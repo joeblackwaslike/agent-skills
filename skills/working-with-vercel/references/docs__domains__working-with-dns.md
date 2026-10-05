@@ -16,8 +16,8 @@ related:
 summary: Learn how DNS works to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "64bae4d8c9524d59fb6b43b69fc452d50b0c37fb6691faab08f6ecba6ab6ba44"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "761a94cbfce0ff90ee7c1e5c3240ef114b13836eddc316cddf61bac0ac9d7791"
 ---
 
 # Working with DNS
@@ -30,12 +30,13 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Domain Connect](https://vercel.com/docs/domains/domain-connect?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS rec
 - [Managing Nameservers](https://vercel.com/docs/domains/managing-nameservers?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=related) — Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
@@ -43,7 +44,7 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 Full cross-link map for this page: [/docs/domains/working-with-dns.graph.md](/docs/domains/working-with-dns.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-dns&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/dns-record-example.png`)
+![DNS configuration with multiple DNS record types](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/dns-record-example.png)
 
 ### DNS records
 

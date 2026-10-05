@@ -1,10 +1,18 @@
 ---
+title: Share useChat State Across Components
+description: Learn how to share a chat instance across multiple components with useChat and easily reset the chat.
+url: "https://ai-sdk.dev/cookbook/next/use-shared-chat-context"
+docs_index: /llms.txt
+tags:
+  - next
+  - useChat
+  - context
 source: "https://ai-sdk.dev/cookbook/next/use-shared-chat-context.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "660a29699c714c2d094e205971765a197d665bdee450c8ef20a1aa081f4022d5"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "14ac5a70b76ed9b212153438e7480871c67ead14fb4aca4043c818cc2df4b294"
 ---
 
-# Share useChat State Across Components
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When building chat applications, you may want to access the same chat instance across multiple components. This allows you to display messages in one component, handle input in another, and control the chat state from anywhere in your application.
 
@@ -12,7 +20,7 @@ When building chat applications, you may want to access the same chat instance a
 
 First, create a context that will hold your chat instance and provide methods to interact with it.
 
-```tsx filename='app/chat-context.tsx'
+```tsx title='app/chat-context.tsx'
 'use client';
 
 import React, { createContext, useContext, ReactNode, useState } from 'react';
@@ -67,7 +75,7 @@ export function useSharedChatContext() {
 
 Add the ChatProvider to your layout to make the chat context available to all child components.
 
-```tsx filename='app/layout.tsx'
+```tsx title='app/layout.tsx'
 import { ChatProvider } from './chat-context';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -79,7 +87,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 Create a component that displays messages and provides a button to clear the chat.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -119,7 +127,7 @@ export default function Chat() {
 
 Create an input component that uses the shared chat context to send messages.
 
-```tsx filename='app/chat-input.tsx'
+```tsx title='app/chat-input.tsx'
 import { useChat } from '@ai-sdk/react';
 import { useState } from 'react';
 import { useSharedChatContext } from './chat-context';
@@ -158,7 +166,7 @@ export default function ChatInput() {
 
 Create an API route to handle the chat messages using the AI SDK.
 
-```tsx filename='app/api/chat/route.ts'
+```tsx title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -183,33 +191,12 @@ export async function POST(req: Request) {
 }
 ```
 
-<GithubLink link="https://github.com/vercel/ai/tree/main/examples/ai-e2e-next/app/chat/shared-context" />
+[View Example on GitHub](https://github.com/vercel/ai/tree/main/examples/ai-e2e-next/app/chat/shared-context)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

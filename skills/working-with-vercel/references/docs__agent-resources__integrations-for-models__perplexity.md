@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Perplexity connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/perplexity.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "adf2551cb02e07140014b0f2c56fe674522742cd73deeddd94c0417a1f1b7d90"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "81860059fc33255b39390a561c997f9b892c1e74f47f5c6f550adb42febab0c9"
 ---
 
 # Vercel Perplexity Integration
@@ -37,11 +37,12 @@ directly within your product experience.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
-- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the fal native integration with Vercel.
 - [Vercel Pinecone Integration](https://vercel.com/docs/agent-resources/integrations-for-models/pinecone?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add Pinecone connectable account integration with Vercel.
+- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=related) — Learn how to add the fal native integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/perplexity.graph.md](/docs/agent-resources/integrations-for-models/perplexity.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fperplexity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -73,22 +74,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

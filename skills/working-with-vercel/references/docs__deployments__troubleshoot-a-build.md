@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "9905b844f703b9ef6518e9868fdbd6cdf9dbd1c1fa657ca752da42d2111563c2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ae44af31d32757df88f216f79203778f746b7f9c8d33fe0b973fbe7fdfcfad71"
 ---
 
 # Troubleshooting Build Errors
@@ -36,12 +36,12 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 - [More detailed report on out of memory or disk space errors on builds](https://vercel.com/changelog/report-on-out-of-memory-or-disk-space?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
 - [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related)
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-a-build&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -75,7 +75,7 @@ In the following we show you how to look up the error message of your failed bui
 1. From your Vercel [dashboard](/dashboard), select the project and then [**Deployments**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fdeployments\&title=Go+to+Deployments) in the sidebar
 2. Select the deployment. When there are build issues you will notice an error status next to deployment name
 
-![Image](`/docs-assets/static/docs/concepts/deployments/build-error-deploy-overview-page-02-1.png`)
+![Error status on the Deployments tab.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-error-deploy-overview-page-02-1.png)
 
 3. On the errored deployment's page, you will see a summary of the error in the preview section. In the **Deployment Details** section, expand the **Building** accordion to expand the logs.
    There are situations where [build logs are not available](#build-logs-not-available), in this scenario the error will be presented in the UI instead.
@@ -85,11 +85,11 @@ In the following we show you how to look up the error message of your failed bui
    In many cases, the last mention is not indicative like in the example below where it says **`yarn run build exited with 1`**.
    If you look a few lines above, you will see an additional error which in this case indicates where the problem is with a link for more details. Sometimes, an error may not be mentioned in the lines above but the output will often help you identify where the problem is.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/build-error-deploy-overview-page-03.png`)
+![Error in the logs of the Building accordion.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-error-deploy-overview-page-03.png)
 
 It is recommended to build your project on your local machine first (the build command varies per project) before deploying on Vercel. This will catch issues specific to your code or to your project's dependencies. In the example above, when the command `npm run build` (that runs `next build`) is run in the local console for a Next.js project, the error happens after building locally.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/build-error-console.png`)
+![Error in local console.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-error-console.png)
 
 ### Build Logs not available
 
@@ -102,7 +102,7 @@ Builds can fail without providing any build logs when Vercel detects a missing p
 
 In this case, you cannot access the **Building** accordion described above, and instead, Vercel will present an overlay that contains the error message.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/build-error-no-logs-v2-light.png`)
+![Build logs not available for a deployment.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-error-no-logs-v2-light.png)
 
 ### Integration resource provisioning failures
 

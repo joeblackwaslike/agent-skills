@@ -1,10 +1,17 @@
 ---
+title: Node.js HTTP Server
+description: Learn how to use the AI SDK in a Node.js HTTP server
+url: "https://ai-sdk.dev/cookbook/api-servers/node-http-server"
+docs_index: /llms.txt
+tags:
+  - api servers
+  - streaming
 source: "https://ai-sdk.dev/cookbook/api-servers/node-http-server.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1bfcc0cfc63608b86b50449072c1eeb00e865410a382ff2c2ee226dd3aaabce2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "022044dd1ca68258ab6661755f850282d8a8aec7629762fb208be80360f51929"
 ---
 
-# Node.js HTTP Server
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can use the AI SDK in a Node.js HTTP server to generate text and stream it to the client.
 
@@ -16,10 +23,8 @@ The examples start a simple HTTP server that listens on port 8080. You can e.g. 
 curl -X POST http://localhost:8080
 ```
 
-<Note>
-  The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
-  set in the `AI_GATEWAY_API_KEY` environment variable.
-</Note>
+The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
+set in the `AI_GATEWAY_API_KEY` environment variable.
 
 **Full example**: [github.com/vercel/ai/examples/node-http-server](https://github.com/vercel/ai/tree/main/examples/node-http-server)
 
@@ -27,7 +32,7 @@ curl -X POST http://localhost:8080
 
 You can use the `pipeUIMessageStreamToResponse` helper to pipe the stream data to the server response.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import {
   pipeUIMessageStreamToResponse,
   streamText,
@@ -51,8 +56,9 @@ createServer(async (req, res) => {
 ### Sending Custom Data
 
 `createUIMessageStream` and `pipeUIMessageStreamToResponse` can be used to send custom data to the client.
+This example handles the `/stream-data` path, so test it with `curl -X POST http://localhost:8080/stream-data`.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import {
   createUIMessageStream,
   pipeUIMessageStreamToResponse,
@@ -107,7 +113,7 @@ createServer(async (req, res) => {
 
 You can send a text stream to the client using `pipeTextStreamToResponse`.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import { pipeTextStreamToResponse, streamText, toTextStream } from 'ai';
 import { createServer } from 'http';
 
@@ -128,14 +134,10 @@ createServer(async (req, res) => {
 
 - Streaming not working when [proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Node.js HTTP Server](/cookbook/api-servers/node-http-server)
-- [Express](/cookbook/api-servers/express)
-- [Hono](/cookbook/api-servers/hono)
-- [Fastify](/cookbook/api-servers/fastify)
-- [Nest.js](/cookbook/api-servers/nest)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

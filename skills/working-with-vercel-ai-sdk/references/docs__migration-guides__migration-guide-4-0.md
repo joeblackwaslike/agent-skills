@@ -1,35 +1,37 @@
 ---
+title: Migrate AI SDK 3.4 to 4.0
+description: Learn how to upgrade AI SDK 3.4 to 4.0.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b3d4a06413c6675d3e642843e0df4a9942e6da08330157d9e68087354771c99b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "e65e7a4823cb6c6889bbec3fd260a2f193164d022185d749fbee5896e628af10"
 ---
 
-# Migrate AI SDK 3.4 to 4.0
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Check out the [AI SDK 4.0 release blog
-  post](https://vercel.com/blog/ai-sdk-4-0) for more information about the
-  release.
-</Note>
+Check out the [AI SDK 4.0 release blog
+post](https://vercel.com/blog/ai-sdk-4-0) for more information about the
+release.
 
 ## Recommended Migration Process
 
 1. Backup your project. If you use a versioning control system, make sure all previous versions are committed.
-1. [Migrate to AI SDK 3.4](/docs/migration-guides/migration-guide-3-4).
-1. Upgrade to AI SDK 4.0.
-1. Automatically migrate your code using [codemods](#codemods).
+2. [Migrate to AI SDK 3.4](/docs/migration-guides/migration-guide-3-4).
+3. Upgrade to AI SDK 4.0.
+4. Automatically migrate your code using [codemods](#codemods).
    > If you don't want to use codemods, we recommend resolving all deprecation warnings before upgrading to AI SDK 4.0.
-1. Follow the breaking changes guide below.
-1. Verify your project is working as expected.
-1. Commit your changes.
+5. Follow the breaking changes guide below.
+6. Verify your project is working as expected.
+7. Commit your changes.
 
 ## AI SDK 4.0 package versions
 
 You need to update the following packages to the following versions in your `package.json` file(s):
 
 - `ai` package: `4.0.*`
-- `ai-sdk@provider-utils` package: `2.0.*`
-- `ai-sdk/*` packages: `1.0.*` (other `@ai-sdk` packages)
+- `@ai-sdk/provider-utils` package: `2.0.*`
+- `@ai-sdk/*` packages: `1.0.*` (other `@ai-sdk/*` packages)
 
 ## Codemods
 
@@ -40,11 +42,9 @@ Codemods are transformations that run on your codebase programmatically. They
 allow you to easily apply many changes without having to manually go through
 every file.
 
-<Note>
-  Codemods are intended as a tool to help you with the upgrade process. They may
-  not cover all of the changes you need to make. You may need to make additional
-  changes manually.
-</Note>
+Codemods are intended as a tool to help you with the upgrade process. They may
+not cover all of the changes you need to make. You may need to make additional
+changes manually.
 
 You can run all codemods provided as part of the 4.0 upgrade process by running
 the following command from the root of your project:
@@ -82,14 +82,14 @@ repository.
 
 The `baseUrl` option has been removed from all providers. Please use the `baseURL` option instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const perplexity = createOpenAI({
   // ...
   baseUrl: 'https://api.perplexity.ai/',
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const perplexity = createOpenAI({
   // ...
   baseURL: 'https://api.perplexity.ai/',
@@ -103,13 +103,13 @@ const perplexity = createOpenAI({
 The `Anthropic` facade has been removed from the Anthropic provider.
 Please use the `anthropic` object or the `createAnthropic` function instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const anthropic = new Anthropic({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const anthropic = createAnthropic({
   // ...
 });
@@ -117,15 +117,13 @@ const anthropic = createAnthropic({
 
 #### Removed `topK` setting
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The model specific `topK` setting has been removed from the Anthropic provider.
 You can use the standard `topK` setting instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await generateText({
   model: anthropic('claude-3-5-sonnet-latest', {
     topK: 0.5,
@@ -133,7 +131,7 @@ const result = await generateText({
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = await generateText({
   model: anthropic('claude-3-5-sonnet-latest'),
   topK: 0.5,
@@ -147,13 +145,13 @@ const result = await generateText({
 The `Google` facade has been removed from the Google Generative AI provider.
 Please use the `google` object or the `createGoogleGenerativeAI` function instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const google = new Google({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const google = createGoogleGenerativeAI({
   // ...
 });
@@ -161,15 +159,13 @@ const google = createGoogleGenerativeAI({
 
 #### Removed `topK` setting
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The model-specific `topK` setting has been removed from the Google Generative AI provider.
 You can use the standard `topK` setting instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await generateText({
   model: google('gemini-1.5-flash', {
     topK: 0.5,
@@ -177,7 +173,7 @@ const result = await generateText({
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = await generateText({
   model: google('gemini-1.5-flash'),
   topK: 0.5,
@@ -188,15 +184,13 @@ const result = await generateText({
 
 #### Removed `topK` setting
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The model-specific `topK` setting has been removed from the Google Vertex provider.
 You can use the standard `topK` setting instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await generateText({
   model: vertex('gemini-1.5-flash', {
     topK: 0.5,
@@ -204,7 +198,7 @@ const result = await generateText({
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = await generateText({
   model: vertex('gemini-1.5-flash'),
   topK: 0.5,
@@ -218,13 +212,13 @@ const result = await generateText({
 The `Mistral` facade has been removed from the Mistral provider.
 Please use the `mistral` object or the `createMistral` function instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const mistral = new Mistral({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const mistral = createMistral({
   // ...
 });
@@ -237,13 +231,13 @@ const mistral = createMistral({
 The `OpenAI` facade has been removed from the OpenAI provider.
 Please use the `openai` object or the `createOpenAI` function instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const openai = new OpenAI({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const openai = createOpenAI({
   // ...
 });
@@ -256,11 +250,11 @@ const openai = createOpenAI({
 The `toAIStream` function has been removed from the LangChain adapter.
 Please use the `toDataStream` function instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 LangChainAdapter.toAIStream(stream);
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 LangChainAdapter.toDataStream(stream);
 ```
 
@@ -271,13 +265,13 @@ LangChainAdapter.toDataStream(stream);
 Instead of returning a Promise, the `streamText` function now returns immediately.
 It is not necessary to await the result of `streamText`.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await streamText({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = streamText({
   // ...
 });
@@ -288,13 +282,13 @@ const result = streamText({
 Instead of returning a Promise, the `streamObject` function now returns immediately.
 It is not necessary to await the result of `streamObject`.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await streamObject({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = streamObject({
   // ...
 });
@@ -308,14 +302,14 @@ Please use the `maxSteps` option instead.
 The `roundtrips` property has been removed from the `GenerateTextResult` type.
 Please use the `steps` property instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { text, roundtrips } = await generateText({
   maxToolRoundtrips: 1, // or maxAutomaticRoundtrips
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { text, steps } = await generateText({
   maxSteps: 2,
   // ...
@@ -326,20 +320,18 @@ const { text, steps } = await generateText({
 
 The `nanoid` export has been removed. Please use [`generateId`](/docs/reference/ai-sdk-core/generate-id) instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { nanoid } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { generateId } from 'ai';
 ```
 
 ### Increased default size of generated IDs
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The [`generateId`](/docs/reference/ai-sdk-core/generate-id) function now
 generates 16-character IDs. The previous default was 7 characters.
@@ -347,7 +339,7 @@ generates 16-character IDs. The previous default was 7 characters.
 This might e.g. require updating your database schema if you limit the length of
 IDs.
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { generateId } from 'ai';
 
 const id = generateId(); // now 16 characters
@@ -362,7 +354,7 @@ The following types have been removed:
 - `ExperimentalAssistantMessage` (use `CoreAssistantMessage` instead)
 - `ExperimentalToolMessage` (use `CoreToolMessage` instead)
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import {
   ExperimentalMessage,
   ExperimentalUserMessage,
@@ -371,7 +363,7 @@ import {
 } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import {
   ModelMessage,
   CoreUserMessage,
@@ -384,11 +376,11 @@ import {
 
 The `ExperimentalTool` type has been removed. Please use the `CoreTool` type instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { ExperimentalTool } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { CoreTool } from 'ai';
 ```
 
@@ -401,7 +393,7 @@ The following exports have been removed:
 - `experimental_generateObject` (use `generateObject` instead)
 - `experimental_streamObject` (use `streamObject` instead)
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import {
   experimental_generateText,
   experimental_streamText,
@@ -410,7 +402,7 @@ import {
 } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { generateText, streamText, generateObject, streamObject } from 'ai';
 ```
 
@@ -424,7 +416,7 @@ The following methods have been removed from the `streamText` result:
 
 Use the `toDataStream`, `pipeDataStreamToResponse`, and `toDataStreamResponse` functions instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await streamText({
   // ...
 });
@@ -434,25 +426,25 @@ result.pipeAIStreamToResponse(response);
 result.toAIStreamResponse();
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = streamText({
   // ...
 });
 
 result.toDataStream();
 result.pipeDataStreamToResponse(response);
-result.toUIMessageStreamResponse();
+result.toDataStreamResponse();
 ```
 
 ### Renamed "formatStreamPart" to "formatDataStreamPart"
 
 The `formatStreamPart` function has been renamed to `formatDataStreamPart`.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 formatStreamPart('text', 'Hello, world!');
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 formatDataStreamPart('text', 'Hello, world!');
 ```
 
@@ -460,11 +452,11 @@ formatDataStreamPart('text', 'Hello, world!');
 
 The `parseStreamPart` function has been renamed to `parseDataStreamPart`.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const part = parseStreamPart(line);
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const part = parseDataStreamPart(line);
 ```
 
@@ -474,20 +466,18 @@ The `TokenUsage`, `CompletionTokenUsage` and `EmbeddingTokenUsage` types have
 been renamed to `LanguageModelUsage` (for the first two) and
 `EmbeddingModelUsage` (for the last).
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { TokenUsage, CompletionTokenUsage, EmbeddingTokenUsage } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { LanguageModelUsage, EmbeddingModelUsage } from 'ai';
 ```
 
 ### Removed deprecated telemetry data
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The following telemetry data values have been removed:
 
@@ -501,59 +491,53 @@ This change will apply to observability providers and any scripts or automation 
 
 ### Provider Registry
 
-#### Removed experimental_Provider, experimental_ProviderRegistry, and experimental_ModelRegistry
+#### Removed experimental\_Provider, experimental\_ProviderRegistry, and experimental\_ModelRegistry
 
 The `experimental_Provider` interface, `experimental_ProviderRegistry` interface, and `experimental_ModelRegistry` interface have been removed.
 Please use the `Provider` interface instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { experimental_Provider, experimental_ProviderRegistry } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { Provider } from 'ai';
 ```
 
-<Note>
-  The model registry is not available any more. Please [register
-  providers](/docs/reference/ai-sdk-core/provider-registry#setup) instead.
-</Note>
+The model registry is not available any more. Please [register
+providers](/docs/reference/ai-sdk-core/provider-registry#setup) instead.
 
-#### Removed `experimental_​createModelRegistry` function
+#### Removed `experimental_createModelRegistry` function
 
 The `experimental_createModelRegistry` function has been removed.
 Please use the `experimental_createProviderRegistry` function instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { experimental_createModelRegistry } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { experimental_createProviderRegistry } from 'ai';
 ```
 
-<Note>
-  The model registry is not available any more. Please [register
-  providers](/docs/reference/ai-sdk-core/provider-registry#setup) instead.
-</Note>
+The model registry is not available any more. Please [register
+providers](/docs/reference/ai-sdk-core/provider-registry#setup) instead.
 
 ### Removed `rawResponse` from results
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `rawResponse` property has been removed from the `generateText`, `streamText`, `generateObject`, and `streamObject` results.
 You can use the `response` property instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { text, rawResponse } = await generateText({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { text, response } = await generateText({
   // ...
 });
@@ -561,20 +545,18 @@ const { text, response } = await generateText({
 
 ### Removed `init` option from `pipeDataStreamToResponse` and `toDataStreamResponse`
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `init` option has been removed from the `pipeDataStreamToResponse` and `toDataStreamResponse` functions.
 You can set the values from `init` directly into the `options` object.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await streamText({
   // ...
 });
 
-result.toUIMessageStreamResponse(response, {
+result.pipeDataStreamToResponse(response, {
   init: {
     headers: {
       'X-Custom-Header': 'value',
@@ -584,12 +566,12 @@ result.toUIMessageStreamResponse(response, {
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = streamText({
   // ...
 });
 
-result.toUIMessageStreamResponse(response, {
+result.pipeDataStreamToResponse(response, {
   headers: {
     'X-Custom-Header': 'value',
   },
@@ -599,22 +581,20 @@ result.toUIMessageStreamResponse(response, {
 
 ### Removed `responseMessages` from `generateText` and `streamText`
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `responseMessages` property has been removed from the `generateText` and `streamText` results.
 This includes the `onFinish` callback.
 Please use the `response.messages` property instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { text, responseMessages } = await generateText({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { text, response } = await generateText({
   // ...
 });
@@ -622,19 +602,19 @@ const { text, response } = await generateText({
 const responseMessages = response.messages;
 ```
 
-### Removed `experimental_​continuationSteps` option
+### Removed `experimental_continuationSteps` option
 
 The `experimental_continuationSteps` option has been removed from the `generateText` function.
 Please use the `experimental_continueSteps` option instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await generateText({
   experimental_continuationSteps: true,
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = await generateText({
   experimental_continueSteps: true,
   // ...
@@ -646,24 +626,22 @@ const result = await generateText({
 The `LanguageModelResponseMetadataWithHeaders` type has been removed.
 Please use the `LanguageModelResponseMetadata` type instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { LanguageModelResponseMetadataWithHeaders } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { LanguageModelResponseMetadata } from 'ai';
 ```
 
 #### Changed `streamText` warnings result to Promise
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `warnings` property of the `StreamTextResult` type is now a Promise.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await streamText({
   // ...
 });
@@ -671,7 +649,7 @@ const result = await streamText({
 const warnings = result.warnings;
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = streamText({
   // ...
 });
@@ -681,14 +659,12 @@ const warnings = await result.warnings;
 
 #### Changed `streamObject` warnings result to Promise
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `warnings` property of the `StreamObjectResult` type is now a Promise.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const result = await streamObject({
   // ...
 });
@@ -696,7 +672,7 @@ const result = await streamObject({
 const warnings = result.warnings;
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const result = streamObject({
   // ...
 });
@@ -706,14 +682,12 @@ const warnings = await result.warnings;
 
 #### Renamed `simulateReadableStream` `values` to `chunks`
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
-The `simulateReadableStream` function from `ai/test` has been renamed to `chunks`.
+The `values` option of the `simulateReadableStream` function from `ai/test` has been renamed to `chunks`.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { simulateReadableStream } from 'ai/test';
 
 const stream = simulateReadableStream({
@@ -722,7 +696,7 @@ const stream = simulateReadableStream({
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { simulateReadableStream } from 'ai/test';
 
 const stream = simulateReadableStream({
@@ -733,21 +707,19 @@ const stream = simulateReadableStream({
 
 ## AI SDK RSC Changes
 
-<Note type="warning">
-  There are no codemods available for the changes in this section. Please review
-  and update your code manually.
-</Note>
+There are no codemods available for the changes in this section. Please review
+and update your code manually.
 
 ### Removed `render` function
 
 The AI SDK RSC 3.0 `render` function has been removed.
 Please use the `streamUI` function instead or [switch to AI SDK UI](/docs/ai-sdk-rsc/migrating-to-ui).
 
-```ts filename="AI SDK 3.0"
+```ts title="AI SDK 3.0"
 import { render } from '@ai-sdk/rsc';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { streamUI } from '@ai-sdk/rsc';
 ```
 
@@ -755,19 +727,17 @@ import { streamUI } from '@ai-sdk/rsc';
 
 ### Removed Svelte, Vue, and SolidJS exports
 
-<Note type="warning">
-  This codemod only operates on `.ts` and `.tsx` files. If you have code in
-  files with other suffixes, please review and update your code manually.
-</Note>
+This codemod only operates on `.ts` and `.tsx` files. If you have code in
+files with other suffixes, please review and update your code manually.
 
 The `ai` package no longer exports Svelte, Vue, and SolidJS UI integrations.
 You need to install the `@ai-sdk/svelte`, `@ai-sdk/vue`, and `@ai-sdk/solid` packages directly.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { useChat } from 'ai/svelte';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { useChat } from '@ai-sdk/svelte';
 ```
 
@@ -776,34 +746,32 @@ import { useChat } from '@ai-sdk/svelte';
 The `experimental_StreamData` export has been removed.
 Please use the `StreamData` export instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { experimental_StreamData } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { StreamData } from 'ai';
 ```
 
 ### `useChat` hook
 
-<Note type="warning">
-  There are no codemods available for the changes in this section. Please review
-  and update your code manually.
-</Note>
+There are no codemods available for the changes in this section. Please review
+and update your code manually.
 
 #### Removed `streamMode` setting
 
 The `streamMode` options has been removed from the `useChat` hook.
 Please use the `streamProtocol` parameter instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { messages } = useChat({
   streamMode: 'text',
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { messages } = useChat({
   streamProtocol: 'text',
   // ...
@@ -821,7 +789,7 @@ The following options have been removed from the `useChat` hook:
 Please use the [`maxSteps`](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-stopwhen) option instead.
 The value of `maxSteps` is equal to roundtrips + 1.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { messages } = useChat({
   experimental_maxAutomaticRoundtrips: 2,
   // or maxAutomaticRoundtrips
@@ -830,7 +798,7 @@ const { messages } = useChat({
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { messages } = useChat({
   maxSteps: 3, // 2 roundtrips + 1
   // ...
@@ -842,7 +810,7 @@ const { messages } = useChat({
 The `options` parameter in the `useChat` hook has been removed.
 Please use the `headers` and `body` parameters instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { messages } = useChat({
   options: {
     headers: {
@@ -853,7 +821,7 @@ const { messages } = useChat({
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { messages } = useChat({
   headers: {
     'X-Custom-Header': 'value',
@@ -867,13 +835,13 @@ const { messages } = useChat({
 The `experimental_addToolResult` method has been removed from the `useChat` hook.
 Please use the `addToolResult` method instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { messages, experimental_addToolResult } = useChat({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { messages, addToolResult } = useChat({
   // ...
 });
@@ -884,14 +852,14 @@ const { messages, addToolResult } = useChat({
 The `keepLastMessageOnError` option has been changed to default to `true`.
 The option will be removed in the next major release.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { messages } = useChat({
   keepLastMessageOnError: true,
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { messages } = useChat({
   // ...
 });
@@ -899,24 +867,22 @@ const { messages } = useChat({
 
 ### `useCompletion` hook
 
-<Note type="warning">
-  There are no codemods available for the changes in this section. Please review
-  and update your code manually.
-</Note>
+There are no codemods available for the changes in this section. Please review
+and update your code manually.
 
 #### Removed `streamMode` setting
 
 The `streamMode` options has been removed from the `useCompletion` hook.
 Please use the `streamProtocol` parameter instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { text } = useCompletion({
   streamMode: 'text',
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { text } = useCompletion({
   streamProtocol: 'text',
   // ...
@@ -930,25 +896,23 @@ const { text } = useCompletion({
 The `experimental_useAssistant` export has been removed from the `useAssistant` hook.
 Please use the `useAssistant` hook directly instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { experimental_useAssistant } from '@ai-sdk/react';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { useAssistant } from '@ai-sdk/react';
 ```
 
 #### Removed `threadId` and `messageId` from `AssistantResponse`
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `threadId` and `messageId` parameters have been removed from the `AssistantResponse` function.
 Please use the `threadId` and `messageId` variables from the outer scope instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 return AssistantResponse(
   { threadId: myThreadId, messageId: myMessageId },
   async ({ forwardStream, sendDataMessage, threadId, messageId }) => {
@@ -957,7 +921,7 @@ return AssistantResponse(
 );
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 return AssistantResponse(
   { threadId: myThreadId, messageId: myMessageId },
   async ({ forwardStream, sendDataMessage }) => {
@@ -966,41 +930,37 @@ return AssistantResponse(
 );
 ```
 
-#### Removed `experimental_​AssistantResponse` export
+#### Removed `experimental_AssistantResponse` export
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `experimental_AssistantResponse` export has been removed.
 Please use the `AssistantResponse` function directly instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { experimental_AssistantResponse } from 'ai';
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { AssistantResponse } from 'ai';
 ```
 
 ### `experimental_useObject` hook
 
-<Note type="warning">
-  There are no codemods available for the changes in this section. Please review
-  and update your code manually.
-</Note>
+There are no codemods available for the changes in this section. Please review
+and update your code manually.
 
 The `setInput` helper has been removed from the `experimental_useObject` hook.
 Please use the `submit` helper instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 const { object, setInput } = useObject({
   // ...
 });
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 const { object, submit } = useObject({
   // ...
 });
@@ -1013,13 +973,13 @@ const { object, submit } = useObject({
 The `isXXXError` static methods have been removed from AI SDK errors.
 Please use the `isInstance` method of the corresponding error class instead.
 
-```ts filename="AI SDK 3.4"
+```ts title="AI SDK 3.4"
 import { APICallError } from 'ai';
 
 APICallError.isAPICallError(error);
 ```
 
-```ts filename="AI SDK 4.0"
+```ts title="AI SDK 4.0"
 import { APICallError } from 'ai';
 
 APICallError.isInstance(error);
@@ -1027,19 +987,15 @@ APICallError.isInstance(error);
 
 ### Removed `toJSON` method
 
-<Note type="warning">
-  There is no codemod available for this change. Please review and update your
-  code manually.
-</Note>
+There is no codemod available for this change. Please review and update your
+code manually.
 
 The `toJSON` method has been removed from AI SDK errors.
 
 ## AI SDK 2.x Legacy Changes
 
-<Note type="warning">
-  There are no codemods available for the changes in this section. Please review
-  and update your code manually.
-</Note>
+There are no codemods available for the changes in this section. Please review
+and update your code manually.
 
 ### Removed 2.x legacy providers
 
@@ -1083,95 +1039,84 @@ list is provided to give visibility into which migrations have some automation.
 It can also be helpful to find the codemod names if you'd like to run a subset
 of codemods. For more, see the [Codemods](#codemods) section.
 
-| Change                                                                                              | Codemod                                               |
-| --------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| **Provider Changes**                                                                                |                                                       |
-| Removed baseUrl option                                                                              | `v4/replace-baseurl`                                  |
-| **Anthropic Provider**                                                                              |                                                       |
-| Removed Anthropic facade                                                                            | `v4/remove-anthropic-facade`                          |
-| Removed topK setting                                                                                | _N/A_                                                 |
-| **Google Generative AI Provider**                                                                   |                                                       |
-| Removed Google facade                                                                               | `v4/remove-google-facade`                             |
-| Removed topK setting                                                                                | _N/A_                                                 |
-| **Google Vertex Provider**                                                                          |                                                       |
-| Removed topK setting                                                                                | _N/A_                                                 |
-| **Mistral Provider**                                                                                |                                                       |
-| Removed Mistral facade                                                                              | `v4/remove-mistral-facade`                            |
-| **OpenAI Provider**                                                                                 |                                                       |
-| Removed OpenAI facade                                                                               | `v4/remove-openai-facade`                             |
-| **LangChain Adapter**                                                                               |                                                       |
-| Removed toAIStream                                                                                  | `v4/replace-langchain-toaistream`                     |
-| **AI SDK Core Changes**                                                                             |                                                       |
-| streamText returns immediately                                                                      | `v4/remove-await-streamtext`                          |
-| streamObject returns immediately                                                                    | `v4/remove-await-streamobject`                        |
-| Remove roundtrips                                                                                   | `v4/replace-roundtrips-with-maxsteps`                 |
-| Removed nanoid export                                                                               | `v4/replace-nanoid`                                   |
-| Increased default size of generated IDs                                                             | _N/A_                                                 |
-| Removed ExperimentalMessage types                                                                   | `v4/remove-experimental-message-types`                |
-| Removed ExperimentalTool type                                                                       | `v4/remove-experimental-tool`                         |
-| Removed experimental AI function exports                                                            | `v4/remove-experimental-ai-fn-exports`                |
-| Removed AI-stream related methods from streamText                                                   | `v4/remove-ai-stream-methods-from-stream-text-result` |
-| Renamed "formatStreamPart" to "formatDataStreamPart"                                                | `v4/rename-format-stream-part`                        |
-| Renamed "parseStreamPart" to "parseDataStreamPart"                                                  | `v4/rename-parse-stream-part`                         |
-| Renamed TokenUsage, CompletionTokenUsage and EmbeddingTokenUsage types                              | `v4/replace-token-usage-types`                        |
-| Removed deprecated telemetry data                                                                   | _N/A_                                                 |
-| **Provider Registry**                                                                               |                                                       |
-| &rarr; Removed experimental_Provider, experimental_ProviderRegistry, and experimental_ModelRegistry | `v4/remove-deprecated-provider-registry-exports`      |
-| &rarr; Removed experimental_createModelRegistry function                                            | _N/A_                                                 |
-| Removed rawResponse from results                                                                    | _N/A_                                                 |
-| Removed init option from pipeDataStreamToResponse and toDataStreamResponse                          | _N/A_                                                 |
-| Removed responseMessages from generateText and streamText                                           | _N/A_                                                 |
-| Removed experimental_continuationSteps option                                                       | `v4/replace-continuation-steps`                       |
-| Removed LanguageModelResponseMetadataWithHeaders type                                               | `v4/remove-metadata-with-headers`                     |
-| Changed streamText warnings result to Promise                                                       | _N/A_                                                 |
-| Changed streamObject warnings result to Promise                                                     | _N/A_                                                 |
-| Renamed simulateReadableStream values to chunks                                                     | _N/A_                                                 |
-| **AI SDK RSC Changes**                                                                              |                                                       |
-| Removed render function                                                                             | _N/A_                                                 |
-| **AI SDK UI Changes**                                                                               |                                                       |
-| Removed Svelte, Vue, and SolidJS exports                                                            | `v4/rewrite-framework-imports`                        |
-| Removed experimental_StreamData                                                                     | `v4/remove-experimental-streamdata`                   |
-| **useChat hook**                                                                                    |                                                       |
-| Removed streamMode setting                                                                          | _N/A_                                                 |
-| Replaced roundtrip setting with maxSteps                                                            | `v4/replace-roundtrips-with-maxsteps`                 |
-| Removed options setting                                                                             | _N/A_                                                 |
-| Removed experimental_addToolResult method                                                           | _N/A_                                                 |
-| Changed default value of keepLastMessageOnError to true and deprecated the option                   | _N/A_                                                 |
-| **useCompletion hook**                                                                              |                                                       |
-| Removed streamMode setting                                                                          | _N/A_                                                 |
-| **useAssistant hook**                                                                               |                                                       |
-| Removed experimental_useAssistant export                                                            | `v4/remove-experimental-useassistant`                 |
-| Removed threadId and messageId from AssistantResponse                                               | _N/A_                                                 |
-| Removed experimental_AssistantResponse export                                                       | _N/A_                                                 |
-| **experimental_useObject hook**                                                                     |                                                       |
-| Removed setInput helper                                                                             | _N/A_                                                 |
-| **AI SDK Errors**                                                                                   |                                                       |
-| Removed isXXXError static methods                                                                   | `v4/remove-isxxxerror`                                |
-| Removed toJSON method                                                                               | _N/A_                                                 |
-| **AI SDK 2.x Legacy Changes**                                                                       |                                                       |
-| Removed 2.x legacy providers                                                                        | _N/A_                                                 |
-| Removed 2.x legacy function and tool calling                                                        | _N/A_                                                 |
-| Removed 2.x prompt helpers                                                                          | _N/A_                                                 |
-| Removed 2.x AIStream                                                                                | _N/A_                                                 |
-| Removed 2.x StreamingTextResponse                                                                   | _N/A_                                                 |
-| Removed 2.x streamToResponse                                                                        | _N/A_                                                 |
-| Removed 2.x RSC Tokens streaming                                                                    | _N/A_                                                 |
+| Change                                                                                            | Codemod                                               |
+| ------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| **Provider Changes**                                                                              |                                                       |
+| Removed baseUrl option                                                                            | `v4/replace-baseurl`                                  |
+| **Anthropic Provider**                                                                            |                                                       |
+| Removed Anthropic facade                                                                          | `v4/remove-anthropic-facade`                          |
+| Removed topK setting                                                                              | *N/A*                                                 |
+| **Google Generative AI Provider**                                                                 |                                                       |
+| Removed Google facade                                                                             | `v4/remove-google-facade`                             |
+| Removed topK setting                                                                              | *N/A*                                                 |
+| **Google Vertex Provider**                                                                        |                                                       |
+| Removed topK setting                                                                              | *N/A*                                                 |
+| **Mistral Provider**                                                                              |                                                       |
+| Removed Mistral facade                                                                            | `v4/remove-mistral-facade`                            |
+| **OpenAI Provider**                                                                               |                                                       |
+| Removed OpenAI facade                                                                             | `v4/remove-openai-facade`                             |
+| **LangChain Adapter**                                                                             |                                                       |
+| Removed toAIStream                                                                                | `v4/replace-langchain-toaistream`                     |
+| **AI SDK Core Changes**                                                                           |                                                       |
+| streamText returns immediately                                                                    | `v4/remove-await-streamtext`                          |
+| streamObject returns immediately                                                                  | `v4/remove-await-streamobject`                        |
+| Remove roundtrips                                                                                 | `v4/replace-roundtrips-with-maxsteps`                 |
+| Removed nanoid export                                                                             | `v4/replace-nanoid`                                   |
+| Increased default size of generated IDs                                                           | *N/A*                                                 |
+| Removed ExperimentalMessage types                                                                 | `v4/remove-experimental-message-types`                |
+| Removed ExperimentalTool type                                                                     | `v4/remove-experimental-tool`                         |
+| Removed experimental AI function exports                                                          | `v4/remove-experimental-ai-fn-exports`                |
+| Removed AI-stream related methods from streamText                                                 | `v4/remove-ai-stream-methods-from-stream-text-result` |
+| Renamed "formatStreamPart" to "formatDataStreamPart"                                              | `v4/rename-format-stream-part`                        |
+| Renamed "parseStreamPart" to "parseDataStreamPart"                                                | `v4/rename-parse-stream-part`                         |
+| Renamed TokenUsage, CompletionTokenUsage and EmbeddingTokenUsage types                            | `v4/replace-token-usage-types`                        |
+| Removed deprecated telemetry data                                                                 | *N/A*                                                 |
+| **Provider Registry**                                                                             |                                                       |
+| → Removed experimental\_Provider, experimental\_ProviderRegistry, and experimental\_ModelRegistry | `v4/remove-deprecated-provider-registry-exports`      |
+| → Removed experimental\_createModelRegistry function                                              | *N/A*                                                 |
+| Removed rawResponse from results                                                                  | *N/A*                                                 |
+| Removed init option from pipeDataStreamToResponse and toDataStreamResponse                        | *N/A*                                                 |
+| Removed responseMessages from generateText and streamText                                         | *N/A*                                                 |
+| Removed experimental\_continuationSteps option                                                    | `v4/replace-continuation-steps`                       |
+| Removed LanguageModelResponseMetadataWithHeaders type                                             | `v4/remove-metadata-with-headers`                     |
+| Changed streamText warnings result to Promise                                                     | *N/A*                                                 |
+| Changed streamObject warnings result to Promise                                                   | *N/A*                                                 |
+| Renamed simulateReadableStream values to chunks                                                   | *N/A*                                                 |
+| **AI SDK RSC Changes**                                                                            |                                                       |
+| Removed render function                                                                           | *N/A*                                                 |
+| **AI SDK UI Changes**                                                                             |                                                       |
+| Removed Svelte, Vue, and SolidJS exports                                                          | `v4/rewrite-framework-imports`                        |
+| Removed experimental\_StreamData                                                                  | `v4/remove-experimental-streamdata`                   |
+| **useChat hook**                                                                                  |                                                       |
+| Removed streamMode setting                                                                        | *N/A*                                                 |
+| Replaced roundtrip setting with maxSteps                                                          | `v4/replace-roundtrips-with-maxsteps`                 |
+| Removed options setting                                                                           | *N/A*                                                 |
+| Removed experimental\_addToolResult method                                                        | *N/A*                                                 |
+| Changed default value of keepLastMessageOnError to true and deprecated the option                 | *N/A*                                                 |
+| **useCompletion hook**                                                                            |                                                       |
+| Removed streamMode setting                                                                        | *N/A*                                                 |
+| **useAssistant hook**                                                                             |                                                       |
+| Removed experimental\_useAssistant export                                                         | `v4/remove-experimental-useassistant`                 |
+| Removed threadId and messageId from AssistantResponse                                             | *N/A*                                                 |
+| Removed experimental\_AssistantResponse export                                                    | *N/A*                                                 |
+| **experimental\_useObject hook**                                                                  |                                                       |
+| Removed setInput helper                                                                           | *N/A*                                                 |
+| **AI SDK Errors**                                                                                 |                                                       |
+| Removed isXXXError static methods                                                                 | `v4/remove-isxxxerror`                                |
+| Removed toJSON method                                                                             | *N/A*                                                 |
+| **AI SDK 2.x Legacy Changes**                                                                     |                                                       |
+| Removed 2.x legacy providers                                                                      | *N/A*                                                 |
+| Removed 2.x legacy function and tool calling                                                      | *N/A*                                                 |
+| Removed 2.x prompt helpers                                                                        | *N/A*                                                 |
+| Removed 2.x AIStream                                                                              | *N/A*                                                 |
+| Removed 2.x StreamingTextResponse                                                                 | *N/A*                                                 |
+| Removed 2.x streamToResponse                                                                      | *N/A*                                                 |
+| Removed 2.x RSC Tokens streaming                                                                  | *N/A*                                                 |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -14,8 +14,8 @@ related:
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "1859fa492641a00fd47626d97e32825d3e88712769140ab14171fb60e18f8f49"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "767a3fc552ea0c9a1a4daf181dc3fd738ed6ba2009081f63442efea99c8a8c36"
 ---
 
 # Global network and regions
@@ -37,14 +37,14 @@ sha256: "1859fa492641a00fd47626d97e32825d3e88712769140ab14171fb60e18f8f49"
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
-- [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
-- [Regional execution for ultra-low latency rendering at the edge](https://vercel.com/blog/regional-execution-for-ultra-low-latency-rendering-at-the-edge?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Effortless high availability for dynamic frontends](https://vercel.com/blog/effortless-high-availability-for-dynamic-frontends?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related)
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md?from=related&source_path=%2Fdocs%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](https://vercel.com/front/docs/edge-network/cdn-pops-light.png)
+![Our global CDN has 126 Points of Presence in 94 cities across 51 countries.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/edge-network/cdn-pops-light.png)
 
 ## Global infrastructure
 
@@ -135,17 +135,16 @@ Vercel's CDN is designed with high availability and fault tolerance in mind:
 | P6 | lhr1 |
 | P7 | cdg1 |
 | P8 | fra1 |
-| P9 | bru1 |
-| P10 | arn1 |
-| P11 | gru1 |
-| P12 | hnd1 |
-| P13 | kix1 |
-| P14 | icn1 |
-| P15 | bom1 |
-| P16 | syd1 |
-| P17 | hkg1 |
-| P18 | sin1 |
-| P19 | cpt1 |
+| P9 | arn1 |
+| P10 | gru1 |
+| P11 | hnd1 |
+| P12 | kix1 |
+| P13 | icn1 |
+| P14 | bom1 |
+| P15 | syd1 |
+| P16 | hkg1 |
+| P17 | sin1 |
+| P18 | cpt1 |
 
 
 - For Enterprise customers, Vercel functions can automatically failover to a different region if the region they are running in becomes unavailable. Learn more about [Vercel Function failover](/docs/functions/configuring-functions/region#automatic-failover).

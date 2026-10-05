@@ -17,8 +17,8 @@ related:
 summary: Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nitro.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "94b073e781266e4d76df4b57d165c6666ec9a6a9d5826199b5f4695aa5737348"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ea67c33a3eda28b6e19277407ae141b785902cf173011072d3263e55230ab28c"
 ---
 
 # Nitro on Vercel
@@ -31,17 +31,14 @@ Nitro is a full-stack framework with TypeScript-first support. It includes files
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Zero-configuration support for Nitro](https://vercel.com/changelog/zero-configuration-support-for-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related)
 - [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related)
-- [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
-- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 
 Full cross-link map for this page: [/docs/frameworks/backend/nitro.graph.md](/docs/frameworks/backend/nitro.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fnitro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -79,7 +76,7 @@ With [on-demand revalidation](/docs/incremental-static-regeneration/quickstart#o
 To revalidate a path to a prerendered function:
 
 - ### Create an Environment Variable
-  Create an [Environment Variable](/docs/environment-variables) to store a revalidation secret by:
+  Create an [Environment Variable](/docs/environment-variables) named `BYPASS_TOKEN` to store a revalidation secret. Generate the secret value by:
   - Using the command:
   ```bash filename="terminal"
   openssl rand -base64 32
@@ -92,7 +89,7 @@ To revalidate a path to a prerendered function:
   export default defineNitroConfig({
     vercel: {
       config: {
-        bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+        bypassToken: process.env.BYPASS_TOKEN,
       },
     },
   });
@@ -101,7 +98,7 @@ To revalidate a path to a prerendered function:
   export default defineNitroConfig({
     vercel: {
       config: {
-        bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+        bypassToken: process.env.BYPASS_TOKEN,
       },
     },
   });
@@ -111,7 +108,7 @@ To revalidate a path to a prerendered function:
     nitro: {
       vercel: {
         config: {
-          bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+          bypassToken: process.env.BYPASS_TOKEN,
         },
       },
     },
@@ -122,7 +119,7 @@ To revalidate a path to a prerendered function:
     nitro: {
       vercel: {
         config: {
-          bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+          bypassToken: process.env.BYPASS_TOKEN,
         },
       },
     },
@@ -130,7 +127,7 @@ To revalidate a path to a prerendered function:
   ```
 
 - ### Trigger revalidation
-  You can revalidate a path to a prerendered function by making a `GET` or `HEAD` request to that path with a header of `x-prerender-revalidate: bypassToken`
+  You can revalidate a path to a prerendered function by making a `GET` or `HEAD` request to that path with a header of `x-prerender-revalidate: <bypassToken>`, where `<bypassToken>` is the value of your `BYPASS_TOKEN` environment variable.
 
   When the prerendered function endpoint is accessed with this header set, the cache will be revalidated. The next request to that function will return a fresh response.
 

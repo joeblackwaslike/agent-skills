@@ -13,13 +13,13 @@ related:
 summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0a58fdd557980c7e0da42e985b7501d158159d7db0fb3dec46ef9c873392ee59"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "00e8bcedb3d167d64c04d0e5917073c9fff0cdf9aee82c4c30adeeb997747bf9"
 ---
 
 # Vercel Blob examples
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 ## Range requests
 
@@ -32,14 +32,15 @@ Vercel Blob supports [range requests](https://developer.mozilla.org/docs/Web/HTT
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related)
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Server Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/server-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 - [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — DELETE /v2/:teamSlug/:projectSlug/:repositor
-- [Delete a blob](https://vercel.com/docs/rest-api/vcr/delete-a-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} — DELETE /v2/:teamSlug/:projectSlug/:repositoryName/
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Delete a blob](https://vercel.com/docs/rest-api/vcr/delete-a-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=related) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} — DELETE /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

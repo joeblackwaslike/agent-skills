@@ -16,8 +16,8 @@ related:
 summary: Learn how to schedule cron jobs to run at specific times or intervals.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9cf9c2c09309c31ea12fd5a3a1321216fdb2a8684de8d1c2cbc7597ca0051126"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bbc35b06ee86720b5056f813e610151c862d24cfb03be07ac9f9db8e0208355a"
 ---
 
 # Getting started with cron jobs
@@ -35,10 +35,9 @@ This guide will help you get started with using cron jobs on Vercel. Cron jobs a
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
@@ -48,7 +47,7 @@ Full cross-link map for this page: [/docs/cron-jobs/quickstart.graph.md](/docs/c
 **Agent prompt**
 
 ```text
-Help me set up a Cron Job in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Create a Vercel Function at app/api/cron/route.ts that runs a scheduled task. 2. Add a cron schedule to vercel.json that triggers this function on a recurring schedule. 3. Run `vercel env pull` to sync environment variables locally. 4. Deploy with `vercel --prod` and use `vercel inspect` to verify the cron job is configured.
+Help me set up a Cron Job in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Create a Vercel Function at app/api/hello/route.ts that runs a scheduled task. 2. Add a cron schedule to vercel.json that triggers this function on a recurring schedule. 3. Run `vercel env pull` to sync environment variables locally. 4. Deploy with `vercel --prod` and use `vercel inspect` to verify the cron job is configured.
 ```
 
 ## Prerequisites
@@ -57,7 +56,7 @@ Help me set up a Cron Job in this project. First, make sure the Vercel CLI is in
 - [A project](/docs/projects#creating-a-project) with a [Vercel Function](/docs/functions)
 
 - ### Create a function
-  This function contains the code that will be executed by the cron job. This example uses a simple function that returns the user's region.
+  This function contains the code that will be executed by the cron job. This example function returns a greeting.
   > For \['nextjs']:
   > **💡 Note:** To stream responses you must use Route Handlers in the App Router, even if the
   > rest of your app uses the Pages Router.

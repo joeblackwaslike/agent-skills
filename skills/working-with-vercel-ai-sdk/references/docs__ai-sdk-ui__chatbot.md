@@ -1,10 +1,14 @@
 ---
+title: Chatbot
+description: Learn how to use the useChat hook.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "f3b191ddbdf456bc257935e7ea7665a446fdbabfaf1756bd0560d4bc142858db"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "63f2417ac02d6cbc6be078674727ef9a5d27107947b751f09bfe922c0da1da2e"
 ---
 
-# Chatbot
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `useChat` hook makes it effortless to create a conversational user interface for your chatbot application. It enables the streaming of chat messages from your AI provider, manages the chat state, and updates the UI automatically as new messages arrive.
 
@@ -20,7 +24,7 @@ Let's start with the following example first.
 
 ## Example
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -70,7 +74,7 @@ export default function Page() {
 }
 ```
 
-```ts filename='app/api/chat/route.ts'
+```ts title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -78,7 +82,6 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -87,7 +90,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'You are a helpful assistant.',
     messages: await convertToModelMessages(messages),
   });
@@ -98,13 +101,11 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  The UI messages have a new `parts` property that contains the message parts.
-  We recommend rendering the messages using the `parts` property instead of the
-  `content` property. The parts property supports different message types,
-  including text, tool invocation, and tool result, and allows for more flexible
-  and complex chat UIs.
-</Note>
+The UI messages have a new `parts` property that contains the message parts.
+We recommend rendering the messages using the `parts` property instead of the
+`content` property. The parts property supports different message types,
+including text, tool invocation, and tool result, and allows for more flexible
+and complex chat UIs.
 
 In the `Page` component, the `useChat` hook will request to your AI provider endpoint whenever the user sends a message using `sendMessage`.
 The messages are then streamed back in real-time and displayed in the chat UI.
@@ -131,7 +132,7 @@ You can use `status` for e.g. the following purposes:
 - To show a "Stop" button to abort the current message.
 - To disable the submit button.
 
-```tsx filename='app/page.tsx' highlight="8,26-33,47,50"
+```tsx title='app/page.tsx' {8,26-33,47,50}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -195,13 +196,11 @@ export default function Page() {
 Similarly, the `error` state reflects the error object thrown during the fetch request.
 It can be used to display an error message, disable the submit button, or show a retry button:
 
-<Note>
-  We recommend showing a generic error message to the user, such as "Something
-  went wrong." This is a good practice to avoid leaking information from the
-  server.
-</Note>
+We recommend showing a generic error message to the user, such as "Something
+went wrong." This is a good practice to avoid leaking information from the
+server.
 
-```tsx file="app/page.tsx" highlight="8,26-33,47"
+```tsx title="app/page.tsx" {8,26-33,47}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -324,32 +323,31 @@ When the user clicks the "Regenerate" button, the AI provider will regenerate th
 
 ### Throttling UI Updates
 
-By default, the `useChat` hook will trigger a render every time a new chunk is received.
+By default, `useChat` publishes message updates as each chunk is processed.
+React may batch multiple updates into a single render.
 React and Vue applications can throttle reactive message updates with the `throttle` option.
 Stream processing and event callbacks remain immediate, and the latest messages are published before the chat enters a terminal `ready` or `error` status.
 
-<Tabs items={['React', 'Vue']}>
-  <Tab>
-    ```tsx filename="page.tsx" highlight="2-3"
-    const { messages, ... } = useChat({
-      // Throttle reactive message updates to 50ms:
-      throttle: 50,
-    });
-    ```
-  </Tab>
-  <Tab>
-    ```vue filename="pages/index.vue" highlight="4-6"
-    <script setup lang="ts">
-    import { useChat } from '@ai-sdk/vue';
+#### React
 
-    const { messages } = useChat({
-      throttle: 50,
-    });
-    </script>
-    ```
+```tsx title="page.tsx" {2-3}
+const { messages, ... } = useChat({
+  // Throttle reactive message updates to 50ms:
+  throttle: 50,
+});
+```
 
-  </Tab>
-</Tabs>
+#### Vue
+
+```vue title="pages/index.vue" {4-6}
+<script setup lang="ts">
+import { useChat } from '@ai-sdk/vue';
+
+const { messages } = useChat({
+  throttle: 50,
+});
+</script>
+```
 
 ## Event Callbacks
 
@@ -433,19 +431,15 @@ const { messages, sendMessage } = useChat({
 });
 ```
 
-<Note>
-  For component state that changes over time, use `useRef` to store the current
-  value and reference `ref.current` in your configuration function, or prefer
-  request-level options (see next section) for better reliability.
-</Note>
+For component state that changes over time, use `useRef` to store the current
+value and reference `ref.current` in your configuration function, or prefer
+request-level options (see next section) for better reliability.
 
 #### Request-Level Configuration (Recommended)
 
-<Note>
-  **Recommended**: Use request-level options for better flexibility and control.
-  Request-level options take precedence over hook-level options and allow you to
-  customize each request individually.
-</Note>
+**Recommended**: Use request-level options for better flexibility and control.
+Request-level options take precedence over hook-level options and allow you to
+customize each request individually.
 
 ```tsx
 // Pass options as the second parameter to sendMessage
@@ -476,7 +470,7 @@ The request-level options are merged with hook-level options, with request-level
 You can configure custom `body` fields on a per-request basis using the second parameter of the `sendMessage` function.
 This is useful if you want to pass in additional information to your backend that is not part of the message list.
 
-```tsx filename="app/page.tsx" highlight="25-32"
+```tsx title="app/page.tsx" {25-32}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -522,7 +516,7 @@ export default function Chat() {
 
 You can retrieve these custom fields on your server side by destructuring the request body:
 
-```ts filename="app/api/chat/route.ts" highlight="3,4"
+```ts title="app/api/chat/route.ts" {3,4}
 export async function POST(req: Request) {
   // Extract additional information ("customKey") from the body of the request:
   const { messages, customKey }: { messages: UIMessage[]; customKey: string } =
@@ -585,7 +579,7 @@ For complete examples with type safety and advanced use cases, see the [Message 
 
 You can configure custom transport behavior using the `transport` option to customize how messages are sent to your API:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -610,7 +604,7 @@ export default function Chat() {
 
 The corresponding API route receives the custom request format:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 export async function POST(req: Request) {
   const { id, message } = await req.json();
 
@@ -619,7 +613,7 @@ export async function POST(req: Request) {
   messages.push(message);
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -633,7 +627,7 @@ export async function POST(req: Request) {
 
 For more complex scenarios like message regeneration, you can use trigger-based routing:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -671,7 +665,7 @@ export default function Chat() {
 
 The corresponding API route would handle different triggers:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 export async function POST(req: Request) {
   const { trigger, id, message, messageId } = await req.json();
 
@@ -690,7 +684,7 @@ export async function POST(req: Request) {
   }
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -710,13 +704,12 @@ For scenarios where you want to communicate directly with an Agent without going
 - Testing without network
 - Single-process applications
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 import { useChat } from '@ai-sdk/react';
 import { DirectChatTransport, ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
 });
 
@@ -759,9 +752,18 @@ With `streamText`, you can control how error messages and usage information are 
 
 By default, the error message is masked for security reasons.
 The default error message is "An error occurred."
+
+Tool execution errors marked `providerExecuted: true` are an exception. They
+bypass the UI stream's `onError` callback: strings are forwarded unchanged, and
+other error values are serialized with `JSON.stringify`. This preserves provider
+error codes when chat history is converted back into model messages, as well as
+error messages from harness runtimes. Stream errors and invalid tool calls still
+use `onError`, even for provider-executed tools. Do not rely on this callback to
+redact provider-executed tool execution errors before they reach the client.
+
 You can forward error messages or send your own error message by providing an `onError` function:
 
-```ts filename="app/api/chat/route.ts" highlight="21-35"
+```ts title="app/api/chat/route.ts" {21-35}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -769,13 +771,12 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -822,7 +823,6 @@ import {
   UIMessage,
   type LanguageModelUsage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 // Create a new metadata type (optional for type-safety)
 type MyMetadata = {
@@ -836,7 +836,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: MyUIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -920,7 +920,7 @@ export default function Chat() {
 
 `useChat` can handle plain text streams by setting the `streamProtocol` option to `text`:
 
-```tsx filename="app/page.tsx" highlight="7"
+```tsx title="app/page.tsx" {7}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -940,19 +940,17 @@ export default function Chat() {
 This configuration also works with other backend servers that stream plain text.
 Check out the [stream protocol guide](/docs/ai-sdk-ui/stream-protocol) for more information.
 
-<Note>
-  When using `TextStreamChatTransport`, tool calls, usage information and finish
-  reasons are not available.
-</Note>
+When using `TextStreamChatTransport`, tool calls, usage information and finish
+reasons are not available.
 
 ## Reasoning
 
 Some models such as DeepSeek `deepseek-r1`
-and Anthropic `claude-sonnet-5` support reasoning tokens.
+and Anthropic `claude-sonnet-5-5` support reasoning tokens.
 These tokens are typically sent before the message content.
 You can forward them to the client with the `sendReasoning` option:
 
-```ts filename="app/api/chat/route.ts" highlight="20"
+```ts title="app/api/chat/route.ts" {20}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -982,7 +980,7 @@ On the client side, you can access the reasoning parts of the message object.
 
 Reasoning parts have a `text` property that contains the reasoning content.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 messages.map(message => (
   <div key={message.id}>
     {message.role === 'user' ? 'User: ' : 'AI: '}
@@ -1010,10 +1008,12 @@ These are available as `reasoning-file` parts (`ReasoningFileUIPart`) with
 Some providers such as [Perplexity](/providers/ai-sdk-providers/perplexity#sources) and
 [Google](/providers/ai-sdk-providers/google#sources) include sources in the response.
 
-Currently sources are limited to web pages that ground the response.
-You can forward them to the client with the `sendSources` option:
+You can forward sources to the client with the `sendSources` option. This example uses the Perplexity Agent API's `fast` preset to search the web. Install `@ai-sdk/perplexity` and set `PERPLEXITY_API_KEY` in your environment:
 
-```ts filename="app/api/chat/route.ts" highlight="20"
+**Packages:** `@ai-sdk/perplexity`
+
+```ts title="app/api/chat/route.ts" {21}
+import { perplexity } from '@ai-sdk/perplexity';
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -1026,7 +1026,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'perplexity/sonar-pro',
+    model: perplexity('fast'),
     messages: await convertToModelMessages(messages),
   });
 
@@ -1043,7 +1043,7 @@ On the client side, you can access source parts of the message object.
 There are two types of sources: `source-url` for web pages and `source-document` for documents.
 Here is an example that renders both types of sources:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 messages.map(message => (
   <div key={message.id}>
     {message.role === 'user' ? 'User: ' : 'AI: '}
@@ -1052,7 +1052,7 @@ messages.map(message => (
     {message.parts
       .filter(part => part.type === 'source-url')
       .map(part => (
-        <span key={`source-${part.id}`}>
+        <span key={`source-${part.sourceId}`}>
           [
           <a href={part.url} target="_blank">
             {part.title ?? new URL(part.url).hostname}
@@ -1065,8 +1065,8 @@ messages.map(message => (
     {message.parts
       .filter(part => part.type === 'source-document')
       .map(part => (
-        <span key={`source-${part.id}`}>
-          [<span>{part.title ?? `Document ${part.id}`}</span>]
+        <span key={`source-${part.sourceId}`}>
+          [<span>{part.title ?? `Document ${part.sourceId}`}</span>]
         </span>
       ))}
   </div>
@@ -1080,7 +1080,7 @@ When images are generated, they are exposed as files to the client.
 On the client side, you can access file parts of the message object
 and render them as images.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 messages.map(message => (
   <div key={message.id}>
     {message.role === 'user' ? 'User: ' : 'AI: '}
@@ -1105,14 +1105,12 @@ There are two ways to send files with a message: using a `FileList` object from 
 
 By using `FileList`, you can send multiple files as attachments along with a message using the file input element. The `useChat` hook will automatically convert them into data URLs and send them to the AI provider.
 
-<Note>
-  Currently, only `image/*` and `text/*` content types get automatically
-  converted into [multi-modal content
-  parts](/docs/foundations/prompts#file-parts). You will need to handle other
-  content types manually.
-</Note>
+Currently, only `image/*` and `text/*` content types get automatically
+converted into [multi-modal content
+parts](/docs/foundations/prompts#file-parts). You will need to handle other
+content types manually.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -1195,7 +1193,7 @@ export default function Page() {
 
 You can also send files as objects along with a message. This can be useful for sending pre-uploaded files or data URLs.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -1382,23 +1380,10 @@ const stream = createUIMessageStream<MyUIMessage>(/* ... */);
 
 This provides full type safety for tool inputs and outputs on the client and server.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

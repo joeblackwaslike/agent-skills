@@ -1,39 +1,39 @@
 ---
+title: Google Vertex AI
+description: Learn how to use the Google Vertex AI provider.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "6e226cfe2c82a515eb13a29735b7529dea02116470f174a23c186078a1606616"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ed9bb8073623643ae865dad31f18c1e86fb5814e072e04ad604c24b269f6382b"
 ---
 
-# Google Vertex Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Google Vertex provider for the [AI SDK](/docs) contains language model support for the [Google Vertex AI](https://cloud.google.com/vertex-ai) APIs. This includes support for [Google's Gemini models](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models), [Anthropic's Claude partner models](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude), [xAI's Grok partner models](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/grok), and [MaaS (Model as a Service) open models](https://cloud.google.com/vertex-ai/generative-ai/docs/maas/use-open-models).
 
-<Note>
-  The Google Vertex provider is compatible with both Node.js and Edge runtimes.
-  The Edge runtime is supported through the `@ai-sdk/google-vertex/edge`
-  sub-module. More details can be found in the [Google Vertex Edge
-  Runtime](#google-vertex-edge-runtime), [Google Vertex Anthropic Edge
-  Runtime](#google-vertex-anthropic-edge-runtime), and [Google Vertex MaaS Edge
-  Runtime](#google-vertex-maas-edge-runtime) sections below.
-</Note>
+The Google Vertex provider is compatible with both Node.js and Edge runtimes.
+The Edge runtime is supported through the `@ai-sdk/google-vertex/edge`
+sub-module. More details can be found in the [Google Vertex Edge
+Runtime](#google-vertex-edge-runtime), [Google Vertex Anthropic Edge
+Runtime](#google-vertex-anthropic-edge-runtime), and [Google Vertex MaaS Edge
+Runtime](#google-vertex-maas-edge-runtime) sections below.
 
 ## Setup
 
 The Google Vertex, Google Vertex Anthropic, Google Vertex xAI, and Google Vertex MaaS providers are available in the `@ai-sdk/google-vertex` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/google-vertex" />
+**Packages:** `@ai-sdk/google-vertex`
 
 ## Google Vertex Provider Usage
 
 The Google Vertex provider instance is used to create model instances that call the Vertex AI API. The models available with this provider include [Google's Gemini models](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models). If you're looking to use [Anthropic's Claude models](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude), see the [Google Vertex Anthropic Provider](#google-vertex-anthropic-provider-usage) section below.
 
-<Note>
-  Vertex Gemini models share the Google provider's forward-compatible model
-  classification. Unrecognized `gemini-*` IDs and `-latest` aliases use the
-  newest supported Gemini request behavior, while known legacy IDs keep their
-  generation-specific tool, reasoning, function-response, and thought-signature
-  handling. The selected Vertex model must still support each requested feature.
-</Note>
+Vertex Gemini models share the Google provider's forward-compatible model
+classification. Unrecognized `gemini-*` IDs and `-latest` aliases use the
+newest supported Gemini request behavior, while known legacy IDs keep their
+generation-specific tool, reasoning, function-response, and thought-signature
+handling. The selected Vertex model must still support each requested feature.
 
 ### Provider Instance
 
@@ -79,73 +79,77 @@ const googleVertex = createGoogleVertex({
 
 You can use the following optional settings to customize the provider instance:
 
-- **project** _string_
+- **project** *string*
 
   The Google Cloud project ID that you want to use for the API calls.
   It uses the `GOOGLE_VERTEX_PROJECT` environment variable by default.
 
-- **location** _string_
+- **location** *string*
 
   The Google Cloud location that you want to use for the API calls, e.g. `us-central1`.
   It uses the `GOOGLE_VERTEX_LOCATION` environment variable by default.
 
-- **googleAuthOptions** _object_
+- **googleAuthOptions** *object*
 
   Optional. The Authentication options used by the [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs/). See also the [GoogleAuthOptions](https://github.com/googleapis/google-auth-library-nodejs/blob/08978822e1b7b5961f0e355df51d738e012be392/src/auth/googleauth.ts#L87C18-L87C35) interface.
-  - **authClient** _object_
+
+  - **authClient** *object*
     An `AuthClient` to use.
 
-  - **keyFilename** _string_
+  - **keyFilename** *string*
     Path to a .json, .pem, or .p12 key file.
 
-  - **keyFile** _string_
+  - **keyFile** *string*
     Path to a .json, .pem, or .p12 key file.
 
-  - **credentials** _object_
-    Object containing client_email and private_key properties, or the external account client options.
+  - **credentials** *object*
+    Object containing client\_email and private\_key properties, or the external account client options.
 
-  - **clientOptions** _object_
+  - **clientOptions** *object*
     Options object passed to the constructor of the client.
 
-  - **scopes** _string | string[]_
+  - **scopes** *string | string\[]*
     Required scopes for the desired API request.
 
-  - **projectId** _string_
+  - **projectId** *string*
     Your project ID.
 
-  - **universeDomain** _string_
+  - **universeDomain** *string*
     The default service domain for a given Cloud universe.
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in the requests. Can be provided in multiple formats:
+
   - A record of header key-value pairs: `Record<string, string | undefined>`
   - A function that returns headers: `() => Record<string, string | undefined>`
   - An async function that returns headers: `async () => Record<string, string | undefined>`
   - A promise that resolves to headers: `Promise<Record<string, string | undefined>>`
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Optional. Base URL for the Google Vertex API calls e.g. to use proxy servers. By default, it is constructed using the location and project:
   `https://${location}-aiplatform.googleapis.com/v1/projects/${project}/locations/${location}/publishers/google`
 
-- **toolResultDownloads** _object_
+- **toolResultDownloads** *object*
 
   Settings for downloading remote files in tool results before sending them to Vertex as inline data.
   Supported Google Cloud Storage URLs are forwarded directly for Gemini 3 and later models.
   See [Tool Result Files](#tool-result-files) for the supported MIME types.
-  - **maxBytes** _number_
+
+  - **maxBytes** *number*
 
     Maximum size in bytes for each downloaded file. Defaults to 7 MiB.
 
-<a id="google-vertex-edge-runtime"></a>
+<a id="google-vertex-edge-runtime" />
+
 #### Edge Runtime
 
 Edge runtimes (like Cloudflare Workers) are lightweight JavaScript environments that run closer to users at the network edge. They only provide a subset of the standard Node.js APIs.
@@ -160,11 +164,9 @@ You can import the default provider instance `googleVertex` from `@ai-sdk/google
 import { googleVertex } from '@ai-sdk/google-vertex/edge';
 ```
 
-<Note>
-  The `/edge` sub-module is included in the `@ai-sdk/google-vertex` package, so
-  you don't need to install it separately. You must import from
-  `@ai-sdk/google-vertex/edge` to differentiate it from the Node.js provider.
-</Note>
+The `/edge` sub-module is included in the `@ai-sdk/google-vertex` package, so
+you don't need to install it separately. You must import from
+`@ai-sdk/google-vertex/edge` to differentiate it from the Node.js provider.
 
 If you need a customized setup, you can import `createGoogleVertex` from `@ai-sdk/google-vertex/edge` and create a provider instance with your settings:
 
@@ -189,37 +191,39 @@ These values can be obtained from a service account JSON file from the [Google C
 
 You can use the following optional settings to customize the provider instance:
 
-- **project** _string_
+- **project** *string*
 
   The Google Cloud project ID that you want to use for the API calls.
   It uses the `GOOGLE_VERTEX_PROJECT` environment variable by default.
 
-- **location** _string_
+- **location** *string*
 
   The Google Cloud location that you want to use for the API calls, e.g. `us-central1`.
   It uses the `GOOGLE_VERTEX_LOCATION` environment variable by default.
 
-- **googleCredentials** _object_
+- **googleCredentials** *object*
 
   Optional. The credentials used by the Edge provider for authentication. These credentials are typically set through environment variables and are derived from a service account JSON file.
-  - **clientEmail** _string_
+
+  - **clientEmail** *string*
     The client email from the service account JSON file. Defaults to the contents of the `GOOGLE_CLIENT_EMAIL` environment variable.
 
-  - **privateKey** _string_
+  - **privateKey** *string*
     The private key from the service account JSON file. Defaults to the contents of the `GOOGLE_PRIVATE_KEY` environment variable.
 
-  - **privateKeyId** _string_
+  - **privateKeyId** *string*
     The private key ID from the service account JSON file (optional). Defaults to the contents of the `GOOGLE_PRIVATE_KEY_ID` environment variable.
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in the requests. Can be provided in multiple formats:
+
   - A record of header key-value pairs: `Record<string, string | undefined>`
   - A function that returns headers: `() => Record<string, string | undefined>`
   - An async function that returns headers: `async () => Record<string, string | undefined>`
   - A promise that resolves to headers: `Promise<Record<string, string | undefined>>`
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -240,7 +244,7 @@ const googleVertex = createGoogleVertex({
 
 ##### Optional Provider Settings
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   The API key for Google Vertex AI. When provided, the provider uses express mode with API key authentication instead of OAuth.
   It uses the `GOOGLE_VERTEX_API_KEY` environment variable by default.
@@ -254,11 +258,9 @@ The first argument is the model id, e.g. `gemini-3.8-flash`.
 const model = googleVertex('gemini-3.8-flash');
 ```
 
-<Note>
-  If you are using [your own
-  models](https://cloud.google.com/vertex-ai/docs/training-overview), the name
-  of your model needs to start with `projects/`.
-</Note>
+If you are using [your own
+models](https://cloud.google.com/vertex-ai/docs/training-overview), the name
+of your model needs to start with `projects/`.
 
 Google Vertex models support also some model specific settings that are not part
 of the [standard call settings](/docs/ai-sdk-core/settings). You can pass them as
@@ -287,12 +289,12 @@ await generateText({
 
 The following optional provider options are available for Google Vertex models:
 
-- **cachedContent** _string_
+- **cachedContent** *string*
 
   Optional. The name of the cached content used as context to serve the prediction.
-  Format: projects/\{project\}/locations/\{location\}/cachedContents/\{cachedContent\}
+  Format: projects/\{project}/locations/\{location}/cachedContents/\{cachedContent}
 
-- **structuredOutputs** _boolean_
+- **structuredOutputs** *boolean*
 
   Optional. Enable structured output. Default is true.
 
@@ -303,12 +305,14 @@ The following optional provider options are available for Google Vertex models:
 
   See [Troubleshooting: Schema Limitations](#schema-limitations) for more details.
 
-- **safetySettings** _Array\<\{ category: string; threshold: string \}\>_
+- **safetySettings** *Array\<\{ category: string; threshold: string }>*
 
   Optional. Safety settings for the model.
-  - **category** _string_
+
+  - **category** *string*
 
     The category of the safety setting. Can be one of the following:
+
     - `HARM_CATEGORY_UNSPECIFIED`
     - `HARM_CATEGORY_HATE_SPEECH`
     - `HARM_CATEGORY_DANGEROUS_CONTENT`
@@ -316,36 +320,39 @@ The following optional provider options are available for Google Vertex models:
     - `HARM_CATEGORY_SEXUALLY_EXPLICIT`
     - `HARM_CATEGORY_CIVIC_INTEGRITY`
 
-  - **threshold** _string_
+  - **threshold** *string*
 
     The threshold of the safety setting. Can be one of the following:
+
     - `HARM_BLOCK_THRESHOLD_UNSPECIFIED`
     - `BLOCK_LOW_AND_ABOVE`
     - `BLOCK_MEDIUM_AND_ABOVE`
     - `BLOCK_ONLY_HIGH`
     - `BLOCK_NONE`
 
-- **audioTimestamp** _boolean_
+- **audioTimestamp** *boolean*
 
   Optional. Enables timestamp understanding for audio files. Defaults to false.
 
   This is useful for generating transcripts with accurate timestamps.
   Consult [Google's Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/audio-understanding) for usage details.
 
-- **labels** _object_
+- **labels** *object*
 
   Optional. Defines labels used in billing reports.
 
   Consult [Google's Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/add-labels-to-api-calls) for usage details.
 
-- **imageConfig** _object_
+- **imageConfig** *object*
 
   Optional. Configuration for image generation. Only supported by Gemini image models.
 
   See [Google's GenerationConfig documentation](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/v1/GenerationConfig) for usage details.
-  - **aspectRatio** _string_
+
+  - **aspectRatio** *string*
 
     Optional. The aspect ratio of generated images. Defaults to 1:1 squares, or to matching the output image size to that of an input image. Can be one of the following:
+
     - 1:1
     - 2:3
     - 3:2
@@ -357,33 +364,36 @@ The following optional provider options are available for Google Vertex models:
     - 16:9
     - 21:9
 
-  - **imageSize** _string_
+  - **imageSize** *string*
 
     Optional. Controls the output image resolution. Defaults to 1K. Can be one of the following:
+
     - 1K
     - 2K
     - 4K
 
-  - **personGeneration** _string_
+  - **personGeneration** *string*
 
     Optional. Controls the generation of people in images. Can be one of the following:
+
     - `PERSON_GENERATION_UNSPECIFIED`
     - `ALLOW_ALL`
     - `ALLOW_ADULT`
     - `ALLOW_NONE`
 
-  - **prominentPeople** _string_
+  - **prominentPeople** *string*
 
     Optional. Controls whether generation of prominent people (celebrities) is allowed. When set together with `personGeneration`, `personGeneration` takes precedence. Can be one of the following:
+
     - `PROMINENT_PEOPLE_UNSPECIFIED`
     - `ALLOW_PROMINENT_PEOPLE`
     - `BLOCK_PROMINENT_PEOPLE`
 
-  - **imageOutputOptions** _\{ mimeType?: 'image/jpeg' | 'image/png', compressionQuality?: number \}_
+  - **imageOutputOptions** *\{ mimeType?: 'image/jpeg' | 'image/png', compressionQuality?: number }*
 
     Optional. The image output format for generated images.
 
-- **streamFunctionCallArguments** _boolean_
+- **streamFunctionCallArguments** *boolean*
 
   Optional. When set to true, function call arguments will be streamed
   incrementally in streaming responses. This enables `tool-input-delta` events
@@ -392,7 +402,7 @@ The following optional provider options are available for Google Vertex models:
 
   Consult [Google's Documentation](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/function-calling#streaming-fc) for details.
 
-- **sharedRequestType** _'priority' | 'flex' | 'standard'_
+- **sharedRequestType** *'priority' | 'flex' | 'standard'*
 
   Optional. Selects a pay-as-you-go (PayGo) tier by setting the
   `X-Vertex-AI-LLM-Shared-Request-Type` request header. Use `'priority'` for
@@ -414,7 +424,7 @@ The following optional provider options are available for Google Vertex models:
   and [Flex PayGo](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/flex-paygo)
   for supported models, ramp limits, and downgrade behavior.
 
-- **requestType** _'shared'_
+- **requestType** *'shared'*
 
   Optional. Sets the `X-Vertex-AI-LLM-Request-Type` request header. Combine
   with `sharedRequestType` to skip Provisioned Throughput entirely and route
@@ -423,7 +433,7 @@ The following optional provider options are available for Google Vertex models:
 
 You can use Google Vertex language models to generate text with the `generateText` function:
 
-```ts highlight="1,4"
+```ts {1,4}
 import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
@@ -460,12 +470,10 @@ Use the deployed **endpoint** id, not the tuned model id (a tuned model has both
 is callable for inference). The request and response format is identical to the
 base model, so all standard call settings and provider options continue to work.
 
-<Note>
-  Tuned models require standard Google Cloud credentials and the
-  project/location of the deployed endpoint (via `GOOGLE_VERTEX_PROJECT` /
-  `GOOGLE_VERTEX_LOCATION` or `createGoogleVertex`). [Express
-  Mode](#express-mode) API keys are not supported for tuned models.
-</Note>
+Tuned models require standard Google Cloud credentials and the
+project/location of the deployed endpoint (via `GOOGLE_VERTEX_PROJECT` /
+`GOOGLE_VERTEX_LOCATION` or `createGoogleVertex`). [Express
+Mode](#express-mode) API keys are not supported for tuned models.
 
 #### Code Execution
 
@@ -489,7 +497,7 @@ The response will contain `tool-call` and `tool-result` parts for the executed c
 
 #### URL Context
 
-URL Context allows Gemini models to retrieve and analyze content from URLs. Supported models: Gemini 2.5 Flash-Lite, 2.5 Pro, 2.5 Flash, 2.0 Flash.
+URL Context allows Gemini models to retrieve and analyze content from URLs. Supported models: Gemini 2.0 and newer.
 
 ```ts
 import { googleVertex } from '@ai-sdk/google-vertex';
@@ -504,7 +512,7 @@ const result = await generateText({
 
 #### Google Search
 
-Google Search enables Gemini models to access real-time web information. Supported models: Gemini 2.5 Flash-Lite, 2.5 Flash, 2.0 Flash, 2.5 Pro.
+Google Search enables Gemini models to access real-time web information. Supported models: Gemini 2.0 and newer.
 
 ```ts
 import { googleVertex } from '@ai-sdk/google-vertex';
@@ -536,7 +544,7 @@ const result = await generateText({
 
 #### Google Maps
 
-Google Maps grounding enables Gemini models to access Google Maps data for location-aware responses. Supported models: Gemini 2.5 Flash-Lite, 2.5 Flash, 2.0 Flash, 2.5 Pro, 3.0 Pro.
+Google Maps grounding enables Gemini models to access Google Maps data for location-aware responses. Supported models: Gemini 2.0 and newer.
 
 ```ts
 import { googleVertex } from '@ai-sdk/google-vertex';
@@ -608,11 +616,9 @@ for await (const part of result.stream) {
 }
 ```
 
-<Note>
-  This feature is only available on the Vertex AI API. It is not supported on
-  the Gemini API. When used with the Google provider, a warning will be emitted
-  and the option will be ignored.
-</Note>
+This feature is only available on the Vertex AI API. It is not supported on
+the Gemini API. When used with the Google provider, a warning will be emitted
+and the option will be ignored.
 
 #### Reasoning (Thinking Tokens)
 
@@ -671,11 +677,9 @@ When `includeThoughts` is true, parts of the API response marked with `thought: 
 - In `generateText`, these contribute to the `reasoningText` (string) and `reasoning` (array) fields.
 - In `streamText`, these are emitted as `reasoning` stream parts.
 
-<Note>
-  Refer to the [Google Vertex AI documentation on
-  "thinking"](https://cloud.google.com/vertex-ai/generative-ai/docs/thinking)
-  for model compatibility and further details.
-</Note>
+Refer to the [Google Vertex AI documentation on
+"thinking"](https://cloud.google.com/vertex-ai/generative-ai/docs/thinking)
+for model compatibility and further details.
 
 #### File Inputs
 
@@ -706,11 +710,9 @@ const { text } = await generateText({
 });
 ```
 
-<Note>
-  The AI SDK will automatically download URLs if you pass them as data, except
-  for `gs://` URLs. You can use the Google Cloud Storage API to upload larger
-  files to that location.
-</Note>
+The AI SDK will automatically download URLs if you pass them as data, except
+for `gs://` URLs. You can use the Google Cloud Storage API to upload larger
+files to that location.
 
 See [File Parts](/docs/foundations/prompts#file-parts) for details on how to use files in prompts.
 
@@ -912,7 +914,7 @@ The errors that you get in this case look like this:
 By default, structured outputs are enabled (and for tool calling they are required).
 You can disable structured outputs for object generation as a workaround:
 
-```ts highlight="7,12"
+```ts {7,12}
 import { googleVertex } from '@ai-sdk/google-vertex';
 import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText, Output } from 'ai';
@@ -953,22 +955,20 @@ The following Zod features are known to not work with Google Vertex:
 
 | Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `gemini-3.8-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-3.7-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-3.6-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-3.5-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-3.5-flash-lite` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-3-pro-preview`  | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-2.5-pro`        | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-2.5-flash`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `gemini-2.0-flash-001`  | <Check />   | <Check />         | <Check />  | <Check />      |
+| `gemini-3.8-flash`      | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.7-flash`      | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.6-flash`      | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.5-flash`      | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.5-flash-lite` | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3-pro-preview`  | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-2.5-pro`        | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-2.5-flash`      | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-2.0-flash-001`  | ✓           | ✓                 | ✓          | ✓              |
 
-<Note>
-  The table above lists popular models. Please see the [Google Vertex AI
-  docs](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#supported-models)
-  for a full list of available models. The table above lists popular models. You
-  can also pass any available provider model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [Google Vertex AI
+docs](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#supported-models)
+for a full list of available models. The table above lists popular models. You
+can also pass any available provider model ID as a string if needed.
 
 ### Embedding Models
 
@@ -1004,13 +1004,14 @@ const { embedding } = await embed({
 
 The following optional provider options are available for Google Vertex AI embedding models:
 
-- **outputDimensionality**: _number_
+- **outputDimensionality**: *number*
 
   Optional reduced dimension for the output embedding. If set, excessive values in the output embedding are truncated from the end.
 
-- **taskType**: _string_
+- **taskType**: *string*
 
   Optional. Specifies the task type for generating embeddings. Supported task types include:
+
   - `SEMANTIC_SIMILARITY`: Optimized for text similarity.
   - `CLASSIFICATION`: Optimized for text classification.
   - `CLUSTERING`: Optimized for clustering texts based on similarity.
@@ -1020,11 +1021,11 @@ The following optional provider options are available for Google Vertex AI embed
   - `FACT_VERIFICATION`: Optimized for verifying factual information.
   - `CODE_RETRIEVAL_QUERY`: Optimized for retrieving code blocks based on natural language queries.
 
-- **title**: _string_
+- **title**: *string*
 
   Optional. The title of the document being embedded. This helps the model produce better embeddings by providing additional context. Only valid when `taskType` is set to `'RETRIEVAL_DOCUMENT'`.
 
-- **autoTruncate**: _boolean_
+- **autoTruncate**: *boolean*
 
   Optional. When set to `true`, input text will be truncated if it exceeds the maximum length. When set to `false`, an error is returned if the input text is too long. Defaults to `true`.
 
@@ -1032,14 +1033,12 @@ The following optional provider options are available for Google Vertex AI embed
 
 | Model                        | Max Values Per Call | Parallel Calls | Multimodal |
 | ---------------------------- | ------------------- | -------------- | ---------- |
-| `text-embedding-005`         | 2048                | <Check />      | <Cross />  |
-| `gemini-embedding-2`         | 2048                | <Check />      | <Check />  |
-| `gemini-embedding-2-preview` | 2048                | <Check />      | <Check />  |
+| `text-embedding-005`         | 2048                | ✓              | ✗          |
+| `gemini-embedding-2`         | 2048                | ✓              | ✓          |
+| `gemini-embedding-2-preview` | 2048                | ✓              | ✓          |
 
-<Note>
-  The table above lists popular models. You can also pass any available provider
-  model ID as a string if needed.
-</Note>
+The table above lists popular models. You can also pass any available provider
+model ID as a string if needed.
 
 ### Image Models
 
@@ -1081,38 +1080,30 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  Input images must be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
-  base64-encoded strings. URL inputs, including HTTP and `gs://` URLs, are not
-  supported by `generateImage()` with Google Vertex image models.
-</Note>
+Input images must be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
+base64-encoded strings. URL inputs, including HTTP and `gs://` URLs, are not
+supported by `generateImage()` with Google Vertex image models.
 
-<Note>
-  Gemini image models do not support the `size` or `n` parameters. Use
-  `aspectRatio` instead of `size`. Mask-based inpainting is also not supported.
-</Note>
+Gemini image models do not support the `size` or `n` parameters. Use
+`aspectRatio` instead of `size`. Mask-based inpainting is also not supported.
 
-<Note>
-  Gemini image models are multimodal output models that can generate both text
-  and images. For more advanced use cases where you need both text and image
-  outputs, or want more control over the generation process, you can use them
-  directly with `generateText()`.
-</Note>
+Gemini image models are multimodal output models that can generate both text
+and images. For more advanced use cases where you need both text and image
+outputs, or want more control over the generation process, you can use them
+directly with `generateText()`.
 
 ##### Gemini Image Model Capabilities
 
 | Model                            | Image Generation | Image Editing | Aspect Ratios                                       |
 | -------------------------------- | ---------------- | ------------- | --------------------------------------------------- |
-| `gemini-3.1-flash-image-preview` | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3-pro-image-preview`     | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-2.5-flash-image`         | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3.1-flash-image-preview` | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3-pro-image-preview`     | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-2.5-flash-image`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
 
-<Note>
-  `gemini-3-pro-image-preview` supports additional features including up to 14
-  reference images for editing (6 objects, 5 humans), resolution options (1K,
-  2K, 4K via `providerOptions.vertex.imageConfig.imageSize`). Use the
-  `GoogleVertexImageModelOptions` type to validate Gemini provider options.
-</Note>
+`gemini-3-pro-image-preview` supports additional features including up to 14
+reference images for editing (6 objects, 5 humans), resolution options (1K,
+2K, 4K via `providerOptions.vertex.imageConfig.imageSize`). Use the
+`GoogleVertexImageModelOptions` type to validate Gemini provider options.
 
 ### Video Models
 
@@ -1217,7 +1208,7 @@ const { video } = await generateVideo({
 
 The following provider options are available:
 
-- **generateAudio** _boolean_
+- **generateAudio** *boolean*
 
   Whether to generate audio along with the video.
 
@@ -1225,31 +1216,29 @@ The following provider options are available:
 
   Whether to allow person generation in the video.
 
-- **negativePrompt** _string_
+- **negativePrompt** *string*
 
   A description of what to discourage in the generated video.
 
-- **gcsOutputDirectory** _string_
+- **gcsOutputDirectory** *string*
 
   Cloud Storage URI to store the generated videos.
 
-- **referenceImages** _Array\<\{ bytesBase64Encoded?: string; gcsUri?: string \}\>_
+- **referenceImages** *Array\<\{ bytesBase64Encoded?: string; gcsUri?: string }>*
 
   Reference images for style or asset guidance.
 
-- **pollIntervalMs** _number_
+- **pollIntervalMs** *number*
 
   Polling interval in milliseconds for checking task status.
 
-- **pollTimeoutMs** _number_
+- **pollTimeoutMs** *number*
 
   Maximum wait time in milliseconds for video generation.
 
-<Note>
-  Video generation is an asynchronous process that can take several minutes. For
-  longer videos or higher resolutions, consider setting `pollTimeoutMs` to at
-  least 10 minutes (600000ms).
-</Note>
+Video generation is an asynchronous process that can take several minutes. For
+longer videos or higher resolutions, consider setting `pollTimeoutMs` to at
+least 10 minutes (600000ms).
 
 #### Model Capabilities
 
@@ -1261,10 +1250,8 @@ The following provider options are available:
 | `veo-3.0-fast-generate-001` | Yes           |
 | `veo-2.0-generate-001`      | No            |
 
-<Note>
-  The table above lists popular models. You can also pass any available provider
-  model ID as a string if needed.
-</Note>
+The table above lists popular models. You can also pass any available provider
+model ID as a string if needed.
 
 ### Speech Models
 
@@ -1295,10 +1282,10 @@ rate is reported in `result.providerMetadata.google.sampleRate`.
 
 | Model                               | Multi-speaker | Style via instructions |
 | ----------------------------------- | ------------- | ---------------------- |
-| `gemini-2.5-flash-tts`              | <Check />     | <Check />              |
-| `gemini-2.5-pro-tts`                | <Check />     | <Check />              |
-| `gemini-2.5-flash-lite-preview-tts` | <Check />     | <Check />              |
-| `gemini-3.1-flash-tts-preview`      | <Check />     | <Check />              |
+| `gemini-2.5-flash-tts`              | ✓             | ✓                      |
+| `gemini-2.5-pro-tts`                | ✓             | ✓                      |
+| `gemini-2.5-flash-lite-preview-tts` | ✓             | ✓                      |
+| `gemini-3.1-flash-tts-preview`      | ✓             | ✓                      |
 
 ### Transcription Models
 
@@ -1349,23 +1336,23 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **languageCodes** _string[]_
+- **languageCodes** *string\[]*
 
   BCP-47 language codes to recognize, or `['auto']` to detect the spoken
   language. Defaults to `['auto']`. Multiple explicit language codes require a
   multi-region Speech-to-Text endpoint such as `us` or `eu`.
 
-- **enableAutomaticPunctuation** _boolean_
+- **enableAutomaticPunctuation** *boolean*
 
   Whether to add punctuation to the transcript. Defaults to `true`.
 
-- **enableWordTimeOffsets** _boolean_
+- **enableWordTimeOffsets** *boolean*
 
   Whether to include word-level timestamps in `result.segments`. Defaults to
   `true`. Google notes that enabling word-level timestamps can reduce
   transcription quality and speed.
 
-- **region** _string_
+- **region** *string*
 
   The Speech-to-Text region for the request. Defaults to the provider
   `location`.
@@ -1422,59 +1409,62 @@ const vertexAnthropic = createVertexAnthropic({
 
 You can use the following optional settings to customize the Google Vertex Anthropic provider instance:
 
-- **project** _string_
+- **project** *string*
 
   The Google Cloud project ID that you want to use for the API calls.
   It uses the `GOOGLE_VERTEX_PROJECT` environment variable by default.
 
-- **location** _string_
+- **location** *string*
 
   The Google Cloud location that you want to use for the API calls, e.g. `us-central1`.
   It uses the `GOOGLE_VERTEX_LOCATION` environment variable by default.
 
-- **googleAuthOptions** _object_
+- **googleAuthOptions** *object*
 
   Optional. The Authentication options used by the [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs/). See also the [GoogleAuthOptions](https://github.com/googleapis/google-auth-library-nodejs/blob/08978822e1b7b5961f0e355df51d738e012be392/src/auth/googleauth.ts#L87C18-L87C35) interface.
-  - **authClient** _object_
+
+  - **authClient** *object*
     An `AuthClient` to use.
 
-  - **keyFilename** _string_
+  - **keyFilename** *string*
     Path to a .json, .pem, or .p12 key file.
 
-  - **keyFile** _string_
+  - **keyFile** *string*
     Path to a .json, .pem, or .p12 key file.
 
-  - **credentials** _object_
-    Object containing client_email and private_key properties, or the external account client options.
+  - **credentials** *object*
+    Object containing client\_email and private\_key properties, or the external account client options.
 
-  - **clientOptions** _object_
+  - **clientOptions** *object*
     Options object passed to the constructor of the client.
 
-  - **scopes** _string | string[]_
+  - **scopes** *string | string\[]*
     Required scopes for the desired API request.
 
-  - **projectId** _string_
+  - **projectId** *string*
     Your project ID.
 
-  - **universeDomain** _string_
+  - **universeDomain** *string*
     The default service domain for a given Cloud universe.
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in the requests. Can be provided in multiple formats:
+
   - A record of header key-value pairs: `Record<string, string | undefined>`
   - A function that returns headers: `() => Record<string, string | undefined>`
   - An async function that returns headers: `async () => Record<string, string | undefined>`
   - A promise that resolves to headers: `Promise<Record<string, string | undefined>>`
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-<a id="google-vertex-anthropic-edge-runtime"></a>
+<a id="google-vertex-anthropic-edge-runtime" />
+
 #### Edge Runtime
 
 Edge runtimes (like Cloudflare Workers) are lightweight JavaScript environments that run closer to users at the network edge. They only provide a subset of the standard Node.js APIs.
@@ -1510,37 +1500,39 @@ For Edge runtime authentication, set these environment variables from your Googl
 
 You can use the following optional settings to customize the provider instance:
 
-- **project** _string_
+- **project** *string*
 
   The Google Cloud project ID that you want to use for the API calls.
   It uses the `GOOGLE_VERTEX_PROJECT` environment variable by default.
 
-- **location** _string_
+- **location** *string*
 
   The Google Cloud location that you want to use for the API calls, e.g. `us-central1`.
   It uses the `GOOGLE_VERTEX_LOCATION` environment variable by default.
 
-- **googleCredentials** _object_
+- **googleCredentials** *object*
 
   Optional. The credentials used by the Edge provider for authentication. These credentials are typically set through environment variables and are derived from a service account JSON file.
-  - **clientEmail** _string_
+
+  - **clientEmail** *string*
     The client email from the service account JSON file. Defaults to the contents of the `GOOGLE_CLIENT_EMAIL` environment variable.
 
-  - **privateKey** _string_
+  - **privateKey** *string*
     The private key from the service account JSON file. Defaults to the contents of the `GOOGLE_PRIVATE_KEY` environment variable.
 
-  - **privateKeyId** _string_
+  - **privateKeyId** *string*
     The private key ID from the service account JSON file (optional). Defaults to the contents of the `GOOGLE_PRIVATE_KEY_ID` environment variable.
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in the requests. Can be provided in multiple formats:
+
   - A record of header key-value pairs: `Record<string, string | undefined>`
   - A function that returns headers: `() => Record<string, string | undefined>`
   - An async function that returns headers: `async () => Record<string, string | undefined>`
   - A promise that resolves to headers: `Promise<Record<string, string | undefined>>`
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -1550,11 +1542,11 @@ You can use the following optional settings to customize the provider instance:
 ### Language Models
 
 You can create models that call the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post) using the provider instance.
-The first argument is the model id, e.g. `claude-sonnet-5`.
+The first argument is the model id, e.g. `claude-sonnet-5-5`.
 Some models have multi-modal capabilities.
 
 ```ts
-const model = vertexAnthropic('claude-sonnet-5');
+const model = vertexAnthropic('claude-sonnet-5-5');
 ```
 
 You can use Anthropic language models to generate text with the `generateText` function:
@@ -1564,7 +1556,7 @@ import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: vertexAnthropic('claude-sonnet-5'),
+  model: vertexAnthropic('claude-sonnet-5-5'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -1573,29 +1565,28 @@ Anthropic language models can also be used in the `streamText` function
 and support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output)
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
-<Note>
-  The Anthropic API returns streaming tool calls all at once after a delay. This
-  causes structured output generation to complete fully after a delay instead of
-  streaming incrementally.
-</Note>
+The Anthropic API returns streaming tool calls all at once after a delay. This
+causes structured output generation to complete fully after a delay instead of
+streaming incrementally.
 
 The following optional provider options are available for Anthropic models:
 
-- `sendReasoning` _boolean_
+- `sendReasoning` *boolean*
 
   Optional. Include reasoning content in requests sent to the model. Defaults to `true`.
 
   If you are experiencing issues with the model handling requests involving
   reasoning content, you can set this to `false` to omit them from the request.
 
-- `thinking` _object_
+- `thinking` *object*
 
   Optional. See [Reasoning section](#reasoning) for more details.
 
-- `metadata` _object_
+- `metadata` *object*
 
   Optional. Metadata to include with the request. See the [Anthropic API documentation](https://platform.claude.com/docs/en/api/messages/create) for details.
-  - `userId` _string_ - An external identifier for the end-user.
+
+  - `userId` *string* - An external identifier for the end-user.
 
 ### Reasoning
 
@@ -1628,11 +1619,9 @@ on how to integrate reasoning into your chatbot.
 
 #### Cache Control
 
-<Note>
-  Anthropic cache control is in a Pre-Generally Available (GA) state on Google
-  Vertex. For more see [Google Vertex Anthropic cache control
-  documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude-prompt-caching).
-</Note>
+Anthropic cache control is in a Pre-Generally Available (GA) state on Google
+Vertex. For more see [Google Vertex Anthropic cache control
+documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude-prompt-caching).
 
 In the messages and message parts, you can use the `providerOptions` property to set cache control breakpoints.
 You need to set the `anthropic` property in the `providerOptions` object to `{ cacheControl: { type: 'ephemeral' } }` to set a cache control breakpoint.
@@ -1642,14 +1631,14 @@ Cache read and cache write (creation) token counts are returned on the standard
 `result.usage.inputTokenDetails.cacheReadTokens` and
 `result.usage.inputTokenDetails.cacheWriteTokens`.
 
-```ts highlight="8,16-18,27-31"
+```ts {8,16-18,27-31}
 import { vertexAnthropic } from '@ai-sdk/google-vertex/anthropic';
 import { generateText } from 'ai';
 
 const errorMessage = '... long error message ...';
 
 const result = await generateText({
-  model: vertexAnthropic('claude-sonnet-5'),
+  model: vertexAnthropic('claude-sonnet-5-5'),
   messages: [
     {
       role: 'user',
@@ -1681,9 +1670,9 @@ console.log(
 
 You can also use cache control on system messages by providing multiple system messages at the head of your messages array:
 
-```ts highlight="3,7-9"
+```ts {3,7-9}
 const result = await generateText({
-  model: vertexAnthropic('claude-sonnet-5'),
+  model: vertexAnthropic('claude-sonnet-5-5'),
   messages: [
     {
       role: 'system',
@@ -1715,17 +1704,13 @@ Google Vertex Anthropic supports a subset of Anthropic's built-in tools. The fol
 3. **Computer Tool**: Enables control of keyboard and mouse actions on a computer.
 4. **Web Search Tool**: Provides access to real-time web content.
 
-<Note>
-  Only a subset of Anthropic tools are supported on Google Vertex. Tools like
-  Code Execution, Memory, and Web Fetch are not available. Use the regular
-  `@ai-sdk/anthropic` provider if you need access to all Anthropic tools.
-</Note>
+Only a subset of Anthropic tools are supported on Google Vertex. Tools like
+Code Execution, Memory, and Web Fetch are not available. Use the regular
+`@ai-sdk/anthropic` provider if you need access to all Anthropic tools.
 
-<Note>
-  Google Vertex Anthropic does not support strict mode on tool definitions.
-  Setting `strict: true` on a tool will be ignored and a warning will be
-  emitted.
-</Note>
+Google Vertex Anthropic does not support strict mode on tool definitions.
+Setting `strict: true` on a tool will be ignored and a warning will be
+emitted.
 
 For more background on Anthropic tools, see [Anthropic's documentation](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview).
 
@@ -1771,14 +1756,14 @@ const textEditorTool = vertexAnthropic.tools.textEditor_20250124({
 
 Parameters:
 
-- `command` ('view' | 'create' | 'str_replace' | 'insert' | 'undo_edit'): The command to run. Note: `undo_edit` is not supported in `textEditor_20250429` and `textEditor_20250728`.
+- `command` ('view' | 'create' | 'str\_replace' | 'insert' | 'undo\_edit'): The command to run. Note: `undo_edit` is not supported in `textEditor_20250429` and `textEditor_20250728`.
 - `path` (string): Absolute path to file or directory, e.g. `/repo/file.py` or `/repo`.
 - `file_text` (string, optional): Required for `create` command, with the content of the file to be created.
 - `insert_line` (number, optional): Required for `insert` command. The line number after which to insert the new string.
 - `new_str` (string, optional): New string for `str_replace` command.
 - `insert_text` (string, optional): Required for `insert` command, containing the text to insert.
 - `old_str` (string, optional): Required for `str_replace` command, containing the string to replace.
-- `view_range` (number[], optional): Optional for `view` command to specify line range to show.
+- `view_range` (number\[], optional): Optional for `view` command to specify line range to show.
 - `max_characters` (number, optional): Optional maximum number of characters to view in the file (only available in `textEditor_20250728`).
 
 #### Computer Tool
@@ -1826,8 +1811,8 @@ const computerTool = vertexAnthropic.tools.computer_20241022({
 
 Parameters:
 
-- `action` ('key' | 'type' | 'mouse_move' | 'left_click' | 'left_click_drag' | 'right_click' | 'middle_click' | 'double_click' | 'screenshot' | 'cursor_position'): The action to perform.
-- `coordinate` (number[], optional): Required for `mouse_move` and `left_click_drag` actions. Specifies the (x, y) coordinates.
+- `action` ('key' | 'type' | 'mouse\_move' | 'left\_click' | 'left\_click\_drag' | 'right\_click' | 'middle\_click' | 'double\_click' | 'screenshot' | 'cursor\_position'): The action to perform.
+- `coordinate` (number\[], optional): Required for `mouse_move` and `left_click_drag` actions. Specifies the (x, y) coordinates.
 - `text` (string, optional): Required for `type` and `key` actions.
 
 #### Web Search Tool
@@ -1853,8 +1838,8 @@ const webSearchTool = vertexAnthropic.tools.webSearch_20250305({
 Parameters:
 
 - `maxUses` (number, optional): Maximum number of web searches Claude can perform during the conversation.
-- `allowedDomains` (string[], optional): Optional list of domains that Claude is allowed to search.
-- `blockedDomains` (string[], optional): Optional list of domains that Claude should avoid when searching.
+- `allowedDomains` (string\[], optional): Optional list of domains that Claude is allowed to search.
+- `blockedDomains` (string\[], optional): Optional list of domains that Claude should avoid when searching.
 - `userLocation` (object, optional): Optional user location information to provide geographically relevant search results.
   - `type` ('approximate'): The type of location (must be approximate).
   - `city` (string, optional): The city name.
@@ -1871,19 +1856,17 @@ See also [Anthropic Model Comparison](https://docs.anthropic.com/en/docs/about-c
 
 | Model                           | Image Input | Object Generation | Tool Usage | Tool Streaming | Computer Use |
 | ------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------ |
-| `claude-fable-5-1`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
-| `claude-3-7-sonnet@20250219`    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
-| `claude-3-5-sonnet-v2@20241022` | <Check />   | <Check />         | <Check />  | <Check />      | <Check />    |
-| `claude-3-5-sonnet@20240620`    | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
-| `claude-3-5-haiku@20241022`     | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross />    |
-| `claude-3-sonnet@20240229`      | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
-| `claude-3-haiku@20240307`       | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
-| `claude-3-opus@20240229`        | <Check />   | <Check />         | <Check />  | <Check />      | <Cross />    |
+| `claude-fable-5-1`              | ✓           | ✓                 | ✓          | ✓              | ✓            |
+| `claude-3-7-sonnet@20250219`    | ✓           | ✓                 | ✓          | ✓              | ✓            |
+| `claude-3-5-sonnet-v2@20241022` | ✓           | ✓                 | ✓          | ✓              | ✓            |
+| `claude-3-5-sonnet@20240620`    | ✓           | ✓                 | ✓          | ✓              | ✗            |
+| `claude-3-5-haiku@20241022`     | ✗           | ✓                 | ✓          | ✓              | ✗            |
+| `claude-3-sonnet@20240229`      | ✓           | ✓                 | ✓          | ✓              | ✗            |
+| `claude-3-haiku@20240307`       | ✓           | ✓                 | ✓          | ✓              | ✗            |
+| `claude-3-opus@20240229`        | ✓           | ✓                 | ✓          | ✓              | ✗            |
 
-<Note>
-  The table above lists popular models. You can also pass any available provider
-  model ID as a string if needed.
-</Note>
+The table above lists popular models. You can also pass any available provider
+model ID as a string if needed.
 
 ## Google Vertex xAI Provider Usage
 
@@ -1929,27 +1912,27 @@ const googleVertexXai = createGoogleVertexXai({
 
 ##### Optional Provider Settings
 
-- **project** _string_
+- **project** *string*
 
   The Google Cloud project ID. Defaults to the `GOOGLE_VERTEX_PROJECT` environment variable.
 
-- **location** _string_
+- **location** *string*
 
   The Google Cloud location. Grok models are available on the global endpoint. Defaults to the `GOOGLE_VERTEX_LOCATION` environment variable. If not set, defaults to `global`.
 
-- **googleAuthOptions** _object_
+- **googleAuthOptions** *object*
 
   Optional. The Authentication options used by the [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs/).
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
-<a id="google-vertex-xai-edge-runtime"></a>
+<a id="google-vertex-xai-edge-runtime" />
 
 #### Edge Runtime
 
@@ -2059,10 +2042,8 @@ The following models are available through the Google Vertex xAI provider. You c
 | `xai/grok-4.1-fast-reasoning`     | Yes       |
 | `xai/grok-4.1-fast-non-reasoning` | No        |
 
-<Note>
-  Grok reasoning models on Vertex report reasoning token counts in usage
-  metadata. They do not support the `reasoning_effort` request parameter.
-</Note>
+Grok reasoning models on Vertex report reasoning token counts in usage
+metadata. They do not support the `reasoning_effort` request parameter.
 
 ## Google Vertex MaaS Provider Usage
 
@@ -2108,27 +2089,27 @@ const vertexMaas = createVertexMaas({
 
 ##### Optional Provider Settings
 
-- **project** _string_
+- **project** *string*
 
   The Google Cloud project ID. Defaults to the `GOOGLE_VERTEX_PROJECT` environment variable.
 
-- **location** _string_
+- **location** *string*
 
   The Google Cloud location, e.g. `us-east5` or `global`. Defaults to the `GOOGLE_VERTEX_LOCATION` environment variable. If not set, defaults to `global`.
 
-- **googleAuthOptions** _object_
+- **googleAuthOptions** *object*
 
   Optional. The Authentication options used by the [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs/).
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
-<a id="google-vertex-maas-edge-runtime"></a>
+<a id="google-vertex-maas-edge-runtime" />
 
 #### Edge Runtime
 
@@ -2202,66 +2183,19 @@ The following models are available through the MaaS provider. You can also pass 
 | `qwen/qwen3-next-80b-a3b-thinking-maas`        | Qwen     |
 | `moonshotai/kimi-k2-thinking-maas`             | Moonshot |
 
-<Note>
-  Llama 4 MaaS models default to their 8,192-token output limit when
-  `maxOutputTokens` is not specified. An explicit `maxOutputTokens` value takes
-  precedence.
-</Note>
+Llama 4 MaaS models default to their 8,192-token output limit when
+`maxOutputTokens` is not specified. An explicit `maxOutputTokens` value takes
+precedence.
 
-<Note>
-  Model availability depends on your Google Cloud project and region. Check the
-  [Vertex AI Model
-  Garden](https://console.cloud.google.com/vertex-ai/model-garden) for the
-  latest available models.
-</Note>
+Model availability depends on your Google Cloud project and region. Check the
+[Vertex AI Model
+Garden](https://console.cloud.google.com/vertex-ai/model-garden) for the
+latest available models.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

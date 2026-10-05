@@ -1,18 +1,20 @@
 ---
+title: render (Removed)
+description: Reference for the render function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/render"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/render.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "0ecd30883d25ea0f5ed189beb76ed61651388dff6b7b162741bf964bb594434d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8bbd26aefa4985c9594d5d9e37a1c0ba418bcd9903cae233f931cd908988de1a"
 ---
 
-# `render` (Removed)
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">"render" has been removed in AI SDK 4.0.</Note>
+"render" has been removed in AI SDK 4.0.
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 A helper function to create a streamable UI from LLM providers. This function is similar to AI SDK Core APIs and supports the same model interfaces.
 
@@ -22,7 +24,9 @@ A helper function to create a streamable UI from LLM providers. This function is
 
 The following import will no longer work since `render` has been removed:
 
-<Snippet text={`import { render } from "@ai-sdk/rsc"`} prompt={false} />
+```
+import { render } from "@ai-sdk/rsc"
+```
 
 Use [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) instead.
 
@@ -30,257 +34,56 @@ Use [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) instead.
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'string',
-      description: 'Model identifier, must be OpenAI SDK compatible.',
-    },
-    {
-      name: 'provider',
-      type: 'provider client',
-      description:
-        'Currently the only provider available is OpenAI. This needs to match the model name.',
-    },
-    {
-      name: 'initial',
-      isOptional: true,
-      type: 'ReactNode',
-      description: 'The initial UI to render.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>',
-      description: 'A list of messages that represent a conversation.',
-      properties: [
-        {
-          type: 'SystemMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'system'",
-              description: 'The role for the system message.',
-            },
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The content of the message.',
-            },
-          ],
-        },
-        {
-          type: 'UserMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'user'",
-              description: 'The role for the user message.',
-            },
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The content of the message.',
-            },
-          ],
-        },
-        {
-          type: 'AssistantMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'assistant'",
-              description: 'The role for the assistant message.',
-            },
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The content of the message.',
-            },
-            {
-              name: 'tool_calls',
-              type: 'ToolCall[]',
-              description: 'A list of tool calls made by the model.',
-              properties: [
-                {
-                  type: 'ToolCall',
-                  parameters: [
-                    {
-                      name: 'id',
-                      type: 'string',
-                      description: 'The id of the tool call.',
-                    },
-                    {
-                      name: 'type',
-                      type: "'function'",
-                      description: 'The type of the tool call.',
-                    },
-                    {
-                      name: 'function',
-                      type: 'Function',
-                      description: 'The function to call.',
-                      properties: [
-                        {
-                          type: 'Function',
-                          parameters: [
-                            {
-                              name: 'name',
-                              type: 'string',
-                              description: 'The name of the function.',
-                            },
-                            {
-                              name: 'arguments',
-                              type: 'string',
-                              description: 'The arguments of the function.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'ToolMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'tool'",
-              description: 'The role for the tool message.',
-            },
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The content of the message.',
-            },
-            {
-              name: 'toolCallId',
-              type: 'string',
-              description: 'The id of the tool call.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'functions',
-      type: 'ToolSet',
-      isOptional: true,
-      description:
-        'Tools that are accessible to and can be called by the model.',
-      properties: [
-        {
-          type: 'Tool',
-          parameters: [
-            {
-              name: 'description',
-              isOptional: true,
-              type: 'string',
-              description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model.',
-            },
-            {
-              name: 'parameters',
-              type: 'zod schema',
-              description:
-                'The typed schema that describes the parameters of the tool that can also be used to validation and error handling.',
-            },
-            {
-              name: 'render',
-              isOptional: true,
-              type: 'async (parameters) => any',
-              description:
-                'An async function that is called with the arguments from the tool call and produces a result.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'tools',
-      type: 'ToolSet',
-      isOptional: true,
-      description:
-        'Tools that are accessible to and can be called by the model.',
-      properties: [
-        {
-          type: 'Tool',
-          parameters: [
-            {
-              name: 'description',
-              isOptional: true,
-              type: 'string',
-              description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model.',
-            },
-            {
-              name: 'parameters',
-              type: 'zod schema',
-              description:
-                'The typed schema that describes the parameters of the tool that can also be used to validation and error handling.',
-            },
-            {
-              name: 'render',
-              isOptional: true,
-              type: 'async (parameters) => any',
-              description:
-                'An async function that is called with the arguments from the tool call and produces a result.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'text',
-      isOptional: true,
-      type: '(Text) => ReactNode',
-      description: 'Callback to handle the generated tokens from the model.',
-      properties: [
-        {
-          type: 'Text',
-          parameters: [
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The full content of the completion.',
-            },
-            { name: 'delta', type: 'string', description: 'The delta.' },
-            { name: 'done', type: 'boolean', description: 'Is it done?' },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'temperature',
-      isOptional: true,
-      type: 'number',
-      description: 'The temperature to use for the model.',
-    },
-  ]}
-/>
+- `model` (`string`): Model identifier, must be OpenAI SDK compatible.
+- `provider` (`provider client`): Currently the only provider available is OpenAI. This needs to match the model name.
+- `initial?` (`ReactNode`): The initial UI to render.
+- `messages` (`Array<SystemMessage | UserMessage | AssistantMessage | ToolMessage>`): A list of messages that represent a conversation.
+  - `SystemMessage`
+    - `role` (`'system'`): The role for the system message.
+    - `content` (`string`): The content of the message.
+  - `UserMessage`
+    - `role` (`'user'`): The role for the user message.
+    - `content` (`string`): The content of the message.
+  - `AssistantMessage`
+    - `role` (`'assistant'`): The role for the assistant message.
+    - `content` (`string`): The content of the message.
+    - `tool_calls` (`ToolCall[]`): A list of tool calls made by the model.
+      - `ToolCall`
+        - `id` (`string`): The id of the tool call.
+        - `type` (`'function'`): The type of the tool call.
+        - `function` (`Function`): The function to call.
+          - `Function`
+            - `name` (`string`): The name of the function.
+            - `arguments` (`string`): The arguments of the function.
+  - `ToolMessage`
+    - `role` (`'tool'`): The role for the tool message.
+    - `content` (`string`): The content of the message.
+    - `toolCallId` (`string`): The id of the tool call.
+- `functions?` (`ToolSet`): Tools that are accessible to and can be called by the model.
+  - `Tool`
+    - `description?` (`string`): Information about the purpose of the tool including details on how and when it can be used by the model.
+    - `parameters` (`zod schema`): The typed schema that describes the parameters of the tool that can also be used to validation and error handling.
+    - `render?` (`async (parameters) => any`): An async function that is called with the arguments from the tool call and produces a result.
+- `tools?` (`ToolSet`): Tools that are accessible to and can be called by the model.
+  - `Tool`
+    - `description?` (`string`): Information about the purpose of the tool including details on how and when it can be used by the model.
+    - `parameters` (`zod schema`): The typed schema that describes the parameters of the tool that can also be used to validation and error handling.
+    - `render?` (`async (parameters) => any`): An async function that is called with the arguments from the tool call and produces a result.
+- `text?` (`(Text) => ReactNode`): Callback to handle the generated tokens from the model.
+  - `Text`
+    - `content` (`string`): The full content of the completion.
+    - `delta` (`string`): The delta.
+    - `done` (`boolean`): Is it done?
+- `temperature?` (`number`): The temperature to use for the model.
 
 ### Returns
 
 It can return any valid ReactNode.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

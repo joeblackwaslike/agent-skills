@@ -16,13 +16,13 @@ related:
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c1702959cadab1bc32ce857965925c98a0dba0f36e8d0dd5a87e46f6dc127692"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4970e114e12350bbddf92af619a597bdbd0cb7471278e68243082d7688394751"
 ---
 
 # Managing Cron Jobs
 
-> **🔒 Permissions Required**: Cron Jobs
+> **Availability**: Cron Jobs are available on all plans
 
 ## Viewing cron jobs
 
@@ -40,11 +40,11 @@ To view your active cron jobs:
 - [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related)
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Schedules](https://eve.dev/docs/schedules?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related)
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/docs/cron-jobs/manage-cron-jobs.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fmanage-cron-jobs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -388,7 +388,7 @@ For all other teams, cron jobs will be invoked within the minute specified. For 
 
 ## Rollbacks with cron jobs
 
-If you [Instant Rollback](/docs/instant-rollback) to a previous deployment, active cron jobs **will not** be updated. They will continue to run as scheduled until they are manually disabled or updated.
+If you [Instant Rollback](/docs/instant-rollback) to a previous deployment, your cron jobs are reverted to the state of the rolled-back deployment. From the next scheduled invocation onward, Vercel invokes the cron jobs defined in that deployment.
 
 
 ---

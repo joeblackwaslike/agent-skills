@@ -1,10 +1,14 @@
 ---
+title: Open Responses
+description: Learn how to use the Open Responses provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "6d1f0491b30ca19bf3f0225eda5a6f2395b9a35b2ac0912f3e58405a72626ad9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "347dd0cff491e80ca44ba9cbe8ac9682a974be07bee3a9aa3e4fc3b2a3f6749d"
 ---
 
-# Open Responses Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Open Responses](https://www.openresponses.org/) provider connects AI SDK
 Core to language model servers that implement an Open Responses-compatible
@@ -20,7 +24,7 @@ need OpenAI-specific provider options or built-in tools, use the
 
 The Open Responses provider is available in the `@ai-sdk/open-responses` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/open-responses" />
+**Packages:** `@ai-sdk/open-responses`
 
 ## Provider Instance
 
@@ -37,39 +41,39 @@ const openResponses = createOpenResponses({
 
 The `name` and `url` options are required:
 
-- **name** _string_
+- **name** *string*
 
   Provider name. Used in the model's provider identifier and as the key for
   provider options.
 
-- **url** _string_
+- **url** *string*
 
   Full URL for the Open Responses API `POST` endpoint. Pass the endpoint URL,
   such as `http://localhost:1234/v1/responses`, not only its base URL.
 
 You can use the following optional settings to customize the Open Responses provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is sent as a bearer token in the `Authorization` header.
 
-- **headers** _Record&lt;string,string&gt; | () => Record&lt;string,string&gt;_
+- **headers** *Record\<string,string> | () => Record\<string,string>*
 
   Custom headers to include in requests. Pass a function when headers must be
   resolved lazily for each request.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
 
-- **failedResponseHandler** _ResponseHandler&lt;APICallError&gt;_
+- **failedResponseHandler** *ResponseHandler\<APICallError>*
 
   Custom handler for non-successful HTTP responses. Use this when an endpoint
   returns an error envelope that differs from the default OpenAI-compatible
   `{ error: { message, type, param, code } }` shape.
 
-- **getResponseErrorMetadata** _function_
+- **getResponseErrorMetadata** *function*
 
   Extracts optional `statusCode` and `isRetryable` metadata from a response error
   object, including endpoint-specific fields. Applies to generation failures and
@@ -78,27 +82,27 @@ You can use the following optional settings to customize the Open Responses prov
   this callback. When only a status code is supplied, the SDK derives retryability
   from it. HTTP failures are handled separately by `failedResponseHandler`.
 
-- **strictResponseInput** _boolean_
+- **strictResponseInput** *boolean*
 
   Serializes assistant history using strict OpenAI Responses input schemas.
   Assistant messages without an item ID are sent as easy input messages, while
   messages with a genuine provider item ID are sent as complete output items.
   Defaults to `false`.
 
-- **customToolId** _`${string}.${string}`_
+- **customToolId** *`${string}.${string}`*
 
   Provider-tool ID used by `provider.tools.customTool`. Defaults to
   `open-responses.custom`.
 
-- **structuredOutputs** _boolean_
+- **structuredOutputs** *boolean*
 
   Whether JSON response formats are sent to the endpoint. When `false`,
   structured-output requests are omitted with an unsupported warning.
   Defaults to `true`.
 
-- **userAgentSuffix** _string_
+- **userAgentSuffix** *string*
 
-  Overrides the default `ai-sdk/open-responses/<version>` user-agent suffix.
+  Overrides the default `ai-sdk-open-responses/<version>` user-agent suffix.
 
 ### Endpoint Examples
 
@@ -387,6 +391,57 @@ const result = await generateText({
 });
 ```
 
+Some Responses-compatible implementations document non-namespaced extension
+discriminators, such as `web_search`, `web_search_call`, or
+`response.custom_tool_call_input.delta`. These are not portable Open Responses
+types. Register each exact value through the dedicated bare fields to opt in:
+
+```ts
+import type { Experimental_OpenResponsesBareExtension } from '@ai-sdk/open-responses';
+
+const webSearchExtension: Experimental_OpenResponsesBareExtension = {
+  id: 'acme.web_search',
+  allowBareTypes: true,
+  bareToolType: 'web_search',
+  bareItemTypes: ['web_search_call'],
+  bareEventTypes: ['response.web_search_call.completed'],
+  encodeTool: ({ name, args }) => ({
+    name,
+    search_context_size: args.searchContextSize,
+  }),
+  decodeItem: ({ item }) => {
+    if (
+      typeof item.call_id !== 'string' ||
+      typeof item.name !== 'string' ||
+      typeof item.query !== 'string'
+    ) {
+      return undefined;
+    }
+
+    return [
+      {
+        type: 'tool-call',
+        toolCallId: item.call_id,
+        toolName: item.name,
+        input: JSON.stringify({ query: item.query }),
+        providerExecuted: true,
+      },
+    ];
+  },
+  decodeEvent: () => undefined,
+};
+```
+
+Set `allowBareTypes: true` when using `bareToolType`, `bareItemTypes`, or
+`bareEventTypes`. These fields accept only non-namespaced values. They do not
+enable unknown JSON passthrough: a bare discriminator is handled only when it
+exactly matches a registered value. Core Open Responses discriminators and
+duplicate registrations are rejected.
+Use the normal namespaced fields whenever the implementation supports them.
+`Experimental_OpenResponsesExtension` remains the namespaced interface;
+use `Experimental_OpenResponsesBareExtension` only for this compatibility
+mode.
+
 Set `providerExecuted` on each decoded `tool-call` or `tool-input-start` part.
 It can vary by item or event.
 
@@ -396,18 +451,18 @@ An extension codec can define:
   with an `unsupported` warning. A `toolChoice` that selects the omitted tool is
   also omitted.
 - `encodeToolChoice`: Encodes a specific `toolChoice`. The default is
-  `{ type: toolType }`.
+  an object containing the registered `toolType` or `bareToolType`.
 - `decodeItem`: Maps a completed item to AI SDK content parts. `mode` is either
   `'generate'` or `'stream'`.
 - `encodeInputItem`: Encodes tool-call or tool-result history when the original
   wire item is unavailable. Returned items must include `id`, `status`, and a
-  registered namespaced `type`.
+  `type` registered through `itemTypes` or `bareItemTypes`.
 - `decodeEvent`: Maps a streaming event to AI SDK stream parts. Its `state` map
   lasts for one response stream.
 
 Tool, item, and event capabilities are independent. An item-only extension, for
-example, defines `itemTypes` and `decodeItem` without `toolType` or `encodeTool`.
-Capability fields must be provided in pairs.
+example, defines `itemTypes` (or `bareItemTypes`) and `decodeItem` without a
+tool type or `encodeTool`. Capability fields must be provided in pairs.
 
 Each decoded item adds an `open-responses.extension-replay` custom part that
 stores the original JSON in provider metadata. Other decoded parts reference
@@ -433,53 +488,10 @@ with extensions throws a `SerializationError`.
   Other provider-specific tools and options require a dedicated provider
   implementation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

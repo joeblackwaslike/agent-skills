@@ -14,8 +14,8 @@ related:
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e0c77386de999b3dd9d40409b8fffc0a143ad5d5ab795917409c6f2d94fa8e3c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "96610ffe81bb59c7444f48a5e1a7c66d5353235ea931cb932f9043f42e3d151f"
 ---
 
 # Read Passport identity in your application
@@ -28,12 +28,13 @@ After Passport authenticates a visitor, Vercel stores a signed Passport session 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related)
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related)
 - [Verify forwarded Passport tokens](https://vercel.com/docs/passport/verify-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Verify a Passport token forwarded to your backend as a signed JWT.
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 
 Full cross-link map for this page: [/docs/passport/read-identity.graph.md](/docs/passport/read-identity.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=graph)

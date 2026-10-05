@@ -12,8 +12,8 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "35be98086eb3a0b57fd631cc587c678ce3eec289f1fe62fb7c8ce7e77e1031ef"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4ae2380ffdd3d9963a438a2d7be8b612490e7cc11d98e9a86cca47e2235b16b4"
 ---
 
 # Taxes
@@ -31,11 +31,11 @@ All prices shown are in USD and exclude value-added tax (VAT), goods and service
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related)
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Vercel pricing for Managed Infrastructure resources in different regions.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 
 Full cross-link map for this page: [/docs/pricing/taxes.graph.md](/docs/pricing/taxes.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Ftaxes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

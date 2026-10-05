@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "867ae4849422b482fba50b64be94536faf1f8b694c39650611179e04a484536f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5969b034a1073baa5e1e38304c261ed91b78e59daeecf50b5f041f1e0dedd77b"
 ---
 
 # Limits and Pricing for Image Optimization
@@ -81,7 +81,7 @@ The total amount of Write Units used to store the cached image in the global cac
 
 You are billed for the number of [Image Transformations](#image-transformations), [Image Cache Reads](#image-cache-reads), and [Image Cache Writes](#image-cache-writes) during the billing period.
 
-Additionally, charges apply for [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [Edge Requests](/docs/manage-cdn-usage#edge-requests) when transformed images are delivered from Vercel's [CDN](/docs/cdn) to clients.
+Additionally, charges apply for [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [CDN Requests](/docs/manage-cdn-usage#cdn-requests) when transformed images are delivered from Vercel's [CDN](/docs/cdn) to clients.
 
 ### Hobby
 

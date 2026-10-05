@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Agent from your Vercel dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/dashboard.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "1191aec0d7d319e010a14f91bc88a26a9bfc2a8e71aab05a36da89ec2c31937c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "34394c1854d89a2c49623d240128bb623c814c9dd8971c55fb1220af10798df2"
 ---
 
 # Dashboard
@@ -31,7 +31,7 @@ Vercel Agent can answer questions about your projects, investigate production is
 3. Select **Send message**.
 4. To start another conversation, select **New Chat**.
 
-![Image](https://vercel.com/front/docs/agent/dashboard-chat-light.png)
+![Starting a conversation with Vercel Agent from the dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/agent/dashboard-chat-light.png)
 
 ## Provide context and attachments
 
@@ -73,7 +73,7 @@ Open the **New Chat** menu in the Vercel Agent panel, then select a conversation
 
 ## Enable or disable dashboard chat
 
-> **🔒 Permissions Required**: Managing Vercel Agent chat
+> **Availability**: Managing Vercel Agent chat is available on Enterprise and Pro plans
 
 Dashboard chat is available to eligible Pro and Enterprise teams. Hobby and Pro trial teams are not eligible.
 

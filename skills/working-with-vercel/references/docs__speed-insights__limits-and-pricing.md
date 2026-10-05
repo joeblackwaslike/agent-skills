@@ -16,13 +16,13 @@ related:
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c73bcc602a41f417f2cb1a9220816a3e2a378f95be04a2eb4b6f72cf91edfc13"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "13820487e82a0cb161ed663d06c6b55632a7bd2cd1d9a10d0b61dbcfb6986947"
 ---
 
 # Limits and Pricing for Speed Insights
 
-> **🔒 Permissions Required**: Speed Insights
+> **Availability**: Speed Insights is available on all plans
 
 Speed Insights has two tiers:
 
@@ -33,6 +33,7 @@ Speed Insights has two tiers:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier?from=related&source_path=%2Fdocs%2Fspeed-insights%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)

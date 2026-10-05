@@ -16,13 +16,13 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c37bd163f726b3984a397f9e6eb007d1c502318d3a1a546e998e810d12fc7390"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ee4b8b33ca5f9c7c650b573d31668af86f24cde523b26cda9a771e07a3cc8887"
 ---
 
 # Vercel Blob
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 ## Use cases
 

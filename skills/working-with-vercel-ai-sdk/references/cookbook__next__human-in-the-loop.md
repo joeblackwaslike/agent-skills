@@ -1,10 +1,18 @@
 ---
+title: Human-in-the-Loop with Next.js
+description: Add a human approval step to your agentic system with Next.js and the AI SDK
+url: "https://ai-sdk.dev/cookbook/next/human-in-the-loop"
+docs_index: /llms.txt
+tags:
+  - next
+  - agents
+  - tool use
 source: "https://ai-sdk.dev/cookbook/next/human-in-the-loop.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "325f75cd6bc7db4f848a33079870f92702a748ce42c8da868d70e8b5b3ccb7e9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "2f3af0a67c6c0801f61ef5e56b3726072faed5efedeec3f2232a765566c63d42"
 ---
 
-# Human-in-the-Loop with Next.js
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When building agentic systems, it's important to add human-in-the-loop (HITL) functionality to ensure that users can approve actions before the system executes them. The AI SDK provides built-in support for tool execution approval through the `needsApproval` property on tools.
 
@@ -16,7 +24,7 @@ To understand how to implement this functionality, let's look at how tool callin
 
 On the frontend, use the `useChat` hook to manage the message state and user interaction.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -70,7 +78,7 @@ export default function Chat() {
 
 On the backend, create a route handler that uses `streamText` and returns a `UIMessageStreamResponse`. The tool has an `execute` function that runs automatically when the model calls it.
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import {
   streamText,
   tool,
@@ -116,7 +124,7 @@ To add a HITL step, you add an approval gate between the tool call and the tool 
 
 Add `needsApproval: true` to the tool definition. The tool keeps its `execute` function, but the SDK pauses execution until the user approves.
 
-```ts filename="app/api/chat/route.ts" highlight="20"
+```ts title="app/api/chat/route.ts" {20}
 import {
   streamText,
   tool,
@@ -159,7 +167,7 @@ When the model calls this tool, instead of running the `execute` function, the S
 
 On the frontend, check for the `approval-requested` state and render approve/deny buttons. Use `addToolApprovalResponse` from the `useChat` hook to send the user's decision.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -280,17 +288,15 @@ const { messages, addToolApprovalResponse } = useChat({
 });
 ```
 
-<Note>
-  If nothing happens after you approve a tool execution, make sure you either
-  call `sendMessage` manually or configure `sendAutomaticallyWhen` on the
-  `useChat` hook.
-</Note>
+If nothing happens after you approve a tool execution, make sure you either
+call `sendMessage` manually or configure `sendAutomaticallyWhen` on the
+`useChat` hook.
 
 ### Dynamic Approval
 
 You can make approval conditional based on the tool's input by providing an async function to `needsApproval`:
 
-```ts filename="app/api/chat/route.ts" highlight="23"
+```ts title="app/api/chat/route.ts" {23}
 import {
   streamText,
   tool,
@@ -333,7 +339,7 @@ In this example, only payments over $1000 require approval. Smaller amounts exec
 
 When a user denies a tool execution, the model receives the denial and can respond accordingly. To prevent the model from retrying the same tool call, add an instruction:
 
-```ts highlight="5-6"
+```ts {5-6}
 const result = streamText({
   model: openai('gpt-6-astra'),
   messages,
@@ -352,31 +358,10 @@ To see tool approval in action, check out the [`/chat/tool-approval` page](https
 
 For more details on tool execution approval, see the [Tool Execution Approval](/docs/ai-sdk-core/tools-and-tool-calling#tool-execution-approval) and [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage#tool-execution-approval) documentation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

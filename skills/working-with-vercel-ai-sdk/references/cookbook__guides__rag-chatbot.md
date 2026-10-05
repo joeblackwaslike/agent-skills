@@ -1,21 +1,27 @@
 ---
+title: RAG Agent
+description: Learn how to build a RAG Agent with the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/guides/rag-chatbot"
+docs_index: /llms.txt
+tags:
+  - rag
+  - chatbot
+  - next
+  - embeddings
+  - database
+  - retrieval
+  - memory
+  - agent
 source: "https://ai-sdk.dev/cookbook/guides/rag-chatbot.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d40ac52da6ed4d1a25148556c76e16ba1f88fb88f13bc5e98496ab9fbfedd859"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "506b63efb45a08e8efb45e79adbacf81d30c011ab15d1b632aa7bd9173b81434"
 ---
 
-# RAG Agent Guide
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will learn how to build a retrieval-augmented generation (RAG) agent.
 
-<video
-  src="/images/rag-guide-demo.mp4"
-  autoplay
-  height={540}
-  width={910}
-  controls
-  playsinline
-/>
+<video src="/images/rag-guide-demo.mp4" autoplay height={540} width={910} controls playsinline />
 
 Before we dive in, let's look at what RAG is, and why we would want to use it.
 
@@ -52,11 +58,9 @@ Your favorite food is chicken nuggets!
 
 Just like that, you have augmented the model’s generation by providing relevant information to the query. Assuming the model has the appropriate information, it is now highly likely to return an accurate response to the users query. But how does it retrieve the relevant information? The answer relies on a concept called embedding.
 
-<Note>
-  You could fetch any context for your RAG application (eg. Google search).
-  Embeddings and Vector Databases are just a specific retrieval approach to
-  achieve semantic search.
-</Note>
+You could fetch any context for your RAG application (eg. Google search).
+Embeddings and Vector Databases are just a specific retrieval approach to
+achieve semantic search.
 
 ### Embedding
 
@@ -64,11 +68,9 @@ Just like that, you have augmented the model’s generation by providing relevan
 
 In practice, this means that if you embedded the words `cat` and `dog`, you would expect them to be plotted close to each other in vector space. The process of calculating the similarity between two vectors is called ‘cosine similarity’ where a value of 1 would indicate high similarity and a value of -1 would indicate high opposition.
 
-<Note>
-  Don’t worry if this seems complicated. a high level understanding is all you
-  need to get started! For a more in-depth introduction to embeddings, check out
-  [this guide](https://jalammar.github.io/illustrated-word2vec/).
-</Note>
+Don’t worry if this seems complicated. a high level understanding is all you
+need to get started! For a more in-depth introduction to embeddings, check out
+[this guide](https://jalammar.github.io/illustrated-word2vec/).
 
 As mentioned above, embeddings are a way to represent the semantic meaning of **words and phrases**. The implication here is that the larger the input to your embedding, the lower quality the embedding will be. So how would you approach embedding content longer than a simple phrase?
 
@@ -78,23 +80,13 @@ Chunking refers to the process of breaking down a particular source material int
 
 Once your source material is appropriately chunked, you can embed each one and then store the embedding and the chunk together in a database. Embeddings can be stored in any database that supports vectors. For this tutorial, you will be using [Postgres](https://www.postgresql.org/) alongside the [pgvector](https://github.com/pgvector/pgvector) plugin.
 
-<MDXImage
-  srcLight="/images/rag-guide-1.png"
-  srcDark="/images/rag-guide-1-dark.png"
-  width={800}
-  height={800}
-/>
+![](/images/rag-guide-1.png)
 
 ### All Together Now
 
 Combining all of this together, RAG is the process of enabling the model to respond with information outside of it’s training data by embedding a users query, retrieving the relevant source material (chunks) with the highest semantic similarity, and then passing them alongside the initial query as context. Going back to the example where you ask the model for your favorite food, the prompt preparation process would look like this.
 
-<MDXImage
-  srcLight="/images/rag-guide-2.png"
-  srcDark="/images/rag-guide-2-dark.png"
-  width={800}
-  height={800}
-/>
+![](/images/rag-guide-2.png)
 
 By passing the appropriate context and refining the model’s objective, you are able to fully leverage its strengths as a reasoning machine.
 
@@ -123,16 +115,16 @@ To reduce the scope of this guide, you will be starting with a [repository](http
 
 To get started, clone the starter repository with the following command:
 
-<Snippet
-  text={[
-    'git clone https://github.com/vercel/ai-sdk-rag-starter',
-    'cd ai-sdk-rag-starter',
-  ]}
-/>
+```
+git clone https://github.com/vercel/ai-sdk-rag-starter
+cd ai-sdk-rag-starter
+```
 
 First things first, run the following command to install the project’s dependencies:
 
-<Snippet text="pnpm install" />
+```
+pnpm install
+```
 
 ### Create Database
 
@@ -146,22 +138,22 @@ You will need a Postgres database to complete this tutorial. If you don't have P
 To set up a Postgres instance on your Vercel account:
 
 1. Go to [Vercel.com](https://vercel.com) and make sure you're logged in
-1. Navigate to your team homepage
-1. Click on the **Integrations** tab
-1. Click **Browse Marketplace**
-1. Look for the **Storage** option in the sidebar
-1. Select the **Neon** option (recommended, but any other PostgreSQL database provider should work)
-1. Click **Install**, then click **Install** again in the top right corner
-1. On the "Get Started with Neon" page, click **Create Database** on the right
-1. Select your region (e.g., Washington, D.C., U.S. East)
-1. Turn off **Auth**
-1. Click **Continue**
-1. Name your database (you can use the default name or rename it to something like "RagTutorial")
-1. Click **Create** in the bottom right corner
-1. After seeing "Database created successfully", click **Done**
-1. You'll be redirected to your database instance
-1. In the Quick Start section, click **Show secrets**
-1. Copy the full `DATABASE_URL` environment variable
+2. Navigate to your team homepage
+3. Click on the **Integrations** tab
+4. Click **Browse Marketplace**
+5. Look for the **Storage** option in the sidebar
+6. Select the **Neon** option (recommended, but any other PostgreSQL database provider should work)
+7. Click **Install**, then click **Install** again in the top right corner
+8. On the "Get Started with Neon" page, click **Create Database** on the right
+9. Select your region (e.g., Washington, D.C., U.S. East)
+10. Turn off **Auth**
+11. Click **Continue**
+12. Name your database (you can use the default name or rename it to something like "RagTutorial")
+13. Click **Create** in the bottom right corner
+14. After seeing "Database created successfully", click **Done**
+15. You'll be redirected to your database instance
+16. In the Quick Start section, click **Show secrets**
+17. Copy the full `DATABASE_URL` environment variable
 
 ### Migrate Database
 
@@ -169,35 +161,35 @@ Once you have a Postgres database, you need to add the connection string as an e
 
 Make a copy of the `.env.example` file and rename it to `.env`.
 
-<Snippet text="cp .env.example .env" />
+```
+cp .env.example .env
+```
 
 Open the new `.env` file. You should see an item called `DATABASE_URL`. Copy in your database connection string after the equals sign.
 
 With that set up, you can now run your first database migration. Run the following command:
 
-<Snippet text="pnpm db:migrate" />
+```
+pnpm db:migrate
+```
 
 This will first add the `pgvector` extension to your database. Then it will create a new table for your `resources` schema that is defined in `lib/db/schema/resources.ts`. This schema has four columns: `id`, `content`, `createdAt`, and `updatedAt`.
 
-<Note>
-  If you experience an error with the migration, see the [troubleshooting
-  section](#troubleshooting-migration-error) below.
-</Note>
+If you experience an error with the migration, see the [troubleshooting
+section](#troubleshooting-migration-error) below.
 
 ### Vercel AI Gateway Key
 
-For this guide, you will need a Vercel AI Gateway API key, which gives you access to hundreds of models from different providers with one API key. If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+For this guide, you will need a Vercel AI Gateway API key, which gives you access to hundreds of models from different providers with one API key. If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
-<Note>
-  The AI SDK's Vercel AI Gateway Provider is the default global provider, so you
-  can access models using a simple string in the model configuration. If you
-  prefer to use a specific provider like OpenAI directly, see the [provider
-  management](/docs/ai-sdk-core/provider-management) documentation.
-</Note>
+The AI SDK's Vercel AI Gateway Provider is the default global provider, so you
+can access models using a simple string in the model configuration. If you
+prefer to use a specific provider like OpenAI directly, see the [provider
+management](/docs/ai-sdk-core/provider-management) documentation.
 
 Now, open your `.env` file and add your API Gateway key:
 
-```env filename=".env"
+```dotenv title=".env"
 AI_GATEWAY_API_KEY=your-api-key
 ```
 
@@ -218,7 +210,7 @@ Currently, your application has one table (`resources`) which has a column (`con
 
 Create a new file (`lib/db/schema/embeddings.ts`) and add the following code:
 
-```tsx filename="lib/db/schema/embeddings.ts"
+```tsx title="lib/db/schema/embeddings.ts"
 import { nanoid } from '@/lib/utils';
 import { index, pgTable, text, varchar, vector } from 'drizzle-orm/pg-core';
 import { resources } from './resources';
@@ -256,7 +248,9 @@ To perform similarity search, you also need to include an index ([HNSW](https:/
 
 To push this change to the database, run the following command:
 
-<Snippet text="pnpm db:push" />
+```
+pnpm db:push
+```
 
 ### Add Embedding Logic
 
@@ -264,13 +258,15 @@ Now that you have a table to store embeddings, it’s time to write the logic to
 
 Create a file with the following command:
 
-<Snippet text="mkdir lib/ai && touch lib/ai/embedding.ts" />
+```
+mkdir lib/ai && touch lib/ai/embedding.ts
+```
 
 ### Generate Chunks
 
 Remember, to create an embedding, you will start with a piece of source material (unknown length), break it down into smaller chunks, embed each chunk, and then save the chunk to the database. Let’s start by creating a function to break the source material into small chunks.
 
-```tsx filename="lib/ai/embedding.ts"
+```tsx title="lib/ai/embedding.ts"
 const generateChunks = (input: string): string[] => {
   return input
     .trim()
@@ -285,23 +281,23 @@ This function will take an input string and split it by periods, filtering out a
 
 You will use the AI SDK to create embeddings. This will require two more dependencies, which you can install by running the following command:
 
-<Snippet text="pnpm add ai @ai-sdk/react" />
+```
+pnpm add ai @ai-sdk/react
+```
 
 This will install the [AI SDK](/docs) and the AI SDK's React hooks.
 
-<Note>
-  The AI SDK is designed to be a unified interface to interact with any large
-  language model. This means that you can change model and providers with just
-  one line of code! Learn more about [available providers](/providers) and
-  [building custom providers](/providers/community-providers/custom-providers)
-  in the [providers](/providers) section.
-</Note>
+The AI SDK is designed to be a unified interface to interact with any large
+language model. This means that you can change model and providers with just
+one line of code! Learn more about [available providers](/providers) and
+[building custom providers](/providers/community-providers/custom-providers)
+in the [providers](/providers) section.
 
 ### Generate Embeddings
 
 Let’s add a function to generate embeddings. Copy the following code into your `lib/ai/embedding.ts` file.
 
-```tsx filename="lib/ai/embedding.ts" highlight="1,3,12-21"
+```tsx title="lib/ai/embedding.ts" {1,3,12-21}
 import { embedMany } from 'ai';
 
 const embeddingModel = 'openai/text-embedding-ada-002';
@@ -333,7 +329,7 @@ Next, you create an asynchronous function called `generateEmbeddings`. This func
 
 Open the file at `lib/actions/resources.ts`. This file has one function, `createResource`, which, as the name implies, allows you to create a resource.
 
-```tsx filename="lib/actions/resources.ts"
+```tsx title="lib/actions/resources.ts"
 'use server';
 
 import {
@@ -364,7 +360,7 @@ This function is a [Server Action](https://nextjs.org/docs/app/building-your-app
 
 Update the file with the following code:
 
-```tsx filename="lib/actions/resources.ts" highlight="9-10,21-27,29"
+```tsx title="lib/actions/resources.ts" {9-10,21-27,29}
 'use server';
 
 import {
@@ -410,7 +406,7 @@ Great! Let's build the frontend. The AI SDK’s [`useChat`](/docs/reference/ai-s
 
 Replace your root page (`app/page.tsx`) with the following code.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -456,15 +452,17 @@ export default function Chat() {
 }
 ```
 
-The `useChat` hook enables the streaming of chat messages from your AI provider (you will be using OpenAI via the Vercel AI Gateway), manages the state for chat input, and updates the UI automatically as new messages are received.
+The `useChat` hook enables the streaming of chat messages from your AI provider (you will be using OpenAI via the Vercel AI Gateway) and updates the UI automatically as new messages are received. Manage chat input state in your component.
 
 Run the following command to start the Next.js dev server:
 
-<Snippet text="pnpm run dev" />
+```
+pnpm run dev
+```
 
 Head to [http://localhost:3000](http://localhost:3000/). You should see an empty screen with an input bar floating at the bottom. Try to send a message. The message shows up in the UI for a fraction of a second and then disappears. This is because you haven’t set up the corresponding API route to call the model! By default, `useChat` will send a POST request to the `/api/chat` endpoint with the `messages` as the request body.
 
-<Note>You can customize the endpoint in the useChat configuration object</Note>
+You can customize the endpoint in the useChat configuration object
 
 ### Create API Route
 
@@ -472,11 +470,13 @@ In Next.js, you can create custom request handlers for a given route using [Rout
 
 Create a file at `app/api/chat/route.ts` by running the following command:
 
-<Snippet text="mkdir -p app/api/chat && touch app/api/chat/route.ts" />
+```
+mkdir -p app/api/chat && touch app/api/chat/route.ts
+```
 
 Open the file and add the following code:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -512,7 +512,7 @@ While you now have a working agent, it isn't doing anything special.
 
 Let’s add system instructions to refine and restrict the model’s behavior. In this case, you want the model to only use information it has retrieved to generate responses. Update your route handler with the following code:
 
-```tsx filename="app/api/chat/route.ts" highlight="18-20"
+```tsx title="app/api/chat/route.ts" {18-20}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -555,7 +555,7 @@ Let’s see how you can create a tool to give the model the ability to create, e
 
 Update your route handler with the following code:
 
-```tsx filename="app/api/chat/route.ts" highlight="25-36"
+```tsx title="app/api/chat/route.ts" {25-36}
 import { createResource } from '@/lib/actions/resources';
 import {
   convertToModelMessages,
@@ -609,13 +609,15 @@ In simple terms, on each generation, the model will decide whether it should cal
 
 Head back to the browser and tell the model your favorite food. You should see an empty response in the UI. Did anything happen? Let’s see. Run the following command in a new terminal window.
 
-<Snippet text="pnpm db:studio" />
+```
+pnpm db:studio
+```
 
 This will start Drizzle Studio where we can view the rows in our database. You should see a new row in both the `embeddings` and `resources` table with your favorite food!
 
 Let’s make a few changes in the UI to communicate to the user when a tool has been called. Head back to your root page (`app/page.tsx`) and add the following code:
 
-```tsx filename="app/page.tsx" highlight="14-32"
+```tsx title="app/page.tsx" {14-32}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -674,20 +676,19 @@ export default function Chat() {
 
 With this change, you now conditionally render the tool that has been called directly in the UI. Save the file and head back to browser. Tell the model your favorite movie. You should see which tool is called in place of the model’s typical text response.
 
-<Note>
-  Don't worry about the `tool-getInformation` tool case in the switch statement
-  - we'll add that tool in a later section.
-</Note>
+Don't worry about the `tool-getInformation` tool case in the switch statement
+
+- we'll add that tool in a later section.
 
 ### Improving UX with Multi-Step Calls
 
 It would be nice if the model could summarize the action too. However, technically, once the model calls a tool, it has completed its generation as it ‘generated’ a tool call. How could you achieve this desired behavior?
 
-The AI SDK has a feature called [`stopWhen`](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls) which allows stopping conditions when the model generates a tool call. If those stopping conditions haven't been hit, the AI SDK will automatically send tool call results back to the model!
+The AI SDK has a feature called [`stopWhen`](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-stopwhen) which allows stopping conditions when the model generates a tool call. If those stopping conditions haven't been hit, the AI SDK will automatically send tool call results back to the model!
 
-Open your root page (`api/chat/route.ts`) and add the following key to the `streamText` configuration object:
+Open your route handler (`app/api/chat/route.ts`) and add the following key to the `streamText` configuration object:
 
-```tsx filename="api/chat/route.ts" highlight="9,25"
+```tsx title="app/api/chat/route.ts" {9,25}
 import { createResource } from '@/lib/actions/resources';
 import {
   convertToModelMessages,
@@ -741,7 +742,7 @@ The model can now add and embed arbitrary information to your knowledge base. Ho
 
 To find similar content, you will need to embed the users query, search the database for semantic similarities, then pass those items to the model as context alongside the query. To achieve this, let’s update your embedding logic file (`lib/ai/embedding.ts`):
 
-```tsx filename="lib/ai/embedding.ts" highlight="1-3,26-48"
+```tsx title="lib/ai/embedding.ts" {1-3,26-48}
 import { embed, embedMany } from 'ai';
 import { db } from '../db';
 import { cosineDistance, desc, gt, sql } from 'drizzle-orm';
@@ -799,9 +800,9 @@ In this code, you add two functions:
 
 With that done, it’s onto the final step: creating the tool.
 
-Go back to your route handler (`api/chat/route.ts`) and add a new tool called `getInformation`:
+Go back to your route handler (`app/api/chat/route.ts`) and add a new tool called `getInformation`:
 
-```ts filename="api/chat/route.ts" highlight="12,38-45"
+```ts title="app/api/chat/route.ts" {12,38-45}
 import { createResource } from '@/lib/actions/resources';
 import {
   convertToModelMessages,
@@ -872,28 +873,10 @@ If you're using the Vercel setup above, you can run the command directly by eith
 
 [More info](https://github.com/vercel/ai-sdk-rag-starter/issues/1).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

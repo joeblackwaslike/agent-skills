@@ -1,10 +1,14 @@
 ---
+title: Navigating the Library
+description: Learn how to navigate the AI SDK.
+url: "https://ai-sdk.dev/docs/getting-started/navigating-the-library"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/navigating-the-library.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "783d54582f0aa7322f65d3aa9011501395e7d699dd10023b34d69dc3f986315d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0e7d93f3a5ea800981d00ff6c9f6d031f54301dcf44107ea94eb26577ab69ac3"
 ---
 
-# Navigating the Library
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK is a powerful toolkit for building AI applications. This page will help you pick the right tools for your requirements.
 
@@ -32,11 +36,11 @@ The following table outlines AI SDK compatibility based on environment:
 
 | Environment           | [AI SDK Core](/docs/ai-sdk-core/overview) | [AI SDK UI](/docs/ai-sdk-ui/overview) | [AI SDK RSC](/docs/ai-sdk-rsc/overview) |
 | --------------------- | ----------------------------------------- | ------------------------------------- | --------------------------------------- |
-| None / Node.js / Deno | <Check />                                 | <Cross />                             | <Cross />                               |
-| Vue / Nuxt            | <Check />                                 | <Check />                             | <Cross />                               |
-| Svelte / SvelteKit    | <Check />                                 | <Check />                             | <Cross />                               |
-| Next.js Pages Router  | <Check />                                 | <Check />                             | <Cross />                               |
-| Next.js App Router    | <Check />                                 | <Check />                             | <Check />                               |
+| None / Node.js / Deno | ✓                                         | ✗                                     | ✗                                       |
+| Vue / Nuxt            | ✓                                         | ✓                                     | ✗                                       |
+| Svelte / SvelteKit    | ✓                                         | ✓                                     | ✗                                       |
+| Next.js Pages Router  | ✓                                         | ✓                                     | ✗                                       |
+| Next.js App Router    | ✓                                         | ✓                                     | ✓                                       |
 
 ## When to use AI SDK UI
 
@@ -51,26 +55,22 @@ AI SDK UI provides a set of framework-agnostic hooks for quickly building **prod
 
 AI SDK UI supports the following frameworks: [React](https://react.dev/), [Svelte](https://svelte.dev/), and [Vue.js](https://vuejs.org/). Here is a comparison of the supported functions across these frameworks:
 
-| Function                                                   | React     | Svelte    | Vue.js    |
-| ---------------------------------------------------------- | --------- | --------- | --------- |
-| [useChat](/docs/reference/ai-sdk-ui/use-chat)              | <Check /> | <Check /> | <Check /> |
-| [useChat](/docs/reference/ai-sdk-ui/use-chat) tool calling | <Check /> | <Check /> | <Cross /> |
-| [useCompletion](/docs/reference/ai-sdk-ui/use-completion)  | <Check /> | <Check /> | <Check /> |
-| [useObject](/docs/reference/ai-sdk-ui/use-object)          | <Check /> | <Cross /> | <Cross /> |
-| [MCP Apps](/docs/ai-sdk-core/mcp-apps)                     | <Check /> | <Cross /> | <Cross /> |
+| Function                                                   | React | Svelte | Vue.js |
+| ---------------------------------------------------------- | ----- | ------ | ------ |
+| [useChat](/docs/reference/ai-sdk-ui/use-chat)              | ✓     | ✓      | ✓      |
+| [useChat](/docs/reference/ai-sdk-ui/use-chat) tool calling | ✓     | ✓      | ✗      |
+| [useCompletion](/docs/reference/ai-sdk-ui/use-completion)  | ✓     | ✓      | ✓      |
+| [useObject](/docs/reference/ai-sdk-ui/use-object)          | ✓     | ✗      | ✗      |
+| [MCP Apps](/docs/ai-sdk-core/mcp-apps)                     | ✓     | ✗      | ✗      |
 
-<Note>
-  [Contributions](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) are
-  welcome to implement missing features for non-React frameworks.
-</Note>
+[Contributions](https://github.com/vercel/ai/blob/main/CONTRIBUTING.md) are
+welcome to implement missing features for non-React frameworks.
 
 ## When to use AI SDK RSC
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
 (RSCs) provide a new approach to building React applications that allow components
@@ -86,19 +86,10 @@ AI SDK RSC provides a number of utilities that allow you to stream values and UI
 
 Given these limitations, **we recommend using [AI SDK UI](/docs/ai-sdk-ui/overview) for production applications**.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

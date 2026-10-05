@@ -12,13 +12,13 @@ related:
 summary: Ensures that the exported Next.js `layout` component and its transitive dependencies are not asynchronous, as that can block the rendering of the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_async_layout.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7ff648e64eb03c2e530d3bebe463742d259625f2f8ccef1fa077d2cdde595ab2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "abde6b7b3d38bbd56f02f8d61b5e9916ae4ef314fb868adb811353be36617808"
 ---
 
 # NEXTJS_NO_ASYNC_LAYOUT
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is in preview, please give us your feedback!
 

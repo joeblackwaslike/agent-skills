@@ -13,8 +13,8 @@ related:
 summary: Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6c90c5f4b75d12b92d707ad2a046259c0e53b22cf7c189c1dc023840f03f254c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b3545b0b3704ee8e957e5796127e4efd384cfafd53c125fdb6e4694eafb6eebb"
 ---
 
 # vercel metrics
@@ -38,7 +38,7 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: Metrics other than Web Analytics and Speed Insights metrics
+> **Availability**: Metrics other than Web Analytics and Speed Insights metrics are available on Enterprise and Pro plans with Observability Plus
 
 Use `vercel metrics schema` before you build a query. Without an argument, the command lists the metrics available to your account. Pass a metric ID or prefix to inspect its dimensions and aggregations.
 

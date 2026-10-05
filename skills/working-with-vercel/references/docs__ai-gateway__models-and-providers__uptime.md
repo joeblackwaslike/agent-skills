@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ca12bb9227b350e4849de835acb6c049c8f4901345085fb04ffcf0d2f158a366"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bf5fc8da9666bf9ae74f15ea6ac263f97246ae572fec6e7ecba7a18edb621814"
 ---
 
 # AI Gateway Uptime and Provider Status
@@ -29,12 +29,12 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
+- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Provider Latency and Throughput Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Understand how AI Gateway measures throughput and latency per provider.
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [AI Gateway Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=related) — Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fuptime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,7 +51,7 @@ Both views share the same time-range toggle in the top-right corner. Each window
 
 The uptime view charts the percentage of successful requests over time, with one line for AI Gateway and one line for each upstream provider. Use it to compare providers, watch trends, and measure how much fallback is helping.
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-uptime-1-week)
+![1-week uptime for anthropic/claude-opus-5](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-uptime-1-week)
 
 If a provider has no recent activity, AI Gateway can't measure its uptime, so the chart shows it at 100%. The 100% line is a placeholder, not a trend. It doesn't mean the provider was fully available.
 
@@ -115,15 +115,15 @@ The response returns one entry per provider serving the model, each with the thr
 
 The status view shows a row of health bars across the selected window, giving you a glanceable read on whether a provider is healthy. Each bar covers one time bucket. The color shows the success rate in that bucket:
 
-| Color | Range   | Meaning  |
-| ----- | ------- | -------- |
-| Green | 95–100% | Healthy  |
-| Amber | 75–95%  | Degraded |
-| Red   | 0–75%   | Down     |
+| Color | Range                | Meaning  |
+| ----- | -------------------- | -------- |
+| Green | 95% to 100%          | Healthy  |
+| Amber | 75% to less than 95% | Degraded |
+| Red   | Less than 75%        | Down     |
 
 If a provider has no activity in a bucket, the bar reads "No activity" instead of a color.
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-status)
+![1-day status for anthropic/claude-opus-5](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-status)
 
 ### Where to find status
 
@@ -138,9 +138,9 @@ You can also link directly at `vercel.com/ai-gateway/models/<model-id>#status`, 
 
 Select **Share** in the top-right corner of either view to export the current view as an image. The export captures the selected model, view, and time range so you can share a snapshot in tickets, postmortems, or status updates.
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/claude-opus-4.7-uptime-1w.png)
+![Example share output for the Uptime view (1-week range)](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/claude-opus-4.7-uptime-1w.png)
 
-![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-share-status)
+![Example share output for the Status view](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-share-status)
 
 ## Scope
 

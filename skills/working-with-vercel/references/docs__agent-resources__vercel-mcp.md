@@ -12,13 +12,13 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8b1d893d80ada4ce6810fa1b7c4f37e8d72f0faadfa4825aea6c83d7793812e1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "746a0b5411c6accd7be33193cfe8de898fe7301e4cf9fa6081b5d5bfd90ea012"
 ---
 
 # Use Vercel
 
-> **🔒 Permissions Required**: Vercel MCP (Beta)
+> **Availability**: Vercel MCP is available on all plans
 
 Connect your AI tools to Vercel using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io),
 an open standard that lets AI assistants interact with your Vercel projects.
@@ -38,8 +38,8 @@ an open standard that lets AI assistants interact with your Vercel projects.
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
-- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related)
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp&source_site=vercel-docs&relationship=graph)
@@ -79,6 +79,8 @@ Follow [Manage Vercel projects with a software factory](/kb/guide/software-facto
 ## Connecting to Vercel MCP
 
 To ensure secure access, Vercel MCP only supports AI clients that have been reviewed and approved by Vercel.
+
+If you're building an MCP client and want it included in the supported clients list below, submit the [client review form](https://forms.gle/FQ3nYPbovoHvbfmz9).
 
 ## Supported clients
 

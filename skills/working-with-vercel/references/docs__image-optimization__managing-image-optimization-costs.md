@@ -12,8 +12,8 @@ related:
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e148ed41dd24d2a5f66730066b43d737d0b302aa3dad2b29b8020da5ce00ecc5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a563ece19e4b8b901fbee4fc9eea2e6cdc34d762a3a886ea41164263789331e6"
 ---
 
 # Managing Usage & Costs
@@ -34,12 +34,12 @@ Your Image Optimization usage over time is displayed under the **Image Optimizat
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
-- [New Observability dashboard for Image Optimization](https://vercel.com/changelog/new-observability-dashboard-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage?from=related&source_path=%2Fdocs%2Fimage-optimization%2Fmanaging-image-optimization-costs&source_site=vercel-docs&relationship=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
@@ -56,7 +56,7 @@ To help you minimize Image Optimization usage costs, consider implementing the f
 
 - **Cache Max Age**: If your images do not change in less than a month, set `max-age=2678400` (31 days) in the `Cache-Control` header or set [`images.minimumCacheTTL`](https://nextjs.org/docs/app/api-reference/components/image#minimumcachettl) to `minimumCacheTTL:2678400` to reduce the number of transformations and cache writes. Using static imports can also help as they set the `Cache-Control` header to 1 year.
 
-- **Formats**: Check if your Next.js configuration is using [`images.formats`](https://nextjs.org/docs/app/api-reference/components/image#formats) with multiple values and consider removing one. For example, change `['image/avif', 'image/web']` to `['image/webp']` to reduce the number of transformations.
+- **Formats**: Check if your Next.js configuration is using [`images.formats`](https://nextjs.org/docs/app/api-reference/components/image#formats) with multiple values and consider removing one. For example, change `['image/avif', 'image/webp']` to `['image/webp']` to reduce the number of transformations.
 
 - **Remote and local patterns**: Configure [`images.remotePatterns`](https://nextjs.org/docs/app/api-reference/components/image#remotepatterns) and [`images.localPatterns`](https://nextjs.org/docs/app/api-reference/components/image#localpatterns) allowlist which images should be optimized so that you can limit unnecessary transformations and cache writes.
 

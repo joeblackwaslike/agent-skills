@@ -1,22 +1,24 @@
 ---
+title: Completion
+description: Learn how to use the useCompletion hook.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/completion"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/completion.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "91414df94a668a5951357c748041e7a8dd67f4df6bb900f0d14cbedf2de45add"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c816f4a41ed985555ffa9456af8cd8a1f1e60756206e90acd237548a4cf5f79c"
 ---
 
-# Completion
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `useCompletion` hook allows you to create a user interface to handle text completions in your application. It enables the streaming of text completions from your AI provider, manages the state for chat input, and updates the UI automatically as new messages are received.
 
-<Note>
-  The `useCompletion` hook is now part of the `@ai-sdk/react` package.
-</Note>
+The `useCompletion` hook is now part of the `@ai-sdk/react` package.
 
 In this guide, you will learn how to use the `useCompletion` hook in your application to generate text completions and stream them in real-time to your users.
 
 ## Example
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useCompletion } from '@ai-sdk/react';
@@ -41,13 +43,12 @@ export default function Page() {
 }
 ```
 
-```ts filename='app/api/completion/route.ts'
+```ts title='app/api/completion/route.ts'
 import {
   createUIMessageStreamResponse,
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt,
   });
 
@@ -141,12 +142,12 @@ When the user clicks the "Stop" button, the fetch request will be aborted. This 
 
 ### Throttling UI Updates
 
-<Note>This feature is currently only available for React.</Note>
+This feature is currently only available for React.
 
 By default, the `useCompletion` hook will trigger a render every time a new chunk is received.
 You can throttle the UI updates with the `throttle` option.
 
-```tsx filename="page.tsx" highlight="2-3"
+```tsx title="page.tsx" {2-3}
 const { completion, ... } = useCompletion({
   // Throttle the completion and data updates to 50ms:
   throttle: 50
@@ -185,7 +186,7 @@ const { messages, input, handleInputChange, handleSubmit } = useCompletion({
 });
 ```
 
-In this example, the `useCompletion` hook sends a POST request to the `/api/completion` endpoint with the specified headers, additional body fields, and credentials for that fetch request. On your server side, you can handle the request with these additional information.
+In this example, the `useCompletion` hook sends a POST request to the `/api/custom-completion` endpoint with the specified headers, additional body fields, and credentials for that fetch request. On your server side, you can handle the request with these additional information.
 
 You can provide a type for the additional body fields. The type applies to
 both the body configured on the hook and the body passed to `complete`:
@@ -208,23 +209,10 @@ await complete('What is a completion?', {
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

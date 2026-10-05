@@ -1,18 +1,23 @@
 ---
+title: Generate Object with File Prompt through Form Submission
+description: Learn how to generate object with file prompt through form submission using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/generate-object-with-file-prompt"
+docs_index: /llms.txt
+tags:
+  - next
+  - multi-modal
 source: "https://ai-sdk.dev/cookbook/next/generate-object-with-file-prompt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3d80e2497ced67783b34cc422771b464d665429eb735f13aaa68b6f4b7111705"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6886161e6f9797e191009ec3fa14b0a8305b9f3bc51f38fad59bc92dd10b975c"
 ---
 
-# Generate Object with File Prompt through Form Submission
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This feature is limited to models/providers that support PDF inputs
-  ([Anthropic](/providers/ai-sdk-providers/anthropic#pdf-support),
-  [OpenAI](/providers/ai-sdk-providers/openai#pdf-support), [Google
-  Gemini](/providers/ai-sdk-providers/google#file-inputs), and [Google
-  Vertex](/providers/ai-sdk-providers/google-vertex#file-inputs)).
-</Note>
+This feature is limited to models/providers that support PDF inputs
+([Anthropic](/providers/ai-sdk-providers/anthropic#pdf-support),
+[OpenAI](/providers/ai-sdk-providers/openai#pdf-support), [Google
+Gemini](/providers/ai-sdk-providers/google#file-inputs), and [Google
+Vertex](/providers/ai-sdk-providers/google-vertex#file-inputs)).
 
 With select models, you can send PDFs (files) as part of your prompt. Let's create a simple Next.js application that allows a user to upload a PDF send it to an LLM for summarization.
 
@@ -20,7 +25,7 @@ With select models, you can send PDFs (files) as part of your prompt. Let's crea
 
 On the frontend, create a form that allows the user to upload a PDF. When the form is submitted, send the PDF to the `/api/analyze` route.
 
-```tsx file="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -69,7 +74,7 @@ export default function Page() {
 
 On the server, create an API route that receives the PDF, sends it to the LLM, and returns the result. This example uses the [ `generateText` ](/docs/reference/ai-sdk-core/generate-text) function with `Output.object` to generate the summary as part of a structured output.
 
-```typescript file="app/api/analyze/route.ts"
+```typescript title="app/api/analyze/route.ts"
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
 
@@ -120,31 +125,10 @@ export async function POST(request: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

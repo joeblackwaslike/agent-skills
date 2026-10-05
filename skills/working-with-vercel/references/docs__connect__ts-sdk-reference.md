@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f785b50d316741cc6d9c022c8e7c1abcdf4ace7b4ad59e31750af3369f263430"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "935f1c604e2b1efe6ab6fcbc90c6ba703c5ebfd017ee8114939c71b20e0af962"
 ---
 
 # SDK Reference
@@ -31,7 +31,7 @@ sha256: "f785b50d316741cc6d9c022c8e7c1abcdf4ace7b4ad59e31750af3369f263430"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
@@ -39,7 +39,7 @@ sha256: "f785b50d316741cc6d9c022c8e7c1abcdf4ace7b4ad59e31750af3369f263430"
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related)
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fts-sdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

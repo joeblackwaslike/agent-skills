@@ -12,13 +12,13 @@ related:
 summary: "Requires that links opened with window.open use the noopener attribute to eliminate a source of eviction from the browser's Back-Forward Cache."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/bfcache_integrity_require_noopener_attribute.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "03ef1f61a069dca3ca687a428f2e1e43d8c93c0d8069d4cc0b579db4ed8bf02f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2544a1a8febf5b9271a828c29b6d086acbbb91eb708e0411f5c2841c00b8c256"
 ---
 
 # BFCACHE_INTEGRITY_REQUIRE_NOOPENER_ATTRIBUTE
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The Back-Forward Cache (bfcache) is a browser feature that allows pages to be cached in memory when the user navigates
 away from them. When the user navigates back to the page, it can be loaded almost instantly from the cache instead of

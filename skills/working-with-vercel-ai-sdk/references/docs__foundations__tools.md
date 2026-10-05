@@ -1,10 +1,14 @@
 ---
+title: Tools
+description: Learn about tools with the AI SDK.
+url: "https://ai-sdk.dev/docs/foundations/tools"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "7c519d73f98932715052cb9fed1e23618acec123819e4edafc18c715a1e0ab14"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "90b6a2ac3075a6ea5fee773040e73681f4567f977928ad2429331d85fc6c1a4f"
 ---
 
-# Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 While [large language models (LLMs)](/docs/foundations/overview#large-language-models) have incredible generation capabilities,
 they struggle with discrete tasks (e.g. mathematics) and interacting with the outside world (e.g. getting the weather).
@@ -28,10 +32,8 @@ A tool consists of three properties:
 - **`inputSchema`**: A [Zod schema](/docs/reference/ai-sdk-core/zod-schema) or a [JSON schema](/docs/reference/ai-sdk-core/json-schema) that defines the input required for the tool to run. The schema is consumed by the LLM, and also used to validate the LLM tool calls.
 - **`execute`**: An optional async function that is called with the arguments from the tool call.
 
-<Note>
-  `streamUI` uses UI generator tools with a `generate` function that can return
-  React components.
-</Note>
+`streamUI` uses UI generator tools with a `generate` function that can return
+React components.
 
 If the LLM decides to use a tool, it will generate a tool call.
 Tools with an `execute` function are run automatically when these calls are generated.
@@ -143,11 +145,9 @@ const result = await generateText({
 | **Model Training** | General tool use         | General tool use              | Optimized for the tool | Optimized for the tool  |
 | **Setup**          | You implement everything | You load or generate the tool | You implement execute  | Configuration only      |
 
-<Note>
-  Provider-defined and provider-executed tools are documented in each provider's
-  page. See [Anthropic Provider](/providers/ai-sdk-providers/anthropic) and
-  [OpenAI Provider](/providers/ai-sdk-providers/openai) for examples.
-</Note>
+Provider-defined and provider-executed tools are documented in each provider's
+page. See [Anthropic Provider](/providers/ai-sdk-providers/anthropic) and
+[OpenAI Provider](/providers/ai-sdk-providers/openai) for examples.
 
 ## Schemas
 
@@ -160,12 +160,10 @@ The AI SDK supports the following schemas:
 - [Standard JSON Schema](https://standardschema.dev/json-schema) compatible schemas
 - Raw JSON schemas via [`jsonSchema()`](/docs/reference/ai-sdk-core/json-schema)
 
-<Note>
-  You can also use schemas for structured output generation with
-  [`generateText`](/docs/reference/ai-sdk-core/generate-text) and
-  [`streamText`](/docs/reference/ai-sdk-core/stream-text) using the `output`
-  setting.
-</Note>
+You can also use schemas for structured output generation with
+[`generateText`](/docs/reference/ai-sdk-core/generate-text) and
+[`streamText`](/docs/reference/ai-sdk-core/stream-text) using the `output`
+setting.
 
 ## Refining Tool Inputs
 
@@ -223,7 +221,7 @@ pnpm add some-tool-package
 
 Then pass them directly to `generateText`, `streamText`, or your agent definition:
 
-```ts highlight="2, 8"
+```ts {2, 8}
 import { generateText, isStepCount } from 'ai';
 import { searchTool } from 'some-tool-package';
 
@@ -241,7 +239,7 @@ const { text } = await generateText({
 
 You can publish your own tool packages to npm for others to use. Simply export your tool objects from your package:
 
-```ts filename="my-tools/index.ts"
+```ts title="my-tools/index.ts"
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -302,26 +300,19 @@ These tutorials and guides help you build your own tools that integrate with spe
 - **[Interlify](https://www.interlify.com/docs/integrate-with-vercel-ai)** - Guide for converting APIs into tools.
 - **[DeepAgent](https://deepagent.amardeep.space/docs/vercel-ai-sdk)** - A suite of 50+ AI tools and integrations, seamlessly connecting with APIs like Tavily, E2B, Airtable and [more](https://deepagent.amardeep.space/docs).
 
-<Note>
-  Do you have open source tools or tool libraries that are compatible with the
-  AI SDK? Please [file a pull request](https://github.com/vercel/ai/pulls) to
-  add them to this list.
-</Note>
+Do you have open source tools or tool libraries that are compatible with the
+AI SDK? Please [file a pull request](https://github.com/vercel/ai/pulls) to
+add them to this list.
 
 ## Learn more
 
 The AI SDK Core [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
 and [Agents](/docs/agents) documentation has more information about tools and tool calling.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/foundations/overview)
-- [Providers and Models](/docs/foundations/providers-and-models)
-- [Prompts](/docs/foundations/prompts)
-- [Tools](/docs/foundations/tools)
-- [Streaming](/docs/foundations/streaming)
-- [Provider Options](/docs/foundations/provider-options)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "017ae88a34a35eb7b3331865d500ce862e417b22d099d7e83d82eab63d2973b0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fc580102e828d6da5aa3abeab67a3748f16a76acad811310db6e12b3db22aa18"
 ---
 
 # Transferring a project
@@ -35,12 +35,13 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 - [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related)
 - [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Enterprise customers can now transfer projects](https://vercel.com/changelog/enterprise-customers-can-now-transfer-projects?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related)
+- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Vercel MCP tools for projects.
 - [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — POST /projects/{idOrName}/transfer-request — Initiates a project transfer request from one team to another. \<br/\> Return
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — PUT /projects/transfer-request/{code} — Accept a project transfer request initated by another team. \<br/\> The \\`code\\` i
-- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 
 Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,11 +56,11 @@ During the transfer, all of the project's dependencies will be moved or copied o
 2. Then, open **Settings** in the sidebar from the top menu to go to the project settings.
 3. From the left sidebar, click **General** and scroll down to the bottom of the page, where you'll see the **Transfer Project** section. Click **Transfer** to begin the transferring flow:
 
-![Image](`/docs-assets/static/docs/concepts/projects/transfer-project-light.png`)
+![The Transfer Project section.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/transfer-project-light.png)
 
 4. Select the Vercel team you wish to transfer the project to. You can also choose to create a new team:
 
-![Image](`/docs-assets/static/docs/concepts/projects/transfer-project-model-light.png`)
+![Choosing a team to transfer the project to.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/transfer-project-model-light.png)
 
 If the target Vercel team does not have a valid payment method, you must add
 one before transferring your project to avoid any interruption in service.
@@ -69,7 +70,7 @@ one before transferring your project to avoid any interruption in service.
 > **💡 Note:** The original project **will be hidden** when initiating the transfer,
 > but you will not experience any downtime.
 
-![Image](`/docs-assets/static/docs/concepts/projects/project-transfer-confirm-light.png`)
+![Reviewing the project data that will be transferred to the target Vercel team, and choosing a new project name.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/project-transfer-confirm-light.png)
 
 6. After reviewing the information, click **Transfer** to initiate the project transfer.
 7. While the transfer is in progress, Vercel will redirect you to the newly created project on the target Vercel team with in-progress indicators. When a transfer is in progress, you **may not** create new deployments,

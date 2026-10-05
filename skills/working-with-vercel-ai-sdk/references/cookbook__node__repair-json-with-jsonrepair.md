@@ -1,10 +1,18 @@
 ---
+title: Repair Malformed JSON with jsonrepair
+description: Learn how to use the jsonrepair library to automatically fix truncated or malformed JSON output from language models.
+url: "https://ai-sdk.dev/cookbook/node/repair-json-with-jsonrepair"
+docs_index: /llms.txt
+tags:
+  - error-handling
+  - json
+  - structured-outputs
 source: "https://ai-sdk.dev/cookbook/node/repair-json-with-jsonrepair.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2825b68a9e725ec12281deb913db669596fc3144fe6b18c48c7162402524bc30"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "df0a4fe56e820bf464283f9808e5911ed5562ab9648f59904ef9fdd038dbd9f8"
 ---
 
-# Repair Malformed JSON with jsonrepair
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When generating structured outputs, language models sometimes produce malformed JSON output. This can happen due to:
 
@@ -30,7 +38,6 @@ Here's how to use `jsonrepair` with `generateText`:
 ```ts
 import { generateText, Output } from 'ai';
 import { safeParseJSON } from '@ai-sdk/provider-utils';
-__PROVIDER_IMPORT__;
 import { jsonrepair } from 'jsonrepair';
 import { z } from 'zod';
 
@@ -48,7 +55,7 @@ const recipeSchema = z.object({
 });
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.text(),
   prompt: 'Generate a lasagna recipe.',
 });
@@ -89,38 +96,10 @@ The `jsonrepair` library can automatically fix many common issues:
 2. **Schema Validation** - Even after repair, the object must still match your schema. If the model produces structurally wrong data, repair won't help
 3. **Truncated Content** - For severely truncated responses, consider increasing `maxOutputTokens` or simplifying your schema
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,10 +1,14 @@
 ---
+title: GitHub Copilot
+description: Learn how to use the GitHub Copilot harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "aaf40540b4dc5e819d4b479daacc2028121277b5450f18f28582b4f06b1c8020"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "fad18add671f819d981d373d6ee930f60a16c8d9b7a07643ce496145c097aebc"
 ---
 
-# GitHub Copilot Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The GitHub Copilot harness adapter connects `HarnessAgent` to
 [GitHub Copilot CLI](https://github.com/github/copilot-cli) through the Agent
@@ -12,14 +16,12 @@ Client Protocol (ACP). The adapter delegates ACP installation, sessions,
 streaming, tools, approvals, and lifecycle management to
 `@ai-sdk/harness-acp`.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-github-copilot @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-github-copilot`, `@ai-sdk/sandbox-vercel`
 
 The ACP harness installs the pinned GitHub Copilot CLI inside the sandbox when
 the first session starts. It never uses a host or globally installed Copilot
@@ -264,20 +266,10 @@ every request. Shell execution still requires approval under `allow-edits`.
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-once delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5c9abaa23d813e91f0aeda10084430786ee1070d62a4bc9dd164898d9b4b6b33"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b5bce9fb46726bf63124e4e7e2f8d758bb95d3bf9b6af5cfb4bd3ae38b80656b"
 ---
 
 # Vercel Queues
@@ -40,8 +40,8 @@ Send messages for agent events and background work to durable topics, then proce
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fqueues&source_site=vercel-docs&relationship=related)
 
@@ -83,7 +83,7 @@ export const POST = handleCallback(async (order, metadata) => {
 }
 ```
 
-> **🔒 Permissions Required**: Vercel Queues (Beta)
+> **Availability**: Vercel Queues (Beta) are available on all plans
 
 Each Vercel Queues topic is a durable, append-only log that retains messages until they expire. Messages fan out to every consumer group subscribed to the topic, and new consumer groups can join at any time to replay non-expired history.
 

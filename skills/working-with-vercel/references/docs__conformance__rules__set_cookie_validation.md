@@ -12,13 +12,13 @@ related:
 summary: Prevents usage of cookies that do not conform to the allowed cookie policy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/set_cookie_validation.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "13236fd932ec6b74660a60eb5f3971abac399af6cc70af089623c8844bda308c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3b77911019c65d9894d5f9ffda35c6c0a186fe825ba320c53f5c59ecdb1fecb9"
 ---
 
 # SET_COOKIE_VALIDATION
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 It's a good practice to enforce a cookie policy across a workspace to ensure only
 certain cookies are allowed to be set.

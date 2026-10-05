@@ -16,8 +16,8 @@ related:
 summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3f44b807f6bd5a7d3e0f5a132bb41af4e6dbdb1f6e1c857f3318bbf1d705e330"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "54282da0a0fe5d6a2cb3b19e1673112732726e7b4510c7fd79dbd46ff2e925f6"
 ---
 
 # Vercel Workflows
@@ -33,6 +33,7 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
 - [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
@@ -42,8 +43,7 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Building human-in-the-loop agents for community moderation with durable workflows](https://vercel.com/kb/guide/building-human-in-the-loop-agents-for-community-moderation-with-durable-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn how to build AI agents that escalate decisions to humans in Slack, pause and resume runs reliably, and stream prog
-- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
+- [Starting workflows](https://workflow-sdk.dev/docs/foundations/starting-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Trigger workflows and track their execution using the start() function.
 
 Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -74,7 +74,7 @@ Your workflows are:
 - **Observable**: Use built-in logs, metrics, and tracing and view them in your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows).
 - Write async JavaScript, TypeScript, or Python with familiar language primitives. No YAML or state machines.
 
-![Image](https://vercel.com/docs-assets/static/docs/workflow/workflow-diagram-light.avif)
+![Workflows diagram.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow/workflow-diagram-light.avif)
 
 ## Getting started
 
@@ -88,7 +88,7 @@ Install the Workflow SDK package:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i workflow
+    yarn add workflow
     ```
   </Code>
   <Code tab="npm">
@@ -98,7 +98,7 @@ Install the Workflow SDK package:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i workflow
+    bun add workflow
     ```
   </Code>
 </CodeBlock>
@@ -111,6 +111,7 @@ Follow the [Workflow SDK getting started guide](https://workflow-sdk.dev/docs/ge
 - [**Sleep and hooks**](/docs/workflows/concepts#sleep): Pause for minutes to months, or wait for external events.
 - [**Observability**](/docs/workflows#observability): Track runs in real time, trace failures, and analyze performance.
 - [**Streams**](https://workflow-sdk.dev/docs/foundations/streaming): Stream data in and out of workflows with managed persistence.
+- [**Dynamic workflows**](https://workflow-sdk.dev/v5/docs/advanced/dynamic-workflows): Start runs from workflow source assembled after deployment, over steps already deployed with your app. Experimental.
 - [**Multi-region**](/docs/workflows#multi-region): Run workflows close to your users across all Vercel Function regions.
 - [**Skew Protection**](/docs/workflows/concepts#skew-protection): Protect your workflows from version skew.
 - [**Usage-based pricing**](/docs/workflows/pricing): Pay only for Events, Data Written, and Data Retained.

@@ -1,10 +1,14 @@
 ---
+title: Firemoon
+description: Firemoon provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/firemoon"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/firemoon.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "cdac8307a720f31c367ff969adb9a301502cdb9ffcc97749ed46636a975b6733"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "cd0268ce486a9e072dfca8cb381b5eccc8dbe32e055d30e4f9c5841e5effb635"
 ---
 
-# Firemoon Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Firemoon Studio](https://firemoon.studio/) is an AI platform specializing in high-quality image and video generation models, specifically fine-tunes and state-of-the-art models.
 
@@ -18,7 +22,7 @@ The Firemoon provider for the AI SDK enables you to use these models with a simp
 
 The Firemoon provider is available via the `@firemoon/ai-provider` module. You can install it with:
 
-<InstallPackages packages="@firemoon/ai-provider" />
+**Packages:** `@firemoon/ai-provider`
 
 ## Provider Instance
 
@@ -189,68 +193,10 @@ try {
 - [Firemoon Studio Models](https://firemoon.studio/models)
 - [Firemoon Studio API Reference](https://docs.firemoon.studio)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

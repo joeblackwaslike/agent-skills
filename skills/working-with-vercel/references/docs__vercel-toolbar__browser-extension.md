@@ -12,13 +12,13 @@ related:
 summary: The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to comments, and set personal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/browser-extension.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a715a80c5947eb423ea335954e95243a5aaeb5389d99e2f36aa5a29eb14ef905"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "81e17cc6792ba4f18c81065f2af083ee55f217776410593ce9b260c948bbd1be"
 ---
 
 # Toolbar Browser Extensions
 
-> **🔒 Permissions Required**: The browser extensions
+> **Availability**: The browser extensions are available on all plans
 
 The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in addition to other Chromium-based browsers that support extensions and enhances the toolbar in the following ways:
 
@@ -34,6 +34,7 @@ The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in
 - [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related)
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related) — Vercel MCP tools for toolbar.
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 - [Comments Overview](https://vercel.com/docs/comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fbrowser-extension&source_site=vercel-docs&relationship=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
 

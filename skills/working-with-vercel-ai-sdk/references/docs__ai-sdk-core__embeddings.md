@@ -1,10 +1,14 @@
 ---
+title: Embeddings
+description: Learn how to embed values with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "9993a9c783b6d705309eb91ae6461b71681cd77b39f9c53e513e5292ad83fb36"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f63650249660983a3bcd972a2287353b6da8bfc63e2a0a71aff37ced8c13be9c"
 ---
 
-# Embeddings
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Embeddings are a way to represent words, phrases, or images as vectors in a high-dimensional space.
 In this space, similar words are close to each other, and the distance between words can be used to measure their similarity.
@@ -55,7 +59,7 @@ After embedding values, you can calculate the similarity between them using the 
 This is useful to e.g. find similar words or phrases in a dataset.
 You can also rank and filter related items based on their similarity.
 
-```ts highlight={"1,9"}
+```ts {1,9}
 import { cosineSimilarity, embedMany } from 'ai';
 
 const { embeddings } = await embedMany({
@@ -73,7 +77,7 @@ console.log(
 Many providers charge based on the number of tokens used to generate embeddings.
 Both `embed` and `embedMany` provide token usage information in the `usage` property of the result object:
 
-```ts highlight={"3,8"}
+```ts {3,8}
 import { embed } from 'ai';
 
 const { embedding, usage } = await embed({
@@ -90,7 +94,7 @@ console.log(usage); // { tokens: 10 }
 
 Embedding model settings can be configured using `providerOptions` for provider-specific parameters:
 
-```ts highlight={"4-8"}
+```ts {4-8}
 import { embed } from 'ai';
 
 const { embedding } = await embed({
@@ -110,7 +114,7 @@ Google's `gemini-embedding-2` model (also available as `gemini-embedding-2-previ
 
 The `embedMany` function now supports parallel processing with configurable `maxParallelCalls` to optimize performance:
 
-```ts highlight={"4"}
+```ts {4}
 import { embedMany } from 'ai';
 
 const { embeddings, usage } = await embedMany({
@@ -130,7 +134,7 @@ Both `embed` and `embedMany` accept an optional `maxRetries` parameter of type `
 that you can use to set the maximum number of retries for the embedding process.
 It defaults to `2` retries (3 attempts in total). You can set it to `0` to disable retries.
 
-```ts highlight={"6"}
+```ts {6}
 import { embed } from 'ai';
 
 const { embedding } = await embed({
@@ -146,7 +150,7 @@ Both `embed` and `embedMany` accept an optional `abortSignal` parameter of
 type [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 that you can use to abort the embedding process or set a timeout.
 
-```ts highlight={"6"}
+```ts {6}
 import { embed } from 'ai';
 
 const { embedding } = await embed({
@@ -161,7 +165,7 @@ const { embedding } = await embed({
 Both `embed` and `embedMany` accept an optional `headers` parameter of type `Record<string, string>`
 that you can use to add custom headers to the embedding request.
 
-```ts highlight={"6"}
+```ts {6}
 import { embed } from 'ai';
 
 const { embedding } = await embed({
@@ -175,7 +179,7 @@ const { embedding } = await embed({
 
 Both `embed` and `embedMany` return response information that includes the raw provider response:
 
-```ts highlight={"3,8"}
+```ts {3,8}
 import { embed } from 'ai';
 
 const { embedding, response } = await embed({
@@ -222,57 +226,27 @@ Several providers offer embedding models:
 
 | Provider                                                                      | Model                           | Embedding Dimensions | Multimodal |
 | ----------------------------------------------------------------------------- | ------------------------------- | -------------------- | ---------- |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-large`        | 3072                 | <Cross />  |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-small`        | 1536                 | <Cross />  |
-| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-ada-002`        | 1536                 | <Cross />  |
-| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-001`          | 3072                 | <Cross />  |
-| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2`            | 3072                 | <Check />  |
-| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2-preview`    | 3072                 | <Check />  |
-| [Mistral](/providers/ai-sdk-providers/mistral#embedding-models)               | `mistral-embed`                 | 1024                 | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v3.0`            | 1024                 | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v3.0`       | 1024                 | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v3.0`      | 384                  | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-light-v3.0` | 384                  | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v2.0`            | 4096                 | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v2.0`      | 1024                 | <Cross />  |
-| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v2.0`       | 768                  | <Cross />  |
-| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v1`    | 1536                 | <Cross />  |
-| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v2:0`  | 1024                 | <Cross />  |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-large`        | 3072                 | ✗          |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-3-small`        | 1536                 | ✗          |
+| [OpenAI](/providers/ai-sdk-providers/openai#embedding-models)                 | `text-embedding-ada-002`        | 1536                 | ✗          |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-001`          | 3072                 | ✗          |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2`            | 3072                 | ✓          |
+| [Google](/providers/ai-sdk-providers/google#embedding-models)                 | `gemini-embedding-2-preview`    | 3072                 | ✓          |
+| [Mistral](/providers/ai-sdk-providers/mistral#embedding-models)               | `mistral-embed`                 | 1024                 | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v3.0`            | 1024                 | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v3.0`       | 1024                 | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v3.0`      | 384                  | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-light-v3.0` | 384                  | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-v2.0`            | 4096                 | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-english-light-v2.0`      | 1024                 | ✗          |
+| [Cohere](/providers/ai-sdk-providers/cohere#embedding-models)                 | `embed-multilingual-v2.0`       | 768                  | ✗          |
+| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v1`    | 1536                 | ✗          |
+| [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock#embedding-models) | `amazon.titan-embed-text-v2:0`  | 1024                 | ✗          |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

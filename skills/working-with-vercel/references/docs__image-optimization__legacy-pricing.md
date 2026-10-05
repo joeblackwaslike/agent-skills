@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the pricing and limits for the source images-based legacy option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cd9f39c170f06f4a8d6cb5b5d7cfc5b39c492b00bf7395cce203b77afe3f8c2f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b73c71b5f6d636fa4ba3d382935989dfba180c5327082fc3f1cbac1b793bbfeb"
 ---
 
 # Legacy Pricing for Image Optimization
@@ -39,8 +39,8 @@ Image Optimization pricing is dependent on your plan and how many unique [source
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
 - [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
@@ -75,7 +75,7 @@ A source image is the value that is passed to the `src` prop. A single source im
 - Optimized image: `/_next/image?url=%2Fhero.png&w=828&q=75`
 - Optimized image: `/_next/image?url=%2Fhero.png&w=1080&q=75`
 
-For example, if you have passed 6000 source images to the `src` prop within the last billing cycle, your bill will be $5000000.00 for image optimization.
+For example, if you have passed 6000 source images to the `src` prop within the last billing cycle, your bill will be $5 for image optimization.
 
 ## Billing
 
@@ -102,7 +102,7 @@ If you want to continue using Hobby, read more about [Managing Usage & Costs](/d
 
 For Teams on Pro trials, the [trial will end](/docs/plans/pro-plan/trials#post-trial-decision) if your Team uses over 2500 source images. For more information, see the [trial limits](/docs/plans/pro-plan/trials#trial-limitations).
 
-Vercel will send you emails as you are nearing your [usage](#pricing) limits, but you will also be advised of any alerts within the [dashboard](/dashboard). Once your team exceeds the **5000 source images** limit, you will continue to be charged **$5000000.00 per 1000 source images** for on-demand usage.
+Vercel will send you emails as you are nearing your [usage](#pricing) limits, but you will also be advised of any alerts within the [dashboard](/dashboard). Once your team exceeds the **5000 source images** limit, you will continue to be charged **$5 per 1000 source images** for on-demand usage.
 
 Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spend-amount) to get notified or to automatically take action, such as [using a webhook](/docs/spend-management#configuring-a-webhook) or pausing your projects when your usage hits a set spend amount.
 

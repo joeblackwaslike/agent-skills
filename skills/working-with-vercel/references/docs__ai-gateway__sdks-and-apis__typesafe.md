@@ -16,8 +16,8 @@ related:
 summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One evaluation requests through it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b42803cc13c7a432589441c4077c3ab8a78c071dd61725c737d30c137a323545"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f6d369661954b012df0433dfc4c3b2361672136233de0cafc50119e4dfec4ac9"
 ---
 
 # TypeSafe API with AI Gateway
@@ -31,12 +31,14 @@ Keep using the [TypeSafe SDK](https://docs.typesafe.ai/introduction) and route r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway now supports TypeSafe clients and an HTTP API for Jev](https://vercel.com/changelog/ai-gateway-now-supports-typesafe-clients-and-http-api-for-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
+- [Laya decision model now available on AI Gateway, free through October 31](https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
-- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
-- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
-- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
+- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Evaluate Choice, Score, and Boolean questions against shared state.
+- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Use TypeSafe System One models for typed evaluations with the AI SDK.
 - [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/typesafe.graph.md](/docs/ai-gateway/sdks-and-apis/typesafe.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

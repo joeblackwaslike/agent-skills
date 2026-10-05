@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure Git for your project through vercel.json or vercel.ts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-configuration.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "3aab26222b6d9ed33d0b6f99c57106365f6b49da6816b4b5350914f8f49bd5eb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "69fae44eb04d6d3ad574f24ab8dd7863aa2c7a8421abf5e4d6a910f6e5c28bcc"
 ---
 
 # Git Configuration
@@ -30,9 +30,8 @@ The following configuration options can be used through a `vercel.json` file via
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Granular branch matching for Git configuration in vercel.json](https://vercel.com/changelog/granular-branch-matching-for-git-configuration-in-vercel-json?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related)
-- [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related)
-- [May 2020](https://vercel.com/blog/changelog-may-2020?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related)
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fgit-configuration&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa

@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "64d3e51c9ef0b17acd935b11830f8263be7bd46922a35df4c6f12ee983c8aada"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d41e6c898e51fceeab11bb721def278d48b7e9e148fc82a8027dbcbc89d4e5a7"
 ---
 
 # vercel deploy
@@ -38,8 +38,8 @@ The `vercel deploy` command deploys Vercel projects, executable from the project
 - [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to automatically alias a Vercel preview deployment.
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related)
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel curl](https://vercel.com/docs/cli/curl?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fdeploy&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 

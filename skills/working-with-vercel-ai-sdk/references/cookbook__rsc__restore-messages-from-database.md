@@ -1,26 +1,33 @@
 ---
+title: Restore Messages From Database
+description: Learn how to restore messages from an external database using the AI SDK and React Server Components
+url: "https://ai-sdk.dev/cookbook/rsc/restore-messages-from-database"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - tool use
 source: "https://ai-sdk.dev/cookbook/rsc/restore-messages-from-database.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d6ec07c8e3ffba53aec21704f7b8563f71800878644000b8696fe9ff0239b4ec"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "86945b69d61a8de49ca280479c1275036652c4f455cb738827a741403b5f4ca3"
 ---
 
-# Restore Messages from Database
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When building AI applications, you might want to restore previous conversations from a database to allow users to continue their conversations or review past interactions. The AI SDK provides mechanisms to restore conversation state through `initialAIState` and `onGetUIState`.
 
 ## Client
 
-```tsx filename='app/layout.tsx'
-import { ServerMessage } from './actions';
+```tsx title='app/layout.tsx'
+import { ServerMessage, getSavedMessages } from './actions';
 import { AI } from './ai';
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   // Fetch stored messages from your database
-  const savedMessages: ServerMessage[] = getSavedMessages();
+  const savedMessages: ServerMessage[] = await getSavedMessages();
 
   return (
     <html lang="en">
@@ -34,7 +41,7 @@ export default function RootLayout({
 }
 ```
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -94,10 +101,10 @@ export default function Home() {
 
 ## Server
 
-The server-side implementation handles the restoration of messages and their transformation into the appropriate format for display.
+The server-side implementation handles the restoration of messages and their transformation into the appropriate format for display. It reuses the `continueConversation` action from the [Save Messages To Database](/cookbook/rsc/save-messages-to-database) example.
 
-```tsx filename='app/ai.ts'
-import { createAI } from '@ai-sdk/rsc';
+```tsx title='app/ai.ts'
+import { createAI, getAIState } from '@ai-sdk/rsc';
 import { ServerMessage, ClientMessage, continueConversation } from './actions';
 import { Stock } from '@ai-studio/components/stock';
 import { generateId } from 'ai';
@@ -123,10 +130,9 @@ export const AI = createAI<ServerMessage[], ClientMessage[]>({
 });
 ```
 
-```tsx filename='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
-import { getAIState } from '@ai-sdk/rsc';
 import type { ReactNode } from 'react';
 
 export interface ServerMessage {
@@ -147,24 +153,14 @@ export async function getSavedMessages(): Promise<ServerMessage[]> {
   // Implement your database fetching logic here
   return await fetchMessagesFromDatabase();
 }
+
+// Export `continueConversation` as shown in the Save Messages To Database example
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

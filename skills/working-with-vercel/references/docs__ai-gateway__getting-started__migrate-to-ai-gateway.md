@@ -17,8 +17,8 @@ related:
 summary: "Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use today."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a073eedd7eab9e4a88c81f40ca99a24d33f4797526a91c0e6dff2d3f39168a24"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0572b4f1883bc484467c08df88f4b97c22e6cc4b6b47672cd075fce87320e891"
 ---
 
 # Migrate to AI Gateway Using Your Coding Agent
@@ -33,11 +33,10 @@ AI Gateway puts one endpoint and one API key in front of hundreds of models, and
 
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related)
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fmigrate-to-ai-gateway&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
@@ -96,7 +95,7 @@ In every case the model ID becomes a `creator/model` slug and the credential bec
 
 The wire format is independent of which provider serves the request. AI Gateway maps parameters across formats, so an Anthropic-format request can be served by an OpenAI model and the reverse. Never rewrite a working integration into a different format to reach a different model.
 
-Change format only when the app needs a capability its current surface does not expose: embeddings and image generation are on Chat Completions only, and reranking is on the Cohere surface only.
+Change format only when the app needs a capability its current surface does not expose: embeddings and image generation are only on the OpenAI-compatible Chat Completions surface (including its `/v1/embeddings` and `/v1/images/generations` endpoints), and reranking is on the Cohere surface only.
 
 Support also differs by modality. Do not assume an OpenAI-compatible base URL works for everything.
 
@@ -248,7 +247,7 @@ If your app calls video or realtime models from Python, the agent reports it rat
 
   The wire format is independent of which provider serves the request. AI Gateway maps parameters across formats, so an Anthropic-format request can be served by an OpenAI model and the reverse. Never rewrite a working integration into a different format to reach a different model.
 
-  Change format only when the app needs a capability its current surface does not expose: embeddings and image generation are on Chat Completions only, and reranking is on the Cohere surface only.
+  Change format only when the app needs a capability its current surface does not expose: embeddings and image generation are only on the OpenAI-compatible Chat Completions surface (including its `/v1/embeddings` and `/v1/images/generations` endpoints), and reranking is on the Cohere surface only.
 
   Support also differs by modality. Do not assume an OpenAI-compatible base URL works for everything.
 

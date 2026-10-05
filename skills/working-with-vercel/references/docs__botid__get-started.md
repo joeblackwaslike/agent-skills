@@ -13,8 +13,8 @@ related:
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2dc56e57926ee9d5b965d6a7b628c1e0b79ecee1c23f46dea8bf5e819f4a3964"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1230bc34552e086ac2ab507cfda7ee440466c8b06bdbb0ee9bc997f7eee6df7b"
 ---
 
 # Get Started with BotID
@@ -36,9 +36,8 @@ This guide shows you how to add BotID protection to your Vercel project. BotID b
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in your local environment.
+- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 
 Full cross-link map for this page: [/docs/botid/get-started.graph.md](/docs/botid/get-started.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Fget-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -63,7 +62,7 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i botid
+      yarn add botid
       ```
     </Code>
     <Code tab="npm">
@@ -73,7 +72,7 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
     </Code>
     <Code tab="bun">
       ```bash
-      bun i botid
+      bun add botid
       ```
     </Code>
   </CodeBlock>
@@ -247,7 +246,6 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   ```
   ```jsx filename="app/layout.js" framework=nextjs-app
   import { BotIdClient } from 'botid/client';
-  import { ReactNode } from 'react';
 
   const protectedRoutes = [
     {
@@ -256,37 +254,7 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
     },
   ];
 
-  type RootLayoutProps = {
-    children: ReactNode;
-  };
-
-  export default function RootLayout({ children }: RootLayoutProps) {
-    return (
-      <html lang="en">
-        <head>
-          <BotIdClient protect={protectedRoutes} />
-        </head>
-        <body>{children}</body>
-      </html>
-    );
-  }
-  ```
-  ```jsx filename="app/layout.js" framework=nextjs-app
-  import { BotIdClient } from 'botid/client';
-  import { ReactNode } from 'react';
-
-  const protectedRoutes = [
-    {
-      path: '/api/checkout',
-      method: 'POST',
-    },
-  ];
-
-  type RootLayoutProps = {
-    children: ReactNode;
-  };
-
-  export default function RootLayout({ children }: RootLayoutProps) {
+  export default function RootLayout({ children }) {
     return (
       <html lang="en">
         <head>
@@ -567,9 +535,9 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   ```js filename="+server.js" framework=sveltekit
   import { checkBotId } from 'botid/server';
   import { json, error } from '@sveltejs/kit';
-  import type { RequestHandler } from './$types';
 
-  export const POST: RequestHandler = async ({ request }) => {
+  /** @type {import('./$types').RequestHandler} */
+  export const POST = async ({ request }) => {
     const verification = await checkBotId();
 
     if (verification.isBot) {
@@ -638,7 +606,7 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   > a page in your application to the protected route.
 
 - ### Enable BotID deep analysis in Vercel (Recommended)
-  > **🔒 Permissions Required**: BotID Deep Analysis
+  > **Availability**: BotID Deep Analysis are available on Enterprise and Pro plans
   From the [Vercel dashboard](/dashboard)
   - Select your Project
   - Click the **Firewall** tab

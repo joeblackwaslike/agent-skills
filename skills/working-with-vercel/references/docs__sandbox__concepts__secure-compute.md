@@ -16,8 +16,8 @@ related:
 summary: You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and reach your own VPC over VPC...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/secure-compute.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3f82c67d0f7d63a71585a4a30e8fae4e64e56f3a8f7ab32ac87190f8af20bb68"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "75ec6f5fdc13a52aa1762528a8eb6c351ac99c642793d5dc89978b8468d7f8be"
 ---
 
 # Using Secure Compute with Sandbox
@@ -30,15 +30,15 @@ Attaching a Vercel Sandbox to a [Secure Compute](/docs/networking/secure-compute
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Sandbox now supports Secure Compute](https://vercel.com/changelog/vercel-sandbox-now-supports-secure-compute?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related)
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related)
-- [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related)
-- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Networking](https://vercel.com/docs/networking?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Connect your Vercel projects to backend services with static IPs and secure networking options.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/secure-compute.graph.md](/docs/sandbox/concepts/secure-compute.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsecure-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

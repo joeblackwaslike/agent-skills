@@ -13,8 +13,8 @@ related:
 summary: Verify a Passport token forwarded to your backend as a signed JWT.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/verify-identity.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "8fefee1a3bdcca69167ae0c572adf0aa266e0c5cb365b6040e5926b29fafe764"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "df4762e82d5b596a4f0dca551cb8b4848057b63c1445e13943dc099116712eec"
 ---
 
 # Verify forwarded Passport tokens
@@ -28,8 +28,8 @@ When a Passport-protected app forwards a token to another backend, the receiving
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related)
-- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
+- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
 - [Read Passport identity in your application](https://vercel.com/docs/passport/read-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Read verified Passport identity in server-side code and apply application-level authorization.
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related)
 - [Forward Passport identity to another backend](https://vercel.com/docs/passport/forward-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Forward a Passport visitor identity to another backend that you operate.

@@ -16,13 +16,13 @@ related:
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9cf5f3c3a6ac1c0bda6aaa7dcdbd3c34c6401813f8e9fc3a665959d1cda74b25"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c69a36d7825f32011af05613efa091b0ad28861efe51d4e764c0d767e5231c93"
 ---
 
 # Using the Go Runtime with Vercel Functions
 
-> **🔒 Permissions Required**: The Go runtime (Beta)
+> **Availability**: The Go runtime (Beta) is available on all plans
 
 Use the Go runtime to deploy a Go HTTP server on Vercel. The Go Framework
 Preset works with standard `net/http` servers and frameworks such as `chi` or
@@ -36,11 +36,13 @@ Preset works with standard `net/http` servers and frameworks such as `chi` or
 
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
-- [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Learn how to use the Python runtime to run Python applications on Vercel.
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
 Full cross-link map for this page: [/docs/functions/runtimes/go.graph.md](/docs/functions/runtimes/go.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fgo&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

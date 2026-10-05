@@ -1,10 +1,14 @@
 ---
+title: Configuring Call Options
+description: Pass type-safe runtime inputs to dynamically configure agent behavior.
+url: "https://ai-sdk.dev/docs/agents/configuring-call-options"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/configuring-call-options.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "b97d59baecdc74fa435a894b66cbe0e7f96ee58c49ed49525a2dbae4475a083d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4226139261ca09943a7a760083732c73191c2a753dd968e3437f5e1b30b9364b"
 ---
 
-# Configuring Call Options
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Call options allow you to pass type-safe structured inputs to your agent. Use them to dynamically modify any agent setting based on the specific request.
 
@@ -33,11 +37,10 @@ Add user context to your agent's prompt at runtime:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const supportAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   callOptionsSchema: z.object({
     userId: z.string(),
     accountType: z.enum(['free', 'pro', 'enterprise']),
@@ -69,7 +72,7 @@ The `options` parameter is now required and type-checked. If you don't provide i
 
 ## Modifying Agent Settings
 
-Use `prepareCall` to modify any agent setting. Return only the settings you want to change.
+Use `prepareCall` to modify any agent setting. The returned object replaces the call settings, so spread the incoming settings and override only the ones you want to change.
 
 ### Dynamic Model Selection
 
@@ -77,11 +80,10 @@ Choose models based on request characteristics:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__, // Default model
+  model: "anthropic/claude-sonnet-5.5", // Default model
   callOptionsSchema: z.object({
     complexity: z.enum(['simple', 'complex']),
   }),
@@ -114,11 +116,10 @@ Configure tools based on runtime inputs:
 ```ts
 import { openai } from '@ai-sdk/openai';
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const newsAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   callOptionsSchema: z.object({
     userCity: z.string().optional(),
     userRegion: z.string().optional(),
@@ -189,11 +190,10 @@ Fetch relevant context and inject it into your prompt:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const ragAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   callOptionsSchema: z.object({
     query: z.string(),
   }),
@@ -224,11 +224,10 @@ Modify multiple settings together:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   callOptionsSchema: z.object({
     userRole: z.enum(['admin', 'user']),
     urgency: z.enum(['low', 'high']),
@@ -240,7 +239,7 @@ const agent = new ToolLoopAgent({
   prepareCall: ({ options, ...settings }) => ({
     ...settings,
     // Upgrade model for urgent requests
-    model: options.urgency === 'high' ? __MODEL__ : settings.model,
+    model: options.urgency === 'high' ? "anthropic/claude-sonnet-5.5" : settings.model,
     // Limit tools based on user role
     activeTools:
       options.userRole === 'admin'
@@ -265,7 +264,7 @@ await agent.generate({
 
 Pass call options through API routes to your agent:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { createAgentUIStreamResponse } from 'ai';
 import { myAgent } from '@/ai/agents/my-agent';
 
@@ -288,20 +287,10 @@ export async function POST(request: Request) {
 - Learn about [loop control](/docs/agents/loop-control) for execution management
 - Explore [workflow patterns](/docs/agents/workflows) for complex multi-step processes
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/request-headers.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9006885c7e6b990d29c7a156f61c9a38576023b0bd8f9368e995070abcca498f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "87ad143bcd8b572d597ef43ced065b539c5dcd82c57aa31ed358fab3bea9dee6"
 ---
 
 # Request headers
@@ -39,7 +39,7 @@ The following headers are sent to each Vercel deployment and can be used to proc
 - [Response headers](https://vercel.com/docs/headers/response-headers?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
-- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 
 Full cross-link map for this page: [/docs/headers/request-headers.graph.md](/docs/headers/request-headers.graph.md?from=related&source_path=%2Fdocs%2Fheaders%2Frequest-headers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -340,7 +340,7 @@ export function GET(request) {
 
 ### Custom `X-Forwarded-For` IP
 
-> **🔒 Permissions Required**: Trusted Proxy
+> **Availability**: Trusted Proxy is available on Enterprise plans
 
 **Enterprise customers** can purchase and enable a trusted proxy to allow your custom `X-Forwarded-For` IP. [Contact us](/contact/sales) for more information.
 
@@ -884,7 +884,7 @@ export function GET(request) {
 
 ## `x-vercel-signature`
 
-Vercel sends an `x-vercel-signature` header with requests from [Webhooks](/docs/webhooks), [Log Drains](/docs/drains), and other services. The header contains an HMAC-SHA1 signature that you can use to verify the request came from Vercel.
+Vercel sends an `x-vercel-signature` header with requests from [Webhooks](/docs/webhooks), [Drains](/docs/drains), and other services. The header contains an HMAC-SHA1 signature that you can use to verify the request came from Vercel.
 
 ### 1. Reading the header value
 

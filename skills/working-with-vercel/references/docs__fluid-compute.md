@@ -16,8 +16,8 @@ related:
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6161b24dccdeb6a28923466f8bafb4c03e29706362e2d6d25b5ee6ac72be0840"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f3680626bf2d9a82cb437ca203bdd7ee6e0b232ba6aee7d15578ffa2d60590a8"
 ---
 
 # Fluid compute
@@ -30,7 +30,7 @@ Fluid compute offers a blend of serverless flexibility and server-like capabilit
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
+- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related) — Learn how to fix timeouts and cut off responses when deploying to Vercel.
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
 - [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
 - [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffluid-compute&source_site=vercel-docs&relationship=related)
@@ -102,7 +102,7 @@ Fluid compute is available for the following runtimes:
 
 Fluid compute allows multiple invocations to share a single function instance, this is especially valuable for AI applications, where tasks like fetching embeddings, querying vector databases, or calling external APIs can be [I/O-bound](# "What does I/O bound mean?"). By allowing concurrent execution within the same instance, you can reduce cold starts, minimize latency, and lower compute costs.
 
-![Image](`/docs-assets/static/docs/fluid/serverless-active-light.avif`)
+![How multiple requests are processed in the fluid compute model with optimized concurrency.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/fluid/serverless-active-light.avif)
 
 Vercel Functions prioritize existing idle resources before allocating new ones, reducing unnecessary compute usage. This in-function-concurrency is especially effective when multiple requests target the same function, leading to fewer total resources needed for the same workload.
 
@@ -157,7 +157,7 @@ Fluid Compute includes default settings that vary by plan:
 
 The settings you configure in your [function code](/docs/functions/configuring-functions), [dashboard](/dashboard), or [`vercel.json`](/docs/project-configuration) file will override the default fluid compute settings.
 
-The following order of precedence determines which settings take effect. Settings you define later in the sequence will always override those defined earlier:
+The following order of precedence determines which settings take effect. Settings with a higher precedence (a lower number in the table) always override those with a lower precedence:
 
 | **Precedence** | **Stage**          | **Explanation**                                                                                                                                    | **Can Override**                                                                                                                                                                    |
 | -------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

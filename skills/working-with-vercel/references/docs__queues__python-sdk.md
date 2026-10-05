@@ -14,8 +14,8 @@ related:
 summary: Publish and consume messages with the Vercel Queues Python SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/python-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0918b57874f088cf0878e0496b26c9aa79a394145017f330c7cd1d5b0a0bfae7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "378fd6b6cee70aed058c9c379942ad0f543e11480e90c2fd72f7a45518e61bc6"
 ---
 
 # Vercel Queues: Python SDK Reference
@@ -29,14 +29,13 @@ The official Vercel Python SDK lets Python apps publish and consume Vercel Queue
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related)
+- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related)
-- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
-- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
-- [Queues concepts](https://vercel.com/docs/queues/concepts?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 
 Full cross-link map for this page: [/docs/queues/python-sdk.graph.md](/docs/queues/python-sdk.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fpython-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -46,24 +45,14 @@ For JavaScript and TypeScript, see the [JS SDK Reference](/docs/queues/sdk).
 ## Installation
 
 <CodeBlock>
-  <Code tab="pnpm">
+  <Code tab="uv">
     ```bash
-    pnpm i vercel-queue
+    uv add vercel
     ```
   </Code>
-  <Code tab="yarn">
+  <Code tab="pip">
     ```bash
-    yarn i vercel-queue
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i vercel-queue
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun i vercel-queue
+    pip install vercel
     ```
   </Code>
 </CodeBlock>
@@ -71,24 +60,14 @@ For JavaScript and TypeScript, see the [JS SDK Reference](/docs/queues/sdk).
 This installs the full Vercel SDK and is recommended when you use other Vercel products. For a minimalist installation that includes only the Queues SDK, use `vercel-queue` instead.
 
 <CodeBlock>
-  <Code tab="pnpm">
+  <Code tab="uv">
     ```bash
-    pnpm i vercel-queue
+    uv add vercel-queue
     ```
   </Code>
-  <Code tab="yarn">
+  <Code tab="pip">
     ```bash
-    yarn i vercel-queue
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i vercel-queue
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun i vercel-queue
+    pip install vercel-queue
     ```
   </Code>
 </CodeBlock>

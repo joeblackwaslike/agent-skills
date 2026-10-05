@@ -1,5 +1,5 @@
 ---
-title: Frameworks and Adapters
+title: Frameworks and Adapters for Vercel Connect
 product: vercel
 url: /docs/connect/frameworks
 canonical_url: "https://vercel.com/docs/connect/frameworks"
@@ -16,13 +16,13 @@ related:
 summary: Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d9e264be1ca985e1138bae9a71c9fedd90b417d9bda36582b4f876ef61f29892"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cf3ba91bacabf04af3761b790f141fa1d8b82b4db7af3385156a43759ec5c77a"
 ---
 
-# Frameworks and Adapters
+# Frameworks and Adapters for Vercel Connect
 
-> **🔒 Permissions Required**: Vercel Connect
+> **Availability**: Vercel Connect is available on all plans
 
 Vercel Connect integrations adapt connector tokens, consent, and webhook
 verification to the frameworks you already use. Choose an integration based on
@@ -35,11 +35,11 @@ the task your application needs to perform.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related)
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 
 Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/connect/frameworks.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

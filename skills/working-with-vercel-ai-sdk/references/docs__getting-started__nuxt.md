@@ -1,10 +1,14 @@
 ---
+title: Vue.js (Nuxt)
+description: Learn how to build your first agent with the AI SDK and Vue.js (Nuxt).
+url: "https://ai-sdk.dev/docs/getting-started/nuxt"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nuxt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e5b8ea6baa8fa2315fa97049da3d42d31e64707b1481ebd389842ebc02f38f92"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "323b45189a1e0bfea8a321381459beaa1d18ed4f6c9b0926f54ee5c727f3b253"
 ---
 
-# Vue.js (Nuxt) Quickstart
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK is a powerful TypeScript library designed to help developers build AI-powered applications.
 
@@ -19,46 +23,51 @@ To follow this quickstart, you'll need:
 - Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Setup Your Application
 
 Start by creating a new Nuxt application. This command will create a new directory named `my-ai-app` and set up a basic Nuxt application inside it.
 
-<Snippet text="pnpm create nuxt my-ai-app" />
+```
+pnpm create nuxt my-ai-app
+```
 
 Navigate to the newly created directory:
 
-<Snippet text="cd my-ai-app" />
+```
+cd my-ai-app
+```
 
 ### Install dependencies
 
 Install `ai` and `@ai-sdk/vue`. The Vercel AI Gateway provider ships with the `ai` package.
 
-<Note>
-  The AI SDK is designed to be a unified interface to interact with any large
-  language model. This means that you can change model and providers with just
-  one line of code! Learn more about [available providers](/providers) and
-  [building custom providers](/providers/community-providers/custom-providers)
-  in the [providers](/providers) section.
-</Note>
-<InstallPackages packages="ai @ai-sdk/vue zod" />
+The AI SDK is designed to be a unified interface to interact with any large
+language model. This means that you can change model and providers with just
+one line of code! Learn more about [available providers](/providers) and
+[building custom providers](/providers/community-providers/custom-providers)
+in the [providers](/providers) section.
+
+**Packages:** `ai`, `@ai-sdk/vue`, `zod`
 
 ### Configure Vercel AI Gateway API key
 
 Create a `.env` file in your project root and add your Vercel AI Gateway API Key. This key is used to authenticate your application with the Vercel AI Gateway service.
 
-<Snippet text="touch .env" />
+```
+touch .env
+```
 
 Edit the `.env` file:
 
-```env filename=".env"
+```dotenv title=".env"
 NUXT_AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
 Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key and configure the environment variable in `nuxt.config.ts`:
 
-```ts filename="nuxt.config.ts"
+```ts title="nuxt.config.ts"
 export default defineNuxtConfig({
   // rest of your nuxt config
   runtimeConfig: {
@@ -67,19 +76,17 @@ export default defineNuxtConfig({
 });
 ```
 
-<Note className="mb-4">
-  This guide uses Nuxt's runtime config to manage the API key. The `NUXT_`
-  prefix in the environment variable allows Nuxt to automatically load it into
-  the runtime config. While the AI Gateway Provider also supports a default
-  `AI_GATEWAY_API_KEY` environment variable, this approach provides better
-  integration with Nuxt's configuration system.
-</Note>
+This guide uses Nuxt's runtime config to manage the API key. The `NUXT_`
+prefix in the environment variable allows Nuxt to automatically load it into
+the runtime config. While the AI Gateway Provider also supports a default
+`AI_GATEWAY_API_KEY` environment variable, this approach provides better
+integration with Nuxt's configuration system.
 
 ## Create an API route
 
 Create an API route, `server/api/chat.ts` and add the following code:
 
-```typescript filename="server/api/chat.ts"
+```typescript title="server/api/chat.ts"
 import {
   streamText,
   UIMessage,
@@ -100,7 +107,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-5'),
+      model: gateway('anthropic/claude-sonnet-5.5'),
       messages: await convertToModelMessages(messages),
     });
 
@@ -126,7 +133,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: __MODEL__;
+model: "anthropic/claude-sonnet-5.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -134,18 +141,18 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
 ### Using other providers
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<InstallPackages packages="@ai-sdk/openai" />
+**Packages:** `@ai-sdk/openai`
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -159,7 +166,7 @@ Now that you have an API route that can query an LLM, it's time to set up your f
 
 Update your root page (`pages/index.vue`) with the following code to show a list of chat messages and provide a user message input:
 
-```typescript filename="pages/index.vue"
+```typescript title="pages/index.vue"
 <script setup lang="ts">
 import { useChat } from "@ai-sdk/vue";
 import { ref } from "vue";
@@ -193,10 +200,8 @@ const handleSubmit = (e: Event) => {
 </template>
 ```
 
-<Note>
-  If your project has `app.vue` instead of `pages/index.vue`, delete the
-  `app.vue` file and create a new `pages/index.vue` file with the code above.
-</Note>
+If your project has `app.vue` instead of `pages/index.vue`, delete the
+`app.vue` file and create a new `pages/index.vue` file with the code above.
 
 This page utilizes the `useChat` hook, which will, by default, use the API route you created earlier (`/api/chat`). The hook provides functions and state for handling user input and form submission. The `useChat` hook provides multiple utility functions and state variables:
 
@@ -211,9 +216,11 @@ The LLM's response is accessed through the message `parts` array. Each message c
 
 With that, you have built everything you need for your chatbot! To start your application, use the command:
 
-<Snippet text="pnpm run dev" />
+```
+pnpm run dev
+```
 
-Head to your browser and open http://localhost:3000. You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Nuxt.
+Head to your browser and open [http://localhost:3000](http://localhost:3000). You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Nuxt.
 
 ## Enhance Your Chatbot with Tools
 
@@ -229,7 +236,7 @@ Let's enhance your chatbot by adding a simple weather tool.
 
 Modify your `server/api/chat.ts` file to include the new weather tool:
 
-```typescript filename="server/api/chat.ts" highlight="5-8,25-41"
+```typescript title="server/api/chat.ts" {5-8,25-41}
 import {
   createGateway,
   streamText,
@@ -252,7 +259,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-5'),
+      model: gateway('anthropic/claude-sonnet-5.5'),
       messages: await convertToModelMessages(messages),
       tools: {
         weather: tool({
@@ -294,17 +301,15 @@ Try asking something like "What's the weather in New York?" and see how the mode
 
 Notice the blank response in the UI? This is because instead of generating a text response, the model generated a tool call. You can access the tool call and subsequent tool result on the client via the `tool-weather` part of the `message.parts` array.
 
-<Note>
-  Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
-  you used when defining the tool. In this case, since we defined the tool as
-  `weather`, the part type is `tool-weather`.
-</Note>
+Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
+you used when defining the tool. In this case, since we defined the tool as
+`weather`, the part type is `tool-weather`.
 
 ### Update the UI
 
 To display the tool invocation in your UI, update your `pages/index.vue` file:
 
-```typescript filename="pages/index.vue" highlight="24"
+```typescript title="pages/index.vue" {24}
 <script setup lang="ts">
 import { useChat } from "@ai-sdk/vue";
 import { ref } from "vue";
@@ -353,7 +358,7 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. By default
 
 Modify your `server/api/chat.ts` file to include the `stopWhen` condition:
 
-```typescript filename="server/api/chat.ts" highlight="26"
+```typescript title="server/api/chat.ts" {26}
 import {
   createGateway,
   streamText,
@@ -377,7 +382,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-5'),
+      model: gateway('anthropic/claude-sonnet-5.5'),
       messages: await convertToModelMessages(messages),
       stopWhen: isStepCount(5),
       tools: {
@@ -414,7 +419,7 @@ By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 
 
 Update your `server/api/chat.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```typescript filename="server/api/chat.ts" highlight="43-56"
+```typescript title="server/api/chat.ts" {43-56}
 import {
   createGateway,
   streamText,
@@ -438,7 +443,7 @@ export default defineLazyEventHandler(async () => {
     const { messages }: { messages: UIMessage[] } = await readBody(event);
 
     const result = streamText({
-      model: gateway('anthropic/claude-sonnet-5'),
+      model: gateway('anthropic/claude-sonnet-5.5'),
       messages: await convertToModelMessages(messages),
       stopWhen: isStepCount(5),
       tools: {
@@ -485,7 +490,7 @@ export default defineLazyEventHandler(async () => {
 
 Update your UI to handle the new temperature conversion tool by modifying the tool part handling:
 
-```typescript filename="pages/index.vue" highlight="24-29"
+```typescript title="pages/index.vue" {24-29}
 <script setup lang="ts">
 import { useChat } from "@ai-sdk/vue";
 import { ref } from "vue";
@@ -547,19 +552,10 @@ You've built an AI chatbot using the AI SDK! From here, you have several paths t
 - If you're interested in diving deeper with guides, check out the [RAG (retrieval-augmented generation)](/cookbook/guides/rag-chatbot) and [multi-modal chatbot](/cookbook/guides/multi-modal-chatbot) guides.
 - To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

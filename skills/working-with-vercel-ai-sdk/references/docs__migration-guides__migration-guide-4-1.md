@@ -1,34 +1,25 @@
 ---
+title: Migrate AI SDK 4.0 to 4.1
+description: Learn how to upgrade AI SDK 4.0 to 4.1.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-1"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-1.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1da662957a5e49ecf81d7785c6ec287060474fd46967502f3b71da8e54ad45f6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f4473154731a7d3c34078c878beb9be1ce54ec7c4816c5a4e254ed4d48ce2184"
 ---
 
-# Migrate AI SDK 4.0 to 4.1
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Check out the [AI SDK 4.1 release blog
-  post](https://vercel.com/blog/ai-sdk-4-1) for more information about the
-  release.
-</Note>
+Check out the [AI SDK 4.1 release blog
+post](https://vercel.com/blog/ai-sdk-4-1) for more information about the
+release.
 
 No breaking changes in this release.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,10 +1,14 @@
 ---
+title: Respan
+description: Trace and monitor your AI SDK application with Respan
+url: "https://ai-sdk.dev/providers/observability/respan"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/respan.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "43c00edf5c491821340a7e4046f12260caec2d268c2e8f7ae512166a05ececa4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "18122a55d277680e7e1b467a0b5c7907b0c10fef1947eca96d5e2b84b165caae"
 ---
 
-# Respan Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Respan](https://www.respan.ai/) (formerly Keywords AI) is an LLM engineering platform for observability, evaluation, and gateway routing. Respan integrates with the AI SDK to provide:
 
@@ -24,7 +28,7 @@ npm install ai @ai-sdk/openai @respan/respan @respan/instrumentation-vercel
 
 ### Configure environment variables
 
-```bash filename=".env"
+```bash title=".env"
 RESPAN_API_KEY="your-respan-api-key"
 ```
 
@@ -32,13 +36,11 @@ Get your API key from [platform.respan.ai](https://platform.respan.ai/platform/a
 
 ### Initialize Respan
 
-<Tabs items={["Next.js", "Serverless / Node"]}>
-
-<Tab>
+#### Next.js
 
 Create `instrumentation.ts` at the root of your Next.js project:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { Respan } from '@respan/respan';
 import { VercelAIInstrumentor } from '@respan/instrumentation-vercel';
 
@@ -53,7 +55,7 @@ export async function register() {
 
 Then mark the SDK packages as server-external in `next.config.ts`:
 
-```ts filename="next.config.ts"
+```ts title="next.config.ts"
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
@@ -63,9 +65,7 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-</Tab>
-
-<Tab>
+#### Serverless / Node
 
 Initialize Respan at the top of your handler or entry point:
 
@@ -79,10 +79,6 @@ const respan = new Respan({
 });
 await respan.initialize();
 ```
-
-</Tab>
-
-</Tabs>
 
 ### Generate text with telemetry enabled
 
@@ -101,7 +97,7 @@ Spans appear in the [Respan traces page](https://platform.respan.ai/platform/tra
 
 ## Gateway routing (optional)
 
-To use Respan as a unified gateway across providers, point any AI SDK provider at `https://api.respan.ai/api` with your `RESPAN_API_KEY`. Provider keys are managed in Respan; only the Respan key is needed at runtime.
+To use Respan as a unified gateway across providers, point your AI SDK provider at the Respan gateway with your `RESPAN_API_KEY`. For the OpenAI provider, use `https://api.respan.ai/api` as the base URL. Provider keys are managed in Respan; only the Respan key is needed at runtime.
 
 ```ts
 import { createOpenAI } from '@ai-sdk/openai';
@@ -126,30 +122,10 @@ The same gateway endpoint accepts Anthropic and Google models when used with the
 - [Respan + Vercel AI SDK documentation](https://www.respan.ai/docs/integrations/vercel-ai-sdk)
 - [TypeScript example projects](https://github.com/respanai/respan-example-projects/tree/main/typescript/tracing/vercel-ai-sdk)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

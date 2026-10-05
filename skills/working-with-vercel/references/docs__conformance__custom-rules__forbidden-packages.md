@@ -12,13 +12,13 @@ related:
 summary: Learn how to set custom rules to disallow packages from being listed as dependencies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-packages.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "797fd13dbef99ddf998a65e6a7f6e0730e059ee8331d76965989e85f722f17ef"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "194394de4edbe65a3db817d3af9e4906dc0f504dadbe560ea419250e1b798a74"
 ---
 
 # forbidden-packages
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The `forbidden-packages` rule type enables you to disallow packages from being listed as dependencies in `package.json`.
 

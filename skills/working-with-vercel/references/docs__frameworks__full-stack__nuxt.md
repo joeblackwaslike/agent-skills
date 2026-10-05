@@ -17,8 +17,8 @@ related:
 summary: Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "40dff26d66b8c9be7c1f30a8bbf27920517ac71ecc9ceeacbfadc100ae9842ba"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "415bd0937b7cdb1900ddbb6ffa7983b77179f818d015923ad528912d793892dc"
 ---
 
 # Nuxt on Vercel
@@ -32,8 +32,10 @@ Nuxt is an open-source framework that streamlines the process of creating modern
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related)
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnuxt&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
@@ -305,9 +307,9 @@ You could then access that data in a page on the frontend with the [`useRequestE
 The following example demonstrates a page fetching data with `useRequestEvent`:
 
 ```tsx filename="example.vue" framework=all
-<script>
+<script setup>
   const event = useRequestEvent();
-  const user = ref(event.context?.user);
+  const user = ref(event?.context?.user);
 </script>
 
 <template>
@@ -321,9 +323,9 @@ The following example demonstrates a page fetching data with `useRequestEvent`:
 ```
 
 ```js filename="example.vue" framework=all
-<script>
+<script setup>
   const event = useRequestEvent();
-  const user = ref(event.context?.user);
+  const user = ref(event?.context?.user);
 </script>
 
 <template>
@@ -610,10 +612,10 @@ The following example demonstrates using Open Graph (OG) image generation with [
 </template>
 ```
 
-```js filename="components/OgImage/BlogPost.vue" framework=all
-<script setup lang="js">
-  withDefaults(defineProps(), {
-    title: 'title',
+```js filename="components/OgImage/Template.vue" framework=all
+<script setup>
+  defineProps({
+    title: { type: String, default: 'title' },
   })
 </script>
 <template>

@@ -1,18 +1,22 @@
 ---
+title: Settings
+description: Learn how to configure the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/settings"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "2c9ac5c8202dc0c88a4674b72ba017af1535afe4b4024403501dd1a7abca6233"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "84d13b03a548840e5c1119c24a4c2259a29046f9c131c40d8c51f4f418193266"
 ---
 
-# Settings
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Large language models (LLMs) typically provide settings to augment their output.
 
 All AI SDK functions support the following common settings in addition to the model, the [prompt](/docs/foundations/prompts), and additional provider-specific settings:
 
-```ts highlight="3-6"
+```ts {3-6}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   maxOutputTokens: 512,
   temperature: 0.3,
   maxRetries: 5,
@@ -21,12 +25,10 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  Some providers do not support all common settings. If you use a setting with a
-  provider that does not support it, a warning will be generated. You can check
-  the `warnings` property in the result object to see if any warnings were
-  generated.
-</Note>
+Some providers do not support all common settings. If you use a setting with a
+provider that does not support it, a warning will be generated. You can check
+the `warnings` property in the result object to see if any warnings were
+generated.
 
 ## Language Model Call Options
 
@@ -45,7 +47,11 @@ For most providers, `0` means almost deterministic results, and higher values me
 
 It is recommended to set either `temperature` or `topP`, but not both.
 
-<Note>In AI SDK 5.0, temperature is no longer set to `0` by default.</Note>
+In AI SDK 5.0, temperature is no longer set to
+
+`0`
+
+by default.
 
 ### `topP`
 
@@ -127,7 +133,7 @@ or to define a timeout using `AbortSignal.timeout`.
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   abortSignal: AbortSignal.timeout(5000), // 5 seconds
 });
@@ -152,7 +158,7 @@ You can specify the timeout either as a number (milliseconds) or as an object wi
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   timeout: 5000, // 5 seconds
 });
@@ -162,7 +168,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   timeout: { totalMs: 5000 }, // 5 seconds
 });
@@ -172,7 +178,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   timeout: { stepMs: 10000 }, // 10 seconds per step
 });
@@ -182,7 +188,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   timeout: {
     totalMs: 60000, // 60 seconds total
@@ -195,7 +201,7 @@ const result = await generateText({
 
 ```ts
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   timeout: { chunkMs: 5000 }, // abort if content stalls for 5 seconds
 });
@@ -205,7 +211,7 @@ const result = streamText({
 
 ```ts
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   timeout: {
     firstChunkMs: 10000, // 10 seconds for first content in each step
@@ -217,7 +223,7 @@ const result = streamText({
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { weather: weatherTool, slowApi: slowApiTool },
   timeout: {
     toolMs: 5000, // 5 seconds default for all tools
@@ -230,7 +236,7 @@ const result = await generateText({
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { weather: weatherTool, slowApi: slowApiTool },
   timeout: {
     toolMs: 5000, // default for all tools
@@ -253,10 +259,9 @@ headers such as `Prompt-Id`.
 
 ```ts
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   headers: {
     'Prompt-Id': 'my-prompt-id',
@@ -264,46 +269,14 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  The `headers` setting is for request-specific headers. You can also set
-  `headers` in the provider configuration. These headers will be sent with every
-  request made by the provider.
-</Note>
+The `headers` setting is for request-specific headers. You can also set
+`headers` in the provider configuration. These headers will be sent with every
+request made by the provider.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

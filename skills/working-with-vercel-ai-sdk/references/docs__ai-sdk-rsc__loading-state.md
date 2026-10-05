@@ -1,16 +1,18 @@
 ---
+title: Handling Loading State
+description: Overview of handling loading state with AI SDK RSC
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/loading-state"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/loading-state.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "471699e5ee505d2d24b61f243d862c1f9dd2ddfcbea3b101351727ddfd008739"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3d436ed5f2c9d5ff132109bb42ac15053e35d0980d1546e1fbdbd28499d62b78"
 ---
 
-# Handling Loading State
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 Given that responses from language models can often take a while to complete, it's crucial to be able to show loading state to users. This provides visual feedback that the system is working on their request and helps maintain a positive user experience.
 
@@ -26,7 +28,7 @@ There are three approaches you can take to handle loading state with the AI SDK 
 
 Let's create a simple Next.js page that will call the `generateResponse` function when the form is submitted. The function will take in the user's prompt (`input`) and then generate a response (`response`). To handle the loading state, use the `loading` state variable. When the form is submitted, set `loading` to `true`, and when the response is received, set it back to `false`. While the response is being streamed, the input field will be disabled.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -80,11 +82,10 @@ export default function Home() {
 
 Now let's implement the `generateResponse` function. Use the `streamText` function to generate a response to the input.
 
-```typescript filename='app/actions.ts'
+```typescript title='app/actions.ts'
 'use server';
 
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 import { createStreamableValue } from '@ai-sdk/rsc';
 
 export async function generateResponse(prompt: string) {
@@ -92,7 +93,7 @@ export async function generateResponse(prompt: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       prompt,
     });
 
@@ -113,11 +114,10 @@ If you are looking to track loading state on a more granular level, you can crea
 
 ### Server
 
-```typescript filename='app/actions.ts' highlight='9,22,25'
+```typescript title='app/actions.ts' {9,22,25}
 'use server';
 
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 import { createStreamableValue } from '@ai-sdk/rsc';
 
 export async function generateResponse(prompt: string) {
@@ -126,7 +126,7 @@ export async function generateResponse(prompt: string) {
 
   (async () => {
     const { textStream } = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       prompt,
     });
 
@@ -144,7 +144,7 @@ export async function generateResponse(prompt: string) {
 
 ### Client
 
-```tsx filename='app/page.tsx' highlight="22,30-34"
+```tsx title='app/page.tsx' {22,34-42}
 'use client';
 
 import { useState } from 'react';
@@ -170,15 +170,24 @@ export default function Home() {
 
           let textContent = '';
 
-          for await (const responseDelta of readStreamableValue(response)) {
-            textContent = `${textContent}${responseDelta}`;
-            setGeneration(textContent);
-          }
-          for await (const loadingDelta of readStreamableValue(loadingState)) {
-            if (loadingDelta) {
-              setLoading(loadingDelta.loading);
-            }
-          }
+          // read both streamable values concurrently
+          await Promise.all([
+            (async () => {
+              for await (const responseDelta of readStreamableValue(response)) {
+                textContent = `${textContent}${responseDelta}`;
+                setGeneration(textContent);
+              }
+            })(),
+            (async () => {
+              for await (const loadingDelta of readStreamableValue(
+                loadingState,
+              )) {
+                if (loadingDelta) {
+                  setLoading(loadingDelta.loading);
+                }
+              }
+            })(),
+          ]);
           setInput('');
           setLoading(false);
         }}
@@ -227,10 +236,8 @@ export async function generateResponse(prompt: string) {
 }
 ```
 
-<Note>
-  Remember to update the file from `.ts` to `.tsx` because you are defining a
-  React component in the `streamUI` function.
-</Note>
+Remember to update the file from `.ts` to `.tsx` because you are defining a
+React component in the `streamUI` function.
 
 ## Client
 
@@ -273,19 +280,10 @@ export default function Home() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,17 +1,26 @@
 ---
+title: Web Search Agent
+description: Learn how to build an agent that has access to web with the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/web-search-agent"
+docs_index: /llms.txt
+tags:
+  - node
+  - tool use
+  - agent
+  - web
 source: "https://ai-sdk.dev/cookbook/node/web-search-agent.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "7c2f1967098efa198979dc873a7a36962d963d3fcabb4924126eb72495b57c12"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "44049558a49eeaef2c9deaf2389aa4c1e0cda1f3aec325f49830d9a652613cc5"
 ---
 
-# Web Search Agent
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 There are two approaches you can take to building a web search agent with the AI SDK:
 
 1. Use a model that has native web-searching capabilities
 2. Use a tool to access the web and return search results.
 
-Both approaches have their advantages and disadvantages. Models with native search capabilities tend to be faster and there is no additional cost to make the search. The disadvantage is that you have less control over what is being searched, and the functionality is limited to models that support it.
+Provider-native search runs on the provider's infrastructure and returns sources alongside the generated response. Available search controls and pricing vary by provider; search can incur additional tool charges.
 
 instead, by using a tool, you can achieve more flexibility and greater control over your search queries. It allows you to customize your search strategy, specify search parameters, and you can use it with any LLM that supports tool calling. This approach will incur additional costs for the search API you use, but gives you complete control over the search experience.
 
@@ -73,19 +82,26 @@ for (const toolResult of toolResults) {
 
 ### Perplexity
 
-Perplexity's Sonar models combines real-time web search with natural language processing. Each response is grounded in current web data and includes detailed citations.
+Perplexity's Agent API offers presets that combine models with native tools such as web search. The `fast` preset can search the web and return citations through the `sources` property.
+
+Install `@ai-sdk/perplexity` and set `PERPLEXITY_API_KEY` in your environment to use the provider directly:
+
+**Packages:** `@ai-sdk/perplexity`
 
 ```ts
+import { perplexity } from '@ai-sdk/perplexity';
 import { generateText } from 'ai';
 
 const { text, sources } = await generateText({
-  model: 'perplexity/sonar-pro',
+  model: perplexity('fast'),
   prompt: 'What are the latest developments in quantum computing?',
 });
 
 console.log(text);
 console.log(sources);
 ```
+
+See the [Perplexity provider documentation](/providers/ai-sdk-providers/perplexity#agent-tools) for native tools, search filters, and Agent API options.
 
 ### Gemini
 
@@ -120,13 +136,11 @@ When using tools for web search, you have two options: use ready-made tools that
 
 Unlike the native web search examples where searching is built into the model, using web search tools requires multiple steps. The language model will make two generations - the first to call the relevant web search tool (extracting search queries from the context), and the second to process the results and generate a response. This multi-step process is handled automatically when you set `stopWhen: isStepCount(n)` to a value greater than 1.
 
-<Note>
-  By using `stopWhen`, you can automatically send tool results back to the
-  language model alongside the original question, enabling the model to respond
-  with information relevant to the user's query based on the search results.
-  This creates a seamless experience where the agent can search the web and
-  incorporate those findings into its response.
-</Note>
+By using `stopWhen`, you can automatically send tool results back to the
+language model alongside the original question, enabling the model to respond
+with information relevant to the user's query based on the search results.
+This creates a seamless experience where the agent can search the web and
+incorporate those findings into its response.
 
 ### Use ready-made tools
 
@@ -134,9 +148,7 @@ If you prefer a ready-to-use web search tool without building one from scratch, 
 
 #### Exa
 
-<Note>
-  Get your API key from the [Exa Dashboard](https://dashboard.exa.ai/api-keys).
-</Note>
+Get your API key from the [Exa Dashboard](https://dashboard.exa.ai/api-keys).
 
 First, install the Exa `webSearch` tool:
 
@@ -148,11 +160,10 @@ Then, you can import and pass it into `generateText`, `streamText`, or your agen
 
 ```ts
 import { generateText, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { webSearch } from '@exalabs/ai-sdk';
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Tell me the latest developments in AI',
   tools: {
     webSearch: webSearch(),
@@ -167,7 +178,11 @@ For more configuration options and customization, see the [Exa AI SDK documentat
 
 #### Parallel Web
 
-<Note>Get your API key from the [Parallel Platform](https://parallel.ai).</Note>
+Get your API key from the
+
+[Parallel Platform](https://parallel.ai)
+
+.
 
 First, install the Parallel Web AI SDK tools:
 
@@ -179,11 +194,10 @@ Then, you can import and pass the tools into `generateText`, `streamText`, or yo
 
 ```ts
 import { generateText, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { searchTool, extractTool } from '@parallel-web/ai-sdk-tools';
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'When was Vercel Ship AI?',
   tools: {
     webSearch: searchTool,
@@ -197,10 +211,8 @@ console.log(text);
 
 #### Perplexity Search
 
-<Note>
-  Get your API key from the [Perplexity API Keys
-  page](https://www.perplexity.ai/account/api/keys).
-</Note>
+Get your API key from the [Perplexity API Keys
+page](https://www.perplexity.ai/account/api/keys).
 
 First, install the Perplexity Search tool:
 
@@ -212,11 +224,10 @@ Then, you can import and pass it into `generateText`, `streamText`, or your agen
 
 ```ts
 import { generateText, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { perplexitySearch } from '@perplexity-ai/ai-sdk';
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt:
     'What are the latest AI developments? Use search to find current information.',
   tools: {
@@ -232,9 +243,7 @@ For more configuration options and customization, see the [Perplexity Search API
 
 #### Tavily
 
-<Note>
-  Get your API key from the [Tavily Dashboard](https://app.tavily.com).
-</Note>
+Get your API key from the [Tavily Dashboard](https://app.tavily.com).
 
 First, install the `tavilySearch` tool:
 
@@ -246,11 +255,10 @@ Then, you can import and pass it into `generateText`, `streamText`, or your agen
 
 ```ts
 import { generateText, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { tavilySearch, tavilyExtract } from '@tavily/ai-sdk';
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'When was the latest update to the AI SDK?',
   tools: {
     webSearch: tavilySearch(),
@@ -266,10 +274,8 @@ For more customization options over your agent's web-access functionality, visit
 
 #### You.com
 
-<Note>
-  Get your API key from the [You.com API Keys
-  page](https://you.com/platform/api-keys).
-</Note>
+Get your API key from the [You.com API Keys
+page](https://you.com/platform/api-keys).
 
 First, install the You.com AI SDK plugin:
 
@@ -281,7 +287,6 @@ Then, you can import and pass the tools into `generateText`, `streamText`, or yo
 
 ```ts
 import { generateText, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import {
   youSearch,
   youResearch,
@@ -289,7 +294,7 @@ import {
 } from '@youdotcom-oss/ai-sdk-plugin';
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Research the latest developments in quantum computing',
   tools: {
     search: youSearch(),
@@ -318,7 +323,6 @@ pnpm install exa-js
 
 ```ts
 import { generateText, tool, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 import Exa from 'exa-js';
 
@@ -344,7 +348,7 @@ export const webSearch = tool({
 });
 
 const { text } = await generateText({
-  model: __MODEL__, // can be any model that supports tools
+  model: "anthropic/claude-sonnet-5.5", // can be any model that supports tools
   prompt: 'What happened in San Francisco last week?',
   tools: {
     webSearch,
@@ -363,7 +367,6 @@ pnpm install @mendable/firecrawl-js
 
 ```ts
 import { generateText, tool, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 import FirecrawlApp from '@mendable/firecrawl-js';
 import 'dotenv/config';
@@ -396,7 +399,7 @@ export const webSearch = tool({
 
 const main = async () => {
   const { text } = await generateText({
-    model: __MODEL__, // can be any model that supports tools
+    model: "anthropic/claude-sonnet-5.5", // can be any model that supports tools
     prompt: 'Get the latest blog post from vercel.com/blog',
     tools: {
       webSearch,
@@ -409,38 +412,10 @@ const main = async () => {
 main();
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

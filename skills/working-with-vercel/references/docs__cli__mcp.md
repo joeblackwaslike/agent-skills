@@ -12,8 +12,8 @@ related:
 summary: Set up Model Context Protocol (MCP) usage with a Vercel project using the vercel mcp CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/mcp.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6794b378cae5bea7df2dc2eb11bdeb2acf116bfce234585094c8f2fea84b6830"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c7274c10b64071828d832dfbbb548bd871710c7967a52b90bda0d59cbdc04779"
 ---
 
 # vercel mcp
@@ -28,10 +28,10 @@ The `vercel mcp` command helps you set up MCP clients (Claude Code, Claude.ai an
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related)
 - [Model Context Protocol](https://vercel.com/docs/mcp?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Learn more about MCP and how you can use it on Vercel.
+- [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Vercel MCP tools for documentation and cli.
+- [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Use use_vercel_cli with Vercel MCP.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
+- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
 Full cross-link map for this page: [/docs/cli/mcp.graph.md](/docs/cli/mcp.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmcp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

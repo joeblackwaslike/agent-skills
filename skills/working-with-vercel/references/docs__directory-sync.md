@@ -14,13 +14,13 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "71a5f8fa955e1c9170d62c705ceb408ffbbffefe26ac6e408fe9d26c0a0c33a5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6de3404816fd3285a0f7fa90d93a4adeaf465b9ed729da04c4a6e4e13015ed41"
 ---
 
 # Directory Sync
 
-> **🔒 Permissions Required**: Directory Sync
+> **Availability**: Directory Sync is available on Enterprise plans
 
 Directory Sync helps teams manage their organization membership from a third-party identity provider like Google Directory or Okta. Directory Sync is only available for **Enterprise Teams** and can only be configured by [**Team Owners**](/docs/rbac/access-roles#owner-role).
 
@@ -34,8 +34,8 @@ Directory Sync helps teams manage their organization membership from a third-par
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related)
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
 - [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
 - [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=graph)
@@ -60,11 +60,11 @@ To configure directory sync for your team:
 3. In the **Authentication and User Provisioning** section, locate the **Directory Sync** row and select **Configure**. This opens a dialog to guide you through configuring Directory Sync for your Team with your Directory Provider.
 4. Once you have completed the configuration walkthrough, configure how Directory Groups should map to Vercel Team roles:
 
-![Image](`/docs-assets/static/docs/concepts/teams/dsync-roles.png`)
+![Setting the Okta Admins group as Vercel owners and the Engineers group as Vercel Members.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/dsync-roles.png)
 
 5. Finally, an overview of all synced members is shown. Click **Confirm and Sync** to complete the syncing:
 
-![Image](`/docs-assets/static/docs/concepts/teams/dsync-confirmation.png`)
+![An overview of Team owners and Members that will be added.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/dsync-confirmation.png)
 
 6. Once confirmed, Directory Sync will be successfully configured for your Vercel Team.
 

@@ -1,10 +1,14 @@
 ---
+title: generateText
+description: API Reference for generateText.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8cc93a3458a54223960283e79428df9a5aab72ea35686b23f01d0433aa55f1b0"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "62ee36bc1415a9ef7dc4bd1b716a2f4686a569b21dfc361b0539ab4b4d868ba4"
 ---
 
-# `generateText()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Generates text and calls tools for a given prompt using a language model.
 
@@ -12,10 +16,9 @@ It is ideal for non-interactive use cases such as automation tasks where you nee
 
 ```ts
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 
@@ -30,3205 +33,545 @@ To see `generateText` in action, check out [these examples](#examples).
 
 ## Import
 
-<Snippet text={`import { generateText } from "ai"`} prompt={false} />
+```
+import { generateText } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'LanguageModel',
-      description: "The language model to use. Example: openai('gpt-6-astra')",
-    },
-    {
-      name: 'instructions',
-      type: 'Instructions',
-      description:
-        'Instructions to use that specify the behavior of the model.',
-    },
-    {
-      name: 'prompt',
-      type: 'string | Array<SystemModelMessage | UserModelMessage | AssistantModelMessage | ToolModelMessage>',
-      description: 'The input prompt to generate the text from.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<SystemModelMessage | UserModelMessage | AssistantModelMessage | ToolModelMessage>',
-      description:
-        'A list of messages that represent a conversation. Automatically converts UI messages from the useChat hook.',
-      properties: [
-        {
-          type: 'SystemModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'system'",
-              description: 'The role for the system message.',
-            },
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The content of the message.',
-            },
-          ],
-        },
-        {
-          type: 'UserModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'user'",
-              description: 'The role for the user message.',
-            },
-            {
-              name: 'content',
-              type: 'string | Array<TextPart | ImagePart | FilePart>',
-              description: 'The content of the message.',
-              properties: [
-                {
-                  type: 'TextPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'text'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The text content of the message part.',
-                    },
-                  ],
-                },
-                {
-                  type: 'ImagePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'image'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'image',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The image content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description:
-                        'The IANA media type of the image. Optional.',
-                      isOptional: true,
-                    },
-                  ],
-                },
-                {
-                  type: 'FilePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'file'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'data',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The file content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'AssistantModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'assistant'",
-              description: 'The role for the assistant message.',
-            },
-            {
-              name: 'content',
-              type: 'string | Array<TextPart | FilePart | ReasoningPart | ReasoningFilePart | ToolCallPart>',
-              description: 'The content of the message.',
-              properties: [
-                {
-                  type: 'TextPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'text'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The text content of the message part.',
-                    },
-                  ],
-                },
-                {
-                  type: 'ReasoningPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'reasoning'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The reasoning text.',
-                    },
-                  ],
-                },
-                {
-                  type: 'ReasoningFilePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'reasoning-file'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'data',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The file data. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                  ],
-                },
-                {
-                  type: 'FilePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'file'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'data',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The file content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                    {
-                      name: 'filename',
-                      type: 'string',
-                      description: 'The name of the file.',
-                      isOptional: true,
-                    },
-                  ],
-                },
-                {
-                  type: 'ToolCallPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'tool-call'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'toolCallId',
-                      type: 'string',
-                      description: 'The id of the tool call.',
-                    },
-                    {
-                      name: 'toolName',
-                      type: 'string',
-                      description:
-                        'The name of the tool, which typically would be the name of the function.',
-                    },
-                    {
-                      name: 'input',
-                      type: 'object based on zod schema',
-                      description:
-                        'Input (parameters) generated by the model to be used by the tool.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'ToolModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'tool'",
-              description: 'The role for the assistant message.',
-            },
-            {
-              name: 'content',
-              type: 'Array<ToolResultPart>',
-              description: 'The content of the message.',
-              properties: [
-                {
-                  type: 'ToolResultPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'tool-result'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'toolCallId',
-                      type: 'string',
-                      description:
-                        'The id of the tool call the result corresponds to.',
-                    },
-                    {
-                      name: 'toolName',
-                      type: 'string',
-                      description:
-                        'The name of the tool the result corresponds to.',
-                    },
-                    {
-                      name: 'output',
-                      type: 'unknown',
-                      description:
-                        'The result returned by the tool after execution.',
-                    },
-                    {
-                      name: 'isError',
-                      type: 'boolean',
-                      isOptional: true,
-                      description:
-                        'Whether the result is an error or an error message.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'allowSystemInMessages',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Whether system messages are allowed in the `prompt` or `messages` fields. Defaults to false. System messages in the `instructions` option are always allowed. Enabling this for user-controlled messages can create a prompt injection risk.',
-    },
-    {
-      name: 'tools',
-      type: 'ToolSet',
-      description:
-        'Tools that are accessible to and can be called by the model. The model needs to support calling tools.',
-      properties: [
-        {
-          type: 'Tool',
-          parameters: [
-            {
-              name: 'description',
-              isOptional: true,
-              type: 'string | ((options: { context: CONTEXT; experimental_sandbox?: Experimental_SandboxSession }) => string)',
-              description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.',
-            },
-            {
-              name: 'inputSchema',
-              type: 'Zod Schema | JSON Schema',
-              description:
-                'The schema of the input that the tool expects. The language model will use this to generate the input. It is also used to validate the output of the language model. Use descriptions to make the input understandable for the language model. You can either pass in a Zod schema or a JSON schema (using the `jsonSchema` function).',
-            },
-            {
-              name: 'execute',
-              isOptional: true,
-              type: 'async (parameters: T, options: ToolExecutionOptions) => RESULT',
-              description:
-                'An async function that is called with the arguments from the tool call and produces a result. If not provided, the tool will not be executed automatically.',
-              properties: [
-                {
-                  type: 'ToolExecutionOptions',
-                  parameters: [
-                    {
-                      name: 'toolCallId',
-                      type: 'string',
-                      description:
-                        'The ID of the tool call. You can use it e.g. when sending tool-call related information with stream data.',
-                    },
-                    {
-                      name: 'messages',
-                      type: 'ModelMessage[]',
-                      description:
-                        'Messages that were sent to the language model to initiate the response that contained the tool call. The messages do not include the system prompt nor the assistant response that contained the tool call.',
-                    },
-                    {
-                      name: 'abortSignal',
-                      type: 'AbortSignal',
-                      description:
-                        'An optional abort signal that indicates that the overall operation should be aborted.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'toolChoice',
-      isOptional: true,
-      type: '"auto" | "none" | "required" | { "type": "tool", "toolName": string }',
-      description:
-        'The tool choice setting. It specifies how tools are selected for execution. The default is "auto". "none" disables tool execution. "required" requires tools to be executed. { "type": "tool", "toolName": string } specifies a specific tool to execute.',
-    },
-    {
-      name: 'maxOutputTokens',
-      type: 'number',
-      isOptional: true,
-      description: 'Maximum number of tokens to generate.',
-    },
-    {
-      name: 'temperature',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Temperature setting. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either `temperature` or `topP`, but not both.',
-    },
-    {
-      name: 'topP',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Nucleus sampling. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either `temperature` or `topP`, but not both.',
-    },
-    {
-      name: 'topK',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Only sample from the top K options for each subsequent token. Used to remove "long tail" low probability responses. Recommended for advanced use cases only. You usually only need to use temperature.',
-    },
-    {
-      name: 'presencePenalty',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Presence penalty setting. It affects the likelihood of the model to repeat information that is already in the prompt. The value is passed through to the provider. The range depends on the provider and model.',
-    },
-    {
-      name: 'frequencyPenalty',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Frequency penalty setting. It affects the likelihood of the model to repeatedly use the same words or phrases. The value is passed through to the provider. The range depends on the provider and model.',
-    },
-    {
-      name: 'stopSequences',
-      type: 'string[]',
-      isOptional: true,
-      description:
-        'Sequences that will stop the generation of the text. If the model generates any of these sequences, it will stop generating further text.',
-    },
-    {
-      name: 'seed',
-      type: 'number',
-      isOptional: true,
-      description:
-        'The seed (integer) to use for random sampling. If set and supported by the model, calls will generate deterministic results.',
-    },
-    {
-      name: 'reasoning',
-      type: "'provider-default' | 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'",
-      isOptional: true,
-      description:
-        "Controls how much reasoning the model performs before generating a response. When omitted, the provider's default behavior is used. `'provider-default'` explicitly requests the provider's default. Providers that do not support reasoning will emit a warning. If reasoning-related `providerOptions` are also set, they take precedence and this parameter is ignored. See the [reasoning guide](/docs/ai-sdk-core/reasoning) for provider-specific mapping details.",
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Maximum number of retries. Set to 0 to disable retries. Default: 2.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isOptional: true,
-      description:
-        'An optional abort signal that can be used to cancel the call.',
-    },
-    {
-      name: 'timeout',
-      type: 'number | { totalMs?: number; stepMs?: number; toolMs?: number; tools?: { [toolName]Ms?: number } }',
-      isOptional: true,
-      description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each individual step (LLM call). toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern {toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string | undefined>',
-      isOptional: true,
-      description:
-        'Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.',
-    },
-    {
-      name: 'telemetry',
-      type: 'TelemetryOptions',
-      isOptional: true,
-      description: 'Telemetry configuration.',
-      properties: [
-        {
-          type: 'TelemetryOptions',
-          parameters: [
-            {
-              name: 'isEnabled',
-              type: 'boolean',
-              isOptional: true,
-              description:
-                'Enable or disable telemetry. Enabled by default. Set to `false` to opt out.',
-            },
-            {
-              name: 'recordInputs',
-              type: 'boolean',
-              isOptional: true,
-              description:
-                'Enable or disable input recording. Enabled by default.',
-            },
-            {
-              name: 'recordOutputs',
-              type: 'boolean',
-              isOptional: true,
-              description:
-                'Enable or disable output recording. Enabled by default.',
-            },
-            {
-              name: 'functionId',
-              type: 'string',
-              isOptional: true,
-              description:
-                'Identifier for this function. Used to group telemetry data by function.',
-            },
-            {
-              name: 'includeRuntimeContext',
-              type: '{ [KEY in keyof CONTEXT]?: boolean }',
-              isOptional: true,
-              description:
-                'Top-level runtime context properties that should be included in telemetry. Runtime context properties are excluded unless they are explicitly set to `true`. Lifecycle callbacks and returned results still receive the full `runtimeContext`.',
-            },
-            {
-              name: 'includeToolsContext',
-              type: '{ [TOOL_NAME in keyof InferToolSetContext<TOOLS>]?: { [KEY in keyof InferToolSetContext<TOOLS>[TOOL_NAME]]?: boolean } }',
-              isOptional: true,
-              description:
-                'Top-level tool context properties that should be included in telemetry, configured per tool. Tool context properties are excluded unless they are explicitly set to `true`. Lifecycle callbacks and returned results still receive the full `toolsContext`.',
-            },
-            {
-              name: 'integrations',
-              isOptional: true,
-              type: 'Telemetry | Telemetry[]',
-              description:
-                'Per-call telemetry integrations that receive lifecycle events. When provided, these replace any globally registered integrations for this call.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'providerOptions',
-      type: 'Record<string,JSONObject> | undefined',
-      isOptional: true,
-      description:
-        'Provider-specific options. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.',
-    },
-    {
-      name: 'activeTools',
-      type: 'ActiveTools<TOOLS>',
-      isOptional: true,
-      description:
-        'Limits the tools that are available for the model to call without changing the tool call and result types in the result. All tools are active by default. Tool names are restricted to the string keys of the tool set.',
-    },
-    {
-      name: 'toolOrder',
-      type: 'ToolOrder<TOOLS>',
-      isOptional: true,
-      description:
-        'Controls the order in which tools are sent to the provider. The list can be partial. Tools not listed in `toolOrder` are sent after the listed tools, sorted alphabetically. Tool names are restricted to the string keys of the tool set.',
-    },
-    {
-      name: 'toolApproval',
-      type: 'ToolApprovalConfiguration<TOOLS, RUNTIME_CONTEXT>',
-      isOptional: true,
-      description:
-        "Approval configuration for this call. Pass a `GenericToolApprovalFunction` to handle all tool calls in one callback with `toolCall`, `tools`, `toolsContext`, `messages`, and `runtimeContext`, or pass a per-tool object where each key can be a status (`'not-applicable'`, `'approved'`, `'denied'`, or `'user-approval'`), an object form such as `{ type: 'denied', reason: 'blocked by policy' }`, or a `SingleToolApprovalFunction` that receives the tool input and options `toolCallId`, `messages`, `toolContext`, and `runtimeContext` (same shape as tool execution options without `abortSignal`, with `context` renamed to `toolContext`). The `RUNTIME_CONTEXT` type parameter matches the call's `runtimeContext`. A `GenericToolApprovalFunction` or `SingleToolApprovalFunction` may return `undefined` for the same effect as `'not-applicable'`. `'not-applicable'` is the default execution path and runs the tool without approval metadata. Use `'approved'`, `'denied'`, or their object forms when you want explicit automatic approval request/response parts in the output. Object statuses can include a `reason`: automatic approvals and denials forward it to the approval response, while manual user approvals forward it to the approval request for the human approver. This setting takes precedence over a tool's `needsApproval` default.",
-    },
-    {
-      name: 'experimental_toolCallers',
-      type: 'Experimental_ToolCallers<TOOLS>',
-      isOptional: true,
-      description:
-        "Configures which caller tools may invoke each tool. The callback receives typed references for caller-capable tools in the `tools` set and returns an object keyed by callee tool name. Include `'direct'` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each generation step. Provider caller references are translated to provider-native allowed-caller options. Tools without an entry keep their existing direct tool-calling behavior.",
-    },
-    {
-      name: 'experimental_refineToolInput',
-      type: 'ToolInputRefinement<TOOLS>',
-      isOptional: true,
-      description:
-        'Optional mapping of tool names to functions that refine parsed tool inputs. Each function receives the typed input for its tool and must return the same input type shape. The refined input is used for tool execution, output parts, lifecycle callbacks, and telemetry.',
-    },
-    {
-      name: 'stopWhen',
-      type: 'StopCondition<TOOLS> | Array<StopCondition<TOOLS>>',
-      isOptional: true,
-      description:
-        'Condition for stopping the generation when there are tool results in the last step. When the condition is an array, any of the conditions can be met to stop the generation. Default: isStepCount(1).',
-    },
-    {
-      name: 'prepareStep',
-      type: '(options: PrepareStepOptions) => PrepareStepResult<TOOLS> | Promise<PrepareStepResult<TOOLS>>',
-      isOptional: true,
-      description:
-        'Optional function that you can use to provide different settings for a step. You can modify the model, model call settings, tool choices, active tools, instructions, input messages, and experimental sandbox for each step.',
-      properties: [
-        {
-          type: 'PrepareStepFunction<TOOLS>',
-          parameters: [
-            {
-              name: 'options',
-              type: 'object',
-              description: 'The options for the step.',
-              properties: [
-                {
-                  type: 'PrepareStepOptions',
-                  parameters: [
-                    {
-                      name: 'steps',
-                      type: 'Array<StepResult<TOOLS>>',
-                      description: 'The steps that have been executed so far.',
-                    },
-                    {
-                      name: 'stepNumber',
-                      type: 'number',
-                      description:
-                        'The number of the step that is being executed.',
-                    },
-                    {
-                      name: 'model',
-                      type: 'LanguageModel',
-                      description: 'The model that is being used.',
-                    },
-                    {
-                      name: 'instructions',
-                      type: 'Instructions | undefined',
-                      description:
-                        'The instructions that will be sent to the model for the current step. If prepareStep returns an instructions override, those instructions carry forward to later steps.',
-                    },
-                    {
-                      name: 'initialInstructions',
-                      type: 'Instructions | undefined',
-                      description:
-                        'The initial instructions that were passed into generateText or streamText.',
-                    },
-                    {
-                      name: 'messages',
-                      type: 'Array<ModelMessage>',
-                      description:
-                        'The messages that will be sent to the model for the current step. If prepareStep returns a messages override, those messages carry forward to later steps.',
-                    },
-                    {
-                      name: 'runtimeContext',
-                      type: 'CONTEXT',
-                      isOptional: true,
-                      description:
-                        'The shared runtime context passed via the `runtimeContext` setting.',
-                    },
-                    {
-                      name: 'toolsContext',
-                      type: 'InferToolSetContext<TOOLS>',
-                      description:
-                        'The per-tool context map passed via the `toolsContext` setting.',
-                    },
-                    {
-                      name: 'experimental_sandbox',
-                      type: 'Experimental_SandboxSession | undefined',
-                      isOptional: true,
-                      description:
-                        'The experimental sandbox environment passed via the `experimental_sandbox` setting.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'PrepareStepResult<TOOLS>',
-          description:
-            'Return value that can modify settings for the current step.',
-          parameters: [
-            {
-              name: 'model',
-              type: 'LanguageModel',
-              isOptional: true,
-              description:
-                'Optionally override which LanguageModel instance is used for this step.',
-            },
-            {
-              name: 'maxOutputTokens',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Maximum number of tokens to generate for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'temperature',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Temperature for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'topP',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Nucleus sampling value for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'topK',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Top-K sampling value for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'presencePenalty',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Presence penalty for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'frequencyPenalty',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Frequency penalty for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'stopSequences',
-              type: 'string[]',
-              isOptional: true,
-              description:
-                'Stop sequences for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'seed',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Random sampling seed for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'reasoning',
-              type: 'LanguageModelV4CallOptions["reasoning"]',
-              isOptional: true,
-              description:
-                'Reasoning effort for this step. Uses the top-level value when omitted or undefined.',
-            },
-            {
-              name: 'toolChoice',
-              type: 'ToolChoice<TOOLS>',
-              isOptional: true,
-              description:
-                'Optionally set which tool the model must call, or provide tool call configuration for this step.',
-            },
-            {
-              name: 'activeTools',
-              type: 'ActiveTools<TOOLS>',
-              isOptional: true,
-              description:
-                'If provided, only these tools are enabled/available for this step.',
-            },
-            {
-              name: 'toolOrder',
-              type: 'ToolOrder<TOOLS>',
-              isOptional: true,
-              description:
-                'If provided, overrides the order in which tools are sent to the provider for this step. Tools not listed are appended alphabetically.',
-            },
-            {
-              name: 'instructions',
-              type: 'Instructions',
-              isOptional: true,
-              description:
-                'Optionally override the instructions sent to the model for this step. The override carries forward to later steps until prepareStep returns another instructions or system override.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              isOptional: true,
-              description:
-                'Optionally override the full set of messages sent to the model for this step.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              isOptional: true,
-              description:
-                'Shared runtime context. Changing it will affect this step and all subsequent steps.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Per-tool context map. Changing it will affect tool-specific context in this step and all subsequent steps.',
-            },
-            {
-              name: 'experimental_sandbox',
-              type: 'Experimental_SandboxSession',
-              isOptional: true,
-              description:
-                'Experimental sandbox environment for this step. Changing it will affect tool execution in this step only.',
-            },
-            {
-              name: 'providerOptions',
-              type: 'ProviderOptions',
-              isOptional: true,
-              description:
-                'Additional provider-specific options for this step. Can be used to pass provider-specific configuration such as container IDs for Anthropic code execution.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'runtimeContext',
-      type: 'CONTEXT',
-      isOptional: true,
-      description:
-        'User-defined shared runtime context object passed to `prepareStep` and lifecycle callbacks.',
-    },
-    {
-      name: 'toolsContext',
-      type: 'InferToolSetContext<TOOLS>',
-      description:
-        'Per-tool context map keyed by tool name. Required when at least one tool defines `contextSchema`; not accepted when no tools need context.',
-    },
-    {
-      name: 'experimental_sandbox',
-      type: 'Experimental_SandboxSession',
-      isOptional: true,
-      description:
-        'Experimental sandbox environment that is passed through to `prepareStep`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.',
-    },
-    {
-      name: 'experimental_download',
-      type: '(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>',
-      isOptional: true,
-      description:
-        'Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.',
-    },
-    {
-      name: 'include',
-      type: '{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean }',
-      isOptional: true,
-      description:
-        'Controls inclusion of request bodies, request messages, and response bodies in step results. By default, request bodies, request messages, and response bodies are excluded to reduce memory usage. Set requestBody, requestMessages, and/or responseBody to true when you need access to the data.',
-      properties: [
-        {
-          type: 'Object',
-          parameters: [
-            {
-              name: 'requestBody',
-              type: 'boolean',
-              isOptional: true,
-              description:
-                'Whether to include the request body in step results. The request body can be large when sending images or files. Default: false.',
-            },
-            {
-              name: 'requestMessages',
-              type: 'boolean',
-              isOptional: true,
-              description:
-                'Whether to include the request messages in step results. The request messages can be large when sending images or files. Default: false.',
-            },
-            {
-              name: 'responseBody',
-              type: 'boolean',
-              isOptional: true,
-              description:
-                'Whether to include the response body in step results. Default: false.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'repairToolCall',
-      type: '(options: ToolCallRepairOptions) => Promise<LanguageModelV4ToolCall | null>',
-      isOptional: true,
-      description:
-        'A function that attempts to repair a tool call that failed to parse. Return either a repaired tool call or null if the tool call cannot be repaired.',
-      properties: [
-        {
-          type: 'ToolCallRepairOptions',
-          parameters: [
-            {
-              name: 'instructions',
-              type: 'Instructions | undefined',
-              description: 'The instructions provided to the model.',
-            },
-            {
-              name: 'system',
-              type: 'Instructions | undefined',
-              isOptional: true,
-              description:
-                'The instructions provided to the model. Deprecated: use `instructions` instead.',
-            },
-            {
-              name: 'messages',
-              type: 'ModelMessage[]',
-              description: 'The messages in the current generation step.',
-            },
-            {
-              name: 'toolCall',
-              type: 'LanguageModelV4ToolCall',
-              description: 'The tool call that failed to parse.',
-            },
-            {
-              name: 'tools',
-              type: 'TOOLS',
-              description: 'The tools that are available.',
-            },
-            {
-              name: 'inputSchema',
-              type: '(options: { toolName: string }) => JSONSchema7',
-              description:
-                'A function that returns the JSON Schema for a tool.',
-            },
-            {
-              name: 'error',
-              type: 'NoSuchToolError | InvalidToolInputError',
-              description:
-                'The error that occurred while parsing the tool call.',
-            },
-            {
-              name: 'abortSignal',
-              type: 'AbortSignal',
-              isOptional: true,
-              description:
-                'An optional signal for cancelling the tool call repair.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'output',
-      type: 'Output',
-      isOptional: true,
-      description:
-        'Specification for parsing structured outputs from the LLM response.',
-      properties: [
-        {
-          type: 'Output',
-          parameters: [
-            {
-              name: 'Output.text()',
-              type: 'Output',
-              description:
-                'Output specification for text generation (default).',
-            },
-            {
-              name: 'Output.object()',
-              type: 'Output',
-              description:
-                'Output specification for typed object generation using schemas. When the model generates a text response, it will return an object that matches the schema.',
-              properties: [
-                {
-                  type: 'Options',
-                  parameters: [
-                    {
-                      name: 'schema',
-                      type: 'Schema<OBJECT>',
-                      description: 'The schema of the object to generate.',
-                    },
-                    {
-                      name: 'name',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional name of the output. Used by some providers for additional LLM guidance.',
-                    },
-                    {
-                      name: 'description',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional description of the output. Used by some providers for additional LLM guidance.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'Output.array()',
-              type: 'Output',
-              description:
-                'Output specification for array generation. When the model generates a text response, it will return an array of elements.',
-              properties: [
-                {
-                  type: 'Options',
-                  parameters: [
-                    {
-                      name: 'element',
-                      type: 'Schema<ELEMENT>',
-                      description:
-                        'The schema of the array elements to generate.',
-                    },
-                    {
-                      name: 'minItems',
-                      type: 'number',
-                      isOptional: true,
-                      description:
-                        'Optional minimum number of array elements. Must be a non-negative integer.',
-                    },
-                    {
-                      name: 'maxItems',
-                      type: 'number',
-                      isOptional: true,
-                      description:
-                        'Optional maximum number of array elements. Must be a non-negative integer and greater than or equal to minItems.',
-                    },
-                    {
-                      name: 'name',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional name of the output. Used by some providers for additional LLM guidance.',
-                    },
-                    {
-                      name: 'description',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional description of the output. Used by some providers for additional LLM guidance.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'Output.choice()',
-              type: 'Output',
-              description:
-                'Output specification for choice generation. When the model generates a text response, it will return a one of the choice options.',
-              properties: [
-                {
-                  type: 'Options',
-                  parameters: [
-                    {
-                      name: 'options',
-                      type: 'Array<string>',
-                      description: 'The available choices.',
-                    },
-                    {
-                      name: 'name',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional name of the output. Used by some providers for additional LLM guidance.',
-                    },
-                    {
-                      name: 'description',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional description of the output. Used by some providers for additional LLM guidance.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'Output.json()',
-              type: 'Output',
-              description:
-                'Output specification for unstructured JSON generation. When the model generates a text response, it will return a JSON object.',
-              properties: [
-                {
-                  type: 'Options',
-                  parameters: [
-                    {
-                      name: 'name',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional name of the output. Used by some providers for additional LLM guidance.',
-                    },
-                    {
-                      name: 'description',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Optional description of the output. Used by some providers for additional LLM guidance.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onStart',
-      type: '(event: GenerateTextStartEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Callback that is called when the generateText operation begins, before any LLM calls are made. Errors thrown in this callback are silently caught and do not break the generation flow.',
-      properties: [
-        {
-          type: 'GenerateTextStartEvent',
-          parameters: [
-            {
-              name: 'provider',
-              type: 'string',
-              description:
-                'The provider identifier (e.g., "openai", "anthropic").',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The specific model identifier (e.g., "gpt-6-astra").',
-            },
-            {
-              name: 'instructions',
-              type: 'Instructions | undefined',
-              description: 'The instructions provided to the model.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description: 'The messages for this generation.',
-            },
-            {
-              name: 'tools',
-              type: 'TOOLS | undefined',
-              description: 'The tools available for this generation.',
-            },
-            {
-              name: 'toolChoice',
-              type: 'ToolChoice<TOOLS> | undefined',
-              description: 'The tool choice strategy for this generation.',
-            },
-            {
-              name: 'activeTools',
-              type: 'ActiveTools<TOOLS>',
-              description:
-                'Limits which tools are available for the model to call.',
-            },
-            {
-              name: 'toolOrder',
-              type: 'ToolOrder<TOOLS>',
-              description:
-                'Controls the order in which tools are sent to the provider.',
-            },
-            {
-              name: 'maxOutputTokens',
-              type: 'number | undefined',
-              description: 'Maximum number of tokens to generate.',
-            },
-            {
-              name: 'temperature',
-              type: 'number | undefined',
-              description: 'Sampling temperature for generation.',
-            },
-            {
-              name: 'topP',
-              type: 'number | undefined',
-              description: 'Top-p (nucleus) sampling parameter.',
-            },
-            {
-              name: 'topK',
-              type: 'number | undefined',
-              description: 'Top-k sampling parameter.',
-            },
-            {
-              name: 'presencePenalty',
-              type: 'number | undefined',
-              description: 'Presence penalty for generation.',
-            },
-            {
-              name: 'frequencyPenalty',
-              type: 'number | undefined',
-              description: 'Frequency penalty for generation.',
-            },
-            {
-              name: 'stopSequences',
-              type: 'string[] | undefined',
-              description: 'Sequences that will stop generation.',
-            },
-            {
-              name: 'seed',
-              type: 'number | undefined',
-              description: 'Random seed for reproducible generation.',
-            },
-            {
-              name: 'maxRetries',
-              type: 'number',
-              description: 'Maximum number of retries for failed requests.',
-            },
-            {
-              name: 'timeout',
-              type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number } | undefined',
-              description:
-                'Timeout configuration for the generation. Can be a number (milliseconds) or an object with totalMs, stepMs, chunkMs.',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string | undefined> | undefined',
-              description: 'Additional HTTP headers sent with the request.',
-            },
-            {
-              name: 'providerOptions',
-              type: 'ProviderOptions | undefined',
-              description: 'Additional provider-specific options.',
-            },
-            {
-              name: 'output',
-              type: 'OUTPUT | undefined',
-              description:
-                'The output specification for structured outputs, if configured.',
-            },
-            {
-              name: 'abortSignal',
-              type: 'AbortSignal | undefined',
-              description: 'Abort signal for cancelling the operation.',
-            },
-            {
-              name: 'include',
-              type: '{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined',
-              description:
-                'Settings for controlling what data is included in step results.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'User-defined shared runtime context object that flows through the generation lifecycle.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Per-tool context map passed via `toolsContext`, keyed by tool name.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onStepStart',
-      type: '(event: GenerateTextStepStartEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Callback that is called when a step (LLM call) begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.',
-      properties: [
-        {
-          type: 'GenerateTextStepStartEvent',
-          parameters: [
-            {
-              name: 'stepNumber',
-              type: 'number',
-              description: 'Zero-based index of the current step.',
-            },
-            {
-              name: 'provider',
-              type: 'string',
-              description:
-                'The provider identifier (e.g., "openai", "anthropic").',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The specific model identifier (e.g., "gpt-6-astra").',
-            },
-            {
-              name: 'instructions',
-              type: 'Instructions | undefined',
-              description:
-                'The instructions provided to the model for this step.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description:
-                'The messages that will be sent to the model for this step. Uses the user-facing ModelMessage format. May be overridden by prepareStep. If prepareStep returns a messages override, those messages carry forward to later steps.',
-            },
-            {
-              name: 'tools',
-              type: 'TOOLS | undefined',
-              description: 'The tools available for this generation.',
-            },
-            {
-              name: 'toolChoice',
-              type: 'LanguageModelV4ToolChoice | undefined',
-              description: 'The tool choice configuration for this step.',
-            },
-            {
-              name: 'activeTools',
-              type: 'ActiveTools<TOOLS>',
-              description: 'Limits which tools are available for this step.',
-            },
-            {
-              name: 'toolOrder',
-              type: 'ToolOrder<TOOLS>',
-              description:
-                'Controls the order in which tools are sent to the provider for this step.',
-            },
-            {
-              name: 'steps',
-              type: 'ReadonlyArray<StepResult<TOOLS>>',
-              description:
-                'Array of results from previous steps (empty for first step).',
-            },
-            {
-              name: 'providerOptions',
-              type: 'ProviderOptions | undefined',
-              description:
-                'Additional provider-specific options for this step.',
-            },
-            {
-              name: 'timeout',
-              type: 'number | { totalMs?: number; stepMs?: number; chunkMs?: number } | undefined',
-              description:
-                'Timeout configuration for the generation. Can be a number (milliseconds) or an object with totalMs, stepMs, chunkMs.',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string | undefined> | undefined',
-              description: 'Additional HTTP headers sent with the request.',
-            },
-            {
-              name: 'stopWhen',
-              type: 'StopCondition<TOOLS> | Array<StopCondition<TOOLS>> | undefined',
-              description:
-                'Condition(s) for stopping the generation. When the condition is an array, any of the conditions can be met to stop.',
-            },
-            {
-              name: 'output',
-              type: 'OUTPUT | undefined',
-              description:
-                'The output specification for structured outputs, if configured.',
-            },
-            {
-              name: 'abortSignal',
-              type: 'AbortSignal | undefined',
-              description: 'Abort signal for cancelling the operation.',
-            },
-            {
-              name: 'include',
-              type: '{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined',
-              description:
-                'Settings for controlling what data is included in step results.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'User-defined shared runtime context object. May be updated from prepareStep between steps.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Per-tool context map. May be updated from prepareStep between steps.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onLanguageModelCallStart',
-      type: '(event: LanguageModelCallStartEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Callback that is called immediately before the provider model call begins. Unlike `onStepStart`, this callback is scoped to model work only and excludes any later client-side tool execution. Errors thrown in this callback are silently caught and do not break the generation flow.',
-      properties: [
-        {
-          type: 'LanguageModelCallStartEvent',
-          parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description: 'Unique identifier for the generation call.',
-            },
-            {
-              name: 'provider',
-              type: 'string',
-              description: 'The provider identifier for this model call.',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description: 'The specific model identifier for this model call.',
-            },
-            {
-              name: 'instructions',
-              type: 'Instructions | undefined',
-              description: 'The instructions that will be sent to the model.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description: 'The messages that will be sent to the model.',
-            },
-            {
-              name: 'tools',
-              type: 'ReadonlyArray<Record<string, unknown>> | undefined',
-              description:
-                'Prepared tool definitions for the model call, if any.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onLanguageModelCallEnd',
-      type: '(event: LanguageModelCallEndEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Callback that is called after the model response has been normalized and parsed, but before any client-side tool execution begins. Errors thrown in this callback are silently caught and do not break the generation flow.',
-      properties: [
-        {
-          type: 'LanguageModelCallEndEvent',
-          parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description: 'Unique identifier for the generation call.',
-            },
-            {
-              name: 'provider',
-              type: 'string',
-              description: 'The provider identifier for this model call.',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The provider-returned model identifier for this model call.',
-            },
-            {
-              name: 'finishReason',
-              type: 'FinishReason',
-              description: 'The unified reason why the model call finished.',
-            },
-            {
-              name: 'usage',
-              type: 'LanguageModelUsage',
-              description: 'Token usage reported by the model call.',
-            },
-            {
-              name: 'content',
-              type: 'ReadonlyArray<ContentPart<TOOLS>>',
-              description:
-                'The content parts produced by the model call (text, reasoning, files, tool calls, etc.).',
-            },
-            {
-              name: 'responseId',
-              type: 'string',
-              description:
-                'The provider-returned response ID for this model call.',
-            },
-            {
-              name: 'providerMetadata',
-              type: 'ProviderMetadata | undefined',
-              description:
-                'Provider-specific metadata for this model call, when returned by the provider.',
-            },
-            {
-              name: 'performance',
-              type: '{ responseTimeMs: number; effectiveOutputTokensPerSecond: number; outputTokensPerSecond: number | undefined; inputTokensPerSecond: number | undefined; effectiveTotalTokensPerSecond: number; timeToFirstOutputMs: number | undefined; timeBetweenOutputChunksMs?: OutputChunkTimingStats }',
-              description: 'Performance metrics for the model call.',
-              properties: [
-                {
-                  type: 'LanguageModelCallPerformance',
-                  parameters: [
-                    {
-                      name: 'responseTimeMs',
-                      type: 'number',
-                      description:
-                        'Time spent waiting for the language model response in milliseconds.',
-                    },
-                    {
-                      name: 'effectiveOutputTokensPerSecond',
-                      type: 'number',
-                      description:
-                        'Effective number of output tokens per second over the full language model response.',
-                    },
-                    {
-                      name: 'outputTokensPerSecond',
-                      type: 'number | undefined',
-                      description:
-                        'Number of output tokens per second after the first generated output chunk was received. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                    {
-                      name: 'inputTokensPerSecond',
-                      type: 'number | undefined',
-                      description:
-                        'Number of input tokens processed per second before the first generated output chunk was received. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                    {
-                      name: 'effectiveTotalTokensPerSecond',
-                      type: 'number',
-                      description:
-                        'Effective number of input and output tokens per second over the full language model response.',
-                    },
-                    {
-                      name: 'timeToFirstOutputMs',
-                      type: 'number | undefined',
-                      description:
-                        'Time until the first generated output chunk was received in milliseconds. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                    {
-                      name: 'timeBetweenOutputChunksMs',
-                      type: 'OutputChunkTimingStats | undefined',
-                      description:
-                        'Timing statistics for the gaps between generated output chunks in milliseconds. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onToolExecutionStart',
-      type: '(event: ToolExecutionStartEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        "Callback that is called right before a tool's execute function runs. Errors thrown in this callback are silently caught and do not break the generation flow.",
-      properties: [
-        {
-          type: 'ToolExecutionStartEvent',
-          parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description:
-                'Unique identifier for this generation call, used to correlate events.',
-            },
-            {
-              name: 'toolCall',
-              type: 'TypedToolCall<TOOLS>',
-              description:
-                'The full tool call object containing toolName, toolCallId, input, and metadata.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description:
-                'Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.',
-            },
-            {
-              name: 'toolContext',
-              type: 'InferToolContext<TOOLS[toolName]>',
-              description:
-                'Tool-specific context object for the tool call that is about to execute. Narrowed to the context type of the individual tool, not the entire tool set.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onToolExecutionEnd',
-      type: '(event: ToolExecutionEndEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        "Callback that is called right after a tool's execute function completes (or errors). The `toolOutput` field is a discriminated union: when `toolOutput.type` is `'tool-result'`, the `output` field contains the tool result; when `toolOutput.type` is `'tool-error'`, the `error` field contains the error. Errors thrown in this callback are silently caught and do not break the generation flow.",
-      properties: [
-        {
-          type: 'ToolExecutionEndEvent',
-          parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description:
-                'Unique identifier for this generation call, used to correlate events.',
-            },
-            {
-              name: 'toolCall',
-              type: 'TypedToolCall<TOOLS>',
-              description:
-                'The full tool call object containing toolName, toolCallId, input, and metadata.',
-            },
-            {
-              name: 'toolExecutionMs',
-              type: 'number',
-              description:
-                'The wall-clock duration of the tool execution in milliseconds.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description:
-                'Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.',
-            },
-            {
-              name: 'toolContext',
-              type: 'InferToolContext<TOOLS[toolName]>',
-              description:
-                'Tool-specific context object for the tool call that just completed. Narrowed to the context type of the individual tool, not the entire tool set.',
-            },
-            {
-              name: 'toolOutput',
-              type: 'ToolOutput<TOOLS>',
-              description:
-                "Discriminated union representing the tool execution result. When `type` is `'tool-result'`, the `output` field contains the tool's return value. When `type` is `'tool-error'`, the `error` field contains the error.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'experimental_onToolCallStart',
-      type: '(event: ToolExecutionStartEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Deprecated. Use `onToolExecutionStart` instead. This alias is only used as a fallback when `onToolExecutionStart` is not provided.',
-    },
-    {
-      name: 'experimental_onToolCallFinish',
-      type: '(event: ToolExecutionEndEvent) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Deprecated. Use `onToolExecutionEnd` instead. This alias is only used as a fallback when `onToolExecutionEnd` is not provided.',
-    },
-    {
-      name: 'onStepEnd',
-      type: '(stepResult: StepResult<TOOLS>) => Promise<void> | void',
-      isOptional: true,
-      description:
-        'Callback that is called when a step ends. Receives a StepResult object.',
-      properties: [
-        {
-          type: 'StepResult',
-          parameters: [
-            {
-              name: 'stepNumber',
-              type: 'number',
-              description: 'Zero-based index of this step.',
-            },
-            {
-              name: 'model',
-              type: '{ provider: string; modelId: string }',
-              description:
-                'Information about the model that produced this step.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'User-defined shared runtime context object flowing through the generation.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description: 'Per-tool context map for the generation step.',
-            },
-            {
-              name: 'content',
-              type: 'Array<ContentPart<TOOLS>>',
-              description: 'The content that was generated in this step.',
-            },
-            {
-              name: 'text',
-              type: 'string',
-              description: 'The generated text.',
-            },
-            {
-              name: 'reasoning',
-              type: 'Array<ReasoningPart | ReasoningFilePart>',
-              description:
-                'The reasoning that was generated during the generation.',
-            },
-            {
-              name: 'reasoningText',
-              type: 'string | undefined',
-              description:
-                'The reasoning text that was generated during the generation.',
-            },
-            {
-              name: 'files',
-              type: 'Array<GeneratedFile>',
-              description:
-                'The files that were generated during the generation.',
-            },
-            {
-              name: 'sources',
-              type: 'Array<Source>',
-              description: 'The sources that were used in this step.',
-            },
-            {
-              name: 'toolCalls',
-              type: 'Array<TypedToolCall<TOOLS>>',
-              description:
-                'The tool calls that were made during the generation.',
-            },
-            {
-              name: 'staticToolCalls',
-              type: 'Array<StaticToolCall<TOOLS>>',
-              description: 'The static tool calls that were made in this step.',
-            },
-            {
-              name: 'dynamicToolCalls',
-              type: 'Array<DynamicToolCall>',
-              description:
-                'The dynamic tool calls that were made in this step.',
-            },
-            {
-              name: 'toolResults',
-              type: 'Array<TypedToolResult<TOOLS>>',
-              description: 'The results of the tool calls.',
-            },
-            {
-              name: 'staticToolResults',
-              type: 'Array<StaticToolResult<TOOLS>>',
-              description:
-                'The static tool results that were made in this step.',
-            },
-            {
-              name: 'dynamicToolResults',
-              type: 'Array<DynamicToolResult>',
-              description:
-                'The dynamic tool results that were made in this step.',
-            },
-            {
-              name: 'finishReason',
-              type: '"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"',
-              description: 'The unified reason why the generation finished.',
-            },
-            {
-              name: 'rawFinishReason',
-              type: 'string | undefined',
-              description:
-                'The raw reason why the generation finished (from the provider).',
-            },
-            {
-              name: 'usage',
-              type: 'LanguageModelUsage',
-              description: 'The token usage of the generated text.',
-              properties: [
-                {
-                  type: 'LanguageModelUsage',
-                  parameters: [
-                    {
-                      name: 'inputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of input (prompt) tokens used.',
-                    },
-                    {
-                      name: 'inputTokenDetails',
-                      type: 'LanguageModelInputTokenDetails',
-                      description:
-                        'Detailed information about the input (prompt) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelInputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'noCacheTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of non-cached input (prompt) tokens used.',
-                            },
-                            {
-                              name: 'cacheReadTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens read.',
-                            },
-                            {
-                              name: 'cacheWriteTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens written.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'outputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of total output (completion) tokens used.',
-                    },
-                    {
-                      name: 'outputTokenDetails',
-                      type: 'LanguageModelOutputTokenDetails',
-                      description:
-                        'Detailed information about the output (completion) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelOutputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'textTokens',
-                              type: 'number | undefined',
-                              description: 'The number of text tokens used.',
-                            },
-                            {
-                              name: 'reasoningTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of reasoning tokens used.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'totalTokens',
-                      type: 'number | undefined',
-                      description: 'The total number of tokens used.',
-                    },
-                    {
-                      name: 'raw',
-                      type: 'object | undefined',
-                      isOptional: true,
-                      description:
-                        "Raw usage information from the provider. This is the provider's original usage information and may include additional fields.",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'performance',
-              type: 'StepResultPerformance',
-              description:
-                'Timing and throughput metrics for the step. For `generateText`, streaming-only metrics are undefined.',
-              properties: [
-                {
-                  type: 'StepResultPerformance',
-                  parameters: [
-                    {
-                      name: 'effectiveOutputTokensPerSecond',
-                      type: 'number',
-                      description:
-                        'Effective number of output tokens per second over the full language model response.',
-                    },
-                    {
-                      name: 'outputTokensPerSecond',
-                      type: 'number | undefined',
-                      description:
-                        'Number of output tokens per second after the first generated output chunk was received. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                    {
-                      name: 'inputTokensPerSecond',
-                      type: 'number | undefined',
-                      description:
-                        'Number of input tokens processed per second before the first generated output chunk was received. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                    {
-                      name: 'effectiveTotalTokensPerSecond',
-                      type: 'number',
-                      description:
-                        'Effective number of input and output tokens per second over the full language model response.',
-                    },
-                    {
-                      name: 'stepTimeMs',
-                      type: 'number',
-                      description:
-                        'Total time spent on the step, including language model response time and tool execution time, in milliseconds.',
-                    },
-                    {
-                      name: 'responseTimeMs',
-                      type: 'number',
-                      description:
-                        'Time spent waiting for the language model response in milliseconds.',
-                    },
-                    {
-                      name: 'toolExecutionMs',
-                      type: 'Readonly<Record<string, number>>',
-                      description:
-                        'Time spent executing each client-side tool call in the step in milliseconds, keyed by tool call ID.',
-                    },
-                    {
-                      name: 'timeToFirstOutputMs',
-                      type: 'number | undefined',
-                      description:
-                        'Time until the first generated output chunk was received in milliseconds. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                    {
-                      name: 'timeBetweenOutputChunksMs',
-                      type: 'OutputChunkTimingStats | undefined',
-                      description:
-                        'Timing statistics for the gaps between generated output chunks in milliseconds. For `generateText`, this is `undefined` because the response is not streamed.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'warnings',
-              type: 'CallWarning[] | undefined',
-              description:
-                'Warnings from the model provider (e.g. unsupported settings).',
-            },
-            {
-              name: 'request',
-              type: 'LanguageModelRequestMetadata',
-              description: 'Additional request information.',
-              properties: [
-                {
-                  type: 'LanguageModelRequestMetadata',
-                  parameters: [
-                    {
-                      name: 'messages',
-                      type: 'Array<ModelMessage>',
-                      isOptional: true,
-                      description:
-                        'The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.',
-                    },
-                    {
-                      name: 'body',
-                      type: 'unknown',
-                      isOptional: true,
-                      description:
-                        'Request HTTP body that was sent to the provider API.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'response',
-              type: 'LanguageModelResponseMetadata',
-              description: 'Additional response information.',
-              properties: [
-                {
-                  type: 'Response',
-                  parameters: [
-                    {
-                      name: 'id',
-                      type: 'string',
-                      description:
-                        'The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.',
-                    },
-                    {
-                      name: 'modelId',
-                      type: 'string',
-                      description:
-                        'The model that was used to generate the response.',
-                    },
-                    {
-                      name: 'timestamp',
-                      type: 'Date',
-                      description: 'The timestamp of the response.',
-                    },
-                    {
-                      name: 'headers',
-                      isOptional: true,
-                      type: 'Record<string, string>',
-                      description: 'Optional response headers.',
-                    },
-                    {
-                      name: 'messages',
-                      type: 'Array<ResponseMessage>',
-                      description:
-                        'The response messages generated during this step.',
-                    },
-                    {
-                      name: 'body',
-                      isOptional: true,
-                      type: 'unknown',
-                      description:
-                        'Response body (available only for providers that use HTTP requests).',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'providerMetadata',
-              type: 'ProviderMetadata | undefined',
-              isOptional: true,
-              description:
-                'Additional provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific results that can be fully encapsulated in the provider.',
-            },
-            {
-              name: 'responseMessages',
-              type: 'Array<ResponseMessage>',
-              description:
-                'The accumulated response messages that were generated during the call.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onStepFinish',
-      type: 'GenerateTextOnStepFinishCallback<TOOLS>',
-      isOptional: true,
-      description:
-        'Deprecated. Use `onStepEnd` instead. This alias is only used as a fallback when `onStepEnd` is not provided.',
-    },
-    {
-      name: 'onEnd',
-      type: '(event: GenerateTextEndEvent<TOOLS>) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Callback that is called when the entire generation completes (all steps finished). The event includes the final step result properties, excluding direct `performance`, along with aggregated data from all steps. Use `event.steps` for per-step performance metrics.',
-      properties: [
-        {
-          type: 'GenerateTextEndEvent',
-          parameters: [
-            {
-              name: 'stepNumber',
-              type: 'number',
-              description: 'Zero-based index of the final step.',
-            },
-            {
-              name: 'model',
-              type: '{ provider: string; modelId: string }',
-              description:
-                'Information about the model that produced the final step.',
-            },
-            {
-              name: 'finishReason',
-              type: '"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"',
-              description: 'The unified reason why the generation finished.',
-            },
-            {
-              name: 'rawFinishReason',
-              type: 'string | undefined',
-              description:
-                'The raw reason why the generation finished (from the provider).',
-            },
-            {
-              name: 'usage',
-              type: 'LanguageModelUsage',
-              description:
-                'The token usage from the final step only (not aggregated).',
-              properties: [
-                {
-                  type: 'LanguageModelUsage',
-                  parameters: [
-                    {
-                      name: 'inputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of input (prompt) tokens used.',
-                    },
-                    {
-                      name: 'inputTokenDetails',
-                      type: 'LanguageModelInputTokenDetails',
-                      description:
-                        'Detailed information about the input (prompt) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelInputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'noCacheTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of non-cached input (prompt) tokens used.',
-                            },
-                            {
-                              name: 'cacheReadTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens read.',
-                            },
-                            {
-                              name: 'cacheWriteTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens written.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'outputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of total output (completion) tokens used.',
-                    },
-                    {
-                      name: 'outputTokenDetails',
-                      type: 'LanguageModelOutputTokenDetails',
-                      description:
-                        'Detailed information about the output (completion) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelOutputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'textTokens',
-                              type: 'number | undefined',
-                              description: 'The number of text tokens used.',
-                            },
-                            {
-                              name: 'reasoningTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of reasoning tokens used.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'totalTokens',
-                      type: 'number | undefined',
-                      description: 'The total number of tokens used.',
-                    },
-                    {
-                      name: 'raw',
-                      type: 'object | undefined',
-                      isOptional: true,
-                      description:
-                        "Raw usage information from the provider. This is the provider's original usage information and may include additional fields.",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'totalUsage',
-              type: 'LanguageModelUsage',
-              description:
-                'Aggregated token usage across all steps. This is the sum of the usage from each individual step.',
-              properties: [
-                {
-                  type: 'LanguageModelUsage',
-                  parameters: [
-                    {
-                      name: 'inputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of input (prompt) tokens used across all steps.',
-                    },
-                    {
-                      name: 'outputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of output (completion) tokens used across all steps.',
-                    },
-                    {
-                      name: 'totalTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of tokens used across all steps.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'content',
-              type: 'Array<ContentPart<TOOLS>>',
-              description: 'The content that was generated in all steps.',
-            },
-            {
-              name: 'providerMetadata',
-              type: 'ProviderMetadata | undefined',
-              description:
-                'Additional provider-specific metadata from the final step.',
-            },
-            {
-              name: 'text',
-              type: 'string',
-              description: 'The full text that has been generated.',
-            },
-            {
-              name: 'reasoningText',
-              type: 'string | undefined',
-              description:
-                'The reasoning text of the model (only available for some models).',
-            },
-            {
-              name: 'reasoning',
-              type: 'Array<ReasoningDetail>',
-              description:
-                'The reasoning details of the model (only available for some models).',
-              properties: [
-                {
-                  type: 'ReasoningDetail',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'text'",
-                      description: 'The type of the reasoning detail.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The text content (only for type "text").',
-                    },
-                    {
-                      name: 'signature',
-                      type: 'string',
-                      isOptional: true,
-                      description: 'Optional signature (only for type "text").',
-                    },
-                  ],
-                },
-                {
-                  type: 'ReasoningDetail',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'redacted'",
-                      description: 'The type of the reasoning detail.',
-                    },
-                    {
-                      name: 'data',
-                      type: 'string',
-                      description:
-                        'The redacted data content (only for type "redacted").',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'sources',
-              type: 'Array<Source>',
-              description: 'Sources that have been used in the final step.',
-              properties: [
-                {
-                  type: 'Source',
-                  parameters: [
-                    {
-                      name: 'sourceType',
-                      type: "'url'",
-                      description:
-                        'A URL source. This is return by web search RAG models.',
-                    },
-                    {
-                      name: 'id',
-                      type: 'string',
-                      description: 'The ID of the source.',
-                    },
-                    {
-                      name: 'url',
-                      type: 'string',
-                      description: 'The URL of the source.',
-                    },
-                    {
-                      name: 'title',
-                      type: 'string',
-                      isOptional: true,
-                      description: 'The title of the source.',
-                    },
-                    {
-                      name: 'providerMetadata',
-                      type: 'SharedV2ProviderMetadata',
-                      isOptional: true,
-                      description:
-                        'Additional provider metadata for the source.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'files',
-              type: 'Array<GeneratedFile>',
-              description: 'Files that were generated in all steps.',
-              properties: [
-                {
-                  type: 'GeneratedFile',
-                  parameters: [
-                    {
-                      name: 'base64',
-                      type: 'string',
-                      description: 'File as a base64 encoded string.',
-                    },
-                    {
-                      name: 'uint8Array',
-                      type: 'Uint8Array',
-                      description: 'File as a Uint8Array.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'toolCalls',
-              type: 'Array<TypedToolCall<TOOLS>>',
-              description:
-                'The tool calls that were made during the generation.',
-            },
-            {
-              name: 'staticToolCalls',
-              type: 'Array<StaticToolCall<TOOLS>>',
-              description:
-                'The static tool calls that were made in the final step.',
-            },
-            {
-              name: 'dynamicToolCalls',
-              type: 'Array<DynamicToolCall>',
-              description:
-                'The dynamic tool calls that were made in the final step.',
-            },
-            {
-              name: 'toolResults',
-              type: 'Array<TypedToolResult<TOOLS>>',
-              description: 'The results of the tool calls.',
-            },
-            {
-              name: 'staticToolResults',
-              type: 'Array<StaticToolResult<TOOLS>>',
-              description:
-                'The static tool results that were made in the final step.',
-            },
-            {
-              name: 'dynamicToolResults',
-              type: 'Array<DynamicToolResult>',
-              description:
-                'The dynamic tool results that were made in the final step.',
-            },
-            {
-              name: 'warnings',
-              type: 'CallWarning[] | undefined',
-              description:
-                'Warnings from the model provider (e.g. unsupported settings) in all steps.',
-            },
-            {
-              name: 'request',
-              type: 'LanguageModelRequestMetadata',
-              description:
-                'Additional request information from the final step.',
-              properties: [
-                {
-                  type: 'LanguageModelRequestMetadata',
-                  parameters: [
-                    {
-                      name: 'messages',
-                      type: 'Array<ModelMessage>',
-                      isOptional: true,
-                      description:
-                        'The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.',
-                    },
-                    {
-                      name: 'body',
-                      type: 'unknown',
-                      isOptional: true,
-                      description:
-                        'Request HTTP body that was sent to the provider API.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'response',
-              type: 'LanguageModelResponseMetadata',
-              description:
-                'Additional response information from the final step.',
-              properties: [
-                {
-                  type: 'Response',
-                  parameters: [
-                    {
-                      name: 'id',
-                      type: 'string',
-                      description:
-                        'The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.',
-                    },
-                    {
-                      name: 'modelId',
-                      type: 'string',
-                      description:
-                        'The model that was used to generate the response. The AI SDK uses the response model from the provider response when available, and the model from the function call otherwise.',
-                    },
-                    {
-                      name: 'timestamp',
-                      type: 'Date',
-                      description:
-                        'The timestamp of the response. The AI SDK uses the response timestamp from the provider response when available, and creates a timestamp otherwise.',
-                    },
-                    {
-                      name: 'headers',
-                      isOptional: true,
-                      type: 'Record<string, string>',
-                      description: 'Optional response headers.',
-                    },
-                    {
-                      name: 'body',
-                      isOptional: true,
-                      type: 'unknown',
-                      description:
-                        'Response body (available only for providers that use HTTP requests).',
-                    },
-                    {
-                      name: 'messages',
-                      type: 'Array<ResponseMessage>',
-                      description:
-                        'The response messages generated during this step. It consists of an assistant message, potentially containing tool calls. When there are tool results in this step, there is an additional tool message with the available tool results. If there are tools that do not have execute functions, they are not included in the tool results and need to be added separately.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'steps',
-              type: 'Array<StepResult>',
-              description:
-                'Response information for every step. You can use this to get information about intermediate steps, such as the tool calls or the response headers.',
-            },
-            {
-              name: 'finalStep',
-              type: 'StepResult',
-              description:
-                'The final step. This is a shortcut for `steps.at(-1)`.',
-            },
-            {
-              name: 'responseMessages',
-              type: 'Array<ResponseMessage>',
-              description:
-                'The accumulated response messages that were generated during the call.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'Deprecated. Use `finalStep.runtimeContext` instead. The final state of the user-defined shared runtime context object. This reflects any modifications made during the generation lifecycle via `prepareStep`.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Deprecated. Use `finalStep.toolsContext` instead. The final state of the per-tool context map passed via `toolsContext`.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onFinish',
-      type: '(event: GenerateTextEndEvent<TOOLS>) => PromiseLike<void> | void',
-      isOptional: true,
-      description: 'Deprecated alias for `onEnd`.',
-    },
-  ]}
-/>
+- `model` (`LanguageModel`): The language model to use. Example: openai('gpt-6-astra')
+- `instructions` (`Instructions`): Instructions to use that specify the behavior of the model.
+- `prompt` (`string | Array<SystemModelMessage | UserModelMessage | AssistantModelMessage | ToolModelMessage>`): The input prompt to generate the text from.
+- `messages` (`Array<SystemModelMessage | UserModelMessage | AssistantModelMessage | ToolModelMessage>`): A list of messages that represent a conversation. Automatically converts UI messages from the useChat hook.
+  - `SystemModelMessage`
+    - `role` (`'system'`): The role for the system message.
+    - `content` (`string`): The content of the message.
+  - `UserModelMessage`
+    - `role` (`'user'`): The role for the user message.
+    - `content` (`string | Array<TextPart | ImagePart | FilePart>`): The content of the message.
+      - `TextPart`
+        - `type` (`'text'`): The type of the message part.
+        - `text` (`string`): The text content of the message part.
+      - `ImagePart`
+        - `type` (`'image'`): The type of the message part.
+        - `image` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The image content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType?` (`string`): The IANA media type of the image. Optional.
+      - `FilePart`
+        - `type` (`'file'`): The type of the message part.
+        - `data` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The file content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType` (`string`): The IANA media type of the file.
+  - `AssistantModelMessage`
+    - `role` (`'assistant'`): The role for the assistant message.
+    - `content` (`string | Array<TextPart | FilePart | ReasoningPart | ReasoningFilePart | ToolCallPart>`): The content of the message.
+      - `TextPart`
+        - `type` (`'text'`): The type of the message part.
+        - `text` (`string`): The text content of the message part.
+      - `ReasoningPart`
+        - `type` (`'reasoning'`): The type of the message part.
+        - `text` (`string`): The reasoning text.
+      - `ReasoningFilePart`
+        - `type` (`'reasoning-file'`): The type of the message part.
+        - `data` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The file data. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType` (`string`): The IANA media type of the file.
+      - `FilePart`
+        - `type` (`'file'`): The type of the message part.
+        - `data` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The file content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType` (`string`): The IANA media type of the file.
+        - `filename?` (`string`): The name of the file.
+      - `ToolCallPart`
+        - `type` (`'tool-call'`): The type of the message part.
+        - `toolCallId` (`string`): The id of the tool call.
+        - `toolName` (`string`): The name of the tool, which typically would be the name of the function.
+        - `input` (`object based on zod schema`): Input (parameters) generated by the model to be used by the tool.
+  - `ToolModelMessage`
+    - `role` (`'tool'`): The role for the tool message.
+    - `content` (`Array<ToolResultPart>`): The content of the message.
+      - `ToolResultPart`
+        - `type` (`'tool-result'`): The type of the message part.
+        - `toolCallId` (`string`): The id of the tool call the result corresponds to.
+        - `toolName` (`string`): The name of the tool the result corresponds to.
+        - `output` (`unknown`): The result returned by the tool after execution.
+        - `isError?` (`boolean`): Whether the result is an error or an error message.
+- `allowSystemInMessages?` (`boolean`): Whether system messages are allowed in the \`prompt\` or \`messages\` fields. Defaults to false. System messages in the \`instructions\` option are always allowed. Enabling this for user-controlled messages can create a prompt injection risk.
+- `tools` (`ToolSet`): Tools that are accessible to and can be called by the model. The model needs to support calling tools.
+  - `Tool`
+    - `description?` (`string | ((options: { context: CONTEXT; experimental_sandbox?: Experimental_SandboxSession }) => string)`): Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.
+    - `inputSchema` (`Zod Schema | JSON Schema`): The schema of the input that the tool expects. The language model will use this to generate the input. It is also used to validate the output of the language model. Use descriptions to make the input understandable for the language model. You can either pass in a Zod schema or a JSON schema (using the \`jsonSchema\` function).
+    - `execute?` (`async (parameters: T, options: ToolExecutionOptions) => RESULT`): An async function that is called with the arguments from the tool call and produces a result. If not provided, the tool will not be executed automatically.
+      - `ToolExecutionOptions`
+        - `toolCallId` (`string`): The ID of the tool call. You can use it e.g. when sending tool-call related information with stream data.
+        - `messages` (`ModelMessage[]`): Messages that were sent to the language model to initiate the response that contained the tool call. The messages do not include the system prompt nor the assistant response that contained the tool call.
+        - `abortSignal` (`AbortSignal`): An optional abort signal that indicates that the overall operation should be aborted.
+- `toolChoice?` (`"auto" | "none" | "required" | { "type": "tool", "toolName": string }`): The tool choice setting. It specifies how tools are selected for execution. The default is "auto". "none" disables tool execution. "required" requires tools to be executed. \{ "type": "tool", "toolName": string } specifies a specific tool to execute.
+- `maxOutputTokens?` (`number`): Maximum number of tokens to generate.
+- `temperature?` (`number`): Temperature setting. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either \`temperature\` or \`topP\`, but not both.
+- `topP?` (`number`): Nucleus sampling. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either \`temperature\` or \`topP\`, but not both.
+- `topK?` (`number`): Only sample from the top K options for each subsequent token. Used to remove "long tail" low probability responses. Recommended for advanced use cases only. You usually only need to use temperature.
+- `presencePenalty?` (`number`): Presence penalty setting. It affects the likelihood of the model to repeat information that is already in the prompt. The value is passed through to the provider. The range depends on the provider and model.
+- `frequencyPenalty?` (`number`): Frequency penalty setting. It affects the likelihood of the model to repeatedly use the same words or phrases. The value is passed through to the provider. The range depends on the provider and model.
+- `stopSequences?` (`string[]`): Sequences that will stop the generation of the text. If the model generates any of these sequences, it will stop generating further text.
+- `seed?` (`number`): The seed (integer) to use for random sampling. If set and supported by the model, calls will generate deterministic results.
+- `reasoning?` (`'provider-default' | 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'`): Controls how much reasoning the model performs before generating a response. When omitted, the provider's default behavior is used. \`'provider-default'\` explicitly requests the provider's default. Providers that do not support reasoning will emit a warning. If reasoning-related \`providerOptions\` are also set, they take precedence and this parameter is ignored. See the \[reasoning guide]\(/docs/ai-sdk-core/reasoning) for provider-specific mapping details.
+- `maxRetries?` (`number`): Maximum number of retries. Set to 0 to disable retries. Default: 2.
+- `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
+- `timeout?` (``number | { totalMs?: number; stepMs?: number; toolMs?: number; tools?: Partial<Record<`${toolName}Ms`, number>> }``): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each individual step (LLM call). toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern \{toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.
+- `headers?` (`Record<string, string | undefined>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
+- `telemetry?` (`TelemetryOptions`): Telemetry configuration.
+  - `TelemetryOptions`
+    - `isEnabled?` (`boolean`): Enable or disable telemetry. Enabled by default. Set to \`false\` to opt out.
+    - `recordInputs?` (`boolean`): Enable or disable input recording. Enabled by default.
+    - `recordOutputs?` (`boolean`): Enable or disable output recording. Enabled by default.
+    - `functionId?` (`string`): Identifier for this function. Used to group telemetry data by function.
+    - `includeRuntimeContext?` (`{ [KEY in keyof CONTEXT]?: boolean }`): Top-level runtime context properties that should be included in telemetry. Runtime context properties are excluded unless they are explicitly set to \`true\`. Lifecycle callbacks and returned results still receive the full \`runtimeContext\`.
+    - `includeToolsContext?` (`{ [TOOL_NAME in keyof InferToolSetContext<TOOLS>]?: { [KEY in keyof InferToolSetContext<TOOLS>[TOOL_NAME]]?: boolean } }`): Top-level tool context properties that should be included in telemetry, configured per tool. Tool context properties are excluded unless they are explicitly set to \`true\`. Lifecycle callbacks and returned results still receive the full \`toolsContext\`.
+    - `integrations?` (`Telemetry | Telemetry[]`): Per-call telemetry integrations that receive lifecycle events. When provided, these replace any globally registered integrations for this call.
+- `providerOptions?` (`Record<string,JSONObject> | undefined`): Provider-specific options. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
+- `activeTools?` (`ActiveTools<TOOLS>`): Limits the tools that are available for the model to call without changing the tool call and result types in the result. All tools are active by default. Tool names are restricted to the string keys of the tool set.
+- `toolOrder?` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider. The list can be partial. Tools not listed in \`toolOrder\` are sent after the listed tools, sorted alphabetically. Tool names are restricted to the string keys of the tool set.
+- `toolApproval?` (`ToolApprovalConfiguration<TOOLS, RUNTIME_CONTEXT>`): Approval configuration for this call. Pass a \`GenericToolApprovalFunction\` to handle all tool calls in one callback with \`toolCall\`, \`tools\`, \`toolsContext\`, \`messages\`, and \`runtimeContext\`, or pass a per-tool object where each key can be a status (\`'not-applicable'\`, \`'approved'\`, \`'denied'\`, or \`'user-approval'\`), an object form such as \`\{ type: 'denied', reason: 'blocked by policy' }\`, or a \`SingleToolApprovalFunction\` that receives the tool input and options \`toolCallId\`, \`messages\`, \`toolContext\`, and \`runtimeContext\` (same shape as tool execution options without \`abortSignal\`, with \`context\` renamed to \`toolContext\`). The \`RUNTIME\_CONTEXT\` type parameter matches the call's \`runtimeContext\`. A \`GenericToolApprovalFunction\` or \`SingleToolApprovalFunction\` may return \`undefined\` for the same effect as \`'not-applicable'\`. \`'not-applicable'\` is the default execution path and runs the tool without approval metadata. Use \`'approved'\`, \`'denied'\`, or their object forms when you want explicit automatic approval request/response parts in the output. Object statuses can include a \`reason\`: automatic approvals and denials forward it to the approval response, while manual user approvals forward it to the approval request for the human approver. This setting takes precedence over a tool's \`needsApproval\` default.
+- `experimental_toolCallers?` (`Experimental_ToolCallers<TOOLS>`): Configures which caller tools may invoke each tool. The callback receives typed references for caller-capable tools in the \`tools\` set and returns an object keyed by callee tool name. Include \`'direct'\` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each generation step. Provider caller references are translated to provider-native allowed-caller options. Tools without an entry keep their existing direct tool-calling behavior.
+- `experimental_refineToolInput?` (`ToolInputRefinement<TOOLS>`): Optional mapping of tool names to functions that refine parsed tool inputs. Each function receives the typed input for its tool and must return the same input type shape. The refined input is used for tool execution, output parts, lifecycle callbacks, and telemetry.
+- `stopWhen?` (`StopCondition<TOOLS> | Array<StopCondition<TOOLS>>`): Condition for stopping the generation when there are tool results in the last step. When the condition is an array, any of the conditions can be met to stop the generation. Default: isStepCount(1).
+- `prepareStep?` (`(options: PrepareStepOptions) => PrepareStepResult<TOOLS> | Promise<PrepareStepResult<TOOLS>>`): Optional function that you can use to provide different settings for a step. You can modify the model, model call settings, tool choices, active tools, instructions, input messages, and experimental sandbox for each step.
+  - `PrepareStepFunction<TOOLS>`
+    - `options` (`object`): The options for the step.
+      - `PrepareStepOptions`
+        - `steps` (`Array<StepResult<TOOLS>>`): The steps that have been executed so far.
+        - `stepNumber` (`number`): The number of the step that is being executed.
+        - `model` (`LanguageModel`): The model that is being used.
+        - `instructions` (`Instructions | undefined`): The instructions that will be sent to the model for the current step. If prepareStep returns an instructions override, those instructions carry forward to later steps.
+        - `initialInstructions` (`Instructions | undefined`): The initial instructions that were passed into generateText or streamText.
+        - `messages` (`Array<ModelMessage>`): The messages that will be sent to the model for the current step. If prepareStep returns a messages override, those messages carry forward to later steps.
+        - `runtimeContext?` (`CONTEXT`): The shared runtime context passed via the \`runtimeContext\` setting.
+        - `toolsContext` (`InferToolSetContext<TOOLS>`): The per-tool context map passed via the \`toolsContext\` setting.
+        - `experimental_sandbox?` (`Experimental_SandboxSession | undefined`): The experimental sandbox environment passed via the \`experimental\_sandbox\` setting.
+  - `PrepareStepResult<TOOLS>`
+    - `model?` (`LanguageModel`): Optionally override which LanguageModel instance is used for this step.
+    - `maxOutputTokens?` (`number`): Maximum number of tokens to generate for this step. Uses the top-level value when omitted or undefined.
+    - `temperature?` (`number`): Temperature for this step. Uses the top-level value when omitted or undefined.
+    - `topP?` (`number`): Nucleus sampling value for this step. Uses the top-level value when omitted or undefined.
+    - `topK?` (`number`): Top-K sampling value for this step. Uses the top-level value when omitted or undefined.
+    - `presencePenalty?` (`number`): Presence penalty for this step. Uses the top-level value when omitted or undefined.
+    - `frequencyPenalty?` (`number`): Frequency penalty for this step. Uses the top-level value when omitted or undefined.
+    - `stopSequences?` (`string[]`): Stop sequences for this step. Uses the top-level value when omitted or undefined.
+    - `seed?` (`number`): Random sampling seed for this step. Uses the top-level value when omitted or undefined.
+    - `reasoning?` (`LanguageModelV4CallOptions["reasoning"]`): Reasoning effort for this step. Uses the top-level value when omitted or undefined.
+    - `toolChoice?` (`ToolChoice<TOOLS>`): Optionally set which tool the model must call, or provide tool call configuration for this step.
+    - `activeTools?` (`ActiveTools<TOOLS>`): If provided, only these tools are enabled/available for this step.
+    - `toolOrder?` (`ToolOrder<TOOLS>`): If provided, overrides the order in which tools are sent to the provider for this step. Tools not listed are appended alphabetically.
+    - `instructions?` (`Instructions`): Optionally override the instructions sent to the model for this step. The override carries forward to later steps until prepareStep returns another instructions or system override.
+    - `messages?` (`Array<ModelMessage>`): Optionally override the full set of messages sent to the model for this step.
+    - `runtimeContext?` (`CONTEXT`): Shared runtime context. Changing it will affect this step and all subsequent steps.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map. Changing it will affect tool-specific context in this step and all subsequent steps.
+    - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment for this step. Changing it will affect tool execution in this step only.
+    - `providerOptions?` (`ProviderOptions`): Additional provider-specific options for this step. Can be used to pass provider-specific configuration such as container IDs for Anthropic code execution.
+- `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
+- `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
+- `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
+- `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
+- `include?` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean }`): Controls inclusion of request bodies, request messages, and response bodies in step results. By default, request bodies, request messages, and response bodies are excluded to reduce memory usage. Set requestBody, requestMessages, and/or responseBody to true when you need access to the data.
+  - `Object`
+    - `requestBody?` (`boolean`): Whether to include the request body in step results. The request body can be large when sending images or files. Default: false.
+    - `requestMessages?` (`boolean`): Whether to include the request messages in step results. The request messages can be large when sending images or files. Default: false.
+    - `responseBody?` (`boolean`): Whether to include the response body in step results. Default: false.
+- `repairToolCall?` (`(options: ToolCallRepairOptions) => Promise<LanguageModelV4ToolCall | null>`): A function that attempts to repair a tool call that failed to parse. Return either a repaired tool call or null if the tool call cannot be repaired.
+  - `ToolCallRepairOptions`
+    - `instructions` (`Instructions | undefined`): The instructions provided to the model.
+    - `system?` (`Instructions | undefined`): The instructions provided to the model. Deprecated: use \`instructions\` instead.
+    - `messages` (`ModelMessage[]`): The messages in the current generation step.
+    - `toolCall` (`LanguageModelV4ToolCall`): The tool call that failed to parse.
+    - `tools` (`TOOLS`): The tools that are available.
+    - `inputSchema` (`(options: { toolName: string }) => JSONSchema7`): A function that returns the JSON Schema for a tool.
+    - `error` (`NoSuchToolError | InvalidToolInputError`): The error that occurred while parsing the tool call.
+    - `abortSignal?` (`AbortSignal`): An optional signal for cancelling the tool call repair.
+- `output?` (`Output`): Specification for parsing structured outputs from the LLM response.
+  - `Output`
+    - `Output.text()` (`Output`): Output specification for text generation (default).
+    - `Output.object()` (`Output`): Output specification for typed object generation using schemas. When the model generates a text response, it will return an object that matches the schema.
+      - `Options`
+        - `schema` (`Schema<OBJECT>`): The schema of the object to generate.
+        - `name?` (`string`): Optional name of the output. Used by some providers for additional LLM guidance.
+        - `description?` (`string`): Optional description of the output. Used by some providers for additional LLM guidance.
+    - `Output.array()` (`Output`): Output specification for array generation. When the model generates a text response, it will return an array of elements.
+      - `Options`
+        - `element` (`Schema<ELEMENT>`): The schema of the array elements to generate.
+        - `minItems?` (`number`): Optional minimum number of array elements. Must be a non-negative integer.
+        - `maxItems?` (`number`): Optional maximum number of array elements. Must be a non-negative integer and greater than or equal to minItems.
+        - `name?` (`string`): Optional name of the output. Used by some providers for additional LLM guidance.
+        - `description?` (`string`): Optional description of the output. Used by some providers for additional LLM guidance.
+    - `Output.choice()` (`Output`): Output specification for choice generation. When the model generates a text response, it will return a one of the choice options.
+      - `Options`
+        - `options` (`Array<string>`): The available choices.
+        - `name?` (`string`): Optional name of the output. Used by some providers for additional LLM guidance.
+        - `description?` (`string`): Optional description of the output. Used by some providers for additional LLM guidance.
+    - `Output.json()` (`Output`): Output specification for unstructured JSON generation. When the model generates a text response, it will return any valid JSON value.
+      - `Options`
+        - `name?` (`string`): Optional name of the output. Used by some providers for additional LLM guidance.
+        - `description?` (`string`): Optional description of the output. Used by some providers for additional LLM guidance.
+- `onStart?` (`(event: GenerateTextStartEvent) => PromiseLike<void> | void`): Callback that is called when the generateText operation begins, before any LLM calls are made. Errors thrown in this callback are silently caught and do not break the generation flow.
+  - `GenerateTextStartEvent`
+    - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
+    - `modelId` (`string`): The specific model identifier (e.g., "gpt-6-astra").
+    - `instructions` (`Instructions | undefined`): The instructions provided to the model.
+    - `messages` (`Array<ModelMessage>`): The messages for this generation.
+    - `tools` (`TOOLS | undefined`): The tools available for this generation.
+    - `toolChoice` (`ToolChoice<TOOLS> | undefined`): The tool choice strategy for this generation.
+    - `activeTools` (`ActiveTools<TOOLS>`): Limits which tools are available for the model to call.
+    - `toolOrder` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider.
+    - `maxOutputTokens` (`number | undefined`): Maximum number of tokens to generate.
+    - `temperature` (`number | undefined`): Sampling temperature for generation.
+    - `topP` (`number | undefined`): Top-p (nucleus) sampling parameter.
+    - `topK` (`number | undefined`): Top-k sampling parameter.
+    - `presencePenalty` (`number | undefined`): Presence penalty for generation.
+    - `frequencyPenalty` (`number | undefined`): Frequency penalty for generation.
+    - `stopSequences` (`string[] | undefined`): Sequences that will stop generation.
+    - `seed` (`number | undefined`): Random seed for reproducible generation.
+    - `maxRetries` (`number`): Maximum number of retries for failed requests.
+    - `timeout` (``number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number; toolMs?: number; tools?: Partial<Record<`${toolName}Ms`, number>> } | undefined``): Timeout configuration for the generation. Can be a number (milliseconds) or an object with totalMs, stepMs, firstChunkMs (streaming only), chunkMs, toolMs, and per-tool overrides via tools.
+    - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+    - `providerOptions` (`ProviderOptions | undefined`): Additional provider-specific options.
+    - `output` (`OUTPUT | undefined`): The output specification for structured outputs, if configured.
+    - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
+    - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
+    - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object that flows through the generation lifecycle.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`, keyed by tool name.
+- `onStepStart?` (`(event: GenerateTextStepStartEvent) => PromiseLike<void> | void`): Callback that is called when a step (LLM call) begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.
+  - `GenerateTextStepStartEvent`
+    - `stepNumber` (`number`): Zero-based index of the current step.
+    - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
+    - `modelId` (`string`): The specific model identifier (e.g., "gpt-6-astra").
+    - `instructions` (`Instructions | undefined`): The instructions provided to the model for this step.
+    - `messages` (`Array<ModelMessage>`): The messages that will be sent to the model for this step. Uses the user-facing ModelMessage format. May be overridden by prepareStep. If prepareStep returns a messages override, those messages carry forward to later steps.
+    - `tools` (`TOOLS | undefined`): The tools available for this generation.
+    - `toolChoice` (`LanguageModelV4ToolChoice | undefined`): The tool choice configuration for this step.
+    - `activeTools` (`ActiveTools<TOOLS>`): Limits which tools are available for this step.
+    - `toolOrder` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider for this step.
+    - `steps` (`ReadonlyArray<StepResult<TOOLS>>`): Array of results from previous steps (empty for first step).
+    - `providerOptions` (`ProviderOptions | undefined`): Additional provider-specific options for this step.
+    - `timeout` (`number | { totalMs?: number; stepMs?: number; chunkMs?: number } | undefined`): Timeout configuration for the generation. Can be a number (milliseconds) or an object with totalMs, stepMs, chunkMs.
+    - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+    - `stopWhen` (`StopCondition<TOOLS> | Array<StopCondition<TOOLS>> | undefined`): Condition(s) for stopping the generation. When the condition is an array, any of the conditions can be met to stop.
+    - `output` (`OUTPUT | undefined`): The output specification for structured outputs, if configured.
+    - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
+    - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
+    - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object. May be updated from prepareStep between steps.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map. May be updated from prepareStep between steps.
+- `onLanguageModelCallStart?` (`(event: LanguageModelCallStartEvent) => PromiseLike<void> | void`): Callback that is called immediately before the provider model call begins. Unlike \`onStepStart\`, this callback is scoped to model work only and excludes any later client-side tool execution. Errors thrown in this callback are silently caught and do not break the generation flow.
+  - `LanguageModelCallStartEvent`
+    - `callId` (`string`): Unique identifier for the generation call.
+    - `provider` (`string`): The provider identifier for this model call.
+    - `modelId` (`string`): The specific model identifier for this model call.
+    - `instructions` (`Instructions | undefined`): The instructions that will be sent to the model.
+    - `messages` (`Array<ModelMessage>`): The messages that will be sent to the model.
+    - `tools` (`ReadonlyArray<Record<string, unknown>> | undefined`): Prepared tool definitions for the model call, if any.
+- `onLanguageModelCallEnd?` (`(event: LanguageModelCallEndEvent) => PromiseLike<void> | void`): Callback that is called after the model response has been normalized and parsed, but before any client-side tool execution begins. Errors thrown in this callback are silently caught and do not break the generation flow.
+  - `LanguageModelCallEndEvent`
+    - `callId` (`string`): Unique identifier for the generation call.
+    - `provider` (`string`): The provider identifier for this model call.
+    - `modelId` (`string`): The provider-returned model identifier for this model call.
+    - `finishReason` (`FinishReason`): The unified reason why the model call finished.
+    - `usage` (`LanguageModelUsage`): Token usage reported by the model call.
+    - `content` (`ReadonlyArray<ContentPart<TOOLS>>`): The content parts produced by the model call (text, reasoning, files, tool calls, etc.).
+    - `responseId` (`string`): The provider-returned response ID for this model call.
+    - `providerMetadata` (`ProviderMetadata | undefined`): Provider-specific metadata for this model call, when returned by the provider.
+    - `performance` (`{ responseTimeMs: number; effectiveOutputTokensPerSecond: number; outputTokensPerSecond: number | undefined; inputTokensPerSecond: number | undefined; effectiveTotalTokensPerSecond: number; timeToFirstOutputMs: number | undefined; timeBetweenOutputChunksMs?: OutputChunkTimingStats }`): Performance metrics for the model call.
+      - `LanguageModelCallPerformance`
+        - `responseTimeMs` (`number`): Time spent waiting for the language model response in milliseconds.
+        - `effectiveOutputTokensPerSecond` (`number`): Effective number of output tokens per second over the full language model response.
+        - `outputTokensPerSecond` (`number | undefined`): Number of output tokens per second after the first generated output chunk was received. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+        - `inputTokensPerSecond` (`number | undefined`): Number of input tokens processed per second before the first generated output chunk was received. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+        - `effectiveTotalTokensPerSecond` (`number`): Effective number of input and output tokens per second over the full language model response.
+        - `timeToFirstOutputMs` (`number | undefined`): Time until the first generated output chunk was received in milliseconds. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+        - `timeBetweenOutputChunksMs` (`OutputChunkTimingStats | undefined`): Timing statistics for the gaps between generated output chunks in milliseconds. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+- `onToolExecutionStart?` (`(event: ToolExecutionStartEvent) => PromiseLike<void> | void`): Callback that is called right before a tool's execute function runs. Errors thrown in this callback are silently caught and do not break the generation flow.
+  - `ToolExecutionStartEvent`
+    - `callId` (`string`): Unique identifier for this generation call, used to correlate events.
+    - `toolCall` (`TypedToolCall<TOOLS>`): The full tool call object containing toolName, toolCallId, input, and metadata.
+    - `messages` (`Array<ModelMessage>`): Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.
+    - `toolContext` (`InferToolContext<TOOLS[toolName]>`): Tool-specific context object for the tool call that is about to execute. Narrowed to the context type of the individual tool, not the entire tool set.
+- `onToolExecutionEnd?` (`(event: ToolExecutionEndEvent) => PromiseLike<void> | void`): Callback that is called right after a tool's execute function completes (or errors). The \`toolOutput\` field is a discriminated union: when \`toolOutput.type\` is \`'tool-result'\`, the \`output\` field contains the tool result; when \`toolOutput.type\` is \`'tool-error'\`, the \`error\` field contains the error. Errors thrown in this callback are silently caught and do not break the generation flow.
+  - `ToolExecutionEndEvent`
+    - `callId` (`string`): Unique identifier for this generation call, used to correlate events.
+    - `toolCall` (`TypedToolCall<TOOLS>`): The full tool call object containing toolName, toolCallId, input, and metadata.
+    - `toolExecutionMs` (`number`): The wall-clock duration of the tool execution in milliseconds.
+    - `messages` (`Array<ModelMessage>`): Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.
+    - `toolContext` (`InferToolContext<TOOLS[toolName]>`): Tool-specific context object for the tool call that just completed. Narrowed to the context type of the individual tool, not the entire tool set.
+    - `toolOutput` (`ToolOutput<TOOLS>`): Discriminated union representing the tool execution result. When \`type\` is \`'tool-result'\`, the \`output\` field contains the tool's return value. When \`type\` is \`'tool-error'\`, the \`error\` field contains the error.
+- `experimental_onToolCallStart?` (`(event: ToolExecutionStartEvent) => PromiseLike<void> | void`): Deprecated. Use \`onToolExecutionStart\` instead. This alias is only used as a fallback when \`onToolExecutionStart\` is not provided.
+- `experimental_onToolCallFinish?` (`(event: ToolExecutionEndEvent) => PromiseLike<void> | void`): Deprecated. Use \`onToolExecutionEnd\` instead. This alias is only used as a fallback when \`onToolExecutionEnd\` is not provided.
+- `onStepEnd?` (`(stepResult: StepResult<TOOLS>) => Promise<void> | void`): Callback that is called when a step ends. Receives a StepResult object.
+  - `StepResult`
+    - `stepNumber` (`number`): Zero-based index of this step.
+    - `model` (`{ provider: string; modelId: string }`): Information about the model that produced this step.
+    - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object flowing through the generation.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map for the generation step.
+    - `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in this step.
+    - `text` (`string`): The generated text.
+    - `reasoning` (`Array<ReasoningPart | ReasoningFilePart>`): The reasoning that was generated during the generation.
+    - `reasoningText` (`string | undefined`): The reasoning text that was generated during the generation.
+    - `files` (`Array<GeneratedFile>`): The files that were generated during the generation.
+    - `sources` (`Array<Source>`): The sources that were used in this step.
+    - `toolCalls` (`Array<TypedToolCall<TOOLS>>`): The tool calls that were made during the generation.
+    - `staticToolCalls` (`Array<StaticToolCall<TOOLS>>`): The static tool calls that were made in this step.
+    - `dynamicToolCalls` (`Array<DynamicToolCall>`): The dynamic tool calls that were made in this step.
+    - `toolResults` (`Array<TypedToolResult<TOOLS>>`): The results of the tool calls.
+    - `staticToolResults` (`Array<StaticToolResult<TOOLS>>`): The static tool results that were made in this step.
+    - `dynamicToolResults` (`Array<DynamicToolResult>`): The dynamic tool results that were made in this step.
+    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"`): The unified reason why the generation finished.
+    - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
+    - `usage` (`LanguageModelUsage`): The token usage of the generated text.
+      - `LanguageModelUsage`
+        - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.
+        - `inputTokenDetails` (`LanguageModelInputTokenDetails`): Detailed information about the input (prompt) tokens.
+          - `LanguageModelInputTokenDetails`
+            - `noCacheTokens` (`number | undefined`): The number of non-cached input (prompt) tokens used.
+            - `cacheReadTokens` (`number | undefined`): The number of cached input (prompt) tokens read.
+            - `cacheWriteTokens` (`number | undefined`): The number of cached input (prompt) tokens written.
+        - `outputTokens` (`number | undefined`): The number of total output (completion) tokens used.
+        - `outputTokenDetails` (`LanguageModelOutputTokenDetails`): Detailed information about the output (completion) tokens.
+          - `LanguageModelOutputTokenDetails`
+            - `textTokens` (`number | undefined`): The number of text tokens used.
+            - `reasoningTokens` (`number | undefined`): The number of reasoning tokens used.
+        - `totalTokens` (`number | undefined`): The total number of tokens used.
+        - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
+    - `performance` (`StepResultPerformance`): Timing and throughput metrics for the step. For \`generateText\`, streaming-only metrics are undefined.
+      - `StepResultPerformance`
+        - `effectiveOutputTokensPerSecond` (`number`): Effective number of output tokens per second over the full language model response.
+        - `outputTokensPerSecond` (`number | undefined`): Number of output tokens per second after the first generated output chunk was received. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+        - `inputTokensPerSecond` (`number | undefined`): Number of input tokens processed per second before the first generated output chunk was received. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+        - `effectiveTotalTokensPerSecond` (`number`): Effective number of input and output tokens per second over the full language model response.
+        - `stepTimeMs` (`number`): Total time spent on the step, including language model response time and tool execution time, in milliseconds.
+        - `responseTimeMs` (`number`): Time spent waiting for the language model response in milliseconds.
+        - `toolExecutionMs` (`Readonly<Record<string, number>>`): Time spent executing each client-side tool call in the step in milliseconds, keyed by tool call ID.
+        - `timeToFirstOutputMs` (`number | undefined`): Time until the first generated output chunk was received in milliseconds. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+        - `timeBetweenOutputChunksMs` (`OutputChunkTimingStats | undefined`): Timing statistics for the gaps between generated output chunks in milliseconds. For \`generateText\`, this is \`undefined\` because the response is not streamed.
+    - `warnings` (`CallWarning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
+    - `request` (`LanguageModelRequestMetadata`): Additional request information.
+      - `LanguageModelRequestMetadata`
+        - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
+        - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
+    - `response` (`LanguageModelResponseMetadata`): Additional response information.
+      - `Response`
+        - `id` (`string`): The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.
+        - `modelId` (`string`): The model that was used to generate the response.
+        - `timestamp` (`Date`): The timestamp of the response.
+        - `headers?` (`Record<string, string>`): Optional response headers.
+        - `messages` (`Array<ResponseMessage>`): The response messages generated during this step.
+        - `body?` (`unknown`): Response body (available only for providers that use HTTP requests).
+    - `providerMetadata?` (`ProviderMetadata | undefined`): Additional provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific results that can be fully encapsulated in the provider.
+    - `responseMessages` (`Array<ResponseMessage>`): The accumulated response messages that were generated during the call.
+- `onStepFinish?` (`GenerateTextOnStepFinishCallback<TOOLS>`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
+- `onEnd?` (`(event: GenerateTextEndEvent<TOOLS>) => PromiseLike<void> | void`): Callback that is called when the entire generation completes (all steps finished). The event includes the final step result properties, excluding direct \`performance\`, along with aggregated data from all steps. Use \`event.steps\` for per-step performance metrics.
+  - `GenerateTextEndEvent`
+    - `stepNumber` (`number`): Zero-based index of the final step.
+    - `model` (`{ provider: string; modelId: string }`): Information about the model that produced the final step.
+    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"`): The unified reason why the generation finished.
+    - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
+    - `usage` (`LanguageModelUsage`): The token usage from the final step only (not aggregated).
+      - `LanguageModelUsage`
+        - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.
+        - `inputTokenDetails` (`LanguageModelInputTokenDetails`): Detailed information about the input (prompt) tokens.
+          - `LanguageModelInputTokenDetails`
+            - `noCacheTokens` (`number | undefined`): The number of non-cached input (prompt) tokens used.
+            - `cacheReadTokens` (`number | undefined`): The number of cached input (prompt) tokens read.
+            - `cacheWriteTokens` (`number | undefined`): The number of cached input (prompt) tokens written.
+        - `outputTokens` (`number | undefined`): The number of total output (completion) tokens used.
+        - `outputTokenDetails` (`LanguageModelOutputTokenDetails`): Detailed information about the output (completion) tokens.
+          - `LanguageModelOutputTokenDetails`
+            - `textTokens` (`number | undefined`): The number of text tokens used.
+            - `reasoningTokens` (`number | undefined`): The number of reasoning tokens used.
+        - `totalTokens` (`number | undefined`): The total number of tokens used.
+        - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
+    - `totalUsage` (`LanguageModelUsage`): Aggregated token usage across all steps. This is the sum of the usage from each individual step.
+      - `LanguageModelUsage`
+        - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used across all steps.
+        - `outputTokens` (`number | undefined`): The total number of output (completion) tokens used across all steps.
+        - `totalTokens` (`number | undefined`): The total number of tokens used across all steps.
+    - `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in all steps.
+    - `providerMetadata` (`ProviderMetadata | undefined`): Additional provider-specific metadata from the final step.
+    - `text` (`string`): The full text that has been generated.
+    - `reasoningText` (`string | undefined`): The reasoning text of the model (only available for some models).
+    - `reasoning` (`Array<ReasoningDetail>`): The reasoning details of the model (only available for some models).
+      - `ReasoningDetail`
+        - `type` (`'text'`): The type of the reasoning detail.
+        - `text` (`string`): The text content (only for type "text").
+        - `signature?` (`string`): Optional signature (only for type "text").
+      - `ReasoningDetail`
+        - `type` (`'redacted'`): The type of the reasoning detail.
+        - `data` (`string`): The redacted data content (only for type "redacted").
+    - `sources` (`Array<Source>`): Sources that have been used in the final step.
+      - `Source`
+        - `sourceType` (`'url'`): A URL source. This is return by web search RAG models.
+        - `id` (`string`): The ID of the source.
+        - `url` (`string`): The URL of the source.
+        - `title?` (`string`): The title of the source.
+        - `providerMetadata?` (`SharedV2ProviderMetadata`): Additional provider metadata for the source.
+    - `files` (`Array<GeneratedFile>`): Files that were generated in all steps.
+      - `GeneratedFile`
+        - `base64` (`string`): File as a base64 encoded string.
+        - `uint8Array` (`Uint8Array`): File as a Uint8Array.
+        - `mediaType` (`string`): The IANA media type of the file.
+    - `toolCalls` (`Array<TypedToolCall<TOOLS>>`): The tool calls that were made during the generation.
+    - `staticToolCalls` (`Array<StaticToolCall<TOOLS>>`): The static tool calls that were made in the final step.
+    - `dynamicToolCalls` (`Array<DynamicToolCall>`): The dynamic tool calls that were made in the final step.
+    - `toolResults` (`Array<TypedToolResult<TOOLS>>`): The results of the tool calls.
+    - `staticToolResults` (`Array<StaticToolResult<TOOLS>>`): The static tool results that were made in the final step.
+    - `dynamicToolResults` (`Array<DynamicToolResult>`): The dynamic tool results that were made in the final step.
+    - `warnings` (`CallWarning[] | undefined`): Warnings from the model provider (e.g. unsupported settings) in all steps.
+    - `request` (`LanguageModelRequestMetadata`): Additional request information from the final step.
+      - `LanguageModelRequestMetadata`
+        - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
+        - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
+    - `response` (`LanguageModelResponseMetadata`): Additional response information from the final step.
+      - `Response`
+        - `id` (`string`): The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.
+        - `modelId` (`string`): The model that was used to generate the response. The AI SDK uses the response model from the provider response when available, and the model from the function call otherwise.
+        - `timestamp` (`Date`): The timestamp of the response. The AI SDK uses the response timestamp from the provider response when available, and creates a timestamp otherwise.
+        - `headers?` (`Record<string, string>`): Optional response headers.
+        - `body?` (`unknown`): Response body (available only for providers that use HTTP requests).
+        - `messages` (`Array<ResponseMessage>`): The response messages generated during this step. It consists of an assistant message, potentially containing tool calls. When there are tool results in this step, there is an additional tool message with the available tool results. If there are tools that do not have execute functions, they are not included in the tool results and need to be added separately.
+    - `steps` (`Array<StepResult>`): Response information for every step. You can use this to get information about intermediate steps, such as the tool calls or the response headers.
+    - `finalStep` (`StepResult`): The final step. This is a shortcut for \`steps.at(-1)\`.
+    - `responseMessages` (`Array<ResponseMessage>`): The accumulated response messages that were generated during the call.
+    - `runtimeContext` (`CONTEXT`): Deprecated. Use \`finalStep.runtimeContext\` instead. The final state of the user-defined shared runtime context object. This reflects any modifications made during the generation lifecycle via \`prepareStep\`.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Deprecated. Use \`finalStep.toolsContext\` instead. The final state of the per-tool context map passed via \`toolsContext\`.
+- `onFinish?` (`(event: GenerateTextEndEvent<TOOLS>) => PromiseLike<void> | void`): Deprecated alias for \`onEnd\`.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'content',
-      type: 'Array<ContentPart<TOOLS>>',
-      description: 'The content that was generated in all steps.',
-    },
-    {
-      name: 'text',
-      type: 'string',
-      description:
-        'The concatenation of all text parts generated in the final step. It is an empty string if the final step contains no text parts. Inspect `finalStep.content` to distinguish that case.',
-    },
-    {
-      name: 'reasoning',
-      type: 'Array<ReasoningOutput | ReasoningFileOutput>',
-      description:
-        'Deprecated. Use `finalStep.reasoning` instead. The full reasoning that the model has generated in the final step.',
-      properties: [
-        {
-          type: 'ReasoningOutput',
-          parameters: [
-            {
-              name: 'type',
-              type: "'reasoning'",
-              description: 'The type of the message part.',
-            },
-            {
-              name: 'text',
-              type: 'string',
-              description: 'The reasoning text.',
-            },
-            {
-              name: 'providerMetadata',
-              type: 'SharedV2ProviderMetadata',
-              isOptional: true,
-              description: 'Additional provider metadata.',
-            },
-          ],
-        },
-        {
-          type: 'ReasoningFileOutput',
-          parameters: [
-            {
-              name: 'type',
-              type: "'reasoning-file'",
-              description: 'The type of the message part.',
-            },
-            {
-              name: 'file',
-              type: 'GeneratedFile',
-              description: 'The generated file.',
-            },
-            {
-              name: 'providerMetadata',
-              type: 'SharedV2ProviderMetadata',
-              isOptional: true,
-              description: 'Additional provider metadata.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'reasoningText',
-      type: 'string | undefined',
-      description:
-        'Deprecated. Use `finalStep.reasoningText` instead. The reasoning text that the model has generated in the final step. Can be undefined if the model has only generated text.',
-    },
-    {
-      name: 'sources',
-      type: 'Array<Source>',
-      description:
-        'Sources that have been used as input to generate the response. For multi-step generation, the sources are accumulated from all steps.',
-      properties: [
-        {
-          type: 'Source',
-          parameters: [
-            {
-              name: 'sourceType',
-              type: "'url'",
-              description:
-                'A URL source. This is return by web search RAG models.',
-            },
-            {
-              name: 'id',
-              type: 'string',
-              description: 'The ID of the source.',
-            },
-            {
-              name: 'url',
-              type: 'string',
-              description: 'The URL of the source.',
-            },
-            {
-              name: 'title',
-              type: 'string',
-              isOptional: true,
-              description: 'The title of the source.',
-            },
-            {
-              name: 'providerMetadata',
-              type: 'SharedV2ProviderMetadata',
-              isOptional: true,
-              description: 'Additional provider metadata for the source.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'files',
-      type: 'Array<GeneratedFile>',
-      description: 'Files that were generated in all steps.',
-      properties: [
-        {
-          type: 'GeneratedFile',
-          parameters: [
-            {
-              name: 'base64',
-              type: 'string',
-              description: 'File as a base64 encoded string.',
-            },
-            {
-              name: 'uint8Array',
-              type: 'Uint8Array',
-              description: 'File as a Uint8Array.',
-            },
-            {
-              name: 'mediaType',
-              type: 'string',
-              description: 'The IANA media type of the file.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'toolCalls',
-      type: 'ToolCallArray<TOOLS>',
-      description: 'The tool calls that were made in all steps.',
-    },
-    {
-      name: 'toolResults',
-      type: 'ToolResultArray<TOOLS>',
-      description: 'The results of the tool calls from all steps.',
-    },
-    {
-      name: 'staticToolCalls',
-      type: 'Array<StaticToolCall<TOOLS>>',
-      description:
-        'The static tool calls that have been executed in all steps.',
-    },
-    {
-      name: 'dynamicToolCalls',
-      type: 'Array<DynamicToolCall>',
-      description:
-        'The dynamic tool calls that have been executed in all steps.',
-    },
-    {
-      name: 'staticToolResults',
-      type: 'Array<StaticToolResult<TOOLS>>',
-      description:
-        'The static tool results that have been generated in all steps.',
-    },
-    {
-      name: 'dynamicToolResults',
-      type: 'Array<DynamicToolResult>',
-      description:
-        'The dynamic tool results that have been generated in all steps.',
-    },
-    {
-      name: 'finishReason',
-      type: "'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'",
-      description: 'The reason the model finished generating the text.',
-    },
-    {
-      name: 'rawFinishReason',
-      type: 'string | undefined',
-      description:
-        'The raw reason why the generation finished (from the provider).',
-    },
-    {
-      name: 'usage',
-      type: 'LanguageModelUsage',
-      description:
-        'The total token usage of all steps. When there are multiple steps, the usage is the sum of all step usages.',
-      properties: [
-        {
-          type: 'LanguageModelUsage',
-          parameters: [
-            {
-              name: 'inputTokens',
-              type: 'number | undefined',
-              description: 'The total number of input (prompt) tokens used.',
-            },
-            {
-              name: 'inputTokenDetails',
-              type: 'LanguageModelInputTokenDetails',
-              description:
-                'Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.',
-              properties: [
-                {
-                  type: 'LanguageModelInputTokenDetails',
-                  parameters: [
-                    {
-                      name: 'noCacheTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of non-cached input (prompt) tokens used.',
-                    },
-                    {
-                      name: 'cacheReadTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of cached input (prompt) tokens read.',
-                    },
-                    {
-                      name: 'cacheWriteTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of cached input (prompt) tokens written.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'outputTokens',
-              type: 'number | undefined',
-              description:
-                'The number of total output (completion) tokens used.',
-            },
-            {
-              name: 'outputTokenDetails',
-              type: 'LanguageModelOutputTokenDetails',
-              description:
-                'Detailed information about the output (completion) tokens.',
-              properties: [
-                {
-                  type: 'LanguageModelOutputTokenDetails',
-                  parameters: [
-                    {
-                      name: 'textTokens',
-                      type: 'number | undefined',
-                      description: 'The number of text tokens used.',
-                    },
-                    {
-                      name: 'reasoningTokens',
-                      type: 'number | undefined',
-                      description: 'The number of reasoning tokens used.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'totalTokens',
-              type: 'number | undefined',
-              description: 'The total number of tokens used.',
-            },
-            {
-              name: 'raw',
-              type: 'object | undefined',
-              isOptional: true,
-              description:
-                "Raw usage information from the provider. This is the provider's original usage information and may include additional fields.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'totalUsage',
-      type: 'LanguageModelUsage',
-      description:
-        'Deprecated. Use usage instead. The total token usage of all steps. When there are multiple steps, the usage is the sum of all step usages.',
-      properties: [
-        {
-          type: 'LanguageModelUsage',
-          parameters: [
-            {
-              name: 'inputTokens',
-              type: 'number | undefined',
-              description: 'The number of input (prompt) tokens used.',
-            },
-            {
-              name: 'outputTokens',
-              type: 'number | undefined',
-              description: 'The number of output (completion) tokens used.',
-            },
-            {
-              name: 'totalTokens',
-              type: 'number | undefined',
-              description:
-                'The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'request',
-      type: 'LanguageModelRequestMetadata',
-      isOptional: true,
-      description:
-        'Deprecated. Use `finalStep.request` instead. Request metadata from the final step.',
-      properties: [
-        {
-          type: 'LanguageModelRequestMetadata',
-          parameters: [
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              isOptional: true,
-              description:
-                'The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.',
-            },
-            {
-              name: 'body',
-              type: 'unknown',
-              isOptional: true,
-              description:
-                'Request HTTP body that was sent to the provider API.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'response',
-      type: 'LanguageModelResponseMetadata',
-      isOptional: true,
-      description:
-        'Deprecated. Use `finalStep.response` instead. Response metadata from the final step.',
-      properties: [
-        {
-          type: 'LanguageModelResponseMetadata',
-          parameters: [
-            {
-              name: 'id',
-              type: 'string',
-              description:
-                'The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The model that was used to generate the response. The AI SDK uses the response model from the provider response when available, and the model from the function call otherwise.',
-            },
-            {
-              name: 'timestamp',
-              type: 'Date',
-              description:
-                'The timestamp of the response. The AI SDK uses the response timestamp from the provider response when available, and creates a timestamp otherwise.',
-            },
-            {
-              name: 'headers',
-              isOptional: true,
-              type: 'Record<string, string>',
-              description: 'Optional response headers.',
-            },
-            {
-              name: 'body',
-              isOptional: true,
-              type: 'unknown',
-              description: 'Optional response body.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ResponseMessage>',
-              description:
-                'The response messages generated during the final step. It consists of an assistant message, potentially containing tool calls. When there are tool results in the final step, there is an additional tool message with the available tool results. If there are tools that do not have execute functions, they are not included in the tool results and need to be added separately.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'warnings',
-      type: 'Warning[] | undefined',
-      description:
-        'Warnings from the model provider (e.g. unsupported settings) in all steps.',
-    },
-    {
-      name: 'responseMessages',
-      type: 'Array<ResponseMessage>',
-      description:
-        'The accumulated response messages of all steps that were generated during the call.',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'ProviderMetadata | undefined',
-      description:
-        'Deprecated. Use `finalStep.providerMetadata` instead. Optional metadata from the provider for the final step. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.',
-    },
-    {
-      name: 'output',
-      type: 'InferCompleteOutput<OUTPUT>',
-      description:
-        'The generated output according to the `output` specification. Accessing this property throws `NoOutputGeneratedError` when no output is available, for example when the final step does not finish with a `stop` reason.',
-    },
-    {
-      name: 'steps',
-      type: 'Array<StepResult<TOOLS>>',
-      description:
-        'Response information for every step. You can use this to get information about intermediate steps, such as the tool calls or the response headers.',
-      properties: [
-        {
-          type: 'StepResult',
-          parameters: [
-            {
-              name: 'stepNumber',
-              type: 'number',
-              description: 'The zero-based index of this step.',
-            },
-            {
-              name: 'model',
-              type: '{ provider: string; modelId: string }',
-              description:
-                'Information about the model that produced this step.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'User-defined shared runtime context object flowing through the generation.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Per-tool context map for the final generation step.',
-            },
-            {
-              name: 'content',
-              type: 'Array<ContentPart<TOOLS>>',
-              description: 'The content that was generated in the final step.',
-            },
-            {
-              name: 'text',
-              type: 'string',
-              description:
-                'The concatenation of all text parts generated in this step. It is an empty string if the step contains no text parts.',
-            },
-            {
-              name: 'reasoning',
-              type: 'Array<ReasoningPart | ReasoningFilePart>',
-              description:
-                'The reasoning that was generated during the generation.',
-              properties: [
-                {
-                  type: 'ReasoningPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'reasoning'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The reasoning text.',
-                    },
-                  ],
-                },
-                {
-                  type: 'ReasoningFilePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'reasoning-file'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'data',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The file data. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'reasoningText',
-              type: 'string | undefined',
-              description:
-                'The reasoning text that was generated during the generation.',
-            },
-            {
-              name: 'files',
-              type: 'Array<GeneratedFile>',
-              description:
-                'The files that were generated during the generation.',
-              properties: [
-                {
-                  type: 'GeneratedFile',
-                  parameters: [
-                    {
-                      name: 'base64',
-                      type: 'string',
-                      description: 'File as a base64 encoded string.',
-                    },
-                    {
-                      name: 'uint8Array',
-                      type: 'Uint8Array',
-                      description: 'File as a Uint8Array.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'sources',
-              type: 'Array<Source>',
-              description: 'Sources that have been used in this step.',
-              properties: [
-                {
-                  type: 'Source',
-                  parameters: [
-                    {
-                      name: 'sourceType',
-                      type: "'url'",
-                      description:
-                        'A URL source. This is return by web search RAG models.',
-                    },
-                    {
-                      name: 'id',
-                      type: 'string',
-                      description: 'The ID of the source.',
-                    },
-                    {
-                      name: 'url',
-                      type: 'string',
-                      description: 'The URL of the source.',
-                    },
-                    {
-                      name: 'title',
-                      type: 'string',
-                      isOptional: true,
-                      description: 'The title of the source.',
-                    },
-                    {
-                      name: 'providerMetadata',
-                      type: 'SharedV2ProviderMetadata',
-                      isOptional: true,
-                      description:
-                        'Additional provider metadata for the source.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'toolCalls',
-              type: 'ToolCallArray<TOOLS>',
-              description:
-                'The tool calls that were made during the generation.',
-            },
-            {
-              name: 'toolResults',
-              type: 'ToolResultArray<TOOLS>',
-              description: 'The results of the tool calls.',
-            },
-            {
-              name: 'finishReason',
-              type: "'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'",
-              description: 'The reason why the generation finished.',
-            },
-            {
-              name: 'rawFinishReason',
-              type: 'string | undefined',
-              description:
-                'The raw reason why the generation finished (from the provider).',
-            },
-            {
-              name: 'usage',
-              type: 'LanguageModelUsage',
-              description: 'The token usage of the generated text.',
-              properties: [
-                {
-                  type: 'LanguageModelUsage',
-                  parameters: [
-                    {
-                      name: 'inputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of input (prompt) tokens used.',
-                    },
-                    {
-                      name: 'inputTokenDetails',
-                      type: 'LanguageModelInputTokenDetails',
-                      description:
-                        'Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelInputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'noCacheTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of non-cached input (prompt) tokens used.',
-                            },
-                            {
-                              name: 'cacheReadTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens read.',
-                            },
-                            {
-                              name: 'cacheWriteTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens written.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'outputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of total output (completion) tokens used.',
-                    },
-                    {
-                      name: 'outputTokenDetails',
-                      type: 'LanguageModelOutputTokenDetails',
-                      description:
-                        'Detailed information about the output (completion) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelOutputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'textTokens',
-                              type: 'number | undefined',
-                              description: 'The number of text tokens used.',
-                            },
-                            {
-                              name: 'reasoningTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of reasoning tokens used.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'totalTokens',
-                      type: 'number | undefined',
-                      description: 'The total number of tokens used.',
-                    },
-                    {
-                      name: 'raw',
-                      type: 'object | undefined',
-                      isOptional: true,
-                      description:
-                        "Raw usage information from the provider. This is the provider's original usage information and may include additional fields.",
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'warnings',
-              type: 'Warning[] | undefined',
-              description:
-                'Warnings from the model provider (e.g. unsupported settings).',
-            },
-            {
-              name: 'request',
-              type: 'LanguageModelRequestMetadata',
-              description: 'Additional request information.',
-              properties: [
-                {
-                  type: 'LanguageModelRequestMetadata',
-                  parameters: [
-                    {
-                      name: 'messages',
-                      type: 'Array<ModelMessage>',
-                      isOptional: true,
-                      description:
-                        'The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.',
-                    },
-                    {
-                      name: 'body',
-                      type: 'unknown',
-                      isOptional: true,
-                      description:
-                        'Request HTTP body that was sent to the provider API.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'response',
-              type: 'LanguageModelResponseMetadata',
-              description: 'Additional response information.',
-              properties: [
-                {
-                  type: 'LanguageModelResponseMetadata',
-                  parameters: [
-                    {
-                      name: 'id',
-                      type: 'string',
-                      description:
-                        'The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.',
-                    },
-                    {
-                      name: 'modelId',
-                      type: 'string',
-                      description:
-                        'The model that was used to generate the response. The AI SDK uses the response model from the provider response when available, and the model from the function call otherwise.',
-                    },
-                    {
-                      name: 'timestamp',
-                      type: 'Date',
-                      description:
-                        'The timestamp of the response. The AI SDK uses the response timestamp from the provider response when available, and creates a timestamp otherwise.',
-                    },
-                    {
-                      name: 'headers',
-                      isOptional: true,
-                      type: 'Record<string, string>',
-                      description: 'Optional response headers.',
-                    },
-                    {
-                      name: 'body',
-                      isOptional: true,
-                      type: 'unknown',
-                      description:
-                        'Response body (available only for providers that use HTTP requests).',
-                    },
-                    {
-                      name: 'messages',
-                      type: 'Array<ResponseMessage>',
-                      description:
-                        'The response messages generated during this step. Response messages can be either assistant messages or tool messages. They contain a generated id.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'providerMetadata',
-              type: 'ProviderMetadata | undefined',
-              description:
-                'Additional provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific results that can be fully encapsulated in the provider.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'finalStep',
-      type: 'StepResult<TOOLS>',
-      description: 'The final step. This is a shortcut for `steps.at(-1)`.',
-    },
-  ]}
-/>
+- `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in all steps.
+- `text` (`string`): The concatenation of all text parts generated in the final step. It is an empty string if the final step contains no text parts. Inspect \`finalStep.content\` to distinguish that case.
+- `reasoning` (`Array<ReasoningOutput | ReasoningFileOutput>`): Deprecated. Use \`finalStep.reasoning\` instead. The full reasoning that the model has generated in the final step.
+  - `ReasoningOutput`
+    - `type` (`'reasoning'`): The type of the message part.
+    - `text` (`string`): The reasoning text.
+    - `providerMetadata?` (`SharedV2ProviderMetadata`): Additional provider metadata.
+  - `ReasoningFileOutput`
+    - `type` (`'reasoning-file'`): The type of the message part.
+    - `file` (`GeneratedFile`): The generated file.
+    - `providerMetadata?` (`SharedV2ProviderMetadata`): Additional provider metadata.
+- `reasoningText` (`string | undefined`): Deprecated. Use \`finalStep.reasoningText\` instead. The reasoning text that the model has generated in the final step. Can be undefined if the model has only generated text.
+- `sources` (`Array<Source>`): Sources that have been used as input to generate the response. For multi-step generation, the sources are accumulated from all steps.
+  - `Source`
+    - `sourceType` (`'url'`): A URL source. This is return by web search RAG models.
+    - `id` (`string`): The ID of the source.
+    - `url` (`string`): The URL of the source.
+    - `title?` (`string`): The title of the source.
+    - `providerMetadata?` (`SharedV2ProviderMetadata`): Additional provider metadata for the source.
+- `files` (`Array<GeneratedFile>`): Files that were generated in all steps.
+  - `GeneratedFile`
+    - `base64` (`string`): File as a base64 encoded string.
+    - `uint8Array` (`Uint8Array`): File as a Uint8Array.
+    - `mediaType` (`string`): The IANA media type of the file.
+- `toolCalls` (`ToolCallArray<TOOLS>`): The tool calls that were made in all steps.
+- `toolResults` (`ToolResultArray<TOOLS>`): The results of the tool calls from all steps.
+- `staticToolCalls` (`Array<StaticToolCall<TOOLS>>`): The static tool calls that have been executed in all steps.
+- `dynamicToolCalls` (`Array<DynamicToolCall>`): The dynamic tool calls that have been executed in all steps.
+- `staticToolResults` (`Array<StaticToolResult<TOOLS>>`): The static tool results that have been generated in all steps.
+- `dynamicToolResults` (`Array<DynamicToolResult>`): The dynamic tool results that have been generated in all steps.
+- `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+- `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
+- `usage` (`LanguageModelUsage`): The total token usage of all steps. When there are multiple steps, the usage is the sum of all step usages.
+  - `LanguageModelUsage`
+    - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.
+    - `inputTokenDetails` (`LanguageModelInputTokenDetails`): Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+      - `LanguageModelInputTokenDetails`
+        - `noCacheTokens` (`number | undefined`): The number of non-cached input (prompt) tokens used.
+        - `cacheReadTokens` (`number | undefined`): The number of cached input (prompt) tokens read.
+        - `cacheWriteTokens` (`number | undefined`): The number of cached input (prompt) tokens written.
+    - `outputTokens` (`number | undefined`): The number of total output (completion) tokens used.
+    - `outputTokenDetails` (`LanguageModelOutputTokenDetails`): Detailed information about the output (completion) tokens.
+      - `LanguageModelOutputTokenDetails`
+        - `textTokens` (`number | undefined`): The number of text tokens used.
+        - `reasoningTokens` (`number | undefined`): The number of reasoning tokens used.
+    - `totalTokens` (`number | undefined`): The total number of tokens used.
+    - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
+- `totalUsage` (`LanguageModelUsage`): Deprecated. Use usage instead. The total token usage of all steps. When there are multiple steps, the usage is the sum of all step usages.
+  - `LanguageModelUsage`
+    - `inputTokens` (`number | undefined`): The number of input (prompt) tokens used.
+    - `outputTokens` (`number | undefined`): The number of output (completion) tokens used.
+    - `totalTokens` (`number | undefined`): The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
+- `request?` (`LanguageModelRequestMetadata`): Deprecated. Use \`finalStep.request\` instead. Request metadata from the final step.
+  - `LanguageModelRequestMetadata`
+    - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
+    - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
+- `response?` (`LanguageModelResponseMetadata`): Deprecated. Use \`finalStep.response\` instead. Response metadata from the final step.
+  - `LanguageModelResponseMetadata`
+    - `id` (`string`): The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.
+    - `modelId` (`string`): The model that was used to generate the response. The AI SDK uses the response model from the provider response when available, and the model from the function call otherwise.
+    - `timestamp` (`Date`): The timestamp of the response. The AI SDK uses the response timestamp from the provider response when available, and creates a timestamp otherwise.
+    - `headers?` (`Record<string, string>`): Optional response headers.
+    - `body?` (`unknown`): Optional response body.
+    - `messages` (`Array<ResponseMessage>`): The response messages generated during the final step. It consists of an assistant message, potentially containing tool calls. When there are tool results in the final step, there is an additional tool message with the available tool results. If there are tools that do not have execute functions, they are not included in the tool results and need to be added separately.
+- `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings) in all steps.
+- `responseMessages` (`Array<ResponseMessage>`): The accumulated response messages of all steps that were generated during the call.
+- `providerMetadata` (`ProviderMetadata | undefined`): Deprecated. Use \`finalStep.providerMetadata\` instead. Optional metadata from the provider for the final step. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
+- `output` (`InferCompleteOutput<OUTPUT>`): The generated output according to the \`output\` specification. Accessing this property throws \`NoOutputGeneratedError\` when no output is available, for example when the final step does not finish with a \`stop\` reason.
+- `steps` (`Array<StepResult<TOOLS>>`): Response information for every step. You can use this to get information about intermediate steps, such as the tool calls or the response headers.
+  - `StepResult`
+    - `stepNumber` (`number`): The zero-based index of this step.
+    - `model` (`{ provider: string; modelId: string }`): Information about the model that produced this step.
+    - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object flowing through the generation.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map for the final generation step.
+    - `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in the final step.
+    - `text` (`string`): The concatenation of all text parts generated in this step. It is an empty string if the step contains no text parts.
+    - `reasoning` (`Array<ReasoningPart | ReasoningFilePart>`): The reasoning that was generated during the generation.
+      - `ReasoningPart`
+        - `type` (`'reasoning'`): The type of the message part.
+        - `text` (`string`): The reasoning text.
+      - `ReasoningFilePart`
+        - `type` (`'reasoning-file'`): The type of the message part.
+        - `data` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The file data. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType` (`string`): The IANA media type of the file.
+    - `reasoningText` (`string | undefined`): The reasoning text that was generated during the generation.
+    - `files` (`Array<GeneratedFile>`): The files that were generated during the generation.
+      - `GeneratedFile`
+        - `base64` (`string`): File as a base64 encoded string.
+        - `uint8Array` (`Uint8Array`): File as a Uint8Array.
+        - `mediaType` (`string`): The IANA media type of the file.
+    - `sources` (`Array<Source>`): Sources that have been used in this step.
+      - `Source`
+        - `sourceType` (`'url'`): A URL source. This is return by web search RAG models.
+        - `id` (`string`): The ID of the source.
+        - `url` (`string`): The URL of the source.
+        - `title?` (`string`): The title of the source.
+        - `providerMetadata?` (`SharedV2ProviderMetadata`): Additional provider metadata for the source.
+    - `toolCalls` (`ToolCallArray<TOOLS>`): The tool calls that were made during the generation.
+    - `toolResults` (`ToolResultArray<TOOLS>`): The results of the tool calls.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason why the generation finished.
+    - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
+    - `usage` (`LanguageModelUsage`): The token usage of the generated text.
+      - `LanguageModelUsage`
+        - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.
+        - `inputTokenDetails` (`LanguageModelInputTokenDetails`): Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+          - `LanguageModelInputTokenDetails`
+            - `noCacheTokens` (`number | undefined`): The number of non-cached input (prompt) tokens used.
+            - `cacheReadTokens` (`number | undefined`): The number of cached input (prompt) tokens read.
+            - `cacheWriteTokens` (`number | undefined`): The number of cached input (prompt) tokens written.
+        - `outputTokens` (`number | undefined`): The number of total output (completion) tokens used.
+        - `outputTokenDetails` (`LanguageModelOutputTokenDetails`): Detailed information about the output (completion) tokens.
+          - `LanguageModelOutputTokenDetails`
+            - `textTokens` (`number | undefined`): The number of text tokens used.
+            - `reasoningTokens` (`number | undefined`): The number of reasoning tokens used.
+        - `totalTokens` (`number | undefined`): The total number of tokens used.
+        - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
+    - `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
+    - `request` (`LanguageModelRequestMetadata`): Additional request information.
+      - `LanguageModelRequestMetadata`
+        - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
+        - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
+    - `response` (`LanguageModelResponseMetadata`): Additional response information.
+      - `LanguageModelResponseMetadata`
+        - `id` (`string`): The response identifier. The AI SDK uses the ID from the provider response when available, and generates an ID otherwise.
+        - `modelId` (`string`): The model that was used to generate the response. The AI SDK uses the response model from the provider response when available, and the model from the function call otherwise.
+        - `timestamp` (`Date`): The timestamp of the response. The AI SDK uses the response timestamp from the provider response when available, and creates a timestamp otherwise.
+        - `headers?` (`Record<string, string>`): Optional response headers.
+        - `body?` (`unknown`): Response body (available only for providers that use HTTP requests).
+        - `messages` (`Array<ResponseMessage>`): The response messages generated during this step. Response messages can be either assistant messages or tool messages. They contain a generated id.
+    - `providerMetadata` (`ProviderMetadata | undefined`): Additional provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific results that can be fully encapsulated in the provider.
+- `finalStep` (`StepResult<TOOLS>`): The final step. This is a shortcut for \`steps.at(-1)\`.
 
 ## Types
 
@@ -3244,102 +587,17 @@ Limits a generation step to the listed tool names. `undefined` means no tool res
 
 ## Examples
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to generate text using a language model in Next.js',
-      link: '/examples/next-app/basics/generating-text',
-    },
-    {
-      title:
-        'Learn to generate a chat completion using a language model in Next.js',
-      link: '/examples/next-app/basics/generating-text',
-    },
-    {
-      title: 'Learn to call tools using a language model in Next.js',
-      link: '/examples/next-app/tools/call-tool',
-    },
-    {
-      title:
-        'Learn to render a React component as a tool call using a language model in Next.js',
-      link: '/examples/next-app/tools/render-interface-during-tool-call',
-    },
-    {
-      title: 'Learn to generate text using a language model in Node.js',
-      link: '/examples/node/generating-text/generate-text',
-    },
-    {
-      title:
-        'Learn to generate chat completions using a language model in Node.js',
-      link: '/examples/node/generating-text/generate-text-with-chat-prompt',
-    },
-  ]}
-/>
+- [Learn to generate text using a language model in Next.js](/examples/next-app/basics/generating-text)
+- [Learn to generate a chat completion using a language model in Next.js](/examples/next-app/basics/generating-text)
+- [Learn to call tools using a language model in Next.js](/examples/next-app/tools/call-tool)
+- [Learn to render a React component as a tool call using a language model in Next.js](/examples/next-app/tools/render-interface-during-tool-call)
+- [Learn to generate text using a language model in Node.js](/examples/node/generating-text/generate-text)
+- [Learn to generate chat completions using a language model in Node.js](/examples/node/generating-text/generate-text-with-chat-prompt)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,13 +16,13 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "06e65e3a913cb52a56867329e043ce3fccddd1a6c63bed8c539e062320ed1815"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "421673fd5a6e0a357405e1116b060adb2667127691bb2fc82aa8227359d5486a"
 ---
 
 # Private Storage
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 > **💡 Note:** Private storage requires a private Blob store and is available starting with:* `@vercel/blob` [TypeScript SDK](/docs/vercel-blob/using-blob-sdk) >= 2.3
 > * `vercel` [Python SDK](https://github.com/vercel/vercel-py) >= 0.5.0
@@ -40,8 +40,8 @@ Private Blob stores require authentication for all read and write operations, en
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fprivate-storage&source_site=vercel-docs&relationship=related)
 

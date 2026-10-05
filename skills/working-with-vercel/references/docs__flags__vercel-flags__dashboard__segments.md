@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d73387d60ae8fab2be0969f40b50d6769e3d0f6d6ca2b4f53df672ff18c816ca"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4886040040e7b146121838258b328e08d946aeb5bfc3083bbfca8a3154d7f246"
 ---
 
 # Segments
@@ -32,8 +32,8 @@ Segments are reusable groups of users for targeting feature flags. Instead of re
 
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsegments&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library

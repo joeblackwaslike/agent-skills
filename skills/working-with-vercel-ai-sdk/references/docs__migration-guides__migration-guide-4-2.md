@@ -1,16 +1,18 @@
 ---
+title: Migrate AI SDK 4.1 to 4.2
+description: Learn how to upgrade AI SDK 4.1 to 4.2.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-2"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-2.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "1558f78d34b74c694ad931876bb9558a7af12e3fd73bad4200c5668358d067c1"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "acc068b42842ca556accb66d1b65acc23dc136474dd2d491330d14d54790343b"
 ---
 
-# Migrate AI SDK 4.1 to 4.2
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Check out the [AI SDK 4.2 release blog
-  post](https://vercel.com/blog/ai-sdk-4-2) for more information about the
-  release.
-</Note>
+Check out the [AI SDK 4.2 release blog
+post](https://vercel.com/blog/ai-sdk-4-2) for more information about the
+release.
 
 This guide will help you upgrade to AI SDK 4.2:
 
@@ -99,21 +101,10 @@ function Chat() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

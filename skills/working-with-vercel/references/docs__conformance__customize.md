@@ -12,13 +12,13 @@ related:
 summary: Learn how to manage and configure your Conformance rules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/customize.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2509128a03578190fbafc8fe7d0cf8512fc6bc3a47387e783d38b365ea72b154"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "df1ba642ca6a2631e87e709a8c1222904cb408dc7fbba4a05973f0338b67ed23"
 ---
 
 # Customizing Conformance
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The Conformance framework may be customized so that you can manage
 rules for different workspaces in your repository or to pass configuration to

@@ -17,8 +17,8 @@ related:
 summary: Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f9767addc05b8dffa02c87556b25247a88c862af8fb088644cb770a7bef46bd7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "05f98fcac1f9b14b93fdc5c6b3ad1d162698e71b6e7e5b9469e22336f765e768"
 ---
 
 # Anthropic Messages Extended Thinking with AI Gateway
@@ -31,12 +31,12 @@ Anthropic calls reasoning **extended thinking**. Configure it with the `thinking
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related)
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Learn how to use the Anthropic provider for the AI SDK.
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Learn how to control reasoning across providers with the top-level reasoning parameter.
+- [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Get started with Claude 4 using the AI SDK.
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
-- [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=related) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Freasoning&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

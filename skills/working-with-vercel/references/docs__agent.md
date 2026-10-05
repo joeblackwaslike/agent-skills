@@ -8,21 +8,21 @@ type: integration
 prerequisites:
   []
 related:
+  - /docs/agent/private-dependencies
   - /docs/agent/pr-review
   - /docs/agent/investigation
   - /docs/agent/installation
   - /docs/agent/chat/permissions
-  - /docs/agent/chat/github
 summary: Use Vercel Agent to investigate production issues, review code, and take approved actions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e02414b393f4d08821583defbfe4c099b2111eb6de76701899cf10da48be2e06"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "66722aeb5c989223698149eb09cb34c0c2b79fd33ed4dac4ea72db49aa97462a"
 ---
 
 # Vercel Agent
 
-> **🔒 Permissions Required**: Vercel Agent (Public Beta)
+> **Availability**: Vercel Agent (Public Beta) is available on Enterprise and Pro plans
 
 Vercel Agent is an AI assistant built into Vercel. Use it to understand your projects, investigate production issues, review code, and take approved actions.
 
@@ -32,23 +32,25 @@ Vercel Agent is an AI assistant built into Vercel. Use it to understand your pro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
 - [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
 - [Native Deployment Checks are now available](https://vercel.com/changelog/native-deployment-checks?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related)
-- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=related) — Vercel MCP tools for billing and purchases.
 
 Full cross-link map for this page: [/docs/agent.graph.md](/docs/agent.graph.md?from=related&source_path=%2Fdocs%2Fagent&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 Vercel Agent uses context from your Vercel projects, deployments, logs, metrics, configuration, usage, and connected repositories. It can use secure sandboxes to reproduce issues, validate generated code, and run checks before suggested changes reach production.
+
+For repositories with private npm packages, [configure shared registry credentials](/docs/agent/private-dependencies) so Vercel Agent can install dependencies during these workflows.
 
 ## Availability
 

@@ -1,10 +1,14 @@
 ---
+title: Policy-Based Tool Approvals
+description: "Author tool authorization rules as code with @ai-sdk/policy-opa and Open Policy Agent."
+url: "https://ai-sdk.dev/docs/agents/policy-tool-approvals"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/policy-tool-approvals.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "dcb0602bed4d8db6f583b2add59b6b93661e00199c3cd2333df751ca78da768d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a83139fd7599fd9edb48c3a071f161734233aeac7e4d24b2ef93da5ad7920b02"
 ---
 
-# Policy-Based Tool Approvals
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Tool Approvals](/docs/agents/tool-approvals) let you approve or deny tool calls with a function in your agent setup. `@ai-sdk/policy-opa` moves those rules out of code and into [Open Policy Agent](https://www.openpolicyagent.org/) (OPA) policies written in `.rego`.
 
@@ -81,7 +85,7 @@ const toolApproval = opaPolicy({
 
 // 3. Pass it to generateText (or streamText / ToolLoopAgent). Everything else is normal.
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   tools: { git, bash, queryLogs },
   toolApproval,
   prompt: 'find the failing test and push the fix',
@@ -92,7 +96,7 @@ const result = await generateText({
 
 The policy emits a decision object. `reason` is optional and is surfaced back to the model (for `deny`) or to the human approver (for `requires-approval`). A manual approval request exposes it as `reason` in core results and as `approval.requestReason` in UI messages.
 
-```rego
+```txt
 package agent.call
 
 # Default to "not-applicable" so unmatched calls fall through.
@@ -140,7 +144,7 @@ opaPolicy({
 
 OPA ships its own test framework. These tests run without the SDK, which is the main reason policy-as-code beats policy-in-application-code.
 
-```rego
+```txt
 # policy_test.rego
 package agent.call
 
@@ -292,7 +296,7 @@ import { wasmPolicyClient, opaCapabilityMiddleware } from '@ai-sdk/policy-opa';
 const client = await wasmPolicyClient({ wasm });
 
 const wrappedModel = wrapLanguageModel({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   middleware: opaCapabilityMiddleware({ client, path: 'agent/tools/allowed' }),
 });
 ```
@@ -413,20 +417,10 @@ OPA backend and adapters:
 - [ai-sdk-slackbot example](https://github.com/vercel-labs/ai-sdk-slackbot): a full agent with policy-gated tools.
 - [Open Policy Agent documentation](https://www.openpolicyagent.org/docs/)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

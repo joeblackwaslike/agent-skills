@@ -1,10 +1,14 @@
 ---
+title: NVIDIA NIM
+description: Use NVIDIA NIM OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/nim"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nim.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e9df145c2668586d3b5b03086cd41c9ab92eca3f7996fb40a96bc18d051fd369"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "666b43d1877d5c7a158f2d67368372a6a06eef0a2d8907168a380a98f626b605"
 ---
 
-# NVIDIA NIM Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [NVIDIA NIM](https://www.nvidia.com/en-us/ai/) provides optimized inference microservices for deploying foundation models. It offers an OpenAI-compatible API that you can use with the AI SDK.
 
@@ -13,7 +17,7 @@ sha256: "e9df145c2668586d3b5b03086cd41c9ab92eca3f7996fb40a96bc18d051fd369"
 The NVIDIA NIM provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 ## Provider Instance
 
@@ -31,11 +35,9 @@ const nim = createOpenAICompatible({
 });
 ```
 
-<Note>
-  You can obtain an API key and free credits by registering at [NVIDIA
-  Build](https://build.nvidia.com/explore/discover). New users receive 1,000
-  inference credits to get started.
-</Note>
+You can obtain an API key and free credits by registering at [NVIDIA
+Build](https://build.nvidia.com/explore/discover). New users receive 1,000
+inference credits to get started.
 
 ## Language Models
 
@@ -103,24 +105,15 @@ console.log('Finish reason:', await result.finishReason);
 
 NIM language models also support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output).
 
-<Note>
-  Model support for tool calls and structured output varies. For example, the
-  [`meta/llama-3.3-70b-instruct`](https://build.nvidia.com/meta/llama-3_3-70b-instruct)
-  model supports structured output capabilities. Check each model's
-  documentation on NVIDIA Build for specific supported features.
-</Note>
+Model support for tool calls and structured output varies. For example, the
+[`meta/llama-3.3-70b-instruct`](https://build.nvidia.com/meta/llama-3_3-70b-instruct)
+model supports structured output capabilities. Check each model's
+documentation on NVIDIA Build for specific supported features.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

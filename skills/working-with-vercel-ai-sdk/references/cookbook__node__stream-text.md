@@ -1,10 +1,17 @@
 ---
+title: Stream Text
+description: Learn how to stream text using the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/stream-text"
+docs_index: /llms.txt
+tags:
+  - node
+  - streaming
 source: "https://ai-sdk.dev/cookbook/node/stream-text.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "6c52ab06276347267d3b04792e56554c32ed6156f04711ebf9227c2d91c66235"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6595b4b7cc668d220421d78fdc838c8e850595cc9aab7af6b8acb2c05afe0c95"
 ---
 
-# Stream Text
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Text generation can sometimes take a long time to complete, especially when you're generating a couple of paragraphs.
 In such cases, it is useful to stream the text to the client in real-time.
@@ -25,7 +32,7 @@ Overall, Joyful Hearts Day is a day to celebrate love, kindness, and positivity,
 
 ## Without reader
 
-```ts file='index.ts'
+```ts title='index.ts'
 import { streamText } from 'ai';
 
 const result = streamText({
@@ -41,7 +48,7 @@ for await (const textPart of result.textStream) {
 
 ## With reader
 
-```ts file='index.ts'
+```ts title='index.ts'
 import { streamText } from 'ai';
 
 const result = streamText({
@@ -61,38 +68,10 @@ while (true) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

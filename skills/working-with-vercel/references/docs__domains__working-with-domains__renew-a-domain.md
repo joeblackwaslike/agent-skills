@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d3b89a377b8f481ff822d2d3a4f1eda0300e96a1123ad6a4252ab283ad1b624b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e2c0d8798169da1e0bab0bb436706ea6092111b4a78a2bd19a41b0365fd826ff"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -30,14 +30,15 @@ Custom domains purchased through or registered with Vercel are [automatically re
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
-- [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each
+- [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
 - [Auto Renewal can now be disabled for Domains](https://vercel.com/changelog/auto-renewal-can-now-be-disabled-for-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related)
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/renew-a-domain.graph.md](/docs/domains/working-with-domains/renew-a-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Frenew-a-domain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,7 +56,7 @@ To enable automatic renewal, follow these steps:
   From the list of domains, find the domain you want to enable automatic renewal for. You can use the search bar or filter button to find it if you have many domains.
   You'll see the auto-renewal or expiry status of the domain in the domain's row.
 
-  ![Image](`/docs-assets/static/docs/domains/domains-list-item-light.png`)
+  ![Domain row with auto renewal status.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/domains/domains-list-item-light.png)
 
 - ### Toggle the auto renewal status
   Click on the hamburger menu icon  to the right of the domain and toggle the Auto Renewal to on or off.
@@ -105,13 +106,13 @@ To prevent a domain from renewing, turn off auto renewal **more than 30 days bef
   > **💡 Note:** Your domain must be within 1 year of expiration to be eligible for renewal.
 
 - ### Confirm your renewal
-  ![Image](`/docs-assets/static/docs/domains/renew-domain-modal-light.png`)
+  ![The Renew Domain Modal](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/domains/renew-domain-modal-light.png)
 
 ## Domain redemptions
 
 For expired domains with a redemption period (typically 30 days), you can now recover them directly in the dashboard:
 
-![Image](`/docs-assets/static/docs/domains/redeem-domain-modal-light.png`)
+![The Redeem Domain Modal](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/domains/redeem-domain-modal-light.png)
 
 A redemption fee will be applied, depending on the domain registry.
 
@@ -121,7 +122,7 @@ A redemption fee will be applied, depending on the domain registry.
 
 You can filter your Vercel owned domains by their renewal status by clicking the filter icon in the top right of the Domains table:
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/renew-domain-light.png`)
+![Filter Domains table by renewal status.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/renew-domain-light.png)
 
 ## Renewing third-party domains
 

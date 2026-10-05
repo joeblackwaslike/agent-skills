@@ -12,13 +12,13 @@ related:
 summary: Requires all dependencies in a monorepo to have the same version policy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/require_one_version_policy.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "00338ff33a9ba48ddc1ce68f27eebbf828a1fc1d2332684166625eabec10c70b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8e9cfdb274d9a21cd482353ff90912071ccff073bfd11de7f7821c582cb49716"
 ---
 
 # REQUIRE_ONE_VERSION_POLICY
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Dependency mismatch is a common and easily preventable problem. When there
 are multiple versions of a single dependency, not only is there additional complexity

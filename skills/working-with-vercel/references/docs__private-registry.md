@@ -14,8 +14,8 @@ related:
 summary: "Learn how to set up Vercel's private registry for use locally, in Vercel, and in your CI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d83f508266e21985c7a2d827bd27ede5f58a089d3c2c7eac38af471baa57b973"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4bd5338fc63cb57b571d6c4baa47d75c57093cb77096075e5f8feb3ef1e7b161"
 ---
 
 # Working with Vercel
@@ -42,22 +42,22 @@ This guide covers Vercel's private registry packages. For information on using y
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
       ```
     </Code>
   </CodeBlock>
@@ -80,22 +80,22 @@ This guide covers Vercel's private registry packages. For information on using y
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm login --scope=@vercel-private
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      npm login --scope=@vercel-private
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npm login --scope=@vercel-private
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      npm login --scope=@vercel-private
       ```
     </Code>
   </CodeBlock>
@@ -124,22 +124,22 @@ This guide covers Vercel's private registry packages. For information on using y
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm whoami --registry=https://vercel-private-registry.vercel.sh/registry
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn npm whoami --scope=vercel-private
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npm whoami --registry=https://vercel-private-registry.vercel.sh/registry
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bun pm whoami --registry=https://vercel-private-registry.vercel.sh/registry
       ```
     </Code>
   </CodeBlock>
@@ -194,22 +194,38 @@ This guide covers Vercel's private registry packages. For information on using y
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      {
+        "scripts": {
+          "pnpm:devPreinstall": "node preinstall.mjs"
+        }
+      }
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      {
+        "scripts": {
+          "preinstall": "node preinstall.mjs"
+        }
+      }
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      {
+        "scripts": {
+          "preinstall": "node preinstall.mjs"
+        }
+      }
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      {
+        "scripts": {
+          "preinstall": "node preinstall.mjs"
+        }
+      }
       ```
     </Code>
   </CodeBlock>

@@ -13,8 +13,8 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "70f78d4407de96310039b50616a1e5abd3a30aa4832f120004581e8329fa79ac"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "41de33480dabef60bc904015a77cf78233f58253c76b233ef086fc75e95e9dbe"
 ---
 
 # AI Gateway Anthropic Reasoning
@@ -28,13 +28,12 @@ Anthropic Claude models support thinking, which lets the model reason through co
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Learn how to control reasoning across providers with the top-level reasoning parameter.
+- [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Get started with Claude 4 using the AI SDK.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [Use Claude Opus 4.6 on AI Gateway](https://vercel.com/changelog/claude-opus-4.6-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related)
-- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md](/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fanthropic&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -328,7 +327,7 @@ Interleaved thinking lets Claude think between tool calls, producing better reas
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-4.5',
   prompt: 'Search for the weather and summarize it.',
   providerOptions: {
     anthropic: {

@@ -17,8 +17,8 @@ related:
 summary: "Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes, and monitor requests."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/amp.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a144a0eae4d7281f951c619246270eb1e811dbaca145331b46ca9cb1e6533cc1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "34d2afc0c4dc0268d388a2c912c2d97c2c11f13cde0275ec56a2e5045264eadf"
 ---
 
 # Amp with AI Gateway
@@ -31,11 +31,12 @@ sha256: "a144a0eae4d7281f951c619246270eb1e811dbaca145331b46ca9cb1e6533cc1"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=related) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/amp.graph.md](/docs/ai-gateway/coding-agents/amp.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Famp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

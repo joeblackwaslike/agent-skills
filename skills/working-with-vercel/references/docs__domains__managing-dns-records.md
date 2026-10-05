@@ -12,8 +12,8 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3b16f9adaaba4f115b7ad67a4b85a85d407940b818e5031ab00bc1c8bfc2e589"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "15c57ba80b9f52af01b4d955f3b3309f7c10eb9cf2b5e92830572722f6ce53d2"
 ---
 
 # Managing DNS Records
@@ -54,7 +54,7 @@ Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md]
 - ### Add DNS Record
   Once on the Advanced Settings page of your domain, select the **Enable Vercel DNS** button to fill out the DNS Record form. Once complete, click on the **Add** button.
 
-  ![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/dns-records-form.png`)
+  ![DNS Records form to add a new DNS Record.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/dns-records-form.png)
 
   You can then create a new DNS record with the following data:
   - **Name:** The prefix or location of the record. For www.example.com, the name argument would be www.
@@ -108,7 +108,7 @@ To remove DNS records:
 
 Default records can't be removed. However, new records can override them if required.
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/delete-dns-record.png`)
+![Removing a DNS record from the DNS UI.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/delete-dns-record.png)
 
 ## DNS Presets
 
@@ -119,7 +119,7 @@ Vercel streamlines this process for common third-party services by allowing you 
 1. From your [dashboard](/dashboard), open [**Domains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+Domains) in the sidebar.
 2. Select the domain you wish to add a preset to and click the **Add DNS Preset** dropdown on the right:
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/dns-presents-light.png`)
+![Adding a DNS Preset by clicking the Add DNS Preset button.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/dns-presents-light.png)
 
 3. You will be presented with a list of commonly used third-party providers. If your provider is listed, select it, and the necessary DNS records, such as MX for email or TXT for other services like Bluesky, will automatically be configured on your domain.
 
@@ -182,7 +182,7 @@ After you've successfully located all records associated with your domain, you m
 
 **Importing a zone file**
 
-If you have downloaded a zone file from your existing file, you may use the following comand to upload that to Vercel:
+If you have downloaded a zone file from your existing DNS provider, you may use the following command to upload that to Vercel:
 
 ```bash
 vercel dns import [your-domain] [zonefile]

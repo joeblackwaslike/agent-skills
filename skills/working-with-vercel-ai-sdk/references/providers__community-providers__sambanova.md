@@ -1,10 +1,14 @@
 ---
+title: SambaNova
+description: Learn how to use the SambaNova provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/sambanova"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/sambanova.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "d165e0b5b0ee13d323b29ec461ac69c8a7405daf8de7c3edd0e840f320b567a6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b82601463ee0953f5e5a22d59f2e0bbfd42d34bf80d49a2bb8ae3a4a6de4a2ea"
 ---
 
-# SambaNova Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [sambanova-ai-provider](https://github.com/sambanova/sambanova-ai-provider) contains language model support for the SambaNova API.
 
@@ -14,7 +18,7 @@ API keys can be obtained from the [SambaNova Cloud Platform](https://cloud.samba
 
 The SambaNova provider is available via the `sambanova-ai-provider` module. You can install it with:
 
-<InstallPackages packages="sambanova-ai-provider" />
+**Packages:** `sambanova-ai-provider`
 
 ### Environment variables
 
@@ -40,21 +44,21 @@ const sambanova = createSambaNova({
 
 You can use the following optional settings to customize the SambaNova provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.sambanova.ai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `SAMBANOVA_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -74,11 +78,11 @@ const model = sambanova('Meta-Llama-3.1-70B-Instruct');
 
 This provider is capable of generating and streaming text, and interpreting image inputs.
 
-At least it has been tested with the following features (which use the `/chat/completion` endpoint):
+At least it has been tested with the following features (which use the `/chat/completions` endpoint):
 
 | Chat completion | Image input |
 | --------------- | ----------- |
-| <Check />       | <Check />   |
+| ✓               | ✓           |
 
 ### Image input
 
@@ -165,68 +169,10 @@ Body {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

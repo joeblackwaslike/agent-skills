@@ -3,7 +3,7 @@ title: update-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-invoice"
-last_updated: 2026-09-28
+last_updated: 2026-10-05
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about update-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-invoice.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "34a8fe5d7ee9585507a92504a5d15a970feec3c29ae3172f7beee9d9ba77ae25"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b0c0082446d3c6f55ca9ef1ded04122756d5e074e42431faf9c4d1545a761dbb"
 ---
 
 # Invoice Actions

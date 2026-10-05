@@ -15,8 +15,8 @@ related:
 summary: Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b2d3aebfb536696e1a60f37847774efdf562805741f5c095d4a31703d78a2822"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8d3856a163792e560cab1753e1c4c6d7ef4a2715382c84a8468e4d31e6b0087f"
 ---
 
 # OpenResponses Configuration with AI Gateway
@@ -32,9 +32,9 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) lets you c
 - [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related)
 - [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
-- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/advanced.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fadvanced&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

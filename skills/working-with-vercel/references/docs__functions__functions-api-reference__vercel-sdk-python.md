@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b8bc09350e61fffc3e89ba3fbb525181367dd7c3af5ec73493c85d5d6d87cf9a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f9144122784113b1fd5c162ed1eafcb42c7b5271e1e4567e92043ca6faf80714"
 ---
 
 # vercel.functions API Reference (Python)
@@ -50,11 +50,12 @@ sha256: "b8bc09350e61fffc3e89ba3fbb525181367dd7c3af5ec73493c85d5d6d87cf9a"
 
 - [Vercel Python SDK is now available in beta](https://vercel.com/changelog/vercel-python-sdk-in-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related)
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related)
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 - [API Reference](https://vercel.com/docs/queues/api?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 - [Runtimes](https://vercel.com/docs/functions/runtimes?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-- [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — Learn how to use the Python runtime to run Python applications on Vercel.
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Caching](https://vercel.com/docs/caching?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=related) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-sdk-python.graph.md](/docs/functions/functions-api-reference/vercel-sdk-python.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-sdk-python&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

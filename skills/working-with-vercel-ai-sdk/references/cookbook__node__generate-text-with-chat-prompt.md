@@ -1,16 +1,23 @@
 ---
+title: Generate Text with Chat Prompt
+description: Learn how to generate text with chat prompt using the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt"
+docs_index: /llms.txt
+tags:
+  - node
+  - chat
 source: "https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "4cece3c83b8596b00b109b2ffc4316554986020f9a7cf90522a0a116a6b97f09"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "147bf4056ff521900e1a1cb0823d14792f238c5cc19461697fe96f312df499a1"
 ---
 
-# Generate Text with Chat Prompt
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Previously, we were able to generate text and objects using either a single message prompt, a system prompt, or a combination of both of them. However, there may be times when you want to generate text based on a series of messages.
 
 A chat completion allows you to generate text based on a series of messages. This series of messages can be any series of interactions between any number of systems, but the most popular and relatable use case has been a series of messages that represent a conversation between a user and a model.
 
-```ts file='index.ts'
+```ts title='index.ts'
 import { generateText } from 'ai';
 
 const result = await generateText({
@@ -36,38 +43,10 @@ const result = await generateText({
 console.log(result.text);
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

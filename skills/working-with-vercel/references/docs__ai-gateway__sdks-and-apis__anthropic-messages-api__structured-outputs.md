@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fba49b05b5f8210a3edafeaecbfb7d058a48382c8275e625b1bdcbcb588b44c5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4f4c6c7a689754676b648e8d163242e23220635d26f5a4808588bb6a52ca1077"
 ---
 
 # Anthropic Messages Structured Outputs with AI Gateway
@@ -27,13 +27,13 @@ Structured outputs constrain completed model responses to a JSON Schema. Check f
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
-- [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
+- [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Learn how to generate structured data with the AI SDK.
+- [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — API Reference for Output.
 - [Output Schema](https://eve.dev/docs/guides/client/output-schema?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Request structured results from eve client turns and read typed data from MessageResult.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
-- [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [Stream Object](https://ai-sdk.dev/cookbook/next/stream-object?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Learn how to stream object using the AI SDK and Next.js
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

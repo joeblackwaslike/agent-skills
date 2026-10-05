@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-09-07T09:04:02.451Z"
-sha256: "70cca632c76a7002cab7a9a21d1041e85e73a7b9f7506101acb716ac6c62a17c"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "0852e255d32c1228c3324785b4e0911d0857d6418632cbccd22fd5da4783d100"
 ---
 
 # REST API endpoints for issues
@@ -704,7 +704,7 @@ curl -L \
   https://api.github.com/repos/OWNER/REPO/issues \
   -d '{
   "title": "Found a bug",
-  "body": "I'm having a problem with this.",
+  "body": "I'\''m having a problem with this.",
   "assignees": [
     "octocat"
   ],
@@ -1211,7 +1211,7 @@ curl -L \
   https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER \
   -d '{
   "title": "Found a bug",
-  "body": "I'm having a problem with this.",
+  "body": "I'\''m having a problem with this.",
   "assignees": [
     "octocat"
   ],
@@ -1690,6 +1690,213 @@ curl -L \
 ```
 
 **Response schema (Status: 204):**
+
+## List issues related to an issue
+
+```
+GET /repos/{owner}/{repo}/issues/{issue_number}/relates_to
+```
+
+You can use the REST API to list the issues that are related to an issue.
+This endpoint supports the following custom media types. For more information, see Media types.
+
+application/vnd.github.raw+json: Returns the raw Markdown body. Response will include body. This is the default if you do not pass any specific media type.
+application/vnd.github.text+json: Returns a text only representation of the Markdown body. Response will include body_text.
+application/vnd.github.html+json: Returns HTML rendered from the body's Markdown. Response will include body_html.
+application/vnd.github.full+json: Returns raw, text, and HTML representations. Response will include body, body_text, and body_html.
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`issue_number`** (integer) (required)
+  The number that identifies the issue.
+
+- **`per_page`** (integer)
+  The number of results per page (max 100). For more information, see "Using pagination in the REST API."
+  Default: `30`
+
+- **`page`** (integer)
+  The page number of the results to fetch. For more information, see "Using pagination in the REST API."
+  Default: `1`
+
+### HTTP response status codes
+
+- **200** - OK
+
+- **301** - Moved permanently
+
+- **404** - Resource not found
+
+- **410** - Gone
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X GET \
+  https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER/relates_to
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [List issues assigned to the authenticated user](#list-issues-assigned-to-the-authenticated-user).
+
+## Add a related issue
+
+```
+POST /repos/{owner}/{repo}/issues/{issue_number}/relates_to
+```
+
+You can use the REST API to mark an issue as related to another issue.
+Creating content too quickly using this endpoint may result in secondary rate limiting.
+For more information, see Rate limits for the API
+and Best practices for using the REST API.
+This endpoint supports the following custom media types. For more information, see Media types.
+
+application/vnd.github.raw+json: Returns the raw Markdown body. Response will include body. This is the default if you do not pass any specific media type.
+application/vnd.github.text+json: Returns a text only representation of the Markdown body. Response will include body_text.
+application/vnd.github.html+json: Returns HTML rendered from the body's Markdown. Response will include body_html.
+application/vnd.github.full+json: Returns raw, text, and HTML representations. Response will include body, body_text, and body_html.
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`issue_number`** (integer) (required)
+  The number that identifies the issue.
+
+#### Body parameters
+
+- **`issue_id`** (integer) (required)
+  The id of the issue to mark as related to the current issue
+
+### HTTP response status codes
+
+- **201** - Created
+
+- **301** - Moved permanently
+
+- **403** - Forbidden
+
+- **404** - Resource not found
+
+- **410** - Gone
+
+- **422** - Validation failed, or the endpoint has been spammed.
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X POST \
+  https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER/relates_to \
+  -d '{
+  "issue_id": 1
+}'
+```
+
+**Response schema (Status: 201):**
+
+Same response schema as [Create an issue](#create-an-issue).
+
+## Remove a related issue
+
+```
+DELETE /repos/{owner}/{repo}/issues/{issue_number}/relates_to/{issue_id}
+```
+
+You can use the REST API to remove a 'relates to' relationship between two issues.
+Removing content too quickly using this endpoint may result in secondary rate limiting.
+For more information, see Rate limits for the API
+and Best practices for using the REST API.
+This endpoint supports the following custom media types. For more information, see Media types.
+
+application/vnd.github.raw+json: Returns the raw Markdown body. Response will include body. This is the default if you do not pass any specific media type.
+application/vnd.github.text+json: Returns a text only representation of the Markdown body. Response will include body_text.
+application/vnd.github.html+json: Returns HTML rendered from the body's Markdown. Response will include body_html.
+application/vnd.github.full+json: Returns raw, text, and HTML representations. Response will include body, body_text, and body_html.
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`issue_number`** (integer) (required)
+  The number that identifies the issue.
+
+- **`issue_id`** (integer) (required)
+  The id of the related issue to remove
+
+### HTTP response status codes
+
+- **200** - OK
+
+- **301** - Moved permanently
+
+- **400** - Bad Request
+
+- **403** - Forbidden
+
+- **404** - Resource not found
+
+- **410** - Gone
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X DELETE \
+  https://api.github.com/repos/OWNER/REPO/issues/ISSUE_NUMBER/relates_to/ISSUE_ID
+```
+
+**Response schema (Status: 200):**
+
+Same response schema as [Create an issue](#create-an-issue).
 
 ## List issue suggestions
 

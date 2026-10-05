@@ -1,12 +1,12 @@
 ---
 source: "generated"
-fetched_at: "2026-09-28T10:38:07.819Z"
-sha256: "9a9cbae993eff2d41e930357eadf513f61cec59544a2e66865de3e90bdd60a86"
+fetched_at: "2026-10-05T11:12:33.971Z"
+sha256: "1e84ced34edf621270c37cface5559b8d5d889bda714aaa6b27b8e7a4d5cae0c"
 ---
 
 # SDK versions
 
-Auto-stamped by `scripts/update_docs.js`. Last run: 2026-09-28
+Auto-stamped by `scripts/update_docs.js`. Last run: 2026-10-05
 
 Latest published versions on the npm registry (the README snapshots in `references/octokit/` track each repo default branch):
 
@@ -18,6 +18,6 @@ Latest published versions on the npm registry (the README snapshots in `referenc
 | `@octokit/graphql` | `9.0.5` |
 | `@octokit/webhooks` | `14.2.0` |
 | `@octokit/auth-app` | `8.3.1` |
-| `@octokit/plugin-paginate-rest` | `15.0.0` |
+| `@octokit/plugin-paginate-rest` | `16.0.0` |
 | `@octokit/plugin-throttling` | `11.0.5` |
 | `@octokit/plugin-retry` | `8.1.1` |

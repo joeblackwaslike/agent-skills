@@ -16,8 +16,8 @@ related:
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b664c9f3a4b94c8c5b36b387ad974ea521e5456c73b3a801c4538f3bc027c215"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "435fc4138eba903cfb05986755db5f8c9fa7a697914380d562cb870f46b536de"
 ---
 
 # CDN pricing and usage
@@ -30,18 +30,18 @@ CDN pricing covers three resources:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Edge Requests are now called CDN Requests](https://vercel.com/changelog/edge-requests-are-now-called-cdn-requests?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Vercel Blob now supports consistent reads on private storage](https://vercel.com/changelog/vercel-blob-now-supports-consistent-reads-on-private-storage?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
+- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how to perform pentesting on Vercel.
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
-- [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 
 Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manage-cdn-usage.graph.md?from=related&source_path=%2Fdocs%2Fmanage-cdn-usage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manag
 - **Fast Origin Transfer**: Data sent between the CDN and Vercel Functions.
 - **CDN Requests**: Requests the CDN processes.
 
-![Image](https://vercel.com/front/docs/cdn/site-cdn-data-light.png)
+![An overview of how items relate to the CDN](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/cdn/site-cdn-data-light.png)
 
 Pro plans charge for CDN usage per unit, and [pricing](/docs/pricing) varies by the region where requests originate.
 
@@ -117,7 +117,7 @@ If using Vercel Functions, you can optimize Fast Origin Transfer by reducing the
 
 You can also add [caching headers](/docs/caching/cdn-cache) to the function response. By caching the response, future requests serve from the CDN cache, rather than invoking the function again. This reduces Fast Origin Transfer usage and improves performance.
 
-Ensure your Function supports `If-Modified-Since` or `Etag` to prevent duplicate data transmission ([on by default for Next.js applications](https://nextjs.org/docs/app/api-reference/config/next-config-js/generateEtags)).
+Ensure your Function supports `If-Modified-Since` or `ETag` to prevent duplicate data transmission ([on by default for Next.js applications](https://nextjs.org/docs/app/api-reference/config/next-config-js/generateEtags)).
 
 #### Middleware
 
@@ -137,18 +137,15 @@ If using Middleware, it is possible to accrue Fast Origin Transfer twice for a s
 
 When visiting your site, requests are made to a Vercel CDN [region](/docs/pricing/regional-pricing). Traffic is routed to the nearest region to the visitor. Static assets and functions all incur CDN Requests.
 
-> **💡 Note:** CDN Requests appear as **Edge Requests** in your billing dashboard and usage
-> charts.
-
 | Resource | Price | Included (Pro) | Included (Hobby) |
 |----------|-------|----------------|-----------------|
-| [Edge Requests](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 1,000,000 |
-| [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour | N/A |
+| [CDN Requests](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 1,000,000 |
+| [CDN Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour | N/A |
 
 
 ### Managing CDN Requests
 
-You can view the **Edge Requests** chart on **Usage** in your dashboard sidebar. This chart shows:
+You can view the **CDN Requests** chart on **Usage** in your dashboard sidebar. This chart shows:
 
 - **Count**: The total count of requests made to your deployments
 - **Projects**: The projects that received the requests
@@ -166,13 +163,13 @@ The most significant opportunities for optimizing CDN Requests include:
   - **To identify**: Use your browsers devtools and browse your site. Pay attention to responses with a [304 status code](# "What is 304 status code?") on repeated requests paths. This indicates content that has been fetched multiple times
 - **Excessive polling or data fetching**: Applications that poll APIs for live updates, or use tools like SWR or React Query to reload data on user focus can contribute to increased requests
 
-## Edge Request CPU duration
+## CDN Request CPU duration
 
-Edge Request CPU duration is the measurement of CPU processing time per CDN Request. CDN Requests of 10ms or less in duration don't incur any additional charges. CPU duration is metered in increments of 10ms.
+CDN Request CPU duration is the measurement of CPU processing time per CDN Request. CDN Requests of 10ms or less in duration don't incur any additional charges. CPU duration is metered in increments of 10ms.
 
-### Managing Edge Request CPU duration
+### Managing CDN Request CPU duration
 
-View the **Edge Request CPU Duration** chart on **Usage** in your dashboard sidebar. If you notice an increase in CPU duration, investigate the following aspects of your application:
+View the **CDN Request CPU Duration** chart on **Usage** in your dashboard sidebar. If you notice an increase in CPU duration, investigate the following aspects of your application:
 
 - Number of routes.
 - Number of redirects.

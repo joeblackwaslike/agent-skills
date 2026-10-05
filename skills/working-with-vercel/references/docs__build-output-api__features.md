@@ -16,8 +16,8 @@ related:
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cbabb7b0bc16a8b66895d5007aa37ef55eb5335801f01cdc454ac3fdbbdc2517"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "32598afb27cd3576c63d4ec0a1db737ac708c962dad0406e90a5f09289883201"
 ---
 
 # Features
@@ -32,6 +32,8 @@ helper functions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
+- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Ffeatures&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -123,7 +125,7 @@ mapping URLs (using the `src` property) to the middleware (using the `middleware
 ### Routing Middleware example
 
 The following example adds a rule that calls the `auth` middleware for any URL that
-starts with `/api`, before continuing to the underlying resource:
+starts with `/api/`, before continuing to the underlying resource:
 
 ```json
   "routes": [

@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c3f59c5fcd9e8b28e5bbcb0594a9a0f7db876933c3b79656c07d2ad70f0e06d4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c83b154a61d71a53fa2f192ba8babf6fd97c368b56fa0fe7149c360291eeb71d"
 ---
 
 # vercel integration
@@ -34,13 +34,13 @@ The `vercel integration` command manages [marketplace integrations](/docs/integr
 - [Mem0 joins the Vercel Marketplace](https://vercel.com/changelog/mem0-joins-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
 - [Vercel CLI for Marketplace integrations optimized for agents](https://vercel.com/changelog/vercel-cli-for-marketplace-integrations-optimized-for-agents?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
 - [Marketplace integrations now install provider skills](https://vercel.com/changelog/vercel-marketplace-agent-skills?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related)
+- [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel install](https://vercel.com/docs/cli/install?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/integration.graph.md](/docs/cli/integration.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fintegration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

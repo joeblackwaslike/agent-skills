@@ -1,10 +1,14 @@
 ---
+title: Kling AI
+description: Learn how to use the Kling AI provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "a41fa6012327aa4950c84a05b202a75da85cf0681f47f7e44cc93d3a9f8bacb6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0079f856d5b43973450581be3d227b119959a3f9456c034a371acf5e0a55cdd6"
 ---
 
-# Kling AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Kling AI](https://klingai.com/) provider contains support for Kling AI's video generation models, including text-to-video, image-to-video, motion control, and multi-shot video generation.
 
@@ -12,7 +16,7 @@ The [Kling AI](https://klingai.com/) provider contains support for Kling AI's vi
 
 The Kling AI provider is available in the `@ai-sdk/klingai` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/klingai" />
+**Packages:** `@ai-sdk/klingai`
 
 ## Provider Instance
 
@@ -34,31 +38,31 @@ const klingai = createKlingAI({
 
 You can use the following optional settings to customize the Kling AI provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   Kling AI API key. Defaults to the `KLINGAI_API_KEY` environment variable.
   Create one in the [Kling AI developer console](https://kling.ai/dev/api-key).
 
-- **accessKey** _string_
+- **accessKey** *string*
 
   Kling AI access key. Defaults to the `KLINGAI_ACCESS_KEY` environment variable.
   Legacy authentication — prefer `apiKey`.
 
-- **secretKey** _string_
+- **secretKey** *string*
 
   Kling AI secret key. Defaults to the `KLINGAI_SECRET_KEY` environment variable.
   Legacy authentication — prefer `apiKey`.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api-singapore.klingai.com`.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -90,12 +94,10 @@ For more on video generation with the AI SDK see [generateVideo()](/docs/referen
 
 This provider currently supports four video generation modes: text-to-video, image-to-video, reference-to-video (multi-image), and motion control.
 
-<Note>
-  Not all options are supported by every model version and mode combination. See
-  the [KlingAI Capability
-  Map](https://app.klingai.com/global/dev/document-api/apiReference/model/skillsMap)
-  for detailed compatibility across models.
-</Note>
+Not all options are supported by every model version and mode combination. See
+the [KlingAI Capability
+Map](https://app.klingai.com/global/dev/document-api/apiReference/model/skillsMap)
+for detailed compatibility across models.
 
 ### Text-to-Video
 
@@ -268,100 +270,98 @@ The following provider options are available via `providerOptions.klingai`. Opti
 
 #### Common Options
 
-- **mode** _'std' | 'pro'_
+- **mode** *'std' | 'pro'*
 
   Video generation mode. `'std'` is cost-effective. `'pro'` produces higher quality
   but takes longer.
 
-- **pollIntervalMs** _number_
+- **pollIntervalMs** *number*
 
   Polling interval in milliseconds for checking task status. Defaults to 5000.
 
-- **pollTimeoutMs** _number_
+- **pollTimeoutMs** *number*
 
   Maximum wait time in milliseconds for video generation. Defaults to 600000 (10 minutes).
 
-- **watermarkEnabled** _boolean_
+- **watermarkEnabled** *boolean*
 
   Whether to generate watermarked results simultaneously.
 
 #### Text-to-Video and Image-to-Video Options
 
-- **negativePrompt** _string_
+- **negativePrompt** *string*
 
   A description of what to avoid in the generated video (max 2500 characters).
 
-- **sound** _'on' | 'off'_
+- **sound** *'on' | 'off'*
 
   Whether to generate audio simultaneously. Only V2.6 and subsequent models support this, and requires `mode: 'pro'`.
 
-- **cfgScale** _number_
+- **cfgScale** *number*
 
-  Flexibility in video generation. Higher values mean stronger prompt adherence. Range: [0, 1]. Not supported by V2.x models.
+  Flexibility in video generation. Higher values mean stronger prompt adherence. Range: \[0, 1]. Not supported by V2.x models.
 
-- **cameraControl** _object_
+- **cameraControl** *object*
 
-  Camera movement control with a `type` preset (`'simple'`, `'down_back'`, `'forward_up'`, `'right_turn_forward'`, `'left_turn_forward'`) and optional `config` with `horizontal`, `vertical`, `pan`, `tilt`, `roll`, `zoom` values (range: [-10, 10]).
+  Camera movement control with a `type` preset (`'simple'`, `'down_back'`, `'forward_up'`, `'right_turn_forward'`, `'left_turn_forward'`) and optional `config` with `horizontal`, `vertical`, `pan`, `tilt`, `roll`, `zoom` values (range: \[-10, 10]).
 
-- **multiShot** _boolean_
+- **multiShot** *boolean*
 
   Enable multi-shot video generation (Kling v3.0+). When true, the video is split into up to 6 storyboard shots with individual prompts and durations.
 
-- **shotType** _'customize' | 'intelligence'_
+- **shotType** *'customize' | 'intelligence'*
 
   Storyboard method for multi-shot generation. `'customize'` uses `multiPrompt` for user-defined shots. `'intelligence'` lets the model auto-segment based on the main prompt. Required when `multiShot` is true.
 
-- **multiPrompt** _Array&lt;\{index, prompt, duration\}&gt;_
+- **multiPrompt** *Array\<\{index, prompt, duration}>*
 
   Per-shot details for multi-shot generation. Each shot has an `index` (number), `prompt` (string, max 512 characters), and `duration` (string, in seconds). Shot durations must sum to the total duration. Required when `multiShot` is true and `shotType` is `'customize'`.
 
-- **voiceList** _Array&lt;\{voice_id: string\}&gt;_
+- **voiceList** *Array\<\{voice\_id: string}>*
 
   Voice references for voice control (Kling v3.0+). Up to 2 voices. Reference via `<<<voice_1>>>` template syntax in the prompt. Requires `sound: 'on'`. Cannot coexist with `elementList` on the I2V endpoint.
 
 #### Image-to-Video Only Options
 
-- **imageTail** _string_
+- **imageTail** *string*
 
   End frame image for start+end frame control. Accepts an image URL or raw base64-encoded data. Requires `mode: 'pro'` for most models.
 
-- **staticMask** _string_
+- **staticMask** *string*
 
   Static brush mask image for motion brush. Accepts an image URL or raw base64-encoded data.
 
-- **dynamicMasks** _Array_
+- **dynamicMasks** *Array*
 
   Dynamic brush configurations for motion brush. Up to 6 groups, each with a `mask` (image URL or base64) and `trajectories` (array of `{x, y}` coordinates).
 
 #### Image-to-Video and Motion Control Options
 
-- **elementList** _Array&lt;\{element_id: number\}&gt;_
+- **elementList** *Array\<\{element\_id: number}>*
 
   Reference elements for element control (Kling v3.0+). Supports video character elements and multi-image elements. Up to 3 elements for I2V (cannot coexist with `voiceList`). Up to 1 element for motion control.
 
 #### Motion Control Only Options
 
-- **videoUrl** _string_ (required)
+- **videoUrl** *string* (required)
 
   URL of the reference motion video. Supports .mp4/.mov, max 100MB, duration 3–30 seconds.
 
-- **characterOrientation** _'image' | 'video'_ (required)
+- **characterOrientation** *'image' | 'video'* (required)
 
   Orientation of the characters in the generated video.
   `'image'` matches the reference image orientation (max 10s video).
   `'video'` matches the reference video orientation (max 30s video).
 
-- **keepOriginalSound** _'yes' | 'no'_
+- **keepOriginalSound** *'yes' | 'no'*
 
   Whether to keep the original sound from the reference video. Defaults to `'yes'`.
 
-<Note>
-  Video generation is an asynchronous process that can take several minutes.
-  Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
-  reliable operation. Status polls trust the configured Kling AI API origin for
-  the first request and validate every redirect to another origin before
-  following it.
-</Note>
+Video generation is an asynchronous process that can take several minutes.
+Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
+reliable operation. Status polls trust the configured Kling AI API origin for
+the first request and validate every redirect to another origin before
+following it.
 
 ### Video Model Capabilities
 
@@ -398,57 +398,12 @@ The following provider options are available via `providerOptions.klingai`. Opti
 | `kling-v3.0-motion-control` | Latest v3.0, enhanced facial consistency via element binding |
 | `kling-v2.6-motion-control` | Transfers motion from a reference video to a character image |
 
-<Note>
-  You can also pass any available provider model ID as a string if needed.
-</Note>
+You can also pass any available provider model ID as a string if needed.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

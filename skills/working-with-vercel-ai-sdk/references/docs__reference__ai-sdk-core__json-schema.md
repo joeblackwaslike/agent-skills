@@ -1,10 +1,14 @@
 ---
+title: jsonSchema
+description: Helper function for creating JSON schemas
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/json-schema"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/json-schema.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "a2aeb49f7f5739b390c31df09bfd2422d5cd3151a18e145d8d744d5820a1b2a2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "83df1161bd332abc917f426d44948b76f58153bc531583e70580c2319f6d8109"
 ---
 
-# `jsonSchema()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `jsonSchema` is a helper function that creates a JSON schema object that is compatible with the AI SDK.
 It takes the JSON schema and an optional validation function as inputs, and can be typed.
@@ -55,109 +59,27 @@ const mySchema = jsonSchema<{
 
 ## Import
 
-<Snippet text={`import { jsonSchema } from "ai"`} prompt={false} />
+```
+import { jsonSchema } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'schema',
-      type: 'JSONSchema7',
-      description: 'The JSON schema definition.',
-    },
-    {
-      name: 'options',
-      type: 'SchemaOptions',
-      description: 'Additional options for the JSON schema.',
-      properties: [
-        {
-          type: 'SchemaOptions',
-          parameters: [
-            {
-              name: 'validate',
-              isOptional: true,
-              type: '(value: unknown) => { success: true; value: OBJECT } | { success: false; error: Error };',
-              description:
-                'A function that validates the value against the JSON schema. If the value is valid, the function should return an object with a `success` property set to `true` and a `value` property set to the validated value. If the value is invalid, the function should return an object with a `success` property set to `false` and an `error` property set to the error.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `schema` (`JSONSchema7`): The JSON schema definition.
+- `options` (`SchemaOptions`): Additional options for the JSON schema.
+  - `SchemaOptions`
+    - `validate?` (`(value: unknown) => { success: true; value: OBJECT } | { success: false; error: Error };`): A function that validates the value against the JSON schema. If the value is valid, the function should return an object with a \`success\` property set to \`true\` and a \`value\` property set to the validated value. If the value is invalid, the function should return an object with a \`success\` property set to \`false\` and an \`error\` property set to the error.
 
 ### Returns
 
 A JSON schema object that is compatible with the AI SDK.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

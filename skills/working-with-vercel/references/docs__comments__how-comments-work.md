@@ -15,8 +15,8 @@ related:
 summary: Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session or interface levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "32115a761fbbf0695a958eef75a88d6d75509d91ebc0cd66bd413a750554233b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fd97f62688c498de2d546c1b0379e2c0d2e17741625adf83b869dbea0e3d0b0f"
 ---
 
 # Enabling and Disabling Comments
@@ -56,7 +56,7 @@ You can enable or disable comments at the account level with certain permissions
 4. Under each environment (**Preview** and **Production**), select either **On** or **Off** from the dropdown to determine the visibility of the Vercel Toolbar for that environment.
 5. You can optionally choose to allow the setting to be overridden at the project level.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png`)
+![The dashboard setting to enable or disable the toolbar at the team level.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png)
 
 ### At the project level
 
@@ -68,7 +68,7 @@ You can enable or disable comments at the account level with certain permissions
    - **On**: Enable the toolbar for the environment.
    - **Off**: Disable the toolbar for the environment.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/project-level-toolbar-management-light.png`)
+![The dashboard setting to enable or disable the toolbar in a project.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/project-level-toolbar-management-light.png)
 
 ### At the session or interface level
 

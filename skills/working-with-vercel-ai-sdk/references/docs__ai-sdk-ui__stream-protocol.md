@@ -1,10 +1,14 @@
 ---
+title: Stream Protocols
+description: Learn more about the supported stream protocols in the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "9fbf8d88112cea511f550b7c38945fc8dd7993739a0a64f34b04567bc9675893"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8fd6328f05410992348c8c1c68f051e51898a3e5a7fab43b67308aaeb80cdea7"
 ---
 
-# Stream Protocols
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 AI SDK UI functions such as `useChat` and `useCompletion` support both text streams and data streams.
 The stream protocol defines how the data is streamed to the frontend on top of the HTTP protocol.
@@ -22,23 +26,21 @@ A text stream contains chunks in plain text, that are streamed to the frontend.
 Each chunk is then appended together to form a full text response.
 
 Text streams are supported by `useChat`, `useCompletion`, and `useObject`.
-When you use `useChat` or `useCompletion`, you need to enable text streaming
-by setting the `streamProtocol` options to `text`.
+To enable text streaming, use `TextStreamChatTransport` with `useChat`, or set
+the `streamProtocol` option to `text` with `useCompletion`.
 
 You can generate text streams with `streamText` in the backend.
 Pass the result's `stream` to `toTextStream` and return it with
 `createTextStreamResponse` to create a streaming HTTP response.
 
-<Note>
-  Text streams only support basic text data. If you need to stream other types
-  of data such as tool calls, use data streams.
-</Note>
+Text streams only support basic text data. If you need to stream other types
+of data such as tool calls, use data streams.
 
 ### Text Stream Example
 
 Here is a Next.js example that uses the text stream protocol:
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -84,7 +86,7 @@ export default function Chat() {
 }
 ```
 
-```ts filename='app/api/chat/route.ts'
+```ts title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createTextStreamResponse,
@@ -92,7 +94,6 @@ import {
   toTextStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -101,7 +102,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -117,10 +118,8 @@ A data stream follows a special protocol that the AI SDK provides to send inform
 
 The data stream protocol uses Server-Sent Events (SSE) format for improved standardization, keep-alive through ping, reconnect capabilities, and better cache handling.
 
-<Note>
-  When you provide data streams from a custom backend, you need to set the
-  `x-vercel-ai-ui-message-stream` header to `v1`.
-</Note>
+When you provide data streams from a custom backend, you need to set the
+`x-vercel-ai-ui-message-stream` header to `v1`.
 
 The following stream parts are currently supported:
 
@@ -512,7 +511,7 @@ On the backend, you can pass the `streamText` result stream to `toUIMessageStrea
 
 Here is a Next.js example that uses the UI message stream protocol:
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -555,7 +554,7 @@ export default function Chat() {
 }
 ```
 
-```ts filename='app/api/chat/route.ts'
+```ts title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -563,7 +562,6 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -572,7 +570,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -582,23 +580,10 @@ export async function POST(req: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

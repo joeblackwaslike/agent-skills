@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a1331bc234f3f00c8fe4a301f6a23fd776ff59a882508099831f5e883888792a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b63bab8c3f530b34fadbfae1e28a53cbeaf0f71834d661bfaaf4a92aab9431a5"
 ---
 
 # Encryption and TLS
@@ -28,7 +28,9 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 
 - [Deprecating the DHE cipher suite for TLS connections](https://vercel.com/changelog/deprecating-the-dhe-cipher-suite-for-tls-connections?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
 - [Encrypted Client Hello (ECH) is now supported on Vercel CDN](https://vercel.com/changelog/encrypted-client-hello-now-supported-on-vercel-cdn?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
+- [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
 - [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
@@ -129,7 +131,7 @@ You can set the `max-age` parameter to a different value. It controls how long t
 
 ## How Vercel handles certificates
 
-Vercel uses a wildcard certificate issued for `.vercel.app` to handle all deployment URLs. Vercel generates these certificates through [LetsEncrypt](https://letsencrypt.org/) and keeps them updated automatically.
+Vercel uses a wildcard certificate issued for `.vercel.app` to handle all deployment URLs. Vercel generates these certificates through [Let's Encrypt](https://letsencrypt.org/) and keeps them updated automatically.
 
 When you generate custom certificates with `vercel certs issue`, Vercel stores the keys in the database and [encrypts them at rest](https://en.wikipedia.org/wiki/Data_at_rest#Encryption) within the CDN.
 

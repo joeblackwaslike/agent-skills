@@ -17,13 +17,13 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fb80f47e5bd39bf0860b4dfaa6dabc28335fcee0daaf647803cebb153bc9a870"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e0873c3f664492209a7f418e9734000d71f872521f4ab2e6f50715d9268ba342"
 ---
 
 # Using the Bun Runtime with Vercel Functions
 
-> **🔒 Permissions Required**: The Bun runtime (Beta)
+> **Availability**: The Bun runtime (Beta) is available on all plans
 
 Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to Node.js.
 
@@ -44,7 +44,7 @@ Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to No
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Using WebAssembly \\(Wasm\\)](https://vercel.com/docs/functions/runtimes/wasm?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Learn how to use WebAssembly \\(Wasm\\) to enable low-level languages to run on Vercel Functions and Routing Middleware.
 
 Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

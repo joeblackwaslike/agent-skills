@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ed84074a17fa6807def3bfbdca73daa51b794660f1af85377ca83d6181563b7c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "524505cd5be7c48deb2509193fcd3a34565971f76643ddac5ad3d1d340ffc9dc"
 ---
 
 # Rate Limiting SDK
@@ -39,7 +39,6 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
-- [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

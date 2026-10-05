@@ -12,13 +12,13 @@ related:
 summary: Learn how to use allowlists to bypass your Conformance rules to merge changes into your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/allowlist.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "32bcd571c2145bb04d1fc07e8db99ff7948c868690443af2ddc8dab4d6f97b1f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "654a1731c17aa95d1b9bc6acc8177743abbef8d73503a35df32c8fef3f12182e"
 ---
 
 # Conformance Allowlists
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Conformance allowlists enable developers to integrate code into the codebase, bypassing specific Conformance rules when necessary. This helps with collaboration, ensures gradual rule implementation, and serves as a systematic checklist for addressing issues.
 
@@ -84,22 +84,22 @@ From the package directory:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm conformance --allowlist-errors
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn conformance --allowlist-errors
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npm run conformance -- --allowlist-errors
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bun run conformance -- --allowlist-errors
     ```
   </Code>
 </CodeBlock>
@@ -109,22 +109,22 @@ From the root of a monorepo:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm --filter=<package-name> conformance --allowlist-errors
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn workspace <package-name> conformance --allowlist-errors
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npm run conformance --workspace=<package-name> -- --allowlist-errors
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bun run conformance --filter <package-name> -- --allowlist-errors
     ```
   </Code>
 </CodeBlock>

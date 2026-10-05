@@ -1,10 +1,14 @@
 ---
+title: vectorstores
+description: Learn how to use vector databases with the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/vectorstores"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/vectorstores.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "1ec24349e4ddf66da2b58312bc7c50bbf737ead7904f3701a62f948df238faa5"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "46f9cdef3d4170089e30da1a7a54188ee83429666feb8da2f33f80a81c692d47"
 ---
 
-# vectorstores Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [vectorstores provider](https://www.vectorstores.org/integration/vercel/) integrates [vectorstores](https://www.vectorstores.org/) with the AI SDK, enabling AI workflows that retrieve and store data in vector databases.
 
@@ -12,7 +16,7 @@ The [vectorstores provider](https://www.vectorstores.org/integration/vercel/) in
 
 The vectorstores provider is available in the `@vectorstores/vercel` module. You can install it with:
 
-<InstallPackages packages="@vectorstores/vercel @vectorstores/core" />
+**Packages:** `@vectorstores/vercel`, `@vectorstores/core`
 
 ## Document Indexing
 
@@ -94,68 +98,10 @@ Store and retrieve user-specific information across conversations by combining a
 - [Vectorstores Documentation](https://www.vectorstores.org/)
 - [Vectorstores AI SDK Integration](https://www.vectorstores.org/integration/vercel/)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

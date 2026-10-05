@@ -1,10 +1,17 @@
 ---
+title: Nest.js
+description: Learn how to use the AI SDK in a Nest.js server
+url: "https://ai-sdk.dev/cookbook/api-servers/nest"
+docs_index: /llms.txt
+tags:
+  - api servers
+  - streaming
 source: "https://ai-sdk.dev/cookbook/api-servers/nest.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8df9fc382c4af7a979819fa9edff9533f6e5c6c81c8d8a97f88d7542f98e2cbd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c793122244405aaaca9d3d40f2179edc857572cff6542be02dc7e64a73bdd3ad"
 ---
 
-# Nest.js
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can use the AI SDK in a [Nest.js](https://nestjs.com/) server to generate and stream text and objects to the client.
 
@@ -18,7 +25,7 @@ The examples show how to implement a Nest.js controller that uses the AI SDK to 
 
 You can use the `pipeUIMessageStreamToResponse` helper to pipe the stream data to the server response.
 
-```ts filename='app.controller.ts'
+```ts title='app.controller.ts'
 import { Controller, Post, Res } from '@nestjs/common';
 import {
   pipeUIMessageStreamToResponse,
@@ -48,7 +55,7 @@ export class AppController {
 
 `createUIMessageStream` and `pipeUIMessageStreamToResponse` can be used to send custom data to the client.
 
-```ts filename='app.controller.ts'
+```ts title='app.controller.ts'
 import { Controller, Post, Res } from '@nestjs/common';
 import {
   createUIMessageStream,
@@ -100,7 +107,7 @@ export class AppController {
 
 You can use the `pipeTextStreamToResponse` helper with `toTextStream` to pipe a text stream to the response.
 
-```ts filename='app.controller.ts'
+```ts title='app.controller.ts'
 import { Controller, Post, Res } from '@nestjs/common';
 import { pipeTextStreamToResponse, streamText, toTextStream } from 'ai';
 import { Response } from 'express';
@@ -126,14 +133,10 @@ export class AppController {
 
 - Streaming not working when [proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Node.js HTTP Server](/cookbook/api-servers/node-http-server)
-- [Express](/cookbook/api-servers/express)
-- [Hono](/cookbook/api-servers/hono)
-- [Fastify](/cookbook/api-servers/fastify)
-- [Nest.js](/cookbook/api-servers/nest)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

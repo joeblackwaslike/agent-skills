@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "525eff481bd155df5946ff70211aa6afc7936a1accc8d081814dcb0a1322639e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b5a3c9a2ad426f88f23f7b09486f588fbdba73406130c798cd9cc1bd8daaa5a9"
 ---
 
 # Working with Sandbox
@@ -30,14 +30,12 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
 Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md](/docs/sandbox/working-with-sandbox.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=graph)
@@ -147,20 +145,27 @@ console.log(await notes.stdout()); // Hello from the first session.
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
 
-# First run: create a named sandbox, write a file, stop it.
-box = await sandbox.create_sandbox(
-    name="my-sandbox",
-    persistent=True,
-)
-await box.fs.write_text("notes.txt", "Hello from the first session.\n")
-await box.stop()
 
-# Later, in a separate process: retrieve the sandbox by name. Reading
-# the restored file automatically resumes the session.
-resumed = await sandbox.get_sandbox(name="my-sandbox")
-print(await resumed.fs.read_text("notes.txt"))
+async def main() -> None:
+    # First run: create a named sandbox, write a file, stop it.
+    box = await sandbox.create_sandbox(
+        name="my-sandbox",
+        persistent=True,
+    )
+    await box.fs.write_text("notes.txt", "Hello from the first session.\n")
+    await box.stop()
+
+    # Later, in a separate process: retrieve the sandbox by name. Reading
+    # the restored file automatically resumes the session.
+    resumed = await sandbox.get_sandbox(name="my-sandbox")
+    print(await resumed.fs.read_text("notes.txt"))
+
+
+asyncio.run(main())
 ```
 
 ## Execute long-running tasks
@@ -202,7 +207,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-To extend a running sandbox, call `extendTimeout` in TypeScript or `extend_timeout()` in Python:
+To extend a running sandbox, call `extendTimeout()` in TypeScript or `extend_execution_time_limit()` in Python:
 
 **index.ts**
 

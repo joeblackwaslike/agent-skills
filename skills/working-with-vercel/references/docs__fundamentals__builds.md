@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/builds.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fba16a283d3fc6df0a44636ba95c2a9d45bec547b877dfc7599305dc93f1df09"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3cbb384c810e96e970ad9c18f02af46899ebe57ee2465eaf3ad5bbeb041d8470"
 ---
 
 # How Vercel builds your application
@@ -30,12 +30,13 @@ When you push code to Vercel, your source files need to be transformed into some
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/fundamentals/builds.graph.md](/docs/fundamentals/builds.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Fbuilds&source_site=vercel-docs&relationship=graph)

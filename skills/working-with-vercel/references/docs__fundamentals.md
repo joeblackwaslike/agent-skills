@@ -14,8 +14,8 @@ related:
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a587059fd57a002a4e887906dcc7ff6f9b3c028a1ebb094ceba5828e98c82f03"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1b6eec8f1b3b26d894301c07447aff9b0f231f9664dedb64b772737bbbb614ee"
 ---
 
 # Vercel fundamental concepts
@@ -32,7 +32,7 @@ The articles below explain core concepts that shape how Vercel works:
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

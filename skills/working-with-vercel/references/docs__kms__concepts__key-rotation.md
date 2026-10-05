@@ -14,8 +14,8 @@ related:
 summary: How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued tokens keep verifying.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/key-rotation.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "34122389bc3c89d4a7e9651ea8e30f0e7ac641e81132dbe4d0faff0e7352ffd5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8c1e35faa1104b9a2cf692340e63f0b98341d2c665f1dd6e4994daba0e9c6b12"
 ---
 
 # Vercel KMS Key Rotation
@@ -29,12 +29,11 @@ Rotation replaces an issuer's active signing key without changing the issuer ID 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related)
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
-- [Implementing secrets rotation](https://vercel.com/docs/integrations/create-integration/secrets-rotation?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=related) — Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 
 Full cross-link map for this page: [/docs/kms/concepts/key-rotation.graph.md](/docs/kms/concepts/key-rotation.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fkey-rotation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

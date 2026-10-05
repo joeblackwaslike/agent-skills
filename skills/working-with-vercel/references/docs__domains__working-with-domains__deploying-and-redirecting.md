@@ -17,8 +17,8 @@ related:
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c495775acb8f83375d4198276f01e377912f58281242645ad7c4746d36fd7c7b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1b4cc294b24ea2e1db2df79875de616638bb16c7b69c48e0ef120909f3cd1eeb"
 ---
 
 # Deploying & Redirecting Domains
@@ -34,11 +34,14 @@ Once the domain has been added to your project and configured, it is **automatic
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/deploying-and-redirecting.graph.md](/docs/domains/working-with-domains/deploying-and-redirecting.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -63,7 +66,7 @@ You can add domain redirects from the **Domains** section in the sidebar when mo
 
 To add a redirect, open **Domains** in the sidebar within **Project Settings**, then select **Edit** on the domain you want to redirect from. Use the **Redirect to** dropdown to select the domain you want to redirect to:
 
-![Image](`/docs-assets/static/docs/domains/redirect-domain-light.png`)
+![Edit domain modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/domains/redirect-domain-light.png)
 
 *A domain redirect that redirects requests made to \`www.acme.com\` to
 \`acme.com\`.*

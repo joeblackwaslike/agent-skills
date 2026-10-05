@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Sitecore XM Cloud to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sitecore.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b3895a0a2f75462108ecf4a3c4c9ceb751f208144152a247194428b2dc7d523e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "52f6b49920fb8933e126c832d33531c213430026398eccbb4c71a0aab26901df"
 ---
 
 # Vercel and Sitecore XM Cloud Integration
@@ -28,14 +28,11 @@ sha256: "b3895a0a2f75462108ecf4a3c4c9ceb751f208144152a247194428b2dc7d523e"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
-- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
+- [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
+- [How to Integrate Next.js with Prismic's Headless CMS](https://vercel.com/kb/guide/how-to-integrate-nextjs-with-prismic?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Learn how to connect Next.js with Prismic's CMS and deploy the integrated website to Vercel
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentful to deploy your content.
-- [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
 Full cross-link map for this page: [/docs/integrations/cms/sitecore.graph.md](/docs/integrations/cms/sitecore.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsitecore&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,65 +53,65 @@ The key parts you will learn from this guide are:
 - ### Initiate project creation
   Navigate to the **Projects** page and select **Create project**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project.png)
 
 - ### Select project foundation
   In the **Create new project** dialog, select **Start from the XM Cloud starter foundation**. Proceed by selecting **Next**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal.png)
 
 - ### Select starter template
   Select the XM Cloud Foundation starter template and select **Next**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-next.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-next.png)
 
 - ### Name your project
   Provide a name for your project in the **Project name** field and select **Next**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-name.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-name.png)
 
 - ### Select source control provider
   Choose your source control provider and select **Next**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-provider.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-provider.png)
 
 - ### Set up source control connection
   If you haven't already set up a connection, create a new source control connection and follow the instructions provided by your source control provider.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-connection.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-connection.png)
 
 - ### Specify repository name
   In the **Repository name** field, provide a unique name for your new repository and select **Next**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-repo.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-repo.png)
 
 - ### Configure environment details
   - Specify the environment name in the **Environment name** field
   - Determine if the environment is a production environment using the **Production environment** drop-down menu
   - Decide if you want automatic deployments upon commits to the linked repository branch using the **Trigger deployment on commit to branch** drop-down menu
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-env.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-modal-env.png)
 
 - ### Finalize setup
   Select **Create and deploy**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-deploy.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-deploy.png)
 
 - ### Create a new website
   - When the deployment finishes, select **Go to XM Cloud**
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-click.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-project-click.png)
   - Under Sites, select **Create Website**
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-website.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-website.png)
   - Select **Basic Site**
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-basic.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-basic.png)
   - Enter a name for your site in the **Site name** field
   - Select **Create website**
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-name.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-name.png)
 
 - ### Publish the site
   - Select the **Open in Pages** option on the newly created website
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-open.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-open.png)
   - Select **Publish** > **Publish item with all sub-items**
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-publish.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-create-website-publish.png)
 
 ## Creating a Next.js JSS application
 
@@ -129,22 +126,22 @@ You can either deploy the template above to Vercel with one-click, or use the st
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm create next-app --example cms-sitecore-xmcloud
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn create next-app --example cms-sitecore-xmcloud
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx create-next-app --example cms-sitecore-xmcloud
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx create-next-app --example cms-sitecore-xmcloud
       ```
     </Code>
   </CodeBlock>
@@ -152,11 +149,11 @@ You can either deploy the template above to Vercel with one-click, or use the st
 - ### Retrieve your API key, GraphQL endpoint, and JSS app name
   Next, navigate to your newly created XM Cloud site under **Sites** and select **Settings**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/sitecore-dashboard.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/sitecore-dashboard.png)
 
   Under the **Developer Settings** tab select **Generate API Key**.
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/developer-settings.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/developer-settings.png)
 
   Save the `SITECORE_API_KEY`, `JSS_APP_NAME`, and `GRAPH_QL_ENDPOINT` values – you'll need them for the next step.
 
@@ -174,22 +171,22 @@ You can either deploy the template above to Vercel with one-click, or use the st
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm install && pnpm build && pnpm dev
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn && yarn build && yarn dev
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npm install && npm run build && npm run dev
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bun install && bun run build && bun run dev
       ```
     </Code>
   </CodeBlock>
@@ -227,7 +224,7 @@ With these components in place, developers can seamlessly integrate content from
 - ### Import to Vercel
   Log in to your Vercel account (or create one) and import your project into Vercel using the [import flow](https://vercel.com/new).
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/import-vercel-light.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/import-vercel-light.png)
 
 - ### Configure environment variables
   Add the `FETCH_WITH`, `JSS_APP_NAME`, `GRAPH_QL_ENDPOINT` , `SITECORE_API_KEY`, and `SITECORE_API_HOST` environment variables to the **Environment Variables** section.
@@ -240,7 +237,7 @@ With these components in place, developers can seamlessly integrate content from
   ```
   Select "Deploy" and your application will be live on Vercel!
 
-  ![Image](`/docs-assets/static/docs/integrations/sitecore/success-vercel-light.png`)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/sitecore/success-vercel-light.png)
 
 
 ---

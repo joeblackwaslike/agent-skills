@@ -1,10 +1,14 @@
 ---
+title: Deep Agents
+description: Learn how to use the Deep Agents harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d5c020f6ffdc7eb764bc8d30550c67f85f874a0a2e47227c120e54b0d68437bf"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b6667fa4b5fdb734372105940cdc352919bd6d6f7e9222ccd644c0e757227992"
 ---
 
-# Deep Agents Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Deep Agents harness adapter connects `HarnessAgent` to
 [Deep Agents](https://github.com/langchain-ai/deepagentsjs), a LangGraph-based agent
@@ -12,14 +16,12 @@ runtime. The adapter runs a Node bridge inside the sandbox that drives the
 `deepagents` package and streams its `streamEvents` output back to the host over a
 sandbox-exposed WebSocket.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-deepagents`, `@ai-sdk/sandbox-vercel`
 
 The adapter bootstraps the bridge's Node dependencies (the `deepagents` package
 and LangChain) inside the sandbox via `pnpm` when the first session starts.
@@ -223,20 +225,10 @@ The adapter exposes these Deep Agents built-ins through `agent.tools`:
 - [Harness tools](/docs/ai-sdk-harnesses/tools)
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

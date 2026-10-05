@@ -16,13 +16,13 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1e73a1c3e1d0468a4f89de861d6c8fe0a62284f7744aa2f292717f0cf1f7b8ae"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8e1df6e297eacbecab7d4d1211ad0b82afa24645eaf319ff70df77afa561b654"
 ---
 
 # Using Drains
 
-> **🔒 Permissions Required**: Drains
+> **Availability**: Drains are available on Enterprise and Pro plans
 
 You can add drains to your project by following the configuration steps below. When you configure the destination, choose whether to send data to a [custom HTTP endpoint](#custom-endpoint), write Audit Log data to an [S3 bucket](#s3-bucket), or use a [native integration](#native-integrations) or [external integration](#external-integrations) to send your data to popular services.
 
@@ -35,9 +35,9 @@ You can add drains to your project by following the configuration steps below. W
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related)
 - [Correlate logs and traces with OpenTelemetry in Vercel Log Drains](https://vercel.com/changelog/correlate-logs-and-traces-with-opentelemetry-in-vercel-log-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
-- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 
 Full cross-link map for this page: [/docs/drains/using-drains.graph.md](/docs/drains/using-drains.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Fusing-drains&source_site=vercel-docs&relationship=graph)
@@ -193,7 +193,7 @@ Learn more about [native integrations](/docs/integrations#native-integrations) a
 
 Occasionally your drain endpoints can return an error. If more than 80% of drain deliveries fail or the number of failures exceed 50 for the past hour, we will send a notification email and indicate the error status on your Drains page.
 
-![Image](https://vercel.com/front/docs/logs/drain-error-light.png)
+![Errored drain will show a warning status.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/logs/drain-error-light.png)
 
 ## Managing your active Drains
 

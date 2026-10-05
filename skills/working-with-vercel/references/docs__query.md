@@ -15,13 +15,13 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e6f581200b941d175473fcced61579257a88814f6771b755674cdfa5d7687bd3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dd86ef3b35a6f941969bee14527bb07d24cb67ae33a1a664e1fecc3652f5de33"
 ---
 
 # Query
 
-> **🔒 Permissions Required**: Query
+> **Availability**: Query is available on Enterprise and Pro plans
 
 You can use Query to get deeper visibility into your application when debugging issues, monitoring usage, or optimizing for speed and reliability. Query lets you explore traffic, errors, latency and similar metrics to:
 
@@ -38,10 +38,10 @@ You can use Query to get deeper visibility into your application when debugging 
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Query data on external API requests in Vercel Observability](https://vercel.com/changelog/query-data-on-external-api-requests-in-vercel-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/query.graph.md](/docs/query.graph.md?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ Full cross-link map for this page: [/docs/query.graph.md](/docs/query.graph.md?f
 
 Full Query access requires [Observability Plus](/docs/observability/observability-plus). With free observability, you can open a query. To modify filters or create new queries, enable [Observability Plus](/docs/observability/observability-plus).
 
-> **🔒 Permissions Required**: Enabling and disabling Observability Plus
+> **Availability**: Enabling and disabling Observability Plus are available on Enterprise and Pro plans
 
 See [Observability Plus](/docs/observability/observability-plus) for plan details and enablement.
 
@@ -72,7 +72,7 @@ See [Observability Plus](/docs/observability/observability-plus) for plan detail
 
 - ### Initiate a new query
   - **Start a new query**: In the Observability section, click the  button (New Query) to open the query creation interface.
-  - **Select a data source**: Under "Visualize", select the [metric](/docs/query/reference#metric) you want to analyze such as edge requests, serverless function invocations, external API requests, or other events.
+  - **Select a data source**: Under "Visualize", select the [metric](/docs/query/reference#metric) you want to analyze such as CDN requests, serverless function invocations, external API requests, or other events.
 
 - ### Define query parameters
   - **Select the data aggregation**: Select how you would like the values of your selected metric to be compiled such as sum, percentage, or per second.
@@ -100,7 +100,7 @@ See [Observability Plus](/docs/observability/observability-plus) for plan detail
 
 ## Manage IP Address visibility for Query
 
-> **🔒 Permissions Required**: Managing IP Address visibility
+> **Availability**: Managing IP Address visibility is available on Enterprise and Pro plans
 
 Vercel creates events each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used.
 

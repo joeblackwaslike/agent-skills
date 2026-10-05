@@ -16,8 +16,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "7568ad99f8b1a06e2ff4977fe03615e12021d643c2fd2b7ef79af06d15458872"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "499bf551609097d117c2a66a2d55343b93f4f93df3f20fb7010aae81f61b4d06"
 ---
 
 # Sign in with Vercel
@@ -34,11 +34,11 @@ Sign in with Vercel lets people use their Vercel account to log in to your appli
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related)
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Vercel Connect](https://vercel.com/docs/connect?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflak
-- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
+- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel.graph.md](/docs/sign-in-with-vercel.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,13 +16,13 @@ related:
 summary: ISR serves cached static pages while regenerating content in the background. Vercel\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "697002aac48fa595bf8aa01eb9d0dcd468907b2c4d7e0e03d4ae786b3792239c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0bb8d13200eed0c0458a2a93e43f3d427a98136ed1bd7f6d2fc3b5e129f31096"
 ---
 
 # Incremental Static Regeneration (ISR)
 
-> **🔒 Permissions Required**: Incremental Static Regeneration
+> **Availability**: Incremental Static Regeneration is available on all plans
 
 Incremental Static Regeneration (ISR) is a caching strategy that combines the speed of static content with the flexibility of server-side rendering. It follows the stale-while-revalidate pattern: visitors get a fast cached response, and Vercel regenerates the page in the background based on a time interval or an API call you trigger.
 
@@ -39,10 +39,10 @@ Incremental Static Regeneration (ISR) is a caching strategy that combines the sp
 - [Fluid compute now supports ISR background and on-demand revalidation](https://vercel.com/changelog/fluid-compute-now-supports-isr-background-and-on-demand-revalidation?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related)
 - [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related)
 - [Request collapsing for ISR cache misses](https://vercel.com/changelog/request-collapsing-for-isr-cache-misses?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related)
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Caching audits: Five antipatterns that cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
-- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 - [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration.graph.md](/docs/incremental-static-regeneration.graph.md?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration&source_site=vercel-docs&relationship=graph)
@@ -67,7 +67,7 @@ To get started:
 When you deploy ISR with your framework on Vercel, the CDN adds these optimizations:
 
 - **Zero configuration overhead**: Vercel's CDN applies the right caching strategy based on your framework code. It manages `Cache-Control` headers automatically.
-- **Durable storage**: The ISR cache lives alongside your [Function region](/docs/functions/configuring-functions/region) and persists content for 31 days, or until you revalidate it. It is scoped to a specific deployment where each deployment generates its own cache.
+- **Durable storage**: The ISR cache lives alongside your [Function region](/docs/functions/configuring-functions/region) and persists content for the duration you specify, until you revalidate it or it goes unaccessed for 31 days. It is scoped to a specific deployment where each deployment generates its own cache.
 - **Cache shielding**: On a CDN miss, Vercel reads from the ISR cache before invoking your function, reducing load on your origin.
 - **Automatic request collapsing**: When multiple requests hit the same uncached path, Vercel [collapses them](/docs/incremental-static-regeneration/request-collapsing) into one function invocation per region, protecting your backend during traffic spikes.
 - **Globally consistent purging**: When you revalidate content, all caches across all regions update within 300ms. Vercel purges HTML and data payloads together, so users see consistent content across full page loads and client-side transitions.

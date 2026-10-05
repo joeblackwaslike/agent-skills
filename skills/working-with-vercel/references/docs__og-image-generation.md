@@ -16,8 +16,8 @@ related:
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f15853a0d951ba6edacbeedef6de6657e10ef0003433905281627e0d28528a1f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4eb4dc435099cec2a9ee0deaebdd9921fb74cec11896722153a4750eded81940"
 ---
 
 # Open Graph (OG) Image Generation
@@ -41,7 +41,7 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related)
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Transform and optimize images to improve page load performance.
+- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
 
 Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -101,7 +101,7 @@ There are limitations when using `vercel/og` with the **Next.js Pages Router** a
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/og
+    yarn add @vercel/og
     ```
   </Code>
   <Code tab="npm">
@@ -111,7 +111,7 @@ There are limitations when using `vercel/og` with the **Next.js Pages Router** a
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/og
+    bun add @vercel/og
     ```
   </Code>
 </CodeBlock>
@@ -131,22 +131,22 @@ Get started with an example that generates an image from static text using Next.
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm create next-app@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn create next-app@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npx create-next-app@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bunx create-next-app@latest
     ```
   </Code>
 </CodeBlock>
@@ -360,27 +360,29 @@ Run the following command:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm dev
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn dev
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npm run dev
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bun run dev
     ```
   </Code>
 </CodeBlock>
 
 Then, browse to `http://localhost:3000/api/og`. You will see the following image:
+
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/functions/og-image/og-language.png)
 
 ### Consume the OG route
 
@@ -394,12 +396,12 @@ Then, based on the [Open Graph Protocol](https://ogp.me/#metadata), create the w
 
 Use the following code:
 
-```html filename="index.js"
+```html filename="index.html"
 <head>
   <title>Hello world</title>
   <meta
     property="og:image"
-    content="https://og-examples.vercel.sh/api/static"
+    content="https://your-project.vercel.app/api/og"
   />
 </head>
 ```

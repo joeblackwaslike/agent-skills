@@ -1,10 +1,14 @@
 ---
+title: Claude Code
+description: Learn how to use the Claude Code provider to access Claude models through the Claude Agent SDK.
+url: "https://ai-sdk.dev/providers/community-providers/claude-code"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/claude-code.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "8d1cc0ef38499091f2a19d0597a71e12308031df3ec8a88a754ac3cfc17c4594"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "dacaa1229d2802d077221dfb644ede3d2d410a36ed68ceac047276270b4475d9"
 ---
 
-# Claude Code Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [ai-sdk-provider-claude-code](https://github.com/ben-vargas/ai-sdk-provider-claude-code) community provider allows you to access Claude models through the official [Claude Agent SDK](https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk). It's particularly useful for developers who want to use their existing Claude Pro/Max subscription without managing API keys.
 
@@ -29,7 +33,7 @@ npm install ai-sdk-provider-claude-code@ai-sdk-v4 ai@^4.0.0
 
 ## Setup
 
-<InstallPackages packages="ai-sdk-provider-claude-code" />
+**Packages:** `ai-sdk-provider-claude-code`
 
 ## Provider Instance
 
@@ -59,13 +63,13 @@ const claudeCode = createClaudeCode({
 
 You can use the following optional settings to customize the provider instance:
 
-- **allowedTools** _string[]_ - List of allowed tools. When specified, only these tools will be available.
-- **disallowedTools** _string[]_ - List of disallowed tools (e.g., `['Bash(rm:*)']`).
-- **mcpServers** _Record&lt;string, McpServerConfig&gt;_ - MCP server configurations.
-- **permissionMode** _'default' | 'acceptEdits' | 'bypassPermissions' | 'plan'_ - Tool permission handling.
-- **maxTurns** _number_ - Maximum conversation turns.
-- **cwd** _string_ - Working directory for CLI operations.
-- **verbose** _boolean_ - Enable debug logging.
+- **allowedTools** *string\[]* - List of allowed tools. When specified, only these tools will be available.
+- **disallowedTools** *string\[]* - List of disallowed tools (e.g., `['Bash(rm:*)']`).
+- **mcpServers** *Record\<string, McpServerConfig>* - MCP server configurations.
+- **permissionMode** *'default' | 'acceptEdits' | 'bypassPermissions' | 'plan'* - Tool permission handling.
+- **maxTurns** *number* - Maximum conversation turns.
+- **cwd** *string* - Working directory for CLI operations.
+- **verbose** *boolean* - Enable debug logging.
 
 ## Language Models
 
@@ -104,18 +108,16 @@ const { text } = await generateText({
 
 | Model    | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | -------- | ----------- | ----------------- | ---------- | -------------- |
-| `opus`   | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `sonnet` | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `haiku`  | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `opus`   | ✓           | ✓                 | ✗          | ✗              |
+| `sonnet` | ✓           | ✓                 | ✗          | ✗              |
+| `haiku`  | ✓           | ✓                 | ✗          | ✗              |
 
-<Note>
-  Tool Usage and Tool Streaming show ❌ because this provider does not support
-  AI SDK custom tools (Zod schemas passed to `generateText`/`streamText`).
-  Instead, it uses Claude's built-in tools (Bash, Edit, Read, Write, etc.) and
-  MCP servers which execute autonomously. Object generation uses native
-  structured outputs with guaranteed schema compliance. Image input requires
-  streaming mode and base64/data URL format only.
-</Note>
+Tool Usage and Tool Streaming show ❌ because this provider does not support
+AI SDK custom tools (Zod schemas passed to `generateText`/`streamText`).
+Instead, it uses Claude's built-in tools (Bash, Edit, Read, Write, etc.) and
+MCP servers which execute autonomously. Object generation uses native
+structured outputs with guaranteed schema compliance. Image input requires
+streaming mode and base64/data URL format only.
 
 ## Authentication
 
@@ -135,68 +137,10 @@ This opens a browser window for authentication. Once authenticated, the provider
 
 For more details, see the [provider documentation](https://github.com/ben-vargas/ai-sdk-provider-claude-code).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,202 +1,102 @@
 ---
+title: Markdown Chatbot with Streamdown
+description: Render streaming Markdown responses with Streamdown, Next.js, and the AI SDK.
+url: "https://ai-sdk.dev/cookbook/next/markdown-chatbot-with-memoization"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - chatbot
+  - markdown
 source: "https://ai-sdk.dev/cookbook/next/markdown-chatbot-with-memoization.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "db371cc9b99cc050a541512aa0c9b57c389495951a7e0c7a3cf8abf3a35327ab"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "bbf145e5c04dd28467135e70c774ffa170fbc8be5f36471ea610eb4c105b0b1f"
 ---
 
-# Markdown Chatbot with Memoization
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-When building a chatbot with Next.js and the AI SDK, you'll likely want to render the model's responses in Markdown format using a library like `react-markdown`. However, this can have negative performance implications as the Markdown is re-rendered on each new token received from the streaming response.
+[Streamdown](https://streamdown.ai) renders Markdown as it streams from a language model. It handles incomplete Markdown syntax and [memoizes Markdown blocks](https://streamdown.ai/docs/memoization) so unchanged blocks can skip re-rendering. Streamdown provides this behavior in its default streaming mode.
 
-As conversations get longer and more complex, this performance impact becomes exponentially worse since the entire conversation history is re-rendered with each new token.
-
-This recipe uses memoization - a performance optimization technique where the results of expensive function calls are cached and reused to avoid unnecessary re-computation. In this case, parsed Markdown blocks are memoized to prevent them from being re-parsed and re-rendered on each token update, which means that once a block is fully parsed, it's cached and reused rather than being regenerated. This approach significantly improves rendering performance for long conversations by eliminating redundant parsing and rendering operations.
+Start with the [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt) recipe for the `/api/chat` route. Then use Streamdown to render the text parts in the client.
 
 ## Installation
 
-First, install the required dependencies for Markdown rendering and parsing:
+Install Streamdown in your Next.js application:
 
 ```bash
-npm install react-markdown marked
+npm install streamdown
 ```
 
-## Server
+For Tailwind CSS v4, add Streamdown to the sources in your global stylesheet:
 
-On the server, you use a simple route handler that streams the response from the language model.
-
-```tsx filename='app/api/chat/route.ts'
-import {
-  convertToModelMessages,
-  createUIMessageStreamResponse,
-  streamText,
-  toUIMessageStream,
-  type UIMessage,
-} from 'ai';
-
-export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json();
-
-  const result = streamText({
-    instructions:
-      'You are a helpful assistant. Respond to the user in Markdown format.',
-    model: 'openai/gpt-6-astra',
-    messages: await convertToModelMessages(messages),
-  });
-
-  return createUIMessageStreamResponse({
-    stream: toUIMessageStream({ stream: result.stream }),
-  });
-}
+```css title='app/globals.css'
+@import 'tailwindcss';
+@source '../node_modules/streamdown/dist/*.js';
 ```
 
-## Memoized Markdown Component
-
-Next, create a memoized markdown component that will take in raw Markdown text into blocks and only updates when the content actually changes. This component splits Markdown content into blocks using the `marked` library to identify discrete Markdown elements, then uses React's memoization features to optimize re-rendering by only updating blocks that have actually changed.
-
-```tsx filename='components/memoized-markdown.tsx'
-import { marked } from 'marked';
-import { memo, useMemo } from 'react';
-import ReactMarkdown from 'react-markdown';
-
-function parseMarkdownIntoBlocks(markdown: string): string[] {
-  const tokens = marked.lexer(markdown);
-  return tokens.map(token => token.raw);
-}
-
-const MemoizedMarkdownBlock = memo(
-  ({ content }: { content: string }) => {
-    return <ReactMarkdown>{content}</ReactMarkdown>;
-  },
-  (prevProps, nextProps) => {
-    if (prevProps.content !== nextProps.content) return false;
-    return true;
-  },
-);
-
-MemoizedMarkdownBlock.displayName = 'MemoizedMarkdownBlock';
-
-export const MemoizedMarkdown = memo(
-  ({ content, id }: { content: string; id: string }) => {
-    const blocks = useMemo(() => parseMarkdownIntoBlocks(content), [content]);
-
-    return blocks.map((block, index) => (
-      <MemoizedMarkdownBlock content={block} key={`${id}-block_${index}`} />
-    ));
-  },
-);
-
-MemoizedMarkdown.displayName = 'MemoizedMarkdown';
-```
+The `@source` path is relative to the stylesheet. Adjust it if you use a `src/app` directory or a monorepo. See the [Streamdown installation guide](https://streamdown.ai/docs/getting-started) for Tailwind CSS v3 configuration.
 
 ## Client
 
-Finally, on the client, use the `useChat` hook to manage the chat state and render the chat interface. You can use the `MemoizedMarkdown` component to render the message contents in Markdown format without compromising on performance. Additionally, you can render the form in its own component so as to not trigger unnecessary re-renders of the chat messages. You can also use the `throttle` option that will throttle data updates to a specified interval, helping to manage rendering performance.
+Pass each text part to `Streamdown`. Set `isAnimating` when that part is streaming so Streamdown can disable interactive controls until the text is complete.
 
-```typescript filename='app/page.tsx'
-"use client";
+```tsx title='app/page.tsx'
+'use client';
 
-import { Chat, useChat } from "@ai-sdk/react";
-import { DefaultChatTransport } from "ai";
-import { useState } from "react";
-import { MemoizedMarkdown } from "@/components/memoized-markdown";
-
-const chat = new Chat({
-  transport: new DefaultChatTransport({
-    api: "/api/chat",
-  }),
-});
+import { useChat } from '@ai-sdk/react';
+import { DefaultChatTransport } from 'ai';
+import { useState } from 'react';
+import { Streamdown } from 'streamdown';
 
 export default function Page() {
-  const { messages } = useChat({ chat, throttle: 50 });
+  const [input, setInput] = useState('');
+  const { messages, sendMessage } = useChat({
+    transport: new DefaultChatTransport({ api: '/api/chat' }),
+  });
 
   return (
-    <div className="flex flex-col w-full max-w-xl py-24 mx-auto stretch">
-      <div className="space-y-8 mb-4">
-        {messages.map((message) => (
-          <div key={message.id}>
-            <div className="font-bold mb-2">
-              {message.role === "user" ? "You" : "Assistant"}
-            </div>
-            <div className="prose space-y-2">
-              {message.parts.map((part) => {
-                if (part.type === "text") {
-                  return (
-                    <MemoizedMarkdown
-                      key={`${message.id}-text`}
-                      id={message.id}
-                      content={part.text}
-                    />
-                  );
-                }
-              })}
-            </div>
-          </div>
-        ))}
-      </div>
+    <div>
+      {messages.map(message => (
+        <div key={message.id}>
+          <div>{message.role === 'user' ? 'You' : 'Assistant'}</div>
+          {message.parts.map((part, index) =>
+            part.type === 'text' ? (
+              <Streamdown
+                key={`${message.id}-${index}`}
+                isAnimating={part.state === 'streaming'}
+              >
+                {part.text}
+              </Streamdown>
+            ) : null,
+          )}
+        </div>
+      ))}
 
-      <MessageInput />
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+          sendMessage({ text: input });
+          setInput('');
+        }}
+      >
+        <input
+          value={input}
+          onChange={event => setInput(event.target.value)}
+          placeholder="Say something..."
+        />
+        <button type="submit">Send</button>
+      </form>
     </div>
   );
 }
-
-const MessageInput = () => {
-  const [input, setInput] = useState("");
-  const { sendMessage } = useChat({ chat });
-
-  return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        sendMessage({
-          text: input,
-        });
-        setInput("");
-      }}
-    >
-      <input
-        className="fixed bottom-0 w-full max-w-xl p-2 mb-8 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 rounded shadow-xl"
-        placeholder="Say something..."
-        value={input}
-        onChange={(event) => {
-          setInput(event.target.value);
-        }}
-      />
-    </form>
-  );
-};
 ```
 
-<Note>
-  The chat state is shared between both components by using the same `Chat`
-  instance. This allows you to split the form and chat messages into separate
-  components while maintaining synchronized state.
-</Note>
+For syntax highlighting, math, or Mermaid diagrams, see [Streamdown's plugins](https://streamdown.ai/docs/plugins).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

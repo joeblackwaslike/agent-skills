@@ -13,8 +13,8 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d5980ed81940dfb5fb8c77574c6cd6100de42667ed9c05ae17f408dca408adeb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c792e51cc4fbe7e3704a348a88de5265a2b0f3649e5d9d96c9c982fa332c742c"
 ---
 
 # Vercel & OpenAI Integration
@@ -28,6 +28,7 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related)
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fopenai&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
@@ -59,6 +60,8 @@ Before you begin, ensure you have an [OpenAI account](https://platform.openai.co
 
 - ### Generate API Key
   Click on **Create new secret key**. Copy the generated API key securely.
+
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/openai/env-vars.png)
   > **💡 Note:** Always keep your API keys confidential. Do not expose them in client-side code. Use [Vercel Environment Variables](/docs/environment-variables) for safe storage and do not commit these values to git.
 
 - ### Set Environment Variable
@@ -81,7 +84,7 @@ Install the AI SDK in your project with your favorite package manager:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i ai
+    yarn add ai
     ```
   </Code>
   <Code tab="npm">
@@ -91,7 +94,7 @@ Install the AI SDK in your project with your favorite package manager:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i ai
+    bun add ai
     ```
   </Code>
 </CodeBlock>

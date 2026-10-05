@@ -1,10 +1,14 @@
 ---
+title: Overview
+description: Learn how to build agents with the AI SDK.
+url: "https://ai-sdk.dev/docs/agents/overview"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/overview.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "d3f80a9e412f6b0667b105c81cf0f5a7ffb2a89c9528f9e87f41478a4aac10f0"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6305b12db169052f8a746948f0e4ea32eb7ec8b5160caa0646210d11cf3a39f6"
 ---
 
-# Agents
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Agents are **large language models (LLMs)** that use **tools** in a **loop** to accomplish tasks.
 
@@ -37,11 +41,10 @@ The ToolLoopAgent class handles these three components. Here's an agent that use
 
 ```ts
 import { ToolLoopAgent, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const weatherAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     weather: tool({
       description: 'Get the weather in a location (in Fahrenheit)',
@@ -141,20 +144,10 @@ Agents are flexible and powerful, but non-deterministic. When you need reliable,
 - **[Workflow Patterns](/docs/agents/workflows)** - Structured patterns using core functions for complex workflows
 - **[Loop Control](/docs/agents/loop-control)** - Execution control with stopWhen and prepareStep
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

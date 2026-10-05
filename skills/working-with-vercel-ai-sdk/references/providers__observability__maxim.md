@@ -1,10 +1,14 @@
 ---
+title: Maxim
+description: "Evaluate & Observe LLM applications with Maxim"
+url: "https://ai-sdk.dev/providers/observability/maxim"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/maxim.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3a8bf6906b5aa992a92b9d833aff7d1136fd22b861b46c071ca06a5b7d41c35a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f5ad343bc092ca95114e414786a8b7abe375b1fef1ca4fa17d68bb5b552c8bed"
 ---
 
-# Maxim Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Maxim AI](https://getmaxim.ai) streamlines AI application development and deployment by applying traditional software best practices to non-deterministic AI workflows. Our evaluation and observability tools help teams maintain quality, reliability, and speed throughout the AI application lifecycle. Maxim integrates with the AI SDK to provide:
 
@@ -138,7 +142,7 @@ for await (const textPart of textStream) {
 
 ### **Using Custom Metadata**
 
-```javascript
+```ts
 import { MaximVercelProviderMetadata } from '@maximai/maxim-js/vercel-ai-sdk';
 
 const response = await generateText({
@@ -178,14 +182,17 @@ const response = await generateText({
 - `traceId` - Use a specific trace ID
 - `spanId` - Use a specific span ID
 
-![Maxim Demo](https://cdn.getmaxim.ai/public/images/maxim_vercel.gif)
+<img alt="Maxim Demo" src="https://cdn.getmaxim.ai/public/images/maxim_vercel.gif" width="1280" height="720" />
 
 ## Streaming Support
 
-```javascript
+```ts
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
-import { wrapMaximAISDKModel, MaximVercelProviderMetadata } from '@maximai/maxim-js/vercel-ai-sdk';
+import {
+  wrapMaximAISDKModel,
+  MaximVercelProviderMetadata,
+} from '@maximai/maxim-js/vercel-ai-sdk';
 
 const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 
@@ -198,7 +205,7 @@ const { textStream } = await streamText({
       traceName: 'Story Generation',
       traceTags: {
         type: 'creative',
-        format: 'streaming'
+        format: 'streaming',
       },
     } as MaximVercelProviderMetadata,
   },
@@ -220,7 +227,7 @@ import { wrapMaximAISDKModel } from '@maximai/maxim-js/vercel-ai-sdk';
 // Wrap different provider models
 const openaiModel = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 const anthropicModel = wrapMaximAISDKModel(
-  anthropic('claude-sonnet-5'),
+  anthropic('claude-sonnet-5-5'),
   logger,
 );
 const googleModel = wrapMaximAISDKModel(google('gemini-pro'), logger);
@@ -237,18 +244,21 @@ const responses = await Promise.all([
 
 ### **API Route Example**
 
-```javascript
-// app/api/chat/route.js
+```ts
+// app/api/chat/route.ts
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
-import { wrapMaximAISDKModel, MaximVercelProviderMetadata } from '@maximai/maxim-js/vercel-ai-sdk';
-import { Maxim } from "@maximai/maxim-js";
+import {
+  wrapMaximAISDKModel,
+  MaximVercelProviderMetadata,
+} from '@maximai/maxim-js/vercel-ai-sdk';
+import { Maxim } from '@maximai/maxim-js';
 
-const maxim = new Maxim({ apiKey });
+const maxim = new Maxim({ apiKey: process.env.MAXIM_API_KEY });
 const logger = await maxim.logger({ id: process.env.MAXIM_LOG_REPO_ID });
 const model = wrapMaximAISDKModel(openai('gpt-6-astra'), logger);
 
-export async function POST(req) {
+export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = await streamText({
@@ -260,7 +270,7 @@ export async function POST(req) {
         traceName: 'Chat API',
         traceTags: {
           endpoint: '/api/chat',
-          type: 'conversation'
+          type: 'conversation',
         },
       } as MaximVercelProviderMetadata,
     },
@@ -311,30 +321,10 @@ export default function Chat() {
 
 For further details, checkout Vercel AI SDK's [Maxim integration documentation](https://www.getmaxim.ai/docs/sdk/typescript/integrations/vercel/vercel).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

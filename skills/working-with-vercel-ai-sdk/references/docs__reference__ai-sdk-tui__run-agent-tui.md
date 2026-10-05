@@ -1,10 +1,14 @@
 ---
+title: runAgentTUI
+description: API Reference for the runAgentTUI function.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-tui/run-agent-tui"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-tui/run-agent-tui.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "5a50c273c8d3b08643d6b29d6559c690438d0aab33bdffc86489d5cea02588b7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "82b79f19471e6c524dcf050eec3e77373b5cbb07388802c2a0cf2d5e0ba3bb12"
 ---
 
-# `runAgentTUI()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Runs a local agent or chat transport in an interactive terminal UI. The
 terminal UI reads user prompts, streams assistant responses, renders markdown,
@@ -30,97 +34,28 @@ await runAgentTUI({
 
 ## Import
 
-<Snippet text={`import { runAgentTUI } from "@ai-sdk/tui"`} prompt={false} />
+```
+import { runAgentTUI } from "@ai-sdk/tui"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'options',
-      type: 'RunAgentTUIOptions',
-      isRequired: true,
-      description: 'Options for starting the terminal UI.',
-      properties: [
-        {
-          type: 'RunAgentTUIOptions',
-          parameters: [
-            {
-              name: 'agent',
-              type: 'AgentTUIAgent',
-              isOptional: true,
-              description:
-                'The agent to run. Provide exactly one of `agent` or `transport`. The agent must not require per-call options and must not use structured output.',
-            },
-            {
-              name: 'transport',
-              type: 'ChatTransport<UIMessage>',
-              isOptional: true,
-              description:
-                'The transport used to communicate with a remote agent. Provide exactly one of `agent` or `transport`.',
-            },
-            {
-              name: 'title',
-              type: 'string',
-              isOptional: true,
-              description:
-                'The title shown in the terminal UI. If omitted, no title is shown.',
-            },
-            {
-              name: 'tools',
-              type: "'full' | 'collapsed' | 'auto-collapsed' | 'hidden'",
-              isOptional: true,
-              description:
-                'Controls how tool call sections are displayed. Defaults to `auto-collapsed`.',
-            },
-            {
-              name: 'reasoning',
-              type: "'full' | 'collapsed' | 'auto-collapsed' | 'hidden'",
-              isOptional: true,
-              description:
-                'Controls how reasoning sections are displayed. Defaults to `auto-collapsed`.',
-            },
-            {
-              name: 'responseStatistics',
-              type: "'outputTokenCount' | 'outputTokensPerSecond'",
-              isOptional: true,
-              description:
-                'Controls which response statistic is shown in response headers. Defaults to `outputTokensPerSecond`.',
-            },
-            {
-              name: 'contextSize',
-              type: 'number',
-              isOptional: true,
-              description:
-                'The model context window size in tokens. When provided, the terminal UI shows total token usage as a percentage of this context window.',
-            },
-            {
-              name: 'sandbox',
-              type: 'Experimental_SandboxSession',
-              isOptional: true,
-              description:
-                'Sandbox session that is passed through to the agent as `experimental_sandbox` on every call.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `options` (`RunAgentTUIOptions`): Options for starting the terminal UI.
+  - `RunAgentTUIOptions`
+    - `agent?` (`AgentTUIAgent`): The agent to run. Provide exactly one of \`agent\` or \`transport\`. The agent must not require per-call options and must not use structured output.
+    - `transport?` (`ChatTransport<UIMessage>`): The transport used to communicate with a remote agent. Provide exactly one of \`agent\` or \`transport\`.
+    - `title?` (`string`): The title shown in the terminal UI. If omitted, no title is shown.
+    - `tools?` (`'full' | 'collapsed' | 'auto-collapsed' | 'hidden'`): Controls how tool call sections are displayed. Defaults to \`auto-collapsed\`.
+    - `reasoning?` (`'full' | 'collapsed' | 'auto-collapsed' | 'hidden'`): Controls how reasoning sections are displayed. Defaults to \`auto-collapsed\`.
+    - `responseStatistics?` (`'outputTokenCount' | 'outputTokensPerSecond'`): Controls which response statistic is shown in response headers. Defaults to \`outputTokensPerSecond\`.
+    - `contextSize?` (`number`): The model context window size in tokens. When provided, the terminal UI shows total token usage as a percentage of this context window.
+    - `sandbox?` (`Experimental_SandboxSession`): Sandbox session that is passed through to the agent as \`experimental\_sandbox\` on every call.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'returns',
-      type: 'Promise<void>',
-      description: 'A promise that resolves when the terminal UI exits.',
-    },
-  ]}
-/>
+- `returns` (`Promise<void>`): A promise that resolves when the terminal UI exits.
 
 ## Types
 
@@ -229,10 +164,10 @@ processing.
 - [Building Agents](/docs/agents/building-agents)
 - [ToolLoopAgent guide](/docs/agents/overview#toolloopagent-class)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [runAgentTUI](/docs/reference/ai-sdk-tui/run-agent-tui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

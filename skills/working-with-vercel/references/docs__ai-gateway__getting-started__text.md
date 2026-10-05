@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c163d9d4356e97ac7cc87ce04f486e3e7e2b474d31a31c5a537393c345fcdf22"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "67fe12820af37cb9de8dd6ea85e3a5bc2e9280c3e4a4ebc16cb0dd064c720224"
 ---
 
 # AI Gateway Text Generation Quickstart
@@ -31,12 +31,13 @@ Stream a text response through AI Gateway.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to use the AI SDK to stream LLM responses.
+- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text with chat prompt using the AI SDK and Node
+- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text with chat prompt using the AI SDK and Next.js
+- [Generate Text](https://ai-sdk.dev/cookbook/next/generate-text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text using the AI SDK and Next.js.
+- [Generate Text](https://ai-sdk.dev/cookbook/node/generate-text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text using the AI SDK and Node
 - [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate speech and transcribe it using AI Gateway.
-- [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate text responses using the OpenResponses API through AI Gateway.
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
-- [AI Gateway Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate an image from a text prompt using AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

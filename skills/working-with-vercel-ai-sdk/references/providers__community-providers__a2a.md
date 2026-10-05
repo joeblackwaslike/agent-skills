@@ -1,16 +1,18 @@
 ---
+title: A2A
+description: A2A Protocol Provider for the AI SDK
+url: "https://ai-sdk.dev/providers/community-providers/a2a"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/a2a.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "70eed1c00862424d73841214d9159c2dd0b7a001677a70f4e649857558ac7e75"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "da6d478e4a7ee5aa1cce0e2c41888a3941b6326334d1e965dbd07e0e885797a1"
 ---
 
-# A2A
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [dracoblue/a2a-ai-provider](https://github.com/dracoblue/a2a-ai-provider) is a community provider enables the use of [A2A protocol](https://a2aproject.github.io/A2A/specification/) compliant agents with the [AI SDK](https://ai-sdk.dev/). This allows developers to stream, send, and receive text, tool calls, and artifacts using a standardized JSON-RPC interface over HTTP.
 
-<Note type="warning">
-  The `a2a-ai-provider` package is under constant development.
-</Note>
+The `a2a-ai-provider` package is under constant development.
 
 The provider supports (by using the official a2a-js sdk [@a2a-js/sdk](https://github.com/a2aproject/a2a-js)):
 
@@ -25,7 +27,7 @@ Learn more about A2A at the [A2A Project Site](https://a2aproject.github.io/A2A/
 
 Install the `a2a-ai-provider` from npm:
 
-<InstallPackages packages="a2a-ai-provider" />
+**Packages:** `a2a-ai-provider`
 
 ## Provider Instance
 
@@ -88,68 +90,10 @@ console.log(await streamResult.content);
 - [A2A Protocol Spec](https://a2aproject.github.io/A2A/specification/)
 - License: MIT
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

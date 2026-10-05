@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0cc3eb0df27babcf2f2215b71a3476fa516abc2df2571da5c12a15e0cf16255b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7d741ca5bdb62d2c51a1d1d2bb41b4430ece037d22878886fdcebe3e935e395c"
 ---
 
 # Build Output Configuration
@@ -33,8 +33,8 @@ sha256: "0cc3eb0df27babcf2f2215b71a3476fa516abc2df2571da5c12a15e0cf16255b"
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related)
 - [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Backwards compatible Image Optimization with the Legacy Image component.
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
@@ -174,7 +174,7 @@ type MatchableValue = {
 
 | Key      | [Type](/docs/rest-api#types)                                                                | Required | Description                                         |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------------------------------------------- |
-| **eq**   | [String](/docs/rest-api#types) | [Number](/docs/rest-api#types) | No       | Value must equal this exact value.                  |
+| **eq**   | [String](/docs/rest-api#types) \| [Number](/docs/rest-api#types) | No       | Value must equal this exact value.                  |
 | **neq**  | [String](/docs/rest-api#types)                                                                      | No       | Value must not equal this value.                    |
 | **inc**  | [String\[\]](/docs/rest-api#types)                                                                    | No       | Value must be included in this array.               |
 | **ninc** | [String\[\]](/docs/rest-api#types)                                                                    | No       | Value must not be included in this array.           |
@@ -201,9 +201,9 @@ type HasField = Array<
 
 | Key       | [Type](/docs/rest-api#types)             | Required | Description                                                             |
 | --------- | ----------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------- |
-| **type**  | "host" | "header" | "cookie" | "query"                                           | Yes      | Determines the HasField type.                                           |
+| **type**  | "host" \| "header" \| "cookie" \| "query"                                           | Yes      | Determines the HasField type.                                           |
 | **key**   | [String](/docs/rest-api#types)                   | No\*     | Required for header, cookie, and query types. The key to match against. |
-| **value** | [String](/docs/rest-api#types) | MatchableValue | No       | The value to match against using string or MatchableValue conditions.   |
+| **value** | [String](/docs/rest-api#types) \| MatchableValue | No       | The value to match against using string or MatchableValue conditions.   |
 
 ##### Source route: `Locale`
 
@@ -216,7 +216,7 @@ type Locale = {
 
 | Key          | [Type](/docs/rest-api#types) | Required | Description                                                                                                                    |
 | ------------ | ----------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| **redirect** | [Map](/docs/rest-api#types)          | Yes      | An object of keys that represent locales to check for (`en`, `fr`, etc.) that map to routes to redirect to (`/`, `/fr`, etc.). |
+| **redirect** | [Map](/docs/rest-api#types)          | No       | An object of keys that represent locales to check for (`en`, `fr`, etc.) that map to routes to redirect to (`/`, `/fr`, etc.). |
 | **cookie**   | [String](/docs/rest-api#types)       | No       | Cookie name that can override the Accept-Language header for determining the current locale.                                   |
 
 ##### Source route: `Mitigate`
@@ -229,7 +229,7 @@ type Mitigate = {
 
 | Key        | [Type](/docs/rest-api#types) | Required | Description                                   |
 | ---------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------- |
-| **action** | "challenge" | "deny"                                                   | Yes      | The action to take when the route is matched. |
+| **action** | "challenge" \| "deny"                                                   | Yes      | The action to take when the route is matched. |
 
 ##### Source route: `Transform`
 
@@ -252,10 +252,10 @@ type Transform =
 
 | Key        | [Type](/docs/rest-api#types)                                                                  | Required | Description                                                                |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------- |
-| **type**   | "request.headers" | "response.headers" | "request.query" | "request.path"                                                            | Yes      | The type of transform to apply.                                            |
-| **op**     | "append" | "set" | "delete"                                                                                                            | Yes      | The operation to perform on the target. The `request.path` transform only supports `set`. |
+| **type**   | "request.headers" \| "response.headers" \| "request.query" \| "request.path"                                                            | Yes      | The type of transform to apply.                                            |
+| **op**     | "append" \| "set" \| "delete"                                                                                                            | Yes      | The operation to perform on the target. The `request.path` transform only supports `set`. |
 | **target** | `{ key: string \| Omit<MatchableValue, 're'> }`                                                                                          | No       | The target of the transform. Regular expression matching is not supported. Not used for `request.path` transforms. |
-| **args**   | [String](/docs/rest-api#types) | [String\[\]](/docs/rest-api#types) | No       | The arguments to pass to the transform. For `request.path`, this must be a single `String` that overrides the path the runtime observes (`req.url`). It must start with `/`, must not be scheme-relative, and must not contain a query string, whitespace, or control characters. |
+| **args**   | [String](/docs/rest-api#types) \| [String\[\]](/docs/rest-api#types) | No       | The arguments to pass to the transform. For `request.path`, this must be a single `String` that overrides the path the runtime observes (`req.url`). It must start with `/`, must not be scheme-relative, and must not contain a query string, whitespace, or control characters. |
 
 #### Handler route
 
@@ -283,7 +283,7 @@ type Handler = {
 | **handle** | HandleValue                                                             | Yes      | The phase of routing when all subsequent routes should apply.                                                  |
 | **src**    | [String](/docs/rest-api#types)       | No       | A PCRE-compatible regular expression that matches each incoming pathname (excluding querystring).              |
 | **dest**   | [String](/docs/rest-api#types)       | No       | A destination pathname or full URL, including querystring, with the ability to embed capture groups as $1, $2. |
-| **status** | [String](/docs/rest-api#types)       | No       | A status code to respond with. Can be used in tandem with `Location:` header to implement redirects.           |
+| **status** | [Number](/docs/rest-api#types)       | No       | A status code to respond with. Can be used in tandem with `Location:` header to implement redirects.           |
 
 #### Routing rule example
 
@@ -368,7 +368,7 @@ The following example shows an image optimization configuration that specifies a
     "localPatterns": [{
       "pathname": "^/assets/.*$",
       "search": ""
-    }]
+    }],
     "remotePatterns": [{
       "protocol": "https",
       "hostname": "^via\\.placeholder\\.com$",
@@ -660,7 +660,7 @@ For an example of declaring services and the resulting build output, see the [Se
     "localPatterns": [{
       "pathname": "^/assets/.*$",
       "search": ""
-    }]
+    }],
     "remotePatterns": [
       {
         "protocol": "https",

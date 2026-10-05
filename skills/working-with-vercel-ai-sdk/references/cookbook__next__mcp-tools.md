@@ -1,10 +1,19 @@
 ---
+title: Model Context Protocol (MCP) Tools
+description: Learn how to use MCP tools with the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/mcp-tools"
+docs_index: /llms.txt
+tags:
+  - next
+  - tool use
+  - agent
+  - mcp
 source: "https://ai-sdk.dev/cookbook/next/mcp-tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e44e475afd67a398a094cfdd62b8ce8f2ff396d52844d3ba1000c7fd6c632f2c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ddb770bd49b5939f8a9536c0ace53543629d4fdb9ee8e7c2c745521373d3f01b"
 ---
 
-# MCP Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK supports Model Context Protocol (MCP) tools by offering a lightweight client that exposes a `tools` method for retrieving tools from a MCP server. After use, the client should always be closed to release resources.
 
@@ -14,11 +23,17 @@ Let's create a route handler for `/api/completion` that will generate text based
 
 If you prefer to use the official transports (optional), install the official TypeScript SDK for Model Context Protocol:
 
-<Snippet text="pnpm install @modelcontextprotocol/sdk" />
+```
+pnpm install @modelcontextprotocol/sdk
+```
 
-```ts filename="app/api/completion/route.ts"
-import { createMCPClient } from '@ai-sdk/mcp';
-import { streamText } from 'ai';
+```ts title="app/api/completion/route.ts"
+import { createMCPClient, type MCPClient } from '@ai-sdk/mcp';
+import {
+  createUIMessageStreamResponse,
+  streamText,
+  toUIMessageStream,
+} from 'ai';
 import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 // Optional: Official transports if you prefer them
@@ -28,6 +43,7 @@ import { openai } from '@ai-sdk/openai';
 
 export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();
+  const clients: MCPClient[] = [];
 
   try {
     // Initialize an MCP client to connect to a `stdio` MCP server (local only):
@@ -39,6 +55,7 @@ export async function POST(req: Request) {
     const stdioClient = await createMCPClient({
       transport,
     });
+    clients.push(stdioClient);
 
     // Connect to an HTTP MCP server directly via the client transport config
     const httpClient = await createMCPClient({
@@ -53,6 +70,7 @@ export async function POST(req: Request) {
         // authProvider: myOAuthClientProvider,
       },
     });
+    clients.push(httpClient);
 
     // Connect to a Server-Sent Events (SSE) MCP server directly via the client transport config
     const sseClient = await createMCPClient({
@@ -67,6 +85,7 @@ export async function POST(req: Request) {
         // authProvider: myOAuthClientProvider,
       },
     });
+    clients.push(sseClient);
 
     // Alternatively, you can create transports with the official SDKs instead of direct config:
     // const httpTransport = new StreamableHTTPClientTransport(new URL('http://localhost:3000/mcp'));
@@ -103,8 +122,12 @@ export async function POST(req: Request) {
       },
     });
 
-    return response.toDataStreamResponse();
+    return createUIMessageStreamResponse({
+      stream: toUIMessageStream({ stream: response.stream }),
+    });
   } catch (error) {
+    // Close any clients that were created before the error:
+    await Promise.all(clients.map(client => client.close()));
     return new Response('Internal Server Error', { status: 500 });
   }
 }
@@ -114,7 +137,7 @@ export async function POST(req: Request) {
 
 Let's create a simple React component that imports the `useCompletion` hook from the `@ai-sdk/react` module. The `useCompletion` hook will call the `/api/completion` endpoint when a button is clicked. The endpoint will generate text based on the input prompt and stream it to the client.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useCompletion } from '@ai-sdk/react';
@@ -142,31 +165,10 @@ export default function Page() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

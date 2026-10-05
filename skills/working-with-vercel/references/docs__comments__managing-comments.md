@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/managing-comments.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6d61c70246354ff4a6c2e05d6d98bbe65a612fa5ccde1168afbd795068416cf8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f13984a39ac4298a06c7543d27253b469891cbc71e6e3a107069fb675b8a1810"
 ---
 
 # Managing Comments on Preview Deployments
@@ -36,8 +36,8 @@ You can resolve comments by selecting the **☐ Resolve** checkbox that appears 
 - [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related)
 - [Markdown support for comments on Preview Deployments ](https://vercel.com/changelog/markdown-support-for-comments-on-preview-deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related)
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Fcomments%2Fmanaging-comments&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 
@@ -151,7 +151,7 @@ On desktop, you can hover your cursor over a comment's timestamp to view less de
 - Device pixel ratio
 - Which deployment they were viewing
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/debug-info-light.png`)
+![A comment's browsing session information.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/debug-info-light.png)
 
 
 ---

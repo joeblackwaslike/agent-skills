@@ -1,10 +1,14 @@
 ---
+title: Writing a Custom Provider
+description: Learn how to write a custom provider for the AI SDK
+url: "https://ai-sdk.dev/providers/community-providers/custom-providers"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "6d4cdae2818c86c9ea8a370293ed45c08fe9c0dcc596706286a58b4c65710b69"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "1fad9668d73ab37a7242bd1b08efff6d4df157b5c1b90ce8f64be09623696776"
 ---
 
-# Writing a Custom Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4) that enables you to create custom providers compatible with the AI SDK. This specification ensures consistency across different providers.
 
@@ -16,11 +20,9 @@ Please publish your custom provider in your own GitHub repository and as an NPM 
 
 The Language Model Specification V4 is a standardized specification for interacting with language models that provides a unified abstraction layer across all AI providers. This specification creates a consistent interface that works seamlessly with different language models, ensuring that developers can interact with any provider using the same patterns and methods. It enables:
 
-<Note>
-  If you open-source a provider, we'd love to promote it here. Please send us a
-  PR to add it to the [Community Providers](/providers/community-providers)
-  section.
-</Note>
+If you open-source a provider, we'd love to promote it here. Please send us a
+PR to add it to the [Community Providers](/providers/community-providers)
+section.
 
 ## Understanding the V4 Specification
 
@@ -41,7 +43,7 @@ The `ProviderV4` interface acts as the entry point:
 ```ts
 interface ProviderV4 {
   languageModel(modelId: string): LanguageModelV4;
-  .embeddingModel(modelId: string): EmbeddingModelV4<string>;
+  embeddingModel(modelId: string): EmbeddingModelV4;
   imageModel(modelId: string): ImageModelV4;
 }
 ```
@@ -52,7 +54,7 @@ The `LanguageModelV4` interface defines the methods your provider must implement
 
 ```ts
 interface LanguageModelV4 {
-  specificationVersion: 'V4';
+  specificationVersion: 'v4';
   provider: string;
   modelId: string;
   supportedUrls: Record<string, RegExp[]>;
@@ -64,7 +66,7 @@ interface LanguageModelV4 {
 
 Key aspects:
 
-- **specificationVersion**: Must be 'V4'
+- **specificationVersion**: Must be 'v4'
 - **supportedUrls**: Declares which URLs (for file parts) the provider can handle natively
 - **doGenerate/doStream**: methods for non-streaming and streaming generation
 
@@ -99,10 +101,9 @@ Enable models to invoke functions with structured arguments:
 ```ts
 type LanguageModelV4ToolCall = {
   type: 'tool-call';
-  toolCallType: 'function';
   toolCallId: string;
   toolName: string;
-  args: string;
+  input: string; // stringified JSON arguments
 };
 ```
 
@@ -299,7 +300,7 @@ Example stream sequence:
 { type: 'stream-start', warnings: [] }
 { type: 'text', text: 'Hello' }
 { type: 'text', text: ' world' }
-{ type: 'tool-call', toolCallId: '1', toolName: 'search', args: {...} }
+{ type: 'tool-call', toolCallId: '1', toolName: 'search', input: '{...}' }
 { type: 'response-metadata', modelId: 'gpt-4.1', ... }
 { type: 'finish', usage: { inputTokens: 10, outputTokens: 20 }, finishReason: 'stop' }
 ```
@@ -423,23 +424,21 @@ Implementing a custom language model provider involves several steps:
 - Processing the results (generate, streaming, tool calls)
 - Supporting object generation
 
-<Note>
-  The best way to get started is to use the [Mistral
-  provider](https://github.com/vercel/ai/tree/main/packages/mistral) as a
-  reference implementation.
-</Note>
+The best way to get started is to use the [Mistral
+provider](https://github.com/vercel/ai/tree/main/packages/mistral) as a
+reference implementation.
 
 ### Step 1: Create the Provider Entry Point
 
 Start by creating a `provider.ts` file that exports a factory function and a default instance:
 
-```ts filename="provider.ts"
+```ts title="provider.ts"
 import {
   generateId,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-sdk/provider-utils';
-import { ProviderV4 } from '@ai-sdk/provider';
+import { NoSuchModelError, ProviderV4 } from '@ai-sdk/provider';
 import { CustomChatLanguageModel } from './custom-chat-language-model';
 
 // Define your provider interface extending ProviderV4
@@ -469,6 +468,11 @@ interface CustomProviderSettings {
    * Custom headers for requests
    */
   headers?: Record<string, string>;
+
+  /**
+   * Custom ID generator
+   */
+  generateId?: () => string;
 }
 
 // Factory function to create provider instance
@@ -502,7 +506,14 @@ function createCustom(options: CustomProviderSettings = {}): CustomProvider {
     return createChatModel(modelId, settings);
   };
 
+  provider.specificationVersion = 'v4' as const;
   provider.languageModel = createChatModel;
+  provider.embeddingModel = (modelId: string) => {
+    throw new NoSuchModelError({ modelId, modelType: 'embeddingModel' });
+  };
+  provider.imageModel = (modelId: string) => {
+    throw new NoSuchModelError({ modelId, modelType: 'imageModel' });
+  };
 
   return provider as CustomProvider;
 }
@@ -515,14 +526,15 @@ const custom = createCustom();
 
 Create a `custom-chat-language-model.ts` file that implements `LanguageModelV4`:
 
-```ts filename="custom-chat-language-model.ts"
+```ts title="custom-chat-language-model.ts"
 import { LanguageModelV4, LanguageModelV4CallOptions } from '@ai-sdk/provider';
 import { postJsonToApi } from '@ai-sdk/provider-utils';
 
 class CustomChatLanguageModel implements LanguageModelV4 {
-  readonly specificationVersion = 'V4';
+  readonly specificationVersion = 'v4';
   readonly provider: string;
   readonly modelId: string;
+  private readonly config: CustomChatConfig;
 
   constructor(
     modelId: string,
@@ -531,6 +543,7 @@ class CustomChatLanguageModel implements LanguageModelV4 {
   ) {
     this.provider = config.provider;
     this.modelId = modelId;
+    this.config = config;
     // Initialize with settings and config
   }
 
@@ -587,10 +600,9 @@ class CustomChatLanguageModel implements LanguageModelV4 {
       for (const toolCall of response.choices[0].message.tool_calls) {
         content.push({
           type: 'tool-call',
-          toolCallType: 'function',
           toolCallId: toolCall.id,
           toolName: toolCall.function.name,
-          args: JSON.stringify(toolCall.function.arguments),
+          input: JSON.stringify(toolCall.function.arguments),
         });
       }
     }
@@ -645,7 +657,7 @@ class CustomChatLanguageModel implements LanguageModelV4 {
 
 Map AI SDK messages to your provider's format:
 
-```ts filename="custom-chat-language-model.ts#L50-100"
+```ts title="custom-chat-language-model.ts#L50-100"
 private convertToProviderMessages(prompt: LanguageModelV4Prompt) {
   return prompt.map((message) => {
     switch (message.role) {
@@ -691,12 +703,13 @@ private convertToProviderMessages(prompt: LanguageModelV4Prompt) {
 
 Create a streaming transformer that converts provider chunks to AI SDK stream parts:
 
-```ts filename="custom-chat-language-model.ts#L150-200"
+```ts title="custom-chat-language-model.ts#L150-200"
 private createTransformer(warnings: SharedV4Warning[]) {
   let isFirstChunk = true;
 
   return new TransformStream<ParsedChunk, LanguageModelV4StreamPart>({
-    async transform(chunk, controller) {
+    // Arrow function keeps `this` bound to the model instance
+    transform: async (chunk, controller) => {
       // Send warnings with first chunk
       if (isFirstChunk) {
         controller.enqueue({ type: 'stream-start', warnings });
@@ -744,7 +757,7 @@ private createTransformer(warnings: SharedV4Warning[]) {
 
 Use standardized AI SDK errors for consistent error handling:
 
-```ts filename="custom-chat-language-model.ts#L250-280"
+```ts title="custom-chat-language-model.ts#L250-280"
 import {
   APICallError,
   InvalidResponseDataError,
@@ -780,7 +793,7 @@ To make your provider compatible with [Workflow DevKit](https://useworkflow.dev)
 
 First, make `headers` optional in your config type so deserialized models work without pre-configured auth:
 
-```ts filename="custom-chat-language-model.ts"
+```ts title="custom-chat-language-model.ts"
 type CustomChatConfig = {
   provider: string;
   baseURL: string;
@@ -792,7 +805,7 @@ type CustomChatConfig = {
 
 Then add the static serialization methods to your model class:
 
-```ts filename="custom-chat-language-model.ts"
+```ts title="custom-chat-language-model.ts"
 import {
   serializeModel,
   deserializeModel,
@@ -830,11 +843,9 @@ headers: combineHeaders(this.config.headers(), options.headers),
 headers: combineHeaders(this.config.headers?.(), options.headers),
 ```
 
-<Note>
-  The deserialized model will not have auth headers. In a workflow context,
-  authentication is typically handled through environment variables or
-  request-level options available in the step execution environment.
-</Note>
+The deserialized model will not have auth headers. In a workflow context,
+authentication is typically handled through environment variables or
+request-level options available in the step execution environment.
 
 ## Next Steps
 
@@ -844,68 +855,10 @@ headers: combineHeaders(this.config.headers?.(), options.headers),
 - Test your provider with the AI SDK's built-in examples
 - Explore the V4 types in detail at [`@ai-sdk/provider`](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

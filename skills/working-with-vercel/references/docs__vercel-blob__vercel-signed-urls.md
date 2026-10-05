@@ -13,13 +13,13 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "bd1770d539f99db2d16d25efcf936c19f14cc090e0675a9c85de21f38772852f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "35efc773630ea6c39554f1ec6b343733cfb014af0632dcd1e4ce0f2e4ccf76e3"
 ---
 
 # Vercel Signed URLs
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 Vercel Signed URLs grant time-limited access to a Blob URL without exposing a read-write token. Issue a short-lived signed token on your server, then sign individual blob URLs from the browser or any client. The CDN verifies the signature and rejects requests that fall outside the token's scope.
 
@@ -33,9 +33,9 @@ Vercel Signed URLs grant time-limited access to a Blob URL without exposing a re
 - [Vercel CLI now supports signing blob URLs](https://vercel.com/changelog/vercel-cli-now-supports-signing-blob-urls?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related)
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fvercel-signed-urls&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 

@@ -13,8 +13,8 @@ related:
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5c9955c8f6089b3ff8fc63d24ea6bdb4c5adbd369f3e7d36ba51ad40cb1c2523"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fbf9eb874b7c4ec10fe20a1bb096fa5275986e8e93ef85515cf06be53e3f6a40"
 ---
 
 # Managing environment variables
@@ -33,10 +33,10 @@ Environment variables are key-value pairs configured outside your source code so
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related)
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Vercel MCP tools for environment variables.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
 - [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
-- [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=related) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 
 Full cross-link map for this page: [/docs/environment-variables/managing-environment-variables.graph.md](/docs/environment-variables/managing-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanaging-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ To declare an Environment Variable for your deployment:
 1. From your [dashboard](/dashboard), select your project. If necessary, you can also set environment variables team-wide so that they will be available for all projects.
 2. Select [**Environment Variables**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fenvironment-variables\&title=Go+to+Environment+Variables) in the sidebar.
 
-![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/env-var-section-light.png`)
+![The 'Add New' section of the Environment Variables page in the Project Settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/env-var-section-light.png)
 
 3. Enter the desired **Name** for your Environment Variable. For example, if you are using Node.js and you create an Environment Variable named `API_URL`, it will be available under `process.env.API_URL` in your code.
 
@@ -137,7 +137,7 @@ To find and view all environment variables.
 4. You can search for an existing Environment Variable by name using the search input and/or filter by [Environment](/docs/deployments/environments).
 5. To edit or delete the Environment Variable, click the three dots to the right of the Environment Variable name.
 
-![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/variable-example-light.png`)
+![An example of an Environment Variable with the search and filter inputs above.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/variable-example-light.png)
 
 
 ---

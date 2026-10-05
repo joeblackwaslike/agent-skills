@@ -1,10 +1,14 @@
 ---
+title: simulateReadableStream
+description: Create a ReadableStream that emits values with configurable delays
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/simulate-readable-stream.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "bed5a9f36e17979dfb056cb4a2f0ca0bfeb37614b95eeb19ac35db73bc588b42"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c6d57fb33744ea5e881e22c8b948c96c27ee470d383f943cfd30ec4df5ae570a"
 ---
 
-# `simulateReadableStream()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `simulateReadableStream` is a utility function that creates a ReadableStream which emits provided values sequentially with configurable delays. This is particularly useful for testing streaming functionality or simulating time-delayed data streams.
 
@@ -20,36 +24,17 @@ const stream = simulateReadableStream({
 
 ## Import
 
-<Snippet text={`import { simulateReadableStream } from "ai"`} prompt={false} />
+```
+import { simulateReadableStream } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'chunks',
-      type: 'T[]',
-      isOptional: false,
-      description: 'Array of values to be emitted by the stream',
-    },
-    {
-      name: 'initialDelayInMs',
-      type: 'number | null',
-      isOptional: true,
-      description:
-        'Initial delay in milliseconds before emitting the first value. Defaults to 0. Set to null to skip the initial delay entirely.',
-    },
-    {
-      name: 'chunkDelayInMs',
-      type: 'number | null',
-      isOptional: true,
-      description:
-        'Delay in milliseconds between emitting each value. Defaults to 0. Set to null to skip delays between chunks.',
-    },
-  ]}
-/>
+- `chunks` (`T[]`): Array of values to be emitted by the stream
+- `initialDelayInMs?` (`number | null`): Initial delay in milliseconds before emitting the first value. Defaults to 0. Set to null to skip the initial delay entirely.
+- `chunkDelayInMs?` (`number | null`): Delay in milliseconds between emitting each value. Defaults to 0. Set to null to skip delays between chunks.
 
 ### Returns
 
@@ -94,70 +79,10 @@ const stream = simulateReadableStream({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

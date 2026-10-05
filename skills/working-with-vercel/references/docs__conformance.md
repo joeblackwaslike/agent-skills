@@ -15,13 +15,13 @@ related:
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "d27598581565c5365d859f6ff8746858e945a501218b0a758a7b83fdcadde77f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "32965e5af5a2bad3bbe2603bbc3f0fca23aa22c5880ffa8407663703fdc43b18"
 ---
 
 # Introduction to Conformance
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Conformance provides tools that run automated checks on your code for product critical issues, such as performance, security, and code health. Conformance runs in the development workflow to help you:
 

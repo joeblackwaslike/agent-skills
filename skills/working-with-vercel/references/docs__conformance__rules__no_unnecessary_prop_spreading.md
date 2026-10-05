@@ -12,13 +12,13 @@ related:
 summary: Disallows the usage of object spreading in a JSX component.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_unnecessary_prop_spreading.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "97729d4283d86468b2629c0a487959e52561716631a4607cf7546aeedefff5fa"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e0ea923ce74aad50ee3448571d63ab09c9a1f785835044f121b3914124d2cd9c"
 ---
 
 # NO_UNNECESSARY_PROP_SPREADING
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.6.0.
 

@@ -16,8 +16,8 @@ related:
 summary: Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain search.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/free-domain-with-pro.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3913394049544162e06c50cf5815e9ca5c376528e1e1cf512e6b2ca327738cc4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "58c16455da92c0041472a2cd3d6b425d444c181758ab82a4e413f137965f9e4d"
 ---
 
 # Free Domain with Pro
@@ -33,12 +33,13 @@ Every paid Pro team gets one free first-year custom domain. You choose an [eligi
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
+- [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Unlimited custom domains for all Pro teams](https://vercel.com/changelog/unlimited-custom-domains-for-all-pro-teams?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=related) — POST /v9/domains/{domain}/claim — Claim ownership of a domain for the authenticated team by verifying a TXT record. The
 
 Full cross-link map for this page: [/docs/domains/free-domain-with-pro.graph.md](/docs/domains/free-domain-with-pro.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Ffree-domain-with-pro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -80,7 +81,7 @@ Vercel covers the first year of registration. After the first year, the domain r
 
 ## Am I eligible if I'm already on Pro or on a Pro trial?
 
-Existing Pro teams may be eligible for this offer while the promotion is available. Pro trials are not eligible until the team upgrades to Pro. To check eligibility, visit your dashboard or search for a domain at [vercel.com/domains](https://vercel.com/domains). Eligible domains will show **Free With Pro**.
+Existing Pro teams are eligible for this offer while the promotion is available. Pro trials are not eligible until the team upgrades to Pro. To check eligibility, visit your dashboard or search for a domain at [vercel.com/domains](https://vercel.com/domains). Eligible domains will show **Free With Pro**.
 
 ## Related
 

@@ -15,13 +15,13 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3eed741fb24271c50d37b3508a6adcc9314b21eb1e5e20649e1c8747c2e80e41"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0c02a6347730013f550ba8f6d0de87dd72cb672b60e6ea793663fbc76f3a9720"
 ---
 
 # Reference
 
-> **🔒 Permissions Required**: Flags Explorer
+> **Availability**: Flags Explorer is available on all plans
 
 The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), the [FLAGS\_SECRET environment variable](/docs/flags/flags-explorer/reference#flags_secret-environment-variable), the [override cookie](/docs/flags/flags-explorer/reference#override-cookie), [flag definitions](/docs/flags/flags-explorer/reference#definitions), and [flag values](/docs/flags/flags-explorer/reference#values).
 
@@ -35,8 +35,8 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
+- [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
-- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=graph)
@@ -70,7 +70,7 @@ A definition can never communicate the value of a flag as they load independentl
 
 This is how Vercel Toolbar shows flag definitions:
 
-![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-definitions-light.png`)
+![Flags Explorer showing flag values.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-definitions-light.png)
 
 There are two ways to provide your feature flags to the Flags Explorer:
 
@@ -147,7 +147,7 @@ Emitted values will show up in the Flags Explorer, and will be used by [Web Anal
 
 This is how Vercel Toolbar shows flag values:
 
-![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-default-value-light.png`)
+![Default Feature Flag Values in Vercel Toolbar.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-default-value-light.png)
 
 Any JSON-serializable values are supported. Flags Explorer combines these values with any definitions, if they are present.
 
@@ -398,7 +398,7 @@ You can create this secret by following the instructions in the [Flags Explorer 
 
 **Manually creating the `FLAGS_SECRET`**
 
-The `FLAGS_SECRET` value must have a specific length (32 random bytes encoded in base64) to work as an encryption key. Generate a unique value for each environment (Development, Preview, and Production) by running the following command once per environment:
+The `FLAGS_SECRET` value must have a specific length (32 random bytes encoded in base64url) to work as an encryption key. Generate a unique value for each environment (Development, Preview, and Production) by running the following command once per environment:
 
 ```bash filename="Terminal"
 node -e "console.log(crypto.randomBytes(32).toString('base64url'))"
@@ -421,7 +421,7 @@ When you have set the [`FLAGS_SECRET`](/docs/flags/flags-explorer/reference#flag
 
 Your endpoint should call `verifyAccess` to ensure the request to load flags originates from Vercel Toolbar. This prevents your feature flag definitions from being exposed publicly through the Discovery Endpoint. The `Authorization` header sent by Vercel Toolbar contains proof that whoever made this request has access to `FLAGS_SECRET`. The secret itself is not sent over the network.
 
-If the `verifyAccess` check fails, you should return status code `401` and no response body. When the `verifyAccess` check is successful, return the feature flag definitions and other configuration as JSON:
+If the `verifyAccess` check fails, you should return status code `401` with a `null` JSON body and no flag definitions. When the `verifyAccess` check is successful, return the feature flag definitions and other configuration as JSON:
 
 **Using the Flags SDK**
 

@@ -1,15 +1,17 @@
 ---
+title: experimental_MCPAppRenderer
+description: "API reference for rendering MCP Apps with @ai-sdk/react."
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/mcp-app-renderer"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/mcp-app-renderer.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e8e4752dc2adcc5c27a4be7e402cea4252e5d39e7591818ae5133d2e53d50f38"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8b6aa1e56fca64745b201052e6ab1b52757f8f82102f535bd1f7cc99c5782533"
 ---
 
-# `experimental_MCPAppRenderer`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  `experimental_MCPAppRenderer` is experimental and may change in a future
-  release.
-</Note>
+`experimental_MCPAppRenderer` is experimental and may change in a future
+release.
 
 `experimental_MCPAppRenderer` renders an MCP App for an AI SDK tool UI part. It detects MCP App metadata on the tool part, loads the app resource, renders the app in a sandbox proxy iframe, and bridges MCP Apps JSON-RPC messages between the iframe and your host application.
 
@@ -17,10 +19,9 @@ For tool parts without MCP App metadata, the component renders the `fallback`.
 
 ## Import
 
-<Snippet
-  text={`import { experimental_MCPAppRenderer as MCPAppRenderer } from "@ai-sdk/react"`}
-  prompt={false}
-/>
+```
+import { experimental_MCPAppRenderer as MCPAppRenderer } from "@ai-sdk/react"
+```
 
 ## Example
 
@@ -86,238 +87,52 @@ export function MessagePart({ part }: { part: unknown }) {
 
 ## Props
 
-<PropertiesTable
-  content={[
-    {
-      name: 'part',
-      type: 'ToolUIPart<UITools> | DynamicToolUIPart',
-      description:
-        'The AI SDK tool UI part. The renderer looks for MCP App metadata in `part.toolMetadata.mcp.app`.',
-    },
-    {
-      name: 'sandbox',
-      type: 'MCPAppSandboxConfig',
-      description:
-        'Configuration for the outer sandbox proxy iframe used to host the app.',
-    },
-    {
-      name: 'resource',
-      type: 'MCPAppResource',
-      isOptional: true,
-      description:
-        'A preloaded MCP App resource. Provide either `resource` or `loadResource`.',
-    },
-    {
-      name: 'loadResource',
-      type: '(app: MCPAppMetadata) => Promise<MCPAppResource>',
-      isOptional: true,
-      description:
-        'Loads the MCP App resource for the app metadata found on the tool part.',
-    },
-    {
-      name: 'handlers',
-      type: 'MCPAppBridgeHandlers',
-      isOptional: true,
-      description:
-        'Callbacks used to handle iframe requests such as `tools/call`, `resources/read`, `ui/open-link`, and display mode changes.',
-    },
-    {
-      name: 'hostInfo',
-      type: '{ name: string; version: string }',
-      isOptional: true,
-      description:
-        'Host identity returned to the app during the `ui/initialize` handshake.',
-    },
-    {
-      name: 'hostContext',
-      type: 'MCPAppHostContext',
-      isOptional: true,
-      description:
-        'Host context sent to the app, such as theme, display mode, and available display modes.',
-    },
-    {
-      name: 'fallback',
-      type: 'ReactNode',
-      isOptional: true,
-      description:
-        'Rendered while the resource is loading, when loading fails, or when the tool part is not an MCP App.',
-    },
-  ]}
-/>
+- `part` (`ToolUIPart<UITools> | DynamicToolUIPart`): The AI SDK tool UI part. The renderer looks for MCP App metadata in \`part.toolMetadata.mcp.app\`.
+- `sandbox` (`MCPAppSandboxConfig`): Configuration for the outer sandbox proxy iframe used to host the app.
+- `resource?` (`MCPAppResource`): A preloaded MCP App resource. Provide either \`resource\` or \`loadResource\`.
+- `loadResource?` (`(app: MCPAppMetadata) => Promise<MCPAppResource>`): Loads the MCP App resource for the app metadata found on the tool part.
+- `handlers?` (`MCPAppBridgeHandlers`): Callbacks used to handle iframe requests such as \`tools/call\`, \`resources/read\`, \`ui/open-link\`, and display mode changes.
+- `hostInfo?` (`{ name: string; version: string }`): Host identity returned to the app during the \`ui/initialize\` handshake.
+- `hostContext?` (`MCPAppHostContext`): Host context sent to the app, such as theme, display mode, and available display modes.
+- `fallback?` (`ReactNode`): Rendered while the resource is loading, when loading fails, or when the tool part is not an MCP App.
 
 ## Sandbox Config
 
-<PropertiesTable
-  content={[
-    {
-      name: 'url',
-      type: 'string | URL',
-      description:
-        'The URL of the sandbox proxy iframe. The proxy receives app HTML from the host and creates the inner app iframe.',
-    },
-    {
-      name: 'title',
-      type: 'string',
-      isOptional: true,
-      description: 'Accessible iframe title.',
-    },
-    {
-      name: 'className',
-      type: 'string',
-      isOptional: true,
-      description: 'Class name applied to the outer iframe.',
-    },
-    {
-      name: 'style',
-      type: 'CSSProperties',
-      isOptional: true,
-      description: 'Inline styles applied to the outer iframe.',
-    },
-    {
-      name: 'targetOrigin',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Target origin used for `postMessage`. Defaults to `*`; set this to your sandbox origin in production.',
-    },
-    {
-      name: 'outerSandbox',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Sandbox attribute for the outer proxy iframe. Defaults to `allow-scripts allow-same-origin allow-forms`.',
-    },
-    {
-      name: 'innerSandbox',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Sandbox attribute sent to the proxy for the inner app iframe. Defaults to `allow-scripts allow-forms`.',
-    },
-  ]}
-/>
+- `url` (`string | URL`): The URL of the sandbox proxy iframe. The proxy receives app HTML from the host and creates the inner app iframe.
+- `title?` (`string`): Accessible iframe title.
+- `className?` (`string`): Class name applied to the outer iframe.
+- `style?` (`CSSProperties`): Inline styles applied to the outer iframe.
+- `targetOrigin?` (`string`): Target origin used for \`postMessage\`. Defaults to \`\*\`; set this to your sandbox origin in production.
+- `outerSandbox?` (`string`): Sandbox attribute for the outer proxy iframe. Defaults to \`allow-scripts allow-same-origin allow-forms\`.
+- `innerSandbox?` (`string`): Sandbox attribute sent to the proxy for the inner app iframe. Defaults to \`allow-scripts allow-forms\`.
 
 ## Bridge Handlers
 
 `experimental_MCPAppRenderer` uses these handlers to respond to iframe requests. In production, server-backed handlers should validate authorization and MCP Apps tool visibility before calling the MCP server.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'allowedTools',
-      type: 'string[]',
-      isOptional: true,
-      description:
-        'Optional client-side allowlist checked before forwarding `tools/call` requests.',
-    },
-    {
-      name: 'callTool',
-      type: '(params: MCPAppToolCallParams) => Promise<unknown> | unknown',
-      isOptional: true,
-      description: 'Handles app-initiated `tools/call` requests.',
-    },
-    {
-      name: 'readResource',
-      type: '(params: { uri: string }) => Promise<unknown> | unknown',
-      isOptional: true,
-      description: 'Handles app-initiated `resources/read` requests.',
-    },
-    {
-      name: 'listResources',
-      type: '(params?: unknown) => Promise<unknown> | unknown',
-      isOptional: true,
-      description: 'Handles app-initiated `resources/list` requests.',
-    },
-    {
-      name: 'openLink',
-      type: '(params: { url: string }) => Promise<unknown> | unknown',
-      isOptional: true,
-      description: 'Handles app-initiated `ui/open-link` requests.',
-    },
-    {
-      name: 'sendMessage',
-      type: '(params: unknown) => Promise<unknown> | unknown',
-      isOptional: true,
-      description: 'Handles app-initiated `ui/message` requests.',
-    },
-    {
-      name: 'updateModelContext',
-      type: '(params: unknown) => Promise<unknown> | unknown',
-      isOptional: true,
-      description: 'Handles app-initiated `ui/update-model-context` requests.',
-    },
-    {
-      name: 'requestDisplayMode',
-      type: "(params: { mode: 'inline' | 'fullscreen' | 'pip' }) => Promise<{ mode: MCPAppDisplayMode }> | { mode: MCPAppDisplayMode }",
-      isOptional: true,
-      description: 'Handles app-initiated `ui/request-display-mode` requests.',
-    },
-    {
-      name: 'onSizeChange',
-      type: '(params: { width?: number; height?: number }) => void',
-      isOptional: true,
-      description: 'Called when the app sends a size change notification.',
-    },
-    {
-      name: 'onInitialized',
-      type: '() => void',
-      isOptional: true,
-      description: 'Called after the app sends `ui/notifications/initialized`.',
-    },
-    {
-      name: 'onRequestTeardown',
-      type: '(params: unknown) => void',
-      isOptional: true,
-      description: 'Called when the app requests teardown.',
-    },
-    {
-      name: 'onLog',
-      type: '(params: unknown) => void',
-      isOptional: true,
-      description: 'Called when the app sends a log notification.',
-    },
-    {
-      name: 'onError',
-      type: '(error: Error) => void',
-      isOptional: true,
-      description:
-        'Called when a supported iframe request fails while being handled.',
-    },
-  ]}
-/>
+- `allowedTools?` (`string[]`): Optional client-side allowlist checked before forwarding \`tools/call\` requests.
+- `callTool?` (`(params: MCPAppToolCallParams) => Promise<unknown> | unknown`): Handles app-initiated \`tools/call\` requests.
+- `readResource?` (`(params: { uri: string }) => Promise<unknown> | unknown`): Handles app-initiated \`resources/read\` requests.
+- `listResources?` (`(params?: unknown) => Promise<unknown> | unknown`): Handles app-initiated \`resources/list\` requests.
+- `openLink?` (`(params: { url: string }) => Promise<unknown> | unknown`): Handles app-initiated \`ui/open-link\` requests.
+- `sendMessage?` (`(params: unknown) => Promise<unknown> | unknown`): Handles app-initiated \`ui/message\` requests.
+- `updateModelContext?` (`(params: unknown) => Promise<unknown> | unknown`): Handles app-initiated \`ui/update-model-context\` requests.
+- `requestDisplayMode?` (`(params: { mode: 'inline' | 'fullscreen' | 'pip' }) => Promise<{ mode: MCPAppDisplayMode }> | { mode: MCPAppDisplayMode }`): Handles app-initiated \`ui/request-display-mode\` requests.
+- `onSizeChange?` (`(params: { width?: number; height?: number }) => void`): Called when the app sends a size change notification.
+- `onInitialized?` (`() => void`): Called after the app sends \`ui/notifications/initialized\`.
+- `onRequestTeardown?` (`(params: unknown) => void`): Called when the app requests teardown.
+- `onLog?` (`(params: unknown) => void`): Called when the app sends a log notification.
+- `onError?` (`(error: Error) => void`): Called when a supported iframe request fails while being handled.
 
 ## See Also
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'MCP Apps guide',
-      link: '/docs/ai-sdk-core/mcp-apps',
-    },
-    {
-      title: 'MCP Apps helpers',
-      link: '/docs/reference/ai-sdk-core/mcp-apps',
-    },
-  ]}
-/>
+- [MCP Apps guide](/docs/ai-sdk-core/mcp-apps)
+- [MCP Apps helpers](/docs/reference/ai-sdk-core/mcp-apps)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

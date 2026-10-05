@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "9ed36a837ce4ee0d31ac09021132ce84b4adeecc85cbd86ab2b74769de9b3a32"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "794f549162ca76d85eb77e5ecadcf57aa670d78da37a628b460109a705df79e5"
 ---
 
 # Vercel Connect Pricing
@@ -31,8 +31,8 @@ Vercel Connect is billed by token requests and triggers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
@@ -45,7 +45,7 @@ Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connec
 
 A **token request** is a single call to the Vercel Connect API that returns a provider token, for example a `getToken` call from your application or agent.
 
-A **trigger** is an incoming webhook from a third-party service that Vercel Connect verifies and forwards to a trigger destination (a linked project).
+A **trigger** is an incoming webhook from a third-party service that Vercel Connect verifies and forwards to your trigger destinations (linked projects). Vercel Connect counts one trigger per destination, or one trigger per event when no destination is configured, as described in [Triggers](#triggers).
 
 > **💡 Note:** **Connect Beta Customers:** To give you time to adjust, both the updated token request pricing and
 > trigger pricing will take effect on September 25, 2026. Until then, your current billing terms remain unchanged.

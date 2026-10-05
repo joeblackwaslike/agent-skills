@@ -16,8 +16,8 @@ related:
 summary: Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/products.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c573441d08fb6d766592eadea44f59b6f32b53ce73f85d7301fd558abc9b03d0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6660e0ab6054e6dc8e5a006dcef4fb0eac4f00850d6575e9fa66f1a720dcef7f"
 ---
 
 # Products
@@ -41,8 +41,8 @@ Browse every Vercel product. Build with AI, deploy and scale your apps, and oper
 - [Deployments](/docs/deployments): Ship every git push
 - [CLI](/docs/cli): Command-line tools
 - [Functions](/docs/functions): Serverless compute
-- [Delivery Network](/docs/cdn): Global edge cache
-- [Storage](/docs/storage): Postgres, Blob, KV
+- [Delivery Network](/docs/cdn): Global CDN cache
+- [Storage](/docs/storage): Blob, Global Config, Marketplace storage
 - [Integrations](/docs/integrations): Connect 100+ services
 - [Microfrontends](/docs/microfrontends): Compose apps
 - [Domains](/docs/domains): Manage domains

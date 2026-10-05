@@ -1,21 +1,21 @@
 ---
+title: Anthropic Vertex
+description: Learn how to use the Anthropic Vertex provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/anthropic-vertex-ai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/anthropic-vertex-ai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "47dde3a619214a0947d6b97443ddf8b95c3d4c3a8591446248952f12f89bb448"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f3ad37bd3d66cdaf239b866010eb3694c3b2e8c4ce05f634907800123a5bb7cc"
 ---
 
-# AnthropicVertex Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Anthropic for Google Vertex is also support by the [AI SDK Google Vertex
-  provider](/providers/ai-sdk-providers/google-vertex).
-</Note>
+Anthropic for Google Vertex is also support by the [AI SDK Google Vertex
+provider](/providers/ai-sdk-providers/google-vertex).
 
-<Note type="warning">
-  This community provider is not yet compatible with AI SDK 5. Please wait for
-  the provider to be updated or consider using an [AI SDK 5 compatible
-  provider](/providers/ai-sdk-providers).
-</Note>
+This community provider is not yet compatible with AI SDK 5. Please wait for
+the provider to be updated or consider using an [AI SDK 5 compatible
+provider](/providers/ai-sdk-providers).
 
 [nalaso/anthropic-vertex-ai](https://github.com/nalaso/anthropic-vertex-ai) is a community provider that uses Anthropic models through Vertex AI to provide language model support for the AI SDK.
 
@@ -23,7 +23,7 @@ sha256: "47dde3a619214a0947d6b97443ddf8b95c3d4c3a8591446248952f12f89bb448"
 
 The AnthropicVertex provider is available in the `anthropic-vertex-ai` module. You can install it with:
 
-<InstallPackages packages="anthropic-vertex-ai" />
+**Packages:** `anthropic-vertex-ai`
 
 ## Provider Instance
 
@@ -47,28 +47,28 @@ const anthropicVertex = createAnthropicVertex({
 
 You can use the following optional settings to customize the AnthropicVertex provider instance:
 
-- **region** _string_
+- **region** *string*
 
   Your Google Vertex region. Defaults to the `GOOGLE_VERTEX_REGION` environment variable.
 
-- **projectId** _string_
+- **projectId** *string*
 
   Your Google Vertex project ID. Defaults to the `GOOGLE_VERTEX_PROJECT_ID` environment variable.
 
-- **googleAuth** _GoogleAuth_
+- **googleAuth** *GoogleAuth*
 
   Optional. The Authentication options provided by google-auth-library.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g., to use proxy servers.
   The default prefix is `https://{region}-aiplatform.googleapis.com/v1`.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom fetch implementation. You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g., testing.
@@ -103,10 +103,10 @@ AnthropicVertex language models can also be used in the `streamText` function an
 
 | Model                        | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ---------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `claude-3-5-sonnet@20240620` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `claude-3-opus@20240229`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `claude-3-sonnet@20240229`   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `claude-3-haiku@20240307`    | <Check />   | <Check />         | <Check />  | <Check />      |
+| `claude-3-5-sonnet@20240620` | ✓           | ✓                 | ✓          | ✓              |
+| `claude-3-opus@20240229`     | ✓           | ✓                 | ✓          | ✓              |
+| `claude-3-sonnet@20240229`   | ✓           | ✓                 | ✓          | ✓              |
+| `claude-3-haiku@20240307`    | ✓           | ✓                 | ✓          | ✓              |
 
 ## Environment Variables
 
@@ -123,68 +123,10 @@ The AnthropicVertex provider uses Google Cloud authentication. Make sure you hav
 
 For more information on setting up authentication, refer to the [Google Cloud Authentication guide](https://cloud.google.com/docs/authentication).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

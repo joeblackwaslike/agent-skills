@@ -1,10 +1,14 @@
 ---
+title: Cerebras
+description: "Learn how to use Cerebras's models with the AI SDK."
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "6bf768818389171e249548edb9afa6b067e84b84eb205064d75aa0a99a93158b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "e2b87dc8c287a2771fd6bb4c4e529c24bb5f06da930c2286d68270275dc2a68b"
 ---
 
-# Cerebras Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Cerebras](https://cerebras.ai) provider offers access to powerful language models through the Cerebras API, including their high-speed inference capabilities powered by Wafer-Scale Engines and CS-3 systems.
 
@@ -14,7 +18,7 @@ API keys can be obtained from the [Cerebras Platform](https://cloud.cerebras.ai)
 
 The Cerebras provider is available via the `@ai-sdk/cerebras` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/cerebras" />
+**Packages:** `@ai-sdk/cerebras`
 
 ## Provider Instance
 
@@ -36,21 +40,21 @@ const cerebras = createCerebras({
 
 You can use the following optional settings to customize the Cerebras provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls.
   The default prefix is `https://api.cerebras.ai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `CEREBRAS_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -80,8 +84,8 @@ const model = cerebras('gpt-oss-120b');
 You can also use the `.languageModel()` and `.chat()` methods:
 
 ```ts
-const model = cerebras.languageModel('gpt-oss-120b');
-const model = cerebras.chat('gpt-oss-120b');
+const languageModel = cerebras.languageModel('gpt-oss-120b');
+const chatModel = cerebras.chat('gpt-oss-120b');
 ```
 
 ### Reasoning Models
@@ -119,47 +123,47 @@ See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details on 
 
 The following optional provider options are available for Cerebras language models:
 
-- **parallelToolCalls** _boolean_
+- **parallelToolCalls** *boolean*
 
   Whether to enable parallel function calling during tool use. Defaults to `true`.
 
-- **logprobs** _boolean_
+- **logprobs** *boolean*
 
   Whether to return log probabilities for generated tokens. Defaults to `false`.
 
-- **topLogprobs** _number_
+- **topLogprobs** *number*
 
   Number of most likely tokens to return at each token position. Accepts values from `0` through `20`. Requires `logprobs` to be `true`.
 
-- **logitBias** _Record&lt;string, number&gt;_
+- **logitBias** *Record\<string, number>*
 
   Maps token IDs to bias values from `-100` through `100`.
 
-- **serviceTier** _'auto' | 'default' | 'flex' | 'priority'_
+- **serviceTier** *'auto' | 'default' | 'flex' | 'priority'*
 
   Controls request priority. Availability depends on your account and endpoint.
 
-- **reasoningEffort** _'none' | 'low' | 'medium' | 'high'_
+- **reasoningEffort** *'none' | 'low' | 'medium' | 'high'*
 
   Controls the amount of reasoning performed by supported models. Supported values and defaults depend on the model.
 
-- **reasoningFormat** _'none' | 'parsed' | 'text_parsed' | 'raw' | 'hidden'_
+- **reasoningFormat** *'none' | 'parsed' | 'text\_parsed' | 'raw' | 'hidden'*
 
   Controls how reasoning content appears in the response. Format support depends on the model.
 
-- **prediction** _&#123; type: 'content'; content: string | Array&lt;&#123; type: 'text'; text: string &#125;&gt; &#125;_
+- **prediction** *\{ type: 'content'; content: string | Array\<\{ type: 'text'; text: string }> }*
 
   Supplies predicted output that can accelerate requests where most of the response is already known.
 
-- **promptCacheKey** _string_
+- **promptCacheKey** *string*
 
   Routes related requests to the same prompt cache. The value can contain up to 1024 characters and requires account-level enablement.
 
-- **user** _string_
+- **user** *string*
 
   A unique identifier representing your end-user, which can help with monitoring and abuse detection.
 
-- **strictJsonSchema** _boolean_
+- **strictJsonSchema** *boolean*
 
   Whether to use strict JSON schema validation. When `true`, the model uses constrained decoding to guarantee schema compliance. Defaults to `true`.
 
@@ -189,56 +193,13 @@ const result = await generateText({
 
 | Model          | Image Input | Object Generation | Tool Usage | Tool Streaming | Reasoning |
 | -------------- | ----------- | ----------------- | ---------- | -------------- | --------- |
-| `gpt-oss-120b` | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `gemma-4-31b`  | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
+| `gpt-oss-120b` | ✗           | ✓                 | ✓          | ✓              | ✓         |
+| `gemma-4-31b`  | ✓           | ✓                 | ✓          | ✓              | ✓         |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

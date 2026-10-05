@@ -16,13 +16,13 @@ related:
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "30e25b67940907b2f4b3c1a0b57844f60bb73f72050efe799f91230e8e59de0e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a7ebe59c5cd4dd87889643e5bc3c96d3c2ef75ae5103957be45cb770cd5e4c83"
 ---
 
 # Managing the visibility of the Vercel Toolbar
 
-> **🔒 Permissions Required**: Vercel Toolbar
+> **Availability**: Vercel Toolbar is available on all plans
 
 ## Viewing the toolbar
 
@@ -40,6 +40,7 @@ When the toolbar is enabled, you'll be able to view it on any preview or enabled
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related)
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Vercel MCP tools for toolbar.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fmanaging-toolbar&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 
@@ -58,7 +59,7 @@ To disable the toolbar by default for all projects in your team:
 4. Under each environment (**Preview** and **Production**), select either **On** or **Off** from the dropdown to determine the visibility of the Vercel Toolbar for that environment.
 5. You can optionally choose to allow the setting to be overridden at the project level.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png`)
+![The dashboard setting to enable or disable the toolbar at the team level.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png)
 
 ## Enable or disable the toolbar project-wide
 
@@ -72,7 +73,7 @@ To disable the toolbar project-wide:
    - **On**: Enable the toolbar for the environment.
    - **Off**: Disable the toolbar for the environment.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/project-level-toolbar-management-light.png`)
+![The dashboard setting to enable or disable the toolbar in a project.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/project-level-toolbar-management-light.png)
 
 ## Disable toolbar for session
 

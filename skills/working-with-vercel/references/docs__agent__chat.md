@@ -15,13 +15,13 @@ related:
 summary: Use Vercel Agent from your dashboard or Slack
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "87b865a68719c68b0c1991ad80349b74e617c4436d84db83ab64fee98e771a25"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "81cdc3261cfb52077d2b2e4a5955c3846305ca1bf655b17217f566658b74efd9"
 ---
 
 # Chat
 
-> **🔒 Permissions Required**: Vercel Agent Chat (Public Beta)
+> **Availability**: Vercel Agent Chat (Public Beta) is available on Enterprise and Pro plans
 
 Use Vercel Agent to ask questions, investigate production issues, and take action on your behalf. You can use the same Vercel Agent from the Vercel dashboard or from Slack.
 

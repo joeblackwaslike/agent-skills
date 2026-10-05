@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/CONTRIBUTING.md"
-fetched_at: "2026-09-14T09:42:54.887Z"
-sha256: "f1eb0e8049da24335d029a9470921d9b2c447930a72336fad296f263b74a6d8f"
+fetched_at: "2026-10-05T11:19:21.899Z"
+sha256: "df7c889142b20cedf2a2e4da21fb73ef710d9d27539c152f98d730ef9c65d474"
 ---
 
 # Contributing to OpenCode
@@ -266,7 +266,7 @@ All issues **must** use one of our issue templates:
 - **Feature request** — for suggesting enhancements (requires verification checkbox and description)
 - **Question** — for asking questions (requires the question)
 
-Blank issues are not allowed. When a new issue is opened, an automated check verifies that it follows a template and meets our contributing guidelines. If an issue doesn't meet the requirements, you'll receive a comment explaining what needs to be fixed and have **2 hours** to edit the issue. After that, it will be automatically closed.
+Blank issues are not allowed. When a new issue is opened, an automated check verifies that it follows a template and meets our contributing guidelines. If an issue doesn't meet the requirements, you'll receive a comment explaining what needs to be fixed and have **72 hours** to edit the issue. After that, it will be automatically closed.
 
 Issues may be flagged for:
 

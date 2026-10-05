@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "51a2ee15725f48cea80cd1d1fcebb5741a58d7f3010dd1b7a4d01e2a4ea9c5e0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "58ba722c4189ddf30f9187c4ffab31905b96f8fcf6d107b7650354011d3e8eb6"
 ---
 
 # AI Gateway Video Generation
@@ -38,12 +38,11 @@ AI Gateway supports video generation, letting you create videos from text prompt
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
 - [Wan 3.0 now available on AI Gateway](https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
+- [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — API Reference for durable video generation in workflows.
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related)
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -106,7 +105,7 @@ inputReferences: [
 ];
 ```
 
-Each entry is a URL, a base64-encoded string, or a `Buffer`. To pass a video reference by URL, use the object form with an explicit `mediaType`, since providers can't infer the type from a bare URL:
+Each entry is a URL, a base64-encoded string, a `Buffer`, or an object with `data` (any of those values) and an optional `mediaType`. To pass a video reference by URL, use the object form with an explicit `mediaType`, since providers can't infer the type from a bare URL:
 
 ```typescript
 inputReferences: [

@@ -16,8 +16,8 @@ related:
 summary: "Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and control repository sharing..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/vcr.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1eab343353b65a7baaeac86914ea951b128ed56ca5f1c09502bd6ce3325c2a08"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "32f4a8f57a3915f1f154127b454d4aa0ea60f0a0f103a332da711be118ee0c06"
 ---
 
 # vercel vcr
@@ -32,6 +32,7 @@ The `vercel vcr` command is the entry point for managing [Vercel Container Regis
 
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related)
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fvcr&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.

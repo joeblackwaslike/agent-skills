@@ -1,10 +1,14 @@
 ---
+title: Vercel Deployment Guide
+description: Learn how to deploy an AI application to production on Vercel
+url: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "c8d1afd92c902cc54c64c768be3f3c77bf2bdef97365eacd4d4289f648c9c52e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c5032ffcd5f692a0bc1d29d61c047035601254175f1548bfa0896b7f617ef938"
 ---
 
-# Vercel Deployment Guide
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will deploy an AI application to [Vercel](https://vercel.com) using [Next.js](https://nextjs.org) (App Router).
 
@@ -106,7 +110,7 @@ AI SDK UI helpers such as `useChat` and `useCompletion` abort the client request
 
 For example, enable cancellation for your chat route:
 
-```json filename="vercel.json"
+```json title="vercel.json"
 {
   "functions": {
     "app/api/chat/route.ts": {
@@ -118,15 +122,14 @@ For example, enable cancellation for your chat route:
 
 Then forward the request signal to the AI SDK:
 
-```ts filename="app/api/chat/route.ts" highlight="10"
+```ts title="app/api/chat/route.ts" {10}
 import { convertToModelMessages, streamText, type UIMessage } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: convertToModelMessages(messages),
     abortSignal: req.signal,
   });
@@ -158,21 +161,10 @@ A firewall helps protect your applications and websites from DDoS attacks and u
 - Streaming not working when [proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
 - Experiencing [Timeouts](/docs/troubleshooting/timeout-on-vercel)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

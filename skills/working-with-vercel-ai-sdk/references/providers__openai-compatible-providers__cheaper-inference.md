@@ -1,10 +1,14 @@
 ---
+title: Cheaper Inference
+description: Use the Cheaper Inference OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/cheaper-inference"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/cheaper-inference.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "def07a39f5b1fd46f9d37bdae36f4f9ef1629eb1365c001b90630fefde95803a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "81931cb3b6e4923d37ed67501a2fe493807393b88d77282c7772898c70709c65"
 ---
 
-# Cheaper Inference Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Cheaper Inference](https://cheaperinference.com/) is an API gateway that provides access to models from multiple AI labs through an OpenAI-compatible API. You can use its Chat Completions endpoint with the AI SDK through the `@ai-sdk/openai-compatible` module.
 
@@ -12,7 +16,7 @@ sha256: "def07a39f5b1fd46f9d37bdae36f4f9ef1629eb1365c001b90630fefde95803a"
 
 Install the OpenAI Compatible provider:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 Create a Cheaper Inference API key and set it as a server-side environment variable:
 
@@ -105,17 +109,10 @@ The model catalog changes over time. Use the authenticated [`GET /models`](https
 - [Cheaper Inference model catalog](https://cheaperinference.com/models)
 - [AI SDK OpenAI Compatible provider](/providers/openai-compatible-providers)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

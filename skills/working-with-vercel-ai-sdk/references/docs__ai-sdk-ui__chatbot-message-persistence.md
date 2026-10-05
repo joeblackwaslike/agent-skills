@@ -1,26 +1,28 @@
 ---
+title: Chatbot Message Persistence
+description: Learn how to store and load chat messages in a chatbot.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-message-persistence.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "5729a9771487ad4167dd93d81cb287f009216e42f82e7ccca9643f6d5b0f02f0"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f328f245bc32de412edc6a2300cfaa00bd71c381f80a190d88036c9f0bf76994"
 ---
 
-# Chatbot Message Persistence
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Being able to store and load chat messages is crucial for most AI chatbots.
 In this guide, we'll show how to implement message persistence with `useChat` and `streamText`.
 
-<Note>
-  This guide does not cover authorization, error handling, or other real-world
-  considerations. It is intended to be a simple example of how to implement
-  message persistence.
-</Note>
+This guide does not cover authorization, error handling, or other real-world
+considerations. It is intended to be a simple example of how to implement
+message persistence.
 
 ## Starting a new chat
 
 When the user navigates to the chat page without providing a chat ID,
 we need to create a new chat and redirect to the chat page with the new chat ID.
 
-```tsx filename="app/chat/page.tsx"
+```tsx title="app/chat/page.tsx"
 import { redirect } from 'next/navigation';
 import { createChat } from '@util/chat-store';
 
@@ -35,7 +37,7 @@ In a real-world application, you would use a database or a cloud storage service
 and get the chat ID from the database.
 That being said, the function interfaces are designed to be easily replaced with other implementations.
 
-```tsx filename="util/chat-store.ts"
+```tsx title="util/chat-store.ts"
 import { generateId } from 'ai';
 import { existsSync, mkdirSync } from 'fs';
 import { writeFile } from 'fs/promises';
@@ -78,7 +80,7 @@ When the user navigates to the chat page with a chat ID, we need to load the cha
 
 The `loadChat` function in our file-based chat store is implemented as follows:
 
-```tsx filename="util/chat-store.ts"
+```tsx title="util/chat-store.ts"
 import { UIMessage } from 'ai';
 import { readFile } from 'fs/promises';
 
@@ -92,6 +94,14 @@ export async function loadChat(id: string): Promise<UIMessage[]> {
 ## Validating messages on the server
 
 When processing messages on the server that contain tool calls, custom metadata, or data parts, you should validate them using `validateUIMessages` before sending them to the model.
+
+### Persisting streaming tool input
+
+An `input-streaming` tool part includes `rawInput` while tool arguments are
+still arriving. Persist the complete UI message, including this field, so a
+resumed stream can append later tool-input deltas to the exact text received
+before the interruption. AI SDK updates `rawInput` as each delta arrives and
+removes it when the tool input becomes available.
 
 ### Migrating deprecated tool `rawInput`
 
@@ -132,7 +142,7 @@ const migratedParts = message.parts.map(part => {
 
 When your messages include tool calls, validate them against your tool definitions:
 
-```tsx filename="app/api/chat/route.ts" highlight="7-8,14-27,35-45"
+```tsx title="app/api/chat/route.ts" {7-8,14-27,35-45}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -144,7 +154,7 @@ import {
 } from 'ai';
 import { z } from 'zod';
 import { loadChat, saveChat } from '@util/chat-store';
-import { dataPartsSchema, metadataSchema } from '@util/schemas';
+import { dataSchemas, metadataSchema } from '@util/schemas';
 
 // Define your tools
 const tools = {
@@ -175,13 +185,13 @@ export async function POST(req: Request) {
   const validatedMessages = await validateUIMessages({
     messages,
     tools, // Ensures tool calls in messages match current schemas
-    dataPartsSchema,
+    dataSchemas,
     metadataSchema,
   });
 
   const result = streamText({
     model: 'openai/gpt-6-luna',
-    messages: convertToModelMessages(validatedMessages),
+    messages: await convertToModelMessages(validatedMessages),
     tools,
   });
 
@@ -201,7 +211,7 @@ export async function POST(req: Request) {
 
 Handle validation errors gracefully when messages from the database don't match current schemas:
 
-```tsx filename="app/api/chat/route.ts" highlight="3,10-24"
+```tsx title="app/api/chat/route.ts" {3,10-24}
 import {
   convertToModelMessages,
   streamText,
@@ -244,7 +254,7 @@ export async function POST(req: Request) {
 
 Once messages are loaded from storage, you can display them in your chat UI. Here's how to set up the page component and the chat display:
 
-```tsx filename="app/chat/[id]/page.tsx"
+```tsx title="app/chat/[id]/page.tsx"
 import { loadChat } from '@util/chat-store';
 import Chat from '@ui/chat';
 
@@ -257,7 +267,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
 
 The chat component uses the `useChat` hook to manage the conversation:
 
-```tsx filename="ui/chat.tsx" highlight="10-16"
+```tsx title="ui/chat.tsx" {10-16}
 'use client';
 
 import { UIMessage, useChat } from '@ai-sdk/react';
@@ -314,22 +324,19 @@ export default function Chat({
 
 `useChat` sends the chat id and the messages to the backend.
 
-<Note>
-  The `useChat` message format is different from the `ModelMessage` format. The
-  `useChat` message format is designed for frontend display, and contains
-  additional fields such as `id` and `createdAt`. We recommend storing the
-  messages in the `useChat` message format.
+The `useChat` message format is different from the `ModelMessage` format. The
+`useChat` message format is designed for frontend display, and contains
+additional fields such as `id` and `createdAt`. We recommend storing the
+messages in the `useChat` message format.
 
 When loading messages from storage that contain tools, metadata, or custom data
 parts, validate them using `validateUIMessages` before processing (see the
 [validation section](#validating-messages-on-the-server) above).
 
-</Note>
-
 Storing messages is done in the `onEnd` callback of the `toUIMessageStream` function.
 `onEnd` receives the complete messages including the new AI response as `UIMessage[]`.
 
-```tsx filename="app/api/chat/route.ts" highlight="12,17-25"
+```tsx title="app/api/chat/route.ts" {12,17-25}
 import { openai } from '@ai-sdk/openai';
 import { saveChat } from '@util/chat-store';
 import {
@@ -364,7 +371,7 @@ export async function POST(req: Request) {
 The actual storage of the messages is done in the `saveChat` function, which in
 our file-based chat store is implemented as follows:
 
-```tsx filename="util/chat-store.ts"
+```tsx title="util/chat-store.ts"
 import { UIMessage } from 'ai';
 import { writeFile } from 'fs/promises';
 
@@ -392,7 +399,8 @@ You can use this message ID to e.g. manipulate individual messages.
 By default, message IDs are generated client-side:
 
 - User message IDs are generated by the `useChat` hook on the client
-- AI response message IDs are generated by `streamText` on the server
+- AI response message IDs are also generated by `useChat` on the client, unless
+  the server sends one in the stream (see below)
 
 For applications without persistence, client-side ID generation works perfectly.
 However, **for persistence, you should use IDs that are stable before messages
@@ -417,7 +425,7 @@ IDs for assistant response messages:
 
 You can control the ID format by providing ID generators using [`createIdGenerator()`](/docs/reference/ai-sdk-core/create-id-generator):
 
-```tsx filename="app/api/chat/route.ts" highlight="18-22"
+```tsx title="app/api/chat/route.ts" {18-22}
 import {
   createIdGenerator,
   createUIMessageStreamResponse,
@@ -452,8 +460,9 @@ export async function POST(req: Request) {
 
 Alternatively, you can use `createUIMessageStream` to control the message ID by writing a start message part:
 
-```tsx filename="app/api/chat/route.ts" highlight="14-18,25-27"
+```tsx title="app/api/chat/route.ts" {15-19,26-28}
 import {
+  convertToModelMessages,
   generateId,
   streamText,
   createUIMessageStream,
@@ -465,7 +474,7 @@ export async function POST(req: Request) {
   const { messages, chatId } = await req.json();
 
   const stream = createUIMessageStream({
-    execute: ({ writer }) => {
+    execute: async ({ writer }) => {
       // Write start message part with custom ID
       writer.write({
         type: 'start',
@@ -491,10 +500,9 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  For client-side applications that don't require persistence, you can still customize client-side ID generation:
+For client-side applications that don't require persistence, you can still customize client-side ID generation:
 
-```tsx filename="ui/chat.tsx"
+```tsx title="ui/chat.tsx"
 import { createIdGenerator } from 'ai';
 import { useChat } from '@ai-sdk/react';
 
@@ -507,8 +515,6 @@ const { ... } = useChat({
 });
 ```
 
-</Note>
-
 ## Sending only the last message
 
 Once you have implemented message persistence, you might want to send only the last message to the server.
@@ -517,7 +523,7 @@ This reduces the amount of data sent to the server on each request and can impro
 To achieve this, you can provide a `prepareSendMessagesRequest` function to the transport.
 This function receives the messages and the chat ID, and returns the request body to be sent to the server.
 
-```tsx filename="ui/chat.tsx" highlight="7-12"
+```tsx title="ui/chat.tsx" {7-12}
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -537,7 +543,7 @@ const {
 
 On the server, you can then load the previous messages and append the new message to the previous messages. If your messages contain tools, metadata, or custom data parts, you should validate them:
 
-```tsx filename="app/api/chat/route.ts" highlight="18-24"
+```tsx title="app/api/chat/route.ts" {18-24}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -565,7 +571,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     // ...
-    messages: convertToModelMessages(validatedMessages),
+    messages: await convertToModelMessages(validatedMessages),
   });
 
   return createUIMessageStreamResponse({
@@ -593,7 +599,7 @@ and then save the result as usual.
 `consumeStream` effectively removes the backpressure,
 meaning that the result is stored even when the client has already disconnected.
 
-```tsx filename="app/api/chat/route.ts" highlight="19-21"
+```tsx title="app/api/chat/route.ts" {19-21}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -630,32 +636,17 @@ export async function POST(req: Request) {
 
 When the client reloads the page after a disconnect, the chat will be restored from the storage solution.
 
-<Note>
-  In production applications, you would also track the state of the request (in
-  progress, complete) in your stored messages and use it on the client to cover
-  the case where the client reloads the page after a disconnection, but the
-  streaming is not yet complete.
-</Note>
+In production applications, you would also track the state of the request (in
+progress, complete) in your stored messages and use it on the client to cover
+the case where the client reloads the page after a disconnection, but the
+streaming is not yet complete.
 
 For more robust handling of disconnects, you may want to add resumability on disconnects. Check out the [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams) documentation to learn more.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

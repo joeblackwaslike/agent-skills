@@ -1,10 +1,14 @@
 ---
+title: Runpod
+description: Runpod Provider for the AI SDK
+url: "https://ai-sdk.dev/providers/community-providers/runpod"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/runpod.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "7e2a1fa8e3cb021b85a1a78c6fe45162a37d83b426e746cc8cd9bfb4bb0ec3f7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0908c02199a0e790418bf94d58b65f6dea15984c12b3efa888b7874078cfe3f7"
 ---
 
-# Runpod
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The official [Runpod](https://runpod.io) provider contains language model and image generation support for public & private endpoints.
 
@@ -12,7 +16,7 @@ The official [Runpod](https://runpod.io) provider contains language model and im
 
 The Runpod provider is available in the `@runpod/ai-sdk-provider` module. You can install it with:
 
-<InstallPackages packages="@runpod/ai-sdk-provider" />
+**Packages:** `@runpod/ai-sdk-provider`
 
 ## Provider Instance
 
@@ -38,23 +42,23 @@ const runpod = createRunpod({
 
 You can use the following optional settings to customize the Runpod provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers or custom endpoints.
   Supports vLLM deployments, SGLang servers, and any OpenAI-compatible API.
   The default prefix is `https://api.runpod.ai/v2`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `RUNPOD_API_KEY` environment variable.
   You can obtain your api key from the [Runpod Console](https://console.runpod.io/user/settings) under "API Keys".
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -102,8 +106,8 @@ for await (const delta of textStream) {
 
 | Model ID              | Description                                                         | Streaming | Object Generation | Tool Usage | Reasoning Notes           |
 | --------------------- | ------------------------------------------------------------------- | --------- | ----------------- | ---------- | ------------------------- |
-| `qwen/qwen3-32b-awq`  | 32B parameter multilingual model with strong reasoning capabilities | <Check /> | <Cross />         | <Check />  | Standard reasoning events |
-| `openai/gpt-oss-120b` | 120B parameter open-source GPT model                                | <Check /> | <Cross />         | <Check />  | Standard reasoning events |
+| `qwen/qwen3-32b-awq`  | 32B parameter multilingual model with strong reasoning capabilities | ✓         | ✗                 | ✓          | Standard reasoning events |
+| `openai/gpt-oss-120b` | 120B parameter open-source GPT model                                | ✓         | ✗                 | ✓          | Standard reasoning events |
 
 **Note:** An up-to-date list of all available models can be found in the [Runpod Public Endpoint Reference](https://docs.runpod.io/hub/public-endpoint-reference).
 
@@ -331,68 +335,10 @@ Runpod image models support flexible provider options through the `providerOptio
 | `maxPollAttempts`       | `number`  | `60`    | Maximum polling attempts for async generation                           |
 | `pollIntervalMillis`    | `number`  | `5000`  | Polling interval in milliseconds (5 seconds)                            |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -15,8 +15,8 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "42c85464a3b3f73b13a531d6e5b6713f1ec1a43c2726269559c3c9f00d87fc8c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c9fd11b46fa6767be2310edda2b973ac678209178133cc8fbcef1943f82d1444"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -170,7 +170,7 @@ The `reason` field tells you how the value was determined:
 A complete example using the `getOpenFeatureClient` helper with evaluation context:
 
 ```ts filename="app/api/feature/route.ts"
-import { getOpenFeatureClient } from '../../lib/openfeature';
+import { getOpenFeatureClient } from '../../../lib/openfeature';
 
 export async function GET(request: Request) {
   const client = await getOpenFeatureClient();

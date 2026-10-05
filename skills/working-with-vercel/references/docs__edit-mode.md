@@ -13,13 +13,13 @@ related:
 summary: "Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless collaboration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edit-mode.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ccf088de3136ea24a3017af06cbf0d0065f62929df46a102f944dd6d4d340eab"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8bca97052f2cf8e84bae493ee659bc61c59d8efc66bb6a4045144f851d56fb84"
 ---
 
 # Edit Mode
 
-> **🔒 Permissions Required**: Edit Mode
+> **Availability**: Edit Mode is available on Enterprise and Pro plans
 
 Content editing in CMSs usually occurs separately from the website's layout and design. This separation makes it hard for authors to visualize their changes. Edit Mode allows authors to edit content within the website's context, offering a clearer understanding of the impact on design and user experience. The ability to jump from content to the editing interface further enhances this experience.
 
@@ -30,7 +30,7 @@ Content editing in CMSs usually occurs separately from the website's layout and 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fedit-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fedit-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fedit-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fedit-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fedit-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway?from=related&source_path=%2Fdocs%2Fedit-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images via Dockerfile.vercel, frame
@@ -55,7 +55,7 @@ To access Edit Mode:
 
 ## Content Link
 
-> **🔒 Permissions Required**: Content Link
+> **Availability**: Content Link is available on Enterprise and Pro plans
 
 Content Link enables you to edit content on websites using headless CMSs by providing links on elements that match a content model in the CMS. This real-time content visualization allows collaborators to make changes without needing a developer's assistance.
 

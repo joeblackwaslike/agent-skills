@@ -15,13 +15,13 @@ related:
 summary: Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9d4b5b87ec03ad07d7d9cfe48140ac8e7bad6d295bc235c987e111cabb68fbbb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3e6786ebd6bd2e1cb05ac23be3741e5b1e7f1f935b10eba2d7f54a9f9c005064"
 ---
 
 # OPTIONS Allowlist
 
-> **🔒 Permissions Required**: OPTIONS Allowlist
+> **Availability**: OPTIONS Allowlist is available on all plans
 
 You can use OPTIONS Allowlist to disable Deployment Protection (including [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)) on any incoming CORS preflight `OPTIONS` request for a list of paths.
 
@@ -35,8 +35,8 @@ You can use OPTIONS Allowlist to disable Deployment Protection (including [Verce
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [OPTIONS Allowlist](https://vercel.com/changelog/options-allowlist?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
+- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
-- [Deployment Protection Exceptions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Disable Deployment Protection for a list of preview domains.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Foptions-allowlist&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
@@ -47,7 +47,7 @@ When you add a path to OPTIONS Allowlist, any incoming request with the method `
 
 For example, if you specify `/api`, all requests to paths that start with `/api` (such as `/api/v1/users` and `/api/v2/projects`) will be unprotected for any `OPTIONS` request.
 
-![Image](https://vercel.com/front/docs/security/options-allowlist-light.png)
+![OPTIONS Allowlist.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/options-allowlist-light.png)
 
 ## Enabling OPTIONS Allowlist
 
@@ -59,17 +59,17 @@ For example, if you specify `/api`, all requests to paths that start with `/api`
 - ### Enable OPTIONS Allowlist
   From the **OPTIONS Allowlist** section, enable the toggle labelled **Disabled**:
 
-  ![Image](https://vercel.com/front/docs/security/options-allowlist-disabled-light.png)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/options-allowlist-disabled-light.png)
 
 - ### Specify a path
   Specify a path to add to the **OPTIONS Allowlist**:
 
-  ![Image](https://vercel.com/front/docs/security/options-allowlist-add-path-light.png)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/options-allowlist-add-path-light.png)
 
 - ### Add more paths
   To add more paths, select **Add path**:
 
-  ![Image](https://vercel.com/front/docs/security/options-allowlist-add-another-path-light.png)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/options-allowlist-add-another-path-light.png)
 
 - ### Save changes
   Once all the paths are added, select **Save**
@@ -84,7 +84,7 @@ For example, if you specify `/api`, all requests to paths that start with `/api`
 - ### Disable OPTIONS Allowlist
   From the **OPTIONS Allowlist** section, select the toggle labelled **Enabled**:
 
-  ![Image](https://vercel.com/front/docs/security/options-allowlist-light.png)
+  ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/options-allowlist-light.png)
 
 - ### Save changes
   Once all the paths are added, select **Save**

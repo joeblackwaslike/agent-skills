@@ -1,10 +1,14 @@
 ---
+title: Anthropic
+description: Learn how to use the Anthropic provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "4f120a08428dc426b792946c76d3f1cc249c518d732920eed2d72ba82882ef3e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "63f7aa448e67969d96a9d5cab670144f8ea5fe1d47e21cdaee3475587e231259"
 ---
 
-# Anthropic Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Anthropic](https://www.anthropic.com/) provider contains language model support for the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post).
 
@@ -12,7 +16,7 @@ The [Anthropic](https://www.anthropic.com/) provider contains language model sup
 
 The Anthropic provider is available in the `@ai-sdk/anthropic` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/anthropic" />
+**Packages:** `@ai-sdk/anthropic`
 
 ## Provider Instance
 
@@ -34,28 +38,28 @@ const anthropic = createAnthropic({
 
 You can use the following optional settings to customize the Anthropic provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.anthropic.com/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `x-api-key` header.
   It defaults to the `ANTHROPIC_API_KEY` environment variable.
   Only one of `apiKey` or `authToken` is required.
 
-- **authToken** _string_
+- **authToken** *string*
 
   Auth token that is being sent using the `Authorization: Bearer` header.
   It defaults to the `ANTHROPIC_AUTH_TOKEN` environment variable.
   Only one of `apiKey` or `authToken` is required.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -94,62 +98,90 @@ Anthropic language models can also be used in the `streamText` function
 and support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output)
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
+### Message-start events
+
+During streaming, each Anthropic `message_start` event is exposed as an
+`anthropic.message_start` custom stream part containing the message ID, model,
+and raw initial token usage. No provider option is required.
+
+```ts
+import { anthropic } from '@ai-sdk/anthropic';
+import { streamText } from 'ai';
+
+const result = streamText({
+  model: anthropic('claude-haiku-4-5'),
+  prompt: 'Say hi in one word.',
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'custom' && part.kind === 'anthropic.message_start') {
+    console.log(part.providerMetadata?.anthropic);
+  }
+}
+```
+
+Initial usage may be incomplete; use `result.usage` for final token counts.
+Like other custom parts, this event is included in response content and forwarded
+to UI message streams. It is ignored when replaying conversation history to Anthropic.
+
+### Provider options
+
 The following optional provider options are available for Anthropic models:
 
-- `disableParallelToolUse` _boolean_
+- `disableParallelToolUse` *boolean*
 
   Optional. Disables the use of parallel tool calls. Defaults to `false`.
 
   When set to `true`, the model will only call one tool at a time instead of potentially calling multiple tools in parallel.
 
-- `sendReasoning` _boolean_
+- `sendReasoning` *boolean*
 
   Optional. Include reasoning content in requests sent to the model. Defaults to `true`.
 
   If you are experiencing issues with the model handling requests involving
   reasoning content, you can set this to `false` to omit them from the request.
 
-- `effort` _"low" | "medium" | "high" | "xhigh" | "max"_
+- `effort` *"low" | "medium" | "high" | "xhigh" | "max"*
 
   Optional. See [Effort section](#effort) for more details.
 
-- `taskBudget` _object_
+- `taskBudget` *object*
 
   Optional. See [Task Budgets section](#task-budgets) for more details.
 
-- `speed` _"fast" | "standard"_
+- `speed` *"fast" | "standard"*
 
   Optional. See [Fast Mode section](#fast-mode) for more details.
 
-- `inferenceGeo` _"us" | "global"_
+- `inferenceGeo` *"us" | "global"*
 
   Optional. See [Data Residency section](#data-residency) for more details.
 
-- `thinking` _object_
+- `thinking` *object*
 
   Optional. See [Reasoning section](#reasoning) for more details.
 
-- `toolStreaming` _boolean_
+- `toolStreaming` *boolean*
 
   Whether to enable tool streaming (and structured output streaming). Default to `true`.
 
-- `structuredOutputMode` _"outputFormat" | "jsonTool" | "auto"_
+- `structuredOutputMode` *"outputFormat" | "jsonTool" | "auto"*
 
   Determines how structured outputs are generated. Optional.
+
   - `"outputFormat"`: Use the `output_format` parameter to specify the structured output format.
   - `"jsonTool"`: Use a special `"json"` tool to specify the structured output format.
   - `"auto"`: Use `"outputFormat"` when supported, otherwise fall back to `"jsonTool"` (default).
 
-- `metadata` _object_
+- `metadata` *object*
 
   Optional. Metadata to include with the request. See the [Anthropic API documentation](https://platform.claude.com/docs/en/api/messages/create) for details.
-  - `userId` _string_ - An external identifier for the end-user. Should be a UUID, hash, or other opaque identifier. Must not contain PII.
+
+  - `userId` *string* - An external identifier for the end-user. Should be a UUID, hash, or other opaque identifier. Must not contain PII.
 
 ### Batch
 
-<Note type="warning">
-  Batch support is experimental and the API may change in patch releases.
-</Note>
+Batch support is experimental and the API may change in patch releases.
 
 Anthropic language models support asynchronous text generation through the
 [Message Batches API](https://platform.claude.com/docs/en/build-with-claude/batch-processing).
@@ -161,13 +193,11 @@ different text models within the same batch.
 
 #### Batch Limitations
 
-<Note>
-  Anthropic Message Batches do not support the `speed` option or completion
-  webhooks. Explicit `anthropicBeta` values must be configured when starting the
-  batch rather than on an individual request. When you provide a `webhookUrl`,
-  the provider returns an unsupported warning and starts the batch without a
-  webhook.
-</Note>
+Anthropic Message Batches do not support the `speed` option or completion
+webhooks. Explicit `anthropicBeta` values must be configured when starting the
+batch rather than on an individual request. When you provide a `webhookUrl`,
+the provider returns an unsupported warning and starts the batch without a
+webhook.
 
 ### Structured Outputs and Tool Input Streaming
 
@@ -180,7 +210,7 @@ import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   tools: {
     writeFile: tool({
       description: 'Write content to a file',
@@ -198,9 +228,10 @@ const result = streamText({
 });
 ```
 
-For `claude-opus-5-5` and `claude-fable-5-1`, the default `"auto"` mode uses
-native structured outputs through `output_config.format`. These models reject
-forced tool use, so the `"jsonTool"` mode cannot be used with them. If you
+For `claude-sonnet-5-5`, `claude-opus-5-5`, and `claude-fable-5-1`, the
+default `"auto"` mode uses native structured outputs through
+`output_config.format`. These models reject forced tool use, so the
+`"jsonTool"` mode cannot be used with them. If you
 request `"jsonTool"` anyway, the provider falls back to `"outputFormat"` and
 emits a warning. Likewise, a `required` or named `toolChoice` is downgraded to
 `auto` with a warning; instruct the model to use the tool in your prompt and
@@ -208,7 +239,7 @@ verify that a tool call was made.
 
 ### Effort
 
-Anthropic introduced an `effort` option with `claude-opus-4-5` that affects thinking, text responses, and function calls. Effort defaults to `high` and you can set it to `medium` or `low` to save tokens and to lower time-to-last-token latency (TTLT). `claude-opus-4-7`, `claude-opus-4-8`, `claude-opus-5`, `claude-opus-5-5`, `claude-fable-5`, `claude-fable-5-1`, and `claude-sonnet-5` additionally support `xhigh` for maximum reasoning effort.
+Anthropic introduced an `effort` option with `claude-opus-4-5` that affects thinking, text responses, and function calls. Effort defaults to `high` and you can set it to `medium` or `low` to save tokens and to lower time-to-last-token latency (TTLT). `claude-opus-4-7`, `claude-opus-4-8`, `claude-opus-5`, `claude-opus-5-5`, `claude-fable-5`, `claude-fable-5-1`, `claude-sonnet-5`, and `claude-sonnet-5-5` additionally support `xhigh` for maximum reasoning effort.
 
 On `claude-opus-5`, thinking can only be disabled at effort levels up to and including `high`. When you combine `thinking: { type: 'disabled' }` with `effort: 'xhigh'` or `effort: 'max'`, the AI SDK lowers the effort to `high` and emits a warning instead of sending a request that the API would reject.
 
@@ -219,7 +250,17 @@ carrying over the setting you used on `claude-opus-5`. Set `maxOutputTokens`
 with room for thinking as well as the reply; thinking counts toward the limit
 even when its content is not returned.
 
-```ts highlight="8-10"
+On `claude-sonnet-5-5`, thinking cannot be turned off either, and the API
+default effort is `high`. Its effort levels are not equivalent to those of
+`claude-sonnet-5`, so test several levels rather than carrying over your
+current setting. For agentic coding and other multi-step tool use, start at
+`medium` for well-specified tasks and move to `high` for harder ones. The
+lowest thinking setting, [`between_tools`](#between-tools-thinking), is only
+accepted at `low`, `medium`, and `high` effort. When you combine it with
+`effort: 'xhigh'` or `effort: 'max'`, the AI SDK lowers the effort to `high`
+and emits a warning.
+
+```ts {8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -241,7 +282,7 @@ console.log(usage); // token usage
 
 Anthropic supports a [`speed` option](https://code.claude.com/docs/en/fast-mode) for `claude-opus-4-6` that enables faster inference with approximately 2.5x faster output token speeds.
 
-```ts highlight="8-10"
+```ts {8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -264,7 +305,7 @@ The `speed` option accepts `'fast'` or `'standard'` (default behavior).
 
 Task budgets are advisory — they do not enforce a hard token limit. The model will attempt to stay within budget, but actual usage may vary.
 
-```ts highlight="8-13"
+```ts {8-13}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -294,15 +335,15 @@ taskBudget: {
 
 The `taskBudget` object accepts:
 
-- `type` _"tokens"_ - Budget type. Currently only `"tokens"` is supported.
-- `total` _number_ - Total task budget for the agentic turn. Minimum 20,000.
-- `remaining` _number_ - Budget left after prior compacted-away contexts. Must be between 0 and `total`. Defaults to `total` if omitted.
+- `type` *"tokens"* - Budget type. Currently only `"tokens"` is supported.
+- `total` *number* - Total task budget for the agentic turn. Minimum 20,000.
+- `remaining` *number* - Budget left after prior compacted-away contexts. Must be between 0 and `total`. Defaults to `total` if omitted.
 
 ### Data Residency
 
 Anthropic supports an [`inferenceGeo` option](https://platform.claude.com/docs/en/build-with-claude/data-residency) that controls where model inference runs for a request.
 
-```ts highlight="8-10"
+```ts {8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -322,6 +363,8 @@ The `inferenceGeo` option accepts `'us'` (US-only infrastructure) or `'global'` 
 ### Safety Classifiers and Fallbacks
 
 Claude Fable 5 has safeguards that limit its performance in certain areas like cybersecurity, biology, and chemistry, and automated safety checks are run on every request.
+
+Claude Sonnet 5.5 also has safety classifiers enabled, including for cybersecurity, biology, and reasoning extraction. Requests that ask the model to reproduce its internal reasoning in the response text can be declined with the `reasoning_extraction` category; use `thinking: { type: 'adaptive', display: 'summarized' }` and read the reasoning parts instead.
 
 When one of these checks blocks a request, the API does not answer it. Instead it returns a classifier block: a `200` response with a `refusal` stop reason and an optional `stop_details` object describing the category that triggered the block. The AI SDK surfaces this as a `content-filter` finish reason, with the details available on `providerMetadata.anthropic.stopDetails`.
 
@@ -347,7 +390,7 @@ To avoid receiving a classifier block, pass the `fallbacks` option. When the pri
 
 The recommended configuration is `fallbacks: 'default'`, which lets the API route the retry to Anthropic's recommended fallback model based on the refusal category and removes the need to migrate when a fallback model is deprecated:
 
-```ts highlight="8-10"
+```ts {8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -364,7 +407,7 @@ const { text } = await generateText({
 
 You can also pin an explicit fallback chain:
 
-```ts highlight="8-10"
+```ts {8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -400,13 +443,13 @@ console.log('Served by fallback:', servedByFallback);
 
 The `safeguards` option asks the API to run additional server-side checks as part of the request. The `dangerous_tool_use` safeguard classifies every `tool_use` block in the response for dangerous actions, such as destructive shell commands or data exfiltration, and returns a verdict per tool call. This is the check that Claude Code's auto mode relies on. The `dangerous-tool-use-2026-09-03` beta header is added for you.
 
-```ts highlight="9-16"
+```ts {9-16}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   prompt: 'Use the bash tool to run: echo hello',
   tools: { bash: tool({ inputSchema: z.object({ command: z.string() }) }) },
   providerOptions: {
@@ -456,7 +499,7 @@ Anthropic models support extended thinking, where Claude shows its reasoning pro
 For newer models (`claude-sonnet-4-6`, `claude-opus-4-6`, and later), use adaptive thinking.
 Claude automatically determines how much reasoning to use based on the complexity of the prompt.
 
-```ts highlight="4,8-10"
+```ts {4,8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -477,7 +520,7 @@ console.log(text); // text response
 
 You can combine adaptive thinking with the `effort` option to control how much reasoning Claude uses:
 
-```ts highlight="6-8"
+```ts {6-8}
 const { text } = await generateText({
   model: anthropic('claude-opus-4-6'),
   prompt: 'Invent a new holiday and describe its traditions.',
@@ -492,20 +535,26 @@ const { text } = await generateText({
 
 ##### Adaptive-Only Models
 
-`claude-opus-5-5`, `claude-fable-5`, and `claude-fable-5-1` always run adaptive
-thinking. The API rejects `thinking: { type: 'disabled' }` and budget-based
-`thinking: { type: 'enabled' }` for these models. To keep existing code working,
-the provider:
+`claude-sonnet-5-5`, `claude-opus-5-5`, `claude-fable-5`, and
+`claude-fable-5-1` always run adaptive thinking. The API rejects
+`thinking: { type: 'disabled' }` and budget-based
+`thinking: { type: 'enabled' }` for these models. To keep existing code
+working, the provider:
 
 - removes `thinking: { type: 'disabled' }` and emits a warning,
 - converts `thinking: { type: 'enabled', budgetTokens }` to `{ type: 'adaptive' }` and emits a warning,
 - maps the top-level `reasoning: 'none'` option to `effort: 'low'` and emits a warning.
 
+On `claude-sonnet-5-5`, which supports
+[`between_tools` thinking](#between-tools-thinking), the provider instead
+replaces `thinking: { type: 'disabled' }` with `thinking: { type: 'between_tools' }`
+(with a warning) and maps `reasoning: 'none'` to `between_tools` thinking.
+
 Use `effort` to control how much these models think. On `claude-opus-5-5`, set
 `effort: 'low'` when time to first token matters, and move to `medium` if
 quality drops:
 
-```ts highlight="6-9"
+```ts {6-9}
 const { text } = await generateText({
   model: anthropic('claude-opus-5-5'),
   prompt: 'Summarize this ticket in one sentence.',
@@ -518,18 +567,52 @@ const { text } = await generateText({
 });
 ```
 
-<Note>
-  Responses from adaptive-only models can begin with a thinking block. Read the
-  response by content type (`text`, `reasoning`, `tool-call`) rather than
-  assuming the first part is text. Under the default `display: 'omitted'`
-  setting, thinking blocks are returned with empty text.
-</Note>
+Responses from adaptive-only models can begin with a thinking block. Read the
+response by content type (`text`, `reasoning`, `tool-call`) rather than
+assuming the first part is text. Under the default `display: 'omitted'`
+setting, thinking blocks are returned with empty text.
+
+##### Between-Tools Thinking
+
+`claude-sonnet-5-5` supports `thinking: { type: 'between_tools' }`, its lowest
+thinking setting. The model does no upfront thinking, but the short progress
+notes it writes between tool calls are still returned as thinking blocks, each
+with a short summary. They are available as reasoning parts and are sent back
+unchanged on the next step. `between_tools` accepts no other thinking options
+(such as `display` or `blockBinding`) and is only accepted at `low`, `medium`,
+and `high` effort. Per-message effort changes via
+[mid-conversation system messages](#mid-conversation-system-controls) are not
+supported with `between_tools`.
+
+```ts {16-17}
+import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
+import { generateText, isStepCount, tool } from 'ai';
+import { z } from 'zod';
+
+const { text, steps } = await generateText({
+  model: anthropic('claude-sonnet-5-5'),
+  stopWhen: isStepCount(5),
+  tools: {
+    weather: tool({
+      inputSchema: z.object({ city: z.string() }),
+      execute: async ({ city }) => ({ city, temperature: 72 }),
+    }),
+  },
+  providerOptions: {
+    anthropic: {
+      thinking: { type: 'between_tools' },
+      effort: 'low',
+    } satisfies AnthropicLanguageModelOptions,
+  },
+  prompt: 'Compare the weather in San Francisco and New York.',
+});
+```
 
 ##### Thinking Display (Opus 4.7+)
 
 Starting with `claude-opus-4-7`, thinking content is omitted from the response by default — thinking blocks are present in the stream but their text is empty. To receive reasoning output, set `display: 'summarized'`:
 
-```ts highlight="5"
+```ts {5}
 const { text, reasoningText } = await generateText({
   model: anthropic('claude-opus-4-8'),
   providerOptions: {
@@ -544,21 +627,19 @@ console.log(reasoningText); // reasoning text (empty without display: 'summarize
 console.log(text);
 ```
 
-<Note>
-  If you stream reasoning to users with `claude-opus-4-7`, the default
-  `"omitted"` display will cause a long pause before output begins. Set
-  `display: "summarized"` to restore visible progress during thinking.
-</Note>
+If you stream reasoning to users with `claude-opus-4-7`, the default
+`"omitted"` display will cause a long pause before output begins. Set
+`display: "summarized"` to restore visible progress during thinking.
 
 ##### Thinking Updates
 
-Use `display: 'updates'` with `claude-opus-5-5` or `claude-fable-5-1` to stream
-thinking summaries between tool calls. These models return progress notes
-between tool calls as thinking blocks rather than text, so without this setting
-a long tool-calling turn can look silent. The provider adds the required
-`thinking-display-updates-2026-08-18` beta header automatically:
+Use `display: 'updates'` with `claude-sonnet-5-5`, `claude-opus-5-5`, or
+`claude-fable-5-1` to stream thinking summaries between tool calls. These models
+return progress notes between tool calls as thinking blocks rather than text, so
+without this setting a long tool-calling turn can look silent. The provider adds
+the required `thinking-display-updates-2026-08-18` beta header automatically:
 
-```ts highlight="12-16"
+```ts {12-16}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
@@ -581,13 +662,15 @@ const result = streamText({
 
 ##### Thinking Binding Controls
 
-Fable 5.1 can recover from a thinking-block prefix mismatch by dropping the
-mismatched block. Set `blockBinding.prefixMismatchBehavior` to `drop_block`, or
-set it to `error` to reject the request. You can provide block binding by itself
-to preserve the model's default thinking mode, or combine it with adaptive
-thinking.
+Fable 5.1, Opus 5.5, and Sonnet 5.5 can recover from a thinking-block prefix
+mismatch by dropping the mismatched block. Set
+`blockBinding.prefixMismatchBehavior` to `drop_block`, or set it to `error` to
+reject the request. You can provide block binding by itself to preserve the
+model's default thinking mode, or combine it with adaptive thinking. Block
+binding is not available with `between_tools` thinking; keep the message
+history append-only instead.
 
-```ts highlight="7-11"
+```ts {7-11}
 const result = await generateText({
   model: anthropic('claude-fable-5-1'),
   prompt: 'Continue from this conversation.',
@@ -614,7 +697,7 @@ Dropped blocks are reported in
 For earlier models (`claude-opus-4-20250514`, `claude-sonnet-4-20250514`, `claude-sonnet-4-5-20250929`),
 use `type: 'enabled'` with an explicit token budget:
 
-```ts highlight="4,8-10"
+```ts {4,8-10}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -647,7 +730,7 @@ Anthropic's Context Management feature allows you to automatically manage conver
 
 You can configure context management using the `contextManagement` provider option:
 
-```ts highlight="7-20"
+```ts {7-20}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -722,7 +805,7 @@ Use the `compaction` provider option to ask Anthropic to summarize the supplied
 conversation immediately. The provider automatically adds the
 `compact-2026-09-04` beta header.
 
-```ts highlight="10-15,21-22"
+```ts {10-15,21-22}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText, ModelMessage } from 'ai';
 
@@ -802,7 +885,7 @@ For more details, see
 
 The `compact_20260112` edit type automatically summarizes earlier conversation context when token limits are reached. This is useful for long-running conversations where you want to preserve the essence of earlier exchanges while staying within token limits.
 
-```ts highlight="7-19"
+```ts {7-19}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 
@@ -924,14 +1007,14 @@ Cache read and cache write (creation) token counts are returned on the standard
 `result.usage.inputTokenDetails.cacheReadTokens` and
 `result.usage.inputTokenDetails.cacheWriteTokens`.
 
-```ts highlight="8,18-20,29-32"
+```ts {8,18-20,29-32}
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 const errorMessage = '... long error message ...';
 
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   messages: [
     {
       role: 'user',
@@ -963,9 +1046,9 @@ console.log(
 
 You can also use cache control on system messages by providing multiple system messages at the head of your messages array:
 
-```ts highlight="3,7-9"
+```ts {3,7-9}
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   messages: [
     {
       role: 'system',
@@ -1051,13 +1134,11 @@ Shorter prompts cannot be cached, even if marked with `cacheControl`. Any reques
 
 For more on prompt caching with Anthropic, see [Anthropic's Cache Control documentation](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching).
 
-<Note type="warning">
-  Because the `UIMessage` type (used by AI SDK UI hooks like `useChat`) does not
-  support the `providerOptions` property, you can use `convertToModelMessages`
-  first before passing the messages to functions like `generateText` or
-  `streamText`. For more details on `providerOptions` usage, see
-  [here](/docs/foundations/prompts#provider-options).
-</Note>
+Because the `UIMessage` type (used by AI SDK UI hooks like `useChat`) does not
+support the `providerOptions` property, you can use `convertToModelMessages`
+first before passing the messages to functions like `generateText` or
+`streamText`. For more details on `providerOptions` usage, see
+[here](/docs/foundations/prompts#provider-options).
 
 ### Bash Tool
 
@@ -1094,10 +1175,8 @@ Parameters:
 - `command` (string): The bash command to run. Required unless the tool is being restarted.
 - `restart` (boolean, optional): Specifying true will restart this tool.
 
-<Note>
-  Two versions are available: `bash_20250124` (recommended) and `bash_20241022`.
-  Only certain Claude versions are supported.
-</Note>
+Two versions are available: `bash_20250124` (recommended) and `bash_20241022`.
+Only certain Claude versions are supported.
 
 You can also provide a custom `execute` function when you want to handle bash
 execution directly instead of using the request experimental sandbox.
@@ -1116,7 +1195,7 @@ const memory = anthropic.tools.memory_20250818({
 });
 ```
 
-<Note>Only certain Claude versions are supported.</Note>
+Only certain Claude versions are supported.
 
 ### Text Editor Tool
 
@@ -1133,8 +1212,7 @@ const tools = {
 } satisfies ToolSet;
 ```
 
-<Note>
-  Different models support different versions of the tool:
+Different models support different versions of the tool:
 
 - `textEditor_20250728` - For Claude Sonnet 4, Opus 4, and Opus 4.1 (recommended)
 - `textEditor_20250124` - For Claude Sonnet 3.7
@@ -1142,18 +1220,16 @@ const tools = {
 
 Note: `textEditor_20250429` is deprecated. Use `textEditor_20250728` instead.
 
-</Note>
-
 Parameters:
 
-- `command` ('view' | 'create' | 'str_replace' | 'insert' | 'undo_edit'): The command to run. Note: `undo_edit` is only available in Claude 3.5 Sonnet and earlier models.
+- `command` ('view' | 'create' | 'str\_replace' | 'insert' | 'undo\_edit'): The command to run. Note: `undo_edit` is only available in Claude 3.5 Sonnet and earlier models.
 - `path` (string): Absolute path to file or directory, e.g. `/repo/file.py` or `/repo`.
 - `file_text` (string, optional): Required for `create` command, with the content of the file to be created.
 - `insert_line` (number, optional): Required for `insert` command. The line number after which to insert the new string.
 - `new_str` (string, optional): New string for `str_replace` command.
 - `insert_text` (string, optional): Required for `insert` command, containing the text to insert.
 - `old_str` (string, optional): Required for `str_replace` command, containing the string to replace.
-- `view_range` (number[], optional): Optional for `view` command to specify line range to show.
+- `view_range` (number\[], optional): Optional for `view` command to specify line range to show.
 
 ### Computer Tool
 
@@ -1206,20 +1282,19 @@ const computerTool = anthropic.tools.computer_20251124({
 });
 ```
 
-<Note>
-  Use `computerToolset_20260801` for Claude Opus 5.5 (required), Opus 5, Sonnet
-  5, Fable 5, Fable 5.1, and Opus 4.8. Use `computer_20251124` for Claude Opus
-  4.5 through Opus 4.7, which support the zoom action. Use `computer_20250124`
-  for Claude Sonnet 4.5, Haiku 4.5, Opus 4.1, Sonnet 4, Opus 4, and Sonnet 3.7.
-</Note>
+Use `computerToolset_20260801` for Claude Sonnet 5.5 and Opus 5.5 (required),
+Opus 5, Sonnet 5, Fable 5, Fable 5.1, and Opus 4.8. Use `computer_20251124`
+for Claude Opus 4.5 through Opus 4.7, which support the zoom action. Use
+`computer_20250124` for Claude Sonnet 4.5, Haiku 4.5, Opus 4.1, Sonnet 4, Opus
+4, and Sonnet 3.7.
 
 #### Computer Toolset
 
 Newer models use the computer toolset instead of a versioned computer tool.
-`claude-opus-5-5` accepts computer use only through the toolset and rejects the
-older `computer_*` tool types with a 400. The toolset does not require a beta
-header and has no display size parameters: coordinates are always in the pixel
-space of the screenshots you return. Zoom is enabled by default, and Claude can
+`claude-sonnet-5-5` and `claude-opus-5-5` accept computer use only through the
+toolset and reject the older `computer_*` tool types with a 400. The toolset
+does not require a beta header and has no display size parameters: coordinates
+are always in the pixel space of the screenshots you return. Zoom is enabled by default, and Claude can
 return several actions in one turn, each as its own tool call.
 
 The API returns each action as a separate `tool_use` block with
@@ -1259,10 +1334,10 @@ const computerTool = anthropic.tools.computerToolset_20260801({
 
 Parameters:
 
-- `action` ('screenshot' | 'zoom' | 'left_click' | 'right_click' | 'middle_click' | 'double_click' | 'triple_click' | 'left_click_drag' | 'mouse_move' | 'left_mouse_down' | 'left_mouse_up' | 'cursor_position' | 'scroll' | 'type' | 'key' | 'hold_key' | 'wait'): The member tool that Claude invoked.
-- `coordinate` (number[], optional): The (x, y) pixel coordinates for click, move, and scroll actions.
-- `start_coordinate` (number[], optional): Where a `left_click_drag` starts.
-- `region` (number[], optional): `[x1, y1, x2, y2]` for the `zoom` action.
+- `action` ('screenshot' | 'zoom' | 'left\_click' | 'right\_click' | 'middle\_click' | 'double\_click' | 'triple\_click' | 'left\_click\_drag' | 'mouse\_move' | 'left\_mouse\_down' | 'left\_mouse\_up' | 'cursor\_position' | 'scroll' | 'type' | 'key' | 'hold\_key' | 'wait'): The member tool that Claude invoked.
+- `coordinate` (number\[], optional): The (x, y) pixel coordinates for click, move, and scroll actions.
+- `start_coordinate` (number\[], optional): Where a `left_click_drag` starts.
+- `region` (number\[], optional): `[x1, y1, x2, y2]` for the `zoom` action.
 - `text` (string, optional): Text to type, the key combination for `key` and `hold_key`, or modifier keys to hold during click and scroll actions.
 - `repeat` (number, optional): How many times to press the key for `key`.
 - `duration` (number, optional): Seconds for `hold_key` and `wait`.
@@ -1277,10 +1352,10 @@ together with an older `computer_*` tool.
 
 Parameters:
 
-- `action` ('key' | 'type' | 'mouse_move' | 'left_click' | 'left_click_drag' | 'right_click' | 'middle_click' | 'double_click' | 'screenshot' | 'cursor_position' | 'zoom'): The action to perform. The `zoom` action is only available with `computer_20251124`.
-- `coordinate` (number[], optional): Required for `mouse_move` and `left_click_drag` actions. Specifies the (x, y) coordinates.
+- `action` ('key' | 'type' | 'mouse\_move' | 'left\_click' | 'left\_click\_drag' | 'right\_click' | 'middle\_click' | 'double\_click' | 'screenshot' | 'cursor\_position' | 'zoom'): The action to perform. The `zoom` action is only available with `computer_20251124`.
+- `coordinate` (number\[], optional): Required for `mouse_move` and `left_click_drag` actions. Specifies the (x, y) coordinates.
 - `text` (string, optional): Required for `type` and `key` actions.
-- `region` (number[], optional): Required for `zoom` action. Specifies `[x1, y1, x2, y2]` coordinates for the area to inspect.
+- `region` (number\[], optional): Required for `zoom` action. Specifies `[x1, y1, x2, y2]` coordinates for the area to inspect.
 - `displayWidthPx` (number): The width of the display in pixels.
 - `displayHeightPx` (number): The height of the display in pixels.
 - `displayNumber` (number, optional): The display number for X11 environments.
@@ -1310,10 +1385,8 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  Web search must be enabled in your organization's [Console
-  settings](https://console.anthropic.com/settings/privacy).
-</Note>
+Web search must be enabled in your organization's [Console
+settings](https://console.anthropic.com/settings/privacy).
 
 #### Configuration Options
 
@@ -1323,23 +1396,23 @@ available for applications that need their earlier behavior.
 
 The web search tool supports several configuration options:
 
-- **maxUses** _number_
+- **maxUses** *number*
 
   Maximum number of web searches Claude can perform during the conversation.
 
-- **allowedDomains** _string[]_
+- **allowedDomains** *string\[]*
 
   Optional list of domains that Claude is allowed to search. If provided, searches will be restricted to these domains.
 
-- **blockedDomains** _string[]_
+- **blockedDomains** *string\[]*
 
   Optional list of domains that Claude should avoid when searching.
 
-- **userLocation** _object_
+- **userLocation** *object*
 
   Optional user location information to provide geographically relevant search results.
 
-- **responseInclusion** _'full' | 'excluded'_
+- **responseInclusion** *'full' | 'excluded'*
 
   Available with `webSearch_20260318`. Controls whether search result blocks
   consumed by a completed code execution call in the same turn are included in
@@ -1369,12 +1442,10 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  `responseInclusion: 'excluded'` only omits results consumed by code execution
-  calls that complete in the same turn. Results from direct calls and from code
-  execution calls that pause before completing are always returned in full so
-  they can be sent back on the next turn.
-</Note>
+`responseInclusion: 'excluded'` only omits results consumed by code execution
+calls that complete in the same turn. Results from direct calls and from code
+execution calls that pause before completing are always returned in full so
+they can be sent back on the next turn.
 
 ### Web Fetch Tool
 
@@ -1425,28 +1496,26 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  The AI SDK automatically sends the required `advisor-tool-2026-03-01` beta
-  header when you include this tool.
-</Note>
+The AI SDK automatically sends the required `advisor-tool-2026-03-01` beta
+header when you include this tool.
 
 #### Configuration Options
 
 The advisor tool supports the following configuration options:
 
-- **model** _string_
+- **model** *string*
 
   Required. The advisor model ID, such as `claude-opus-4-8`. The advisor model must be at least as capable as the executor model.
 
-- **maxUses** _number_
+- **maxUses** *number*
 
   Optional. Maximum number of advisor calls allowed in a single request. Once the executor reaches this cap, further advisor calls return an `advisor_tool_result_error` with `errorCode: 'max_uses_exceeded'`, and the executor continues without further advice.
 
-- **maxTokens** _number_
+- **maxTokens** *number*
 
   Optional. Maximum number of tokens the advisor can generate per call, including thinking and text. The minimum is `1024`, and Anthropic recommends starting with `2048`. This limit applies independently to each advisor call and is separate from the request-level `maxOutputTokens`, which controls executor output. Values above the selected advisor model's output limit result in an Anthropic `400` error. When configured, successful advisor results include `stopReason`; check for `stopReason === 'max_tokens'` to detect truncated advice. The field is available on both plaintext and redacted advisor result variants and is preserved across follow-up turns.
 
-- **caching** _object_
+- **caching** *object*
 
   Optional. Enables prompt caching for the advisor's own transcript across calls within a conversation. Use `{ type: 'ephemeral', ttl: '5m' | '1h' }`. This is most useful for longer agent loops where you expect at least three advisor calls.
 
@@ -1479,7 +1548,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   prompt: 'What is the weather in San Francisco?',
   tools: {
     toolSearch: anthropic.tools.toolSearchBm25_20251119(),
@@ -1509,7 +1578,7 @@ For more precise tool matching, you can use the regex variant:
 
 ```ts
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   prompt: 'Get the weather data',
   tools: {
     toolSearch: anthropic.tools.toolSearchRegex_20251119(),
@@ -1530,7 +1599,7 @@ import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   prompt: 'What is the weather in San Francisco?',
   tools: {
     // Custom search tool
@@ -1573,16 +1642,16 @@ This sends `tool_reference` blocks to Anthropic, which loads the corresponding d
 
 ### Mid-Conversation System Controls
 
-With `claude-opus-5-5` and `claude-fable-5-1`, use an empty system message to
-change effort from the next user turn. A separate system message containing text
-can provide a turn-scoped reminder with `clearAt: 'next_user_message'`: its text
-applies until the next user message. Keep the reminder after a user turn and
+With `claude-sonnet-5-5`, `claude-opus-5-5`, and `claude-fable-5-1`, use an
+empty system message to change effort from the next user turn. A separate
+system message containing text can provide a turn-scoped reminder with
+`clearAt: 'next_user_message'`: its text applies until the next user message. Keep the reminder after a user turn and
 before an assistant turn, or at the end of the messages array.
 The provider adds the required
 `mid-conversation-system-clear-at-2026-08-21` and
 `mid-conversation-output-config-2026-07-01` beta headers automatically.
 
-```ts highlight="16-24,29-37"
+```ts {16-24,29-37}
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -1638,13 +1707,11 @@ follow Anthropic's [content placement rules](https://platform.claude.com/docs/en
 Turn-scoped messages with `clearAt` support text only. Put effort updates in a
 separate message, as in the example above.
 
-<Note>
-  `clearAt` applies only to mid-conversation system messages. On initial system
-  messages, the provider ignores `clearAt` and effort attached to non-empty
-  content and emits a warning. Use an empty system message for an initial
-  per-message effort setting, or the top-level `effort` provider option to
-  configure effort for the full request.
-</Note>
+`clearAt` applies only to mid-conversation system messages. On initial system
+messages, the provider ignores `clearAt` and effort attached to non-empty
+content and emits a warning. Use an empty system message for an initial
+per-message effort setting, or the top-level `effort` provider option to
+configure effort for the full request.
 
 ### Mid-Conversation Tool Changes
 
@@ -1695,11 +1762,9 @@ const result = await generateText({
 
 To change a tool's definition, remove the old definition at the end of one request, then carry the conversation forward with the updated definition in `tools` on the next request.
 
-<Note>
-  Tool changes are not supported on the initial system message. The AI SDK
-  ignores them there and emits a warning — configure the initial tool set via
-  the `tools` option instead.
-</Note>
+Tool changes are not supported on the initial system message. The AI SDK
+ignores them there and emits a warning — configure the initial tool set via
+the `tools` option instead.
 
 ### MCP Connectors
 
@@ -1712,7 +1777,7 @@ import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   prompt: `Call the echo tool with "hello world". what does it respond with back?`,
   providerOptions: {
     anthropic: {
@@ -1741,33 +1806,33 @@ The tool calls and results are dynamic, i.e. the input and output schemas are no
 
 The web fetch tool supports several configuration options:
 
-- **maxUses** _number_
+- **maxUses** *number*
 
   The maxUses parameter limits the number of web fetches performed.
 
-- **allowedDomains** _string[]_
+- **allowedDomains** *string\[]*
 
   Only fetch from these domains.
 
-- **blockedDomains** _string[]_
+- **blockedDomains** *string\[]*
 
   Never fetch from these domains.
 
-- **citations** _object_
+- **citations** *object*
 
   Unlike web search where citations are always enabled, citations are optional for web fetch. Set `"citations": {"enabled": true}` to enable Claude to cite specific passages from fetched documents.
 
-- **maxContentTokens** _number_
+- **maxContentTokens** *number*
 
   The maxContentTokens parameter limits the amount of content that will be included in the context.
 
-- **useCache** _boolean_
+- **useCache** *boolean*
 
   Available with `webFetch_20260318`. Set to `false` to bypass cached content
   and fetch fresh content. The default is `true`; disabling the cache can
   increase latency.
 
-- **responseInclusion** _'full' | 'excluded'_
+- **responseInclusion** *'full' | 'excluded'*
 
   Available with `webFetch_20260318`. Controls whether fetch result blocks
   consumed by a completed code execution call in the same turn are included in
@@ -1840,12 +1905,10 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  Three versions are available: `codeExecution_20260120` (recommended, does not
-  require a beta header, supports Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and
-  Opus 4.5), `codeExecution_20250825` (supports Python and Bash with enhanced
-  file operations), and `codeExecution_20250522` (supports Bash only).
-</Note>
+Three versions are available: `codeExecution_20260120` (recommended, does not
+require a beta header, supports Claude Opus 4.6, Sonnet 4.6, Sonnet 4.5, and
+Opus 4.5), `codeExecution_20250825` (supports Python and Bash with enhanced
+file operations), and `codeExecution_20250522` (supports Bash only).
 
 #### Uploading Files for Code Execution
 
@@ -1943,7 +2006,7 @@ for await (const part of result.textStream) {
 
 To enable programmatic tool calling, use the `allowedCallers` provider option on tools that you want to be callable from within code execution:
 
-```ts highlight="13-17"
+```ts {13-17}
 import {
   anthropic,
   forwardAnthropicContainerIdFromLastStep,
@@ -1988,11 +2051,21 @@ In this flow:
 2. The SDK automatically executes your tool and returns results to the code execution container
 3. Claude processes the results in code and generates the final response
 
-<Note>
-  Programmatic tool calling requires `claude-sonnet-4-6`, `claude-sonnet-4-5`,
-  `claude-opus-4-6`, or `claude-opus-4-5` models and uses the
-  `code_execution_20260120` or `code_execution_20250825` tool.
-</Note>
+Programmatic tool calling requires `claude-sonnet-4-6`, `claude-sonnet-4-5`,
+`claude-opus-4-6`, or `claude-opus-4-5` models and uses the
+`code_execution_20260120` or `code_execution_20250825` tool.
+
+#### Pruning Programmatic Tool History
+
+When pruning removes a code execution call but keeps a tool call that references
+it through `caller.toolId`, the provider omits the dangling caller metadata from
+history before a subsequent user message and emits a warning. The retained tool
+calls and results are still sent to Anthropic; the removed code execution history
+is not restored.
+
+Tool-result messages do not end a turn. Caller metadata in an active tool
+continuation is preserved, so keep the source code execution call when returning
+programmatic tool results.
 
 #### Container Persistence
 
@@ -2016,7 +2089,7 @@ To use skills, you need to:
 1. Enable the code execution tool
 2. Specify the container with skills in `providerOptions`
 
-```ts highlight="6-8,10-23"
+```ts {6-8,10-23}
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -2046,7 +2119,7 @@ const result = await generateText({
 
 You can also use custom skills by specifying `type: 'custom'`:
 
-```ts highlight="11-15"
+```ts {11-15}
 const result = await generateText({
   model: anthropic('claude-sonnet-4-5'),
   tools: {
@@ -2069,10 +2142,8 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  Skills use progressive context loading and execute within a sandboxed
-  container with code execution capabilities.
-</Note>
+Skills use progressive context loading and execute within a sandboxed
+container with code execution capabilities.
 
 ### PDF support
 
@@ -2083,7 +2154,7 @@ Option 1: URL-based PDF document
 
 ```ts
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   messages: [
     {
       role: 'user',
@@ -2109,7 +2180,7 @@ Option 2: Base64-encoded PDF document
 
 ```ts
 const result = await generateText({
-  model: anthropic('claude-sonnet-5'),
+  model: anthropic('claude-sonnet-5-5'),
   messages: [
     {
       role: 'user',
@@ -2138,28 +2209,27 @@ and the `mediaType` should be set to `'application/pdf'`.
 
 | Model               | Image Input | Object Generation | Tool Usage | Computer Use | Web Search | Tool Search | Compaction |
 | ------------------- | ----------- | ----------------- | ---------- | ------------ | ---------- | ----------- | ---------- |
-| `claude-opus-5-5`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-opus-5`     | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-sonnet-5`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-fable-5-1`  | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-fable-5`    | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-opus-4-8`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-opus-4-7`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-opus-4-6`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   | <Check />  |
-| `claude-sonnet-4-6` | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   |            |
-| `claude-opus-4-5`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   |            |
-| `claude-haiku-4-5`  | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  |             |            |
-| `claude-sonnet-4-5` | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  | <Check />   |            |
-| `claude-opus-4-1`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  |             |            |
-| `claude-opus-4-0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  |             |            |
-| `claude-sonnet-4-0` | <Check />   | <Check />         | <Check />  | <Check />    | <Check />  |             |            |
+| `claude-opus-5-5`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-5`     | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-sonnet-5-5` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-sonnet-5`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-fable-5-1`  | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-fable-5`    | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-8`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-7`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-6`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-sonnet-4-6` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           |            |
+| `claude-opus-4-5`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           |            |
+| `claude-haiku-4-5`  | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
+| `claude-sonnet-4-5` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           |            |
+| `claude-opus-4-1`   | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
+| `claude-opus-4-0`   | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
+| `claude-sonnet-4-0` | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
 
-<Note>
-  The table above lists popular models. Please see the [Anthropic
-  docs](https://docs.anthropic.com/en/docs/about-claude/models) for a full list
-  of available models. The table above lists popular models. You can also pass
-  any available provider model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [Anthropic
+docs](https://docs.anthropic.com/en/docs/about-claude/models) for a full list
+of available models. The table above lists popular models. You can also pass
+any available provider model ID as a string if needed.
 
 ## Evaluation Models
 
@@ -2210,53 +2280,10 @@ use Gateway by default, or an explicitly configured default provider with an
 `evaluationModel` method. See
 [model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

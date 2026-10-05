@@ -17,8 +17,8 @@ related:
 summary: Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/advanced-configuration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7cbb3a75e413221238b90909138a48d894d44425b49e51dd19b66166b7e0952a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "348ed841b56e0e7e79d52487e38245f74d2f005a77f95a6988572fd653c06a7b"
 ---
 
 # Advanced Configuration
@@ -32,11 +32,12 @@ For an advanced configuration, you can create a `vercel.json` file to use [Runti
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
+- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn about advanced configurations for Vercel functions on Vercel.
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
-- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/advanced-configuration.graph.md](/docs/functions/configuring-functions/advanced-configuration.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fadvanced-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

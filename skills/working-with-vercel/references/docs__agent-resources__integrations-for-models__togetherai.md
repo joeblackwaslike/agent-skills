@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Together AI connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/togetherai.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cc7e491395454009e2e2d7ba05219692f3ce7a8f7de7f8748450c4c85e9f24a1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "62a533b181e4891d84f4085a871e4f4df2060be67ac3aad001e28c190d4a6b8b"
 ---
 
 # Vercel Together AI Integration
@@ -66,22 +66,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "73575965351861cd8a409bf16a964b5b409ce4fa8061aecd38f0fc119612f809"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "71e6f30ebf75755b37276e4b4446651e325ba7dbb6a6b1dc407a10b41904c738"
 ---
 
 # PCI DSS iframe Integration
@@ -30,13 +30,14 @@ When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/E
 
 - [PCI compliance for ecommerce](https://vercel.com/blog/pci-compliance-for-ecommerce-teams?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related)
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related)
-- [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related)
 - [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
-- [Stripe Integration](https://vercel.com/docs/integrations/ecommerce/stripe?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Connect your Stripe account to Vercel and accept payments in your applications.
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Content Security Policy](https://vercel.com/docs/cdn-security/security-headers?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Learn how the Content Security Policy \\(CSP\\) offers defense against web vulnerabilities, its key features, and best pra
-- [Frameworks and Adapters](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Vercel Integrations](https://vercel.com/docs/integrations?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/security/pci-dss.graph.md](/docs/security/pci-dss.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fpci-dss&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

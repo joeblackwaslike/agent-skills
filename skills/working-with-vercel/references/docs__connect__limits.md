@@ -15,8 +15,8 @@ related:
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "2c9017aeb0412145848aae6fc9b0fcb42528d63c11b3abeaa31c907a9eac00bf"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a700501874319bf82640e8f66e968d81c3b09fe414fbb95a189dbe21d960796a"
 ---
 
 # Vercel Connect Limits
@@ -31,8 +31,8 @@ The following limits apply. Contact your account team if you need higher limits.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related)
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to

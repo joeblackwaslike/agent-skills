@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "eaa89808c17260cb972469ddd05c1ffbae64abd068a62af1ccc27bafe4c0eb06"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "264f36f56742f22a9513c42ae9e59305dd7fc6c8b1658074d2d77c32457a4960"
 ---
 
 # Drains Security
@@ -30,11 +30,11 @@ All Drains support transport-level encryption using HTTPS protocol.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related)
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 - [Validate Drain delivery configuration](https://vercel.com/docs/rest-api/drains/validate-drain-delivery-configuration?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — POST /v1/drains/test — Validate the delivery configuration of a Drain using sample events.
 - [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
-- [Update an existing Drain](https://vercel.com/docs/rest-api/drains/update-an-existing-drain?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=related) — PATCH /v1/drains/{id} — Update the configuration of an existing drain.
 
 Full cross-link map for this page: [/docs/drains/security.graph.md](/docs/drains/security.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -181,7 +181,7 @@ export default async function handler(
   response.status(200).json({ success: true });
 }
 
-async function sha1(data: Buffer, secret: string): string {
+function sha1(data: Buffer, secret: string): string {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 
@@ -281,7 +281,7 @@ For additional authentication or identification purposes, you can also add custo
 
 ## IP Address Visibility
 
-> **🔒 Permissions Required**: Managing IP address visibility
+> **Availability**: Managing IP address visibility is available on Enterprise and Pro plans
 
 Drains can include public IP addresses in the data, which may be considered personal information under certain data protection laws. To hide IP addresses in your drains:
 

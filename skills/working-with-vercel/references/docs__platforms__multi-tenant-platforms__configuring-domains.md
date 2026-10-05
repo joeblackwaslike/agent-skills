@@ -16,8 +16,8 @@ related:
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8db5635841727ae38ccac9365358008573124298d2cdfbb7bee9a5a77ef45e2e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4eb8279fcbb182f791a5144de418a5c4ab7304adfdae70e7747c994c47651c51"
 ---
 
 # Configuring Custom Domains
@@ -35,11 +35,13 @@ If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to y
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fconfiguring-domains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,7 +52,7 @@ Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/confi
 
 If you can't change your domain's nameservers, follow [Use wildcard domains with an external DNS provider](/docs/domains/working-with-domains/add-a-domain#use-wildcard-domains-with-an-external-dns-provider) to delegate certificate validation and configure wildcard traffic routing.
 
-Now, any `tenant.acme.com` you create, whether it's `tenant1.acme.com` or `docs.tenant1.acme.com`, automatically resolves to your Vercel deployment. Vercel issues individual certificates for each subdomain on the fly.
+Now, any tenant subdomain you create, such as `tenant1.acme.com` or `tenant2.acme.com`, resolves to your Vercel deployment. Vercel issues one wildcard certificate for `*.acme.com` that covers every tenant subdomain at that level, so you don't need a certificate per tenant. A wildcard certificate covers only one subdomain level. To serve a deeper subdomain such as `docs.tenant1.acme.com` over HTTPS, add a wildcard domain for that level, such as `*.tenant1.acme.com`, which gets its own wildcard certificate.
 
 ### Protecting tenant subdomains with the Public Suffix List
 
@@ -132,7 +134,7 @@ await projectsAddProjectDomain(vercel, {
 });
 ```
 
-Once the domain is added, Vercel attempts to issue an SSL certificate automatically.
+Once the domain is added, Vercel attempts to issue an SSL certificate automatically. Each custom domain gets its own certificate, separate from your wildcard certificate.
 
 ## Verifying domain ownership
 

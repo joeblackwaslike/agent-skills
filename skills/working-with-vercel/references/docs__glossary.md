@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b723efc67bb7df4157077e2e5e0c90f849500b449ec8845314511af286c350de"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "097f36b5e35f08d3ef95583260047ac502483763a860d1f105a8a815c342745b"
 ---
 
 # Glossary
@@ -38,9 +38,9 @@ A full glossary of terms used in Vercel's products and documentation.
 - [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
@@ -290,7 +290,7 @@ Automatic connection between your Git repository (GitHub, GitLab, Bitbucket, Azu
 
 ### Global Config
 
-A global data store that enables ultra-fast data reads in the region closest to the user (within 15ms at P99, often less than 1ms) for configuration data like feature flags.
+A global data store for configuration data like feature flags. Reads on Vercel typically complete in less than a millisecond, with [latency depending on your application's usage patterns](/docs/global-config#read-latency).
 
 ## H
 
@@ -602,7 +602,7 @@ A high-performance build system for monorepos that provides fast incremental bui
 
 ### Two-factor Authentication (2FA)
 
-An additional login verification step using either an authenticator app for time-based one-time passwords or a passkey through a WebAuthN-compatible device. You can configure recovery codes to regain access if you lose your second factor. See [Two-factor authentication](/docs/two-factor-authentication).
+An additional login verification step using either an authenticator app for time-based one-time passwords or a passkey through a WebAuthn-compatible device. You can configure recovery codes to regain access if you lose your second factor. See [Two-factor authentication](/docs/two-factor-authentication).
 
 ## V
 

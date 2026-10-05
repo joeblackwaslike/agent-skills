@@ -1,16 +1,18 @@
 ---
+title: Migrate AI SDK 3.1 to 3.2
+description: Learn how to upgrade AI SDK 3.1 to 3.2.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-2"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-2.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "006905e4e30cc84d982e011cc3b6fb4f9119e8d34094a0b3588b9b14aab2ed3c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5699000a9c75b860472ca96cf5b99ac00d8631966d5da609a561c9bb8898b93d"
 ---
 
-# Migrate AI SDK 3.1 to 3.2
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Check out the [AI SDK 3.2 release blog
-  post](https://vercel.com/blog/introducing-vercel-ai-sdk-3-2) for more
-  information about the release.
-</Note>
+Check out the [AI SDK 3.2 release blog
+post](https://vercel.com/blog/introducing-vercel-ai-sdk-3-2) for more
+information about the release.
 
 This guide will help you upgrade to AI SDK 3.2:
 
@@ -24,7 +26,9 @@ This guide will help you upgrade to AI SDK 3.2:
 
 To update to AI SDK version 3.2, run the following command using your preferred package manager:
 
-<Snippet text="pnpm add ai@latest" />
+```
+pnpm add ai@3.2
+```
 
 ## Removed Functionality
 
@@ -46,21 +50,10 @@ The integrations (other than React and RSC) have moved to separate Node modules.
 
 The old exports are still available but will be removed in a future release.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

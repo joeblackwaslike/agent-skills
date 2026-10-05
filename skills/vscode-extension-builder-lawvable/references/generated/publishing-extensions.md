@@ -1,8 +1,8 @@
 ---
 title: "Publishing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
-fetched_at: "2026-09-21T09:38:51.493Z"
-sha256: "f9dd426d717d28f78a21e43676a02b50687c487d37add8557ecf348fe5b5a19a"
+fetched_at: "2026-10-05T11:12:49.290Z"
+sha256: "d75db570615fc64981a7e271403fa88de13c136efdcd29b2c987352e57710ce7"
 ---
 
 # Publishing Extensions
@@ -778,4 +778,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
 
  
- 9/16/2026
+ 9/30/2026

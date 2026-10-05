@@ -16,13 +16,13 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6e3f330f19a3f33fb67fe1671f9022179954364a3f0abba0157d696fe7bfbcc9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8cd0bf1f5aca8496c80501b0c3f35a1fad9b409d3d2a476911d772e63302de73"
 ---
 
 # Storage on Vercel Marketplace
 
-> **🔒 Permissions Required**: Marketplace Storage Integrations
+> **Availability**: Marketplace Storage Integrations are available on all plans
 
 The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provides integrations with different storage providers to provision databases and data stores directly from your Vercel dashboard.
 
@@ -33,23 +33,23 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
+- [Vercel Marketplace database browser now supports Redis](https://vercel.com/changelog/vercel-marketplace-database-browser-now-supports-redis?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related)
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md?from=related&source_path=%2Fdocs%2Fmarketplace-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - For Postgres, you can use providers like Neon, Supabase, or AWS Aurora Postgres.
-- For KV (key-value stores), you can use Upstash Redis.
+- For KV (key-value stores), you can use Redis or Upstash Redis.
 
 The integration automatically injects credentials into your projects as environment variables.
 
@@ -151,21 +151,25 @@ After installation, you can manage your storage resources from the Vercel dashbo
 - **Monitor usage**: Track storage consumption and costs
 - **Update configuration**: Modify settings or upgrade plans
 - **Access provider dashboard**: Link directly to the provider's management interface
-- [**Browse and query your database**](#browsing-and-querying-your-database): For supported Postgres integrations, run queries, edit data, and inspect your schema directly from the dashboard
+- [**Browse and query your database**](#browsing-and-querying-your-database): For supported integrations, run queries or commands, view and edit data, and inspect your schema directly from the dashboard
 - **Transfer resources**: For supported integrations, [move a resource to a different team](/docs/integrations/install-an-integration/product-integration#transfer-a-resource-to-another-team)
 
 For more details, see [Manage Native Integrations](/docs/integrations/install-an-integration/product-integration#manage-native-integrations).
 
 ## Browsing and querying your database
 
-For supported Marketplace Postgres integrations, you can run SQL queries, view and edit data, and inspect your database schema directly from the Vercel dashboard. You no longer need external tools like `psql` or third-party database UIs.
+You can browse, edit, and manage your data directly from the Vercel dashboard, without external tools like `psql`, `redis-cli`, or third-party database UIs.
 
 This feature is available for the following integrations:
 
-- [AWS Aurora Postgres](/marketplace/aws/aws-apg)
-- [Neon](/marketplace/neon)
-- [Prisma Postgres](/marketplace/prisma)
-- [Supabase](/marketplace/supabase)
+- Postgres
+  - [AWS Aurora Postgres](/marketplace/aws/aws-apg)
+  - [Neon](/marketplace/neon)
+  - [Prisma Postgres](/marketplace/prisma)
+  - [Supabase](/marketplace/supabase)
+- Redis
+  - [Redis](/marketplace/redis)
+  - [Upstash for Redis](/marketplace/upstash)
 
 Support for more integrations will be added over time.
 
@@ -175,29 +179,42 @@ To access the database browser:
 
 1. Open your project in the Vercel dashboard
 2. Navigate to the **Storage** tab and select your database resource
-3. Go to the **Browser** section of the database page
+3. Go to the **Database** section of the database page
 
 You need **Owner** permissions to access the database browser.
 
+The tabs available in the database section depend on the type of database.
+
 ### Query editor
 
-The **Query** tab lets you run SQL queries and view results in a table. You can copy results as CSV, JSON, or Markdown for use in other tools.
+For Postgres integrations, the **Query** tab lets you run SQL queries and view results in a table. You can copy results as CSV, JSON, or Markdown for use in other tools.
 
 ### Data editor
 
-The **Data** tab displays your table data in a spreadsheet-like interface where you can:
+For Postgres integrations, the **Data** tab displays your table data in a spreadsheet-like interface where you can:
 
-- Sort rows
-- Copy cell values
+- Sort and filter rows
+- Copy data as CSV, JSON, or Markdown
 - Edit data
-- Insert new rows
-- Delete rows
+- Insert and delete rows
 
 When you confirm your changes, the data editor applies them to the database as a single transaction.
 
 ### Schema viewer
 
-The **Schema** tab shows your tables and their relations in a visual graph layout. Use it to understand your database structure without writing queries.
+For Postgres integrations, the **Schema** tab shows your tables and their relations in a visual graph layout. Use it to understand your database structure without writing queries.
+
+### Redis CLI
+
+For Redis integrations, the **CLI** tab allows you to run Redis commands and inspect the results. Run multiple commands by separating them with newlines or semicolons, with support for `MULTI`/`EXEC` to run commands in a transaction.
+
+### Redis data browser
+
+For Redis integrations, the data **Browser** lets you:
+
+- List keys (optionally grouped by prefix), and filter by type and pattern
+- View values for String, JSON, Hash, List, Set, and Sorted set data types
+- Inspect metadata for a key, including type, TTL, encoding, and size
 
 ## Choosing a storage solution
 

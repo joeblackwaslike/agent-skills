@@ -12,13 +12,13 @@ related:
 summary: "Disallows the use of the unload and beforeunload events to eliminate a source of eviction from the browser's Back-Forward Cache."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/bfcache_integrity_no_unload_listeners.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "65d8f725d7d85f300bdf21c9fe30d84a6085615db868fcf5b5c5182055f1f009"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6d271bf77710c70d35e22cb8c45ccadcc38c08d023de91c2bb7958b02a52f975"
 ---
 
 # BFCACHE_INTEGRITY_NO_UNLOAD_LISTENERS
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 This rule disallows the use of the `unload` and `beforeunload` events to improve the integrity of the Back-Forward Cache in browsers.
 

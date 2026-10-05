@@ -1,27 +1,30 @@
 ---
+title: convertToModelMessages
+description: Convert useChat messages to ModelMessages for AI functions (API Reference)
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/convert-to-model-messages"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/convert-to-model-messages.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4550dc9dfaf934025814109a4072e3b8b9eec29514b7b7686c43b2b045a5fa73"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "718a75fc46798247a327e0f93fdc9a13f05b3d2682f24925b6526744b9d5e460"
 ---
 
-# `convertToModelMessages()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `convertToModelMessages` function is used to transform an array of UI messages from the `useChat` hook into an array of `ModelMessage` objects. These `ModelMessage` objects are compatible with AI core functions like `streamText`.
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -33,43 +36,22 @@ export async function POST(req: Request) {
 
 ## Import
 
-<Snippet text={`import { convertToModelMessages } from "ai"`} prompt={false} />
+```
+import { convertToModelMessages } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'messages',
-      type: 'Message[]',
-      description:
-        'An array of UI messages from the useChat hook to be converted',
-    },
-    {
-      name: 'options',
-      type: '{ tools?: ToolSet, ignoreIncompleteToolCalls?: boolean, convertDataPart?: (part: DataUIPart) => TextPart | FilePart | undefined }',
-      description:
-        'Optional configuration object. Provide tools to enable multi-modal tool responses. Set ignoreIncompleteToolCalls to true to skip tool calls without results (default: false). Use convertDataPart to transform custom data parts into model-compatible content.',
-    },
-  ]}
-/>
+- `messages` (`Message[]`): An array of UI messages from the useChat hook to be converted
+- `options` (`{ tools?: ToolSet, ignoreIncompleteToolCalls?: boolean, convertDataPart?: (part: DataUIPart) => TextPart | FilePart | undefined }`): Optional configuration object. Provide tools to enable multi-modal tool responses. Set ignoreIncompleteToolCalls to true to skip tool calls without results (default: false). Use convertDataPart to transform custom data parts into model-compatible content.
 
 ### Returns
 
 A Promise that resolves to an array of [`ModelMessage`](/docs/reference/ai-sdk-core/model-message) objects.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'Promise<ModelMessage[]>',
-      type: 'Promise',
-      description:
-        'A Promise that resolves to an array of ModelMessage objects',
-    },
-  ]}
-/>
+- `Promise<ModelMessage[]>` (`Promise`): A Promise that resolves to an array of ModelMessage objects
 
 ## Deprecated `rawInput` field
 
@@ -98,7 +80,6 @@ The `convertToModelMessages` function supports tools that can return multi-modal
 
 ```ts
 import { tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const screenshotTool = tool({
@@ -110,8 +91,8 @@ const screenshotTool = tool({
 });
 
 const result = streamText({
-  model: __MODEL__,
-  messages: convertToModelMessages(messages, {
+  model: "anthropic/claude-sonnet-5.5",
+  messages: await convertToModelMessages(messages, {
     tools: {
       screenshot: screenshotTool,
     },
@@ -129,12 +110,13 @@ The `convertToModelMessages` function supports converting custom data parts atta
 
 By default, data parts in user messages are filtered out during conversion. To include them, provide a `convertDataPart` callback that transforms data parts into text or file parts that the model can understand:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
   streamText,
   toUIMessageStream,
+  type UIMessage,
 } from 'ai';
 
 type CustomUIMessage = UIMessage<
@@ -149,8 +131,8 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
-    messages: convertToModelMessages<CustomUIMessage>(messages, {
+    model: "anthropic/claude-sonnet-5.5",
+    messages: await convertToModelMessages<CustomUIMessage>(messages, {
       convertDataPart: part => {
         // Convert URL attachments to text
         if (part.type === 'data-url') {
@@ -220,7 +202,7 @@ Only data parts for which you return a text or file model message part are inclu
 all other data parts are ignored.
 
 ```ts
-const result = convertToModelMessages<
+const result = await convertToModelMessages<
   UIMessage<
     unknown,
     {
@@ -238,7 +220,7 @@ const result = convertToModelMessages<
       };
     }
 
-    // data-code and data-node are ignored
+    // data-code and data-note are ignored
   },
 });
 ```
@@ -268,23 +250,10 @@ convertToModelMessages<MyUIMessage>(messages, {
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

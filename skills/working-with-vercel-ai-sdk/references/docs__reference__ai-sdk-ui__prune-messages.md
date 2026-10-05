@@ -1,21 +1,24 @@
 ---
+title: pruneMessages
+description: API Reference for pruneMessages.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "eec68aff2a5d09d1cb8f60cc40a3218ad412e734714d1cb2c5c56e67f4232285"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7791aec102e7eebb6dfb7321795f88575b8b25cef2cbdde4f22f6f4f39dc0e69"
 ---
 
-# `pruneMessages()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `pruneMessages` function is used to prune or filter an array of `ModelMessage` objects. This is useful for reducing message context (to save tokens), removing intermediate reasoning, or trimming tool calls and empty messages before sending to an LLM.
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import {
   createUIMessageStreamResponse,
   pruneMessages,
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -28,7 +31,7 @@ export async function POST(req: Request) {
   });
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: prunedMessages,
   });
 
@@ -40,53 +43,24 @@ export async function POST(req: Request) {
 
 ## Import
 
-<Snippet text={`import { pruneMessages } from "ai"`} prompt={false} />
+```
+import { pruneMessages } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'messages',
-      type: 'ModelMessage[]',
-      description: 'An array of ModelMessage objects to prune.',
-    },
-    {
-      name: 'reasoning',
-      type: `'all' | 'before-last-message' | 'none'`,
-      description:
-        'How to remove reasoning content from assistant messages. Default: "none".',
-    },
-    {
-      name: 'toolCalls',
-      type: `'all' | 'before-last-message' | 'before-last-\${number}-messages' | 'none' | Array<{ type: 'all' | 'before-last-message' | 'before-last-\${number}-messages'; tools?: string[] }>`,
-      description:
-        'How to prune tool call/results/approval content. Can specify a strategy string or an array for per-tool fine control. Default: [] (empty array, equivalent to "none").',
-    },
-    {
-      name: 'emptyMessages',
-      type: `'keep' | 'remove'`,
-      description:
-        'Whether to keep or remove messages whose content is empty after pruning. Default: "remove".',
-    },
-  ]}
-/>
+- `messages` (`ModelMessage[]`): An array of ModelMessage objects to prune.
+- `reasoning` (`'all' | 'before-last-message' | 'none'`): How to remove reasoning content from assistant messages. Default: "none".
+- `toolCalls` (`'all' | 'before-last-message' | 'before-last-${number}-messages' | 'none' | Array<{ type: 'all' | 'before-last-message' | 'before-last-${number}-messages'; tools?: string[] }>`): How to prune tool call/results/approval content. Can specify a strategy string or an array for per-tool fine control. Default: \[] (empty array, equivalent to "none").
+- `emptyMessages` (`'keep' | 'remove'`): Whether to keep or remove messages whose content is empty after pruning. Default: "remove".
 
 ### Returns
 
 An array of [`ModelMessage`](/docs/reference/ai-sdk-core/model-message) objects, pruned according to the provided options.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'ModelMessage[]',
-      type: 'Array',
-      description: 'The pruned list of ModelMessage objects',
-    },
-  ]}
-/>
+- `ModelMessage[]` (`Array`): The pruned list of ModelMessage objects
 
 ## Example Usage
 
@@ -115,23 +89,10 @@ const pruned = pruneMessages({
 
 For advanced usage and the full list of possible message parts, see [`ModelMessage`](/docs/reference/ai-sdk-core/model-message) and [`pruneMessages` implementation](https://github.com/vercel/ai/blob/main/packages/ai/src/generate-text/prune-messages.ts).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy Model Context Protocol (MCP) servers on Vercel with OAuth authentication and efficient scaling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e2f367a49d5205b44a5c18827c02c1a7966e3cff9fc3a07739e9e32f569db02f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7d7f66b43e67973481dc1b5725d2f690d4ac73aeae7bfdf15307ce52cf55c2f1"
 ---
 
 # Deploy MCP servers to Vercel
@@ -32,13 +32,13 @@ Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
+- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related)
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — This is my wonderful
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
+- [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=related) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 
 Full cross-link map for this page: [/docs/mcp/deploy-mcp-servers-to-vercel.graph.md](/docs/mcp/deploy-mcp-servers-to-vercel.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fdeploy-mcp-servers-to-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -70,7 +70,7 @@ Install `mcp-handler` v2, the MCP server SDK v2, and Zod v4:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
+    yarn add mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
     ```
   </Code>
   <Code tab="npm">
@@ -80,7 +80,7 @@ Install `mcp-handler` v2, the MCP server SDK v2, and Zod v4:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
+    bun add mcp-handler@2.1.1 @modelcontextprotocol/server@2 zod@4
     ```
   </Code>
 </CodeBlock>
@@ -154,22 +154,22 @@ Start your Next.js development server at `http://localhost:3000` before opening 
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i @modelcontextprotocol/inspector@latest
+    pnpm dlx @modelcontextprotocol/inspector@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @modelcontextprotocol/inspector@latest
+    yarn dlx @modelcontextprotocol/inspector@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i @modelcontextprotocol/inspector@latest
+    npx @modelcontextprotocol/inspector@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @modelcontextprotocol/inspector@latest
+    bunx @modelcontextprotocol/inspector@latest
     ```
   </Code>
 </CodeBlock>

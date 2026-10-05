@@ -17,8 +17,8 @@ related:
 summary: Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/create-react-app.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0f9b690ade41bdf2c67900ec139324b13e88efa6a48618f0c3199cbd23e4a58e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "af04b1a8670a2dfee9d1d028ada31be4e43d0ddd5f11653cb056d5af0ef9cffb"
 ---
 
 # Create React App on Vercel
@@ -31,15 +31,16 @@ Create React App (CRA) is a development environment for building single-page app
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related)
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 
 Full cross-link map for this page: [/docs/frameworks/frontend/create-react-app.graph.md](/docs/frameworks/frontend/create-react-app.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fcreate-react-app&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -147,7 +148,7 @@ Vercel's observability features help you monitor, analyze, and manage your proje
 - **[Web Analytics](/docs/analytics)**: Track page views, visitor activity, and custom events
 - **[Speed Insights](/docs/speed-insights)**: Track Core Web Vitals and page performance
 - **[Observability Plus](/docs/observability/observability-plus)**: Available on Pro and Enterprise for additional observability features, Query, and longer retention
-- **[Log Drains](/docs/drains)**: Available on Pro and Enterprise to export log data for debugging and analysis
+- **[Drains](/docs/drains)**: Available on Pro and Enterprise to export logs and other observability data for debugging and analysis
 - **[Audit Logs](/docs/audit-log)**: Available on Enterprise for tracking team member activity
 
 **To summarize, using Vercel's observability features with CRA enable you to:**

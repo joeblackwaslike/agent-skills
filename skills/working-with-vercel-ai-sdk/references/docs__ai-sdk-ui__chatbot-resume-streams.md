@@ -1,23 +1,25 @@
 ---
+title: Chatbot Resume Streams
+description: Learn how to resume chatbot streams after client disconnects.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "c8c3a9895547829d5c48c5d899f22a3d6b95748854ca1610f253bdb9a09c9b80"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3e57fa4c31399332886690e31d1e9d594dc4aa4725f3c06aacb382d61547cc93"
 ---
 
-# Chatbot Resume Streams
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `useChat` supports resuming ongoing streams after page reloads. Use this feature to build applications with long-running generations.
 
-<Note type="warning">
-  In a resumable stream setup, client-side aborts are treated as disconnects.
-  Closing a tab, refreshing the page, or calling `stop()` only closes the
-  current HTTP connection and should not cancel the underlying generation. To
-  let users stop generation, add a dedicated stop endpoint that persists the
-  partial response, cancels the active work, and clears the active stream. See
-  [Stop an Active Resumable Stream](#stop-an-active-resumable-stream) and
-  [troubleshooting](/docs/troubleshooting/abort-breaks-resumable-streams) for
-  more details.
-</Note>
+In a resumable stream setup, client-side aborts are treated as disconnects.
+Closing a tab, refreshing the page, or calling `stop()` only closes the
+current HTTP connection and should not cancel the underlying generation. To
+let users stop generation, add a dedicated stop endpoint that persists the
+partial response, cancels the active work, and clears the active stream. See
+[Stop an Active Resumable Stream](#stop-an-active-resumable-stream) and
+[troubleshooting](/docs/troubleshooting/abort-breaks-resumable-streams) for
+more details.
 
 ## How stream resumption works
 
@@ -50,7 +52,7 @@ To implement resumable streams in your chat application, you need:
 
 Use the `resume` option in the `useChat` hook to enable stream resumption. When `resume` is true, the hook automatically attempts to reconnect to any active stream for the chat on mount:
 
-```tsx filename="app/chat/[chatId]/chat.tsx"
+```tsx title="app/chat/[chatId]/chat.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -84,12 +86,14 @@ export function Chat({
 }
 ```
 
-<Note>
-  You must send the chat ID with each request (see
-  `prepareSendMessagesRequest`).
-</Note>
+You must send the chat ID with each request (see
+`prepareSendMessagesRequest`).
 
 When you enable `resume`, the `useChat` hook makes a `GET` request to `/api/chat/[id]/stream` on mount to check for and resume any active streams.
+
+The default transport URL-encodes the chat ID as a single path segment. IDs equal
+to `.` or `..` are rejected with an `InvalidArgumentError` because URL parsers
+interpret them as path traversal segments.
 
 Let's start by creating the POST handler to create the resumable stream.
 
@@ -97,7 +101,7 @@ Let's start by creating the POST handler to create the resumable stream.
 
 The POST handler creates resumable streams using the `consumeSseStream` callback:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import { readChat, saveChat } from '@util/chat-store';
 import {
@@ -166,7 +170,7 @@ Create a GET handler at `/api/chat/[id]/stream` that:
 3. Returns 204 (No Content) if no stream is active
 4. Resumes the existing stream if one is found
 
-```ts filename="app/api/chat/[id]/stream/route.ts"
+```ts title="app/api/chat/[id]/stream/route.ts"
 import { readChat } from '@util/chat-store';
 import { UI_MESSAGE_STREAM_HEADERS } from 'ai';
 import { after } from 'next/server';
@@ -196,18 +200,16 @@ export async function GET(
 }
 ```
 
-<Note>
-  The `after` function from Next.js allows work to continue after the response
-  has been sent. This ensures that the resumable stream persists in Redis even
-  after the initial response is returned to the client, enabling reconnection
-  later.
-</Note>
+The `after` function from Next.js allows work to continue after the response
+has been sent. This ensures that the resumable stream persists in Redis even
+after the initial response is returned to the client, enabling reconnection
+later.
 
 ## How it works
 
 ### Request lifecycle
 
-![Diagram showing the architecture and lifecycle of resumable stream requests](https://e742qlubrjnjqpp0.public.blob.vercel-storage.com/resume-stream-diagram.png)
+<img alt="Diagram showing the architecture and lifecycle of resumable stream requests" src="https://e742qlubrjnjqpp0.public.blob.vercel-storage.com/resume-stream-diagram.png" width="1608" height="1940" />
 
 The diagram above shows the complete lifecycle of a resumable stream:
 
@@ -215,13 +217,16 @@ The diagram above shows the complete lifecycle of a resumable stream:
 2. **Stream tracking**: Your persistence layer saves the `activeStreamId` in the chat data
 3. **Client reconnection**: When the client reconnects (page reload), the `resume` option triggers a GET request to `/api/chat/[id]/stream`
 4. **Stream recovery**: The GET handler checks for an `activeStreamId` and uses `resumeExistingStream` to reconnect. If no active stream exists, it returns a 204 (No Content) response
-5. **Completion cleanup**: When the stream finishes, the `onFinish` callback clears the `activeStreamId` by setting it to `null`
+5. **Completion cleanup**: When the stream finishes, the `onEnd` callback clears the `activeStreamId` by setting it to `null`
 
 ## Customize the resume endpoint
 
 By default, the `useChat` hook makes a GET request to `/api/chat/[id]/stream` when resuming. Customize this endpoint, credentials, and headers, using the `prepareReconnectToStreamRequest` option in `DefaultChatTransport`:
 
-```tsx filename="app/chat/[chatId]/chat.tsx"
+The callback receives the original, unencoded ID. Its returned `api` URL is used
+verbatim, so encode and validate any ID you include in a custom URL yourself.
+
+```tsx title="app/chat/[chatId]/chat.tsx"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -234,10 +239,10 @@ export function Chat({ chatData, resume }) {
       // Customize reconnect settings (optional)
       prepareReconnectToStreamRequest: ({ id }) => {
         return {
-          api: `/api/chat/${id}/stream`, // Default pattern
+          api: `/api/chat/${encodeURIComponent(id)}/stream`,
           // Or use a different pattern:
-          // api: `/api/streams/${id}/resume`,
-          // api: `/api/resume-chat?id=${id}`,
+          // api: `/api/streams/${encodeURIComponent(id)}/resume`,
+          // api: `/api/resume-chat?id=${encodeURIComponent(id)}`,
           credentials: 'include', // Include cookies/auth
           headers: {
             Authorization: 'Bearer token',
@@ -276,7 +281,7 @@ The chat setup is the same as the resumable stream setup above. To add stop beha
 
 When the client knows the active stream ID, include it in the request. This lets the server ignore stale stop requests that arrive after a newer stream has already started.
 
-```tsx filename="app/chat/[chatId]/chat.tsx"
+```tsx title="app/chat/[chatId]/chat.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -304,7 +309,7 @@ export function Chat({
     const assistantMessage =
       lastMessage?.role === 'assistant' ? lastMessage : undefined;
 
-    void fetch(`/api/chat/${chatData.id}/stop`, {
+    void fetch(`/api/chat/${encodeURIComponent(chatData.id)}/stop`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(
@@ -335,7 +340,7 @@ The stop endpoint should:
 3. Cancel the work that is producing the stream
 4. Clear `activeStreamId` only if it still points to the same stream
 
-```ts filename="app/api/chat/[id]/stop/route.ts"
+```ts title="app/api/chat/[id]/stop/route.ts"
 import { readChat, saveChat } from '@util/chat-store';
 import { type UIMessage } from 'ai';
 
@@ -404,25 +409,13 @@ After a user stops a stream, avoid automatic reconnect attempts for that chat un
 - **Race conditions**: Clear the `activeStreamId` when starting a new stream to prevent resuming outdated streams
 
 <br />
-<GithubLink link="https://github.com/vercel/ai/blob/main/examples/next" />
 
+[View Example on GitHub](https://github.com/vercel/ai/blob/main/examples/next)
 
-## Navigation
+---
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

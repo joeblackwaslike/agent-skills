@@ -1,36 +1,31 @@
 ---
+title: Call Tools
+description: Learn how to call tools using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/call-tools"
+docs_index: /llms.txt
+tags:
+  - next
+  - tool use
 source: "https://ai-sdk.dev/cookbook/next/call-tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "674dede7360b64a543166b588f6586a8886159bfca96e9211e0da0a262b66c74"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "843ccb3b52ea7f80bc33e1b918e2e801772df0120460d6d1cdfaddd69599ed16"
 ---
 
-# Call Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Some models allow developers to provide a list of tools that can be called at any time during a generation. This is useful for extending the capabilities of a language model to either use logic or data to interact with systems external to the model.
 
-<Browser>
-  <ChatGeneration
-    history={[
-      { role: 'User', content: 'How is it going?' },
-      { role: 'Assistant', content: 'All good, how may I help you?' },
-    ]}
-    inputMessage={{
-      role: 'User',
-      content: 'What is the weather in Paris and New York?',
-    }}
-    outputMessage={{
-      role: 'Assistant',
-      content:
-        'The weather is 24°C in New York and 25°C in Paris. It is sunny in both cities.',
-    }}
-  />
-</Browser>
+User: How is it going?
+
+Assistant: All good, how may I help you?
+
+What is the weather in Paris and New York?
 
 ## Client
 
 Let's create a React component that imports the `useChat` hook from the `@ai-sdk/react` module. The `useChat` hook will call the `/api/chat` endpoint when the user sends a message. The endpoint will generate the assistant's response based on the conversation history and stream it to the client. If the assistant responds with a tool call, the hook will automatically display them as well.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -90,11 +85,11 @@ export default function Page() {
 
 You will create a new route at `/api/chat` that will use the `streamText` function from the `ai` module to generate the assistant's response based on the conversation history.
 
-You will use the [`tools`](/docs/reference/ai-sdk-core/generate-text#tools) parameter to specify a tool called `celsiusToFahrenheit` that will convert a user given value in celsius to fahrenheit.
+You will use the [`tools`](/docs/reference/ai-sdk-core/generate-text#tools) parameter to specify a tool called `getWeather` that will get the weather for a user given city.
 
-You will also use zod to specify the schema for the `celsiusToFahrenheit` function's parameters.
+You will also use zod to specify the schema for the `getWeather` tool's parameters.
 
-```tsx filename='app/api/chat/route.ts'
+```tsx title='app/api/chat/route.ts'
 import {
   type InferUITools,
   type ToolSet,
@@ -150,35 +145,14 @@ export async function POST(req: Request) {
 }
 ```
 
+***
+
+[View Example on GitHub](https://github.com/vercel/ai/blob/main/examples/next-openai-pages/pages/tools/call-tool/index.tsx)
+
 ---
 
-<GithubLink link="https://github.com/vercel/ai/blob/main/examples/next-openai-pages/pages/tools/call-tool/index.tsx" />
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-## Navigation
-
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
-
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

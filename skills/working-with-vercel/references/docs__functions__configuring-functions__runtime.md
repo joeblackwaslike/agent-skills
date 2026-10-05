@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "b2146c5d6d2c6dcd513a20e3a4ea9a47339bc820d5f37f6a67ca7e4475c0a1bb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c94d3738043b14679c321e4e5c7a43e7042b0a13ac61c0510421704c867c0cb4"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -190,7 +190,7 @@ You can configure other runtimes by using the `functions` property in your `verc
 }
 ```
 
-In this case, the function at `api/hello.ts` would use the custom runtime specified.
+In this case, the function at `api/test.php` would use the custom runtime specified.
 
 For more information, see [Community runtimes](/docs/functions/runtimes#community-runtimes)
 

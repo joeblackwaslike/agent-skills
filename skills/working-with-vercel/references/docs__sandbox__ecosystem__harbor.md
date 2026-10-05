@@ -17,8 +17,8 @@ related:
 summary: Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker microVM.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/harbor.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "efeac6531f00ff9f1ceca34d20609d45d149b16224d68a53c732adb47ed22e7f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4559a90ca51db23401fc1840d73cba25fa422c766043ed4d2256004e7a481f17"
 ---
 
 # Harbor and Terminal-Bench
@@ -46,9 +46,8 @@ parallel than on your local machine.
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Harbor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/harbor?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separat
+- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/harbor.graph.md](/docs/sandbox/ecosystem/harbor.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fharbor&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

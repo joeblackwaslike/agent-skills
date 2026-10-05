@@ -12,13 +12,13 @@ related:
 summary: All packages must define a conformance script that invokes the Conformance package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/workspace_missing_conformance_script.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4bee588adbfc97639ac97ef1f87ab94568f7b72d8db066fbaabd58b25eac1a45"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7c706c207a3f6eadc427a19e3c4d71157a731e00e74b14ac3bfbf313e6cdb4ac"
 ---
 
 # WORKSPACE_MISSING_CONFORMANCE_SCRIPT
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Conformance requires a script to exist in every workspace in the
 repository. This makes sure that Conformance rules are running on all code.

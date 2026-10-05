@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f172caea3c83552e374aaf7c4a184d623e8ecbf65681c2638e677342900c4ffc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "acc9f4b587bd471aee22645fa7f76b4300fcb4f7a6d53b74a620b9093756cb6f"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -42,7 +42,7 @@ Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions writt
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -199,7 +199,7 @@ Vercel additionally provides helper methods inside of the Request and Response o
 | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `request.query`                                         | An object containing the request's [query string](https://en.wikipedia.org/wiki/Query_string), or `{}` if the request does not have a query string.                                                 | Request  |
 | `request.cookies`                                       | An object containing the cookies sent by the request, or `{}` if the request contains no cookies.                                                                                                   | Request  |
-| [`request.body`](#request-body)                         | An object containing the body sent by the request, or `null` if no body is sent.                                                                                                                    | Request  |
+| [`request.body`](#request-body)                         | An object containing the body sent by the request, or `undefined` if the request has no `Content-Type` header or an unsupported one.                                                                | Request  |
 | `response.status(code)`                                 | A function to set the status code sent with the response where `code` must be a valid [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). Returns `response` for chaining. | Response |
 | `response.send(body)`                                   | A function to set the content of the response where `body` can be a `string`, an `object` or a `Buffer`.                                                                                            | Response |
 | `response.json(obj)`                                    | A function to send a JSON response where `obj` is the JSON object to send.                                                                                                                          | Response |

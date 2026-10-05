@@ -1,10 +1,14 @@
 ---
+title: Cartesia
+description: Learn how to use the Cartesia provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "003da3fd9c5f06ed898b5093bf919e0767e245e4d6c56971f81824183044be00"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6210df74e7b1b3c1fb232dd41751312d90a9fe7b4a43a57c450648d690b791e8"
 ---
 
-# Cartesia Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Cartesia](https://cartesia.ai/) provider contains Sonic speech generation,
 Ink-Whisper batch transcription, and Ink 2 realtime and streaming transcription
@@ -14,21 +18,29 @@ support.
 
 The Cartesia provider is available in the `@ai-sdk/cartesia` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/cartesia" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/cartesia" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/cartesia" dark />
-  </Tab>
+#### pnpm
 
-  <Tab>
-    <Snippet text="bun add @ai-sdk/cartesia" dark />
-  </Tab>
-</Tabs>
+```
+pnpm add @ai-sdk/cartesia
+```
+
+#### npm
+
+```
+npm install @ai-sdk/cartesia
+```
+
+#### yarn
+
+```
+yarn add @ai-sdk/cartesia
+```
+
+#### bun
+
+```
+bun add @ai-sdk/cartesia
+```
 
 ## Provider Instance
 
@@ -51,27 +63,27 @@ const cartesia = createCartesia({
 
 You can use the following optional settings to customize the Cartesia provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `CARTESIA_API_KEY` environment variable.
 
-- **version** _string_
+- **version** *string*
 
   The Cartesia API version to use (sent via the `Cartesia-Version` header).
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **webSocket** _WebSocketConstructor_
+- **webSocket** *WebSocketConstructor*
 
   Custom WebSocket implementation for Ink 2 streaming transcription.
   Defaults to the global `WebSocket` constructor.
@@ -102,7 +114,7 @@ const result = await generateSpeech({
 
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
-```ts highlight="7-12"
+```ts {7-12}
 import { generateSpeech } from 'ai';
 import { cartesia, type CartesiaSpeechModelOptions } from '@ai-sdk/cartesia';
 
@@ -122,34 +134,34 @@ const result = await generateSpeech({
 
 The following provider options are available:
 
-- **container** _string_
+- **container** *string*
 
   Container format for the output audio.
   Supported values: `'raw'`, `'wav'`, `'mp3'`.
   Optional.
 
-- **encoding** _string_
+- **encoding** *string*
 
   Encoding type for the audio output.
   Supported values: `'pcm_f32le'`, `'pcm_s16le'`, `'pcm_mulaw'`, `'pcm_alaw'`.
   Optional.
 
-- **sampleRate** _number_
+- **sampleRate** *number*
 
   Sample rate for the output audio in Hz (e.g. `8000`, `16000`, `22050`, `24000`, `44100`, `48000`).
   Optional.
 
-- **bitRate** _number_
+- **bitRate** *number*
 
   Bitrate for `mp3` output in bits per second (e.g. `32000`, `64000`, `128000`, `192000`).
   Optional.
 
-- **speed** _number_
+- **speed** *number*
 
   Controls the speed of the generated speech between `0.6` and `1.5`.
   Optional.
 
-- **language** _string_
+- **language** *string*
 
   The language to generate speech in (ISO 639-1 code).
   Optional.
@@ -166,7 +178,7 @@ The following provider options are available:
 
 ## Realtime Transcription Models
 
-<Note type="warning">Realtime is an experimental feature.</Note>
+Realtime is an experimental feature.
 
 You can create a model for Cartesia's realtime [Ink 2](https://docs.cartesia.ai/build-with-cartesia/stt/latest)
 API using the `.experimental_realtime()` factory method:
@@ -201,13 +213,13 @@ setup.
 
 ### Model Capabilities
 
-| Model   | Streaming Transcription | Turn Detection      |
-| ------- | ----------------------- | ------------------- |
-| `ink-2` | <Check size={18} />     | <Check size={18} /> |
+| Model   | Streaming Transcription | Turn Detection |
+| ------- | ----------------------- | -------------- |
+| `ink-2` | ✓                       | ✓              |
 
 ## Streaming Transcription Models
 
-<Note type="warning">Streaming transcription is an experimental feature.</Note>
+Streaming transcription is an experimental feature.
 
 Ink 2 is also available through the transcription streaming API. Create the
 model with `.transcription()` and pass it to `experimental_streamTranscribe`:
@@ -272,9 +284,9 @@ streaming transcription.
 
 ### Model Capabilities
 
-| Model   | Streaming Transcription | Turn Detection      |
-| ------- | ----------------------- | ------------------- |
-| `ink-2` | <Check size={18} />     | <Check size={18} /> |
+| Model   | Streaming Transcription | Turn Detection |
+| ------- | ----------------------- | -------------- |
+| `ink-2` | ✓                       | ✓              |
 
 ## Batch Transcription Models
 
@@ -302,7 +314,7 @@ const result = await transcribe({
 
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
-```ts highlight="11-15"
+```ts {11-15}
 import { transcribe } from 'ai';
 import {
   cartesia,
@@ -323,69 +335,26 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **language** _string_
+- **language** *string*
 
   The language of the audio (ISO 639-1 code). If not specified, it defaults to English.
   Optional.
 
-- **timestampGranularities** _array of strings_
+- **timestampGranularities** *array of strings*
 
   The timestamp granularities to populate. Currently only `'word'` is supported.
   Optional.
 
 ### Model Capabilities
 
-| Model         | Transcription       | Duration            | Segments            | Language            |
-| ------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `ink-whisper` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model         | Transcription | Duration | Segments | Language |
+| ------------- | ------------- | -------- | -------- | -------- |
+| `ink-whisper` | ✓             | ✓        | ✓        | ✓        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

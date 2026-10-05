@@ -1,16 +1,18 @@
 ---
+title: Crosshatch
+description: Learn how to use the Crosshatch provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/crosshatch"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/crosshatch.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "76deb1f3984620861aefedae7251059356a6c3e9b12dd4cd950178f5c2fa67b5"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c69c62fbe249d439d41b98dfb11c78b914ee2c8fbe04c0c91a820676d70abb8a"
 ---
 
-# Crosshatch Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  This community provider is not yet compatible with AI SDK 5. Please wait for
-  the provider to be updated or consider using an [AI SDK 5 compatible
-  provider](/providers/ai-sdk-providers).
-</Note>
+This community provider is not yet compatible with AI SDK 5. Please wait for
+the provider to be updated or consider using an [AI SDK 5 compatible
+provider](/providers/ai-sdk-providers).
 
 The [Crosshatch](https://crosshatch.io) provider supports secure inference from popular language models with permissioned access to data users share, giving responses personalized with complete user context.
 
@@ -21,7 +23,7 @@ It creates language model objects that can be used with the `generateText` and `
 The Crosshatch provider is available via the `@crosshatch/ai-provider` module.
 You can install it with:
 
-<InstallPackages packages="@crosshatch/ai-provider" />
+**Packages:** `@crosshatch/ai-provider`
 
 The [Crosshatch](https://crosshatch.io/) provider supports all of their available models such as OpenAI's GPT and Anthropic's Claude. This provider also supports the querying interface for controlling Crosshatch's custom data integration behaviors. This provider wraps the existing underlying providers ([@ai-sdk/openai](/providers/ai-sdk-providers/openai), [@ai-sdk/anthropic](/providers/ai-sdk-providers/openai).
 
@@ -59,28 +61,28 @@ This example uses `gpt-4o-mini` to generate text.
 
 ```ts
 import { generateText } from 'ai';
-import createCrosshatch from '@crosshatch/ai-provider':
+import createCrosshatch from '@crosshatch/ai-provider';
 const crosshatch = createCrosshatch();
 
 const { text } = await generateText({
-  model: crosshatch.languageModel("gpt-4o-mini", {
+  model: crosshatch.languageModel('gpt-4o-mini', {
     token: 'YOUR_ACCESS_TOKEN',
     replace: {
       restaurants: {
-        select: ["entity_name", "entity_city", "entity_region"],
-        from: "personalTimeline",
+        select: ['entity_name', 'entity_city', 'entity_region'],
+        from: 'personalTimeline',
         where: [
-          { field: "event", op: "=", value: "confirmed" },
-          { field: "entity_subtype2", op: "=", value: "RESTAURANTS" }
+          { field: 'event', op: '=', value: 'confirmed' },
+          { field: 'entity_subtype2', op: '=', value: 'RESTAURANTS' },
         ],
-        groupby: ["entity_name", "entity_city", "entity_region"],
-        orderby: "count DESC",
-        limit: 5
-      }
-    }
+        groupby: ['entity_name', 'entity_city', 'entity_region'],
+        orderby: 'count DESC',
+        limit: 5,
+      },
+    },
   }),
   system: `The user recently ate at these restaurants: {restaurants}`,
-  messages: [{role: "user", content: "Where should I stay in Paris?"}]
+  messages: [{ role: 'user', content: 'Where should I stay in Paris?' }],
 });
 ```
 
@@ -89,102 +91,56 @@ const { text } = await generateText({
 Use crosshatch to re-rank items based on recent user purchases.
 
 ```ts
-import { streamText, Output } from 'ai';
-import createCrosshatch from `@crosshatch/ai-provider`
+import { streamText, Output, jsonSchema } from 'ai';
+import createCrosshatch from '@crosshatch/ai-provider';
 const crosshatch = createCrosshatch();
 
-const itemSummaries = [...]; // list of items
+const itemSummaries: { itemId: string }[] = [
+  /* your items */
+];
 const ids = (itemSummaries?.map(({ itemId }) => itemId) ?? []) as string[];
 
 const { elementStream } = streamText({
   output: Output.array({
     element: jsonSchema<{ id: string; reason: string }>({
-      type: "object",
+      type: 'object',
       properties: {
-        id: { type: "string", enum: ids },
-        reason: { type: "string", description: "Explain your ranking." },
+        id: { type: 'string', enum: ids },
+        reason: { type: 'string', description: 'Explain your ranking.' },
       },
     }),
   }),
-  model: crosshatch.languageModel("gpt-4o-mini", {
-    token,
+  model: crosshatch.languageModel('gpt-4o-mini', {
+    token: 'YOUR_ACCESS_TOKEN',
     replace: {
-      "orders": {
-        select: ["originalTimestamp", "entity_name", "order_total", "order_summary"],
-        from: "personalTimeline",
-        where: [{ field: "event", op: "=", value: "purchased" }],
-        orderBy: [{ field: "originalTimestamp", dir: "desc" }],
+      orders: {
+        select: [
+          'originalTimestamp',
+          'entity_name',
+          'order_total',
+          'order_summary',
+        ],
+        from: 'personalTimeline',
+        where: [{ field: 'event', op: '=', value: 'purchased' }],
+        orderBy: [{ field: 'originalTimestamp', dir: 'desc' }],
         limit: 5,
       },
     },
   }),
   system: `Rerank the following items based on alignment with users recent purchases {orders}`,
-  messages: [{role: "user", content: "Heres a list of item: ${JSON.stringify(itemSummaries)"},],
-})
+  messages: [
+    {
+      role: 'user',
+      content: `Here's a list of items: ${JSON.stringify(itemSummaries)}`,
+    },
+  ],
+});
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

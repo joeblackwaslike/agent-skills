@@ -13,8 +13,8 @@ related:
 summary: Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python/python-version.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1107c5f511d29f41a2a133a32fbb45d73d043799775a4a9199a8919d68e765d9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7b540d7a1ff3903ee0edd02caed7d344a37f723ca3b9330a8e2e9258266ff96e"
 ---
 
 # Set the Python version for your Vercel project
@@ -35,6 +35,7 @@ the default Python version.
 - [Python 3.12 and Ruby 3.3 are now available](https://vercel.com/changelog/python-3-12-and-ruby-3-3-are-now-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related)
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Learn about the supported Node.js versions on Vercel.
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
+- [update_version](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_version?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Use update_version with Vercel MCP.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 - [Package Managers](https://vercel.com/docs/package-managers?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fpython%2Fpython-version&source_site=vercel-docs&relationship=related) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
 

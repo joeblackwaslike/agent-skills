@@ -1,10 +1,14 @@
 ---
+title: Loop Control
+description: Control agent execution with built-in loop management using stopWhen and prepareStep
+url: "https://ai-sdk.dev/docs/agents/loop-control"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "0988711553ff378b521f10c393fa3953d87377c34da625f44c54956a501be114"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c7cf81a3891bd98192b7697803f600901409e4c481e372684e83d5f24af8fc70"
 ---
 
-# Loop Control
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can control both the execution flow and the settings at each step of the agent loop. The loop continues until:
 
@@ -35,10 +39,9 @@ The AI SDK provides several built-in stopping conditions:
 
 ```ts
 import { ToolLoopAgent, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // your tools
   },
@@ -56,10 +59,9 @@ If you want a `ToolLoopAgent` to run until the model naturally stops making tool
 
 ```ts
 import { ToolLoopAgent, isLoopFinished } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // your tools
   },
@@ -71,11 +73,9 @@ const result = await agent.generate({
 });
 ```
 
-<Note>
-  Use `isLoopFinished()` with caution. Without a step limit, the agent could
-  potentially run indefinitely or incur significant costs if the model keeps
-  making tool calls.
-</Note>
+Use `isLoopFinished()` with caution. Without a step limit, the agent could
+potentially run indefinitely or incur significant costs if the model keeps
+making tool calls.
 
 ### Combine Multiple Conditions
 
@@ -83,10 +83,9 @@ Combine multiple stopping conditions. The loop stops when it meets any condition
 
 ```ts
 import { ToolLoopAgent, isStepCount, hasToolCall } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // your tools
   },
@@ -107,7 +106,6 @@ Build custom stopping conditions for specific requirements:
 
 ```ts
 import { ToolLoopAgent, StopCondition, ToolSet } from 'ai';
-__PROVIDER_IMPORT__;
 
 const tools = {
   // your tools
@@ -119,7 +117,7 @@ const hasAnswer: StopCondition<typeof tools> = ({ steps }) => {
 };
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools,
   stopWhen: hasAnswer,
 });
@@ -159,7 +157,6 @@ Switch models based on step requirements:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
   model: 'openai/gpt-6-luna', // Default model
@@ -170,7 +167,7 @@ const agent = new ToolLoopAgent({
     // Use a stronger model for complex reasoning after initial steps
     if (stepNumber > 2 && messages.length > 10) {
       return {
-        model: __MODEL__,
+        model: "anthropic/claude-sonnet-5.5",
       };
     }
     // Continue with default settings
@@ -191,10 +188,9 @@ final response:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   temperature: 0.7,
   tools: {
     // your tools
@@ -233,7 +229,6 @@ The `pruneMessages` helper provides a built-in way to remove selected messages. 
 
 ```ts
 import { ToolLoopAgent, pruneMessages, type ModelMessage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const COMPACTION_THRESHOLD = 100_000;
 
@@ -242,7 +237,7 @@ const estimateTokens = (messages: ModelMessage[]) => {
 };
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // your tools
   },
@@ -273,10 +268,9 @@ Control which tools are available at each step:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     search: searchTool,
     analyze: analyzeTool,
@@ -339,10 +333,9 @@ Transform messages before sending them to the model. Returned messages carry for
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // your tools
   },
@@ -373,10 +366,9 @@ Switch the experimental sandbox used for tool execution in a single step:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     runCommand,
   },
@@ -434,10 +426,9 @@ You can force the agent to always use tools by combining `toolChoice: 'required'
 ```ts
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     search: searchTool,
     analyze: analyzeTool,
@@ -481,7 +472,6 @@ Build your own agent loop when you need full control over execution:
 
 ```ts
 import { generateText, ModelMessage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const messages: ModelMessage[] = [{ role: 'user', content: '...' }];
 
@@ -490,7 +480,7 @@ const maxSteps = 10;
 
 while (step < maxSteps) {
   const result = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages,
     tools: {
       // your tools here
@@ -517,20 +507,10 @@ This manual approach gives you complete control over:
 
 [Learn more about manual agent loops in the cookbook](/cookbook/node/manual-agent-loop).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

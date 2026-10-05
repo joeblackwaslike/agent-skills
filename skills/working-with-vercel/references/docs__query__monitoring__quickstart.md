@@ -9,16 +9,16 @@ prerequisites:
   - /docs/query/monitoring
   - /docs/query
 related:
-  - /docs/plans/pro-plan
   - /docs/plans/enterprise
-  - /docs/observability
+  - /docs/observability/observability-plus
+  - /docs/query
   - /docs/query/monitoring/monitoring-reference
   - /docs/query/monitoring
 summary: "In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/quickstart.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "488a483ac0d9d0f622967ccdd5db97a42bfac942f4ec5d35a9cfc3b85a1d8d7e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c2df8d902ce348671925136076cbee2f9895429c0191f93447bb09eebd42c22e"
 ---
 
 # Monitoring Quickstart
@@ -32,11 +32,11 @@ Monitoring is now
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel MCP tools for observability.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/query/monitoring/quickstart.graph.md](/docs/query/monitoring/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -61,8 +61,8 @@ Help me set up Vercel Monitoring in this project. First, make sure the Vercel CL
 
 ## Prerequisites
 
-- Make sure you upgrade to [Pro](/docs/plans/pro-plan) or [Enterprise](/docs/plans/enterprise) plan.
-- Pro and Enterprise teams should [Upgrade to Observability Plus](/docs/observability#enabling-observability-plus) to access Monitoring.
+- Monitoring is only available to [Enterprise](/docs/plans/enterprise) teams that already have Monitoring access.
+- Pro teams and other Enterprise teams can't enable Monitoring. Instead, [enable Observability Plus](/docs/observability/observability-plus#enabling-observability-plus) and use [Query](/docs/query).
 
 ## Create a new query
 

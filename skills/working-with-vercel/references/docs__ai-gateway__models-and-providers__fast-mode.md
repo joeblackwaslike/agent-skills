@@ -14,8 +14,8 @@ related:
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "74e08fa02e694802c7125476176d072733f84027ba289ae85bbe559d02ad1673"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cda51b03c5deb9ec753d262d6706f9879c4d29bd1d17d9e9e4bf2523f6066fca"
 ---
 
 # AI Gateway Fast Mode
@@ -34,6 +34,7 @@ Some models expose a faster serving path that trades a higher per-token cost for
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Ffast-mode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

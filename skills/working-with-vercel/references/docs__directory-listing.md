@@ -12,19 +12,19 @@ related:
 summary: The Directory Listing is served when a particular path is a directory and does not contain an index file. Learn how to toggle and disable it in this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-listing.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f6abfeb61549f0c8baa9ae3dea4e86e0234a8b5b8c0651e1660e55df292dca9d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "65943c6e1a46bae8d296836093aafb4ecb68dc0399ef5a9b754432cce6ac15f0"
 ---
 
 # Using the Directory Listing
 
 The Directory Listing setting enables you to display the contents of a directory when a user visits its path. For example, if you create a directory at the root of your project called `/assets`, then when people visit `https://your-site.com/assets`, they will see the files and folders within that directory, as shown in the example below:
 
-![Image](`/front/docs/projects/directory-listing-page-light.png`)
+![The contents of a /assets directory.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/projects/directory-listing-page-light.png)
 
 You can enable or disable Directory Listing from **Advanced** in your project sidebar settings.
 
-![Image](`/front/docs/projects/directory-listing-light.png`)
+![Directory Listing for an example /assets directory.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/projects/directory-listing-light.png)
 
 When enabled, the Directory Listing will be displayed. When disabled, a "Not Found" error will be displayed with status code `404`.
 

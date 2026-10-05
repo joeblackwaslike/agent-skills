@@ -16,8 +16,8 @@ related:
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "6c0ad8729aabd5c9013db8504a8ad8219cb6f957ed16486eb6f9e6e03ff5e238"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "54a0b272749f68b1a72153dac88425e0ab665755fadc9eb2b4a9f0d192de11d2"
 ---
 
 # Concepts
@@ -34,12 +34,13 @@ the runtime as a deployable app.
 
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Create an eve project, configure model credentials, and run your first agent.
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
 - [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [How Software Factories Work](https://vercel.com/docs/eve/software-factory?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed chan
 
 Full cross-link map for this page: [/docs/eve/concepts.graph.md](/docs/eve/concepts.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fconcepts&source_site=vercel-docs&relationship=graph)

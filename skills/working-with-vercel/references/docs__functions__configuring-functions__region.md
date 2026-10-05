@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "94e38ff7902475d1c9427b256a15d27e2b650131bdd7adb105fec21cf2f3a676"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0fe857ca558b7bd11739edd2008b96b5a0ada07021b8cd210b1deeb1a668c820"
 ---
 
 # Configuring regions for Vercel Functions
@@ -37,11 +37,11 @@ The Vercel platform caches all static content in [the CDN](/docs/caching/cdn-cac
 - [OpenAI will not support the Hong Kong region (hkg1) for Functions](https://vercel.com/changelog/openai-will-not-support-the-hong-kong-region-hkg1-for-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 - [Pro customers can now configure up to 3 regions for Vercel Functions](https://vercel.com/changelog/pro-customers-can-now-configure-up-to-3-regions-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 - [Vercel Edge Functions can now be regional or global](https://vercel.com/changelog/regional-edge-functions-are-now-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
+- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
-- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/region.graph.md](/docs/functions/configuring-functions/region.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fregion&source_site=vercel-docs&relationship=graph)
@@ -67,7 +67,7 @@ To change the default regions in the dashboard:
 3. From the left side, select [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings)
 4. Use the **Function Regions** accordion to select your project's default regions:
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/regions/function-regions-selection-light.png`)
+![The Function Regions setting in a Vercel project's dashboard](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/regions/function-regions-selection-light.png)
 
 ### Project configuration
 
@@ -146,7 +146,7 @@ Vercel Functions have multiple availability zone redundancy by default. Multi-re
 
 ### Node.js runtime failover
 
-> **🔒 Permissions Required**: Setting failover regions
+> **Availability**: Setting failover regions are available on Enterprise plans
 
 Enterprise teams can enable multi-region redundancy for Vercel Functions using Node.js.
 
@@ -156,7 +156,7 @@ To automatically failover to the closest region in the event of an outage:
 2. Open **Settings** in the sidebar and select [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings)
 3. Enable the **Function Failover** toggle:
 
-   ![Image](`/docs-assets/static/docs/concepts/functions/function-failover-light.png`)
+   ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/functions/function-failover-light.png)
 
 To manually specify the fallback region, you can pass one or more regions to the [`functionFailoverRegions`](/docs/project-configuration/vercel-json#functionfailoverregions) property in your `vercel.json` file:
 
@@ -175,7 +175,7 @@ During an automatic failover, Vercel will reroute application traffic to the nex
 
 You can view your default and failover regions through the [deployment summary](/docs/deployments#resources-tab-and-deployment-summary):
 
-![Image](`/docs-assets/static/docs/concepts/functions/function-failover-region-light.png`)
+![Failover regions for your Vercel functions shown in the deployment summary.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/functions/function-failover-region-light.png)
 
 Region failover is supported with Secure Compute. See [Region Failover](/docs/networking/secure-compute#region-failover) to learn more.
 

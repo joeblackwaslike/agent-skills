@@ -16,8 +16,8 @@ related:
 summary: Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web search, and compare provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a1318fe17e638a417b1a9e617a7afe215c870514af94825e65244fd2ebb16f0a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a10524dd28c9b47f87c2759f09618ed0b2fb0814847a71ac37c7fc5330270e2b"
 ---
 
 # AI Gateway Models and Providers
@@ -34,8 +34,9 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
@@ -81,6 +82,8 @@ https://ai-gateway.vercel.sh/v1/models
 ```
 
 This endpoint requires no authentication and returns model IDs, context windows, pricing, and reasoning controls. Use `reasoning_options` to discover effort levels, thinking budgets, or toggles. See [reasoning model discovery](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) for TypeScript, Python, and cURL examples, or [Dynamic model discovery](#dynamic-model-discovery) for SDK usage.
+
+Authenticated requests can pass `include_availability` to annotate each model with its eligibility under your team's configuration. See [team availability annotations](/docs/ai-gateway/sdks-and-apis/rest-api#team-availability-annotations) in the REST API reference.
 
 ### Specifying the model
 

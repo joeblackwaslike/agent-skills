@@ -16,8 +16,8 @@ related:
 summary: Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel Functions or in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "6344e701da6a9213f4f2d4d4b25ce39fa7f98ce106c2f01cfd83e6f2719ad66a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "411aa89b131ec30e327e37c9b4f20d6c465113cc7308f64749311b795579c694"
 ---
 
 # Vercel Container Registry
@@ -31,6 +31,7 @@ Vercel Container Registry (VCR) is a Docker-compatible container registry built 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
 - [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
@@ -38,8 +39,7 @@ Vercel Container Registry (VCR) is a Docker-compatible container registry built 
 - [Push images to Vercel Container Registry from GitHub Actions](https://vercel.com/changelog/vcr-login-github-action?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related)
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fcontainer-registry&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 

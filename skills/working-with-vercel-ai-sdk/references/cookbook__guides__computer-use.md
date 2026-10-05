@@ -1,21 +1,26 @@
 ---
+title: Get started with Computer Use
+description: "Get started with Claude's Computer Use capabilities with the AI SDK"
+url: "https://ai-sdk.dev/cookbook/guides/computer-use"
+docs_index: /llms.txt
+tags:
+  - computer-use
+  - tools
 source: "https://ai-sdk.dev/cookbook/guides/computer-use.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "061fa935e827fab89b62d8cf6c01c64e2fec3a6bd0c3582b30083dc9bad70577"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6a4b93120e0a4c89193a615ae2afb1ee26daca325117f53155843204f9af0293"
 ---
 
-# Get started with Computer Use
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 With the [release of Computer Use in Claude 3.5 Sonnet](https://www.anthropic.com/news/3-5-models-and-computer-use), you can now direct AI models to interact with computers like humans do - moving cursors, clicking buttons, and typing text. This capability enables automation of complex tasks while leveraging Claude's advanced reasoning abilities.
 
 The AI SDK is a powerful TypeScript toolkit for building AI applications with large language models (LLMs) like Anthropic's Claude alongside popular frameworks like React, Next.js, Vue, Svelte, Node.js, and more. In this guide, you will learn how to integrate Computer Use into your AI SDK applications.
 
-<Note>
-  Computer Use is currently in beta with some [ limitations
-  ](https://docs.anthropic.com/en/docs/build-with-claude/computer-use#understand-computer-use-limitations).
-  The feature may be error-prone at times. Anthropic recommends starting with
-  low-risk tasks and implementing appropriate safety measures.
-</Note>
+Computer Use is currently in beta with some [ limitations
+](https://docs.anthropic.com/en/docs/build-with-claude/computer-use#understand-computer-use-limitations).
+The feature may be error-prone at times. Anthropic recommends starting with
+low-risk tasks and implementing appropriate safety measures.
 
 ## Computer Use
 
@@ -75,20 +80,18 @@ This reference implementation serves as a foundation to understand the requireme
 
 ## Getting Started with the AI SDK
 
-<Note>
-  If you have never used the AI SDK before, start by following the [Getting
-  Started guide](/docs/getting-started).
-</Note>
+If you have never used the AI SDK before, start by following the [Getting
+Started guide](/docs/getting-started).
 
-<Note>
-  For a working example of Computer Use implementation with Next.js and the AI
-  SDK, check out our [AI SDK Computer Use
-  Template](https://github.com/vercel-labs/ai-sdk-computer-use).
-</Note>
+For a working example of Computer Use implementation with Next.js and the AI
+SDK, check out our [AI SDK Computer Use
+Template](https://github.com/vercel-labs/ai-sdk-computer-use).
 
 First, ensure you have the AI SDK and [Anthropic AI SDK provider](/providers/ai-sdk-providers/anthropic) installed:
 
-<Snippet text="pnpm add ai @ai-sdk/anthropic" />
+```
+pnpm add ai @ai-sdk/anthropic
+```
 
 You can add Computer Use to your AI SDK applications using provider-defined-client tools. These tools accept various input parameters (like display height and width in the case of the computer tool) and then require that you define an execute function.
 
@@ -126,11 +129,9 @@ The `computerTool` handles two main actions: taking screenshots via `getScreensh
 
 Finally, to send tool results back to the model, use the [`toModelOutput()`](/docs/foundations/prompts#multi-modal-tool-results) function to convert text and image responses into a format the model can process. The AI SDK includes experimental support for these multi-modal tool results when using Anthropic's models.
 
-<Note>
-  Computer Use requires appropriate safety measures like using virtual machines,
-  limiting access to sensitive data, and implementing human oversight for
-  critical actions.
-</Note>
+Computer Use requires appropriate safety measures like using virtual machines,
+limiting access to sensitive data, and implementing human oversight for
+critical actions.
 
 ### Using Computer Tools with Text Generation
 
@@ -166,7 +167,7 @@ for await (const chunk of result.textStream) {
 
 To allow the model to perform multiple steps without user intervention, use the `stopWhen` parameter. This will automatically send any tool results back to the model to trigger a subsequent generation:
 
-```ts highlight="1,7"
+```ts {1,7}
 import { isStepCount } from 'ai';
 
 const stream = streamText({
@@ -190,7 +191,7 @@ const bashTool = anthropic.tools.bash_20250124({
   execute: async ({ command, restart }) => execSync(command).toString()
 });
 
-const textEditorTool = anthropic.tools.textEditor_20250124({
+const textEditorTool = anthropic.tools.textEditor_20250728({
   execute: async ({
     command,
     path,
@@ -229,10 +230,8 @@ const response = await generateText({
 });
 ```
 
-<Note>
-  Always implement appropriate [security measures](#security-measures) and
-  obtain user consent before enabling Computer Use in production applications.
-</Note>
+Always implement appropriate [security measures](#security-measures) and
+obtain user consent before enabling Computer Use in production applications.
 
 ### Best Practices for Computer Use
 
@@ -253,28 +252,10 @@ Remember, Computer Use is a beta feature. Please be aware that it poses unique r
 3. Limit internet access to an allowlist of domains to reduce exposure to malicious content.
 4. Ask a human to confirm decisions that may result in meaningful real-world consequences as well as any tasks requiring affirmative consent, such as accepting cookies, executing financial transactions, or agreeing to terms of service.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

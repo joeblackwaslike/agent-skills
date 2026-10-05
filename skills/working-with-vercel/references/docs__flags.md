@@ -16,8 +16,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "127b782752a733bbba0dfcc279ceb5f7993dd58496cc24cbd228cf40b99647f6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "45c207f77ce316ba5d938e26943f77495a709f679727c4e0fe0978a945a27ca1"
 ---
 
 # Flags
@@ -46,7 +46,7 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 Full cross-link map for this page: [/docs/flags.graph.md](/docs/flags.graph.md?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](`/docs-assets/static/docs/flags/flags-tab-light.png`)
+![Flags in Vercel Dashboard](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/flags/flags-tab-light.png)
 
 ## Why use feature flags?
 

@@ -1,12 +1,17 @@
 ---
+title: Object Generation
+description: Learn how to use the useObject hook.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/object-generation"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/object-generation.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "4e92b36eed1f0344fb8749a2d39c591f4154884b4f059f5fd27f79e2abfd130e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f2251204df40189c56f284ad679785f1d66e01eaefa8b1f6f290a3cd9f180288"
 ---
 
-# Object Generation
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>`useObject` is only available in React, Svelte, and Vue.</Note>
+`useObject` is available in React, Svelte, Vue, and the SolidJS community
+integration. Angular provides the equivalent `StructuredObject` service.
 
 The [`useObject`](/docs/reference/ai-sdk-ui/use-object) hook allows you to create interfaces that represent a structured JSON object that is being streamed.
 
@@ -20,7 +25,7 @@ The example shows a small notifications demo app that generates fake notificatio
 
 It is helpful to set up the schema in a separate file that is imported on both the client and server.
 
-```ts filename='app/api/notifications/schema.ts'
+```ts title='app/api/notifications/schema.ts'
 import { z } from 'zod';
 
 // define a schema for the notifications
@@ -41,7 +46,7 @@ The client uses [`useObject`](/docs/reference/ai-sdk-ui/use-object) to stream th
 The results are partial and are displayed as they are received.
 Please note the code for handling `undefined` values in the JSX.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -74,9 +79,8 @@ export default function Page() {
 
 On the server, we use [`streamText`](/docs/reference/ai-sdk-core/stream-text) with [`Output.object()`](/docs/reference/ai-sdk-core/output#output-object) to stream the object generation process.
 
-```typescript filename='app/api/notifications/route.ts'
+```typescript title='app/api/notifications/route.ts'
 import { createTextStreamResponse, Output, streamText, toTextStream } from 'ai';
-__PROVIDER_IMPORT__;
 import { notificationSchema } from './schema';
 
 // Allow streaming responses up to 30 seconds
@@ -86,7 +90,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     output: Output.object({ schema: notificationSchema }),
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,
@@ -110,7 +114,7 @@ This example shows how to build a simple text classifier that categorizes statem
 
 When using `useObject` with enum output mode, your schema must be an object with `enum` as the key:
 
-```tsx filename='app/classify/page.tsx'
+```tsx title='app/classify/page.tsx'
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -138,15 +142,14 @@ export default function ClassifyPage() {
 
 On the server, use `streamText` with `Output.choice()` to stream the classification result:
 
-```typescript filename='app/api/classify/route.ts'
+```typescript title='app/api/classify/route.ts'
 import { createTextStreamResponse, Output, streamText, toTextStream } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     output: Output.choice({ options: ['true', 'false'] }),
     prompt: `Classify this statement as true or false: ${context}`,
   });
@@ -169,7 +172,7 @@ purposes:
 - To show a loading spinner while the object is generated.
 - To disable the submit button.
 
-```tsx filename='app/page.tsx' highlight="6,13-20,24"
+```tsx title='app/page.tsx' {6,13-20,24}
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -206,7 +209,7 @@ export default function Page() {
 
 The `stop` function can be used to stop the object generation process. This can be useful if the user wants to cancel the request or if the server is taking too long to respond.
 
-```tsx filename='app/page.tsx' highlight="6,14-16"
+```tsx title='app/page.tsx' {6,14-16}
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -245,13 +248,11 @@ export default function Page() {
 Similarly, the `error` state reflects the error object thrown during the fetch request.
 It can be used to display an error message, or to disable the submit button:
 
-<Note>
-  We recommend showing a generic error message to the user, such as "Something
-  went wrong." This is a good practice to avoid leaking information from the
-  server.
-</Note>
+We recommend showing a generic error message to the user, such as "Something
+went wrong." This is a good practice to avoid leaking information from the
+server.
 
-```tsx file="app/page.tsx" highlight="6,13"
+```tsx title="app/page.tsx" {6,13}
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -290,7 +291,7 @@ export default function Page() {
 
 These callbacks can be used to trigger additional actions, such as logging, analytics, or custom UI updates.
 
-```tsx filename='app/page.tsx' highlight="10-20"
+```tsx title='app/page.tsx' {10-20}
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -334,7 +335,7 @@ export default function Page() {
 
 You can configure the API endpoint, optional headers and credentials using the `api`, `headers` and `credentials` settings.
 
-```tsx highlight="2-5"
+```tsx {2-5}
 const { submit, object } = useObject({
   api: '/api/use-object',
   headers: {
@@ -345,23 +346,10 @@ const { submit, object } = useObject({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

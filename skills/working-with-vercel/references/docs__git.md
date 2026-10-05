@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d0aedbfeb9885cceb48d8cea3b7cab0baf54d27520f296a9a28497b7d0fea9cc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "99a7b5ad9eb3e51282f2ebf334091fa0c117a98ef493672d8261546e9531cb41"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -36,7 +36,7 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 - [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
-- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
@@ -114,7 +114,7 @@ After clicking it, you'll be presented with a list of repositories available fro
 
 To select a different Git namespace or provider, you can use the dropdown list on the top left of the section.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/git/index/repo-list-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/git/index/repo-list-light.png)
 
 *A list of repositories available from your connected Git providers.*
 
@@ -144,7 +144,7 @@ To create a deployment from a Git reference:
 
 3. Depending on how you would like to deploy, enter the following:
    - **Targeted Deployments:** Provide the unique ID (SHA) of a commit to build a deployment based on that specific commit
-   - **Branch-Based Deployments:** Provide the full name of a branch when you want to build the most recent changes from that specific branch (for example, `https://github.com/vercel/examples/tree/deploy`)
+   - **Branch-Based Deployments:** Provide the full name or URL of a branch when you want to build the most recent changes from that specific branch (for example, `deploy` or `https://github.com/vercel/examples/tree/deploy`)
 
 4. Select **Create Deployment**. Vercel will build and deploy your commit or branch as usual
 

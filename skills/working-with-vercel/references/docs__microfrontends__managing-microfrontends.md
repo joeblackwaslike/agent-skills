@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "02bce353f28556083ac95504dac907032bc1b54ec075966b87a31469ded5bdfd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0ddbfb8649672ede1b35a3a0f9285e2bb5239c04a27e2205d48a551c73ca3ab2"
 ---
 
 # Managing microfrontends
@@ -78,7 +78,7 @@ vercel mf add-to-group --group="My Group" --default-route=/docs
 
 These changes will take effect on the next deployment.
 
-![Image](`/docs-assets/static/docs/microfrontends/add-to-microfrontends-group-2-light.png`)
+![Add the current project to a microfrontends group.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/add-to-microfrontends-group-2-light.png)
 
 ## Removing microfrontends
 

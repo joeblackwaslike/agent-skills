@@ -16,13 +16,13 @@ related:
 summary: Learn how to use the Vercel Blob SDK to access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "22f6d7203cbe0b8d70aefe95996e0c592f7c7216f6799198d8ca913889578b01"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4c7f546bc0e1bedc96e5a37eaaf5ef1104137e6c78871a8071ccee3ef43ef8f0"
 ---
 
 # @vercel/blob
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 ## Getting started
 
@@ -41,7 +41,6 @@ To start using [Vercel Blob](/storage/blob) SDK, follow the steps below:
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
 - [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=related) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusing-blob-sdk&source_site=vercel-docs&relationship=graph)
@@ -63,7 +62,7 @@ Vercel Blob works with any frontend framework. begin by installing the package:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/blob
+    yarn add @vercel/blob
     ```
   </Code>
   <Code tab="npm">
@@ -73,7 +72,7 @@ Vercel Blob works with any frontend framework. begin by installing the package:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/blob
+    bun add @vercel/blob
     ```
   </Code>
 </CodeBlock>
@@ -446,14 +445,13 @@ An example blob (uploaded with `addRandomSuffix: true`) is:
 
 > **💡 Note:** If `access` is `'public'`, the URL domain will be `.public.blob.vercel-storage.com` instead of `.private.blob.vercel-storage.com`.
 
-An example blob uploaded without `addRandomSuffix: true` (default) is:
+An example blob uploaded without `addRandomSuffix: true` (default) is shown below. Its `pathname` and `url` don't include a random suffix:
 
 ```json
 {
   "pathname": "profilesv1/user-12345.txt",
   "contentType": "text/plain",
   "contentDisposition": "attachment; filename=\"user-12345.txt\"",
-  // no automatic random suffix added 👇
   "url": "https://ce0rcu23vrrdzqap.private.blob.vercel-storage.com/profilesv1/user-12345.txt",
   "downloadUrl": "https://ce0rcu23vrrdzqap.private.blob.vercel-storage.com/profilesv1/user-12345.txt?download=1",
   "etag": "\"f6e5d4c3b2a1\""
@@ -854,6 +852,14 @@ import { head } from '@vercel/blob';
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const blobUrl = searchParams.get('url');
+
+  if (!blobUrl) {
+    return Response.json(
+      { error: 'Missing url query parameter' },
+      { status: 400 },
+    );
+  }
+
   const blobDetails = await head(blobUrl);
 
   return Response.json(blobDetails);
@@ -866,6 +872,14 @@ import { head } from '@vercel/blob';
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const blobUrl = searchParams.get('url');
+
+  if (!blobUrl) {
+    return Response.json(
+      { error: 'Missing url query parameter' },
+      { status: 400 },
+    );
+  }
+
   const blobDetails = await head(blobUrl);
 
   return Response.json(blobDetails);
@@ -878,6 +892,14 @@ import { head } from '@vercel/blob';
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const blobUrl = searchParams.get('url');
+
+  if (!blobUrl) {
+    return Response.json(
+      { error: 'Missing url query parameter' },
+      { status: 400 },
+    );
+  }
+
   const blobDetails = await head(blobUrl);
 
   return Response.json(blobDetails);
@@ -890,6 +912,14 @@ import { head } from '@vercel/blob';
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const blobUrl = searchParams.get('url');
+
+  if (!blobUrl) {
+    return Response.json(
+      { error: 'Missing url query parameter' },
+      { status: 400 },
+    );
+  }
+
   const blobDetails = await head(blobUrl);
 
   return Response.json(blobDetails);
@@ -902,6 +932,14 @@ import { head } from '@vercel/blob';
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const blobUrl = searchParams.get('url');
+
+  if (!blobUrl) {
+    return Response.json(
+      { error: 'Missing url query parameter' },
+      { status: 400 },
+    );
+  }
+
   const blobDetails = await head(blobUrl);
 
   return Response.json(blobDetails);
@@ -914,6 +952,14 @@ import { head } from '@vercel/blob';
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const blobUrl = searchParams.get('url');
+
+  if (!blobUrl) {
+    return Response.json(
+      { error: 'Missing url query parameter' },
+      { status: 400 },
+    );
+  }
+
   const blobDetails = await head(blobUrl);
 
   return Response.json(blobDetails);

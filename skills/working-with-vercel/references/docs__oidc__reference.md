@@ -12,13 +12,13 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3328eb0bc7a4bfbf8f865becca2a735c421efe425510cbb63921550ba2841ac0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ca85c5574359a4b3550a2af4f61242b0f5930e3e06cfde4b4f43833e99e08457"
 ---
 
 # OIDC Federation Reference
 
-> **🔒 Permissions Required**: Secure backend access with OIDC federation
+> **Availability**: Secure backend access with OIDC federation is available on all plans
 
 ## Helper libraries
 
@@ -38,7 +38,7 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -202,7 +202,7 @@ that are signed with the same `kid` in the token's header.
   "aud": "https://vercel.com/acme",
   "sub": "owner:acme:project:acme_website:environment:production",
   "iat": 1718885593,
-  "nfb": 1718885593,
+  "nbf": 1718885593,
   "exp": 1718892793,
   "owner": "acme",
   "owner_id": "team_7Gw5ZMzpQA8h90F832KGp7nwbuh3",
@@ -247,7 +247,7 @@ These headers are standard to the JWT tokens:
 | ------ | --------- | ------------------------------------------------ |
 | `alg`  | Algorithm | The algorithm used by the issuer                 |
 | `kid`  | Key ID    | The identifier of the key used to sign the token |
-| `typ`  | Type      | The type of token, this is set to `jwt`.         |
+| `typ`  | Type      | The type of token, this is set to `JWT`.         |
 
 
 ---

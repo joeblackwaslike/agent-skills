@@ -14,8 +14,8 @@ related:
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1e688662417faab55a59c84043652c11f253b467c7497747fb31fa0133fb481e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "15938282bca3db32541ee46c15603b7f8e28908df971ec57820f4a35e7f5a8f1"
 ---
 
 # Speed Insights Metrics
@@ -34,18 +34,18 @@ While many performance measurement tools, like [Lighthouse](https://web.dev/meas
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Speed Insights deprecates First Input Delay on November 1st](https://vercel.com/changelog/speed-insights-deprecates-first-input-delay-on-november-first?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Latency numbers every frontend developer should know](https://vercel.com/blog/latency-numbers-every-web-developer-should-know?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
-- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
 - [How Core Web Vitals Will Impact Google Rankings in 2021](https://vercel.com/blog/core-web-vitals?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [Improving INP with React 18 and Suspense](https://vercel.com/blog/improving-interaction-to-next-paint-with-react-18-and-suspense?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related)
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
 
 Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fmetrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -54,7 +54,7 @@ As a result, RES shows how real users experience your application. This real-tim
 
 You can use these insights to see how new deployments affect performance, helping you improve your application's user experience.
 
-![Image](`/docs-assets/static/docs/concepts/speed-insights/v2/res-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/speed-insights/v2/res-light.png)
 
 *An example of a Real Experience Score over time.*
 

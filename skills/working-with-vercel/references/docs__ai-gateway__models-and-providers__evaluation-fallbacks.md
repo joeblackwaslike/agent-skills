@@ -17,8 +17,8 @@ related:
 summary: Escalate uncertain AI Gateway evaluation results to another model with confidence, probability, and compound conditions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/evaluation-fallbacks.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "615c50708e6513472eb39325febe9ff0b89a6065842a535903555c9d0ae4394b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "311879b1cf4d3e809d937a2f9d8cc3e39181299ac2fba4cd0b98eef1c05a78b5"
 ---
 
 # Evaluation Fallbacks
@@ -31,12 +31,13 @@ Evaluation fallbacks rerun a successful evaluation with another model when an an
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related)
-- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related)
+- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Evaluate Choice, Score, and Boolean questions against shared state.
+- [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
+- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related)
+- [experimental_evaluate](https://ai-sdk.dev/docs/reference/ai-sdk-core/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Evaluate typed questions against shared state with an evaluation model.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/evaluation-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/evaluation-fallbacks.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fevaluation-fallbacks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -320,6 +321,14 @@ The condition matches when `P(true)` is greater than or equal to `0.4` and less 
 
 Do not use `confidenceBelow` with a Boolean or Noul question. AI Gateway validates condition predicates against the declared question types before running the primary model.
 
+## Check every question
+
+Leave out `question` to check every question of the matching type. `{ confidenceBelow }` checks each Choice and Score answer, and `{ probabilityBetween }` checks each Boolean and Noul answer. The condition matches when some answer crosses the threshold, so one unsure answer is enough to fall back:
+
+```json
+{ "confidenceBelow": 0.6 }
+```
+
 ## Combine conditions
 
 A condition can be direct or combine other conditions:
@@ -328,6 +337,8 @@ A condition can be direct or combine other conditions:
 | --- | --- |
 | `{ question, confidenceBelow }` | The named Choice or Score confidence is below the threshold, or finite confidence is unavailable |
 | `{ question, probabilityBetween }` | The named Boolean or Noul `P(true)` is inside the inclusive range |
+| `{ confidenceBelow }` | Some Choice or Score confidence is below the threshold, or unavailable |
+| `{ probabilityBetween }` | Some Boolean or Noul `P(true)` is inside the inclusive range |
 | `{ any: conditions }` | At least one nested condition matches |
 | `{ all: conditions }` | Every nested condition matches |
 | `{ atLeast: { count, conditions } }` | At least `count` nested conditions match |
@@ -458,7 +469,7 @@ AI Gateway applies these structural rules:
 
 - The conditional object must be the first `models` entry, and `models` can contain only one conditional object.
 - The conditional object's `model` cannot be the primary model, including the primary model's fast-mode or base-tier counterpart.
-- Every `question` value must be 1 to 256 characters and name a question in the evaluation request.
+- A `question` value, when present, must be 1 to 256 characters and name a question in the evaluation request.
 - `confidenceBelow` and both `probabilityBetween` bounds must be finite numbers from `0` through `1`.
 - The `probabilityBetween` lower bound cannot exceed its upper bound.
 - `any`, `all`, and `atLeast.conditions` must each contain 1 to 20 conditions.
@@ -650,7 +661,7 @@ When a condition matches, the TypeSafe-compatible API also reports the fallback 
 | `x-ai-gateway-evaluation-fallback-primary-model` | The primary model whose answers matched the condition |
 | `x-ai-gateway-evaluation-fallback-triggering-questions` | A percent-encoded JSON array of the question IDs that matched |
 
-AI Gateway sets these headers only on responses where the condition matched. It also lists them in `Access-Control-Expose-Headers`, so browser clients can read them. Decode the question list with `decodeURIComponent`, then `JSON.parse`:
+AI Gateway sets these headers only on responses where the condition matched. When the encoded question list would exceed 4,096 characters, it carries the questions that fit and AI Gateway adds `x-ai-gateway-evaluation-fallback-triggering-questions-truncated: true`. `provider_metadata.gateway.routing` always has the full list. AI Gateway lists these headers in `Access-Control-Expose-Headers`, so browser clients can read them. Decode the question list with `decodeURIComponent`, then `JSON.parse`:
 
 ```typescript filename="detect-typesafe-fallback.ts"
 const response = await fetch(

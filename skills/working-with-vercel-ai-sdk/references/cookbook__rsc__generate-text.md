@@ -1,28 +1,28 @@
 ---
+title: Generate Text
+description: Learn how to generate text using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/generate-text"
+docs_index: /llms.txt
+tags:
+  - rsc
 source: "https://ai-sdk.dev/cookbook/rsc/generate-text.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "136b37eb410778bd57fd0b90a6654d51c9ba8d0e5eef9f8ed6668bfa39ceb8fd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0790e36bc3d52c4b7ee8861b7633a59ee008117b352e7fcfa91a7a86ca6e9a02"
 ---
 
-# Generate Text
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This example uses React Server Components (RSC). If you want to client side
-  rendering and hooks instead, check out the ["generate text" example with
-  useState](/examples/next-pages/basics/generating-text).
-</Note>
+This example uses React Server Components (RSC). If you want to client side
+rendering and hooks instead, check out the ["generate text" example with
+useState](/examples/next-pages/basics/generating-text).
 
 A situation may arise when you need to generate text based on a prompt. For example, you may want to generate a response to a question or summarize a body of text. The `generateText` function can be used to generate text based on the input prompt.
-
-<Browser>
-  <TextGeneration />
-</Browser>
 
 ## Client
 
 Let's create a simple React component that will call the `getAnswer` function when a button is clicked. The `getAnswer` function will call the `generateText` function from the `ai` module, which will then generate text based on the input prompt.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -54,7 +54,7 @@ export default function Home() {
 
 On the server side, we need to implement the `getAnswer` function, which will call the `generateText` function from the `ai` module. The `generateText` function will generate text based on the input prompt.
 
-```typescript filename='app/actions.ts'
+```typescript title='app/actions.ts'
 'use server';
 
 import { generateText } from 'ai';
@@ -69,22 +69,10 @@ export async function getAnswer(question: string) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

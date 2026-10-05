@@ -16,18 +16,18 @@ related:
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "5d5a24f14adb3e6c2cbecb4d3a6704748687a0d6b26799295a9aa842c6adcb07"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "df00bb729f7c50131e006cdbd6637c5d358df528406f0da535eced49600f1580"
 ---
 
 # Vercel Web Analytics
 
-> **🔒 Permissions Required**: Web Analytics
+> **Availability**: Web Analytics are available on all plans
 
 - To set up Web Analytics for your project, see the [Quickstart](/docs/analytics/quickstart).
 - To monitor your site's performance, use [Speed Insights](/docs/speed-insights).
 
-![Image](https://vercel.com/front/docs/analytics/visitor-chart-light.png)
+![Visitors tab data.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/analytics/visitor-chart-light.png)
 
 
 <!-- docsgraph:related -->
@@ -99,7 +99,7 @@ Panels provide a way to view detailed analytics for Visitors and Page Views, suc
 
 By default, panels provide you with a list of top entries, categorized by the number of visitors. Depending on the panel, the information is displayed either as a number or percentage of the total visitors. You can click **View All** to see all the data:
 
-![Image](https://vercel.com/front/docs/observability/panels-light-mode.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/observability/panels-light-mode.png)
 
 *Panels showing a breakdown of page view data.*
 

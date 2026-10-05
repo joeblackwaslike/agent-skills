@@ -1,34 +1,34 @@
 ---
+title: Generate Text with Chat Prompt
+description: Learn how to generate text with chat prompt using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - chat
 source: "https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "db389a9c2af86ab477b2b0967b6fd1d08a2052005ecde9922d4b3c2608d82781"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "af2314e702c1ba86beedc117d6cd73c33d14f58b4f75d4ae247aacdfc47e30f7"
 ---
 
-# Generate Text with Chat Prompt
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Previously, you were able to generate text and objects using either a single message prompt, a system prompt, or a combination of both of them. However, there may be times when you want to generate text based on a series of messages.
 
 A chat completion allows you to generate text based on a series of messages. This series of messages can be any series of interactions between any number of systems, but the most popular and relatable use case has been a series of messages that represent a conversation between a user and a model.
 
-<Browser>
-  <ChatGeneration
-    history={[
-      { role: 'User', content: 'How is it going?' },
-      { role: 'Assistant', content: 'All good, how may I help you?' },
-    ]}
-    inputMessage={{ role: 'User', content: 'Why is the sky blue?' }}
-    outputMessage={{
-      role: 'Assistant',
-      content: 'The sky is blue because of rayleigh scattering.',
-    }}
-  />
-</Browser>
+User: How is it going?
+
+Assistant: All good, how may I help you?
+
+Why is the sky blue?
 
 ## Client
 
 Let's start by creating a simple chat interface with an input field that sends the user's message and displays the conversation history. You will call the `/api/chat` endpoint to generate the assistant's response.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import type { ModelMessage } from 'ai';
@@ -89,7 +89,7 @@ export default function Page() {
 
 Next, let's create the `/api/chat` endpoint that generates the assistant's response based on the conversation history.
 
-```typescript filename='app/api/chat/route.ts'
+```typescript title='app/api/chat/route.ts'
 import { generateText, type ModelMessage } from 'ai';
 
 export async function POST(req: Request) {
@@ -105,35 +105,14 @@ export async function POST(req: Request) {
 }
 ```
 
+***
+
+[View Example on GitHub](https://github.com/vercel/ai/blob/main/examples/next-openai-pages/pages/chat/generate-chat/index.tsx)
+
 ---
 
-<GithubLink link="https://github.com/vercel/ai/blob/main/examples/next-openai-pages/pages/chat/generate-chat/index.tsx" />
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-## Navigation
-
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
-
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

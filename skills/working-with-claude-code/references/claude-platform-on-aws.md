@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-platform-on-aws.md"
-fetched_at: "2026-09-28T10:38:50.037Z"
-sha256: "b00d4570834ce8df01fb5c1fcb82167a8d2df57f5662db91917783a04d8bcdf3"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "1521b2469e61b48438e3bc39009b9cec0299f6eb1578af4cadd111d07d40f2ed"
 ---
 
 > ## Documentation Index
@@ -232,7 +232,7 @@ export AWS_PROFILE=my-profile
 
 For CI and automation, give the runner an IAM role with permission to invoke the Anthropic service and set `AWS_REGION`. The credential chain picks the role up automatically.
 
-If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](/docs/en/amazon-bedrock#advanced-credential-configuration) so Claude Code re-runs your login command and retries instead of failing. Automatic refresh on Claude Platform on AWS requires Claude Code v2.1.198 or later; earlier versions stop with a prompt to run `/login`, which can't refresh AWS credentials. Add the command to your [settings file](/docs/en/settings), such as `~/.claude/settings.json`:
+If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](/docs/en/amazon-bedrock#advanced-credential-configuration) so Claude Code re-runs your login command and retries instead of failing. Add the command to your [settings file](/docs/en/settings), such as `~/.claude/settings.json`:
 
 ```json theme={null}
 {

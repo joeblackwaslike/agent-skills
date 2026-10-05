@@ -9,15 +9,15 @@ prerequisites:
   - /docs/rolling-releases
 related:
   - /docs/cli/project-linking
+  - /docs/project-configuration/project-settings
   - /docs/rolling-releases
   - /docs/cli/rolling-release
   - /docs/cli/deploy
-  - /docs/cli/logs
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f983a6ba1aa960288fa5797a06fe7a4dac17d86f3ae3a05e9910acd8dedfbba2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "55bf59b76f14934f21dca069d6b36b5bdbf253b8f06cd97f62d71bfdd986f0aa"
 ---
 
 # Performing a rolling release deployment
@@ -31,11 +31,12 @@ Use this guide to gradually roll out a new production deployment using rolling r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Vercel MCP tools for rolling releases.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Test a preview deployment and promote it to production using the CLI.
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
-- [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
 
 Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md?from=related&source_path=%2Fdocs%2Frolling-releases%2Frolling-release-deployment&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,10 +53,10 @@ Use this block when you already know what you're doing and want the full command
 # 1. Configure rolling release stages
 vercel rolling-release configure --cfg '{"enabled":true,"advancementType":"automatic","stages":[{"targetPercentage":10,"duration":5},{"targetPercentage":50,"duration":10},{"targetPercentage":100}]}'
 
-# 2. Deploy to production (triggers rolling release automatically)
+# 2. Deploy to production (starts the rolling release automatically if the project auto-assigns custom domains)
 vercel deploy --prod
 
-# 3. Start the rolling release
+# 3. Start the rolling release (idempotent if step 2 already started it)
 vercel rolling-release start --dpl <deployment-url>
 
 # 4. Monitor the release
@@ -106,7 +107,7 @@ Begin the rolling release to start shifting traffic to the new deployment:
 vercel rolling-release start --dpl <deployment-url>
 ```
 
-This starts at the first stage (10% of traffic in the example configuration above). The start command is idempotent. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
+This starts at the first stage (10% of traffic in the example configuration above). The start command is idempotent. If your project [auto-assigns custom domains](/docs/project-configuration/project-settings#domains), the production deployment already started the rolling release, and this command returns its current state. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
 
 To send 100% of traffic to the canary, run [`vercel rolling-release complete`](/docs/cli/rolling-release#complete). See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
 

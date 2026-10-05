@@ -1,10 +1,19 @@
 ---
+title: Compact Agent Context
+description: Learn how to compact agent context by mutating message state between steps with prepareStep.
+url: "https://ai-sdk.dev/cookbook/guides/agent-context-compaction"
+docs_index: /llms.txt
+tags:
+  - agent
+  - context
+  - compaction
+  - prepareStep
 source: "https://ai-sdk.dev/cookbook/guides/agent-context-compaction.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7a65322fdd54a1d82d2446ac7f89e71c5d497f07f7621db43f50fa50e8ded61c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "2ce6a7ace1f61da524291d64c3efbf5cc5d92dccf8456ff7514f66b27e6e5553"
 ---
 
-# Compact Agent Context
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will learn how to compact an agent's context by returning a new `messages` array from `prepareStep`.
 
@@ -19,7 +28,6 @@ This example uses a tool that returns long results:
 ```ts
 import { ToolLoopAgent, isStepCount, tool } from 'ai';
 import { z } from 'zod';
-__PROVIDER_IMPORT__;
 
 const readDocument = tool({
   description: 'Read a document by name',
@@ -35,7 +43,7 @@ const readDocument = tool({
 });
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     readDocument,
   },
@@ -82,7 +90,6 @@ import {
   type ModelMessage,
 } from 'ai';
 import { z } from 'zod';
-__PROVIDER_IMPORT__;
 
 const COMPACT_AFTER_TOKENS = 100_000;
 
@@ -104,7 +111,7 @@ const readDocument = tool({
 });
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     readDocument,
   },
@@ -154,10 +161,9 @@ The same `prepareStep` behavior works with `generateText` and `streamText`:
 
 ```ts
 import { generateText, isStepCount, pruneMessages } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Read the project documents and summarize the migration plan.',
   tools: {
     readDocument,
@@ -184,28 +190,10 @@ const result = await generateText({
 - [Tools and Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling#preparestep-callback) for `prepareStep` with AI SDK Core
 - [`pruneMessages`](/docs/reference/ai-sdk-ui/prune-messages) for built-in message pruning options
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

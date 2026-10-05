@@ -1,10 +1,14 @@
 ---
+title: Harness Adapters
+description: Learn about the available AI SDK harness adapters.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "ef4ce643532e1a04e53cc0de1ccadd5739195d7c5f5bd0f8cf8df305fa300829"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "39e124a51c9429f62bc3f8539262328b2d88597d32f2baf5d3ba35eb37210f53"
 ---
 
-# Harness Adapters
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Harness adapters connect `HarnessAgent` to a specific agent runtime. They are
 the harness equivalent of AI SDK model providers: each adapter wraps one runtime
@@ -34,30 +38,23 @@ The AI SDK includes the following harness adapters:
 
 ## Adapter Capabilities
 
-| Adapter                                                      | Runtime location | Custom tools | Custom skills | Structured output | Built-in tool approval | Built-in tool filtering      |
-| ------------------------------------------------------------ | ---------------- | ------------ | ------------- | ----------------- | ---------------------- | ---------------------------- |
-| [Claude Code](/providers/ai-sdk-harnesses/claude-code)       | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
-| [Cline](/providers/ai-sdk-harnesses/cline)                   | Host process     | <Check />    | <Check />     | <Check />         | <Check />              | <Check />                    |
-| [Codex](/providers/ai-sdk-harnesses/codex)                   | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Cross />              | <Cross />                    |
-| [Cursor](/providers/ai-sdk-harnesses/cursor)                 | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
-| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)        | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
-| [fx](/providers/ai-sdk-harnesses/fx)                         | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
-| [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot) | Sandbox via ACP  | <Check />    | <Check />     | <Cross />         | <Check />              | <Cross />                    |
-| [Grok Build](/providers/ai-sdk-harnesses/grok-build)         | Sandbox via ACP  | <Check />    | <Check />     | <Check />         | <Check />              | <Cross />                    |
-| [OpenCode](/providers/ai-sdk-harnesses/opencode)             | Sandbox bridge   | <Check />    | <Check />     | <Check />         | <Check />              | <Check /> via auto-rejection |
-| [Pi](/providers/ai-sdk-harnesses/pi)                         | Host process     | <Check />    | <Check />     | <Cross />         | <Check />              | <Check />                    |
+| Adapter                                                      | Runtime location | Custom tools | Custom skills | Structured output | Built-in tool approval | Built-in tool filtering | History access |
+| ------------------------------------------------------------ | ---------------- | ------------ | ------------- | ----------------- | ---------------------- | ----------------------- | -------------- |
+| [Claude Code](/providers/ai-sdk-harnesses/claude-code)       | Sandbox bridge   | ✓            | ✓             | ✓                 | ✓                      | ✓                       | ✗              |
+| [Cline](/providers/ai-sdk-harnesses/cline)                   | Host process     | ✓            | ✓             | ✓                 | ✓                      | ✓                       | ✗              |
+| [Codex](/providers/ai-sdk-harnesses/codex)                   | Sandbox bridge   | ✓            | ✓             | ✓                 | ✗                      | ✗                       | ✗              |
+| [Cursor](/providers/ai-sdk-harnesses/cursor)                 | Sandbox via ACP  | ✓            | ✓             | ✗                 | ✗                      | ✗                       | ✗              |
+| [Deep Agents](/providers/ai-sdk-harnesses/deepagents)        | Sandbox bridge   | ✓            | ✓             | ✓                 | ✓                      | ✓ via auto-rejection    | ✗              |
+| [fx](/providers/ai-sdk-harnesses/fx)                         | Sandbox via ACP  | ✓            | ✓             | ✗                 | ✓                      | ✗                       | ✗              |
+| [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot) | Sandbox via ACP  | ✓            | ✓             | ✗                 | ✗                      | ✗                       | ✗              |
+| [Grok Build](/providers/ai-sdk-harnesses/grok-build)         | Sandbox via ACP  | ✓            | ✓             | ✓                 | ✗                      | ✗                       | ✗              |
+| [OpenCode](/providers/ai-sdk-harnesses/opencode)             | Sandbox bridge   | ✓            | ✓             | ✓                 | ✓                      | ✓ via auto-rejection    | ✗              |
+| [Pi](/providers/ai-sdk-harnesses/pi)                         | Host process     | ✓            | ✓             | ✗                 | ✓                      | ✓                       | ✗              |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

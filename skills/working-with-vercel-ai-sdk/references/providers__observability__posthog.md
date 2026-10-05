@@ -1,10 +1,14 @@
 ---
+title: PostHog
+description: Monitor and analyze LLM usage with PostHog
+url: "https://ai-sdk.dev/providers/observability/posthog"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/posthog.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "984f1c8bb956362ec63640081b99eb7a2f0017ce90e87de5fd96617fd1044c14"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8dcfd63df363205635e25386df79232984229d7230508ebaf657401532116496"
 ---
 
-# PostHog LLM Analytics
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [PostHog](https://posthog.com/) is an open source product analytics platform. With the PostHog LLM Analytics integration, you can track LLM usage alongside your product analytics to understand how AI features impact user behavior. PostHog provides:
 
@@ -16,8 +20,7 @@ sha256: "984f1c8bb956362ec63640081b99eb7a2f0017ce90e87de5fd96617fd1044c14"
 
 PostHog supports [AI SDK telemetry data](/docs/ai-sdk-core/telemetry) through [OpenTelemetry](https://opentelemetry.io/docs/). The `PostHogTraceExporter` from the `@posthog/ai` package sends `gen_ai.*` spans to PostHog's OTLP ingestion endpoint, where they are automatically converted into `$ai_generation` events.
 
-<Tabs items={["Next.js", "Node.js"]}>
-<Tab>
+#### Next.js
 
 Next.js has built-in support for OpenTelemetry instrumentation via the [instrumentation hook](https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry).
 
@@ -29,7 +32,7 @@ npm install @posthog/ai @opentelemetry/sdk-node @opentelemetry/resources @ai-sdk
 
 **Step 2.** Create an `instrumentation.ts` file in your project root and register the AI SDK telemetry integration alongside your OTel setup:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { NodeSDK } from '@opentelemetry/sdk-node';
@@ -54,7 +57,7 @@ export function register() {
 
 **Step 3.** Use the AI SDK with telemetry enabled in your route handlers or server actions
 
-```ts highlight="6-11"
+```ts {6-11}
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
@@ -70,8 +73,7 @@ const result = await generateText({
 });
 ```
 
-</Tab>
-<Tab>
+#### Node.js
 
 **Step 1.** Install dependencies
 
@@ -81,7 +83,7 @@ npm install @posthog/ai @opentelemetry/sdk-node @opentelemetry/resources @ai-sdk
 
 **Step 2.** Initialize the OpenTelemetry SDK with PostHog's trace exporter
 
-```ts filename="tracing.ts"
+```ts title="tracing.ts"
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { PostHogTraceExporter } from '@posthog/ai/otel';
@@ -103,7 +105,7 @@ registerTelemetry(new LegacyOpenTelemetry());
 
 **Step 3.** Use the AI SDK. Telemetry is captured automatically once the integration is registered:
 
-```ts highlight="6-12"
+```ts {6-12}
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
@@ -123,13 +125,8 @@ console.log(result.text);
 await sdk.shutdown();
 ```
 
-</Tab>
-</Tabs>
-
-<Note>
-  The integration supports streaming functions like `streamText`. Each streamed
-  call will produce `ai.streamText` spans that are captured by PostHog.
-</Note>
+The integration supports streaming functions like `streamText`. Each streamed
+call will produce `ai.streamText` spans that are captured by PostHog.
 
 ## Configuration
 
@@ -137,7 +134,7 @@ await sdk.shutdown();
 
 Pass `posthog_distinct_id` in the `metadata` field to associate LLM events with a specific user in PostHog. If omitted, events are captured anonymously.
 
-```ts highlight="6"
+```ts {6}
 const result = await generateText({
   model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
@@ -153,7 +150,7 @@ const result = await generateText({
 
 You can disable recording of inputs and outputs by setting `recordInputs` and `recordOutputs` to `false`:
 
-```ts highlight="5-6"
+```ts {5-6}
 const result = await generateText({
   model: openai('gpt-6-astra'),
   prompt: 'Write a short story about a cat.',
@@ -170,30 +167,10 @@ const result = await generateText({
 - [PostHog AI SDK package](https://www.npmjs.com/package/@posthog/ai)
 - [PostHog](https://posthog.com/)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

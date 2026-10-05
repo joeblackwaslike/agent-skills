@@ -1,8 +1,18 @@
 ---
+title: Knowledge Base Agent
+description: Build an AI agent that can read from and write to a knowledge base using Upstash Search and the AI SDK
+url: "https://ai-sdk.dev/cookbook/node/knowledge-base-agent"
+docs_index: /llms.txt
+tags:
+  - node
+  - retrieval
+  - tools
 source: "https://ai-sdk.dev/cookbook/node/knowledge-base-agent.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "7d5a4ec3b7ceaff56e7309d5e782f7fe3619b07bd4969463363439212ef2558d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f40a4bb7a422e11584885880004f99655889f1e467de220acd5b1618c55aa96b"
 ---
+
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this recipe, you'll learn how to build an AI agent that can interact with a knowledge base using [Upstash Search](https://upstash.com/docs/search). The agent will be able to both retrieve information from the knowledge base and add new resources to it, leveraging AI SDK tools.
 
@@ -31,10 +41,10 @@ cd knowledge-base-agent
 pnpm init
 ```
 
-Install the AI SDK, OpenAI provider, Upstash Search packages, and tsx as a dev dependency:
+Install the AI SDK, OpenAI provider, Upstash Search, and dotenv packages, and tsx as a dev dependency:
 
 ```bash
-pnpm i ai zod @ai-sdk/openai @upstash/search
+pnpm i ai zod @ai-sdk/openai @upstash/search dotenv
 pnpm i -D tsx
 ```
 
@@ -48,7 +58,7 @@ curl -o essay.txt https://raw.githubusercontent.com/run-llama/llama_index/main/d
 
 Next, let's set up the initial knowledge base by reading a file and uploading its content to Upstash Search. Create a script called `setup.ts`:
 
-```ts filename="setup.ts"
+```ts title="setup.ts"
 import fs from 'fs';
 import path from 'path';
 import 'dotenv/config';
@@ -112,7 +122,7 @@ Navigate to the Upstash Console and check the data browser of your Search databa
 
 Now let's create an agent that can interact with this knowledge base. Create a new file called `agent.ts`:
 
-```ts filename="agent.ts"
+```ts title="agent.ts"
 import { tool, isStepCount, generateText, generateId } from 'ai';
 import { z } from 'zod';
 import { Search } from '@upstash/search';
@@ -239,38 +249,10 @@ pnpm tsx agent.ts
 
 The agent will utilize the knowledge base to answer questions, add new resources, and delete existing ones as needed. You can modify the `question` variable to test different queries and interactions with the knowledge base.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

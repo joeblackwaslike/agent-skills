@@ -17,13 +17,13 @@ related:
 summary: Learn how you can add a product to your Vercel project through a native integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/product-integration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1112eb58478616c69b55e954f834fd5c2af33cb36bcb18ee0b238ff22eefd04d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3e7ea8131c7515423285398bc4b9ebac38da35c584a518261df831b01c83138d"
 ---
 
 # Add a Native Integration
 
-> **🔒 Permissions Required**: Native Integrations
+> **Availability**: Native Integrations are available on all plans
 
 ## Add a product
 
@@ -45,8 +45,8 @@ You can install integrations and provision resources directly from the command l
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Learn how to create a product for your Vercel native integration
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Create an Integration](https://vercel.com/docs/integrations/create-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fproduct-integration&source_site=vercel-docs&relationship=related) — Learn how to create and manage your own integration for internal or public use with Vercel.

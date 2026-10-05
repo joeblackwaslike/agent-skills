@@ -17,13 +17,13 @@ related:
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "bc0252ff24d7e0ec22a9e56aa32943a7baa4337899b65b15556ab6822e070495"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5806267e15412d57f6ba21960dfc9a046b1ec39b53a7e27ccc5941fcceb32bdc"
 ---
 
 # Password Protection
 
-> **🔒 Permissions Required**: Password Protection
+> **Availability**: Password Protection is available on Enterprise and Pro plans
 
 Password Protection requires visitors to enter a pre-defined password before they can access your deployment. You can set the desired password from your project settings when enabling the feature, and update it any time.
 
@@ -49,7 +49,7 @@ Password Protection requires visitors to enter a pre-defined password before the
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md](/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fpassword-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](`/docs-assets/static/docs/concepts/projects/password-protection-screen.png`)
+![Deployment protected with Password Protection authentication screen.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/password-protection-screen.png)
 
 ## Password Protection pricing
 
@@ -97,7 +97,7 @@ You can manage Password Protection through the dashboard, API, or Terraform.
   4. Finally, select **Save**
   All your existing and future deployments will be protected with a password for the project. The next time you access a deployment, you'll need to enter the password. After you enter it, a cookie is set in your browser for that deployment URL so you don't need to enter the password again.
 
-  ![Image](`/docs-assets/static/docs/concepts/projects/password-protection-light.png`)
+  ![Enabling Password Protection.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/password-protection-light.png)
 
 ### Configure Password Protection with the API
 

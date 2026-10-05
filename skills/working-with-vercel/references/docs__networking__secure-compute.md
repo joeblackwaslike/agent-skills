@@ -16,13 +16,13 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "cf7bb80302628cd89f2e86b294a57e940aa218673494283a5f9f7a396ef4252b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "069d44ce2d18001f012c3de7391c8a9b461ecfcbad42e2b36b06b195dad18428"
 ---
 
 # Secure Compute
 
-> **🔒 Permissions Required**: Secure Compute
+> **Availability**: Secure Compute is available for purchase on Enterprise plans
 
 Secure Compute creates private connections between your [Vercel Functions](/docs/functions) and your backend infrastructure like databases, APIs, or any private services you're running.
 
@@ -34,15 +34,15 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 
 - [Secure Compute and Static IP builds start 64% faster](https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox now supports Secure Compute](https://vercel.com/changelog/vercel-sandbox-now-supports-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Secure Compute is now self-serve](https://vercel.com/changelog/secure-compute-is-now-self-serve?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [VPC Peering now available as self-service for Vercel’s Secure Compute](https://vercel.com/changelog/vpc-peering-now-available-as-self-service-for-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Improved infrastructure security with Vercel Secure Compute](https://vercel.com/changelog/improve-infrastructure-security-with-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=graph)
@@ -87,7 +87,7 @@ Once created, your network includes:
 - AWS VPC ID
 - CIDR block based on your selection
 
-![Image](https://vercel.com/front/docs/secure-compute/private-network-light.png)
+![Secure Compute network settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/secure-compute/private-network-light.png)
 
 When you enable Secure Compute on a project, Vercel attaches your project's [build container](/docs/builds) and subsequent deployment inside a Secure Compute network with a specific IP address pair ([dedicated IP](#secure-compute-networks-and-dedicated-ip-addresses)). You can choose to [exclude the build container](#managing-the-build-container) from the private network.
 
@@ -136,7 +136,7 @@ To add a project to your Secure Compute network:
    - Optionally enable **Builds** to include the project's build container in the network.
 3. Click **Save** to persist your changes.
 
-![Image](https://vercel.com/front/docs/secure-compute/secure-compute-connect-envs-light.png)
+![Adding a project to a Secure Compute network. One environment at a time.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/secure-compute/secure-compute-connect-envs-light.png)
 
 To change multiple environments at once:
 
@@ -149,7 +149,7 @@ To change multiple environments at once:
    - Click **Apply** to modify the selected environments.
 4. Click **Save** to persist your changes.
 
-![Image](https://vercel.com/front/docs/secure-compute/secure-compute-connect-envs-bulk-light.png)
+![Adding a project to a Secure Compute network. Multiple environments at once.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/secure-compute/secure-compute-connect-envs-bulk-light.png)
 
 ### Managing the build container
 
@@ -168,7 +168,7 @@ To manage the build container *after* the project is connected to the Secure Com
 5. Check/uncheck **Include Builds** to include/exclude the project's build container in the network.
 6. Click **Save**.
 
-![Image](https://vercel.com/front/docs/secure-compute/manage-build-container-light.png)
+![Exclude your build from the private network.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/secure-compute/manage-build-container-light.png)
 
 ## Multiple Secure Compute networks
 
@@ -194,7 +194,7 @@ To set up VPC peering:
 4. **Accept peering connection**: Go back to your Vercel dashboard and click **Accept** to accept the connection.
 5. **Update route tables**: Go to AWS's VPC dashboard, select **Route Tables**, and configure routing to allow traffic from Vercel's CIDR block.
 
-![Image](https://vercel.com/front/docs/secure-compute/vpc-connection-light.png)
+![Secure Compute VPC peering settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/secure-compute/vpc-connection-light.png)
 
 The connection can be deleted from either the Vercel dashboard, or the AWS VPC dashboard.
 

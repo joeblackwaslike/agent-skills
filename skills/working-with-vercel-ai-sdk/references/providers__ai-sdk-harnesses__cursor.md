@@ -1,24 +1,26 @@
 ---
+title: Cursor
+description: Learn how to use the Cursor harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3af454dadf7c1960ea1d427b907cf6f2bbf662d3f4b2a24564141642a9f9b3ea"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4a34c024bd855ac43fd015760957a61a4c29772a31d829c19a7ffe776fdabbc8"
 ---
 
-# Cursor Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Cursor harness adapter connects `HarnessAgent` to
 [Cursor CLI](https://cursor.com/cli) through the Agent Client Protocol (ACP).
 The adapter delegates ACP sessions, streaming, tools, and lifecycle management
 to `@ai-sdk/harness-acp`.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-cursor @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-cursor`, `@ai-sdk/sandbox-vercel`
 
 Create a Cursor user API key and set `CURSOR_API_KEY`. The key authenticates
 Cursor CLI in the sandbox regardless of how Cursor authenticates to the model
@@ -209,20 +211,10 @@ MCP payload and correlates the call with the host-side tool execution.
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

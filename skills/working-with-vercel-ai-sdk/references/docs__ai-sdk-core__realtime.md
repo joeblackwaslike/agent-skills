@@ -1,12 +1,16 @@
 ---
+title: Realtime
+description: Learn how to build realtime voice conversations with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/realtime"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/realtime.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "d18a1c2f50ca86469ce900e64771385edd300d815cd425fab638fd390af1ba7a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "2472c197c9393cfffcfbe1340eab477c1cf5d9b5e09d9fd8debb540d8590aee3"
 ---
 
-# Realtime
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">Realtime is an experimental feature.</Note>
+Realtime is an experimental feature.
 
 This guide covers legacy token-based, turn-based realtime conversations over
 WebSockets. These sessions run in the browser and connect
@@ -20,10 +24,10 @@ client delegation, see
 The typical flow is:
 
 1. The browser calls your setup endpoint.
-1. Your server creates a short-lived realtime token with `experimental_realtime.getToken()`.
-1. The browser opens a WebSocket connection to the provider or AI Gateway.
-1. The model streams audio, text, and tool calls back to the browser.
-1. Tool calls are handled by your application with `onToolCall`.
+2. Your server creates a short-lived realtime token with `experimental_realtime.getToken()`.
+3. The browser opens a WebSocket connection to the provider or AI Gateway.
+4. The model streams audio, text, and tool calls back to the browser.
+5. Tool calls are handled by your application with `onToolCall`.
 
 For continuous **OpenAI Live** conversations, use an application-owned WebSocket
 relay or optional WebRTC via `api.session`. Live uses client delegation: your
@@ -37,7 +41,7 @@ for SDP setup, server-owned permissions, capture ownership, and graceful close.
 Create a setup endpoint that returns a short-lived token for the realtime
 provider. This endpoint can also attach tool definitions to the session.
 
-```ts filename='app/api/realtime/setup/route.ts'
+```ts title='app/api/realtime/setup/route.ts'
 import { openai } from '@ai-sdk/openai';
 import { experimental_getRealtimeToolDefinitions, tool } from 'ai';
 import { z } from 'zod';
@@ -72,10 +76,8 @@ export async function POST(request: Request) {
 }
 ```
 
-<Note>
-  In production, authenticate and rate-limit your setup endpoint. It creates
-  realtime sessions using your server-side API key.
-</Note>
+In production, authenticate and rate-limit your setup endpoint. It creates
+realtime sessions using your server-side API key.
 
 ## AI Gateway
 
@@ -86,7 +88,7 @@ short-lived client secret.
 
 Create the short-lived Gateway realtime token from a server-side setup endpoint:
 
-```ts filename='app/api/realtime/setup/route.ts'
+```ts title='app/api/realtime/setup/route.ts'
 import { gateway } from 'ai';
 
 export async function POST() {
@@ -100,7 +102,7 @@ export async function POST() {
 
 Then use the matching Gateway realtime model in the browser:
 
-```tsx filename='app/realtime/page.tsx'
+```tsx title='app/realtime/page.tsx'
 'use client';
 
 import { experimental_useRealtime } from '@ai-sdk/react';
@@ -127,11 +129,9 @@ export default function RealtimePage() {
 }
 ```
 
-<Note>
-  `gateway.experimental_realtime.getToken()` must run on your server because it
-  uses your Gateway credential to mint a `vcst_` client secret. Creating the
-  realtime model with `gateway.experimental_realtime()` is safe in the browser.
-</Note>
+`gateway.experimental_realtime.getToken()` must run on your server because it
+uses your Gateway credential to mint a `vcst_` client secret. Creating the
+realtime model with `gateway.experimental_realtime()` is safe in the browser.
 
 Tool definitions work the same way with AI Gateway: convert AI SDK tools with
 `experimental_getRealtimeToolDefinitions()` in your setup endpoint and return
@@ -143,7 +143,7 @@ update after the WebSocket opens.
 Use the `experimental_useRealtime` hook to connect to a realtime model, capture
 microphone audio, play model audio, send text messages, and render messages.
 
-```tsx filename='app/realtime/page.tsx'
+```tsx title='app/realtime/page.tsx'
 'use client';
 
 import { openai } from '@ai-sdk/openai';
@@ -202,7 +202,7 @@ validation, and rate limiting rules.
 
 ### Server-Backed Tool Endpoint
 
-```ts filename='app/api/weather/route.ts'
+```ts title='app/api/weather/route.ts'
 import { z } from 'zod';
 
 const inputSchema = z.object({
@@ -226,7 +226,7 @@ export async function POST(request: Request) {
 
 ### Client Tool Handler
 
-```tsx filename='app/realtime/page.tsx' highlight="12-26"
+```tsx title='app/realtime/page.tsx' {12-26}
 import { openai } from '@ai-sdk/openai';
 import { experimental_useRealtime } from '@ai-sdk/react';
 
@@ -299,40 +299,10 @@ WebSocket; the SDK handles the Gateway-specific WebSocket subprotocols for you.
 See the [AI Gateway realtime docs](/providers/ai-sdk-providers/ai-gateway#realtime)
 for Gateway-specific token and provider option details.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

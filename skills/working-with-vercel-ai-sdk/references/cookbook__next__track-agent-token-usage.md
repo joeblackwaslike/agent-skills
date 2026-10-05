@@ -1,15 +1,19 @@
 ---
+title: Track Agent Token Usage
+description: Learn how to track the active context window with ToolLoopAgent.
+url: "https://ai-sdk.dev/cookbook/next/track-agent-token-usage"
+docs_index: /llms.txt
+tags:
+  - next
 source: "https://ai-sdk.dev/cookbook/next/track-agent-token-usage.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "fd0f1caa3dae59596c251cdb728b9d1b51ed3b2fb9a89cd1e753ad9761254c4a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3943d5f3c8b8798ced6fc35543ea7fb4ef4817124ecd73eb97d91d659095d7db"
 ---
 
-# Track Agent Token Usage
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  For more information about building agents, check out the [ToolLoopAgent
-  documentation](/docs/reference/ai-sdk-core/tool-loop-agent).
-</Note>
+For more information about building agents, check out the [ToolLoopAgent
+documentation](/docs/reference/ai-sdk-core/tool-loop-agent).
 
 Tracking token consumption in agentic applications helps you monitor costs and implement context management strategies.
 This recipe shows how to track usage across steps and make it available throughout your agent's lifecycle.
@@ -18,7 +22,7 @@ This recipe shows how to track usage across steps and make it available througho
 
 First, set up a basic `ToolLoopAgent` with a tool. Define an `AgentUIMessage` type using `InferAgentUIMessage` to get type-safe messages on the frontend, including typed tool calls and results.
 
-```typescript filename='ai/agent.ts'
+```typescript title='ai/agent.ts'
 import { type InferAgentUIMessage, ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
@@ -38,7 +42,7 @@ export type AgentUIMessage = InferAgentUIMessage<typeof agent>;
 
 Create a route handler that streams the agent's response. Use `AgentUIMessage` to type the messages coming from the client.
 
-```tsx filename='app/api/chat/route.ts'
+```tsx title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -61,7 +65,7 @@ export async function POST(req: Request) {
 
 And a basic chat interface using `useChat`. Pass `AgentUIMessage` as a generic to get type-safe access to messages, including typed tool invocations and results.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { type AgentUIMessage } from '@/ai/agent';
@@ -100,7 +104,7 @@ export default function Chat() {
 
 To track token usage, attach it to each message using the `messageMetadata` callback. First, define a metadata type and pass it as a second generic to `InferAgentUIMessage`.
 
-```typescript filename='ai/agent.ts' highlight="2-3,20-21"
+```typescript title='ai/agent.ts' {2-3,20-21}
 import {
   type InferAgentUIMessage,
   type LanguageModelUsage,
@@ -126,7 +130,7 @@ export type AgentUIMessage = InferAgentUIMessage<typeof agent, AgentMetadata>;
 
 Now add the `messageMetadata` callback to the route handler. Pass `AgentUIMessage` as the message generic to `toUIMessageStream` to type the callback. When a step finishes, the `finish-step` part contains usage data that you can include in the message metadata.
 
-```tsx filename='app/api/chat/route.ts' highlight="16-25"
+```tsx title='app/api/chat/route.ts' {16-25}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -157,7 +161,7 @@ export async function POST(req: Request) {
 
 Now you can access the metadata on the client. The `AgentUIMessage` type already includes the metadata shape, giving you type-safe access to `m.metadata.usage`.
 
-```typescript filename='app/page.tsx' highlight="17-19"
+```typescript title='app/page.tsx' {17-19}
 'use client';
 
 import { type AgentUIMessage } from '@/ai/agent';
@@ -199,7 +203,7 @@ To manipulate messages or apply context management strategies, you'd use the `pr
 
 To solve this, pass the usage from previous messages back to the agent. Use `callOptionsSchema` to define the data shape and `prepareCall` to make it available on `context`, where `prepareStep` can access it.
 
-```typescript filename='ai/agent.ts' highlight="11-13,21-26"
+```typescript title='ai/agent.ts' {11-13,21-26}
 import {
   type InferAgentUIMessage,
   type LanguageModelUsage,
@@ -234,7 +238,7 @@ export type AgentUIMessage = InferAgentUIMessage<typeof agent, AgentMetadata>;
 
 Extract the last input token count from previous messages and pass it to the agent.
 
-```tsx filename='app/api/chat/route.ts' highlight="12-14,18-20"
+```tsx title='app/api/chat/route.ts' {12-14,18-20}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -274,7 +278,7 @@ export async function POST(req: Request) {
 
 With the usage on `context`, you can access it in `prepareStep` to make decisions about context management, or pass it to your tools.
 
-```typescript filename='ai/agent.ts' highlight="9-11,31-40"
+```typescript title='ai/agent.ts' {9-11,31-40}
 import {
   type InferAgentUIMessage,
   type LanguageModelUsage,
@@ -333,31 +337,10 @@ The `prepareStep` callback runs before each step, giving you access to:
 
 This allows you to track token consumption across the entire conversation lifecycle and implement strategies like context compaction when approaching token limits.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

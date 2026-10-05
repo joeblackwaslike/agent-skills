@@ -13,13 +13,13 @@ related:
 summary: Use Code Owners to define users or teams that are responsible for directories and files in your codebase
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "cee4e791d1162df408efca48da3d0dc3d0436dc90ea3cab10aa3ccf976a64a7a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "325cc1d40ef7e7c83ccfd7066cb51462e3b5853a062f9022fa824b9bd6eded3c"
 ---
 
 # Code Owners
 
-> **🔒 Permissions Required**: Code Owners
+> **Availability**: Code Owners are available on Enterprise plans
 
 As a company grows, it can become difficult for any one person to be familiar with the entire codebase. As growing teams start to specialize, it's hard to track which team and members are responsible for any given piece of code. **Code Owners** works with GitHub to let you automatically assign the right developer for the job by implementing features like:
 

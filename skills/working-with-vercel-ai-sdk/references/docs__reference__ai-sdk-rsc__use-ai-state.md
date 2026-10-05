@@ -1,16 +1,18 @@
 ---
+title: useAIState
+description: Reference for the useAIState function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/use-ai-state"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/use-ai-state.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "912f451afb11e80468c9b59dc65620941f416099a40c2c61b6a75e445e8d1bb7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b42dc2ee03558ac97746f992f27e2d98dcbb0f93b5da4ba54478d999b4ad57d4"
 ---
 
-# `useAIState`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 It is a hook that enables you to read and update the AI state. The AI state is shared globally between all `useAIState` hooks under the same `<AI/>` provider.
 
@@ -18,7 +20,9 @@ The AI state is intended to contain context and information shared with the AI m
 
 ## Import
 
-<Snippet text={`import { useAIState } from "@ai-sdk/rsc"`} prompt={false} />
+```
+import { useAIState } from "@ai-sdk/rsc"
+```
 
 ## API Signature
 
@@ -26,21 +30,10 @@ The AI state is intended to contain context and information shared with the AI m
 
 Similar to useState, it is an array where the first element is the current AI state and the second element is a function to update the state.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

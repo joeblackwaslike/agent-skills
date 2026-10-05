@@ -1,10 +1,14 @@
 ---
+title: Fal
+description: Learn how to use Fal AI models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/fal"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "76c1223a55dbd920b84b92527c97374f8558757f6272df1a1569282a72dc8a9f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7580f7402d87e7fd37ed22478d1efa23325b7b1dfea2d2acc05509270c5158de"
 ---
 
-# Fal Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Fal AI](https://fal.ai/) provides a generative media platform for developers with lightning-fast inference capabilities. Their platform offers optimized performance for running diffusion models, with speeds up to 4x faster than alternatives.
 
@@ -12,7 +16,7 @@ sha256: "76c1223a55dbd920b84b92527c97374f8558757f6272df1a1569282a72dc8a9f"
 
 The Fal provider is available via the `@ai-sdk/fal` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/fal" />
+**Packages:** `@ai-sdk/fal`
 
 ## Provider Instance
 
@@ -38,21 +42,21 @@ const fal = createFal({
 
 You can use the following optional settings to customize the Fal provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://fal.run`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `FAL_API_KEY` environment variable, falling back to `FAL_KEY`.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -97,9 +101,9 @@ Fal offers many models optimized for different use cases. Here are a few popular
 
 | Model                                          | Description                                                                                                                       |
 | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `fal-ai/flux/dev`                              | FLUX.1 [dev] model for high-quality image generation                                                                              |
-| `fal-ai/flux-pro/kontext`                      | FLUX.1 Kontext [pro] handles both text and reference images as inputs, enabling targeted edits and complex transformations        |
-| `fal-ai/flux-pro/kontext/max`                  | FLUX.1 Kontext [max] with improved prompt adherence and typography generation                                                     |
+| `fal-ai/flux/dev`                              | FLUX.1 \[dev] model for high-quality image generation                                                                             |
+| `fal-ai/flux-pro/kontext`                      | FLUX.1 Kontext \[pro] handles both text and reference images as inputs, enabling targeted edits and complex transformations       |
+| `fal-ai/flux-pro/kontext/max`                  | FLUX.1 Kontext \[max] with improved prompt adherence and typography generation                                                    |
 | `fal-ai/flux-lora`                             | Super fast endpoint for FLUX.1 with LoRA support                                                                                  |
 | `fal-ai/ideogram/character`                    | Generate consistent character appearances across multiple images. Maintain facial features, proportions, and distinctive traits   |
 | `fal-ai/qwen-image`                            | Qwen-Image foundation model with significant advances in complex text rendering and precise image editing                         |
@@ -149,7 +153,7 @@ A mask can be passed as well
 
 ```ts
 await generateImage({
-  model: fal.image('fal-ai/flux-pro/kontext/max'),
+  model: fal.image('fal-ai/flux-general/inpainting'),
   prompt: {
     text: 'Put a donut next to the flour.',
     images: [imageBuffer],
@@ -173,11 +177,9 @@ Fal image models support flexible provider options through the `providerOptions.
 - **safetyTolerance** - Content safety filtering level (1-6, where 1 is strictest)
 - **useMultipleImages** - When true, converts multiple input images to `image_urls` array for models that support multiple images (e.g., fal-ai/flux-2/edit)
 
-<Note type="warning">
-  **Deprecation Notice**: snake_case parameter names (e.g., `image_url`,
-  `guidance_scale`) are deprecated and will be removed in a future version.
-  Please use camelCase names (e.g., `imageUrl`, `guidanceScale`) instead.
-</Note>
+**Deprecation Notice**: snake\_case parameter names (e.g., `image_url`,
+`guidance_scale`) are deprecated and will be removed in a future version.
+Please use camelCase names (e.g., `imageUrl`, `guidanceScale`) instead.
 
 Refer to the [Fal AI model documentation](https://fal.ai/models) for model-specific parameters.
 
@@ -205,7 +207,7 @@ const model = fal.transcription('wizper');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `batchSize` option will increase the number of audio chunks processed in parallel.
 
-```ts highlight="6"
+```ts {6}
 import { transcribe } from 'ai';
 import { fal, type FalTranscriptionModelOptions } from '@ai-sdk/fal';
 import { readFile } from 'fs/promises';
@@ -221,41 +223,41 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **language** _string_
+- **language** *string*
   Language of the audio file. Defaults to 'en'. If set to null, the language will be automatically detected.
   Accepts ISO language codes like 'en', 'fr', 'zh', etc.
   Optional.
 
-- **diarize** _boolean_
+- **diarize** *boolean*
   Whether to diarize the audio file (identify different speakers).
   Defaults to true.
   Optional.
 
-- **chunkLevel** _string_
+- **chunkLevel** *string*
   Level of the chunks to return. Either 'segment' or 'word'.
   Default value: "segment"
   Optional.
 
-- **version** _string_
+- **version** *string*
   Version of the model to use. All models are Whisper large variants.
   Default value: "3"
   Optional.
 
-- **batchSize** _number_
+- **batchSize** *number*
   Batch size for processing.
   Default value: 64
   Optional.
 
-- **numSpeakers** _number_
+- **numSpeakers** *number*
   Number of speakers in the audio file. If not provided, the number of speakers will be automatically detected.
   Optional.
 
 ### Model Capabilities
 
-| Model     | Transcription | Duration  | Segments  | Language  |
-| --------- | ------------- | --------- | --------- | --------- |
-| `whisper` | <Check />     | <Check /> | <Check /> | <Check /> |
-| `wizper`  | <Check />     | <Check /> | <Check /> | <Check /> |
+| Model     | Transcription | Duration | Segments | Language |
+| --------- | ------------- | -------- | -------- | -------- |
+| `whisper` | ✓             | ✓        | ✓        | ✓        |
+| `wizper`  | ✓             | ✓        | ✓        | ✓        |
 
 ## Speech Models
 
@@ -289,7 +291,7 @@ const result = await generateSpeech({
 
 Pass provider-specific options via `providerOptions.fal` depending on the model:
 
-- **voice_setting** _object_
+- **voice\_setting** *object*
   - `voice_id` (string): predefined voice ID
   - `speed` (number): 0.5–2.0
   - `vol` (number): 0–10
@@ -297,64 +299,21 @@ Pass provider-specific options via `providerOptions.fal` depending on the model:
   - `emotion` (enum): happy | sad | angry | fearful | disgusted | surprised | neutral
   - `english_normalization` (boolean)
 
-- **audio_setting** _object_
+- **audio\_setting** *object*
   Audio configuration settings specific to the model.
 
-- **language_boost** _enum_
+- **language\_boost** *enum*
   Chinese | Chinese,Yue | English | Arabic | Russian | Spanish | French | Portuguese | German | Turkish | Dutch | Ukrainian | Vietnamese | Indonesian | Japanese | Italian | Korean | Thai | Polish | Romanian | Greek | Czech | Finnish | Hindi | auto
 
-- **pronunciation_dict** _object_
+- **pronunciation\_dict** *object*
   Custom pronunciation dictionary for specific words.
 
 Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_audio_url`, `ref_text`) can be passed directly under `providerOptions.fal` and will be forwarded to the Fal API.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

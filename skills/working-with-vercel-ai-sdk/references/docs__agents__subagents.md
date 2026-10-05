@@ -1,10 +1,14 @@
 ---
+title: Subagents
+description: Delegate context-heavy tasks to specialized subagents while keeping the main agent focused.
+url: "https://ai-sdk.dev/docs/agents/subagents"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/subagents.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "3ce10df00ddd3068e417867db4d9ac38f62c7622c69b3eccea7c36ee205252d4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "d1668b1baa6a424d7cc2ae7aa25120eeb66885db1f593ef5b7b110b14b6bc7d2"
 ---
 
-# Subagents
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 A subagent is an agent that a parent agent can invoke. The parent delegates work via a tool, and the subagent executes autonomously before returning a result.
 
@@ -61,12 +65,11 @@ The simplest subagent pattern requires no special machinery. Your main agent has
 
 ```ts
 import { ToolLoopAgent, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 // Define a subagent for research tasks
 const researchSubagent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: `You are a research agent.
 Summarize your findings in your final response.`,
   tools: {
@@ -92,7 +95,7 @@ const researchTool = tool({
 
 // Main agent uses the research tool
 const mainAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant that can delegate research tasks.',
   tools: {
     research: researchTool,
@@ -231,7 +234,7 @@ For `toModelOutput` to extract a useful summary, your subagent must produce one.
 
 ```ts
 const researchSubagent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: `You are a research agent. Complete the task autonomously.
 
 IMPORTANT: When you have finished, write a clear summary of your findings as your final response.
@@ -270,7 +273,7 @@ const isComplete = hasOutput && !part.preliminary;
 
 Export types alongside your agents for use in UI components:
 
-```ts filename="lib/agents.ts"
+```ts title="lib/agents.ts"
 import { ToolLoopAgent, InferAgentUIMessage } from 'ai';
 
 export const mainAgent = new ToolLoopAgent({
@@ -364,20 +367,10 @@ Use this sparingly since passing full history defeats some of the context isolat
 
 The basic pattern (no streaming) is simpler to implement and debug. Only add streaming when you need to show real-time progress in the UI.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

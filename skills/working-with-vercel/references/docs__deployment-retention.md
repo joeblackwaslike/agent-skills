@@ -16,13 +16,13 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c201d4e3ac5dcfbae495abd247e8569f6f91bbc97129f70a4eda4c20643bb89c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "371e4a06150d752d88d299c17e2e2efdd54b07600b90ae017681299f8c98fcec"
 ---
 
 # Deployment Retention
 
-> **🔒 Permissions Required**: Deployment Retention
+> **Availability**: Deployment Retention is available on all plans
 
 Deployment retention refers to the configured policies that determine how long different types of deployments are kept before they are automatically deleted.
 

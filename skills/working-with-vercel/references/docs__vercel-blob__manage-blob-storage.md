@@ -14,8 +14,8 @@ related:
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f686f3435fc4a5af065a21fdf1cc13cffde6f479ce7e76f0dd6442994c78323c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a296951386188bfd8560bc373078e834be515410ba40b8cc4550cfd9ad2ab83f"
 ---
 
 # Managing Vercel Blob storage from the CLI
@@ -29,14 +29,14 @@ Use this guide to manage Vercel Blob storage from the CLI. You'll create a store
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related)
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related)
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — DELETE /storage/stores/blob/{id} — Delete a Blob store
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — POST /storage/stores/blob — Create a Blob store
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Storage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Vercel MCP tools for storage.
 - [Vercel Container Registry](https://vercel.com/docs/container-registry?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
-- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 
 Full cross-link map for this page: [/docs/vercel-blob/manage-blob-storage.graph.md](/docs/vercel-blob/manage-blob-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fmanage-blob-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

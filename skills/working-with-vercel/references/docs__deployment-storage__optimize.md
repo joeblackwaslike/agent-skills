@@ -16,8 +16,8 @@ related:
 summary: Set retention periods, review remaining usage, and reduce deployment output size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4986027ba3be4f1c411b58c9f2142d510267a1d3d7a73e8f241ece76dbd5387e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b321f28f9eba7880e812671cd4fbabe2f567b217b406ff93bad32e9a983daaaf"
 ---
 
 # Optimize Deployment Storage
@@ -32,15 +32,16 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related)
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Updated defaults for deployment retention](https://vercel.com/changelog/updated-defaults-for-deployment-retention?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related)
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
+- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
+- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 
 Full cross-link map for this page: [/docs/deployment-storage/optimize.graph.md](/docs/deployment-storage/optimize.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-storage%2Foptimize&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

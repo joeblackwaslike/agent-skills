@@ -1,10 +1,14 @@
 ---
+title: Migrate Your Data to AI SDK 5.0
+description: Learn how to migrate your persisted messages and chat data from AI SDK 4.x to 5.0.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0-data"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0-data.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "e3ad8720509c7e210691d57a652baa7b022a9a8d69a6d12717f8a1150df8e50b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6b36efe6b2f5bc42c2f31d3542ca0a3366d5b3211cae15437ec2ce0b8e017caa"
 ---
 
-# Migrate Your Data to AI SDK 5.0
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 AI SDK 5.0 introduces changes to the message structure and persistence patterns. Unlike code migrations that can often be automated with codemods, data migration depends on your specific persistence approach, database schema, and application requirements.
 
@@ -77,7 +81,7 @@ This creates a conversion layer without making changes to your database schema.
 
 To get proper TypeScript types for your v4 messages, install the v4 package alongside v5 using npm aliases:
 
-```json filename="package.json"
+```json title="package.json"
 {
   "dependencies": {
     "ai": "^5.0.0",
@@ -128,6 +132,7 @@ type V4FilePart = Extract<V4Part, { type: 'file' }>;
 // Type guards
 function isV4Message(msg: V4Message | MyUIMessage): msg is V4Message {
   return (
+    msg?.parts == null ||
     'toolInvocations' in msg ||
     (msg?.parts?.some(p => p.type === 'tool-invocation') ?? false) ||
     msg?.role === 'data' ||
@@ -423,7 +428,7 @@ export function convertV5MessageToV4(msg: MyUIMessage): LegacyUIMessage {
 
 Apply the conversion when loading messages from your database:
 
-<Note type="warning">Adapt this code to your specific database and ORM.</Note>
+Adapt this code to your specific database and ORM.
 
 ```tsx
 import { convertV4MessageToV5, type MyUIMessage } from './conversion';
@@ -453,7 +458,6 @@ import {
 } from './conversion';
 import { upsertMessage, loadChat } from './db/actions';
 import { streamText, generateId, convertToModelMessages } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { message, chatId }: { message: MyUIMessage; chatId: string } =
@@ -466,12 +470,11 @@ export async function POST(req: Request) {
     message: convertV5MessageToV4(message), // convert to v4
   });
 
-  // Load previous messages (already in v5 format)
-  const previousMessages = await loadChat(chatId);
-  const messages = [...previousMessages, message];
+  // Load all messages, including the one just saved (already in v5 format)
+  const messages = await loadChat(chatId);
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: convertToModelMessages(messages),
     tools: {
       // Your tools here
@@ -518,14 +521,11 @@ Now that your application is updated to AI SDK 5.0 and working with the runtime 
 
 This phase uses a simplified approach: create a new `messages_v5` table with the same structure as your current `messages` table, but storing v5-formatted message parts.
 
-<Note type="warning">
 **Adapt phase 2 examples to your setup**
 
 These code examples demonstrate migration patterns. Your implementation will differ based on your database (Postgres, MySQL, SQLite), ORM (Drizzle, Prisma, raw SQL), schema design, and data persistence patterns.
 
 Use these examples as a guide, then adapt them to your specific setup.
-
-</Note>
 
 ### Overview: Migration Strategy
 
@@ -828,11 +828,10 @@ export async function POST(req: Request) {
     message,
   });
 
-  const previousMessages = await loadChat(chatId);
-  const messages = [...previousMessages, message];
+  const messages = await loadChat(chatId);
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: convertToModelMessages(messages),
     tools: {
       // Your tools here
@@ -882,21 +881,10 @@ The following community members have shared their migration experiences:
 
 For more API change details, see the [main migration guide](/docs/migration-guides/migration-guide-5-0).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cace31c16a898a9c676a4df57c3af14b940b62340e480fc8d566e6aadf61debc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "42f64ea4d7153f1b8edb60c42266b53fef559767dbfa1c110a15b242b8be7b32"
 ---
 
 # Microfrontends
@@ -40,8 +40,8 @@ Microfrontends allow you to split a single application into smaller, independent
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Vercel MCP tools for microfrontends.
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Reference](https://vercel.com/docs/flags/flags-explorer/reference?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — In-depth reference for configuring the Flags Explorer
 
 Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

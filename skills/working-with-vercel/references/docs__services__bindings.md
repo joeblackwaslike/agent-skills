@@ -14,8 +14,8 @@ related:
 summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "fccb5cb3cd713405a5a96373f77f0ba8d3f58ada1447e1020a1bf65a3a4fb272"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a6fadaddce1c3a4b9b81945d947854a0e540e6209d2a154d5ae17c4174c42994"
 ---
 
 # Service bindings
@@ -31,12 +31,12 @@ A service binding lets server-side code in one service call another service dire
 - [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related)
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related)
-- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Options available for service configuration.
+- [Services](https://vercel.com/docs/build-output-api/services?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fservices%2Fbindings&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 
@@ -106,7 +106,7 @@ Vercel injects the binding as a URL base, and the value is deployment-aware. Thi
 
 Internal calls also skip the public request pipeline. Firewall, Deployment Protection, the project's top-level middleware, and CDN request accounting do not apply to a service-to-service call.
 
-A call over a binding is billed as a single service request, with no separate Edge Request or Fast Data Transfer charge. See [Pricing and Limits](/docs/services/pricing) for how billing works across services.
+A call over a binding is billed as a single service request, with no separate CDN Request or Fast Data Transfer charge. See [Pricing and Limits](/docs/services/pricing) for how billing works across services.
 
 > **💡 Note:** A binding grants internal access only. It does not authenticate or authorize the
 > call. If you need application-level authorization between services, handle it in

@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c6e7387ce2b12c12c7ccebe805c535ff07fe925253f4b6874545b10c39894d70"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "77094b12cd8eaf992960a7574324137ca20c027adedb092d3929c1d44fbc978d"
 ---
 
 # Bot Management
@@ -34,14 +34,14 @@ Bots generate nearly half of all internet traffic. While many bots serve legitim
 - [Bot Protection is now in public beta](https://vercel.com/changelog/bot-protection-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
 - [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
 - [View & query bot verification data in Vercel Observability](https://vercel.com/changelog/view-and-query-bot-verification-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related) — Information on using Cloudflare together with Vercel.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
+- [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
-- [The AI Cloud: A unified platform for AI workloads](https://vercel.com/blog/the-ai-cloud-a-unified-platform-for-ai-workloads?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/bot-management.graph.md](/docs/bot-management.graph.md?from=related&source_path=%2Fdocs%2Fbot-management&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -73,7 +73,7 @@ With Vercel, you can use:
 
 ## Bot protection managed ruleset
 
-> **🔒 Permissions Required**: Bot protection managed ruleset
+> **Availability**: Bot protection managed ruleset is available on all plans
 
 With Vercel, you can use the bot protection managed ruleset to [challenge](/docs/vercel-firewall/firewall-concepts#challenge) non-browser traffic from accessing your applications. It filters out automated threats while allowing legitimate traffic.
 
@@ -105,7 +105,7 @@ Bot Protection doesn't work when a reverse proxy (e.g. Cloudflare, Azure, or oth
 
 ## AI bots managed ruleset
 
-> **🔒 Permissions Required**: AI bots managed ruleset
+> **Availability**: AI bots managed ruleset is available on all plans
 
 Vercel's AI bots managed ruleset allows you to control traffic from AI bots that crawl your site for training data, search purposes, or user-generated fetches.
 

@@ -1,10 +1,14 @@
 ---
+title: Svelte
+description: Learn how to build your first agent with the AI SDK and Svelte.
+url: "https://ai-sdk.dev/docs/getting-started/svelte"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/svelte.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "b17ddb4a2f61e424d67fd19b9621fa01b91a16eda996a5ce99ad5e450afa1840"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "72d49ea1dccb80218f2cd51504b0ca47142a91881a9bbcc899f8438372a74ee3"
 ---
 
-# Svelte Quickstart
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK is a powerful TypeScript library designed to help developers build AI-powered applications.
 
@@ -19,56 +23,59 @@ To follow this quickstart, you'll need:
 - Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Set Up Your Application
 
 Start by creating a new SvelteKit application. This command will create a new directory named `my-ai-app` and set up a basic SvelteKit application inside it.
 
-<Snippet text="npx sv create my-ai-app" />
+```
+npx sv create my-ai-app
+```
 
 Navigate to the newly created directory:
 
-<Snippet text="cd my-ai-app" />
+```
+cd my-ai-app
+```
 
 ### Install Dependencies
 
 Install `ai` and `@ai-sdk/svelte`, the AI package and AI SDK's Svelte bindings. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
-<Note>
-  This guide uses the Vercel AI Gateway provider so you can access hundreds of
-  models from different providers with one API key, but you can switch to any
-  provider or model by installing its package. Check out available [AI SDK
-  providers](/providers/ai-sdk-providers) for more information.
-</Note>
-<InstallPackages packages="ai @ai-sdk/svelte zod" dev />
+This guide uses the Vercel AI Gateway provider so you can access hundreds of
+models from different providers with one API key, but you can switch to any
+provider or model by installing its package. Check out available [AI SDK
+providers](/providers/ai-sdk-providers) for more information.
+
+**Packages:** `ai`, `@ai-sdk/svelte`, `zod`
 
 ### Configure your AI Gateway API key
 
 Create a `.env.local` file in your project root and add your AI Gateway API key. This key authenticates your application with the Vercel AI Gateway.
 
-<Snippet text="touch .env.local" />
+```
+touch .env.local
+```
 
 Edit the `.env.local` file:
 
-```env filename=".env.local"
+```dotenv title=".env.local"
 AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
 Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
 
-<Note className="mb-4">
-  The AI SDK's Vercel AI Gateway Provider will default to using the
-  `AI_GATEWAY_API_KEY` environment variable. Vite does not automatically load
-  environment variables onto `process.env`, so you'll need to import
-  `AI_GATEWAY_API_KEY` from `$env/static/private` in your code (see below).
-</Note>
+The AI SDK's Vercel AI Gateway Provider will default to using the
+`AI_GATEWAY_API_KEY` environment variable. Vite does not automatically load
+environment variables onto `process.env`, so you'll need to import
+`AI_GATEWAY_API_KEY` from `$env/static/private` in your code (see below).
 
 ## Create an API route
 
 Create a SvelteKit Endpoint, `src/routes/api/chat/+server.ts` and add the following code:
 
-```tsx filename="src/routes/api/chat/+server.ts"
+```tsx title="src/routes/api/chat/+server.ts"
 import {
   streamText,
   type UIMessage,
@@ -88,7 +95,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-5'),
+    model: gateway('anthropic/claude-sonnet-5.5'),
     messages: await convertToModelMessages(messages),
   });
 
@@ -98,10 +105,8 @@ export async function POST({ request }) {
 }
 ```
 
-<Note>
-  If you see type errors with `AI_GATEWAY_API_KEY` or your `POST` function, run
-  the dev server.
-</Note>
+If you see type errors with `AI_GATEWAY_API_KEY` or your `POST` function, run
+the dev server.
 
 Let's take a look at what is happening in this code:
 
@@ -118,7 +123,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: __MODEL__;
+model: "anthropic/claude-sonnet-5.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -126,18 +131,18 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
 ### Using other providers
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<InstallPackages packages="@ai-sdk/openai" />
+**Packages:** `@ai-sdk/openai`
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -158,7 +163,7 @@ Its properties and API are largely the same as React's [`useChat`](/docs/referen
 
 Update your root page (`src/routes/+page.svelte`) with the following code to show a list of chat messages and provide a user message input:
 
-```svelte filename="src/routes/+page.svelte"
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 
@@ -207,9 +212,11 @@ The LLM's response is accessed through the message `parts` array. Each message c
 
 With that, you have built everything you need for your chatbot! To start your application, use the command:
 
-<Snippet text="pnpm run dev" />
+```
+pnpm run dev
+```
 
-Head to your browser and open http://localhost:5173. You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Svelte.
+Head to your browser and open [http://localhost:5173](http://localhost:5173). You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Svelte.
 
 ## Enhance Your Chatbot with Tools
 
@@ -225,7 +232,7 @@ Let's enhance your chatbot by adding a simple weather tool.
 
 Modify your `src/routes/api/chat/+server.ts` file to include the new weather tool:
 
-```tsx filename="src/routes/api/chat/+server.ts" highlight="5-8,25-39"
+```tsx title="src/routes/api/chat/+server.ts" {5-8,25-39}
 import {
   createGateway,
   streamText,
@@ -248,7 +255,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-5'),
+    model: gateway('anthropic/claude-sonnet-5.5'),
     messages: await convertToModelMessages(messages),
     tools: {
       weather: tool({
@@ -287,17 +294,15 @@ Try asking something like "What's the weather in New York?" and see how the mode
 
 Notice the blank response in the UI? This is because instead of generating a text response, the model generated a tool call. You can access the tool call and subsequent tool result on the client via the `tool-weather` part of the `message.parts` array.
 
-<Note>
-  Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
-  you used when defining the tool. In this case, since we defined the tool as
-  `weather`, the part type is `tool-weather`.
-</Note>
+Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
+you used when defining the tool. In this case, since we defined the tool as
+`weather`, the part type is `tool-weather`.
 
 ### Update the UI
 
 To display the tool invocation in your UI, update your `src/routes/+page.svelte` file:
 
-```svelte filename="src/routes/+page.svelte"
+```svelte title="src/routes/+page.svelte"
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 
@@ -349,7 +354,7 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. By default
 
 Modify your `src/routes/api/chat/+server.ts` file to include the `stopWhen` condition:
 
-```ts filename="src/routes/api/chat/+server.ts" highlight="25"
+```ts title="src/routes/api/chat/+server.ts" {25}
 import {
   createGateway,
   streamText,
@@ -372,7 +377,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-5'),
+    model: gateway('anthropic/claude-sonnet-5.5'),
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {
@@ -406,7 +411,7 @@ By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 
 
 Update your `src/routes/api/chat/+server.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```tsx filename="src/routes/api/chat/+server.ts" highlight="40-53"
+```tsx title="src/routes/api/chat/+server.ts" {40-53}
 import {
   createGateway,
   streamText,
@@ -429,7 +434,7 @@ export async function POST({ request }) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: gateway('anthropic/claude-sonnet-5'),
+    model: gateway('anthropic/claude-sonnet-5.5'),
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {
@@ -473,7 +478,7 @@ export async function POST({ request }) {
 
 Update your UI to handle the new temperature conversion tool by modifying the tool part handling:
 
-```svelte filename="src/routes/+page.svelte" highlight="23-24"
+```svelte title="src/routes/+page.svelte" {23-24}
 <script lang="ts">
   import { Chat } from '@ai-sdk/svelte';
 
@@ -531,7 +536,7 @@ The surface-level difference is that Svelte uses classes to manage state, wherea
 ### 1. Arguments to classes aren't reactive by default
 
 Unlike in React, where hooks are rerun any time their containing component is invalidated, code in the `script` block of a Svelte component is only run once when the component is created.
-This means that, if you want arguments to your class to be reactive, you need to make sure you pass a _reference_ into the class, rather than a value:
+This means that, if you want arguments to your class to be reactive, you need to make sure you pass a *reference* into the class, rather than a value:
 
 ```svelte
 <script>
@@ -610,19 +615,10 @@ You've built an AI chatbot using the AI SDK! From here, you have several paths t
 - To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).
 - To learn more about Svelte, check out the [official documentation](https://svelte.dev/docs/svelte).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Understand how eve usage maps to Vercel resources and inherited platform limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c5b0b6b78af6129a2cf65ba0e4775af84cc98fb6c2a14e66765e47ead0b07a7f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1c1cda13c6b5b14770b22076505959c4aababeba1426a7d7b9c58488832d0abe"
 ---
 
 # Pricing and Limits
@@ -32,13 +32,14 @@ Sandbox for isolated command execution, and AI Gateway or model providers for mo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 
 Full cross-link map for this page: [/docs/eve/pricing.graph.md](/docs/eve/pricing.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fpricing&source_site=vercel-docs&relationship=graph)

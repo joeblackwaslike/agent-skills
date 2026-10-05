@@ -15,8 +15,8 @@ related:
 summary: Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-agents.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "60338e44eb1a44047634b82cb667c1e5643e90ff3550f9dfc17f1158a6fee9ee"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "57454d7c4a7ba139e60c6f6d3b489304fe32712dd8db6b1e35dbc9cda6ff7490"
 ---
 
 # Build with AI agents on Vercel
@@ -36,7 +36,7 @@ Integrating AI agents in your application often means working with separate dash
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=related) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=related) — Learn how to add a new AI model to your Vercel projects
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-agents.graph.md](/docs/agent-resources/integrations-for-agents.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-agents&source_site=vercel-docs&relationship=graph)

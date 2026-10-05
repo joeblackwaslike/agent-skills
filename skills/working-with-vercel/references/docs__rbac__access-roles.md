@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4611ba90eda985cc1efc85a4889d7ad45a1ed45c51b3ef4e689a4d85865aefc6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "79bfd5712dcd8ef7ef0c57d3385ab5b1e682db066c9b9cffffb7b105830d990c"
 ---
 
 # Access Roles
@@ -64,7 +64,7 @@ The two groups are further divided into specific roles, each with its own set of
 
 ## Team level roles
 
-> **🔒 Permissions Required**: Team level roles
+> **Availability**: Team level roles are available on Enterprise and Pro plans
 
 Team level roles are designed to provide a broad level of control and access to the team as a whole. These roles are assigned to individuals and apply to all projects within the team, ensuring centralized control and access while upholding the team's security and integrity.
 
@@ -83,7 +83,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Owner role
 
-> **🔒 Permissions Required**: The owner role
+> **Availability**: The owner role is available on Enterprise and Pro plans
 
 | About                      | Details                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -97,7 +97,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Member role
 
-> **🔒 Permissions Required**: The member role
+> **Availability**: The member role is available on Enterprise and Pro plans
 
 Members play a pivotal role in team operations and project management.
 
@@ -124,7 +124,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Developer role
 
-> **🔒 Permissions Required**: The developer role
+> **Availability**: The developer role is available on Enterprise and Pro plans
 
 | About                      | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -155,7 +155,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Contributor role
 
-> **🔒 Permissions Required**: The contributor role
+> **Availability**: The contributor role is available on Enterprise plans
 
 Contributors offer flexibility in access control at the project level. To limit team members' access at the project level, they must first be assigned the contributor role. Only after being assigned the contributor role can they receive project-level roles. **Contributors have no access to projects unless explicitly assigned**.
 
@@ -186,7 +186,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Security role
 
-> **🔒 Permissions Required**: The security role
+> **Availability**: The security role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                               |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -200,7 +200,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Billing role
 
-> **🔒 Permissions Required**: The billing role
+> **Availability**: The billing role is available on Enterprise and Pro plans
 
 | About                      | Details                                                                                                                                                                                                                   |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -218,7 +218,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Pro Viewer role
 
-> **🔒 Permissions Required**: The Pro Viewer role
+> **Availability**: The Pro Viewer role is available on Pro plans
 
 An observational role designed for Pro teams, Pro Viewer members can monitor team activities and collaborate on projects with limited administrative visibility.
 
@@ -248,15 +248,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Enterprise Viewer role
 
-> **🔒 Permissions Required**: The viewer role
-
-| About                      | Details                                                                                                                                                  |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description**            | An observational role, viewers are informed on team activities without direct intervention.                                                              |
-| **Key Responsibilities**   | - Monitor and inspect all team [projects](/docs/projects) <br /> - Review shared team resources <br /> - Observe team settings and configurations |
-| **Access and Permissions** | Viewers have broad viewing privileges but are restricted from making changes.                                                                            |
-
-> **🔒 Permissions Required**: The Enterprise Viewer role
+> **Availability**: The Enterprise Viewer role is available on Enterprise plans
 
 An observational role with enhanced visibility for Enterprise teams, Enterprise Viewer members have comprehensive read-only access to team activities and operational data.
 
@@ -287,7 +279,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ## Project level roles
 
-> **🔒 Permissions Required**: Project level roles
+> **Availability**: Project level roles are available on Enterprise plans
 
 Project level roles provide fine-grained control and access to specific projects within a team. These roles are assigned to individuals and are restricted to the projects they're assigned to, allowing for precise access control while preserving the overarching security and integrity of the team.
 
@@ -301,7 +293,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 
 ### Project administrators
 
-> **🔒 Permissions Required**: The project administrator role
+> **Availability**: The project administrator role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                                                                                                                 |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -315,7 +307,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 
 ### Project developer
 
-> **🔒 Permissions Required**: The project developer role
+> **Availability**: The project developer role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                                                                                                                                       |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -329,7 +321,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 
 ### Project viewer
 
-> **🔒 Permissions Required**: The project viewer role
+> **Availability**: The project viewer role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                                                                                                                                    |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -347,13 +339,12 @@ Existing team roles can be combined with permission groups to create custom acce
 
 | Permission                        | Description                                                                                           | Compatible Roles                     | Already Included in |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------- |
-| **Create Project**                | Allows the user to create a new project.                                                              | Developer, Contributor               | Owner, Member       |
-| **Full Production Deployment**    | Deploy to production from CLI, rollback and promote any deployment.                                   | Developer, Contributor               | Owner, Member       |
-| **Usage Viewer**                  | Read-only usage team-wide including prices and invoices.                                              | Developer, Security, Billing, Viewer | Owner               |
+| **Create Project**                | Allows the user to create a new project.                                                              | Developer                            | Owner, Member       |
+| **Full Production Deployment**    | Deploy to production from CLI, rollback and promote any deployment.                                   | Developer                            | Owner, Member       |
+| **Usage Viewer**                  | Read-only usage team-wide including prices and invoices.                                              | Developer, Security, Member, Billing, Viewer | Owner               |
 | **Connector Manager**             | Create and manage team-wide connectors, project connections, installations, and tokens.               | Developer, Security, Billing, Viewer, Contributor | Owner, Member       |
 | **Environment Manager**           | Create and manage project environments.                                                               | Developer                            | Owner               |
 | **Environment Variable Manager**  | Create and manage environment variables.                                                              | Developer                            | Owner, Member       |
-| **Deployment Protection Manager** | Configure password protection, deployment protection by pass, and Vercel Authentication for projects. | Developer                            | Owner, Member       |
 
 See [project level roles](/docs/rbac/access-roles/project-level-roles) and [team level roles](/docs/rbac/access-roles/team-level-roles) for a complete list of roles, their permissions, and how they can be combined.
 

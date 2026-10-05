@@ -1,10 +1,14 @@
 ---
+title: Coding Agents
+description: Learn how to set up the AI SDK for use with coding agents, including installing skills, accessing bundled docs, and using DevTools.
+url: "https://ai-sdk.dev/docs/getting-started/coding-agents"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/coding-agents.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "80535f1dd9727bd8ee75494df85b38eee651c164d54f5476b5d8d1b534c28b8b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4fc19b95a6973e27d001a2e4209680b715adba42a1e690c41139448e85a43ec4"
 ---
 
-# Getting Started with Coding Agents
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 This page explains how to get the most out of the AI SDK when working inside a coding agent (such as Claude Code, Codex, OpenCode, Cursor, or any other AI-assisted development environment).
 
@@ -22,11 +26,9 @@ This installs the skill into your agent's specific skills directory (e.g., `.cla
 
 Once installed, any agent that supports the [Agent Skills](https://agentskills.io) format will automatically discover and load the skill when working on AI SDK tasks.
 
-<Note>
-  Agent Skills use **progressive disclosure**: your agent loads only the skill's
-  name and description at startup. The full instructions are only pulled into
-  context when the task calls for it, keeping your agent fast and focused.
-</Note>
+Agent Skills use **progressive disclosure**: your agent loads only the skill's
+name and description at startup. The full instructions are only pulled into
+context when the task calls for it, keeping your agent fast and focused.
 
 ## Docs and Source Code in `node_modules`
 
@@ -34,7 +36,7 @@ Once you've installed the `ai` package, you already have the full AI SDK documen
 
 Install the `ai` package if you haven't already:
 
-<InstallPackages packages="ai" />
+**Packages:** `ai`
 
 After installation, your agent can reference the bundled source code and documentation at paths like:
 
@@ -49,14 +51,12 @@ This means your agent can look up accurate API signatures, implementations, and 
 
 AI SDK DevTools gives you full visibility into your AI SDK calls during development. It captures LLM requests, responses, tool calls, token usage, and multi-step interactions, and displays them in a local web UI.
 
-<Note type="warning">
-  AI SDK DevTools is experimental and intended for local development only. Do
-  not use in production environments.
-</Note>
+AI SDK DevTools is experimental and intended for local development only. Do
+not use in production environments.
 
 Install the DevTools package:
 
-<InstallPackages packages="@ai-sdk/devtools" />
+**Packages:** `@ai-sdk/devtools`
 
 ### Register the integration
 
@@ -133,11 +133,9 @@ const result = streamText({
 
 The `onStepEnd` callback fires after each LLM step and prints any tool results to your terminal — useful for quick debugging without opening the DevTools UI.
 
-<Note>
-  DevTools stores all AI interactions in a local `.devtools/generations.json`
-  file. It automatically adds `.devtools` to your `.gitignore` to prevent
-  committing sensitive interaction data.
-</Note>
+DevTools stores all AI interactions in a local `.devtools/generations.json`
+file. It automatically adds `.devtools` to your `.gitignore` to prevent
+committing sensitive interaction data.
 
 ## Where to Next?
 
@@ -146,19 +144,10 @@ The `onStepEnd` callback fires after each LLM step and prints any tool results t
 - Explore [Tools and Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling) to build agents that can take real-world actions.
 - Check out the [Add Skills to Your Agent](/cookbook/guides/agent-skills) cookbook guide for a step-by-step integration walkthrough.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

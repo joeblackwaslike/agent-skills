@@ -1,10 +1,14 @@
 ---
+title: ToolLoopAgent
+description: API Reference for the ToolLoopAgent class.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "06331d25c2e4ee866d9390fd4c60cab564bb768492fab287c4779c209530bac9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "39ff5fbe5ec6cdbac7494a12333732098f605bee2e02a37f44f17589d15227de"
 ---
 
-# `ToolLoopAgent`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Creates a reusable AI agent capable of generating text, streaming responses, and using tools over multiple steps (a reasoning-and-acting loop). `ToolLoopAgent` is ideal for building autonomous, multi-step agents that can take actions, call tools, and reason over the results until a stop condition is reached.
 
@@ -12,10 +16,9 @@ Unlike single-step calls like `generateText()`, an agent can iteratively invoke 
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: weatherTool,
@@ -41,655 +44,120 @@ To see `ToolLoopAgent` in action, check out [these examples](#examples).
 
 ## Import
 
-<Snippet text={`import { ToolLoopAgent } from "ai"`} prompt={false} />
+```
+import { ToolLoopAgent } from "ai"
+```
 
 ## Constructor
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'LanguageModel',
-      isRequired: true,
-      description:
-        'The language model instance to use (e.g., from a provider).',
-    },
-    {
-      name: 'instructions',
-      type: 'Instructions',
-      isOptional: true,
-      description:
-        'Instructions for the agent, usually used for system prompt/context.',
-    },
-    {
-      name: 'allowSystemInMessages',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Whether `role: "system"` messages are allowed in the `prompt` or `messages` fields. When unset, system messages are rejected because they can create a prompt injection attack risk. Ideally, use the `instructions` option instead. Set to `true` to allow system messages, or `false` to explicitly reject them.',
-    },
-    {
-      name: 'tools',
-      type: 'Record<string, Tool>',
-      isOptional: true,
-      description:
-        'A set of tools the agent can call. Keys are tool names. Tools require the underlying model to support tool calling.',
-    },
-    {
-      name: 'toolChoice',
-      type: 'ToolChoice',
-      isOptional: true,
-      description:
-        "Tool call selection strategy. Options: 'auto' | 'none' | 'required' | { type: 'tool', toolName: string }. Default: 'auto'.",
-    },
-    {
-      name: 'stopWhen',
-      type: 'StopCondition | StopCondition[]',
-      isOptional: true,
-      description:
-        'Condition(s) for ending the agent loop. Default: isStepCount(20). Use `isLoopFinished()` to let the agent run until all tool calls have completed, but beware of potential runaway loops. See https://ai-sdk.dev/v7/docs/reference/ai-sdk-core/loop-finished#isloopfinished.',
-    },
-    {
-      name: 'activeTools',
-      type: 'ActiveTools<TOOLS>',
-      isOptional: true,
-      description:
-        'Limits the tools that are available for the model to call without changing the tool call and result types in the result. All tools are active by default. Tool names are restricted to the string keys of the tool set.',
-    },
-    {
-      name: 'toolOrder',
-      type: 'ToolOrder<TOOLS>',
-      isOptional: true,
-      description:
-        'Controls the order in which tools are sent to the provider. The list can be partial. Tools not listed in `toolOrder` are sent after the listed tools, sorted alphabetically. Tool names are restricted to the string keys of the tool set.',
-    },
-    {
-      name: 'toolApproval',
-      type: 'ToolApprovalConfiguration<TOOLS, RUNTIME_CONTEXT>',
-      isOptional: true,
-      description:
-        "Approval configuration for the agent. Pass a `GenericToolApprovalFunction` to handle all tool calls in one callback with `toolCall`, `tools`, `toolsContext`, `messages`, and `runtimeContext`, or pass a per-tool object where each key can be a status (`'not-applicable'`, `'approved'`, `'denied'`, or `'user-approval'`), an object form such as `{ type: 'denied', reason: 'blocked by policy' }`, or a `SingleToolApprovalFunction` that receives the tool input and options `toolCallId`, `messages`, `toolContext`, and `runtimeContext` (same shape as tool execution options without `abortSignal`, with `context` renamed to `toolContext`). The `RUNTIME_CONTEXT` type parameter matches the agent's `runtimeContext`. A `GenericToolApprovalFunction` or `SingleToolApprovalFunction` may return `undefined` for the same effect as `'not-applicable'`. `'not-applicable'` is the default execution path and runs the tool without approval metadata. Use `'approved'`, `'denied'`, or their object forms when you want explicit automatic approval request/response parts in the output. Object statuses can include a `reason`: automatic approvals and denials forward it to the approval response, while manual user approvals forward it to the approval request for the human approver. This setting takes precedence over a tool's `needsApproval` default.",
-    },
-    {
-      name: 'experimental_toolCallers',
-      type: 'Experimental_ToolCallers<TOOLS>',
-      isOptional: true,
-      description:
-        'Configures which caller tools may invoke each tool. Pass an object keyed by callee tool name whose values list caller-capable tool names. Include `DIRECT_TOOL_CALL` from `@ai-sdk/code-mode` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each agent step. Provider caller names are translated to provider-native allowed-caller options.',
-    },
-    {
-      name: 'output',
-      type: 'Output',
-      isOptional: true,
-      description:
-        'Optional structured output specification, for parsing responses into typesafe data.',
-    },
-    {
-      name: 'prepareStep',
-      type: 'PrepareStepFunction',
-      isOptional: true,
-      description:
-        'Optional function to mutate step settings or inject state for each agent step, including per-step model call settings such as temperature, maxOutputTokens, sampling controls, penalties, stop sequences, seed, and reasoning. Model call setting overrides apply only to the current step.',
-    },
-    {
-      name: 'include',
-      type: '{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean; rawChunks?: boolean }',
-      isOptional: true,
-      description:
-        'Settings for controlling what data is included in step results. requestBody, requestMessages, and responseBody apply to generate(); requestBody, requestMessages, and rawChunks apply to stream().',
-    },
-    {
-      name: 'repairToolCall',
-      type: 'ToolCallRepairFunction',
-      isOptional: true,
-      description:
-        'Optional callback to attempt automatic recovery when a tool call cannot be parsed.',
-    },
-    {
-      name: 'experimental_refineToolInput',
-      type: 'ToolInputRefinement<TOOLS>',
-      isOptional: true,
-      description:
-        'Optional mapping of tool names to functions that refine parsed tool inputs. Each function receives the typed input for its tool and must return the same input type shape. The refined input is used for tool execution, output parts, lifecycle callbacks, and telemetry in both `generate()` and `stream()`.',
-    },
-    {
-      name: 'onStart',
-      type: 'GenerateTextOnStartCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when the agent operation begins, before any LLM calls are made. Useful for logging, analytics, or initializing state. If also specified in `generate()` or `stream()`, both callbacks are called (constructor first).',
-      properties: [
-        {
-          type: 'GenerateTextStartEvent',
-          parameters: [
-            {
-              name: 'provider',
-              type: 'string',
-              description:
-                'The provider identifier (e.g., "openai", "anthropic").',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The specific model identifier (e.g., "gpt-6-astra").',
-            },
-            {
-              name: 'instructions',
-              type: 'Instructions | undefined',
-              description: 'The instructions provided to the model.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description: 'The messages for this generation.',
-            },
-            {
-              name: 'tools',
-              type: 'TOOLS | undefined',
-              description: 'The tools available for this generation.',
-            },
-            {
-              name: 'toolChoice',
-              type: 'ToolChoice<TOOLS> | undefined',
-              description: 'The tool choice strategy for this generation.',
-            },
-            {
-              name: 'activeTools',
-              type: 'ActiveTools<TOOLS>',
-              description:
-                'Limits which tools are available for the model to call.',
-            },
-            {
-              name: 'toolOrder',
-              type: 'ToolOrder<TOOLS>',
-              description:
-                'Controls the order in which tools are sent to the provider.',
-            },
-            {
-              name: 'maxOutputTokens',
-              type: 'number | undefined',
-              description: 'Maximum number of tokens to generate.',
-            },
-            {
-              name: 'temperature',
-              type: 'number | undefined',
-              description: 'Sampling temperature for generation.',
-            },
-            {
-              name: 'topP',
-              type: 'number | undefined',
-              description: 'Top-p (nucleus) sampling parameter.',
-            },
-            {
-              name: 'topK',
-              type: 'number | undefined',
-              description: 'Top-k sampling parameter.',
-            },
-            {
-              name: 'presencePenalty',
-              type: 'number | undefined',
-              description: 'Presence penalty for generation.',
-            },
-            {
-              name: 'frequencyPenalty',
-              type: 'number | undefined',
-              description: 'Frequency penalty for generation.',
-            },
-            {
-              name: 'stopSequences',
-              type: 'string[] | undefined',
-              description: 'Sequences that will stop generation.',
-            },
-            {
-              name: 'seed',
-              type: 'number | undefined',
-              description: 'Random seed for reproducible generation.',
-            },
-            {
-              name: 'maxRetries',
-              type: 'number',
-              description: 'Maximum number of retries for failed requests.',
-            },
-            {
-              name: 'timeout',
-              type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number } | undefined',
-              description:
-                'Timeout configuration for the generation. firstChunkMs and chunkMs are only enforced by stream().',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string | undefined> | undefined',
-              description: 'Additional HTTP headers sent with the request.',
-            },
-            {
-              name: 'providerOptions',
-              type: 'ProviderOptions | undefined',
-              description: 'Additional provider-specific options.',
-            },
-            {
-              name: 'output',
-              type: 'OUTPUT | undefined',
-              description:
-                'The output specification for structured outputs, if configured.',
-            },
-            {
-              name: 'abortSignal',
-              type: 'AbortSignal | undefined',
-              description: 'Abort signal for cancelling the operation.',
-            },
-            {
-              name: 'include',
-              type: '{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined',
-              description:
-                'Settings for controlling what data is included in step results.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'User-defined shared runtime context object that flows through the entire generation lifecycle.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Per-tool context map passed via `toolsContext`, keyed by tool name.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onStepStart',
-      type: 'GenerateTextOnStepStartCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when a step (LLM call) begins, before the provider is called. Each step represents a single LLM invocation. If also specified in `generate()` or `stream()`, both callbacks are called (constructor first).',
-      properties: [
-        {
-          type: 'GenerateTextStepStartEvent',
-          parameters: [
-            {
-              name: 'provider',
-              type: 'string',
-              description:
-                'The provider identifier (e.g., "openai", "anthropic").',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The specific model identifier (e.g., "gpt-6-astra").',
-            },
-            {
-              name: 'instructions',
-              type: 'Instructions | undefined',
-              description:
-                'The instructions provided to the model for this step.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description:
-                'The messages that will be sent to the model for this step.',
-            },
-            {
-              name: 'tools',
-              type: 'TOOLS | undefined',
-              description: 'The tools available for this generation.',
-            },
-            {
-              name: 'toolChoice',
-              type: 'LanguageModelV4ToolChoice | undefined',
-              description: 'The tool choice configuration for this step.',
-            },
-            {
-              name: 'activeTools',
-              type: 'ActiveTools<TOOLS>',
-              description: 'Limits which tools are available for this step.',
-            },
-            {
-              name: 'toolOrder',
-              type: 'ToolOrder<TOOLS>',
-              description:
-                'Controls the order in which tools are sent to the provider for this step.',
-            },
-            {
-              name: 'steps',
-              type: 'ReadonlyArray<StepResult<TOOLS>>',
-              description:
-                'Array of results from previous steps (empty for first step).',
-            },
-            {
-              name: 'providerOptions',
-              type: 'ProviderOptions | undefined',
-              description:
-                'Additional provider-specific options for this step.',
-            },
-            {
-              name: 'timeout',
-              type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number } | undefined',
-              description:
-                'Timeout configuration for the generation. firstChunkMs and chunkMs are only enforced by stream().',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string | undefined> | undefined',
-              description: 'Additional HTTP headers sent with the request.',
-            },
-            {
-              name: 'stopWhen',
-              type: 'StopCondition<TOOLS> | Array<StopCondition<TOOLS>> | undefined',
-              description: 'Condition(s) for stopping the generation.',
-            },
-            {
-              name: 'output',
-              type: 'OUTPUT | undefined',
-              description:
-                'The output specification for structured outputs, if configured.',
-            },
-            {
-              name: 'abortSignal',
-              type: 'AbortSignal | undefined',
-              description: 'Abort signal for cancelling the operation.',
-            },
-            {
-              name: 'include',
-              type: '{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined',
-              description:
-                'Settings for controlling what data is included in step results.',
-            },
-            {
-              name: 'runtimeContext',
-              type: 'CONTEXT',
-              description:
-                'User-defined shared runtime context object. May be updated from prepareStep between steps.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              description:
-                'Per-tool context map. May be updated from prepareStep between steps.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onToolExecutionStart',
-      type: 'OnToolExecutionStartCallback',
-      isOptional: true,
-      description:
-        "Callback that is called right before a tool's execute function runs. If also specified in `generate()` or `stream()`, both callbacks are called (constructor first).",
-      properties: [
-        {
-          type: 'ToolExecutionStartEvent',
-          parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description:
-                'Unique identifier for this generation call, used to correlate events.',
-            },
-            {
-              name: 'toolCall',
-              type: 'TypedToolCall<TOOLS>',
-              description:
-                'The full tool call object containing toolName, toolCallId, input, and metadata.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description:
-                'Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.',
-            },
-            {
-              name: 'toolContext',
-              type: 'InferToolContext<TOOLS[toolName]>',
-              description:
-                'Tool-specific context object for the tool call that is about to execute. Narrowed to the context type of the individual tool, not the entire tool set.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onToolExecutionEnd',
-      type: 'OnToolExecutionEndCallback',
-      isOptional: true,
-      description:
-        "Callback that is called right after a tool's execute function completes (or errors). The `toolOutput` field is a discriminated union: when `toolOutput.type` is `'tool-result'`, the `output` field contains the tool result; when `toolOutput.type` is `'tool-error'`, the `error` field contains the error. If also specified in `generate()` or `stream()`, both callbacks are called (constructor first).",
-      properties: [
-        {
-          type: 'ToolExecutionEndEvent',
-          parameters: [
-            {
-              name: 'callId',
-              type: 'string',
-              description:
-                'Unique identifier for this generation call, used to correlate events.',
-            },
-            {
-              name: 'toolCall',
-              type: 'TypedToolCall<TOOLS>',
-              description:
-                'The full tool call object containing toolName, toolCallId, input, and metadata.',
-            },
-            {
-              name: 'toolExecutionMs',
-              type: 'number',
-              description:
-                'The wall-clock duration of the tool execution in milliseconds.',
-            },
-            {
-              name: 'messages',
-              type: 'Array<ModelMessage>',
-              description:
-                'Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.',
-            },
-            {
-              name: 'toolContext',
-              type: 'InferToolContext<TOOLS[toolName]>',
-              description:
-                'Tool-specific context object for the tool call that just completed. Narrowed to the context type of the individual tool, not the entire tool set.',
-            },
-            {
-              name: 'toolOutput',
-              type: 'ToolOutput<TOOLS>',
-              description:
-                "Discriminated union representing the tool execution result. When `type` is `'tool-result'`, the `output` field contains the tool's return value. When `type` is `'tool-error'`, the `error` field contains the error.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onStepEnd',
-      type: 'GenerateTextOnStepEndCallback',
-      isOptional: true,
-      description:
-        'Callback invoked after each agent step (LLM/tool call) completes. If also specified in `generate()` or `stream()`, both callbacks are called (constructor first).',
-    },
-    {
-      name: 'onStepFinish',
-      type: 'GenerateTextOnStepFinishCallback',
-      isOptional: true,
-      description:
-        'Deprecated. Use `onStepEnd` instead. This alias is only used as a fallback when `onStepEnd` is not provided.',
-    },
-    {
-      name: 'onEnd',
-      type: 'GenerateTextOnEndCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when all agent steps are finished and the response is complete. Receives step results, total usage, shared `runtimeContext`, and `toolsContext`. If also specified in `generate()` or `stream()`, both callbacks are called (constructor first).',
-    },
-    {
-      name: 'onFinish',
-      type: 'GenerateTextOnEndCallback',
-      isOptional: true,
-      description: 'Deprecated alias for `onEnd`.',
-    },
-    {
-      name: 'runtimeContext',
-      type: 'CONTEXT',
-      isOptional: true,
-      description:
-        'User-defined shared runtime context object passed to `prepareStep` and lifecycle callbacks.',
-    },
-    {
-      name: 'toolsContext',
-      type: 'InferToolSetContext<TOOLS>',
-      description:
-        'Per-tool context map keyed by tool name. Required when at least one tool defines `contextSchema`; not accepted when no tools need context.',
-    },
-    {
-      name: 'telemetry',
-      type: 'TelemetryOptions',
-      isOptional: true,
-      description: 'Optional telemetry configuration.',
-      properties: [
-        {
-          type: 'TelemetryOptions',
-          parameters: [
-            {
-              name: 'includeRuntimeContext',
-              type: '{ [KEY in keyof CONTEXT]?: boolean }',
-              isOptional: true,
-              description:
-                'Top-level runtime context properties that should be included in telemetry. Runtime context properties are excluded unless they are explicitly set to `true`. Lifecycle callbacks and returned results still receive the full `runtimeContext`.',
-            },
-            {
-              name: 'includeToolsContext',
-              type: '{ [TOOL_NAME in keyof InferToolSetContext<TOOLS>]?: { [KEY in keyof InferToolSetContext<TOOLS>[TOOL_NAME]]?: boolean } }',
-              isOptional: true,
-              description:
-                'Top-level tool context properties that should be included in telemetry, configured per tool. Tool context properties are excluded unless they are explicitly set to `true`. Lifecycle callbacks and returned results still receive the full `toolsContext`.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'experimental_download',
-      type: 'DownloadFunction | undefined',
-      isOptional: true,
-      description:
-        'Experimental: Custom download function for fetching files/URLs for tool or model use. By default, files are downloaded if the model does not support the URL for a given media type.',
-    },
-    {
-      name: 'maxOutputTokens',
-      type: 'number',
-      isOptional: true,
-      description: 'Maximum number of tokens the model is allowed to generate.',
-    },
-    {
-      name: 'temperature',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Sampling temperature, controls randomness. Passed through to the model.',
-    },
-    {
-      name: 'topP',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Top-p (nucleus) sampling parameter. Passed through to the model.',
-    },
-    {
-      name: 'topK',
-      type: 'number',
-      isOptional: true,
-      description: 'Top-k sampling parameter. Passed through to the model.',
-    },
-    {
-      name: 'presencePenalty',
-      type: 'number',
-      isOptional: true,
-      description: 'Presence penalty parameter. Passed through to the model.',
-    },
-    {
-      name: 'frequencyPenalty',
-      type: 'number',
-      isOptional: true,
-      description: 'Frequency penalty parameter. Passed through to the model.',
-    },
-    {
-      name: 'stopSequences',
-      type: 'string[]',
-      isOptional: true,
-      description:
-        'Custom token sequences which stop the model output. Passed through to the model.',
-    },
-    {
-      name: 'seed',
-      type: 'number',
-      isOptional: true,
-      description: 'Seed for deterministic generation (if supported).',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      isOptional: true,
-      description: 'How many times to retry on failure. Default: 2.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions',
-      isOptional: true,
-      description: 'Additional provider-specific configuration.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string | undefined>',
-      isOptional: true,
-      description:
-        'Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.',
-    },
-    {
-      name: 'callOptionsSchema',
-      type: 'FlexibleSchema<CALL_OPTIONS>',
-      isOptional: true,
-      description:
-        'Optional schema for custom call options that can be passed when calling generate() or stream().',
-    },
-    {
-      name: 'prepareCall',
-      type: 'PrepareCallFunction',
-      isOptional: true,
-      description:
-        'Optional function to prepare call-specific settings based on the call options.',
-    },
-    {
-      name: 'id',
-      type: 'string',
-      isOptional: true,
-      description: 'Custom agent identifier.',
-    },
-  ]}
-/>
+- `model` (`LanguageModel`): The language model instance to use (e.g., from a provider).
+- `instructions?` (`Instructions`): Instructions for the agent, usually used for system prompt/context.
+- `allowSystemInMessages?` (`boolean`): Whether \`role: "system"\` messages are allowed in the \`prompt\` or \`messages\` fields. When unset, system messages are rejected because they can create a prompt injection attack risk. Ideally, use the \`instructions\` option instead. Set to \`true\` to allow system messages, or \`false\` to explicitly reject them.
+- `tools?` (`Record<string, Tool>`): A set of tools the agent can call. Keys are tool names. Tools require the underlying model to support tool calling.
+- `toolChoice?` (`ToolChoice`): Tool call selection strategy. Options: 'auto' | 'none' | 'required' | \{ type: 'tool', toolName: string }. Default: 'auto'.
+- `stopWhen?` (`StopCondition | StopCondition[]`): Condition(s) for ending the agent loop. Default: isStepCount(20). Use \`isLoopFinished()\` to let the agent run until all tool calls have completed, but beware of potential runaway loops. See https\://ai-sdk.dev/v7/docs/reference/ai-sdk-core/loop-finished#isloopfinished.
+- `activeTools?` (`ActiveTools<TOOLS>`): Limits the tools that are available for the model to call without changing the tool call and result types in the result. All tools are active by default. Tool names are restricted to the string keys of the tool set.
+- `toolOrder?` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider. The list can be partial. Tools not listed in \`toolOrder\` are sent after the listed tools, sorted alphabetically. Tool names are restricted to the string keys of the tool set.
+- `toolApproval?` (`ToolApprovalConfiguration<TOOLS, RUNTIME_CONTEXT>`): Approval configuration for the agent. Pass a \`GenericToolApprovalFunction\` to handle all tool calls in one callback with \`toolCall\`, \`tools\`, \`toolsContext\`, \`messages\`, and \`runtimeContext\`, or pass a per-tool object where each key can be a status (\`'not-applicable'\`, \`'approved'\`, \`'denied'\`, or \`'user-approval'\`), an object form such as \`\{ type: 'denied', reason: 'blocked by policy' }\`, or a \`SingleToolApprovalFunction\` that receives the tool input and options \`toolCallId\`, \`messages\`, \`toolContext\`, and \`runtimeContext\` (same shape as tool execution options without \`abortSignal\`, with \`context\` renamed to \`toolContext\`). The \`RUNTIME\_CONTEXT\` type parameter matches the agent's \`runtimeContext\`. A \`GenericToolApprovalFunction\` or \`SingleToolApprovalFunction\` may return \`undefined\` for the same effect as \`'not-applicable'\`. \`'not-applicable'\` is the default execution path and runs the tool without approval metadata. Use \`'approved'\`, \`'denied'\`, or their object forms when you want explicit automatic approval request/response parts in the output. Object statuses can include a \`reason\`: automatic approvals and denials forward it to the approval response, while manual user approvals forward it to the approval request for the human approver. This setting takes precedence over a tool's \`needsApproval\` default.
+- `experimental_toolCallers?` (`Experimental_ToolCallers<TOOLS>`): Configures which caller tools may invoke each tool. Pass an object keyed by callee tool name whose values list caller-capable tool names. Include \`DIRECT\_TOOL\_CALL\` from \`@ai-sdk/code-mode\` to keep a configured tool directly callable by the model. Local-only callees are hidden from direct model calls and bound to their local caller for each agent step. Provider caller names are translated to provider-native allowed-caller options.
+- `output?` (`Output`): Optional structured output specification, for parsing responses into typesafe data.
+- `prepareStep?` (`PrepareStepFunction`): Optional function to mutate step settings or inject state for each agent step, including per-step model call settings such as temperature, maxOutputTokens, sampling controls, penalties, stop sequences, seed, and reasoning. Model call setting overrides apply only to the current step.
+- `include?` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean; rawChunks?: boolean }`): Settings for controlling what data is included in step results. requestBody, requestMessages, and responseBody apply to generate(); requestBody, requestMessages, and rawChunks apply to stream().
+- `repairToolCall?` (`ToolCallRepairFunction`): Optional callback to attempt automatic recovery when a tool call cannot be parsed.
+- `experimental_refineToolInput?` (`ToolInputRefinement<TOOLS>`): Optional mapping of tool names to functions that refine parsed tool inputs. Each function receives the typed input for its tool and must return the same input type shape. The refined input is used for tool execution, output parts, lifecycle callbacks, and telemetry in both \`generate()\` and \`stream()\`.
+- `onStart?` (`GenerateTextOnStartCallback`): Callback that is called when the agent operation begins, before any LLM calls are made. Useful for logging, analytics, or initializing state. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+  - `GenerateTextStartEvent`
+    - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
+    - `modelId` (`string`): The specific model identifier (e.g., "gpt-6-astra").
+    - `instructions` (`Instructions | undefined`): The instructions provided to the model.
+    - `messages` (`Array<ModelMessage>`): The messages for this generation.
+    - `tools` (`TOOLS | undefined`): The tools available for this generation.
+    - `toolChoice` (`ToolChoice<TOOLS> | undefined`): The tool choice strategy for this generation.
+    - `activeTools` (`ActiveTools<TOOLS>`): Limits which tools are available for the model to call.
+    - `toolOrder` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider.
+    - `maxOutputTokens` (`number | undefined`): Maximum number of tokens to generate.
+    - `temperature` (`number | undefined`): Sampling temperature for generation.
+    - `topP` (`number | undefined`): Top-p (nucleus) sampling parameter.
+    - `topK` (`number | undefined`): Top-k sampling parameter.
+    - `presencePenalty` (`number | undefined`): Presence penalty for generation.
+    - `frequencyPenalty` (`number | undefined`): Frequency penalty for generation.
+    - `stopSequences` (`string[] | undefined`): Sequences that will stop generation.
+    - `seed` (`number | undefined`): Random seed for reproducible generation.
+    - `maxRetries` (`number`): Maximum number of retries for failed requests.
+    - `timeout` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number } | undefined`): Timeout configuration for the generation. firstChunkMs and chunkMs are only enforced by stream().
+    - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+    - `providerOptions` (`ProviderOptions | undefined`): Additional provider-specific options.
+    - `output` (`OUTPUT | undefined`): The output specification for structured outputs, if configured.
+    - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
+    - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
+    - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object that flows through the entire generation lifecycle.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`, keyed by tool name.
+- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step (LLM call) begins, before the provider is called. Each step represents a single LLM invocation. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+  - `GenerateTextStepStartEvent`
+    - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
+    - `modelId` (`string`): The specific model identifier (e.g., "gpt-6-astra").
+    - `instructions` (`Instructions | undefined`): The instructions provided to the model for this step.
+    - `messages` (`Array<ModelMessage>`): The messages that will be sent to the model for this step.
+    - `tools` (`TOOLS | undefined`): The tools available for this generation.
+    - `toolChoice` (`LanguageModelV4ToolChoice | undefined`): The tool choice configuration for this step.
+    - `activeTools` (`ActiveTools<TOOLS>`): Limits which tools are available for this step.
+    - `toolOrder` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider for this step.
+    - `steps` (`ReadonlyArray<StepResult<TOOLS>>`): Array of results from previous steps (empty for first step).
+    - `providerOptions` (`ProviderOptions | undefined`): Additional provider-specific options for this step.
+    - `timeout` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number } | undefined`): Timeout configuration for the generation. firstChunkMs and chunkMs are only enforced by stream().
+    - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+    - `stopWhen` (`StopCondition<TOOLS> | Array<StopCondition<TOOLS>> | undefined`): Condition(s) for stopping the generation.
+    - `output` (`OUTPUT | undefined`): The output specification for structured outputs, if configured.
+    - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
+    - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
+    - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object. May be updated from prepareStep between steps.
+    - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map. May be updated from prepareStep between steps.
+- `onToolExecutionStart?` (`OnToolExecutionStartCallback`): Callback that is called right before a tool's execute function runs. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+  - `ToolExecutionStartEvent`
+    - `callId` (`string`): Unique identifier for this generation call, used to correlate events.
+    - `toolCall` (`TypedToolCall<TOOLS>`): The full tool call object containing toolName, toolCallId, input, and metadata.
+    - `messages` (`Array<ModelMessage>`): Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.
+    - `toolContext` (`InferToolContext<TOOLS[toolName]>`): Tool-specific context object for the tool call that is about to execute. Narrowed to the context type of the individual tool, not the entire tool set.
+- `onToolExecutionEnd?` (`OnToolExecutionEndCallback`): Callback that is called right after a tool's execute function completes (or errors). The \`toolOutput\` field is a discriminated union: when \`toolOutput.type\` is \`'tool-result'\`, the \`output\` field contains the tool result; when \`toolOutput.type\` is \`'tool-error'\`, the \`error\` field contains the error. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+  - `ToolExecutionEndEvent`
+    - `callId` (`string`): Unique identifier for this generation call, used to correlate events.
+    - `toolCall` (`TypedToolCall<TOOLS>`): The full tool call object containing toolName, toolCallId, input, and metadata.
+    - `toolExecutionMs` (`number`): The wall-clock duration of the tool execution in milliseconds.
+    - `messages` (`Array<ModelMessage>`): Messages that were sent to the language model to initiate the response that contained the tool call. Does not include the system prompt nor the assistant response that contained the tool call.
+    - `toolContext` (`InferToolContext<TOOLS[toolName]>`): Tool-specific context object for the tool call that just completed. Narrowed to the context type of the individual tool, not the entire tool set.
+    - `toolOutput` (`ToolOutput<TOOLS>`): Discriminated union representing the tool execution result. When \`type\` is \`'tool-result'\`, the \`output\` field contains the tool's return value. When \`type\` is \`'tool-error'\`, the \`error\` field contains the error.
+- `onStepEnd?` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+- `onStepFinish?` (`GenerateTextOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
+- `onEnd?` (`GenerateTextOnEndCallback`): Callback that is called when all agent steps are finished and the response is complete. Receives step results, total usage, shared \`runtimeContext\`, and \`toolsContext\`. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+- `onFinish?` (`GenerateTextOnEndCallback`): Deprecated alias for \`onEnd\`.
+- `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
+- `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
+- `telemetry?` (`TelemetryOptions`): Optional telemetry configuration.
+  - `TelemetryOptions`
+    - `includeRuntimeContext?` (`{ [KEY in keyof CONTEXT]?: boolean }`): Top-level runtime context properties that should be included in telemetry. Runtime context properties are excluded unless they are explicitly set to \`true\`. Lifecycle callbacks and returned results still receive the full \`runtimeContext\`.
+    - `includeToolsContext?` (`{ [TOOL_NAME in keyof InferToolSetContext<TOOLS>]?: { [KEY in keyof InferToolSetContext<TOOLS>[TOOL_NAME]]?: boolean } }`): Top-level tool context properties that should be included in telemetry, configured per tool. Tool context properties are excluded unless they are explicitly set to \`true\`. Lifecycle callbacks and returned results still receive the full \`toolsContext\`.
+- `experimental_download?` (`DownloadFunction | undefined`): Experimental: Custom download function for fetching files/URLs for tool or model use. By default, files are downloaded if the model does not support the URL for a given media type.
+- `maxOutputTokens?` (`number`): Maximum number of tokens the model is allowed to generate.
+- `temperature?` (`number`): Sampling temperature, controls randomness. Passed through to the model.
+- `topP?` (`number`): Top-p (nucleus) sampling parameter. Passed through to the model.
+- `topK?` (`number`): Top-k sampling parameter. Passed through to the model.
+- `presencePenalty?` (`number`): Presence penalty parameter. Passed through to the model.
+- `frequencyPenalty?` (`number`): Frequency penalty parameter. Passed through to the model.
+- `stopSequences?` (`string[]`): Custom token sequences which stop the model output. Passed through to the model.
+- `seed?` (`number`): Seed for deterministic generation (if supported).
+- `maxRetries?` (`number`): How many times to retry on failure. Default: 2.
+- `providerOptions?` (`ProviderOptions`): Additional provider-specific configuration.
+- `headers?` (`Record<string, string | undefined>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
+- `callOptionsSchema?` (`FlexibleSchema<CALL_OPTIONS>`): Optional schema for custom call options that can be passed when calling generate() or stream().
+- `prepareCall?` (`PrepareCallFunction`): Optional function to prepare call-specific settings based on the call options.
+- `id?` (`string`): Custom agent identifier.
 
 ## Properties
 
-<PropertiesTable
-  content={[
-    {
-      name: 'tools',
-      type: 'Record<string, Tool>',
-      description: 'The tool set configured for this agent. Read-only.',
-    },
-    {
-      name: 'id',
-      type: 'string | undefined',
-      description:
-        'The agent identifier, if one was provided in the constructor.',
-    },
-  ]}
-/>
+- `tools` (`Record<string, Tool>`): The tool set configured for this agent. Read-only.
+- `id` (`string | undefined`): The agent identifier, if one was provided in the constructor.
 
 ## Methods
 
@@ -703,103 +171,20 @@ const result = await agent.generate({
 });
 ```
 
-<PropertiesTable
-  content={[
-    {
-      name: 'prompt',
-      type: 'string | Array<ModelMessage>',
-      description: 'A text prompt or message array.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description: 'A full conversation history as a list of model messages.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isOptional: true,
-      description:
-        'An optional abort signal that can be used to cancel the call.',
-    },
-    {
-      name: 'timeout',
-      type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }',
-      isOptional: true,
-      description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs and chunkMs have no effect on generate(); they are streaming-only and are enforced by stream(). Can be used alongside abortSignal.',
-    },
-    {
-      name: 'experimental_sandbox',
-      type: 'Experimental_SandboxSession',
-      isOptional: true,
-      description:
-        'Experimental sandbox environment that is passed through to `prepareStep`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.',
-    },
-    {
-      name: 'options',
-      type: 'CALL_OPTIONS',
-      isOptional: true,
-      description:
-        'Custom call options when the agent is configured with a callOptionsSchema.',
-    },
-    {
-      name: 'onStart',
-      type: 'GenerateTextOnStartCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when the agent operation begins, before any LLM calls are made. If also specified in the constructor, both callbacks are called (constructor first).',
-    },
-    {
-      name: 'onStepStart',
-      type: 'GenerateTextOnStepStartCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when a step (LLM call) begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).',
-    },
-    {
-      name: 'onToolExecutionStart',
-      type: 'OnToolExecutionStartCallback',
-      isOptional: true,
-      description:
-        "Callback that is called right before a tool's execute function runs. If also specified in the constructor, both callbacks are called (constructor first).",
-    },
-    {
-      name: 'onToolExecutionEnd',
-      type: 'OnToolExecutionEndCallback',
-      isOptional: true,
-      description:
-        "Callback that is called right after a tool's execute function completes (or errors). If also specified in the constructor, both callbacks are called (constructor first).",
-    },
-    {
-      name: 'onStepEnd',
-      type: 'GenerateTextOnStepEndCallback',
-      isOptional: true,
-      description:
-        'Callback invoked after each agent step (LLM/tool call) completes. If also specified in the constructor, both callbacks are called (constructor first, then this one).',
-    },
-    {
-      name: 'onStepFinish',
-      type: 'GenerateTextOnStepFinishCallback',
-      isOptional: true,
-      description:
-        'Deprecated. Use `onStepEnd` instead. This alias is only used as a fallback when `onStepEnd` is not provided.',
-    },
-    {
-      name: 'onEnd',
-      type: 'GenerateTextOnEndCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when all agent steps are finished and the response is complete. If also specified in the constructor, both callbacks are called (constructor first, then this one).',
-    },
-    {
-      name: 'onFinish',
-      type: 'GenerateTextOnEndCallback',
-      isOptional: true,
-      description: 'Deprecated alias for `onEnd`.',
-    },
-  ]}
-/>
+- `prompt` (`string | Array<ModelMessage>`): A text prompt or message array.
+- `messages` (`Array<ModelMessage>`): A full conversation history as a list of model messages.
+- `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
+- `timeout?` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs and chunkMs have no effect on generate(); they are streaming-only and are enforced by stream(). Can be used alongside abortSignal.
+- `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
+- `options?` (`CALL_OPTIONS`): Custom call options when the agent is configured with a callOptionsSchema.
+- `onStart?` (`GenerateTextOnStartCallback`): Callback that is called when the agent operation begins, before any LLM calls are made. If also specified in the constructor, both callbacks are called (constructor first).
+- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step (LLM call) begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).
+- `onToolExecutionStart?` (`OnToolExecutionStartCallback`): Callback that is called right before a tool's execute function runs. If also specified in the constructor, both callbacks are called (constructor first).
+- `onToolExecutionEnd?` (`OnToolExecutionEndCallback`): Callback that is called right after a tool's execute function completes (or errors). If also specified in the constructor, both callbacks are called (constructor first).
+- `onStepEnd?` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. If also specified in the constructor, both callbacks are called (constructor first, then this one).
+- `onStepFinish?` (`GenerateTextOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
+- `onEnd?` (`GenerateTextOnEndCallback`): Callback that is called when all agent steps are finished and the response is complete. If also specified in the constructor, both callbacks are called (constructor first, then this one).
+- `onFinish?` (`GenerateTextOnEndCallback`): Deprecated alias for \`onEnd\`.
 
 #### Returns
 
@@ -819,110 +204,21 @@ for await (const chunk of stream.textStream) {
 }
 ```
 
-<PropertiesTable
-  content={[
-    {
-      name: 'prompt',
-      type: 'string | Array<ModelMessage>',
-      description: 'A text prompt or message array.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description: 'A full conversation history as a list of model messages.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isOptional: true,
-      description:
-        'An optional abort signal that can be used to cancel the call.',
-    },
-    {
-      name: 'timeout',
-      type: 'number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }',
-      isOptional: true,
-      description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs limits the wait for the first content-bearing output in each model-call step. chunkMs limits gaps between later content-bearing output chunks. Can be used alongside abortSignal.',
-    },
-    {
-      name: 'experimental_sandbox',
-      type: 'Experimental_SandboxSession',
-      isOptional: true,
-      description:
-        'Experimental sandbox environment that is passed through to `prepareStep`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.',
-    },
-    {
-      name: 'options',
-      type: 'CALL_OPTIONS',
-      isOptional: true,
-      description:
-        'Custom call options when the agent is configured with a callOptionsSchema.',
-    },
-    {
-      name: 'experimental_transform',
-      type: 'StreamTextTransform | Array<StreamTextTransform>',
-      isOptional: true,
-      description:
-        'Optional stream transformation(s). They are applied in the order provided and must maintain the stream structure. See `streamText` docs for details.',
-    },
-    {
-      name: 'onStart',
-      type: 'GenerateTextOnStartCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when the agent operation begins, before any LLM calls are made. If also specified in the constructor, both callbacks are called (constructor first).',
-    },
-    {
-      name: 'onStepStart',
-      type: 'GenerateTextOnStepStartCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when a step (LLM call) begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).',
-    },
-    {
-      name: 'onToolExecutionStart',
-      type: 'OnToolExecutionStartCallback',
-      isOptional: true,
-      description:
-        "Callback that is called right before a tool's execute function runs. If also specified in the constructor, both callbacks are called (constructor first).",
-    },
-    {
-      name: 'onToolExecutionEnd',
-      type: 'OnToolExecutionEndCallback',
-      isOptional: true,
-      description:
-        "Callback that is called right after a tool's execute function completes (or errors). If also specified in the constructor, both callbacks are called (constructor first).",
-    },
-    {
-      name: 'onStepEnd',
-      type: 'GenerateTextOnStepEndCallback',
-      isOptional: true,
-      description:
-        'Callback invoked after each agent step (LLM/tool call) completes. If also specified in the constructor, both callbacks are called (constructor first, then this one).',
-    },
-    {
-      name: 'onStepFinish',
-      type: 'GenerateTextOnStepFinishCallback',
-      isOptional: true,
-      description:
-        'Deprecated. Use `onStepEnd` instead. This alias is only used as a fallback when `onStepEnd` is not provided.',
-    },
-    {
-      name: 'onEnd',
-      type: 'GenerateTextOnEndCallback',
-      isOptional: true,
-      description:
-        'Callback that is called when all agent steps are finished and the response is complete. If also specified in the constructor, both callbacks are called (constructor first, then this one).',
-    },
-    {
-      name: 'onFinish',
-      type: 'GenerateTextOnEndCallback',
-      isOptional: true,
-      description: 'Deprecated alias for `onEnd`.',
-    },
-  ]}
-/>
+- `prompt` (`string | Array<ModelMessage>`): A text prompt or message array.
+- `messages` (`Array<ModelMessage>`): A full conversation history as a list of model messages.
+- `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
+- `timeout?` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs limits the wait for the first content-bearing output in each model-call step. chunkMs limits gaps between later content-bearing output chunks. Can be used alongside abortSignal.
+- `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
+- `options?` (`CALL_OPTIONS`): Custom call options when the agent is configured with a callOptionsSchema.
+- `experimental_transform?` (`StreamTextTransform | Array<StreamTextTransform>`): Optional stream transformation(s). They are applied in the order provided and must maintain the stream structure. See \`streamText\` docs for details.
+- `onStart?` (`GenerateTextOnStartCallback`): Callback that is called when the agent operation begins, before any LLM calls are made. If also specified in the constructor, both callbacks are called (constructor first).
+- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step (LLM call) begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).
+- `onToolExecutionStart?` (`OnToolExecutionStartCallback`): Callback that is called right before a tool's execute function runs. If also specified in the constructor, both callbacks are called (constructor first).
+- `onToolExecutionEnd?` (`OnToolExecutionEndCallback`): Callback that is called right after a tool's execute function completes (or errors). If also specified in the constructor, both callbacks are called (constructor first).
+- `onStepEnd?` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. If also specified in the constructor, both callbacks are called (constructor first, then this one).
+- `onStepFinish?` (`GenerateTextOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
+- `onEnd?` (`GenerateTextOnEndCallback`): Callback that is called when all agent steps are finished and the response is complete. If also specified in the constructor, both callbacks are called (constructor first, then this one).
+- `onFinish?` (`GenerateTextOnEndCallback`): Deprecated alias for \`onEnd\`.
 
 #### Returns
 
@@ -950,7 +246,7 @@ Infers the UI message type for the given agent instance. Useful for type-safe UI
 import { ToolLoopAgent, InferAgentUIMessage } from 'ai';
 
 const weatherAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { weather: weatherTool },
 });
 
@@ -976,7 +272,7 @@ type ExampleMetadata = z.infer<typeof exampleMetadataSchema>;
 
 // Define agent as usual
 const metadataAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   // ...other options
 });
 
@@ -996,7 +292,7 @@ import { ToolLoopAgent, isStepCount } from 'ai';
 import { weatherTool, calculatorTool } from './tools';
 
 const assistant = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: weatherTool,
@@ -1017,7 +313,7 @@ console.log(result.steps); // Array of all steps taken by the agent
 
 ```ts
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a creative storyteller.',
 });
 
@@ -1036,7 +332,7 @@ for await (const chunk of stream.textStream) {
 import { z } from 'zod';
 
 const analysisAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: {
     schema: z.object({
       sentiment: z.enum(['positive', 'negative', 'neutral']),
@@ -1061,7 +357,7 @@ import { ToolLoopAgent, ModelMessage, ToolApprovalResponse, tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are an agent with access to a weather API.',
   tools: {
     weather: tool({
@@ -1104,70 +400,10 @@ const approvedResult = await agent.generate({ messages });
 console.log(approvedResult.text);
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

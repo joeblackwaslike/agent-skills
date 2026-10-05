@@ -12,8 +12,8 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b690a31830fd9007ea94de60998d88ba68c49c4162457c602010acdc445915ba"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7040d5c490c0ae804cc7cb5ee9576c6cfaf04a0ea9bc4baf39f92ca06fc02800"
 ---
 
 # vercel domains
@@ -26,6 +26,7 @@ The `vercel domains` command manages domains under the current scope. With it, y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
 - [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
 - [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.

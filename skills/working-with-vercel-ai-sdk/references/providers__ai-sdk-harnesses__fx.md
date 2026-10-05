@@ -1,23 +1,25 @@
 ---
+title: fx
+description: Learn how to use the fx harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8c374aa9fe11d9abfa37602f050017b02489f85fd4dc0a42a6fb6a5f22283c99"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f3b4dcad8c321527069d74e77096b72e57955501579582413879b4a4a147eaa3"
 ---
 
-# fx Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The fx harness adapter connects `HarnessAgent` to [fx](https://fx.sh) through
 the Agent Client Protocol (ACP). The adapter delegates installation, sessions,
 streaming, tools, and lifecycle management to `@ai-sdk/harness-acp`.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-fx @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-fx`, `@ai-sdk/sandbox-vercel`
 
 The ACP harness runs the [canonical fx installer](https://fx.sh/docs/getting-started/installation)
 inside the sandbox when the first session starts. The installer tracks the
@@ -218,20 +220,10 @@ or apply its own permission policy without sending an ACP permission request.
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

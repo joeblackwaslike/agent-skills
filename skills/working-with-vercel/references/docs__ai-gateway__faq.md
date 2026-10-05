@@ -16,8 +16,8 @@ related:
 summary: Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, model availability, uptime,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/faq.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "78625e5cb662566e0c864bc8ff363185634ed2526b698ad1ed413ab2d320dd6c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9b51a04c9b5b270d119087a118818d7ac427a87832fe9e1c8c1a86ad4a98e913"
 ---
 
 # AI Gateway FAQ
@@ -33,9 +33,11 @@ Answers to common questions about AI Gateway, including request errors, pricing,
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/faq.graph.md](/docs/ai-gateway/faq.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=graph)

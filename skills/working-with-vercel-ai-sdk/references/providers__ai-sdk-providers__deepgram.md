@@ -1,10 +1,14 @@
 ---
+title: Deepgram
+description: Learn how to use the Deepgram provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "ba15afd68b3bc968df03c19987280f4b5dd96abd54429bced35e070f1c128566"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "05113ce25dfb3ded433820f1a36a9b63a083f2d45189e9848bb4dd695497ba71"
 ---
 
-# Deepgram Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Deepgram](https://deepgram.com/) provider contains language model support for the Deepgram transcription and speech generation APIs.
 
@@ -12,7 +16,7 @@ The [Deepgram](https://deepgram.com/) provider contains language model support f
 
 The Deepgram provider is available in the `@ai-sdk/deepgram` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/deepgram" />
+**Packages:** `@ai-sdk/deepgram`
 
 ## Provider Instance
 
@@ -35,16 +39,16 @@ const deepgram = createDeepgram({
 
 You can use the following optional settings to customize the Deepgram provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `DEEPGRAM_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -74,15 +78,13 @@ const result = await generateSpeech({
 });
 ```
 
-<Note>
-  Full voice model IDs (e.g. `deepgram.speech('aura-2-helena-en')`) still pass
-  through, but the family ID + `voice`/`language` form above is the recommended
-  path — it matches voice selection in the other speech providers.
-</Note>
+Full voice model IDs (e.g. `deepgram.speech('aura-2-helena-en')`) still pass
+through, but the family ID + `voice`/`language` form above is the recommended
+path — it matches voice selection in the other speech providers.
 
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
-```ts highlight="7-11"
+```ts {7-11}
 import { generateSpeech } from 'ai';
 import { deepgram, type DeepgramSpeechModelOptions } from '@ai-sdk/deepgram';
 
@@ -101,25 +103,25 @@ const result = await generateSpeech({
 
 The following provider options are available:
 
-- **encoding** _string_
+- **encoding** *string*
 
   Encoding type for the audio output.
   Supported values: `'linear16'`, `'mulaw'`, `'alaw'`, `'mp3'`, `'opus'`, `'flac'`, `'aac'`.
   Optional.
 
-- **container** _string_
+- **container** *string*
 
   Container format for the output audio.
   Supported values: `'wav'`, `'ogg'`, `'none'`.
   Optional.
 
-- **sampleRate** _number_
+- **sampleRate** *number*
 
   Sample rate for the output audio in Hz.
   Supported values depend on the encoding: `8000`, `16000`, `24000`, `32000`, `48000`.
   Optional.
 
-- **bitRate** _number | string_
+- **bitRate** *number | string*
 
   Bitrate of the audio in bits per second.
   For `mp3`: `32000` or `48000`.
@@ -127,23 +129,23 @@ The following provider options are available:
   For `aac`: `4000` to `192000`.
   Optional.
 
-- **callback** _string_
+- **callback** *string*
 
   URL to which Deepgram will make a callback request with the audio.
   Optional.
 
-- **callbackMethod** _enum_
+- **callbackMethod** *enum*
 
   HTTP method for the callback request.
   Allowed values: `'POST'`, `'PUT'`.
   Optional.
 
-- **mipOptOut** _boolean_
+- **mipOptOut** *boolean*
 
   Opts out requests from the Deepgram Model Improvement Program.
   Optional.
 
-- **tag** _string | array of strings_
+- **tag** *string | array of strings*
 
   Label your requests for identification during usage reporting.
   Optional.
@@ -182,7 +184,7 @@ const model = deepgram.transcription('nova-3');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `summarize` option will enable summaries for sections of content.
 
-```ts highlight="11-15"
+```ts {11-15}
 import { transcribe } from 'ai';
 import {
   deepgram,
@@ -195,7 +197,7 @@ const result = await transcribe({
   audio: await readFile('audio.mp3'),
   providerOptions: {
     deepgram: {
-      summarize: true,
+      summarize: 'v2',
     } satisfies DeepgramTranscriptionModelOptions,
   },
 });
@@ -203,158 +205,115 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **language** _string_
+- **language** *string*
 
   Language code for the audio.
   Supports numerous ISO-639-1 and ISO-639-3 language codes.
   Optional.
 
-- **detectLanguage** _boolean_
+- **detectLanguage** *boolean*
 
   Whether to enable automatic language detection.
   When true, Deepgram will detect the language of the audio.
   Optional.
 
-- **smartFormat** _boolean_
+- **smartFormat** *boolean*
 
   Whether to apply smart formatting to the transcription.
   Optional.
 
-- **punctuate** _boolean_
+- **punctuate** *boolean*
 
   Whether to add punctuation to the transcription.
   Optional.
 
-- **summarize** _enum | boolean_
+- **summarize** *enum | boolean*
 
   Whether to generate a summary of the transcription.
   Allowed values: `'v2'`, `false`.
   Optional.
 
-- **topics** _boolean_
+- **topics** *boolean*
 
   Whether to detect topics in the transcription.
   Optional.
 
-- **detectEntities** _boolean_
+- **detectEntities** *boolean*
 
   Whether to detect entities in the transcription.
   Optional.
 
-- **redact** _string | array of strings_
+- **redact** *string | array of strings*
 
   Specifies what content to redact from the transcription.
   Optional.
 
-- **search** _string_
+- **search** *string*
 
   Search term to find in the transcription.
   Optional.
 
-- **diarize** _boolean_
+- **diarize** *boolean*
 
   Whether to identify different speakers in the transcription.
   Defaults to `false`. Note that Deepgram bills speaker diarization as a
   per-minute add-on.
   Optional.
 
-- **utterances** _boolean_
+- **utterances** *boolean*
 
   Whether to segment the transcription into utterances.
   Optional.
 
-- **uttSplit** _number_
+- **uttSplit** *number*
 
   Threshold for splitting utterances.
   Optional.
 
-- **fillerWords** _boolean_
+- **fillerWords** *boolean*
 
   Whether to include filler words (um, uh, etc.) in the transcription.
   Optional.
 
-- **paragraphs** _boolean_
+- **paragraphs** *boolean*
 
   Whether to format the transcription into paragraphs.
   Optional.
 
-- **intents** _boolean_
+- **intents** *boolean*
 
   Whether to detect intents in the transcription.
   Optional.
 
-- **sentiment** _boolean_
+- **sentiment** *boolean*
 
   Whether to analyze sentiment in the transcription.
   Optional.
 
-- **keyterm** _string_
+- **keyterm** *string*
 
   Key term to improve recognition accuracy for.
   Optional.
 
-- **replace** _string_
+- **replace** *string*
 
   String to replace redacted content with.
   Optional.
 
 ### Model Capabilities
 
-| Model                                                                                              | Transcription | Duration  | Segments  | Language  |
-| -------------------------------------------------------------------------------------------------- | ------------- | --------- | --------- | --------- |
-| `nova-3` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-3))     | <Check />     | <Check /> | <Check /> | <Cross /> |
-| `nova-2` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-2))     | <Check />     | <Check /> | <Check /> | <Cross /> |
-| `nova` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova))         | <Check />     | <Check /> | <Check /> | <Cross /> |
-| `enhanced` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#enhanced)) | <Check />     | <Check /> | <Check /> | <Cross /> |
-| `base` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#base))         | <Check />     | <Check /> | <Check /> | <Cross /> |
+| Model                                                                                              | Transcription | Duration | Segments | Language |
+| -------------------------------------------------------------------------------------------------- | ------------- | -------- | -------- | -------- |
+| `nova-3` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-3))     | ✓             | ✓        | ✓        | ✗        |
+| `nova-2` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-2))     | ✓             | ✓        | ✓        | ✗        |
+| `nova` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova))         | ✓             | ✓        | ✓        | ✗        |
+| `enhanced` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#enhanced)) | ✓             | ✓        | ✓        | ✗        |
+| `base` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#base))         | ✓             | ✓        | ✓        | ✗        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

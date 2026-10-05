@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "1d710b44d78b02784fa61551b7f6bb8495e2d14bf524c5e193528c7332c59ede"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "36d5647a34996fd97f03a8741bea813f12a4c90f446d8c42b7c63e512a0f84d6"
 ---
 
 # Ecosystem
@@ -33,13 +33,11 @@ tool inside an isolated Firecracker microVM.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related)
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sandbox/ecosystem.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

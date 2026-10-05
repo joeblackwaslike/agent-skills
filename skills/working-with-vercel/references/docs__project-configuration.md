@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8cb081eb849a38ab50199fa374854ffdf6233aa1be6c04a55bb3a4a5689beb2b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c6879e69d6bc02e8007d6fb4dbbc0080e49288b500d0e663b2cfde8e07bb5020"
 ---
 
 # Project Configuration
@@ -37,9 +37,9 @@ Vercel automatically detects your framework and sets sensible defaults for build
 - [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related)
 - [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
 - [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Information on whether or not it is possible to route based on letting casing with Vercel.
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [How do I perform Vercel redirects based on query strings?](https://vercel.com/kb/guide/how-do-i-perform-vercel-redirects-based-on-query-strings?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — When using redirects with the \\`vercel.json\\` or \\`next.config.js\\` configuration file, your URL may contain query param
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 

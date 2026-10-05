@@ -16,13 +16,13 @@ related:
 summary: Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, use Draft Mode for previewing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "83d474d00e930144f96ada1d7a1f1861e791ac52251c6d4bb33d57ec4de1553c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b2f25e2e70d81cfe8cc7a6bf7d7a204deda365bb2111c6b22bd70ee16d506945"
 ---
 
 # Vercel Toolbar
 
-> **🔒 Permissions Required**: Vercel Toolbar
+> **Availability**: Vercel Toolbar is available on all plans
 
 The Vercel Toolbar is a tool that assists in the iteration and development process. Through the toolbar, you can:
 
@@ -37,7 +37,7 @@ The Vercel Toolbar is a tool that assists in the iteration and development proce
 - [Updates to Vercel Toolbar shortcuts](https://vercel.com/changelog/updates-to-vercel-toolbar-shortcuts?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
 - [Use feature flags in Fumadocs with the Vercel Toolbar](https://vercel.com/kb/guide/use-feature-flags-in-fumadocs-with-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Control documentation visibility with feature flags. Hide inline content, entire pages, and navigation items based on fl
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)

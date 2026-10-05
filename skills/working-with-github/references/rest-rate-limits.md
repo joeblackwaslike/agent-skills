@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/rest/using-the-rest-api/rate-limits-for-the-rest-api.md"
-fetched_at: "2026-09-28T10:42:53.812Z"
-sha256: "254499696dbfda2762a71c53d36134b1d6806c9b7844e5a779fbe8208f4fecaa"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "54ca3a970ced53a83fdcf703b335d309d0108036f510a9eef559d0ccb6e958ad"
 ---
 
 {% ifversion ghes %}
@@ -88,9 +88,12 @@ Header name | Description
 `x-ratelimit-reset` | The time at which the current rate limit window resets, in UTC epoch seconds
 `x-ratelimit-resource` | The rate limit resource that the request counted against. For more information about the different resources, see [AUTOTITLE](/rest/rate-limit/rate-limit#get-rate-limit-status-for-the-authenticated-user).
 
-You can also call the `GET /rate_limit` endpoint to check your rate limit. Calling this endpoint does not count against your primary rate limit, but it can count against your secondary rate limit. See [AUTOTITLE](/rest/rate-limit/rate-limit).
+You can call the `GET /rate_limit` endpoint for a periodic overview of all resource families for the authenticated user. Calling this endpoint does not count against your primary rate limit, but it can count against your secondary rate limit. See [AUTOTITLE](/rest/rate-limit/rate-limit).
 
-The `x-ratelimit-*` response headers are the authoritative source for your current rate limit status. Use them to pace and back off your requests. Use `GET /rate_limit` for a periodic overview of all resource families for the authenticated user, and treat the response headers as authoritative if the two disagree.
+> [!NOTE]
+> Because {% data variables.product.company_short %} processes API requests in multiple regions, rate limit values can vary from one response to the next based on the location handling the request. For example, `x-ratelimit-remaining` may be higher on a later response than on an earlier one within the same rate limit window. The `x-ratelimit-*` headers are the authoritative source for your current rate limit status and may differ from values reported by the `GET /rate_limit` endpoint. If the two disagree, rely on the response headers.
+
+Use the `x-ratelimit-*` response headers to pace and back off your requests, but avoid logic that depends on an exact remaining count. Ensure your integration handles `403` and `429` responses as described in [Exceeding the rate limit](#exceeding-the-rate-limit) later in this article.
 
 There is not a way to check the status of your secondary rate limit.
 

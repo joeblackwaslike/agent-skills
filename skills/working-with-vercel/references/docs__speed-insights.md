@@ -16,13 +16,13 @@ related:
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bfd48bb13c5d5ed1bfea5513a8526581fcadbbe36772c98e13e4045bd2be8920"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0be65d0984fc51d874acbc3e926f4577b31574d91e2a12be5ca25581c9a72b13"
 ---
 
 # Speed Insights Overview
 
-> **🔒 Permissions Required**: Speed Insights
+> **Availability**: Speed Insights is available on all plans
 
 - To set up Speed Insights for your project, see the [Quickstart](/docs/speed-insights/quickstart).
 - To understand who is visiting your site, use [Web Analytics](/docs/analytics).
@@ -65,7 +65,7 @@ To learn more, see the [dashboard view](/docs/speed-insights#dashboard-view) and
 
 ## Dashboard view
 
-![Image](`/docs-assets/static/docs/concepts/speed-insights/v2/res-chart-light.png`)
+![A snapshot of the Speed Insights tab from the project view.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/speed-insights/v2/res-chart-light.png)
 
 You can access the dashboard by selecting your project in the Vercel [dashboard](/dashboard), and clicking [**Speed Insights**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fspeed-insights\&title=Go+to+Speed+Insights) in the sidebar.
 
@@ -80,7 +80,7 @@ The Speed Insights dashboard displays data that you can sort and inspect based o
   - **Kanban board** that shows which routes, paths, or HTML elements need improvement (URLs that make up less than 0.5% of visits are not shown by default). Poor rows and element selectors require Speed Insights Plus.
   - **Geographical map** showing the experience metric by country. Requires Speed Insights Plus:
 
-    ![Image](`/docs-assets/static/docs/concepts/speed-insights/v2/country-map-light.png`)
+    ![Geographic map of the P75 score where the color intensity indicates the relative amount of data points per country](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/speed-insights/v2/country-map-light.png)
 
 The data in the Kanban and map views is selectable so that you can filter by
 country, route, path and HTML element. The red, orange and green colors in the

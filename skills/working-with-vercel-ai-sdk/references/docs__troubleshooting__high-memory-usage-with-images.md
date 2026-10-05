@@ -1,10 +1,14 @@
 ---
+title: High memory usage when processing many images
+description: Troubleshooting high memory usage when using generateText or streamText with many images
+url: "https://ai-sdk.dev/docs/troubleshooting/high-memory-usage-with-images"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/high-memory-usage-with-images.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "0d04459d09d0930dde9e88ceabefbe0b97953de0a28d3de6706418f481cbd5a6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f635ef12385eec9dd90dd848ad88142a74855b1be51c8aecd6ca6c36daf45865"
 ---
 
-# High memory usage when processing many images
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Issue
 
@@ -18,9 +22,9 @@ This is especially noticeable when using `experimental_download` to process imag
 
 ## Background
 
-By default, the AI SDK includes the full request messages plus request and response bodies in the step results. When processing images, the request messages and request body can contain base64-encoded image data, which can be very large (a single image can be 1MB+ when base64 encoded). If you process many images and keep references to the results, this data accumulates in memory.
+When enabled with the `include` option, the AI SDK includes the full request messages plus request and response bodies in the step results. When processing images, the request messages and request body can contain base64-encoded image data, which can be very large (a single image can be 1MB+ when base64 encoded). If you process many images and keep references to the results, this data accumulates in memory.
 
-For example, processing 100 images of 500KB each would include ~50MB+ of request body data in memory.
+For example, processing 100 images of 500KB each would include \~50MB+ of request body data in memory.
 
 ## Solution
 
@@ -111,40 +115,10 @@ for (const imageUrl of imageUrls) {
 - [`generateText` API Reference](/docs/reference/ai-sdk-core/generate-text)
 - [`streamText` API Reference](/docs/reference/ai-sdk-core/stream-text)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Azure OpenAI Slow to Stream](/docs/troubleshooting/azure-stream-slow)
-- [Server Actions in Client Components](/docs/troubleshooting/server-actions-in-client-components)
-- [useChat/useCompletion stream output contains 0:... instead of text](/docs/troubleshooting/strange-stream-output)
-- [Streamable UI Errors](/docs/troubleshooting/streamable-ui-errors)
-- [Tool Invocation Missing Result Error](/docs/troubleshooting/tool-invocation-missing-result)
-- [Streaming Not Working When Deployed](/docs/troubleshooting/streaming-not-working-when-deployed)
-- [Streaming Not Working When Proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
-- [Getting Timeouts When Deploying on Vercel](/docs/troubleshooting/timeout-on-vercel)
-- [Unclosed Streams](/docs/troubleshooting/unclosed-streams)
-- [useChat Failed to Parse Stream](/docs/troubleshooting/use-chat-failed-to-parse-stream)
-- [Server Action Plain Objects Error](/docs/troubleshooting/client-stream-error)
-- [useChat No Response](/docs/troubleshooting/use-chat-tools-no-response)
-- [Custom headers, body, and credentials not working with useChat](/docs/troubleshooting/use-chat-custom-request-options)
-- [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
-- [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
-- [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
-- [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
-- [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
-- [streamText fails silently](/docs/troubleshooting/stream-text-not-working)
-- [Streaming Status Shows But No Text Appears](/docs/troubleshooting/streaming-status-delay)
-- [Stale body values with useChat](/docs/troubleshooting/use-chat-stale-body-data)
-- [Type Error with onToolCall](/docs/troubleshooting/ontoolcall-type-narrowing)
-- [Unsupported model version error](/docs/troubleshooting/unsupported-model-version)
-- [Object generation failed with OpenAI](/docs/troubleshooting/no-object-generated-content-filter)
-- [Missing Tool Results Error](/docs/troubleshooting/missing-tool-results-error)
-- [Model is not assignable to type "LanguageModelV1"](/docs/troubleshooting/model-is-not-assignable-to-type)
-- [TypeScript error "Cannot find namespace 'JSX'"](/docs/troubleshooting/typescript-cannot-find-namespace-jsx)
-- [React error "Maximum update depth exceeded"](/docs/troubleshooting/react-maximum-update-depth-exceeded)
-- [Jest: cannot find module '@ai-sdk/rsc'](/docs/troubleshooting/jest-cannot-find-module-ai-rsc)
-- [High memory usage when processing many images](/docs/troubleshooting/high-memory-usage-with-images)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/microsoft-foundry.md"
-fetched_at: "2026-09-21T09:39:23.760Z"
-sha256: "433d6d0985119a47d656a13e3d640b7289cd1c4564c277beb566ca132d509791"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "54dd25d91c98e8ac091f09a1ff68341985ecd750b6c024fff4d54513859b11c1"
 ---
 
 > ## Documentation Index
@@ -167,6 +167,8 @@ export ANTHROPIC_FOUNDRY_RESOURCE={resource}
 # Or provide the full base URL:
 # export ANTHROPIC_FOUNDRY_BASE_URL=https://{resource}.services.ai.azure.com/anthropic
 ```
+
+Set `ANTHROPIC_FOUNDRY_RESOURCE` to the resource name alone, such as `my-resource`. Claude Code [refuses a URL or host name](/docs/en/errors#anthropic-foundry-resource-must-be-a-foundry-resource-name) when you send a message.
 
 ### 4. Pin model versions
 

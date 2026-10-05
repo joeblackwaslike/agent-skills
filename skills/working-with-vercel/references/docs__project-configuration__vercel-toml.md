@@ -15,8 +15,8 @@ related:
 summary: Configure your Vercel project with a TOML file using the same properties as vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-toml.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "991f75ab4ec51393ef5694352369b9765657a613ab7053da398b5630bf15163b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2814ee534194c9a57eb81987cc19f857461028057b37b8664de8d75a418517a1"
 ---
 
 # Static Configuration with vercel.toml
@@ -30,8 +30,10 @@ The `vercel.toml` file lets you configure your Vercel project with [TOML](https:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related)
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [Integrating Terraform with Vercel](https://vercel.com/kb/guide/integrating-terraform-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Understand the benefits of Terraform and how to set up the Integration with Vercel.
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
+- [Integrating AWS Secrets Manager with Vercel Using Terraform](https://vercel.com/kb/guide/integrating_aws_secrets_manager_with_vercel_using_terraform?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Learn how to seamlessly integrate AWS Secrets Manager with Vercel for enhanced security and efficiency in your web deplo
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Options available for service configuration.
 - [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-toml&source_site=vercel-docs&relationship=related) — Learn how to configure Vercel CLI under your system user.

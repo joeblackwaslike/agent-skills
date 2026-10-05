@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/functions/runtimes/node-js
   - /docs/functions/runtimes/bun
-  - /docs/functions/runtimes/edge
   - /docs/project-configuration/vercel-json
+  - /docs/functions/functions-api-reference/vercel-functions-package
   - /docs/routing-middleware/api
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "059b2f184988dfe15ec212672aeba8edf99eb375aaaf1d2b03c90387f4129903"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5095dbc77f09bc6b4948e5a7539d83403c8af5ab0106819be9f850bbe02c7fbe"
 ---
 
 # Getting Started with Routing Middleware
@@ -31,13 +31,14 @@ Routing Middleware lets you to run code before your pages load, giving you contr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to modify request headers in your Middleware.
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related)
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
+- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related)
+- [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to add a response header in your Middleware.
+- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to render different content based on the user agent in your Middleware.
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 
@@ -47,20 +48,10 @@ Full cross-link map for this page: [/docs/routing-middleware/getting-started.gra
 **Agent prompt**
 
 ```text
-Help me set up Routing Middleware in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Create a middleware file (middleware.ts at the project root, or proxy.ts if using Next.js 16+). 2. Add a redirect from /old-blog to /blog using a permanent redirect. 3. Configure the matcher to run on all paths except static files and images. 4. Test locally with `vercel dev`, then deploy with `vercel --prod`.
+Help me set up Routing Middleware in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Create a middleware file (middleware.ts at the project root, or proxy.ts if using Next.js 16+). 2. Add a redirect from /old-blog to /blog. 3. Configure the matcher to run on all paths except static files and images. 4. Test locally with `vercel dev`, then deploy with `vercel --prod`.
 ```
 
-Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js), [Bun](/docs/functions/runtimes/bun), and [Edge](/docs/functions/runtimes/edge) runtimes. Edge is the default runtime for Routing Middleware. To use Node.js, configure the `runtime` in your middleware config. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file.
-
-> For \['nextjs', 'nextjs-app']:
-
-> **💡 Note:** **Next.js 16 users:** Next.js 16 renamed the middleware file from
-> `middleware.ts` to `proxy.ts` and changed the function export from
-> `middleware` to `proxy`. When using Next.js 16 or later, use `proxy.ts`
-> instead of `middleware.ts`. The proxy function runs on Node.js only (Edge
-> runtime is not supported). See the [Next.js proxy
-> documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy)
-> for details.
+Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js) and [Bun](/docs/functions/runtimes/bun) runtimes. Node.js is the default runtime for Routing Middleware. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file.
 
 ## What you will learn
 
@@ -82,7 +73,7 @@ The following steps will guide you through creating your first Routing Middlewar
   Create a file called `middleware.ts` in your project root (same level as your `package.json`) and add the following code:
   ```ts v0="build" filename="middleware.ts"
   export const config = {
-    runtime: 'nodejs', // optional: use 'nodejs' or omit for 'edge' (default)
+    runtime: 'nodejs',
   };
 
   export default function middleware(request: Request) {
@@ -93,14 +84,16 @@ The following steps will guide you through creating your first Routing Middlewar
   - Every request to your site will trigger this function
   - You log the request URL to see what's being accessed
   - You return a response to prove the middleware is running
-  - The `runtime` config is optional and defaults to `edge`. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in `vercel.json` instead
+  - The `runtime` config is optional and defaults to `nodejs`. To use Bun, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in `vercel.json` instead
   Deploy your project and visit any page. You should see "Logging request URL from Middleware" instead of your normal page content.
 
 - ### Redirecting users
   To redirect users based on their URL, add a new route to your project called `/blog`, and modify your `middleware.ts` to include a redirect condition.
   ```ts v0="build" filename="middleware.ts"
+  import { next } from '@vercel/functions';
+
   export const config = {
-    runtime: 'nodejs', // optional: use 'nodejs' or omit for 'edge' (default)
+    runtime: 'nodejs',
   };
 
   export default function middleware(request: Request) {
@@ -115,18 +108,21 @@ The following steps will guide you through creating your first Routing Middlewar
     }
 
     // Let other requests continue normally
-    return new Response('Other pages work normally');
+    return next();
   }
   ```
   - You use `new URL(request.url)` to parse the incoming URL
   - You check if the path matches `/old-blog`
   - If it does, you return a redirect response (status 302)
   - The `Location` header tells the browser where to go
+  - For every other path, `next()` from the [`@vercel/functions`](/docs/functions/functions-api-reference/vercel-functions-package) package lets the request continue to your page
   Try visiting `/old-blog` - you should be redirected to `/blog`.
 
 - ### Configure which paths trigger the middleware
   By default, Routing Middleware runs on every request. To limit it to specific paths, you can use the [`config`](/docs/routing-middleware/api#config-object) object:
   ```ts v0="build" filename="middleware.ts"
+  import { next } from '@vercel/functions';
+
   export default function middleware(request: Request) {
     const url = new URL(request.url);
 
@@ -138,7 +134,8 @@ The following steps will guide you through creating your first Routing Middlewar
       });
     }
 
-    return new Response('Middleware processed this request');
+    // Let other requests continue normally
+    return next();
   }
 
   // Configure which paths trigger the Middleware
@@ -181,7 +178,7 @@ The following steps will guide you through creating your first Routing Middlewar
 | **File location**                                 | Any path set with [`proxy.entrypoint`](/docs/project-configuration/vercel-json#proxy), or `middleware.ts` in project root (`proxy.ts` for Next.js 16+) |
 | **Export**                                        | `export default function middleware(request: Request)` (or `export function proxy` for Next.js 16+)                         |
 | **[Config export](/docs/routing-middleware/api)** | `export const config = { matcher: [...] }`                                                                                  |
-| **Default runtime**                               | [`edge`](/docs/functions/runtimes/edge) (set `runtime: 'nodejs'` in config for [Node.js](/docs/functions/runtimes/node-js)) |
+| **Default runtime**                               | [`nodejs`](/docs/functions/runtimes/node-js)                                                                                |
 | **Bun runtime**                                   | Set [`bunVersion`](/docs/project-configuration/vercel-json) in `vercel.json` and `runtime: 'nodejs'` in config              |
 | **Request object**                                | Standard `Request` API                                                                                                      |
 | **Geo headers**                                   | `x-vercel-ip-country`, `x-vercel-ip-country-region`, `x-vercel-ip-city`                                                     |

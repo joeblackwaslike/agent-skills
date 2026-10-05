@@ -1,10 +1,14 @@
 ---
+title: Baseten
+description: Learn how to use Baseten models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "bee7f9f638e40de5f5da78ddaa04899c9a1f394b7f11a2115a3eecf4a3ebfa59"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b131666366e1669bf0b12a7a281bdb114736d654d49783bf348319a0f3d48b3c"
 ---
 
-# Baseten Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Baseten](https://baseten.co/) is an inference platform for serving frontier, enterprise-grade opensource AI models via their [API](https://docs.baseten.co/overview).
 
@@ -12,7 +16,7 @@ sha256: "bee7f9f638e40de5f5da78ddaa04899c9a1f394b7f11a2115a3eecf4a3ebfa59"
 
 The Baseten provider is available via the `@ai-sdk/baseten` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/baseten" />
+**Packages:** `@ai-sdk/baseten`
 
 ## Provider Instance
 
@@ -35,27 +39,27 @@ const baseten = createBaseten({
 
 You can use the following optional settings to customize the Baseten provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://inference.baseten.co/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `BASETEN_API_KEY` environment variable. It is recommended you set the environment variable using `export` so you do not need to include the field every time.
   You can grab your Baseten API Key [here](https://app.baseten.co/settings/api_keys)
 
-- **modelURL** _string_
+- **modelURL** *string*
 
   Custom model URL for specific models (chat or embeddings). If not provided,
   the default Model APIs will be used.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **performanceClient** _PerformanceClient constructor_
+- **performanceClient** *PerformanceClient constructor*
 
   Opt in to Baseten's native performance client for embeddings, for client-side
   batching and request hedging. Pass the `PerformanceClient` constructor from
@@ -63,7 +67,7 @@ You can use the following optional settings to customize the Baseten provider in
   embeddings use plain HTTP. See
   [Native performance client](#native-performance-client-optional).
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -123,11 +127,9 @@ const { text } = await generateText({
 
 You can create models that call the Baseten embeddings API using the `.embeddingModel()` factory method. Baseten Embeddings Inference deployments are OpenAI-compatible, so embeddings use plain HTTP by default with no extra dependencies.
 
-<Note>
-  **Important:** Embedding models require a dedicated deployment with a custom
-  `modelURL`. Unlike chat models, embeddings cannot use Baseten's default Model
-  APIs and must specify a dedicated model endpoint.
-</Note>
+**Important:** Embedding models require a dedicated deployment with a custom
+`modelURL`. Unlike chat models, embeddings cannot use Baseten's default Model
+APIs and must specify a dedicated model endpoint.
 
 ```ts
 import { createBaseten } from '@ai-sdk/baseten';
@@ -264,58 +266,13 @@ try {
 }
 ```
 
-<Note>
-  For more information about Baseten models and deployment options, see the
-  [Baseten documentation](https://docs.baseten.co/).
-</Note>
+For more information about Baseten models and deployment options, see the
+[Baseten documentation](https://docs.baseten.co/).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

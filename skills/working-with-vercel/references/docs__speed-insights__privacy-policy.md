@@ -14,13 +14,13 @@ related:
 summary: Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "96c62c44fa07f6908ba49ee3c1c9b447313c6b409760e14441d3eb688f33a65b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bef1170d1124059f66a9e82863147ce4f937813c4435313ee6e7dc603da9f2e0"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
 
-> **🔒 Permissions Required**: Speed Insights
+> **Availability**: Speed Insights is available on all plans
 
 To ensure that the Speed Insights feature can be used despite many different regulatory limitations around the world, we've designed it in such a way that it provides you with information without being tied to, or associated with, any individual visitor or IP address.
 
@@ -30,13 +30,12 @@ To ensure that the Speed Insights feature can be used despite many different reg
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
+- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
-- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
+- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
-- [Vercel Web Analytics](https://vercel.com/docs/analytics?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/speed-insights/privacy-policy.graph.md](/docs/speed-insights/privacy-policy.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fprivacy-policy&source_site=vercel-docs&relationship=graph)

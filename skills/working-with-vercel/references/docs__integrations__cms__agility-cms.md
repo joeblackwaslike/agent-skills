@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the integration for flexible and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/agility-cms.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6f3e2f9ec50e49daaa0c279ffa49dd9beb94eeb89a47b97020d6a65e4922d025"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "aba8b91a347745e83f3b8b07b196650697ea2f78088e04d47eb18f2be741921e"
 ---
 
 # Vercel Agility CMS Integration
@@ -28,12 +28,12 @@ Agility CMS is a headless content management system designed for flexibility and
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn best practices for using databases in a serverless environment with Vercel
-- [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
-- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
+- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
 - [Vercel Formspree Integration](https://vercel.com/docs/integrations/cms/formspree?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=related) — Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on you
 
 Full cross-link map for this page: [/docs/integrations/cms/agility-cms.graph.md](/docs/integrations/cms/agility-cms.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fagility-cms&source_site=vercel-docs&relationship=graph)
@@ -50,22 +50,22 @@ Or, follow the steps below to install the integration:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

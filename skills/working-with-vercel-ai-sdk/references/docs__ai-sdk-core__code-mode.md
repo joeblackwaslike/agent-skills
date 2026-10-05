@@ -1,10 +1,14 @@
 ---
+title: Code Mode
+description: Let models orchestrate AI SDK tools with sandboxed JavaScript and TypeScript.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4a3c68d120aa89dfa87e1e6100bbb800aa7a4cb87b37ea53a59121f0f836f132"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "1796fa4daedf9f98bcc3ab9a6bc6ca556102f2e00db40d089603dd8944b96e3a"
 ---
 
-# Code Mode
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Code mode lets a model write JavaScript or TypeScript that calls your AI SDK
 tools. The generated code runs in an isolated QuickJS sandbox and returns a JSON-serializable result.
@@ -18,10 +22,8 @@ Instead of calling tools one at a time, a model can use code mode to:
 
 Code mode is provided by the `@ai-sdk/code-mode` package.
 
-<Note type="warning">
-  Code mode is experimental and its APIs may change in future releases. It
-  requires Node.js 22 or newer and is not available in browser or edge runtimes.
-</Note>
+Code mode is experimental and its APIs may change in future releases. It
+requires Node.js 22 or newer and is not available in browser or edge runtimes.
 
 ## Installation
 
@@ -83,7 +85,7 @@ const tools = {
 } as const;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools,
   experimental_toolCallers: {
     getInventory: ['code_mode'],
@@ -132,7 +134,7 @@ const tools = {
 } as const;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools,
   experimental_toolCallers: {
     getInventory: ['code_mode'],
@@ -297,50 +299,18 @@ Each invocation receives a fresh QuickJS context. Sandboxed code cannot access:
 Network or system access must be implemented in a tool and explicitly provided
 to code mode.
 
-<Note type="warning">
-  Treat the sandbox as defense in depth. Generated code and tool arguments are
-  untrusted. Tools execute in your host application, outside the QuickJS
-  sandbox, and every capability exposed by a provided tool is available to the
-  generated program. Enforce authorization and validate inputs inside each tool.
-</Note>
+Treat the sandbox as defense in depth. Generated code and tool arguments are
+untrusted. Tools execute in your host application, outside the QuickJS
+sandbox, and every capability exposed by a provided tool is available to the
+generated program. Enforce authorization and validate inputs inside each tool.
 
 Tool input schemas are validated before their `execute` functions run. Abort
 signals and AI SDK tool execution context are forwarded to nested tool calls.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

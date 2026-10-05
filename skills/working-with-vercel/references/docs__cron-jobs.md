@@ -16,13 +16,13 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6de49338127cf55976718750e1abf981ea5c77106dbb9fe273decc3aeb405b0e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "984dc1d89fe46fe629462254812fd8ccac0b19c6056dde949a9cb49439b00889"
 ---
 
 # Cron Jobs
 
-> **🔒 Permissions Required**: Cron Jobs
+> **Availability**: Cron Jobs are available on all plans
 
 Cron jobs are time-based scheduling tools used to automate repetitive tasks. By using a specific syntax called a [cron expression](#cron-expressions), you can define the frequency and timing of each task. This helps improve efficiency and ensures that important processes are performed consistently.
 
@@ -42,7 +42,7 @@ Cron jobs are time-based scheduling tools used to automate repetitive tasks. By 
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/cron-jobs.graph.md](/docs/cron-jobs.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs&source_site=vercel-docs&relationship=graph)

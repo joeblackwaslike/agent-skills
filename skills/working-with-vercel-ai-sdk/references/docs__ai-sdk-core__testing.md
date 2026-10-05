@@ -1,10 +1,14 @@
 ---
+title: Testing
+description: Learn how to use AI SDK Core mock providers for testing.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/testing"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/testing.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "da84ad35e0355561a566e99755411aa0e2a6a1f62e12e92bfe4fe6e5d064f50d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "50e308720f941c91cceeb438803a3367b6b572a9b4318a969fc5ed8a65ac4350"
 ---
 
-# Testing
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Testing language models can be challenging, because they are non-deterministic
 and calling them is slow and expensive.
@@ -262,7 +266,7 @@ debugging, or demonstration purposes.
 
 Here is a Next example:
 
-```ts filename="route.ts"
+```ts title="route.ts"
 import { simulateReadableStream } from 'ai';
 
 export async function POST(req: Request) {
@@ -294,40 +298,10 @@ export async function POST(req: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

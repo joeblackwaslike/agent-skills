@@ -13,8 +13,8 @@ related:
 summary: Send AI Gateway token usage to Stripe Billing Meters with an existing configured meter or private-preview access to meter dimensions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d25d767ca3263f80df5a09d2dbac24e73a41ed0d2a0379b198e8417ccfcb04be"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "248a14940c6f4ffba022592b6fdfdbc443a1f2348c342d6b6963c9c710283fe6"
 ---
 
 # Stripe Usage-Based Billing with AI Gateway
@@ -27,12 +27,13 @@ Send AI Gateway token usage to an existing [Stripe Billing Meters integration](h
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [Anthropic Messages API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=related) — Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/stripe-billing.graph.md](/docs/ai-gateway/ecosystem/stripe-billing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fstripe-billing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

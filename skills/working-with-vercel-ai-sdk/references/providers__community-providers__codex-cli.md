@@ -1,10 +1,14 @@
 ---
+title: Codex CLI
+description: Learn how to use the Codex CLI provider to access OpenAI GPT-5 models through the Codex CLI.
+url: "https://ai-sdk.dev/providers/community-providers/codex-cli"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/codex-cli.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "47bef7a6a99a9cf6a069494183079fe802aed953cb4921cb5250ecc7b229f80d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3e8c2728233186deaf6a1d158e44e1a6ede45673096041e72b183fe4427c1cd1"
 ---
 
-# Codex CLI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [ai-sdk-provider-codex-cli](https://github.com/ben-vargas/ai-sdk-provider-codex-cli) community provider enables using OpenAI's GPT-5 series models through the [Codex CLI](https://github.com/openai/codex). It's useful for developers who want to use their ChatGPT Plus/Pro subscription or API key authentication.
 
@@ -25,7 +29,7 @@ npm install ai-sdk-provider-codex-cli@ai-sdk-v5 ai@^5.0.0
 
 ## Setup
 
-<InstallPackages packages="ai-sdk-provider-codex-cli" />
+**Packages:** `ai-sdk-provider-codex-cli`
 
 ## Provider Instance
 
@@ -62,12 +66,12 @@ const model = codexCli('gpt-5.1-codex', {
 
 Model settings:
 
-- **reasoningEffort** _'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'_ - Controls reasoning depth.
-- **approvalMode** _'untrusted' | 'on-failure' | 'on-request' | 'never'_ - Tool approval policy.
-- **sandboxMode** _'read-only' | 'workspace-write' | 'danger-full-access'_ - Sandbox restrictions.
-- **mcpServers** _Record&lt;string, McpServerConfig&gt;_ - MCP server configurations.
-- **verbose** _boolean_ - Enable verbose logging.
-- **logger** _Logger | false_ - Custom logger or disable logging.
+- **reasoningEffort** *'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'* - Controls reasoning depth.
+- **approvalMode** *'untrusted' | 'on-failure' | 'on-request' | 'never'* - Tool approval policy.
+- **sandboxMode** *'read-only' | 'workspace-write' | 'danger-full-access'* - Sandbox restrictions.
+- **mcpServers** *Record\<string, McpServerConfig>* - MCP server configurations.
+- **verbose** *boolean* - Enable verbose logging.
+- **logger** *Logger | false* - Custom logger or disable logging.
 
 ## Language Models
 
@@ -113,31 +117,27 @@ const model = codexCli('gpt-5.1-codex-max', {
 });
 ```
 
-<Note>
-  The `xhigh` reasoning effort is available on `gpt-5.1-codex-max` and newer
-  model families that support it (including GPT-5.2 variants when supported by
-  your Codex CLI version).
-</Note>
+The `xhigh` reasoning effort is available on `gpt-5.1-codex-max` and newer
+model families that support it (including GPT-5.2 variants when supported by
+your Codex CLI version).
 
 ### Model Capabilities
 
 | Model                | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | -------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `gpt-5.3-codex`      | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `gpt-5.2-codex`      | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `gpt-5.2`            | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `gpt-5.1-codex-max`  | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `gpt-5.1-codex-mini` | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `gpt-5.1`            | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `gpt-5.1-codex`      | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| `gpt-5.3-codex`      | ✓           | ✓                 | ✗          | ✗              |
+| `gpt-5.2-codex`      | ✓           | ✓                 | ✗          | ✗              |
+| `gpt-5.2`            | ✓           | ✓                 | ✗          | ✗              |
+| `gpt-5.1-codex-max`  | ✓           | ✓                 | ✗          | ✗              |
+| `gpt-5.1-codex-mini` | ✓           | ✓                 | ✗          | ✗              |
+| `gpt-5.1`            | ✓           | ✓                 | ✗          | ✗              |
+| `gpt-5.1-codex`      | ✓           | ✓                 | ✗          | ✗              |
 
-<Note>
-  Tool Usage and Tool Streaming show ❌ because this provider does not support
-  AI SDK custom tools (Zod schemas passed to `generateText`/`streamText`).
-  Instead, the Codex CLI executes its own tools autonomously, which can be
-  observed via streaming events. Object generation uses native JSON Schema
-  support via `--output-schema` for guaranteed schema compliance.
-</Note>
+Tool Usage and Tool Streaming show ❌ because this provider does not support
+AI SDK custom tools (Zod schemas passed to `generateText`/`streamText`).
+Instead, the Codex CLI executes its own tools autonomously, which can be
+observed via streaming events. Object generation uses native JSON Schema
+support via `--output-schema` for guaranteed schema compliance.
 
 ## Authentication
 
@@ -158,68 +158,10 @@ Alternatively, you can use an OpenAI API key by setting the `OPENAI_API_KEY` env
 
 For more details, see the [provider documentation](https://github.com/ben-vargas/ai-sdk-provider-codex-cli).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

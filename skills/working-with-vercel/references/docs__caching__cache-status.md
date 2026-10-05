@@ -16,8 +16,8 @@ related:
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "241054cbb3092e12374854a94b9fa4c4fbfbdfc54eba69b44e298e4b63071b6c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "67848d7d6fc88ec03658078f0db5fd45780cc5f00b392d6bf05115b7a91297ee"
 ---
 
 # Cache Status and Reasons
@@ -31,12 +31,13 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Runtime logs now show cache reasons](https://vercel.com/changelog/runtime-logs-now-show-cache-reasons?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related)
+- [Vercel CDN no longer caches responses with Vary: Cookie](https://vercel.com/changelog/vary-cookie-responses-no-longer-cached?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related)
+- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related)
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [Caching audits: Five antipatterns that cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-status&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -62,7 +63,7 @@ Every cacheable request resolves to one of these statuses:
 
 The response was served directly from the cache, with no function invocation or origin fetch needed.
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-hit2x.png?v=4\&lightbox`)
+![HIT: the response was served from the cache](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-hit2x.png?v=4\&lightbox)
 
 ## MISS
 
@@ -70,7 +71,7 @@ A `MISS` means Vercel checked the cache, found nothing it could serve, and gener
 
 A miss isn't always a problem. Dynamic routes are generated on every request, so a miss there is expected and shows no reason. A reason appears only when the miss is worth explaining, such as on a route meant to be served from the cache, and tells you what sent the request to your function or origin instead.
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-miss2x.png?v=4\&lightbox`)
+![MISS: Vercel found nothing in the cache and generated the response from your function or origin](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-miss2x.png?v=4\&lightbox)
 
 ### Cold
 
@@ -100,7 +101,7 @@ To make the route cacheable, check whether the response really changes with that
 
 A `BYPASS` means Vercel skipped the cache on purpose for this request and served fresh content from your function or origin. Unlike a miss, it doesn't consult the cache at all, so the reason describes what opted this request out.
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-bypass2x.png?v=4\&lightbox`)
+![BYPASS: Vercel skipped the cache and served the response directly from your function or origin](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-bypass2x.png?v=4\&lightbox)
 
 ### Draft Mode
 
@@ -118,7 +119,7 @@ A request from a known crawler hit a path that would normally serve a [prerender
 
 A `STALE` status means the cache served an existing response that's no longer fresh, then regenerated it in the background by re-invoking your function or origin. The visitor still gets a fast response from the cache while Vercel regenerates the response in the background. The reason explains why the entry became stale.
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-stale2x.png?v=4\&lightbox`)
+![STALE: Vercel served the cached response and refreshed it in the background](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-stale2x.png?v=4\&lightbox)
 
 ### Time-based revalidation
 
@@ -136,13 +137,13 @@ Vercel tried to regenerate the entry, but the request failed, for example becaus
 
 The response was served from static storage, such as a page prerendered at build time. Frameworks configure this through the [Build Output API](/docs/build-output-api/features#on-demand-incremental-static-regeneration-isr). In Next.js, statically generated pages return `PRERENDER`. See the Next.js [`getStaticPaths`](https://nextjs.org/docs/pages/api-reference/functions/get-static-paths) docs for when a route is prerendered.
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-prerender2x.png?v=4\&lightbox`)
+![PRERENDER: the response was served from static storage](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-prerender2x.png?v=4\&lightbox)
 
 ## REVALIDATED
 
 The cached entry had been deleted, so Vercel regenerated the response from your origin in the foreground. Because there's no stale copy to fall back on, the request waits for that regeneration and pays the full generation latency, unlike `STALE`, where an expired entry is served immediately while Vercel refreshes the next one in the background. An entry is deleted on demand through [`dangerouslyDeleteByTag()`](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag), a framework function like [`revalidateTag()`](https://nextjs.org/docs/app/api-reference/functions/revalidateTag) or [`revalidatePath()`](https://nextjs.org/docs/app/api-reference/functions/revalidatePath), or a [dashboard purge](/docs/caching/cdn-cache/purge) that deletes by tag.
 
-![Image](`/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-revalidated2x.png?v=4\&lightbox`)
+![REVALIDATED: Vercel regenerated the response from your origin in the foreground after the entry was deleted](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/edge-network/x-vercel-cache-revalidated2x.png?v=4\&lightbox)
 
 ### Tag-based deletion
 

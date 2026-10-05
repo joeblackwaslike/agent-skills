@@ -1,24 +1,26 @@
 ---
+title: OpenCode
+description: Learn how to use the OpenCode harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "7136da8ada17f8a5b6ca4e47a8fdbb323cbc57ce9708ae44dada6b463434d9bc"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "71f591b1338f1579bf3ce5322a5bfd6b1a5c744b14e7f9886187566844da3f6b"
 ---
 
-# OpenCode Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The OpenCode harness adapter connects `HarnessAgent` to OpenCode through
 `@opencode-ai/sdk`. The adapter runs a bridge inside the sandbox, starts an
 OpenCode server in that sandbox, and streams OpenCode session events back to
 the host over a sandbox-exposed WebSocket.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-opencode`, `@ai-sdk/sandbox-vercel`
 
 The adapter bootstraps the OpenCode bridge dependencies inside the sandbox when
 the first session starts. The bridge package depends on `@opencode-ai/sdk` and
@@ -231,20 +233,10 @@ OpenCode supports built-in tool approval requests when `permissionMode` is
 - [Harness tools](/docs/ai-sdk-harnesses/tools)
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

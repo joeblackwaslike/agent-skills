@@ -12,8 +12,8 @@ related:
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d14781e06c35a4766b8fb5d1636959424c0af9f62b3f3742a38c62bd85743bfd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3571044416bb0643680b169b7931cbd1ed3d34fbe817ab18c57914d9a49880a6"
 ---
 
 # Agent Skills
@@ -27,17 +27,17 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
+- [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
 - [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
 - [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
 - [Skills](https://eve.dev/docs/skills?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Author load-on-demand procedures the model pulls into context with load_skill.
 - [How to set up your Next.js project for AI coding agents](https://nextjs.org/docs/app/guides/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
 - [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
-- [Add Skills to Your Agent](https://ai-sdk.dev/cookbook/guides/agent-skills?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
 - [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
-- [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
-- [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related)
+- [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
 - [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/agent-resources/skills.graph.md](/docs/agent-resources/skills.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fskills&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

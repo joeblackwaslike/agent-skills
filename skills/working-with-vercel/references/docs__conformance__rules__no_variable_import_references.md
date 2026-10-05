@@ -12,13 +12,13 @@ related:
 summary: import and require statements must be passed string literals to avoid arbitrary user access to code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_variable_import_references.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5c86b83851d2e757b7535e5d739d49f28ef33136503fa701309b12ac3483dc4e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d3e7cc91663552a481bc037aeca6410727302b51c369a76ce17578fb2e3770d2"
 ---
 
 # NO_VARIABLE_IMPORT_REFERENCES
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 `import` and `require` statements load code from another file. When the
 location of the import is influenced by user input, the user may be able to

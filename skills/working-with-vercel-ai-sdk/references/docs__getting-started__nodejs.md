@@ -1,10 +1,14 @@
 ---
+title: Node.js
+description: Learn how to build your first agent with the AI SDK and Node.js.
+url: "https://ai-sdk.dev/docs/getting-started/nodejs"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "2f4d00b7703f0b590857eb86571f63b82589befb95c2a38897fe35a31fb82240"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c299460e33ba38599f5ff3adec45ad262dd6cfcab2a09c3a699f0e4388f2843c"
 ---
 
-# Node.js Quickstart
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK is a powerful TypeScript library designed to help developers build AI-powered applications.
 
@@ -19,7 +23,7 @@ To follow this quickstart, you'll need:
 - Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Setup Your Application
 
@@ -35,13 +39,11 @@ pnpm init
 
 Install `ai`, the AI SDK, along with other necessary dependencies.
 
-<Note>
-  The AI SDK is designed to be a unified interface to interact with any large
-  language model. This means that you can change model and providers with just
-  one line of code! Learn more about [available providers](/providers) and
-  [building custom providers](/providers/community-providers/custom-providers)
-  in the [providers](/providers) section.
-</Note>
+The AI SDK is designed to be a unified interface to interact with any large
+language model. This means that you can change model and providers with just
+one line of code! Learn more about [available providers](/providers) and
+[building custom providers](/providers/community-providers/custom-providers)
+in the [providers](/providers) section.
 
 ```bash
 pnpm add ai zod dotenv
@@ -54,28 +56,27 @@ The `ai` package contains the AI SDK. You will use `zod` to define type-safe sch
 
 Create a `.env` file in your project's root directory and add your Vercel AI Gateway API Key. This key is used to authenticate your application with the Vercel AI Gateway service.
 
-<Snippet text="touch .env" />
+```
+touch .env
+```
 
 Edit the `.env` file:
 
-```env filename=".env"
+```dotenv title=".env"
 AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
 Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
 
-<Note className="mb-4">
-  The AI SDK will use the `AI_GATEWAY_API_KEY` environment variable to
-  authenticate with Vercel AI Gateway.
-</Note>
+The AI SDK will use the `AI_GATEWAY_API_KEY` environment variable to
+authenticate with Vercel AI Gateway.
 
 ## Create Your Application
 
 Create an `index.ts` file in the root of your project and add the following code:
 
-```ts filename="index.ts"
+```ts title="index.ts"
 import { ModelMessage, streamText } from 'ai';
-__PROVIDER_IMPORT__;
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 
@@ -93,7 +94,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages,
     });
 
@@ -128,7 +129,9 @@ Let's take a look at what is happening in this code:
 
 With that, you have built everything you need for your agent! To start your application, use the command:
 
-<Snippet text="pnpm tsx index.ts" />
+```
+pnpm tsx index.ts
+```
 
 You should see a prompt in your terminal. Test it out by entering a message and see the AI agent respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Node.js.
 
@@ -139,7 +142,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: __MODEL__;
+model: "anthropic/claude-sonnet-5.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -147,18 +150,18 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
 ### Using other providers
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<InstallPackages packages="@ai-sdk/openai" />
+**Packages:** `@ai-sdk/openai`
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -180,9 +183,8 @@ Let's enhance your agent by adding a simple weather tool.
 
 Modify your `index.ts` file to include the new weather tool:
 
-```ts filename="index.ts" highlight="2,4,24-38"
+```ts title="index.ts" {2,4,24-38}
 import { ModelMessage, streamText, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import 'dotenv/config';
 import { z } from 'zod';
 import * as readline from 'node:readline/promises';
@@ -201,7 +203,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages,
       tools: {
         weather: tool({
@@ -249,11 +251,10 @@ Now your agent can "fetch" weather information for any location the user asks ab
 
 Try asking something like "What's the weather in New York?" and see how the agent uses the new tool.
 
-Notice the blank "assistant" response? This is because instead of generating a text response, the agent generated a tool call. You can access the tool call and subsequent tool result in the `toolCall` and `toolResult` keys of the result object.
+Notice the blank "assistant" response? This is because instead of generating a text response, the agent generated a tool call. You can access the tool call and subsequent tool result in the `toolCalls` and `toolResults` properties of the result object.
 
-```typescript highlight="50-51"
+```typescript {50-51}
 import { ModelMessage, streamText, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import 'dotenv/config';
 import { z } from 'zod';
 import * as readline from 'node:readline/promises';
@@ -272,7 +273,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages,
       tools: {
         weather: tool({
@@ -322,9 +323,8 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. This featu
 
 Modify your `index.ts` file to configure stopping conditions with `stopWhen`:
 
-```ts filename="index.ts" highlight="1,40-45"
+```ts title="index.ts" {1,40-45}
 import { ModelMessage, streamText, tool, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import 'dotenv/config';
 import { z } from 'zod';
 import * as readline from 'node:readline/promises';
@@ -343,7 +343,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages,
       tools: {
         weather: tool({
@@ -388,19 +388,18 @@ main().catch(console.error);
 In this updated code:
 
 1. You set `stopWhen` to be when `isStepCount` 5, allowing the agent to use up to 5 "steps" for any given generation.
-2. You add an `onStepEnd` callback to log any `toolResults` from each step of the interaction, helping you understand the agent's tool usage. This means we can also delete the `toolCall` and `toolResult` `console.log` statements from the previous example.
+2. You add an `onStepEnd` callback to log any `toolResults` from each step of the interaction, helping you understand the agent's tool usage. This means we can also delete the `toolCalls` and `toolResults` `console.log` statements from the previous example.
 
 Now, when you ask about the weather in a location, you should see the agent using the weather tool results to answer your question.
 
-By setting `stopWhen: isStepCount(5)`, you're allowing the agent to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the agent to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Celsius to Fahrenheit.
+By setting `stopWhen: isStepCount(5)`, you're allowing the agent to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the agent to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
 
 ### Adding a second tool
 
-Update your `index.ts` file to add a new tool to convert the temperature from Celsius to Fahrenheit:
+Update your `index.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```ts filename="index.ts" highlight="39-52"
+```ts title="index.ts" {39-52}
 import { ModelMessage, streamText, tool, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import 'dotenv/config';
 import { z } from 'zod';
 import * as readline from 'node:readline/promises';
@@ -419,7 +418,7 @@ async function main() {
     messages.push({ role: 'user', content: userInput });
 
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages,
       tools: {
         weather: tool({
@@ -494,19 +493,10 @@ You've built an AI agent using the AI SDK! From here, you have several paths to 
 - If you're interested in diving deeper with guides, check out the [RAG (retrieval-augmented generation)](/cookbook/guides/rag-chatbot) and [multi-modal chatbot](/cookbook/guides/multi-modal-chatbot) guides.
 - To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

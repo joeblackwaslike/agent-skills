@@ -1,10 +1,14 @@
 ---
+title: Skills
+description: Use skills with AI SDK harnesses.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/skills"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/skills.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "edf8d7dadbb7993ea30c5c48cdfb81b97da562fe0a26f51f83f2e9fca1df3e32"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "29a1d2b7ab4d255b2feb55f5a2c5b751114618c5b734b2c139f1e9cd12d3ccb2"
 ---
 
-# Harness Skills
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Skills](https://agentskills.io/) are reusable instruction bundles that can
 be useful for project conventions, workflow guidance, domain-specific procedures,
@@ -65,17 +69,10 @@ for details.
 - [Harness tools](/docs/ai-sdk-harnesses/tools)
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

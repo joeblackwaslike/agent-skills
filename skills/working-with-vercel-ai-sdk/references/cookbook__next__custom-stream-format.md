@@ -1,10 +1,18 @@
 ---
+title: Streaming with Custom Format
+description: Build a custom format to stream LLM responses
+url: "https://ai-sdk.dev/cookbook/next/custom-stream-format"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - tool use
 source: "https://ai-sdk.dev/cookbook/next/custom-stream-format.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c066c042af1bd5ba3d3a5e66eafcb133b434d23c31b8a962799e03381f3ae313"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6280d13525f1b891fee5b24a123e884c07b378f9e67284ecb39a7216890179c1"
 ---
 
-# Streaming with Custom Format
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Create a custom stream to control the streaming format and structure of tool calls instead of using the built-in AI SDK data stream format (`toUIMessageStream()`).
 
@@ -25,10 +33,9 @@ For complete control over both the streaming format and the execution loop, comb
 
 Create a route handler that calls a model and then streams the responses in a custom format:
 
-```tsx filename="app/api/stream/route.ts"
+```tsx title="app/api/stream/route.ts"
 import { tools } from '@/ai/tools'; // your tools
 import { isStepCount, streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 export type StreamEvent =
   | { type: 'text'; text: string }
@@ -46,7 +53,7 @@ export async function POST(request: Request) {
 
   const result = streamText({
     prompt,
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     tools,
     stopWhen: isStepCount(5),
   });
@@ -91,7 +98,7 @@ The route uses `streamText` to process the prompt with tools. Each event (text, 
 
 Create a simple interface that parses and displays the stream:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -167,31 +174,10 @@ The client uses the Fetch API to stream responses from the server. Since the ser
 
 Events are rendered in order as they arrive, giving you a linear representation of the AI's response.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

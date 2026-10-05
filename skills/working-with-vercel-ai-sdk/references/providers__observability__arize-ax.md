@@ -1,31 +1,31 @@
 ---
+title: Arize AX
+description: Trace, monitor, and evaluate LLM applications with Arize AX
+url: "https://ai-sdk.dev/providers/observability/arize-ax"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/arize-ax.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "04220761c37c598b0bd79bbdffd56e1d17a5ce5db1bc0b766bdd79ee69540582"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f7e3e532863b2c605f3eec2e9a50c6c31dcaca23f6305d116e4d0560724703cd"
 ---
 
-# Arize AX Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Arize AX](https://arize.com/docs/ax) is an enterprise-grade observability, evaluation, and experimentation platform purpose-built for agents and complex AI systems. It empowers teams to rigorously develop and improve real-world AI applications.
 
-<Note>
-  You can also find this guide in the [Arize AX
-  docs](https://arize.com/docs/ax/integrations/ts-js-agent-frameworks/vercel).
-</Note>
+You can also find this guide in the [Arize AX
+docs](https://arize.com/docs/ax/integrations/ts-js-agent-frameworks/vercel).
 
 ## Setup
 
 Arize AX offers first-class OpenTelemetry integration and works directly with the AI SDK in both Next.js and Node.js environments.
 
-<Note>
-  Arize AX has an
-  [OpenInferenceSimpleSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-vercel/src/OpenInferenceSpanProcessor.ts#L32)
-  and an
-  [OpenInferenceBatchSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-vercel/src/OpenInferenceSpanProcessor.ts#L86).
-  All of the examples below can be used with either the simple or the batch
-  processor. For more information on simple / batch span processors see our
-  [documentation](https://arize.com/docs/ax/observe/tracing/configure/batch-vs-simple-span-processor#batch-vs-simple-span-processor).
-</Note>
+Arize AX has an
+[OpenInferenceSimpleSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-vercel/src/OpenInferenceSpanProcessor.ts#L32)
+and an
+[OpenInferenceBatchSpanProcessor](https://github.com/Arize-ai/openinference/blob/main/js/packages/openinference-vercel/src/OpenInferenceSpanProcessor.ts#L86).
+All of the examples below can be used with either the simple or the batch
+processor. For more information on simple / batch span processors see our
+[documentation](https://arize.com/docs/ax/observe/tracing/configure/batch-vs-simple-span-processor#batch-vs-simple-span-processor).
 
 ### Next.js
 
@@ -39,7 +39,7 @@ npm install ai @ai-sdk/openai @ai-sdk/otel @vercel/otel @arizeai/openinference-v
 
 Then, in your `instrumentation.ts` file add the following, including the AI SDK telemetry integration registration:
 
-```typescript filename="instrumentation"
+```typescript title="instrumentation"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
@@ -211,30 +211,10 @@ After sending spans to your Arize AX project check out other features:
 
 AX has a [TypeScript client](https://www.npmjs.com/package/@arizeai/ax-client) for managing your datasets and evaluations.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

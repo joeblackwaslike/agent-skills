@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c2337b66c9e2cb8d9e557e6687ce24743d9d0dcd13e743e0306a2cb67c3bec76"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dce9d38b8a83759142a8a3f11c2f20373ff2a6becea63c0d2d29c1349eedbd15"
 ---
 
 # Supported Frameworks on Vercel
@@ -38,11 +38,11 @@ The following table shows which features are supported by each framework on Verc
 - [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
 - [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
+- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related)
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/frameworks/more-frameworks.graph.md](/docs/frameworks/more-frameworks.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fmore-frameworks&source_site=vercel-docs&relationship=graph)

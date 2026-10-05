@@ -16,8 +16,8 @@ related:
 summary: Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zed.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "768ef9b11dec162180e83fcfb4cc130c70b9996eaa5a3376d95cd99b07870c25"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c806e955a40db9266a6d491c01de5b034b7c01272c69dadcb72699d9ee5b9a7b"
 ---
 
 # Zed with AI Gateway
@@ -31,10 +31,10 @@ sha256: "768ef9b11dec162180e83fcfb4cc130c70b9996eaa5a3376d95cd99b07870c25"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zed.graph.md](/docs/ai-gateway/coding-agents/zed.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

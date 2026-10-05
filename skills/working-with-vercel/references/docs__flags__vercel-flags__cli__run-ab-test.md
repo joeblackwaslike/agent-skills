@@ -14,8 +14,8 @@ related:
 summary: Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "1654aec3b085aa7adccb2ec7d264d6ef1d55877f4b5c2b6f6c8d234c684b95a5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f5d9c44089b2db8a9a4bf73cb19b48baa45c47a695846bf1a36fb6c8cd483df9"
 ---
 
 # Running an A/B test
@@ -28,16 +28,12 @@ This workflow sets up a multi-variant layout experiment, tracks results through 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
-- [A/B Testing on Vercel](https://vercel.com/kb/guide/ab-testing-on-vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Learn best practices for A/B testing on Vercel
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
-- [Observability](https://vercel.com/docs/flags/observability?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
-- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/run-ab-test.graph.md](/docs/flags/vercel-flags/cli/run-ab-test.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Frun-ab-test&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

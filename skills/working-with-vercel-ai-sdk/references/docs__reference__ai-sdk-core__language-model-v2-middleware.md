@@ -1,14 +1,16 @@
 ---
+title: LanguageModelV4Middleware
+description: Middleware for enhancing language model behavior (API Reference)
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/language-model-v2-middleware.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "c7f909b50439df9e289caf60b012e18981c0ef75b07d606317b31f5bf42c6967"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "e57a97aaf46d8cd4c649b4049901ef58152989ef5dd62c1da812a1985de50b97"
 ---
 
-# `LanguageModelV4Middleware`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  Language model middleware is an experimental feature.
-</Note>
+Language model middleware is an experimental feature.
 
 Language model middleware provides a way to enhance the behavior of language models
 by intercepting and modifying the calls to the language model. It can be used to add
@@ -18,126 +20,24 @@ See [Language Model Middleware](/docs/ai-sdk-core/middleware) for more informati
 
 ## Import
 
-<Snippet
-  text={`import { LanguageModelV4Middleware } from "ai"`}
-  prompt={false}
-/>
+```
+import { LanguageModelV4Middleware } from "ai"
+```
 
 ## API Signature
 
-<PropertiesTable
-  content={[
-    {
-      name: 'specificationVersion',
-      type: "'v4'",
-      description: 'The specification version of the middleware. Must be "v4".',
-    },
-    {
-      name: 'transformParams',
-      type: '({ type: "generate" | "stream", params: LanguageModelV4CallOptions, model: LanguageModelV4 }) => PromiseLike<LanguageModelV4CallOptions>',
-      isOptional: true,
-      description:
-        'Transforms the parameters before they are passed to the language model.',
-    },
-    {
-      name: 'wrapGenerate',
-      type: '({ doGenerate: () => PromiseLike<LanguageModelV4GenerateResult>, doStream: () => PromiseLike<LanguageModelV4StreamResult>, params: LanguageModelV4CallOptions, model: LanguageModelV4 }) => PromiseLike<LanguageModelV4GenerateResult>',
-      isOptional: true,
-      description:
-        'Wraps the generate operation of the language model. Receives both doGenerate and doStream functions.',
-    },
-    {
-      name: 'wrapStream',
-      type: '({ doGenerate: () => PromiseLike<LanguageModelV4GenerateResult>, doStream: () => PromiseLike<LanguageModelV4StreamResult>, params: LanguageModelV4CallOptions, model: LanguageModelV4 }) => PromiseLike<LanguageModelV4StreamResult>',
-      isOptional: true,
-      description:
-        'Wraps the stream operation of the language model. Receives both doGenerate and doStream functions.',
-    },
-    {
-      name: 'overrideProvider',
-      type: '(options: { model: LanguageModelV4 }) => string',
-      isOptional: true,
-      description: 'Override the provider ID of the model.',
-    },
-    {
-      name: 'overrideModelId',
-      type: '(options: { model: LanguageModelV4 }) => string',
-      isOptional: true,
-      description: 'Override the model ID of the model.',
-    },
-    {
-      name: 'overrideSupportedUrls',
-      type: '(options: { model: LanguageModelV4 }) => PromiseLike<Record<string, RegExp[]>> | Record<string, RegExp[]>',
-      isOptional: true,
-      description: 'Override the supported URLs for the model.',
-    },
-  ]}
-/>
+- `specificationVersion` (`'v4'`): The specification version of the middleware. Must be "v4".
+- `transformParams?` (`({ type: "generate" | "stream", params: LanguageModelV4CallOptions, model: LanguageModelV4 }) => PromiseLike<LanguageModelV4CallOptions>`): Transforms the parameters before they are passed to the language model.
+- `wrapGenerate?` (`({ doGenerate: () => PromiseLike<LanguageModelV4GenerateResult>, doStream: () => PromiseLike<LanguageModelV4StreamResult>, params: LanguageModelV4CallOptions, model: LanguageModelV4 }) => PromiseLike<LanguageModelV4GenerateResult>`): Wraps the generate operation of the language model. Receives both doGenerate and doStream functions.
+- `wrapStream?` (`({ doGenerate: () => PromiseLike<LanguageModelV4GenerateResult>, doStream: () => PromiseLike<LanguageModelV4StreamResult>, params: LanguageModelV4CallOptions, model: LanguageModelV4 }) => PromiseLike<LanguageModelV4StreamResult>`): Wraps the stream operation of the language model. Receives both doGenerate and doStream functions.
+- `overrideProvider?` (`(options: { model: LanguageModelV4 }) => string`): Override the provider ID of the model.
+- `overrideModelId?` (`(options: { model: LanguageModelV4 }) => string`): Override the model ID of the model.
+- `overrideSupportedUrls?` (`(options: { model: LanguageModelV4 }) => PromiseLike<Record<string, RegExp[]>> | Record<string, RegExp[]>`): Override the supported URLs for the model.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

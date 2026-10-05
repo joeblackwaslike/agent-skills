@@ -1,10 +1,14 @@
 ---
+title: readUIMessageStream
+description: API Reference for readUIMessageStream.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/read-ui-message-stream"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/read-ui-message-stream.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "de9b3dcaa36d1e8ed89e475e6b5fd89cb0da14ba3f05d7050f39188a01fae0bb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b6bedcc17d4436e2110b1db3ff7a2eaf139a1de45abf9462b7c863fcafbe51bc"
 ---
 
-# readUIMessageStream
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Transforms a stream of `UIMessageChunk`s into an `AsyncIterableStream` of `UIMessage`s.
 
@@ -20,36 +24,10 @@ import { readUIMessageStream } from 'ai';
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'message',
-      type: 'UIMessage',
-      isOptional: true,
-      description:
-        'The last assistant message to use as a starting point when the conversation is resumed. Otherwise undefined.',
-    },
-    {
-      name: 'stream',
-      type: 'ReadableStream<UIMessageChunk>',
-      description: 'The stream of UIMessageChunk objects to read.',
-    },
-    {
-      name: 'onError',
-      type: '(error: unknown) => void',
-      isOptional: true,
-      description:
-        'A function that is called when an error occurs during stream processing.',
-    },
-    {
-      name: 'terminateOnError',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Whether to terminate the stream if an error occurs. Defaults to false.',
-    },
-  ]}
-/>
+- `message?` (`UIMessage`): The last assistant message to use as a starting point when the conversation is resumed. Otherwise undefined.
+- `stream` (`ReadableStream<UIMessageChunk>`): The stream of UIMessageChunk objects to read.
+- `onError?` (`(error: unknown) => void`): A function that is called when an error occurs during stream processing.
+- `terminateOnError?` (`boolean`): Whether to terminate the stream if an error occurs. Defaults to false.
 
 ### Returns
 
@@ -57,23 +35,10 @@ An `AsyncIterableStream` of `UIMessage`s. Each stream part represents a differen
 
 For comprehensive examples and use cases, see [Reading UI Message Streams](/docs/ai-sdk-ui/reading-ui-message-streams).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

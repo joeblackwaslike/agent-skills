@@ -1,10 +1,14 @@
 ---
+title: TanStack Start
+description: Learn how to build your first agent with the AI SDK and TanStack Start.
+url: "https://ai-sdk.dev/docs/getting-started/tanstack-start"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/tanstack-start.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "191633c6ea66f8e9e2fbdff99881996c19959e9ef55fb451fd29373267bb51b9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b84afb17c09a508a23c97d5485ed777678cc293248ac8fdca0de3d7ba4c4089a"
 ---
 
-# TanStack Start Quickstart
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK is a powerful TypeScript library designed to help developers build AI-powered applications.
 
@@ -19,55 +23,57 @@ To follow this quickstart, you'll need:
 - Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Create Your Application
 
 Start by creating a new TanStack Start application. This command will create a new directory named `my-ai-app` and set up a basic TanStack Start application inside it.
 
-<Snippet text="pnpm create @tanstack/start@latest my-ai-app" />
+```
+pnpm create @tanstack/start@latest my-ai-app
+```
 
 Navigate to the newly created directory:
 
-<Snippet text="cd my-ai-app" />
+```
+cd my-ai-app
+```
 
 ### Install dependencies
 
 Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
-<Note>
-  This guide uses the Vercel AI Gateway provider so you can access hundreds of
-  models from different providers with one API key, but you can switch to any
-  provider or model by installing its package. Check out available [AI SDK
-  providers](/providers/ai-sdk-providers) for more information.
-</Note>
+This guide uses the Vercel AI Gateway provider so you can access hundreds of
+models from different providers with one API key, but you can switch to any
+provider or model by installing its package. Check out available [AI SDK
+providers](/providers/ai-sdk-providers) for more information.
 
-<InstallPackages packages="ai @ai-sdk/react zod" />
+**Packages:** `ai`, `@ai-sdk/react`, `zod`
 
 ### Configure your AI Gateway API key
 
 Create a `.env` file in your project root and add your AI Gateway API key. This key authenticates your application with Vercel AI Gateway.
 
-<Snippet text="touch .env" />
+```
+touch .env
+```
 
 Edit the `.env` file:
 
-```env filename=".env"
+```dotenv title=".env"
 AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
 Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
 
-<Note className="mb-4">
-  The AI SDK's Vercel AI Gateway Provider will default to using the
-  `AI_GATEWAY_API_KEY` environment variable.
-</Note>
+The AI SDK's Vercel AI Gateway Provider will default to using the
+`AI_GATEWAY_API_KEY` environment variable.
 
 ## Create a Route Handler
 
 Create a route handler, `src/routes/api/chat.ts` and add the following code:
 
-```tsx filename="src/routes/api/chat.ts"
+```tsx title="src/routes/api/chat.ts"
 import {
   streamText,
   UIMessage,
@@ -75,7 +81,6 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/api/chat')({
@@ -85,7 +90,7 @@ export const Route = createFileRoute('/api/chat')({
         const { messages }: { messages: UIMessage[] } = await request.json();
 
         const result = streamText({
-          model: __MODEL__,
+          model: "anthropic/claude-sonnet-5.5",
           messages: await convertToModelMessages(messages),
         });
 
@@ -114,7 +119,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: __MODEL__;
+model: "anthropic/claude-sonnet-5.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -122,18 +127,18 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
 ### Using other providers
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<InstallPackages packages="@ai-sdk/openai" />
+**Packages:** `@ai-sdk/openai`
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -153,7 +158,7 @@ Now that you have a Route Handler that can query an LLM, it's time to setup your
 
 Update your index route (`src/routes/index.tsx`) with the following code to show a list of chat messages and provide a user message input:
 
-```tsx filename="src/routes/index.tsx"
+```tsx title="src/routes/index.tsx"
 import { createFileRoute } from '@tanstack/react-router';
 import { useChat } from '@ai-sdk/react';
 import { useState } from 'react';
@@ -211,9 +216,11 @@ The LLM's response is accessed through the message `parts` array. Each message c
 
 With that, you have built everything you need for your chatbot! To start your application, use the command:
 
-<Snippet text="pnpm run dev" />
+```
+pnpm run dev
+```
 
-Head to your browser and open http://localhost:3000. You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with TanStack Start.
+Head to your browser and open [http://localhost:3000](http://localhost:3000). You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with TanStack Start.
 
 ## Enhance Your Chatbot with Tools
 
@@ -229,7 +236,7 @@ Let's enhance your chatbot by adding a simple weather tool.
 
 Modify your `src/routes/api/chat.ts` file to include the new weather tool:
 
-```tsx filename="src/routes/api/chat.ts" highlight="9,22-38"
+```tsx title="src/routes/api/chat.ts" {9,22-38}
 import {
   streamText,
   UIMessage,
@@ -238,7 +245,6 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
 
@@ -249,7 +255,7 @@ export const Route = createFileRoute('/api/chat')({
         const { messages }: { messages: UIMessage[] } = await request.json();
 
         const result = streamText({
-          model: __MODEL__,
+          model: "anthropic/claude-sonnet-5.5",
           messages: await convertToModelMessages(messages),
           tools: {
             weather: tool({
@@ -293,17 +299,15 @@ Try asking something like "What's the weather in New York?" and see how the mode
 
 Notice the blank response in the UI? This is because instead of generating a text response, the model generated a tool call. You can access the tool call and subsequent tool result on the client via the `tool-weather` part of the `message.parts` array.
 
-<Note>
-  Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
-  you used when defining the tool. In this case, since we defined the tool as
-  `weather`, the part type is `tool-weather`.
-</Note>
+Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
+you used when defining the tool. In this case, since we defined the tool as
+`weather`, the part type is `tool-weather`.
 
 ### Update the UI
 
 To display the tool invocation in your UI, update your `src/routes/index.tsx` file:
 
-```tsx filename="src/routes/index.tsx" highlight="21-26"
+```tsx title="src/routes/index.tsx" {21-26}
 import { createFileRoute } from '@tanstack/react-router';
 import { useChat } from '@ai-sdk/react';
 import { useState } from 'react';
@@ -368,7 +372,7 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. By default
 
 Modify your `src/routes/api/chat.ts` file to include the `stopWhen` condition:
 
-```tsx filename="src/routes/api/chat.ts"
+```tsx title="src/routes/api/chat.ts"
 import {
   streamText,
   UIMessage,
@@ -378,7 +382,6 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
 
@@ -389,7 +392,7 @@ export const Route = createFileRoute('/api/chat')({
         const { messages }: { messages: UIMessage[] } = await request.json();
 
         const result = streamText({
-          model: __MODEL__,
+          model: "anthropic/claude-sonnet-5.5",
           messages: await convertToModelMessages(messages),
           stopWhen: isStepCount(5),
           tools: {
@@ -424,13 +427,13 @@ In this updated code, you set `stopWhen` to be when `isStepCount(5)`, allowing t
 
 Head back to the browser and ask about the weather in a location. You should now see the model using the weather tool results to answer your question.
 
-By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Celsius to Fahrenheit.
+By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
 
 ### Add another tool
 
 Update your `src/routes/api/chat.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```tsx filename="src/routes/api/chat.ts" highlight="40-53"
+```tsx title="src/routes/api/chat.ts" {40-53}
 import {
   streamText,
   UIMessage,
@@ -440,7 +443,6 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
 
@@ -451,7 +453,7 @@ export const Route = createFileRoute('/api/chat')({
         const { messages }: { messages: UIMessage[] } = await request.json();
 
         const result = streamText({
-          model: __MODEL__,
+          model: "anthropic/claude-sonnet-5.5",
           messages: await convertToModelMessages(messages),
           stopWhen: isStepCount(5),
           tools: {
@@ -500,7 +502,7 @@ export const Route = createFileRoute('/api/chat')({
 
 update your `src/routes/index.tsx` file to render the new temperature conversion tool:
 
-```tsx filename="src/routes/index.tsx" highlight="21-26"
+```tsx title="src/routes/index.tsx" {21-26}
 import { createFileRoute } from '@tanstack/react-router';
 import { useChat } from '@ai-sdk/react';
 import { useState } from 'react';
@@ -573,19 +575,10 @@ You've built an AI chatbot using the AI SDK! From here, you have several paths t
 - If you're interested in diving deeper with guides, check out the [RAG (retrieval-augmented generation)](/cookbook/guides/rag-chatbot) and [multi-modal chatbot](/cookbook/guides/multi-modal-chatbot) guides.
 - To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

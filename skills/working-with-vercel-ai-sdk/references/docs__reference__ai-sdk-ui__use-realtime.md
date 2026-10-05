@@ -1,14 +1,16 @@
 ---
+title: experimental_useRealtime
+description: API reference for the experimental_useRealtime hook.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "40114ec9d36f87a36416c187d4ac3830b85793a4e6638cfe6d11f6b72414d2f7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "548803ea997e766b6fa226020eafa862faa49e50aa797858a79a525fb948d389"
 ---
 
-# `experimental_useRealtime()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  `experimental_useRealtime` is an experimental feature.
-</Note>
+`experimental_useRealtime` is an experimental feature.
 
 Creates a browser-side realtime session for bidirectional audio and text
 conversations with a realtime provider model.
@@ -227,265 +229,56 @@ and completion of delegated work do not prove that the corresponding audio was h
 
 ## Import
 
-<Snippet
-  text={`import { experimental_useRealtime } from "@ai-sdk/react"`}
-  prompt={false}
-/>
+```
+import { experimental_useRealtime } from "@ai-sdk/react"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'Experimental_RealtimeModel',
-      description: 'The realtime model to connect to.',
-    },
-    {
-      name: 'api',
-      type: '{ token: string } | { websocket: string; protocols?: string[] } | { session: string }',
-      description:
-        'Choose one supported connection mechanism: token setup, a WebSocket relay, or a WebRTC SDP endpoint. Conversation semantics and connection capabilities are independent.',
-      properties: [
-        {
-          type: 'Object',
-          parameters: [
-            {
-              name: 'token',
-              type: 'string',
-              isOptional: true,
-              description:
-                'The setup endpoint that returns an Experimental_RealtimeSetupResponse.',
-            },
-            {
-              name: 'session',
-              type: 'string',
-              isOptional: true,
-              description:
-                'Application WebRTC setup endpoint. Accepts JSON { sdp, sessionConfig } and returns JSON { sdp, sessionId }.',
-            },
-            {
-              name: 'websocket',
-              type: 'string',
-              isOptional: true,
-              description:
-                'Application-owned raw-protocol relay URL. Use wss in production; never put provider credentials in the URL.',
-            },
-            {
-              name: 'protocols',
-              type: 'string[]',
-              isOptional: true,
-              description:
-                'Optional relay subprotocols, supported only with websocket.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'sessionConfig',
-      type: 'Partial<Experimental_RealtimeSessionConfig>',
-      isOptional: true,
-      description:
-        'Provider-neutral session configuration, such as instructions, voice, audio formats, input audio transcription, turn detection, tools, and providerOptions.',
-    },
-    {
-      name: 'sampleRate',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Default audio sample rate used when inputAudioFormat.rate or outputAudioFormat.rate is not specified. Defaults to 24000.',
-    },
-    {
-      name: 'maxEvents',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Maximum number of provider events to keep in the events array. Defaults to 500.',
-    },
-    {
-      name: 'startupTimeoutMs',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Readiness deadline, including transport setup. Defaults to 30000.',
-    },
-    {
-      name: 'closeTimeoutMs',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Deadline for confirmed provider finalization after graceful close. Defaults to 15000.',
-    },
-    {
-      name: 'rtcDisconnectTimeoutMs',
-      type: 'number',
-      isOptional: true,
-      description:
-        'WebRTC peer disconnect recovery grace period. Defaults to 5000. Failed ICE terminates immediately.',
-    },
-    {
-      name: 'maxPlaybackBufferSeconds',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Continuous WebSocket PCM playback budget before reporting a recoverable gap and pausing playback. Defaults to 2. Unsupported with WebRTC.',
-    },
-    {
-      name: 'onToolCall',
-      type: '(options: { toolCall: { toolCallId: string; toolName: string; args: unknown } }) => unknown | Promise<unknown> | undefined',
-      isOptional: true,
-      description:
-        'Turn-based tools only. Return a value to automatically submit it as tool output, or return undefined and call addToolOutput manually later. Live client delegations are application-handled through session metadata and events.',
-    },
-    {
-      name: 'onEvent',
-      type: '(event: Experimental_RealtimeServerEvent) => void',
-      isOptional: true,
-      description: 'Called for every normalized realtime server event.',
-    },
-    {
-      name: 'onError',
-      type: '(error: Error) => void',
-      isOptional: true,
-      description: 'Called when the realtime session encounters an error.',
-    },
-  ]}
-/>
+- `model` (`Experimental_RealtimeModel`): The realtime model to connect to.
+- `api` (`{ token: string } | { websocket: string; protocols?: string[] } | { session: string }`): Choose one supported connection mechanism: token setup, a WebSocket relay, or a WebRTC SDP endpoint. Conversation semantics and connection capabilities are independent.
+  - `Object`
+    - `token?` (`string`): The setup endpoint that returns an Experimental\_RealtimeSetupResponse.
+    - `session?` (`string`): Application WebRTC setup endpoint. Accepts JSON \{ sdp, sessionConfig } and returns JSON \{ sdp, sessionId }.
+    - `websocket?` (`string`): Application-owned raw-protocol relay URL. Use wss in production; never put provider credentials in the URL.
+    - `protocols?` (`string[]`): Optional relay subprotocols, supported only with websocket.
+- `sessionConfig?` (`Partial<Experimental_RealtimeSessionConfig>`): Provider-neutral session configuration, such as instructions, voice, audio formats, input audio transcription, turn detection, tools, and providerOptions.
+- `sampleRate?` (`number`): Default audio sample rate used when inputAudioFormat.rate or outputAudioFormat.rate is not specified. Defaults to 24000.
+- `maxEvents?` (`number`): Maximum number of provider events to keep in the events array. Defaults to 500.
+- `startupTimeoutMs?` (`number`): Readiness deadline, including transport setup. Defaults to 30000.
+- `closeTimeoutMs?` (`number`): Deadline for confirmed provider finalization after graceful close. Defaults to 15000.
+- `rtcDisconnectTimeoutMs?` (`number`): WebRTC peer disconnect recovery grace period. Defaults to 5000. Failed ICE terminates immediately.
+- `maxPlaybackBufferSeconds?` (`number`): Continuous WebSocket PCM playback budget before reporting a recoverable gap and pausing playback. Defaults to 2. Unsupported with WebRTC.
+- `onToolCall?` (`(options: { toolCall: { toolCallId: string; toolName: string; args: unknown } }) => unknown | Promise<unknown> | undefined`): Turn-based tools only. Return a value to automatically submit it as tool output, or return undefined and call addToolOutput manually later. Live client delegations are application-handled through session metadata and events.
+- `onEvent?` (`(event: Experimental_RealtimeServerEvent) => void`): Called for every normalized realtime server event.
+- `onError?` (`(error: Error) => void`): Called when the realtime session encounters an error.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'status',
-      type: "'disconnected' | 'connecting' | 'connected' | 'closing' | 'error'",
-      description: 'The current connection status.',
-    },
-    {
-      name: 'messages',
-      type: 'UIMessage[]',
-      description:
-        'Messages assembled from turn-based response text, transcript, and tool events. Continuous Live transcript fragments are exposed separately through session.transcripts.',
-    },
-    {
-      name: 'events',
-      type: 'Experimental_RealtimeServerEvent[]',
-      description:
-        'Recent normalized provider events for inspection or debug UI.',
-    },
-    {
-      name: 'isCapturing',
-      type: 'boolean',
-      description:
-        'Capture state observed through SDK controls and events on the selected audio track. External changes to borrowed tracks may require an explicit refresh; see Capture ownership.',
-    },
-    {
-      name: 'isPlaying',
-      type: 'boolean',
-      description: 'Whether model audio playback is active.',
-    },
-    {
-      name: 'session',
-      type: 'Experimental_RealtimeSessionState | undefined',
-      description:
-        'Session lifecycle metadata where supported: sessionId, transcript fragments, client delegation metadata, cumulative voice usage, input mute, terminationReason, and pending/confirmed/unconfirmed finalization. Transcript fragments may overlap or arrive late; they are not complete turns.',
-    },
-    {
-      name: 'connect',
-      type: '(options?: { stream?: MediaStream; capture?: boolean }) => Promise<void>',
-      description:
-        'Starts the selected connection. Continuous browser sessions acquire microphone audio by default; capture: false opts out. A supplied Live stream remains caller-owned. The zero-argument overload remains usable as an event handler.',
-    },
-    {
-      name: 'close',
-      type: '(options?: { eventId?: string }) => Promise<void>',
-      description:
-        'Stops capture/submissions and waits for bounded graceful finalization where supported. Inspect session.finalization for confirmation; models without acknowledged close disconnect immediately.',
-    },
-    {
-      name: 'disconnect',
-      type: '() => void',
-      description:
-        'Immediately releases transports and owned media. Preserves latest usage as unconfirmed unless a terminal provider event was received.',
-    },
-    {
-      name: 'addToolOutput',
-      type: '(callId: string, result: unknown) => void',
-      description:
-        'Turn-based only: submits a tool result back to the realtime provider. Continuous Live sessions reject this control; append application-handled client delegation results with sendEvent instead.',
-    },
-    {
-      name: 'sendEvent',
-      type: '(event: Experimental_RealtimeClientEvent) => Promise<void>',
-      description:
-        'Sends a normalized command in order. Resolves on local serialization/submission, not provider acceptance. Validation can throw synchronously; asynchronous send failures reject and are reported through onError. Live context/results use context-append with a known client delegation ID or null.',
-    },
-    {
-      name: 'sendTextMessage',
-      type: '(text: string) => void',
-      description:
-        'Turn-based only: sends user text and requests a response. Continuous Live sessions reject this control. The application owns its text conversation and supplies Live context through sendEvent.',
-    },
-    {
-      name: 'sendAudio',
-      type: '(base64Audio: string) => void',
-      description:
-        'Sends a base64-encoded audio chunk to the provider input audio buffer over WebSocket. WebRTC uses media tracks and rejects JSON audio commands.',
-    },
-    {
-      name: 'commitAudio',
-      type: '() => void',
-      description: 'Turn-based only: commits the provider input audio buffer.',
-    },
-    {
-      name: 'clearAudioBuffer',
-      type: '() => void',
-      description: 'Turn-based only: clears the provider input audio buffer.',
-    },
-    {
-      name: 'requestResponse',
-      type: '(options?: { modalities?: string[] }) => void',
-      description: 'Turn-based only: requests a new model response.',
-    },
-    {
-      name: 'cancelResponse',
-      type: '() => void',
-      description: 'Turn-based only: cancels the active model response.',
-    },
-    {
-      name: 'startAudioCapture',
-      type: '(stream: MediaStream) => void',
-      description:
-        'Starts or replaces capture with the supplied MediaStream. Live paths borrow tracks; the existing legacy capture API retains ownership of its supplied stream. Async attachment failures are reported through onError.',
-    },
-    {
-      name: 'stopAudioCapture',
-      type: '() => void',
-      description:
-        'Stops local capture and releases SDK-owned microphone tracks. Caller-owned Live tracks are only detached. Does not change the provider input-mute state.',
-    },
-    {
-      name: 'resumeAudioCapture',
-      type: '() => Promise<void>',
-      description:
-        'Restarts capture, reusing a supplied Live stream or acquiring a fresh SDK-owned microphone. Does not reconnect the provider.',
-    },
-    {
-      name: 'stopPlayback',
-      type: '() => void',
-      description: 'Stops queued model audio playback.',
-    },
-    {
-      name: 'resumePlayback',
-      type: '() => Promise<void>',
-      description:
-        'Retries browser playback after interruption, suspension, or buffer overflow. Discarded stale audio is not replayed.',
-    },
-  ]}
-/>
+- `status` (`'disconnected' | 'connecting' | 'connected' | 'closing' | 'error'`): The current connection status.
+- `messages` (`UIMessage[]`): Messages assembled from turn-based response text, transcript, and tool events. Continuous Live transcript fragments are exposed separately through session.transcripts.
+- `events` (`Experimental_RealtimeServerEvent[]`): Recent normalized provider events for inspection or debug UI.
+- `isCapturing` (`boolean`): Capture state observed through SDK controls and events on the selected audio track. External changes to borrowed tracks may require an explicit refresh; see Capture ownership.
+- `isPlaying` (`boolean`): Whether model audio playback is active.
+- `session` (`Experimental_RealtimeSessionState | undefined`): Session lifecycle metadata where supported: sessionId, transcript fragments, client delegation metadata, cumulative voice usage, input mute, terminationReason, and pending/confirmed/unconfirmed finalization. Transcript fragments may overlap or arrive late; they are not complete turns.
+- `connect` (`(options?: { stream?: MediaStream; capture?: boolean }) => Promise<void>`): Starts the selected connection. Continuous browser sessions acquire microphone audio by default; capture: false opts out. A supplied Live stream remains caller-owned. The zero-argument overload remains usable as an event handler.
+- `close` (`(options?: { eventId?: string }) => Promise<void>`): Stops capture/submissions and waits for bounded graceful finalization where supported. Inspect session.finalization for confirmation; models without acknowledged close disconnect immediately.
+- `disconnect` (`() => void`): Immediately releases transports and owned media. Preserves latest usage as unconfirmed unless a terminal provider event was received.
+- `addToolOutput` (`(callId: string, result: unknown) => void`): Turn-based only: submits a tool result back to the realtime provider. Continuous Live sessions reject this control; append application-handled client delegation results with sendEvent instead.
+- `sendEvent` (`(event: Experimental_RealtimeClientEvent) => Promise<void>`): Sends a normalized command in order. Resolves on local serialization/submission, not provider acceptance. Validation can throw synchronously; asynchronous send failures reject and are reported through onError. Live context/results use context-append with a known client delegation ID or null.
+- `sendTextMessage` (`(text: string) => void`): Turn-based only: sends user text and requests a response. Continuous Live sessions reject this control. The application owns its text conversation and supplies Live context through sendEvent.
+- `sendAudio` (`(base64Audio: string) => void`): Sends a base64-encoded audio chunk to the provider input audio buffer over WebSocket. WebRTC uses media tracks and rejects JSON audio commands.
+- `commitAudio` (`() => void`): Turn-based only: commits the provider input audio buffer.
+- `clearAudioBuffer` (`() => void`): Turn-based only: clears the provider input audio buffer.
+- `requestResponse` (`(options?: { modalities?: string[] }) => void`): Turn-based only: requests a new model response.
+- `cancelResponse` (`() => void`): Turn-based only: cancels the active model response.
+- `startAudioCapture` (`(stream: MediaStream) => void`): Starts or replaces capture with the supplied MediaStream. Live paths borrow tracks; the existing legacy capture API retains ownership of its supplied stream. Async attachment failures are reported through onError.
+- `stopAudioCapture` (`() => void`): Stops local capture and releases SDK-owned microphone tracks. Caller-owned Live tracks are only detached. Does not change the provider input-mute state.
+- `resumeAudioCapture` (`() => Promise<void>`): Restarts capture, reusing a supplied Live stream or acquiring a fresh SDK-owned microphone. Does not reconnect the provider.
+- `stopPlayback` (`() => void`): Stops queued model audio playback.
+- `resumePlayback` (`() => Promise<void>`): Retries browser playback after interruption, suspension, or buffer overflow. Discarded stale audio is not replayed.
 
 ## Tool Calling
 
@@ -563,23 +356,10 @@ OpenAI Live startup options are exported as `Experimental_OpenAIRealtimeModelLiv
 See [Realtime](/docs/ai-sdk-core/realtime#tool-calling) for a complete example
 with server-backed app-specific tool endpoints.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -13,8 +13,8 @@ related:
 summary: Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a3ee1b12041d505c382cc2c1439afb307400ad5c8d24481808aa6e84e8ecead8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "db4b24ac273a542e8a0ba89c68ed0ebc1d4f8f7d943ced2ddc7fa99d67087ff1"
 ---
 
 # Multi-tenant Preview URLs
@@ -30,11 +30,12 @@ Multi-tenant preview URLs let you test tenant-specific experiences in preview de
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related)
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Learn how to automatically alias a Vercel preview deployment.
 - [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
-- [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/middleware-and-routing?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
-- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/preview-url-prefixes.graph.md](/docs/platforms/multi-tenant-platforms/preview-url-prefixes.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Fpreview-url-prefixes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -119,7 +120,7 @@ export const config = {
 ## Limitations
 
 - Preview URL prefixes only work with custom deployment URL suffixes, not the default `.vercel.app`
-- The prefix must appear before `---` in the preview URL path
+- The prefix must appear before `---` in the preview URL hostname
 - Total hostname length must not exceed DNS limits (253 characters)
 
 

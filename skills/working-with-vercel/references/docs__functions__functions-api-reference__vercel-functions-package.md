@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7749a19c182b5c9cc37764d676aa302b2f753317c6b54a01b5591731b70f2aa5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "29d6e025211a8d147240a69017da94bf2228a6148e723b98a5d99d50fa979905"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -35,7 +35,7 @@ sha256: "7749a19c182b5c9cc37764d676aa302b2f753317c6b54a01b5591731b70f2aa5"
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/functions
+    yarn add @vercel/functions
     ```
   </Code>
   <Code tab="npm">
@@ -45,7 +45,7 @@ sha256: "7749a19c182b5c9cc37764d676aa302b2f753317c6b54a01b5591731b70f2aa5"
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/functions
+    bun add @vercel/functions
     ```
   </Code>
 </CodeBlock>
@@ -61,13 +61,13 @@ sha256: "7749a19c182b5c9cc37764d676aa302b2f753317c6b54a01b5591731b70f2aa5"
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — How to create high-performance database connection pools without leaking connections
-- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
-- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Stream real-time data to clients without waiting for workflow completion.
-- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Configure custom cache handlers for use cache directives in Next.js.
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Stream data to clients in real time without waiting for workflow completion.
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -184,7 +184,7 @@ Returns `undefined` when the deadline is not available, for example when running
 
 | Returns   | Type                                                                                                  | Description                                                                 |
 | :-------- | :---------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
-| `deadline` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | `undefined` | The invocation deadline, or `undefined` if it is unavailable or invalid. |
+| `deadline` | [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) \| `undefined` | The invocation deadline, or `undefined` if it is unavailable or invalid. |
 
 ```ts {1,9} filename="api/example.ts"
 import { getDeadline } from '@vercel/functions';
@@ -398,7 +398,7 @@ export default {
     const id = new URL(request.url).searchParams.get('id');
     const res = await fetch(`https://api.example.com/${id}`);
     const product = await res.json();
-    await addCacheTag(`product-${id},products`);
+    await addCacheTag([`product-${id}`, 'products']);
     return Response.json(product, {
       headers: {
         'Vercel-CDN-Cache-Control': 'public, max-age=86400',
@@ -486,8 +486,8 @@ The Runtime Cache is isolated per deployment environment (`preview` and `product
 The Runtime Cache API does not have first class integration with [Incremental Static Regeneration](/docs/incremental-static-regeneration). This means that:
 
 - Runtime Cache entry tags will not apply to ISR pages, so you cannot use expireTag to invalidate both caches.
-- Runtime Cache entry TTLs will have no effect on the ISR revalidation time and
-- Next.js's `revalidatePath` and `revalidateTag`API does not invalidate the Runtime Cache.
+- Runtime Cache entry TTLs will have no effect on the ISR revalidation time.
+- Next.js's `revalidatePath` and `revalidateTag` APIs do not invalidate the Runtime Cache.
 
 The following Runtime Cache limits apply:
 
@@ -511,7 +511,7 @@ Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [r
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i ws
+    yarn add ws
     ```
   </Code>
   <Code tab="npm">
@@ -521,7 +521,7 @@ Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [r
   </Code>
   <Code tab="bun">
     ```bash
-    bun i ws
+    bun add ws
     ```
   </Code>
 </CodeBlock>
@@ -681,7 +681,7 @@ const cosmosClient = new CosmosClient({
   aadCredentials: credentialsProvider,
 });
 
-export const GET = () => {
+export const GET = async () => {
   const container = cosmosClient
     .database(process.env.COSMOS_DB_NAME)
     .container(process.env.COSMOS_DB_CONTAINER);

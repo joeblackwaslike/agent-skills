@@ -1,10 +1,14 @@
 ---
+title: Braintrust
+description: Monitoring and tracing LLM applications with Braintrust
+url: "https://ai-sdk.dev/providers/observability/braintrust"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/braintrust.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e8081a587de15ad552ee5b8f1f7b65a820e2b98395c73236d1e464f296addeee"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7278359a9b630144cab1efd2989d0b5e2ce661b47f2410b9b0a54b88a93bdc22"
 ---
 
-# Braintrust Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Braintrust is an end-to-end platform for building AI applications. When building with the AI SDK, you can integrate Braintrust to [log](https://www.braintrust.dev/docs/guides/logging), monitor, and take action on real-world interactions.
 
@@ -16,7 +20,7 @@ Braintrust natively supports OpenTelemetry and works out of the box with the AI 
 
 If you are using Next.js, use the Braintrust exporter with `@vercel/otel`:
 
-```typescript filename="instrumentation"
+```typescript title="instrumentation"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
@@ -53,7 +57,6 @@ const result = await generateText({
 });
 ```
 
-<Note>
 The integration supports streaming functions like `streamText`. Each streamed call will produce `ai.streamText` spans in Braintrust.
 
 ```typescript
@@ -71,8 +74,6 @@ export async function POST(req: Request) {
   return result.toDataStreamResponse();
 }
 ```
-
-</Note>
 
 ### Node.js
 
@@ -155,30 +156,10 @@ After you log your application in Braintrust, explore other workflows like:
 - Creating [custom scorers](https://www.braintrust.dev/docs/guides/functions/scorers) to assess the quality of your LLM calls
 - Adding your logs to a [dataset](https://www.braintrust.dev/docs/guides/datasets) and running evaluations comparing models and prompts
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

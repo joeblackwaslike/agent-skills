@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "14c9ddaa23181f4dec3d82968352af290fcaf50032e0d4b97b7153cbba45131e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d36e97f73e7d1a579014d4ffd47c643172397728fac9ba94f8764378b6591fff"
 ---
 
 # Managing environment variables across environments
@@ -36,10 +36,10 @@ Use this guide to manage environment variables across multiple environments. You
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
+- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Vercel MCP tools for environment variables.
 - [Environments](https://vercel.com/docs/deployments/environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 - [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

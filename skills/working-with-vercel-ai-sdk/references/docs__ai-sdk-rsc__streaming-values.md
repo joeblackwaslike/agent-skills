@@ -1,29 +1,24 @@
 ---
+title: Streaming Values
+description: Overview of streaming RSCs
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/streaming-values"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/streaming-values.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "9cedb6f36b5ea3eeba0d4108ff5a642a3d11b58fd0c2bfe50f943a5663c6b7b8"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "12e410bf3098e5a748b9b6d04cec65d555063a9910dbe2db1f32b5626e2a644d"
 ---
 
-import { UIPreviewCard, Card } from '@/components/home/card';
-import { EventPlanning } from '@/components/home/event-planning';
-import { Searching } from '@/components/home/searching';
-import { Weather } from '@/components/home/weather';
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-# Streaming Values
-
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 The RSC API provides several utility functions to allow you to stream values from the server to the client. This is useful when you need more granular control over what you are streaming and how you are streaming it.
 
-<Note>
-  These utilities can also be paired with [AI SDK Core](/docs/ai-sdk-core)
-  functions like [`streamText`](/docs/reference/ai-sdk-core/stream-text) to
-  easily stream LLM generations from the server to the client.
-</Note>
+These utilities can also be paired with [AI SDK Core](/docs/ai-sdk-core)
+functions like [`streamText`](/docs/reference/ai-sdk-core/stream-text) to
+easily stream LLM generations from the server to the client.
 
 There are two functions provided by the RSC API that allow you to create streamable values:
 
@@ -44,7 +39,7 @@ This is useful when you want to stream:
 
 You can import `createStreamableValue` from `@ai-sdk/rsc` and use it to create a streamable value.
 
-```tsx file='app/actions.ts'
+```tsx title='app/actions.ts'
 'use server';
 
 import { createStreamableValue } from '@ai-sdk/rsc';
@@ -69,7 +64,7 @@ export const runThread = async () => {
 
 You can read streamable values on the client using `readStreamableValue`. It returns an async iterator that yields the value of the streamable as it is updated:
 
-```tsx file='app/page.tsx'
+```tsx title='app/page.tsx'
 import { readStreamableValue } from '@ai-sdk/rsc';
 import { runThread } from '@/actions';
 
@@ -100,7 +95,7 @@ Learn how to stream a text generation (with `streamText`) using the Next.js App 
 
 Let's look at how you can use the `createStreamableUI` function with a Server Action.
 
-```tsx filename='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
 import { createStreamableUI } from '@ai-sdk/rsc';
@@ -124,7 +119,7 @@ First, you create a streamable UI with an empty state and then update it with a 
 
 On the client side, you can call the `getWeather` Server Action and render the returned UI like any other React component.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -157,19 +152,10 @@ Learn more about handling multiple streams in a single request in the [Multiple 
 
 Learn more about handling state for more complex use cases with [ AI/UI State ](/docs/ai-sdk-rsc/generative-ui-state).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

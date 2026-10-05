@@ -16,8 +16,8 @@ related:
 summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "2b194c6fa3a0777eee1a843ca4b74e690a9835bd109fec5476a4cbc4ba4a21c2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5403c0ef2a0b3a085249e68407263b0dc584ea0625d44fa40d5cf805d10fe521"
 ---
 
 # MCP Integrations
@@ -35,8 +35,8 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 - [MCP Integrations](https://v0.app/docs/MCP?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect and use MCP servers directly in v0
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [MCP Connections](https://eve.dev/docs/connections/mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect an eve agent to a remote MCP server, authorize it with Vercel Connect or static credentials, and control which t
-- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
-- [Frameworks and Adapters](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/mcp/integrations.graph.md](/docs/mcp/integrations.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

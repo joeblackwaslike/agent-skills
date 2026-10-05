@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-09-28
+last_updated: 2026-10-05
 type: reference
 prerequisites:
   []
@@ -16,15 +16,15 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-09-28T10:45:17.525Z"
-sha256: "07a4809191addddea94e106a1a970c5d22ccb5e63fb77058855dfd815e9a1be0"
+fetched_at: "2026-10-05T11:22:15.364Z"
+sha256: "8ba5876b58b74abaadf5b10a2f945d5cc399059f8affeb35ce60912b14ec013b"
 ---
 
 # Vercel REST API Reference
 
 Vercel combines the best developer experience with an obsessive focus on end-user performance. Our platform enables frontend teams to do their best work.
 
-## access-groups
+## Access Groups
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -40,29 +40,30 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/update-an-access-group-project.md) | Update an access group project |
 | **DELETE** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/access-groups/delete-an-access-group-project.md) | Delete an access group project |
 
-## api-ai-gateway
+## Ai Gateway
 
 | Method | Endpoint | Description |
 |---|---|---|
-| **GET** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/get-virtual-model-config.md) | Get virtual model config |
-| **POST** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/create-virtual-model-config.md) | Create virtual model config |
-| **PATCH** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/update-virtual-model-config.md) | Update virtual model config |
-| **DELETE** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/api-ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
-| **GET** | [`/v1/ai-gateway/virtual-model-configs/list`](/docs/rest-api/api-ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
-| **GET** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/api-ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
-| **PATCH** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/api-ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
-| **DELETE** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/api-ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
+| **GET** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/get-virtual-model-config.md) | Get virtual model config |
+| **POST** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/create-virtual-model-config.md) | Create virtual model config |
+| **PATCH** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/update-virtual-model-config.md) | Update virtual model config |
+| **DELETE** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
+| **GET** | [`/ai-gateway/virtual-model-configs/list`](/docs/rest-api/ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
+| **GET** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
+| **PATCH** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
+| **DELETE** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
+| **GET** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/list-rules.md) | List rules |
+| **POST** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/create-rule.md) | Create rule |
+| **PATCH** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/update-rule.md) | Update rule |
+| **DELETE** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/delete-rule.md) | Delete rule |
+| **GET** | [`/ai-gateway/budgets/list`](/docs/rest-api/ai-gateway/list-ai-gateway-budgets.md) | List AI Gateway budgets |
+| **PUT** | [`/ai-gateway/budgets`](/docs/rest-api/ai-gateway/upsert-ai-gateway-budget.md) | Upsert AI Gateway budget |
+| **DELETE** | [`/ai-gateway/budgets`](/docs/rest-api/ai-gateway/archive-ai-gateway-budget.md) | Archive AI Gateway budget |
+| **GET** | [`/ai-gateway/budgets/defaults/list`](/docs/rest-api/ai-gateway/list-ai-gateway-budget-defaults.md) | List AI Gateway budget defaults |
+| **PUT** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/upsert-ai-gateway-budget-default.md) | Upsert AI Gateway budget default |
+| **DELETE** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/archive-ai-gateway-budget-default.md) | Archive AI Gateway budget default |
 
-## ai-gateway
-
-| Method | Endpoint | Description |
-|---|---|---|
-| **GET** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/list-rules.md) | List rules |
-| **POST** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/create-rule.md) | Create rule |
-| **PATCH** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/update-rule.md) | Update rule |
-| **DELETE** | [`/v1/ai-gateway/rules`](/docs/rest-api/ai-gateway/delete-rule.md) | Delete rule |
-
-## artifacts
+## Artifacts
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -74,7 +75,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v8/artifacts`](/docs/rest-api/artifacts/query-information-about-an-artifact.md) | Query information about an artifact |
 | **DELETE** | [`/v8/artifacts`](/docs/rest-api/artifacts/delete-all-cache-artifacts.md) | Delete all cache artifacts |
 
-## billing
+## Billing
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -82,7 +83,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/billing/contract-commitments`](/docs/rest-api/billing/list-focus-contract-commitments.md) | List FOCUS contract commitments |
 | **POST** | [`/v1/billing/buy`](/docs/rest-api/billing/purchase-credits.md) | Purchase credits |
 
-## bulk-redirects
+## Bulk Redirects
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -94,7 +95,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/bulk-redirects/versions`](/docs/rest-api/bulk-redirects/get-the-version-history-for-a-project-s-redirects.md) | Get the version history for a project's redirects. |
 | **POST** | [`/v1/bulk-redirects/versions`](/docs/rest-api/bulk-redirects/promote-a-staging-version-to-production-or-restore-a-previous-production-version.md) | Promote a staging version to production or restore a previous production version. |
 
-## checks-v2
+## Checks V2
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -109,7 +110,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v2/deployments/{deploymentId}/check-runs/{checkRunId}`](/docs/rest-api/checks-v2/get-a-check-run.md) | Get a check run |
 | **PATCH** | [`/v2/deployments/{deploymentId}/check-runs/{checkRunId}`](/docs/rest-api/checks-v2/update-a-check-run.md) | Update a check run |
 
-## networking
+## Networking
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -125,7 +126,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **DELETE** | [`/v1/networking/privatelink/endpoints/{endpointId}`](/docs/rest-api/networking/delete-a-privatelink-endpoint.md) | Delete a PrivateLink endpoint |
 | **PATCH** | [`/v1/projects/{idOrName}/shared-connect-links`](/docs/rest-api/networking/configures-static-ips-for-a-project.md) | Configures Static IPs for a project |
 
-## connect
+## Connect
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -143,7 +144,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
 
-## deployments
+## Deployments
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -158,7 +159,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v7/deployments`](/docs/rest-api/deployments/list-deployments.md) | List deployments |
 | **DELETE** | [`/v13/deployments/{id}`](/docs/rest-api/deployments/delete-a-deployment.md) | Delete a Deployment |
 
-## dns
+## DNS
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -180,7 +181,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/speed-insights/toggle`](/docs/rest-api/untagged/createspeedinsightstoggle.md) | POST /speed-insights/toggle |
 | **POST** | [`/web/insights/toggle`](/docs/rest-api/untagged/createwebinsightstoggle.md) | POST /web/insights/toggle |
 
-## domains-registrar
+## Domains Registrar
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -204,7 +205,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/registrar/domains/{domain}/contact-verification`](/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain.md) | Get contact verification status for a domain |
 | **GET** | [`/v1/registrar/orders/{orderId}`](/docs/rest-api/domains-registrar/get-a-domain-order.md) | Get a domain order |
 
-## domains
+## Domains
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -218,7 +219,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v3/domains/{domain}`](/docs/rest-api/domains/update-or-move-apex-domain.md) | Update or move apex domain |
 | **DELETE** | [`/v6/domains/{domain}`](/docs/rest-api/domains/remove-a-domain-by-name.md) | Remove a domain by name |
 
-## drains
+## Drains
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -229,7 +230,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **DELETE** | [`/v1/drains/{id}`](/docs/rest-api/drains/delete-a-drain.md) | Delete a drain |
 | **POST** | [`/v1/drains/test`](/docs/rest-api/drains/validate-drain-delivery-configuration.md) | Validate Drain delivery configuration |
 
-## edge-cache
+## CDN Cache
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -238,7 +239,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/edge-cache/invalidate-by-src-images`](/docs/rest-api/edge-cache/invalidate-by-source-image.md) | Invalidate by source image |
 | **POST** | [`/v1/edge-cache/dangerously-delete-by-src-images`](/docs/rest-api/edge-cache/dangerously-delete-by-source-image.md) | Dangerously delete by source image |
 
-## global-config
+## Global Config
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -261,7 +262,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore`](/docs/rest-api/global-config/restore-global-config-backup.md) | Restore Global Config backup |
 | **GET** | [`/v1/global-config/{edgeConfigId}/backups`](/docs/rest-api/global-config/get-global-config-backups.md) | Get Global Config backups |
 
-## environment
+## Environment
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -277,7 +278,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}`](/docs/rest-api/environment/update-a-custom-environment.md) | Update a custom environment |
 | **DELETE** | [`/v9/projects/{idOrName}/custom-environments/{environmentSlugOrId}`](/docs/rest-api/environment/remove-a-custom-environment.md) | Remove a custom environment |
 
-## user
+## User
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -286,7 +287,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v2/user`](/docs/rest-api/user/get-the-user.md) | Get the User |
 | **DELETE** | [`/v1/user`](/docs/rest-api/user/delete-user-account.md) | Delete User Account |
 
-## feature-flags
+## Feature Flags
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -312,7 +313,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PUT** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys`](/docs/rest-api/feature-flags/create-an-sdk-key.md) | Create an SDK key |
 | **DELETE** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey}`](/docs/rest-api/feature-flags/delete-an-sdk-key.md) | Delete an SDK key |
 
-## integrations
+## Integrations
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -326,7 +327,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/integrations/configuration/{id}/products`](/docs/rest-api/integrations/list-products-for-integration-configuration.md) | List products for integration configuration |
 | **POST** | [`/v1/storage/stores/integration/direct`](/docs/rest-api/integrations/create-integration-store-free-and-paid-plans.md) | Create integration store (free and paid plans) |
 
-## marketplace
+## Marketplace
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -355,7 +356,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PUT** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/rest-api/marketplace/push-data-into-a-user-provided-global-config.md) | Push data into a user-provided Global Config |
 | **HEAD** | [`/v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config`](/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config-1.md) | Get the data of a user-provided Global Config |
 
-## authentication
+## Authentication
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -365,7 +366,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v5/user/tokens/{tokenId}`](/docs/rest-api/authentication/get-auth-token-metadata.md) | Get Auth Token Metadata |
 | **DELETE** | [`/v3/user/tokens/{tokenId}`](/docs/rest-api/authentication/delete-an-authentication-token.md) | Delete an authentication token |
 
-## kms
+## Kms
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -383,13 +384,13 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}`](/docs/rest-api/kms/update-an-issuer-policy.md) | Update an issuer policy |
 | **DELETE** | [`/v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey}`](/docs/rest-api/kms/delete-an-issuer-policy.md) | Delete an issuer policy |
 
-## logs
+## Logs
 
 | Method | Endpoint | Description |
 |---|---|---|
 | **GET** | [`/v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs`](/docs/rest-api/logs/get-logs-for-a-deployment.md) | Get logs for a deployment |
 
-## microfrontends
+## Microfrontends
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -399,14 +400,14 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/microfrontends/projects/{projectIdOrName}/production-mfe-config`](/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project.md) | Get microfrontends config for a project |
 | **POST** | [`/v1/microfrontends/group`](/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications.md) | Create a microfrontends group with applications |
 
-## observability
+## Observability
 
 | Method | Endpoint | Description |
 |---|---|---|
 | **GET** | [`/v1/observability/manage/configuration/projects`](/docs/rest-api/observability/lists-disabled-observability-plus-projects.md) | Lists disabled Observability Plus projects |
 | **PUT** | [`/v1/observability/manage/configuration/projects/{projectIdOrName}`](/docs/rest-api/observability/updates-a-disabled-observability-plus-project-setting.md) | Updates a disabled Observability Plus project setting |
 
-## projectMembers
+## Projectmembers
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -414,7 +415,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/projects/{idOrName}/members`](/docs/rest-api/projectmembers/adds-a-new-member-to-a-project.md) | Adds a new member to a project. |
 | **DELETE** | [`/v1/projects/{idOrName}/members/{uid}`](/docs/rest-api/projectmembers/remove-a-project-member.md) | Remove a Project Member |
 
-## project-routes
+## Project Routes
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -427,7 +428,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/projects/{projectId}/routes/versions`](/docs/rest-api/project-routes/get-routing-rule-version-history.md) | Get routing rule version history |
 | **POST** | [`/v1/projects/{projectId}/routes/versions`](/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version.md) | Promote, restore, or discard a routing rule version |
 
-## projects
+## Projects
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -464,7 +465,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/projects/{projectId}/pause`](/docs/rest-api/projects/pause-a-project.md) | Pause a project |
 | **POST** | [`/v1/projects/{projectId}/unpause`](/docs/rest-api/projects/unpause-a-project.md) | Unpause a project |
 
-## rolling-release
+## Rolling Release
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -477,7 +478,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/projects/{idOrName}/rolling-release/start`](/docs/rest-api/rolling-release/start-a-rolling-release-for-the-project.md) | Start a rolling release for the project |
 | **POST** | [`/v1/projects/{idOrName}/rolling-release/complete`](/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project.md) | Complete the rolling release for the project |
 
-## sandboxes
+## Sandboxes
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -512,7 +513,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v3/sandboxes/{name}/fork`](/docs/rest-api/sandboxes/fork-a-named-sandbox-1.md) | Fork a named sandbox |
 | **POST** | [`/v4/sandboxes`](/docs/rest-api/sandboxes/create-a-named-sandbox-2.md) | Create a named sandbox |
 
-## security
+## Security
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -528,9 +529,10 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/create-system-bypass-rule.md) | Create System Bypass Rule |
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
+| **GET** | [`/v1/security/firewall/events/summary`](/docs/rest-api/security/read-firewall-actions-summary-by-project.md) | Read Firewall Actions Summary by Project |
 | **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/security/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
 
-## storage
+## Storage
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -538,7 +540,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/storage/stores/blob`](/docs/rest-api/storage/create-a-blob-store.md) | Create a Blob store |
 | **DELETE** | [`/storage/stores/blob/{id}`](/docs/rest-api/storage/delete-a-blob-store.md) | Delete a Blob store |
 
-## teams
+## Teams
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -559,7 +561,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/teams/{teamId}/microfrontends/{groupId}`](/docs/rest-api/teams/update-a-microfrontends-group.md) | Update a microfrontends group |
 | **DELETE** | [`/v1/teams/{teamId}/microfrontends/{groupId}`](/docs/rest-api/teams/delete-a-microfrontends-group.md) | Delete a microfrontends group |
 
-## vcr
+## VCR
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -591,11 +593,12 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **HEAD** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference}`](/docs/rest-api/vcr/check-if-a-manifest-exists.md) | Check if a manifest exists |
 | **GET** | [`/v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list`](/docs/rest-api/vcr/list-image-tags.md) | List image tags |
 
-## vercel-ci
+## Vercel Ci
 
 | Method | Endpoint | Description |
 |---|---|---|
 | **GET** | [`/v2/vercel-ci/invocations`](/docs/rest-api/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata.md) | List invocations for a team, optionally filtered by repository and invocation metadata |
+| **GET** | [`/v2/vercel-ci/branches`](/docs/rest-api/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team.md) | List Vercel CI branch suggestions for a team |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts`](/docs/rest-api/vercel-ci/list-all-attempts-for-an-invocation.md) | List all attempts for an invocation |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/tree`](/docs/rest-api/vercel-ci/get-an-invocation-with-its-jobs-and-tasks.md) | Get an invocation with its jobs and tasks |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}`](/docs/rest-api/vercel-ci/get-a-specific-invocation-attempt.md) | Get a specific invocation attempt |
@@ -612,7 +615,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-job-run-attempt.md) | Get log lines for a specific job run attempt |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-task-run-attempt.md) | Get log lines for a specific task run attempt |
 
-## web-analytics
+## Web Analytics
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -621,7 +624,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/query/web-analytics/visits/count`](/docs/rest-api/web-analytics/counts-page-views.md) | Counts page views |
 | **GET** | [`/v1/query/web-analytics/events/count`](/docs/rest-api/web-analytics/counts-custom-events.md) | Counts custom events |
 
-## webhooks
+## Webhooks
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -630,7 +633,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/webhooks/{id}`](/docs/rest-api/webhooks/get-a-webhook.md) | Get a webhook |
 | **DELETE** | [`/v1/webhooks/{id}`](/docs/rest-api/webhooks/deletes-a-webhook.md) | Deletes a webhook |
 
-## aliases
+## Aliases
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -641,7 +644,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **DELETE** | [`/v2/aliases/{aliasId}`](/docs/rest-api/aliases/delete-an-alias.md) | Delete an Alias |
 | **PATCH** | [`/aliases/{id}/protection-bypass`](/docs/rest-api/aliases/update-the-protection-bypass-for-a-url.md) | Update the protection bypass for a URL |
 
-## certs
+## Certs
 
 | Method | Endpoint | Description |
 |---|---|---|

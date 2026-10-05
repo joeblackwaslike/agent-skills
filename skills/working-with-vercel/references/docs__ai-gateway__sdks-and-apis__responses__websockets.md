@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/ai-gateway/sdks-and-apis/responses
   - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/models-and-providers/service-tiers
 summary: Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1868071094d9bb2f056e91933cbffa88b06d67fe8058a52e30de808f01970886"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6724cdc4ed1386205caa87611df63e2c8ec20b6464aa251e11ced6c88834ba04"
 ---
 
 # OpenAI Responses API WebSocket Mode with AI Gateway
@@ -31,9 +32,9 @@ AI Gateway supports WebSocket mode for the [Responses API](/docs/ai-gateway/sdks
 - [WebSocket support for OpenAI Responses API live on AI Gateway](https://vercel.com/changelog/websocket-support-for-openai-responses-api-live-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related)
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related)
 - [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
-- [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related) — Stream responses token by token using the OpenResponses API through AI Gateway.
 - [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=related) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/websockets.graph.md](/docs/ai-gateway/sdks-and-apis/responses/websockets.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fwebsockets&source_site=vercel-docs&relationship=graph)
@@ -117,6 +118,24 @@ Set `store: false` to keep the provider from persisting your responses, includin
 - Continuation does **not** work across connections. After a reconnect, a `previous_response_id` from the old connection returns `previous_response_not_found`. Start a new chain, or resend the conversation context in `input`.
 
 This is the combination agent loops typically want: persistent context across turns while the connection lives, nothing retained after it closes.
+
+## Service tiers
+
+Set `service_tier` on a `response.create` frame to request an OpenAI [service tier](/docs/ai-gateway/models-and-providers/service-tiers), including `ultrafast`. AI Gateway bills each turn at the tier OpenAI served. If the model doesn't have pricing for the requested tier, AI Gateway removes the field and the turn runs at the default tier.
+
+```typescript filename="responses-websocket-ultrafast.ts"
+ws.send(
+  JSON.stringify({
+    type: 'response.create',
+    model: 'openai/gpt-6-astra',
+    service_tier: 'ultrafast',
+    input: 'Why is the sky blue?',
+    store: false,
+  }),
+);
+```
+
+For complete AI SDK, Chat Completions, Responses, and WebSocket examples, see [Ultrafast service tiers](/docs/ai-gateway/models-and-providers/service-tiers#ultrafast).
 
 ## Supported models
 

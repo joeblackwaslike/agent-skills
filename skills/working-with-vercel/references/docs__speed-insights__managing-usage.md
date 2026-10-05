@@ -15,13 +15,13 @@ related:
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "99379f35200a4ac8b6a6a6faa7f2edf1e8e964abf903a2d1f73128fd79f936b3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "089257acb98e3b98f0190bfb2cc6be123661fda569478113984f02f6b0b0f7ab"
 ---
 
 # Managing Usage & Costs
 
-> **🔒 Permissions Required**: Speed Insights
+> **Availability**: Speed Insights is available on all plans
 
 Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package to measure and reduce your Speed Insights usage.
 
@@ -164,7 +164,11 @@ If you want to track only certain pages, you can invert the logic to create an a
     const allowedPaths = ['/', '/products', '/pricing'];
     const currentPath = new URL(data.url).pathname;
 
-    if (allowedPaths.some((path) => currentPath.startsWith(path))) {
+    const isAllowed = allowedPaths.some(
+      (path) => currentPath === path || currentPath.startsWith(`${path}/`),
+    );
+
+    if (isAllowed) {
       return data;
     }
     return null;

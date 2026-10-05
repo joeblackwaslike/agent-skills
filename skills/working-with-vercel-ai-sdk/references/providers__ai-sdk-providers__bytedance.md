@@ -1,10 +1,14 @@
 ---
+title: ByteDance
+description: Learn how to use ByteDance Seedance video and Seedream image models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "466e5d36ff342fae70511109764a923f075ca68263038ca6596d3db20369110c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "243a911e7dab712cc1e8a7aff573c3603acaa05856b5b6410322ad8fa2eaf39c"
 ---
 
-# ByteDance Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [ByteDance](https://www.bytedance.com/) provider contains support for the Seedance family of video generation models and the Seedream family of image generation models through the [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/) platform. Seedance provides high-quality text-to-video and image-to-video generation capabilities, including audio-video synchronization, first-and-last frame control, and multi-reference image generation (see the [video generation API](https://docs.byteplus.com/en/docs/ModelArk/Video_Generation_API)). Seedream provides text-to-image and image-to-image generation, including multi-image blending and batch image generation (see the [image generation API](https://docs.byteplus.com/en/docs/ModelArk/1824690)).
 
@@ -12,7 +16,7 @@ The [ByteDance](https://www.bytedance.com/) provider contains support for the Se
 
 The ByteDance provider is available via the `@ai-sdk/bytedance` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/bytedance" />
+**Packages:** `@ai-sdk/bytedance`
 
 ## Provider Instance
 
@@ -38,22 +42,22 @@ const byteDance = createByteDance({
 
 You can use the following optional settings to customize the ByteDance provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://ark.ap-southeast.bytepluses.com/api/v3`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `ARK_API_KEY` environment variable.
   You can [obtain an API key](https://console.byteplus.com/ark/apiKey) from the BytePlus console.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -84,12 +88,10 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  ByteDance identifies Seedream models by their ModelArk model id (e.g.
-  `seedream-5-0-260128`) or an account-specific endpoint id (e.g. `ep-...`). The
-  `size` parameter accepts pixel dimensions (`{width}x{height}`); resolution
-  levels such as `2K` can be passed via `providerOptions.bytedance.size`.
-</Note>
+ByteDance identifies Seedream models by their ModelArk model id (e.g.
+`seedream-5-0-260128`) or an account-specific endpoint id (e.g. `ep-...`). The
+`size` parameter accepts pixel dimensions (`{width}x{height}`); resolution
+levels such as `2K` can be passed via `providerOptions.bytedance.size`.
 
 ### Image Editing
 
@@ -139,53 +141,49 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  Seedream does not support mask-based inpainting. Describe the edit in the
-  prompt, optionally with markers drawn on the input image (interactive editing,
-  supported by `dola-seedream-5-0-pro-260628`).
-</Note>
+Seedream does not support mask-based inpainting. Describe the edit in the
+prompt, optionally with markers drawn on the input image (interactive editing,
+supported by `dola-seedream-5-0-pro-260628`).
 
 ### Image Model Options
 
 The following options are available via `providerOptions.bytedance`. You can
 type them with `ByteDanceImageModelOptions`.
 
-- **watermark** _boolean_
+- **watermark** *boolean*
 
   Whether to add an "AI generated" watermark to the bottom-right corner of the
   output image.
 
-- **outputFormat** _'png' | 'jpeg'_
+- **outputFormat** *'png' | 'jpeg'*
 
   Format of the generated image file. Supported by `seedream-5-0` and
   `dola-seedream-5-0-pro`; `seedream-4-5` / `seedream-4-0` always return `jpeg`.
 
-- **size** _string_
+- **size** *string*
 
   A resolution level (e.g. `1K`, `2K`, `3K`, `4K`) as an alternative to passing
   pixel dimensions via the top-level `size` parameter. When set, this overrides
   the top-level `size`. Available levels vary by model.
 
-- **sequentialImageGeneration** _'auto' | 'disabled'_
+- **sequentialImageGeneration** *'auto' | 'disabled'*
 
   Set to `'auto'` to generate a batch of related images (e.g. storyboards or
   brand visuals). Defaults to `'disabled'` (single image).
 
-- **maxImages** _number_
+- **maxImages** *number*
 
   Maximum number of images to generate when `sequentialImageGeneration` is
   `'auto'`. The number of input reference images plus generated images must not
   exceed the model's limit.
 
-- **optimizePromptMode** _'standard' | 'fast'_
+- **optimizePromptMode** *'standard' | 'fast'*
 
   Prompt optimization mode. `seedream-4-0` supports both `standard` and `fast`;
   other models support `standard` only.
 
-<Note>
-  Additional ModelArk fields can also be passed through
-  `providerOptions.bytedance` and are validated by ModelArk.
-</Note>
+Additional ModelArk fields can also be passed through
+`providerOptions.bytedance` and are validated by ModelArk.
 
 ### Image Model Capabilities
 
@@ -196,11 +194,9 @@ type them with `ByteDanceImageModelOptions`.
 | Seedream 4.5      | `seedream-4-5-251128`                                    | Text-to-image, single/multi image-to-image, batch generation. Sizes: 2K, 4K. Format: jpeg. Up to 14 references.                       |
 | Seedream 4.0      | `seedream-4-0-250828`                                    | Text-to-image, single/multi image-to-image, batch generation, fast prompt mode. Sizes: 1K, 2K, 4K. Format: jpeg. Up to 14 references. |
 
-<Note>
-  You can also pass any model or endpoint id string if needed, e.g. for future
-  models not yet listed here. Streaming image output is not currently supported
-  through the AI SDK integration.
-</Note>
+You can also pass any model or endpoint id string if needed, e.g. for future
+models not yet listed here. Streaming image output is not currently supported
+through the AI SDK integration.
 
 ## Video Models
 
@@ -254,13 +250,11 @@ const { video } = await generateVideo({
 });
 ```
 
-<Note>
-  When the output ratio is dictated by an input — first-frame or
-  first-and-last-frame image-to-video, video editing, and video extension — pass
-  `aspectRatio: 'adaptive'` or omit `aspectRatio` entirely. Newer Seedance
-  models reject an explicit ratio on those paths, because the output inherits
-  the ratio of the input media.
-</Note>
+When the output ratio is dictated by an input — first-frame or
+first-and-last-frame image-to-video, video editing, and video extension — pass
+`aspectRatio: 'adaptive'` or omit `aspectRatio` entirely. Newer Seedance
+models reject an explicit ratio on those paths, because the output inherits
+the ratio of the input media.
 
 ### Image-to-Video with Audio
 
@@ -415,38 +409,38 @@ type them with `ByteDanceVideoModelOptions`.
 
 #### Generation Options
 
-- **watermark** _boolean_
+- **watermark** *boolean*
 
   Whether to add a watermark to the generated video.
 
-- **generateAudio** _boolean_
+- **generateAudio** *boolean*
 
   Whether to generate synchronized audio for the video. Supported by Seedance
   1.5 Pro and Seedance 2.0.
 
-- **cameraFixed** _boolean_
+- **cameraFixed** *boolean*
 
   Whether to fix the camera during generation.
 
-- **returnLastFrame** _boolean_
+- **returnLastFrame** *boolean*
 
   Whether to return the last frame of the generated video. Useful for chaining consecutive videos.
 
-- **serviceTier** _'default' | 'flex'_
+- **serviceTier** *'default' | 'flex'*
 
   Inference tier. `'default'` for online inference. `'flex'` for offline inference at 50% of the price, with higher latency (response times on the order of hours).
 
-- **draft** _boolean_
+- **draft** *boolean*
 
   Enable draft sample mode for low-cost preview generation. Only supported by Seedance 1.5 Pro. Generates a 480p preview video for rapid iteration before committing to a full-quality generation.
 
 #### Image Input Options
 
-- **lastFrameImage** _string_
+- **lastFrameImage** *string*
 
   URL of the last frame image for first-and-last frame video generation. The model generates smooth transitions between the first frame (provided via the `image` prompt) and this last frame. Supported by Seedance 1.5 Pro, 1.0 Pro, and 1.0 Lite I2V.
 
-- **referenceImages** _string[]_
+- **referenceImages** *string\[]*
 
   Array of reference image URLs for multi-reference image-to-video generation.
   The model extracts key features from each image and reproduces them in the
@@ -455,11 +449,11 @@ type them with `ByteDanceVideoModelOptions`.
 
 #### Media Reference Options
 
-- **referenceVideos** _string[]_
+- **referenceVideos** *string\[]*
 
   Array of reference video URLs (up to 3 videos, max 15 seconds each) for reference-guided video generation. The model uses the referenced videos to guide style, motion, or composition. Supported by Seedance 2.0.
 
-- **referenceAudio** _string[]_
+- **referenceAudio** *string\[]*
 
   Array of reference audio URLs (up to 3, max 15 seconds each) for audio-guided video generation. The model uses the referenced audio as background music or synchronized sound. Supports data URIs (e.g., `data:audio/wav;base64,...`). Supported by Seedance 2.0.
 
@@ -483,11 +477,9 @@ const { video } = await generateVideo({
 });
 ```
 
-<Note>
-  The `pollIntervalMs` and `pollTimeoutMs` provider options are deprecated and
-  ignored. Passing either emits a warning. Video generation can take several
-  minutes, so raise `poll.timeoutMs` above the 10 minute default for long jobs.
-</Note>
+The `pollIntervalMs` and `pollTimeoutMs` provider options are deprecated and
+ignored. Passing either emits a warning. Video generation can take several
+minutes, so raise `poll.timeoutMs` above the 10 minute default for long jobs.
 
 ### Video Model Capabilities
 
@@ -505,58 +497,13 @@ Supported aspect ratios: `16:9`, `4:3`, `1:1`, `3:4`, `9:16`, `21:9`, `adaptive`
 
 All models output MP4 video at 24 fps.
 
-<Note>
-  You can also pass any model ID string if needed, e.g. for future models not
-  yet listed here.
-</Note>
+You can also pass any model ID string if needed, e.g. for future models not
+yet listed here.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

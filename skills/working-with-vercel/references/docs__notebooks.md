@@ -12,13 +12,13 @@ related:
 summary: Learn more about Notebooks and how they allow you to organize and save your queries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notebooks.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1b9d4851899bb0122c3c0384ae436c53a14853caf3d1910314b186042afb57ae"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ad8a9a4b68683d4df2ea06fd5cfec6fbd70466d2af1df916b91d5cd66760a852"
 ---
 
 # Notebooks
 
-> **🔒 Permissions Required**: Notebooks
+> **Availability**: Notebooks are available on Enterprise and Pro plans
 
 **Notebooks** allow you to collect and manage multiple queries related to your application's metrics and performance data.
 
@@ -29,14 +29,15 @@ sha256: "1b9d4851899bb0122c3c0384ae436c53a14853caf3d1910314b186042afb57ae"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Create and share queries with notebooks in Vercel Observability](https://vercel.com/changelog/create-and-share-queries-with-notebooks-in-vercel-observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
-- [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
 - [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
-- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
+- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
 - [New custom visualization in Vercel Observability](https://vercel.com/changelog/new-custom-visualization-in-vercel-observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related)
+- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Monitoring Quickstart](https://vercel.com/docs/query/monitoring/quickstart?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Vercel MCP tools for observability.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/notebooks.graph.md](/docs/notebooks.graph.md?from=related&source_path=%2Fdocs%2Fnotebooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4b210b5d6c8f5a1d4f1118453dc6c5d03d9b6c944ea313404b7b155dc97d0bba"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1368b212c8473a270f42a7e0512177e7dfffa24344a5fefe408897f8a22e6084"
 ---
 
 # Persistence
@@ -31,17 +31,15 @@ Persistent sandboxes automatically save their filesystem state when stopped and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Sandbox persistence is now GA](https://vercel.com/changelog/sandbox-persistence-is-now-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
 - [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=graph)

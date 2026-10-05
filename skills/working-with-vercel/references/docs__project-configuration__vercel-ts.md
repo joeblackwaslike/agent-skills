@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cdfb01d616a58b9ed35f8e089cc92f6ad0966d73713ff75b756f52570d15dfaa"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b97d8b14cdaea6d923568d959a4164f07fdafde5e2d3ed5d4878616007337123"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -36,11 +36,12 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
 - [headers](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -76,7 +77,7 @@ Install the NPM package to get access to types and helpers.
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/config
+    yarn add @vercel/config
     ```
   </Code>
   <Code tab="npm">
@@ -86,7 +87,7 @@ Install the NPM package to get access to types and helpers.
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/config
+    bun add @vercel/config
     ```
   </Code>
 </CodeBlock>
@@ -146,7 +147,7 @@ export const config = {
   outputDirectory: ".next",
   headers: [
     {
-      source: "/(.*)\\\\.(js|css|jpg|jpeg|gif|png|svg|txt|ttf|woff2|webmanifest)",
+      source: "/(.*)\\.(js|css|jpg|jpeg|gif|png|svg|txt|ttf|woff2|webmanifest)",
       headers: [
         {
           key: "Cache-Control",
@@ -168,7 +169,7 @@ export const config: VercelConfig = {
   outputDirectory: `.${process.env.framework}`,
   headers: [
     routes.cacheControl(
-      '/(.*)\\\\.(js|css|jpg|jpeg|gif|png|svg|txt|ttf|woff2|webmanifest)',
+      '/(.*)\\.(js|css|jpg|jpeg|gif|png|svg|txt|ttf|woff2|webmanifest)',
       {
         public: true,
         maxAge: '30days',
@@ -235,7 +236,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 ## bunVersion
 
-> **🔒 Permissions Required**: The Bun runtime (Beta)
+> **Availability**: The Bun runtime (Beta) is available on all plans
 
 **Type:** `string`
 
@@ -785,7 +786,7 @@ import { routes, type VercelConfig } from '@vercel/config/v1';
 
 export const config: VercelConfig = {
   redirects: [
-    routes.redirect('/post/:path(\\d{1,})', '/news/:path*'),
+    routes.redirect('/posts/:path(\\d{1,})', '/news/:path*'),
   ],
 };
 ```
@@ -969,7 +970,7 @@ You can also set `regions` on individual functions using the [`functions`](/docs
 
 ## functionFailoverRegions
 
-> **🔒 Permissions Required**: Setting failover regions for Vercel functions
+> **Availability**: Setting failover regions for Vercel functions are available on Enterprise plans
 
 Set this property to specify the [region](/docs/functions/configuring-functions/region) to which a Vercel Function should fallback when the default region(s) are unavailable.
 

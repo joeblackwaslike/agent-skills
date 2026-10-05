@@ -12,13 +12,13 @@ related:
 summary: Prevent unsafe usage of document.write() in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_document_write.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f4db79a69af40cfda13eac89e8e178ea7a9c9b9ec25ca3da4ff8376af163b832"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9d0babe65aa084e1efa6fa665a09d169cf52b7fbc4253d9681325c2cc3d62dec"
 ---
 
 # NO_DOCUMENT_WRITE
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Calls to `document.write()` or `document.writeln()` manipulate DOM directly without any sanitization and should be avoided.
 

@@ -1,10 +1,14 @@
 ---
+title: Claude Platform on AWS
+description: Learn how to use the Claude Platform on AWS provider.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "a51c49aee75e3aed7a4d20b52e029be039268c38a2d1dbbd8fa99c6ad54009a3"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "90f086cdd83264dea0b25f03ebbce05c32cdf6ab71021d9bbd6ee1dd4c7f8775"
 ---
 
-# Claude Platform on AWS Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Claude Platform on AWS provider for the [AI SDK](/docs) gives you access to the Anthropic Messages API hosted inside your AWS environment. Anthropic operates the stack, so you get the same API surface and feature set as the first-party [Anthropic provider](/providers/ai-sdk-providers/anthropic) — including streaming, prompt caching, tool use, computer use, Agent Skills, and `anthropic-beta` headers — with AWS-native authentication and AWS Marketplace billing.
 
@@ -14,7 +18,7 @@ This differs from [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock) i
 
 The Claude Platform on AWS provider is available in the `@ai-sdk/anthropic-aws` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/anthropic-aws" />
+**Packages:** `@ai-sdk/anthropic-aws`
 
 ### Prerequisites
 
@@ -113,7 +117,7 @@ You can create models that call the Anthropic Messages API on AWS using the prov
 ```ts
 import { anthropicAws } from '@ai-sdk/anthropic-aws';
 
-const model = anthropicAws('claude-sonnet-5');
+const model = anthropicAws('claude-sonnet-5-5');
 ```
 
 Model IDs are identical to the first-party Anthropic API. See the [Anthropic provider docs](/providers/ai-sdk-providers/anthropic#language-models) for the full list of language model options, prompt caching, computer use, web search, code execution, and Agent Skills. All of these work identically here because Claude Platform on AWS uses Anthropic's runtime directly.
@@ -125,7 +129,7 @@ import { anthropicAws } from '@ai-sdk/anthropic-aws';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: anthropicAws('claude-sonnet-5'),
+  model: anthropicAws('claude-sonnet-5-5'),
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```
@@ -138,53 +142,10 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - `AnthropicInferenceAccess` — grants read actions plus `CreateInference`, `CreateBatchInference`, `CancelBatchInference`, `DeleteBatchInference`, and `CountTokens` on all workspaces. **This is the minimum for calling models.**
 - `AnthropicReadOnlyAccess` — grants `Get*`, `List*`, and `CallWithBearerToken` on all workspaces. Insufficient for inference.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

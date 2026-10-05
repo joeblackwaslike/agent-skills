@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0c0cff39be88d8c9d405ce05381fe8b6008a3986ad3926d5b34f2e6c9aa997e1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7136bacb1edd114a1040a7fad5d2a12c8e6df55a263f252139d63400b360a9d0"
 ---
 
 # WAF Managed Rulesets
@@ -39,10 +39,10 @@ WAF Managed Rulesets are collections of predefined WAF rules based on standards 
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related)
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md](/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fmanaged-rulesets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -60,7 +60,7 @@ The following ruleset(s) are currently available:
 
 ## Configure OWASP core ruleset
 
-> **🔒 Permissions Required**: OWASP core ruleset
+> **Availability**: OWASP core ruleset is available on Enterprise plans
 
 To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-ten/) for your project, follow these steps:
 
@@ -80,7 +80,7 @@ To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-t
 
 ## Configure Bot Protection Managed Ruleset
 
-> **🔒 Permissions Required**: Bot Protection Managed Ruleset
+> **Availability**: Bot Protection Managed Ruleset is available on all plans
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Off**. Matching traffic is not evaluated and reaches your application.
 
@@ -97,7 +97,7 @@ To enable and configure [bot protection](/docs/bot-management#bot-protection-man
 
 ## Configure AI Bots Managed Ruleset
 
-> **🔒 Permissions Required**: AI Bots Managed Ruleset
+> **Availability**: AI Bots Managed Ruleset is available on all plans
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Allow**. Matching traffic is not evaluated and reaches your application.
 

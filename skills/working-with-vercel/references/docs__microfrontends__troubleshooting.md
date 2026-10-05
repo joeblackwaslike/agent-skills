@@ -16,8 +16,8 @@ related:
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "3eb027ef9f97f974756b79fade064c4e562cb3894c50eb70076c67abbb0e0bd4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5780c4d8464d869f3d3cf5907505c9d0cd33dc1361971e17d958c5d9787366f1"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -39,8 +39,8 @@ The `@vercel/microfrontends` package includes test utilities to help avoid commo
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Vercel MCP tools for microfrontends.
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 
 Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Ftroubleshooting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

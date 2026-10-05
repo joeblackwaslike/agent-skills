@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "880a4069633758e169d8af3f8c03032749945b35d5836d4c6801a8726b117b68"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3916ff5f6509548e3853edd0f112a14c92ce6d65bb03a372e4884871ac1bde5c"
 ---
 
 # Debugging slow Vercel Functions
@@ -31,8 +31,8 @@ Use this guide to diagnose and fix slow Vercel Functions. You'll identify which 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
-- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues?from=related&source_path=%2Fdocs%2Ffunctions%2Fdebug-slow-functions&source_site=vercel-docs&relationship=related) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
@@ -50,9 +50,9 @@ Full cross-link map for this page: [/docs/functions/debug-slow-functions.graph.m
 Use this block when you already know what you're doing and want the full command sequence. Use the steps below for context and checks.
 
 ```bash filename="terminal"
-# 1. Identify slow functions from production logs
+# 1. List recent function requests from production logs
 vercel logs --environment production --source serverless --since 1h --json \
-  | jq 'select(.statusCode != null) | {path: .path, statusCode: .statusCode}'
+  | jq '{path: .requestPath, statusCode: .responseStatusCode}'
 
 # 2. Measure endpoint timing (server processing = time in your function)
 vercel httpstat /api/slow-endpoint
@@ -81,11 +81,11 @@ vercel logs --environment production --source serverless --since 5m
 
 ## 1. Identify the slow functions
 
-Start by checking your production logs for slow requests. Filter for your function routes and look for high latency:
+Start by listing recent function requests in your production logs. The JSON output includes each request's `requestPath` and `responseStatusCode`, but not its duration:
 
 ```bash filename="terminal"
 vercel logs --environment production --source serverless --since 1h --json \
-  | jq 'select(.statusCode != null) | {path: .path, statusCode: .statusCode}'
+  | jq '{path: .requestPath, statusCode: .responseStatusCode}'
 ```
 
 To see the full log output with expanded messages:
@@ -94,9 +94,9 @@ To see the full log output with expanded messages:
 vercel logs --environment production --source serverless --since 1h --expand
 ```
 
-The `--source serverless` filter limits results to Vercel Functions, excluding static assets and edge requests.
+The `--source serverless` filter limits results to Vercel Functions, excluding static assets and CDN requests.
 
-> **💡 Note:** For a visual breakdown of slow routes, check the **Vercel Functions** tab in
+> **💡 Note:** To find high-latency routes, check the **Vercel Functions** tab in
 > [Observability](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fobservability\&title=Open+Observability)
 > on the Vercel Dashboard. Sort by duration to find your slowest routes.
 

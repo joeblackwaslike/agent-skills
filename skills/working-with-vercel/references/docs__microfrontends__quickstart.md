@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "eb0bb7c180b2602f457a4cf83ed32028c15a2bc67149ae820cfc601c9f1e4088"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7ecfddf50e7e46b165c53fd0c5cfe2c64939eaa9a8c5e683e6b310b58e1f71cb"
 ---
 
 # Getting started with microfrontends
@@ -35,7 +35,8 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel MCP tools for microfrontends.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fquickstart&source_site=vercel-docs&relationship=graph)
@@ -126,7 +127,7 @@ Before diving into implementation, it's helpful to understand these core concept
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/microfrontends
+      yarn add @vercel/microfrontends
       ```
     </Code>
     <Code tab="npm">
@@ -136,7 +137,7 @@ Before diving into implementation, it's helpful to understand these core concept
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/microfrontends
+      bun add @vercel/microfrontends
       ```
     </Code>
   </CodeBlock>
@@ -220,23 +221,27 @@ Before diving into implementation, it's helpful to understand these core concept
   > For \['sveltekit']:
   To handle static assets for [SvelteKit](/docs/frameworks/full-stack/sveltekit), add the `withMicrofrontends` wrapper around your SvelteKit configuration:
   > For \['sveltekit']:
-  **sveltekit.config.js**
-  ```ts filename="sveltekit.config.js" framework=sveltekit
+  **svelte.config.js**
+  ```ts filename="svelte.config.js" framework=sveltekit
   import { withMicrofrontends } from '@vercel/microfrontends/experimental/sveltekit';
 
   /** @type {import('@sveltejs/kit').Config} */
   const config = withMicrofrontends({
     // ...
   });
+
+  export default config;
   ```
-  **sveltekit.config.js**
-  ```js filename="sveltekit.config.js" framework=sveltekit
+  **svelte.config.js**
+  ```js filename="svelte.config.js" framework=sveltekit
   import { withMicrofrontends } from '@vercel/microfrontends/experimental/sveltekit';
 
   /** @type {import('@sveltejs/kit').Config} */
   const config = withMicrofrontends({
     // ...
   });
+
+  export default config;
   ```
   Then, add the microfrontends plugin to your Vite configuration:
 
@@ -304,7 +309,7 @@ Before diving into implementation, it's helpful to understand these core concept
         {
           "paths": ["/my-base-path/:path*"]
         }
-      ],
+      ]
     }
   }
   ```
@@ -320,7 +325,7 @@ Before diving into implementation, it's helpful to understand these core concept
         {
           "paths": ["/docs-assets/:path*"]
         }
-      ],
+      ]
     }
   }
   ```

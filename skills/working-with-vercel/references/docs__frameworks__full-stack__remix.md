@@ -17,8 +17,8 @@ related:
 summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c5ba60005e59f4611fba567dec208c5cffb2113ac605431044da9ac2fb3855e6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8481a5fb3f2c3840637d436247c94563cf6807ef39806ac1647f9dd2fc0d91d0"
 ---
 
 # Remix on Vercel
@@ -33,8 +33,11 @@ Remix is a fullstack, [server-rendered](#server-side-rendering-ssr) React framew
 
 - [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
 - [Support for Remix with Vite](https://vercel.com/changelog/support-for-remix-with-vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
-- [Remix projects can now be deployed with zero configuration](https://vercel.com/changelog/remix-projects-can-now-be-deployed-with-zero-configuration?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fremix&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
@@ -87,7 +90,7 @@ To get started, navigate to the root directory of your Remix project with your t
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/remix
+    yarn add @vercel/remix
     ```
   </Code>
   <Code tab="npm">
@@ -97,7 +100,7 @@ To get started, navigate to the root directory of your Remix project with your t
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/remix
+    bun add @vercel/remix
     ```
   </Code>
 </CodeBlock>
@@ -319,7 +322,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/analytics
+    yarn add @vercel/analytics
     ```
   </Code>
   <Code tab="npm">
@@ -329,7 +332,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/analytics
+    bun add @vercel/analytics
     ```
   </Code>
 </CodeBlock>

@@ -1,16 +1,18 @@
 ---
+title: Migrate AI SDK 3.0 to 3.1
+description: Learn how to upgrade AI SDK 3.0 to 3.1.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-1"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-3-1.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "b601b52b3bd1d5b3069bf52f332d8019164966c2c6373934ad739ed289f9b4ab"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "dddde38d24723581477e25ad407909b3fbdac9815ad02b982a701a7ae277f590"
 ---
 
-# Migrate AI SDK 3.0 to 3.1
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Check out the [AI SDK 3.1 release blog
-  post](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team)
-  for more information about the release.
-</Note>
+Check out the [AI SDK 3.1 release blog
+post](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team)
+for more information about the release.
 
 This guide will help you:
 
@@ -26,7 +28,9 @@ Upgrading to AI SDK 3.1 does not require using the newly released AI SDK Core AP
 
 To update to AI SDK version 3.1, run the following command using your preferred package manager:
 
-<Snippet text="pnpm add ai@3.1" />
+```
+pnpm add ai@3.1
+```
 
 ## Next Steps
 
@@ -71,17 +75,16 @@ Let’s take a look at the example above, but refactored to utilize the AI SDK C
 ```tsx
 import { streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = await streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages,
   });
 
-  return result.toUIMessageStreamResponse();
+  return result.toDataStreamResponse();
 }
 ```
 
@@ -143,7 +146,7 @@ async function submitMessage(userInput = 'What is the weather in SF?') {
   'use server';
 
   const result = await streamUI({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     system: 'You are a helpful assistant',
     messages: [{ role: 'user', content: userInput }],
     text: ({ content }) => <p>{content}</p>,
@@ -168,21 +171,10 @@ async function submitMessage(userInput = 'What is the weather in SF?') {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

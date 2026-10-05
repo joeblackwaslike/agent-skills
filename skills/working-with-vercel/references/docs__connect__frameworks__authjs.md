@@ -1,5 +1,5 @@
 ---
-title: Auth.js
+title: Auth.js with Vercel Connect
 product: vercel
 url: /docs/connect/frameworks/authjs
 canonical_url: "https://vercel.com/docs/connect/frameworks/authjs"
@@ -17,13 +17,13 @@ related:
 summary: Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/authjs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c3839061c5d68d404133a205b0da96fd87e4224534b6b7917675849ffaca171f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "885d778df7fff3d943af3be19c584975b2aaa3b0e066ede4877bf79cc02df054"
 ---
 
-# Auth.js
+# Auth.js with Vercel Connect
 
-> **🔒 Permissions Required**: Vercel Connect
+> **Availability**: Vercel Connect is available on all plans
 
 [Auth.js](https://authjs.dev/) can use Vercel Connect as an OAuth provider for
 signing users into your Next.js application. The `@vercel/connect/authjs`
@@ -38,11 +38,12 @@ and maps the Connect user profile into an Auth.js user.
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
-- [Better Auth](https://vercel.com/docs/connect/frameworks/better-auth?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
-- [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/connect/frameworks/authjs.graph.md](/docs/connect/frameworks/authjs.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fauthjs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -81,7 +82,7 @@ connector and link it to your project.
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i next-auth@beta @auth/core @vercel/connect
+      yarn add next-auth@beta @auth/core @vercel/connect
       ```
     </Code>
     <Code tab="npm">
@@ -91,7 +92,7 @@ connector and link it to your project.
     </Code>
     <Code tab="bun">
       ```bash
-      bun i next-auth@beta @auth/core @vercel/connect
+      bun add next-auth@beta @auth/core @vercel/connect
       ```
     </Code>
   </CodeBlock>

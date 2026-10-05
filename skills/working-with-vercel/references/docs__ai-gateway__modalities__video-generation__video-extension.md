@@ -14,8 +14,8 @@ related:
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "6660c02a405ad005dc48f1c917520f685d672719792f3f54e681fbf940ef52b8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2572784f280bcd1d8d0e4f6b2b59f2ce71b64a94a33ed35049d183a0c8345a19"
 ---
 
 # AI Gateway Video Extension
@@ -29,14 +29,14 @@ Continue an existing video from its last frame. Describe what happens next and t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related) — Learn how to generate videos with the AI SDK.
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
+- [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related) — API Reference for durable video generation in workflows.
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
-- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related)
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-extension.graph.md](/docs/ai-gateway/modalities/video-generation/video-extension.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-extension&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

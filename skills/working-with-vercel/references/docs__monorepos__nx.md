@@ -16,8 +16,8 @@ related:
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "05f3c5ff1001d0c9e36608aff19dae28f086e61f17d9a7950249bfeedbf51344"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9bbd93c71383902217f3547e4b93e681031947d3e8dbd0217e15c888870e4c19"
 ---
 
 # Deploying Nx to Vercel
@@ -32,16 +32,15 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 
 - [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related)
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn the answer to common questions about deploying monorepos on Vercel.
-- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
+- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fnx&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -91,7 +90,7 @@ To configure Remote Caching for your Nx project on Vercel, use the [`@vercel/rem
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/remote-nx
+      yarn add @vercel/remote-nx
       ```
     </Code>
     <Code tab="npm">
@@ -101,7 +100,7 @@ To configure Remote Caching for your Nx project on Vercel, use the [`@vercel/rem
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/remote-nx
+      bun add @vercel/remote-nx
       ```
     </Code>
   </CodeBlock>
@@ -134,44 +133,44 @@ To configure Remote Caching for your Nx project on Vercel, use the [`@vercel/rem
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm dlx nx reset
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn dlx nx reset
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx nx reset
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx nx reset
       ```
     </Code>
   </CodeBlock>
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm dlx nx build
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn dlx nx build
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx nx build
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx nx build
       ```
     </Code>
   </CodeBlock>

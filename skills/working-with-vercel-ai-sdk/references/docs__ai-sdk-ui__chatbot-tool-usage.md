@@ -1,10 +1,14 @@
 ---
+title: Chatbot Tool Usage
+description: Learn how to use tools with the useChat hook.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "5b8e04c931a183951ea98c9e48a139ffbef80c9bfcd99e3160e06611c52eee2d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "1ac3d5894e4eb3aed57141a54097355e078015dfd9a081ca5ce7ac25ea4b5f69"
 ---
 
-# Chatbot Tool Usage
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 With [`useChat`](/docs/reference/ai-sdk-ui/use-chat) and [`streamText`](/docs/reference/ai-sdk-core/stream-text), you can use tools in your chatbot application.
 The AI SDK supports three tool execution patterns in this context:
@@ -16,28 +20,26 @@ The AI SDK supports three tool execution patterns in this context:
 The flow is as follows:
 
 1. The user enters a message in the chat UI.
-1. The message is sent to the API route.
-1. In your server side route, the language model generates tool calls during the `streamText` call.
-1. All tool calls are forwarded to the client.
-1. Server-side tools are executed using their `execute` method and their results are forwarded to the client.
-1. Client-side tools that should be automatically executed are handled with the `onToolCall` callback.
+2. The message is sent to the API route.
+3. In your server side route, the language model generates tool calls during the `streamText` call.
+4. All tool calls are forwarded to the client.
+5. Server-side tools are executed using their `execute` method and their results are forwarded to the client.
+6. Client-side tools that should be automatically executed are handled with the `onToolCall` callback.
    You must call `addToolOutput` to provide the tool result.
-1. Client-side tool that require user interactions can be displayed in the UI.
+7. Client-side tool that require user interactions can be displayed in the UI.
    The tool calls and results are available as tool invocation parts in the `parts` property of the last assistant message.
-1. When the user interaction is done, `addToolOutput` can be used to add the tool result to the chat.
-1. The chat can be configured to automatically submit when all tool results are available using `sendAutomaticallyWhen`.
+8. When the user interaction is done, `addToolOutput` can be used to add the tool result to the chat.
+9. The chat can be configured to automatically submit when all tool results are available using `sendAutomaticallyWhen`.
    This triggers another iteration of this flow.
 
 The tool calls and tool executions are integrated into the assistant message as typed tool parts.
 A tool part is at first a tool call, and then it becomes a tool result when the tool is executed.
 The tool result contains all information about the tool call as well as the result of the tool execution.
 
-<Note>
-  Tool result submission can be configured using the `sendAutomaticallyWhen`
-  option. You can use the `lastAssistantMessageIsCompleteWithToolCalls` helper
-  to automatically submit when all tool results are available. This simplifies
-  the client-side code while still allowing full control when needed.
-</Note>
+Tool result submission can be configured using the `sendAutomaticallyWhen`
+option. You can use the `lastAssistantMessageIsCompleteWithToolCalls` helper
+to automatically submit when all tool results are available. This simplifies
+the client-side code while still allowing full control when needed.
 
 ## Example
 
@@ -49,7 +51,7 @@ In this example, we'll use three tools:
 
 ### API route
 
-```tsx filename='app/api/chat/route.ts'
+```tsx title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -57,7 +59,6 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds
@@ -67,7 +68,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
     tools: {
       // server-side tool with execute function:
@@ -115,12 +116,10 @@ There are three things worth mentioning:
    In this example, the `getLocation` tool is a client-side tool that returns a random city.
    You call `addToolOutput` to provide the result (without `await` to avoid potential deadlocks).
 
-   <Note>
-     Always check `if (toolCall.dynamic)` first in your `onToolCall` handler.
-     Without this check, TypeScript will throw an error like: `Type 'string' is
-     not assignable to type '"toolName1" | "toolName2"'` when you try to use
-     `toolCall.toolName` in `addToolOutput`.
-   </Note>
+   Always check `if (toolCall.dynamic)` first in your `onToolCall` handler.
+   Without this check, TypeScript will throw an error like: `Type 'string' is
+       not assignable to type '"toolName1" | "toolName2"'` when you try to use
+   `toolCall.toolName` in `addToolOutput`.
 
 2. The [`sendAutomaticallyWhen`](/docs/reference/ai-sdk-ui/use-chat#send-automatically-when) option with `lastAssistantMessageIsCompleteWithToolCalls` helper automatically submits when all tool results are available.
 
@@ -134,7 +133,7 @@ and `output-denied` states. Include these states when handling `part.state`
 exhaustively, even when a tool does not require approval. See
 [Tool execution approval](#tool-execution-approval) for a complete approval UI.
 
-```tsx filename='app/page.tsx' highlight="6,11,16,19-23,25-26,28-33,51,66-70,77-81"
+```tsx title='app/page.tsx' {6,11,16,19-23,25-26,28-33,51,66-70,77-81}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -229,9 +228,7 @@ export default function Chat() {
                     return <div key={callId}>Approval response received.</div>;
                   case 'output-available':
                     return (
-                      <div key={callId}>
-                        Location access allowed: {part.output}
-                      </div>
+                      <div key={callId}>Confirmation result: {part.output}</div>
                     );
                   case 'output-error':
                     return <div key={callId}>Error: {part.errorText}</div>;
@@ -332,7 +329,7 @@ export default function Chat() {
 
 Sometimes an error may occur during client-side tool execution. Use the `addToolOutput` method with a `state` of `output-error` and `errorText` value instead of `output` to record the error.
 
-```tsx filename='app/page.tsx' highlight="19,36-41"
+```tsx title='app/page.tsx' {19,36-41}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -357,22 +354,22 @@ export default function Chat() {
         return;
       }
 
-      if (toolCall.toolName === 'getWeatherInformation') {
+      if (toolCall.toolName === 'getLocation') {
         try {
-          const weather = await getWeatherInformation(toolCall.input);
+          const location = await getLocation();
 
           // No await - avoids potential deadlocks
           addToolOutput({
-            tool: 'getWeatherInformation',
+            tool: 'getLocation',
             toolCallId: toolCall.toolCallId,
-            output: weather,
+            output: location,
           });
         } catch (err) {
           addToolOutput({
-            tool: 'getWeatherInformation',
+            tool: 'getLocation',
             toolCallId: toolCall.toolCallId,
             state: 'output-error',
-            errorText: 'Unable to get the weather information',
+            errorText: 'Unable to get the user location',
           });
         }
       }
@@ -413,21 +410,20 @@ For tools that need to run in the browser (updating UI state, accessing browser 
 Enable approval with `toolApproval` on `streamText`. The older
 `needsApproval` property on tools is deprecated. See [Tool Execution Approval](/docs/ai-sdk-core/tools-and-tool-calling#tool-execution-approval) for configuration options including dynamic approval based on input.
 
-```tsx filename='app/api/chat/route.ts'
+```tsx title='app/api/chat/route.ts'
 import {
   createUIMessageStreamResponse,
   streamText,
   tool,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages,
     tools: {
       getWeather: tool({
@@ -460,7 +456,7 @@ same approval states, but they set `part.approval.isAutomatic === true`, so you
 can render the status without calling `addToolApprovalResponse`. Automatic
 approval decisions can also include `part.approval.reason`.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -570,9 +566,9 @@ determine whether the tool was approved.
 
 In the `useChat` pattern, the client sends the full message history to the server each turn. Without additional protection, a modified client could fabricate an approval response. For tools that perform sensitive operations, add `experimental_toolApprovalSecret` to your `streamText` call so the server cryptographically verifies that it issued the approval:
 
-```tsx filename='app/api/chat/route.ts' highlight="6"
+```tsx title='app/api/chat/route.ts' {6}
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   tools: { deleteFile },
   toolApproval: { deleteFile: 'user-approval' },
@@ -584,11 +580,9 @@ See [Security Considerations](/docs/agents/tool-approvals#security-consideration
 
 ### Auto-Submit After Approval
 
-<Note>
-  If nothing happens after you approve a tool execution, make sure you either
-  call `sendMessage` manually or configure `sendAutomaticallyWhen` on the
-  `useChat` hook.
-</Note>
+If nothing happens after you approve a tool execution, make sure you either
+call `sendMessage` manually or configure `sendAutomaticallyWhen` on the
+`useChat` hook.
 
 Use `lastAssistantMessageIsCompleteWithApprovalResponses` to automatically continue the conversation after approvals:
 
@@ -605,7 +599,7 @@ const { messages, addToolApprovalResponse } = useChat({
 
 When using dynamic tools (tools with unknown types at compile time), the UI parts use a generic `dynamic-tool` type instead of specific tool types:
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 {
   message.parts.map((part, index) => {
     switch (part.type) {
@@ -644,12 +638,12 @@ Dynamic tools are useful when integrating with:
 
 Tool call streaming is **enabled by default** in AI SDK 5.0, allowing you to stream tool calls while they are being generated. This provides a better user experience by showing tool inputs as they are generated in real-time.
 
-```tsx filename='app/api/chat/route.ts'
+```tsx title='app/api/chat/route.ts'
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
     // toolCallStreaming is enabled by default in v5
     // ...
@@ -666,7 +660,7 @@ They are available through the `useChat` hook.
 The typed tool parts of assistant messages will also contain partial tool calls.
 You can use the `state` property of the tool part to render the correct UI.
 
-```tsx filename='app/page.tsx' highlight="9,10"
+```tsx title='app/page.tsx' {9,10}
 export default function Chat() {
   // ...
   return (
@@ -708,7 +702,7 @@ export default function Chat() {
 When you are using multi-step tool calls, the AI SDK will add step start parts to the assistant messages.
 If you want to display boundaries between tool calls, you can use the `step-start` parts as follows:
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 // ...
 // where you render the message parts:
 message.parts.map((part, index) => {
@@ -736,7 +730,7 @@ message.parts.map((part, index) => {
 You can also use multi-step calls on the server-side with `streamText`.
 This works when all invoked tools have an `execute` function on the server side.
 
-```tsx filename='app/api/chat/route.ts' highlight="22-28,31"
+```tsx title='app/api/chat/route.ts' {22-28,31}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -745,14 +739,13 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
     tools: {
       getWeatherInformation: {
@@ -781,7 +774,16 @@ export async function POST(req: Request) {
 Language models can make errors when calling tools.
 By default, these errors are masked for security reasons, and show up as "An error occurred" in the UI.
 
-To surface the errors, you can use the `onError` function when calling `toUIMessageResponse`.
+Tool execution errors marked `providerExecuted: true` bypass this masking and the
+UI stream's `onError` callback. String errors pass through unchanged; other error
+values are serialized with `JSON.stringify`. The original error data is needed
+when converting persisted UI messages back into model messages, for example to
+preserve Anthropic tool error codes. Harness runtime tool errors also retain
+their original messages. The callback still handles invalid tool calls and
+stream errors, regardless of whether a tool is provider-executed.
+
+To customize masked errors, pass `onError` to `toUIMessageStream`. This callback
+does not redact provider-executed tool execution errors sent to the client.
 
 ```tsx
 export function errorHandler(error: unknown) {
@@ -826,23 +828,10 @@ const response = createUIMessageResponse({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

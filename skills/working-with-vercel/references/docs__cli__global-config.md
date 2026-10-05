@@ -16,8 +16,8 @@ related:
 summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "5b039f7e36ae3e30daee012c0f1615cffc32926b1ef6811a3c04c46d1b584650"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e9de7dfe41aa8544785f2dfd0b3d5c71daa1f52041c2df413c069a95fd370d3e"
 ---
 
 # vercel global-config
@@ -32,9 +32,9 @@ The `vercel global-config` command manages [Global Config](/docs/global-config) 
 
 - [vercel blob](https://vercel.com/docs/cli/blob?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
 
 Full cross-link map for this page: [/docs/cli/global-config.graph.md](/docs/cli/global-config.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

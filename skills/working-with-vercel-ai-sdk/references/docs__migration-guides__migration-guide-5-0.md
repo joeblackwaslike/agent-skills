@@ -1,21 +1,25 @@
 ---
+title: Migrate AI SDK 4.x to 5.0
+description: Learn how to upgrade AI SDK 4.x to 5.0.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "2baa3eb355ca931b0eab19a47fd0e8f1cd7b62537d35155cc2647ea122630c4e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4479436ccba2bac47b70da759adb090d8a85edfc0b7f4fba412e7341672170b7"
 ---
 
-# Migrate AI SDK 4.x to 5.0
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Recommended Migration Process
 
 1. Backup your project. If you use a versioning control system, make sure all previous versions are committed.
-1. Upgrade to AI SDK 5.0.
-1. Automatically migrate your code using one of these approaches:
+2. Upgrade to AI SDK 5.0.
+3. Automatically migrate your code using one of these approaches:
    - Use the [AI SDK 5 Migration MCP Server](#ai-sdk-5-migration-mcp-server) for AI-assisted migration in Cursor or other MCP-compatible coding agents
    - Use [codemods](#codemods) to automatically transform your code
-1. Follow the breaking changes guide below.
-1. Verify your project is working as expected.
-1. Commit your changes.
+4. Follow the breaking changes guide below.
+5. Verify your project is working as expected.
+6. Commit your changes.
 
 ## AI SDK 5 Migration MCP Server
 
@@ -62,13 +66,11 @@ An example upgrade command would be:
 npm install ai @ai-sdk/react @ai-sdk/openai zod@^4.1.8
 ```
 
-<Note>
-  If you encounter TypeScript performance issues after upgrading, ensure you're
-  using Zod 4.1.8 or later. If the issue persists, update your `tsconfig.json`
-  to use `moduleResolution: "nodenext"`. See the [TypeScript performance
-  troubleshooting guide](/docs/troubleshooting/typescript-performance-zod) for
-  more details.
-</Note>
+If you encounter TypeScript performance issues after upgrading, ensure you're
+using Zod 4.1.8 or later. If the issue persists, update your `tsconfig.json`
+to use `moduleResolution: "nodenext"`. See the [TypeScript performance
+troubleshooting guide](/docs/troubleshooting/typescript-performance-zod) for
+more details.
 
 ## Codemods
 
@@ -79,11 +81,9 @@ Codemods are transformations that run on your codebase automatically. They
 allow you to easily apply many changes without having to manually go through
 every file.
 
-<Note>
-  Codemods are intended as a tool to help you with the upgrade process. They may
-  not cover all of the changes you need to make. You may need to make additional
-  changes manually.
-</Note>
+Codemods are intended as a tool to help you with the upgrade process. They may
+not cover all of the changes you need to make. You may need to make additional
+changes manually.
 
 You can run all codemods provided as part of the 5.0 upgrade process by running
 the following command from the root of your project:
@@ -123,17 +123,17 @@ repository.
 
 The `maxTokens` parameter has been renamed to `maxOutputTokens` for clarity.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   maxTokens: 1024,
   prompt: 'Hello, world!',
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   maxOutputTokens: 1024,
   prompt: 'Hello, world!',
 });
@@ -145,48 +145,46 @@ const result = await generateText({
 
 ##### `CoreMessage` → `ModelMessage`
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { CoreMessage } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { ModelMessage } from 'ai';
 ```
 
 ##### `Message` → `UIMessage`
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { Message, CreateMessage } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { UIMessage, CreateUIMessage } from 'ai';
 ```
 
 ##### `convertToCoreMessages` → `convertToModelMessages`
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { convertToCoreMessages, streamText } from 'ai';
 
 const result = await streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: convertToCoreMessages(messages),
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { convertToModelMessages, streamText } from 'ai';
 
 const result = await streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: convertToModelMessages(messages),
 });
 ```
 
-<Note>
-  For more information about model messages, see the [Model Message
-  reference](/docs/reference/ai-sdk-core/model-message).
-</Note>
+For more information about model messages, see the [Model Message
+reference](/docs/reference/ai-sdk-core/model-message).
 
 ### UIMessage Changes
 
@@ -194,7 +192,7 @@ const result = await streamText({
 
 For `UIMessage`s (previously called `Message`), the `.content` property has been replaced with a `parts` array structure.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { type Message } from 'ai'; // v4 Message type
 
 // Messages (useChat) - had content property
@@ -205,7 +203,7 @@ const message: Message = {
 };
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { type UIMessage, type ModelMessage } from 'ai';
 
 // UIMessages (useChat) - now use parts array
@@ -220,7 +218,7 @@ const uiMessage: UIMessage = {
 
 The `data` role has been removed from UI messages.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const message = {
   role: 'data',
   content: 'Some content',
@@ -228,7 +226,7 @@ const message = {
 };
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // V5: Use UI message streams with custom data parts
 const stream = createUIMessageStream({
   execute({ writer }) {
@@ -246,7 +244,7 @@ const stream = createUIMessageStream({
 
 The reasoning property on UI messages has been moved to parts.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const message: Message = {
   role: 'assistant',
   content: 'Hello',
@@ -254,7 +252,7 @@ const message: Message = {
 };
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const message: UIMessage = {
   role: 'assistant',
   parts: [
@@ -274,7 +272,7 @@ const message: UIMessage = {
 
 The `reasoning` property on reasoning UI parts has been renamed to `text`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 {
   message.parts.map((part, index) => {
     if (part.type === 'reasoning') {
@@ -288,7 +286,7 @@ The `reasoning` property on reasoning UI parts has been renamed to `text`.
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 {
   message.parts.map((part, index) => {
     if (part.type === 'reasoning') {
@@ -306,7 +304,7 @@ The `reasoning` property on reasoning UI parts has been renamed to `text`.
 
 File parts now use `.url` instead of `.data` and `.mimeType`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 {
   messages.map(message => (
     <div key={message.id}>
@@ -327,7 +325,7 @@ File parts now use `.url` instead of `.data` and `.mimeType`.
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 {
   messages.map(message => (
     <div key={message.id}>
@@ -350,7 +348,7 @@ File parts now use `.url` instead of `.data` and `.mimeType`.
 
 The `StreamData` class has been completely removed and replaced with UI message streams for custom data.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { StreamData } from 'ai';
 
 const streamData = new StreamData();
@@ -358,7 +356,7 @@ streamData.append('custom-data');
 streamData.close();
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { createUIMessageStream, createUIMessageStreamResponse } from 'ai';
 
 const stream = createUIMessageStream({
@@ -372,7 +370,7 @@ const stream = createUIMessageStream({
 
     // Can merge with LLM streams
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages,
     });
 
@@ -387,7 +385,7 @@ return createUIMessageStreamResponse({ stream });
 
 The `writeMessageAnnotation` and `writeData` methods from `DataStreamWriter` have been removed. Instead, use custom data parts with the new `UIMessage` stream architecture.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { createDataStreamResponse, streamText } from 'ai';
 
 export async function POST(req: Request) {
@@ -399,7 +397,7 @@ export async function POST(req: Request) {
       dataStream.writeData('call started');
 
       const result = streamText({
-        model: __MODEL__,
+        model: "anthropic/claude-sonnet-5.5",
         messages,
         onChunk() {
           // Write message annotations
@@ -425,7 +423,7 @@ export async function POST(req: Request) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import {
   createUIMessageStream,
   createUIMessageStreamResponse,
@@ -448,7 +446,7 @@ export async function POST(req: Request) {
       });
 
       const result = streamText({
-        model: __MODEL__,
+        model: "anthropic/claude-sonnet-5.5",
         messages,
         onChunk() {
           // Write data parts that update during streaming
@@ -481,16 +479,14 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  For more detailed information about streaming custom data in v5, see the
-  [Streaming Data guide](/docs/ai-sdk-ui/streaming-data).
-</Note>
+For more detailed information about streaming custom data in v5, see the
+[Streaming Data guide](/docs/ai-sdk-ui/streaming-data).
 
 ##### Provider Metadata → Provider Options
 
 The `providerMetadata` input parameter has been renamed to `providerOptions`. Note that the returned metadata in results is still called `providerMetadata`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
   model: 'openai/gpt-5',
   prompt: 'Hello',
@@ -500,7 +496,7 @@ const result = await generateText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
   model: 'openai/gpt-5',
   prompt: 'Hello',
@@ -518,7 +514,7 @@ console.log(result.providerMetadata?.openai);
 
 Tool definitions have been updated to use `inputSchema` instead of `parameters` and error classes have been renamed.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { tool } from 'ai';
 
 const weatherTool = tool({
@@ -532,7 +528,7 @@ const weatherTool = tool({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { tool } from 'ai';
 
 const weatherTool = tool({
@@ -546,11 +542,11 @@ const weatherTool = tool({
 });
 ```
 
-#### Tool Result Content: experimental_toToolResultContent → toModelOutput
+#### Tool Result Content: experimental\_toToolResultContent → toModelOutput
 
 The `experimental_toToolResultContent` option has been renamed to `toModelOutput` and is no longer experimental.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const screenshotTool = tool({
   description: 'Take a screenshot',
   parameters: z.object({}),
@@ -562,7 +558,7 @@ const screenshotTool = tool({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const screenshotTool = tool({
   description: 'Take a screenshot',
   inputSchema: z.object({}),
@@ -581,7 +577,7 @@ const screenshotTool = tool({
 
 Tool call and result properties have been renamed for better consistency with schemas.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Tool calls used "args" and "result"
 for await (const part of result.fullStream) {
   switch (part.type) {
@@ -595,7 +591,7 @@ for await (const part of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Tool calls now use "input" and "output"
 for await (const part of result.fullStream) {
   switch (part.type) {
@@ -613,7 +609,7 @@ for await (const part of result.fullStream) {
 
 The `ToolExecutionError` class has been removed. Tool execution errors now appear as `tool-error` content parts in the result steps, enabling automated LLM roundtrips in multi-step scenarios.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { ToolExecutionError } from 'ai';
 
 try {
@@ -629,7 +625,7 @@ try {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Tool execution errors now appear in result steps
 const { steps } = await generateText({
   // ...
@@ -653,9 +649,9 @@ For streaming scenarios, tool execution errors appear as `tool-error` parts in t
 
 The `toolCallStreaming` option has been removed in AI SDK 5.0. Tool call streaming is now always enabled by default.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   toolCallStreaming: true, // Optional parameter to enable streaming
   tools: {
@@ -665,9 +661,9 @@ const result = streamText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: convertToModelMessages(messages),
   // toolCallStreaming removed - streaming is always enabled
   tools: {
@@ -681,7 +677,7 @@ const result = streamText({
 
 In v5, UI tool parts use typed naming: `tool-${toolName}` instead of generic types.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Generic tool-invocation type
 {
   message.parts.map(part => {
@@ -692,7 +688,7 @@ In v5, UI tool parts use typed naming: `tool-${toolName}` instead of generic typ
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Type-safe tool parts with specific names
 {
   message.parts.map(part => {
@@ -714,7 +710,7 @@ AI SDK 5.0 introduces dynamic tools for handling tools with unknown types at dev
 
 The new `dynamicTool` helper function allows you to define tools where the input and output types are not known at compile time.
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { dynamicTool } from 'ai';
 import { z } from 'zod';
 
@@ -724,7 +720,8 @@ const runtimeTool = dynamicTool({
   inputSchema: z.object({}),
   execute: async input => {
     // Input and output are typed as 'unknown'
-    return { result: `Processed: ${input.query}` };
+    const { query } = input as { query: string };
+    return { result: `Processed: ${query}` };
   },
 });
 ```
@@ -733,7 +730,7 @@ const runtimeTool = dynamicTool({
 
 MCP tools that don't provide schemas are now automatically treated as dynamic tools:
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { MCPClient } from 'ai';
 
 const client = new MCPClient({
@@ -749,9 +746,9 @@ const tools = await client.getTools();
 
 When using both static and dynamic tools together, use the `dynamic` flag for type narrowing:
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // Static tool with known types
     weather: weatherTool,
@@ -785,7 +782,7 @@ const result = await generateText({
 
 UI messages now include a `dynamic-tool` part type for rendering dynamic tool invocations:
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 {
   message.parts.map((part, index) => {
     switch (part.type) {
@@ -810,7 +807,7 @@ UI messages now include a `dynamic-tool` part type for rendering dynamic tool in
 
 When iterating over `toolCalls` and `toolResults`, you now need to check the `dynamic` flag first for proper type narrowing:
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Direct type checking worked without dynamic flag
 onStepFinish: step => {
   for (const toolCall of step.toolCalls) {
@@ -826,7 +823,7 @@ onStepFinish: step => {
 };
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Must check dynamic flag first for type narrowing
 onStepFinish: step => {
   for (const toolCall of step.toolCalls) {
@@ -854,7 +851,7 @@ onStepFinish: step => {
 
 Tool UI parts now use more granular states that better represent the streaming lifecycle and error handling.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Old states
 {
   message.parts.map(part => {
@@ -876,7 +873,7 @@ Tool UI parts now use more granular states that better represent the streaming l
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // New granular states
 {
   message.parts.map(part => {
@@ -908,7 +905,7 @@ Tool UI parts now use more granular states that better represent the streaming l
 
 In v4, you typically rendered tool invocations using a catch-all `tool-invocation` type. In v5, the **recommended approach is to handle each tool specifically using its typed part name (e.g., `tool-getWeather`)**. However, if you need a catch-all pattern for rendering all tool invocations the same way, you can use the `isToolUIPart` and `getToolName` helper functions as a fallback.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 {
   message.parts.map((part, index) => {
     switch (part.type) {
@@ -938,7 +935,7 @@ In v4, you typically rendered tool invocations using a catch-all `tool-invocatio
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { isToolUIPart, getToolName } from 'ai';
 
 {
@@ -976,7 +973,7 @@ import { isToolUIPart, getToolName } from 'ai';
 
 `mimeType` has been renamed to `mediaType` for consistency. Both image and file types are supported in model messages.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
   model: someModel,
   messages: [
@@ -1000,7 +997,7 @@ const result = await generateText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
   model: someModel,
   messages: [
@@ -1030,13 +1027,13 @@ const result = await generateText({
 
 The `.reasoning` property has been renamed to `.reasoningText` for multi-step generations.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 for (const step of steps) {
   console.log(step.reasoning);
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for (const step of steps) {
   console.log(step.reasoningText);
 }
@@ -1046,7 +1043,7 @@ for (const step of steps) {
 
 In `generateText()` and `streamText()` results, reasoning properties have been renamed.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
   model: anthropic('claude-sonnet-4-20250514'),
   prompt: 'Explain your reasoning',
@@ -1056,7 +1053,7 @@ console.log(result.reasoning); // String reasoning text
 console.log(result.reasoningDetails); // Array of reasoning details
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
   model: anthropic('claude-sonnet-4-20250514'),
   prompt: 'Explain your reasoning',
@@ -1070,14 +1067,14 @@ console.log(result.reasoning); // Array of reasoning details
 
 The `experimental_continueSteps` option has been removed from `generateText()`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
   experimental_continueSteps: true,
   // ...
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
   // experimental_continueSteps has been removed
   // Use newer models with higher output token limits instead
@@ -1089,7 +1086,7 @@ const result = await generateText({
 
 Image model settings have been moved to `providerOptions`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 await generateImage({
   model: luma.image('photon-flash-1', {
     maxImagesPerCall: 5,
@@ -1100,7 +1097,7 @@ await generateImage({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 await generateImage({
   model: luma.image('photon-flash-1'),
   prompt,
@@ -1118,7 +1115,7 @@ await generateImage({
 
 The `stepType` property has been removed from step results.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 steps.forEach(step => {
   switch (step.stepType) {
     case 'initial':
@@ -1134,7 +1131,7 @@ steps.forEach(step => {
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 steps.forEach((step, index) => {
   if (index === 0) {
     console.log('Initial step');
@@ -1150,10 +1147,10 @@ steps.forEach((step, index) => {
 
 For core functions like `generateText` and `streamText`, the `maxSteps` parameter has been replaced with `stopWhen`, which provides more flexible control over multi-step execution. The `stopWhen` parameter defines conditions for stopping the generation **when the last step contains tool results**. When multiple conditions are provided as an array, the generation stops if any condition is met.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // V4: Simple numeric limit
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   maxSteps: 5, // Stop after a maximum of 5 steps
 });
@@ -1164,12 +1161,12 @@ const { messages } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { isStepCount, hasToolCall } from 'ai';
 
 // V5: Server-side - flexible stopping conditions with stopWhen
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   // Only triggers when last step has tool results
   stopWhen: isStepCount(5), // Stop at step 5 if tools were called
@@ -1177,7 +1174,7 @@ const result = await generateText({
 
 // Server-side - stop when a specific tool is called
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   stopWhen: hasToolCall('finalizeTask'), // Stop when finalizeTask tool is called
 });
@@ -1185,7 +1182,7 @@ const result = await generateText({
 
 **Common stopping patterns:**
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Stop after N steps (equivalent to old maxSteps)
 // Note: Only applies when the last step has tool results
 stopWhen: isStepCount(5);
@@ -1216,12 +1213,12 @@ stopWhen: ({ steps }) => {
 
 Usage properties now distinguish between single step and total usage.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // usage contained total token usage across all steps
 console.log(result.usage);
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // usage contains token usage from the final step only
 console.log(result.usage);
 // totalUsage contains total token usage across all steps
@@ -1236,31 +1233,31 @@ console.log(result.totalUsage);
 
 The `ai/rsc` export has been extracted to a separate package `@ai-sdk/rsc`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { createStreamableValue } from 'ai/rsc';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { createStreamableValue } from '@ai-sdk/rsc';
 ```
 
-<Note>Don't forget to install the new package: `npm install @ai-sdk/rsc`</Note>
+Don't forget to install the new package:
+
+`npm install @ai-sdk/rsc`
 
 ### React UI Hooks Moved to `@ai-sdk/react`
 
 The deprecated `ai/react` export has been removed in favor of `@ai-sdk/react`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { useChat } from 'ai/react';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat } from '@ai-sdk/react';
 ```
 
-<Note>
-  Don't forget to install the new package: `npm install @ai-sdk/react`
-</Note>
+Don't forget to install the new package: `npm install @ai-sdk/react`
 
 ### useChat Changes
 
@@ -1270,19 +1267,18 @@ The `useChat` hook has undergone significant changes in v5, with new transport a
 
 The `maxSteps` parameter has been removed from `useChat`. You should now use server-side `stopWhen` conditions for multi-step tool execution control, and manually submit tool results and trigger new messages for client-side tool calls.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { messages, sendMessage } = useChat({
   maxSteps: 5, // Automatic tool result submission
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Server-side: Use stopWhen for multi-step control
 import { streamText, convertToModelMessages, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: convertToModelMessages(messages),
   stopWhen: isStepCount(5), // Stop after 5 steps with tool calls
 });
@@ -1311,12 +1307,10 @@ const { messages, sendMessage, addToolOutput } = useChat({
 });
 ```
 
-<Note>
-  Important: When using `sendAutomaticallyWhen`, don't use `await` with
-  `addToolOutput` inside `onToolCall` as it can cause deadlocks. The `await` is
-  useful when you're not using automatic submission and need to ensure the
-  messages are updated before manually calling `sendMessage()`.
-</Note>
+Important: When using `sendAutomaticallyWhen`, don't use `await` with
+`addToolOutput` inside `onToolCall` as it can cause deadlocks. The `await` is
+useful when you're not using automatic submission and need to ensure the
+messages are updated before manually calling `sendMessage()`.
 
 This change provides more flexibility for handling tool calls and aligns client behavior with server-side multi-step execution patterns.
 
@@ -1326,7 +1320,7 @@ For more details on the new tool submission approach, see the [Tool Result Submi
 
 The `initialMessages` option has been renamed to `messages`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { useChat, type Message } from '@ai-sdk/react';
 
 function ChatComponent({ initialMessages }: { initialMessages: Message[] }) {
@@ -1339,7 +1333,7 @@ function ChatComponent({ initialMessages }: { initialMessages: Message[] }) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat, type UIMessage } from '@ai-sdk/react';
 
 function ChatComponent({ initialMessages }: { initialMessages: UIMessage[] }) {
@@ -1356,7 +1350,7 @@ function ChatComponent({ initialMessages }: { initialMessages: UIMessage[] }) {
 
 In v4, you could share chat state between components by using the same `id` parameter in multiple `useChat` hooks.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Component A
 const { messages } = useChat({
   id: 'shared-chat',
@@ -1372,7 +1366,7 @@ const { messages } = useChat({
 
 In v5, you need to explicitly share chat instances by passing a shared `Chat` instance.
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // e.g. Store Chat instance in React Context and create a custom hook
 
 // Component A
@@ -1396,7 +1390,7 @@ For a complete example of sharing chat state across components, see the [Share C
 
 Configuration is now handled through transport objects instead of direct API options.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { useChat } from '@ai-sdk/react';
 
 const { messages } = useChat({
@@ -1406,7 +1400,7 @@ const { messages } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -1423,7 +1417,7 @@ const { messages } = useChat({
 
 The `useChat` hook no longer manages input state internally. You must now manage input state manually.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { useChat } from '@ai-sdk/react';
 
 export default function Page() {
@@ -1440,7 +1434,7 @@ export default function Page() {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 import { useState } from 'react';
@@ -1470,7 +1464,7 @@ export default function Page() {
 
 The `append` function has been replaced with `sendMessage` and requires structured message format.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { append } = useChat();
 
 // Simple text message
@@ -1486,7 +1480,7 @@ append(
 );
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { sendMessage } = useChat();
 
 // Simple text message (most common usage)
@@ -1508,14 +1502,14 @@ sendMessage(
 
 The `reload` function has been renamed to `regenerate` with enhanced functionality.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { reload } = useChat();
 
 // Regenerate last message
 reload();
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { regenerate } = useChat();
 
 // Regenerate last message
@@ -1529,7 +1523,7 @@ regenerate({ messageId: 'message-123' });
 
 The `onResponse` callback has been removed from `useChat` and `useCompletion`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { messages } = useChat({
   onResponse(response) {
     // handle response
@@ -1537,7 +1531,7 @@ const { messages } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { messages } = useChat({
   // onResponse is no longer available
 });
@@ -1547,13 +1541,13 @@ const { messages } = useChat({
 
 The `sendExtraMessageFields` option has been removed and is now the default behavior.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { messages } = useChat({
   sendExtraMessageFields: true,
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { messages } = useChat({
   // sendExtraMessageFields is now the default
 });
@@ -1563,13 +1557,13 @@ const { messages } = useChat({
 
 The `keepLastMessageOnError` option has been removed as it's no longer needed.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { messages } = useChat({
   keepLastMessageOnError: true,
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { messages } = useChat({
   // keepLastMessageOnError is no longer needed
 });
@@ -1579,7 +1573,7 @@ const { messages } = useChat({
 
 The `data` and `allowEmptySubmit` options have been removed from `ChatRequestOptions`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 handleSubmit(e, {
   data: { imageUrl: 'https://...' },
   body: { custom: 'value' },
@@ -1587,7 +1581,7 @@ handleSubmit(e, {
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 sendMessage(
   {
     /* yourMessage */
@@ -1605,11 +1599,11 @@ sendMessage(
 
 `RequestOptions` has been renamed to `CompletionRequestOptions`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import type { RequestOptions } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import type { CompletionRequestOptions } from 'ai';
 ```
 
@@ -1617,7 +1611,7 @@ import type { CompletionRequestOptions } from 'ai';
 
 The `addToolResult` method has been renamed to `addToolOutput`. Additionally, the `result` parameter has been renamed to `output` for consistency with other tool-related APIs.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { addToolResult } = useChat();
 
 // Add tool result with 'result' parameter
@@ -1627,7 +1621,7 @@ addToolResult({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { addToolOutput } = useChat();
 
 // Add tool output with 'output' parameter and 'tool' name for type safety
@@ -1638,10 +1632,8 @@ addToolOutput({
 });
 ```
 
-<Note>
-  `addToolResult` is still available but deprecated. It will be removed in
-  version 6.
-</Note>
+`addToolResult` is still available but deprecated. It will be removed in
+version 6.
 
 #### Tool Result Submission Changes
 
@@ -1654,7 +1646,7 @@ The automatic tool result submission behavior has been updated in `useChat` and 
 - The `maxSteps` parameter has been removed from the `Chat` component and `useChat` hook
 - For multi-step tool execution, use server-side `stopWhen` conditions instead (see [maxSteps Removal](#maxsteps-removal))
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { messages, sendMessage, addToolResult } = useChat({
   maxSteps: 5, // Removed in v5
 
@@ -1668,7 +1660,7 @@ const { messages, sendMessage, addToolResult } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat } from '@ai-sdk/react';
 import {
   DefaultChatTransport,
@@ -1698,11 +1690,11 @@ const { messages, sendMessage, addToolOutput } = useChat({
 
 The deprecated `isLoading` helper has been removed in favor of `status`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { isLoading } = useChat();
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { status } = useChat();
 // Use state instead of isLoading for more granular control
 ```
@@ -1711,14 +1703,14 @@ const { status } = useChat();
 
 The resume functionality has been moved from `experimental_resume` to `resumeStream`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Resume was experimental
 const { messages } = useChat({
   experimental_resume: true,
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { messages } = useChat({
   resumeStream: true, // Resume interrupted streams
 });
@@ -1728,7 +1720,7 @@ const { messages } = useChat({
 
 In v4, the `body` option in useChat configuration would dynamically update with component state changes. In v5, the `body` value is only captured at the first render and remains static throughout the component lifecycle.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const [temperature, setTemperature] = useState(0.7);
 
 const { messages } = useChat({
@@ -1739,7 +1731,7 @@ const { messages } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const [temperature, setTemperature] = useState(0.7);
 
 // Option 1: Use request-level configuration (Recommended)
@@ -1777,7 +1769,7 @@ For more details on request configuration, see the [Chatbot guide](/docs/ai-sdk-
 
 In v4, usage information was directly accessible through the `onFinish` callback's options parameter. In v5, usage data is attached as metadata to individual messages using the `messageMetadata` function in `toUIMessageStreamResponse`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { messages } = useChat({
   onFinish(message, options) {
     const usage = options.usage;
@@ -1786,14 +1778,13 @@ const { messages } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import {
   convertToModelMessages,
   streamText,
   UIMessage,
   type LanguageModelUsage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 // Create a new metadata type (optional for type-safety)
 type MyMetadata = {
@@ -1807,7 +1798,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: MyUIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: convertToModelMessages(messages),
   });
 
@@ -1825,7 +1816,7 @@ export async function POST(req: Request) {
 
 Then, on the client, you can access the message-level metadata.
 
-```tsx filename="AI SDK 5.0 - Client"
+```tsx title="AI SDK 5.0 - Client"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -1863,7 +1854,7 @@ export default function Chat() {
 
 You can also access your metadata from the `onFinish` callback of `useChat`:
 
-```tsx filename="AI SDK 5.0 - onFinish"
+```tsx title="AI SDK 5.0 - onFinish"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -1884,11 +1875,11 @@ export default function Chat() {
 }
 ```
 
-#### Request Body Preparation: experimental_prepareRequestBody → prepareSendMessagesRequest
+#### Request Body Preparation: experimental\_prepareRequestBody → prepareSendMessagesRequest
 
 The `experimental_prepareRequestBody` option has been replaced with `prepareSendMessagesRequest` in the transport configuration.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { useChat } from '@ai-sdk/react';
 
 const { messages } = useChat({
@@ -1900,7 +1891,7 @@ const { messages } = useChat({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -1921,7 +1912,7 @@ The Vue.js integration has been completely restructured, replacing the `useChat`
 
 #### useChat Replaced with Chat Class
 
-```typescript filename="@ai-sdk/vue v1"
+```typescript title="@ai-sdk/vue v1"
 <script setup>
 import { useChat } from '@ai-sdk/vue';
 
@@ -1931,7 +1922,7 @@ const { messages, input, handleSubmit } = useChat({
 </script>
 ```
 
-```typescript filename="@ai-sdk/vue v2"
+```typescript title="@ai-sdk/vue v2"
 <script setup>
 import { Chat } from '@ai-sdk/vue';
 import { DefaultChatTransport } from 'ai';
@@ -1954,7 +1945,7 @@ const handleSubmit = (e: Event) => {
 
 Messages now use a `parts` array instead of a `content` string.
 
-```typescript filename="@ai-sdk/vue v1"
+```typescript title="@ai-sdk/vue v1"
 <template>
   <div v-for="message in messages" :key="message.id">
     <div>{{ message.role }}: {{ message.content }}</div>
@@ -1962,7 +1953,7 @@ Messages now use a `parts` array instead of a `content` string.
 </template>
 ```
 
-```typescript filename="@ai-sdk/vue v2"
+```typescript title="@ai-sdk/vue v2"
 <template>
   <div v-for="message in chat.messages" :key="message.id">
     <div>{{ message.role }}:</div>
@@ -1979,7 +1970,7 @@ The Svelte integration has also been updated with new constructor patterns and r
 
 #### Constructor API Changes
 
-```js filename="@ai-sdk/svelte v1"
+```js title="@ai-sdk/svelte v1"
 import { Chat } from '@ai-sdk/svelte';
 
 const chatInstance = Chat({
@@ -1987,7 +1978,7 @@ const chatInstance = Chat({
 });
 ```
 
-```js filename="@ai-sdk/svelte v2"
+```js title="@ai-sdk/svelte v2"
 import { Chat } from '@ai-sdk/svelte';
 import { DefaultChatTransport } from 'ai';
 
@@ -2000,12 +1991,12 @@ const chatInstance = Chat(() => ({
 
 Properties are now readonly and must be updated using setter methods.
 
-```js filename="@ai-sdk/svelte v1"
+```js title="@ai-sdk/svelte v1"
 // Direct property mutation was allowed
 chatInstance.messages = [...chatInstance.messages, newMessage];
 ```
 
-```js filename="@ai-sdk/svelte v2"
+```js title="@ai-sdk/svelte v2"
 // Must use setter methods
 chatInstance.setMessages([...chatInstance.messages, newMessage]);
 ```
@@ -2014,12 +2005,12 @@ chatInstance.setMessages([...chatInstance.messages, newMessage]);
 
 Like React and Vue, input management has been removed from the Svelte integration.
 
-```js filename="@ai-sdk/svelte v1"
+```js title="@ai-sdk/svelte v1"
 // Input was managed internally
 const { messages, input, handleSubmit } = chatInstance;
 ```
 
-```js filename="@ai-sdk/svelte v2"
+```js title="@ai-sdk/svelte v2"
 // Must manage input state manually
 let input = '';
 const { messages, sendMessage } = chatInstance;
@@ -2034,11 +2025,11 @@ const handleSubmit = () => {
 
 The `@ai-sdk/ui-utils` package has been removed and its exports moved to the main `ai` package.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { getTextFromDataUrl } from '@ai-sdk/ui-utils';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { getTextFromDataUrl } from 'ai';
 ```
 
@@ -2048,7 +2039,7 @@ import { getTextFromDataUrl } from 'ai';
 
 The `data` property has been removed from the `useCompletion` hook.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const {
   completion,
   handleSubmit,
@@ -2056,7 +2047,7 @@ const {
 } = useCompletion();
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const {
   completion,
   handleSubmit,
@@ -2068,11 +2059,11 @@ const {
 
 The `useAssistant` hook has been removed.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { useAssistant } from '@ai-sdk/react';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
 
@@ -2091,7 +2082,7 @@ The `useAssistant` hook was specific to the OpenAI Assistants API. OpenAI has
 deprecated that API in favor of the Responses API. Configure `useChat` for your
 route as shown above, then return a UI message stream from the route:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import { convertToModelMessages, streamText, type UIMessage } from 'ai';
 
@@ -2120,7 +2111,7 @@ OpenAI Assistants data and API calls, see OpenAI's
 
 The `experimental_attachments` property has been replaced with the parts array.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 {
   messages.map(message => (
     <div className="flex flex-col gap-2">
@@ -2142,7 +2133,7 @@ The `experimental_attachments` property has been replaced with the parts array.
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 {
   messages.map(message => (
     <div>
@@ -2164,10 +2155,9 @@ The `experimental_attachments` property has been replaced with the parts array.
 }
 ```
 
-<Note>
-  Some models do not support text files (text/plain, text/markdown, text/csv,
-  etc.) as file parts. For text files, you can read and send the context as a text part
-  instead:
+Some models do not support text files (text/plain, text/markdown, text/csv,
+etc.) as file parts. For text files, you can read and send the context as a text part
+instead:
 
 ```tsx
 // Instead of this:
@@ -2177,15 +2167,13 @@ The `experimental_attachments` property has been replaced with the parts array.
 { type: 'text', text: buffer.toString('utf-8') }
 ```
 
-</Note>
-
 ### Embedding Changes
 
 #### Provider Options for Embeddings
 
 Embedding model settings now use provider options instead of model parameters.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { embedding } = await embed({
   model: openai('text-embedding-3-small', {
     dimensions: 10,
@@ -2193,7 +2181,7 @@ const { embedding } = await embed({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { embedding } = await embed({
   model: openai('text-embedding-3-small'),
   providerOptions: {
@@ -2208,11 +2196,11 @@ const { embedding } = await embed({
 
 The `rawResponse` property has been renamed to `response`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { rawResponse } = await embed(/* */);
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { response } = await embed(/* */);
 ```
 
@@ -2220,7 +2208,7 @@ const { response } = await embed(/* */);
 
 `embedMany` now makes parallel requests with a configurable `maxParallelCalls` option.
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const { embeddings, usage } = await embedMany({
   maxParallelCalls: 2, // Limit parallel requests
   model: 'openai/text-embedding-3-small',
@@ -2236,13 +2224,13 @@ const { embeddings, usage } = await embedMany({
 
 The `LangChainAdapter` has been moved to `@ai-sdk/langchain` and the API has been updated to use UI message streams.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { LangChainAdapter } from 'ai';
 
 const response = LangChainAdapter.toDataStreamResponse(stream);
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { toUIMessageStream } from '@ai-sdk/langchain';
 import { createUIMessageStreamResponse } from 'ai';
 
@@ -2251,21 +2239,19 @@ const response = createUIMessageStreamResponse({
 });
 ```
 
-<Note>
-  Don't forget to install the new package: `npm install @ai-sdk/langchain`
-</Note>
+Don't forget to install the new package: `npm install @ai-sdk/langchain`
 
 #### LlamaIndex Adapter Moved to `@ai-sdk/llamaindex`
 
 The `LlamaIndexAdapter` has been extracted to a separate package `@ai-sdk/llamaindex` and follows the same UI message stream pattern.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { LlamaIndexAdapter } from 'ai';
 
 const response = LlamaIndexAdapter.toDataStreamResponse(stream);
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { toUIMessageStream } from '@ai-sdk/llamaindex';
 import { createUIMessageStreamResponse } from 'ai';
 
@@ -2274,9 +2260,7 @@ const response = createUIMessageStreamResponse({
 });
 ```
 
-<Note>
-  Don't forget to install the new package: `npm install @ai-sdk/llamaindex`
-</Note>
+Don't forget to install the new package: `npm install @ai-sdk/llamaindex`
 
 ## Streaming Architecture
 
@@ -2288,7 +2272,7 @@ The streaming architecture has been completely redesigned in v5 to support bette
 
 The fundamental streaming pattern has changed from single chunks to a three-phase pattern with unique IDs for each content block.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'text-delta': {
@@ -2299,7 +2283,7 @@ for await (const chunk of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'text-start': {
@@ -2325,7 +2309,7 @@ for await (const chunk of result.fullStream) {
 
 Reasoning content now follows the same start/delta/end pattern:
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'reasoning': {
@@ -2337,7 +2321,7 @@ for await (const chunk of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'reasoning-start': {
@@ -2360,7 +2344,7 @@ for await (const chunk of result.fullStream) {
 
 Tool inputs can now be streamed as they're being generated:
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'tool-input-start': {
@@ -2389,9 +2373,9 @@ for await (const chunk of result.fullStream) {
 
 The `onChunk` callback now receives the new streaming chunk types with IDs and the start/delta/end pattern.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a story',
   onChunk({ chunk }) {
     switch (chunk.type) {
@@ -2405,9 +2389,9 @@ const result = streamText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a story',
   onChunk({ chunk }) {
     switch (chunk.type) {
@@ -2457,7 +2441,7 @@ const result = streamText({
 
 File parts in streams have been flattened.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'file': {
@@ -2469,7 +2453,7 @@ for await (const chunk of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'file': {
@@ -2485,7 +2469,7 @@ for await (const chunk of result.fullStream) {
 
 Source stream parts have been flattened.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 for await (const part of result.fullStream) {
   if (part.type === 'source' && part.source.sourceType === 'url') {
     console.log('ID:', part.source.id);
@@ -2495,7 +2479,7 @@ for await (const part of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for await (const part of result.fullStream) {
   if (part.type === 'source' && part.sourceType === 'url') {
     console.log('ID:', part.id);
@@ -2509,7 +2493,7 @@ for await (const part of result.fullStream) {
 
 Stream finish events have been renamed for consistency.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 for await (const part of result.fullStream) {
   switch (part.type) {
     case 'step-finish': {
@@ -2524,7 +2508,7 @@ for await (const part of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 for await (const part of result.fullStream) {
   switch (part.type) {
     case 'finish-step': {
@@ -2546,7 +2530,7 @@ for await (const part of result.fullStream) {
 
 The data stream protocol has been updated to use Server-Sent Events.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { createDataStream, formatDataStreamPart } from 'ai';
 
 const dataStream = createDataStream({
@@ -2564,7 +2548,7 @@ const dataStream = createDataStream({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { createUIMessageStream } from 'ai';
 
 const stream = createUIMessageStream({
@@ -2588,11 +2572,11 @@ const stream = createUIMessageStream({
 
 The streaming API has been completely restructured from data streams to UI message streams.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // Express/Node.js servers
 app.post('/stream', async (req, res) => {
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Generate content',
   });
 
@@ -2601,18 +2585,18 @@ app.post('/stream', async (req, res) => {
 
 // Next.js API routes
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Generate content',
 });
 
 return result.toDataStreamResponse();
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // Express/Node.js servers
 app.post('/stream', async (req, res) => {
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Generate content',
   });
 
@@ -2621,7 +2605,7 @@ app.post('/stream', async (req, res) => {
 
 // Next.js API routes
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Generate content',
 });
 
@@ -2632,11 +2616,11 @@ return result.toUIMessageStreamResponse();
 
 Various stream-related functions have been renamed for consistency.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { DataStreamToSSETransformStream } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { JsonToSseTransformStream } from 'ai';
 ```
 
@@ -2646,7 +2630,7 @@ The `getErrorMessage` option in `toDataStreamResponse` has been replaced with `o
 
 By default, error messages are NOT sent to the client to prevent leaking sensitive information. The `onError` callback allows you to explicitly control what error information is forwarded to the client.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 return result.toDataStreamResponse({
   getErrorMessage: error => {
     // Return sanitized error data to send to client
@@ -2660,7 +2644,7 @@ return result.toDataStreamResponse({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 return result.toUIMessageStreamResponse({
   onError: error => {
     // Return sanitized error data to send to client
@@ -2680,12 +2664,12 @@ return result.toUIMessageStreamResponse({
 
 The `createIdGenerator()` function now requires a `size` argument.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const generator = createIdGenerator({ prefix: 'msg' });
 const id = generator(16); // Custom size at call time
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const generator = createIdGenerator({ prefix: 'msg', size: 16 });
 const id = generator(); // Fixed size from creation
 ```
@@ -2694,11 +2678,11 @@ const id = generator(); // Fixed size from creation
 
 The type name has been updated.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { IDGenerator } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { IdGenerator } from 'ai';
 ```
 
@@ -2708,11 +2692,11 @@ import { IdGenerator } from 'ai';
 
 `LanguageModelV3` must now be imported from `@ai-sdk/provider`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { LanguageModelV3 } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { LanguageModelV3 } from '@ai-sdk/provider';
 ```
 
@@ -2720,11 +2704,11 @@ import { LanguageModelV3 } from '@ai-sdk/provider';
 
 `LanguageModelV1Middleware` has been renamed and moved.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { LanguageModelV1Middleware } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { LanguageModelV3Middleware } from '@ai-sdk/provider';
 ```
 
@@ -2732,7 +2716,7 @@ import { LanguageModelV3Middleware } from '@ai-sdk/provider';
 
 Token usage properties have been renamed for consistency.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // In language model implementations
 {
   usage: {
@@ -2742,7 +2726,7 @@ Token usage properties have been renamed for consistency.
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // In language model implementations
 {
   usage: {
@@ -2757,7 +2741,7 @@ Token usage properties have been renamed for consistency.
 
 The `LanguageModelV3StreamPart` type has been expanded to support the new streaming architecture with start/delta/end patterns and IDs.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // V4: Simple stream parts
 type LanguageModelV3StreamPart =
   | { type: 'text-delta'; textDelta: string }
@@ -2765,7 +2749,7 @@ type LanguageModelV3StreamPart =
   | { type: 'tool-call'; toolCallId: string; toolName: string; input: string };
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // V5: Enhanced stream parts with IDs and lifecycle events
 type LanguageModelV3StreamPart =
   // Text blocks with start/delta/end pattern
@@ -2846,7 +2830,7 @@ type LanguageModelV3StreamPart =
 
 Provider response objects have been updated.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 // In language model implementations
 {
   rawResponse: {
@@ -2855,7 +2839,7 @@ Provider response objects have been updated.
 }
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 // In language model implementations
 {
   response: {
@@ -2866,28 +2850,28 @@ Provider response objects have been updated.
 
 #### `wrapLanguageModel` now stable
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { experimental_wrapLanguageModel } from 'ai';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { wrapLanguageModel } from 'ai';
 ```
 
 #### `activeTools` No Longer Experimental
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   tools: { weatherTool, locationTool },
   experimental_activeTools: ['weatherTool'],
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   tools: { weatherTool, locationTool },
   activeTools: ['weatherTool'], // No longer experimental
@@ -2898,9 +2882,9 @@ const result = await generateText({
 
 The `experimental_prepareStep` option has been promoted and no longer requires the experimental prefix.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   tools: { weatherTool, locationTool },
   experimental_prepareStep: ({ steps, stepNumber, model }) => {
@@ -2913,9 +2897,9 @@ const result = await generateText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   tools: { weatherTool, locationTool },
   prepareStep: ({ steps, stepNumber, model }) => {
@@ -2941,17 +2925,17 @@ The `prepareStep` function receives `{ steps, stepNumber, model }` and can retur
 
 Temperature is no longer set to `0` by default.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a creative story',
   // Implicitly temperature: 0
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a creative story',
   temperature: 0, // Must explicitly set
 });
@@ -2959,15 +2943,13 @@ await generateText({
 
 ## Message Persistence Changes
 
-<Note>
-  If you have persisted messages in a database, see the [Data Migration
-  Guide](/docs/migration-guides/migration-guide-5-0-data) for comprehensive
-  guidance on migrating your stored message data to the v5 format.
-</Note>
+If you have persisted messages in a database, see the [Data Migration
+Guide](/docs/migration-guides/migration-guide-5-0-data) for comprehensive
+guidance on migrating your stored message data to the v5 format.
 
 In v4, you would typically use helper functions like `appendResponseMessages` or `appendClientMessage` to format messages in the `onFinish` callback of `streamText`:
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import {
   streamText,
   convertToModelMessages,
@@ -2981,7 +2963,7 @@ const updatedMessages = appendClientMessage({
 });
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: updatedMessages,
   experimental_generateMessageId: () => generateId(), // ID generation on streamText
   onFinish: async ({ responseMessages, usage }) => {
@@ -2999,7 +2981,7 @@ const result = streamText({
 
 In v5, message persistence is now handled through the `toUIMessageStreamResponse` method, which automatically formats response messages in the `UIMessage` format:
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { streamText, convertToModelMessages, UIMessage } from 'ai';
 
 const messages: UIMessage[] = [
@@ -3007,7 +2989,7 @@ const messages: UIMessage[] = [
 ];
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: convertToModelMessages(messages),
   // experimental_generateMessageId removed from here
 });
@@ -3025,29 +3007,27 @@ return result.toUIMessageStreamResponse({
 });
 ```
 
-<Note>
-  **Important:** When using `toUIMessageStreamResponse`, you should always
-  provide both `originalMessages` and `generateMessageId` parameters. Without
-  these, you may experience duplicate or repeated assistant messages in your UI.
-  For more details, see [Troubleshooting: Repeated Assistant
-  Messages](/docs/troubleshooting/repeated-assistant-messages).
-</Note>
+**Important:** When using `toUIMessageStreamResponse`, you should always
+provide both `originalMessages` and `generateMessageId` parameters. Without
+these, you may experience duplicate or repeated assistant messages in your UI.
+For more details, see [Troubleshooting: Repeated Assistant
+Messages](/docs/troubleshooting/repeated-assistant-messages).
 
 ### Message ID Generation
 
 The `experimental_generateMessageId` option has been moved from `streamText` configuration to `toUIMessageStreamResponse`, as it's designed for use with `UIMessage`s rather than `ModelMessage`s.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages,
   experimental_generateMessageId: () => generateId(),
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: convertToModelMessages(messages),
 });
 
@@ -3063,7 +3043,7 @@ For more details on message IDs and persistence, see the [Chatbot Message Persis
 
 For more complex scenarios, especially when working with data parts, you can use `createUIMessageStream`:
 
-```tsx filename="AI SDK 5.0 - Advanced"
+```tsx title="AI SDK 5.0 - Advanced"
 import {
   createUIMessageStream,
   createUIMessageStreamResponse,
@@ -3084,7 +3064,7 @@ const stream = createUIMessageStream({
 
     // Stream the AI response
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       messages: convertToModelMessages(messages),
     });
 
@@ -3107,13 +3087,13 @@ return createUIMessageStreamResponse({ stream });
 
 In AI SDK 5, the default OpenAI provider instance uses the Responses API, while AI SDK 4 used the Chat Completions API. The Chat Completions API remains fully supported and you can use it with `openai.chat(...)`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { openai } from '@ai-sdk/openai';
 
 const defaultModel = openai('gpt-4.1-mini'); // Chat Completions API
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { openai } from '@ai-sdk/openai';
 
 const defaultModel = openai('gpt-4.1-mini'); // Responses API
@@ -3123,17 +3103,15 @@ const chatCompletionsModel = openai.chat('gpt-4.1-mini');
 const responsesModel = openai.responses('gpt-4.1-mini');
 ```
 
-<Note>
-  The Responses and Chat Completions APIs have different behavior and defaults.
-  If you depend on the Chat Completions API, switch your model instance to
-  `openai.chat(...)` and audit your configuration.
-</Note>
+The Responses and Chat Completions APIs have different behavior and defaults.
+If you depend on the Chat Completions API, switch your model instance to
+`openai.chat(...)` and audit your configuration.
 
 #### Strict Schemas (`strictSchemas`) with Responses API
 
 In AI SDK 4.0, you could set the `strictSchemas` option on Responses models (which defaulted to `true`). This option has been renamed to `strictJsonSchema` in AI SDK 5.0 and now defaults to `false`.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { z } from 'zod';
 import { generateObject } from 'ai';
 import { openai, type OpenAIResponsesProviderOptions } from '@ai-sdk/openai';
@@ -3151,7 +3129,7 @@ const result = await generateObject({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { z } from 'zod';
 import { generateObject } from 'ai';
 import { openai, type OpenAIResponsesProviderOptions } from '@ai-sdk/openai';
@@ -3175,7 +3153,7 @@ If you call `openai.chat(...)` to use the Chat Completions API directly, you can
 
 The `structuredOutputs` option is now configured using provider options rather than as a setting on the model instance.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import { z } from 'zod';
 import { generateObject } from 'ai';
 import { openai } from '@ai-sdk/openai';
@@ -3186,7 +3164,7 @@ const result = await generateObject({
 });
 ```
 
-```tsx filename="AI SDK 5.0 (Chat Completions API)"
+```tsx title="AI SDK 5.0 (Chat Completions API)"
 import { z } from 'zod';
 import { generateObject } from 'ai';
 import { openai, type OpenAIChatLanguageModelOptions } from '@ai-sdk/openai';
@@ -3206,13 +3184,13 @@ const result = await generateObject({
 
 The `compatibility` option has been removed; strict compatibility mode is now the default.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const openai = createOpenAI({
   compatibility: 'strict',
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const openai = createOpenAI({
   // strict compatibility is now the default
 });
@@ -3222,13 +3200,13 @@ const openai = createOpenAI({
 
 The `useLegacyFunctionCalls` option has been removed.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = streamText({
   model: openai('gpt-4.1', { useLegacyFunctionCalls: true }),
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = streamText({
   model: openai('gpt-4.1'),
 });
@@ -3238,14 +3216,14 @@ const result = streamText({
 
 The `simulateStreaming` model option has been replaced with middleware.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = generateText({
   model: openai('gpt-4.1', { simulateStreaming: true }),
   prompt: 'Hello, world!',
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { simulateStreamingMiddleware, wrapLanguageModel } from 'ai';
 
 const model = wrapLanguageModel({
@@ -3265,7 +3243,7 @@ const result = generateText({
 
 Search Grounding is now called "Google Search" and is now a provider defined tool.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const { text, providerMetadata } = await generateText({
   model: google('gemini-1.5-pro', {
     useSearchGrounding: true,
@@ -3274,7 +3252,7 @@ const { text, providerMetadata } = await generateText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import { google } from '@ai-sdk/google';
 const { text, sources, providerMetadata } = await generateText({
   model: google('gemini-1.5-pro'),
@@ -3292,7 +3270,7 @@ const { text, sources, providerMetadata } = await generateText({
 
 Provider options have been updated to use camelCase.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 const result = await generateText({
   model: bedrock('amazon.titan-tg1-large'),
   prompt: 'Hello, world!',
@@ -3306,7 +3284,7 @@ const result = await generateText({
 });
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 const result = await generateText({
   model: bedrock('amazon.titan-tg1-large'),
   prompt: 'Hello, world!',
@@ -3324,7 +3302,7 @@ const result = await generateText({
 
 Deprecated `CoreTool*` types have been removed.
 
-```tsx filename="AI SDK 4.0"
+```tsx title="AI SDK 4.0"
 import {
   CoreToolCall,
   CoreToolResult,
@@ -3334,7 +3312,7 @@ import {
 } from '@ai-sdk/provider-utils';
 ```
 
-```tsx filename="AI SDK 5.0"
+```tsx title="AI SDK 5.0"
 import {
   ToolCall,
   ToolResult,
@@ -3437,7 +3415,7 @@ This section documents breaking changes between different beta versions of AI SD
 
 The chunk types in `fullStream` have been renamed for consistency with UI streams and language model streams.
 
-```tsx filename="AI SDK 5.0 (before beta.26)"
+```tsx title="AI SDK 5.0 (before beta.26)"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'text-delta': {
@@ -3452,7 +3430,7 @@ for await (const chunk of result.fullStream) {
 }
 ```
 
-```tsx filename="AI SDK 5.0 (beta.26 and later)"
+```tsx title="AI SDK 5.0 (beta.26 and later)"
 for await (const chunk of result.fullStream) {
   switch (chunk.type) {
     case 'text-delta': {
@@ -3467,21 +3445,10 @@ for await (const chunk of result.fullStream) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

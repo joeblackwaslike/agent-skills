@@ -17,8 +17,8 @@ related:
 summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b62bc12905e307a02de1daecd9d9aa96c4d241dc7cf47dbe9417e8bf62c5dec2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f975e4defd44d81489368f8bb54d6fd9900d44bdf409e3827145a8c40552a63e"
 ---
 
 # React Router on Vercel
@@ -32,8 +32,10 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
-- [Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related)
-- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [How to ship a Hono app on Vercel](https://vercel.com/kb/guide/ship-a-hono-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy a Hono app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and conf
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Freact-router&source_site=vercel-docs&relationship=related) — Learn about the frameworks that can be deployed to Vercel.
@@ -67,7 +69,7 @@ To get started, navigate to the root directory of your React Router project with
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/react-router
+    yarn add @vercel/react-router
     ```
   </Code>
   <Code tab="npm">
@@ -77,7 +79,7 @@ To get started, navigate to the root directory of your React Router project with
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/react-router
+    bun add @vercel/react-router
     ```
   </Code>
 </CodeBlock>
@@ -244,7 +246,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/analytics
+    yarn add @vercel/analytics
     ```
   </Code>
   <Code tab="npm">
@@ -254,7 +256,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/analytics
+    bun add @vercel/analytics
     ```
   </Code>
 </CodeBlock>
@@ -307,7 +309,7 @@ The server entrypoint file is expected to export a Web API-compatible function t
 matches the following signature:
 
 ```ts
-export default async function (request: Request) => Response | Promise<Response>;
+export default function (request: Request): Response | Promise<Response>;
 ```
 
 To implement a server entrypoint using the [Hono web framework](https://hono.dev), follow these steps:

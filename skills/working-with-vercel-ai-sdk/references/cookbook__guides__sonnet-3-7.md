@@ -1,16 +1,20 @@
 ---
+title: Get started with Claude 3.7 Sonnet
+description: Get started with Claude 3.7 Sonnet using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/sonnet-3-7"
+docs_index: /llms.txt
+tags:
+  - getting-started
 source: "https://ai-sdk.dev/cookbook/guides/sonnet-3-7.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "787155c14ddbb1c425b33bbea90a9f710682a0165afe678d931b422031fe1b66"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a761223112b27a10846a43b9d4bfc4404a2993f2a28462804a7d0c9e45dae797"
 ---
 
-# Get started with Claude 3.7 Sonnet
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  This guide is deprecated. [Claude 3.7 Sonnet was retired on February 19,
-  2026](https://platform.claude.com/docs/en/about-claude/model-deprecations#2025-10-28-claude-sonnet-3-7-model)
-  and can no longer be used with the Anthropic API.
-</Note>
+This guide is deprecated. [Claude 3.7 Sonnet was retired on February 19,
+2026](https://platform.claude.com/docs/en/about-claude/model-deprecations#2025-10-28-claude-sonnet-3-7-model)
+and can no longer be used with the Anthropic API.
 
 With the [release of Claude 3.7 Sonnet](https://www.anthropic.com/news/claude-3-7-sonnet), there has never been a better time to start building AI applications, particularly those that require complex reasoning capabilities.
 
@@ -80,17 +84,19 @@ AI SDK Core can be paired with [AI SDK UI](/docs/ai-sdk-ui/overview), another po
 
 AI SDK UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
 
-With four main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
+With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
 
 Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and Claude 3.7 Sonnet:
 
 In a new Next.js application, first install the AI SDK and the Anthropic provider:
 
-<Snippet text="pnpm install ai @ai-sdk/anthropic" />
+```
+pnpm install ai @ai-sdk/anthropic
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import {
   streamText,
@@ -122,14 +128,12 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  You can forward the model's reasoning tokens to the client with
-  `sendReasoning: true` in the `toUIMessageStream` helper.
-</Note>
+You can forward the model's reasoning tokens to the client with
+`sendReasoning: true` in the `toUIMessageStream` helper.
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -180,10 +184,8 @@ export default function Page() {
 }
 ```
 
-<Note>
-  You can access the model's reasoning tokens with the `reasoning` part on the
-  message `parts`.
-</Note>
+You can access the model's reasoning tokens with the `reasoning` part on the
+message `parts`.
 
 The useChat hook on your root page (`app/page.tsx`) will make a request to your LLM provider endpoint (`app/api/chat/route.ts`) whenever the user submits a message. The messages are then displayed in the chat UI.
 
@@ -198,28 +200,10 @@ Ready to dive in? Here's how you can begin:
 
 Claude 3.7 Sonnet opens new opportunities for reasoning-intensive AI applications. Start building today and leverage the power of advanced reasoning in your AI projects.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

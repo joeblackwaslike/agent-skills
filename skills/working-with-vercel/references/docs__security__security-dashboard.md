@@ -16,8 +16,8 @@ related:
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "76ee8ad81b5116f925671c188148fa630ad97a5bbdf4523a0807c5837561743f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cc90fef8559f62bfbb438df940c96117fa4ee548697c2df5ea1ecada2db1c523"
 ---
 
 # Security Dashboard
@@ -35,8 +35,8 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Vercel Security Dashboard is in private beta](https://vercel.com/changelog/vercel-security-dashboard-is-in-private-beta?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related)
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to preview and download Vercel compliance documents from the dashboard.
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 
 Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=graph)

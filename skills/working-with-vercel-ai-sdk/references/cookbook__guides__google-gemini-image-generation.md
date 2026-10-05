@@ -1,10 +1,18 @@
 ---
+title: Google Gemini Image Generation
+description: Generate and edit images with Google Gemini 3.1 Flash Image using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation"
+docs_index: /llms.txt
+tags:
+  - image-generation
+  - google
+  - gemini
 source: "https://ai-sdk.dev/cookbook/guides/google-gemini-image-generation.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8b4307662008b207e112706e0738267c64f9817bc37e2cf7404aa8ff64d73edc"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "70bf21b5c4c54955940ef1af7e47d93fa3621c437844b3ce315d923c3e1c2e8d"
 ---
 
-# Generate and Edit Images with Google Gemini 3.1 Flash
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 This guide will show you how to generate and edit images with the AI SDK and Google's Gemini 3.1 Flash Image model.
 
@@ -73,7 +81,7 @@ async function editImage() {
             data: new URL(
               'https://raw.githubusercontent.com/vercel/ai/refs/heads/main/examples/ai-functions/data/comic-cat.png',
             ),
-            mediaType: 'image/jpeg',
+            mediaType: 'image/png',
           },
         ],
       },
@@ -104,28 +112,10 @@ You've learned how to generate new images from text prompts and edit existing im
 
 For more advanced techniques, integration patterns, and practical examples, check out our [Cookbook](/cookbook) where you'll find comprehensive guides for building sophisticated AI-powered applications.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -14,8 +14,8 @@ related:
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "49a0622420f277b12a473d4b7b4304e7a6fa2e040e85699b12168a3c45987636"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0219e46f162c635da9d8813f06d29268c464cef9f694ae5ac379b2354107b064"
 ---
 
 # Deployment Checks
@@ -33,13 +33,13 @@ Deployment Checks are conditions that must be met before promoting a production 
 - [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related)
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related)
 - [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Working with Checks](https://vercel.com/docs/checks?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Checks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=related) — Vercel MCP tools for checks.
 
 Full cross-link map for this page: [/docs/deployment-checks.graph.md](/docs/deployment-checks.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-checks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

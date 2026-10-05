@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "5d7ab8b5591d60d9aa35851995558e06462b80ff4759e531930f117fbf6e1bbb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0fbec7f5aeb431b8959cc2a83ca5f16254052449bc16174b30cc614c8ecc4f1b"
 ---
 
 # Build Features for Customizing Deployments
@@ -31,9 +31,11 @@ Vercel provides the following features to customize your deployments:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Private Dependencies](https://v0.app/docs/private-dependencies?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
+- [How do I use the "Ignored Build Step" field on Vercel?](https://vercel.com/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Instructions on how to use the "Ignored Build Step" field to programmatically prevent a new deployment from being built.
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-features&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
@@ -49,7 +51,7 @@ Full cross-link map for this page: [/docs/builds/build-features.graph.md](/docs/
 
 When your project's code is using private `npm` modules that require authentication, you need to perform an additional step to install private modules.
 
-To install private `npm` modules, define `NPM_TOKEN` as an [Environment Variable](/docs/environment-variables) in your project. Alternatively, define `NPM_RC` as an [Environment Variable](/docs/environment-variables) in the contents of the project's npmrc config file that resides at the root of the project folder and is named `~/.npmrc`. This file defines the config settings of `npm` at the level of the project.
+To install private `npm` modules, define `NPM_TOKEN` as an [Environment Variable](/docs/environment-variables) in your project. Alternatively, define `NPM_RC` as an [Environment Variable](/docs/environment-variables) in the contents of the project's npmrc config file that resides at the root of the project folder and is named `.npmrc`. This file defines the config settings of `npm` at the level of the project.
 
 To learn more, check out the [guide here](/kb/guide/using-private-dependencies-with-vercel) if you need help configuring private dependencies.
 
@@ -107,7 +109,7 @@ All deployment URLs have two special pathnames to access the source code and the
 
 By default, these routes are protected so that they can only be accessed by you and the members of your Vercel Team.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/build-step/logs-and-sources-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-step/logs-and-sources-light.png)
 
 *Build Logs and Source Protection is enabled by default.*
 

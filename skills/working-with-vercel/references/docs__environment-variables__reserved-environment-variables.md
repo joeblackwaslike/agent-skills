@@ -13,8 +13,8 @@ related:
 summary: Reserved environment variables are reserved by Vercel Vercel Function runtimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/reserved-environment-variables.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "bd49e9c8159bc5b87289fcd0c630172b08d8e156a949834c7cf6df39001df690"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1757749e4ef000e67ee4c2dccd6f5aaf327323d13a6136cda0a4303be0875136"
 ---
 
 # Reserved environment variables
@@ -28,11 +28,11 @@ The following [environment variable](/docs/environment-variables) names are [res
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — Vercel MCP tools for environment variables.
 - [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
 - [Vercel Functions Limits](https://vercel.com/docs/functions/limitations?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — Learn about the limits and restrictions of using Vercel Functions.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 
 Full cross-link map for this page: [/docs/environment-variables/reserved-environment-variables.graph.md](/docs/environment-variables/reserved-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Freserved-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

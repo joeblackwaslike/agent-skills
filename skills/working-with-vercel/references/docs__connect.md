@@ -16,13 +16,13 @@ related:
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c053b715d04778fed697d6838c0001c94309222acf41badcc01b4410c9c6206b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "417653c820822763b0a6ae6e9185cb91fa57ba940588ec23a659b81a4f5e6e68"
 ---
 
 # Vercel Connect
 
-> **🔒 Permissions Required**: Vercel Connect
+> **Availability**: Vercel Connect is available on all plans
 
 With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
 
@@ -35,7 +35,7 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)
 - [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect&source_site=vercel-docs&relationship=related)

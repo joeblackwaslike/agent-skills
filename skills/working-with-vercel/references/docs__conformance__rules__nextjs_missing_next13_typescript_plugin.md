@@ -12,13 +12,13 @@ related:
 summary: "Applications using Next 13 should use the \"next\" TypeScript plugin."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_next13_typescript_plugin.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "132715b92ba81ec1afaec747caf34d2c2f681b59f3f16233167f167f54cf436d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "333d7b8b2e247a6bbf8924544237814a828022a63766e21dd52d7faece64f4df"
 ---
 
 # NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Next 13 introduced a TypeScript plugin to provide richer information for
 Next.js applications using TypeScript. See the [Next.js docs](https://nextjs.org/docs/app/building-your-application/configuring/typescript#using-the-typescript-plugin) for more information.

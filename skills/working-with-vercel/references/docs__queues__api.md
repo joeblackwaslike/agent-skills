@@ -13,8 +13,8 @@ related:
 summary: HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/api.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5d93834317bbed495845d385426d0242e20ee895c11d56145ee539399c675c35"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "386567f1766dae1efd6079f43e6e60999367ee2effc71548806c85e48694d789"
 ---
 
 # API Reference
@@ -30,8 +30,8 @@ The Vercel Queues API is a REST API for publishing, consuming, and managing mess
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 - [Vercel Queues: Python SDK Reference](https://vercel.com/docs/queues/python-sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues Python SDK.
-- [Poll Mode](https://vercel.com/docs/queues/poll-mode?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
+- [Poll Mode](https://vercel.com/docs/queues/poll-mode?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 
 Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

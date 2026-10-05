@@ -1,10 +1,14 @@
 ---
+title: Terminal UI
+description: Run AI SDK agents in an interactive terminal UI.
+url: "https://ai-sdk.dev/docs/agents/terminal-ui"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/terminal-ui.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ff6db72a400b7cad4bfcbd1a028a56910fc52525457c54947152f3a6620036a4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "eeadd873949231c15e3a29fed50cf9139a0b31d27e3fdc15feaf47bb5f74a7e0"
 ---
 
-# Terminal UI
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `@ai-sdk/tui` package lets you run a local `ToolLoopAgent` or connect to a
 remote agent through a `ChatTransport` in an interactive terminal interface.
@@ -18,7 +22,9 @@ rendering, tool cards, reasoning sections, scrolling, and tool approval prompts.
 
 Install `@ai-sdk/tui` alongside `ai` and the provider package you use:
 
-<Snippet text={`pnpm add @ai-sdk/tui ai @ai-sdk/openai`} prompt={false} />
+```
+pnpm add @ai-sdk/tui ai @ai-sdk/openai
+```
 
 ## Running an Agent
 
@@ -187,20 +193,10 @@ custom stream processing.
 - [runAgentTUI API Reference](/docs/reference/ai-sdk-tui/run-agent-tui) for
   detailed parameter documentation
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

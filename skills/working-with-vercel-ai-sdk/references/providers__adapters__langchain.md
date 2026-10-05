@@ -1,10 +1,14 @@
 ---
+title: LangChain
+description: Learn how to use LangChain with the AI SDK.
+url: "https://ai-sdk.dev/providers/adapters/langchain"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/adapters/langchain.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d4d0aea86cc46d79176b3f3a6941e492eda9f726de9c8bb5393119e02e2da11a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "bd0f7be2579e517bb5d7ff3c56624155b005d79f9032c3c3c68263a6d0a57fd1"
 ---
 
-# LangChain
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [LangChain](https://docs.langchain.com/) is a framework for building applications powered by large language models.
 It provides tools and abstractions for working with AI models, prompts, chains, vector stores,
@@ -19,9 +23,11 @@ enabling you to use LangChain models and LangGraph agents with AI SDK UI compone
 
 ## Installation
 
-<InstallPackages packages="@ai-sdk/langchain @langchain/core" />
+**Packages:** `@ai-sdk/langchain`, `@langchain/core`
 
-<Note>`@langchain/core` is a required peer dependency.</Note>
+`@langchain/core`
+
+is a required peer dependency.
 
 ## Features
 
@@ -36,7 +42,7 @@ enabling you to use LangChain models and LangGraph agents with AI SDK UI compone
 
 Here is a basic example that uses both the AI SDK and LangChain together with the [Next.js](https://nextjs.org/docs) App Router.
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
 import { ChatOpenAI } from '@langchain/openai';
 import { createUIMessageStreamResponse, UIMessage } from 'ai';
@@ -66,7 +72,7 @@ export async function POST(req: Request) {
 
 Then, use the AI SDK's [`useChat`](/docs/ai-sdk-ui/chatbot) hook in the page component:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -107,7 +113,7 @@ export default function Chat() {
 
 Create agents with tools using LangChain's [`createAgent`](https://docs.langchain.com/oss/javascript/langchain/agents):
 
-```tsx filename="app/api/agent/route.ts"
+```tsx title="app/api/agent/route.ts"
 import { createUIMessageStreamResponse, UIMessage } from 'ai';
 import { createAgent } from 'langchain';
 import { ChatOpenAI, tools } from '@langchain/openai';
@@ -156,7 +162,7 @@ Use the `tools` stream mode to stream LangGraph tool progress. The adapter conve
 
 Use the adapter with [LangGraph](https://docs.langchain.com/oss/javascript/langgraph/overview) to build agent workflows:
 
-```tsx filename="app/api/langgraph/route.ts"
+```tsx title="app/api/langgraph/route.ts"
 import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
 import { ChatOpenAI } from '@langchain/openai';
 import { createUIMessageStreamResponse, UIMessage } from 'ai';
@@ -204,7 +210,7 @@ export async function POST(req: Request) {
 
 LangChain's [`streamEvents()`](https://docs.langchain.com/oss/javascript/langchain/streaming) method provides granular, semantic events with metadata. This is useful for debugging, observability, and migrating existing LCEL applications:
 
-```tsx filename="app/api/stream-events/route.ts"
+```tsx title="app/api/stream-events/route.ts"
 import { toBaseMessages, toUIMessageStream } from '@ai-sdk/langchain';
 import { ChatOpenAI } from '@langchain/openai';
 import { createUIMessageStreamResponse, UIMessage } from 'ai';
@@ -234,20 +240,18 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  **When to use `streamEvents()` vs `graph.stream()`:** - **`streamEvents()`**:
-  Best for debugging, observability, filtering by event type, agents created
-  with `createAgent`, and migrating existing LCEL applications that rely on
-  callbacks - **`graph.stream()` with `streamMode`**: Best for LangGraph
-  applications where you need structured state updates via `values`, `messages`,
-  `tools`, or `custom` modes
-</Note>
+**When to use `streamEvents()` vs `graph.stream()`:** - **`streamEvents()`**:
+Best for debugging, observability, filtering by event type, agents created
+with `createAgent`, and migrating existing LCEL applications that rely on
+callbacks - **`graph.stream()` with `streamMode`**: Best for LangGraph
+applications where you need structured state updates via `values`, `messages`,
+`tools`, or `custom` modes
 
 ## Example: Custom Data Streaming
 
 LangChain tools can emit custom data events using `config.writer()`. The adapter converts these to typed `data-{type}` parts that can be rendered in the UI or handled via the `onData` callback:
 
-```tsx filename="app/api/custom-data/route.ts"
+```tsx title="app/api/custom-data/route.ts"
 import { createUIMessageStreamResponse, UIMessage } from 'ai';
 import { createAgent, tool, type ToolRuntime } from 'langchain';
 import { ChatOpenAI } from '@langchain/openai';
@@ -320,7 +324,7 @@ export async function POST(req: Request) {
 
 Handle custom data on the client with the `onData` callback or render persistent data parts:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -361,18 +365,17 @@ export default function Chat() {
 }
 ```
 
-<Note>
 **Custom data behavior:**
+
 - Data with an `id` field is **persistent** (added to `message.parts` for rendering)
 - Data without an `id` is **transient** (only delivered via the `onData` callback)
 - The `type` field determines the event name: `{ type: 'progress' }` → `data-progress`
-</Note>
 
 ## Example: LangSmith Deployment Transport
 
 Connect directly to a LangGraph deployment from the browser using `LangSmithDeploymentTransport`, bypassing the need for a backend API route:
 
-```tsx filename="app/langsmith/page.tsx"
+```tsx title="app/langsmith/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -574,11 +577,10 @@ const { messages, sendMessage } = useChat({
 
 You can find additional examples in the AI SDK [examples/next-langchain](https://github.com/vercel/ai/tree/main/examples/next-langchain) folder.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [LangChain](/providers/adapters/langchain)
-- [LlamaIndex](/providers/adapters/llamaindex)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

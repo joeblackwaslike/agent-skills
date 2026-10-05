@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/troubleshooting.md"
-fetched_at: "2026-09-28T10:38:50.037Z"
-sha256: "a776a2b327507f7af812aaea4b61d9778aa6ef43db503cf590acaa829ee143de"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "06f3b1d365256d76c6b26e1fb4175f3a7edb8810c0d08a3c7483b00b7ece8b86"
 ---
 
 > ## Documentation Index
@@ -14,20 +14,20 @@ sha256: "a776a2b327507f7af812aaea4b61d9778aa6ef43db503cf590acaa829ee143de"
 
 This page covers performance, stability, and search problems once Claude Code is running. For other issues, start with the page that matches where you're stuck:
 
-| Symptom                                                                                                                                              | Go to                                                                                    |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------- |
-| `command not found`, install fails, PATH issues, `EACCES`, TLS errors                                                                                | [Troubleshoot installation and login](/docs/en/troubleshoot-install)                          |
-| Update or install download fails with `The connection dropped while downloading the update` or `aborted`                                             | [Error reference](/docs/en/errors#the-connection-dropped-while-downloading-the-update)        |
+| Symptom | Go to |
+| :- | :- |
+| `command not found`, install fails, PATH issues, `EACCES`, TLS errors | [Troubleshoot installation and login](/docs/en/troubleshoot-install) |
+| Update or install download fails with `The connection dropped while downloading the update` or `aborted` | [Error reference](/docs/en/errors#the-connection-dropped-while-downloading-the-update) |
 | Login loops, OAuth errors, `403 Forbidden`, "organization disabled", Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry credentials | [Troubleshoot installation and login](/docs/en/troubleshoot-install#login-and-authentication) |
-| Settings not applying, hooks not firing, MCP servers not loading                                                                                     | [Debug your configuration](/docs/en/debug-your-config)                                        |
-| Session started in auto mode, or Claude edits files and runs commands without asking                                                                 | [Which mode a session starts in](/docs/en/permission-modes#which-mode-a-session-starts-in)    |
-| `API Error: 5xx`, `529 Overloaded`, `429`, request validation errors                                                                                 | [Error reference](/docs/en/errors)                                                            |
-| `model not found` or `you may not have access to it`                                                                                                 | [Error reference](/docs/en/errors#theres-an-issue-with-the-selected-model)                    |
-| A command Claude runs fails with `Your disk quota is full`, `is full (ENOSPC)`, or `Command output was lost`                                         | [Error reference](/docs/en/errors#disk-quota-or-temp-filesystem-is-full)                      |
-| VS Code extension not connecting or detecting Claude                                                                                                 | [VS Code integration](/docs/en/vs-code#fix-common-issues)                                     |
-| `Claude Code process exited with code 1` in VS Code or an SDK app                                                                                    | [Error reference](/docs/en/errors#claude-code-process-exited-with-code-n)                     |
-| JetBrains plugin or IDE not detected                                                                                                                 | [JetBrains integration](/docs/en/jetbrains#troubleshooting)                                   |
-| High CPU or memory, slow responses, hangs, search not finding files                                                                                  | [Performance and stability](#performance-and-stability) below                            |
+| Settings not applying, hooks not firing, MCP servers not loading | [Debug your configuration](/docs/en/debug-your-config) |
+| Session started in auto mode, or Claude edits files and runs commands without asking | [Which mode a session starts in](/docs/en/permission-modes#which-mode-a-session-starts-in) |
+| `API Error: 5xx`, `529 Overloaded`, `429`, request validation errors | [Error reference](/docs/en/errors) |
+| `model not found` or `you may not have access to it` | [Error reference](/docs/en/errors#theres-an-issue-with-the-selected-model) |
+| A command Claude runs fails with `Your disk quota is full`, `is full (ENOSPC)`, or `Command output was lost` | [Error reference](/docs/en/errors#disk-quota-or-temp-filesystem-is-full) |
+| VS Code extension not connecting or detecting Claude | [VS Code integration](/docs/en/vs-code#fix-common-issues) |
+| `Claude Code process exited with code 1` in VS Code or an SDK app | [Error reference](/docs/en/errors#claude-code-process-exited-with-code-n) |
+| JetBrains plugin or IDE not detected | [JetBrains integration](/docs/en/jetbrains#troubleshooting) |
+| High CPU or memory, slow responses, hangs, search not finding files | [Performance and stability](#performance-and-stability) below |
 
 If you're not sure which applies, run `/doctor` inside Claude Code for an automated check of your installation, settings, extensions, and context usage; it proposes fixes it can apply after you confirm. If `claude` won't start at all, run `claude doctor` from your shell instead. Run `/mcp` to check MCP server status.
 
@@ -54,7 +54,7 @@ If memory usage stays high after these steps, run `/heapdump` to write two files
   The `.heapsnapshot` file contains every string in the process, including your full conversation and credentials. Don't attach it to a public issue or share it.
 </Warning>
 
-The command also prints a summary in the conversation, showing resident set size, JS heap, array buffers, and unaccounted native memory, plus any leak indicators it detected, such as a high memory growth rate or an unusually high number of open handles. The summary says whether most memory is in the JS heap, which the snapshot captures, or in native memory, which it doesn't.
+The command also prints a summary in the conversation, showing the process's total memory, how much of it is in the JS heap, and how much sits outside the heap. The summary also lists any leak indicators, such as a high memory growth rate or an unusually high number of open handles. The summary says whether most memory is in the JS heap, which the snapshot captures, or in native memory, which it doesn't.
 
 Report the output or investigate it yourself:
 
@@ -77,6 +77,11 @@ To recover:
 2. Run `/compact` with a focus that drops the large output, for example `/compact keep only the plan and the diff`
 3. Move the large-file work to a [subagent](/docs/en/sub-agents) so it runs in a separate context window
 4. Run `/clear` if the earlier conversation is no longer needed
+
+If the error comes back after a `/clear`, run [`/context`](/docs/en/debug-your-config) and compare the `Messages` row with the rows above it:
+
+* **`Messages` is the largest row**: a file or tool output in the new conversation is refilling the window, so work through steps 1 to 3 again
+* **The other rows together are larger**: what loads at session start leaves too little room to work in, so [trim what loads at startup](/docs/en/errors#prompt-is-too-long)
 
 ### Command hangs or freezes
 

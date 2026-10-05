@@ -16,13 +16,13 @@ related:
 summary: Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/container-images.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "553e0e80e05fc51dedeaee08418322832fbb783d8da86223d964582f38884116"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d9226dbfe6898080d35ef700be209f5feda2c84a711497c1487e4286eb003b40"
 ---
 
 # Container Images
 
-> **🔒 Permissions Required**: Container Images (Beta)
+> **Availability**: Container Images (Beta) are available on all plans
 
 Vercel Functions can run Open Container Initiative (OCI) compatible container images stored in [Vercel Container Registry (VCR)](/docs/container-registry). Functions scale up and down automatically based on demand, and use [Active CPU](/docs/functions/usage-and-pricing) pricing. You are only billed for CPU when your code is actively running, not while waiting for I/O or sleeping.
 
@@ -38,9 +38,10 @@ Vercel Functions can run Open Container Initiative (OCI) compatible container im
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related)
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Getting Started](https://vercel.com/docs/container-registry/getting-started?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/functions/container-images.graph.md](/docs/functions/container-images.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fcontainer-images&source_site=vercel-docs&relationship=graph)

@@ -1,13 +1,17 @@
 ---
+title: toolSearch
+description: Search deferred tools and load their definitions on demand for direct calling or code mode.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-search"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-search.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4d4e2eaaa98dca8f87ddbd0189ca21320ef834c95af3f16e30f7cb6abe59b68a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a44eb98ea04ad153ddb539327bae2b974897bfcb66539fbca0bdf12c16bcf3e3"
 ---
 
-# `toolSearch()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-Creates a tool that searches the surrounding generation's deferred tools by name
-and description. The factory takes no arguments. Use it with `generateText`,
+Creates a tool that searches the surrounding generation's deferred tools, using
+keyword matching by default or a custom search callback. Use it with `generateText`,
 `streamText`, `ToolLoopAgent`, or `WorkflowAgent` from `@ai-sdk/workflow`.
 `WorkflowAgent` supports direct tool calling. The other APIs also support code
 mode configured with `toolDiscovery: 'conversation'`.
@@ -21,6 +25,60 @@ const search = toolSearch();
 See the [Tool Search guide](/docs/ai-sdk-core/tool-search) for direct-calling and
 code mode examples, including how code mode preserves the tool-definition cache.
 
+## Options
+
+Pass an optional configuration object to control the result limit:
+
+```ts
+const search = toolSearch({ maxResults: 10 });
+```
+
+`maxResults` is the maximum number of matching tools returned and discovered per
+search. It defaults to `5` and must be a positive safe integer. Invalid values
+throw `InvalidArgumentError` when creating the search tool. The model-facing
+description reflects the configured limit.
+
+The limit applies to both default keyword search and custom search callbacks,
+without changing their matching or ranking. Discovered tools accumulate across
+searches, so this is not a limit on the total number of tools loaded during a
+generation.
+
+Pass a `search` callback to select and rank tools using your application's search
+logic. The callback can return synchronously or asynchronously:
+
+```ts
+const search = toolSearch({
+  search: ({ query, tools }) => {
+    const preferred = /\bgmail\b/i.test(query)
+      ? ['gmail_list_messages', 'gmail_get_message']
+      : [];
+    return preferred.filter(name => tools.some(tool => tool.name === name));
+  },
+});
+```
+
+The callback has this signature:
+
+```ts
+search?: (options: {
+  query: string;
+  tools: Array<{ name: string; description?: string }>;
+}) => string[] | PromiseLike<string[]>;
+```
+
+`tools` contains all eligible deferred tools, before keyword matching or ranking.
+Eligibility respects `activeTools` and caller routing. Descriptions are resolved
+using the current tool context and sandbox; schemas are not included.
+
+Return tool names in ranked order. The SDK ignores unknown or ineligible names,
+removes duplicates while preserving order, and keeps the first `maxResults` valid
+names (five by default). Returned descriptions come from the SDK's candidate
+catalog. An empty array
+discovers no tools. Callback errors follow normal tool-execution error handling;
+the SDK does not fall back to keyword search.
+
+Without a callback, `toolSearch()` uses the default keyword search described below.
+
 ## Model Input
 
 The model supplies the following input to the search tool:
@@ -29,11 +87,12 @@ The model supplies the following input to the search tool:
 { "query": "weather forecast" }
 ```
 
-`query` is a required, nonempty string of search keywords. Search is local and
+`query` is a required, nonempty string. By default, search is local and
 case-insensitive, matching words in tool names and descriptions. Camel-case names
 are split into words. Name matches rank above description matches; equal scores
 preserve registration order. Function descriptions are resolved with the current
-tool context and sandbox. No embedding service or additional model call is used.
+tool context and sandbox. The default search uses no embedding service or
+additional model call. A custom callback can use either.
 
 ## Output
 
@@ -45,8 +104,9 @@ tool context and sandbox. No embedding service or additional model call is used.
 }
 ```
 
-Results contain at most five matching tools, with their names and optional
-descriptions. They do not include schemas. No matches returns `{ tools: [] }`.
+Results contain at most `maxResults` matching tools (five by default), with their
+names and optional descriptions. They do not include schemas. No matches returns
+`{ tools: [] }`.
 Every returned match is queued for discovery. Newly discovered tools can only be
 called on the next model step, after their definitions have been provided. A
 parallel call in the same response as the search cannot use a newly discovered
@@ -76,70 +136,10 @@ agent or tool instances.
 Set a multi-step `stopWhen` condition with `generateText` and `streamText` so the
 model can search, use the discovered tools, and answer.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

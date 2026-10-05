@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d7cdf439d5eea9326ffd52c84f4228c37052ab398546a2bbeb80aa4bb0bb3cfa"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c50d259e6252f91372c8cee62974c8d054ffbd7191ae7cb932acf0d68126fc91"
 ---
 
 # Managing with the Vercel Toolbar
@@ -32,12 +32,11 @@ Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independ
 
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
-- [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in your local environment.
 - [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Fmanaging-microfrontends%2Fvercel-toolbar&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,13 +49,13 @@ You can access it in all microfrontends that you have [enabled the toolbar for](
 
 In the **Microfrontends** panel of the toolbar shows all microfrontends that are available in that microfrontends group. By clicking on each microfrontend, you can see information such as the corresponding Vercel project or take action on the microfrontend.
 
-![Image](`/docs-assets/static/docs/microfrontends/toolbar/microfrontends-panel-2-light.png`)
+![Panel in the Toolbar showing all microfrontends.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/toolbar/microfrontends-panel-2-light.png)
 
 ## Microfrontends zone indicator
 
 Since multiple microfrontends can serve content on the same domain, it's easy to lose track of which application is serving that page. Use the **Zone Indicator** to display the name of the application and environment that the microfrontend is being served by whenever you visit any paths.
 
-![Image](`/docs-assets/static/docs/microfrontends/toolbar/zone-indicator-3-light.png`)
+![Indicator for which microfrontend served the current page.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/toolbar/zone-indicator-3-light.png)
 
 You find the **Zone Indicator** toggle at the bottom of the **Microfrontends** panel in the Vercel toolbar.
 
@@ -71,7 +70,7 @@ While developing microfrontends, you often want to build and test just your micr
 
 To undo the changes back to the original values, open the microfrontends panel and click **Reset to Default**.
 
-![Image](`/docs-assets/static/docs/microfrontends/toolbar/routing-overrides-3-light.png`)
+![Override the environment that microfrontend requests are routed to.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/toolbar/routing-overrides-3-light.png)
 
 ## Enable routing debug mode
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the vercel dev CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e620c9656fda69f3c1a7640d485b61a7ebca0909857d86216e3fbec5a9800564"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "606d90012853b5999605439da0c6858568ff996a87614e68f225bccb009bc71b"
 ---
 
 # vercel dev
@@ -30,12 +30,13 @@ The `vercel dev` command is used to replicate the Vercel deployment environment 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
 - [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
 Full cross-link map for this page: [/docs/cli/dev.graph.md](/docs/cli/dev.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdev&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

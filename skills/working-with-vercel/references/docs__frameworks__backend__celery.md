@@ -17,13 +17,13 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0ec162a8374a7f932ea3ef854ca8cf845edfe52066a79fe86a7001c30be3fdc9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8a8b667170d87dd54e9f75b90ff799bb3e10224e2bd96ef52705e5ffe7445bf6"
 ---
 
 # Run background tasks with Celery on Vercel
 
-> **🔒 Permissions Required**: Vercel Queues (Beta)
+> **Availability**: Vercel Queues (Beta) are available on all plans
 
 Deploy Celery on Vercel with the Python runtime, Vercel Queues, and Vercel
 Functions. Vercel builds each Celery worker as a private, queue-triggered
@@ -35,13 +35,12 @@ Vercel Function, so you don't need to run a long-lived worker process.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related)
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fcelery&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

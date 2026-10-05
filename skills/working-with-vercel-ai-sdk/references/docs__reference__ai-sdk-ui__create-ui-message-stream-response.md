@@ -1,19 +1,22 @@
 ---
+title: createUIMessageStreamResponse
+description: API Reference for createUIMessageStreamResponse.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream-response"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream-response.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "974f2a928f67fc8afbf37619c4b6862fa223f24c4d1639ccf2d6c03b7e53d05b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "e9504de0962a2a279c83cee57af9f3a3040939d188d196faadef3bf63d4f2f21"
 ---
 
-# `createUIMessageStreamResponse`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `createUIMessageStreamResponse` function creates a Response object that streams UI messages to the client.
 
 ## Import
 
-<Snippet
-  text={`import { createUIMessageStreamResponse } from "ai"`}
-  prompt={false}
-/>
+```
+import { createUIMessageStreamResponse } from "ai"
+```
 
 ## Example
 
@@ -24,7 +27,6 @@ import {
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 const response = createUIMessageStreamResponse({
   status: 200,
@@ -68,7 +70,7 @@ const response = createUIMessageStreamResponse({
 
       // Merge with LLM stream
       const result = streamText({
-        model: __MODEL__,
+        model: "anthropic/claude-sonnet-5.5",
         prompt: 'Say hello',
       });
 
@@ -84,40 +86,12 @@ const response = createUIMessageStreamResponse({
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'stream',
-      type: 'ReadableStream<UIMessageChunk>',
-      description: 'The UI message stream to send to the client.',
-    },
-    {
-      name: 'status',
-      type: 'number',
-      isOptional: true,
-      description: 'The status code for the response. Defaults to 200.',
-    },
-    {
-      name: 'statusText',
-      type: 'string',
-      isOptional: true,
-      description: 'The status text for the response.',
-    },
-    {
-      name: 'headers',
-      type: 'Headers | Record<string, string>',
-      isOptional: true,
-      description: 'Additional headers for the response.',
-    },
-    {
-      name: 'consumeSseStream',
-      type: '(options: { stream: ReadableStream<string> }) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Optional callback to consume the Server-Sent Events stream.',
-    },
-  ]}
-/>
+- `stream` (`ReadableStream<UIMessageChunk>`): The UI message stream to send to the client.
+- `status?` (`number`): The status code for the response. Defaults to 200.
+- `statusText?` (`string`): The status text for the response.
+- `headers?` (`Headers | Record<string, string>`): Additional headers for the response.
+- `keepAliveMs?` (`number`): Interval in milliseconds for sending SSE keep-alive comments. When set, an opening comment is sent immediately and additional comments are sent after the stream has been idle for the configured interval.
+- `consumeSseStream?` (`(options: { stream: ReadableStream<string> }) => PromiseLike<void> | void`): Optional callback to consume the Server-Sent Events stream.
 
 ### Returns
 
@@ -125,23 +99,10 @@ const response = createUIMessageStreamResponse({
 
 A Response object that streams UI message chunks with the specified status, headers, and content.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

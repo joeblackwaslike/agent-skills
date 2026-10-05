@@ -12,8 +12,8 @@ related:
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "249c768161b47eb6c20fe3ccdc3e770091484fb1d7b4d5778981372451fe50c0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "186541edc1e2edf500e06d4446d6b0658fdd93841d356791905c7d994759acf2"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events
@@ -31,11 +31,11 @@ Sometimes, URLs and query parameters may contain sensitive data. This could be a
 - [How to optimize third-party libraries](https://nextjs.org/docs/app/guides/third-party-libraries?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [How to optimize third-party libraries](https://nextjs.org/docs/pages/guides/third-party-libraries?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Learn how to send custom analytics events from your application.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 
 Full cross-link map for this page: [/docs/analytics/redacting-sensitive-data.graph.md](/docs/analytics/redacting-sensitive-data.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fredacting-sensitive-data&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -248,7 +248,7 @@ export default function App() {
       </head>
       <body>
         <Analytics
-          beforeSend={(event: BeforeSendEvent) => {
+          beforeSend={(event) => {
             if (event.url.includes('/private')) {
               return null;
             }
@@ -359,7 +359,7 @@ const beforeSend = (event) => {
 
 ```tsx {2, 4-9, 13} filename="src/App.vue" framework=vue
 <script setup lang="ts">
-import { Analytics, type BeforeSendEvent } from '@vercel/analytics/nuxt';
+import { Analytics, type BeforeSendEvent } from '@vercel/analytics/vue';
 
 const beforeSend = (event: BeforeSendEvent) => {
   if (event.url.includes('/private')) {
@@ -377,7 +377,7 @@ const beforeSend = (event: BeforeSendEvent) => {
 
 ```jsx {4-9, 13} filename="src/App.vue" framework=vue
 <script setup>
-import { Analytics } from '@vercel/analytics/nuxt';
+import { Analytics } from '@vercel/analytics/vue';
 
 const beforeSend = (event) => {
   if (event.url.includes('/private')) {

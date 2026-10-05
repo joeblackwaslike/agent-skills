@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b697b8e2ab2bf5989254749794639993f0a10fd357d49a29647ed2d4cabeaa27"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3959f491459813f4093dcaa7cb619e22587a1870ffc5c83c8dedfd3c1a434051"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -31,17 +31,17 @@ The maximum duration configuration determines the longest time that a function c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
+- [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Learn how to fix timeouts and cut off responses when deploying to Vercel.
 - [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 - [No action required: Lowering default function timeout in new Enterprise projects](https://vercel.com/changelog/lowering-default-serverless-function-timeout-in-enterprise-projects?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 - [Vercel Functions can now run up to 30 minutes](https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 - [Vercel Functions for Hobby can now run up to 60 seconds](https://vercel.com/changelog/vercel-functions-for-hobby-can-now-run-up-to-60-seconds?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 - [Workflow steps now support extended function durations](https://vercel.com/changelog/workflow-steps-now-support-extended-function-durations?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
+- [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
-- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/duration.graph.md](/docs/functions/configuring-functions/duration.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions%2Fduration&source_site=vercel-docs&relationship=graph)
@@ -292,13 +292,13 @@ For these runtimes and frameworks, configure the `maxDuration` property of the [
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/test.js": {
-      "maxDuration": 30 // This function can run for a maximum of 30 seconds
+      "maxDuration": 30
     },
     "api/*.js": {
-      "maxDuration": 15 // This function can run for a maximum of 15 seconds
+      "maxDuration": 15
     },
     "src/api/*.js": {
-      "maxDuration": 25 // You must prefix functions in the src directory with /src/
+      "maxDuration": 25
     }
   }
 }
@@ -397,8 +397,9 @@ The dashboard sets the project default. During the extended max duration beta, u
 }
 ```
 
-```json {3-4} filename="pages/api/handler.js" framework=nextjs
+```json {4-5} filename="vercel.json" framework=nextjs
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "pages/api/**/*": {
       "maxDuration": 5
@@ -412,7 +413,7 @@ The dashboard sets the project default. During the extended max duration beta, u
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "app/routes/**/*": {
-      "maxDuration": 5 // All functions can run for a maximum of 5 seconds
+      "maxDuration": 5
     }
   }
 }
@@ -423,7 +424,7 @@ The dashboard sets the project default. During the extended max duration beta, u
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "path/to/dir/**/*": {
-      "maxDuration": 5 // All functions can run for a maximum of 5 seconds
+      "maxDuration": 5
     }
   }
 }

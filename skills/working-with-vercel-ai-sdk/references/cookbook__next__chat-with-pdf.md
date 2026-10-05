@@ -1,19 +1,25 @@
 ---
+title: Chat with PDFs
+description: Learn how to build a chatbot that can understand PDFs using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/chat-with-pdf"
+docs_index: /llms.txt
+tags:
+  - next
+  - pdf
+  - multimodal
 source: "https://ai-sdk.dev/cookbook/next/chat-with-pdf.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "061896455664f34347e500eb9ff6e98607525af64b6dd54581d0858ce27db83b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "33f8ab53f1471fea26308011d611e2502d73b31cfb8f325d03f9dedf289ac701"
 ---
 
-# Chat with PDFs
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-Some language models like Anthropic's Claude Sonnet 5 and Google's Gemini 3.8 Flash can understand PDFs and respond to questions about their contents. In this example, we'll show you how to build a chat interface that accepts PDF uploads.
+Some language models like Anthropic's Claude Sonnet 5.5 and Google's Gemini 3.8 Flash can understand PDFs and respond to questions about their contents. In this example, we'll show you how to build a chat interface that accepts PDF uploads.
 
-<Note>
-  This example requires a provider that supports PDFs, such as Anthropic's
-  Claude Sonnet 5, Google's Gemini 3.8 Flash, or OpenAI's GPT-6 Astra. Check the
-  [provider documentation](/providers/ai-sdk-providers) for up-to-date support
-  information.
-</Note>
+This example requires a provider that supports PDFs, such as Anthropic's
+Claude Sonnet 5.5, Google's Gemini 3.8 Flash, or OpenAI's GPT-6 Astra. Check
+the [provider documentation](/providers/ai-sdk-providers) for up-to-date
+support information.
 
 ## Implementation
 
@@ -21,7 +27,7 @@ Some language models like Anthropic's Claude Sonnet 5 and Google's Gemini 3.8 Fl
 
 Create a route handler that will use Anthropic's Claude model to process messages and PDFs:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -34,7 +40,7 @@ export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: 'anthropic/claude-sonnet-5',
+    model: 'anthropic/claude-sonnet-5.5',
     messages: await convertToModelMessages(messages),
   });
 
@@ -48,7 +54,7 @@ export async function POST(req: Request) {
 
 Create a chat interface that allows uploading PDFs alongside messages:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -165,37 +171,16 @@ The code uses the `useChat` hook which handles the file upload and message strea
 
 Make sure to set up your environment variables with your Anthropic API key:
 
-```env filename=".env.local"
+```dotenv title=".env.local"
 ANTHROPIC_API_KEY=xxxxxxxxx
 ```
 
 Now you can upload PDFs and ask questions about their contents. The LLM will analyze the PDF and provide relevant responses based on the document's content.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

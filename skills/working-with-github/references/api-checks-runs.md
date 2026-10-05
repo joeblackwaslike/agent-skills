@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/checks/runs"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "2aab32239b41d7f9fe809b0c84715c94085e3caabb276614eb27567d79147cba"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "a7475f947ccb3b1932adabbcd723056cc331cb11134c76fb70112753446c0d34"
 ---
 
 # REST API endpoints for check runs
@@ -213,8 +213,8 @@ curl -L \
         "path": "README.md",
         "annotation_level": "warning",
         "title": "Spell Checker",
-        "message": "Check your spelling for 'banaas'.",
-        "raw_details": "Do you mean 'bananas' or 'banana'?",
+        "message": "Check your spelling for '\''banaas'\''.",
+        "raw_details": "Do you mean '\''bananas'\'' or '\''banana'\''?",
         "start_line": 2,
         "end_line": 2
       },
@@ -222,8 +222,8 @@ curl -L \
         "path": "README.md",
         "annotation_level": "warning",
         "title": "Spell Checker",
-        "message": "Check your spelling for 'aples'",
-        "raw_details": "Do you mean 'apples' or 'Naples'",
+        "message": "Check your spelling for '\''aples'\''",
+        "raw_details": "Do you mean '\''apples'\'' or '\''Naples'\''",
         "start_line": 4,
         "end_line": 4
       }
@@ -543,8 +543,8 @@ curl -L \
         "path": "README.md",
         "annotation_level": "warning",
         "title": "Spell Checker",
-        "message": "Check your spelling for 'banaas'.",
-        "raw_details": "Do you mean 'bananas' or 'banana'?",
+        "message": "Check your spelling for '\''banaas'\''.",
+        "raw_details": "Do you mean '\''bananas'\'' or '\''banana'\''?",
         "start_line": 2,
         "end_line": 2
       },
@@ -552,8 +552,8 @@ curl -L \
         "path": "README.md",
         "annotation_level": "warning",
         "title": "Spell Checker",
-        "message": "Check your spelling for 'aples'",
-        "raw_details": "Do you mean 'apples' or 'Naples'",
+        "message": "Check your spelling for '\''aples'\''",
+        "raw_details": "Do you mean '\''apples'\'' or '\''Naples'\''",
         "start_line": 4,
         "end_line": 4
       }

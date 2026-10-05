@@ -16,8 +16,8 @@ related:
 summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "90bacfa620335923b0b5364fb226beed5a0ea5d651faa512ba23f9d7426d62a0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0255c1016677eab595a72aae185dc791e520b561f6eae64e91e8c04d0e821dea"
 ---
 
 # Deploying with Vercel Drop
@@ -30,16 +30,16 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel Drop](https://vercel.com/changelog/vercel-drop?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related)
 - [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
+- [Introducing Vercel Drop](https://vercel.com/changelog/vercel-drop?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related)
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [Deploy a Google Stitch design with Vercel Drop](https://vercel.com/kb/guide/google-stitch-vercel-drop?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Download the HTML from your Google Stitch screens and deploy them to production with Vercel Drop, with no Git or CLI req
 - [Vercel Drop vs Cloudflare Direct Upload](https://vercel.com/kb/guide/vercel-drop-vs-cloudflare-direct-upload?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Compare Vercel Drop and Cloudflare Direct Upload: framework builds, browser vs CLI workflows, file limits, Git integrati
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Deploy a Lovable app on Vercel](https://vercel.com/docs/integrations/lovable?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=related) — Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
 
 Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md?from=related&source_path=%2Fdocs%2Fdrop&source_site=vercel-docs&relationship=graph)
@@ -71,9 +71,18 @@ Vercel creates a new project, uploads your files, and publishes it straight to p
 
 For a static site with no `index.html` at the top of your folder, Vercel asks which page people should see first when they open your site. Pick one from the **Root (/)** menu, or choose **No root page** if you don't want a homepage. With no root page, your site's root (`/`) returns a 404, though Vercel still serves each file at its own path.
 
+## Keep iterating on a dropped project
+
+A dropped project has no Git connection, so pushes don't create deployments. After the first deploy, you can keep iterating in these ways:
+
+- Drop a folder onto the project in the Vercel dashboard. Vercel creates a new production deployment of that project.
+- Continue in [v0](https://v0.app) if the project is available there, or deploy from a terminal or coding agent with [Vercel CLI](/docs/cli).
+- Delete the project in Settings, then drop a folder on [vercel.com/new](/new) or [vercel.com/drop](/drop) to create a new project.
+
 ## Limitations
 
-- Each drop creates a new project. Vercel Drop doesn't redeploy into an existing project.
+- Dropping on [vercel.com/new](/new) or [vercel.com/drop](/drop) creates a new project.
+- Dropping onto a project with no Git connection creates a new production deployment of that project.
 - The project isn't connected to Git, so pushes don't trigger new deployments. [Connect a Git repository](/docs/git) afterward if you want automatic deployments.
 - Files upload from your browser, so larger folders take longer on slower connections.
 

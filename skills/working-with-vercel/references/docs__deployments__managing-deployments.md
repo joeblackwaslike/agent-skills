@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0679cebb4320460a65a0a7207d252da2de1f780eb8020975d45260c9a1833bf9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bef05387826471e7e85074d96543f31dfd7402bcf4dc5af0d6cdcb9c9423ec04"
 ---
 
 # Managing Deployments
@@ -36,9 +36,9 @@ You can manage all current and previous deployments regardless of environment, s
 - [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
 - [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fmanaging-deployments&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
@@ -67,7 +67,7 @@ You can filter your deployments based on branch, status, and deployment environm
 2. Open [**Deployments**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fdeployments\&title=Go+to+Deployments) in the sidebar
 3. Use the dropdowns to search by **Branch**, **Date Range**, **All Environments**, or **Status**
 
-![Image](`/docs-assets/static/docs/concepts/deployments/filtering-deployments/filter-status-light.png`)
+![The Deployments tab with the status filter dropdown open.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/filtering-deployments/filter-status-light.png)
 
 ## Delete a deployment
 
@@ -141,7 +141,7 @@ Vercel automatically redeploys your application when you make any commits. Howev
 5. Click the ellipsis icon () and select **Redeploy**
 6. In the **Redeploy to Production** window, decide if you want to use the existing [Build Cache](/docs/deployments/troubleshoot-a-build#understanding-build-cache), and then select **Redeploy**
 
-![Image](`/docs-assets/static/docs/concepts/deployments/redeploy-model-light.png`)
+![Option to confirm redeploy to production.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/redeploy-model-light.png)
 
 ### When to Redeploy
 

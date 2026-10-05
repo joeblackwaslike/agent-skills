@@ -12,12 +12,12 @@ related:
   - /docs/vercel-firewall/vercel-waf
   - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/vercel-firewall
-  - /docs/manage-cdn-usage
+  - /docs/drains
 summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cf47238b28e61c8c5a5b44e27db39cf5cef30f8966d2bff19f3fca373a12cd78"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3e8e7eef878a5cf29645990fbb1611fce2cb089ff58ba2a186fa400e5da2f2da"
 ---
 
 # Firewall concepts
@@ -52,18 +52,18 @@ If allowed to go through, the request is subject to the rules that you configure
 
 If you [enabled a persistent action](/docs/vercel-firewall/vercel-waf/custom-rules#persistent-actions) for a WAF rule and it blocks the request, the source IP address is stored in the platform firewall so that future requests from this source continue to be blocked for the specified time period. These future blocks happen at the level of the platform-wide firewall.
 
-![Image](`/docs-assets/static/docs/security/vercel-firewall-protection-concept-light.png`)
+![How Vercel protects every incoming request with multiple layers](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-firewall-protection-concept-light.png)
 
 ## Firewall actions
 
-The Vercel Firewall allows several possible actions to be taken when traffic matches a rule. These actions, that can be taken by custom rules or system DDoS mitigations, apply when detecting malicious traffic. You can view the actions and their results in the [Firewall and Monitoring](/docs/vercel-firewall#observability) tabs.
+The Vercel Firewall allows several possible actions to be taken when traffic matches a rule. These actions, that can be taken by custom rules or system DDoS mitigations, apply when detecting malicious traffic. You can view the actions and their results in the [**Firewall** and **Observability**](/docs/vercel-firewall#observability) sections of the dashboard.
 
 ### Log
 
 The log action allows you to monitor and record specific traffic patterns without affecting the request. When a request matches a rule with the log action:
 
 - The request is allowed to proceed normally.
-- Details about the request are logged and displayed in the Firewall and Monitoring tabs, and sent to log drains for analysis.
+- Details about the request are logged and displayed in the **Firewall** and **Observability** sections of the dashboard, and sent to [Drains](/docs/drains) for analysis.
 - There is no impact on the visitor's experience.
 
 This is useful for monitoring suspicious patterns or gathering data about specific types of traffic before implementing stricter actions.
@@ -74,7 +74,7 @@ The deny action blocks requests immediately when they match a rule. When a reque
 
 - A `403 Forbidden` response is returned.
 - The request does not reach your application.
-- The request does not incur [Edge Requests](/docs/manage-cdn-usage#edge-requests) or [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer).
+- The request does not incur [CDN Requests](/docs/manage-cdn-usage#cdn-requests) or [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer).
 
 This is the most restrictive action and you should use it for known malicious traffic patterns or IP addresses.
 
@@ -89,7 +89,7 @@ When the challenge action is applied:
 - ### Initial challenge
   During this process, visitors see a **Vercel Security Checkpoint** screen:
 
-  ![Image](https://vercel.com/docs-assets/static/docs/security/challenge-light.png)
+  ![Vercel challenge page](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/challenge-light.png)
   - The browser must execute JavaScript code to prove it's a real browser.
   - The code computes and submits a challenge solution.
   - The system validates browser characteristics to prevent automated tools from passing.
@@ -156,7 +156,7 @@ The goal of a Layer 7 (L7) DDoS attack is to crash and slow down software at the
 
 Vercel Firewall leverages [JA3](#ja3) and [JA4](#ja4) TLS fingerprints to identify and restrict malicious traffic. TLS fingerprints allow the unique identification of user sessions inspecting details in the Transport Layer Security (TLS) protocol initiation process.
 
-> **🔒 Permissions Required**: TLS Fingerprints
+> **Availability**: TLS Fingerprints are available on all plans
 
 ### TLS fingerprinting
 

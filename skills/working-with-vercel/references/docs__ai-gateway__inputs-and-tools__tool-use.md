@@ -17,8 +17,8 @@ related:
 summary: Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b9113b2783bc606f0bfe39f91919ac6136fdce17f82b156813ab8e226520587b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "75b91a1c2fac9e35411179c9d315a037a63c7ed568cd5f9dceb9ad0a766d6ec6"
 ---
 
 # AI Gateway Tool Use and Function Calling
@@ -31,12 +31,13 @@ Connect a model to functions in your application, such as a weather lookup or a 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related)
-- [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related)
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn about tools with the AI SDK.
+- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
+- [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn how to build your first agent with the AI SDK and Node.js.
+- [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn how to call tools using the AI SDK and Node
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [AI SDK](https://vercel.com/docs/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
-- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/tool-use.graph.md](/docs/ai-gateway/inputs-and-tools/tool-use.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

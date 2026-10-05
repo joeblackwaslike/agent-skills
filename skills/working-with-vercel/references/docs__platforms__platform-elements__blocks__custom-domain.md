@@ -15,8 +15,8 @@ related:
 summary: A complete domain management interface with DNS verification and real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d921785a50210b203c1819f0220828e35e11955f316ec9c7bee8187ab261deb9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1c00decf08e4b14cdc7ef321153f4bdd01a511ea06bf2912a6f734ab3f5183c3"
 ---
 
 # Custom Domain
@@ -32,10 +32,12 @@ The Custom Domain block provides a comprehensive solution for platforms that nee
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related)
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Domains Overview](https://vercel.com/docs/domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/custom-domain.graph.md](/docs/platforms/platform-elements/blocks/custom-domain.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fcustom-domain&source_site=vercel-docs&relationship=graph)

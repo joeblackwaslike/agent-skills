@@ -12,8 +12,8 @@ related:
 summary: Learn how to view contract commitment information for your Vercel account using the vercel contract CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/contract.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "51fa380a97a82896a72ac4745d8683d6fd139fdc4de67b0f7dec188e005b78f7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3b78945fd7368d123b892a3c5d293e6583e2b107334d0d219e4011dacd94d3f0"
 ---
 
 # vercel contract
@@ -29,8 +29,8 @@ The `vercel contract` command displays contract commitment information for your 
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [list_contract_commitments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_contract_commitments?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Use list_contract_commitments with Vercel MCP.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/contract.graph.md](/docs/cli/contract.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcontract&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

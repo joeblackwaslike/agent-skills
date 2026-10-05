@@ -14,8 +14,8 @@ related:
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a3f78ff4237beab14af3e89489a6fc362060a1ae7f1c20d3ecd205691c49910d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d20b3981b7c5e7f5abf1668b758d1457c87cb268a4034d810002a2df9f279d36"
 ---
 
 # AI Gateway Motion Control Video Generation
@@ -30,13 +30,12 @@ Transfer motion from a reference video to a character in an image. The model ana
 
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Learn how to use the Kling AI provider for the AI SDK.
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related)
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fmotion-control&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,9 +55,9 @@ KlingAI's motion control models transfer motion from a reference video to a char
 | `prompt.image`                                 | `string \| Buffer`     | Yes      | Character image (buffer, URL, or base64). See [image requirements](#klingai-image-requirements).    |
 | `prompt.text`                                  | `string`               | No       | Text prompt for scene elements or camera movement. Max 2500 characters.                             |
 | `providerOptions.klingai.videoUrl`             | `string`               | Yes      | URL to reference motion video. See [video requirements](#klingai-video-requirements).               |
-| `providerOptions.klingai.characterOrientation` | `'image'` | `'video'` | Yes      | `'image'` matches image orientation (max 10s video). `'video'` matches video orientation (max 30s). |
-| `providerOptions.klingai.mode`                 | `'std'` | `'pro'`     | Yes      | `'std'` for standard quality. `'pro'` for professional quality.                                     |
-| `providerOptions.klingai.keepOriginalSound`    | `'yes'` | `'no'`      | No       | Keep audio from reference video. Defaults to `'yes'`.                                               |
+| `providerOptions.klingai.characterOrientation` | `'image'` \| `'video'` | Yes      | `'image'` matches image orientation (max 10s video). `'video'` matches video orientation (max 30s). |
+| `providerOptions.klingai.mode`                 | `'std'` \| `'pro'`     | Yes      | `'std'` for standard quality. `'pro'` for professional quality.                                     |
+| `providerOptions.klingai.keepOriginalSound`    | `'yes'` \| `'no'`      | No       | Keep audio from reference video. Defaults to `'yes'`.                                               |
 | `providerOptions.klingai.watermarkInfo`        | `object`               | No       | Set `{ enabled: true }` to generate watermarked result.                                             |
 | `providerOptions.klingai.pollIntervalMs`       | `number`               | No       | How often to check task status. Defaults to `5000`.                                                 |
 | `providerOptions.klingai.pollTimeoutMs`        | `number`               | No       | Maximum wait time. Defaults to `600000` (10 minutes).                                               |

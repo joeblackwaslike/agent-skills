@@ -17,8 +17,8 @@ related:
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "4f7cbbc9f81da418ab2ad44f186d29a381e2c672b675eef70a1aad46b33d55fd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "09a4631a5acdafdc9c7096e175913f12dd47dce37032b90b4e331b4c910b682d"
 ---
 
 # Deploy a Flask app on Vercel
@@ -35,12 +35,11 @@ your repository.
 
 - [Zero-configuration Flask backends](https://vercel.com/changelog/zero-configuration-flask-backends?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related)
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How can I use Python and JavaScript in the same application?](https://vercel.com/kb/guide/how-to-use-python-and-javascript-in-the-same-application?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Unlock the power of Python and JavaScript in your apps. Learn to integrate Flask and Next.js for dynamic frontends with
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fflask&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 

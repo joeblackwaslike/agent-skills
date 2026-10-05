@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "c8d6367403a9af8e52edc048912f5cb25cffe9327a18df623da743865796da5d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0abfc9eb34a0539be9fd385f7b2b8013503a8e3ffd9dcb669d070c0a527d7539"
 ---
 
 # Privacy and Compliance
@@ -32,10 +32,10 @@ Vercel takes a privacy-focused approach to our products and strives to enable ou
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
 - [Vercel acquires Splitbee to expand first-party analytics](https://vercel.com/blog/vercel-acquires-splitbee?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
 - [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/privacy-policy.graph.md](/docs/analytics/privacy-policy.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

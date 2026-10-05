@@ -16,8 +16,8 @@ related:
 summary: Evaluate shared state against typed questions and get back structured choices, scores, and boolean probabilities through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/evaluation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8b56aa2d0de371980e481120623e8c37565db041d5bf1bdc9e1bf08904d84baf"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "89e5ea067a5276dfd6f18b9d050778887d2fc856ab17d163486864c5c752d92e"
 ---
 
 # Evaluation
@@ -30,14 +30,15 @@ Evaluate a piece of shared state against typed questions and get structured answ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
+- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Evaluate Choice, Score, and Boolean questions against shared state.
 - [AI Gateway now supports TypeSafe clients and an HTTP API for Jev](https://vercel.com/changelog/ai-gateway-now-supports-typesafe-clients-and-http-api-for-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
+- [Laya decision model now available on AI Gateway, free through October 31](https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
 - [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
 - [An Introduction to Evals](https://vercel.com/kb/guide/an-introduction-to-evals?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Evaluations test model and agent outputs to ensure they meet the standards and requirements you specify.
-- [Judge](https://eve.dev/docs/evals/judge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Grade evals with evaluation models using criteria, typed questions, or batches, and set thresholds on each assertion.
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Eval-driven development: Build better AI faster](https://vercel.com/blog/eval-driven-development-build-better-ai-faster?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related)
+- [Judge](https://eve.dev/docs/evals/judge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Grade evals with evaluation models using criteria, typed questions, or batches, and set thresholds on each assertion.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/evaluation.graph.md](/docs/ai-gateway/modalities/evaluation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fevaluation&source_site=vercel-docs&relationship=graph)

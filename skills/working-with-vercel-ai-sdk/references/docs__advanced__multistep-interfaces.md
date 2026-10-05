@@ -1,10 +1,14 @@
 ---
+title: Multistep Interfaces
+description: Concepts behind building multistep interfaces
+url: "https://ai-sdk.dev/docs/advanced/multistep-interfaces"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/multistep-interfaces.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "52d7e830c6c2a3fa409807957750a215482b39833379c9003aa0224d682a44ed"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a729631f9072872fe47cfa16c51a0e901bec87e805edaaacbe465b85df733245"
 ---
 
-# Multistep Interfaces
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Multistep interfaces refer to user interfaces that require multiple independent steps to be executed in order to complete a specific task.
 
@@ -32,7 +36,7 @@ For example, consider a meal logging application that helps users track their da
 
 When the user logs a meal, the model generates a response confirming the meal has been logged.
 
-```txt highlight="2"
+```txt {2}
 User: Log a chicken shawarma for lunch.
 Tool: log_meal("chicken shawarma", "250g", "12:00 PM")
 Model: Chicken shawarma has been logged for lunch.
@@ -40,7 +44,7 @@ Model: Chicken shawarma has been logged for lunch.
 
 Now when the user decides to delete the meal, the model should be able to reference the previous step to identify the meal to be deleted.
 
-```txt highlight="7"
+```txt {7}
 User: Log a chicken shawarma for lunch.
 Tool: log_meal("chicken shawarma", "250g", "12:00 PM")
 Model: Chicken shawarma has been logged for lunch.
@@ -73,7 +77,7 @@ The `bookFlight` tool is called when the user decides to book a flight. In order
 
 So the conversation between the user and the model could look like this:
 
-```txt highlight="8"
+```txt {8}
 User: I want to book a flight from New York to London.
 Tool: searchFlights("New York", "London")
 Model: Here are the available flights from New York to London.
@@ -85,11 +89,11 @@ Tool: bookFlight("BA123", "12th December", ["John Doe", "Jane Doe"])
 Model: Your flight has been booked!
 ```
 
-In the last tool call, the `bookFlight` tool does not include passenger details as it is not available in the application context. As a result, it requests the user to provide the passenger details before proceeding with the booking.
+Before the last tool call, the passenger details needed by the `bookFlight` tool are not available in the application context. As a result, the model asks the user to provide the passenger details before proceeding with the booking.
 
 Looking up passenger information could've been another tool that the model could've called before calling the `bookFlight` tool assuming that the user is logged into the application. This way, the model does not have to ask the user for the passenger details and can proceed with the booking.
 
-```txt highlight="5,6"
+```txt {5,6}
 User: I want to book a flight from New York to London.
 Tool: searchFlights("New York", "London")
 Model: Here are the available flights from New York to London.
@@ -103,7 +107,7 @@ The `lookupContacts` tool is called before the `bookFlight` tool to ensure that 
 
 Now, let's introduce another tool called `lookupBooking` that can be used to show booking details by taking in the name of the passenger as parameter. This tool can be composed with the existing tools to provide a more complete user experience.
 
-```txt highlight="2-4"
+```txt {2-4}
 User: What's the status of my wife's upcoming flight?
 Tool: lookupContacts() -> ["John Doe", "Jane Doe"]
 Tool: lookupBooking("Jane Doe") -> "BA123 confirmed"
@@ -115,21 +119,10 @@ In this example, the `lookupBooking` tool is used to provide the user with the s
 
 As a result, the more tools you design that can be composed together, the more complex and powerful your application can become.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

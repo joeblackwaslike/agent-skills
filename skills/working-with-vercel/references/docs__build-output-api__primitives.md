@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f0e4f30c416823808db2fc8aaf056ff6e34b94b0b570327094e910a2ce58695d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "46a902f6ab3cadbec7c81e2310e71699e207f3f96ffbdd0bebc410d1a22647e8"
 ---
 
 # Vercel Primitives
@@ -36,9 +36,9 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Edge Runtime](https://vercel.com/docs/functions/runtimes/edge?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn about the Edge runtime, an environment in which Vercel Functions can run.
-- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 
 Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -160,7 +160,7 @@ type ServerlessFunctionConfig = {
   runtime: string;
   memory?: number;
   maxDuration?: number;
-  environment: Record<string, string>[];
+  environment?: Record<string, string>;
   regions?: string[];
   supportsWrapper?: boolean;
   supportsResponseStreaming?: boolean;

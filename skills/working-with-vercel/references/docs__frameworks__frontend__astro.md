@@ -17,8 +17,8 @@ related:
 summary: Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b5ce30c5d198d10def63021103ca96a5e1f9873b34dc4acdc1b2901ad10061bb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8ea00a001d17a8bf51997c0b4569cc34489d09439a40d336a2ac95f411c35f91"
 ---
 
 # Astro on Vercel
@@ -33,15 +33,14 @@ Astro is an all-in-one web framework that enables you to build performant static
 
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related)
 - [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
-- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/astro.graph.md](/docs/frameworks/frontend/astro.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffrontend%2Fastro&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -68,22 +67,22 @@ To deploy a server-rendered Astro app, or a static Astro site with Vercel featur
    <CodeBlock>
      <Code tab="pnpm">
        ```bash
-       pnpm i @astrojs/vercel
+       pnpm astro add vercel
        ```
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i @astrojs/vercel
+       yarn astro add @astrojs/vercel
        ```
      </Code>
      <Code tab="npm">
        ```bash
-       npm i @astrojs/vercel
+       npx astro add @astrojs/vercel
        ```
      </Code>
      <Code tab="bun">
        ```bash
-       bun i @astrojs/vercel
+       bun add @astrojs/vercel
        ```
      </Code>
    </CodeBlock>
@@ -98,7 +97,7 @@ To deploy a server-rendered Astro app, or a static Astro site with Vercel featur
        </Code>
        <Code tab="yarn">
          ```bash
-         yarn i @astrojs/vercel
+         yarn add @astrojs/vercel
          ```
        </Code>
        <Code tab="npm">
@@ -108,7 +107,7 @@ To deploy a server-rendered Astro app, or a static Astro site with Vercel featur
        </Code>
        <Code tab="bun">
          ```bash
-         bun i @astrojs/vercel
+         bun add @astrojs/vercel
          ```
        </Code>
      </CodeBlock>
@@ -540,7 +539,7 @@ The `Astro.locals` object exposes data to your `.astro` components, allowing you
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i @vercel/functions
+       yarn add @vercel/functions
        ```
      </Code>
      <Code tab="npm">
@@ -550,7 +549,7 @@ The `Astro.locals` object exposes data to your `.astro` components, allowing you
      </Code>
      <Code tab="bun">
        ```bash
-       bun i @vercel/functions
+       bun add @vercel/functions
        ```
      </Code>
    </CodeBlock>
@@ -630,14 +629,14 @@ export default defineConfig({
 You can also return a redirect from a Server Endpoint using the [`redirect`](https://docs.astro.build/en/guides/endpoints/#redirects) utility:
 
 ```ts filename="src/pages/links/[id].ts" framework=all
-export async function GET({ params, redirect }): APIRoute {
+import type { APIRoute } from 'astro';
+
+export const GET: APIRoute = async ({ redirect }) => {
   return redirect('/redirect-path', 307);
-}
+};
 ```
 
 ```js filename="src/pages/links/[id].js" framework=all
-import { getLinkUrl } from '../db';
-
 export async function GET({ redirect }) {
   return redirect('/redirect-path', 307);
 }
@@ -680,7 +679,7 @@ The following Astro component will show a new time every 10 seconds. It does so 
 
 ```jsx filename="src/pages/ssr-with-swr-caching.astro"
 ---
-Astro.response.headers.set('Cache-Control', 's-maxage=10, stale-while-revalidate');
+Astro.response.headers.set('Cache-Control', 's-maxage=10, stale-while-revalidate=59');
 const time = new Date().toLocaleTimeString();
 ---
 

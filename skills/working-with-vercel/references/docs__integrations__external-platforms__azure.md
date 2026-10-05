@@ -16,8 +16,8 @@ related:
 summary: Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless authentication through Microsoft...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/azure.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "93f3dacf5bbcd6a2173f6e80c67c56517f031fe1e1d49e5405e013c3f5674aba"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2f59bd157e6bc79b586e5a3c2fe24a7cdf00423691433633c46b69f9ab30df97"
 ---
 
 # Using Vercel with Microsoft Azure
@@ -30,16 +30,15 @@ You can run your frontend on Vercel while your APIs, databases, and internal ser
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related)
-- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related)
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [How to Deploy a Jekyll Site with Vercel](https://vercel.com/kb/guide/deploying-jekyll-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Create a Jekyll website and deploy it live with Vercel.
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Networking](https://vercel.com/docs/networking?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=related) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/azure.graph.md](/docs/integrations/external-platforms/azure.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fazure&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ related:
 summary: Work with custom environments using the --target flag in Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/target.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "605abbc4853c051ef4b47bbbfbd30d985ffc659ca200daa5e53a9532de14170b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "85036fe002b7019404bdc333016767fb5a1437da4a2f6e284c83fa2d7a2ea5fc"
 ---
 
 # vercel target
@@ -32,8 +32,8 @@ The `vercel target` command (alias: `vercel targets`) manages your Vercel projec
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [vercel pull](https://vercel.com/docs/cli/pull?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=related) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel pull](https://vercel.com/docs/cli/pull?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=related) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 
 Full cross-link map for this page: [/docs/cli/target.graph.md](/docs/cli/target.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftarget&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

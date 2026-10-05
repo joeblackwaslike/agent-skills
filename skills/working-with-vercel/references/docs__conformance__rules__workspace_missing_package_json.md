@@ -12,13 +12,13 @@ related:
 summary: All directories that match a workspace glob must include a package.json file.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/workspace_missing_package_json.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "bb11cb2e7e3481fcd6a4ba9ae584e1763bb0079af0f0043d058a1711d921a8f6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "141a9795dbc6429c7f163d70dff04e4fb06e55a1ccf67aa12f3c721e5c17b1bb"
 ---
 
 # WORKSPACE_MISSING_PACKAGE_JSON
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 All directories that match a glob used to configure package manager workspaces
 must be defined as a package and contain a `package.json` file. This check

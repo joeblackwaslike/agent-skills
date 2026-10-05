@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4a44684a3f2e9c7040a0b69d2c2fef79e77fc61d0d74d606f9950792e7c04ad7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "82def21708aa50dea45ec2231a0edab901f0fa5bf5f0ff2991ebd1fafcd4eddd"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -34,9 +34,10 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn about the providers and models available in the AI SDK.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn how to configure and authenticate with AI providers in the AI SDK.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
@@ -537,17 +538,17 @@ Black Forest Labs
 
 bfl.ai
 
-blackbox
-
-Blackbox AI
-
-blackbox.ai
-
 boundless
 
 Boundless
 
 boundless.network
+
+browserbase
+
+Browserbase
+
+browserbase.com
 
 bytedance
 
@@ -668,6 +669,12 @@ klingai
 Kling AI
 
 klingai.com
+
+liquid
+
+Liquid AI
+
+liquid.ai
 
 meituan
 
@@ -812,12 +819,6 @@ sambanova
 SambaNova
 
 sambanova.ai
-
-stealth
-
-Stealth
-
-vercel.com
 
 stepfun
 

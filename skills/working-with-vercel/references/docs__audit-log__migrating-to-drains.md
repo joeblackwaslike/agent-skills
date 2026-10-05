@@ -16,13 +16,13 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b0157a3babb93d9a73477db8a2a099aac6570190b44edcdef646ee4529220bce"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a025c250f3e5c01a43187a9dd173cafa3ca966cb2c9d8dfc963c2f8f61bfbfa9"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
 
-> **🔒 Permissions Required**: Audit Log Drains
+> **Availability**: Audit Log Drains are available on Enterprise plans
 
 Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drains/reference/audit-logs). Audit Log Drains forward the events from your [Activity Log](/docs/activity-log) including audit metadata, which covers more team activity than the legacy integration. If you stream audit logs to a Security Information and Event Management (SIEM) system today, migrate your integration to keep receiving events.
 
@@ -36,10 +36,10 @@ Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drai
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related)
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 - [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
-- [Retrieves a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=related) — GET /v1/log-drains/{id} — Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken \\(int
 
 Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md?from=related&source_path=%2Fdocs%2Faudit-log%2Fmigrating-to-drains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

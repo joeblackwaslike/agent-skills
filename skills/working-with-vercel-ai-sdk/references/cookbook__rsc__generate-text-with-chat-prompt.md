@@ -1,34 +1,33 @@
 ---
+title: Generate Text with Chat Prompt
+description: Learn how to generate text with chat prompt using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/generate-text-with-chat-prompt"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - chat
 source: "https://ai-sdk.dev/cookbook/rsc/generate-text-with-chat-prompt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "0d8a6a7995700ce11fe1d1045241f72806ef756f8551991eaf0f38de10659a25"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "982da8f10371ea747797a01188ab71cca37d99726680f51d4b1b3629a77dbcf1"
 ---
 
-# Generate Text with Chat Prompt
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Previously, we were able to generate text and objects using either a single message prompt, a system prompt, or a combination of both of them. However, there may be times when you want to generate text based on a series of messages.
 
 A chat completion allows you to generate text based on a series of messages. This series of messages can be any series of interactions between any number of systems, but the most popular and relatable use case has been a series of messages that represent a conversation between a user and a model.
 
-<Browser>
-  <ChatGeneration
-    history={[
-      { role: 'User', content: 'How is it going?' },
-      { role: 'Assistant', content: 'All good, how may I help you?' },
-    ]}
-    inputMessage={{ role: 'User', content: 'Why is the sky blue?' }}
-    outputMessage={{
-      role: 'Assistant',
-      content: 'The sky is blue because of rayleigh scattering.',
-    }}
-  />
-</Browser>
+User: How is it going?
+
+Assistant: All good, how may I help you?
+
+Why is the sky blue?
 
 ## Client
 
 Let's create a simple conversation between a user and a model, and place a button that will call `continueConversation`.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -81,7 +80,7 @@ export default function Home() {
 
 Now, let's implement the `continueConversation` function that will insert the user's message into the conversation and generate a response.
 
-```typescript filename='app/actions.ts'
+```typescript title='app/actions.ts'
 'use server';
 
 import { generateText } from 'ai';
@@ -112,22 +111,10 @@ export async function continueConversation(history: Message[]) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

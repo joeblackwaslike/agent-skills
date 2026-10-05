@@ -16,13 +16,13 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "931a8381b368e31dc9e509c4c702f442e5e1dd06dc4ce8eb96f44371c6dc559f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "383838947fa33dbbda6da8ca6aa8ca026e0e35a0eafde1c1280fdca6a1325dfe"
 ---
 
 # Layout Shift Tool
 
-> **🔒 Permissions Required**: Layout Shift Tool
+> **Availability**: Layout Shift Tool is available on all plans
 
 The layout shift tool gives you insight into any elements that may cause layout shifts on the page. The cause for a layout shift could be many things:
 
@@ -36,11 +36,12 @@ The layout shift tool gives you insight into any elements that may cause layout 
 - [Automatically detect and replay layout shifts from the Vercel Toolbar](https://vercel.com/changelog/automatically-detect-and-replay-layout-shifts?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Vercel MCP tools for toolbar.
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
-- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related)
 - [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
-- [Edit Mode](https://vercel.com/docs/edit-mode?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
-- [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
+- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Comments Overview](https://vercel.com/docs/comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
 
 Full cross-link map for this page: [/docs/vercel-toolbar/layout-shift-tool.graph.md](/docs/vercel-toolbar/layout-shift-tool.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Flayout-shift-tool&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

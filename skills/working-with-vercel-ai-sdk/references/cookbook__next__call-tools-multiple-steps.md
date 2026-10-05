@@ -1,10 +1,18 @@
 ---
+title: Call Tools in Multiple Steps
+description: Learn how to call tools in multiple steps using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/call-tools-multiple-steps"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - tool use
 source: "https://ai-sdk.dev/cookbook/next/call-tools-multiple-steps.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "15e936544ab90c9b0e76920b7e92723de2bfcb6c316449775a5541b22061442e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f365e596ba8c5db7df6266f08511c23463693e4c2e915231f400ea2f9b96b313"
 ---
 
-# Call Tools in Multiple Steps
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Some language models are great at calling tools in multiple steps to achieve a more complex task. This is particularly useful when the tools are dependent on each other and need to be executed in sequence during the same generation step.
 
@@ -12,7 +20,7 @@ Some language models are great at calling tools in multiple steps to achieve a m
 
 Let's create a React component that imports the `useChat` hook from the `@ai-sdk/react` module. The `useChat` hook will call the `/api/chat` endpoint when the user sends a message. The endpoint will generate the assistant's response based on the conversation history and stream it to the client. If the assistant responds with a tool call, the hook will automatically display them as well.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -79,7 +87,7 @@ You will add the two functions mentioned earlier and use zod to specify the sche
 
 To call tools in multiple steps, you can use the `stopWhen` option to specify the stopping conditions for when the model generates a tool call. In this example, you will set it to `isStepCount(5)` to allow for multiple consecutive tool calls (steps).
 
-```ts filename='app/api/chat/route.ts'
+```ts title='app/api/chat/route.ts'
 import {
   type InferUITools,
   type ToolSet,
@@ -143,31 +151,10 @@ export async function POST(req: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

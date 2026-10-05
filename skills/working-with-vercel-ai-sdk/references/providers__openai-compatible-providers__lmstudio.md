@@ -1,10 +1,14 @@
 ---
+title: LM Studio
+description: Use the LM Studio OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3f15bcaa6725c835f33193160a4099471372feec7a4e14ae3c0ee1db1ec8a3cd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7c60851f03d443c7d646bd4b9a0a931d46d2553d7466c914214cfeaa2879eb4f"
 ---
 
-# LM Studio Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [LM Studio](https://lmstudio.ai/) is a user interface for running local models.
 
@@ -16,7 +20,7 @@ You can start the local server under the [Local Server tab](https://lmstudio.ai/
 The LM Studio provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 ## Provider Instance
 
@@ -31,10 +35,8 @@ const lmstudio = createOpenAICompatible({
 });
 ```
 
-<Note>
-  LM Studio uses port `1234` by default, but you can change in the [app's Local
-  Server tab](https://lmstudio.ai/docs/basics/server).
-</Note>
+LM Studio uses port `1234` by default, but you can change in the [app's Local
+Server tab](https://lmstudio.ai/docs/basics/server).
 
 ## Language Models
 
@@ -63,7 +65,7 @@ const lmstudio = createOpenAICompatible({
 const { text } = await generateText({
   model: lmstudio('llama-3.2-1b'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
-  maxRetries: 1, // immediately error if the server is not running
+  maxRetries: 0, // immediately error if the server is not running
 });
 ```
 
@@ -126,17 +128,10 @@ const { embeddings } = await embedMany({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

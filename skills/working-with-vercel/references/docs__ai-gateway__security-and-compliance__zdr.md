@@ -16,8 +16,8 @@ related:
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "067c64871f0d92e37c8eb136fc75441e30988be2e6beac4a2308a0f564e30d47"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ec92083f3a52dc3340155eab4d0279cb174bdc6483d97844bb3d91b57ebffa4b"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -32,12 +32,12 @@ Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gatewa
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
+- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
-- [Grok 4.7 now available and 40% off on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [Inkling Small from Thinking Machines is now available on AI Gateway](https://vercel.com/changelog/inkling-small-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fzdr&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,

@@ -16,8 +16,8 @@ related:
 summary: Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f7f7e477486ecb3cae819ed5c1cecf2f81faef58e5905517eaed5b8f642dae1e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "343bfe7b43fdf5126b2842a543e9abcb5bc5b39ae2d18479dcd1a40012619e01"
 ---
 
 # OpenAI Codex with AI Gateway
@@ -31,11 +31,13 @@ sha256: "f7f7e477486ecb3cae819ed5c1cecf2f81faef58e5905517eaed5b8f642dae1e"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Learn how to use the Codex CLI provider to access OpenAI GPT-5 models through the Codex CLI.
 - [GPT 5.2 Codex now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-2-codex-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Learn how to use the Codex harness adapter.
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
 - [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
-- [GPT 5.1 Codex models now available in Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-models-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related)
+- [Codex CLI (App Server)](https://ai-sdk.dev/providers/community-providers/codex-app-server?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Learn how to use the Codex CLI App Server provider for mid-execution message injection and persistent threads.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopenai-codex&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 

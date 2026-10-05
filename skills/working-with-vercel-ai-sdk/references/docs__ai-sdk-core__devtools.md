@@ -1,15 +1,17 @@
 ---
+title: DevTools
+description: Debug and inspect AI SDK applications with DevTools
+url: "https://ai-sdk.dev/docs/ai-sdk-core/devtools"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/devtools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "2d1cbb2e6db2968f7ec3f468f83f4306cb81de6ed825579b443554d522cfd8c9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f7f0fa4ab3761b018254558b111fa77eaab6ab5e4ec8cc5fa30f2023f0ac1674"
 ---
 
-# DevTools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK DevTools is intended for local development only. Do not use in
-  production environments.
-</Note>
+AI SDK DevTools is intended for local development only. Do not use in
+production environments.
 
 AI SDK DevTools gives you full visibility over your AI SDK calls with [`generateText`](/docs/reference/ai-sdk-core/generate-text), [`streamText`](/docs/reference/ai-sdk-core/stream-text), and [`ToolLoopAgent`](/docs/reference/ai-sdk-core/tool-loop-agent). It helps you debug and inspect LLM requests, responses, tool calls, and multi-step interactions through a web-based UI.
 
@@ -57,7 +59,7 @@ const result = await generateText({
 
 You can also pass the integration to individual calls instead of registering it globally:
 
-```ts highlight="7-9"
+```ts {7-9}
 import { streamText } from 'ai';
 import { DevToolsTelemetry } from '@ai-sdk/devtools';
 
@@ -158,7 +160,7 @@ retain their JSON and metadata fallback without an embedded preview.
 
 Telemetry is enabled automatically, but AI SDK 7 excludes raw request and response bodies from step results by default. To make them available to DevTools for `generateText`, enable body retention on the call:
 
-```ts highlight="4-7"
+```ts {4-7}
 const result = await generateText({
   model: openai('gpt-6-astra'),
   prompt: 'Hello!',
@@ -184,11 +186,9 @@ Multi-step interactions, such as those created by tool calling or agent loops, a
 
 The `DevToolsTelemetry` integration hooks into the AI SDK [telemetry](/docs/ai-sdk-core/telemetry) lifecycle to capture all `generateText`, `streamText`, `generateObject`, and `streamObject` calls. Captured data is stored locally in a JSON file (`.devtools/generations.json`) and served through a web UI built with Hono and React.
 
-<Note type="warning">
-  The integration automatically adds `.devtools` to your `.gitignore` file.
-  Verify that `.devtools` is in your `.gitignore` to ensure you don't commit
-  sensitive AI interaction data to your repository.
-</Note>
+The integration automatically adds `.devtools` to your `.gitignore` file.
+Verify that `.devtools` is in your `.gitignore` to ensure you don't commit
+sensitive AI interaction data to your repository.
 
 ## Security considerations
 
@@ -201,40 +201,10 @@ DevTools stores all AI interactions locally in plain text files, including:
 
 **Only use DevTools in local development environments.** Do not enable DevTools in production or when handling sensitive data.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,19 +1,28 @@
 ---
+title: Multi-Modal Agent
+description: Learn how to build a multi-modal agent that can process images and PDFs with the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot"
+docs_index: /llms.txt
+tags:
+  - multi-modal
+  - agent
+  - images
+  - pdf
+  - vision
+  - next
 source: "https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "7bc88544e2e3d4d58a7d14e24c774760a6fd0fabe9437b84a307f9f458ccd784"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "69ca408ea03bd151fec306eb0b5d43890aa3dcc452ebf13de6e9b052cb713f12"
 ---
 
-# Multi-Modal Agent
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will build a multi-modal agent capable of understanding both images and PDFs.
 
 Multi-modal refers to the ability of the agent to understand and generate responses in multiple formats. In this guide, we'll focus on images and PDFs - two common document types that modern language models can process natively.
 
-<Note>
-  For a complete list of providers and their multi-modal capabilities, visit the
-  [providers documentation](/providers/ai-sdk-providers).
-</Note>
+For a complete list of providers and their multi-modal capabilities, visit the
+[providers documentation](/providers/ai-sdk-providers).
 
 We'll build this agent using OpenAI's GPT-6 Astra, but the same code works seamlessly with other providers - you can switch between them by changing just one line of code.
 
@@ -24,59 +33,60 @@ To follow this quickstart, you'll need:
 - Node.js 22+ and pnpm installed on your local development machine.
 - A Vercel AI Gateway API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Create Your Application
 
 Start by creating a new Next.js application. This command will create a new directory named `multi-modal-agent` and set up a basic Next.js application inside it.
 
 <div className="mb-4">
-  <Note>
-    Be sure to select yes when prompted to use the App Router. If you are
-    looking for the Next.js Pages Router quickstart guide, you can find it
-    [here](/docs/getting-started/nextjs-pages-router).
-  </Note>
+  Be sure to select yes when prompted to use the App Router. If you are
+  looking for the Next.js Pages Router quickstart guide, you can find it
+  [here](/docs/getting-started/nextjs-pages-router).
 </div>
 
-<Snippet text="pnpm create next-app@latest multi-modal-agent" />
+```
+pnpm create next-app@latest multi-modal-agent
+```
 
 Navigate to the newly created directory:
 
-<Snippet text="cd multi-modal-agent" />
+```
+cd multi-modal-agent
+```
 
 ### Install dependencies
 
 Install `ai` and `@ai-sdk/react`, the AI SDK package and the AI SDK's React package respectively.
 
-<Note>
-  The AI SDK is designed to be a unified interface to interact with any large
-  language model. This means that you can change model and providers with just
-  one line of code! Learn more about [available providers](/providers) and
-  [building custom providers](/providers/community-providers/custom-providers)
-  in the [providers](/providers) section.
-</Note>
-<InstallPackages packages="ai @ai-sdk/react" />
+The AI SDK is designed to be a unified interface to interact with any large
+language model. This means that you can change model and providers with just
+one line of code! Learn more about [available providers](/providers) and
+[building custom providers](/providers/community-providers/custom-providers)
+in the [providers](/providers) section.
+
+**Packages:** `ai`, `@ai-sdk/react`
 
 ### Configure your Vercel AI Gateway API key
 
 Create a `.env.local` file in your project root and add your Vercel AI Gateway API key. This key authenticates your application with Vercel AI Gateway.
 
-<Snippet text="touch .env.local" />
+```
+touch .env.local
+```
 
 Edit the `.env.local` file:
 
-```env filename=".env.local"
+```dotenv title=".env.local"
 AI_GATEWAY_API_KEY=your_api_key_here
 ```
 
 Replace `your_api_key_here` with your actual Vercel AI Gateway API key.
 
-<Note className="mb-4">
-  The AI SDK's Vercel AI Gateway Provider is the default global provider, so you
-  can access models using a simple string in the model configuration. If you
-  prefer to use a specific provider like OpenAI directly, see the [provider
-  management](/docs/ai-sdk-core/provider-management) documentation.
-</Note>
+The AI SDK's Vercel AI Gateway Provider is the default global provider, so you
+can access models using a simple string in the model configuration. If you
+prefer to use a specific provider like OpenAI directly, see the [provider
+management](/docs/ai-sdk-core/provider-management) documentation.
 
 ## Implementation Plan
 
@@ -90,7 +100,7 @@ To build a multi-modal agent, you will need to:
 
 Create a route handler, `app/api/chat/route.ts` and add the following code:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import {
   streamText,
   convertToModelMessages,
@@ -132,7 +142,7 @@ Now that you have a Route Handler that can query a large language model (LLM), i
 
 Update your root page (`app/page.tsx`) with the following code to show a list of chat messages and provide a user message input:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -185,10 +195,8 @@ export default function Chat() {
 }
 ```
 
-<Note>
-  Make sure you add the `"use client"` directive to the top of your file. This
-  allows you to add interactivity with JavaScript.
-</Note>
+Make sure you add the `"use client"` directive to the top of your file. This
+allows you to add interactivity with JavaScript.
 
 This page utilizes the `useChat` hook, configured with `DefaultChatTransport` to specify the API endpoint. The `useChat` hook provides multiple utility functions and state variables:
 
@@ -203,7 +211,7 @@ To make your agent multi-modal, let's add the ability to upload and send both im
 
 Update your root page (`app/page.tsx`) with the following code:
 
-```tsx filename="app/page.tsx" highlight="4-5,10-12,15-39,46-81,87-97"
+```tsx title="app/page.tsx" {4-5,10-12,15-39,46-81,87-97}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -332,19 +340,21 @@ export default function Chat() {
 In this code, you:
 
 1. Add a helper function `convertFilesToDataURLs` to convert file uploads to data URLs.
-1. Create state to hold the input text, files, and a ref to the file input field.
-1. Configure `useChat` with `DefaultChatTransport` to specify the API endpoint.
-1. Display messages using the `parts` array structure, rendering text, images, and PDFs appropriately.
-1. Update the `onSubmit` function to send messages with the `sendMessage` function, including both text and file parts.
-1. Add a file input field to the form, including an `onChange` handler to handle updating the files state.
+2. Create state to hold the input text, files, and a ref to the file input field.
+3. Configure `useChat` with `DefaultChatTransport` to specify the API endpoint.
+4. Display messages using the `parts` array structure, rendering text, images, and PDFs appropriately.
+5. Update the `onSubmit` function to send messages with the `sendMessage` function, including both text and file parts.
+6. Add a file input field to the form, including an `onChange` handler to handle updating the files state.
 
 ## Running Your Application
 
 With that, you have built everything you need for your multi-modal agent! To start your application, use the command:
 
-<Snippet text="pnpm run dev" />
+```
+pnpm run dev
+```
 
-Head to your browser and open http://localhost:3000. You should see an input field and a button to upload files.
+Head to your browser and open [http://localhost:3000](http://localhost:3000). You should see an input field and a button to upload files.
 
 Try uploading an image or PDF and asking the model questions about it. Watch as the model's response is streamed back to you!
 
@@ -352,10 +362,10 @@ Try uploading an image or PDF and asking the model questions about it. Watch as 
 
 With the AI SDK's unified provider interface you can easily switch to other providers that support multi-modal capabilities:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 // Using Anthropic
 const result = streamText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   messages: await convertToModelMessages(messages),
 });
 
@@ -368,38 +378,18 @@ const result = streamText({
 
 Install the provider package (`@ai-sdk/anthropic` or `@ai-sdk/google`) and update your API keys in `.env.local`. The rest of your code remains the same.
 
-<Note>
-  Different providers may have varying file size limits and performance
-  characteristics. Check the [provider
-  documentation](/providers/ai-sdk-providers) for specific details.
-</Note>
+Different providers may have varying file size limits and performance
+characteristics. Check the [provider
+documentation](/providers/ai-sdk-providers) for specific details.
 
 ## Where to Next?
 
 You've built a multi-modal AI agent using the AI SDK! Experiment and extend the functionality of this application further by exploring [tool calling](/docs/ai-sdk-core/tools-and-tool-calling).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

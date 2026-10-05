@@ -12,8 +12,8 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "26a7d3d954d9bfe1ff729478b2cd1ab1217699828601bd35189aaacaa3287c16"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "21b3628da24cdcabe13d3b8ff0c70f2f9c8a943328960645e8fce5458ed4833e"
 ---
 
 # vercel tokens
@@ -26,10 +26,11 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=graph)

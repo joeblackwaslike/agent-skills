@@ -1,10 +1,18 @@
 ---
+title: Local Caching Middleware
+description: Learn how to create a caching middleware for local development.
+url: "https://ai-sdk.dev/cookbook/node/local-caching-middleware"
+docs_index: /llms.txt
+tags:
+  - streaming
+  - caching
+  - middleware
 source: "https://ai-sdk.dev/cookbook/node/local-caching-middleware.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "c5535be117a688f9c97ba9d1a0c4ceb4c0ae1cbd685abb6de9acf4531e09e38c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "41fb1532169bb0e3f43c5dda42452f00f6d0e3dc73d8e83079d287393d81ebab"
 ---
 
-# Local Caching Middleware
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When developing AI applications, you'll often find yourself repeatedly making the same API calls during development. This can lead to increased costs and slower development cycles. A caching middleware allows you to store responses locally and reuse them when the same inputs are provided.
 
@@ -17,10 +25,8 @@ This approach is particularly useful in two scenarios:
 
 In this implementation, you create a JSON file to store responses. When a request is made, you first check if you have already seen this exact request. If you have, you return the cached response immediately (as a one-off generation or chunks of tokens). If not, you trigger the generation, save the response, and return it.
 
-<Note>
-  Make sure to add the path of your local cache to your `.gitignore` so you do
-  not commit it.
-</Note>
+Make sure to add the path of your local cache to your `.gitignore` so you do
+not commit it.
 
 ### How it works
 
@@ -77,7 +83,7 @@ const getCachedResult = (key: string | object) => {
       console.error('Failed to parse cache:', parseResult.error);
       return null;
     }
-    const cache = parseResult.value as Record<string, unknown>;
+    const cache = parseResult.value as Record<string, any>;
 
     const result = cache[cacheKey];
 
@@ -133,6 +139,7 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
   specificationVersion: 'v4',
   wrapGenerate: async ({ doGenerate, params, model }) => {
     const cacheKey = JSON.stringify({
+      ...params,
       prompt: cleanPrompt(params.prompt),
       _function: 'generate',
       model: model.modelId,
@@ -161,6 +168,7 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
 
   wrapStream: async ({ doStream, params, model }) => {
     const cacheKey = JSON.stringify({
+      ...params,
       prompt: cleanPrompt(params.prompt),
       _function: 'stream',
       model: model.modelId,
@@ -217,7 +225,7 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
 
 The middleware can be easily integrated into your existing AI SDK setup:
 
-```ts highlight="4,8"
+```ts {4,8}
 import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 import 'dotenv/config';
@@ -252,38 +260,10 @@ When using this caching middleware, keep these points in mind:
 2. **Cache Invalidation** - You'll need to clear the cache (delete the cache file) when you want fresh responses
 3. **Multi-Step Flows** - When using `stopWhen`, be aware that caching occurs at the individual language model response level, not across the entire execution flow. This means that while the model's generation is cached, the tool call is not and will run on each generation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,21 +1,18 @@
 ---
+title: Streaming React Components
+description: Overview of streaming RSCs
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/streaming-react-components"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/streaming-react-components.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "004dc95cdfddc0e19c94ebe21e5b9e9df31e9998d078612951cff1562d78518f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "d9a63e7107e2bfc1ab198180bdaa40aec2a2835a081137e25ce159d6acfa429b"
 ---
 
-import { UIPreviewCard, Card } from '@/components/home/card';
-import { EventPlanning } from '@/components/home/event-planning';
-import { Searching } from '@/components/home/searching';
-import { Weather } from '@/components/home/weather';
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-# Streaming React Components
-
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 The RSC API allows you to stream React components from the server to the client with the [`streamUI`](/docs/reference/ai-sdk-rsc/stream-ui) function. This is useful when you want to go beyond raw text and stream components to the client in real-time.
 
@@ -26,16 +23,18 @@ It supports the same model interfaces as AI SDK Core APIs.
 
 To give the model the ability to respond to a user's prompt with a React component, you can leverage [tools](/docs/ai-sdk-core/tools-and-tool-calling).
 
-<Note>
-  Remember, tools are like programs you can give to the model, and the model can
-  decide as and when to use based on the context of the conversation.
-</Note>
+Remember, tools are like programs you can give to the model, and the model can
+decide as and when to use based on the context of the conversation.
 
 With the `streamUI` function, **you provide tools that return React components**. With the ability to stream components, the model is akin to a dynamic router that is able to understand the user's intention and display relevant UI.
 
 At a high level, the `streamUI` works like other AI SDK Core functions: you can provide the model with a prompt or some conversation history and, optionally, some tools. If the model decides, based on the context of the conversation, to call a tool, it will generate a tool call. The `streamUI` function will then run the respective tool, returning a React component. If the model doesn't have a relevant tool to use, it will return a text generation, which will be passed to the `text` function, for you to handle (render and return as a React component).
 
-<Note>Remember, the `streamUI` function must return a React component. </Note>
+Remember, the
+
+`streamUI`
+
+function must return a React component.
 
 ```tsx
 const result = await streamUI({
@@ -59,7 +58,7 @@ A tool is an object that has:
 
 Let's expand the previous example to add a tool.
 
-```tsx highlight="6-14"
+```tsx {6-14}
 const result = await streamUI({
   model: openai('gpt-6-astra'),
   prompt: 'Get the weather for San Francisco',
@@ -80,16 +79,14 @@ const result = await streamUI({
 
 This tool would be run if the user asks for the weather for their location. If the user hasn't specified a location, the model will ask for it before calling the tool. When the model calls the tool, the generate function will initially return a loading component. This component will show until the awaited call to `getWeather` is resolved, at which point, the model will stream the `<WeatherComponent />` to the user.
 
-<Note>
-  Note: This example uses a [ generator function
-  ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
-  (`function*`), which allows you to pause its execution and return a value,
-  then resume from where it left off on the next call. This is useful for
-  handling data streams, as you can fetch and return data from an asynchronous
-  source like an API, then resume the function to fetch the next chunk when
-  needed. By yielding values one at a time, generator functions enable efficient
-  processing of streaming data without blocking the main thread.
-</Note>
+Note: This example uses a [ generator function
+](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
+(`function*`), which allows you to pause its execution and return a value,
+then resume from where it left off on the next call. This is useful for
+handling data streams, as you can fetch and return data from an asynchronous
+source like an API, then resume the function to fetch the next chunk when
+needed. By yielding values one at a time, generator functions enable efficient
+processing of streaming data without blocking the main thread.
 
 ## Using `streamUI` with Next.js
 
@@ -102,15 +99,13 @@ To use `streamUI` in a Next.js application, you will need two things:
 
 ### Step 1: Create a Server Action
 
-<Note>
-  Server Actions are server-side functions that you can call directly from the
-  frontend. For more info, see [the
-  documentation](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#with-client-components).
-</Note>
+Server Actions are server-side functions that you can call directly from the
+frontend. For more info, see [the
+documentation](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#with-client-components).
 
 Create a Server Action at `app/actions.tsx` and add the following code:
 
-```tsx filename="app/actions.tsx"
+```tsx title="app/actions.tsx"
 'use server';
 
 import { streamUI } from '@ai-sdk/rsc';
@@ -175,7 +170,7 @@ To call this Server Action and display the resulting React Component, you will n
 
 Create or update your root page (`app/page.tsx`) with the following code:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -209,19 +204,10 @@ You can now allow the model to respond to your prompt with a React component. Ho
 
 Learn how to stream React components with the Next.js App Router using `streamUI` with this [example](/examples/next-app/interface/route-components).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

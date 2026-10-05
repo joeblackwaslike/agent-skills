@@ -16,8 +16,8 @@ related:
 summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS content on your site before publishing it."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "39ca80277dfd7d01c37cb5f4d3789ca4b77e25f51d4bfde6e768fc2ab5e4c3f6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "499d01815b848f6311f6ad229bae741a1dae9f5538eb518df45c8f0ced31a8fc"
 ---
 
 # Draft Mode
@@ -31,7 +31,7 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images via Dockerfile.vercel, frame
@@ -40,8 +40,8 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
 - [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related)
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/draft-mode.graph.md](/docs/draft-mode.graph.md?from=related&source_path=%2Fdocs%2Fdraft-mode&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

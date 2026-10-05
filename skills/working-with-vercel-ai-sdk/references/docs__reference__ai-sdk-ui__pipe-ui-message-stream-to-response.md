@@ -1,19 +1,22 @@
 ---
+title: pipeUIMessageStreamToResponse
+description: Learn to use pipeUIMessageStreamToResponse helper function to pipe streaming data to a ServerResponse object.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "040ef22344decd28006af49815d20494c5a0d5dccf84b652a844087d5890d131"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "568238ee5d135711d0ac2169e9297f2805eb68c649ff56a237619a654858bc9f"
 ---
 
-# `pipeUIMessageStreamToResponse`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `pipeUIMessageStreamToResponse` function pipes streaming data to a Node.js ServerResponse object (see [Streaming Data](/docs/ai-sdk-ui/streaming-data)).
 
 ## Import
 
-<Snippet
-  text={`import { pipeUIMessageStreamToResponse } from "ai"`}
-  prompt={false}
-/>
+```
+import { pipeUIMessageStreamToResponse } from "ai"
+```
 
 ## Example
 
@@ -37,68 +40,23 @@ await pipeUIMessageStreamToResponse({
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'response',
-      type: 'ServerResponse',
-      description: 'The Node.js ServerResponse object to pipe the data to.',
-    },
-    {
-      name: 'stream',
-      type: 'ReadableStream<UIMessageChunk>',
-      description: 'The UI message stream to pipe to the response.',
-    },
-    {
-      name: 'status',
-      type: 'number',
-      isOptional: true,
-      description: 'The status code for the response.',
-    },
-    {
-      name: 'statusText',
-      type: 'string',
-      isOptional: true,
-      description: 'The status text for the response.',
-    },
-    {
-      name: 'headers',
-      type: 'Headers | Record<string, string>',
-      isOptional: true,
-      description: 'Additional headers for the response.',
-    },
-    {
-      name: 'consumeSseStream',
-      type: '({ stream }: { stream: ReadableStream<string> }) => PromiseLike<void> | void',
-      isOptional: true,
-      description:
-        'Optional function to consume the SSE stream independently. The stream is teed and this function receives a copy.',
-    },
-  ]}
-/>
+- `response` (`ServerResponse`): The Node.js ServerResponse object to pipe the data to.
+- `stream` (`ReadableStream<UIMessageChunk>`): The UI message stream to pipe to the response.
+- `status?` (`number`): The status code for the response.
+- `statusText?` (`string`): The status text for the response.
+- `headers?` (`Headers | Record<string, string>`): Additional headers for the response.
+- `keepAliveMs?` (`number`): Interval in milliseconds for sending SSE keep-alive comments. When set, an opening comment is sent immediately and additional comments are sent after the stream has been idle for the configured interval.
+- `consumeSseStream?` (`({ stream }: { stream: ReadableStream<string> }) => PromiseLike<void> | void`): Optional function to consume the SSE stream independently. The stream is teed and this function receives a copy.
 
 ### Returns
 
 A `Promise<void>` that resolves when the stream has been written to the response
 and rejects when reading or writing the stream fails.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

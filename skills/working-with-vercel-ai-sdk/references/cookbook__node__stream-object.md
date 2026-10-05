@@ -1,10 +1,18 @@
 ---
+title: Stream Object
+description: Learn how to stream structured data using the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/stream-object"
+docs_index: /llms.txt
+tags:
+  - node
+  - streaming
+  - structured data
 source: "https://ai-sdk.dev/cookbook/node/stream-object.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "2e533e79f35ae335985d317d219fa8ecba114080886fe09cdbb1589ac0445d89"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ed3b57b1bde22bb90a33e3b6adcc2183c048f75285aebec1d2ed0316a895ec1d"
 ---
 
-# Stream Object
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Object generation can sometimes take a long time to complete,
 especially when you're generating a large schema.
@@ -13,7 +21,7 @@ In Generative UI use cases, it is useful to stream the object to the client in r
 to render UIs as the object is being generated.
 You can use `streamText` with `Output.object` to generate partial object streams.
 
-```ts file='index.ts'
+```ts title='index.ts'
 import { streamText, Output } from 'ai';
 import { z } from 'zod';
 
@@ -37,38 +45,10 @@ for await (const partialObject of partialOutputStream) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

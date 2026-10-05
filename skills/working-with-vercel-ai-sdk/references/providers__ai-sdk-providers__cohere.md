@@ -1,10 +1,14 @@
 ---
+title: Cohere
+description: Learn how to use the Cohere provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d0f63a9088b7f8dc0ccd2b7bfe017ad934015589bb92c6a52d7979bc431f6de9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "1f5d7f9e1aeed5566380b6cf12e36f638fecb63097e78c5fabf57e9b23aeae99"
 ---
 
-# Cohere Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Cohere](https://cohere.com/) provider contains language and embedding model support for the Cohere chat API.
 
@@ -12,7 +16,7 @@ The [Cohere](https://cohere.com/) provider contains language and embedding model
 
 The Cohere provider is available in the `@ai-sdk/cohere` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/cohere" />
+**Packages:** `@ai-sdk/cohere`
 
 ## Provider Instance
 
@@ -35,28 +39,28 @@ const cohere = createCohere({
 
 You can use the following optional settings to customize the Cohere provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.cohere.com/v2`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `COHERE_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **generateId** _() => string_
+- **generateId** *() => string*
 
   Optional function to generate unique IDs for each request.
   Defaults to the SDK's built-in ID generator.
@@ -93,26 +97,24 @@ and support structured data generation with [`Output`](/docs/reference/ai-sdk-co
 
 | Model                         | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `command-a-03-2025`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-a-reasoning-08-2025` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-a-vision-07-2025`    | <Check />   | <Check />         | <Check />  | <Check />      |
-| `command-r7b-12-2024`         | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-r-plus-04-2024`      | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-r-plus`              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-r-08-2024`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-r-03-2024`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command-r`                   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `command`                     | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `command-nightly`             | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `command-light`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `command-light-nightly`       | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `command-a-03-2025`           | ✗           | ✓                 | ✓          | ✓              |
+| `command-a-reasoning-08-2025` | ✗           | ✓                 | ✓          | ✓              |
+| `command-a-vision-07-2025`    | ✓           | ✓                 | ✓          | ✓              |
+| `command-r7b-12-2024`         | ✗           | ✓                 | ✓          | ✓              |
+| `command-r-plus-04-2024`      | ✗           | ✓                 | ✓          | ✓              |
+| `command-r-plus`              | ✗           | ✓                 | ✓          | ✓              |
+| `command-r-08-2024`           | ✗           | ✓                 | ✓          | ✓              |
+| `command-r-03-2024`           | ✗           | ✓                 | ✓          | ✓              |
+| `command-r`                   | ✗           | ✓                 | ✓          | ✓              |
+| `command`                     | ✗           | ✗                 | ✗          | ✗              |
+| `command-nightly`             | ✗           | ✗                 | ✗          | ✗              |
+| `command-light`               | ✗           | ✗                 | ✗          | ✗              |
+| `command-light-nightly`       | ✗           | ✗                 | ✗          | ✗              |
 
-<Note>
-  The table above lists popular models. Please see the [Cohere
-  docs](https://docs.cohere.com/v2/docs/models#command) for a full list of
-  available models. You can also pass any available provider model ID as a
-  string if needed.
-</Note>
+The table above lists popular models. Please see the [Cohere
+docs](https://docs.cohere.com/v2/docs/models#command) for a full list of
+available models. You can also pass any available provider model ID as a
+string if needed.
 
 #### Image Inputs
 
@@ -143,7 +145,7 @@ const { text } = await generateText({
 
 You can use the `cohere` provider option on a file part to set the [image input detail](https://docs.cohere.com/docs/image-inputs) to `high`, `low`, or `auto`:
 
-```ts highlight="2,16-18"
+```ts {2,16-18}
 import { cohere } from '@ai-sdk/cohere';
 import { generateText } from 'ai';
 
@@ -172,7 +174,7 @@ const { text } = await generateText({
 
 #### Reasoning
 
-Cohere has introduced reasoning with the `command-a-reasoning-08-2025` model. You can learn more at https://docs.cohere.com/docs/reasoning.
+Cohere has introduced reasoning with the `command-a-reasoning-08-2025` model. You can learn more at [https://docs.cohere.com/docs/reasoning](https://docs.cohere.com/docs/reasoning).
 
 ```ts
 import { cohere, type CohereLanguageModelChatOptions } from '@ai-sdk/cohere';
@@ -247,18 +249,45 @@ const { embedding } = await embed({
 
 The following provider options are available:
 
-- **inputType** _'search_document' | 'search_query' | 'classification' | 'clustering'_
+- **embeddingType** *'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'*
+
+  Selects one embedding format per call. Defaults to `float`, preserving the
+  existing behavior. Non-float formats require Embed v3.0 or newer. For example:
+
+  ```ts
+  const { embedding } = await embed({
+    model: cohere.embedding('embed-v4.0'),
+    value: 'sunny day at the beach',
+    providerOptions: {
+      cohere: {
+        embeddingType: 'int8',
+      } satisfies CohereEmbeddingModelOptions,
+    },
+  });
+  ```
+
+  The selected format is returned in `embedding` (or `embeddings` for
+  `embedMany`) as number arrays. The provider returns the values without
+  converting or unpacking them. `binary` and `ubinary` contain packed bytes:
+  each number represents eight dimensions. Use a binary-aware vector database
+  or unpack the bits before comparing vectors; do not pass packed bytes directly
+  to `cosineSimilarity`. Compressed formats can affect retrieval quality, and
+  compact storage requires an appropriate database representation.
+
+- **inputType** *'search\_document' | 'search\_query' | 'classification' | 'clustering'*
 
   Specifies the type of input passed to the model. Default is `search_query`.
+
   - `search_document`: Used for embeddings stored in a vector database for search use-cases.
   - `search_query`: Used for embeddings of search queries run against a vector DB to find relevant documents.
   - `classification`: Used for embeddings passed through a text classifier.
   - `clustering`: Used for embeddings run through a clustering algorithm.
 
-- **truncate** _'NONE' | 'START' | 'END'_
+- **truncate** *'NONE' | 'START' | 'END'*
 
   Specifies how the API will handle inputs longer than the maximum token length.
   Default is `END`.
+
   - `NONE`: If selected, when the input exceeds the maximum input token length will return an error.
   - `START`: Will discard the start of the input until the remaining input is exactly the maximum input token length for the model.
   - `END`: Will discard the end of the input until the remaining input is exactly the maximum input token length for the model.
@@ -331,11 +360,11 @@ const { ranking } = await rerank({
 
 The following provider options are available:
 
-- **maxTokensPerDoc** _number_
+- **maxTokensPerDoc** *number*
 
   Maximum number of tokens per document. Default is `4096`.
 
-- **priority** _number_
+- **priority** *number*
 
   Priority of the request. Default is `0`.
 
@@ -349,53 +378,10 @@ The following provider options are available:
 | `rerank-english-v3.0`      |
 | `rerank-multilingual-v3.0` |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

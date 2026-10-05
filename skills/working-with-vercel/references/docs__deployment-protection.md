@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "eea9da26477b5e4fea7419c572e70d98f421a3acd6a3a65f3ee1807a0574adf3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1163f28ced6ed058936cdfeabf4a4b3a221abe6340a5e865b6c462712921ffcf"
 ---
 
 # Deployment Protection on Vercel
@@ -31,6 +31,7 @@ Deployment Protection lets you control who can access your preview and productio
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
+- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
 - [Remote Agents](https://eve.dev/docs/guides/remote-agents?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Call another eve deployment as a subagent with defineRemoteAgent: the same tool call as a local subagent, with outbound
 - [More Secure Deployment Protection](https://vercel.com/changelog/more-secure-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
@@ -40,8 +41,7 @@ Deployment Protection lets you control who can access your preview and productio
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related)
+- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -85,15 +85,15 @@ You can set a default Deployment Protection configuration for new projects in yo
 
 When setting a team default, choose the protection level (All Deployments, Standard Protection, or None) and one of the available protection methods, including Vercel Authentication, Passport, or Password Protection.
 
-![Image](https://vercel.com/docs-assets/static/docs/deployment-protection/deployment-protection-team-default-light.png)
+![Team default Deployment Protection](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/deployment-protection/deployment-protection-team-default-light.png)
 
 ## Standard Protection
 
-> **🔒 Permissions Required**: Standard Protection
+> **Availability**: Standard Protection is available on all plans
 
 **Standard Protection** is the recommended option for most projects. It protects all domains except [production domains](/docs/domains/working-with-domains/add-a-domain "Production Domains").
 
-![Image](`/contentful/image/e5382hct74si/7LHNvuRkcDlKMWswY7c8xd/858a8627a82bcec2c456bcd42618b3f5/Screenshot_2025-07-09_at_5.05.58%C3%A2__pm.png`)
+![Selecting Standard Protection in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/contentful/image/e5382hct74si/7LHNvuRkcDlKMWswY7c8xd/858a8627a82bcec2c456bcd42618b3f5/Screenshot_2025-07-09_at_5.05.58%C3%A2__pm.png)
 
 You can combine Standard Protection with any of the following methods:
 
@@ -128,21 +128,25 @@ fetch('/some/path');
 For server-side requests, use the origin from the incoming request and manually add request cookies to pass the user's authentication cookie:
 
 ```ts
-const headers = { cookie: <incoming request header cookies> };
-fetch('<incoming request origin>/some/path', { headers });
+export async function GET(request: Request) {
+  const { origin } = new URL(request.url);
+  const headers = { cookie: request.headers.get('cookie') ?? '' };
+
+  return fetch(`${origin}/some/path`, { headers });
+}
 ```
 
 Bypassing protection using [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) is an option but not required for requests targeting the same domain.
 
 ## All Deployments
 
-> **🔒 Permissions Required**: Protecting all deployments
+> **Availability**: Protecting all deployments is available on all plans
 
 Select **All Deployments** to secure all deployments (both preview and production), restricting public access entirely.
 
 With this configuration, all URLs are protected, including your production domain `example.com` and [generated URLs](/docs/deployments/generated-urls) like `my-project-1234.vercel.app`.
 
-![Image](`/front/docs/security/all-deployments-light.png`)
+![Selecting All Deployments in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/all-deployments-light.png)
 
 You can combine All Deployments protection with any of the following methods:
 
@@ -153,13 +157,13 @@ You can combine All Deployments protection with any of the following methods:
 
 ## Only Production Deployments
 
-> **🔒 Permissions Required**: Protecting production deployments
+> **Availability**: Protecting production deployments is available on Enterprise plans
 
 Use [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) to restrict access to production deployments to a specific list of IPv4 addresses.
 
 Preview deployment URLs remain publicly accessible. This feature is **only available on the Enterprise plan**.
 
-![Image](`/front/docs/security/prod-deployments-light.png`)
+![Selecting Only Production Deployments in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/prod-deployments-light.png)
 
 ## (Legacy) Standard Protection
 

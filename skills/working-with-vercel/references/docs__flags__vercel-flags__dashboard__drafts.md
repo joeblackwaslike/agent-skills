@@ -16,8 +16,8 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f0f5f21ece2ee3251c0cf667bbd0879b0b9257c77e52b50287a89c524db7fd0e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e4cd0a058f9487e4f874906e8581b543500e3155e9401140ef079a1ad072b320"
 ---
 
 # Draft Flags
@@ -38,6 +38,7 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

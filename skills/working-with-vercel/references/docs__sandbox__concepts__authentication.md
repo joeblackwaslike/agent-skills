@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/authentication.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "74df4915e88df014625c1fffac8c43453d7fcd512fa27f0d352926b8d08bb5dc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d833a9261f6f9e7de87f69c1a555e53625a038bcf50e74c94f3c6b1e4955e83d"
 ---
 
 # Sandbox Authentication
@@ -36,10 +36,9 @@ The Sandbox SDK supports two authentication methods: Vercel OIDC tokens (recomme
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 
 Full cross-link map for this page: [/docs/sandbox/concepts/authentication.graph.md](/docs/sandbox/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -104,9 +103,9 @@ from vercel.sandbox import SandboxCredentials, SandboxServiceOptions
 
 async def resolve_credentials() -> SandboxCredentials:
     return SandboxCredentials(
-        token=os.environ["CI_VERCEL_TOKEN"],
-        project_id=os.environ["CI_VERCEL_PROJECT_ID"],
-        team_id=os.environ["CI_VERCEL_TEAM_ID"],
+        token=os.environ["VERCEL_TOKEN"],
+        project_id=os.environ["VERCEL_PROJECT_ID"],
+        team_id=os.environ["VERCEL_TEAM_ID"],
     )
 
 

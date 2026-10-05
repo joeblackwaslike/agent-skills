@@ -17,8 +17,8 @@ related:
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "250d3010659586dccff57565e58abd9e827d05d7fb61424add161c4c7e98757d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fcd7e56da844e9ef22afca4ee9a28f01b3ae612c99f9dd1ae37309e0e34f6847"
 ---
 
 # AI Gateway Request Logs
@@ -32,13 +32,13 @@ The Logs page lists every request and asynchronous job your team sends through A
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
-- [Grok 4.7 now available and 40% off on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Flogs&source_site=vercel-docs&relationship=related) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
@@ -143,7 +143,7 @@ With Live off, the list loads 50 more rows each time you scroll to the bottom.
 
 Click any row to open its details beside the list. The panel is resizable by dragging its left edge. The selected log ID is stored in the URL, so you can copy the address to share the same log and filtered list.
 
-![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/logs/request-details-light.png)
+![A request's details panel with a Routing card per provider attempt.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/logs/request-details-light.png)
 
 The header carries the generation or job ID with a copy button. **Request started** identifies the authentication input, inference region, and whether Zero Data Retention applied. OIDC-authenticated requests name their project because the token itself has no API key name. App tokens and personal access tokens appear as team-scoped authentication.
 
@@ -157,7 +157,7 @@ Timing spans use green for successful work, amber for a 4xx response, and red fo
 
 Use the **Request Mode** filter to show asynchronous jobs, or search for an exact job ID. Click a job to open its details beside the list:
 
-![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/logs/async-job-details-light.png)
+![A running asynchronous video job with its job details open beside the log table.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/logs/async-job-details-light.png)
 
 Running asynchronous jobs stay at the top of the table so you can monitor them until they complete, fail, or are canceled. The timeline identifies when AI Gateway submitted the job. The details include its authentication, model, provider, and inference region.
 

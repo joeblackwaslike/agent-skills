@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f992c26f387bd2ed9c999c33a72c8866a6f34eca248520ea211b04ea473f151a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4c708740d7e840c6a219b085fd5ba800e2a71bfaac6d18038be31c8f9204c994"
 ---
 
 # Using Global Config
@@ -35,7 +35,7 @@ sha256: "f992c26f387bd2ed9c999c33a72c8866a6f34eca248520ea211b04ea473f151a"
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 
 Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -92,12 +92,13 @@ You can find your Global Config ID with one of the following methods:
 
 - In your dashboard, under the **Storage** section in the sidebar. Select your Global Config, and you'll see the ID under the **Global Config ID** label near the top of the page, as shown in the screenshot below:
 
-![Image](https://vercel.com/docs-assets/static/docs/storage/global-config/config-id-light.png)
+![Your Global Config ID in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/config-id-light.png)
 
 - Send a `GET` request to the `/global-config` endpoint of Vercel REST API. The response will be a list of Global Configs associated with your account (or team, if you add the `teamId` query parameter)
 
 ```bash
-https://api.vercel.com/v1/global-config?teamId=<teamId>
+curl "https://api.vercel.com/v1/global-config?teamId=<teamId>" \
+     -H 'Authorization: Bearer <your_vercel_api_token>'
 ```
 
 ### Creating a read access token

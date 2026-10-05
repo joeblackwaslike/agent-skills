@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage your Git provider connections using the vercel git CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/git.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "977d1dcab76d5c603eeeca81d74aaf668360eb74e8737250fdfb6519923a8ada"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "be9210421c6d06359905e7daa2d723ac5727c803c2a763826ce8392fe4f3835a"
 ---
 
 # vercel git
@@ -31,8 +31,8 @@ enabling deployments to Vercel through Git.
 - [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 
 Full cross-link map for this page: [/docs/cli/git.graph.md](/docs/cli/git.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fgit&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

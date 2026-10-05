@@ -1,10 +1,14 @@
 ---
+title: AI Gateway
+description: Learn how to use the AI Gateway provider with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ddf6ce5a31bfdb103fd5f6b325302d02853db62701940d6f266f616ba67108ec"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ef607898f92882f45636250be07f3298915b4feea73dea9df38154c96d2bee23"
 ---
 
-# AI Gateway Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [AI Gateway](https://vercel.com/docs/ai-gateway) provider connects you to models from multiple AI providers through a single interface. Instead of integrating with each provider separately, you can access OpenAI, Anthropic, Google, Meta, xAI, and other providers and their models.
 
@@ -49,10 +53,8 @@ The AI SDK automatically uses the AI Gateway when you pass a model string in the
 
 ## Provider Instance
 
-<Note>
-  The `gateway` provider instance is available from the `ai` package in version
-  5.0.36 and later.
-</Note>
+The `gateway` provider instance is available from the `ai` package in version
+5.0.36 and later.
 
 You can also import the default provider instance `gateway` from `ai`:
 
@@ -79,34 +81,34 @@ const gateway = createGateway({
 
 You can use the following optional settings to customize the AI Gateway provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls. The default prefix is `https://ai-gateway.vercel.sh/v4/ai`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key or Vercel access token that is being sent using the `Authorization`
   header. It defaults to the `AI_GATEWAY_API_KEY` environment variable.
   Supports AI Gateway API keys, Vercel personal access tokens, and Vercel app
   access tokens.
 
-- **teamIdOrSlug** _string_
+- **teamIdOrSlug** *string*
 
   Vercel team ID or slug used to scope model requests when authenticating with
   multi-team Vercel access tokens.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **metadataCacheRefreshMillis** _number_
+- **metadataCacheRefreshMillis** *number*
 
   How frequently to refresh the metadata cache in milliseconds. Defaults to 5 minutes (300,000ms).
 
@@ -148,11 +150,9 @@ const gateway = createGateway({
 
 `apiKey` takes precedence over `AI_GATEWAY_API_KEY` and OIDC.
 
-<Note>
-  Vercel access tokens with `teamIdOrSlug` are supported for model requests.
-  Gateway helper methods such as `getCredits`, `getSpendReport`, and
-  `getGenerationInfo` require an AI Gateway API key or OIDC authentication.
-</Note>
+Vercel access tokens with `teamIdOrSlug` are supported for model requests.
+Gateway helper methods such as `getCredits`, `getSpendReport`, and
+`getGenerationInfo` require an AI Gateway API key or OIDC authentication.
 
 ### OIDC Authentication (Vercel Deployments)
 
@@ -176,10 +176,8 @@ without API Keys.
      - If not using `vercel dev`, note that OIDC tokens expire after 12 hours
      - You'll need to run `vercel env pull` again to refresh the token before it expires
 
-<Note>
-  If an API key or Vercel access token is present (either passed directly or via
-  environment), it will always be used instead of OIDC, even if invalid.
-</Note>
+If an API key or Vercel access token is present (either passed directly or via
+environment), it will always be used instead of OIDC, even if invalid.
 
 Read more about using OIDC tokens in the [Vercel AI Gateway docs](https://vercel.com/docs/ai-gateway#using-the-ai-gateway-with-a-vercel-oidc-token).
 
@@ -216,9 +214,7 @@ the failure without inspecting the Gateway's serialized error payload.
 
 ## Batch
 
-<Note type="warning">
-  Batch support is experimental and the API may change in patch releases.
-</Note>
+Batch support is experimental and the API may change in patch releases.
 
 AI Gateway supports durable text batches through `experimental_startBatch`,
 `experimental_getBatchStatus`, `experimental_getBatchResults`, and `experimental_cancelBatch`. See
@@ -228,7 +224,7 @@ for supported models, limits, and Gateway-specific behavior.
 
 Pass a publicly reachable HTTPS `webhookUrl` when starting a batch to receive a terminal notification instead of polling. AI Gateway sends `batch.completed`, `batch.failed`, or `batch.cancelled`. The event contains terminal status information but not batch results. Completion webhooks are an AI Gateway capability; direct Anthropic and OpenAI batch providers return an unsupported warning when this option is provided.
 
-```ts filename="start-batch.ts"
+```ts title="start-batch.ts"
 import { randomUUID } from 'node:crypto';
 import {
   experimental_startBatch as startBatch,
@@ -292,7 +288,7 @@ The signing secret is returned only in the start response. Reserve the callback 
 
 The receiver must verify the `x-ai-gateway-signature` header against a bounded raw request body before trusting the event:
 
-```ts filename="app/api/batch-webhook/route.ts"
+```ts title="app/api/batch-webhook/route.ts"
 import { createHmac, timingSafeEqual } from 'node:crypto';
 
 const MAX_AGE_SECONDS = 5 * 60;
@@ -458,9 +454,7 @@ Reranking models are useful for improving search results in retrieval-augmented 
 
 ## Realtime Models
 
-<Note type="warning">
-  Realtime support is experimental and the API may change in patch releases.
-</Note>
+Realtime support is experimental and the API may change in patch releases.
 
 You can create realtime models for bidirectional audio/text WebSocket sessions using the `experimental_realtime` method on the provider instance. The first argument is the model ID in the format `creator/model-name`:
 
@@ -474,7 +468,7 @@ The Gateway normalizes realtime the same way it normalizes every other modality:
 
 Realtime sessions run in the browser and require a short-lived Gateway client secret created on your server with `gateway.experimental_realtime.getToken()`. The method uses your Gateway credential (`apiKey`, `AI_GATEWAY_API_KEY`, or Vercel OIDC token) to mint a `vcst_` client secret and returns the WebSocket URL for the model.
 
-```ts filename='app/api/realtime/setup/route.ts'
+```ts title='app/api/realtime/setup/route.ts'
 import { gateway } from 'ai';
 
 export async function POST() {
@@ -490,7 +484,7 @@ export async function POST() {
 Use the matching Gateway realtime model in the browser. Creating the model is
 safe in browser code; only `getToken()` is server-side.
 
-```tsx filename='app/realtime/page.tsx'
+```tsx title='app/realtime/page.tsx'
 'use client';
 
 import { experimental_useRealtime } from '@ai-sdk/react';
@@ -511,14 +505,12 @@ export default function RealtimePage() {
 Do not expose your Gateway API key or OIDC token to browser clients. Only return
 the short-lived setup response from `getToken()`.
 
-<Note>
-  The Gateway WebSocket route transports the short-lived auth token via the
-  versioned `Sec-WebSocket-Protocol` subprotocol and the model id via the
-  `?ai-model-id=` query - the WebSocket transport of the `Authorization` and
-  `ai-model-id` headers the HTTP routes use. Subprotocol values must fit the
-  WebSocket token grammar, and the complete `Sec-WebSocket-Protocol` header
-  should stay compact (under an 8 KiB safe header budget).
-</Note>
+The Gateway WebSocket route transports the short-lived auth token via the
+versioned `Sec-WebSocket-Protocol` subprotocol and the model id via the
+`?ai-model-id=` query - the WebSocket transport of the `Authorization` and
+`ai-model-id` headers the HTTP routes use. Subprotocol values must fit the
+WebSocket token grammar, and the complete `Sec-WebSocket-Protocol` header
+should stay compact (under an 8 KiB safe header budget).
 
 ### Provider Options
 
@@ -540,13 +532,11 @@ const sessionConfig = {
 
 The `GatewayProviderOptions` type is exported from `@ai-sdk/gateway` for stable client-facing fields. The type also accepts service-owned option keys so the Gateway service can add or change server-side options without requiring an SDK release for every schema change. Runtime validation is owned by the Gateway service.
 
-<Note>
-  Provider options are sent in the initial session update after the socket
-  opens, so connect-time options such as `byok` and quota selection require a
-  Gateway that resolves them from that update. Routing knobs like `order` /
-  `only` do not apply to realtime, where the Gateway selects the
-  WebSocket-capable provider.
-</Note>
+Provider options are sent in the initial session update after the socket
+opens, so connect-time options such as `byok` and quota selection require a
+Gateway that resolves them from that update. Routing knobs like `order` /
+`only` do not apply to realtime, where the Gateway selects the
+WebSocket-capable provider.
 
 ## Available Models
 
@@ -607,8 +597,8 @@ console.log(`Team total used: ${credits.total_used} credits`);
 
 The `getCredits()` method returns your team's credit information based on the authenticated API key or OIDC token:
 
-- **balance** _number_ - Your team's current available credit balance
-- **total_used** _number_ - Total credits consumed by your team
+- **balance** *number* - Your team's current available credit balance
+- **total\_used** *number* - Total credits consumed by your team
 
 ## Generation Lookup
 
@@ -621,21 +611,25 @@ import { gateway, generateText } from 'ai';
 
 // Make a request
 const result = await generateText({
-  model: gateway('anthropic/claude-sonnet-5'),
+  model: gateway('anthropic/claude-sonnet-5.5'),
   prompt: 'Explain quantum entanglement briefly',
 });
 
 // Get the generation ID from provider metadata
-const generationId = result.providerMetadata?.gateway?.generationId;
+const generationId = result.providerMetadata?.gateway?.generationId as
+  | string
+  | undefined;
 
 // Look up detailed generation info
-const generation = await gateway.getGenerationInfo({ id: generationId });
+if (generationId) {
+  const generation = await gateway.getGenerationInfo({ id: generationId });
 
-console.log(`Model: ${generation.model}`);
-console.log(`Cost: $${generation.totalCost.toFixed(6)}`);
-console.log(`Latency: ${generation.latency}ms`);
-console.log(`Prompt tokens: ${generation.promptTokens}`);
-console.log(`Completion tokens: ${generation.completionTokens}`);
+  console.log(`Model: ${generation.model}`);
+  console.log(`Cost: $${generation.totalCost.toFixed(6)}`);
+  console.log(`Latency: ${generation.latency}ms`);
+  console.log(`Prompt tokens: ${generation.promptTokens}`);
+  console.log(`Completion tokens: ${generation.completionTokens}`);
+}
 ```
 
 With `streamText`, you can capture the generation ID from the first chunk via `stream`:
@@ -644,7 +638,7 @@ With `streamText`, you can capture the generation ID from the first chunk via `s
 import { gateway, streamText } from 'ai';
 
 const result = streamText({
-  model: gateway('anthropic/claude-sonnet-5'),
+  model: gateway('anthropic/claude-sonnet-5.5'),
   prompt: 'Explain quantum entanglement briefly',
 });
 
@@ -674,7 +668,7 @@ a tool is running:
 import { gateway, generateText } from 'ai';
 
 await generateText({
-  model: gateway('anthropic/claude-sonnet-5'),
+  model: gateway('anthropic/claude-sonnet-5.5'),
   prompt: 'Explain quantum entanglement briefly',
   onLanguageModelCallEnd({ providerMetadata }) {
     const generationId = providerMetadata?.gateway?.generationId as
@@ -690,28 +684,28 @@ await generateText({
 
 The `getGenerationInfo()` method accepts:
 
-- **id** _string_ - The generation ID to look up (format: `gen_<ulid>`, required)
+- **id** *string* - The generation ID to look up (format: `gen_<ulid>`, required)
 
 It returns a `GatewayGenerationInfo` object with the following fields:
 
-- **id** _string_ - The generation ID
-- **totalCost** _number_ - Total cost in USD
-- **upstreamInferenceCost** _number_ - Upstream inference cost in USD (relevant for BYOK)
-- **usage** _number_ - Usage cost in USD (same as totalCost)
-- **createdAt** _string_ - ISO 8601 timestamp when the generation was created
-- **model** _string_ - Model identifier used
-- **isByok** _boolean_ - Whether Bring Your Own Key credentials were used
-- **providerName** _string_ - The provider that served this generation
-- **streamed** _boolean_ - Whether streaming was used
-- **finishReason** _string_ - Finish reason (e.g. `'stop'`)
-- **latency** _number_ - Time to first token in milliseconds
-- **generationTime** _number_ - Total generation time in milliseconds
-- **promptTokens** _number_ - Number of prompt tokens
-- **completionTokens** _number_ - Number of completion tokens
-- **reasoningTokens** _number_ - Reasoning tokens used (if applicable)
-- **cachedTokens** _number_ - Cached tokens used (if applicable)
-- **cacheCreationTokens** _number_ - Cache creation input tokens
-- **billableWebSearchCalls** _number_ - Number of billable web search calls
+- **id** *string* - The generation ID
+- **totalCost** *number* - Total cost in USD
+- **upstreamInferenceCost** *number* - Upstream inference cost in USD (relevant for BYOK)
+- **usage** *number* - Usage cost in USD (same as totalCost)
+- **createdAt** *string* - ISO 8601 timestamp when the generation was created
+- **model** *string* - Model identifier used
+- **isByok** *boolean* - Whether Bring Your Own Key credentials were used
+- **providerName** *string* - The provider that served this generation
+- **streamed** *boolean* - Whether streaming was used
+- **finishReason** *string* - Finish reason (e.g. `'stop'`)
+- **latency** *number* - Time to first token in milliseconds
+- **generationTime** *number* - Total generation time in milliseconds
+- **promptTokens** *number* - Number of prompt tokens
+- **completionTokens** *number* - Number of completion tokens
+- **reasoningTokens** *number* - Reasoning tokens used (if applicable)
+- **cachedTokens** *number* - Cached tokens used (if applicable)
+- **cacheCreationTokens** *number* - Cache creation input tokens
+- **billableWebSearchCalls** *number* - Number of billable web search calls
 
 ## Examples
 
@@ -721,7 +715,7 @@ It returns a `GatewayGenerationInfo` object with the following fields:
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prompt: 'Write a haiku about programming',
 });
 
@@ -787,11 +781,9 @@ const result = await generateText({
 console.dir(result.text);
 ```
 
-<Note>
-  Some provider-executed tools require account-specific configuration (such as
-  Claude Agent Skills) and may not work through AI Gateway. To use these tools,
-  you must bring your own key (BYOK) directly to the provider.
-</Note>
+Some provider-executed tools require account-specific configuration (such as
+Claude Agent Skills) and may not work through AI Gateway. To use these tools,
+you must bring your own key (BYOK) directly to the provider.
 
 ### Gateway Tools
 
@@ -843,31 +835,31 @@ console.log('Tool results:', JSON.stringify(result.toolResults, null, 2));
 
 The Perplexity Search tool supports the following optional configuration options:
 
-- **maxResults** _number_
+- **maxResults** *number*
 
   The maximum number of search results to return (1-20, default: 10).
 
-- **maxTokensPerPage** _number_
+- **maxTokensPerPage** *number*
 
   The maximum number of tokens to extract per search result page (256-2048, default: 2048).
 
-- **maxTokens** _number_
+- **maxTokens** *number*
 
   The maximum total tokens across all search results (default: 25000, max: 1000000).
 
-- **searchLanguageFilter** _string[]_
+- **searchLanguageFilter** *string\[]*
 
   Filter search results by language using ISO 639-1 language codes (e.g., `['en']` for English, `['en', 'es']` for English and Spanish).
 
-- **country** _string_
+- **country** *string*
 
   Filter search results by country using ISO 3166-1 alpha-2 country codes (e.g., `'US'` for United States, `'GB'` for United Kingdom).
 
-- **searchDomainFilter** _string[]_
+- **searchDomainFilter** *string\[]*
 
   Limit search results to specific domains (e.g., `['reuters.com', 'bbc.com']`). This is useful for restricting results to trusted sources.
 
-- **searchRecencyFilter** _'day' | 'week' | 'month' | 'year'_
+- **searchRecencyFilter** *'day' | 'week' | 'month' | 'year'*
 
   Filter search results by relative time period. Useful for always getting recent results (e.g., 'week' for results from the last week).
 
@@ -949,29 +941,30 @@ console.log('Tool results:', JSON.stringify(result.toolResults, null, 2));
 
 The Exa Search tool supports the following optional configuration options:
 
-- **type** _'auto' | 'fast' | 'instant'_
+- **type** *'auto' | 'fast' | 'instant'*
 
   Search mode. `'auto'` is the default balance of speed and quality.
 
-- **numResults** _number_
+- **numResults** *number*
 
   Maximum number of results to return (1-100, default: 10).
 
-- **category** _'company' | 'people' | 'research paper' | 'news' | 'personal site' | 'financial report'_
+- **category** *'company' | 'people' | 'research paper' | 'news' | 'personal site' | 'financial report'*
 
   Focus results on a specific content type.
 
-- **includeDomains** / **excludeDomains** _string[]_
+- **includeDomains** / **excludeDomains** *string\[]*
 
   Restrict or exclude search results by domain.
 
-- **startPublishedDate** / **endPublishedDate** _string_
+- **startPublishedDate** / **endPublishedDate** *string*
 
   Filter results by ISO 8601 publication date.
 
-- **contents** _object_
+- **contents** *object*
 
   Control result extraction and freshness:
+
   - `text` - Return full page text, optionally capped with `maxCharacters`
   - `highlights` - Return token-efficient excerpts
   - `maxAgeHours` - Control cached content freshness
@@ -1028,7 +1021,7 @@ console.log(result.text);
 
 The Browserbase Search tool supports this optional configuration option:
 
-- **numResults** _number_
+- **numResults** *number*
 
   Maximum number of search results to return (1-25, default: 10).
 
@@ -1090,23 +1083,23 @@ console.log(result.text);
 
 The Browserbase Fetch tool supports these optional configuration options:
 
-- **format** _'raw' | 'markdown' | 'json'_
+- **format** *'raw' | 'markdown' | 'json'*
 
   Output format for the fetched content. `raw` returns the upstream response body unchanged and is the default. `markdown` converts the page to Markdown. `json` performs structured extraction and requires `schema`.
 
-- **schema** _object_
+- **schema** *object*
 
   JSON Schema describing the desired structured content. Only used when `format` is `json`.
 
-- **allowRedirects** _boolean_
+- **allowRedirects** *boolean*
 
   Follow HTTP redirects. Defaults to `false`.
 
-- **proxies** _boolean_
+- **proxies** *boolean*
 
   Route the request through Browserbase's proxy network. Defaults to `false`.
 
-- **allowInsecureSsl** _boolean_
+- **allowInsecureSsl** *boolean*
 
   Bypass TLS certificate verification. Defaults to `false`; only enable it for trusted hosts.
 
@@ -1164,29 +1157,29 @@ console.log(result.text);
 
 The Tako Search tool supports these optional configuration options:
 
-- **effort** _'fast' | 'instant' | 'deep'_ - Search effort. `'fast'` is the balanced default, `'instant'` favors cached low-latency results, and `'deep'` broadens retrieval with reranking at higher cost and latency.
-- **sources** _object_ - Omit to search both curated Tako data and the live web. When set, only source keys present are searched.
-- **sources.web** _object_ - Configure web results:
-  - **count** _number_ - Maximum web results, 1-20.
-  - **category** _'finance' | 'news' | 'sports'_ - Restrict web results to one category.
-  - **includeDomains** / **excludeDomains** _string[]_ - Only return, or drop, results from these bare domains. Up to 20 each.
-  - **publishedAfter** / **publishedBefore** _string_ - Keep results published on or after, or on or before, this `YYYY-MM-DD` date.
-  - **snippetMaxChars** _number_ - Character cap on each result's text excerpt. Defaults to 4,000; maximum 20,000.
-  - **highlights** _boolean_ - Return query-relevant passages as each result's snippet instead of the opening text of the page. The snippet can hold multiple passages joined by `' ... '`, and a page with no highlight returns `snippet: null`. Defaults to `true` in the AI Gateway.
-  - **includeContents** _boolean_ - Inline each page's extracted full text in `content`. **articleContentMaxChars** caps it, defaulting to 30,000 characters (maximum 1,000,000).
-- **sources.data** _object_ - Configure data results:
-  - **count** _number_ - Maximum data results, 1-20. Defaults to 5.
-  - **includeContents** _boolean_ - Inline each card's underlying rows in `content.dataset` as typed, unit-labeled columns. This adds a data surcharge based on the row count and dataset source. To estimate cost, first search with `includeContents: false` and inspect `cards.content.export_pricing`. Because this applies to every returned card, use `count` and `maxRows` to control cost.
-  - **contentFormat** _'json_compact' | 'json_records' | 'csv' | 'card_json'_ - Serialization for inlined card data. Defaults to `'json_compact'`.
-  - **maxRows** _number_ - Row cap per result. Omit to use the allowance in `cards.content.export_pricing`. A data surcharge applies per 1,000 exported rows; lower values reduce cost.
-  - **nodeIds** _string[]_ - Data Graph node IDs to prioritize. Up to 20.
-  - **strict** _boolean_ - Only return cards matching `nodeIds`. Requires at least one `nodeIds` value.
-- **location** _object_ - End-user `{ latitude, longitude }` coordinates for localized results.
-- **countryCode** _string_ - ISO 3166-1 alpha-2 country code, such as `'US'`.
-- **locale** _string_ - BCP-47 locale, such as `'en-US'`.
-- **timezone** _string_ - IANA timezone, such as `'America/New_York'`.
-- **outputSettings** _object_ - Card rendering controls. `forceRefresh` is available only with `'instant'` effort.
-- **includeRelated** _number_ - Number of related search suggestions to include (1-20).
+- **effort** *'fast' | 'instant' | 'deep'* - Search effort. `'fast'` is the balanced default, `'instant'` favors cached low-latency results, and `'deep'` broadens retrieval with reranking at higher cost and latency.
+- **sources** *object* - Omit to search both curated Tako data and the live web. When set, only source keys present are searched.
+- **sources.web** *object* - Configure web results:
+  - **count** *number* - Maximum web results, 1-20.
+  - **category** *'finance' | 'news' | 'sports'* - Restrict web results to one category.
+  - **includeDomains** / **excludeDomains** *string\[]* - Only return, or drop, results from these bare domains. Up to 20 each.
+  - **publishedAfter** / **publishedBefore** *string* - Keep results published on or after, or on or before, this `YYYY-MM-DD` date.
+  - **snippetMaxChars** *number* - Character cap on each result's text excerpt. Defaults to 4,000; maximum 20,000.
+  - **highlights** *boolean* - Return query-relevant passages as each result's snippet instead of the opening text of the page. The snippet can hold multiple passages joined by `' ... '`, and a page with no highlight returns `snippet: null`. Defaults to `true` in the AI Gateway.
+  - **includeContents** *boolean* - Inline each page's extracted full text in `content`. **articleContentMaxChars** caps it, defaulting to 30,000 characters (maximum 1,000,000).
+- **sources.data** *object* - Configure data results:
+  - **count** *number* - Maximum data results, 1-20. Defaults to 5.
+  - **includeContents** *boolean* - Inline each card's underlying rows in `content.dataset` as typed, unit-labeled columns. This adds a data surcharge based on the row count and dataset source. To estimate cost, first search with `includeContents: false` and inspect `cards.content.export_pricing`. Because this applies to every returned card, use `count` and `maxRows` to control cost.
+  - **contentFormat** *'json\_compact' | 'json\_records' | 'csv' | 'card\_json'* - Serialization for inlined card data. Defaults to `'json_compact'`.
+  - **maxRows** *number* - Row cap per result. Omit to use the allowance in `cards.content.export_pricing`. A data surcharge applies per 1,000 exported rows; lower values reduce cost.
+  - **nodeIds** *string\[]* - Data Graph node IDs to prioritize. Up to 20.
+  - **strict** *boolean* - Only return cards matching `nodeIds`. Requires at least one `nodeIds` value.
+- **location** *object* - End-user `{ latitude, longitude }` coordinates for localized results.
+- **countryCode** *string* - ISO 3166-1 alpha-2 country code, such as `'US'`.
+- **locale** *string* - BCP-47 locale, such as `'en-US'`.
+- **timezone** *string* - IANA timezone, such as `'America/New_York'`.
+- **outputSettings** *object* - Card rendering controls. `forceRefresh` is available only with `'instant'` effort.
+- **includeRelated** *number* - Number of related search suggestions to include (1-20).
 
 For precise entity matching, quote a phrase in the query and optionally append a label: `"Tesla":PRODUCT price`. Tako treats the quoted phrase as one entity before searching.
 
@@ -1267,32 +1260,36 @@ console.log('Tool results:', JSON.stringify(result.toolResults, null, 2));
 
 The Parallel Search tool supports the following optional configuration options:
 
-- **mode** _'one-shot' | 'agentic'_
+- **mode** *'one-shot' | 'agentic'*
 
   Mode preset for different use cases:
+
   - `'one-shot'` - Comprehensive results with longer excerpts for single-response answers (default)
   - `'agentic'` - Concise, token-efficient results optimized for multi-step agentic workflows
 
-- **maxResults** _number_
+- **maxResults** *number*
 
   Maximum number of results to return (1-20). Defaults to 10 if not specified.
 
-- **sourcePolicy** _object_
+- **sourcePolicy** *object*
 
   Source policy for controlling which domains to include/exclude:
+
   - `includeDomains` - List of domains to include in search results
   - `excludeDomains` - List of domains to exclude from search results
   - `afterDate` - Only include results published after this date (ISO 8601 format)
 
-- **excerpts** _object_
+- **excerpts** *object*
 
   Excerpt configuration for controlling result length:
+
   - `maxCharsPerResult` - Maximum characters per result
   - `maxCharsTotal` - Maximum total characters across all results
 
-- **fetchPolicy** _object_
+- **fetchPolicy** *object*
 
   Fetch policy for controlling content freshness:
+
   - `maxAgeSeconds` - Maximum age in seconds for cached content (set to 0 for always fresh)
 
 The tool works with both `generateText` and `streamText`:
@@ -1371,26 +1368,26 @@ for (const row of report.results) {
 
 The `getSpendReport()` method accepts the following parameters:
 
-- **startDate** _string_ - Start date in `YYYY-MM-DD` format (inclusive, required)
-- **endDate** _string_ - End date in `YYYY-MM-DD` format (inclusive, required)
-- **groupBy** _string_ - Aggregation dimension: `'day'` (default), `'user'`, `'model'`, `'tag'`, `'provider'`, or `'credential_type'`
-- **datePart** _string_ - Time granularity when `groupBy` is `'day'`: `'day'` or `'hour'`
-- **userId** _string_ - Filter to a specific user
-- **model** _string_ - Filter to a specific model (e.g. `'anthropic/claude-sonnet-5'`)
-- **provider** _string_ - Filter to a specific provider (e.g. `'anthropic'`)
-- **credentialType** _string_ - Filter by `'byok'` or `'system'` credentials
-- **tags** _string[]_ - Filter to requests matching these tags
+- **startDate** *string* - Start date in `YYYY-MM-DD` format (inclusive, required)
+- **endDate** *string* - End date in `YYYY-MM-DD` format (inclusive, required)
+- **groupBy** *string* - Aggregation dimension: `'day'` (default), `'user'`, `'model'`, `'tag'`, `'provider'`, or `'credential_type'`
+- **datePart** *string* - Time granularity when `groupBy` is `'day'`: `'day'` or `'hour'`
+- **userId** *string* - Filter to a specific user
+- **model** *string* - Filter to a specific model (e.g. `'anthropic/claude-sonnet-5.5'`)
+- **provider** *string* - Filter to a specific provider (e.g. `'anthropic'`)
+- **credentialType** *string* - Filter by `'byok'` or `'system'` credentials
+- **tags** *string\[]* - Filter to requests matching these tags
 
 Each row in `results` contains a grouping field (matching your `groupBy` choice) and metrics:
 
-- **totalCost** _number_ - Total cost in USD
-- **marketCost** _number_ - Market cost in USD
-- **inputTokens** _number_ - Number of input tokens
-- **outputTokens** _number_ - Number of output tokens
-- **cachedInputTokens** _number_ - Number of cached input tokens
-- **cacheCreationInputTokens** _number_ - Number of cache creation input tokens
-- **reasoningTokens** _number_ - Number of reasoning tokens
-- **requestCount** _number_ - Number of requests
+- **totalCost** *number* - Total cost in USD
+- **marketCost** *number* - Market cost in USD
+- **inputTokens** *number* - Number of input tokens
+- **outputTokens** *number* - Number of output tokens
+- **cachedInputTokens** *number* - Number of cached input tokens
+- **cacheCreationInputTokens** *number* - Number of cache creation input tokens
+- **reasoningTokens** *number* - Number of reasoning tokens
+- **requestCount** *number* - Number of requests
 
 You can combine tracking and querying to analyze spend by tags you defined:
 
@@ -1435,7 +1432,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prompt: 'Explain quantum computing',
   providerOptions: {
     gateway: {
@@ -1448,21 +1445,22 @@ const { text } = await generateText({
 
 The following gateway provider options are available:
 
-- **order** _string[]_
+- **order** *string\[]*
 
   Specifies the sequence of providers to attempt when routing requests. The gateway will try providers in the order specified. If a provider fails or is unavailable, it will move to the next provider in the list.
 
   Example: `order: ['bedrock', 'anthropic']` will attempt Amazon Bedrock first, then fall back to Anthropic.
 
-- **only** _string[]_
+- **only** *string\[]*
 
   Restricts routing to only the specified providers. When set, the gateway will never route to providers not in this list, even if they would otherwise be available.
 
   Example: `only: ['anthropic', 'vertex']` will only allow routing to Anthropic or Vertex AI.
 
-- **sort** _'cost' | 'ttft' | 'tps'_
+- **sort** *'cost' | 'ttft' | 'tps'*
 
   Sorts available providers by a performance or cost metric before routing. The gateway will try the best-scoring provider first and fall back through the rest in sorted order. If unspecified, providers are ordered using the gateway's default system ranking.
+
   - `'cost'` — lowest cost first
   - `'ttft'` — lowest time-to-first-token first
   - `'tps'` — highest tokens-per-second first
@@ -1473,25 +1471,29 @@ The following gateway provider options are available:
 
   When `sort` is active, the response's `providerMetadata.gateway.routing.sort` object contains the sort option used, the resulting execution order, per-provider metric values, and any providers that were deprioritized.
 
-- **models** _string[]_
+- **models** *string\[] | \[GatewayModelFallback, ...string\[]]*
 
-  Specifies fallback models to use when the primary model fails or is unavailable. The gateway will try the primary model first (specified in the `model` parameter), then try each model in this array in order until one succeeds.
+  Specifies fallback models in attempt order. String entries keep their existing behavior: the gateway tries them when the primary model fails or is unavailable. Evaluation requests can also start the list with one conditional `{ model, when }` entry to retry a successful but uncertain evaluation with another model. Only the first entry can be conditional, and only one conditional entry is allowed. If the primary model fails, the gateway also advances to the conditional entry under its existing error fallback behavior. Conditional entries are rejected on non-evaluation requests.
 
   Example: `models: ['openai/gpt-5.4-nano', 'google/gemini-3.8-flash']` will try the fallback models in order if the primary model fails.
 
-- **user** _string_
+  A direct condition uses `{ question, confidenceBelow }` for Choice and Score questions, or `{ question, probabilityBetween: [minimum, maximum] }` for Boolean questions. Leave out `question` to check every question of that type: `{ confidenceBelow: 0.6 }` matches when any Choice or Score answer is below 0.6, and a request with no Choice or Score questions never matches it. Boolean probability is P(true), not confidence in the selected Boolean outcome. Bounds are inclusive, finite, ordered, and within `[0, 1]`.
+
+  Combine conditions with `{ any: [...] }`, `{ all: [...] }`, or `{ atLeast: { count, conditions: [...] } }`. Each condition list holds 1 to 20 conditions. `atLeast.count` must be an integer from `1` through the number of conditions. Conditions nest at most 5 levels deep. Question IDs are 1 to 256 characters, and the conditional `model` must not be empty. The SDK checks these bounds before sending the request, and the gateway also checks that each question exists and has a kind that matches its condition. String error fallbacks may follow the conditional entry.
+
+- **user** *string*
 
   Optional identifier for the end user on whose behalf the request is being made. This is used for spend tracking and attribution purposes, allowing you to track usage per end-user in your application.
 
   Example: `user: 'user-123'` will associate this request with end-user ID "user-123" in usage reports.
 
-- **tags** _string[]_
+- **tags** *string\[]*
 
   Optional array of tags for categorizing and filtering usage in reports. Useful for tracking spend by feature, prompt version, or any other dimension relevant to your application.
 
   Example: `tags: ['chat', 'v2']` will tag this request with "chat" and "v2" for filtering in usage analytics.
 
-- **byok** _Record&lt;string, Array&lt;Record&lt;string, unknown&gt;&gt;&gt;_
+- **byok** *Record\<string, Array\<Record\<string, unknown>>>*
 
   Request-scoped BYOK (Bring Your Own Key) credentials to use for this request. When provided, any cached BYOK credentials configured in the gateway system are not considered. Requests may still fall back to use system credentials if the provided credentials fail.
 
@@ -1500,28 +1502,30 @@ The following gateway provider options are available:
   Each credential can optionally include a `modelMappings` array to map AI Gateway model slugs to your deployment names (for example, custom Azure deployment names). If a BYOK request fails, the gateway falls back to system credentials using the default model name.
 
   Examples:
+
   - Single provider: `byok: { 'anthropic': [{ apiKey: 'sk-ant-...' }] }`
   - Multiple credentials: `byok: { 'vertex': [{ project: 'proj-1', googleCredentials: { privateKey: '...', clientEmail: '...' } }, { project: 'proj-2', googleCredentials: { privateKey: '...', clientEmail: '...' } }] }`
   - Multiple providers: `byok: { 'anthropic': [{ apiKey: '...' }], 'bedrock': [{ accessKeyId: '...', secretAccessKey: '...' }] }`
   - With model mappings: `byok: { 'azure': [{ apiKey: '...', resourceName: '...', modelMappings: [{ gatewayModelSlug: 'openai/gpt-5.4-nano', customModelId: 'my-deployment' }] }] }`
 
-- **zeroDataRetention** _boolean_
+- **zeroDataRetention** *boolean*
 
   Restricts routing to providers with zero data retention agreements with Vercel for AI Gateway. BYOK credentials are skipped by default, since your provider agreements differ from Vercel's. When this filter is on, AI Gateway routes only to providers Vercel has ZDR agreements with for the model. If you have BYOK keys marked as ZDR, those keys are tried first, then AI Gateway falls back to its system credentials. You are responsible for the accuracy of that marking. Applies to both account-wide and request-level ZDR. The request fails if no ZDR-eligible credentials are available. Request-level ZDR is only available for Vercel Pro and Enterprise plans.
 
-- **disallowPromptTraining** _boolean_
+- **disallowPromptTraining** *boolean*
 
   Restricts routing to providers that have agreements with Vercel for AI Gateway to not use prompts for model training. When using BYOK credentials, this filter is not applied. If BYOK credentials fail and the request falls back to system credentials, only providers that do not train on prompt data will be used. If there are no providers available for the model that disallow prompt training, the request will fail.
 
-- **quotaEntityId** _string_
+- **quotaEntityId** *string*
 
   The unique identifier for the entity against which quota is tracked. Used for quota management and enforcement purposes.
 
-- **has** _Array&lt;'implicit-caching' | 'reasoning' | 'structured-output' | 'tool-use' | 'vision' | `quantization:${string}` | `!quantization:${string}`&gt;_
+- **has** *Array\<'implicit-caching' | 'reasoning' | 'structured-output' | 'tool-use' | 'vision' | `quantization:${string}` | `!quantization:${string}`>*
 
   Restricts routing to provider models that have all of the specified capabilities. Applies to both BYOK and system credentials, since the capability is a property of the model rather than the credential. If no provider model for the requested model satisfies the capabilities, the request fails. Unsupported values are rejected.
 
   Supported capabilities:
+
   - `'implicit-caching'` — models that perform automatic (implicit) prompt caching.
   - `'reasoning'` — models that support reasoning.
   - `'structured-output'` — models that support schema-constrained output.
@@ -1532,7 +1536,7 @@ The following gateway provider options are available:
 
   Example: `has: ['implicit-caching']` will only route to models that support implicit caching. Example: `has: ['vision']` will only route to models that accept image input. Example: `has: ['tool-use']` will only route to models that support tool calling. Example: `has: ['!quantization:fp8']` will only route to providers that do not serve fp8 weights.
 
-- **providerTimeouts** _object_
+- **providerTimeouts** *object*
 
   Per-provider timeouts for BYOK credentials in milliseconds. Controls how long to wait for a provider to start responding before falling back to the next available provider.
 
@@ -1540,7 +1544,7 @@ The following gateway provider options are available:
 
   For full details, see [Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts).
 
-- **serviceTier** _'flex' | 'priority'_
+- **serviceTier** *'flex' | 'priority'*
 
   Unified service tier intent. The gateway translates it into whichever
   per-provider option each provider expects, and overrides any tier
@@ -1573,7 +1577,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prompt: 'Write a haiku about programming',
   providerOptions: {
     gateway: {
@@ -1597,17 +1601,74 @@ const { text } = await generateText({
   prompt: 'Write a TypeScript haiku',
   providerOptions: {
     gateway: {
-      models: ['openai/gpt-5.4-nano', 'gemini-3.8-flash'], // Fallback models
+      models: ['openai/gpt-5.4-nano', 'google/gemini-3.8-flash'], // Fallback models
     } satisfies GatewayProviderOptions,
   },
 });
 
 // This will:
-// 1. Try openai/gpt-5.4 first
+// 1. Try openai/gpt-6-astra first
 // 2. If it fails, try openai/gpt-5.4-nano
-// 3. If that fails, try gemini-3-flash-preview
+// 3. If that fails, try google/gemini-3.8-flash
 // 4. Return the result from the first model that succeeds
 ```
+
+#### Conditional Evaluation Fallbacks Example
+
+Conditional model entries are available only for evaluation requests. Keep the
+configuration under `providerOptions.gateway.models`. `experimental_evaluate`
+does not have a top-level fallback option.
+
+```ts
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
+import { experimental_evaluate } from 'ai';
+
+const questions = {
+  department: {
+    type: 'choice',
+    instructions: 'Which team should handle this?',
+    criteria: { billing: 'Charges and refunds', support: 'Other requests' },
+  },
+  requestsRefund: {
+    type: 'boolean',
+    instructions: 'Is the customer requesting money back?',
+  },
+} as const;
+
+const result = await experimental_evaluate({
+  model: 'typesafe-ai/jev',
+  state: 'I was charged twice. Please refund the duplicate.',
+  questions,
+  providerOptions: {
+    gateway: {
+      models: [
+        {
+          model: 'openai/gpt-5.6-sol',
+          when: {
+            any: [
+              { question: 'department', confidenceBelow: 0.6 },
+              {
+                question: 'requestsRefund',
+                probabilityBetween: [0.4, 0.6],
+              },
+            ],
+          },
+        },
+      ],
+    } satisfies GatewayProviderOptions,
+  },
+});
+
+// The model that produced the answers, the fallback when the condition matched.
+console.log(result.response.modelId);
+console.log(JSON.stringify(result.providerMetadata?.gateway?.routing, null, 2));
+```
+
+When the condition matches, `result.response.modelId` names the fallback model,
+and `providerMetadata.gateway.routing.modelAttempts` lists the primary and
+fallback attempts. The successful attempt of each stage carries its own
+`generationId`, `usage`, and cost fields, and the first fallback attempt lists
+the questions that triggered it in `triggeredBy`.
 
 #### Zero Data Retention Example
 
@@ -1618,7 +1679,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prompt: 'Analyze this sensitive document...',
   providerOptions: {
     gateway: {
@@ -1637,7 +1698,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prompt: 'Analyze this proprietary business data...',
   providerOptions: {
     gateway: {
@@ -1656,7 +1717,7 @@ import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prompt: 'Summarize this report...',
   providerOptions: {
     gateway: {
@@ -1694,7 +1755,7 @@ import { generateText } from 'ai';
 import fs from 'node:fs';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   messages: [
     {
       role: 'user',
@@ -1754,53 +1815,10 @@ Model capabilities depend on the specific provider and model you're using. For d
 - [AI Gateway provider options](https://vercel.com/docs/ai-gateway/provider-options#available-providers) for an overview of available providers
 - Individual [AI SDK provider pages](/providers/ai-sdk-providers) for specific model capabilities and features
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

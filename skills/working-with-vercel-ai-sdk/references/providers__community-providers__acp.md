@@ -1,10 +1,14 @@
 ---
+title: ACP (Agent Client Protocol)
+description: ACP Provider for the AI SDK
+url: "https://ai-sdk.dev/providers/community-providers/acp"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/acp.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "968dce58ed8494060cc6b519550cb0b97be9f4d85a78b7625ffdaa6afff4244a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5255a776e7ade176fb76108facd2d72b49ace84e3db8195197e70994a082895c"
 ---
 
-# ACP (Agent Client Protocol)
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [ACP (Agent Client Protocol)](https://agentclientprotocol.com/) is an open protocol that enables seamless communication between AI agents and client applications.
 
@@ -23,7 +27,7 @@ Learn more about ACP in the [Agent Client Protocol Documentation](https://agentc
 
 The ACP provider is available in the `@mcpc-tech/acp-ai-provider` module. You can install it with:
 
-<InstallPackages packages="@mcpc-tech/acp-ai-provider" />
+**Packages:** `@mcpc-tech/acp-ai-provider`
 
 ## Provider Instance
 
@@ -46,25 +50,26 @@ const provider = createACPProvider({
 
 The provider accepts the following configuration:
 
-- **command** _string_ (required)
+- **command** *string* (required)
 
   The command to execute the ACP agent (e.g., `'gemini'`, `'claude-code-acp'`, `'codex-acp'`).
 
-- **args** _string[]_ (optional)
+- **args** *string\[]* (optional)
 
   Arguments to pass to the command (e.g., `['--experimental-acp']`).
 
-- **env** _Record&lt;string, string&gt;_ (optional)
+- **env** *Record\<string, string>* (optional)
 
   Environment variables for the agent process.
 
-- **session** _ACPSessionConfig_ (required)
+- **session** *ACPSessionConfig* (required)
 
   Session configuration including:
+
   - `cwd`: Working directory for the agent
   - `mcpServers`: Array of MCP server configurations to provide tools to the agent
 
-- **authMethodId** _string_ (optional)
+- **authMethodId** *string* (optional)
 
   Authentication method ID to use if required by the ACP agent.
 
@@ -161,7 +166,7 @@ const result = await generateText({
 
 The ACP provider handles tool execution through provider-defined tools. Tools are called and executed by the ACP agent, and results are reported back through the AI SDK's streaming interface.
 
-To stream tool calls, pass the provider tools to the AI SDK:
+To enable tool calls, pass the provider tools to the AI SDK:
 
 ```javascript
 const result = await generateText({
@@ -233,7 +238,7 @@ const provider = createACPProvider({
 - **Process Lifecycle**: Each language model instance spawns a new agent process; ensure proper cleanup
 - **Node.js Only**: Currently supports Node.js environments with child process capabilities
 - **File Operations**: Basic file operation support through ACP's client interface
-- **Model Selection**: Currently, model selection is not yet supported. See https://github.com/agentclientprotocol/agent-client-protocol/pull/182 for updates on this feature
+- **Model Selection**: Currently, model selection is not yet supported. See [https://github.com/agentclientprotocol/agent-client-protocol/pull/182](https://github.com/agentclientprotocol/agent-client-protocol/pull/182) for updates on this feature
 
 ## Additional Resources
 
@@ -244,68 +249,10 @@ const provider = createACPProvider({
 - [JSR Package](https://jsr.io/@mcpc/acp-ai-provider)
 - [Examples](https://github.com/mcpc-tech/mcpc/tree/main/packages/acp-ai-provider/examples)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

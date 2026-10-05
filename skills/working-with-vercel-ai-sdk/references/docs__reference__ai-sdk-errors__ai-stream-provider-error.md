@@ -1,10 +1,14 @@
 ---
+title: AI_StreamProviderError
+description: Learn how to handle AI_StreamProviderError
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-stream-provider-error"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-stream-provider-error.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "cb44e7e6df5d3ff47700bf532f6a5f9a149c7ae9753bad477532a87b7ba49d35"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "888097e9960dc6d10d7ce62dcce94bb2426172a4230dfbe0f25438a4a934dbf7"
 ---
 
-# AI_StreamProviderError
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 This error represents a well-formed error event reported by a provider after a
 model response stream has started. The AI SDK exposes it in streaming error
@@ -33,7 +37,7 @@ AI SDK versions are present:
 import { StreamProviderError, streamText } from 'ai';
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   onError: ({ error }) => {
     if (StreamProviderError.isInstance(error) && error.isRetryable) {
@@ -52,46 +56,10 @@ when a numeric code is also used to determine `statusCode`. Errors that are
 already `Error` instances and malformed or unknown provider values are
 preserved unchanged.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI_APICallError](/docs/reference/ai-sdk-errors/ai-api-call-error)
-- [AI_DownloadError](/docs/reference/ai-sdk-errors/ai-download-error)
-- [AI_EmptyResponseBodyError](/docs/reference/ai-sdk-errors/ai-empty-response-body-error)
-- [AI_EvaluationUnsupportedQuestionTypeError](/docs/reference/ai-sdk-errors/ai-evaluation-unsupported-question-type-error)
-- [AI_InvalidArgumentError](/docs/reference/ai-sdk-errors/ai-invalid-argument-error)
-- [AI_InvalidDataContentError](/docs/reference/ai-sdk-errors/ai-invalid-data-content-error)
-- [AI_InvalidMessageRoleError](/docs/reference/ai-sdk-errors/ai-invalid-message-role-error)
-- [AI_InvalidPromptError](/docs/reference/ai-sdk-errors/ai-invalid-prompt-error)
-- [AI_InvalidResponseDataError](/docs/reference/ai-sdk-errors/ai-invalid-response-data-error)
-- [AI_InvalidToolApprovalError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-error)
-- [AI_InvalidToolApprovalSignatureError](/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error)
-- [AI_InvalidToolInputError](/docs/reference/ai-sdk-errors/ai-invalid-tool-input-error)
-- [AI_JSONParseError](/docs/reference/ai-sdk-errors/ai-json-parse-error)
-- [AI_LoadAPIKeyError](/docs/reference/ai-sdk-errors/ai-load-api-key-error)
-- [AI_LoadSettingError](/docs/reference/ai-sdk-errors/ai-load-setting-error)
-- [AI_MessageConversionError](/docs/reference/ai-sdk-errors/ai-message-conversion-error)
-- [AI_NoContentGeneratedError](/docs/reference/ai-sdk-errors/ai-no-content-generated-error)
-- [AI_NoImageGeneratedError](/docs/reference/ai-sdk-errors/ai-no-image-generated-error)
-- [AI_NoObjectGeneratedError](/docs/reference/ai-sdk-errors/ai-no-object-generated-error)
-- [AI_NoOutputGeneratedError](/docs/reference/ai-sdk-errors/ai-no-output-generated-error)
-- [AI_NoSpeechGeneratedError](/docs/reference/ai-sdk-errors/ai-no-speech-generated-error)
-- [AI_NoSuchModelError](/docs/reference/ai-sdk-errors/ai-no-such-model-error)
-- [AI_NoSuchProviderError](/docs/reference/ai-sdk-errors/ai-no-such-provider-error)
-- [AI_NoSuchProviderReferenceError](/docs/reference/ai-sdk-errors/ai-no-such-provider-reference-error)
-- [AI_NoSuchToolError](/docs/reference/ai-sdk-errors/ai-no-such-tool-error)
-- [AI_NoTranscriptGeneratedError](/docs/reference/ai-sdk-errors/ai-no-transcript-generated-error)
-- [AI_NoTranslationGeneratedError](/docs/reference/ai-sdk-errors/ai-no-translation-generated-error)
-- [AI_NoVideoGeneratedError](/docs/reference/ai-sdk-errors/ai-no-video-generated-error)
-- [AI_RetryError](/docs/reference/ai-sdk-errors/ai-retry-error)
-- [AI_StreamProviderError](/docs/reference/ai-sdk-errors/ai-stream-provider-error)
-- [AI_TooManyEmbeddingValuesForCallError](/docs/reference/ai-sdk-errors/ai-too-many-embedding-values-for-call-error)
-- [AI_ToolCallNotFoundForApprovalError](/docs/reference/ai-sdk-errors/ai-tool-call-not-found-for-approval-error)
-- [ToolCallRepairError](/docs/reference/ai-sdk-errors/ai-tool-call-repair-error)
-- [ToolChoiceViolationError](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error)
-- [AI_TypeValidationError](/docs/reference/ai-sdk-errors/ai-type-validation-error)
-- [AI_UIMessageStreamError](/docs/reference/ai-sdk-errors/ai-ui-message-stream-error)
-- [AI_UnsupportedFunctionalityError](/docs/reference/ai-sdk-errors/ai-unsupported-functionality-error)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,12 +1,16 @@
 ---
+title: Translation
+description: Learn how to translate speech with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/translation"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/translation.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "88716f6db623b5f9f229551067d84bc4410c109074f4a59bb5194b8a7dcde6d4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "aab56ee89e4aff9ff92c0ec465a96068b9c20c43895737c49a646d97acfdaf2f"
 ---
 
-# Translation
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">Speech translation is an experimental feature.</Note>
+Speech translation is an experimental feature.
 
 The AI SDK provides the
 [`experimental_streamTranslate`](/docs/reference/ai-sdk-core/stream-translate)
@@ -17,12 +21,10 @@ target-language audio and text.
 `experimental_streamTranslate` is built on the speech translation model
 specification (`Experimental_SpeechTranslationModelV4`).
 
-<Note>
-  Provider implementations of the speech translation model specification ship
-  separately. Pass any model instance that implements
-  `Experimental_SpeechTranslationModelV4` — see your provider's documentation
-  for available translation models.
-</Note>
+Provider implementations of the speech translation model specification ship
+separately. Pass any model instance that implements
+`Experimental_SpeechTranslationModelV4` — see your provider's documentation
+for available translation models.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -108,7 +110,7 @@ part for output text by design for now.
 Use `outputAudioFormat` to request a specific audio format for translated
 audio chunks. When absent, the provider default output format is used.
 
-```ts highlight="8"
+```ts {8}
 import { openai } from '@ai-sdk/openai';
 import { experimental_streamTranslate as streamTranslate } from 'ai';
 
@@ -126,7 +128,7 @@ const result = streamTranslate({
 Translation models often have provider or model-specific settings which you can
 set using the `providerOptions` parameter.
 
-```ts highlight="9-13"
+```ts {9-13}
 import { openai } from '@ai-sdk/openai';
 import { experimental_streamTranslate as streamTranslate } from 'ai';
 
@@ -147,7 +149,7 @@ const result = streamTranslate({
 
 Pass an `abortSignal` to cancel the translation:
 
-```ts highlight="9"
+```ts {9}
 import { openai } from '@ai-sdk/openai';
 import { experimental_streamTranslate as streamTranslate } from 'ai';
 
@@ -209,40 +211,10 @@ try {
 Above are a small subset of the translation models supported by the AI SDK
 providers. For more, see the respective provider documentation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

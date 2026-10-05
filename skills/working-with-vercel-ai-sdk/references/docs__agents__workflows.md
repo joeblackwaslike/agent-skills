@@ -1,10 +1,14 @@
 ---
+title: Workflow Patterns
+description: Learn workflow patterns for building reliable agents with the AI SDK.
+url: "https://ai-sdk.dev/docs/agents/workflows"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/workflows.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "c3a26a38d71fc458e9793ed15c109c11df4457a1f4dc5567413fe600daa237a6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "2010f2f11c7526b0e470acb00d26c25120f82c6e68bd36868fa2f994746adb67"
 ---
 
-# Workflow Patterns
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Combine the building blocks from the [overview](/docs/agents/overview) with these patterns to add structure and reliability to your agents:
 
@@ -42,11 +46,10 @@ The simplest workflow pattern executes steps in a predefined order. Each step's 
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 async function generateMarketingCopy(input: string) {
-  const model = __MODEL__;
+  const model = "anthropic/claude-sonnet-5.5";
 
   // First step: Generate marketing copy
   const { text: copy } = await generateText({
@@ -100,11 +103,10 @@ This pattern lets the model decide which path to take through a workflow based o
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 async function handleCustomerQuery(query: string) {
-  const model = __MODEL__;
+  const model = "anthropic/claude-sonnet-5.5";
 
   // First step: Classify the query type
   const { output: classification } = await generateText({
@@ -153,12 +155,11 @@ Break down tasks into independent subtasks that execute simultaneously. This pat
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 // Example: Parallel code review with multiple specialized reviewers
 async function parallelCodeReview(code: string) {
-  const model = __MODEL__;
+  const model = "anthropic/claude-sonnet-5.5";
 
   // Run parallel reviews
   const [securityReview, performanceReview, maintainabilityReview] =
@@ -233,13 +234,12 @@ A primary model (orchestrator) coordinates the execution of specialized workers.
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 async function implementFeature(featureRequest: string) {
   // Orchestrator: Plan the implementation
   const { output: implementationPlan } = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     output: Output.object({
       schema: z.object({
         files: z.array(
@@ -272,7 +272,7 @@ async function implementFeature(featureRequest: string) {
       }[file.changeType];
 
       const { output: change } = await generateText({
-        model: __MODEL__,
+        model: "anthropic/claude-sonnet-5.5",
         output: Output.object({
           schema: z.object({
             explanation: z.string(),
@@ -307,7 +307,6 @@ Add quality control to workflows with dedicated evaluation steps that assess int
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 async function translateWithFeedback(text: string, targetLanguage: string) {
@@ -317,7 +316,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 
   // Initial translation
   const { text: translation } = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'You are an expert literary translator.',
     prompt: `Translate this text to ${targetLanguage}, preserving tone and cultural nuances:
     ${text}`,
@@ -329,7 +328,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
   while (iterations < MAX_ITERATIONS) {
     // Evaluate current translation
     const { output: evaluation } = await generateText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       output: Output.object({
         schema: z.object({
           qualityScore: z.number().min(1).max(10),
@@ -365,7 +364,7 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 
     // Generate improved translation based on feedback
     const { text: improvedTranslation } = await generateText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       instructions: 'You are an expert literary translator.',
       prompt: `Improve this translation based on the following feedback:
       ${evaluation.specificIssues.join('\n')}
@@ -386,20 +385,10 @@ async function translateWithFeedback(text: string, targetLanguage: string) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

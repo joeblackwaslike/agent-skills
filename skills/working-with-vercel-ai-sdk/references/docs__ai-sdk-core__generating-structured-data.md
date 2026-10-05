@@ -1,10 +1,14 @@
 ---
+title: Generating Structured Data
+description: Learn how to generate structured data with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "0fb408131571591d3eeb4e00b793a109c98b79908c99b6bbc854465a11e2edd5"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4014be911286dca6335c0c186aff0f41397465318277d98a14603386bdb8cd72"
 ---
 
-# Generating Structured Data
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 While text generation can be useful, your use case will likely call for generating structured data.
 For example, you might want to extract information from text, classify data, or generate synthetic data.
@@ -18,10 +22,8 @@ and [`streamText`](/docs/reference/ai-sdk-core/stream-text).
 You can use [Zod schemas](/docs/reference/ai-sdk-core/zod-schema), [Valibot](/docs/reference/ai-sdk-core/valibot-schema), or [JSON schemas](/docs/reference/ai-sdk-core/json-schema) to specify the shape of the data that you want,
 and the AI model will generate data that conforms to that structure.
 
-<Note>
-  Structured output generation is part of the `generateText` and `streamText`
-  flow. This means you can combine it with tool calling in the same request.
-</Note>
+Structured output generation is part of the `generateText` and `streamText`
+flow. This means you can combine it with tool calling in the same request.
 
 ## Generating Structured Outputs
 
@@ -30,11 +32,10 @@ The schema is also used to validate the generated data, ensuring type safety and
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { output } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -50,11 +51,9 @@ const { output } = await generateText({
 });
 ```
 
-<Note>
-  Structured output generation counts as a step in the AI SDK's multi-turn
-  execution model (where each model call or tool execution is one step). When
-  combining with tools, account for this in your `stopWhen` configuration.
-</Note>
+Structured output generation counts as a step in the AI SDK's multi-turn
+execution model (where each model call or tool execution is one step). When
+combining with tools, account for this in your `stopWhen` configuration.
 
 ### Accessing response headers & body
 
@@ -82,11 +81,10 @@ With `streamText` and `output`, you can stream the model's structured response a
 
 ```ts
 import { streamText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { partialOutputStream } = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -115,7 +113,7 @@ You can consume the structured output on the client with the [`useObject`](/docs
 
 To handle errors, provide an `onError` callback:
 
-```tsx highlight="6-8"
+```tsx {6-8}
 import { streamText, Output } from 'ai';
 
 const result = streamText({
@@ -170,11 +168,9 @@ const { output } = await generateText({
 // output will be an object matching the schema above
 ```
 
-<Note>
-  Partial outputs streamed via `streamText` cannot be validated against your
-  provided schema, as incomplete data may not yet conform to the expected
-  structure.
-</Note>
+Partial outputs streamed via `streamText` cannot be validated against your
+provided schema, as incomplete data may not yet conform to the expected
+structure.
 
 ### `Output.array()`
 
@@ -234,14 +230,12 @@ for await (const hero of elementStream) {
 }
 ```
 
-<Note>
-  Each element emitted by `elementStream` is complete and validated against your
-  element schema. This differs from `partialOutputStream`, which streams the
-  entire partial array including incomplete elements. If the model generates
-  more than `maxItems`, `elementStream` errors before emitting the first excess
-  element. This does not automatically abort provider generation, and the final
-  `output` promise rejects.
-</Note>
+Each element emitted by `elementStream` is complete and validated against your
+element schema. This differs from `partialOutputStream`, which streams the
+entire partial array including incomplete elements. If the model generates
+more than `maxItems`, `elementStream` errors before emitting the first excess
+element. This does not automatically abort provider generation, and the final
+`output` promise rejects.
 
 ### `Output.choice()`
 
@@ -295,11 +289,10 @@ One of the key advantages of using structured output with `generateText` and `st
 
 ```ts
 import { generateText, Output, tool, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { output } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     weather: tool({
       description: 'Get the weather for a location',
@@ -321,23 +314,20 @@ const { output } = await generateText({
 });
 ```
 
-<Note>
-  When using tools with structured output, remember that generating the
-  structured output counts as a step. Configure `stopWhen` to allow enough steps
-  for both tool execution and output generation.
-</Note>
+When using tools with structured output, remember that generating the
+structured output counts as a step. Configure `stopWhen` to allow enough steps
+for both tool execution and output generation.
 
 ## Property Descriptions
 
 You can add `.describe("...")` to individual schema properties to give the model hints about what each property is for. This helps improve the quality and accuracy of generated structured data:
 
-```ts highlight="9,16,19-20"
+```ts {9,16,19-20}
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { output } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       name: z.string().describe('The name of the recipe'),
@@ -368,13 +358,12 @@ Property descriptions are particularly useful for:
 
 You can optionally specify a `name` and `description` for the output. These are used by some providers for additional LLM guidance, e.g. via tool or schema name.
 
-```ts highlight="8-9"
+```ts {8-9}
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { output } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     name: 'Recipe',
     description: 'A recipe for a dish.',
@@ -397,15 +386,14 @@ This works with all output types that support structured generation:
 
 ## Accessing Reasoning
 
-You can access the reasoning used by the language model to generate the object via the `reasoning` property on the result. This property contains a string with the model's thought process, if available.
+You can access the reasoning used by the language model to generate the object via the `reasoningText` property on the result. This property contains a string with the model's thought process, if available.
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const result = await generateText({
-  model: __MODEL__, // must be a reasoning model
+  model: "anthropic/claude-sonnet-5.5", // must be a reasoning model
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -485,80 +473,20 @@ You can see structured output generation in action using various frameworks in t
 
 ### `generateText` with Output
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to generate structured data in Node.js',
-      link: '/examples/node/generating-structured-data/generate-object',
-    },
-    {
-      title:
-        'Learn to generate structured data in Next.js with Route Handlers (AI SDK UI)',
-      link: '/examples/next-pages/basics/generating-object',
-    },
-    {
-      title:
-        'Learn to generate structured data in Next.js with Server Actions (AI SDK RSC)',
-      link: '/examples/next-app/basics/generating-object',
-    },
-  ]}
-/>
+- [Learn to generate structured data in Node.js](/examples/node/generating-structured-data/generate-object)
+- [Learn to generate structured data in Next.js with Route Handlers (AI SDK UI)](/examples/next-pages/basics/generating-object)
+- [Learn to generate structured data in Next.js with Server Actions (AI SDK RSC)](/examples/next-app/basics/generating-object)
 
 ### `streamText` with Output
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to stream structured data in Node.js',
-      link: '/examples/node/streaming-structured-data/stream-object',
-    },
-    {
-      title:
-        'Learn to stream structured data in Next.js with Route Handlers (AI SDK UI)',
-      link: '/examples/next-pages/basics/streaming-object-generation',
-    },
-    {
-      title:
-        'Learn to stream structured data in Next.js with Server Actions (AI SDK RSC)',
-      link: '/examples/next-app/basics/streaming-object-generation',
-    },
-  ]}
-/>
+- [Learn to stream structured data in Node.js](/examples/node/streaming-structured-data/stream-object)
+- [Learn to stream structured data in Next.js with Route Handlers (AI SDK UI)](/examples/next-pages/basics/streaming-object-generation)
+- [Learn to stream structured data in Next.js with Server Actions (AI SDK RSC)](/examples/next-app/basics/streaming-object-generation)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

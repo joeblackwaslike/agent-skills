@@ -17,8 +17,8 @@ related:
 summary: Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, and monitor usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/command-code.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "104bf3c8f9ad1ba099b8ae4f90f6fb64f575078b613f4c3e1d0dafde2e4709e3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5b192d453c41eed43912bd4106fb42ad69c0ba0e408ceec6076cd983694ad26b"
 ---
 
 # Command Code with AI Gateway
@@ -31,6 +31,7 @@ Use [Command Code](https://commandcode.ai/) with AI Gateway for model access and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcommand-code&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcommand-code&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcommand-code&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcommand-code&source_site=vercel-docs&relationship=related) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.

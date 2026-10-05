@@ -1,10 +1,14 @@
 ---
+title: Secure URL Fetching
+description: How the AI SDK protects server-side fetches of URLs returned by model providers, and how to harden your deployment further.
+url: "https://ai-sdk.dev/docs/advanced/secure-url-fetching"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/secure-url-fetching.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "4b70aada6c1c5ac04a4493d38368d990431901d208aec54ea308eadcbdf1eba1"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3155c4bd9013aa4384643f13c24dce8903324ab1fc04f07cfb99b3f75ab9f0b0"
 ---
 
-# Secure URL Fetching
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Many providers return a **URL in their response body** — a generated image,
 audio, or video to download, or a polling URL to check job status. The AI SDK
@@ -162,21 +166,10 @@ const fal = createFal({ fetch: safeFetch });
 The SDK's URL validation and your custom fetch's connect-time pinning are
 complementary — keep both.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -14,8 +14,8 @@ related:
 summary: Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5666f770d6e78725ff94fefe00d82d2a21602c4141c63f1896feae4105a1c49a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fb348edc12c748802f2a0d78e7387f820ab6724298d29c9a9c36326689a58004"
 ---
 
 # AI Gateway Chat Completions Image Generation Reference
@@ -31,8 +31,8 @@ Generate images using AI models that support multimodal output through the Chat 
 - [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
-- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=related) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fimage-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

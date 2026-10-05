@@ -1,10 +1,14 @@
 ---
+title: Tools
+description: Use tools with AI SDK harnesses.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "248dd4e5cd0991eefda8dd0381d064c2cee101eb7db27fec510566ec6538c589"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4f311179267e6d6424fd06517174b4fbd9ab68d90f6f6c57ccfa55d9fa1e8511"
 ---
 
-# Harness Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Harnesses have three tool surfaces:
 
@@ -297,17 +301,10 @@ Some harness events are not ordinary tool calls. For UI compatibility,
 
 Check `part.dynamic` before assuming a tool part belongs to your typed tool set.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

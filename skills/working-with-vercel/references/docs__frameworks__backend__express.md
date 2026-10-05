@@ -17,8 +17,8 @@ related:
 summary: Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/express.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "41f68864b59665b18cde455954fdb6a242381f3bea3dec66df4c5e2ddeca07c3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c058711b5a3ac1e476da9e4ffec72df71f7b5219d605d8602c18cd61e39af0a1"
 ---
 
 # Express on Vercel
@@ -36,11 +36,10 @@ Express is a fast, unopinionated, minimalist web framework for Node.js. You can 
 - [How to Build a Weather API with Express and Vercel](https://vercel.com/kb/guide/weather-api-with-express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Provide real-time weather data to apps and websites with a single Express route.
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
 
 Full cross-link map for this page: [/docs/frameworks/backend/express.graph.md](/docs/frameworks/backend/express.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fexpress&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -12,12 +12,12 @@ related:
   - /docs/platforms/multi-tenant-platforms/quickstart
   - /docs/platforms/multi-tenant-platforms/configuring-domains
   - /docs/platforms/multi-tenant-platforms/custom-subpaths
-  - /docs/platforms/multi-tenant-platforms/middleware-and-routing
+  - /docs/platforms/multi-tenant-platforms/proxy-and-routing
 summary: Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "07017f8b145b63103abe91dea66138be87eadf7424fbf606db40ff64bdd6b3d7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "169e17fb04597839be91bc09e252cd60ebca26b9d6cfe50f675e129e6f2a80e2"
 ---
 
 # Multi-Tenant Platforms
@@ -31,11 +31,12 @@ A multi-tenant platform serves every customer from one codebase and one Vercel d
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related)
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
-- [Examples](https://vercel.com/docs/platforms/examples?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Examples](https://vercel.com/docs/platforms/examples?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms.graph.md](/docs/platforms/multi-tenant-platforms.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -48,7 +49,7 @@ Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms.graph
 
 **Custom subpaths**: Serve tenants from paths like /tenant1 instead of subdomains. [Learn more →](/docs/platforms/multi-tenant-platforms/custom-subpaths)
 
-**Proxy and routing**: Resolve tenants in Proxy and pass context to your app. [Learn more →](/docs/platforms/multi-tenant-platforms/middleware-and-routing)
+**Proxy and routing**: Resolve tenants in Proxy and pass context to your app. [Learn more →](/docs/platforms/multi-tenant-platforms/proxy-and-routing)
 
 **Serving static files**: Serve tenant-specific static assets from a multi-tenant app. [Learn more →](/docs/platforms/multi-tenant-platforms/serving-static-files)
 

@@ -1,10 +1,14 @@
 ---
+title: OpenAI Compatible Providers
+description: Use OpenAI compatible providers with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "f318f95a146daf8e1ed71eeddcc237497bbbb8f9b75be54289c420e33b652b05"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "39f077926fe8de23cb7d8c32e816fd692d9f3b51110a8a0360bc9e92755b0edb"
 ---
 
-# OpenAI Compatible Providers
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can use the [OpenAI Compatible Provider](https://www.npmjs.com/package/@ai-sdk/openai-compatible) package to use language model providers that implement the OpenAI API.
 
@@ -26,7 +30,7 @@ The general setup and provider instance creation is the same for all of these pr
 
 The OpenAI Compatible provider is available via the `@ai-sdk/openai-compatible` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 ## Provider Instance
 
@@ -45,53 +49,61 @@ const provider = createOpenAICompatible({
 
 You can use the following optional settings to customize the provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Set the URL prefix for API calls.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key for authenticating requests. If specified, adds an `Authorization`
   header to request headers with the value `Bearer <apiKey>`. This will be added
   before any headers potentially specified in the `headers` option.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Optional custom headers to include in requests. These will be added to request headers
   after any headers potentially added by use of the `apiKey` option.
 
-- **queryParams** _Record&lt;string,string&gt;_
+- **queryParams** *Record\<string,string>*
 
   Optional custom url query parameters to include in request urls.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **includeUsage** _boolean_
+- **includeUsage** *boolean*
 
   Include usage information in streaming responses. When enabled, usage data will be included in the response metadata for streaming requests. Defaults to `undefined` (`false`).
 
-- **supportsStructuredOutputs** _boolean_
+- **supportsStructuredOutputs** *boolean*
 
   Set to true if the provider supports structured outputs. Only relevant for `provider()`, `provider.chatModel()`, and `provider.languageModel()`.
 
-- **supportedUrls** _() =&gt; Record&lt;string, RegExp[]&gt;_
+- **supportsMultiPartToolContent** *boolean*
+
+  Set to true if the provider supports multi-part content arrays in tool
+  results. When enabled, tool outputs with `type: 'content'` can contain text,
+  images, video, audio, and PDF content parts. Defaults to `false`. Only
+  relevant for `provider()`, `provider.chatModel()`, and
+  `provider.languageModel()`.
+
+- **supportedUrls** *() => Record\<string, RegExp\[]>*
 
   Defines URLs that chat models can access directly, grouped by media type.
   Matching URLs are passed to the provider instead of being downloaded by the
   AI SDK.
 
-- **transformRequestBody** _(args: Record&lt;string, any&gt;) =&gt; Record&lt;string, any&gt;_
+- **transformRequestBody** *(args: Record\<string, any>) => Record\<string, any>*
 
   Optional function to transform the request body before sending it to the API.
   This is useful for proxy providers that may require a different request format
   than the official OpenAI API.
 
-- **metadataExtractor** _MetadataExtractor_
+- **metadataExtractor** *MetadataExtractor*
 
   Optional metadata extractor to capture provider-specific metadata from API responses.
   See [Custom Metadata Extraction](#custom-metadata-extraction) for details.
@@ -121,6 +133,22 @@ Chat models created with this provider support the following capabilities:
 - **Reasoning content** - Support for models that return reasoning/thinking tokens (e.g., DeepSeek R1)
 - **System messages** - Support for system prompts
 - **Multi-modal inputs** - Support for images and other content types (provider-dependent)
+
+Some providers extend the OpenAI Chat Completions API with multi-part tool
+result content. You can opt into this behavior when creating the provider:
+
+```ts
+const provider = createOpenAICompatible({
+  name: 'providerName',
+  apiKey: process.env.PROVIDER_API_KEY,
+  baseURL: 'https://api.provider.com/v1',
+  supportsMultiPartToolContent: true,
+});
+```
+
+Only enable `supportsMultiPartToolContent` when the provider accepts content
+arrays for messages with the `tool` role. The default stringifies multi-part
+tool results for compatibility with the OpenAI Chat Completions API.
 
 ### Example
 
@@ -268,7 +296,7 @@ which requires an `api-version` query parameter.
 You can set these via the optional `queryParams` provider setting. These will be
 added to all requests made by the provider.
 
-```ts highlight="7-9"
+```ts {7-9}
 import { createOpenAICompatible } from '@ai-sdk/openai-compatible';
 
 const provider = createOpenAICompatible({
@@ -326,26 +354,26 @@ const { images } = await generateImage({
 
 The following common provider options are available for image models:
 
-- **size** _string_
+- **size** *string*
 
   Dimensions of the generated image. Use the top-level `size` option for
   standard dimensions, or this provider option for provider-specific values
   such as `auto`.
 
-- **quality** _string_
+- **quality** *string*
 
   Quality of the generated image. Supported values depend on the provider and
   model.
 
-- **output_format** _string_
+- **output\_format** *string*
 
   File format of the generated image.
 
-- **output_compression** _number_
+- **output\_compression** *number*
 
   Compression level from `0` to `100` for formats such as JPEG and WebP.
 
-- **background** _string_
+- **background** *string*
 
   Background behavior for the generated image. Supported values depend on the
   provider and model.
@@ -411,11 +439,9 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`,
-  base64-encoded strings, or URLs. The provider will automatically download
-  URL-based images and convert them to the appropriate format.
-</Note>
+Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`,
+base64-encoded strings, or URLs. The provider will automatically download
+URL-based images and convert them to the appropriate format.
 
 ## Embedding Models
 
@@ -447,12 +473,12 @@ const { embedding } = await embed({
 
 The following provider options are available for embedding models via `providerOptions`:
 
-- **dimensions** _number_
+- **dimensions** *number*
 
   The number of dimensions the resulting output embeddings should have.
   Only supported in models that allow dimension configuration.
 
-- **user** _string_
+- **user** *string*
 
   A unique identifier representing your end-user, which can help providers to
   monitor and detect abuse.
@@ -500,21 +526,21 @@ const { text } = await generateText({
 
 The following provider options are available for completion models via `providerOptions`:
 
-- **echo** _boolean_
+- **echo** *boolean*
 
   Echo back the prompt in addition to the completion.
 
-- **logitBias** _Record&lt;string, number&gt;_
+- **logitBias** *Record\<string, number>*
 
   Modify the likelihood of specified tokens appearing in the completion.
   Accepts a JSON object that maps tokens (specified by their token ID) to an
   associated bias value from -100 to 100.
 
-- **suffix** _string_
+- **suffix** *string*
 
   The suffix that comes after a completion of inserted text.
 
-- **user** _string_
+- **user** *string*
 
   A unique identifier representing your end-user, which can help providers to
   monitor and detect abuse.
@@ -537,20 +563,20 @@ const { text } = await generateText({
 
 The following provider options are available for chat models via `providerOptions`:
 
-- **user** _string_
+- **user** *string*
 
   A unique identifier representing your end-user, which can help the provider to
   monitor and detect abuse.
 
-- **reasoningEffort** _string_
+- **reasoningEffort** *string*
 
   Reasoning effort for reasoning models. The exact values depend on the provider.
 
-- **textVerbosity** _string_
+- **textVerbosity** *string*
 
   Controls the verbosity of the generated text. The exact values depend on the provider.
 
-- **strictJsonSchema** _boolean_
+- **strictJsonSchema** *boolean*
 
   Whether to use strict JSON schema validation. When true, the model uses constrained
   decoding to guarantee schema compliance. Only used when the provider supports
@@ -685,165 +711,15 @@ const { text, providerMetadata } = await generateText({
   prompt: 'Hello',
 });
 
-console.log(providerMetadata.myProvider.customMetric);
+console.log(providerMetadata.myProvider.customMetrics);
 ```
 
 This allows you to access provider-specific information while maintaining a consistent interface across different providers.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI SDK Providers](/providers/ai-sdk-providers)
-  - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-  - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [OpenAI](/providers/ai-sdk-providers/openai)
-  - [Azure OpenAI](/providers/ai-sdk-providers/azure)
-  - [Anthropic](/providers/ai-sdk-providers/anthropic)
-  - [Open Responses](/providers/ai-sdk-providers/open-responses)
-  - [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-  - [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-  - [Groq](/providers/ai-sdk-providers/groq)
-  - [Fal](/providers/ai-sdk-providers/fal)
-  - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-  - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-  - [Deepgram](/providers/ai-sdk-providers/deepgram)
-  - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-  - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [Google](/providers/ai-sdk-providers/google)
-  - [Hume](/providers/ai-sdk-providers/hume)
-  - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-  - [Rev.ai](/providers/ai-sdk-providers/revai)
-  - [Baseten](/providers/ai-sdk-providers/baseten)
-  - [Hugging Face](/providers/ai-sdk-providers/huggingface)
-  - [QuiverAI](/providers/ai-sdk-providers/quiverai)
-  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-  - [Mistral AI](/providers/ai-sdk-providers/mistral)
-  - [Z.AI](/providers/ai-sdk-providers/zai)
-  - [Together.ai](/providers/ai-sdk-providers/togetherai)
-  - [Cohere](/providers/ai-sdk-providers/cohere)
-  - [Fireworks](/providers/ai-sdk-providers/fireworks)
-  - [Voyage AI](/providers/ai-sdk-providers/voyage)
-  - [DeepSeek](/providers/ai-sdk-providers/deepseek)
-  - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-  - [Alibaba](/providers/ai-sdk-providers/alibaba)
-  - [MiniMax](/providers/ai-sdk-providers/minimax)
-  - [Cerebras](/providers/ai-sdk-providers/cerebras)
-  - [Replicate](/providers/ai-sdk-providers/replicate)
-  - [Prodia](/providers/ai-sdk-providers/prodia)
-  - [Perplexity](/providers/ai-sdk-providers/perplexity)
-  - [Luma](/providers/ai-sdk-providers/luma)
-  - [ByteDance](/providers/ai-sdk-providers/bytedance)
-  - [Kling AI](/providers/ai-sdk-providers/klingai)
-  - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-  - [Cartesia](/providers/ai-sdk-providers/cartesia)
-- [AI SDK Harnesses](/providers/ai-sdk-harnesses)
-  - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-  - [Codex](/providers/ai-sdk-harnesses/codex)
-  - [Pi](/providers/ai-sdk-harnesses/pi)
-  - [OpenCode](/providers/ai-sdk-harnesses/opencode)
-  - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-  - [Cline](/providers/ai-sdk-harnesses/cline)
-  - [Cursor](/providers/ai-sdk-harnesses/cursor)
-  - [fx](/providers/ai-sdk-harnesses/fx)
-  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
-- [Observability Integrations](/providers/observability)
-  - [Arize AX](/providers/observability/arize-ax)
-  - [Axiom](/providers/observability/axiom)
-  - [Braintrust](/providers/observability/braintrust)
-  - [Confident AI](/providers/observability/confident-ai)
-  - [Helicone](/providers/observability/helicone)
-  - [Laminar](/providers/observability/laminar)
-  - [Langfuse](/providers/observability/langfuse)
-  - [LangSmith](/providers/observability/langsmith)
-  - [LangWatch](/providers/observability/langwatch)
-  - [Latitude](/providers/observability/latitude)
-  - [Maxim](/providers/observability/maxim)
-  - [MLflow](/providers/observability/mlflow)
-  - [Patronus](/providers/observability/patronus)
-  - [PostHog](/providers/observability/posthog)
-  - [Raindrop](/providers/observability/raindrop)
-  - [Respan](/providers/observability/respan)
-  - [Scorecard](/providers/observability/scorecard)
-  - [Sentry](/providers/observability/sentry)
-  - [SigNoz](/providers/observability/signoz)
-  - [Traceloop](/providers/observability/traceloop)
-  - [Weave](/providers/observability/weave)
-- [OpenAI Compatible Providers](/providers/openai-compatible-providers)
-  - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-  - [LM Studio](/providers/openai-compatible-providers/lmstudio)
-  - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-  - [ModelRush](/providers/openai-compatible-providers/modelrush)
-  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-  - [Clarifai](/providers/openai-compatible-providers/clarifai)
-  - [Heroku](/providers/openai-compatible-providers/heroku)
-  - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-- [Community Providers](/providers/community-providers)
-  - [Writing a Custom Provider](/providers/community-providers/custom-providers)
-  - [A2A](/providers/community-providers/a2a)
-  - [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-  - [Aihubmix](/providers/community-providers/aihubmix)
-  - [AI/ML API](/providers/community-providers/aimlapi)
-  - [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-  - [Automatic1111](/providers/community-providers/automatic1111)
-  - [Azure AI](/providers/community-providers/azure-ai)
-  - [Browser AI](/providers/community-providers/browser-ai)
-  - [Claude Code](/providers/community-providers/claude-code)
-  - [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-  - [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-  - [Codex CLI](/providers/community-providers/codex-cli)
-  - [Crosshatch](/providers/community-providers/crosshatch)
-  - [Dify](/providers/community-providers/dify)
-  - [Firemoon](/providers/community-providers/firemoon)
-  - [FriendliAI](/providers/community-providers/friendliai)
-  - [Gemini CLI](/providers/community-providers/gemini-cli)
-  - [Helicone](/providers/community-providers/helicone)
-  - [Inflection AI](/providers/community-providers/inflection-ai)
-  - [Jina AI](/providers/community-providers/jina-ai)
-  - [LangDB](/providers/community-providers/langdb)
-  - [Letta](/providers/community-providers/letta)
-  - [llama.cpp](/providers/community-providers/llama-cpp)
-  - [LlamaGate](/providers/community-providers/llamagate)
-  - [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-  - [Mem0](/providers/community-providers/mem0)
-  - [MiniMax](/providers/community-providers/minimax)
-  - [Mixedbread](/providers/community-providers/mixedbread)
-  - [Ollama](/providers/community-providers/ollama)
-  - [OpenCode](/providers/community-providers/opencode-sdk)
-  - [OpenRouter](/providers/community-providers/openrouter)
-  - [Portkey](/providers/community-providers/portkey)
-  - [Qwen](/providers/community-providers/qwen)
-  - [React Native Apple](/providers/community-providers/react-native-apple)
-  - [Requesty](/providers/community-providers/requesty)
-  - [Runpod](/providers/community-providers/runpod)
-  - [SambaNova](/providers/community-providers/sambanova)
-  - [SAP AI Core](/providers/community-providers/sap-ai)
-  - [Sarvam](/providers/community-providers/sarvam)
-  - [Soniox](/providers/community-providers/soniox)
-  - [Spark](/providers/community-providers/spark)
-  - [Supermemory](/providers/community-providers/supermemory)
-  - [Voyage AI](/providers/community-providers/voyage-ai)
-  - [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-  - [vectorstores](/providers/community-providers/vectorstores)
-  - [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-  - [Apertis](/providers/community-providers/apertis)
-  - [OLLM](/providers/community-providers/ollm)
-  - [Cencori](/providers/community-providers/cencori)
-  - [Hindsight](/providers/community-providers/hindsight)
-  - [Nia](/providers/community-providers/nia)
-  - [ZeroEntropy](/providers/community-providers/zeroentropy)
-  - [Crusoe](/providers/community-providers/crusoe)
-  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-  - [QVAC](/providers/community-providers/qvac)
-  - [Interfaze](/providers/community-providers/interfaze)
-  - [Telnyx](/providers/community-providers/telnyx)
-  - [Flowise](/providers/community-providers/flowise)
-- [Adapters](/providers/adapters)
-  - [LangChain](/providers/adapters/langchain)
-  - [LlamaIndex](/providers/adapters/llamaindex)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

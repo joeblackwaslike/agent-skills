@@ -1,10 +1,14 @@
 ---
+title: Memory
+description: Add persistent memory to your agent using provider-defined tools, memory providers, or a custom tool.
+url: "https://ai-sdk.dev/docs/agents/memory"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/memory.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "79a16ca9471afb3d11d10eeeffc4cc76dc6314fd621c2e0bc690850e865ed40d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "00453e473080a0a5c94649322e8ee82b563785c9db62da8d70446194f161fcb5"
 ---
 
-# Memory
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Memory lets your agent save information and recall it later. Without memory, every conversation starts fresh. With memory, your agent builds context over time, recalls previous interactions, and adapts to the user.
 
@@ -158,12 +162,11 @@ pnpm add @supermemory/tools
 ```
 
 ```ts
-__PROVIDER_IMPORT__;
 import { supermemoryTools } from '@supermemory/tools/ai-sdk';
 import { ToolLoopAgent } from 'ai';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: supermemoryTools(process.env.SUPERMEMORY_API_KEY!),
 });
 
@@ -185,7 +188,6 @@ pnpm add @vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client
 ```
 
 ```ts
-__PROVIDER_IMPORT__;
 import { HindsightClient } from '@vectorize-io/hindsight-client';
 import { createHindsightTools } from '@vectorize-io/hindsight-ai-sdk';
 import { ToolLoopAgent } from 'ai';
@@ -194,7 +196,7 @@ import { openai } from '@ai-sdk/openai';
 const client = new HindsightClient({ baseUrl: process.env.HINDSIGHT_API_URL });
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: createHindsightTools({ client, bankId: 'user-123' }),
   instructions: 'You are a helpful assistant with long-term memory.',
 });
@@ -270,20 +272,10 @@ There are two common patterns:
 
 For a full walkthrough of implementing a custom memory tool with a bash-backed interface, AST-based command validation, and filesystem persistence, see the **[Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)** recipe.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

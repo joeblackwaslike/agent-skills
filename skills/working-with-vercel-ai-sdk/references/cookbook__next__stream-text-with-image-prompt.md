@@ -1,10 +1,18 @@
 ---
+title: Stream Text with Image Prompt
+description: Learn how to stream text with an image prompt using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/stream-text-with-image-prompt"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - multimodal
 source: "https://ai-sdk.dev/cookbook/next/stream-text-with-image-prompt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ae97285a4548c6b32c5937bc8f8bdd361e432ba80fb006d5a1398f54461c96fd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "bd3a8cd4e2bcae072776134d60f90e65df8397cb7e7aa6150c5baa8f9a513e46"
 ---
 
-# Stream Text with Image Prompt
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Vision models such as GPT-6 Astra can process both text and images. In this example, we will show you how to send an image URL along with the user's message to the model with `useChat`.
 
@@ -14,7 +22,7 @@ Vision models such as GPT-6 Astra can process both text and images. In this exam
 
 The server route uses `convertToModelMessages` to handle the conversion from `UIMessage`s to model messages, which automatically handles multimodal content including images.
 
-```tsx filename='app/api/chat/route.ts' highlight="16,20-22"
+```tsx title='app/api/chat/route.ts' {16,20-22}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -44,7 +52,7 @@ export async function POST(req: Request) {
 
 On the client side, we use the new `useChat` hook and send multimodal messages using the `parts` array.
 
-```typescript filename='app/page.tsx'
+```typescript title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -137,31 +145,10 @@ export default function Chat() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

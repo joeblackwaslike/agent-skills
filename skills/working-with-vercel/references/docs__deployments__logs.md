@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "73bad8d875919b6c380c496404dadfc8ee96b02e29d515629fbf32016db2cd27"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c97098ccf16d25880d684dfbe61d3c03a7b6594a8e55adaefec3f43c59522aff"
 ---
 
 # Accessing Build Logs
@@ -40,8 +40,8 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related)
 - [Logs](https://vercel.com/docs/logs?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Use logs to find information on deployment builds, function executions, and more.
-- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
+- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -54,7 +54,7 @@ Build logs are particularly useful for debugging issues that may arise during de
 
 To access build logs, click the **Build Logs** button from the production deployment tile in the projects overview page.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/logs/buttons-light.png`)
+![View build logs for your Vercel deployments.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/logs/buttons-light.png)
 
 ## How build logs work?
 
@@ -75,13 +75,13 @@ You can select multiple lines by holding the `Shift` key and clicking the timest
 
 The log link is only accessible to [team members](/docs/rbac/managing-team-members). Anyone who is not a member or has a valid Vercel account cannot access this link.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/logs/log-link-light.png`)
+![Create a link to a log entry.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/logs/log-link-light.png)
 
 > **💡 Note:** The link to build logs feature works for logs that are up to 2000 lines long.
 
 ## Save logs
 
-You can use [Drains](/docs/drains) to export, store, and analyze your build logs. Log Drains configuration can be accessed through the Vercel dashboard or through one of our [Logging integrations](/integrations#logging).
+You can use [Drains](/docs/drains) to export, store, and analyze your build logs. You can configure Drains through the Vercel dashboard or through one of our [Logging integrations](/integrations#logging).
 
 
 ---

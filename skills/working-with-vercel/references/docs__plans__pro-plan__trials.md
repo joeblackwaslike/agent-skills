@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "85d0a9565c7f453aa42fe9c34c96fd479bddb7a4e76d0b64d6ca7b19be178965"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a7e4aa8fcc1a564af57b43ea5bd2551545b7985bc0c11344b4dda90ba2d0f9c0"
 ---
 
 # Understanding Vercel
@@ -53,7 +53,7 @@ The Pro trial offers an opportunity to explore [Pro features](/docs/plans/pro-pl
 2. Name your team
 3. Select the **Pro Trial** option from the dialog. If this option does not appear, it means you have already reached your limit of one trial:
 
-![Image](https://vercel.com/docs-assets/static/docs/concepts/teams/new-team-light.png)
+![Selecting a team plan.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/new-team-light.png)
 
 ## Trial Limitations
 
@@ -78,7 +78,7 @@ The following Pro features are **not available** on the trial:
 
 - [Observability Plus](/docs/observability/observability-plus) (available on Paid Pro only)
 
-* [Log drains](/docs/drains)
+* [Drains](/docs/drains)
 * [Account webhooks](/docs/webhooks#account-webhooks)
 * [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
 * [Sandbox failover regions](/docs/sandbox/concepts/regions#failover-regions)

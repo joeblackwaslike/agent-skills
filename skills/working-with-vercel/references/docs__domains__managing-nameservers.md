@@ -12,8 +12,8 @@ related:
 summary: Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-nameservers.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "622b30c4ea228a7d13ba30eadb5df2bbf9f859c04f73da2176a3466a9e194641"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "05b39a18df1088efd939a6629822c1a20dcf587493a4e34c61603a02116e5919"
 ---
 
 # Managing Nameservers
@@ -29,10 +29,12 @@ sha256: "622b30c4ea228a7d13ba30eadb5df2bbf9f859c04f73da2176a3466a9e194641"
 - [Easily manage custom nameservers for domains](https://vercel.com/changelog/easily-manage-custom-nameservers-for-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related)
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [How do I add a domain using the Vercel API?](https://vercel.com/kb/guide/how-do-i-add-a-domain-using-the-vercel-api?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Information on adding a domain using the Vercel API.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/domains/managing-nameservers.graph.md](/docs/domains/managing-nameservers.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=graph)
@@ -50,11 +52,11 @@ Nameserver changes can take up to 48 hours to complete due to [DNS propagation](
 2. Open [**Domains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+Domains) in the sidebar and select the domain
 3. On your domain's settings page, under **Nameservers**, click the **Edit** button:
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/nameservers.png`)
+![Nameservers section showing the Edit button.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/nameservers.png)
 
 4. In the **Edit Nameservers** modal, add the new nameservers:
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/edit-nameservers.png`)
+![Adding custom nameservers on the Edit Nameservers modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/edit-nameservers.png)
 
 ## Add Vercel's nameservers
 
@@ -77,7 +79,7 @@ Nameserver changes can take up to 48 hours to complete due to [DNS propagation](
 
 Vercel will present a message when you have successfully submitted the nameserver change.
 
-![Image](`/docs-assets/static/docs/concepts/projects/custom-domains/restore-original-nameservers.png`)
+![Restoring original nameservers by clicking the Restore button.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/restore-original-nameservers.png)
 
 
 ---

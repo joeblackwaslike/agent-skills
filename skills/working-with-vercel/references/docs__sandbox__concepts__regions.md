@@ -17,8 +17,8 @@ related:
 summary: Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/regions.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "190e97a74bc34563106e4c61052480a2228506cdcbab649e9a47c8b0b04e1248"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "83afeba90628293b99ed3d94cdc25e09707830c8a001b8512fe9681f0b72dc89"
 ---
 
 # Sandbox Regions
@@ -35,11 +35,9 @@ Sandboxes run in a region that you choose when you create them. Pick the region 
 - [Vercel Sandbox is now available in all regions](https://vercel.com/changelog/vercel-sandbox-is-now-available-in-all-regions?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox is now globally available](https://vercel.com/changelog/vercel-sandbox-is-now-globally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/regions.graph.md](/docs/sandbox/concepts/regions.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fregions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -143,7 +141,7 @@ New sandboxes that don't specify a `region` use the project default. Existing sa
 
 ## Failover regions
 
-> **🔒 Permissions Required**: Failover regions
+> **Availability**: Failover regions are available on Enterprise and Pro plans
 
 Failover regions let sandbox creation succeed even when the main region is unavailable. When Vercel can't provision capacity in the main region, it tries the failover regions in the order you list them.
 

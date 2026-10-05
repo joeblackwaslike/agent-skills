@@ -15,13 +15,13 @@ related:
 summary: Learn about the different team level roles and the permissions they provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/team-level-roles.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b86b4d39bc7d0766092b82a786411e6fcaf13e6830551993f977690f718d7d77"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d67d928b5062b009e32b64b9d80e4e332da623718dc758a268bc1029aafff9b8"
 ---
 
 # Team Level Roles
 
-> **🔒 Permissions Required**: Team level roles
+> **Availability**: Team level roles are available on Enterprise and Pro plans
 
 Team level roles are designed to provide a comprehensive level of control and access to the team as a whole. These roles are assigned to individuals and are applicable to all projects within the team. This allows for a centralized level of control and access, while still maintaining the security and integrity of the team as a whole.
 
@@ -35,9 +35,11 @@ Team level roles are designed to provide a comprehensive level of control and ac
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn about the project level roles and their permissions.
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related)
+- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related)
+- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related)
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
+- [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
 
 Full cross-link map for this page: [/docs/rbac/access-roles/team-level-roles.graph.md](/docs/rbac/access-roles/team-level-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fteam-level-roles&source_site=vercel-docs&relationship=graph)

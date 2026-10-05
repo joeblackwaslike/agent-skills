@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "540af3aaa33efd48422bebfc80d67652fd587c7ad9aad979ad15dbd93c7f3796"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8d16e7ad60a401e952942e76de697ca0ac5d6baf4ef19050fdf9867bf22ed762"
 ---
 
 # vercel cache
@@ -60,7 +60,7 @@ vercel cache purge --type cdn
 ```
 
 *Using the \`vercel cache purge --type cdn\` command to
-purge the CDN cache for the currenet project.*
+purge the CDN cache for the current project.*
 
 ```bash filename="terminal"
 vercel cache purge --type data

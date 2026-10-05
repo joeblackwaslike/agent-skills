@@ -1,10 +1,14 @@
 ---
+title: Amazon Bedrock
+description: Learn how to use the Amazon Bedrock provider.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3768bbfa9a2cb4304cb3085938d550138cfa2e56ac35d609e7bc76e2a30c3f74"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0a419a61626bdf79768266ec6a69f00095d85f8a46a969af9d9c1d689ad99550"
 ---
 
-# Amazon Bedrock Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Amazon Bedrock provider for the [AI SDK](/docs) contains language model support for the [Amazon Bedrock](https://aws.amazon.com/bedrock) APIs.
 
@@ -12,7 +16,7 @@ The Amazon Bedrock provider for the [AI SDK](/docs) contains language model supp
 
 The Bedrock provider is available in the `@ai-sdk/amazon-bedrock` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/amazon-bedrock" />
+**Packages:** `@ai-sdk/amazon-bedrock`
 
 ### Prerequisites
 
@@ -80,12 +84,10 @@ AWS_SECRET_ACCESS_KEY=YOUR_SECRET_ACCESS_KEY
 AWS_REGION=YOUR_REGION
 ```
 
-<Note>
-  Many frameworks such as [Next.js](https://nextjs.org/) load the `.env` file
-  automatically. If you're using a different framework, you may need to load the
-  `.env` file manually using a package like
-  [`dotenv`](https://github.com/motdotla/dotenv).
-</Note>
+Many frameworks such as [Next.js](https://nextjs.org/) load the `.env` file
+automatically. If you're using a different framework, you may need to load the
+`.env` file manually using a package like
+[`dotenv`](https://github.com/motdotla/dotenv).
 
 Remember to replace `YOUR_ACCESS_KEY_ID`, `YOUR_SECRET_ACCESS_KEY`, and `YOUR_REGION` with the actual values from your AWS account.
 
@@ -93,11 +95,11 @@ Remember to replace `YOUR_ACCESS_KEY_ID`, `YOUR_SECRET_ACCESS_KEY`, and `YOUR_RE
 
 When using AWS SDK, the SDK will automatically use the credentials chain to determine the credentials to use. This includes instance profiles, instance roles, ECS roles, EKS Service Accounts, etc. A similar behavior is possible using the AI SDK by not specifying the `accessKeyId` and `secretAccessKey`, `sessionToken` properties in the provider settings and instead passing a `credentialProvider` property.
 
-_Usage:_
+*Usage:*
 
 `@aws-sdk/credential-providers` package provides a set of credential providers that can be used to create a credential provider chain.
 
-<InstallPackages packages="@aws-sdk/credential-providers" />
+**Packages:** `@aws-sdk/credential-providers`
 
 ```ts
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
@@ -130,49 +132,47 @@ const amazonBedrock = createAmazonBedrock({
 });
 ```
 
-<Note>
-  Omitted options use the environment variables below. When **both**
-  `accessKeyId` and `secretAccessKey` are strings, SigV4 uses a **`sessionToken`
-  only if you pass one** - not `AWS_SESSION_TOKEN` from the environment - so
-  static keys are not mixed with workload tokens (e.g. EKS IRSA).
-</Note>
+Omitted options use the environment variables below. When **both**
+`accessKeyId` and `secretAccessKey` are strings, SigV4 uses a **`sessionToken`
+only if you pass one** - not `AWS_SESSION_TOKEN` from the environment - so
+static keys are not mixed with workload tokens (e.g. EKS IRSA).
 
 You can use the following optional settings to customize the Amazon Bedrock provider instance:
 
-- **region** _string_
+- **region** *string*
 
   The AWS region that you want to use for the API calls.
   It uses the `AWS_REGION` environment variable by default.
 
-- **accessKeyId** _string_
+- **accessKeyId** *string*
 
   The AWS access key ID that you want to use for the API calls.
   It uses the `AWS_ACCESS_KEY_ID` environment variable by default.
 
-- **secretAccessKey** _string_
+- **secretAccessKey** *string*
 
   The AWS secret access key that you want to use for the API calls.
   It uses the `AWS_SECRET_ACCESS_KEY` environment variable by default.
 
-- **sessionToken** _string_
+- **sessionToken** *string*
 
   Optional. For temporary credentials. With **both** access keys set as strings,
   pass the token here if needed; `AWS_SESSION_TOKEN` from the environment is not
   used. If either key is taken from the environment, omitting `sessionToken`
   allows `AWS_SESSION_TOKEN`.
 
-- **credentialProvider** _() =&gt; Promise&lt;&#123; accessKeyId: string; secretAccessKey: string; sessionToken?: string; &#125;&gt;_
+- **credentialProvider** *() => Promise\<\{ accessKeyId: string; secretAccessKey: string; sessionToken?: string; }>*
 
   Optional. The AWS credential provider chain that you want to use for the API calls.
   It uses the specified credentials by default.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   Optional. API key for authenticating requests using Bearer token authentication.
   When provided, this will be used instead of AWS SigV4 authentication.
   It uses the `AWS_BEARER_TOKEN_BEDROCK` environment variable by default.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Optional. Base URL for the Bedrock API calls.
   Useful for custom endpoints or proxy configurations.
@@ -181,11 +181,11 @@ You can use the following optional settings to customize the Amazon Bedrock prov
   `AWS_ENDPOINT_URL_BEDROCK_AGENT_RUNTIME` environment variables, which take
   precedence over the global `AWS_ENDPOINT_URL` environment variable.
 
-- **headers** _Record&lt;string, string&gt;_
+- **headers** *Record\<string, string>*
 
   Optional. Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) =&gt; Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Optional. Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -317,10 +317,8 @@ output, set `structuredOutputMode` to `"jsonTool"`.
 
 ### File Inputs
 
-<Note type="warning">
-  Amazon Bedrock supports file inputs in combination with specific models, e.g.
-  `anthropic.claude-3-haiku-20240307-v1:0`.
-</Note>
+Amazon Bedrock supports file inputs in combination with specific models, e.g.
+`anthropic.claude-3-haiku-20240307-v1:0`.
 
 The Amazon Bedrock provider supports file inputs, e.g. PDF files.
 
@@ -461,7 +459,7 @@ See the [Amazon Bedrock Guardrails with Converse API documentation](https://docs
 Amazon Bedrock supports citations for document-based inputs across compatible models. When enabled:
 
 - Some models can read documents with visual understanding, not just extracting text
-- Models can cite specific parts of documents you provide, making it easier to trace information back to its source (Not Supported Yet)
+- Models can cite specific parts of documents you provide, making it easier to trace information back to its source (the AI SDK does not return citation data in results yet)
 
 ```ts
 import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
@@ -505,11 +503,9 @@ console.log('Response:', result.output);
 
 ### Cache Points
 
-<Note>
-  Amazon Bedrock prompt caching is currently in preview release. To request
-  access, visit the [Amazon Bedrock prompt caching
-  page](https://aws.amazon.com/bedrock/prompt-caching/).
-</Note>
+Amazon Bedrock prompt caching is currently in preview release. To request
+access, visit the [Amazon Bedrock prompt caching
+page](https://aws.amazon.com/bedrock/prompt-caching/).
 
 In messages, you can use the `providerOptions` property to set cache points. Set the `bedrock` property in the `providerOptions` object to `{ cachePoint: { type: 'default' } }` to create a cache point.
 
@@ -521,21 +517,17 @@ providerOptions: {
 }
 ```
 
-<Note>
-  When using multiple cache points with different TTLs, cache entries with
-  longer TTL must appear before shorter TTLs (i.e., 1-hour cache entries must
-  come before 5-minute cache entries).
-</Note>
+When using multiple cache points with different TTLs, cache entries with
+longer TTL must appear before shorter TTLs (i.e., 1-hour cache entries must
+come before 5-minute cache entries).
 
 Cache usage information is returned in the `providerMetadata` object. See examples below.
 
-<Note>
-  Cache points have model-specific token minimums and limits. For example,
-  Claude 3.5 Sonnet v2 requires at least 1,024 tokens for a cache point and
-  allows up to 4 cache points. See the [Amazon Bedrock prompt caching
-  documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html)
-  for details on supported models, regions, and limits.
-</Note>
+Cache points have model-specific token minimums and limits. For example,
+Claude 3.5 Sonnet v2 requires at least 1,024 tokens for a cache point and
+allows up to 4 cache points. See the [Amazon Bedrock prompt caching
+documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html)
+for details on supported models, regions, and limits.
 
 ```ts
 import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
@@ -545,7 +537,7 @@ const cyberpunkAnalysis =
   '... literary analysis of cyberpunk themes and concepts ...';
 
 const result = await generateText({
-  model: amazonBedrock('us.anthropic.claude-sonnet-5'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-5-5'),
   messages: [
     {
       role: 'system',
@@ -581,7 +573,7 @@ const cyberpunkAnalysis =
   '... literary analysis of cyberpunk themes and concepts ...';
 
 const result = streamText({
-  model: amazonBedrock('us.anthropic.claude-sonnet-5'),
+  model: amazonBedrock('us.anthropic.claude-sonnet-5-5'),
   messages: [
     {
       role: 'assistant',
@@ -618,15 +610,15 @@ console.log(
 
 The following Bedrock-specific metadata may be returned in `providerMetadata.bedrock`:
 
-- **trace** _(optional)_
+- **trace** *(optional)*
   Guardrail tracing information (when tracing is enabled).
-- **performanceConfig** _(optional)_
+- **performanceConfig** *(optional)*
   Performance configuration, e.g. `{ latency: 'optimized' }`.
-- **serviceTier** _(optional)_
+- **serviceTier** *(optional)*
   Service tier information, e.g. `{ type: 'on-demand' }`.
-- **usage** _(optional)_
+- **usage** *(optional)*
   Cache token usage details including `cacheWriteInputTokens` and `cacheDetails`.
-- **stopSequence** _string | null_
+- **stopSequence** *string | null*
   The stop sequence that triggered the stop, if any.
 
 ## Reasoning
@@ -743,10 +735,8 @@ Via Anthropic, Amazon Bedrock provides three provider-defined tools that can be 
 
 They are available via the `tools` property of the provider instance.
 
-<Note>
-  Amazon Bedrock does not support strict mode on tool definitions. Setting
-  `strict: true` on a tool will be ignored and a warning will be emitted.
-</Note>
+Amazon Bedrock does not support strict mode on tool definitions. Setting
+`strict: true` on a tool will be ignored and a warning will be emitted.
 
 ### Bash Tool
 
@@ -812,14 +802,14 @@ const textEditorTool = amazonBedrock.tools.textEditor_20241022({
 
 Parameters:
 
-- `command` ('view' | 'create' | 'str_replace' | 'insert' | 'undo_edit'): The command to run. Note: `undo_edit` is only available in Claude 3.5 Sonnet and earlier models.
+- `command` ('view' | 'create' | 'str\_replace' | 'insert' | 'undo\_edit'): The command to run. Note: `undo_edit` is only available in Claude 3.5 Sonnet and earlier models.
 - `path` (string): Absolute path to file or directory, e.g. `/repo/file.py` or `/repo`.
 - `file_text` (string, optional): Required for `create` command, with the content of the file to be created.
 - `insert_line` (number, optional): Required for `insert` command. The line number after which to insert the new string.
 - `new_str` (string, optional): New string for `str_replace` command.
 - `insert_text` (string, optional): Required for `insert` command, containing the text to insert.
 - `old_str` (string, optional): Required for `str_replace` command, containing the string to replace.
-- `view_range` (number[], optional): Optional for `view` command to specify line range to show.
+- `view_range` (number\[], optional): Optional for `view` command to specify line range to show.
 
 When using the Text Editor Tool, make sure to name the key in the tools object correctly:
 
@@ -893,8 +883,8 @@ const computerTool = amazonBedrock.tools.computer_20241022({
 
 Parameters:
 
-- `action` ('key' | 'type' | 'mouse_move' | 'left_click' | 'left_click_drag' | 'right_click' | 'middle_click' | 'double_click' | 'screenshot' | 'cursor_position'): The action to perform.
-- `coordinate` (number[], optional): Required for `mouse_move` and `left_click_drag` actions. Specifies the (x, y) coordinates.
+- `action` ('key' | 'type' | 'mouse\_move' | 'left\_click' | 'left\_click\_drag' | 'right\_click' | 'middle\_click' | 'double\_click' | 'screenshot' | 'cursor\_position'): The action to perform.
+- `coordinate` (number\[], optional): Required for `mouse_move` and `left_click_drag` actions. Specifies the (x, y) coordinates.
 - `text` (string, optional): Required for `type` and `key` actions.
 
 These tools can be used in conjunction with the `anthropic.claude-3-5-sonnet-20240620-v1:0` model to enable more complex interactions and tasks.
@@ -903,72 +893,70 @@ These tools can be used in conjunction with the `anthropic.claude-3-5-sonnet-202
 
 | Model                                          | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ---------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `amazon.titan-tg1-large`                       | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `amazon.titan-text-express-v1`                 | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `amazon.titan-text-lite-v1`                    | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `us.amazon.nova-premier-v1:0`                  | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.amazon.nova-pro-v1:0`                      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.amazon.nova-lite-v1:0`                     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.amazon.nova-micro-v1:0`                    | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-haiku-4-5-20251001-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-sonnet-4-20250514-v1:0`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-sonnet-4-5-20250929-v1:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-opus-4-20250514-v1:0`        | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-opus-4-1-20250805-v1:0`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-3-5-sonnet-20241022-v2:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-3-5-sonnet-20240620-v1:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-3-opus-20240229-v1:0`        | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-3-sonnet-20240229-v1:0`      | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-3-haiku-20240307-v1:0`       | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-opus-4-20250514-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-3-5-sonnet-20240620-v1:0` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-3-sonnet-20240229-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-3-opus-20240229-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `us.anthropic.claude-3-haiku-20240307-v1:0`    | <Check />   | <Check />         | <Check />  | <Check />      |
-| `anthropic.claude-v2`                          | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `anthropic.claude-v2:1`                        | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `anthropic.claude-instant-v1`                  | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `cohere.command-text-v14`                      | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `cohere.command-light-text-v14`                | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `cohere.command-r-v1:0`                        | <Cross />   | <Cross />         | <Check />  | <Cross />      |
-| `cohere.command-r-plus-v1:0`                   | <Cross />   | <Cross />         | <Check />  | <Cross />      |
-| `us.deepseek.r1-v1:0`                          | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta.llama3-8b-instruct-v1:0`                 | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-70b-instruct-v1:0`                | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-1-8b-instruct-v1:0`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-1-70b-instruct-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-1-405b-instruct-v1:0`             | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-2-1b-instruct-v1:0`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-2-3b-instruct-v1:0`               | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-2-11b-instruct-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta.llama3-2-90b-instruct-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `us.meta.llama3-2-1b-instruct-v1:0`            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama3-2-3b-instruct-v1:0`            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama3-2-11b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama3-2-90b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama3-1-8b-instruct-v1:0`            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama3-1-70b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama3-3-70b-instruct-v1:0`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama4-scout-17b-instruct-v1:0`       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `us.meta.llama4-maverick-17b-instruct-v1:0`    | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mistral.mistral-7b-instruct-v0:2`             | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `mistral.mixtral-8x7b-instruct-v0:1`           | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `mistral.mistral-large-2402-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `mistral.mistral-small-2402-v1:0`              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `us.mistral.pixtral-large-2502-v1:0`           | <Check />   | <Check />         | <Check />  | <Check />      |
-| `openai.gpt-oss-120b-1:0`                      | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `openai.gpt-oss-20b-1:0`                       | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `amazon.titan-tg1-large`                       | ✗           | ✗                 | ✗          | ✗              |
+| `amazon.titan-text-express-v1`                 | ✗           | ✗                 | ✗          | ✗              |
+| `amazon.titan-text-lite-v1`                    | ✗           | ✗                 | ✗          | ✗              |
+| `us.amazon.nova-premier-v1:0`                  | ✓           | ✓                 | ✓          | ✓              |
+| `us.amazon.nova-pro-v1:0`                      | ✓           | ✓                 | ✓          | ✓              |
+| `us.amazon.nova-lite-v1:0`                     | ✓           | ✓                 | ✓          | ✓              |
+| `us.amazon.nova-micro-v1:0`                    | ✗           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-haiku-4-5-20251001-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-sonnet-4-20250514-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-sonnet-4-5-20250929-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-opus-4-20250514-v1:0`        | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-opus-4-1-20250805-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-5-sonnet-20241022-v2:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-5-sonnet-20240620-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-opus-20240229-v1:0`        | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-sonnet-20240229-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-haiku-20240307-v1:0`       | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-opus-4-20250514-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-5-sonnet-20240620-v1:0` | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-sonnet-20240229-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-opus-20240229-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-haiku-20240307-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-v2`                          | ✗           | ✗                 | ✗          | ✗              |
+| `anthropic.claude-v2:1`                        | ✗           | ✗                 | ✗          | ✗              |
+| `anthropic.claude-instant-v1`                  | ✗           | ✗                 | ✗          | ✗              |
+| `cohere.command-text-v14`                      | ✗           | ✗                 | ✗          | ✗              |
+| `cohere.command-light-text-v14`                | ✗           | ✗                 | ✗          | ✗              |
+| `cohere.command-r-v1:0`                        | ✗           | ✗                 | ✓          | ✗              |
+| `cohere.command-r-plus-v1:0`                   | ✗           | ✗                 | ✓          | ✗              |
+| `us.deepseek.r1-v1:0`                          | ✗           | ✓                 | ✓          | ✓              |
+| `meta.llama3-8b-instruct-v1:0`                 | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-70b-instruct-v1:0`                | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-1-8b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-1-70b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-1-405b-instruct-v1:0`             | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-2-1b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-2-3b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-2-11b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-2-90b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `us.meta.llama3-2-1b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-3b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-11b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-90b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-1-8b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-1-70b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-3-70b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama4-scout-17b-instruct-v1:0`       | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama4-maverick-17b-instruct-v1:0`    | ✗           | ✓                 | ✓          | ✓              |
+| `mistral.mistral-7b-instruct-v0:2`             | ✗           | ✗                 | ✗          | ✗              |
+| `mistral.mixtral-8x7b-instruct-v0:1`           | ✗           | ✗                 | ✗          | ✗              |
+| `mistral.mistral-large-2402-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `mistral.mistral-small-2402-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `us.mistral.pixtral-large-2502-v1:0`           | ✓           | ✓                 | ✓          | ✓              |
+| `openai.gpt-oss-120b-1:0`                      | ✗           | ✓                 | ✓          | ✓              |
+| `openai.gpt-oss-20b-1:0`                       | ✗           | ✓                 | ✓          | ✓              |
 
-<Note>
-  The table above lists popular models. Please see the [Amazon Bedrock
-  docs](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html)
-  for a full list of available models. You can also pass any available provider
-  model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [Amazon Bedrock
+docs](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html)
+for a full list of available models. You can also pass any available provider
+model ID as a string if needed.
 
 ## Embedding Models
 
@@ -1003,11 +991,11 @@ const { embedding } = await embed({
 
 The following optional provider options are available for Bedrock Titan embedding models:
 
-- **dimensions**: _number_
+- **dimensions**: *number*
 
   The number of dimensions the output embeddings should have. The following values are accepted: 1024 (default), 512, 256.
 
-- **normalize** _boolean_
+- **normalize** *boolean*
 
   Flag indicating whether or not to normalize the output embeddings. Defaults to true.
 
@@ -1035,15 +1023,15 @@ const { embedding } = await embed({
 
 The following optional provider options are available for Nova embedding models:
 
-- **embeddingDimension** _number_
+- **embeddingDimension** *number*
 
   The number of dimensions for the output embeddings. Supported values: 256, 384, 1024 (default), 3072.
 
-- **embeddingPurpose** _string_
+- **embeddingPurpose** *string*
 
   The purpose of the embedding. Accepts: `GENERIC_INDEX` (default), `TEXT_RETRIEVAL`, `IMAGE_RETRIEVAL`, `VIDEO_RETRIEVAL`, `DOCUMENT_RETRIEVAL`, `AUDIO_RETRIEVAL`, `GENERIC_RETRIEVAL`, `CLASSIFICATION`, `CLUSTERING`.
 
-- **truncate** _string_
+- **truncate** *string*
 
   Truncation behavior when input exceeds the model's context length. Accepts: `NONE`, `START`, `END` (default).
 
@@ -1070,11 +1058,11 @@ const { embedding } = await embed({
 
 The following provider options are available for Cohere embedding models:
 
-- **inputType** _string_
+- **inputType** *string*
 
   Input type for Cohere embedding models. Accepts: `search_document`, `search_query` (default), `classification`, `clustering`.
 
-- **truncate** _string_
+- **truncate** *string*
 
   Truncation behavior when input exceeds the model's context length. Accepts: `NONE`, `START`, `END`.
 
@@ -1106,11 +1094,11 @@ const { embeddings } = await embedMany({
 
 | Model                          | Default Dimensions | Custom Dimensions |
 | ------------------------------ | ------------------ | ----------------- |
-| `amazon.titan-embed-text-v1`   | 1536               | <Cross />         |
-| `amazon.titan-embed-text-v2:0` | 1024               | <Check />         |
-| `amazon.nova-embed-text-v2:0`  | 1024               | <Check />         |
-| `cohere.embed-english-v3`      | 1024               | <Cross />         |
-| `cohere.embed-multilingual-v3` | 1024               | <Cross />         |
+| `amazon.titan-embed-text-v1`   | 1536               | ✗                 |
+| `amazon.titan-embed-text-v2:0` | 1024               | ✓                 |
+| `amazon.nova-embed-text-v2:0`  | 1024               | ✓                 |
+| `cohere.embed-english-v3`      | 1024               | ✗                 |
+| `cohere.embed-multilingual-v3` | 1024               | ✗                 |
 
 ## Reranking Models
 
@@ -1167,11 +1155,11 @@ const { ranking } = await rerank({
 
 The following provider options are available:
 
-- **nextToken** _string_
+- **nextToken** *string*
 
   Token for pagination of results.
 
-- **additionalModelRequestFields** _Record&lt;string, unknown&gt;_
+- **additionalModelRequestFields** *Record\<string, unknown>*
 
   Additional model-specific request fields.
 
@@ -1190,10 +1178,8 @@ using the `.image()` factory method.
 For more on the Amazon Nova Canvas image model, see the [Nova Canvas
 Overview](https://docs.aws.amazon.com/ai/responsible-ai/nova-canvas/overview.html).
 
-<Note>
-  The `amazon.nova-canvas-v1:0` model is available in the `us-east-1`,
-  `eu-west-1`, and `ap-northeast-1` regions.
-</Note>
+The `amazon.nova-canvas-v1:0` model is available in the `us-east-1`,
+`eu-west-1`, and `ap-northeast-1` regions.
 
 ```ts
 const model = amazonBedrock.image('amazon.nova-canvas-v1:0');
@@ -1240,19 +1226,19 @@ const { image } = await generateImage({
 
 The following optional provider options are available for Amazon Nova Canvas:
 
-- **quality** _string_
+- **quality** *string*
 
   The quality level for image generation. Accepts `'standard'` or `'premium'`.
 
-- **negativeText** _string_
+- **negativeText** *string*
 
   Text describing what you don't want in the generated image.
 
-- **cfgScale** _number_
+- **cfgScale** *number*
 
   Controls how closely the generated image adheres to the prompt. Higher values result in images that are more closely aligned to the prompt.
 
-- **style** _string_
+- **style** *string*
 
   Predefined visual style for image generation.
   Accepts one of:
@@ -1291,7 +1277,7 @@ const { images } = await generateImage({
 });
 ```
 
-- **similarityStrength** _number_
+- **similarityStrength** *number*
 
   Controls how similar the output is to the input image. Values range from 0.2 to 1.0, where higher values produce results closer to the original.
 
@@ -1335,7 +1321,7 @@ const { images } = await generateImage({
 });
 ```
 
-- **maskPrompt** _string_
+- **maskPrompt** *string*
 
   A text description of the area to modify. The model will automatically identify and mask the described region.
 
@@ -1362,7 +1348,7 @@ const { images } = await generateImage({
 });
 ```
 
-- **outPaintingMode** _string_
+- **outPaintingMode** *string*
 
   Controls how the outpainting is performed. Accepts `'DEFAULT'` or `'PRECISE'`.
 
@@ -1386,28 +1372,26 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Background removal does not require a text prompt - only the input image is
-  needed.
-</Note>
+Background removal does not require a text prompt - only the input image is
+needed.
 
 #### Image Editing Provider Options
 
 The following additional provider options are available for image editing:
 
-- **taskType** _string_
+- **taskType** *string*
 
   Explicitly set the editing task type. Accepts `'TEXT_IMAGE'` (default for text-only), `'IMAGE_VARIATION'`, `'INPAINTING'`, `'OUTPAINTING'`, or `'BACKGROUND_REMOVAL'`. When images are provided without an explicit taskType, the model defaults to `'IMAGE_VARIATION'` (or `'INPAINTING'` if a mask is provided).
 
-- **maskPrompt** _string_
+- **maskPrompt** *string*
 
   Text description of the area to modify (for inpainting/outpainting). Alternative to providing a mask image.
 
-- **similarityStrength** _number_
+- **similarityStrength** *number*
 
   For `IMAGE_VARIATION`: Controls similarity to the original (0.2-1.0).
 
-- **outPaintingMode** _string_
+- **outPaintingMode** *string*
 
   For `OUTPAINTING`: Controls the outpainting behavior (`'DEFAULT'` or `'PRECISE'`).
 
@@ -1425,7 +1409,7 @@ await generateImage({
 });
 ```
 
-- **maxImagesPerCall** _number_
+- **maxImagesPerCall** *number*
 
   Override the maximum number of images generated per API call. Default can vary
   by model, with 5 as a common default.
@@ -1455,7 +1439,7 @@ network requests made of the Bedrock servers.
 import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
-const { text } = await generateText({
+const result = await generateText({
   model: amazonBedrock('meta.llama3-70b-instruct-v1:0'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
@@ -1466,7 +1450,7 @@ console.log(result.response.headers);
 Below is sample output where you can see the `x-amzn-requestid` header. This can
 be useful for correlating Bedrock API calls with requests made by the AI SDK:
 
-```js highlight="6"
+```js {6}
 {
   connection: 'keep-alive',
   'content-length': '2399',
@@ -1494,7 +1478,7 @@ console.log('Response headers:', (await result.response).headers);
 
 With sample output as:
 
-```js highlight="6"
+```js {6}
 {
   connection: 'keep-alive',
   'content-type': 'application/vnd.amazon.eventstream',
@@ -1535,35 +1519,35 @@ const bedrockAnthropic = createBedrockAnthropic({
 
 You can use the following optional settings to customize the Bedrock Anthropic provider instance:
 
-- **region** _string_
+- **region** *string*
 
   The AWS region that you want to use for the API calls.
   It uses the `AWS_REGION` environment variable by default.
 
-- **accessKeyId** _string_
+- **accessKeyId** *string*
 
   The AWS access key ID that you want to use for the API calls.
   It uses the `AWS_ACCESS_KEY_ID` environment variable by default.
 
-- **secretAccessKey** _string_
+- **secretAccessKey** *string*
 
   The AWS secret access key that you want to use for the API calls.
   It uses the `AWS_SECRET_ACCESS_KEY` environment variable by default.
 
-- **sessionToken** _string_
+- **sessionToken** *string*
 
   Optional. For temporary credentials. With **both** access keys set as strings,
   pass the token here if needed; `AWS_SESSION_TOKEN` from the environment is not
   used. If either key is taken from the environment, omitting `sessionToken`
   allows `AWS_SESSION_TOKEN`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key for authenticating requests using Bearer token authentication.
   When provided, this will be used instead of AWS SigV4 authentication.
   It uses the `AWS_BEARER_TOKEN_BEDROCK` environment variable by default.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Base URL for the Bedrock API calls.
   Useful for custom endpoints or proxy configurations.
@@ -1571,17 +1555,17 @@ You can use the following optional settings to customize the Bedrock Anthropic p
   `AWS_ENDPOINT_URL_BEDROCK_RUNTIME` environment variable, which takes
   precedence over the global `AWS_ENDPOINT_URL` environment variable.
 
-- **headers** _Resolvable&lt;Record&lt;string, string | undefined&gt;&gt;_
+- **headers** *Resolvable\<Record\<string, string | undefined>>*
 
   Headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **credentialProvider** _() => PromiseLike&lt;BedrockCredentials&gt;_
+- **credentialProvider** *() => PromiseLike\<BedrockCredentials>*
 
   The AWS credential provider to use for the Bedrock provider to get dynamic
   credentials similar to the AWS SDK. Setting a provider here will cause its
@@ -1591,10 +1575,10 @@ You can use the following optional settings to customize the Bedrock Anthropic p
 ### Language Models
 
 You can create models that call the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post) using the provider instance.
-The first argument is the model id, e.g. `us.anthropic.claude-sonnet-5`.
+The first argument is the model id, e.g. `us.anthropic.claude-sonnet-5-5`.
 
 ```ts
-const model = bedrockAnthropic('us.anthropic.claude-sonnet-5');
+const model = bedrockAnthropic('us.anthropic.claude-sonnet-5-5');
 ```
 
 You can use Bedrock Anthropic language models to generate text with the `generateText` function:
@@ -1604,7 +1588,7 @@ import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: bedrockAnthropic('us.anthropic.claude-sonnet-5'),
+  model: bedrockAnthropic('us.anthropic.claude-sonnet-5-5'),
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -1613,10 +1597,11 @@ const { text } = await generateText({
 
 The following optional provider options are available for Bedrock Anthropic models:
 
-- `metadata` _object_
+- `metadata` *object*
 
   Optional. Metadata to include with the request. See the [Anthropic API documentation](https://platform.claude.com/docs/en/api/messages/create) for details.
-  - `userId` _string_ - An external identifier for the end-user.
+
+  - `userId` *string* - An external identifier for the end-user.
 
 ### Cache Control
 
@@ -1628,7 +1613,7 @@ import { bedrockAnthropic } from '@ai-sdk/amazon-bedrock/anthropic';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: bedrockAnthropic('us.anthropic.claude-sonnet-5'),
+  model: bedrockAnthropic('us.anthropic.claude-sonnet-5-5'),
   messages: [
     {
       role: 'system',
@@ -1645,12 +1630,10 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  Cache control requires a minimum of 1024 tokens before the cache checkpoint.
-  See the [Amazon Bedrock prompt caching
-  documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html)
-  for details on supported models and limits.
-</Note>
+Cache control requires a minimum of 1024 tokens before the cache checkpoint.
+See the [Amazon Bedrock prompt caching
+documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html)
+for details on supported models and limits.
 
 ### Computer Use
 
@@ -1662,10 +1645,8 @@ The Bedrock Anthropic provider supports Anthropic's computer use tools:
 
 They are available via the `tools` property of the provider instance.
 
-<Note>
-  Computer use tools require Claude 3.7 Sonnet or newer models. Claude 3.5
-  Sonnet v2 does not support these tools.
-</Note>
+Computer use tools require Claude 3.7 Sonnet or newer models. Claude 3.5
+Sonnet v2 does not support these tools.
 
 #### Bash Tool
 
@@ -1757,6 +1738,7 @@ const result = await generateText({
 Anthropic has reasoning support for Claude 3.7 and Claude 4 models on Bedrock, including:
 
 - `us.anthropic.claude-fable-5-1`
+- `us.anthropic.claude-sonnet-5-5`
 - `us.anthropic.claude-sonnet-5`
 - `us.anthropic.claude-fable-5`
 - `us.anthropic.claude-opus-4-8`
@@ -1802,25 +1784,24 @@ on how to integrate reasoning into your chatbot.
 
 | Model                                          | Image Input | Object Generation | Tool Usage | Computer Use | Reasoning |
 | ---------------------------------------------- | ----------- | ----------------- | ---------- | ------------ | --------- |
-| `us.anthropic.claude-fable-5-1`                | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-sonnet-5`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-fable-5`                  | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-opus-4-8`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-opus-4-7`                 | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-opus-4-6-v1`              | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-opus-4-5-20251101-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-opus-4-20250514-v1:0`     | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-haiku-4-5-20251001-v1:0`  | <Check />   | <Check />         | <Check />  | <Check />    | <Check /> |
-| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | <Check />   | <Check />         | <Check />  | <Cross />    | <Cross /> |
+| `us.anthropic.claude-fable-5-1`                | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-sonnet-5-5`               | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-sonnet-5`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-fable-5`                  | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-opus-4-8`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-opus-4-7`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-opus-4-6-v1`              | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-opus-4-5-20251101-v1:0`   | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-opus-4-20250514-v1:0`     | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-haiku-4-5-20251001-v1:0`  | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | ✓           | ✓                 | ✓          | ✗            | ✗         |
 
-<Note>
-  The Bedrock Anthropic provider uses the native InvokeModel API and supports
-  all features available in the Anthropic API, except for the Files API and MCP
-  Connector which are not supported on Bedrock.
-</Note>
+The Bedrock Anthropic provider uses the native InvokeModel API and supports
+all features available in the Anthropic API, except for the Files API and MCP
+Connector which are not supported on Bedrock.
 
 ## Bedrock Mantle Provider Usage
 
@@ -1851,50 +1832,50 @@ const bedrockMantle = createBedrockMantle({
 
 You can use the following optional settings to customize the Bedrock Mantle provider instance:
 
-- **region** _string_
+- **region** *string*
 
   The AWS region that you want to use for the API calls.
   It uses the `AWS_REGION` environment variable by default.
 
-- **accessKeyId** _string_
+- **accessKeyId** *string*
 
   The AWS access key ID that you want to use for the API calls.
   It uses the `AWS_ACCESS_KEY_ID` environment variable by default.
 
-- **secretAccessKey** _string_
+- **secretAccessKey** *string*
 
   The AWS secret access key that you want to use for the API calls.
   It uses the `AWS_SECRET_ACCESS_KEY` environment variable by default.
 
-- **sessionToken** _string_
+- **sessionToken** *string*
 
   Optional. The AWS session token that you want to use for the API calls.
   It uses the `AWS_SESSION_TOKEN` environment variable by default.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key for authenticating requests using Bearer token authentication.
   When provided, this will be used instead of AWS SigV4 authentication.
   It uses the `AWS_BEARER_TOKEN_BEDROCK` environment variable by default.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Base URL for the Bedrock Mantle API calls.
   By default, the provider selects either
   `https://bedrock-mantle.{region}.api.aws/v1` or
   `https://bedrock-mantle.{region}.api.aws/openai/v1` based on the model.
 
-- **headers** _Record&lt;string, string | undefined&gt;_
+- **headers** *Record\<string, string | undefined>*
 
   Headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **credentialProvider** _() => PromiseLike&lt;BedrockCredentials&gt;_
+- **credentialProvider** *() => PromiseLike\<BedrockCredentials>*
 
   The AWS credential provider to use for the Bedrock provider to get dynamic
   credentials similar to the AWS SDK. Setting a provider here will cause its
@@ -1969,17 +1950,15 @@ const { text } = await generateText({
 
 | Model                           | Chat Completions | Responses API |
 | ------------------------------- | ---------------- | ------------- |
-| `openai.gpt-oss-20b`            | <Check />        | <Check />     |
-| `openai.gpt-oss-120b`           | <Check />        | <Check />     |
-| `openai.gpt-oss-safeguard-20b`  | <Check />        | <Cross />     |
-| `openai.gpt-oss-safeguard-120b` | <Check />        | <Cross />     |
+| `openai.gpt-oss-20b`            | ✓                | ✓             |
+| `openai.gpt-oss-120b`           | ✓                | ✓             |
+| `openai.gpt-oss-safeguard-20b`  | ✓                | ✗             |
+| `openai.gpt-oss-safeguard-120b` | ✓                | ✗             |
 
-<Note>
-  The Bedrock Mantle provider uses the OpenAI-compatible API format. Models
-  available through the Mantle endpoint may differ from those available through
-  the Bedrock Converse API. Use the Mantle endpoint's model listing API to
-  discover all available models.
-</Note>
+The Bedrock Mantle provider uses the OpenAI-compatible API format. Models
+available through the Mantle endpoint may differ from those available through
+the Bedrock Converse API. Use the Mantle endpoint's model listing API to
+discover all available models.
 
 ## Migrating to `@ai-sdk/amazon-bedrock` 2.x
 
@@ -1992,53 +1971,10 @@ you were using the `bedrockOptions` object, you should now use the `region`,
 
 Static IAM user keys do not require `sessionToken`.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

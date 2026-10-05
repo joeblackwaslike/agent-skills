@@ -1,10 +1,14 @@
 ---
+title: Gladia
+description: Learn how to use the Gladia provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "07b202144d7557687c6d69255e47a1d0620a8a28c15d6dd3a932a055a724b50c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "417c685b1a1c2af4b9046e09969583f96b383a4f690638347c43421fb30b4859"
 ---
 
-# Gladia Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Gladia](https://gladia.io/) provider contains language model support for the Gladia transcription API.
 
@@ -12,7 +16,7 @@ The [Gladia](https://gladia.io/) provider contains language model support for th
 
 The Gladia provider is available in the `@ai-sdk/gladia` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/gladia" />
+**Packages:** `@ai-sdk/gladia`
 
 ## Provider Instance
 
@@ -35,16 +39,16 @@ const gladia = createGladia({
 
 You can use the following optional settings to customize the Gladia provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `GLADIA_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -60,9 +64,9 @@ using the `.transcription()` factory method.
 const model = gladia.transcription();
 ```
 
-You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `summarize` option will enable summaries for sections of content.
+You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `summarization` option will enable summaries for sections of content.
 
-```ts highlight="7"
+```ts {7}
 import { transcribe } from 'ai';
 import { gladia } from '@ai-sdk/gladia';
 import { type GladiaTranscriptionModelOptions } from '@ai-sdk/gladia';
@@ -79,248 +83,213 @@ const result = await transcribe({
 });
 ```
 
-<Note>
-  Gladia does not have various models, so you can omit the standard `model` id
-  parameter.
-</Note>
+Gladia does not have various models, so you can omit the standard `model` id
+parameter.
 
 The following provider options are available:
 
-- **contextPrompt** _string_
+- **contextPrompt** *string*
 
   Context to feed the transcription model with for possible better accuracy.
   Optional.
 
-- **customVocabulary** _boolean | any[]_
+- **customVocabulary** *boolean | any\[]*
 
   Custom vocabulary to improve transcription accuracy.
   Optional.
 
-- **customVocabularyConfig** _object_
+- **customVocabularyConfig** *object*
 
   Configuration for custom vocabulary.
   Optional.
-  - **vocabulary** _Array&lt;string | \{ value: string, intensity?: number, pronunciations?: string[], language?: string \}&gt;_
-  - **defaultIntensity** _number_
 
-- **detectLanguage** _boolean_
+  - **vocabulary** *Array\<string | \{ value: string, intensity?: number, pronunciations?: string\[], language?: string }>*
+  - **defaultIntensity** *number*
+
+- **detectLanguage** *boolean*
 
   Whether to automatically detect the language.
   Optional.
 
-- **enableCodeSwitching** _boolean_
+- **enableCodeSwitching** *boolean*
 
   Enable code switching for multilingual audio.
   Optional.
 
-- **codeSwitchingConfig** _object_
+- **codeSwitchingConfig** *object*
 
   Configuration for code switching.
   Optional.
-  - **languages** _string[]_
 
-- **language** _string_
+  - **languages** *string\[]*
+
+- **language** *string*
 
   Specify the language of the audio.
   Optional.
 
-- **callback** _boolean_
+- **callback** *boolean*
 
   Enable callback when transcription is complete.
   Optional.
 
-- **callbackConfig** _object_
+- **callbackConfig** *object*
 
   Configuration for callback.
   Optional.
-  - **url** _string_
-  - **method** _'POST' | 'PUT'_
 
-- **subtitles** _boolean_
+  - **url** *string*
+  - **method** *'POST' | 'PUT'*
+
+- **subtitles** *boolean*
 
   Generate subtitles from the transcription.
   Optional.
 
-- **subtitlesConfig** _object_
+- **subtitlesConfig** *object*
 
   Configuration for subtitles.
   Optional.
-  - **formats** _Array&lt;'srt' | 'vtt'&gt;_
-  - **minimumDuration** _number_
-  - **maximumDuration** _number_
-  - **maximumCharactersPerRow** _number_
-  - **maximumRowsPerCaption** _number_
-  - **style** _'default' | 'compliance'_
 
-- **diarization** _boolean_
+  - **formats** *Array\<'srt' | 'vtt'>*
+  - **minimumDuration** *number*
+  - **maximumDuration** *number*
+  - **maximumCharactersPerRow** *number*
+  - **maximumRowsPerCaption** *number*
+  - **style** *'default' | 'compliance'*
+
+- **diarization** *boolean*
 
   Enable speaker diarization.
   Optional.
 
-- **diarizationConfig** _object_
+- **diarizationConfig** *object*
 
   Configuration for diarization.
   Optional.
-  - **numberOfSpeakers** _number_
-  - **minSpeakers** _number_
-  - **maxSpeakers** _number_
-  - **enhanced** _boolean_
 
-- **translation** _boolean_
+  - **numberOfSpeakers** *number*
+  - **minSpeakers** *number*
+  - **maxSpeakers** *number*
+  - **enhanced** *boolean*
+
+- **translation** *boolean*
 
   Enable translation of the transcription.
   Optional.
 
-- **translationConfig** _object_
+- **translationConfig** *object*
 
   Configuration for translation.
   Optional.
-  - **targetLanguages** _string[]_
-  - **model** _'base' | 'enhanced'_
-  - **matchOriginalUtterances** _boolean_
 
-- **summarization** _boolean_
+  - **targetLanguages** *string\[]*
+  - **model** *'base' | 'enhanced'*
+  - **matchOriginalUtterances** *boolean*
+
+- **summarization** *boolean*
 
   Enable summarization of the transcription.
   Optional.
 
-- **summarizationConfig** _object_
+- **summarizationConfig** *object*
 
   Configuration for summarization.
   Optional.
-  - **type** _'general' | 'bullet_points' | 'concise'_
 
-- **moderation** _boolean_
+  - **type** *'general' | 'bullet\_points' | 'concise'*
+
+- **moderation** *boolean*
 
   Enable content moderation.
   Optional.
 
-- **namedEntityRecognition** _boolean_
+- **namedEntityRecognition** *boolean*
 
   Enable named entity recognition.
   Optional.
 
-- **chapterization** _boolean_
+- **chapterization** *boolean*
 
   Enable chapterization of the transcription.
   Optional.
 
-- **nameConsistency** _boolean_
+- **nameConsistency** *boolean*
 
   Enable name consistency in the transcription.
   Optional.
 
-- **customSpelling** _boolean_
+- **customSpelling** *boolean*
 
   Enable custom spelling.
   Optional.
 
-- **customSpellingConfig** _object_
+- **customSpellingConfig** *object*
 
   Configuration for custom spelling.
   Optional.
-  - **spellingDictionary** _Record&lt;string, string[]&gt;_
 
-- **structuredDataExtraction** _boolean_
+  - **spellingDictionary** *Record\<string, string\[]>*
+
+- **structuredDataExtraction** *boolean*
 
   Enable structured data extraction.
   Optional.
 
-- **structuredDataExtractionConfig** _object_
+- **structuredDataExtractionConfig** *object*
 
   Configuration for structured data extraction.
   Optional.
-  - **classes** _string[]_
 
-- **sentimentAnalysis** _boolean_
+  - **classes** *string\[]*
+
+- **sentimentAnalysis** *boolean*
 
   Enable sentiment analysis.
   Optional.
 
-- **audioToLlm** _boolean_
+- **audioToLlm** *boolean*
 
   Enable audio to LLM processing.
   Optional.
 
-- **audioToLlmConfig** _object_
+- **audioToLlmConfig** *object*
 
   Configuration for audio to LLM.
   Optional.
-  - **prompts** _string[]_
 
-- **customMetadata** _Record&lt;string, any&gt;_
+  - **prompts** *string\[]*
+
+- **customMetadata** *Record\<string, any>*
 
   Custom metadata to include with the request.
   Optional.
 
-- **sentences** _boolean_
+- **sentences** *boolean*
 
   Enable sentence detection.
   Optional.
 
-- **displayMode** _boolean_
+- **displayMode** *boolean*
 
   Enable display mode.
   Optional.
 
-- **punctuationEnhanced** _boolean_
+- **punctuationEnhanced** *boolean*
 
   Enable enhanced punctuation.
   Optional.
 
 ### Model Capabilities
 
-| Model     | Transcription | Duration  | Segments  | Language  |
-| --------- | ------------- | --------- | --------- | --------- |
-| `Default` | <Check />     | <Check /> | <Check /> | <Check /> |
+| Model     | Transcription | Duration | Segments | Language |
+| --------- | ------------- | -------- | -------- | -------- |
+| `Default` | ✓             | ✓        | ✓        | ✓        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

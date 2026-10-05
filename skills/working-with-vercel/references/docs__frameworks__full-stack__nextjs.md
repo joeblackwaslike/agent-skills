@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "18a44fffe98431748775f58918f5442c17793272ff82d7728262073287c2b81b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "da916c6b3ed6e737cf4f23bf535bfba169286b202bacf359a3bb47564e381800"
 ---
 
 # Next.js on Vercel
@@ -33,16 +33,16 @@ sha256: "18a44fffe98431748775f58918f5442c17793272ff82d7728262073287c2b81b"
 
 - [Deploying](https://nextjs.org/docs/app/getting-started/deploying?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Next.js application.
 - [How to deploy your Next.js application](https://nextjs.org/docs/pages/getting-started/deploying?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Next.js application.
+- [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
+- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Next.js on Vercel vs Cloudflare](https://vercel.com/kb/guide/next-js-on-vercel-vs-cloudflare?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Cloudflare Workers with the OpenNext Cloudflare a
-- [Next.js on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/next-js-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Compare running Next.js on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Ne
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Fetching Data](https://nextjs.org/docs/app/getting-started/fetching-data?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to fetch data and stream content that depends on data.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fnextjs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -708,7 +708,7 @@ Deployments on Vercel automatically secure Draft Mode behind the same authentica
 
 You and your team members can toggle Draft Mode in the Vercel Toolbar in [production](/docs/vercel-toolbar/in-production-and-localhost/add-to-production), [localhost](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost), and [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production#comments). When you do so, the toolbar will become purple to indicate Draft Mode is active.
 
-![Image](`/docs-assets/static/docs/workflow-collaboration/draft-mode/draft-toolbar1-light.png`)
+![The Vercel toolbar when Draft Mode is enabled.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/draft-mode/draft-toolbar1-light.png)
 
 Users outside your Vercel team cannot toggle Draft Mode.
 
@@ -737,7 +737,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/analytics
+    yarn add @vercel/analytics
     ```
   </Code>
   <Code tab="npm">
@@ -747,7 +747,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/analytics
+    bun add @vercel/analytics
     ```
   </Code>
 </CodeBlock>
@@ -854,7 +854,7 @@ On Vercel, you can track your Next.js app's Core Web Vitals in your project's da
 
 > For \['nextjs-app']:
 
-If you're self-hosting your app, you can use the [`useWebVitals`](https://nextjs.org/docs/app/guides/analytics#build-your-own) hook to send metrics to any analytics provider. The following example demonstrates a custom `WebVitals` component that you can use in your app's root `layout` file:
+If you're self-hosting your app, you can use the [`useReportWebVitals`](https://nextjs.org/docs/app/guides/analytics#build-your-own) hook to send metrics to any analytics provider. The following example demonstrates a custom `WebVitals` component that you can use in your app's root `layout` file:
 
 ```jsx filename="app/_components/web-vitals.jsx" framework=all
 'use client';
@@ -882,7 +882,7 @@ export function WebVitals() {
 
 You could then reference your custom `WebVitals` component like this:
 
-```ts filename="app/layout.ts" framework=all
+```tsx filename="app/layout.tsx" framework=all
 import { WebVitals } from './_components/web-vitals';
 
 export default function Layout({ children }) {
@@ -951,7 +951,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-```ts filename="pages/_app.ts" framework=all
+```tsx filename="pages/_app.tsx" framework=all
 export function reportWebVitals(metric) {
   switch (metric.name) {
     case 'FCP':
@@ -1016,7 +1016,7 @@ Learn more about deploying Next.js projects on Vercel with the following resourc
 
 - [Build a fullstack Next.js app](/kb/guide/nextjs-prisma-postgres)
 - [Build a multi-tenant app](/docs/platforms)
-- [Next.js with Contenful](/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms)
+- [Next.js with Contentful](/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms)
 - [Next.js with Stripe Checkout and Typescript](/kb/guide/getting-started-with-nextjs-typescript-stripe)
 - [Next.js with Magic.link](/kb/guide/add-auth-to-nextjs-with-magic)
 - [Generate a sitemap with Next.js](/kb/guide/how-do-i-generate-a-sitemap-for-my-nextjs-app-on-vercel)

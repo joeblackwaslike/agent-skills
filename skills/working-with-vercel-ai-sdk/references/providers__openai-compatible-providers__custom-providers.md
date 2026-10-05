@@ -1,10 +1,14 @@
 ---
+title: Writing a Custom Provider
+description: Create a custom provider package for an OpenAI-compatible provider leveraging the AI SDK OpenAI Compatible package.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/custom-providers"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/custom-providers.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "cf228fd176e484fcca49f0683015dbab918ba3cbed288b1ae19a2232974fcf0f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "e07a28934a8753c2dd9030d9d5d887fff02202527249bd97d4183bdeb20e99d7"
 ---
 
-# Writing a Custom Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can create your own provider package that leverages the AI SDK's [OpenAI Compatible package](https://www.npmjs.com/package/@ai-sdk/openai-compatible). Publishing your provider package to [npm](https://www.npmjs.com/) can give users an easy way to use the provider's models and stay up to date with any changes you may have. Here's an example structure:
 
@@ -22,7 +26,7 @@ packages/example/
 │   └── index.ts                       # Public exports
 ├── package.json
 ├── tsconfig.json
-├── tsup.config.ts                     # Build configuration
+├── tsdown.config.ts                   # Build configuration
 └── README.md
 ```
 
@@ -42,7 +46,11 @@ The completion, embedding, and image settings are implemented similarly to the c
 2. **example-provider.ts** - Main provider implementation:
 
 ```ts
-import { LanguageModelV4, EmbeddingModelV4 } from '@ai-sdk/provider';
+import {
+  EmbeddingModelV4,
+  ImageModelV4,
+  LanguageModelV4,
+} from '@ai-sdk/provider';
 import {
   OpenAICompatibleChatLanguageModel,
   OpenAICompatibleCompletionLanguageModel,
@@ -108,10 +116,10 @@ Creates a completion model for text generation.
   /**
 Creates a text embedding model for text generation.
 */
-  .embeddingModel(
+  embeddingModel(
     modelId: ExampleEmbeddingModelId,
     settings?: ExampleEmbeddingSettings,
-  ): EmbeddingModelV4<string>;
+  ): EmbeddingModelV4;
 
   /**
 Creates an image model for image generation.
@@ -178,7 +186,7 @@ export function createExample(
       getCommonModelConfig('completion'),
     );
 
-  const create.embeddingModel = (
+  const createEmbeddingModel = (
     modelId: ExampleEmbeddingModelId,
     settings: ExampleEmbeddingSettings = {},
   ) =>
@@ -205,7 +213,7 @@ export function createExample(
 
   provider.completionModel = createCompletionModel;
   provider.chatModel = createChatModel;
-  provider.embeddingModel = create.embeddingModel;
+  provider.embeddingModel = createEmbeddingModel;
   provider.imageModel = createImageModel;
 
   return provider;
@@ -267,17 +275,10 @@ import { convertToOpenAICompatibleChatMessages } from '@ai-sdk/openai-compatible
 
 You can see the latest available exports in the AI SDK [GitHub repository](https://github.com/vercel/ai/blob/main/packages/openai-compatible/src/internal/index.ts).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

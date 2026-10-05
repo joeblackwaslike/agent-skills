@@ -1,22 +1,24 @@
 ---
+title: Handling Authentication
+description: Learn how to authenticate with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/authentication"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/authentication.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "d72d49382ef8769ec6206920574c6b74041ed06ba91e4ea34c51f143cc42681e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "71e80c4a8cd7e1e88ae9327c77e3389ba21b447ad2211b50bfdd89f8879e922f"
 ---
 
-# Authentication
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 The RSC API makes extensive use of [`Server Actions`](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) to power streaming values and UI from the server.
 
 Server Actions are exposed as public, unprotected endpoints. As a result, you should treat Server Actions as you would public-facing API endpoints and ensure that the user is authorized to perform the action before returning any data.
 
-```tsx filename="app/actions.tsx"
+```tsx title="app/actions.tsx"
 'use server';
 
 import { cookies } from 'next/headers';
@@ -42,19 +44,10 @@ export const getWeather = async () => {
 };
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

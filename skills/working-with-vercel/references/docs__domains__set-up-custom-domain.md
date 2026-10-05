@@ -16,8 +16,8 @@ related:
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d3f167c1f87791a44cb024a7bfeeda6c4ce6fbd576e56f4dac98808aedc55ef2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "95e281d7b2784f591dede690dd66e8bb9bb29bcabb81cd9067011636f937dbf8"
 ---
 
 # Setting up a custom domain
@@ -32,11 +32,13 @@ Use this guide to add a custom domain to your Vercel project from the CLI, confi
 
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
-- [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Server action for programmatically adding custom domains to Vercel projects.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 
 Full cross-link map for this page: [/docs/domains/set-up-custom-domain.graph.md](/docs/domains/set-up-custom-domain.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fset-up-custom-domain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -61,7 +63,8 @@ vercel domains inspect example.com
 # 4. Configure DNS records (apex domain)
 vercel dns add example.com '@' A 76.76.21.21
 
-# 4b. OR configure DNS records (subdomain)
+# 4b. OR add the subdomain to your project and configure DNS records (subdomain)
+vercel domains add www.example.com
 vercel dns add example.com www CNAME cname.vercel-dns-0.com
 
 # 5. Verify DNS configuration

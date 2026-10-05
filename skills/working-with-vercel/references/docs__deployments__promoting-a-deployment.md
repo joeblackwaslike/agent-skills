@@ -15,8 +15,8 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "dcd1a09592d9186d41bc653702a2b82df33206d9d2552b5ae4585e1bbd6297e5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ff74654e28739e47911e5262eb5694678c7c138aff4b8c1d542298569ffa4641"
 ---
 
 # Promoting Deployments
@@ -37,10 +37,10 @@ By default, when you merge to or make commits to your production branch (often `
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [vercel promote](https://vercel.com/docs/cli/promote?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Learn how to promote an existing deployment using the vercel promote CLI command.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
-- [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 
 Full cross-link map for this page: [/docs/deployments/promoting-a-deployment.graph.md](/docs/deployments/promoting-a-deployment.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromoting-a-deployment&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -65,7 +65,7 @@ To promote an existing preview deployment to production on Vercel, do the follow
 2. Click the ellipsis (), and from the context menu select **Promote to Production**
 3. The popup dialog informs you of which domain(s) will be linked to the build once promoted. To confirm, select **Promote to Production**
 
-![Image](`/front/docs/deployment/promote-to-prod-light.png`)
+![Option to confirm promote to production.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/deployment/promote-to-prod-light.png)
 
 > **💡 Note:** If you have different [Environment
 > Variables](/docs/environment-variables#environments) set for preview and
@@ -93,7 +93,7 @@ For steps on using this workflow in the CLI, see [Deploying a staged production 
 6. From the menu, select the **Promote** option
 7. From the **Promote** dialog, confirm the deployment, and select the **Promote** button:
 
-![Image](`/docs-assets/static/docs/concepts/deployments/promote-to-prod-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/promote-to-prod-light.png)
 
 Vercel will instantly promote the deployment; it doesn't require a rebuild. Once promoted, the deployment is marked as [**Current**](#production-deployment-state).
 

@@ -14,8 +14,8 @@ related:
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "5f978845c7782acb4578ca79c76a49d968b325321ed61c38984b5b79b1c4513d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c61abbc9fd64d829bd524c81e63cb728c6a1a3e106ab9d708d5f000d1a7c0a1c"
 ---
 
 # Archive
@@ -31,12 +31,11 @@ The Archive is where you find feature flags that are no longer active. Archiving
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related)
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Permanently delete a feature flag from the pr
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
-- [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [Integrate flags with Vercel Web Analytics](https://vercel.com/docs/flags/observability/web-analytics?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — Learn how to tag your page views and custom events with feature flags
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/archive.graph.md](/docs/flags/vercel-flags/dashboard/archive.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Farchive&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

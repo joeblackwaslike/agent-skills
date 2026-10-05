@@ -1,47 +1,31 @@
 ---
+title: Render Visual Interface in Chat
+description: Learn how to render visual interfaces in chat using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/render-visual-interface-in-chat"
+docs_index: /llms.txt
+tags:
+  - next
+  - generative user interface
 source: "https://ai-sdk.dev/cookbook/next/render-visual-interface-in-chat.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "147d4c10de6c1aebf612426de47a4c89033894424fda9a64c4a526cd15b2b52a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6a2cf128a6defb009ed2b6c19bf1fd517d4031c20ca4e0d34e79732e7bd7925a"
 ---
 
-# Render Visual Interface in Chat
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 An interesting consequence of language models that can call [tools](/docs/ai-sdk-core/tools-and-tool-calling) is that this ability can be used to render visual interfaces by streaming React components to the client.
 
-<Browser>
-  <ChatGeneration
-    history={[
-      { role: 'User', content: 'How is it going?' },
-      { role: 'Assistant', content: 'All good, how may I help you?' },
-    ]}
-    inputMessage={{
-      role: 'User',
-      content: 'What is the weather in San Francisco?',
-    }}
-    outputMessage={{
-      role: 'Assistant',
-      content: 'The weather is 24°C and sunny in San Francisco.',
-      display: (
-        <div className="py-4">
-          <WeatherCard
-            content={{
-              weather: {
-                temperature: 24,
-                condition: 'Sunny',
-              },
-            }}
-          />
-        </div>
-      ),
-    }}
-  />
-</Browser>
+User: How is it going?
+
+Assistant: All good, how may I help you?
+
+What is the weather in San Francisco?
 
 ## Client
 
 Let's build an assistant that gets the weather for any city by calling the `getWeatherInformation` tool. Instead of returning text during the tool call, you will render a React component that displays the weather information on the client.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -204,7 +188,7 @@ export default function Chat() {
 
 ## Server
 
-```tsx filename='api/chat.ts'
+```tsx title='app/api/chat/route.ts'
 import {
   type InferUITools,
   type ToolSet,
@@ -275,31 +259,10 @@ export async function POST(request: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

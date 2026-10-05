@@ -1,16 +1,18 @@
 ---
+title: useActions
+description: Reference for the useActions function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/use-actions"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/use-actions.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "2f25dc8fd43a98634b560d7e7ed0291451bdcee2a7df65abb9bd41f4f14268e4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ce8f3a6f3462d30e6246d49db469fbc266c0831c9fa716c154b844e5e76866e7"
 ---
 
-# `useActions`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 It is a hook to help you access your Server Actions from the client. This is particularly useful for building interfaces that require user interactions with the server.
 
@@ -18,7 +20,9 @@ It is required to access these server actions via this hook because they are pat
 
 ## Import
 
-<Snippet text={`import { useActions } from "@ai-sdk/rsc"`} prompt={false} />
+```
+import { useActions } from "@ai-sdk/rsc"
+```
 
 ## API Signature
 
@@ -28,35 +32,13 @@ It is required to access these server actions via this hook because they are pat
 
 ## Examples
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to manage AI and UI states in Next.js',
-      link: '/examples/next-app/state-management/ai-ui-states',
-    },
-    {
-      title:
-        'Learn to route React components using a language model in Next.js',
-      link: '/examples/next-app/interface/route-components',
-    },
-  ]}
-/>
+- [Learn to manage AI and UI states in Next.js](/examples/next-app/state-management/ai-ui-states)
+- [Learn to route React components using a language model in Next.js](/examples/next-app/interface/route-components)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

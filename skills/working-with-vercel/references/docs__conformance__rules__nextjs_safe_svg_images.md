@@ -12,13 +12,13 @@ related:
 summary: Prevent dangerouslyAllowSVG without Content Security Policy in Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_svg_images.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "1a16b7afbca77d856880e2883cfd77caf45c09bcc5786fd595e6be5b88310d83"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "590cc57118e1fd77db04541d50f0cda97e12dc180f837851ef57f445004a0a5d"
 ---
 
 # NEXTJS_SAFE_SVG_IMAGES
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 SVG can do many of the same things that HTML/JS/CSS can, meaning that it can be dangerous to execute SVG
 as this can lead to vulnerabilities without proper [Content Security Policy](https://nextjs.org/docs/advanced-features/security-headers) (CSP) headers.

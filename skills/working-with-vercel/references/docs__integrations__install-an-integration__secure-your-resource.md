@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b0edbe8ed8aaafd88c9e89c8ce7dbe07fcc25a9f261b8b8ade93e9cd926ef966"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "33554af65cde497c0985d64de0375acf83ae2fc72c2417daa5e33e58772da9f8"
 ---
 
 # Secure Your Resource
@@ -30,10 +30,11 @@ Secure a native integration resource by controlling where projects can connect t
 
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related)
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/secure-your-resource.graph.md](/docs/integrations/install-an-integration/secure-your-resource.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fsecure-your-resource&source_site=vercel-docs&relationship=graph)

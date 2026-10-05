@@ -9,15 +9,15 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/vercel-firewall
-  - /docs/observability/observability-plus
   - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/bot-management
   - /docs/botid
+  - /docs/observability/observability-plus
 summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "aab98f45fc48d9b4ddf4c55c147f8c56ec2c5c402fdf6a525fa83b7060328c07"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3f2e69e2458826ae1c7d434712621909777a1d1ae9bc27f6c496189541b7d372"
 ---
 
 # vercel firewall
@@ -32,13 +32,13 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to create scalable firewall configurations with Terraform
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
-- [Generate a firewall rule from natural language](https://vercel.com/docs/rest-api/security/generate-a-firewall-rule-from-natural-language?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/config/generate-rule — Generate a firewall rule from a natural language description.
+- [vercel flags](https://vercel.com/docs/cli/flags?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -114,7 +114,7 @@ Reach for `status` when you need to reason about which check runs first, and [`o
 
 Report the requests the firewall acted on. `traffic list` answers what happened across the project. `traffic inspect` takes one value from those lists and shows only its traffic. Both are read-only and need a team scope.
 
-How far back you can read is bounded by your plan's firewall data retention. [Observability Plus](/docs/observability/observability-plus) extends that retention to 30 days.
+How far back you can read is bounded by your plan's firewall data retention. Observability Plus extends that retention to 30 days.
 
 The CLI allows a query only when `--since` falls inside the data your plan still keeps. Shortening the window with `--until` does not help if `--since` is already too far back.
 
@@ -122,8 +122,8 @@ The CLI allows a query only when `--since` falls inside the data your plan still
 | --- | --- |
 | `vercel firewall traffic list` | Succeeds on every team plan. The default window is the last 24 hours. |
 | `vercel firewall traffic list --since 1h` | Succeeds. The window starts inside retention. |
-| `vercel firewall traffic list --since 7d` | Fails without Observability Plus. Succeeds with Observability Plus. |
-| `vercel firewall traffic list --since 5d --until 4d` | Fails without Observability Plus. The window is one day long, but it starts before retained data. |
+| `vercel firewall traffic list --since 7d` | Requires Observability Plus. |
+| `vercel firewall traffic list --since 5d --until 4d` | Requires Observability Plus. The window is one day long, but it starts before retained data. |
 
 Both subcommands describe traffic with the same 10 dimensions: `ip`, `ja4`, `asn`, `user-agent`, `path`, `rule`, `host`, `bot`, `country`, and `action`. Each dimension plays three roles:
 
@@ -205,7 +205,7 @@ vercel firewall traffic list --alert al_abc123
 
 ### `traffic inspect`
 
-Show one dimension value in detail: its requests by action over the window, and a breakdown of that traffic by a second dimension. Pass one of the dimensions above and one of its values, such as an IP from the `Top IPs` list.
+Show one dimension value in detail: its requests by action over the window, and a breakdown of that traffic by a second dimension. Pass one of the dimensions above and one of its values, such as an IP from the `Top IPs` list. To break down unknown bot traffic, pass `unknown-bot` and a category from [`bot-management`](#bot-management).
 
 ```bash filename="terminal"
 vercel firewall traffic inspect <dimension> <value>

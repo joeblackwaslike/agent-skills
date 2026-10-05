@@ -15,13 +15,13 @@ related:
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "fb3ddbb1e49ce76c72b9277cf0e3c1a45359a9be2aab88a09d8eb0b623521841"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "664366d14c0b03338119a890412fe9be913473876354aabd3a68eda8b2f4a4b7"
 ---
 
 # Drain Audit Logs to S3
 
-> **🔒 Permissions Required**: Audit Log Drains
+> **Availability**: Audit Log Drains are available on Enterprise plans
 
 Audit Log Drains can write team activity events directly to your Amazon S3 bucket. Use this setup when you want audit logs stored in your AWS account for security archives, compliance retention, or downstream analysis.
 
@@ -32,11 +32,12 @@ Audit Log Drains can write team activity events directly to your Amazon S3 bucke
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-s3.graph.md](/docs/drains/audit-logs-to-s3.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-s3&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

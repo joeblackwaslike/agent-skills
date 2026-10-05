@@ -16,8 +16,8 @@ related:
 summary: Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry trace drains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "ec9f5d22f2a7d9a722411a6c90927378389ffc023e23235afd97d77e94d2ffe8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0010b221a5a82f589bc3799d547f2b78514a5a16c5e2f591171772560af688c0"
 ---
 
 # AI Gateway Observability and Spend
@@ -35,8 +35,9 @@ AI Gateway logs every request and gives you the tools to understand and control 
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related)
-- [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related)
-- [Open WebUI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/open-webui?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Connect Open WebUI to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend.graph.md](/docs/ai-gateway/observability-and-spend.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend&source_site=vercel-docs&relationship=graph)

@@ -16,8 +16,8 @@ related:
 summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "79f8096899a9c89541b3187fcc1e94b374517715a8e45df22513ec3832345fa3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "45a30fb2b590d4f963aaab01e56e4d27f6e78263a93e9b754b6cbf7c6cb026ba"
 ---
 
 # Vercel Function Logs
@@ -32,11 +32,11 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
+- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
 - [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
-- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 - [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
-- [Runtime logs now show event sequences for Vercel requests](https://vercel.com/changelog/runtime-logs-now-show-event-sequences-for-vercel-requests?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related)
+- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Use get_runtime_logs with Vercel MCP.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Container Images](https://vercel.com/docs/functions/container-images?from=related&source_path=%2Fdocs%2Ffunctions%2Flogs&source_site=vercel-docs&relationship=related) — Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.

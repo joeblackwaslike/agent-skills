@@ -12,13 +12,13 @@ related:
 summary: Prevent relative fetch calls in getServerSideProps from being added to Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_fetch_in_server_props.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "73ed033937b5c1fe62daee0bd9cf9f89a97fa523d7a863f9754b3b967be296d5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4c6530249c67b2f99cd8f601b9f78c1084e483ac4bebb81656b4f6a0e5d8ba41"
 ---
 
 # NEXTJS_NO_FETCH_IN_SERVER_PROPS
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Since both `getServerSideProps` and API routes run on the server, calling `fetch` on a non-relative
 URL will trigger an additional network request.

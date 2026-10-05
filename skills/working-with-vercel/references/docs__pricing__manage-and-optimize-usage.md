@@ -16,8 +16,8 @@ related:
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "95d0e1223ddcc6fdb2c173a928e194ce24ea05c2c3d4c95f15f358008809bce2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c835bd9749ca7912876c1abd701ad52e3e40d46b8916faa5e4b4027b8fe7f4a8"
 ---
 
 # Manage and optimize usage
@@ -120,7 +120,7 @@ To view information on managing each resource, select the resource link in the *
 
 ## Observability
 
-The table below shows the metrics for the [Web Analytics](/docs/manage-and-optimize-observability#managing-web-analytics-events), [Speed Insights](/docs/manage-and-optimize-observability#managing-speed-insights-events), and [Monitoring](/docs/manage-and-optimize-observability#optimizing-monitoring-events) sections of the **Usage** dashboard.
+The table below shows the metrics for the [Web Analytics](/docs/manage-and-optimize-observability#managing-web-analytics-events), [Speed Insights](/docs/manage-and-optimize-observability#managing-speed-insights-events), and [Observability Plus](/docs/manage-and-optimize-observability#managing-observability-events) sections of the **Usage** dashboard.
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 

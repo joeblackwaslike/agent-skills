@@ -16,8 +16,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/generated-urls.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4a8a34091b23ba88386c073a4d972ca2cd1f0118b14116f2c3cb42bbb5b3c33b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a9deb0446f5bdbd592ef7dfb03605da497a7b6b24426411e9edbca4ac2f5ab11"
 ---
 
 # Accessing Deployments through Generated URLs
@@ -36,12 +36,11 @@ When you create a new [deployment](/docs/deployments) in either a preview or pro
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related)
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
 
 Full cross-link map for this page: [/docs/deployments/generated-urls.graph.md](/docs/deployments/generated-urls.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fgenerated-urls&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -71,7 +70,7 @@ You can access these automatically generated URLs in the following ways:
 - When using Git, you can access either a URL for the branch or for each commit. To learn more, see [Generated from Git](#generated-from-git).
 - Under the Project's Overview and Deployments tabs, as shown below:
 
-![Image](`/docs-assets/static/docs/concepts/deployments/generated-url-prod-light.png`)
+![Generated URL for a production deployment.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/generated-url-prod-light.png)
 
 ## URL Components
 
@@ -99,14 +98,14 @@ When are working with Git, Vercel will automatically generate a URL for the foll
 
 To access the commit URL, click the **View deployment** button from your pull request. To access the branch URL, click the **Visit Preview** button from the pull request comment.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/git-link-light.png`)
+![Viewing deployment URLs in a pull request on GitHub.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/git-link-light.png)
 
 ### Generated with Vercel CLI
 
 To access the URL for a successful deployment from Vercel CLI, you can save the [standard output of the deploy command](/docs/cli/deploy#standard-output-usage). The generated URL will have the following structure:
 
 ```bash filename="url-structure"
-<project-name>-<scope-slug>.vercel.app;
+<project-name>-<scope-slug>.vercel.app
 ```
 
 > **💡 Note:** Once you deploy to the production environment, the above URL will point to the
@@ -115,7 +114,7 @@ To access the URL for a successful deployment from Vercel CLI, you can save the 
 If the deployment is created on a [Team](/docs/accounts#creating-a-team), you can also use the URL specific to the deployment's author. It will have the following structure:
 
 ```bash filename="url-structure"
-<project-name>-<author-name>-<scope-slug>.vercel.app;
+<project-name>-<author-name>-<scope-slug>.vercel.app
 ```
 
 This allows you to stay on top of the latest change deployed by a particular [member](/docs/rbac) of a team within a specific project.
@@ -132,7 +131,7 @@ If your `<project-name>` resembles a regular web domain, it may be shortened to 
 
 ## Preview Deployment Suffix
 
-> **🔒 Permissions Required**: Preview Deployment Suffix
+> **Availability**: Preview Deployment Suffix is available on Enterprise and Pro plans
 
 Preview Deployment Suffixes allow you to customize the URL of a [preview deployment](/docs/deployments/environments#preview-environment-pre-production) by replacing the default `vercel.app` suffix with a [custom domain](/docs/domains/working-with-domains/add-a-domain) of your choice.
 

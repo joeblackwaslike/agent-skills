@@ -16,8 +16,8 @@ related:
 summary: End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sessions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/workflows.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5efb0d3b431e3a65525051a4d5a888816bbb72ce9e729f6c6ec240d2dd63c2c5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "71fdabb80af4c5b3b854ddf96cd669af6bb853a8645b088bfce6209e3664e600"
 ---
 
 # CLI Workflows
@@ -32,15 +32,15 @@ These workflows show how to compose multiple Vercel CLI commands into complete w
 
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Observability](https://workflow-sdk.dev/docs/observability?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Inspect and debug workflow runs using the CLI and web UI.
+- [CLI and Web UI](https://workflow-sdk.dev/docs/configuration/cli-and-web-ui?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Configure workflow inspect, workflow cancel, workflow web, workflow health, and observability tooling.
 - [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
-- [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related)
-- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
-- [Testing](https://workflow-sdk.dev/docs/testing?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Unit test individual steps and integration test entire workflows using Vitest.
-- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Starting workflows](https://workflow-sdk.dev/docs/foundations/starting-workflows?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Trigger workflows and track their execution using the start() function.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
+- [Building Durable AI Agents](https://workflow-sdk.dev/docs/ai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Convert a basic AI chat app into a durable, resumable agent using Workflow SDK.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 
 Full cross-link map for this page: [/docs/agent-resources/workflows.graph.md](/docs/agent-resources/workflows.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fworkflows&source_site=vercel-docs&relationship=graph)

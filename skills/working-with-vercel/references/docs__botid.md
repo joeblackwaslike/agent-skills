@@ -16,13 +16,13 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "63eff35dc3a82d4077a6e98fb7c462ef476db68b5e4ab05cae0ac3d03934e11a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4fc64d092d66ae886aca727505d5a5aada6606194693ad66dc843eb59d04e3cf"
 ---
 
 # BotID
 
-> **🔒 Permissions Required**: BotID
+> **Availability**: BotID is available on all plans
 
 [Vercel BotID](/botid) is an invisible CAPTCHA that protects against sophisticated bots without showing visible challenges or requiring user action. It's a client-side challenge that uses machine learning to distinguish between humans and bots. It adds a protection layer to high-value routes, such as checkouts, signups, and APIs, that are common targets for bots imitating real users.
 
@@ -38,12 +38,12 @@ sha256: "63eff35dc3a82d4077a6e98fb7c462ef476db68b5e4ab05cae0ac3d03934e11a"
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Introduction](https://docs.vercel.shop/docs?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
 - [Shop Configuration](https://docs.vercel.shop/docs/reference/shop-config?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Choose optional storefront features and set your store's identity and locale.
 - [Billions of requests: Black Friday-Cyber Monday 2025](https://vercel.com/blog/bfcm-2025?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
-- [Protecting against token theft](https://vercel.com/blog/protecting-against-token-theft?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

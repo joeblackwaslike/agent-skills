@@ -17,8 +17,8 @@ related:
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "229d39cbf5daba13ff1a35781539190e84f2341c20fd2fbfa0d1437bd33b45e0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "76a94bc9bf7b4a8982825844de54b7924e5abe3ef2753c5096804cfa5496cf16"
 ---
 
 # Create a Native Integration
@@ -33,7 +33,6 @@ With a product, you allow a Vercel customer who has installed your integration t
 
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-product&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-product&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-product&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-product&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-product&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-product&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration

@@ -1,10 +1,18 @@
 ---
+title: Natural Language Postgres
+description: Learn how to build a Next.js app that lets you talk to a PostgreSQL database in natural language.
+url: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres"
+docs_index: /llms.txt
+tags:
+  - agents
+  - next
+  - tools
 source: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ae1f7eb12f138d2988234dc55617d841b33d1b0b5bf971fcda79bd83162caf73"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ddffeb9ce3a9eb9146b86519488d8c556eff82430485568f69e6ad197b94de1f"
 ---
 
-# Natural Language Postgres Guide
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will learn how to build an app that uses AI to interact with a PostgreSQL database using natural language.
 
@@ -34,13 +42,11 @@ To focus on the AI-powered functionality rather than project setup and configura
 
 Clone the starter repository and check out the `starter` branch:
 
-<Snippet
-  text={[
-    'git clone https://github.com/vercel-labs/natural-language-postgres',
-    'cd natural-language-postgres',
-    'git checkout starter',
-  ]}
-/>
+```
+git clone https://github.com/vercel-labs/natural-language-postgres
+cd natural-language-postgres
+git checkout starter
+```
 
 ### Project setup and data
 
@@ -48,15 +54,19 @@ Let's set up the project and seed the database with the dataset:
 
 1. Install dependencies:
 
-<Snippet text={['pnpm install']} />
+```
+pnpm install
+```
 
 2. Copy the example environment variables file:
 
-<Snippet text={['cp .env.example .env']} />
+```
+cp .env.example .env
+```
 
 3. Add your environment variables to `.env`:
 
-```bash filename=".env"
+```bash title=".env"
 OPENAI_API_KEY="your_api_key_here"
 POSTGRES_URL="..."
 POSTGRES_PRISMA_URL="..."
@@ -73,35 +83,33 @@ POSTGRES_DATABASE="..."
    - Enter in your email. You will receive a link to download the dataset.
    - Save it as `unicorns.csv` in your project root
 
-<Note>
-  You will need a Postgres database to complete this tutorial. If you don't have
-  Postgres setup on your local machine you can: - Create a free Postgres
-  database with Vercel (recommended - see instructions below); or - Follow [this
-  guide](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database)
-  to set it up locally
-</Note>
+You will need a Postgres database to complete this tutorial. If you don't have
+Postgres setup on your local machine you can: - Create a free Postgres
+database with Vercel (recommended - see instructions below); or - Follow [this
+guide](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database)
+to set it up locally
 
 #### Setting up Postgres with Vercel
 
 To set up a Postgres instance on your Vercel account:
 
 1. Go to [Vercel.com](https://vercel.com) and make sure you're logged in
-1. Navigate to your team homepage
-1. Click on the **Integrations** tab
-1. Click **Browse Marketplace**
-1. Look for the **Storage** option in the sidebar
-1. Select the **Neon** option (recommended, but any other PostgreSQL database provider should work)
-1. Click **Install**, then click **Install** again in the top right corner
-1. On the "Get Started with Neon" page, click **Create Database** on the right
-1. Select your region (e.g., Washington, D.C., U.S. East)
-1. Turn off **Auth**
-1. Click **Continue**
-1. Name your database (you can use the default name or rename it to something like "NaturalLanguagePostgres")
-1. Click **Create** in the bottom right corner
-1. After seeing "Database created successfully", click **Done**
-1. You'll be redirected to your database instance
-1. In the Quick Start section, click **Show secrets**
-1. Copy the full `DATABASE_URL` environment variable and use it to populate the Postgres environment variables in your `.env` file
+2. Navigate to your team homepage
+3. Click on the **Integrations** tab
+4. Click **Browse Marketplace**
+5. Look for the **Storage** option in the sidebar
+6. Select the **Neon** option (recommended, but any other PostgreSQL database provider should work)
+7. Click **Install**, then click **Install** again in the top right corner
+8. On the "Get Started with Neon" page, click **Create Database** on the right
+9. Select your region (e.g., Washington, D.C., U.S. East)
+10. Turn off **Auth**
+11. Click **Continue**
+12. Name your database (you can use the default name or rename it to something like "NaturalLanguagePostgres")
+13. Click **Create** in the bottom right corner
+14. After seeing "Database created successfully", click **Done**
+15. You'll be redirected to your database instance
+16. In the Quick Start section, click **Show secrets**
+17. Copy the full `DATABASE_URL` environment variable and use it to populate the Postgres environment variables in your `.env` file
 
 ### About the dataset
 
@@ -119,18 +127,20 @@ This dataset contains over 1000 rows of data over 7 columns, giving us plenty of
 
 5. Now that you have the dataset downloaded and added to your project, you can initialize the database with the following command:
 
-<Snippet text={['pnpm run seed']} />
+```
+pnpm run seed
+```
 
 Note: this step can take a little while. You should see a message indicating the Unicorns table has been created and then that the database has been seeded successfully.
 
-<Note>
-  Remember, the dataset should be named `unicorns.csv` and located in root of
-  your project.
-</Note>
+Remember, the dataset should be named `unicorns.csv` and located in root of
+your project.
 
 6. Start the development server:
 
-<Snippet text={['pnpm run dev']} />
+```
+pnpm run dev
+```
 
 Your application should now be running at [http://localhost:3000](http://localhost:3000).
 
@@ -253,7 +263,7 @@ Open `app/actions.ts`. You should see one action already defined (`runGeneratedS
 
 Add a new action. This action should be asynchronous and take in one parameter - the natural language query.
 
-```ts filename="app/actions.ts"
+```ts title="app/actions.ts"
 /* ...rest of the file... */
 
 export const generateQuery = async (input: string) => {};
@@ -261,7 +271,7 @@ export const generateQuery = async (input: string) => {};
 
 In this action, you'll use the `generateText` function with `Output` from the AI SDK which allows you to constrain the model's output to a pre-defined schema. This process, sometimes called structured output, ensures the model returns only the SQL query without any additional prefixes, explanations, or formatting that would require manual parsing.
 
-```ts filename="app/actions.ts"
+```ts title="app/actions.ts"
 /* ...other imports... */
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
@@ -297,7 +307,7 @@ With the Server Action in place, you can now update the frontend to call this ac
 
 Import the `generateQuery` function and call it with the user's input.
 
-```typescript filename="app/page.tsx" highlight="21"
+```typescript title="app/page.tsx" {21}
 /* ...other imports... */
 import { runGeneratedSQLQuery, generateQuery } from './actions';
 
@@ -382,7 +392,7 @@ Add a new Server Action to generate explanations for SQL queries.
 
 This action takes two parameters - the original natural language input and the generated SQL query.
 
-```ts filename="app/actions.ts"
+```ts title="app/actions.ts"
 /* ...rest of the file... */
 
 export const explainQuery = async (input: string, sqlQuery: string) => {
@@ -411,7 +421,7 @@ This action uses the `generateText` function. However, you haven't defined the o
 
 Update your `lib/types.ts` file to include the schema for the explanations:
 
-```ts filename="lib/types.ts"
+```ts title="lib/types.ts"
 import { z } from 'zod';
 
 /* ...rest of the file... */
@@ -426,7 +436,7 @@ export type QueryExplanation = z.infer<typeof explanationSchema>;
 
 This schema defines the structure of the explanation that the model will generate. Each explanation will have a `section` and an `explanation`. The `section` is the part of the query being explained, and the `explanation` is the plain English explanation of that section. Go back to your `actions.ts` file and import and use the `explanationSchema`:
 
-```ts filename="app/actions.ts" highlight="2,19,20"
+```ts title="app/actions.ts" {2,19,20}
 // other imports
 import { explanationSchema } from '@/lib/types';
 
@@ -455,16 +465,14 @@ export const explainQuery = async (input: string, sqlQuery: string) => {
 };
 ```
 
-<Note>
-  You can use `Output.array()` to indicate to the model that you expect an array
-  of objects matching the schema to be returned.
-</Note>
+You can use `Output.array()` to indicate to the model that you expect an array
+of objects matching the schema to be returned.
 
 ### Update query viewer
 
 Next, update the `query-viewer.tsx` component to display these explanations. The `handleExplainQuery` function is called every time the user clicks the question icon button on the right side of the query. Let's update this function to use the new `explainQuery` action:
 
-```ts filename="components/query-viewer.tsx" highlight="2,10,11"
+```ts title="components/query-viewer.tsx" {2,10,11}
 /* ...other imports... */
 import { explainQuery } from '@/app/actions';
 
@@ -512,7 +520,7 @@ For this feature, you'll create a Server Action that takes the query results and
 
 Let's start by defining the schema for the chart configuration in `lib/types.ts`:
 
-```ts filename="lib/types.ts"
+```ts title="lib/types.ts"
 /* ...rest of the file... */
 
 export const configSchema = z
@@ -563,9 +571,7 @@ export const configSchema = z
 export type Config = z.infer<typeof configSchema>;
 ```
 
-<Note>
-  Replace the existing `export type Config = any;` type with the new one.
-</Note>
+Replace the existing `export type Config = any;` type with the new one.
 
 This schema makes extensive use of Zod's `.describe()` function to give the model extra context about each of the key's you are expecting in the chart configuration. This will help the model understand the purpose of each key and generate more accurate results.
 
@@ -577,7 +583,7 @@ Create a new action in `app/actions.ts`:
 
 ```ts
 /* ...other imports... */
-import { Config, configSchema, explanationsSchema, Result } from '@/lib/types';
+import { Config, configSchema, Result } from '@/lib/types';
 
 /* ...rest of the file... */
 
@@ -636,7 +642,7 @@ With the action in place, you'll want to trigger it automatically after receivin
 
 Update the `handleSubmit` function in your root page (`app/page.tsx`) to generate and set the chart configuration after running the query:
 
-```typescript filename="app/page.tsx" highlight="38,39"
+```typescript title="app/page.tsx" {38,39}
 /* ...other imports... */
 import { getCompanies, generateQuery, generateChartConfig } from './actions';
 
@@ -700,28 +706,10 @@ You've built an AI-powered SQL analysis tool that can convert natural language t
 
 You could, for example, extend the application to use your own data sources or add more advanced features like customizing the chart configuration schema to support more chart types and options. You could also add more complex SQL query generation capabilities.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

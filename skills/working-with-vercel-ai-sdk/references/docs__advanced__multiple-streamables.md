@@ -1,16 +1,20 @@
 ---
+title: Multiple Streamables
+description: Learn to handle multiple streamables in your application.
+url: "https://ai-sdk.dev/docs/advanced/multiple-streamables"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/multiple-streamables.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "ec046317d2c49760641f4e6625c74d97331e32d9b5b0c405603898069294457f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "adcd16496845df2967a403b3fd6e9e05108d8e5e8a758efeb37de24cd94186a3"
 ---
 
-# Multiple Streams
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Multiple Streamable UIs
 
 The AI SDK RSC APIs allow you to compose and return any number of streamable UIs, along with other data, in a single request. This can be useful when you want to decouple the UI into smaller components and stream them separately.
 
-```tsx file='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
 import { createStreamableUI } from '@ai-sdk/rsc';
@@ -45,8 +49,8 @@ The client side code is similar to the previous example, but the [tool call](/do
 
 You can stream UI components within other UI components. This allows you to create complex UIs that are built up from smaller, reusable components. In the example below, we pass a `historyChart` streamable as a prop to a `StockCard` component. The StockCard can render the `historyChart` streamable, and it will automatically update as the server responds with new data.
 
-```tsx file='app/actions.tsx'
-async function getStockHistoryChart({ symbol: string }) {
+```tsx title='app/actions.tsx'
+async function getStockHistoryChart({ symbol }: { symbol: string }) {
   'use server';
 
   const ui = createStreamableUI(<Spinner />);
@@ -68,21 +72,10 @@ async function getStockHistoryChart({ symbol: string }) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

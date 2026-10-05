@@ -14,13 +14,13 @@ related:
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7379ea45e82a8d90b2818d2ad43c164bd43f1b6110b146df99a46e0f57b410bc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1f4ac3441dc9f946a6e88ecd40d10a989546edc9a6e198e948eebbf544bacc08"
 ---
 
 # Observability Plus
 
-> **🔒 Permissions Required**: Observability Plus
+> **Availability**: Observability Plus is available on Enterprise and Pro plans
 
 Every Vercel team has access to [Observability](/docs/observability). **Observability Plus** is available on Paid Pro and Enterprise teams and unlocks more granular data exploration, helping you pinpoint when and why issues occurred.
 
@@ -137,7 +137,7 @@ Paid Pro and Enterprise teams can use **Observability Plus** for additional feat
 | Query                                 | No access                                                                                | Author queries in the Vercel dashboard and save queries to notebooks                                                                |
 | Vercel Functions                      | No Latency (p75) data, no breakdown by path                                              | Latency data, sort by p75, breakdown by path and routes                                                                             |
 | External APIs                         | No ability to sort by error rate or p75 duration, only request totals for each hostname  | Sorting and filtering by requests, p75 duration, and duration. Latency, Requests, API Endpoint and function calls for each hostname |
-| Edge Requests                         | No breakdown by path                                                                     | Full request data                                                                                                                   |
+| CDN Requests                         | No breakdown by path                                                                     | Full request data                                                                                                                   |
 | Fast Data Transfer                    | No breakdown by path                                                                     | Full request data                                                                                                                   |
 | ISR (Incremental Static Regeneration) | No access to average duration or revalidation data. Limited function data for each route | Access to sorting and filtering by duration and revalidation. Full function data for each route                                     |
 | Build Diagnostics                     | Hobby: 12 hours <br /> Pro: 1 day <br /> Enterprise: 3 days                                | Full access                                                                                                                         |

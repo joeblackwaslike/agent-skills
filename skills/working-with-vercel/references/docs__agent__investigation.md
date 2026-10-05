@@ -13,13 +13,13 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a692725667d61c02c1eb3ca67e4eaae99e1ca87b41eeb8d6c95dd7c6d5dd5a91"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "557c8f4f6fd432d58c93e92c1530443c6a0aef496ce7bba507938360c01b8242"
 ---
 
 # Investigation
 
-> **🔒 Permissions Required**: Vercel Agent Investigation (Public Beta)
+> **Availability**: Vercel Agent Investigation (Public Beta) is available on Enterprise and Pro plans with Observability Plus
 
 When you get an anomaly alert, Vercel Agent can investigate your logs and metrics to help you find the root cause. Vercel Agent displays anomaly highlights in the Vercel dashboard.
 
@@ -36,7 +36,7 @@ When you get an anomaly alert, Vercel Agent can investigate your logs and metric
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related)
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fagent%2Finvestigation&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.

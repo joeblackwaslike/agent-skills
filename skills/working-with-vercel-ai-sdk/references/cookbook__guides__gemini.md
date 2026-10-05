@@ -1,10 +1,16 @@
 ---
+title: Get started with Gemini 3
+description: Get started with Gemini 3 using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/gemini"
+docs_index: /llms.txt
+tags:
+  - getting-started
 source: "https://ai-sdk.dev/cookbook/guides/gemini.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "483d45be8cf6f8ac5447b4230205ddd7b7db18f1d7722ae06de306e19ea833ee"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5a7d65373ba2aead2b3ab90bf2e6910967a77ccae3f3464a084c4b2368986c80"
 ---
 
-# Get started with Gemini 3
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 With the release of Gemini 3, Google's most intelligent model to date, there has never been a better time to start building AI applications that combine state-of-the-art reasoning with multimodal understanding.
 
@@ -142,11 +148,13 @@ Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK,
 
 In a new Next.js application, first install the AI SDK and the Google provider:
 
-<Snippet text="pnpm install ai @ai-sdk/google" />
+```
+pnpm install ai @ai-sdk/google
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { google } from '@ai-sdk/google';
 import {
   streamText,
@@ -172,7 +180,7 @@ export async function POST(req: Request) {
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -226,28 +234,10 @@ Ready to dive in? Here's how you can begin:
 4. Use ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 5. Read more about the [Google provider](/providers/ai-sdk-providers/google).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

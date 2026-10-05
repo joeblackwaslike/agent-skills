@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3003c3c0e1bd48ab924ac30b81f065dd4dadcd4caf31eb8363998dcf16f5ebfd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "21b6c2249d45a71b033ec4c3ebc704c08cff73dab21fd37fd049ffc48ba1b0d2"
 ---
 
 # Mastra with AI Gateway
@@ -30,11 +30,11 @@ Integrating with AI Gateway provides unified model management and routing capabi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Pydantic AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
-- [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/mastra.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/mastra.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Fmastra&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -59,7 +59,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @ai-sdk/gateway mastra @mastra/core @mastra/memory
+      yarn add @ai-sdk/gateway mastra @mastra/core @mastra/memory
       ```
     </Code>
     <Code tab="npm">
@@ -69,7 +69,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @ai-sdk/gateway mastra @mastra/core @mastra/memory
+      bun add @ai-sdk/gateway mastra @mastra/core @mastra/memory
       ```
     </Code>
   </CodeBlock>
@@ -137,22 +137,22 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm dev
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn dev
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npm run dev
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bun run dev
       ```
     </Code>
   </CodeBlock>

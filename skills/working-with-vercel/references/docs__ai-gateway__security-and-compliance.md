@@ -15,8 +15,8 @@ related:
 summary: "AI Gateway data privacy and governance controls: zero data retention, prompt training policies, and provider allowlists."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d89d52053562afc316a63da911626a2020f43579db41cdf1e2ab5463f150ecf3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a4e26a02f4fddd9ef0e0d481f3fb9895c0aa68e5630f2b54cada85e06e60e20c"
 ---
 
 # AI Gateway Security and Compliance
@@ -31,10 +31,10 @@ AI Gateway gives you controls over where your data goes and what providers can d
 
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related)
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related)
-- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 

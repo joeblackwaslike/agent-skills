@@ -1,22 +1,25 @@
 ---
+title: Error Handling
+description: Learn how to handle errors in the AI SDK Core
+url: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/error-handling.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "cd564848f641790cf5991d67776394b8ad9a520ec1ea17de236b32f24e59d776"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "876ebba5425b9798f4d264e97ed7663345cad6145ad71391fd78d509fd5f5653"
 ---
 
-# Error Handling
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Handling regular errors
 
 Regular errors are thrown and can be handled using the `try/catch` block.
 
-```ts highlight="4,9-11"
+```ts {4,9-11}
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 try {
   const { text } = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 } catch (error) {
@@ -32,13 +35,12 @@ When errors occur during streams that do not support error chunks,
 the error is thrown as a regular error.
 You can handle these errors using the `try/catch` block.
 
-```ts highlight="4,13-15"
+```ts {4,13-15}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 try {
   const { textStream } = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 
@@ -57,13 +59,12 @@ You can handle those parts similar to other parts.
 It is recommended to also add a try-catch block for errors that
 happen outside of the streaming.
 
-```ts highlight="14-22"
+```ts {14-22}
 import { StreamProviderError, streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 try {
   const { stream } = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   });
 
@@ -108,12 +109,11 @@ try {
 well-formed provider error events received after response streaming has begun,
 set `streamRetries`:
 
-```ts highlight="7"
+```ts {7}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { textStream } = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   streamRetries: 2,
 });
@@ -144,9 +144,9 @@ You can also decide dynamically in `onError`. Set `streamRetries` explicitly to
 enable stream recovery; use `0` when a single retry should only be
 callback-directed:
 
-```ts highlight="7-12"
+```ts {7-12}
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   streamRetries: 0,
   onError: ({ error }) => {
@@ -168,23 +168,19 @@ An `onError` return value other than `{ retry: true }` keeps its previous
 behavior and does not request recovery. Provider error events that are
 recovered are not emitted as final `error` parts.
 
-<Note type="warning">
-  Non-tool output emitted before a provider error cannot be retracted. A retried
-  model step may therefore append repeated or divergent partial text, reasoning,
-  files, or sources to consumer streams. Open text and reasoning parts are ended
-  before recovered output begins so UI consumers do not retain them in a
-  streaming state. Failed-attempt output is excluded from the recovered step
-  result, structured output parsing, response messages, and subsequent model
-  steps. Final request and response metadata come from the recovered attempt.
-  Retries also add latency and may incur additional provider usage and cost.
-</Note>
+Non-tool output emitted before a provider error cannot be retracted. A retried
+model step may therefore append repeated or divergent partial text, reasoning,
+files, or sources to consumer streams. Open text and reasoning parts are ended
+before recovered output begins so UI consumers do not retain them in a
+streaming state. Failed-attempt output is excluded from the recovered step
+result, structured output parsing, response messages, and subsequent model
+steps. Final request and response metadata come from the recovered attempt.
+Retries also add latency and may incur additional provider usage and cost.
 
-<Note type="warning">
-  Failed-attempt isolation prevents AI SDK client-side tools from executing, but
-  it cannot undo work already performed by provider-executed tools. Retrying a
-  step after provider-side work may repeat that work or its cost. Use
-  idempotency controls for provider-executed side effects.
-</Note>
+Failed-attempt isolation prevents AI SDK client-side tools from executing, but
+it cannot undo work already performed by provider-executed tools. Retrying a
+step after provider-side work may repeat that work or its cost. Use
+idempotency controls for provider-executed side effects.
 
 ## Handling stream aborts
 
@@ -192,12 +188,11 @@ When streams are aborted (e.g., via chat stop button), you may want to perform c
 
 The `onAbort` callback is called when a stream is aborted via `AbortSignal`, but `onEnd` is not called. This ensures you can still update your UI state appropriately.
 
-```ts highlight="6-10"
+```ts {6-10}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { textStream } = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
   onAbort: ({ steps }) => {
     // Update stored messages or perform cleanup
@@ -220,12 +215,11 @@ The `onAbort` callback receives:
 
 You can also handle abort events directly in the stream:
 
-```ts highlight="11-14"
+```ts {11-14}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { stream } = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 
@@ -241,40 +235,10 @@ for await (const chunk of stream) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

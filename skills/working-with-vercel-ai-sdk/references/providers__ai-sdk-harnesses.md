@@ -1,70 +1,58 @@
 ---
+title: AI SDK Harnesses
+description: Learn how to use AI SDK harness adapters.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "f2cebb96866cd0cce248c0c4e45d3a96b5efca24404ace4159f47c9755ae4de4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "716911985d27f0e124ffdc021fc5ca51cf1565a27474723c5f6887bf130d945c"
 ---
 
-# AI SDK Harnesses
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 AI SDK harness adapters connect `HarnessAgent` to established agent runtimes.
 They are separate from model providers, but they expose AI SDK-compatible stream
 and response primitives.
 
-<IndexCards
-  cards={[
-    {
-      title: 'Claude Code',
-      description: 'Use Claude Code through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/claude-code',
-    },
-    {
-      title: 'Cline',
-      description: 'Use the Cline SDK through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/cline',
-    },
-    {
-      title: 'Codex',
-      description: 'Use Codex through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/codex',
-    },
-    {
-      title: 'Cursor',
-      description: 'Use Cursor through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/cursor',
-    },
-    {
-      title: 'fx',
-      description: 'Use fx through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/fx',
-    },
-    {
-      title: 'GitHub Copilot',
-      description: 'Use GitHub Copilot through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/github-copilot',
-    },
-    {
-      title: 'Grok Build',
-      description: 'Use Grok Build through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/grok-build',
-    },
-    {
-      title: 'OpenCode',
-      description: 'Use OpenCode through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/opencode',
-    },
-    {
-      title: 'Pi',
-      description: 'Use Pi through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/pi',
-    },
-    {
-      title: 'Agent Client Protocol',
-      description:
-        'Use any ACP compatible harness through the AI SDK harness abstraction.',
-      href: '/providers/ai-sdk-harnesses/acp',
-    },
-  ]}
-/>
+#### [Claude Code](/providers/ai-sdk-harnesses/claude-code)
+
+Use Claude Code through the AI SDK harness abstraction.
+
+#### [Cline](/providers/ai-sdk-harnesses/cline)
+
+Use the Cline SDK through the AI SDK harness abstraction.
+
+#### [Codex](/providers/ai-sdk-harnesses/codex)
+
+Use Codex through the AI SDK harness abstraction.
+
+#### [Cursor](/providers/ai-sdk-harnesses/cursor)
+
+Use Cursor through the AI SDK harness abstraction.
+
+#### [fx](/providers/ai-sdk-harnesses/fx)
+
+Use fx through the AI SDK harness abstraction.
+
+#### [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+
+Use GitHub Copilot through the AI SDK harness abstraction.
+
+#### [Grok Build](/providers/ai-sdk-harnesses/grok-build)
+
+Use Grok Build through the AI SDK harness abstraction.
+
+#### [OpenCode](/providers/ai-sdk-harnesses/opencode)
+
+Use OpenCode through the AI SDK harness abstraction.
+
+#### [Pi](/providers/ai-sdk-harnesses/pi)
+
+Use Pi through the AI SDK harness abstraction.
+
+#### [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
+
+Use any ACP compatible harness through the AI SDK harness abstraction.
 
 ## Usage
 
@@ -99,160 +87,10 @@ try {
 Read the [Harnesses](/docs/ai-sdk-harnesses) documentation for sessions,
 tools, UI, and terminal usage.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI SDK Providers](/providers/ai-sdk-providers)
-  - [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-  - [xAI Grok](/providers/ai-sdk-providers/xai)
-  - [OpenAI](/providers/ai-sdk-providers/openai)
-  - [Azure OpenAI](/providers/ai-sdk-providers/azure)
-  - [Anthropic](/providers/ai-sdk-providers/anthropic)
-  - [Open Responses](/providers/ai-sdk-providers/open-responses)
-  - [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-  - [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-  - [Groq](/providers/ai-sdk-providers/groq)
-  - [Fal](/providers/ai-sdk-providers/fal)
-  - [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-  - [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-  - [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-  - [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-  - [Deepgram](/providers/ai-sdk-providers/deepgram)
-  - [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-  - [Gladia](/providers/ai-sdk-providers/gladia)
-  - [Google](/providers/ai-sdk-providers/google)
-  - [Hume](/providers/ai-sdk-providers/hume)
-  - [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-  - [Rev.ai](/providers/ai-sdk-providers/revai)
-  - [Baseten](/providers/ai-sdk-providers/baseten)
-  - [Hugging Face](/providers/ai-sdk-providers/huggingface)
-  - [QuiverAI](/providers/ai-sdk-providers/quiverai)
-  - [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-  - [Mistral AI](/providers/ai-sdk-providers/mistral)
-  - [Z.AI](/providers/ai-sdk-providers/zai)
-  - [Together.ai](/providers/ai-sdk-providers/togetherai)
-  - [Cohere](/providers/ai-sdk-providers/cohere)
-  - [Fireworks](/providers/ai-sdk-providers/fireworks)
-  - [Voyage AI](/providers/ai-sdk-providers/voyage)
-  - [DeepSeek](/providers/ai-sdk-providers/deepseek)
-  - [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-  - [Alibaba](/providers/ai-sdk-providers/alibaba)
-  - [MiniMax](/providers/ai-sdk-providers/minimax)
-  - [Cerebras](/providers/ai-sdk-providers/cerebras)
-  - [Replicate](/providers/ai-sdk-providers/replicate)
-  - [Prodia](/providers/ai-sdk-providers/prodia)
-  - [Perplexity](/providers/ai-sdk-providers/perplexity)
-  - [Luma](/providers/ai-sdk-providers/luma)
-  - [ByteDance](/providers/ai-sdk-providers/bytedance)
-  - [Kling AI](/providers/ai-sdk-providers/klingai)
-  - [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-  - [Cartesia](/providers/ai-sdk-providers/cartesia)
-- [AI SDK Harnesses](/providers/ai-sdk-harnesses)
-  - [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-  - [Codex](/providers/ai-sdk-harnesses/codex)
-  - [Pi](/providers/ai-sdk-harnesses/pi)
-  - [OpenCode](/providers/ai-sdk-harnesses/opencode)
-  - [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-  - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-  - [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-  - [Cline](/providers/ai-sdk-harnesses/cline)
-  - [Cursor](/providers/ai-sdk-harnesses/cursor)
-  - [fx](/providers/ai-sdk-harnesses/fx)
-  - [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
-- [Observability Integrations](/providers/observability)
-  - [Arize AX](/providers/observability/arize-ax)
-  - [Axiom](/providers/observability/axiom)
-  - [Braintrust](/providers/observability/braintrust)
-  - [Confident AI](/providers/observability/confident-ai)
-  - [Helicone](/providers/observability/helicone)
-  - [Laminar](/providers/observability/laminar)
-  - [Langfuse](/providers/observability/langfuse)
-  - [LangSmith](/providers/observability/langsmith)
-  - [LangWatch](/providers/observability/langwatch)
-  - [Latitude](/providers/observability/latitude)
-  - [Maxim](/providers/observability/maxim)
-  - [MLflow](/providers/observability/mlflow)
-  - [Patronus](/providers/observability/patronus)
-  - [PostHog](/providers/observability/posthog)
-  - [Raindrop](/providers/observability/raindrop)
-  - [Respan](/providers/observability/respan)
-  - [Scorecard](/providers/observability/scorecard)
-  - [Sentry](/providers/observability/sentry)
-  - [SigNoz](/providers/observability/signoz)
-  - [Traceloop](/providers/observability/traceloop)
-  - [Weave](/providers/observability/weave)
-- [OpenAI Compatible Providers](/providers/openai-compatible-providers)
-  - [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-  - [LM Studio](/providers/openai-compatible-providers/lmstudio)
-  - [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-  - [ModelRush](/providers/openai-compatible-providers/modelrush)
-  - [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-  - [Clarifai](/providers/openai-compatible-providers/clarifai)
-  - [Heroku](/providers/openai-compatible-providers/heroku)
-  - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-- [Community Providers](/providers/community-providers)
-  - [Writing a Custom Provider](/providers/community-providers/custom-providers)
-  - [A2A](/providers/community-providers/a2a)
-  - [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-  - [Aihubmix](/providers/community-providers/aihubmix)
-  - [AI/ML API](/providers/community-providers/aimlapi)
-  - [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-  - [Automatic1111](/providers/community-providers/automatic1111)
-  - [Azure AI](/providers/community-providers/azure-ai)
-  - [Browser AI](/providers/community-providers/browser-ai)
-  - [Claude Code](/providers/community-providers/claude-code)
-  - [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-  - [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-  - [Codex CLI](/providers/community-providers/codex-cli)
-  - [Crosshatch](/providers/community-providers/crosshatch)
-  - [Dify](/providers/community-providers/dify)
-  - [Firemoon](/providers/community-providers/firemoon)
-  - [FriendliAI](/providers/community-providers/friendliai)
-  - [Gemini CLI](/providers/community-providers/gemini-cli)
-  - [Helicone](/providers/community-providers/helicone)
-  - [Inflection AI](/providers/community-providers/inflection-ai)
-  - [Jina AI](/providers/community-providers/jina-ai)
-  - [LangDB](/providers/community-providers/langdb)
-  - [Letta](/providers/community-providers/letta)
-  - [llama.cpp](/providers/community-providers/llama-cpp)
-  - [LlamaGate](/providers/community-providers/llamagate)
-  - [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-  - [Mem0](/providers/community-providers/mem0)
-  - [MiniMax](/providers/community-providers/minimax)
-  - [Mixedbread](/providers/community-providers/mixedbread)
-  - [Ollama](/providers/community-providers/ollama)
-  - [OpenCode](/providers/community-providers/opencode-sdk)
-  - [OpenRouter](/providers/community-providers/openrouter)
-  - [Portkey](/providers/community-providers/portkey)
-  - [Qwen](/providers/community-providers/qwen)
-  - [React Native Apple](/providers/community-providers/react-native-apple)
-  - [Requesty](/providers/community-providers/requesty)
-  - [Runpod](/providers/community-providers/runpod)
-  - [SambaNova](/providers/community-providers/sambanova)
-  - [SAP AI Core](/providers/community-providers/sap-ai)
-  - [Sarvam](/providers/community-providers/sarvam)
-  - [Soniox](/providers/community-providers/soniox)
-  - [Spark](/providers/community-providers/spark)
-  - [Supermemory](/providers/community-providers/supermemory)
-  - [Voyage AI](/providers/community-providers/voyage-ai)
-  - [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-  - [vectorstores](/providers/community-providers/vectorstores)
-  - [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-  - [Apertis](/providers/community-providers/apertis)
-  - [OLLM](/providers/community-providers/ollm)
-  - [Cencori](/providers/community-providers/cencori)
-  - [Hindsight](/providers/community-providers/hindsight)
-  - [Nia](/providers/community-providers/nia)
-  - [ZeroEntropy](/providers/community-providers/zeroentropy)
-  - [Crusoe](/providers/community-providers/crusoe)
-  - [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-  - [QVAC](/providers/community-providers/qvac)
-  - [Interfaze](/providers/community-providers/interfaze)
-  - [Telnyx](/providers/community-providers/telnyx)
-  - [Flowise](/providers/community-providers/flowise)
-- [Adapters](/providers/adapters)
-  - [LangChain](/providers/adapters/langchain)
-  - [LlamaIndex](/providers/adapters/llamaindex)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -15,8 +15,8 @@ related:
 summary: Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern matching, and geolocation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/configuration-redirects.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f225eb5f06b94dbe41fb7e5b4df46252e582d7bf6d7685bd35379e1c34233730"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2fe44e14fa7a0e85585ac4346a7d894fe8ea12ae61790f6db359786b348f0f3d"
 ---
 
 # Configuration Redirects
@@ -32,8 +32,8 @@ Configuration redirects define routing rules that Vercel evaluates at build time
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [How do I perform Vercel redirects based on query strings?](https://vercel.com/kb/guide/how-do-i-perform-vercel-redirects-based-on-query-strings?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — When using redirects with the \\`vercel.json\\` or \\`next.config.js\\` configuration file, your URL may contain query param
+- [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
 - [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to implement an emergency redirect without re-deploying your site.
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Frouting%2Fredirects%2Fconfiguration-redirects&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.

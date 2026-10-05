@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8a1fed68430304fd251c9d3d7541d104c7c2bc1144afd560fd199c6a3bf3ef5c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e10400bb58d526b9e56b04f07966e50b01af8713483c3596c649dae5e4aa58ee"
 ---
 
 # Account Management
@@ -39,9 +39,9 @@ When you first sign up for Vercel, you'll create an account. This account is use
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
+- [How do I delete my Vercel account?](https://vercel.com/kb/guide/how-do-i-delete-my-vercel-account?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — This guide covers how to delete your personal or team account on Vercel.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 - [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -83,7 +83,7 @@ You can manage your login connections in the **Authentication** section of [your
 2. Select **Settings** in the dropdown that appears
 3. Select **Authentication** in the list near the left side of the page
 
-![Image](https://vercel.com/docs-assets/static/docs/accounts/authentication-page-light.png)
+![The Authentication section of your account settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/accounts/authentication-page-light.png)
 
 ### Login with passkeys
 
@@ -166,7 +166,7 @@ To choose which team appears when you first log in or open the dashboard, [chang
 3. Name your team
 4. Depending on the types of team plans that you have already created, you'll be able to select a team plan option:
 
-![Image](https://vercel.com/docs-assets/static/docs/concepts/teams/new-team-light.png)
+![Selecting a team plan.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/new-team-light.png)
 
 #### cURL
 
@@ -333,7 +333,7 @@ To add a new email address
 
 You can add up to three emails per account, with a single email domain shared by two emails at most.
 
-![Image](https://vercel.com/docs-assets/static/docs/accounts/account-emails-2-light.png)
+![Your account email addresses.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/accounts/account-emails-2-light.png)
 
 ## Changing your primary email address
 
@@ -341,7 +341,7 @@ Your primary email address is the email address that will be used to send you no
 
 Once you have added and verified a new email address, you can change your primary email address by selecting **Set as Primary** in the dot menu.
 
-![Image](https://vercel.com/docs-assets/static/docs/accounts/account-emails-set-primary-2-light.png)
+![Setting your primary email address.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/accounts/account-emails-set-primary-2-light.png)
 
 ## Removing an email address
 

@@ -13,8 +13,8 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f3b1346fe681e3394a572a683ff96eb936f8ee00e2b9d5a8c055a3c97cdae898"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3ee84ace7aa475fc9303803e4dace4f9bf2c16f63fe418614bd37809ab9f68ab"
 ---
 
 # AI Gateway Reranking
@@ -29,11 +29,11 @@ Rerank documents by relevance to a search query. Reranking is useful for improvi
 
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — API Reference for rerank.
 - [Cohere Rerank API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP
-- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
-- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
-- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
-- [Together.ai](https://ai-sdk.dev/providers/ai-sdk-providers/togetherai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related)
+- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Learn how to use the Voyage AI provider for embedding and reranking with the AI SDK.
+- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Learn how to use the Cohere provider for the AI SDK.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/reranking.graph.md](/docs/ai-gateway/modalities/reranking.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Freranking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

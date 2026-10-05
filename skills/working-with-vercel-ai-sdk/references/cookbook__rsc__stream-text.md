@@ -1,28 +1,29 @@
 ---
+title: Stream Text
+description: Learn how to stream text using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/stream-text"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - streaming
 source: "https://ai-sdk.dev/cookbook/rsc/stream-text.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "7a20f596b5a8883a9b29afa80706233521c845668e1b4dcb9736b5c1e51745a9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3cf39f099645ff2f1db9978189208efc18b99b5b23b284735c2083ab9f2ba0a2"
 ---
 
-# Stream Text
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This example uses React Server Components (RSC). If you want to client side
-  rendering and hooks instead, check out the ["stream text" example with
-  useCompletion](/examples/next-pages/basics/streaming-text-generation).
-</Note>
+This example uses React Server Components (RSC). If you want to client side
+rendering and hooks instead, check out the ["stream text" example with
+useCompletion](/examples/next-pages/basics/streaming-text-generation).
 
 Text generation can sometimes take a long time to complete, especially when you're generating a couple of paragraphs. In such cases, it is useful to stream the text generation process to the client in real-time. This allows the client to display the generated text as it is being generated, rather than have users wait for it to complete before displaying the result.
-
-<Browser>
-  <TextGeneration stream />
-</Browser>
 
 ## Client
 
 Let's create a simple React component that will call the `generate` function when a button is clicked. The `generate` function will call the `streamText` function, which will then generate text based on the input prompt. To consume the stream of text in the client, we will use the `readStreamableValue` function from the `@ai-sdk/rsc` module.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -61,7 +62,7 @@ On the server side, we need to implement the `generate` function, which will cal
 
 Using DevTools, we can see the text generation being streamed to the client in real-time.
 
-```typescript filename='app/actions.ts'
+```typescript title='app/actions.ts'
 'use server';
 
 import { streamText } from 'ai';
@@ -87,22 +88,10 @@ export async function generate(input: string) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

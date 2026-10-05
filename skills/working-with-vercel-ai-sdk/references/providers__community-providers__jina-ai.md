@@ -1,10 +1,14 @@
 ---
+title: Jina AI
+description: Learn how to use the Jina AI provider.
+url: "https://ai-sdk.dev/providers/community-providers/jina-ai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/jina-ai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "969562c0edd22927a5e25f12375e9f1b8f16dac012679c997eaadc9de9eeb4d3"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4ce7db890af40d797c8d70bd00d6a9b216686fb9592f7e357bb6132740163c81"
 ---
 
-# Jina AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [patelvivekdev/jina-ai-provider](https://github.com/patelvivekdev/jina-ai-provider) is a community provider that uses [Jina AI](https://jina.ai) to provide text and multimodal embedding support for the AI SDK.
 
@@ -12,7 +16,7 @@ sha256: "969562c0edd22927a5e25f12375e9f1b8f16dac012679c997eaadc9de9eeb4d3"
 
 The Jina provider is available in the `jina-ai-provider` module. You can install it with
 
-<InstallPackages packages="jina-ai-provider" />
+**Packages:** `jina-ai-provider`
 
 ## Provider Instance
 
@@ -34,21 +38,21 @@ const customJina = createJina({
 
 You can use the following optional settings to customize the Jina provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   The base URL of the Jina API.
   The default prefix is `https://api.jina.ai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `JINA_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -62,7 +66,7 @@ You can create models that call the Jina text embeddings API using the `.embeddi
 ```ts
 import { jina } from 'jina-ai-provider';
 
-const .embeddingModel = jina.embeddingModel('jina-embeddings-v3');
+const embeddingModel = jina.embeddingModel('jina-embeddings-v3');
 ```
 
 You can use Jina embedding models to generate embeddings with the `embed` or `embedMany` function:
@@ -71,7 +75,7 @@ You can use Jina embedding models to generate embeddings with the `embed` or `em
 import { jina } from 'jina-ai-provider';
 import { embedMany } from 'ai';
 
-const .embeddingModel = jina.embeddingModel('jina-embeddings-v3');
+const embeddingModel = jina.embeddingModel('jina-embeddings-v3');
 
 export const generateEmbeddings = async (
   value: string,
@@ -79,7 +83,7 @@ export const generateEmbeddings = async (
   const chunks = value.split('\n');
 
   const { embeddings } = await embedMany({
-    model: .embeddingModel,
+    model: embeddingModel,
     values: chunks,
     providerOptions: {
       jina: {
@@ -123,45 +127,45 @@ export const generateMultimodalEmbeddings = async () => {
 };
 ```
 
-<Note type="tip">
-  Use the `MultimodalEmbeddingInput` type to ensure type safety when using multimodal embeddings.
-  You can pass Base64 encoded images to the `image` property in the Data URL format
-  `data:[mediatype];base64,<data>`.
-</Note>
+Use the `MultimodalEmbeddingInput` type to ensure type safety when using multimodal embeddings.
+You can pass Base64 encoded images to the `image` property in the Data URL format
+`data:[mediatype];base64,<data>`.
 
 ## Provider Options
 
 Pass Jina embedding options via `providerOptions.jina`. The following options are supported:
 
-- **inputType** _'text-matching' | 'retrieval.query' | 'retrieval.passage' | 'separation' | 'classification'_
+- **inputType** *'text-matching' | 'retrieval.query' | 'retrieval.passage' | 'separation' | 'classification'*
 
   Intended downstream application to help the model produce better embeddings. Defaults to `'retrieval.passage'`.
+
   - `'retrieval.query'`: input is a search query.
   - `'retrieval.passage'`: input is a document/passage.
   - `'text-matching'`: for semantic textual similarity tasks.
   - `'classification'`: for classification tasks.
   - `'separation'`: for clustering tasks.
 
-- **outputDimension** _number_
+- **outputDimension** *number*
 
   Number of dimensions for the output embeddings. See model documentation for valid ranges.
+
   - `jina-embeddings-v3`: min 32, max 1024.
   - `jina-clip-v2`: min 64, max 1024.
   - `jina-clip-v1`: fixed 768.
 
-- **embeddingType** _'float' | 'binary' | 'ubinary' | 'base64'_
+- **embeddingType** *'float' | 'binary' | 'ubinary' | 'base64'*
 
   Data type for the returned embeddings.
 
-- **normalized** _boolean_
+- **normalized** *boolean*
 
   Whether to L2-normalize embeddings. Defaults to `true`.
 
-- **truncate** _boolean_
+- **truncate** *boolean*
 
   Whether to truncate inputs beyond the model context limit instead of erroring. Defaults to `false`.
 
-- **lateChunking** _boolean_
+- **lateChunking** *boolean*
 
   Split long inputs into 1024-token chunks automatically. Only for text embedding models.
 
@@ -185,68 +189,10 @@ Pass Jina embedding options via `providerOptions.jina`. The following options ar
 - Image objects: `const image = [{ image: 'https://example.com/image.jpg' }]` or Base64 data URLs
 - Mixed arrays: `const mixed = [{ text: 'object text' }, { image: 'image-url' }, { image: 'data:image/jpeg;base64,...' }]`
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

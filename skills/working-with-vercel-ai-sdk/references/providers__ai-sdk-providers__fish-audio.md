@@ -1,10 +1,14 @@
 ---
+title: Fish Audio
+description: Learn how to use the Fish Audio provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "825d5ec18d1c207f4ab6149d81fb9c516f22de0dc984d81caafb125cd4c8e02b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "237c78f593315fafc14b20a20abf595e3fc8adb30063a9cf03dbd28698c65b7b"
 ---
 
-# Fish Audio Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Fish Audio](https://fish.audio/) provider contains speech generation (S1 and
 S2 models) and speech-to-text transcription support.
@@ -13,21 +17,29 @@ S2 models) and speech-to-text transcription support.
 
 The Fish Audio provider is available in the `@ai-sdk/fish-audio` module. You can install it with
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @ai-sdk/fish-audio" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @ai-sdk/fish-audio" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @ai-sdk/fish-audio" dark />
-  </Tab>
+#### pnpm
 
-  <Tab>
-    <Snippet text="bun add @ai-sdk/fish-audio" dark />
-  </Tab>
-</Tabs>
+```
+pnpm add @ai-sdk/fish-audio
+```
+
+#### npm
+
+```
+npm install @ai-sdk/fish-audio
+```
+
+#### yarn
+
+```
+yarn add @ai-sdk/fish-audio
+```
+
+#### bun
+
+```
+bun add @ai-sdk/fish-audio
+```
 
 ## Provider Instance
 
@@ -50,21 +62,21 @@ const fishAudio = createFishAudio({
 
 You can use the following optional settings to customize the Fish Audio provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `FISH_AUDIO_API_KEY` environment variable.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Base URL for the API calls.
   Defaults to `https://api.fish.audio`.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -120,94 +132,94 @@ Add `self=true` to list only your own uploaded models, or `language=en` / `tag=n
 
 The following provider options are available:
 
-- **referenceId** _string | array of strings_
+- **referenceId** *string | array of strings*
 
   Voice model ID(s). A single ID selects one speaker; an array enables
   multi-speaker dialogue (S2-Pro models). Takes precedence over the top-level
   `voice` option.
   Optional.
 
-- **sampleRate** _number_
+- **sampleRate** *number*
 
   Output sample rate in Hz. Falls back to the format default when unset
   (44100 Hz for `wav`/`pcm`/`mp3`, 48000 Hz for `opus`).
   Optional.
 
-- **mp3Bitrate** _64 | 128 | 192_
+- **mp3Bitrate** *64 | 128 | 192*
 
   Bitrate in kbps for `mp3` output. Ignored for other formats.
   Optional.
 
-- **opusBitrate** _-1000 | 24000 | 32000 | 48000 | 64000_
+- **opusBitrate** *-1000 | 24000 | 32000 | 48000 | 64000*
 
   Bitrate in bps for `opus` output, where `-1000` selects automatic. Ignored for
   other formats.
   Optional.
 
-- **latency** _'low' | 'normal' | 'balanced'_
+- **latency** *'low' | 'normal' | 'balanced'*
 
   Latency/quality tradeoff. `normal` gives the best quality, `balanced` reduces
   latency, and `low` is the fastest.
   Optional.
 
-- **volume** _number_
+- **volume** *number*
 
   Volume offset in dB. Negative values are quieter.
   Optional.
 
-- **normalizeLoudness** _boolean_
+- **normalizeLoudness** *boolean*
 
   Loudness normalization. Supported by the S2 family (`s2-pro` and
   `s2.1-pro`). Fish Audio accepts it on `s1` but ignores it, so the provider
   drops it and emits a warning in that case.
   Optional.
 
-- **temperature** _number_
+- **temperature** *number*
 
   Governs expressiveness (0 to 1). Higher values are more varied.
   Optional.
 
-- **topP** _number_
+- **topP** *number*
 
   Controls diversity via nucleus sampling (0 to 1).
   Optional.
 
-- **chunkLength** _number_
+- **chunkLength** *number*
 
   Text segment size for processing (100 to 300).
   Optional.
 
-- **minChunkLength** _number_
+- **minChunkLength** *number*
 
   Minimum characters before splitting into a new chunk (0 to 100).
   Optional.
 
-- **normalize** _boolean_
+- **normalize** *boolean*
 
   Text normalization for English and Chinese. Helps stability with numbers.
   Optional.
 
-- **maxNewTokens** _number_
+- **maxNewTokens** *number*
 
   Maximum audio tokens to generate per text chunk.
   Optional.
 
-- **repetitionPenalty** _number_
+- **repetitionPenalty** *number*
 
   Values above 1.0 discourage repeated audio patterns.
   Optional.
 
-- **conditionOnPreviousChunks** _boolean_
+- **conditionOnPreviousChunks** *boolean*
 
   Reuse prior audio as context for voice consistency across chunks.
   Optional.
 
-- **earlyStopThreshold** _number_
+- **earlyStopThreshold** *number*
 
   Early-stop threshold used in batch processing (0 to 1).
   Optional.
 
-- **features** _array of strings_
+- **features** *array of strings*
 
   Request-scoped flags passed through to the inference backend, e.g.
   `['quality-guard']`.
@@ -239,28 +251,24 @@ const { audio } = await generateSpeech({
 Fish Audio supports the `wav`, `pcm`, `mp3`, and `opus` output formats. Any other
 value falls back to `mp3` and produces a warning.
 
-<Note>
-  Fish Audio infers the language from the input text and the selected voice, and
-  has no language parameter. The `language` and `instructions` options are not
-  supported and produce warnings.
-</Note>
+Fish Audio infers the language from the input text and the selected voice, and
+has no language parameter. The `language` and `instructions` options are not
+supported and produce warnings.
 
 ### Model Capabilities
 
-| Model           | Multi-Speaker       | Notes                                                                     |
-| --------------- | ------------------- | ------------------------------------------------------------------------- |
-| `s1`            |                     | Ignores `normalizeLoudness`                                               |
-| `s2-pro`        | <Check size={18} /> | Supports `normalizeLoudness`                                              |
-| `s2.1-pro`      | <Check size={18} /> | Recommended default; supports `normalizeLoudness`                         |
-| `s2.1-pro-free` |                     | Free developer tier; no time-to-first-audio or data-processing guarantees |
+| Model           | Multi-Speaker | Notes                                                                     |
+| --------------- | ------------- | ------------------------------------------------------------------------- |
+| `s1`            |               | Ignores `normalizeLoudness`                                               |
+| `s2-pro`        | ✓             | Supports `normalizeLoudness`                                              |
+| `s2.1-pro`      | ✓             | Recommended default; supports `normalizeLoudness`                         |
+| `s2.1-pro-free` |               | Free developer tier; no time-to-first-audio or data-processing guarantees |
 
-<Note>
-  Streaming text-to-speech (Fish Audio's TTS-live WebSocket and timestamped
-  streaming endpoints) is not currently supported, and neither is inline
-  zero-shot voice cloning via `references`, which requires a MessagePack request
-  body. Upload reference audio to Fish Audio and pass its `reference_id` via
-  `voice` or `referenceId` instead.
-</Note>
+Streaming text-to-speech (Fish Audio's TTS-live WebSocket and timestamped
+streaming endpoints) is not currently supported, and neither is inline
+zero-shot voice cloning via `references`, which requires a MessagePack request
+body. Upload reference audio to Fish Audio and pass its `reference_id` via
+`voice` or `referenceId` instead.
 
 ## Transcription Models
 
@@ -288,14 +296,14 @@ matching the text-to-speech endpoint.
 
 The following provider options are available:
 
-- **language** _string_
+- **language** *string*
 
   Language of the audio. A hint only: Fish Audio passes it to the model, but
   auto-detection is authoritative and overrides it, so it changes neither the
   transcript nor the reported language.
   Optional.
 
-- **ignoreTimestamps** _boolean_
+- **ignoreTimestamps** *boolean*
 
   Whether to skip precise timestamps. Mirrors the Fish Audio
   `ignore_timestamps` parameter, whose API default is `true`. This provider
@@ -329,70 +337,23 @@ console.log(result.language); // 'en'
 console.log(result.providerMetadata?.fishAudio?.language); // 'English'
 ```
 
-<Note>
-  The provider metadata `language` is a display name intended for presentation.
-  Its exact form is not guaranteed, so avoid matching or branching on it — use
-  `result.language` for anything programmatic.
-</Note>
+The provider metadata `language` is a display name intended for presentation.
+Its exact form is not guaranteed, so avoid matching or branching on it — use
+`result.language` for anything programmatic.
 
-<Note>
-  Setting `ignoreTimestamps` to `true` makes Fish Audio return an empty
-  `segments` array. The provider therefore requests timestamps by default.
-</Note>
+Setting `ignoreTimestamps` to `true` makes Fish Audio return an empty
+`segments` array. The provider therefore requests timestamps by default.
 
 ### Model Capabilities
 
-| Model          | Transcription       | Duration            | Segments            | Language            |
-| -------------- | ------------------- | ------------------- | ------------------- | ------------------- |
-| `transcribe-1` | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> | <Check size={18} /> |
+| Model          | Transcription | Duration | Segments | Language |
+| -------------- | ------------- | -------- | -------- | -------- |
+| `transcribe-1` | ✓             | ✓        | ✓        | ✓        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

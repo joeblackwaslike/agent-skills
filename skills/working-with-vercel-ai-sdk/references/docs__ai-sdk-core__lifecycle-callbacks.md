@@ -1,10 +1,14 @@
 ---
+title: Lifecycle Callbacks
+description: Observe AI SDK lifecycle events in generateText, streamText, embed, embedMany, rerank, and experimental_evaluate calls
+url: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ceb7cb4a3523d00dc4a833c750dc403408c10ee8371124ca7154583eb37d0170"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "58a6fbd6e88b764fab0d956780e25273a1d8796f6f0e8f161e27097e64a3654b"
 ---
 
-# Lifecycle Callbacks
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Event callbacks let you run your own code at important points in an AI SDK call.
 You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, `rerank`, and `experimental_evaluate` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
@@ -24,12 +28,11 @@ Use event callbacks when you want to run custom code for a specific AI SDK call.
 
 Pass callbacks as options to the AI SDK function you are calling:
 
-```tsx highlight="8-18"
+```tsx {8-18}
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'What is the weather in San Francisco?',
 
   onStart({ callId, modelId }) {
@@ -56,12 +59,11 @@ Because callbacks run as part of the lifecycle, keep them fast or enqueue expens
 Use `onStart` and `onEnd` to record one application log for the beginning and end of a call.
 The `callId` is available across lifecycle events, so you can correlate logs from the same request.
 
-```tsx highlight="8-23"
+```tsx {8-23}
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a short product description for a camping mug.',
 
   onStart({ callId, provider, modelId }) {
@@ -90,12 +92,11 @@ This pattern works well for audit logs, internal dashboards, and tracking usage 
 `onLanguageModelCallEnd` runs after a provider response has been normalized and parsed.
 For `streamText`, the event also includes streaming-specific timing data such as time to first output and gaps between output chunks.
 
-```tsx highlight="8-19"
+```tsx {8-19}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Explain partial prerendering in two paragraphs.',
 
   onLanguageModelCallEnd({
@@ -136,13 +137,12 @@ Use step events when you want timing that includes SDK-managed work such as loca
 When you use tools with `generateText` or `streamText`, a single user request can involve multiple model calls.
 Each model call is a step. The model may call a tool in one step, receive the tool result, and then produce a final answer in the next step.
 
-```tsx highlight="17-31"
+```tsx {17-31}
 import { generateText, isStepCount, tool } from 'ai';
 import { z } from 'zod';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   stopWhen: isStepCount(5),
   prompt: 'What is the weather in San Francisco?',
   tools: {
@@ -183,13 +183,12 @@ This helps answer questions such as:
 Tool execution callbacks run around the tool's `execute` function.
 Use them to record tool usage, latency, successful results, and tool errors.
 
-```tsx highlight="19-36"
+```tsx {19-36}
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Find flights from SFO to JFK tomorrow morning.',
   tools: {
     searchFlights: tool({
@@ -230,7 +229,7 @@ const result = await generateText({
 Embedding and reranking callbacks are simpler: they expose `onStart` and `onEnd` around the operation.
 This is useful for retrieval pipelines where you want to understand how often you are embedding, how many values you embed, and how reranking changes result sets.
 
-```tsx highlight="10-24,32-37"
+```tsx {10-24,32-37}
 import { embedMany, rerank } from 'ai';
 import { cohere } from '@ai-sdk/cohere';
 
@@ -302,16 +301,17 @@ This distinction matters when the step includes local tool execution: the step d
 
 ## Runtime and Tool Context
 
-Lifecycle callbacks receive the full `runtimeContext` and `toolsContext` values that flow through the call.
-This makes callbacks useful for attaching application context without changing prompts or tool inputs.
+Generation and step lifecycle callbacks receive the full `runtimeContext` and
+`toolsContext` values that flow through the call. Tool-execution callbacks receive
+the scoped `toolContext` for the tool being executed. This makes callbacks useful
+for attaching application context without changing prompts or tool inputs.
 
-```tsx highlight="8-24,26-39"
+```tsx {8-24,26-39}
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Check the order status.',
   runtimeContext: {
     requestId: 'req_123',
@@ -348,126 +348,46 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  Telemetry integrations can filter `runtimeContext` and `toolsContext` before
-  exporting them. Lifecycle callbacks receive the full context objects. Be
-  careful not to log secrets or sensitive user data from callbacks.
-</Note>
+Telemetry integrations can filter `runtimeContext` and `toolsContext` before
+exporting them. Generation and step callbacks receive the full context
+objects; tool-execution callbacks receive scoped tool context. Be careful not
+to log secrets or sensitive user data from callbacks.
 
 ## Available Callbacks
 
 ### `generateText` and `streamText`
 
-<PropertiesTable
-  content={[
-    {
-      name: 'onStart',
-      type: '(event: GenerateTextStartEvent) => void | Promise<void>',
-      description:
-        'Called once when the generation operation begins, before any model calls.',
-    },
-    {
-      name: 'onStepStart',
-      type: '(event: GenerateTextStepStartEvent) => void | Promise<void>',
-      description:
-        'Called before each generation step. Each step represents one model call and any SDK-managed work around it.',
-    },
-    {
-      name: 'onLanguageModelCallStart',
-      type: '(event: LanguageModelCallStartEvent) => void | Promise<void>',
-      description:
-        'Called immediately before the provider model call begins. Scoped to model work only.',
-    },
-    {
-      name: 'onLanguageModelCallEnd',
-      type: '(event: LanguageModelCallEndEvent) => void | Promise<void>',
-      description:
-        'Called after the model response has been normalized and parsed, before local tool execution begins.',
-    },
-    {
-      name: 'onToolExecutionStart',
-      type: '(event: ToolExecutionStartEvent) => void | Promise<void>',
-      description: "Called before a local tool's `execute` function runs.",
-    },
-    {
-      name: 'onToolExecutionEnd',
-      type: '(event: ToolExecutionEndEvent) => void | Promise<void>',
-      description:
-        "Called after a local tool's `execute` function completes or errors.",
-    },
-    {
-      name: 'onStepEnd',
-      type: '(event: GenerateTextStepEndEvent) => void | Promise<void>',
-      description:
-        'Called after each generation step completes. Receives the step result, including usage and performance.',
-    },
-    {
-      name: 'onEnd',
-      type: '(event: GenerateTextEndEvent) => void | Promise<void>',
-      description:
-        'Called once when the full generation completes. Receives final output and aggregated usage across all steps.',
-    },
-  ]}
-/>
+- `onStart` (`(event: GenerateTextStartEvent) => void | Promise<void>`): Called once when the generation operation begins, before any model calls.
+- `onStepStart` (`(event: GenerateTextStepStartEvent) => void | Promise<void>`): Called before each generation step. Each step represents one model call and any SDK-managed work around it.
+- `onLanguageModelCallStart` (`(event: LanguageModelCallStartEvent) => void | Promise<void>`): Called immediately before the provider model call begins. Scoped to model work only.
+- `onLanguageModelCallEnd` (`(event: LanguageModelCallEndEvent) => void | Promise<void>`): Called after the model response has been normalized and parsed, before local tool execution begins.
+- `onToolExecutionStart` (`(event: ToolExecutionStartEvent) => void | Promise<void>`): Called before a local tool's \`execute\` function runs.
+- `onToolExecutionEnd` (`(event: ToolExecutionEndEvent) => void | Promise<void>`): Called after a local tool's \`execute\` function completes or errors.
+- `onStepEnd` (`(event: GenerateTextStepEndEvent) => void | Promise<void>`): Called after each generation step completes. Receives the step result, including usage and performance.
+- `onEnd` (`(event: GenerateTextEndEvent) => void | Promise<void>`): Called once when the full generation completes. Receives final output and aggregated usage across all steps.
 
-<Note>`onStepFinish` is deprecated. Use `onStepEnd` for new code.</Note>
+`onStepFinish`
+
+is deprecated. Use
+
+`onStepEnd`
+
+for new code.
 
 ### `embed` and `embedMany`
 
-<PropertiesTable
-  content={[
-    {
-      name: 'onStart',
-      type: '(event: EmbedStartEvent) => void | Promise<void>',
-      description:
-        'Called when the embedding operation begins, before the embedding model is called.',
-    },
-    {
-      name: 'onEnd',
-      type: '(event: EmbedEndEvent) => void | Promise<void>',
-      description:
-        'Called when the embedding operation completes, after the embedding model returns.',
-    },
-  ]}
-/>
+- `onStart` (`(event: EmbedStartEvent) => void | Promise<void>`): Called when the embedding operation begins, before the embedding model is called.
+- `onEnd` (`(event: EmbedEndEvent) => void | Promise<void>`): Called when the embedding operation completes, after the embedding model returns.
 
 ### `rerank`
 
-<PropertiesTable
-  content={[
-    {
-      name: 'onStart',
-      type: '(event: RerankStartEvent) => void | Promise<void>',
-      description:
-        'Called when the reranking operation begins, before the reranking model is called.',
-    },
-    {
-      name: 'onEnd',
-      type: '(event: RerankEndEvent) => void | Promise<void>',
-      description:
-        'Called when the reranking operation completes, after the reranking model returns.',
-    },
-  ]}
-/>
+- `onStart` (`(event: RerankStartEvent) => void | Promise<void>`): Called when the reranking operation begins, before the reranking model is called.
+- `onEnd` (`(event: RerankEndEvent) => void | Promise<void>`): Called when the reranking operation completes, after the reranking model returns.
 
 ### `experimental_evaluate`
 
-<PropertiesTable
-  content={[
-    {
-      name: 'onStart',
-      type: '(event: Experimental_EvaluateStartEvent) => void | Promise<void>',
-      description:
-        'Called when the evaluation operation begins, before the evaluation model is called.',
-    },
-    {
-      name: 'onEnd',
-      type: '(event: Experimental_EvaluateEndEvent) => void | Promise<void>',
-      description:
-        'Called when the evaluation operation completes successfully.',
-    },
-  ]}
-/>
+- `onStart` (`(event: Experimental_EvaluateStartEvent) => void | Promise<void>`): Called when the evaluation operation begins, before the evaluation model is called.
+- `onEnd` (`(event: Experimental_EvaluateEndEvent) => void | Promise<void>`): Called when the evaluation operation completes successfully.
 
 ## Event Data Reference
 
@@ -479,470 +399,118 @@ The exact event data depends on the callback. The tables below summarize the fie
 
 Called once before any model calls are made.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'operationId',
-      type: 'string',
-      description:
-        "Operation type, such as 'ai.generateText' or 'ai.streamText'.",
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the resolved model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Model identifier for the resolved model.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description: 'Messages for this generation.',
-    },
-    {
-      name: 'instructions',
-      type: 'Instructions | undefined',
-      description: 'Instructions provided to the model.',
-    },
-    {
-      name: 'tools',
-      type: 'ToolSet | undefined',
-      description: 'Tools available for this generation.',
-    },
-    {
-      name: 'toolChoice',
-      type: 'ToolChoice | undefined',
-      description: 'Tool choice strategy for this generation.',
-    },
-    {
-      name: 'activeTools',
-      type: 'ActiveTools<TOOLS>',
-      description: 'Limits which tools are available for the model to call.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      description: 'Maximum number of retries for failed requests.',
-    },
-    {
-      name: 'timeout',
-      type: 'TimeoutConfiguration | undefined',
-      description: 'Timeout configuration for the generation.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string | undefined> | undefined',
-      description: 'Additional HTTP headers sent with the request.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions | undefined',
-      description: 'Provider-specific options.',
-    },
-    {
-      name: 'runtimeContext',
-      type: 'CONTEXT',
-      description: 'User-defined runtime context for the generation.',
-    },
-    {
-      name: 'toolsContext',
-      type: 'InferToolSetContext<TOOLS>',
-      description: 'Per-tool context map passed via `toolsContext`.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `operationId` (`string`): Operation type, such as 'ai.generateText' or 'ai.streamText'.
+- `provider` (`string`): Provider identifier for the resolved model.
+- `modelId` (`string`): Model identifier for the resolved model.
+- `messages` (`Array<ModelMessage>`): Messages for this generation.
+- `instructions` (`Instructions | undefined`): Instructions provided to the model.
+- `tools` (`ToolSet | undefined`): Tools available for this generation.
+- `toolChoice` (`ToolChoice | undefined`): Tool choice strategy for this generation.
+- `activeTools` (`ActiveTools<TOOLS>`): Limits which tools are available for the model to call.
+- `maxRetries` (`number`): Maximum number of retries for failed requests.
+- `timeout` (`TimeoutConfiguration | undefined`): Timeout configuration for the generation.
+- `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+- `providerOptions` (`ProviderOptions | undefined`): Provider-specific options.
+- `runtimeContext` (`CONTEXT`): User-defined runtime context for the generation.
+- `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`.
 
 #### onStepStart
 
 Called before each step begins.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'stepNumber',
-      type: 'number',
-      description: 'Zero-based index of the current step.',
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the resolved model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Model identifier for the resolved model.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description: 'Messages that will be sent to the model for this step.',
-    },
-    {
-      name: 'tools',
-      type: 'ToolSet | undefined',
-      description: 'Tools available for this generation.',
-    },
-    {
-      name: 'activeTools',
-      type: 'ActiveTools<TOOLS>',
-      description: 'Limits which tools are available for this step.',
-    },
-    {
-      name: 'steps',
-      type: 'ReadonlyArray<StepResult>',
-      description: 'Results from previous steps. Empty for the first step.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions | undefined',
-      description: 'Provider-specific options for this step.',
-    },
-    {
-      name: 'runtimeContext',
-      type: 'CONTEXT',
-      description:
-        'Runtime context for this step. May be updated from `prepareStep` between steps.',
-    },
-    {
-      name: 'toolsContext',
-      type: 'InferToolSetContext<TOOLS>',
-      description:
-        'Per-tool context map for this step. May be updated from `prepareStep` between steps.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `stepNumber` (`number`): Zero-based index of the current step.
+- `provider` (`string`): Provider identifier for the resolved model.
+- `modelId` (`string`): Model identifier for the resolved model.
+- `messages` (`Array<ModelMessage>`): Messages that will be sent to the model for this step.
+- `tools` (`ToolSet | undefined`): Tools available for this generation.
+- `activeTools` (`ActiveTools<TOOLS>`): Limits which tools are available for this step.
+- `steps` (`ReadonlyArray<StepResult>`): Results from previous steps. Empty for the first step.
+- `providerOptions` (`ProviderOptions | undefined`): Provider-specific options for this step.
+- `runtimeContext` (`CONTEXT`): Runtime context for this step. May be updated from \`prepareStep\` between steps.
+- `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map for this step. May be updated from \`prepareStep\` between steps.
 
 #### onLanguageModelCallStart
 
 Called immediately before the provider model call begins.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for this model call.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Model identifier for this model call.',
-    },
-    {
-      name: 'instructions',
-      type: 'Instructions | undefined',
-      description: 'Instructions that will be sent to the model.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description: 'Messages that will be sent to the model.',
-    },
-    {
-      name: 'tools',
-      type: 'ReadonlyArray<Record<string, unknown>> | undefined',
-      description: 'Prepared tool definitions for the model call, if any.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `provider` (`string`): Provider identifier for this model call.
+- `modelId` (`string`): Model identifier for this model call.
+- `instructions` (`Instructions | undefined`): Instructions that will be sent to the model.
+- `messages` (`Array<ModelMessage>`): Messages that will be sent to the model.
+- `tools` (`ReadonlyArray<Record<string, unknown>> | undefined`): Prepared tool definitions for the model call, if any.
 
 #### onLanguageModelCallEnd
 
 Called after the provider response has been normalized and parsed, before local tool execution begins.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for this model call.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Provider-returned model identifier for this model call.',
-    },
-    {
-      name: 'finishReason',
-      type: 'FinishReason',
-      description: 'Unified reason why the model call finished.',
-    },
-    {
-      name: 'usage',
-      type: 'LanguageModelUsage',
-      description: 'Token usage reported by the model call.',
-    },
-    {
-      name: 'content',
-      type: 'ReadonlyArray<ContentPart<TOOLS>>',
-      description: 'Content parts produced by the model call.',
-    },
-    {
-      name: 'responseId',
-      type: 'string',
-      description: 'Provider-returned response ID for this model call.',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'ProviderMetadata | undefined',
-      description:
-        'Provider-specific metadata for this model call, when returned by the provider.',
-    },
-    {
-      name: 'performance',
-      type: 'LanguageModelCallPerformance',
-      description:
-        'Timing and throughput metrics, including response time, tokens per second, and streaming timing when available.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `provider` (`string`): Provider identifier for this model call.
+- `modelId` (`string`): Provider-returned model identifier for this model call.
+- `finishReason` (`FinishReason`): Unified reason why the model call finished.
+- `usage` (`LanguageModelUsage`): Token usage reported by the model call.
+- `content` (`ReadonlyArray<ContentPart<TOOLS>>`): Content parts produced by the model call.
+- `responseId` (`string`): Provider-returned response ID for this model call.
+- `providerMetadata` (`ProviderMetadata | undefined`): Provider-specific metadata for this model call, when returned by the provider.
+- `performance` (`LanguageModelCallPerformance`): Timing and throughput metrics, including response time, tokens per second, and streaming timing when available.
 
 #### onToolExecutionStart
 
 Called before a local tool's `execute` function runs.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'toolCall',
-      type: 'TypedToolCall',
-      description:
-        'The tool call that is about to execute, including `toolCallId`, `toolName`, and `input`.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description:
-        'Messages sent to the model to initiate the response that contained the tool call. Does not include the system prompt or the assistant response that contained the tool call.',
-    },
-    {
-      name: 'toolContext',
-      type: 'InferToolContext<TOOLS[toolName]>',
-      description: 'Tool-specific context object for the tool call.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `toolCall` (`TypedToolCall`): The tool call that is about to execute, including \`toolCallId\`, \`toolName\`, and \`input\`.
+- `messages` (`Array<ModelMessage>`): Messages sent to the model to initiate the response that contained the tool call. Does not include the system prompt or the assistant response that contained the tool call.
+- `toolContext` (`InferToolContext<TOOLS[toolName]>`): Tool-specific context object for the tool call.
 
 #### onToolExecutionEnd
 
 Called after a local tool's `execute` function completes or errors.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'toolCall',
-      type: 'TypedToolCall',
-      description: 'The tool call that completed.',
-    },
-    {
-      name: 'toolExecutionMs',
-      type: 'number',
-      description: 'Execution time of the tool call in milliseconds.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<ModelMessage>',
-      description:
-        'Messages sent to the model to initiate the response that contained the tool call. Does not include the system prompt or the assistant response that contained the tool call.',
-    },
-    {
-      name: 'toolContext',
-      type: 'InferToolContext<TOOLS[toolName]>',
-      description: 'Tool-specific context object for the completed tool call.',
-    },
-    {
-      name: 'toolOutput',
-      type: "{ type: 'tool-result'; output: unknown } | { type: 'tool-error'; error: unknown }",
-      description:
-        'Discriminated union representing either a successful tool result or a tool error.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `toolCall` (`TypedToolCall`): The tool call that completed.
+- `toolExecutionMs` (`number`): Execution time of the tool call in milliseconds.
+- `messages` (`Array<ModelMessage>`): Messages sent to the model to initiate the response that contained the tool call. Does not include the system prompt or the assistant response that contained the tool call.
+- `toolContext` (`InferToolContext<TOOLS[toolName]>`): Tool-specific context object for the completed tool call.
+- `toolOutput` (`{ type: 'tool-result'; output: unknown } | { type: 'tool-error'; error: unknown }`): Discriminated union representing either a successful tool result or a tool error.
 
 #### onStepEnd
 
 Called after each step completes. The event is the full `StepResult` for that step.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'stepNumber',
-      type: 'number',
-      description: 'Zero-based index of the completed step.',
-    },
-    {
-      name: 'model',
-      type: '{ provider: string; modelId: string }',
-      description: 'Information about the model that produced this step.',
-    },
-    {
-      name: 'content',
-      type: 'Array<ContentPart>',
-      description: 'Content generated in this step.',
-    },
-    {
-      name: 'text',
-      type: 'string',
-      description: 'Text generated in this step.',
-    },
-    {
-      name: 'toolCalls',
-      type: 'Array<TypedToolCall>',
-      description: 'Tool calls made in this step.',
-    },
-    {
-      name: 'toolResults',
-      type: 'Array<TypedToolResult>',
-      description: 'Tool results produced in this step.',
-    },
-    {
-      name: 'finishReason',
-      type: 'FinishReason',
-      description: 'Unified reason why the step finished.',
-    },
-    {
-      name: 'usage',
-      type: 'LanguageModelUsage',
-      description: 'Token usage for this step.',
-    },
-    {
-      name: 'performance',
-      type: 'StepResultPerformance',
-      description:
-        'Timing and throughput metrics for this step, including model response time and tool execution time.',
-    },
-    {
-      name: 'warnings',
-      type: 'CallWarning[] | undefined',
-      description: 'Warnings from the model provider.',
-    },
-    {
-      name: 'request',
-      type: 'LanguageModelRequestMetadata',
-      description:
-        'Request metadata, including request body and request messages when included.',
-    },
-    {
-      name: 'response',
-      type: 'LanguageModelResponseMetadata',
-      description:
-        'Response metadata, including response headers, body, and messages when included.',
-    },
-    {
-      name: 'runtimeContext',
-      type: 'CONTEXT',
-      description: 'Runtime context for this step.',
-    },
-    {
-      name: 'toolsContext',
-      type: 'InferToolSetContext<TOOLS>',
-      description: 'Per-tool context map for this step.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `stepNumber` (`number`): Zero-based index of the completed step.
+- `model` (`{ provider: string; modelId: string }`): Information about the model that produced this step.
+- `content` (`Array<ContentPart>`): Content generated in this step.
+- `text` (`string`): Text generated in this step.
+- `toolCalls` (`Array<TypedToolCall>`): Tool calls made in this step.
+- `toolResults` (`Array<TypedToolResult>`): Tool results produced in this step.
+- `finishReason` (`FinishReason`): Unified reason why the step finished.
+- `usage` (`LanguageModelUsage`): Token usage for this step.
+- `performance` (`StepResultPerformance`): Timing and throughput metrics for this step, including model response time and tool execution time.
+- `warnings` (`CallWarning[] | undefined`): Warnings from the model provider.
+- `request` (`LanguageModelRequestMetadata`): Request metadata, including request body and request messages when included.
+- `response` (`LanguageModelResponseMetadata`): Response metadata, including response headers, body, and messages when included.
+- `runtimeContext` (`CONTEXT`): Runtime context for this step.
+- `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map for this step.
 
 #### onEnd
 
 Called once when the full generation completes.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this generation call.',
-    },
-    {
-      name: 'steps',
-      type: 'Array<StepResult>',
-      description: 'Results from all steps in the generation.',
-    },
-    {
-      name: 'finalStep',
-      type: 'StepResult',
-      description: 'The final step. This is a shortcut for `steps.at(-1)`.',
-    },
-    {
-      name: 'responseMessages',
-      type: 'Array<ResponseMessage>',
-      description: 'Response messages generated during the call.',
-    },
-    {
-      name: 'content',
-      type: 'Array<ContentPart>',
-      description: 'Content generated across all steps.',
-    },
-    {
-      name: 'text',
-      type: 'string',
-      description: 'Text generated in the final step.',
-    },
-    {
-      name: 'toolCalls',
-      type: 'Array<TypedToolCall>',
-      description: 'Tool calls made across all steps.',
-    },
-    {
-      name: 'toolResults',
-      type: 'Array<TypedToolResult>',
-      description: 'Tool results produced across all steps.',
-    },
-    {
-      name: 'finishReason',
-      type: 'FinishReason',
-      description: 'Unified reason why the final step finished.',
-    },
-    {
-      name: 'usage',
-      type: 'LanguageModelUsage',
-      description: 'Aggregated token usage across all steps.',
-    },
-    {
-      name: 'warnings',
-      type: 'CallWarning[] | undefined',
-      description: 'Warnings from the model provider across all steps.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this generation call.
+- `steps` (`Array<StepResult>`): Results from all steps in the generation.
+- `finalStep` (`StepResult`): The final step. This is a shortcut for \`steps.at(-1)\`.
+- `responseMessages` (`Array<ResponseMessage>`): Response messages generated during the call.
+- `content` (`Array<ContentPart>`): Content generated across all steps.
+- `text` (`string`): Text generated in the final step.
+- `toolCalls` (`Array<TypedToolCall>`): Tool calls made across all steps.
+- `toolResults` (`Array<TypedToolResult>`): Tool results produced across all steps.
+- `finishReason` (`FinishReason`): Unified reason why the final step finished.
+- `usage` (`LanguageModelUsage`): Aggregated token usage across all steps.
+- `warnings` (`CallWarning[] | undefined`): Warnings from the model provider across all steps.
 
 ### Embedding Events
 
@@ -952,225 +520,55 @@ For `embed`, `value` is a single string. For `embedMany`, `value` is an array of
 
 #### onStart
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this embedding call.',
-    },
-    {
-      name: 'operationId',
-      type: 'string',
-      description: "Operation type, such as 'ai.embed' or 'ai.embedMany'.",
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the embedding model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Embedding model identifier.',
-    },
-    {
-      name: 'value',
-      type: 'string | Array<string>',
-      description: 'Value or values being embedded.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      description: 'Maximum number of retries for failed requests.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string | undefined> | undefined',
-      description: 'Additional HTTP headers sent with the request.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions | undefined',
-      description: 'Provider-specific options.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this embedding call.
+- `operationId` (`string`): Operation type, such as 'ai.embed' or 'ai.embedMany'.
+- `provider` (`string`): Provider identifier for the embedding model.
+- `modelId` (`string`): Embedding model identifier.
+- `value` (`string | Array<string>`): Value or values being embedded.
+- `maxRetries` (`number`): Maximum number of retries for failed requests.
+- `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+- `providerOptions` (`ProviderOptions | undefined`): Provider-specific options.
 
 #### onEnd
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this embedding call.',
-    },
-    {
-      name: 'operationId',
-      type: 'string',
-      description: "Operation type, such as 'ai.embed' or 'ai.embedMany'.",
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the embedding model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Embedding model identifier.',
-    },
-    {
-      name: 'value',
-      type: 'string | Array<string>',
-      description: 'Value or values that were embedded.',
-    },
-    {
-      name: 'embedding',
-      type: 'Embedding | Array<Embedding>',
-      description: 'Resulting embedding or embeddings.',
-    },
-    {
-      name: 'usage',
-      type: 'EmbeddingModelUsage',
-      description: 'Token usage for the embedding operation.',
-    },
-    {
-      name: 'warnings',
-      type: 'Array<Warning>',
-      description: 'Warnings from the embedding model.',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'ProviderMetadata | undefined',
-      description: 'Optional provider-specific metadata.',
-    },
-    {
-      name: 'response',
-      type: '{ headers?: Record<string, string>; body?: unknown } | Array<{ headers?: Record<string, string>; body?: unknown } | undefined> | undefined',
-      description:
-        'Response data. For `embedMany`, this can be one response per chunk.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this embedding call.
+- `operationId` (`string`): Operation type, such as 'ai.embed' or 'ai.embedMany'.
+- `provider` (`string`): Provider identifier for the embedding model.
+- `modelId` (`string`): Embedding model identifier.
+- `value` (`string | Array<string>`): Value or values that were embedded.
+- `embedding` (`Embedding | Array<Embedding>`): Resulting embedding or embeddings.
+- `usage` (`EmbeddingModelUsage`): Token usage for the embedding operation.
+- `warnings` (`Array<Warning>`): Warnings from the embedding model.
+- `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
+- `response` (`{ headers?: Record<string, string>; body?: unknown } | Array<{ headers?: Record<string, string>; body?: unknown } | undefined> | undefined`): Response data. For \`embedMany\`, this can be one response per chunk.
 
 ### Rerank Events
 
 #### onStart
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this rerank call.',
-    },
-    {
-      name: 'operationId',
-      type: 'string',
-      description: "Operation type, 'ai.rerank'.",
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the reranking model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Reranking model identifier.',
-    },
-    {
-      name: 'documents',
-      type: 'Array<JSONObject | string>',
-      description: 'Documents being reranked.',
-    },
-    {
-      name: 'query',
-      type: 'string',
-      description: 'Query to rerank the documents against.',
-    },
-    {
-      name: 'topN',
-      type: 'number | undefined',
-      description: 'Number of top documents to return.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      description: 'Maximum number of retries for failed requests.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string | undefined> | undefined',
-      description: 'Additional HTTP headers sent with the request.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions | undefined',
-      description: 'Provider-specific options.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this rerank call.
+- `operationId` (`string`): Operation type, 'ai.rerank'.
+- `provider` (`string`): Provider identifier for the reranking model.
+- `modelId` (`string`): Reranking model identifier.
+- `documents` (`Array<JSONObject | string>`): Documents being reranked.
+- `query` (`string`): Query to rerank the documents against.
+- `topN` (`number | undefined`): Number of top documents to return.
+- `maxRetries` (`number`): Maximum number of retries for failed requests.
+- `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
+- `providerOptions` (`ProviderOptions | undefined`): Provider-specific options.
 
 #### onEnd
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this rerank call.',
-    },
-    {
-      name: 'operationId',
-      type: 'string',
-      description: "Operation type, 'ai.rerank'.",
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the reranking model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Reranking model identifier.',
-    },
-    {
-      name: 'documents',
-      type: 'Array<JSONObject | string>',
-      description: 'Documents that were reranked.',
-    },
-    {
-      name: 'query',
-      type: 'string',
-      description: 'Query the documents were reranked against.',
-    },
-    {
-      name: 'ranking',
-      type: 'Array<{ originalIndex: number; score: number; document: JSONObject | string }>',
-      description:
-        'Reranked results sorted by relevance score in descending order.',
-    },
-    {
-      name: 'warnings',
-      type: 'Array<Warning>',
-      description: 'Warnings from the reranking model.',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'ProviderMetadata | undefined',
-      description: 'Optional provider-specific metadata.',
-    },
-    {
-      name: 'response',
-      type: '{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }',
-      description: 'Response data including headers and body.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this rerank call.
+- `operationId` (`string`): Operation type, 'ai.rerank'.
+- `provider` (`string`): Provider identifier for the reranking model.
+- `modelId` (`string`): Reranking model identifier.
+- `documents` (`Array<JSONObject | string>`): Documents that were reranked.
+- `query` (`string`): Query the documents were reranked against.
+- `ranking` (`Array<{ originalIndex: number; score: number; document: JSONObject | string }>`): Reranked results sorted by relevance score in descending order.
+- `warnings` (`Array<Warning>`): Warnings from the reranking model.
+- `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
+- `response` (`{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }`): Response data including headers and body.
 
 ### Evaluation Events
 
@@ -1179,136 +577,32 @@ Evaluation callbacks are experimental. Their exported types are
 
 #### onStart
 
-<PropertiesTable
-  content={[
-    {
-      name: 'callId',
-      type: 'string',
-      description: 'Unique identifier for this evaluation call.',
-    },
-    {
-      name: 'operationId',
-      type: "'ai.evaluate'",
-      description: 'Evaluation operation identifier.',
-    },
-    {
-      name: 'runtimeContext',
-      type: 'RUNTIME_CONTEXT',
-      description: 'Full user-defined runtime context.',
-    },
-    {
-      name: 'provider',
-      type: 'string',
-      description: 'Provider identifier for the evaluation model.',
-    },
-    {
-      name: 'modelId',
-      type: 'string',
-      description: 'Evaluation model identifier.',
-    },
-    {
-      name: 'state',
-      type: 'string | object | array',
-      description: 'Shared state being evaluated.',
-    },
-    {
-      name: 'questions',
-      type: 'Readonly<Record<string, Experimental_EvaluationQuestion>>',
-      description: 'Questions being evaluated against the shared state.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      description: 'Maximum number of retries for the model call.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string> | undefined',
-      description: 'Additional HTTP headers sent with the request.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions',
-      description: 'Provider-specific options.',
-    },
-  ]}
-/>
+- `callId` (`string`): Unique identifier for this evaluation call.
+- `operationId` (`'ai.evaluate'`): Evaluation operation identifier.
+- `runtimeContext` (`RUNTIME_CONTEXT`): Full user-defined runtime context.
+- `provider` (`string`): Provider identifier for the evaluation model.
+- `modelId` (`string`): Evaluation model identifier.
+- `state` (`string | object | array`): Shared state being evaluated.
+- `questions` (`Readonly<Record<string, Experimental_EvaluationQuestion>>`): Questions being evaluated against the shared state.
+- `maxRetries` (`number`): Maximum number of retries for the model call.
+- `headers` (`Record<string, string> | undefined`): Additional HTTP headers sent with the request.
+- `providerOptions` (`ProviderOptions`): Provider-specific options.
 
 #### onEnd
 
 Includes every `onStart` field plus:
 
-<PropertiesTable
-  content={[
-    {
-      name: 'answers',
-      type: 'Record<string, Experimental_EvaluationAnswer>',
-      description: 'Exactly one typed answer per question ID.',
-    },
-    {
-      name: 'usage',
-      type: '{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }',
-      description: 'Token usage for the evaluation operation.',
-    },
-    {
-      name: 'warnings',
-      type: 'Array<Warning>',
-      description: 'Warnings from the evaluation model.',
-    },
-    {
-      name: 'rounding',
-      type: '{ probabilityDecimals?: number; scoreDecimals?: number } | undefined',
-      description:
-        'Provider-declared decimal precision for probabilities and scores.',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'ProviderMetadata | undefined',
-      description: 'Optional provider-specific metadata.',
-    },
-    {
-      name: 'response',
-      type: '{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }',
-      description:
-        'Response metadata including the resolved model and timestamp.',
-    },
-  ]}
-/>
+- `answers` (`Record<string, Experimental_EvaluationAnswer>`): Exactly one typed answer per question ID.
+- `usage` (`{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }`): Token usage for the evaluation operation.
+- `warnings` (`Array<Warning>`): Warnings from the evaluation model.
+- `rounding` (`{ probabilityDecimals?: number; scoreDecimals?: number } | undefined`): Provider-declared decimal precision for probabilities and scores.
+- `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
+- `response` (`{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }`): Response metadata including the resolved model and timestamp.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

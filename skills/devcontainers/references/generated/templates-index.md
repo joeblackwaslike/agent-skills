@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-09-28T10:38:04.080Z"
-sha256: "c4919706539a94cfdbec1645ae323d09a0336be0a9ee80473385979e46cb9698"
+fetched_at: "2026-10-05T11:12:30.813Z"
+sha256: "814284d75adb897897d3475cb31034972ee595c9c509465b8633f1e1d996477b"
 ---
 
 # Available templates index
@@ -272,6 +272,7 @@ Templates
 | Debian | nozaq | `ghcr.io/bare-devcontainer/templates/debian:1.3.0` | `1.3.0` |
 | Deno | nozaq | `ghcr.io/bare-devcontainer/templates/deno:1.1.0` | `1.1.0` |
 | Go | nozaq | `ghcr.io/bare-devcontainer/templates/golang:1.4.0` | `1.4.0` |
+| Lean 4 | nozaq | `ghcr.io/bare-devcontainer/templates/lean:1.0.0` | `1.0.0` |
 | mise | nozaq | `ghcr.io/bare-devcontainer/templates/mise:1.4.0` | `1.4.0` |
 | Node.js | nozaq | `ghcr.io/bare-devcontainer/templates/node:1.2.0` | `1.2.0` |
 | OpenTofu | nozaq | `ghcr.io/bare-devcontainer/templates/opentofu:1.1.0` | `1.1.0` |
@@ -281,11 +282,11 @@ Templates
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.3.0` | `1.3.0` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.1.1` | `1.1.1` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.4.0` | `1.4.0` |
-| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.9.28-2.15.19` | `2026.9.28-2.15.19` |
-| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.9.28-2.15.19` | `2026.9.28-2.15.19` |
-| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.9.28-2.15.19` | `2026.9.28-2.15.19` |
-| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.9.28-2.15.19` | `2026.9.28-2.15.19` |
-| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.9.28-2.15.19` | `2026.9.28-2.15.19` |
+| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.3-2.47.5` | `2026.10.3-2.47.5` |
+| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.3-2.47.5` | `2026.10.3-2.47.5` |
+| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.3-2.47.5` | `2026.10.3-2.47.5` |
+| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.10.3-2.47.5` | `2026.10.3-2.47.5` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.10.3-2.47.5` | `2026.10.3-2.47.5` |
 
 
             

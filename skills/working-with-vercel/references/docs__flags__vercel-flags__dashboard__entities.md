@@ -16,8 +16,8 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "135e8ed26e83ed610cf49b24e4a3654e5f29ea02eb5d19a1080fa90b014bc22d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "82d0dd40177bcf2a0405976141383fe44bbd7cfc296355ca7436d9eb1eeb62f1"
 ---
 
 # Entities
@@ -33,8 +33,8 @@ Entities represent the things your application knows about: users, teams, device
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fentities&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags

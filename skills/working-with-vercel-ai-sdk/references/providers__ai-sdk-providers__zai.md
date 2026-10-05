@@ -1,10 +1,14 @@
 ---
+title: Z.AI
+description: "Learn how to use Z.AI's GLM models with the AI SDK."
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/zai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4d5e477fa80d9cbe9e169d8e947217ce2594a9b65679408d5bae059127a9e42d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a0ee797ea2b6f53202f58c728eda9fda449e8a0fc816597e64dd62c646caf745"
 ---
 
-# Z.AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Z.AI](https://z.ai/) provider gives you access to GLM language and vision models through the Z.AI API.
 
@@ -14,7 +18,7 @@ API keys can be created in the [Z.AI API key console](https://z.ai/manage-apikey
 
 The Z.AI provider is available through the `@ai-sdk/zai` package. Install it with:
 
-<InstallPackages packages="@ai-sdk/zai" />
+**Packages:** `@ai-sdk/zai`
 
 Set the `ZAI_API_KEY` environment variable:
 
@@ -43,19 +47,19 @@ const zai = createZai({
 
 The provider accepts these optional settings:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key sent in the `Authorization` header. It defaults to the `ZAI_API_KEY` environment variable.
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   URL prefix for API requests. It defaults to `https://api.z.ai/api/paas/v4`.
 
-- **headers** _Record&lt;string, string&gt;_
+- **headers** *Record\<string, string>*
 
   Additional request headers.
 
-- **fetch** _FetchFunction_
+- **fetch** *FetchFunction*
 
   Custom fetch implementation, for example to intercept requests in middleware.
 
@@ -107,27 +111,27 @@ const result = await generateText({
 
 The following options are available:
 
-- **doSample** _boolean_
+- **doSample** *boolean*
 
   Enables sampling. When disabled, `temperature` and `topP` do not take effect.
 
-- **thinking** _object_
+- **thinking** *object*
 
   Controls thinking with `type: 'enabled' | 'disabled'`. Set `clearThinking` to `false` to retain reasoning from previous assistant messages.
 
-- **reasoningEffort** _'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'max'_
+- **reasoningEffort** *'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'max'*
 
   Controls reasoning effort on supported models.
 
-- **toolStream** _boolean_
+- **toolStream** *boolean*
 
   Enables incremental function-call argument streaming on supported models.
 
-- **requestId** _string_
+- **requestId** *string*
 
   A caller-provided request id between 6 and 64 characters.
 
-- **userId** _string_
+- **userId** *string*
 
   A non-sensitive end-user id between 6 and 128 characters.
 
@@ -159,53 +163,10 @@ for await (const part of result.fullStream) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

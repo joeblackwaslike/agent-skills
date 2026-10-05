@@ -1,10 +1,14 @@
 ---
+title: Codex CLI (App Server)
+description: Learn how to use the Codex CLI App Server provider for mid-execution message injection and persistent threads.
+url: "https://ai-sdk.dev/providers/community-providers/codex-app-server"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/codex-app-server.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "dd1062774752f85678a38e9431ee4c7f789532fb295b6833ff6212ba4ae190f6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ed20ff9acae0eb60b484069a84bc760b7aa4c67896645ed1446d9ac3ebe4ba3c"
 ---
 
-# Codex CLI (App Server) Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [ai-sdk-provider-codex-app-server](https://github.com/pablof7z/ai-sdk-provider-codex-app-server) community provider enables using OpenAI's GPT-5 series models through the [Codex CLI](https://github.com/openai/codex) app-server mode. Unlike the standard Codex CLI provider, it supports **mid-execution message injection** and **persistent threads**.
 
@@ -23,7 +27,7 @@ The [ai-sdk-provider-codex-app-server](https://github.com/pablof7z/ai-sdk-provid
 
 ## Setup
 
-<InstallPackages packages="ai-sdk-provider-codex-app-server" />
+**Packages:** `ai-sdk-provider-codex-app-server`
 
 ## Provider Instance
 
@@ -172,20 +176,20 @@ const result = await streamText({
 
 | Model                | Image Input | Object Generation | Tool Streaming | Mid-Execution |
 | -------------------- | ----------- | ----------------- | -------------- | ------------- |
-| `gpt-5.3-codex`      | <Check />   | <Check />         | <Check />      | <Check />     |
-| `gpt-5.2-codex`      | <Check />   | <Check />         | <Check />      | <Check />     |
-| `gpt-5.1-codex-max`  | <Check />   | <Check />         | <Check />      | <Check />     |
-| `gpt-5.1-codex-mini` | <Check />   | <Check />         | <Check />      | <Check />     |
+| `gpt-5.3-codex`      | ✓           | ✓                 | ✓              | ✓             |
+| `gpt-5.2-codex`      | ✓           | ✓                 | ✓              | ✓             |
+| `gpt-5.1-codex-max`  | ✓           | ✓                 | ✓              | ✓             |
+| `gpt-5.1-codex-mini` | ✓           | ✓                 | ✓              | ✓             |
 
 ## Comparison with Codex CLI Provider
 
 | Feature              | Codex CLI Provider | Codex App Server |
 | -------------------- | ------------------ | ---------------- |
-| Mid-execution inject | <Cross />          | <Check />        |
-| Persistent threads   | <Cross />          | <Check />        |
-| Session control      | <Cross />          | <Check />        |
-| Tool streaming       | <Cross />          | <Check />        |
-| One-shot execution   | <Check />          | <Check />        |
+| Mid-execution inject | ✗                  | ✓                |
+| Persistent threads   | ✗                  | ✓                |
+| Session control      | ✗                  | ✓                |
+| Tool streaming       | ✗                  | ✓                |
+| One-shot execution   | ✓                  | ✓                |
 
 Use the **Codex CLI provider** for simple one-shot tasks. Use the **Codex App Server provider** when you need human-in-the-loop workflows, real-time course correction, or collaborative coding.
 
@@ -197,68 +201,10 @@ Use the **Codex CLI provider** for simple one-shot tasks. Use the **Codex App Se
 
 For more details, see the [provider documentation](https://github.com/pablof7z/ai-sdk-provider-codex-app-server).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

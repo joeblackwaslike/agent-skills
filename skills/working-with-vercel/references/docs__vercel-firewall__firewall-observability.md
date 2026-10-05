@@ -16,8 +16,8 @@ related:
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4b84127d9c8aa6ab68f4a55bc2965d1e639de2bf09f4fa57f489cfaa22224fc2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "79a50503752a6c672c9228e333716d5b9bf09bca86857d99142b33dfe751f1f4"
 ---
 
 # Firewall Observability
@@ -30,18 +30,18 @@ The project **Firewall** page of your Vercel dashboard provides a consolidated v
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
-- [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
-- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
-- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
-- [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
+- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related)
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-observability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ The **Overview** page provides a summary of active rules with associated events 
 
 The default time period for the traffic view is the past hour. From a drop-down on the top left, you can adjust this time period to show the last 24 hours or a **live** 10-minute window.
 
-![Image](`/docs-assets/static/docs/security/vercel-waf-overview-tab-light.png`)
+![Web traffic monitoring with firewall insights](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-overview-tab-light.png)
 
 The **Alerts** section displays recent firewall alerts such as detected attacks against your project. When large volume attacks are detected, active or recent alerts appear here.
 
@@ -60,7 +60,7 @@ The **Rules** section breaks down incoming traffic by the rule that applied. Thi
 
 The **Events** section provides insight into actions Vercel's platform-wide firewall has applied to your project. Selected events can be expanded to explore requests made by the affected client.
 
-![Image](`/docs-assets/static/docs/security/vercel-waf-event-sheet-light.png`)
+![Challenged client event details](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-event-sheet-light.png)
 
 The **Denied IPs** section shows the most commonly blocked malicious sources.
 
@@ -82,11 +82,11 @@ You can also review incoming requests grouped by the following dimensions:
 - **JA4 (TLS Fingerprints)**: Identify clients by their [JA4](/docs/vercel-firewall/firewall-concepts#ja4) TLS fingerprints
 - **Country**: Geographic distribution of traffic by country
 
-![Image](`/docs-assets/static/docs/security/vercel-waf-traffic-tab-light.png`)
+![Incoming web traffic view with popular filter breakdowns](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-traffic-tab-light.png)
 
 ## Firewall Alerts
 
-> **🔒 Permissions Required**: Firewall Alerts
+> **Availability**: Firewall Alerts are available on all plans
 
 ### How alerts work
 

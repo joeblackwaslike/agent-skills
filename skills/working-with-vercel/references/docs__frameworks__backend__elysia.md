@@ -17,8 +17,8 @@ related:
 summary: Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/elysia.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ac360c05ad0ae45a4043e536fe067f40d8924604e1330bcf909ab791ab809fdf"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9f169d0633af39226e59d99e66c2c388fe6b1453846974a49dce3f5d3c5d4659"
 ---
 
 # Elysia on Vercel
@@ -33,14 +33,12 @@ Elysia is an ergonomic web framework for building backend servers with Bun. Desi
 
 - [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related)
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
-- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 
 Full cross-link map for this page: [/docs/frameworks/backend/elysia.graph.md](/docs/frameworks/backend/elysia.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Felysia&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -86,7 +84,7 @@ To run an Elysia application on Vercel, create a file that imports the `elysia` 
 - `src/index.{js,cjs,mjs,ts,cts,mts}`
 - `src/server.{js,mjs,cjs,ts,cts,mts}`
 
-The file must also export the application as a default export of the module or use a port listener.
+The file must also export the application as a default export of the module. Port listeners (`app.listen`) are not currently supported.
 
 ### Using a default export
 

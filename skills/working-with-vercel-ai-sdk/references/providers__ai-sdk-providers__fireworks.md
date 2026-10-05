@@ -1,10 +1,14 @@
 ---
+title: Fireworks
+description: Learn how to use Fireworks models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "2d2867f4fb31a102c2b7b5048f71fdd4f7a26fa1d4a9b5efe6a63a76ab68d74b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6aa2abadb3629538c2993e602c662fe561c420e5b25d13538ff26cfc1fee7fbc"
 ---
 
-# Fireworks Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Fireworks](https://fireworks.ai/) is a platform for running and testing LLMs through their [API](https://readme.fireworks.ai/).
 
@@ -12,7 +16,7 @@ sha256: "2d2867f4fb31a102c2b7b5048f71fdd4f7a26fa1d4a9b5efe6a63a76ab68d74b"
 
 The Fireworks provider is available via the `@ai-sdk/fireworks` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/fireworks" />
+**Packages:** `@ai-sdk/fireworks`
 
 ## Provider Instance
 
@@ -35,21 +39,21 @@ const fireworks = createFireworks({
 
 You can use the following optional settings to customize the Fireworks provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.fireworks.ai/inference/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `FIREWORKS_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -122,32 +126,34 @@ const { text, reasoningText } = await generateText({
 
 The following optional provider options are available for Fireworks chat models:
 
-- **promptCacheKey** _string_
+- **promptCacheKey** *string*
 
   A stable, opaque key that improves prompt cache hit rates by routing requests
   with shared prompt prefixes to the same Fireworks replica. Reuse the same key
   for all steps and calls in one conversation, and use different keys for
   unrelated conversations.
 
-- **serviceTier** _'priority'_
+- **serviceTier** *'priority'*
 
   Uses the Fireworks Priority serving path for higher reliability during peak
   traffic. The provider sends it as Fireworks' `service_tier` request field.
 
-- **thinking** _object_
+- **thinking** *object*
 
   Configuration for thinking/reasoning models like Kimi K2.6.
-  - **type** _'enabled' | 'disabled'_
+
+  - **type** *'enabled' | 'disabled'*
 
     Whether to enable thinking mode.
 
-  - **budgetTokens** _number_
+  - **budgetTokens** *number*
 
     Maximum number of tokens for thinking (minimum 1024).
 
-- **reasoningHistory** _'disabled' | 'interleaved' | 'preserved'_
+- **reasoningHistory** *'disabled' | 'interleaved' | 'preserved'*
 
   Controls how reasoning history is handled in multi-turn conversations:
+
   - `'disabled'`: Remove reasoning from history
   - `'interleaved'`: Include reasoning between tool calls within a single turn
   - `'preserved'`: Keep all reasoning in history
@@ -274,32 +280,30 @@ const model = fireworks.completionModel(
 
 | Model                                                      | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ---------------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `accounts/fireworks/models/firefunction-v1`                | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `accounts/fireworks/models/deepseek-r1`                    | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `accounts/fireworks/models/deepseek-v3`                    | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/llama-v3p1-405b-instruct`       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `accounts/fireworks/models/llama-v3p1-8b-instruct`         | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/llama-v3p2-3b-instruct`         | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/llama-v3p3-70b-instruct`        | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/mixtral-8x7b-instruct`          | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/mixtral-8x7b-instruct-hf`       | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/mixtral-8x22b-instruct`         | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/qwen2p5-coder-32b-instruct`     | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/qwen2p5-72b-instruct`           | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/qwen-qwq-32b-preview`           | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `accounts/fireworks/models/qwen2-vl-72b-instruct`          | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `accounts/fireworks/models/llama-v3p2-11b-vision-instruct` | <Check />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/qwq-32b`                        | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `accounts/fireworks/models/yi-large`                       | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/kimi-k2-instruct`               | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/kimi-k2-thinking`               | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/kimi-k2p6`                      | <Check />   | <Check />         | <Check />  | <Cross />      |
-| `accounts/fireworks/models/minimax-m2`                     | <Cross />   | <Check />         | <Check />  | <Cross />      |
+| `accounts/fireworks/models/firefunction-v1`                | ✗           | ✓                 | ✓          | ✓              |
+| `accounts/fireworks/models/deepseek-r1`                    | ✗           | ✓                 | ✗          | ✗              |
+| `accounts/fireworks/models/deepseek-v3`                    | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/llama-v3p1-405b-instruct`       | ✗           | ✓                 | ✓          | ✓              |
+| `accounts/fireworks/models/llama-v3p1-8b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/llama-v3p2-3b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/llama-v3p3-70b-instruct`        | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/mixtral-8x7b-instruct`          | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/mixtral-8x7b-instruct-hf`       | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/mixtral-8x22b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/qwen2p5-coder-32b-instruct`     | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/qwen2p5-72b-instruct`           | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/qwen-qwq-32b-preview`           | ✗           | ✓                 | ✗          | ✗              |
+| `accounts/fireworks/models/qwen2-vl-72b-instruct`          | ✓           | ✓                 | ✗          | ✗              |
+| `accounts/fireworks/models/llama-v3p2-11b-vision-instruct` | ✓           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/qwq-32b`                        | ✗           | ✓                 | ✗          | ✗              |
+| `accounts/fireworks/models/yi-large`                       | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/kimi-k2-instruct`               | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/kimi-k2-thinking`               | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/kimi-k2p6`                      | ✓           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/minimax-m2`                     | ✗           | ✓                 | ✓          | ✗              |
 
-<Note>
-  The table above lists popular models. Please see the [Fireworks models
-  page](https://fireworks.ai/models) for a full list of available models.
-</Note>
+The table above lists popular models. Please see the [Fireworks models
+page](https://fireworks.ai/models) for a full list of available models.
 
 ## Embedding Models
 
@@ -327,10 +331,8 @@ const { embedding } = await embed({
 | -------------------------------- | ---------- | ---------- |
 | `nomic-ai/nomic-embed-text-v1.5` | 768        | 8192       |
 
-<Note>
-  For more embedding models, see the [Fireworks models
-  page](https://fireworks.ai/models) for a full list of available models.
-</Note>
+For more embedding models, see the [Fireworks models
+page](https://fireworks.ai/models) for a full list of available models.
 
 ## Image Models
 
@@ -354,12 +356,10 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  Model support for `size` and `aspectRatio` parameters varies. See the [Model
-  Capabilities](#model-capabilities-1) section below for supported dimensions,
-  or check the model's documentation on [Fireworks models
-  page](https://fireworks.ai/models) for more details.
-</Note>
+Model support for `size` and `aspectRatio` parameters varies. See the [Model
+Capabilities](#model-capabilities-1) section below for supported dimensions,
+or check the model's documentation on [Fireworks models
+page](https://fireworks.ai/models) for more details.
 
 ### Provider Options
 
@@ -367,39 +367,39 @@ Fireworks image models support flexible provider options through the `providerOp
 
 The following typed provider options are available:
 
-- **guidance_scale** _number_
+- **guidance\_scale** *number*
 
   Classifier-free guidance scale for the image diffusion process.
 
-- **num_inference_steps** _number_
+- **num\_inference\_steps** *number*
 
   Number of denoising steps for FLUX workflow image generation.
 
-- **output_format** _'jpeg' | 'png'_
+- **output\_format** *'jpeg' | 'png'*
 
   Desired output format for FLUX Kontext image generation and editing.
 
-- **prompt_upsampling** _boolean_
+- **prompt\_upsampling** *boolean*
 
   Whether Fireworks should automatically modify the prompt for more creative generation.
 
-- **safety_tolerance** _number_
+- **safety\_tolerance** *number*
 
   Moderation tolerance level for inputs and outputs, from `0` to `6`. Fireworks limits image-to-image requests to `2`.
 
-- **webhook_url** _string_
+- **webhook\_url** *string*
 
   URL to receive webhook notifications for async Kontext requests.
 
-- **webhook_secret** _string_
+- **webhook\_secret** *string*
 
   Secret for webhook signature verification.
 
-- **cfg_scale** _number_
+- **cfg\_scale** *number*
 
   Guidance scale for legacy `image_generation` models.
 
-- **steps** _number_
+- **steps** *number*
 
   Number of generation steps for legacy `image_generation` models.
 
@@ -407,10 +407,8 @@ The following typed provider options are available:
 
 Fireworks supports image editing through FLUX Kontext models (`flux-kontext-pro` and `flux-kontext-max`). Pass input images via `prompt.images` to transform or edit existing images.
 
-<Note>
-  Fireworks Kontext models do not support explicit masks. Editing is
-  prompt-driven — describe what you want to change in the text prompt.
-</Note>
+Fireworks Kontext models do not support explicit masks. Editing is
+prompt-driven — describe what you want to change in the text prompt.
 
 #### Basic Image Editing
 
@@ -451,11 +449,9 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
-  base64-encoded strings. Fireworks only supports a single input image per
-  request.
-</Note>
+Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
+base64-encoded strings. Fireworks only supports a single input image per
+request.
 
 ### Model Capabilities
 
@@ -469,15 +465,15 @@ For all models supporting size, the following sizes are supported:
 
 | Model                                                        | Dimensions Specification | Image Editing |
 | ------------------------------------------------------------ | ------------------------ | ------------- |
-| `accounts/fireworks/models/flux-kontext-pro`                 | Aspect Ratio             | <Check />     |
-| `accounts/fireworks/models/flux-kontext-max`                 | Aspect Ratio             | <Check />     |
-| `accounts/fireworks/models/flux-1-dev-fp8`                   | Aspect Ratio             | <Cross />     |
-| `accounts/fireworks/models/flux-1-schnell-fp8`               | Aspect Ratio             | <Cross />     |
-| `accounts/fireworks/models/playground-v2-5-1024px-aesthetic` | Size                     | <Cross />     |
-| `accounts/fireworks/models/japanese-stable-diffusion-xl`     | Size                     | <Cross />     |
-| `accounts/fireworks/models/playground-v2-1024px-aesthetic`   | Size                     | <Cross />     |
-| `accounts/fireworks/models/SSD-1B`                           | Size                     | <Cross />     |
-| `accounts/fireworks/models/stable-diffusion-xl-1024-v1-0`    | Size                     | <Cross />     |
+| `accounts/fireworks/models/flux-kontext-pro`                 | Aspect Ratio             | ✓             |
+| `accounts/fireworks/models/flux-kontext-max`                 | Aspect Ratio             | ✓             |
+| `accounts/fireworks/models/flux-1-dev-fp8`                   | Aspect Ratio             | ✗             |
+| `accounts/fireworks/models/flux-1-schnell-fp8`               | Aspect Ratio             | ✗             |
+| `accounts/fireworks/models/playground-v2-5-1024px-aesthetic` | Size                     | ✗             |
+| `accounts/fireworks/models/japanese-stable-diffusion-xl`     | Size                     | ✗             |
+| `accounts/fireworks/models/playground-v2-1024px-aesthetic`   | Size                     | ✗             |
+| `accounts/fireworks/models/SSD-1B`                           | Size                     | ✗             |
+| `accounts/fireworks/models/stable-diffusion-xl-1024-v1-0`    | Size                     | ✗             |
 
 For more details, see the [Fireworks models page](https://fireworks.ai/models).
 
@@ -493,53 +489,10 @@ support for these models:
 | `accounts/stability/models/sd3-medium` |
 | `accounts/stability/models/sd3`        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

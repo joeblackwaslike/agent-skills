@@ -16,13 +16,13 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "bd80ca566c37c562cd1e9a0e346042163a877f070df29f19af19816730a6af9b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "01a31420763050bee21c209b7d482900c650d4e39b534a68d02bdd5e8cff3855"
 ---
 
 # Runtime Cache
 
-> **🔒 Permissions Required**: Runtime Cache
+> **Availability**: Runtime Cache is available on all plans
 
 Runtime cache is a regional, ephemeral cache you can use for storing and retrieving data across Vercel Functions, Routing middleware, and build execution within a Vercel region. It lets you cache data close to where your code runs, reduce duplicate work, and control invalidation with TTLs and tags.
 
@@ -35,15 +35,15 @@ Runtime cache is a regional, ephemeral cache you can use for storing and retriev
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
 - [Caching audits: Five antipatterns that cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
+- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related)
-- [cacheHandlers](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Configure custom cache handlers for use cache directives in Next.js.
 - [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
+- [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
+- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 
 Full cross-link map for this page: [/docs/caching/runtime-cache.graph.md](/docs/caching/runtime-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -344,7 +344,7 @@ You can control how long data stays cached using the following revalidation opti
 
 This example revalidates the cache every hour:
 
-> **💡 Note:** The Next.js examples are for Next.js 15 and above. For Next.js 14 and below, see [Data Cache](/docs/caching/runtime-cache/data-cache).
+> **💡 Note:** The Next.js examples are for Next.js 16 and above. For Next.js 15 and below, see [Data Cache](/docs/caching/runtime-cache/data-cache).
 
 **pages/api/products.ts**
 
@@ -641,6 +641,8 @@ export default {
 You can then revalidate the cache for any data associated with the `products` tag by using the `revalidateTag` function. For example, use a server action:
 
 ```ts filename="app/actions.ts"
+'use server';
+
 import { revalidateTag } from 'next/cache';
 
 export async function invalidateProductsCache() {
@@ -653,9 +655,11 @@ export async function invalidateProductsCache() {
 This example revalidates the cache for the `/products` path using a server action:
 
 ```ts filename="app/actions.ts"
+'use server';
+
 import { revalidatePath } from 'next/cache';
 
-export async function POST() {
+export async function invalidateProductsPage() {
   revalidatePath('/products');
 }
 ```

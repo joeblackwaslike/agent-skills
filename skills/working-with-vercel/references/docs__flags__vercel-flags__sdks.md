@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d25d64e21d34c14543951247ad47bc557c6b11839bcaa599e1585c7956be0ad5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d3efd2b8edffd1face9dbb7af3b3621517c3ea8f66cf3f84d7db6d9bc9f6b293"
 ---
 
 # SDKs
@@ -32,12 +32,11 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Segments](https://vercel.com/docs/flags/vercel-flags/dashboard/segments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=related) — Create reusable user segments for targeting feature flags.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/docs/flags/vercel-flags/sdks.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

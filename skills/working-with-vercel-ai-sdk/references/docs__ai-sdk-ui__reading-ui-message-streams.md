@@ -1,10 +1,14 @@
 ---
+title: Reading UIMessage Streams
+description: Learn how to read UIMessage streams.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/reading-ui-message-streams"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/reading-ui-message-streams.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "f07d83135113835f97d8046d721f180a8066093a851359697e7836a00f053b18"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c65dd9047d87c554d3fcff9046748fbffa5866e9db0bae65c94a7dbe8a5f05a2"
 ---
 
-# Reading UI Message Streams
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `UIMessage` streams are useful outside of traditional chat use cases. You can consume them for terminal UIs, custom stream processing on the client, or React Server Components (RSC).
 
@@ -14,11 +18,10 @@ The `readUIMessageStream` helper transforms a stream of `UIMessageChunk` objects
 
 ```tsx
 import { readUIMessageStream, streamText, toUIMessageStream } from 'ai';
-__PROVIDER_IMPORT__;
 
 async function main() {
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Write a short story about a robot.',
   });
 
@@ -36,12 +39,11 @@ Handle streaming responses that include tool calls:
 
 ```tsx
 import { readUIMessageStream, streamText, toUIMessageStream, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 async function handleToolCalls() {
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     tools: {
       weather: tool({
         description: 'Get the weather in a location',
@@ -84,11 +86,10 @@ Resume streaming from a previous message state:
 
 ```tsx
 import { readUIMessageStream, streamText, toUIMessageStream } from 'ai';
-__PROVIDER_IMPORT__;
 
 async function resumeConversation(lastMessage: UIMessage) {
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: [
       { role: 'user', content: 'Continue our previous conversation.' },
     ],
@@ -104,23 +105,10 @@ async function resumeConversation(lastMessage: UIMessage) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

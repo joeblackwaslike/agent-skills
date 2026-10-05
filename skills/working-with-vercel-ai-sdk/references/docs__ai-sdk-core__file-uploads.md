@@ -1,10 +1,14 @@
 ---
+title: File Uploads
+description: Learn how to upload files and use provider references with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/file-uploads"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/file-uploads.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "28084307e17ecf5c345e611492b62c68b7eed65f2e96ea28a49da436252843ab"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "1abd9bb43f49b8c5bf102e161631220d50fcad47fa1092693ad4d0f8f78e63c8"
 ---
 
-# File Uploads
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK provides the [`uploadFile`](/docs/reference/ai-sdk-core/upload-file)
 function to upload files to a provider and get back a `ProviderReference` that can be
@@ -42,7 +46,7 @@ const { text } = await generateText({
 
 As a shorthand, you can pass a provider instance directly to `api` instead of calling `.files()` explicitly — the SDK will call `.files()` for you:
 
-```ts highlight="3"
+```ts {3}
 const { providerReference } = await uploadFile({
   api: openai, // shorthand for openai.files()
   data: fs.readFileSync('./photo.png'),
@@ -55,7 +59,7 @@ const { providerReference } = await uploadFile({
 You can upload images, PDFs, text files, and other documents depending on the provider.
 The media type is auto-detected from the file bytes when not specified explicitly:
 
-```ts highlight="4"
+```ts {4}
 const { providerReference } = await uploadFile({
   api: anthropic.files(),
   data: fs.readFileSync('./document.pdf'),
@@ -81,7 +85,7 @@ Use the `providerReference` in a file content part with its media type:
 Some providers accept additional options through `providerOptions`.
 For example, OpenAI requires a `purpose` field:
 
-```ts highlight="5-9"
+```ts {5-9}
 import { openai, type OpenAIFilesOptions } from '@ai-sdk/openai';
 
 const { providerReference } = await uploadFile({
@@ -180,40 +184,10 @@ The following providers support `files()` and file uploads:
 Providers without file upload support will throw an `UnsupportedFunctionalityError`
 if they encounter a provider reference in a message.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

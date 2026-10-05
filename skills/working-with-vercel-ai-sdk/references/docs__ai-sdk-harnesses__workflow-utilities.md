@@ -1,10 +1,14 @@
 ---
+title: Workflow Utilities
+description: Run HarnessAgent turns as durable Workflow DevKit workflows.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "4485656e1db8c01e92e86ea3e1f9a470d4d3be75f1e71df068af839957780e28"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6e6c2a95c811cecbb342cf4d7822708011f64bcb6d6e53cb5fb7331f7f437e0e"
 ---
 
-# Workflow Utilities
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `@ai-sdk/workflow-harness` provides helpers for running `HarnessAgent` turns
 inside a [workflow](https://vercel.com/docs/workflow).
@@ -21,7 +25,7 @@ before following the examples.
 
 ## Installation
 
-<InstallPackages packages="@ai-sdk/workflow-harness workflow" />
+**Packages:** `@ai-sdk/workflow-harness`, `workflow`
 
 In addition to the workflow specific packages, install the core harness package,
 a harness adapter, and a sandbox adapter as shown in
@@ -33,7 +37,7 @@ The agent can be configured in the usual way, for the most part. When using
 semantic agent steps, set `stopWhen` to `isStepCount(1)` so one call to
 `stream()` completes one agent step. Omit it when using time slices.
 
-```ts filename='harness-workflow/agent.ts' highlight="13-17"
+```ts title='harness-workflow/agent.ts' {13-17}
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { claudeCode } from '@ai-sdk/harness-claude-code';
 import { isStepCount } from 'ai';
@@ -61,7 +65,7 @@ Keep the Workflow step in its own module and import the agent dynamically inside
 the step body. This keeps the agent, sandbox adapter, and other Node.js
 dependencies out of the workflow bundle.
 
-```ts filename='harness-workflow/agent-step.ts'
+```ts title='harness-workflow/agent-step.ts'
 import {
   runHarnessAgentStep,
   type HarnessWorkflowState,
@@ -101,7 +105,7 @@ export async function agentStep(
 Create the workflow state and keep scheduling `agentStep()` while the agent has
 more work.
 
-```ts filename='harness-workflow/workflow.ts'
+```ts title='harness-workflow/workflow.ts'
 import { agentStep } from './agent-step';
 import {
   createHarnessWorkflowState,
@@ -125,11 +129,9 @@ export async function agentWorkflow(input: {
 }
 ```
 
-<Note>
-  This example covers the workflow execution foundation only. For multi-turn
-  conversations, you must persist the harness session's `resumeFrom` state
-  between workflow runs. See [Resume Persistence](#resume-persistence).
-</Note>
+This example covers the workflow execution foundation only. For multi-turn
+conversations, you must persist the harness session's `resumeFrom` state
+between workflow runs. See [Resume Persistence](#resume-persistence).
 
 Each `ready_for_next_step` result carries `continueFrom`, which lets the next
 Workflow step continue the same unfinished turn. When the turn finishes,
@@ -142,7 +144,7 @@ UI messages, starts `agentWorkflow()`, and returns the workflow's AI SDK UI
 message stream. Passing the converted messages lets `HarnessAgent` distinguish a
 new user turn from tool approval and tool result continuations.
 
-```ts filename='app/api/harness-workflow/route.ts'
+```ts title='app/api/harness-workflow/route.ts'
 import { agentWorkflow } from '../../../harness-workflow/workflow';
 import {
   convertToModelMessages,
@@ -193,9 +195,8 @@ by default; pass `timeSliceSeconds` to choose a different budget.
 ### Defining the Time Slice Step
 
 As with semantic agent steps, keep the Workflow step in its own module and
-import the agent dynamically inside the step body.
 
-```ts filename='harness-workflow/time-slice-step.ts'
+```ts title='harness-workflow/time-slice-step.ts'
 import {
   runHarnessAgentTimeSlice,
   type HarnessWorkflowState,
@@ -235,7 +236,7 @@ export async function timeSliceStep(
 Create the workflow state and keep scheduling `timeSliceStep()` while the agent
 has more work.
 
-```ts filename='harness-workflow/workflow.ts'
+```ts title='harness-workflow/workflow.ts'
 import { timeSliceStep } from './time-slice-step';
 import {
   createHarnessWorkflowState,
@@ -259,11 +260,9 @@ export async function timeSliceWorkflow(input: {
 }
 ```
 
-<Note>
-  This example covers the workflow execution foundation only. For multi-turn
-  conversations, you must persist the harness session's `resumeFrom` state
-  between workflow runs. See [Resume Persistence](#resume-persistence).
-</Note>
+This example covers the workflow execution foundation only. For multi-turn
+conversations, you must persist the harness session's `resumeFrom` state
+between workflow runs. See [Resume Persistence](#resume-persistence).
 
 Each `ready_for_next_step` result carries `continueFrom`, which lets the next
 Workflow step continue the same unfinished turn. When the turn finishes,
@@ -275,7 +274,7 @@ Start the workflow from server-side code. As with semantic agent steps, pass the
 converted messages so `HarnessAgent` can distinguish a new user turn from tool
 approval and tool result continuations.
 
-```ts filename='app/api/harness-workflow/route.ts'
+```ts title='app/api/harness-workflow/route.ts'
 import { timeSliceWorkflow } from '../../../harness-workflow/workflow';
 import {
   convertToModelMessages,
@@ -333,7 +332,7 @@ slices. This example uses Workflow steps because filesystem access must stay out
 of the workflow function itself. Use durable storage instead of local files in
 production.
 
-```ts filename='harness-workflow/resume-store.ts'
+```ts title='harness-workflow/resume-store.ts'
 import type { HarnessV1ResumeSessionState } from '@ai-sdk/harness';
 import { safeParseJSON } from '@ai-sdk/provider-utils';
 
@@ -394,7 +393,7 @@ the same for both workflow approaches.
 
 ### Semantic Agent Step Workflow
 
-```ts filename='harness-workflow/workflow.ts'
+```ts title='harness-workflow/workflow.ts'
 import { agentStep } from './agent-step';
 import { loadResumeStep, persistResumeStep } from './resume-store';
 import {
@@ -427,7 +426,7 @@ export async function agentWorkflow(input: {
 
 ### Time-Sliced Workflow
 
-```ts filename='harness-workflow/workflow.ts'
+```ts title='harness-workflow/workflow.ts'
 import { loadResumeStep, persistResumeStep } from './resume-store';
 import { timeSliceStep } from './time-slice-step';
 import {
@@ -464,17 +463,10 @@ export async function timeSliceWorkflow(input: {
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 - [UI](/docs/ai-sdk-harnesses/ui)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

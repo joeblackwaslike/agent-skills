@@ -13,8 +13,8 @@ related:
 summary: Guidelines for creating images for integrations, including layout, content, visual assets, descriptions, and design standards.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/integration-image-guidelines.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7d806fe23096970cd921f08c9abea4f0ecdeeefacfd7c79108f85fa64dca1752"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8e52dd8d70bf6c7421550ae752bd282f16c347488d0c2fbdb62de618ab25ebc5"
 ---
 
 # Integration Image Guidelines
@@ -30,8 +30,8 @@ These guidelines help ensure consistent, high-quality previews for integrations 
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=related) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
-- [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/integration-image-guidelines.graph.md](/docs/integrations/create-integration/integration-image-guidelines.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fintegration-image-guidelines&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

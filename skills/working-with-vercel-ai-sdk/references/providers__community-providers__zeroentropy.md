@@ -1,10 +1,14 @@
 ---
+title: ZeroEntropy
+description: Learn how to use the ZeroEntropy community provider.
+url: "https://ai-sdk.dev/providers/community-providers/zeroentropy"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/zeroentropy.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "da57c43595ec161bd787cfe367cdb70aca3d3f39af7069587591a6bfc560a0f8"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "79645db7b7bb510b2ecb597ef714c18db7c3ff9dd617e0341e85123e0c9720ab"
 ---
 
-# ZeroEntropy Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [zeroentropy-ai/zeroentropy-ai-provider](https://github.com/zeroentropy-ai/zeroentropy-ai-provider) is a community provider that uses [ZeroEntropy](https://zeroentropy.dev) to provide text embedding and reranking support for the AI SDK.
 
@@ -12,7 +16,7 @@ sha256: "da57c43595ec161bd787cfe367cdb70aca3d3f39af7069587591a6bfc560a0f8"
 
 The ZeroEntropy provider is available in the `zeroentropy-ai-provider` module. You can install it with:
 
-<InstallPackages packages="zeroentropy-ai-provider" />
+**Packages:** `zeroentropy-ai-provider`
 
 ## Provider Instance
 
@@ -34,19 +38,19 @@ const zeroentropy = createZeroEntropy({
 
 You can use the following optional settings to customize the ZeroEntropy provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   The base URL of the ZeroEntropy API. The default prefix is `https://api.zeroentropy.dev/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to the `ZEROENTROPY_API_KEY` environment variable. Obtain your API key from the [ZeroEntropy Dashboard](https://dashboard.zeroentropy.dev).
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation. Defaults to the global `fetch` function. You can use it as a middleware to intercept requests, or to provide a custom fetch implementation for e.g. testing.
 
@@ -99,15 +103,15 @@ const { embedding } = await embed({
 
 The following provider options are available:
 
-- **inputType** _'query' | 'document'_
+- **inputType** *'query' | 'document'*
 
   Whether the input is a search query or a document to index. Use `'query'` for retrieval queries and `'document'` for content being indexed. Defaults to `'document'`.
 
-- **dimensions** _2560 | 1280 | 640 | 320 | 160 | 80 | 40_
+- **dimensions** *2560 | 1280 | 640 | 320 | 160 | 80 | 40*
 
   Output vector dimensions. Defaults to `2560`. Supports Matryoshka representations for flexible dimensionality reduction.
 
-- **latency** _'fast' | 'slow'_
+- **latency** *'fast' | 'slow'*
 
   `'fast'` for sub-second latency; `'slow'` for higher throughput limits.
 
@@ -154,7 +158,7 @@ const result = await rerank({
 
 The following provider option is available:
 
-- **latency** _'fast' | 'slow'_
+- **latency** *'fast' | 'slow'*
 
   `'fast'` for sub-second latency; `'slow'` for higher throughput limits.
 
@@ -167,73 +171,13 @@ The following provider option is available:
 | `zerank-1`       | Previous generation reranker                           |
 | `zerank-1-small` | Lightweight reranker for lower-latency use cases       |
 
-<Note>
-  Please see the [ZeroEntropy docs](https://docs.zeroentropy.dev) for the full
-  list of available models and options.
-</Note>
+Please see the [ZeroEntropy docs](https://docs.zeroentropy.dev) for the full
+list of available models and options.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

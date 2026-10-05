@@ -17,8 +17,8 @@ related:
 summary: Learn how the Vercel WAF can affect your usage and how specific features are priced.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4018a9df8553161b44ad9059d80fd41d121de0bffdfe55dc6f0ff3847354d265"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1e955b00b5b2ac93426f60fbcbdf706ff0536d7ef074d4b6e69907d721f6b2a6"
 ---
 
 # Usage & Pricing for Vercel WAF
@@ -32,13 +32,15 @@ Vercel Firewall features available on all plans are free to use. This includes [
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [Add Rate Limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to implement rate limiting with Vercel
 - [Firewall‑mitigated traffic is free on Vercel](https://vercel.com/changelog/web-application-firewall-mitigated-traffic-is-free-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/usage-and-pricing.graph.md](/docs/vercel-firewall/vercel-waf/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -64,8 +66,8 @@ Priced WAF features are billed as described below.
 
 | Resource | Price | Included (Pro) |
 |----------|-------|----------------|
-| [OWASP CRS per request number](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | Usage-based |
-| [OWASP CRS per request size](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | 4KB of each inspected request |
+| [OWASP CRS per request number](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | N/A |
+| [OWASP CRS per request size](/docs/vercel-firewall/vercel-waf/managed-rulesets) | Regional | N/A |
 
 
 ---

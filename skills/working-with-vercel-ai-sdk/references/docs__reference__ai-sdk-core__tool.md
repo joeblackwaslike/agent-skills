@@ -1,10 +1,14 @@
 ---
+title: tool
+description: Helper function for tool type inference
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "1136a24b6fe5a342cbe9713df5ce6ba9ae14e229c4da27535d326107e50877be"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c1a47046ed94cd6b043af5d421905e03d1c8fe7357d823de86c6ed39fe3dc672"
 ---
 
-# `tool()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Tool is a helper function that infers the tool input and context for its `execute` method and lifecycle callbacks.
 
@@ -24,7 +28,7 @@ The `Tool` type is a union of four tool kinds:
 - `ProviderDefinedTool`: a provider-defined tool that your code executes.
 - `ProviderExecutedTool`: a provider-defined tool that the provider executes.
 
-```ts highlight={"1,4,9,10"}
+```ts {1,4,9,10}
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -43,282 +47,52 @@ export const weatherTool = tool({
 
 ## Import
 
-<Snippet text={`import { tool } from "ai"`} prompt={false} />
+```
+import { tool } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'tool',
-      type: 'Tool',
-      description: 'The tool definition.',
-      properties: [
-        {
-          type: 'Tool',
-          parameters: [
-            {
-              name: 'description',
-              isOptional: true,
-              type: 'string | ((options: { context: CONTEXT; experimental_sandbox?: Experimental_SandboxSession }) => string)',
-              description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.',
-            },
-            {
-              name: 'deferLoading',
-              isOptional: true,
-              type: 'boolean',
-              description:
-                "Keep this tool out of the model context until toolSearch discovers it. Supports direct calling or code mode with toolDiscovery: 'conversation'. Discovered tools become available on the next model step. Defaults to false.",
-            },
-            {
-              name: 'title',
-              isOptional: true,
-              type: 'string',
-              description:
-                'Deprecated. Use `providerMetadata` for source-specific tool display metadata.',
-            },
-            {
-              name: 'needsApproval',
-              isOptional: true,
-              type: 'boolean | ((input: INPUT, options: { toolCallId: string; messages: ModelMessage[]; context: CONTEXT }) => boolean | Promise<boolean>)',
-              description:
-                'Deprecated. For `generateText`, `streamText`, and `ToolLoopAgent`, configure approval with `toolApproval` instead. Existing `needsApproval` usages still work as a compatibility fallback. When used, it can be a boolean or a function that receives the tool input plus execution metadata, including the typed `context`.',
-            },
-            {
-              name: 'inputSchema',
-              type: 'Zod Schema | JSON Schema',
-              description:
-                'The schema of the input that the tool expects. The language model will use this to generate the input. It is also used to validate the output of the language model. Use descriptions to make the input understandable for the language model. You can either pass in a Zod schema or a JSON schema (using the `jsonSchema` function).',
-            },
-            {
-              name: 'inputExamples',
-              isOptional: true,
-              type: 'Array<{ input: INPUT }>',
-              description:
-                'An optional list of input examples that show the language model what the input should look like.',
-            },
-            {
-              name: 'contextSchema',
-              isOptional: true,
-              type: 'Zod Schema | JSON Schema',
-              description:
-                "An optional schema that describes the tool-specific context expected by the tool. When provided, the `context` type in `execute`, `needsApproval`, and the input lifecycle callbacks is inferred from this schema. The value is supplied via the tool's entry in `toolsContext`.",
-            },
-            {
-              name: 'strict',
-              isOptional: true,
-              type: 'boolean',
-              description:
-                'Strict mode setting for the tool. Providers that support strict mode will use this setting to determine how the input should be generated. Strict mode will always produce valid inputs, but it might limit what input schemas are supported.',
-            },
-            {
-              name: 'execute',
-              isOptional: true,
-              type: 'async (input: INPUT, options: ToolExecutionOptions<CONTEXT>) => RESULT | Promise<RESULT> | AsyncIterable<RESULT>',
-              description:
-                'An async function that is called with the arguments from the tool call and produces a result or a results iterable. If an iterable is provided, all results but the last one are considered preliminary. If not provided, the tool will not be executed automatically.',
-              properties: [
-                {
-                  type: 'ToolExecutionOptions<CONTEXT>',
-                  parameters: [
-                    {
-                      name: 'toolCallId',
-                      type: 'string',
-                      description:
-                        'The ID of the tool call. You can use it e.g. when sending tool-call related information with stream data.',
-                    },
-                    {
-                      name: 'messages',
-                      type: 'ModelMessage[]',
-                      description:
-                        'Messages that were sent to the language model to initiate the response that contained the tool call. The messages do not include the system prompt nor the assistant response that contained the tool call.',
-                    },
-                    {
-                      name: 'abortSignal',
-                      type: 'AbortSignal',
-                      isOptional: true,
-                      description:
-                        'An optional abort signal that indicates that the overall operation should be aborted.',
-                    },
-                    {
-                      name: 'context',
-                      type: 'CONTEXT',
-                      description:
-                        'Tool-specific context passed into tool execution. When `contextSchema` is provided, this type is inferred from that schema and supplied from the matching entry in `toolsContext`.',
-                    },
-                    {
-                      name: 'experimental_sandbox',
-                      type: 'Experimental_SandboxSession',
-                      isOptional: true,
-                      description:
-                        'Optional experimental sandbox environment passed from the generation or agent call. Use it when a tool needs to execute commands or code in an experimental sandbox.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'outputSchema',
-              isOptional: true,
-              type: 'Zod Schema | JSON Schema',
-              description:
-                'The schema of the output that the tool produces. Used for type inference.',
-            },
-            {
-              name: 'toModelOutput',
-              isOptional: true,
-              type: '({toolCallId: string; input: INPUT; output: OUTPUT}) => ToolResultOutput | PromiseLike<ToolResultOutput>',
-              description:
-                'Optional conversion function that maps the tool result to an output that can be used by the language model. If not provided, the tool result will be sent as a JSON object. This function is invoked on the server by "convertToModelMessages", so ensure that you pass the same "tools" (ToolSet) to both "convertToModelMessages" and "streamText" (or other generation APIs).',
-            },
-            {
-              name: 'onInputStart',
-              isOptional: true,
-              type: '(options: ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
-              description:
-                'Optional function that is called when the model starts generating the tool input. In non-streaming contexts, it is called immediately before onInputAvailable.',
-            },
-            {
-              name: 'onInputDelta',
-              isOptional: true,
-              type: '(options: { inputTextDelta: string } & ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
-              description:
-                'Optional function that is called when an argument streaming delta is available. Only called when the tool is used in a streaming context.',
-            },
-            {
-              name: 'onInputAvailable',
-              isOptional: true,
-              type: '(options: { input: INPUT } & ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>',
-              description:
-                'Optional function that is called when a tool call can be started, even if the execute function is not provided.',
-            },
-            {
-              name: 'providerOptions',
-              isOptional: true,
-              type: 'ProviderOptions',
-              description:
-                'Additional provider-specific metadata. They are passed through to the provider from the AI SDK and enable provider-specific functionality that can be fully encapsulated in the provider.',
-            },
-            {
-              name: 'metadata',
-              isOptional: true,
-              type: 'JSONObject',
-              description:
-                "Optional metadata about the tool itself (e.g. its source). It is propagated onto the resulting tool call's toolMetadata so consumers can read it from tool call/result parts and UI message parts. Useful for sources of dynamic tools (e.g. an MCP server) to identify themselves.",
-            },
-            {
-              name: 'type',
-              isOptional: true,
-              type: "'function' | 'dynamic' | 'provider'",
-              description:
-                'The type of the tool. Defaults to "function" for regular tools. Use "dynamic" for tools defined at runtime and "provider" for provider-specific tools.',
-            },
-            {
-              name: 'id',
-              isOptional: true,
-              type: '`${string}.${string}`',
-              description:
-                'The ID of a provider tool. Must follow the format `<provider-name>.<unique-tool-name>`. Required when type is "provider".',
-            },
-            {
-              name: 'isProviderExecuted',
-              isOptional: true,
-              type: 'boolean',
-              description:
-                'Whether a provider tool is executed by the provider. Set to `false` for `ProviderDefinedTool` and `true` for `ProviderExecutedTool`. Required when type is "provider".',
-            },
-            {
-              name: 'args',
-              isOptional: true,
-              type: 'Record<string, unknown>',
-              description:
-                'The arguments for configuring a provider tool. Must match the expected arguments defined by the provider for this tool. Required when type is "provider".',
-            },
-            {
-              name: 'supportsDeferredResults',
-              isOptional: true,
-              type: 'boolean',
-              description:
-                'Whether a provider-executed tool supports results that arrive without a matching tool call in the current response. Only available for `ProviderExecutedTool`.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `tool` (`Tool`): The tool definition.
+  - `Tool`
+    - `description?` (`string | ((options: { context: CONTEXT; experimental_sandbox?: Experimental_SandboxSession }) => string)`): Information about the purpose of the tool including details on how and when it can be used by the model. Provide a string for a fixed description, or a function to derive the description from the tool-specific context and optional experimental sandbox before each model call.
+    - `deferLoading?` (`boolean`): Keep this tool out of the model context until toolSearch discovers it. Supports direct calling or code mode with toolDiscovery: 'conversation'. Discovered tools become available on the next model step. Defaults to false.
+    - `title?` (`string`): Deprecated. Use \`providerMetadata\` for source-specific tool display metadata.
+    - `needsApproval?` (`boolean | ((input: INPUT, options: { toolCallId: string; messages: ModelMessage[]; context: CONTEXT }) => boolean | Promise<boolean>)`): Deprecated. For \`generateText\`, \`streamText\`, and \`ToolLoopAgent\`, configure approval with \`toolApproval\` instead. Existing \`needsApproval\` usages still work as a compatibility fallback. When used, it can be a boolean or a function that receives the tool input plus execution metadata, including the typed \`context\`.
+    - `inputSchema` (`Zod Schema | JSON Schema`): The schema of the input that the tool expects. The language model will use this to generate the input. It is also used to validate the output of the language model. Use descriptions to make the input understandable for the language model. You can either pass in a Zod schema or a JSON schema (using the \`jsonSchema\` function).
+    - `inputExamples?` (`Array<{ input: INPUT }>`): An optional list of input examples that show the language model what the input should look like.
+    - `contextSchema?` (`Zod Schema | JSON Schema`): An optional schema that describes the tool-specific context expected by the tool. When provided, the \`context\` type in \`execute\`, \`needsApproval\`, and the input lifecycle callbacks is inferred from this schema. The value is supplied via the tool's entry in \`toolsContext\`.
+    - `strict?` (`boolean`): Strict mode setting for the tool. Providers that support strict mode will use this setting to determine how the input should be generated. Strict mode will always produce valid inputs, but it might limit what input schemas are supported.
+    - `execute?` (`async (input: INPUT, options: ToolExecutionOptions<CONTEXT>) => RESULT | Promise<RESULT> | AsyncIterable<RESULT>`): An async function that is called with the arguments from the tool call and produces a result or a results iterable. If an iterable is provided, all results but the last one are considered preliminary. If not provided, the tool will not be executed automatically.
+      - `ToolExecutionOptions<CONTEXT>`
+        - `toolCallId` (`string`): The ID of the tool call. You can use it e.g. when sending tool-call related information with stream data.
+        - `messages` (`ModelMessage[]`): Messages that were sent to the language model to initiate the response that contained the tool call. The messages do not include the system prompt nor the assistant response that contained the tool call.
+        - `abortSignal?` (`AbortSignal`): An optional abort signal that indicates that the overall operation should be aborted.
+        - `context` (`CONTEXT`): Tool-specific context passed into tool execution. When \`contextSchema\` is provided, this type is inferred from that schema and supplied from the matching entry in \`toolsContext\`.
+        - `experimental_sandbox?` (`Experimental_SandboxSession`): Optional experimental sandbox environment passed from the generation or agent call. Use it when a tool needs to execute commands or code in an experimental sandbox.
+    - `outputSchema?` (`Zod Schema | JSON Schema`): The schema of the output that the tool produces. Used for type inference.
+    - `toModelOutput?` (`({toolCallId: string; input: INPUT; output: OUTPUT}) => ToolResultOutput | PromiseLike<ToolResultOutput>`): Optional conversion function that maps the tool result to an output that can be used by the language model. If not provided, the tool result will be sent as a JSON object. This function is invoked on the server by "convertToModelMessages", so ensure that you pass the same "tools" (ToolSet) to both "convertToModelMessages" and "streamText" (or other generation APIs).
+    - `onInputStart?` (`(options: ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>`): Optional function that is called when the model starts generating the tool input. In non-streaming contexts, it is called immediately before onInputAvailable.
+    - `onInputDelta?` (`(options: { inputTextDelta: string } & ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>`): Optional function that is called when an argument streaming delta is available. Only called when the tool is used in a streaming context.
+    - `onInputAvailable?` (`(options: { input: INPUT } & ToolExecutionOptions<CONTEXT>) => void | PromiseLike<void>`): Optional function that is called when a tool call can be started, even if the execute function is not provided.
+    - `providerOptions?` (`ProviderOptions`): Additional provider-specific metadata. They are passed through to the provider from the AI SDK and enable provider-specific functionality that can be fully encapsulated in the provider.
+    - `metadata?` (`JSONObject`): Optional metadata about the tool itself (e.g. its source). It is propagated onto the resulting tool call's toolMetadata so consumers can read it from tool call/result parts and UI message parts. Useful for sources of dynamic tools (e.g. an MCP server) to identify themselves.
+    - `type?` (`'function' | 'dynamic' | 'provider'`): The type of the tool. Defaults to "function" for regular tools. Use "dynamic" for tools defined at runtime and "provider" for provider-specific tools.
+    - `id?` (`` `${string}.${string}` ``): The ID of a provider tool. Must follow the format \`\<provider-name>.\<unique-tool-name>\`. Required when type is "provider".
+    - `isProviderExecuted?` (`boolean`): Whether a provider tool is executed by the provider. Set to \`false\` for \`ProviderDefinedTool\` and \`true\` for \`ProviderExecutedTool\`. Required when type is "provider".
+    - `args?` (`Record<string, unknown>`): The arguments for configuring a provider tool. Must match the expected arguments defined by the provider for this tool. Required when type is "provider".
+    - `supportsDeferredResults?` (`boolean`): Whether a provider-executed tool supports results that arrive without a matching tool call in the current response. Only available for \`ProviderExecutedTool\`.
 
 ### Returns
 
 The tool that was passed in.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

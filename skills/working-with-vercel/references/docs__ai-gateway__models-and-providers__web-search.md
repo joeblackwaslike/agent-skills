@@ -14,8 +14,8 @@ related:
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e940acfb08bcb215211d6192aee4653f74db4649db60ddef12e0dcc0979f3c02"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1cc476efa66dc1b97d088f1d1522d52aa6c79c2ab79326443886347e330fdaff"
 ---
 
 # AI Gateway Web Search
@@ -28,15 +28,17 @@ AI Gateway provides built-in search tools that let AI models access current web 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway adds Browserbase Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Exa web search free through August 31 on AI Gateway and eve](https://vercel.com/changelog/exa-web-search-free-through-august-31-on-ai-gateway-and-eve?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
 - [Tako Search is free on AI Gateway through September 30](https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Learn how to build an agent that has access to web with the AI SDK and Node
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Learn how to use xAI Grok and Imagine.
+- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Learn how to use Google Provider.
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Learn how to use the Azure OpenAI provider for the AI SDK.
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related)
+- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Learn how to use Groq.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fweb-search&source_site=vercel-docs&relationship=graph)
@@ -44,8 +46,10 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-se
 
 AI Gateway supports two types of web search:
 
-- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), [Tako Search](#using-tako-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
+- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), [Tako Search](#using-tako-search), [Browserbase Search](#using-browserbase-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
 - **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [SpaceXAI](#spacexai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
+
+For pages the model already has a URL for, [Browserbase Fetch](#using-browserbase-fetch) retrieves the contents directly instead of searching.
 
 ## Search across API formats
 
@@ -680,6 +684,197 @@ AI Gateway applies options you set in `takoSearch()` as developer defaults, over
 
 For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#tako-search). For search behavior, data cards, and Tako-specific options, see the [Tako Search documentation](https://docs.tako.com/documentation/integrating-tako/search/for-coding-agent).
 
+## Using Browserbase Search
+
+The `browserbaseSearch` tool can be used with any model regardless of the model
+provider or creator. [Browserbase](https://browserbase.com/) provides fast,
+structured web discovery through its
+[Search API](https://docs.browserbase.com/reference/api/web-search), returning
+result titles, URLs, and metadata without opening a browser session. Use it when
+you want the model to find pages, then pair it with
+[Browserbase Fetch](#using-browserbase-fetch) to read one.
+
+To use Browserbase Search, import `gateway` from `ai` and pass
+`gateway.tools.browserbaseSearch()` to `tools`:
+
+> **💡 Note:** Browserbase Search costs $7 per 1,000 requests, regardless of how many results
+> you request.
+
+#### streamText
+
+```typescript filename="browserbase-search.ts" {9-11}
+import { gateway, streamText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const result = streamText({
+    model: 'openai/gpt-5.6-sol', // Works with any model
+    prompt,
+    tools: {
+      browserbase_search: gateway.tools.browserbaseSearch({ numResults: 3 }),
+    },
+  });
+
+  for await (const part of result.fullStream) {
+    if (part.type === 'text-delta') {
+      process.stdout.write(part.text);
+    } else if (part.type === 'tool-result') {
+      console.log('Search results received');
+    }
+  }
+
+  return result.toUIMessageStreamResponse();
+}
+```
+
+#### generateText
+
+```typescript filename="browserbase-search.ts" {9-11}
+import { gateway, generateText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'openai/gpt-5.6-sol', // Works with any model
+    prompt,
+    tools: {
+      browserbase_search: gateway.tools.browserbaseSearch({ numResults: 3 }),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+### Browserbase Search parameters
+
+You can configure the `browserbaseSearch` tool with this parameter:
+
+- `numResults`: Maximum number of results to return (1-25). Defaults to 10.
+
+The model supplies the `query`, which must be between 1 and 200 characters.
+
+AI Gateway applies options you set in `browserbaseSearch()` as developer defaults, overriding model-generated values.
+
+For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#browserbase-search). For search behavior and Browserbase-specific options, see the [Browserbase Search documentation](https://docs.browserbase.com/reference/api/web-search).
+
+## Using Browserbase Fetch
+
+The `browserbaseFetch` tool retrieves the contents of a URL the model already
+has, rather than searching for one. It uses
+[Browserbase's Fetch API](https://docs.browserbase.com/platform/fetch/overview),
+a lightweight option for pages that do not need JavaScript execution or browser
+interaction, and can return the raw response body, Markdown, or structured JSON
+extracted against a JSON Schema you supply. Pair it with
+[Browserbase Search](#using-browserbase-search) when the model needs to find the
+page first.
+
+To use Browserbase Fetch, import `gateway` from `ai` and pass
+`gateway.tools.browserbaseFetch()` to `tools`:
+
+> **💡 Note:** Browserbase Fetch is priced per option. A plain `raw` fetch costs $1 per 1,000
+> requests. Routing through proxies adds $3 per 1,000, and extraction (`markdown`
+> or `json` format) adds another $3 per 1,000, so a proxied extraction costs $7
+> per 1,000. The surcharges are billed from the options actually sent upstream and
+> reported in the gateway usage metadata.
+
+#### streamText
+
+```typescript filename="browserbase-fetch.ts" {9-11}
+import { gateway, streamText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const result = streamText({
+    model: 'openai/gpt-5.6-sol', // Works with any model
+    prompt,
+    tools: {
+      browserbase_fetch: gateway.tools.browserbaseFetch({ format: 'markdown' }),
+    },
+  });
+
+  for await (const part of result.fullStream) {
+    if (part.type === 'text-delta') {
+      process.stdout.write(part.text);
+    } else if (part.type === 'tool-result') {
+      console.log('Page contents received');
+    }
+  }
+
+  return result.toUIMessageStreamResponse();
+}
+```
+
+#### generateText
+
+```typescript filename="browserbase-fetch.ts" {9-22}
+import { gateway, generateText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'openai/gpt-5.6-sol', // Works with any model
+    prompt,
+    tools: {
+      browserbase_fetch: gateway.tools.browserbaseFetch({
+        allowRedirects: true,
+        format: 'json',
+        schema: {
+          type: 'object',
+          properties: {
+            title: { type: 'string' },
+            summary: { type: 'string' },
+          },
+          required: ['title', 'summary'],
+        },
+      }),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+### Browserbase Fetch parameters
+
+You can configure the `browserbaseFetch` tool with these parameters:
+
+- `format`: Output format for the fetched content. Values: `'raw'` (the upstream
+  response body unchanged), `'markdown'` (the page converted to
+  Markdown), or `'json'` (structured extraction, which requires `schema`).
+  Browserbase defaults to `'raw'` when the request omits `format`.
+  `'markdown'` and `'json'` run extraction and are billed above the base rate.
+- `schema`: JSON Schema describing the object to extract. Only valid when
+  `format` is `'json'`. Omitting `schema` with `'json'` passes AI Gateway
+  validation but causes an error from Browserbase.
+- `allowRedirects`: Follow HTTP redirects. Defaults to `false`.
+- `proxies`: Route the request through Browserbase's proxy network. Defaults to
+  `false`. Billed above the base rate.
+- `allowInsecureSsl`: Skip TLS certificate verification. Defaults to `false`.
+
+The model supplies the `url`, which must be an absolute `http` or `https` URL. It
+can also supply `format`, `allow_redirects`, and `proxies` unless you set them.
+
+Because `format` and `proxies` each affect the price, a model that selects
+`proxies: true` together with `markdown` or `json` output raises the cost of a
+call from $1 to $7 per 1,000. Set either option in `browserbaseFetch()` to pin
+it and cap the per-call cost.
+
+> **💡 Note:** `schema` and `allowInsecureSsl` are developer configuration only. A model cannot
+> set them, so a prompt-injected value is discarded before the fetch runs.
+
+AI Gateway applies options you set in `browserbaseFetch()` as developer defaults, overriding model-generated values.
+
+If Browserbase extraction is unavailable or its quota is exhausted, `'markdown'`
+and `'json'` requests can return `configuration_error` with status code 403 or
+402\. Retry with `format: 'raw'` and omit `schema`.
+
+For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#browserbase-fetch). For fetch behavior and Browserbase-specific options, see the [Browserbase Fetch documentation](https://docs.browserbase.com/platform/fetch/overview).
+
 ## Using AI Gateway search tools with Chat Completions
 
 Use AI Gateway server tools from the OpenAI-compatible Chat Completions API. AI
@@ -690,10 +885,14 @@ Choose the search provider by adding one server tool to `tools`:
 
 | Tool type | Search provider | Required config field |
 | --- | --- | --- |
+| `vercel:browserbase_search` | Browserbase | `query` |
 | `vercel:exa_search` | Exa | `query` |
 | `vercel:parallel_search` | Parallel | `objective` |
 | `vercel:perplexity_search` | Perplexity | `query` |
 | `vercel:tako_search` | Tako | `query` |
+
+Browserbase Fetch is also available as a server tool. Add `vercel:browserbase_fetch`
+with a `url` config field to fetch a page instead of searching for one.
 
 Put static tool settings in `config`. Use snake case for config keys. AI Gateway
 uses these values as developer defaults and overrides model-generated values.
@@ -737,8 +936,9 @@ search results. Inspect `choices[0].message.provider_metadata.gateway.gatewayToo
 for successful search-call counts and the gateway metadata for aggregate cost.
 
 Use distinct names for your own function tools. Do not define a client function
-named `exa_search`, `parallel_search`, `perplexity_search`, or `tako_search` in a
-request that includes the corresponding AI Gateway server tool.
+named `browserbase_fetch`, `browserbase_search`, `exa_search`,
+`parallel_search`, `perplexity_search`, or `tako_search` in a request that
+includes the corresponding AI Gateway server tool.
 
 ## Using Parallel Search
 

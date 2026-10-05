@@ -12,13 +12,13 @@ related:
 summary: Usage process.env.NEXT_PUBLIC_* environment variables must be allowlisted.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_next_public_env_usage.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7fd3a2a9ebea1749461e4e6f170124cd246f042a29578351bd6f0f2ed55643ad"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b9254db90e35cbf4e054d88131ce02ae7faaf049b4e546294d8bd7e711bd1bde"
 ---
 
 # NEXTJS_SAFE_NEXT_PUBLIC_ENV_USAGE
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.4.0.
 

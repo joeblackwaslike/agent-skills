@@ -1,20 +1,23 @@
 ---
+title: Image Generation
+description: Learn how to generate images with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8d50795897b57a914bd52087663bacf45b6854e1aba89029d11f11e468b0b9fb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "bcf53336f0fe782a9d438bc503f37159679d8cd0ffc4d0dd9a10c3c14727cb2d"
 ---
 
-# Image Generation
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK provides the [`generateImage`](/docs/reference/ai-sdk-core/generate-image)
 function to generate images based on a given prompt using an image model.
 
 ```tsx
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { image } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
 });
 ```
@@ -37,12 +40,11 @@ Depending on the model, you can either specify the size or the aspect ratio.
 The size is specified as a string in the format `{width}x{height}`.
 Models only support a few sizes, and the supported sizes are different for each model and provider.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { image } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   size: '1024x1024',
 });
@@ -53,12 +55,11 @@ const { image } = await generateImage({
 The aspect ratio is specified as a string in the format `{width}:{height}`.
 Models only support a few aspect ratios, and the supported aspect ratios are different for each model and provider.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { image } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   aspectRatio: '16:9',
 });
@@ -68,21 +69,18 @@ const { image } = await generateImage({
 
 `generateImage` also supports generating multiple images at once:
 
-```tsx highlight={"7"}
+```tsx {7}
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { images } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   n: 4, // number of images to generate
 });
 ```
 
-<Note>
-  `generateImage` will automatically call the model as often as needed (in
-  parallel) to generate the requested number of images.
-</Note>
+`generateImage` will automatically call the model as often as needed (in
+parallel) to generate the requested number of images.
 
 Each image model has an internal limit on how many images it can generate in a single API call. The AI SDK manages this automatically by batching requests appropriately when you request multiple images using the `n` parameter. By default, the SDK uses provider-documented limits (for example, DALL-E 3 can only generate 1 image per call, while DALL-E 2 supports up to 10).
 
@@ -90,24 +88,61 @@ If needed, you can override this behavior using the `maxImagesPerCall` setting w
 
 ```tsx
 const { images } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   maxImagesPerCall: 5, // Override the default batch size
   n: 10, // Will make 2 calls of 5 images each
 });
 ```
 
+### Checking Image Editing Support
+
+Image model instances can advertise whether they support reference image files
+and masks. Check these capabilities before routing an image editing request:
+
+```ts
+import { openai } from '@ai-sdk/openai';
+
+const model = openai.image('gpt-image-1');
+const needsMask = true;
+
+if ((await model.supportsFileInputs) !== true) {
+  throw new Error(
+    'The selected model does not advertise image editing support.',
+  );
+}
+
+if (needsMask && (await model.supportsMaskInputs) !== true) {
+  throw new Error('The selected model does not advertise mask support.');
+}
+```
+
+`supportsFileInputs` and `supportsMaskInputs` can be `true`, `false`, or
+`undefined` (unknown), and providers may expose any of these values
+asynchronously. Treat only `true` as confirmed support when selecting a model for an edit. File and mask
+support are separate because some models accept reference images but do not
+accept masks.
+
+These capabilities describe support for the SDK's standardized image and mask
+inputs, including the provider's request mapping. A model name that resembles a
+supported family is not sufficient evidence of support. A model may still require
+provider-specific options or impose limits on input formats and counts.
+
+The AI SDK does not automatically reject editing inputs based on these
+capabilities. Applications can decide whether to reject the request, ask the
+user to choose another model, or use a fallback when support is false or
+unknown.
+
 ### Providing a Seed
 
 You can provide a seed to the `generateImage` function to control the output of the image generation process.
 If supported by the model, the same seed will always produce the same image.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { image } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   seed: 1234567890,
 });
@@ -120,7 +155,7 @@ You can pass such settings to the `generateImage` function
 using the `providerOptions` parameter. The options for the provider
 (`openai` in the example below) become request body properties.
 
-```tsx highlight={"8-13"}
+```tsx {8-13}
 import { generateImage } from 'ai';
 import { openai, type OpenAIImageModelGenerationOptions } from '@ai-sdk/openai';
 
@@ -143,12 +178,11 @@ const { image } = await generateImage({
 type [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 that you can use to abort the image generation process or set a timeout.
 
-```ts highlight={"7"}
+```ts {7}
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { image } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   abortSignal: AbortSignal.timeout(1000), // Abort after 1 second
 });
@@ -159,12 +193,11 @@ const { image } = await generateImage({
 `generateImage` accepts an optional `headers` parameter of type `Record<string, string>`
 that you can use to add custom headers to the image generation request.
 
-```ts highlight={"7"}
+```ts {7}
 import { generateImage } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { image } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
   headers: { 'X-Custom-Header': 'custom-value' },
 });
@@ -176,7 +209,7 @@ If the model returns warnings, e.g. for unsupported parameters, they will be ava
 
 ```tsx
 const { image, warnings } = await generateImage({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   prompt: 'Santa Claus driving a Cadillac',
 });
 ```
@@ -266,10 +299,9 @@ Here is an example that sets a default size when none is provided:
 
 ```ts
 import { generateImage, wrapImageModel } from 'ai';
-__PROVIDER_IMPORT__;
 
 const model = wrapImageModel({
-  model: __IMAGE_MODEL__,
+  model: "openai/gpt-image-2.5-sunburst",
   middleware: {
     specificationVersion: 'v3',
     transformParams: async ({ params }) => ({
@@ -363,6 +395,11 @@ for (const file of result.files) {
 | [Together.ai](/providers/ai-sdk-providers/togetherai#image-models)              | `black-forest-labs/FLUX.1.1-pro`                             | 512x512, 768x768, 1024x1024                                                                                                                                         |
 | [Together.ai](/providers/ai-sdk-providers/togetherai#image-models)              | `black-forest-labs/FLUX.1-pro`                               | 512x512, 768x768, 1024x1024                                                                                                                                         |
 | [Together.ai](/providers/ai-sdk-providers/togetherai#image-models)              | `black-forest-labs/FLUX.1-schnell-Free`                      | 512x512, 768x768, 1024x1024                                                                                                                                         |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-2-pro`                                                 | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-2-max`                                                 | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-2-flex`                                                | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-2-klein-9b`                                            | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
+| [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-2-klein-4b`                                            | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
 | [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-kontext-pro`                                           | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
 | [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-kontext-max`                                           | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
 | [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs#image-models) | `flux-pro-1.1-ultra`                                         | From 3:7 (portrait) to 7:3 (landscape)                                                                                                                              |
@@ -371,40 +408,10 @@ for (const file of result.files) {
 
 Above are a small subset of the image models supported by the AI SDK providers. For more, see the respective provider documentation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's LaunchDarkly integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "55a83ef249fdf5de47253d679e7983693151434af9e083532e58e6008fcc1f42"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c58afb0e8436296ca2cf99770cb0951699619c1aee8375272ccb2405e7e20f07"
 ---
 
 # Using Global Config with LaunchDarkly
@@ -34,11 +34,12 @@ This guide will help you get started with using Vercel's LaunchDarkly integratio
 - [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related)
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
-- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to configure Vercel CLI under your system user.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=related) — Learn how to configure Vercel CLI under your system user.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/launchdarkly-global-config.graph.md](/docs/global-config/global-config-integrations/launchdarkly-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Flaunchdarkly-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -57,22 +58,22 @@ Before using this integration, you should have:
    <CodeBlock>
      <Code tab="pnpm">
        ```bash
-       pnpm i vercel
+       pnpm i -g vercel@latest
        ```
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i vercel
+       yarn global add vercel@latest
        ```
      </Code>
      <Code tab="npm">
        ```bash
-       npm i vercel
+       npm i -g vercel@latest
        ```
      </Code>
      <Code tab="bun">
        ```bash
-       bun i vercel
+       bun add -g vercel@latest
        ```
      </Code>
    </CodeBlock>
@@ -81,22 +82,22 @@ Before using this integration, you should have:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm create next-app@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn create next-app@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npx create-next-app@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bunx create-next-app@latest
     ```
   </Code>
 </CodeBlock>
@@ -112,7 +113,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i @vercel/global-config
+       yarn add @vercel/global-config
        ```
      </Code>
      <Code tab="npm">
@@ -122,7 +123,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="bun">
        ```bash
-       bun i @vercel/global-config
+       bun add @vercel/global-config
        ```
      </Code>
    </CodeBlock>
@@ -155,7 +156,7 @@ Before using this integration, you should have:
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @launchdarkly/vercel-server-sdk
+      yarn add @launchdarkly/vercel-server-sdk
       ```
     </Code>
     <Code tab="npm">
@@ -165,7 +166,7 @@ Before using this integration, you should have:
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @launchdarkly/vercel-server-sdk
+      bun add @launchdarkly/vercel-server-sdk
       ```
     </Code>
   </CodeBlock>
@@ -182,14 +183,19 @@ Before using this integration, you should have:
      import { createClient } from '@vercel/global-config';
 
      const globalConfigClient = createClient(process.env.GLOBAL_CONFIG!);
-     const launchDarklyClient = init('YOUR CLIENT-SIDE ID', globalConfigClient);
+     const launchDarklyClient = init(
+       process.env.LD_CLIENT_SIDE_ID!,
+       globalConfigClient,
+     );
 
      export const config = {
-       // Only run the middleware on the dashboard route
+       // Only run the middleware on the /homepage route
        matcher: '/homepage',
      };
 
-     export default function middleware(request: Request): Response {
+     export default async function middleware(
+       request: Request,
+     ): Promise<Response | undefined> {
        await launchDarklyClient.initFromServerIfNeeded();
        const launchDarklyContext = { kind: 'org', key: 'my-org-key' };
        const showExperimentalHomepage = await launchDarklyClient.variation(
@@ -211,14 +217,17 @@ Before using this integration, you should have:
      import { createClient } from '@vercel/global-config'
 
      const globalConfigClient = createClient(process.env.GLOBAL_CONFIG);
-     const launchDarklyClient = init("YOUR CLIENT-SIDE ID", globalConfigClient);
+     const launchDarklyClient = init(
+       process.env.LD_CLIENT_SIDE_ID,
+       globalConfigClient,
+     );
 
      export const config = {
-       // Only run the middleware on the dashboard route
+       // Only run the middleware on the /homepage route
        matcher: '/homepage',
      };
 
-     export default function middleware(request) {
+     export default async function middleware(request) {
        await launchDarklyClient.initFromServerIfNeeded();
        const launchDarklyContext = { kind: 'org', key: 'my-org-key' };
        const showExperimentalHomepage = await launchDarklyClient.variation(

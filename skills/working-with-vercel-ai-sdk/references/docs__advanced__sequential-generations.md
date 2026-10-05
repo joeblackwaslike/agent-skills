@@ -1,10 +1,14 @@
 ---
+title: Sequential Generations
+description: "Learn how to implement sequential generations (\"chains\") with the AI SDK"
+url: "https://ai-sdk.dev/docs/advanced/sequential-generations"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/sequential-generations.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "619ccd20fda9b2440f918e8352ae7c4dfbbcacc294c4e4f2a78e1ed1fdbd5742"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a8e0ba4e851f8904299f954b0a94812a12c87279da176e28fcafe6fa21dc0fec"
 ---
 
-# Sequential Generations
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When working with the AI SDK, you may want to create sequences of generations (often referred to as "chains" or "pipes"), where the output of one becomes the input for the next. This can be useful for creating more complex AI-powered workflows or for breaking down larger tasks into smaller, more manageable steps.
 
@@ -16,12 +20,11 @@ Here's an example of how you can implement sequential actions:
 
 ```typescript
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 async function sequentialActions() {
   // Generate blog post ideas
   const ideasGeneration = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: 'Generate 10 ideas for a blog post about making spaghetti.',
   });
 
@@ -29,7 +32,7 @@ async function sequentialActions() {
 
   // Pick the best idea
   const bestIdeaGeneration = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: `Here are some blog post ideas about making spaghetti:
 ${ideasGeneration}
 
@@ -40,7 +43,7 @@ Pick the best idea from the list above and explain why it's the best.`,
 
   // Generate an outline
   const outlineGeneration = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     prompt: `We've chosen the following blog post idea about making spaghetti:
 ${bestIdeaGeneration}
 
@@ -55,21 +58,10 @@ sequentialActions().catch(console.error);
 
 In this example, we first generate ideas for a blog post, then pick the best idea, and finally create an outline based on that idea. Each step uses the output from the previous step as input for the next generation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

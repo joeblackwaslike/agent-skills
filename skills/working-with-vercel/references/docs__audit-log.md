@@ -16,13 +16,13 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a27a73a8b12ef19629db1a5c5063a6fa828431f8d71033d667b78fe5a3a67d63"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "42955319d13432a22c392e12e56e1882341be0debc3b3a107b417be505628d26"
 ---
 
 # Audit Logs
 
-> **🔒 Permissions Required**: Audit Logs
+> **Availability**: Audit Logs are available on Enterprise plans
 
 Audit logs help you track and analyze your [team members'](/docs/rbac/managing-team-members) activity. They can be accessed by team members with the [owner](/docs/rbac/access-roles#owner-role) role, and are available to customers on [enterprise](/docs/plans/enterprise) plans.
 
@@ -41,14 +41,14 @@ Audit logs help you track and analyze your [team members'](/docs/rbac/managing-t
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
 - [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Understand how workflow and step data is encrypted at rest.
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [July 2020](https://vercel.com/blog/changelog-july-2020?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](`/docs-assets/static/docs/concepts/teams/audit-logs-section-light.png`)
+![Select a timeframe to export audit logs for your team.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/audit-logs-section-light.png)
 
 ## Export audit logs
 
@@ -64,7 +64,7 @@ Reports generated for the last 90 days (three months) will not impact your billi
 
 ## Custom SIEM Log Streaming
 
-> **🔒 Permissions Required**: Custom SIEM Log Streaming
+> **Availability**: Custom SIEM Log Streaming is available for purchase on Enterprise plans
 
 > **⚠️ Warning:** Vercel is replacing Custom SIEM Log Streaming with [Audit Log
 > Drains](/docs/drains/reference/audit-logs). If you stream audit logs to a SIEM,
@@ -105,7 +105,7 @@ To set up custom log streaming to your SIEM:
 - Click the **Configure** button
 - Select one of the supported SIEM providers and follow the step-by-step guide
 
-![Image](`/docs-assets/static/docs/concepts/teams/audit-log-streams-light.png`)
+![Select one of the supported SIEM providers](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/audit-log-streams-light.png)
 
 The HTTP POST provider is generic solution to stream audit logs to any configured endpoint. To set this up, you need to provide:
 

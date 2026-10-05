@@ -1,10 +1,14 @@
 ---
+title: Hume
+description: Learn how to use the Hume provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/hume"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4f35766e047781452d6c99d748bfff68e279caf2537b1cc6e0ccd129e59cb104"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "352538964c0d81dba776930923808aa132c2aca449aa00a69f0ee5d90a00d3c7"
 ---
 
-# Hume Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Hume](https://hume.ai/) provider contains support for the Hume text-to-speech (TTS) API.
 
@@ -12,7 +16,7 @@ The [Hume](https://hume.ai/) provider contains support for the Hume text-to-spee
 
 The Hume provider is available in the `@ai-sdk/hume` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/hume" />
+**Packages:** `@ai-sdk/hume`
 
 ## Provider Instance
 
@@ -35,16 +39,16 @@ const hume = createHume({
 
 You can use the following optional settings to customize the Hume provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `X-Hume-Api-Key` header.
   It defaults to the `HUME_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -78,32 +82,30 @@ const result = await generateSpeech({
 
 ### Supported Parameters
 
-- **text** _string_ (required)
+- **text** *string* (required)
 
   The text to convert to speech.
 
-- **voice** _string_
+- **voice** *string*
 
   The voice ID to use for the generated audio.
   Defaults to `'d8ab67c6-953d-4bd8-9370-8fa53a0f1453'`.
 
-- **speed** _number_
+- **speed** *number*
 
   Speech rate multiplier.
 
-- **instructions** _string_
+- **instructions** *string*
 
   Description or instructions for how the text should be spoken.
 
-- **outputFormat** _string_
+- **outputFormat** *string*
 
   The audio format to generate. Supported values: `'mp3'`, `'pcm'`, `'wav'`.
   Defaults to `'mp3'`.
 
-<Note>
-  The `language` parameter is not supported by Hume speech models and will be
-  ignored with a warning.
-</Note>
+The `language` parameter is not supported by Hume speech models and will be
+ignored with a warning.
 
 ### Provider Options
 
@@ -129,70 +131,28 @@ const result = await generateSpeech({
 
 The following provider options are available:
 
-- **context** _object_
+- **context** *object*
 
   Context for the speech synthesis request. Can be either:
+
   - `{ generationId: string }` - ID of a previously generated speech synthesis to use as context.
   - `{ utterances: Utterance[] }` - An array of utterance objects for context, where each utterance has:
-    - `text` _string_ (required) - The text content.
-    - `description` _string_ - Instructions for how the text should be spoken.
-    - `speed` _number_ - Speech rate multiplier.
-    - `trailingSilence` _number_ - Duration of silence to add after the utterance in seconds.
-    - `voice` _object_ - Voice configuration, either `{ id: string, provider?: 'HUME_AI' | 'CUSTOM_VOICE' }` or `{ name: string, provider?: 'HUME_AI' | 'CUSTOM_VOICE' }`.
+    - `text` *string* (required) - The text content.
+    - `description` *string* - Instructions for how the text should be spoken.
+    - `speed` *number* - Speech rate multiplier.
+    - `trailingSilence` *number* - Duration of silence to add after the utterance in seconds.
+    - `voice` *object* - Voice configuration, either `{ id: string, provider?: 'HUME_AI' | 'CUSTOM_VOICE' }` or `{ name: string, provider?: 'HUME_AI' | 'CUSTOM_VOICE' }`.
 
 ### Model Capabilities
 
-| Model     | Instructions | Speed     | Output Formats |
-| --------- | ------------ | --------- | -------------- |
-| `default` | <Check />    | <Check /> | mp3, pcm, wav  |
+| Model     | Instructions | Speed | Output Formats |
+| --------- | ------------ | ----- | -------------- |
+| `default` | ✓            | ✓     | mp3, pcm, wav  |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

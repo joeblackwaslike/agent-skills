@@ -1,10 +1,14 @@
 ---
+title: Language Model Middleware
+description: Learn how to use middleware to enhance the behavior of language models
+url: "https://ai-sdk.dev/docs/ai-sdk-core/middleware"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "b7a5a9a22f4fbdb262ce002ac3a923832603cb7fed39aff9400e0c4574444791"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ad10d4fd4076bb26ba770447b21b559d9332830b7b0634017f6af79155a7120d"
 ---
 
-# Language Model Middleware
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Language model middleware is a way to enhance the behavior of language models
 by intercepting and modifying the calls to the language model.
@@ -30,7 +34,7 @@ const wrappedLanguageModel = wrapLanguageModel({
 
 The wrapped language model can be used just like any other language model, e.g. in `streamText`:
 
-```ts highlight="2"
+```ts {2}
 const result = streamText({
   model: wrappedLanguageModel,
   prompt: 'What cities are in the United States?',
@@ -65,7 +69,7 @@ The AI SDK comes with several built-in middlewares that you can use to configure
 ### Extract Reasoning
 
 Some providers and models expose reasoning information in the generated text using special tags,
-e.g. &lt;think&gt; and &lt;/think&gt;.
+e.g. \<think> and \</think>.
 
 The `extractReasoningMiddleware` function can be used to extract this reasoning information and expose it as a `reasoning` property on the result.
 
@@ -181,12 +185,10 @@ const model = wrapLanguageModel({
 The `instructions` option also accepts a `SystemModelMessage` or an array of
 `SystemModelMessage` objects when you need provider options on an instruction.
 
-<Note>
-  The middleware treats any system message in the normalized prompt as
-  call-level instructions and does not add the defaults. Only enable
-  `allowSystemInMessages` for trusted message histories, because a system
-  message in that history can override these defaults.
-</Note>
+The middleware treats any system message in the normalized prompt as
+call-level instructions and does not add the defaults. Only enable
+`allowSystemInMessages` for trusted message histories, because a system
+message in that history can override these defaults.
 
 ### Add Tool Input Examples
 
@@ -267,11 +269,9 @@ Here are some community middlewares that you can explore:
 
 The [Custom tool call parser](https://github.com/minpeter/ai-sdk-tool-call-middleware) middleware extends tool call capabilities to models that don't natively support the OpenAI-style `tools` parameter. This includes many self-hosted and third-party models that lack native function calling features.
 
-<Note>
-  Using this middleware on models that support native function calls may result
-  in unintended performance degradation, so check whether your model supports
-  native function calls before deciding to use it.
-</Note>
+Using this middleware on models that support native function calls may result
+in unintended performance degradation, so check whether your model supports
+native function calls before deciding to use it.
 
 This middleware enables function calling capabilities by converting function schemas into prompt instructions and parsing the model's responses into structured function calls. It works by transforming the JSON function definitions into natural language instructions the model can understand, then analyzing the generated text to extract function call attempts. This approach allows developers to use the same function calling API across different model providers, even with models that don't natively support the OpenAI-style function calling format, providing a consistent function calling experience regardless of the underlying model implementation.
 
@@ -297,11 +297,9 @@ Find more examples at this [link](https://github.com/minpeter/ai-sdk-tool-call-m
 
 ## Implementing Language Model Middleware
 
-<Note>
-  Implementing language model middleware is advanced functionality and requires
-  a solid understanding of the [language model
-  specification](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
-</Note>
+Implementing language model middleware is advanced functionality and requires
+a solid understanding of the [language model
+specification](https://github.com/vercel/ai/blob/main/packages/provider/src/language-model/v4/language-model-v4.ts).
 
 You can implement any of the following three function to modify the behavior of the language model:
 
@@ -318,10 +316,8 @@ Here are some examples of how to implement language model middleware:
 
 ## Examples
 
-<Note>
-  These examples are not meant to be used in production. They are just to show
-  how you can use middleware to enhance the behavior of language models.
-</Note>
+These examples are not meant to be used in production. They are just to show
+how you can use middleware to enhance the behavior of language models.
 
 ### Logging
 
@@ -437,11 +433,9 @@ export const yourCacheMiddleware: LanguageModelV4Middleware = {
 
 This example shows how to use RAG as middleware.
 
-<Note>
-  Helper functions like `getLastUserMessageText` and `findSources` are not part
-  of the AI SDK. They are just used in this example to illustrate the concept of
-  RAG.
-</Note>
+Helper functions like `getLastUserMessageText` and `findSources` are not part
+of the AI SDK. They are just used in this example to illustrate the concept of
+RAG.
 
 ```ts
 import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
@@ -562,14 +556,12 @@ export const yourGuardrailMiddleware: LanguageModelV4Middleware = {
 };
 ```
 
-<Note>
-  The streaming example buffers each text block until `text-end` so matches
-  split across `text-delta` chunks cannot leak through. This delays output and
-  uses memory proportional to the text block size. Do not redact each delta
-  independently. An incremental implementation must retain every possible
-  incomplete match, and a fixed-size buffer alone is not safe for unbounded
-  variable-length patterns.
-</Note>
+The streaming example buffers each text block until `text-end` so matches
+split across `text-delta` chunks cannot leak through. This delays output and
+uses memory proportional to the text block size. Do not redact each delta
+independently. An incremental implementation must retain every possible
+incomplete match, and a fixed-size buffer alone is not safe for unbounded
+variable-length patterns.
 
 ## Configuring Per Request Custom Metadata
 
@@ -577,7 +569,6 @@ To send and access custom metadata in Middleware, you can use `providerOptions`.
 
 ```ts
 import { generateText, wrapLanguageModel } from 'ai';
-__PROVIDER_IMPORT__;
 import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
 
 export const yourLogMiddleware: LanguageModelV4Middleware = {
@@ -592,7 +583,7 @@ export const yourLogMiddleware: LanguageModelV4Middleware = {
 
 const { text } = await generateText({
   model: wrapLanguageModel({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     middleware: yourLogMiddleware,
   }),
   prompt: 'Invent a new holiday and describe its traditions.',
@@ -606,40 +597,10 @@ const { text } = await generateText({
 console.log(text);
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

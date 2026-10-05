@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration for real-time collaboration...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sanity.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "08613a0455b4a3465f6a697439cae98a1cdbbfb4a9821fbb34429c68f78acab8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bf8932806f0d563153de445e63f0d0762c705537995e502fe910082148d3e939"
 ---
 
 # Vercel Sanity Integration
@@ -32,8 +32,9 @@ Sanity is a headless content management system that provides real-time collabora
 - [Vercel + Sanity: Innovating on a faster, more collaborative Web](https://vercel.com/blog/vercel-sanity-innovating-on-a-faster-collaborative-web?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related)
 - [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Learn best practices for using databases in a serverless environment with Vercel
 - [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related)
-- [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
+- [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
+- [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentful to deploy your content.
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fsanity&source_site=vercel-docs&relationship=related) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
@@ -52,22 +53,22 @@ Or, follow the steps below to install the integration:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>
@@ -85,7 +86,7 @@ See your installed CMSs documentation for next steps on how to use the integrati
 
 ### Content Link
 
-> **🔒 Permissions Required**: Content Link
+> **Availability**: Content Link is available on Enterprise and Pro plans
 
 Content Link enables you to edit content on websites using headless CMSs by providing links on elements that match a content model in the CMS. This real-time content visualization allows collaborators to make changes without needing a developer's assistance.
 

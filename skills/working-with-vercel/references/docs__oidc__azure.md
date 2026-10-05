@@ -14,13 +14,13 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "7412e20efed3944f3473e95d3e6a14ee22feb005732ab28079ee9bc2b3e2212d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9f8113e74c0fadd6de49f914a5022b77fe920dbede900c12d9509704398b6e3f"
 ---
 
 # Connect to Microsoft Azure
 
-> **🔒 Permissions Required**: Secure backend access with OIDC federation
+> **Availability**: Secure backend access with OIDC federation is available on all plans
 
 Connect your Vercel deployments to Microsoft Azure without storing long-lived credentials. Microsoft Entra ID trusts Vercel's OIDC Identity Provider (IdP) and exchanges the token Vercel issues for a short-lived Entra ID access token.
 
@@ -32,11 +32,12 @@ Connect your Vercel deployments to Microsoft Azure without storing long-lived cr
 
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related)
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [Connect to Google Cloud Platform \\(GCP\\)](https://vercel.com/docs/oidc/gcp?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/azure.graph.md](/docs/oidc/azure.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Fazure&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -121,7 +122,7 @@ Install the following packages:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @azure/identity @azure/cosmos @vercel/oidc
+    yarn add @azure/identity @azure/cosmos @vercel/oidc
     ```
   </Code>
   <Code tab="npm">
@@ -131,7 +132,7 @@ Install the following packages:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @azure/identity @azure/cosmos @vercel/oidc
+    bun add @azure/identity @azure/cosmos @vercel/oidc
     ```
   </Code>
 </CodeBlock>
@@ -233,7 +234,7 @@ Install the following packages:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @azure/identity @azure/keyvault-secrets @vercel/oidc
+    yarn add @azure/identity @azure/keyvault-secrets @vercel/oidc
     ```
   </Code>
   <Code tab="npm">
@@ -243,7 +244,7 @@ Install the following packages:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @azure/identity @azure/keyvault-secrets @vercel/oidc
+    bun add @azure/identity @azure/keyvault-secrets @vercel/oidc
     ```
   </Code>
 </CodeBlock>
@@ -288,7 +289,7 @@ Install the following packages:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @azure/identity @vercel/oidc
+    yarn add @azure/identity @vercel/oidc
     ```
   </Code>
   <Code tab="npm">
@@ -298,7 +299,7 @@ Install the following packages:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @azure/identity @vercel/oidc
+    bun add @azure/identity @vercel/oidc
     ```
   </Code>
 </CodeBlock>

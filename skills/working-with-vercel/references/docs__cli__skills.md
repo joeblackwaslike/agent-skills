@@ -12,8 +12,8 @@ related:
 summary: Discover agent skills relevant to your project using the vercel skills CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/skills.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2ff1c98fd4aa56e92b114cb55aa3abf8f14f372c9a37e9b926d08c1bb203b78e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b3f06ed675f9fd7c67f3db8f1c85d5dfd00e6563ae3bfd81e6ac3ed38f761be7"
 ---
 
 # vercel skills
@@ -31,7 +31,7 @@ The `vercel skills` command surfaces agent skills relevant to your project. When
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel agent](https://vercel.com/docs/cli/agent?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
-- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
+- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
 Full cross-link map for this page: [/docs/cli/skills.graph.md](/docs/cli/skills.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fskills&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

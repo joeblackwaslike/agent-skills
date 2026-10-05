@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-vs-single-mode.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "2f93a33306a429379f467bb73a7cc45e3adce502fb03fe65d3f74c6980863530"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "2d7e6f05239baf9c870e5ab7e58fed07b29444c116e1301df5ec36a299e11176"
 ---
 
 > ## Documentation Index
@@ -163,6 +163,8 @@ These examples read an image named `diagram.png` from the working directory. Cre
 </CodeGroup>
 
 When you run the example, the TypeScript version prints each response as it completes. The Python version's `receive_response()` loop ends at the first result message, so it prints the security analysis; to read both responses, use one `query()` and `receive_response()` pair per message as shown in the [Python reference's example of continuing a conversation](/docs/en/agent-sdk/python#example-continuing-a-conversation).
+
+If an image block's `source` is missing or isn't an object, the SDK doesn't report an error. Claude Code sends Claude a text note in place of the image, such as `[Image could not be processed: image block has no source object]`, and the session continues.
 
 <Note>
   In the TypeScript SDK, if your message generator throws, for example when a file it reads is missing, the stream ends with an error that reads `Claude Code process aborted by user` instead of the original error, so check the code inside your generator first when you see that message. The error may also be preceded by a long minified line of bundled SDK source, so read to the end of the output for the error text.

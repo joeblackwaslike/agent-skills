@@ -15,13 +15,13 @@ related:
 summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "170fca1c515b8b84b52d14e1b1e7840f9f07829ff510c589727df894492369ef"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "af5029df38cb8ba91e2d6614865b10f0a495ccfbdefc5808cc053e80357fc268"
 ---
 
 # Flat Rate CDN
 
-> **🔒 Permissions Required**: Flat Rate CDN
+> **Availability**: Flat Rate CDN is available on Pro plans
 
 Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes. You pay for a capacity tier instead of per unit of usage, so a one-day traffic spike doesn't change your bill.
 
@@ -39,12 +39,12 @@ Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage s
 - [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Networking](https://vercel.com/docs/networking?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/flat-rate-cdn.graph.md](/docs/pricing/flat-rate-cdn.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fflat-rate-cdn&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](https://vercel.com/docs-assets/static/docs/cdn/flat-rate-cdn-cost-comparison-light.png)
+![How Flat Rate CDN compares to on-demand pricing.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/cdn/flat-rate-cdn-cost-comparison-light.png)
 
 On this page, you'll learn how [Flat Rate CDN handles usage](#how-vercel-handles-usage), how to [enable and configure it](#using-flat-rate-cdn), how to [exclude projects from it](#excluding-projects-from-flat-rate-cdn), and if your [project is eligible](#flat-rate-cdn-eligibility) for Flat Rate CDN.
 
@@ -74,9 +74,6 @@ While Flat Rate CDN is enabled, Vercel covers these resources as a part of your 
 - Blob Data Transfer
 - Sandbox Data Transfer
 - Observability events generated from CDN requests
-
-> **💡 Note:** CDN requests appear as **Edge Requests** in your billing dashboard and usage
-> charts.
 
 See [CDN pricing and usage](/docs/manage-cdn-usage) for how these resources are defined.
 

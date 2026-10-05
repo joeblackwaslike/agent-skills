@@ -1,20 +1,22 @@
 ---
+title: Model Context Protocol (MCP)
+description: Learn how to connect to Model Context Protocol (MCP) servers and use their tools with AI SDK Core.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "f7d20a9b701c383a49b1c43cba2f268671030db4aefea568ba05fc822ad674ef"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "d807a523ad5c5b822cf64e729dc780d31e2b05565895fc6aff941571cc133e6e"
 ---
 
-# Model Context Protocol (MCP)
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK supports connecting to [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers to access their tools, resources, and prompts.
 This enables your AI applications to discover and use capabilities across various services through a standardized interface.
 
-<Note>
-  If you're using OpenAI's Responses API, you can also use the built-in
-  `openai.tools.mcp` tool, which provides direct MCP server integration without
-  needing to convert tools. See the [OpenAI provider
-  documentation](/providers/ai-sdk-providers/openai#mcp-tool) for details.
-</Note>
+If you're using OpenAI's Responses API, you can also use the built-in
+`openai.tools.mcp` tool, which provides direct MCP server integration without
+needing to convert tools. See the [OpenAI provider
+documentation](/providers/ai-sdk-providers/openai#mcp-tool) for details.
 
 ## Initializing an MCP Client
 
@@ -144,9 +146,7 @@ const mcpClient = await createMCPClient({
 
 ### Stdio Transport (Local Servers)
 
-<Note type="warning">
-  The stdio transport should only be used for local servers.
-</Note>
+The stdio transport should only be used for local servers.
 
 The Stdio transport can be imported from either the MCP SDK or the AI SDK:
 
@@ -168,16 +168,38 @@ const mcpClient = await createMCPClient({
 
 You can also bring your own transport by implementing the `MCPTransport` interface for specific requirements not covered by the standard transports.
 
-<Note>
-  The client returned by the `createMCPClient` function is a
-  lightweight client intended for use in tool conversion. It currently does not
-  support all features of the full MCP client, such as automatic session
-  persistence, resumable streams, and receiving notifications.
+The client returned by the `createMCPClient` function is a
+lightweight client intended for use in tool conversion. It currently does not
+support all features of the full MCP client, such as automatic session
+persistence, resumable streams, and receiving notifications.
 
 Authorization via OAuth is supported when using the AI SDK MCP HTTP or SSE
 transports by providing an `authProvider`.
 
-</Note>
+### Shared OAuth Credential Storage
+
+When multiple MCP clients or replicas share OAuth credentials, a rotating refresh
+token can be used concurrently. One refresh may save new tokens while another
+receives `invalid_grant` for the old refresh token.
+
+The optional `OAuthClientProvider.invalidateCredentials` method receives a
+second argument identifying the tokens used by a failed refresh:
+
+```typescript
+invalidateCredentials(
+  scope: 'all' | 'client' | 'tokens' | 'verifier',
+  context?: { tokens: OAuthTokens },
+): void | Promise<void>;
+```
+
+For `scope === 'tokens'` with a context, delete the credential only if the stored
+access and refresh tokens still match `context.tokens`. The comparison and
+deletion must be atomic, using a conditional database operation or a transaction.
+If they no longer match, leave the newer tokens in storage. The SDK retries
+authorization and reads the stored tokens again.
+
+The SDK also provides this context when invalidating stored tokens that lack an
+authorization server pin. Other invalidations can omit the context.
 
 ### OAuth Authorization Server Validation
 
@@ -290,11 +312,48 @@ invalid tool arguments, are surfaced immediately without retrying. Successful
 MCP tool responses with `isError: true` are also returned to the model without
 retrying.
 
-<Note type="warning">
-  Only enable retries for MCP tools where retrying is safe. Retrying
-  non-idempotent tools, such as tools that send emails or create records, can
-  duplicate side effects.
-</Note>
+`maxRetries` applies to `tools/call` requests, not to client initialization.
+The following example identifies potentially transient HTTP initialization
+failures using the exported `MCPClientError` type guard:
+
+```typescript
+import { createMCPClient, MCPClientError } from '@ai-sdk/mcp';
+
+try {
+  await createMCPClient({
+    transport: {
+      type: 'http',
+      url: 'https://your-server.com/mcp',
+    },
+  });
+} catch (error) {
+  if (
+    !MCPClientError.isInstance(error) ||
+    error.code != null ||
+    error.statusCode == null ||
+    !(
+      error.statusCode === 408 ||
+      error.statusCode === 409 ||
+      error.statusCode === 429 ||
+      error.statusCode >= 500
+    )
+  ) {
+    throw error;
+  }
+
+  // Retry according to your application's backoff policy.
+}
+```
+
+This example only considers HTTP statuses. A missing `statusCode` does not
+establish that a failure is transient: configuration errors, protocol errors,
+and cancelled requests can also lack an HTTP status. Network and timeout
+retries require a separate application policy. OAuth errors such as
+`UnauthorizedError` and `MCPClientOAuthError` are rethrown by this example.
+
+Only enable retries for MCP tools where retrying is safe. Retrying
+non-idempotent tools, such as tools that send emails or create records, can
+duplicate side effects.
 
 ### Closing the MCP Client
 
@@ -313,7 +372,7 @@ const mcpClient = await createMCPClient({
 const tools = await mcpClient.tools();
 
 const result = await streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools,
   prompt: 'What is the weather in Brooklyn, New York?',
   onEnd: async () => {
@@ -372,7 +431,7 @@ or no `readOnlyHint` require user approval:
 import { type McpProviderMetadata } from '@ai-sdk/mcp';
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools,
   toolApproval: ({ toolCall }) => {
     const annotations = (
@@ -479,10 +538,8 @@ If the server doesn't return `structuredContent`, the client falls back to parsi
 
 If a server returns `structuredContent` without the backwards-compatible `content` field, the client adds a text content block containing the serialized JSON before returning the result. This compatibility behavior handles servers that omit the text mirror recommended by the MCP specification.
 
-<Note>
-  Without `outputSchema`, the tool returns the raw `CallToolResult` object
-  containing `content` and optional `isError` fields.
-</Note>
+Without `outputSchema`, the tool returns the raw `CallToolResult` object
+containing `content` and optional `isError` fields.
 
 ## Using MCP Resources
 
@@ -564,9 +621,7 @@ client throws an `MCPClientError`.
 
 ## Using MCP Prompts
 
-<Note type="warning">
-  MCP Prompts is an experimental feature and may change in the future.
-</Note>
+MCP Prompts is an experimental feature and may change in the future.
 
 According to the MCP specification, prompts are user-controlled templates that servers expose for clients to list and retrieve with optional arguments.
 
@@ -591,11 +646,9 @@ const prompt = await mcpClient.experimental_getPrompt({
 
 Elicitation is a mechanism where MCP servers can request additional information from the client during tool execution. For example, a server might need user input to complete a registration form or confirmation for a sensitive operation.
 
-<Note type="warning">
-  It is up to the client application to handle elicitation requests properly.
-  The MCP client simply surfaces these requests from the server to your
-  application code.
-</Note>
+It is up to the client application to handle elicitation requests properly.
+The MCP client simply surfaces these requests from the server to your
+application code.
 
 ### Enabling Elicitation Support
 
@@ -650,7 +703,7 @@ Your handler must return an object with an `action` field that can be one of:
 
 An MCP server sends tool definitions (name, description, input schema) when your
 app first connects, and you typically review and approve them at that point.
-Nothing in the protocol prevents the server from later serving a _different_
+Nothing in the protocol prevents the server from later serving a *different*
 definition for the same tool name — for example a description carrying injected
 instructions, or an input schema widened with an extra field. Because the SDK
 uses whatever tools you pass on each call, a mutated definition returned by a
@@ -681,70 +734,25 @@ if (drift.changed.length || drift.added.length) {
 }
 ```
 
-<Note>
-  This detects mutation of a tool's description, input schema, or title — the
-  prompt-injection and schema-widening vectors. It cannot detect a
-  behavior/endpoint swap where the name, description, and schema are all
-  unchanged, because the tool runs remotely on the MCP server and that change is
-  invisible to the client. Core stays unopinionated: it does not persist
-  baselines or block calls — those are your app's responsibility.
-</Note>
+This detects mutation of a tool's description, input schema, or title — the
+prompt-injection and schema-widening vectors. It cannot detect a
+behavior/endpoint swap where the name, description, and schema are all
+unchanged, because the tool runs remotely on the MCP server and that change is
+invisible to the client. Core stays unopinionated: it does not persist
+baselines or block calls — those are your app's responsibility.
 
 ## Examples
 
 You can see MCP in action in the following examples:
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to use MCP tools in Node.js',
-      link: '/cookbook/node/mcp-tools',
-    },
-    {
-      title: 'Learn to handle MCP elicitation requests in Node.js',
-      link: '/cookbook/node/mcp-elicitation',
-    },
-    {
-      title: 'Learn to render MCP Apps',
-      link: '/docs/ai-sdk-core/mcp-apps',
-    },
-  ]}
-/>
+- [Learn to use MCP tools in Node.js](/cookbook/node/mcp-tools)
+- [Learn to handle MCP elicitation requests in Node.js](/cookbook/node/mcp-elicitation)
+- [Learn to render MCP Apps](/docs/ai-sdk-core/mcp-apps)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

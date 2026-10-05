@@ -1,10 +1,14 @@
 ---
+title: Mistral AI
+description: Learn how to use Mistral.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "f45d6752401d6b32dec4d0b78763f4e1d902e7c1c43d636278bc3686e115382f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "cae9dc4de97b937790abb748580a644a9cecfb65f0bfc4263a11ee7fe467a067"
 ---
 
-# Mistral AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Mistral AI](https://mistral.ai/) provider contains language model,
 embedding model, speech model, and transcription model support for Mistral
@@ -14,7 +18,7 @@ APIs.
 
 The Mistral provider is available in the `@ai-sdk/mistral` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/mistral" />
+**Packages:** `@ai-sdk/mistral`
 
 ## Provider Instance
 
@@ -37,21 +41,21 @@ const mistral = createMistral({
 
 You can use the following optional settings to customize the Mistral provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.mistral.ai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `MISTRAL_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -88,39 +92,39 @@ await generateText({
 
 The following optional provider options are available for Mistral models:
 
-- **safePrompt** _boolean_
+- **safePrompt** *boolean*
 
   Whether to inject a safety prompt before all conversations.
 
   Defaults to `false`.
 
-- **documentImageLimit** _number_
+- **documentImageLimit** *number*
 
   Maximum number of images to process in a document.
 
-- **documentPageLimit** _number_
+- **documentPageLimit** *number*
 
   Maximum number of pages to process in a document.
 
-- **strictJsonSchema** _boolean_
+- **strictJsonSchema** *boolean*
 
   Whether to use strict JSON schema validation for structured outputs. Only applies when a schema is provided and only sets the [`strict` flag](https://docs.mistral.ai/api/#tag/chat/operation/chat_completion_v1_chat_completions_post) in addition to using [Custom Structured Outputs](https://docs.mistral.ai/capabilities/structured-output/custom_structured_output/), which is used by default if a schema is provided.
 
   Defaults to `false`.
 
-- **structuredOutputs** _boolean_
+- **structuredOutputs** *boolean*
 
   Whether to use [structured outputs](#structured-outputs). When enabled, tool calls and object generation will be strict and follow the provided schema.
 
   Defaults to `true`.
 
-- **parallelToolCalls** _boolean_
+- **parallelToolCalls** *boolean*
 
   Whether to enable parallel function calling during tool use. When set to false, the model will use at most one tool per response.
 
   Defaults to `true`.
 
-- **promptCacheKey** _string_
+- **promptCacheKey** *string*
 
   A stable identifier used to improve cache affinity for requests that share a prompt prefix.
 
@@ -291,7 +295,7 @@ console.log(JSON.stringify(result.output, null, 2));
 
 You can enable strict JSON Schema validation using a provider option:
 
-```ts highlight="7-11"
+```ts {7-11}
 import { mistral, type MistralLanguageModelChatOptions } from '@ai-sdk/mistral';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
@@ -315,33 +319,29 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  When using structured outputs, the SDK no longer injects an extra "answer with
-  JSON" instruction. It relies on Mistral's native `json_schema`/`json_object`
-  response formats instead. You can customize the schema name/description via
-  the standard structured-output APIs.
-</Note>
+When using structured outputs, the SDK no longer injects an extra "answer with
+JSON" instruction. It relies on Mistral's native `json_schema`/`json_object`
+response formats instead. You can customize the schema name/description via
+the standard structured-output APIs.
 
 ### Model Capabilities
 
 | Model                     | Image Input | Tool Usage |
 | ------------------------- | ----------- | ---------- |
-| `labs-leanstral-1-5`      | <Check />   | <Check />  |
-| `magistral-medium-latest` | <Check />   | <Check />  |
-| `magistral-small-latest`  | <Check />   | <Check />  |
-| `ministral-14b-latest`    | <Check />   | <Check />  |
-| `ministral-8b-latest`     | <Check />   | <Check />  |
-| `mistral-large-latest`    | <Check />   | <Check />  |
-| `mistral-medium-latest`   | <Check />   | <Check />  |
-| `mistral-small-latest`    | <Check />   | <Check />  |
-| `voxtral-small-latest`    | <Cross />   | <Check />  |
-| `zai-glm-5-2`             | <Cross />   | <Check />  |
+| `labs-leanstral-1-5`      | ✓           | ✓          |
+| `magistral-medium-latest` | ✓           | ✓          |
+| `magistral-small-latest`  | ✓           | ✓          |
+| `ministral-14b-latest`    | ✓           | ✓          |
+| `ministral-8b-latest`     | ✓           | ✓          |
+| `mistral-large-latest`    | ✓           | ✓          |
+| `mistral-medium-latest`   | ✓           | ✓          |
+| `mistral-small-latest`    | ✓           | ✓          |
+| `voxtral-small-latest`    | ✗           | ✓          |
+| `zai-glm-5-2`             | ✗           | ✓          |
 
-<Note>
-  The table above lists popular models. Please see the [Mistral
-  docs](https://docs.mistral.ai/models) for a full list of available models. You
-  can also pass any available provider model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [Mistral
+docs](https://docs.mistral.ai/models) for a full list of available models. You
+can also pass any available provider model ID as a string if needed.
 
 ## Transcription Models
 
@@ -370,7 +370,7 @@ Mistral transcription models support additional provider options. Pass them
 through `providerOptions.mistral` and use
 `MistralTranscriptionModelOptions` for type checking:
 
-```ts highlight="9-13"
+```ts {9-13}
 import {
   mistral,
   type MistralTranscriptionModelOptions,
@@ -393,25 +393,25 @@ const result = await transcribe({
 
 The following optional provider options are available:
 
-- **language** _string_
+- **language** *string*
 
   The language of the audio, such as `en`. Providing it can improve accuracy.
 
-- **temperature** _number_
+- **temperature** *number*
 
   The sampling temperature for the transcription.
 
-- **timestampGranularities** _Array&lt;'segment' | 'word'&gt;_
+- **timestampGranularities** *Array\<'segment' | 'word'>*
 
   Timestamp granularities to include in the response. Mistral does not support
   combining this option with `language`; the SDK throws an
   `InvalidArgumentError` when both are provided.
 
-- **diarize** _boolean_
+- **diarize** *boolean*
 
   Whether to identify speakers in the transcription.
 
-- **contextBias** _string[]_
+- **contextBias** *string\[]*
 
   Up to 100 words or phrases that guide spelling for names, technical terms,
   or domain-specific vocabulary. Items cannot contain commas or whitespace;
@@ -423,17 +423,15 @@ available under `result.providerMetadata.mistral.usage`. Segment scores and
 speaker IDs from diarization are available under
 `result.providerMetadata.mistral.segments`.
 
-<Note>
-  Audio is uploaded to Mistral for processing. This integration supports batch
-  transcription only; Mistral realtime transcription is not exposed by this
-  model.
-</Note>
+Audio is uploaded to Mistral for processing. This integration supports batch
+transcription only; Mistral realtime transcription is not exposed by this
+model.
 
 ### Model Capabilities
 
 | Model                 | Timestamps | Diarization | Context Bias |
 | --------------------- | ---------- | ----------- | ------------ |
-| `voxtral-mini-latest` | <Check />  | <Check />   | <Check />    |
+| `voxtral-mini-latest` | ✓          | ✓           | ✓            |
 
 ## Speech Models
 
@@ -470,7 +468,7 @@ Mistral also supports one-off voice cloning with base64-encoded reference
 audio. Pass it through `providerOptions.mistral.refAudio` and use
 `MistralSpeechModelOptions` for type checking:
 
-```ts highlight="9-13"
+```ts {9-13}
 import { readFile } from 'node:fs/promises';
 import { mistral, type MistralSpeechModelOptions } from '@ai-sdk/mistral';
 import { generateSpeech } from 'ai';
@@ -491,18 +489,16 @@ const result = await generateSpeech({
 When `refAudio` is provided, it takes precedence over `voice`. Reference audio
 is redacted from request metadata and API call errors returned by the provider.
 
-<Note>
-  Only use reference audio with the speaker's explicit consent. Follow Mistral's
-  voice cloning usage policy and disclose AI-generated audio when required. This
-  provider integration supports non-streaming speech generation; Mistral's
-  streaming speech API is not exposed through `SpeechModelV4`.
-</Note>
+Only use reference audio with the speaker's explicit consent. Follow Mistral's
+voice cloning usage policy and disclose AI-generated audio when required. This
+provider integration supports non-streaming speech generation; Mistral's
+streaming speech API is not exposed through `SpeechModelV4`.
 
 ### Model Capabilities
 
 | Model                   | Saved Voices | Reference Audio | Non-Streaming |
 | ----------------------- | ------------ | --------------- | ------------- |
-| `voxtral-mini-tts-2603` | <Check />    | <Check />       | <Check />     |
+| `voxtral-mini-tts-2603` | ✓            | ✓               | ✓             |
 
 ## Embedding Models
 
@@ -549,15 +545,15 @@ const { embedding } = await embed({
 The following optional provider options are available for Mistral embedding
 models:
 
-- **metadata** _Record&lt;string, unknown&gt;_
+- **metadata** *Record\<string, unknown>*
 
   Additional metadata to attach to the embedding request.
 
-- **outputDimension** _number_
+- **outputDimension** *number*
 
   The dimension of the output embeddings when supported by the model.
 
-- **outputDtype** _string_
+- **outputDtype** *string*
 
   The data type of the output embeddings when supported by the model. Accepts
   `'float'`, `'int8'`, `'uint8'`, `'binary'`, or `'ubinary'`.
@@ -568,53 +564,10 @@ models:
 | --------------- | ------------------ |
 | `mistral-embed` | 1024               |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

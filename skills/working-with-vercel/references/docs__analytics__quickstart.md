@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "691eb0a70891a0822f6ad81300bf45802380639c9a7898cf523d4394a70b6cf1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6873d4883fe2e2a895ba525d230a18e1f28ba4230d8ba2ca9920663373a605f6"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -36,11 +36,12 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
+- [Using Fathom Analytics with Next.js](https://vercel.com/kb/guide/deploying-nextjs-using-fathom-analytics-with-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to integrate Fathom Analytics with Next.js.
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/analytics/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -62,22 +63,22 @@ Help me add Vercel Web Analytics to this project. First, make sure the Vercel CL
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i vercel
+    pnpm i -g vercel
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i vercel
+    yarn global add vercel
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i vercel
+    npm i -g vercel
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i vercel
+    bun add -g vercel
     ```
   </Code>
 </CodeBlock>
@@ -108,7 +109,7 @@ Help me add Vercel Web Analytics to this project. First, make sure the Vercel CL
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/analytics
+      yarn add @vercel/analytics
       ```
     </Code>
     <Code tab="npm">
@@ -118,7 +119,7 @@ Help me add Vercel Web Analytics to this project. First, make sure the Vercel CL
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/analytics
+      bun add @vercel/analytics
       ```
     </Code>
   </CodeBlock>

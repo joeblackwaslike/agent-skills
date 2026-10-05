@@ -16,8 +16,8 @@ related:
 summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit top-ups and spending budgets.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "acc2cef3ea02883d0e55846644fc0dec78c12221b525bfb3038e322fcaf9a572"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3e436f54d7f9f38259f1f55614054bf2dfa9ce240058d4df17e25619987e3618"
 ---
 
 # AI Gateway Pricing
@@ -34,12 +34,12 @@ sha256: "acc2cef3ea02883d0e55846644fc0dec78c12221b525bfb3038e322fcaf9a572"
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
-- [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

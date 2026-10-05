@@ -17,8 +17,8 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "00a06ba86cc5dbcc20d020f73a45cd34f6d6e34f8e70844ac85a9893b9af4552"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8d420ffd0ed8984bc5800d0db5c28b7f5fd93bc11fc10e382fafa33d4b58c4db"
 ---
 
 # Getting Started with Vercel Flags
@@ -35,8 +35,8 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=graph)
@@ -78,7 +78,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i flags @flags-sdk/vercel
+      yarn add flags @flags-sdk/vercel
       ```
     </Code>
     <Code tab="npm">
@@ -88,7 +88,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
     </Code>
     <Code tab="bun">
       ```bash
-      bun i flags @flags-sdk/vercel
+      bun add flags @flags-sdk/vercel
       ```
     </Code>
   </CodeBlock>
@@ -107,7 +107,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @openfeature/server-sdk @vercel/flags-core
+      yarn add @openfeature/server-sdk @vercel/flags-core
       ```
     </Code>
     <Code tab="npm">
@@ -117,7 +117,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @openfeature/server-sdk @vercel/flags-core
+      bun add @openfeature/server-sdk @vercel/flags-core
       ```
     </Code>
   </CodeBlock>
@@ -132,7 +132,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/flags-core
+      yarn add @vercel/flags-core
       ```
     </Code>
     <Code tab="npm">
@@ -142,7 +142,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/flags-core
+      bun add @vercel/flags-core
       ```
     </Code>
   </CodeBlock>

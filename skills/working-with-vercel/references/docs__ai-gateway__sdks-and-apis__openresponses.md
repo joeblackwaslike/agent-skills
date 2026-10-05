@@ -17,8 +17,8 @@ related:
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d8f8b9030f64e5a234a7f6348de93392e934c0d31773d3803d06280454c6da3e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3e9b1c796855ee56991d6f5c3525f90d2dae21320edf5cd18ca0c81565898b90"
 ---
 
 # OpenResponses API with AI Gateway
@@ -37,6 +37,7 @@ AI Gateway supports the [OpenResponses API](https://openresponses.org) specifica
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses&source_site=vercel-docs&relationship=related)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses&source_site=vercel-docs&relationship=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses&source_site=vercel-docs&relationship=graph)

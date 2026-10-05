@@ -1,10 +1,14 @@
 ---
+title: Prompt Engineering
+description: Learn how to develop prompts with AI SDK Core.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/prompt-engineering.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "cfe244b7497410caddf802d4a83cf7542c9440d88a8d3904123c62e142691436"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c180bd0c20b6a58dbc0ffb27ebbdcbee6c367f0923d520ecebd978b302d764fe"
 ---
 
-# Prompt Engineering
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Tips
 
@@ -14,13 +18,13 @@ When you create prompts that include tools, getting good results can be tricky a
 
 Here are a few tips to help you get the best results:
 
-1. Use a model that is strong at tool calling, such as `gpt-6-astra` or `claude-sonnet-5`. Weaker models will often struggle to call tools effectively and flawlessly.
-1. Keep the number of tools low, e.g. to 5 or less.
-1. Keep the complexity of the tool parameters low. Complex Zod schemas with many nested and optional elements, unions, etc. can be challenging for the model to work with.
-1. Use semantically meaningful names for your tools, parameters, parameter properties, etc. The more information you pass to the model, the better it can understand what you want.
-1. Add `.describe("...")` to your Zod schema properties to give the model hints about what a particular property is for.
-1. When the output of a tool might be unclear to the model and there are dependencies between tools, use the `description` field of a tool to provide information about the output of the tool execution.
-1. You can include example input/outputs of tool calls in your prompt to help the model understand how to use the tools. Keep in mind that the tools work with JSON objects, so the examples should use JSON.
+1. Use a model that is strong at tool calling, such as `gpt-6-astra` or `claude-sonnet-5-5`. Weaker models will often struggle to call tools effectively and flawlessly.
+2. Keep the number of tools low, e.g. to 5 or less.
+3. Keep the complexity of the tool parameters low. Complex Zod schemas with many nested and optional elements, unions, etc. can be challenging for the model to work with.
+4. Use semantically meaningful names for your tools, parameters, parameter properties, etc. The more information you pass to the model, the better it can understand what you want.
+5. Add `.describe("...")` to your Zod schema properties to give the model hints about what a particular property is for.
+6. When the output of a tool might be unclear to the model and there are dependencies between tools, use the `description` field of a tool to provide information about the output of the tool execution.
+7. You can include example input/outputs of tool calls in your prompt to help the model understand how to use the tools. Keep in mind that the tools work with JSON objects, so the examples should use JSON.
 
 In general, the goal should be to give the model all information it needs in a clear way.
 
@@ -34,9 +38,9 @@ Zod expects JavaScript Date objects, but models return dates as strings.
 You can specify and validate the date format using `z.string().datetime()` or `z.string().date()`,
 and then use a Zod transformer to convert the string to a Date object.
 
-```ts highlight="8-11"
+```ts {8-11}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       events: z.array(
@@ -58,14 +62,12 @@ const result = await generateText({
 
 When working with tools that have optional parameters, you may encounter compatibility issues with certain providers that use strict schema validation.
 
-<Note>
-  This is particularly relevant for OpenAI models with structured outputs
-  (strict mode).
-</Note>
+This is particularly relevant for OpenAI models with structured outputs
+(strict mode).
 
 For maximum compatibility, optional parameters should use `.nullable()` instead of `.optional()`:
 
-```ts highlight="6,7,16,17"
+```ts {6,7,16,17}
 // This may fail with strict schema validation
 const failingTool = tool({
   description: 'Execute a command',
@@ -91,9 +93,9 @@ const workingTool = tool({
 
 For tool calls and object generation, it's recommended to use `temperature: 0` to ensure deterministic and consistent results:
 
-```ts highlight="3"
+```ts {3}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   temperature: 0, // Recommended for tool calls
   tools: {
     myTool: tool({
@@ -123,7 +125,7 @@ To check if your prompt, tools, and settings are handled correctly by the provid
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Hello, world!',
 });
 
@@ -135,9 +137,9 @@ console.log(result.warnings);
 You can inspect the input messages that were sent to the model for the final step using `request.messages`.
 Set `include.requestMessages` to `true` to include these messages in step results.
 
-```ts highlight="4,7"
+```ts {4,7}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Hello, world!',
   include: { requestMessages: true },
 });
@@ -152,49 +154,19 @@ This allows you to inspect the exact payload that is sent to the model provider 
 
 Request bodies are available via the `finalStep.request.body` property of the response:
 
-```ts highlight="6"
+```ts {6}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Hello, world!',
 });
 
 console.log(result.finalStep.request.body);
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

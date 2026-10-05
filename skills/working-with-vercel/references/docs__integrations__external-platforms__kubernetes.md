@@ -16,8 +16,8 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d492d55b7d7ccfa8188df51509f163796dc0b54877dbff9cf0cbf5ced7e4a39d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4d809009e809906dc7aa3e13a1a0954b113a2c66ffe72faa9c1f44fd316e2a58"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -37,9 +37,9 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 - [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
 - [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Learn how you can use Ruby on Rails with your frontend on Vercel.
+- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -95,7 +95,7 @@ With Vercel, you can securely configure [environment variables](/docs/environmen
 
 ## Observability
 
-A Kubernetes setup typically uses observability solutions to aid in troubleshooting, alerting, and monitoring of your applications. You could do this through third-party services like Splunk, DataDog, Grafana, and more.
+A Kubernetes setup typically uses observability solutions to aid in troubleshooting, alerting, and monitoring of your applications. You could do this through third-party services like Splunk, Datadog, Grafana, and more.
 
 Vercel provides built-in logging and monitoring capabilities through our [observability products](/docs/observability) with real-time logs and built-in traffic analytics. These are all accessible through the Vercel dashboard. If needed, Vercel has [one-click integrations with leading observability platforms](/integrations), so you can keep using your existing tools alongside your Kubernetes-based backend.
 
@@ -105,7 +105,7 @@ If you’re running backend services on Kubernetes (e.g., APIs, RPC layers, data
 
 - **Networking**: Vercel can securely connect to your Kubernetes-hosted backend services. You can keep your APIs behind load balancers or private networks. For stricter environments, [Vercel Secure Compute](/docs/networking/secure-compute) (available on Enterprise plans) ensures secure, private connectivity to internal services.
 - **Environment Variables and Secrets**: Your application’s environment variables (e.g., API keys, database credentials) can be configured securely in the [Vercel dashboard](/docs/environment-variables).
-- **Observability**: You can maintain your existing observability setup for Kubernetes (Grafana, DataDog, etc.) while also leveraging Vercel’s built-in logs and analytics for your frontend.
+- **Observability**: You can maintain your existing observability setup for Kubernetes (Grafana, Datadog, etc.) while also leveraging Vercel’s built-in logs and analytics for your frontend.
 
 ## Before/after comparison: Kubernetes vs. Vercel
 
@@ -120,7 +120,7 @@ Here's how managing frontend infrastructure compares between traditional, self-m
 | **Runtime & OS Security Patches**      | Manual and ongoing maintenance                                                          | Automatic and managed by Vercel                   |
 | **Multi-region Deployment & Failover** | Manual setup, configuration, and management                                             | Automatic global deployment and failover          |
 | **Version Skew Protection**            | Manual rolling deployments (possible downtime)                                          | Built-in Skew Protection                          |
-| **Observability & Logging**            | Requires third-party setup (Grafana, Splunk, DataDog)                                   | Built-in observability and one-click integrations |
+| **Observability & Logging**            | Requires third-party setup (Grafana, Splunk, Datadog)                                   | Built-in observability and one-click integrations |
 | **CI/CD & Deployment Management**      | Requires integration of multiple tools (Docker, Kubernetes, Terraform, CI/CD pipelines) | Built-in Git-integrated CI/CD system              |
 
 By migrating just your frontend to Vercel, you drastically reduce the operational overhead of managing and scaling web servers, pods, load balancers, ingress controllers, and more.

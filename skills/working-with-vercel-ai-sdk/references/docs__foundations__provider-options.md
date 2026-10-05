@@ -1,10 +1,14 @@
 ---
+title: Provider Options
+description: Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
+url: "https://ai-sdk.dev/docs/foundations/provider-options"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/provider-options.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e44395d76a95f48ae1db16555e70707f7dad4adc0913ffb378378dff1fee97de"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "67668c42f9202187465d174a9ba440cb99f859e1f22d228e99cf64e8a069a73d"
 ---
 
-# Provider Options
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Provider options let you pass provider-specific configuration that goes beyond the [standard settings](/docs/ai-sdk-core/settings) shared by all providers. They are set via the `providerOptions` property on functions like `generateText` and `streamText`.
 
@@ -22,13 +26,11 @@ const result = await generateText({
 
 Provider options are namespaced by the provider name (e.g. `openai`, `anthropic`) so you can even include options for multiple providers in the same call — only the options matching the active provider are used. See [Prompts: Provider Options](/docs/foundations/prompts#provider-options) for details on applying options at the message and message-part level.
 
-<Note>
-  For controlling reasoning effort, consider using the top-level [`reasoning`
-  parameter](/docs/ai-sdk-core/reasoning) instead of provider-specific options.
-  It provides a portable setting that works across all providers that support
-  reasoning. Use provider-specific options only when you need features like
-  exact token budgets.
-</Note>
+For controlling reasoning effort, consider using the top-level [`reasoning`
+parameter](/docs/ai-sdk-core/reasoning) instead of provider-specific options.
+It provides a portable setting that works across all providers that support
+reasoning. Use provider-specific options only when you need features like
+exact token budgets.
 
 ## Common Provider Options
 
@@ -37,7 +39,7 @@ The sections below cover the most frequently used provider options, focusing on 
 - [OpenAI provider options](/providers/ai-sdk-providers/openai)
 - [Anthropic provider options](/providers/ai-sdk-providers/anthropic)
 
----
+***
 
 ## OpenAI
 
@@ -79,14 +81,12 @@ console.log(
 | `'high'`    | Thorough reasoning                         |
 | `'xhigh'`   | Maximum reasoning (GPT-5.1-Codex-Max only) |
 
-<Note>
-  `'none'` and `'xhigh'` are only supported on specific models. Using them with
-  unsupported models will result in an error.
-</Note>
+`'none'` and `'xhigh'` are only supported on specific models. Using them with
+unsupported models will result in an error.
 
 ### Reasoning Summary
 
-When working with reasoning models, you may want to see _how_ the model arrived at its answer. The `reasoningSummary` option surfaces the model's thought process.
+When working with reasoning models, you may want to see *how* the model arrived at its answer. The `reasoningSummary` option surfaces the model's thought process.
 
 When `reasoningEffort` is set to a value other than `'none'`, the OpenAI Responses provider defaults `reasoningSummary` to `'detailed'`. Set `reasoningSummary: null` to omit reasoning summaries.
 
@@ -173,7 +173,7 @@ const result = await generateText({
 | `'medium'` | Balanced detail (default)        |
 | `'high'`   | Verbose, comprehensive responses |
 
----
+***
 
 ## Anthropic
 
@@ -201,10 +201,8 @@ console.log('Answer:', text);
 
 The `budgetTokens` value sets the upper limit on how many tokens the model can use for its internal reasoning. Higher budgets allow deeper reasoning but increase latency and cost.
 
-<Note>
-  Thinking is supported on `claude-opus-4-20250514`, `claude-sonnet-4-20250514`,
-  and `claude-sonnet-4-5-20250929` models.
-</Note>
+Thinking is supported on `claude-opus-4-20250514`, `claude-sonnet-4-20250514`,
+and `claude-sonnet-4-5-20250929` models.
 
 ### Effort
 
@@ -240,7 +238,7 @@ import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: anthropic('claude-opus-5-5'),
+  model: anthropic('claude-opus-4-6'),
   prompt: 'Write a short poem about the sea.',
   providerOptions: {
     anthropic: {
@@ -250,7 +248,7 @@ const { text } = await generateText({
 });
 ```
 
----
+***
 
 ## Combining Options
 
@@ -352,15 +350,10 @@ For a full list of available options, see the provider-specific documentation:
 - [OpenAI Provider](/providers/ai-sdk-providers/openai)
 - [Anthropic Provider](/providers/ai-sdk-providers/anthropic)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/foundations/overview)
-- [Providers and Models](/docs/foundations/providers-and-models)
-- [Prompts](/docs/foundations/prompts)
-- [Tools](/docs/foundations/tools)
-- [Streaming](/docs/foundations/streaming)
-- [Provider Options](/docs/foundations/provider-options)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

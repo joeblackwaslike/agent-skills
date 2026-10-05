@@ -12,8 +12,8 @@ related:
 summary: "Set up Partial Prerendering (PPR) in a Next.js App Router project: enable Cache Components, cache a static shell, and stream dynamic content per..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/quickstart.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "13413f29ddb1d07634629a1712666f2f0c6aa18dc8a151babf1f0f2368d37da2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c08eccb26758dd7341483a46981f24eb41ddfbca3c468a5a4a128d48299b0f94"
 ---
 
 # Getting started with Partial Prerendering
@@ -35,7 +35,6 @@ This guide walks through setting up [Partial Prerendering (PPR)](/docs/partial-p
 - [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/partial-prerendering/quickstart.graph.md](/docs/partial-prerendering/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

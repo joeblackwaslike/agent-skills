@@ -12,13 +12,13 @@ related:
 summary: Warns when CORS header (or header-like) configuration is detected, requiring that configuration to be allowlisted.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_cors_headers.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "ac9bc3e68a445cb65aad636f2a5ec6a63aa6edf4dd8b9cd0c473b314f8005cc0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "33b339f0522177e9d0a22e16a8b29e5c257ea118b51b403d7c109d13ecfc550e"
 ---
 
 # NO_CORS_HEADERS
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Misconfiguring CORS ([Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS))
 headers can introduce security risks, potentially exposing private and/or

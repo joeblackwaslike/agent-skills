@@ -17,8 +17,8 @@ related:
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "6c0e0ab0d720383b29d1b0605911140260f4cd24fd235771933b4166f1abd89b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0698cd2386de05e654600e95afe5293550deba6694273f4bae48927ecfa01c3c"
 ---
 
 # AI Gateway Regional Inference
@@ -40,9 +40,9 @@ running somewhere else.
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
 - [Regional inference now available on AI Gateway](https://vercel.com/changelog/regional-inference-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -519,8 +519,8 @@ network path your request takes to reach the provider.
 
 ## Confirming where a request ran
 
-Every response reports where AI Gateway actually ran inference, so you can verify
-residency instead of assuming it. The resolved region is in the gateway routing
+When you pin a region, every response reports where AI Gateway actually ran
+inference, so you can verify residency instead of assuming it. The resolved region is in the gateway routing
 metadata, on the provider attempt that served the request.
 
 With the AI SDK, read it from `providerMetadata.gateway`. On the OpenAI-compatible

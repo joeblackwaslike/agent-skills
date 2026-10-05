@@ -1,10 +1,14 @@
 ---
+title: Voyage AI
+description: Learn how to use the Voyage AI provider for embedding and reranking with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "5f4edca560ce6d68156f1a0f0bd4fa4799089f4fae7ceb1652a1fc240930ffe6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "175844abb66827b88b6d4cb9911a49929d439aa5bf49cebe8d32c46d16f87d09"
 ---
 
-# Voyage AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Voyage AI](https://www.voyageai.com/) provider contains embedding and reranking model support for the Voyage AI API.
 
@@ -12,7 +16,7 @@ The [Voyage AI](https://www.voyageai.com/) provider contains embedding and reran
 
 The Voyage AI provider is available in the `@ai-sdk/voyage` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/voyage" />
+**Packages:** `@ai-sdk/voyage`
 
 ## Provider Instance
 
@@ -35,21 +39,21 @@ const voyage = createVoyage({
 
 You can use the following optional settings to customize the Voyage AI provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.voyageai.com/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `VOYAGE_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -97,26 +101,28 @@ const { embedding } = await embed({
 
 The following provider options are available:
 
-- **inputType** _'query' | 'document' | null_
+- **inputType** *'query' | 'document' | null*
 
   Specifies the type of input passed to the model. Defaults to `null`.
+
   - `null`: The embedding model directly converts the inputs into numerical vectors.
   - `'query'`: Used for embeddings of search queries run against a vector DB to find relevant documents.
   - `'document'`: Used for embeddings stored in a vector database for search use-cases.
 
-- **truncation** _boolean_
+- **truncation** *boolean*
 
   Whether to truncate the input texts to fit within the model's context length. Defaults to `true`.
 
-- **outputDimension** _number_
+- **outputDimension** *number*
 
   The number of dimensions for the resulting output embeddings.
   Supported by models with flexible dimensions (e.g. `voyage-4-large`, `voyage-4`, `voyage-4-lite`, `voyage-4-nano`, `voyage-code-3.5`, `voyage-code-3`, `voyage-3-large`, `voyage-3.5`, `voyage-3.5-lite`).
   Supported values: 256, 512, 1024, 2048.
 
-- **outputDtype** _'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'_
+- **outputDtype** *'float' | 'int8' | 'uint8' | 'binary' | 'ubinary'*
 
   The data type for the output embeddings. Defaults to `'float'`.
+
   - `'float'`: 32-bit floating-point numbers.
   - `'int8'`, `'uint8'`: 8-bit integer types.
   - `'binary'`, `'ubinary'`: Bit-packed, quantized single-bit embedding values.
@@ -141,12 +147,10 @@ The following provider options are available:
 | `voyage-law-2`          | 1024               | 16,000         |
 | `voyage-code-2`         | 1536               | 16,000         |
 
-<Note>
-  The table above lists popular models. Please see the [Voyage AI
-  docs](https://docs.voyageai.com/docs/embeddings) for a full list of available
-  models. You can also pass any available provider model ID as a string if
-  needed.
-</Note>
+The table above lists popular models. Please see the [Voyage AI
+docs](https://docs.voyageai.com/docs/embeddings) for a full list of available
+models. You can also pass any available provider model ID as a string if
+needed.
 
 ## Reranking Models
 
@@ -200,11 +204,11 @@ const { ranking } = await rerank({
 
 The following provider options are available:
 
-- **returnDocuments** _boolean_
+- **returnDocuments** *boolean*
 
   Whether to return the documents in the response. Defaults to `false`.
 
-- **truncation** _boolean_
+- **truncation** *boolean*
 
   Whether to truncate the input texts to fit within the model's context length. Defaults to `true`.
 
@@ -219,53 +223,10 @@ The following provider options are available:
 | `rerank-1`        | 8,000          |
 | `rerank-lite-1`   | 4,000          |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

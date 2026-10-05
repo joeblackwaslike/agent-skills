@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "9fc9b7ded01b2927c1c2739f378520b1fc57f03ad27bc28cfe0cb07ca97bdc3a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1b407ceb36f0abfc155d0d2eb7d5eed9c07febf008ece38fd04364e89e26fee2"
 ---
 
 # Using Global Config with DevCycle
@@ -31,17 +31,19 @@ This guide will help you get started with using Vercel's DevCycle integration wi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
 - [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related)
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
-- [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
-- [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
+- [Project Configuration](https://vercel.com/docs/project-configuration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=related) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/devcycle-global-config.graph.md](/docs/global-config/global-config-integrations/devcycle-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fdevcycle-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: The DevCycle Global Config integration (Beta)
+> **Availability**: The DevCycle Global Config integration (Beta) is available on all plans
 
 DevCycle is a feature management platform designed for developers. DevCycle allows you to work with feature flags more naturally, where you write code, so you can deliver better features, faster.
 
@@ -55,22 +57,22 @@ Before using this integration, you should have:
    <CodeBlock>
      <Code tab="pnpm">
        ```bash
-       pnpm i vercel
+       pnpm i -g vercel@latest
        ```
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i vercel
+       yarn global add vercel@latest
        ```
      </Code>
      <Code tab="npm">
        ```bash
-       npm i vercel
+       npm i -g vercel@latest
        ```
      </Code>
      <Code tab="bun">
        ```bash
-       bun i vercel
+       bun add -g vercel@latest
        ```
      </Code>
    </CodeBlock>
@@ -79,22 +81,22 @@ Before using this integration, you should have:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm create next-app@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn create next-app@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npx create-next-app@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bunx create-next-app@latest
     ```
   </Code>
 </CodeBlock>
@@ -110,7 +112,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i @vercel/global-config
+       yarn add @vercel/global-config
        ```
      </Code>
      <Code tab="npm">
@@ -120,7 +122,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="bun">
        ```bash
-       bun i @vercel/global-config
+       bun add @vercel/global-config
        ```
      </Code>
    </CodeBlock>
@@ -142,7 +144,7 @@ Before using this integration, you should have:
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @devcycle/vercel-edge-config @vercel/global-config
+      yarn add @devcycle/vercel-edge-config @vercel/global-config
       ```
     </Code>
     <Code tab="npm">
@@ -152,7 +154,7 @@ Before using this integration, you should have:
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @devcycle/vercel-edge-config @vercel/global-config
+      bun add @devcycle/vercel-edge-config @vercel/global-config
       ```
     </Code>
   </CodeBlock>

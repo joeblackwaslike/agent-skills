@@ -12,13 +12,13 @@ related:
 summary: Requires that a workspace package is configured with required ESLint plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/eslint_rules_required.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "bc7c0400a544c92fadec739f8d0072500e5f93e06c0c0a650c07c9744be66450"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dd8df1382d4916046d583ab259cd13d6af75235d12d8ababba4419cd964511a0"
 ---
 
 # ESLINT_RULES_REQUIRED
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 This Conformance check requires that ESLint plugins are configured correctly
 in your application, including:

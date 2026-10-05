@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c7a4063dbada575329dcb34c63267ffe414028c725f292aad027d1fb3b9033f3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b4778f40e4fe12b3eaf5b8d3d4ac89d0da183664861b642528f2eb074fd5c192"
 ---
 
 # Vercel CDN overview
@@ -30,6 +30,7 @@ Vercel's CDN is a globally distributed network that caches content near your vis
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Caching details now available in Runtime Logs](https://vercel.com/changelog/caching-details-now-available-in-runtime-logs?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related)
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related)
@@ -38,7 +39,6 @@ Vercel's CDN is a globally distributed network that caches content near your vis
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Build with a Flask starter template](https://vercel.com/kb/guide/build-with-a-flask-starter-template?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel from a starter template. Compare the Flask Hello World starter, AI SDK, alt text generator,
-- [Build with a Hono starter template](https://vercel.com/kb/guide/build-with-a-hono-starter-template?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related) — Deploy a Hono app to Vercel from a starter template. Compare the Hono API starter, MCP server, AI SDK, Slack Bolt, Next.
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related)
 - [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related)
 - [Replacing Google Optimize with the Vercel Edge Network](https://vercel.com/blog/vercel-edge-google-optimize?from=related&source_path=%2Fdocs%2Fcdn&source_site=vercel-docs&relationship=related)
@@ -144,7 +144,7 @@ You can configure branded error pages for 5xx server errors so visitors see a co
 
 ## Pricing and usage
 
-CDN pricing covers [CDN requests](/docs/manage-cdn-usage#cdn-requests), data transfer to visitors, and [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer). Pricing can vary by the region where requests originate. CDN requests appear as **Edge Requests** in **Billing** and on the **Usage** page.
+CDN pricing covers [CDN requests](/docs/manage-cdn-usage#cdn-requests), data transfer to visitors, and [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer). Pricing can vary by the region where requests originate.
 
 For resource definitions, rates, usage dashboards, and ways to manage or stop charges, see [CDN pricing and usage](/docs/manage-cdn-usage).
 

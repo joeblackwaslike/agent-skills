@@ -16,8 +16,8 @@ related:
 summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8c5da822bc523442625b4b0b808c0798904a704a0e9898caead05f62f2ed6ce1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bebe38639990274ecbc4ea9454813e69a310589f97bfdcfa8a787f2c9400b0fa"
 ---
 
 # Streaming
@@ -35,13 +35,13 @@ AI providers can be slow when producing responses, but many make their responses
 - [Streaming is now supported in Vercel Functions for the Python runtime](https://vercel.com/changelog/streaming-is-now-supported-in-vercel-functions-for-the-python-runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
 - [Streaming now enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/streaming-now-enabled-by-default-for-all-node-js-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
 - [Streaming to be enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/vercel-functions-to-enable-streaming-by-default?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
 - [Building a GPT-3 app with Next.js and streaming (historical)](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
 - [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [How streaming helps build faster web applications](https://vercel.com/blog/how-streaming-helps-build-faster-web-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/functions/streaming-functions.graph.md](/docs/functions/streaming-functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -66,7 +66,7 @@ The following example shows how to send a message to one of OpenAI's models and 
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i ai
+       yarn add ai
        ```
      </Code>
      <Code tab="npm">
@@ -76,7 +76,7 @@ The following example shows how to send a message to one of OpenAI's models and 
      </Code>
      <Code tab="bun">
        ```bash
-       bun i ai
+       bun add ai
        ```
      </Code>
    </CodeBlock>

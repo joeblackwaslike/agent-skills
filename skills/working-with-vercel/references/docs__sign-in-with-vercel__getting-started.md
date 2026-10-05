@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ce4f5b093fa5cb55d1f06d1de7bbbc627d61f3f6eea21918d343d5903cb90c8e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "043169810fe4c85fd7cb13ad0bdedd46650c3c279628efc96850348c549d9c98"
 ---
 
 # Getting started with Sign in with Vercel
@@ -34,12 +34,13 @@ This guide uses Next.js App Router. You'll create a Sign in with Vercel button t
 - [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
-- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
+- [How to implement authentication in Next.js](https://nextjs.org/docs/app/guides/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Next.js application.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.graph.md](/docs/sign-in-with-vercel/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -403,6 +404,7 @@ Add Sign in with Vercel to this Next.js App Router project. First, make sure the
     }
 
     cookieStore.set('access_token', '', { maxAge: 0 });
+    cookieStore.set('refresh_token', '', { maxAge: 0 });
 
     return Response.json({}, { status: response.status });
   }
@@ -442,12 +444,12 @@ Add Sign in with Vercel to this Next.js App Router project. First, make sure the
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm run dev
+      pnpm dev
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn run dev
+      yarn dev
       ```
     </Code>
     <Code tab="npm">
@@ -457,7 +459,7 @@ Add Sign in with Vercel to this Next.js App Router project. First, make sure the
     </Code>
     <Code tab="bun">
       ```bash
-      bun run dev
+      bun dev
       ```
     </Code>
   </CodeBlock>
@@ -514,7 +516,17 @@ Add Sign in with Vercel to this Next.js App Router project. First, make sure the
 
       return Response.json({
         message: 'Token is valid!',
-        tokenInfo: introspectionData,
+        tokenInfo: {
+          active: introspectionData.active,
+          clientId: introspectionData.client_id,
+          tokenType: introspectionData.token_type,
+          subject: introspectionData.sub,
+          issuer: introspectionData.iss,
+          tokenId: introspectionData.jti,
+          sessionId: introspectionData.session_id,
+          issuedAt: introspectionData.iat,
+          expiresAt: introspectionData.exp,
+        },
       });
     } catch (error) {
       console.error('Token validation error:', error);

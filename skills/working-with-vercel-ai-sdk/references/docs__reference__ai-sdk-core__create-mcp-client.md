@@ -1,10 +1,14 @@
 ---
+title: createMCPClient
+description: Create a client for connecting to MCP servers
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "7e8a1074e48e192f2dc1145169f4d84b764798bb2b245b69fbdbff30ed0a9d63"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "97dab1b7b941852f03dd829f01d1f6784db83eba05ee6ec1175608ae69dfde00"
 ---
 
-# `createMCPClient()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Creates a lightweight Model Context Protocol (MCP) client that connects to an MCP server. The client provides:
 
@@ -14,589 +18,137 @@ Creates a lightweight Model Context Protocol (MCP) client that connects to an MC
 - **Completions**: Methods to request autocompletion suggestions for prompt arguments and resource template variables
 - **Elicitation**: Support for handling server requests for additional input during tool execution
 
-It currently does not support accepting notifications from an MCP server, and custom configuration of the client.
+It currently does not support accepting notifications from an MCP server.
 
 ## Import
 
-<Snippet
-  text={`import { createMCPClient } from "@ai-sdk/mcp"`}
-  prompt={false}
-/>
+```
+import { createMCPClient } from "@ai-sdk/mcp"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'config',
-      type: 'MCPClientConfig',
-      description: 'Configuration for the MCP client.',
-      properties: [
-        {
-          type: 'MCPClientConfig',
-          parameters: [
-            {
-              name: 'transport',
-              type: 'MCPTransportConfig | MCPTransport',
-              description: 'Configuration for the message transport layer.',
-              properties: [
-                {
-                  type: 'MCPTransport',
-                  description:
-                    'A client transport instance, used explicitly for stdio or custom transports',
-                  parameters: [
-                    {
-                      name: 'start',
-                      type: '() => Promise<void>',
-                      description: 'A method that starts the transport',
-                    },
-                    {
-                      name: 'send',
-                      type: '(message: JSONRPCMessage) => Promise<void>',
-                      description:
-                        'A method that sends a message through the transport',
-                    },
-                    {
-                      name: 'close',
-                      type: '() => Promise<void>',
-                      description: 'A method that closes the transport',
-                    },
-                    {
-                      name: 'onclose',
-                      type: '() => void',
-                      description:
-                        'A method that is called when the transport is closed',
-                    },
-                    {
-                      name: 'onerror',
-                      type: '(error: Error) => void',
-                      description:
-                        'A method that is called when the transport encounters an error',
-                    },
-                    {
-                      name: 'onmessage',
-                      type: '(message: JSONRPCMessage) => void',
-                      description:
-                        'A method that is called when the transport receives a message',
-                    },
-                  ],
-                },
-                {
-                  type: 'MCPTransportConfig',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'sse' | 'http'",
-                      description: 'Use Server-Sent Events for communication',
-                    },
-                    {
-                      name: 'url',
-                      type: 'string',
-                      description: 'URL of the MCP server',
-                    },
-                    {
-                      name: 'headers',
-                      type: 'Record<string, string>',
-                      isOptional: true,
-                      description:
-                        'Additional HTTP headers to be sent with requests.',
-                    },
-                    {
-                      name: 'authProvider',
-                      type: 'OAuthClientProvider',
-                      isOptional: true,
-                      description:
-                        'Optional OAuth provider for authorization to access protected remote MCP servers. Implement `validateAuthorizationServerURL` on the provider to allowlist discovered OAuth authorization server URLs before metadata is fetched.',
-                    },
-                    {
-                      name: 'redirect',
-                      type: "'follow' | 'error'",
-                      isOptional: true,
-                      description:
-                        "Controls how HTTP redirects are handled for transport requests. Set to 'follow' to allow redirect responses. Defaults to 'error' to reject any redirect response, preventing servers from redirecting requests to unintended hosts.",
-                    },
-                    {
-                      name: 'initialSessionId',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Initial legacy MCP session id to send with resumed Streamable HTTP requests after initialization. Pair with initialInitializeResult when using createMCPClient. Only used by the HTTP transport and initialization-based protocol versions.',
-                    },
-                    {
-                      name: 'initialProtocolVersion',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'Initial legacy MCP protocol version to send before initialize negotiates one. Only used by the HTTP transport.',
-                    },
-                    {
-                      name: 'onSessionIdChange',
-                      type: '(sessionId: string | undefined) => void',
-                      isOptional: true,
-                      description:
-                        'Callback invoked when the Streamable HTTP server creates, changes, or clears the MCP session id. Only used by the HTTP transport.',
-                    },
-                    {
-                      name: 'onSessionExpired',
-                      type: '(sessionId: string) => void',
-                      isOptional: true,
-                      description:
-                        'Callback invoked when a Streamable HTTP request returns 404 for an existing MCP session id. The transport clears the session id before reporting the underlying HTTP error. Only used by the HTTP transport.',
-                    },
-                    {
-                      name: 'terminateSessionOnClose',
-                      type: 'boolean',
-                      isOptional: true,
-                      description:
-                        'Whether close() should send DELETE for the current MCP session id. Set to false when the application intends to reattach to the session later. Defaults to true. Only used by the HTTP transport.',
-                    },
-                    {
-                      name: 'fetch',
-                      type: 'FetchFunction',
-                      isOptional: true,
-                      description:
-                        'Optional custom fetch implementation to use for HTTP requests. Useful for runtimes that need a request-local fetch.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'initializationOptions',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional signal and timeout settings that bound transport startup and protocol negotiation. A timeout or abort closes the transport and rejects createMCPClient.',
-            },
-            {
-              name: 'clientName',
-              type: 'string',
-              isOptional: true,
-              description: 'Client name. Defaults to "ai-sdk-mcp-client".',
-            },
-            {
-              name: 'name',
-              type: 'string',
-              isOptional: true,
-              description:
-                'Deprecated. Use `clientName` instead. Defaults to "ai-sdk-mcp-client".',
-            },
-            {
-              name: 'version',
-              type: 'string',
-              isOptional: true,
-              description: 'Client version. Defaults to "1.0.0"',
-            },
-            {
-              name: 'onUncaughtError',
-              type: '(error: unknown) => void',
-              isOptional: true,
-              description: 'Handler for uncaught errors',
-            },
-            {
-              name: 'maxRetries',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Maximum number of retries for transient MCP tool call failures. Set to 0 to disable retries. Defaults to 0. Retries are opt-in and apply to tools/call requests.',
-            },
-            {
-              name: 'initialInitializeResult',
-              type: 'InitializeResult',
-              isOptional: true,
-              description:
-                'Initialize result from a previous legacy MCP session. When provided, the client starts the transport and reuses this metadata without sending a new initialize request.',
-            },
-            {
-              name: 'capabilities',
-              type: 'ClientCapabilities',
-              isOptional: true,
-              description:
-                'Optional client capabilities to advertise during legacy initialization or on each stateless modern request. For example, set { elicitation: {} } to enable handling elicitation requests from the server.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `config` (`MCPClientConfig`): Configuration for the MCP client.
+  - `MCPClientConfig`
+    - `transport` (`MCPTransportConfig | MCPTransport`): Configuration for the message transport layer.
+      - `MCPTransport`
+        - `start` (`() => Promise<void>`): A method that starts the transport
+        - `send` (`(message: JSONRPCMessage) => Promise<void>`): A method that sends a message through the transport
+        - `close` (`() => Promise<void>`): A method that closes the transport
+        - `onclose` (`() => void`): A method that is called when the transport is closed
+        - `onerror` (`(error: Error) => void`): A method that is called when the transport encounters an error
+        - `onmessage` (`(message: JSONRPCMessage) => void`): A method that is called when the transport receives a message
+      - `MCPTransportConfig`
+        - `type` (`'sse' | 'http'`): Use Server-Sent Events for communication
+        - `url` (`string`): URL of the MCP server
+        - `headers?` (`Record<string, string>`): Additional HTTP headers to be sent with requests.
+        - `authProvider?` (`OAuthClientProvider`): Optional OAuth provider for authorization to access protected remote MCP servers. Implement \`validateAuthorizationServerURL\` on the provider to allowlist discovered OAuth authorization server URLs before metadata is fetched.
+        - `redirect?` (`'follow' | 'error'`): Controls how HTTP redirects are handled for transport requests. Set to 'follow' to allow redirect responses. Defaults to 'error' to reject any redirect response, preventing servers from redirecting requests to unintended hosts.
+        - `initialSessionId?` (`string`): Initial legacy MCP session id to send with resumed Streamable HTTP requests after initialization. Pair with initialInitializeResult when using createMCPClient. Only used by the HTTP transport and initialization-based protocol versions.
+        - `initialProtocolVersion?` (`string`): Initial legacy MCP protocol version to send before initialize negotiates one. Only used by the HTTP transport.
+        - `onSessionIdChange?` (`(sessionId: string | undefined) => void`): Callback invoked when the Streamable HTTP server creates, changes, or clears the MCP session id. Only used by the HTTP transport.
+        - `onSessionExpired?` (`(sessionId: string) => void`): Callback invoked when a Streamable HTTP request returns 404 for an existing MCP session id. The transport clears the session id before reporting the underlying HTTP error. Only used by the HTTP transport.
+        - `terminateSessionOnClose?` (`boolean`): Whether close() should send DELETE for the current MCP session id. Set to false when the application intends to reattach to the session later. Defaults to true. Only used by the HTTP transport.
+        - `fetch?` (`FetchFunction`): Optional custom fetch implementation to use for HTTP requests. Useful for runtimes that need a request-local fetch.
+    - `initializationOptions?` (`RequestOptions`): Optional signal and timeout settings that bound transport startup and protocol negotiation. A timeout or abort closes the transport and rejects createMCPClient.
+    - `clientName?` (`string`): Client name. Defaults to "ai-sdk-mcp-client".
+    - `name?` (`string`): Deprecated. Use \`clientName\` instead. Defaults to "ai-sdk-mcp-client".
+    - `version?` (`string`): Client version. Defaults to "1.0.0"
+    - `onUncaughtError?` (`(error: unknown) => void`): Handler for uncaught errors
+    - `maxRetries?` (`number`): Maximum number of retries for transient MCP tool call failures. Set to 0 to disable retries. Defaults to 0. Retries are opt-in and apply to tools/call requests.
+    - `initialInitializeResult?` (`InitializeResult`): Initialize result from a previous legacy MCP session. When provided, the client starts the transport and reuses this metadata without sending a new initialize request.
+    - `capabilities?` (`ClientCapabilities`): Optional client capabilities to advertise during legacy initialization or on each stateless modern request. For example, set \{ elicitation: \{} } to enable handling elicitation requests from the server.
 
 ### Returns
 
 Returns a Promise that resolves to an `MCPClient` with the following properties and methods:
 
-<PropertiesTable
-  content={[
-    {
-      name: 'initializeResult',
-      type: 'InitializeResult',
-      description:
-        'Connection metadata used by this client. For legacy servers this is the initialize result; for modern servers an equivalent value is derived from protocol discovery.',
-    },
-    {
-      name: 'serverInfo',
-      type: 'Configuration',
-      description:
-        'Information about the connected MCP server (name, version, optional title), as reported during initialization or protocol discovery.',
-    },
-    {
-      name: 'instructions',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional instructions provided by the server during the initialize handshake. Describes how to use the server and its features. Useful for inclusion in the LLM system prompt.',
-    },
-    {
-      name: 'tools',
-      type: `async (options?: {
-        schemas?: TOOL_SCHEMAS
-      }) => Promise<McpToolSet<TOOL_SCHEMAS>>`,
-      description: 'Gets the tools available from the MCP server.',
-      properties: [
-        {
-          type: 'options',
-          parameters: [
-            {
-              name: 'schemas',
-              type: 'TOOL_SCHEMAS',
-              isOptional: true,
-              description:
-                'Schema definitions for compile-time type checking. When not provided, schemas are inferred from the server. Each tool schema can include inputSchema for typed inputs, and optionally outputSchema for typed outputs when the server returns structuredContent.',
-            },
-          ],
-        },
-        {
-          type: 'TOOL_SCHEMAS',
-          parameters: [
-            {
-              name: 'inputSchema',
-              type: 'FlexibleSchema',
-              description:
-                'Zod schema or JSON schema defining the expected input parameters for the tool.',
-            },
-            {
-              name: 'outputSchema',
-              type: 'FlexibleSchema',
-              isOptional: true,
-              description:
-                'Zod schema or JSON schema defining the expected output structure. When provided, the client extracts and validates structuredContent from tool results, giving you typed outputs.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'listTools',
-      type: `async (options?: {
-        params?: PaginatedRequest['params'];
-        options?: RequestOptions;
-      }) => Promise<ListToolsResult>`,
-      description:
-        'Lists available tool definitions from the MCP server without converting them to AI SDK tools.',
-      properties: [
-        {
-          type: 'options',
-          parameters: [
-            {
-              name: 'params',
-              type: "PaginatedRequest['params']",
-              isOptional: true,
-              description: 'Optional pagination parameters including cursor.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'callTool',
-      type: `async (args: {
-        name: string;
-        arguments?: Record<string, unknown>;
-        options?: RequestOptions;
-      }) => Promise<CallToolResult>`,
-      description:
-        'Calls a tool on the MCP server. This is useful for host-mediated calls, such as MCP Apps iframe requests.',
-      properties: [
-        {
-          type: 'args',
-          parameters: [
-            {
-              name: 'name',
-              type: 'string',
-              description: 'The name of the MCP tool to call.',
-            },
-            {
-              name: 'arguments',
-              type: 'Record<string, unknown>',
-              isOptional: true,
-              description: 'Arguments to pass to the MCP tool.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'toolsFromDefinitions',
-      type: `(definitions: ListToolsResult, options?: {
-        schemas?: TOOL_SCHEMAS
-      }) => McpToolSet<TOOL_SCHEMAS>`,
-      description:
-        'Converts existing MCP tool definitions into AI SDK tools without listing tools again.',
-      properties: [
-        {
-          type: 'parameters',
-          parameters: [
-            {
-              name: 'definitions',
-              type: 'ListToolsResult',
-              description:
-                'Tool definitions, typically returned by `listTools`.',
-            },
-            {
-              name: 'schemas',
-              type: 'TOOL_SCHEMAS',
-              isOptional: true,
-              description:
-                'Optional schema definitions for compile-time type checking and typed outputs.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'listResources',
-      type: `async (options?: {
-        params?: PaginatedRequest['params'];
-        options?: RequestOptions;
-      }) => Promise<ListResourcesResult>`,
-      description: 'Lists all available resources from the MCP server.',
-      properties: [
-        {
-          type: 'options',
-          parameters: [
-            {
-              name: 'params',
-              type: "PaginatedRequest['params']",
-              isOptional: true,
-              description: 'Optional pagination parameters including cursor.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'readResource',
-      type: `async (args: {
-        uri: string;
-        options?: RequestOptions;
-      }) => Promise<ReadResourceResult>`,
-      description: 'Reads the contents of a specific resource by URI.',
-      properties: [
-        {
-          type: 'args',
-          parameters: [
-            {
-              name: 'uri',
-              type: 'string',
-              description: 'The URI of the resource to read.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'listResourceTemplates',
-      type: `async (options?: {
-        options?: RequestOptions;
-      }) => Promise<ListResourceTemplatesResult>`,
-      description:
-        'Lists all available resource templates from the MCP server.',
-      properties: [
-        {
-          type: 'options',
-          parameters: [
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'complete',
-      type: `async (args: CompleteRequestParams & {
-        options?: RequestOptions;
-      }) => Promise<CompleteResult>`,
-      description:
-        'Requests autocompletion suggestions for a prompt argument or resource template variable. The server must advertise the completions capability.',
-      properties: [
-        {
-          type: 'args',
-          parameters: [
-            {
-              name: 'ref',
-              type: "{ type: 'ref/prompt'; name: string } | { type: 'ref/resource'; uri: string }",
-              description:
-                'Reference to the prompt or resource template being completed.',
-            },
-            {
-              name: 'argument',
-              type: '{ name: string; value: string }',
-              description:
-                'Argument name and current partial value to complete.',
-            },
-            {
-              name: 'context',
-              type: '{ arguments: Record<string, string> }',
-              isOptional: true,
-              description:
-                'Previously resolved argument values used to provide context for multi-argument prompts or resource templates.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'experimental_listPrompts',
-      type: `async (options?: {
-        params?: PaginatedRequest['params'];
-        options?: RequestOptions;
-      }) => Promise<ListPromptsResult>`,
-      description:
-        'Lists available prompts from the MCP server. This method is experimental and may change in the future.',
-      properties: [
-        {
-          type: 'options',
-          parameters: [
-            {
-              name: 'params',
-              type: "PaginatedRequest['params']",
-              isOptional: true,
-              description: 'Optional pagination parameters including cursor.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'experimental_getPrompt',
-      type: `async (args: {
-        name: string;
-        arguments?: Record<string, unknown>;
-        options?: RequestOptions;
-      }) => Promise<GetPromptResult>`,
-      description:
-        'Retrieves a prompt by name, optionally passing arguments. This method is experimental and may change in the future.',
-      properties: [
-        {
-          type: 'args',
-          parameters: [
-            {
-              name: 'name',
-              type: 'string',
-              description: 'Prompt name to retrieve.',
-            },
-            {
-              name: 'arguments',
-              type: 'Record<string, unknown>',
-              isOptional: true,
-              description: 'Optional arguments to fill into the prompt.',
-            },
-            {
-              name: 'options',
-              type: 'RequestOptions',
-              isOptional: true,
-              description:
-                'Optional request options including signal and timeout.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onElicitationRequest',
-      type: `(
-        schema: typeof ElicitationRequestSchema,
-        handler: (request: ElicitationRequest) => Promise<ElicitResult> | ElicitResult
-      ) => void`,
-      description:
-        'Registers a handler for elicitation requests from the MCP server. The handler receives requests when the server needs additional input during tool execution.',
-      properties: [
-        {
-          type: 'parameters',
-          parameters: [
-            {
-              name: 'schema',
-              type: 'typeof ElicitationRequestSchema',
-              description:
-                'The schema to validate requests against. Must be ElicitationRequestSchema.',
-            },
-            {
-              name: 'handler',
-              type: '(request: ElicitationRequest) => Promise<ElicitResult> | ElicitResult',
-              description:
-                'A function that handles the elicitation request. The request contains a message and requestedSchema. The handler must return an object with an action ("accept", "decline", or "cancel") and optionally content when accepting.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'close',
-      type: '() => Promise<void>',
-      description:
-        'Closes the connection to the MCP server and cleans up resources.',
-    },
-  ]}
-/>
+- `initializeResult` (`InitializeResult`): Connection metadata used by this client. For legacy servers this is the initialize result; for modern servers an equivalent value is derived from protocol discovery.
+- `serverInfo` (`Configuration`): Information about the connected MCP server (name, version, optional title), as reported during initialization or protocol discovery.
+- `instructions?` (`string`): Optional instructions provided by the server during the initialize handshake. Describes how to use the server and its features. Useful for inclusion in the LLM system prompt.
+- `tools` (`async (options?: {
+      schemas?: TOOL_SCHEMAS
+    }) => Promise<McpToolSet<TOOL_SCHEMAS>>`): Gets the tools available from the MCP server.
+  - `options`
+    - `schemas?` (`TOOL_SCHEMAS`): Schema definitions for compile-time type checking. When not provided, schemas are inferred from the server. Each tool schema can include inputSchema for typed inputs, and optionally outputSchema for typed outputs when the server returns structuredContent.
+  - `TOOL_SCHEMAS`
+    - `inputSchema` (`FlexibleSchema`): Zod schema or JSON schema defining the expected input parameters for the tool.
+    - `outputSchema?` (`FlexibleSchema`): Zod schema or JSON schema defining the expected output structure. When provided, the client extracts and validates structuredContent from tool results, giving you typed outputs.
+- `listTools` (`async (options?: {
+      params?: PaginatedRequest['params'];
+      options?: RequestOptions;
+    }) => Promise<ListToolsResult>`): Lists available tool definitions from the MCP server without converting them to AI SDK tools.
+  - `options`
+    - `params?` (`PaginatedRequest['params']`): Optional pagination parameters including cursor.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `callTool` (`async (args: {
+      name: string;
+      arguments?: Record<string, unknown>;
+      options?: RequestOptions;
+    }) => Promise<CallToolResult>`): Calls a tool on the MCP server. This is useful for host-mediated calls, such as MCP Apps iframe requests.
+  - `args`
+    - `name` (`string`): The name of the MCP tool to call.
+    - `arguments?` (`Record<string, unknown>`): Arguments to pass to the MCP tool.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `toolsFromDefinitions` (`(definitions: ListToolsResult, options?: {
+      schemas?: TOOL_SCHEMAS
+    }) => McpToolSet<TOOL_SCHEMAS>`): Converts existing MCP tool definitions into AI SDK tools without listing tools again.
+  - `parameters`
+    - `definitions` (`ListToolsResult`): Tool definitions, typically returned by \`listTools\`.
+    - `schemas?` (`TOOL_SCHEMAS`): Optional schema definitions for compile-time type checking and typed outputs.
+- `listResources` (`async (options?: {
+      params?: PaginatedRequest['params'];
+      options?: RequestOptions;
+    }) => Promise<ListResourcesResult>`): Lists all available resources from the MCP server.
+  - `options`
+    - `params?` (`PaginatedRequest['params']`): Optional pagination parameters including cursor.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `readResource` (`async (args: {
+      uri: string;
+      options?: RequestOptions;
+    }) => Promise<ReadResourceResult>`): Reads the contents of a specific resource by URI.
+  - `args`
+    - `uri` (`string`): The URI of the resource to read.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `listResourceTemplates` (`async (options?: {
+      options?: RequestOptions;
+    }) => Promise<ListResourceTemplatesResult>`): Lists all available resource templates from the MCP server.
+  - `options`
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `complete` (`async (args: CompleteRequestParams & {
+      options?: RequestOptions;
+    }) => Promise<CompleteResult>`): Requests autocompletion suggestions for a prompt argument or resource template variable. The server must advertise the completions capability.
+  - `args`
+    - `ref` (`{ type: 'ref/prompt'; name: string } | { type: 'ref/resource'; uri: string }`): Reference to the prompt or resource template being completed.
+    - `argument` (`{ name: string; value: string }`): Argument name and current partial value to complete.
+    - `context?` (`{ arguments: Record<string, string> }`): Previously resolved argument values used to provide context for multi-argument prompts or resource templates.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `experimental_listPrompts` (`async (options?: {
+      params?: PaginatedRequest['params'];
+      options?: RequestOptions;
+    }) => Promise<ListPromptsResult>`): Lists available prompts from the MCP server. This method is experimental and may change in the future.
+  - `options`
+    - `params?` (`PaginatedRequest['params']`): Optional pagination parameters including cursor.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `experimental_getPrompt` (`async (args: {
+      name: string;
+      arguments?: Record<string, unknown>;
+      options?: RequestOptions;
+    }) => Promise<GetPromptResult>`): Retrieves a prompt by name, optionally passing arguments. This method is experimental and may change in the future.
+  - `args`
+    - `name` (`string`): Prompt name to retrieve.
+    - `arguments?` (`Record<string, unknown>`): Optional arguments to fill into the prompt.
+    - `options?` (`RequestOptions`): Optional request options including signal and timeout.
+- `onElicitationRequest` (`(
+      schema: typeof ElicitationRequestSchema,
+      handler: (request: ElicitationRequest) => Promise<ElicitResult> | ElicitResult
+    ) => void`): Registers a handler for elicitation requests from the MCP server. The handler receives requests when the server needs additional input during tool execution.
+  - `parameters`
+    - `schema` (`typeof ElicitationRequestSchema`): The schema to validate requests against. Must be ElicitationRequestSchema.
+    - `handler` (`(request: ElicitationRequest) => Promise<ElicitResult> | ElicitResult`): A function that handles the elicitation request. The request contains a message and requestedSchema. The handler must return an object with an action ("accept", "decline", or "cancel") and optionally content when accepting.
+- `close` (`() => Promise<void>`): Closes the connection to the MCP server and cleans up resources.
 
 ## Example
 
@@ -617,7 +169,7 @@ try {
   const tools = await client.tools();
 
   const response = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     tools,
     messages: [{ role: 'user', content: 'Query the data' }],
   });
@@ -642,74 +194,55 @@ The client throws `MCPClientError` for:
 - Missing server capabilities
 - Connection failures
 
+Import `MCPClientError` from `@ai-sdk/mcp` and use its `isInstance` method to
+safely narrow unknown errors:
+
+```typescript
+import { createMCPClient, MCPClientError } from '@ai-sdk/mcp';
+
+try {
+  await createMCPClient({
+    transport: {
+      type: 'http',
+      url: 'https://your-server.com/mcp',
+    },
+  });
+} catch (error) {
+  if (MCPClientError.isInstance(error)) {
+    if (error.statusCode === 401 || error.statusCode === 403) {
+      // Authentication or authorization must be fixed before retrying.
+      throw error;
+    }
+
+    // Inspect error.code and error.statusCode according to your application's policy.
+  }
+
+  throw error;
+}
+```
+
+The error exposes the optional `code`, `statusCode`, `url`, and `responseBody`
+properties. `code` is the JSON-RPC application error code. `statusCode`, `url`,
+and `responseBody` contain HTTP transport context when it is available. They
+are `undefined` for failures without an HTTP response, such as network errors,
+timeouts, aborted requests, and stdio transport failures.
+
+`MCPClientError` also represents configuration and protocol errors, so its
+type or a missing `statusCode` alone does not indicate a retryable failure.
+OAuth failures can instead throw the separately exported `UnauthorizedError`
+or `MCPClientOAuthError`.
+
+Avoid logging `url` or `responseBody` without redacting sensitive endpoint,
+query parameter, or server response data.
+
 For tool execution, errors are propagated as `CallToolError` errors.
 
 For unknown errors, the client exposes an `onUncaughtError` callback that can be used to manually log or handle errors that are not covered by known error types.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

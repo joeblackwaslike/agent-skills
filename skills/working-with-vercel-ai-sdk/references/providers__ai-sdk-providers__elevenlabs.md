@@ -1,10 +1,14 @@
 ---
+title: ElevenLabs
+description: Learn how to use the ElevenLabs provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "faeed280c49b3a7eb2327d3616a9e354cdcf10d8ef5709a838e5c8b281cd2c29"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9021d5819da9cb605cb6a31d5926953ef3498de240b3a15c36786a1d6d098426"
 ---
 
-# ElevenLabs Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [ElevenLabs](https://elevenlabs.io/) provider contains language model support for the ElevenLabs transcription and speech generation APIs.
 
@@ -12,7 +16,7 @@ The [ElevenLabs](https://elevenlabs.io/) provider contains language model suppor
 
 The ElevenLabs provider is available in the `@ai-sdk/elevenlabs` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/elevenlabs" />
+**Packages:** `@ai-sdk/elevenlabs`
 
 ## Provider Instance
 
@@ -35,23 +39,23 @@ const elevenLabs = createElevenLabs({
 
 You can use the following optional settings to customize the ElevenLabs provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `xi-api-key` header.
   It defaults to the `ELEVENLABS_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **webSocket** _WebSocketConstructor_
+- **webSocket** *WebSocketConstructor*
 
   Custom WebSocket implementation for realtime transcription. A
   header-capable implementation is required in runtimes whose native WebSocket
@@ -71,7 +75,7 @@ const model = elevenLabs.speech('eleven_multilingual_v2');
 The `voice` argument can be set to a voice ID from the [ElevenLabs Voice Library](https://elevenlabs.io/app/voice-library).
 You can find voice IDs by selecting a voice in the library and copying its ID.
 
-```ts highlight="6"
+```ts {6}
 import { generateSpeech } from 'ai';
 import { elevenLabs } from '@ai-sdk/elevenlabs';
 
@@ -84,7 +88,7 @@ const result = await generateSpeech({
 
 You can also pass additional provider-specific options using the `providerOptions` argument:
 
-```ts highlight="7-9"
+```ts {7-9}
 import { generateSpeech } from 'ai';
 import {
   elevenLabs,
@@ -106,69 +110,69 @@ const result = await generateSpeech({
 });
 ```
 
-- **languageCode** _string or null_  
+- **languageCode** *string or null*\
   Optional. Language code (ISO 639-1) used to enforce a language for the model. Currently, only Turbo v2.5 and Flash v2.5 support language enforcement. For other models, providing a language code will result in an error.
 
-- **voiceSettings** _object or null_  
+- **voiceSettings** *object or null*\
   Optional. Voice settings that override stored settings for the given voice. These are applied only to the current request.
-  - **stability** _double or null_  
+  - **stability** *double or null*\
     Optional. Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range; higher values result in a more monotonous voice.
-  - **useSpeakerBoost** _boolean or null_  
+  - **useSpeakerBoost** *boolean or null*\
     Optional. Boosts similarity to the original speaker. Increases computational load and latency.
-  - **similarityBoost** _double or null_  
+  - **similarityBoost** *double or null*\
     Optional. Controls how closely the AI should adhere to the original voice.
-  - **style** _double or null_  
+  - **style** *double or null*\
     Optional. Amplifies the style of the original speaker. May increase latency if set above 0.
 
-- **pronunciationDictionaryLocators** _array of objects or null_  
-  Optional. A list of pronunciation dictionary locators to apply to the text, in order. Up to 3 locators per request.  
+- **pronunciationDictionaryLocators** *array of objects or null*\
+  Optional. A list of pronunciation dictionary locators to apply to the text, in order. Up to 3 locators per request.\
   Each locator object:
-  - **pronunciationDictionaryId** _string_ (required)  
+  - **pronunciationDictionaryId** *string* (required)\
     The ID of the pronunciation dictionary.
-  - **versionId** _string or null_ (optional)  
+  - **versionId** *string or null* (optional)\
     The version ID of the dictionary. If not provided, the latest version is used.
 
-- **seed** _integer or null_  
+- **seed** *integer or null*\
   Optional. If specified, the system will attempt to sample deterministically. Must be between 0 and 4294967295. Determinism is not guaranteed.
 
-- **previousText** _string or null_  
+- **previousText** *string or null*\
   Optional. The text that came before the current request's text. Can improve continuity when concatenating generations or influence current generation continuity.
 
-- **nextText** _string or null_  
+- **nextText** *string or null*\
   Optional. The text that comes after the current request's text. Can improve continuity when concatenating generations or influence current generation continuity.
 
-- **previousRequestIds** _array of strings or null_  
+- **previousRequestIds** *array of strings or null*\
   Optional. List of request IDs for samples generated before this one. Improves continuity when splitting large tasks. Max 3 IDs. If both `previousText` and `previousRequestIds` are sent, `previousText` is ignored.
 
-- **nextRequestIds** _array of strings or null_  
+- **nextRequestIds** *array of strings or null*\
   Optional. List of request IDs for samples generated after this one. Useful for maintaining continuity when regenerating a sample. Max 3 IDs. If both `nextText` and `nextRequestIds` are sent, `nextText` is ignored.
 
-- **applyTextNormalization** _enum_  
-  Optional. Controls text normalization.  
+- **applyTextNormalization** *enum*\
+  Optional. Controls text normalization.\
   Allowed values: `'auto'` (default), `'on'`, `'off'`.
   - `'auto'`: System decides whether to apply normalization (e.g., spelling out numbers).
   - `'on'`: Always apply normalization.
-  - `'off'`: Never apply normalization.  
+  - `'off'`: Never apply normalization.\
     For `eleven_turbo_v2_5` and `eleven_flash_v2_5`, can only be enabled with Enterprise plans.
 
-- **applyLanguageTextNormalization** _boolean_  
+- **applyLanguageTextNormalization** *boolean*\
   Optional. Defaults to `false`. Controls language text normalization, which helps with proper pronunciation in some supported languages (currently only Japanese). May significantly increase latency.
 
-- **enableLogging** _boolean_  
+- **enableLogging** *boolean*\
   Optional. Whether to enable request logging for this API call. Defaults to the account-level setting.
 
 ### Model Capabilities
 
 | Model                    | Instructions |
 | ------------------------ | ------------ |
-| `eleven_v3`              | <Check />    |
-| `eleven_multilingual_v2` | <Check />    |
-| `eleven_flash_v2_5`      | <Check />    |
-| `eleven_flash_v2`        | <Check />    |
-| `eleven_turbo_v2_5`      | <Check />    |
-| `eleven_turbo_v2`        | <Check />    |
-| `eleven_monolingual_v1`  | <Check />    |
-| `eleven_multilingual_v1` | <Check />    |
+| `eleven_v3`              | ✓            |
+| `eleven_multilingual_v2` | ✓            |
+| `eleven_flash_v2_5`      | ✓            |
+| `eleven_flash_v2`        | ✓            |
+| `eleven_turbo_v2_5`      | ✓            |
+| `eleven_turbo_v2`        | ✓            |
+| `eleven_monolingual_v1`  | ✓            |
+| `eleven_multilingual_v1` | ✓            |
 
 ## Transcription Models
 
@@ -183,7 +187,7 @@ const model = elevenLabs.transcription('scribe_v2');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format can sometimes improve transcription performance if known beforehand.
 
-```ts highlight="10-14"
+```ts {10-14}
 import { transcribe } from 'ai';
 import {
   elevenLabs,
@@ -203,36 +207,36 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **languageCode** _string_
+- **languageCode** *string*
 
   An ISO-639-1 or ISO-639-3 language code corresponding to the language of the audio file.
   Can sometimes improve transcription performance if known beforehand.
   Defaults to `null`, in which case the language is predicted automatically.
 
-- **tagAudioEvents** _boolean_
+- **tagAudioEvents** *boolean*
 
   Whether to tag audio events like (laughter), (footsteps), etc. in the transcription.
   Defaults to `true`.
 
-- **numSpeakers** _integer_
+- **numSpeakers** *integer*
 
   The maximum amount of speakers talking in the uploaded file.
   Can help with predicting who speaks when.
   The maximum amount of speakers that can be predicted is 32.
   Defaults to `null`, in which case the amount of speakers is set to the maximum value the model supports.
 
-- **timestampsGranularity** _enum_
+- **timestampsGranularity** *enum*
 
   The granularity of the timestamps in the transcription.
   Defaults to `'word'`.
   Allowed values: `'none'`, `'word'`, `'character'`.
 
-- **diarize** _boolean_
+- **diarize** *boolean*
 
   Whether to annotate which speaker is currently talking in the uploaded file.
   Defaults to `true`.
 
-- **fileFormat** _enum_
+- **fileFormat** *enum*
 
   The format of input audio.
   Defaults to `'other'`.
@@ -242,15 +246,15 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                    | Transcription | Duration  | Segments  | Language  |
-| ------------------------ | ------------- | --------- | --------- | --------- |
-| `scribe_v1`              | <Check />     | <Check /> | <Check /> | <Check /> |
-| `scribe_v1_experimental` | <Check />     | <Check /> | <Check /> | <Check /> |
-| `scribe_v2`              | <Check />     | <Check /> | <Check /> | <Check /> |
+| Model                    | Transcription | Duration | Segments | Language |
+| ------------------------ | ------------- | -------- | -------- | -------- |
+| `scribe_v1`              | ✓             | ✓        | ✓        | ✓        |
+| `scribe_v1_experimental` | ✓             | ✓        | ✓        | ✓        |
+| `scribe_v2`              | ✓             | ✓        | ✓        | ✓        |
 
 ## Streaming Transcription Models
 
-<Note type="warning">Streaming transcription is an experimental feature.</Note>
+Streaming transcription is an experimental feature.
 
 Scribe v2 Realtime supports live transcription through
 `experimental_streamTranscribe`. It accepts raw PCM audio at 8, 16, 22.05, 24,
@@ -314,57 +318,14 @@ streaming transcription.
 
 ### Model Capabilities
 
-| Model                | Streaming Transcription | Timestamps          | Language Detection  |
-| -------------------- | ----------------------- | ------------------- | ------------------- |
-| `scribe_v2_realtime` | <Check size={18} />     | <Check size={18} /> | <Check size={18} /> |
+| Model                | Streaming Transcription | Timestamps | Language Detection |
+| -------------------- | ----------------------- | ---------- | ------------------ |
+| `scribe_v2_realtime` | ✓                       | ✓          | ✓                  |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

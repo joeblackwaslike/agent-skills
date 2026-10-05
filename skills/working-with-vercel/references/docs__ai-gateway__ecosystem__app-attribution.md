@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "7488fe3d7fa145618f28d6d5a7850d57b85ec7c3bbd62a9ac98c30bede1f245a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7e5fe0794a5a5d93745776949fb6f2e49604737dd277377cdfc2d0f851cbfb4d"
 ---
 
 # AI Gateway App Attribution
@@ -29,13 +29,12 @@ driving awareness.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related)
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
+- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Learn how to configure and authenticate with AI providers in the AI SDK.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/app-attribution.graph.md](/docs/ai-gateway/ecosystem/app-attribution.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fapp-attribution&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

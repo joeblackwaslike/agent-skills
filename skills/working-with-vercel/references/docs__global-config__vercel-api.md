@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bc51de56ad0469efa1f84e72f3fdeb9af791d15755bfd74daf3355b51a04173d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "47569beca46cad7d5bceb893bf0964d918e673e394bdb0a955839e139c001c4d"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -32,10 +32,10 @@ We recommend you use the Vercel REST API only for creating and updating a [Globa
 
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
-- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
 - [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
+- [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=related) — PUT /v1/global-config/{edgeConfigId} — Updates a Global Config.
 
 Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fvercel-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -358,8 +358,8 @@ The response should be similar to this:
   {
     "slug": "example_config_2",
     "itemCount": 0,
-    "createdAt": 0123456789012,
-    "updatedAt": 0123456789012,
+    "createdAt": 1234567890456,
+    "updatedAt": 1234567890456,
     "id": "your_global_config_id_here",
     "digest": "123efg456hij789abc",
     "sizeInBytes": 2,
@@ -446,7 +446,7 @@ To request a single item, you can use the `/item` path instead of `/items`, then
 #### cURL
 
 ```bash filename="request"
-curl "https://global-config.vercel.com/your_global_config_id_here/item/example_key_1?token=your_global_config_read_access_token_here" \
+curl "https://global-config.vercel.com/your_global_config_id_here/item/example_key_1?token=your_global_config_read_access_token_here"
 ```
 
 #### fetch
@@ -468,7 +468,7 @@ You can also send your Global Config read access token in an Authorization heade
 #### cURL
 
 ```bash filename="request"
-curl -X 'https://global-config.vercel.com/your_global_config_id_here/item/example_key_1' \
+curl 'https://global-config.vercel.com/your_global_config_id_here/item/example_key_1' \
      -H 'Authorization: Bearer your_global_config_read_access_token_here'
 ```
 
@@ -530,7 +530,7 @@ You can also send the Global Config read access token in the `Authorization` hea
 
 ```bash filename="request"
 curl  -X 'GET' 'https://global-config.vercel.com/your_global_config_id_here/digest?teamId=your_team_id_here' \
-      -H 'Authorization: Bearer your_global_config_read_access_token_here
+      -H 'Authorization: Bearer your_global_config_read_access_token_here'
 ```
 
 #### fetch

@@ -16,13 +16,13 @@ related:
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "744a423b96542d85ca823beaa37e173b17cb5e2a0bf6dd64fb67c02f166ae376"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "78498365205424d44e141beb039fe8bbb47c44dcb5355e2ba9d33cb83a59a88e"
 ---
 
 # Conformance Rules
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 This page lists all the built-in rules that Conformance will check for by
 default in your application.

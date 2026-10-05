@@ -17,8 +17,8 @@ related:
 summary: Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/vision.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "778ebe9cc24360c30d2f7f4f55cf5df0b0882a50d4066feeef3215d4d82e117b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dd4669eb203c9173a91dc9b847717d6b09b6fcef1b80569e60e959cb631b4ef6"
 ---
 
 # AI Gateway Vision and Image Input
@@ -34,8 +34,8 @@ Send an image and a question to a vision-capable model to describe a scene, read
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=related) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=related) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/vision.graph.md](/docs/ai-gateway/inputs-and-tools/vision.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Fvision&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

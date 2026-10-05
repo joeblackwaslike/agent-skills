@@ -17,8 +17,8 @@ related:
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "6f56f10a7a20736806b14b2cb4219f76d4ee3d7b111fb224e8ef8b90c7f5edd7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "036df0b2050cfaebf5326c61f8a185f5a41e3d89040a4322f3ca8a19af4e7150"
 ---
 
 # AI SDK with AI Gateway
@@ -31,13 +31,13 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [GPT-6 Sol and Luna now available on AI Gateway](https://vercel.com/changelog/gpt-6-sol-and-luna-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Get started with OpenAI o1](https://ai-sdk.dev/cookbook/guides/o1?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [GPT-6.1 Sol now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-sol-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Get started with GPT-5 using the AI SDK.
+- [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

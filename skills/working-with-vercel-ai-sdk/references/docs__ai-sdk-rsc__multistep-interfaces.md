@@ -1,16 +1,18 @@
 ---
+title: Multistep Interfaces
+description: Overview of Building Multistep Interfaces with AI SDK RSC
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/multistep-interfaces"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/multistep-interfaces.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "520b9b3008c47d8227ab402f477bf59ec8dbbc2a045424e37695fa3580e108c4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9067a7734f64289d3de42caa4d7c0c0245b9bd434a8d3ad9db8aaa9b70797703"
 ---
 
-# Designing Multistep Interfaces
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 Multistep interfaces refer to user interfaces that require multiple independent steps to be executed in order to complete a specific task.
 
@@ -22,9 +24,9 @@ For example, if you wanted to build a Generative UI chatbot capable of booking f
 
 To build this kind of application you will leverage two concepts, **tool composition** and **application context**.
 
-**Tool composition** is the process of combining multiple [tools](/docs/ai-sdk-core/tools-and-tool-calling) to create a new tool. This is a powerful concept that allows you to break down complex tasks into smaller, more manageable steps. In the example above, _"search all flights"_, _"pick flight"_, and _"check availability"_ come together to create a holistic _"book flight"_ tool.
+**Tool composition** is the process of combining multiple [tools](/docs/ai-sdk-core/tools-and-tool-calling) to create a new tool. This is a powerful concept that allows you to break down complex tasks into smaller, more manageable steps. In the example above, *"search all flights"*, *"pick flight"*, and *"check availability"* come together to create a holistic *"book flight"* tool.
 
-**Application context** refers to the state of the application at any given point in time. This includes the user's input, the output of the language model, and any other relevant information. In the example above, the flight selected in _"pick flight"_ would be used as context necessary to complete the _"check availability"_ task.
+**Application context** refers to the state of the application at any given point in time. This includes the user's input, the output of the language model, and any other relevant information. In the example above, the flight selected in *"pick flight"* would be used as context necessary to complete the *"check availability"* task.
 
 ## Overview
 
@@ -49,7 +51,7 @@ The turn-by-turn implementation is the simplest form of multistep interfaces. In
 
 In the following example, you specify two tools (`searchFlights` and `lookupFlight`) that the model can use to search for flights and lookup details for a specific flight.
 
-```tsx filename="app/actions.tsx"
+```tsx title="app/actions.tsx"
 import { streamUI } from '@ai-sdk/rsc';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
@@ -137,7 +139,7 @@ export async function submitUserMessage(input: string) {
 
 Next, create an AI context that will hold the UI State and AI State.
 
-```ts filename='app/ai.ts'
+```ts title='app/ai.ts'
 import { createAI } from '@ai-sdk/rsc';
 import { submitUserMessage } from './actions';
 
@@ -152,7 +154,7 @@ export const AI = createAI<any[], React.ReactNode[]>({
 
 Next, wrap your application with your newly created context.
 
-```tsx filename='app/layout.tsx'
+```tsx title='app/layout.tsx'
 import { type ReactNode } from 'react';
 import { AI } from './ai';
 
@@ -171,7 +173,7 @@ export default function RootLayout({
 
 To call your Server Action, update your root page with the following:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -220,9 +222,9 @@ This page pulls in the current UI State using the `useUIState` hook, which is th
 
 In this example, to call the next tool, the user must respond with plain text. **Given you are streaming a React component, you can add a button to trigger the next step in the conversation**.
 
-To add user interaction, you will have to convert the component into a client component and use the `useAction` hook to trigger the next step in the conversation.
+To add user interaction, you will have to convert the component into a client component and use the `useActions` hook to trigger the next step in the conversation.
 
-```tsx filename="components/flights.tsx"
+```tsx title="components/flights.tsx"
 'use client';
 
 import { useActions, useUIState } from '@ai-sdk/rsc';
@@ -260,7 +262,7 @@ export const Flights = ({ flights }: FlightsProps) => {
 
 Now, update your `searchFlights` tool to render the new `<Flights />` component.
 
-```tsx filename="actions.tsx"
+```tsx title="actions.tsx"
 ...
 searchFlights: {
   description: 'search for flights',
@@ -282,19 +284,10 @@ In the above example, the `Flights` component is used to display the search resu
 
 Learn more about tool calling in Next.js App Router by checking out examples [here](/examples/next-app/tools).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepseek.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b2f59662783367c24a7af6df47fcdfd6ced0d5924c9937ac99e9135f4939856f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5a56402c8584fb9698265a5b327dadfaedfa9a236f243e332d887249b09ad947"
 ---
 
 # DeepSeek Harness with AI Gateway
@@ -31,10 +31,10 @@ sha256: "b2f59662783367c24a7af6df47fcdfd6ced0d5924c9937ac99e9135f4939856f"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenHands with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openhands?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/deepseek.graph.md](/docs/ai-gateway/coding-agents/deepseek.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdeepseek&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3b33211038bbc88f90aa20c64c676dd37ff8769bf54b9bfd9d01ed69a79c132b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e9a905fbf9384facc2ef22df65e3dd5d0f36ca9daba5cffaf9f10d447a4a0785"
 ---
 
 # Deploying to Vercel
@@ -32,6 +32,7 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Resources tab allows instant searching and filtering of functions, middleware, and static assets](https://vercel.com/changelog/resources-tab-allows-instant-searching-and-filtering-of-functions-middleware?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
@@ -39,11 +40,10 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related)
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related)
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -191,11 +191,11 @@ When you select a deployment from your **Project → Deployments** page, you can
 
 You can use the three dot (…) menu for a given function to jump to that function in **Logs**, **Analytics**, **Speed Insights**, or the **Observability** section in the sidebar.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/deployment-resources-page-light.png`)
+![Example of a deployment resources page with a search applied.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/deployment-resources-page-light.png)
 
 You can also see a summary of these resources by expanding the **Deployment Summary** section on a **Deployment Details** page. To visit the **Deployment Details** page for a deployment, select it from your **Project → Deployments** page.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/deploy-outputs-light.png`)
+![Example of an open deployment summary.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/deploy-outputs-light.png)
 
 You’ll also see your build time, detected framework, and any relevant logs or errors.
 

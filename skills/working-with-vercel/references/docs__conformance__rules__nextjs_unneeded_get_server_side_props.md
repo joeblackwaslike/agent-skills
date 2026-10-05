@@ -12,13 +12,13 @@ related:
 summary: Catches usages of getServerSideProps that could use static rendering instead, improving the performance of those pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_unneeded_get_server_side_props.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5ccbce8d44744ceeda39e19b90e98c4f95f610b8cd273ec06b9d873f3c1b72f3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ad9bacd4416da30c8e3cf85c92d2098f12601d8cff090a00cf350a02285e1578"
 ---
 
 # NEXTJS_UNNEEDED_GET_SERVER_SIDE_PROPS
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 This rule will analyze each Next.js page's `getServerSideProps` to see if the context parameter is being used and if not
 then it will fail.

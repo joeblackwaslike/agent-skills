@@ -1,10 +1,14 @@
 ---
+title: LlamaIndex
+description: Learn how to use LlamaIndex with the AI SDK.
+url: "https://ai-sdk.dev/providers/adapters/llamaindex"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/adapters/llamaindex.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "fb92e1b0e44315d74aded8803efd7e6339c7f6eba9deae3f966f4dccc0e534f8"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c5bf84e3d95c64c437c66c763e61b383b6285a00848805d9bdf283980f3edb0d"
 ---
 
-# LlamaIndex
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [LlamaIndex](https://ts.llamaindex.ai/) is a framework for building LLM-powered applications. LlamaIndex helps you ingest, structure, and access private or domain-specific data. LlamaIndex.TS supports modern JavaScript runtimes such as Node.js, Deno, and Bun.
 
@@ -14,7 +18,7 @@ Here is a basic example that uses both AI SDK and LlamaIndex together with the [
 
 The AI SDK `@ai-sdk/llamaindex` package uses the stream result from calling the `chat` method on a [LlamaIndex ChatEngine](https://ts.llamaindex.ai/modules/chat_engine) or the `query` method on a [LlamaIndex QueryEngine](https://ts.llamaindex.ai/modules/query_engines) to pipe text to the client.
 
-```tsx filename="app/api/completion/route.ts" highlight="18-20"
+```tsx title="app/api/completion/route.ts" {18-20}
 import { OpenAI, SimpleChatEngine } from 'llamaindex';
 import { toUIMessageStream } from '@ai-sdk/llamaindex';
 import { createUIMessageStreamResponse } from 'ai';
@@ -40,7 +44,7 @@ export async function POST(req: Request) {
 
 Then, we use the AI SDK's [`useCompletion`](/docs/ai-sdk-ui/completion) method in the page component to handle the completion:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useCompletion } from '@ai-sdk/react';
@@ -64,11 +68,10 @@ export default function Chat() {
 
 [create-llama](https://github.com/run-llama/create-llama) is the easiest way to get started with LlamaIndex. It uses the AI SDK to connect to LlamaIndex in all its generated code.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [LangChain](/providers/adapters/langchain)
-- [LlamaIndex](/providers/adapters/llamaindex)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

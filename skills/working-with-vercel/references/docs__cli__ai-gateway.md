@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c1475baedb461ec50a3c383d83d7488b078ad3bcd011210052b550a70bac69a7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "13f3e5ab6f3f235875507bd1e2c3caac7d2c0f8e1ff7f76dc4991ddfa7ac89fd"
 ---
 
 # vercel ai-gateway
@@ -37,6 +37,7 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
 Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

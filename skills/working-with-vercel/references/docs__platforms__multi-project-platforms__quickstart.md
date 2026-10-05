@@ -17,8 +17,8 @@ related:
 summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "da0806ae8f01df5c831022149752ff6382db511a9a310de9b778ad1bbf23ebcb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "82a9a1e18ed1da80a51d90fa21d35f01b6bc7802a19160a6a4fd304b788cf70f"
 ---
 
 # Multi-Project Platforms Quickstart
@@ -90,35 +90,27 @@ Leverage our pre-configured [file deploy action](/docs/platforms/platform-elemen
 npx @vercel/platforms@latest add deploy-files
 ```
 
-```jsx filename="deploy-files.ts"
-import { deployFiles } from "@/actions/deploy-files"
-import type { InlinedFile } from "@vercel/sdk/models/createdeploymentop"
+The command copies the action's source into your project so you can edit it. As installed, `deployFiles` takes an optional `{ deploymentName, config, domain }` object, deploys a hardcoded sample `index.html` file, and reads the target project from the `DEPLOY_FILES_PROJECT_ID` environment variable. It also imports a Vercel SDK client from `../lib/vercel`, which you create yourself. See [Set up the Vercel client](/docs/platforms/platform-elements/actions/deploy-files#set-up-the-vercel-client).
 
-// Example: Deploy a simple HTML site
-const files: InlinedFile[] = [
-  {
-    file: "index.html",
-    data: "<html><body><h1>Hello from my platform!</h1></body></html>"
-  },
-  {
-    file: "package.json",
-    data: JSON.stringify({
-      name: "my-deployment",
-      version: "1.0.0"
-    })
-  }
-]
+To deploy your users' generated files, [edit the action to accept a `files` argument](/docs/platforms/platform-elements/actions/deploy-files#deploy-your-own-files), then call it:
 
-await deployFiles(files, {
-  domain: "customer-site.com",
-  deploymentName: "customer-deployment-1",
-  projectId: "existing-project-id", // Optional: use existing project
+```ts filename="deploy-files.ts"
+import { deployFiles } from '@/actions/deploy-files';
+
+// Requires the files argument added in "Deploy your own files"
+await deployFiles({
+  files: [
+    {
+      file: 'index.html',
+      data: '<html><body><h1>Hello from my platform!</h1></body></html>',
+    },
+  ],
+  deploymentName: 'customer-deployment-1',
   config: {
-    framework: "nextjs",
-    buildCommand: "npm run build",
-    outputDirectory: ".next"
-  }
-})
+    framework: null, // Static HTML, no build step
+  },
+  domain: 'customer-site.com',
+});
 ```
 
 ## Domain Aliasing

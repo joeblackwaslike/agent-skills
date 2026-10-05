@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8201681e84145d3d0d684a9a6193c85a0fdc0c830fc517daac765500ee2106ea"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "58e4416dbbfa892e578661baa9d63c3138633e8a2dff33589e6f9214848c929a"
 ---
 
 # Vercel Firewall
@@ -71,13 +71,13 @@ When you have more than one custom rule, you can [customize](/docs/vercel-firewa
 
 ## Platform-wide firewall
 
-> **🔒 Permissions Required**: DDoS Mitigation
+> **Availability**: DDoS Mitigation is available on all plans
 
 Vercel provides automated [DDoS mitigation](/docs/vercel-firewall/ddos-mitigation) for all deployments, regardless of the plan that you are on. With this automated DDoS mitigation, we block incoming traffic if we identify abnormal or suspicious levels of incoming requests.
 
 ## Vercel WAF
 
-> **🔒 Permissions Required**: Vercel WAF
+> **Availability**: Vercel WAF is available on all plans
 
 The [Vercel WAF](/docs/vercel-firewall/vercel-waf) complements the platform-wide firewall by allowing you to define custom protection strategies using the following tools:
 
@@ -92,10 +92,10 @@ You can also manage bypass rules and your WAF configuration programmatically wit
 
 You can use the following tools to [monitor the internet traffic](/docs/vercel-firewall/firewall-observability) at your team or project level:
 
-- The [Monitoring](/docs/query/monitoring) feature at the team level allows you to create [queries](/docs/query/monitoring/monitoring-reference#example-queries) to visualize the traffic across your Vercel projects.
+- [Query](/docs/query) in the **Observability** section of the dashboard allows you to create queries, filtered by fields such as [WAF Action](/docs/query/reference#group-by-and-where-fields), to visualize the traffic across your Vercel projects.
 - **Firewall** in the Vercel dashboard sidebar on every project allows you to monitor the internet traffic to your deployments with a [traffic monitoring view](/docs/vercel-firewall/firewall-observability#traffic) that includes a live traffic window.
 - [Firewall alerts](/docs/vercel-firewall/firewall-observability#firewall-alerts) allow you to react quickly to potential security threats.
-- Use [Log Drains](/docs/drains/using-drains) to send your application logs to a Security Information and Event Management (SIEM) system.
+- Use [Drains](/docs/drains/using-drains) to send your application logs to a Security Information and Event Management (SIEM) system.
 
 
 ---

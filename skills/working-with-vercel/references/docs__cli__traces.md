@@ -15,8 +15,8 @@ related:
 summary: Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a74b0aea9e6cf3a7c09aabf72619a252c6e87c52a7c265b73c74f74cc4e02fd0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5b26a0349a9901003943e9955cd2f3b81b30a70cdc7e47f39290c3d1a295f0eb"
 ---
 
 # vercel traces
@@ -30,6 +30,7 @@ The `vercel traces` command lets you search spans, inspect request traces, captu
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related)
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
@@ -54,7 +55,7 @@ The `vercel traces` command supports the following operations:
 
 ### `search`
 
-`vercel traces search` returns up to 100 spans from one project. By default, it searches the last hour and lists the newest spans first.
+`vercel traces search` returns up to 100 spans from one project, or up to 1,000 with `--limit`. By default, it searches the last hour and lists the newest spans first.
 
 ```bash filename="terminal"
 vercel traces search

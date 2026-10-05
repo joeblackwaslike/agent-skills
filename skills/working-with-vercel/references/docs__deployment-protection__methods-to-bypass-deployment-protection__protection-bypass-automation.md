@@ -17,13 +17,13 @@ related:
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5bdd14ae934a75486f5be913542e18b17d782441615910fa7d011b727b1db6a2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fb9a0481e729458cc370e2b99498ef8272202a1f001d9532bfc58ba1c21319b8"
 ---
 
 # Protection Bypass for Automation
 
-> **🔒 Permissions Required**: Protection Bypass for Automation
+> **Availability**: Protection Bypass for Automation is available on all plans
 
 Protection Bypass for Automation enables you to run automated tests, CI/CD pipelines, and monitoring tools against your protected deployments without triggering authentication challenges or security blocks.
 
@@ -77,7 +77,7 @@ You can create multiple bypass secrets per project to manage access independentl
 
 You can use each available secret to bypass Deployment Protection on all deployments in a project until the secret is revoked. When you build a deployment, Vercel sets the environment variable value, so regenerating or deleting the secret in the project settings will invalidate previous deployments. You will need to redeploy your app if you update the secret to use the new value.
 
-![Image](<&#xA;    '/docs-assets/static/docs/deployment-protection/protection-bypass-light.png'&#xA;  >)
+![Protection Bypass for Automation option](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/deployment-protection/protection-bypass-light.png)
 
 ## Permissions for Protection Bypass for Automation
 

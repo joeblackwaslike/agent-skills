@@ -14,8 +14,8 @@ related:
 summary: Clone working multi-tenant and multi-project starters to begin your platform build.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "048679625decbf17db742500a80355522653e369c075cff878c230f0d7208962"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e8576a0202648a1f050134b312597fcd40d9d1d90133b142e126132b57d2ba33"
 ---
 
 # Examples
@@ -30,11 +30,13 @@ Start from a working example instead of a blank project. Each template covers a 
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related)
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
-- [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
+- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/examples.graph.md](/docs/platforms/examples.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

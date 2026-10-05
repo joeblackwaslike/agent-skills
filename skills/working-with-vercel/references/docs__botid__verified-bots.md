@@ -12,8 +12,8 @@ related:
 summary: Information about verified bots and their handling in BotID
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/verified-bots.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "0fd2d57fd5d6c69e888e48ce2eae55f88770d3bb2e3cf8d0320376cb352ea7e4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cf3cc1222fae4288c6a6e081bbd1ce2abfb143a030596d83643f9adfc6e505a3"
 ---
 
 # Handling Verified Bots
@@ -29,12 +29,12 @@ BotID allows you to identify and handle [verified bots](/docs/bot-management#ver
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
+- [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
 - [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
-- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [View & query bot verification data in Vercel Observability](https://vercel.com/changelog/view-and-query-bot-verification-data-in-vercel-observability?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Fverified-bots&source_site=vercel-docs&relationship=related)
 

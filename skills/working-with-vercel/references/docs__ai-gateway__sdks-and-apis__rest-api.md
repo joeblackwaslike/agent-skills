@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "50b403830f30b7c252992743870af21bb183b89d201d2366273b8911ca136f9e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "58227a7cb2505d827805a9af169fd63bcddda5c492fc11d7e28b89ad8aa78be8"
 ---
 
 # AI Gateway REST API Reference
@@ -32,12 +32,11 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Frest-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -165,6 +164,51 @@ For TypeScript, Python, and cURL examples that filter reasoning models and inspe
 | `data[].pricing.web_search`              | string   | Cost per web search request                                           |
 
 The catalog doesn't expose a structured reasoning default. Missing controls or budget bounds mean unspecified metadata, not unsupported reasoning or an unlimited budget. The controls describe model capabilities; each [request format](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) has its own fields and accepted values.
+
+#### Team availability annotations
+
+Pass `include_availability` with an [authenticated request](/docs/ai-gateway/authentication-and-byok) to annotate the catalog with each model's eligibility under your team's configuration:
+
+```http filename="Endpoint"
+GET /v1/models?include_availability
+```
+
+Eligibility reflects your team's stored defaults: model and provider allowlists, routing rules, stored BYOK credentials, virtual model configuration, plan restrictions, and rate-limit configuration. It does not evaluate request-supplied credentials, request-selected providers, live provider health, or account state beyond the request-level result below.
+
+```typescript filename="list-model-availability.ts"
+const response = await fetch(
+  'https://ai-gateway.vercel.sh/v1/models?include_availability',
+  { headers: { Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}` } },
+);
+const { data: models } = await response.json();
+
+const eligible = models.filter(
+  (model) => model.model_eligibility?.status === 'eligible',
+);
+```
+
+Each model row gains a `model_eligibility` field, and the response adds request-level fields:
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `data[].model_eligibility.status` | string | `eligible`, `ineligible`, or `unknown` |
+| `data[].model_eligibility.evaluated_runtime` | string | The runtime the verdict applies to: `http` or `realtime_websocket` |
+| `data[].model_eligibility.category` | string | For `ineligible` rows: `configuration`, `policy`, or `transient` |
+| `data[].model_eligibility.reason` | string | Stable machine-readable reason for `ineligible` and `unknown` rows |
+| `request_context_availability` | object | Account admission per runtime (`available`, `unavailable`, or `unknown`): team blocking, verification, funds, quota |
+| `availability_status` | string | `complete`, or `partial` when any row is `unknown` |
+| `catalog_status` | string | `complete`, or `partial` when private model or virtual model resolution was incomplete |
+| `evaluation_context` | object | The evaluation scope: `credential_mode: "runtime_default"` and `request_constraints: "default_only"` |
+
+A model can serve a request when its status is `eligible` and the matching `request_context_availability` runtime is `available`. Treat `unknown` as neither approval nor denial; it means a dependency could not be resolved.
+
+| Request | Response |
+| ------- | -------- |
+| No query parameter | Public catalog, edge-cached. Authenticated requests also include the team's private models and virtual models. No annotations. |
+| `include_availability` with authentication | The same catalog with annotations. `Cache-Control: private, no-store`. |
+| `include_availability` without authentication | `401` |
+
+Annotated requests share a per-team rate limit. A blocked request returns `429` with `Retry-After: 60`.
 
 ### Get model endpoints
 

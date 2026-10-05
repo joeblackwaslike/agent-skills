@@ -16,8 +16,8 @@ related:
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "56e587ff075c05bea8ee05d7369ad13d5aaa515abf0e48d4021fc7c19dc174cc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fe99d2913023cc9df37a81867faf3a44c516dd97a1259f56903038d2b2c7aa0e"
 ---
 
 # Services Pricing and Limits
@@ -36,7 +36,7 @@ Vercel bills Services across the compute each service runs on, the requests serv
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 
 Full cross-link map for this page: [/docs/services/pricing.graph.md](/docs/services/pricing.graph.md?from=related&source_path=%2Fdocs%2Fservices%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,11 +51,11 @@ Each service runs on Vercel's compute and is billed the same as [Vercel Function
 
 When one service calls another over a [binding](/docs/services/bindings), each call counts as one service request. Requests that arrive from the public internet are not service requests.
 
-Service requests are [regionally priced](/docs/pricing/regional-pricing), like other Managed Infrastructure resources, and are billed separately from CDN requests. A service-to-service call does not incur a separate Edge Request or Fast Data Transfer charge.
+Service requests are [regionally priced](/docs/pricing/regional-pricing), like other Managed Infrastructure resources, and are billed separately from CDN requests. A service-to-service call does not incur a separate CDN Request or Fast Data Transfer charge.
 
 | Resource | Price | Included (Pro) | Included (Hobby) |
 |----------|-------|----------------|-----------------|
-| [Service Requests](/docs/services/pricing) | Regional | Usage-based | N/A |
+| [Service Requests](/docs/services/pricing) | Regional | Usage-based | First 1,000,000 |
 
 
 See [Pricing](/docs/pricing) for plan details and included credits.

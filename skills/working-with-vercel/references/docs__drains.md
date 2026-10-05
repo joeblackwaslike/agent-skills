@@ -16,13 +16,13 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "62c9fc83490f07022d3a2964c28b5c966989c5c839fc7c701706acf94d5f331c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8ac1088469f3adb57cd65b41c02d0210285df26051799789da6a8a64cd9146f8"
 ---
 
 # Working with Drains
 
-> **🔒 Permissions Required**: Drains
+> **Availability**: Drains are available on Enterprise and Pro plans
 
 Drains let you forward observability data from your applications to external services for debugging, performance optimization, analysis, and alerting, so that you can:
 
@@ -36,14 +36,14 @@ Drains let you forward observability data from your applications to external ser
 - [Redirects and rewrites now available in Observability](https://vercel.com/changelog/redirects-and-rewrites-now-available-in-observability?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related)
 - [Public Web Analytics API now available](https://vercel.com/changelog/web-analytics-api?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 
 Full cross-link map for this page: [/docs/drains.graph.md](/docs/drains.graph.md?from=related&source_path=%2Fdocs%2Fdrains&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

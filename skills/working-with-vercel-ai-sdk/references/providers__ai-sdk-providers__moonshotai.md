@@ -1,10 +1,14 @@
 ---
+title: Moonshot AI
+description: Learn how to use Moonshot AI models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4f424fc1a87d0be41d0acf2985bbca76baf030b6d1d8f8e42dfa0e40fb8fa262"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "d41575640321c59c87e854d115b90adc1d674da0bf754deb570346a4a3b6fec4"
 ---
 
-# Moonshot AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Moonshot AI](https://www.moonshot.ai) provider offers access to powerful language models through the Moonshot API, including the Kimi series of models with reasoning capabilities.
 
@@ -14,7 +18,7 @@ API keys can be obtained from the [Kimi API Platform](https://platform.kimi.ai/c
 
 The Moonshot AI provider is available via the `@ai-sdk/moonshotai` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/moonshotai" />
+**Packages:** `@ai-sdk/moonshotai`
 
 ## Provider Instance
 
@@ -36,21 +40,21 @@ const moonshotai = createMoonshotAI({
 
 You can use the following optional settings to customize the Moonshot AI provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls.
   The default prefix is `https://api.moonshot.ai/v1`
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `MOONSHOT_API_KEY` environment variable
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation
 
@@ -177,12 +181,10 @@ The partial message must be the final assistant message in the prompt. Moonshot
 returns only the continuation, so concatenate the prefix and generated text
 when you need the complete response.
 
-<Note>
-  Partial Mode cannot be combined with Moonshot's `json_object` response format.
-  The provider rejects that combination before sending the request. A supported
-  `json_schema` response remains available, but structured-output parsing
-  validates only the returned continuation.
-</Note>
+Partial Mode cannot be combined with Moonshot's `json_object` response format.
+The provider rejects that combination before sending the request. A supported
+`json_schema` response remains available, but structured-output parsing
+validates only the returned continuation.
 
 ### Kimi K3 Dynamic Tool Loading
 
@@ -237,13 +239,11 @@ dynamically loaded tools can be used in the same request. Known unsupported
 official models omit the dynamic message and return an unsupported warning;
 custom model IDs retain it for forward compatibility.
 
-<Note>
-  Keep dynamic system messages in trusted server-side state. Tool names,
-  descriptions, and schemas are sent to Moonshot and consume context. Dynamic
-  declarations are request-local, so retain earlier declarations in later
-  requests while those tools should remain available. Appending messages also
-  preserves prompt-cache prefixes better than rewriting earlier declarations.
-</Note>
+Keep dynamic system messages in trusted server-side state. Tool names,
+descriptions, and schemas are sent to Moonshot and consume context. Dynamic
+declarations are request-local, so retain earlier declarations in later
+requests while those tools should remain available. Appending messages also
+preserves prompt-cache prefixes better than rewriting earlier declarations.
 
 ### Reasoning Models
 
@@ -345,11 +345,9 @@ schema. The provider therefore preserves the OpenAI-compatible `content`
 entries, including each token's `logprob`, nullable `bytes`, and
 `top_logprobs`.
 
-<Note>
-  Token probabilities and alternatives can significantly increase response size.
-  Request them only when needed, and avoid forwarding or persistently logging
-  provider metadata unless your application requires it.
-</Note>
+Token probabilities and alternatives can significantly increase response size.
+Request them only when needed, and avoid forwarding or persistently logging
+provider metadata unless your application requires it.
 
 ### Video Input
 
@@ -390,20 +388,16 @@ You can also pass a URL. Since Moonshot AI does not fetch external URLs, the AI 
 }
 ```
 
-<Note>
-  Supported image media types are `image/jpeg`, `image/png`, `image/gif`,
-  `image/webp`, `image/bmp`, `image/heic`, and `image/heif`. Supported video
-  media types are `video/mp4`, `video/mpeg`, `video/mov`, `video/avi`,
-  `video/x-flv`, `video/mpg`, `video/webm`, `video/wmv`, and `video/3gpp`. Other
-  image and video media types are rejected before a request is sent.
-</Note>
+Supported image media types are `image/jpeg`, `image/png`, `image/gif`,
+`image/webp`, `image/bmp`, `image/heic`, and `image/heif`. Supported video
+media types are `video/mp4`, `video/mpeg`, `video/mov`, `video/avi`,
+`video/x-flv`, `video/mpg`, `video/webm`, `video/wmv`, and `video/3gpp`. Other
+image and video media types are rejected before a request is sent.
 
-<Note>
-  Moonshot AI recommends videos up to 1080p. For larger videos, or videos you
-  reuse across many requests, upload them with the [Moonshot Files
-  API](https://platform.kimi.ai/docs/api/files) instead. Audio and PDF inputs
-  are not supported by Moonshot AI chat completions.
-</Note>
+Moonshot AI recommends videos up to 1080p. For larger videos, or videos you
+reuse across many requests, upload them with the [Moonshot Files
+API](https://platform.kimi.ai/docs/api/files) instead. Audio and PDF inputs
+are not supported by Moonshot AI chat completions.
 
 ### File References and Text Files
 
@@ -491,59 +485,59 @@ prediction: {
 }
 ```
 
-<Note>
-  Predicted content is sent to Moonshot AI as part of the request. Avoid
-  including sensitive or proprietary text unless you intend to share it with the
-  provider.
-</Note>
+Predicted content is sent to Moonshot AI as part of the request. Avoid
+including sensitive or proprietary text unless you intend to share it with the
+provider.
 
 ### Provider Options
 
 The following optional provider options are available for Moonshot AI language models:
 
-- **strictJsonSchema** _boolean_
+- **strictJsonSchema** *boolean*
 
   Whether to use strict JSON schema validation for structured outputs. Defaults
   to `true`.
 
-- **logprobs** _boolean_
+- **logprobs** *boolean*
 
   Whether to return log probabilities for generated tokens. Results are
   available in `providerMetadata.moonshotai.logprobs`.
 
-- **topLogprobs** _number_
+- **topLogprobs** *number*
 
   Number of most likely tokens to return at each token position. Accepts
   integer values from `0` through `20` and automatically enables `logprobs`.
 
-- **reasoningEffort** _'low' | 'high' | 'max'_
+- **reasoningEffort** *'low' | 'high' | 'max'*
 
   Reasoning effort for Kimi K3. Defaults to `'max'`. You can also use the
   generic `reasoning` setting.
 
-- **prediction** _&#123; type: 'content'; content: string | Array&lt;&#123; type: 'text'; text: string &#125;&gt; &#125;_
+- **prediction** *\{ type: 'content'; content: string | Array\<\{ type: 'text'; text: string }> }*
 
   Supplies static predicted output that can accelerate requests where most of
   the response is already known.
 
-- **thinking** _object_
+- **thinking** *object*
 
   Configuration for Kimi K2.5 and K2.6. Kimi K2.7 accepts only `enabled`
   because its thinking cannot be disabled. Kimi K3 does not accept this field.
-  - **type** _'enabled' | 'disabled'_
+
+  - **type** *'enabled' | 'disabled'*
 
     Whether to enable thinking mode. For Kimi K2.7 Code, only `'enabled'` is
     accepted.
 
-  - **budgetTokens** _number_
+  - **budgetTokens** *number*
 
     Deprecated. Moonshot Chat Completions does not support thinking budgets.
     The provider omits this value and returns a warning. It remains accepted
     for backwards compatibility.
 
-- **reasoningHistory** _'disabled' | 'interleaved' | 'preserved'_
+- **reasoningHistory** *'disabled' | 'interleaved' | 'preserved'*
 
   Controls preserved reasoning behavior in multi-turn conversations:
+
   - `'disabled'` and `'interleaved'` are retained for compatibility. They do
     not change the request, so the model's server-default behavior applies.
   - `'preserved'` maps to `thinking.keep: 'all'` for Kimi K2.6. Kimi K2.7 and
@@ -571,73 +565,28 @@ but new applications should use Kimi K3, Kimi K2.7 Code, or Kimi K2.6.
 
 | Model                             | Image Input | Video Input | Object Generation | Tool Usage | Tool Streaming |
 | --------------------------------- | ----------- | ----------- | ----------------- | ---------- | -------------- |
-| `moonshot-v1-auto`                | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-8k`                  | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-32k`                 | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-128k`                | <Cross />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-8k-vision-preview`   | <Check />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-32k-vision-preview`  | <Check />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshot-v1-128k-vision-preview` | <Check />   | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2.5`                       | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2.6`                       | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2.7-code`                  | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k2.7-code-highspeed`        | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `kimi-k3`                         | <Check />   | <Check />   | <Check />         | <Check />  | <Check />      |
+| `moonshot-v1-auto`                | ✗           | ✗           | ✓                 | ✓          | ✓              |
+| `moonshot-v1-8k`                  | ✗           | ✗           | ✓                 | ✓          | ✓              |
+| `moonshot-v1-32k`                 | ✗           | ✗           | ✓                 | ✓          | ✓              |
+| `moonshot-v1-128k`                | ✗           | ✗           | ✓                 | ✓          | ✓              |
+| `moonshot-v1-8k-vision-preview`   | ✓           | ✗           | ✓                 | ✓          | ✓              |
+| `moonshot-v1-32k-vision-preview`  | ✓           | ✗           | ✓                 | ✓          | ✓              |
+| `moonshot-v1-128k-vision-preview` | ✓           | ✗           | ✓                 | ✓          | ✓              |
+| `kimi-k2.5`                       | ✓           | ✓           | ✓                 | ✓          | ✓              |
+| `kimi-k2.6`                       | ✓           | ✓           | ✓                 | ✓          | ✓              |
+| `kimi-k2.7-code`                  | ✓           | ✓           | ✓                 | ✓          | ✓              |
+| `kimi-k2.7-code-highspeed`        | ✓           | ✓           | ✓                 | ✓          | ✓              |
+| `kimi-k3`                         | ✓           | ✓           | ✓                 | ✓          | ✓              |
 
-<Note>
-  See the [Kimi model list](https://platform.kimi.ai/docs/models) and [model
-  parameter reference](https://platform.kimi.ai/docs/api/models-overview) for
-  current availability and model-specific constraints. You can also pass custom
-  or retired provider model IDs as strings when needed.
-</Note>
+See the [Kimi model list](https://platform.kimi.ai/docs/models) and [model
+parameter reference](https://platform.kimi.ai/docs/api/models-overview) for
+current availability and model-specific constraints. You can also pass custom
+or retired provider model IDs as strings when needed.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

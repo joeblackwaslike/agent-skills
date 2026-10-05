@@ -1,10 +1,14 @@
 ---
+title: generateVideo
+description: API Reference for durable video generation in workflows.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "66e61202bb738afc443e15599a0797a3c3e89dd25acf048b52976d77574966e5"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9a104748fa90025eb3def5d611d4c52b90097e0727d82cd9f38a1128adc8a983"
 ---
 
-# `generateVideo()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Generates videos durably inside a workflow. The helper starts an asynchronous
 video generation job with a Workflow webhook URL, suspends the workflow until
@@ -38,112 +42,30 @@ provider webhooks. The helper must be called from a Workflow SDK workflow.
 
 ## Import
 
-<Snippet
-  text={`import { experimental_generateVideo as generateVideo } from "@ai-sdk/workflow/video"`}
-  prompt={false}
-/>
+```
+import { experimental_generateVideo as generateVideo } from "@ai-sdk/workflow/video"
+```
 
 ## Parameters
 
 The helper accepts the same parameters as `experimental_startVideo` from `ai`,
 except `webhookUrl` and `abortSignal`. It creates and manages the webhook URL.
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'VideoModel',
-      isRequired: true,
-      description:
-        'The asynchronous video model to use. A string compatible with Vercel AI Gateway or a serializable provider model.',
-    },
-    {
-      name: 'prompt',
-      type: 'string | GenerateVideoPrompt',
-      isRequired: true,
-      description: 'The prompt or image prompt used to generate the video.',
-    },
-    {
-      name: 'n',
-      type: 'number',
-      isOptional: true,
-      description: 'Number of videos to generate. Default: 1.',
-    },
-    {
-      name: 'aspectRatio',
-      type: '`${number}:${number}` | "adaptive"',
-      isOptional: true,
-      description: 'Aspect ratio of the generated videos.',
-    },
-    {
-      name: 'resolution',
-      type: '`${number}x${number}`',
-      isOptional: true,
-      description: 'Resolution of the generated videos.',
-    },
-    {
-      name: 'duration',
-      type: 'number',
-      isOptional: true,
-      description: 'Duration of each generated video in seconds.',
-    },
-    {
-      name: 'maxVideosPerCall',
-      type: 'number',
-      isOptional: true,
-      description: 'Maximum number of videos that may be started in one call.',
-    },
-    {
-      name: 'fps',
-      type: 'number',
-      isOptional: true,
-      description: 'Frames per second for the generated videos.',
-    },
-    {
-      name: 'seed',
-      type: 'number',
-      isOptional: true,
-      description: 'Seed used for deterministic generation when supported.',
-    },
-    {
-      name: 'frameImages',
-      type: 'Array<{ image: DataContent; frameType: VideoModelV4FrameType }>',
-      isOptional: true,
-      description: 'Role-tagged first and last frame images.',
-    },
-    {
-      name: 'inputReferences',
-      type: 'Array<DataContent | { data: DataContent; mediaType?: string }>',
-      isOptional: true,
-      description: 'Reference images or videos for the generation.',
-    },
-    {
-      name: 'generateAudio',
-      type: 'boolean',
-      isOptional: true,
-      description: 'Whether to generate audio with the video.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions',
-      isOptional: true,
-      description: 'Additional provider-specific options.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string>',
-      isOptional: true,
-      description: 'Additional HTTP headers for start and status requests.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Maximum number of AI SDK retries for each start and status request. Default: 2.',
-    },
-  ]}
-/>
+- `model` (`VideoModel`): The asynchronous video model to use. A string compatible with Vercel AI Gateway or a serializable provider model.
+- `prompt` (`string | GenerateVideoPrompt`): The prompt or image prompt used to generate the video.
+- `n?` (`number`): Number of videos to generate. Default: 1.
+- `aspectRatio?` (`` `${number}:${number}` | "adaptive" ``): Aspect ratio of the generated videos.
+- `resolution?` (`` `${number}x${number}` ``): Resolution of the generated videos.
+- `duration?` (`number`): Duration of each generated video in seconds.
+- `maxVideosPerCall?` (`number`): Maximum number of videos that may be started in one call.
+- `fps?` (`number`): Frames per second for the generated videos.
+- `seed?` (`number`): Seed used for deterministic generation when supported.
+- `frameImages?` (`Array<{ image: DataContent; frameType: VideoModelV4FrameType }>`): Role-tagged first and last frame images.
+- `inputReferences?` (`Array<DataContent | { data: DataContent; mediaType?: string }>`): Reference images or videos for the generation.
+- `generateAudio?` (`boolean`): Whether to generate audio with the video.
+- `providerOptions?` (`ProviderOptions`): Additional provider-specific options.
+- `headers?` (`Record<string, string>`): Additional HTTP headers for start and status requests.
+- `maxRetries?` (`number`): Maximum number of AI SDK retries for each start and status request. Default: 2.
 
 ## Returns
 
@@ -157,12 +79,10 @@ provider video data discriminated by `type`:
 Hosted URLs can expire. Handle any video you need to retain in a separate
 workflow step.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
-- [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
-- [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

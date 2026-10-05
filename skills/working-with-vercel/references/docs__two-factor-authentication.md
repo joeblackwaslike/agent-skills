@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure two-factor authentication for your Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-authentication.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e9936569384bbbf77546e6c6c9c058cd716297d23177b695cfc1ed2338fed4b6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a5426bc445102d729e82ff5fe9345f5067bc8937eb01c8e45998158d3c01e7fc"
 ---
 
 # Two-factor Authentication
@@ -34,15 +34,15 @@ methods available for 2FA on Vercel:
 - [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Authentication](https://vercel.com/docs/rest-api/authentication?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Endpoints in the authentication group of the Vercel REST API Reference.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/two-factor-authentication.graph.md](/docs/two-factor-authentication.graph.md?from=related&source_path=%2Fdocs%2Ftwo-factor-authentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 - **Authenticator App**: Use an authenticator app like Google Authenticator to generate a time-based one-time password (TOTP).
-- **Passkey**: Authenticate using any WebAuthN compatible device, such as a security key or biometric key.
+- **Passkey**: Authenticate using any WebAuthn-compatible device, such as a security key or biometric key.
 
 ## Enabling two-factor authentication
 
@@ -52,14 +52,14 @@ Full cross-link map for this page: [/docs/two-factor-authentication.graph.md](/d
 4. Confirm your setup
 5. Save your recovery codes
 
-![Image](https://vercel.com/front/docs/two-factor/two-factor-settings.png)
+![Two-factor authentication settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/two-factor-settings.png)
 
 ### Configuring an authenticator app (TOTP)
 
 Scan the QR code with your authenticator app or manually enter the provided key.
 Once added, enter the generated 6-digit code to verify your setup.
 
-![Image](https://vercel.com/front/docs/two-factor/totp.png)
+![The time-based one-time password (TOTP) setup modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/totp.png)
 
 ### Configuring a passkey
 
@@ -72,7 +72,7 @@ Store these codes in a safe place, as they can be used to access your account if
 
 Each recovery code can only be used once, and you can generate a new set of codes at any time.
 
-![Image](https://vercel.com/front/docs/two-factor/recovery-codes.png)
+![The recovery codes modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/recovery-codes.png)
 
 ## Enforcing two-factor authentication
 

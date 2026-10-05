@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d2c6a00010612b2751876d292b762f53cc7cbf1f26bd69258c34b7abcfd5d1ba"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "60eebe9ea58c0fd5fdb875796a517885c68560042732a3e8965d4adb91f2baa6"
 ---
 
 # Deploying Projects from Vercel CLI
@@ -34,13 +34,16 @@ The `vercel` command is used to [deploy](/docs/cli/deploy) Vercel Projects and c
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
 - [Zero Config Deployments](https://vercel.com/blog/zero-config?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Deploying with Vercel Drop](https://vercel.com/docs/drop?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=related) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 
 Full cross-link map for this page: [/docs/cli/deploying-from-cli.graph.md](/docs/cli/deploying-from-cli.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdeploying-from-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

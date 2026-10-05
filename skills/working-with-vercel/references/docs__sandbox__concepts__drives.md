@@ -17,13 +17,13 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "7f3d4b0ab01d49632aa11692cb3763402d47e81551dd55bb014e5dc4a06e99ab"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7816fb76a05f6fee46c518c58bdd9e000851b2e504a6e10890cdac80b7efb117"
 ---
 
 # Drives
 
-> **🔒 Permissions Required**: Drives (Public Beta)
+> **Availability**: Drives (Public Beta) are available on Enterprise and Pro and Hobby plans
 
 Drives provide persistent storage that you mount into a sandbox as a working directory. Your agent can generate code, download dependencies, and build up context in that directory, keeping its progress across sessions.
 
@@ -38,6 +38,7 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/drives — Retrieves a paginated list of drives belonging to a specific project.
 

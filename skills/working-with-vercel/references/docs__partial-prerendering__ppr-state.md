@@ -13,8 +13,8 @@ related:
 summary: "Understand the PPR state that describes how a Partial Prerendering page was served: as a static shell, a partial resume, or fully dynamic."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/ppr-state.md"
-fetched_at: "2026-08-10T05:33:51.465Z"
-sha256: "8159c1a8c6b88b250cde4eb897027627b5433c9b2c60261955990a0db84971df"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a4cb5f296d9f38ee489b5ff354b3a7f9b4a725ed49d260f3534d2f8baf272663"
 ---
 
 # Partial Prerendering State
@@ -64,7 +64,7 @@ export default function Page() {
 }
 ```
 
-![Image](https://vercel.com/front/docs/partial-prerendering/ppr-state/ppr-state-static-light-v2.png?lightbox)
+![A Static request, served entirely from the static shell.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/partial-prerendering/ppr-state/ppr-state-static-light-v2.png?lightbox)
 
 ## Partial
 
@@ -115,7 +115,7 @@ export default function Page() {
 }
 ```
 
-![Image](https://vercel.com/front/docs/partial-prerendering/ppr-state/ppr-state-partial-light-v2.png?lightbox)
+![A Partial request, where the static shell is served and the dynamic parts stream from your function.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/partial-prerendering/ppr-state/ppr-state-partial-light-v2.png?lightbox)
 
 ## Dynamic
 
@@ -169,7 +169,7 @@ export default async function InboxPage() {
 
 With an empty shell, there is nothing for the CDN to serve ahead of the render, so the visitor waits on your function for the first byte. A route that consistently shows `Dynamic` is the signal to move whatever can be cached back above the boundary so a shell exists.
 
-![Image](https://vercel.com/front/docs/partial-prerendering/ppr-state/ppr-state-dynamic-light-v2.png?lightbox)
+![A Dynamic request, rendered entirely by your function.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/partial-prerendering/ppr-state/ppr-state-dynamic-light-v2.png?lightbox)
 
 
 ---

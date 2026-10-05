@@ -1,10 +1,14 @@
 ---
+title: MCP Sampling AI Provider
+description: Learn how to use the MCP Sampling AI Provider.
+url: "https://ai-sdk.dev/providers/community-providers/mcp-sampling"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/mcp-sampling.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "4396c865b63d260d1971f2375d28ab2be66eda0740c2959b9a22c52d2ca62af7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "75cdf92deec2fb78a75ca58f9962a195910367536a08611eb6283ab54d18ba9f"
 ---
 
-# MCP Sampling AI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [MCP Sampling AI Provider](https://github.com/mcpc-tech/mcpc/tree/main/packages/mcp-sampling-ai-provider) allows MCP servers to use AI models through the AI SDK by leveraging your existing client subscriptions (like VS Code Copilot). This transforms your MCP server into an agentic tool that can reason and make decisions, without requiring separate API keys or subscriptions.
 
@@ -40,23 +44,35 @@ See the [full list of MCP clients](https://modelcontextprotocol.io/clients) for 
 
 The MCP Sampling AI Provider is available in the `@mcpc-tech/mcp-sampling-ai-provider` module. You can install it with:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun', 'deno']}>
-  <Tab>
-    <Snippet text="pnpm add @mcpc-tech/mcp-sampling-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @mcpc-tech/mcp-sampling-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @mcpc-tech/mcp-sampling-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="bun add @mcpc-tech/mcp-sampling-ai-provider" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="deno add jsr:@mcpc/mcp-sampling-ai-provider" dark />
-  </Tab>
-</Tabs>
+#### pnpm
+
+```
+pnpm add @mcpc-tech/mcp-sampling-ai-provider
+```
+
+#### npm
+
+```
+npm install @mcpc-tech/mcp-sampling-ai-provider
+```
+
+#### yarn
+
+```
+yarn add @mcpc-tech/mcp-sampling-ai-provider
+```
+
+#### bun
+
+```
+bun add @mcpc-tech/mcp-sampling-ai-provider
+```
+
+#### deno
+
+```
+deno add jsr:@mcpc/mcp-sampling-ai-provider
+```
 
 ## Provider Instance
 
@@ -79,7 +95,7 @@ const provider = createMCPSamplingProvider({ server });
 
 The provider accepts the following configuration:
 
-- **server** _MCP Server instance_
+- **server** *MCP Server instance*
 
   An MCP Server instance that has sampling capability enabled.
 
@@ -102,19 +118,19 @@ const model = provider.languageModel({
 
 The `languageModel()` method accepts optional model preferences:
 
-- **hints** _Array\<\{ name: string \}\>_
+- **hints** *Array\<\{ name: string }>*
 
   Array of model name hints (e.g., `[{ name: "gpt-5-mini" }]`). These suggest preferred models to the MCP client.
 
-- **costPriority** _number (0-1)_
+- **costPriority** *number (0-1)*
 
   Higher values prefer cheaper models. Default is 0.
 
-- **speedPriority** _number (0-1)_
+- **speedPriority** *number (0-1)*
 
   Higher values prefer faster models. Default is 0.
 
-- **intelligencePriority** _number (0-1)_
+- **intelligencePriority** *number (0-1)*
 
   Higher values prefer more capable models. Default is 0.
 
@@ -392,9 +408,9 @@ await server.connect(transport);
 
 See the [examples directory](https://github.com/mcpc-tech/mcpc/tree/main/packages/mcp-sampling-ai-provider/examples) for more complete working examples:
 
-- [generate_text_example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/generate_text_example.ts) - Basic text generation
-- [stream_text_example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/stream_text_example.ts) - Streaming responses
-- [generate_object_example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/generate_object_example.ts) - Structured output
+- [generate\_text\_example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/generate_text_example.ts) - Basic text generation
+- [stream\_text\_example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/stream_text_example.ts) - Streaming responses
+- [generate\_object\_example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/generate_object_example.ts) - Structured output
 - [client-sampling-example.ts](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples/client-sampling-example.ts) - Client sampling implementation
 
 ## Client Sampling (for clients without native support)
@@ -479,68 +495,10 @@ The MCP client (e.g., VS Code, Claude Desktop) decides which actual model to use
 - [MCP Specification](https://modelcontextprotocol.io/)
 - [Example Code](https://github.com/mcpc-tech/mcpc/blob/main/packages/mcp-sampling-ai-provider/examples)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

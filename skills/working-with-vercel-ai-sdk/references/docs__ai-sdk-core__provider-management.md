@@ -1,10 +1,14 @@
 ---
+title: "Provider & Model Management"
+description: Learn how to work with multiple providers and models
+url: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "91e63bf6127e68f97e3d4a8f6a9c4bd55733704d2249be0b7c363ea630e160a7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9632fbee4870b96521f88b6b4d5db8ea171630c316b323c91ae86ece95f99dfa"
 ---
 
-# Provider & Model Management
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When you work with multiple providers and models, it is often desirable to manage them in a central place
 and access the models through simple string ids.
@@ -80,7 +84,7 @@ import { customProvider, gateway } from 'ai';
 export const anthropic = customProvider({
   languageModels: {
     opus: gateway('anthropic/claude-opus-5.5'),
-    sonnet: gateway('anthropic/claude-sonnet-5'),
+    sonnet: gateway('anthropic/claude-sonnet-5.5'),
     haiku: gateway('anthropic/claude-haiku-4.5'),
   },
   fallbackProvider: gateway,
@@ -101,7 +105,7 @@ import {
 
 export const myProvider = customProvider({
   languageModels: {
-    'text-medium': gateway('anthropic/claude-sonnet-5'),
+    'text-medium': gateway('anthropic/claude-sonnet-5.5'),
     'text-small': gateway('openai/gpt-6-luna'),
     'reasoning-medium': wrapLanguageModel({
       model: gateway('openai/gpt-6-astra'),
@@ -155,7 +159,7 @@ const myOpenAI = customProvider({
 // custom provider with skills interface:
 const myAnthropic = customProvider({
   languageModels: {
-    sonnet: anthropic('claude-sonnet-5'),
+    sonnet: anthropic('claude-sonnet-5-5'),
   },
   skills: anthropic.skills(),
 });
@@ -181,7 +185,7 @@ You can create a [provider registry](/docs/reference/ai-sdk-core/provider-regist
 
 ### Setup
 
-```ts filename={"registry.ts"}
+```ts title="registry.ts"
 import { anthropic } from '@ai-sdk/anthropic';
 import { openai } from '@ai-sdk/openai';
 import { createProviderRegistry, gateway } from 'ai';
@@ -200,7 +204,7 @@ export const registry = createProviderRegistry({
 
 By default, the registry uses `:` as the separator between provider and model IDs. You can customize this separator:
 
-```ts filename={"registry.ts"}
+```ts title="registry.ts"
 import { anthropic } from '@ai-sdk/anthropic';
 import { openai } from '@ai-sdk/openai';
 import { createProviderRegistry, gateway } from 'ai';
@@ -220,7 +224,7 @@ export const customSeparatorRegistry = createProviderRegistry(
 You can access language models by using the `languageModel` method on the registry.
 The provider id will become the prefix of the model id: `providerId:modelId`.
 
-```ts highlight={"5"}
+```ts {5}
 import { generateText } from 'ai';
 import { registry } from './registry';
 
@@ -237,7 +241,7 @@ const { text } = await generateText({
 You can access text embedding models by using the `.embeddingModel` method on the registry.
 The provider id will become the prefix of the model id: `providerId:modelId`.
 
-```ts highlight={"5"}
+```ts {5}
 import { embed } from 'ai';
 import { registry } from './registry';
 
@@ -252,7 +256,7 @@ const { embedding } = await embed({
 You can access image models by using the `imageModel` method on the registry.
 The provider id will become the prefix of the model id: `providerId:modelId`.
 
-```ts highlight={"5"}
+```ts {5}
 import { generateImage } from 'ai';
 import { registry } from './registry';
 
@@ -267,7 +271,7 @@ const { image } = await generateImage({
 You can access video models by using the `videoModel` method on the registry.
 The provider id will become the prefix of the model id: `providerId:modelId`.
 
-```ts highlight={"8"}
+```ts {8}
 import { experimental_generateVideo } from 'ai';
 import { fal } from '@ai-sdk/fal';
 import { createProviderRegistry } from 'ai';
@@ -285,7 +289,7 @@ const { videos } = await experimental_generateVideo({
 You can access a provider's files interface by calling `registry.files(providerId)`.
 This is useful when you want to upload files through a provider in the registry before referencing them in model requests.
 
-```ts highlight={"12,17"}
+```ts {12,17}
 import { openai } from '@ai-sdk/openai';
 import {
   createProviderRegistry,
@@ -325,13 +329,13 @@ const { text } = await generateText({
 
 You can access a provider's skills interface by calling `registry.skills(providerId)`.
 
-```ts highlight={"7,12"}
+```ts {7,12}
 import { anthropic } from '@ai-sdk/anthropic';
 import { createProviderRegistry, customProvider, uploadSkill } from 'ai';
 
 const registry = createProviderRegistry({
   anthropic: customProvider({
-    languageModels: { sonnet: anthropic('claude-sonnet-5') },
+    languageModels: { sonnet: anthropic('claude-sonnet-5-5') },
     skills: anthropic.skills(),
   }),
 });
@@ -438,10 +442,9 @@ The AI SDK 5 includes a global provider feature that allows you to specify a mod
 
 ```ts
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await streamText({
-  model: __MODEL__, // Uses the global provider (defaults to gateway)
+  model: "anthropic/claude-sonnet-5.5", // Uses the global provider (defaults to gateway)
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```
@@ -452,14 +455,14 @@ By default, the global provider is set to the Vercel AI Gateway.
 
 You can set your own preferred global provider:
 
-```ts filename="setup.ts"
+```ts title="setup.ts"
 import { openai } from '@ai-sdk/openai';
 
 // Initialize once during startup:
 globalThis.AI_SDK_DEFAULT_PROVIDER = openai;
 ```
 
-```ts filename="app.ts"
+```ts title="app.ts"
 import { streamText } from 'ai';
 
 const result = await streamText({
@@ -480,40 +483,10 @@ middleware for language and image models does not apply to evaluation.
 See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
 for aliases, default-provider configuration, and capability differences.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

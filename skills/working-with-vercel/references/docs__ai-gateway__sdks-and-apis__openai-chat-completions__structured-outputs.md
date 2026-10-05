@@ -13,8 +13,8 @@ related:
 summary: Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "8aba25634a26c56d9467844d5d9fc75fb1286e62dea2a74d5750f167a658b5ec"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2a950ee2dac8b0266b9f7d0005b1c3f9357ab5181cd09ea57178a151def228c7"
 ---
 
 # OpenAI Chat Completions Structured Outputs with AI Gateway
@@ -27,12 +27,12 @@ Generate structured JSON responses that conform to a specific schema, ensuring p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related)
+- [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Learn how to generate structured data with the AI SDK.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
 - [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
-- [OpenAI Chat Completions Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenai-chat-completions%2Fstructured-outputs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

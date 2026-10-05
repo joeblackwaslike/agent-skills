@@ -12,16 +12,17 @@ related:
   - /docs/speed-insights
   - /docs/analytics/limits-and-pricing
   - /docs/speed-insights/limits-and-pricing
+  - /docs/agent/private-dependencies
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "733992764166329c2dcd509e8c1d4686bf3cca991c43911c8dc9f342a357702f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "749e5e38ed792d9612cd7c655c188c8453f8b31a16253a20ef3facae3482ca03"
 ---
 
 # Installation
 
-> **🔒 Permissions Required**: Vercel Agent Installation (Public Beta)
+> **Availability**: Vercel Agent Installation (Public Beta) is available on all plans
 
 Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed Insights](/docs/speed-insights) to your project with AI. After you start the installation, Vercel Agent automatically:
 
@@ -33,14 +34,14 @@ Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed 
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel Agent can now install Web Analytics and Speed insights for you](https://vercel.com/changelog/vercel-agent-installation?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Introducing Vercel Agent: Your new Vercel teammate](https://vercel.com/blog/introducing-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related)
+- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/agent/installation.graph.md](/docs/agent/installation.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Finstallation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -72,16 +73,7 @@ There is no charge for using Vercel Agent Installation. Standard usage charges f
 
 Vercel Agent runs the repository's normal install command in a secure sandbox when a workflow needs dependencies. The repository determines the package manager and lockfile behavior. Vercel Agent does not promise to rewrite a lockfile or convert a project between npm, pnpm, yarn, and Bun.
 
-Private npm package installs are available only when the private npm capability is enabled for your team and the team has configured an `NPM_TOKEN` or an `NPM_RC` value with a token for `registry.npmjs.org`.
-
-- Vercel Agent injects the credential at the sandbox network boundary. It does not write the token to `.npmrc`.
-- `NPM_RC` takes precedence when it contains a usable default-registry token. Otherwise, Vercel Agent uses `NPM_TOKEN`.
-- Authentication is limited to read requests to `registry.npmjs.org`, so installs can resolve private packages without authorizing publishing.
-- `registry.yarnpkg.com` is not authenticated. Yarn works only when it resolves packages through the npm registry.
-- Public packages remain available without a team credential. Private installs fail when no usable credential is configured.
-- Package-manager commands are not automatically wrapped with `vercel env run`.
-
-Vercel Agent does not support publishing, unpublishing, deprecating, changing dist-tags, changing package access or owners, or managing npm tokens from the sandbox. Do not pass npm credentials in a prompt or command.
+To install private npm packages, [configure your team's shared registry credentials](/docs/agent/private-dependencies).
 
 
 ---

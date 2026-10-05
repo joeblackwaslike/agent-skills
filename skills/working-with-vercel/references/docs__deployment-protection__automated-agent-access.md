@@ -16,8 +16,8 @@ related:
 summary: Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Protection enabled.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/automated-agent-access.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "922f77c26dca6a28399aed498792b3031947d8b6082e1011dc0d7d5fbbad6685"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9e815af622dc5fddf8b0bc35d0ba255e7d903266386fb578d2b6da4cb4c1d9d5"
 ---
 
 # Automated & Agent Access
@@ -33,9 +33,10 @@ AI agents, CI/CD pipelines, MCP servers, and end-to-end testing tools can't comp
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
 - [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related)
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=related) — Learn how to run and test your microfrontends locally.
 
 Full cross-link map for this page: [/docs/deployment-protection/automated-agent-access.graph.md](/docs/deployment-protection/automated-agent-access.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fautomated-agent-access&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -283,7 +284,7 @@ jobs:
       - name: Run tests against preview
         env:
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
-          DEPLOYMENT_URL: ${{ github.event.deployment_status.target_url }}
+          VERCEL_PREVIEW_URL: ${{ github.event.deployment_status.target_url }}
         run: npx playwright test
 ```
 

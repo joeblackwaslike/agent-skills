@@ -12,12 +12,12 @@ related:
   - /docs/security/pci-dss
   - /docs/production-checklist
   - /docs/spend-management
-  - /docs/query/monitoring
+  - /docs/observability/observability-plus
 summary: Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers, Vercel, and shared aspects in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/shared-responsibility.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "49e9c75ae24309368a8edc17975a6a3c3ea8b146fb2ae342e2d5481b2092f0df"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0e8716d6f9ddf0eb4f30cd609675184428af8280e3a0811d0f037c7219baf9f5"
 ---
 
 # Shared Responsibility Model
@@ -39,9 +39,9 @@ A shared responsibility model is a framework designed to split tasks and obligat
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related)
 - [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
 Full cross-link map for this page: [/docs/security/shared-responsibility.graph.md](/docs/security/shared-responsibility.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fshared-responsibility&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ The customer handles their data, applications, and user access management. This 
 
 Vercel manages infrastructure components, such as compute, storage, and networking. Our role is to guarantee that the platform is secure, dependable, and maintained.
 
-![Image](`/docs-assets/static/docs/security/shared-responsibility-model-light-mode.png`)
+![The shared responsibility model for Vercel.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/shared-responsibility-model-light-mode.png)
 
 ## Customer responsibilities
 
@@ -71,7 +71,7 @@ Vercel manages infrastructure components, such as compute, storage, and networki
 ## Shared responsibilities
 
 - **Information and Data**: Customers control and own their data. By design, customers determine the access to their data and are responsible for securing and protecting it while in their possession. Vercel does not have visibility into customers' data until they provide it to us. Once in our possession, it is our responsibility to protect and secure it. This shared responsibility ensures the safety and privacy of our customers' data
-  - **Integrations**: Customers are responsible for deciding which Vercel services to use and the data that is collected or needed to provide those services. This includes making choices about optional features such as [monitoring](/docs/query/monitoring) and [analytics](/docs/analytics), which give customers more information about their end users. Integrations with third-party services should also be considered in this context, as they can impact the data collected and shared
+  - **Integrations**: Customers are responsible for deciding which Vercel services to use and the data that is collected or needed to provide those services. This includes making choices about optional features such as [Observability Plus](/docs/observability/observability-plus) and [analytics](/docs/analytics), which give customers more information about their end users. Integrations with third-party services should also be considered in this context, as they can impact the data collected and shared
 - **Encryption & Data Integrity**: Vercel is responsible for [encryption](/docs/cdn-security/encryption) and data integrity for data in transit (when in motion between systems or locations) and at rest for the services Vercel controls. However, customers must ensure that all integrations and third-party services used to interact with Vercel are properly secured. This includes proxies, WAFs, CMSs, and integrations with other third-party services
   - **User Code & Environment Variables**: Customers are responsible for managing their application's code, including the exposure of [environment variables](/docs/environment-variables). By providing code and setting environment variables, customers authorize Vercel to build and deploy their application based on the provided parameters. It is essential for customers to ensure proper handling of sensitive information, such as API keys or other secrets, to maintain the security of their application and data
 - **Authentication**: Customers handle their app's authentication with tools like [NextAuth.js](https://next-auth.js.org/getting-started/introduction). Vercel manages platform authentication and provides [deployment protection](/docs/deployment-protection) to help secure the platform for Pro and Hobby users, who authenticate using the [CLI](/docs/cli/login). Enterprise users can access Single Sign-On (SSO). Vercel deployments can be protected in the following ways: [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [SSO](/docs/saml), or [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)

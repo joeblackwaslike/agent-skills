@@ -16,8 +16,8 @@ related:
 summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "85e9b8b935f597df959b59362fbf3a5edc7e8e3eb5dd1aa56ef2eebf457e05f5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f7a7309925fac5de250e0408c71321e3c26ba0e369fcc39dba101933b33b6471"
 ---
 
 # Mistral Vibe with AI Gateway
@@ -30,11 +30,11 @@ sha256: "85e9b8b935f597df959b59362fbf3a5edc7e8e3eb5dd1aa56ef2eebf457e05f5"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/vibe.graph.md](/docs/ai-gateway/coding-agents/vibe.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -66,6 +66,8 @@ If you can't use the Vercel CLI, configure Mistral Vibe manually:
 - ### Add the gateway provider
   Add the provider and model entries to `~/.vibe/config.toml`:
   ```toml filename="~/.vibe/config.toml"
+  active_model = "openai/gpt-6-astra"
+
   [[providers]]
   name = "vercel-ai-gateway"
   api_base = "https://ai-gateway.vercel.sh/coding-agent/v1"
@@ -76,8 +78,6 @@ If you can't use the Vercel CLI, configure Mistral Vibe manually:
   [[models]]
   name = "openai/gpt-6-astra"
   provider = "vercel-ai-gateway"
-
-  active_model = "openai/gpt-6-astra"
   ```
   `api_key_env_var` keeps the key in the shell environment, so it never lands in the file. Model entries must be unaliased because Vibe resolves `[[models]]` names against the provider list. The picker scrolls without type-to-filter, so keep the shortlist focused.
 

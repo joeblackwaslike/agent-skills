@@ -16,8 +16,8 @@ related:
 summary: Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f11cc3cc8dd31a75fdbad25be855281ea8bdd26f1e0785ae434274e6ba7b60c2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "32273f6d8b1f7687dfeaaf2fbc17ee058e6fa8afaeaf27f6e7072bead61b34ca"
 ---
 
 # OpenAI Responses Compaction with AI Gateway
@@ -30,11 +30,11 @@ Long agent sessions eventually fill the model's context window. [Compaction](htt
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 - [OpenAI Responses API WebSocket Mode with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=related) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/compaction.graph.md](/docs/ai-gateway/sdks-and-apis/responses/compaction.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Fcompaction&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

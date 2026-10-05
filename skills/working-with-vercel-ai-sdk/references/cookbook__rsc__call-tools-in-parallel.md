@@ -1,36 +1,31 @@
 ---
+title: Call Tools in Parallel
+description: Learn how to tools in parallel text using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/call-tools-in-parallel"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - tool use
 source: "https://ai-sdk.dev/cookbook/rsc/call-tools-in-parallel.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ac755624a5affbb517c6d86bb9200aa683a8960e3f778c579e7480c1241f5944"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0c4a87ee177122f6149958e1263d0906db5c78ceefbe36280df633ec5a158199"
 ---
 
-# Call Tools in Parallel
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Some language models support calling tools in parallel. This is particularly useful when multiple tools are independent of each other and can be executed in parallel during the same generation step.
 
-<Browser>
-  <ChatGeneration
-    history={[
-      { role: 'User', content: 'How is it going?' },
-      { role: 'Assistant', content: 'All good, how may I help you?' },
-    ]}
-    inputMessage={{
-      role: 'User',
-      content: 'What is the weather in Paris and New York?',
-    }}
-    outputMessage={{
-      role: 'Assistant',
-      content:
-        'The weather is 24°C in New York and 25°C in Paris. It is sunny in both cities.',
-    }}
-  />
-</Browser>
+User: How is it going?
+
+Assistant: All good, how may I help you?
+
+What is the weather in Paris and New York?
 
 ## Client
 
 Let's modify our previous example to call `getWeather` tool for multiple cities in parallel.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -83,7 +78,7 @@ export default function Home() {
 
 Let's update the tools object to now use the `getWeather` function instead.
 
-```ts filename='app/actions.ts'
+```ts title='app/actions.ts'
 'use server';
 
 import { generateText } from 'ai';
@@ -138,22 +133,10 @@ export async function continueConversation(history: Message[]) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

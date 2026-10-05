@@ -3,7 +3,7 @@ title: rotate-installation-credential
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential"
-last_updated: 2026-09-28
+last_updated: 2026-10-05
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about rotate-installation-credential on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "af49eb6d0e968fe4e3623e9045f7d4233e9b3a2ea1af43ad4acc6856d5cbf0e9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3b8ebc38861db0eaa3f7321f5566b8d975ebebe82642ff528b46ad847142adeb"
 ---
 
 # Rotate Installation Credential

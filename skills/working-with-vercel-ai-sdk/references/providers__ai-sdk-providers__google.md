@@ -1,10 +1,14 @@
 ---
+title: Google
+description: Learn how to use Google Provider.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/google"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "fa0e86a6208b5861b90f7e74a2ad58c47df26f44194ac9e9b04091ad5fa83e0f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "80f0d0cd6c7e05d2211565df64be644feeebedac0ca71f0c43a804b03f9efca4"
 ---
 
-# Google Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Google](https://ai.google.dev) provider contains language and embedding model support for
 the [Google](https://ai.google.dev/api/rest) APIs.
@@ -13,7 +17,7 @@ the [Google](https://ai.google.dev/api/rest) APIs.
 
 The Google provider is available in the `@ai-sdk/google` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/google" />
+**Packages:** `@ai-sdk/google`
 
 ## Provider Instance
 
@@ -35,33 +39,33 @@ const google = createGoogle({
 
 You can use the following optional settings to customize the Google provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://generativelanguage.googleapis.com/v1beta`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `x-goog-api-key` header.
   It defaults to the `GOOGLE_GENERATIVE_AI_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **generateId** _() => string_
+- **generateId** *() => string*
 
   Optional function to generate unique IDs for each request.
   Defaults to the SDK's built-in ID generator.
 
-- **name** _string_
+- **name** *string*
 
   Custom provider name.
   Defaults to `'google.generative-ai'`.
@@ -92,15 +96,13 @@ Google language models can also be used in the `streamText` function
 and support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output)
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
-<Note>
-  To remain forward-compatible, the provider treats unrecognized `gemini-*`
-  model IDs and `-latest` aliases like the newest supported Gemini generation.
-  Currently, this means Gemini 3 request behavior for provider-defined and mixed
-  tools, `thinkingLevel` reasoning, multimodal function responses, and thought
-  signatures. Known legacy Gemini model IDs keep their generation-specific
-  request behavior. This SDK default controls request serialization; the
-  selected model must still support each feature in the Google API.
-</Note>
+To remain forward-compatible, the provider treats unrecognized `gemini-*`
+model IDs and `-latest` aliases like the newest supported Gemini generation.
+Currently, this means Gemini 3 request behavior for provider-defined and mixed
+tools, `thinkingLevel` reasoning, multimodal function responses, and thought
+signatures. Known legacy Gemini model IDs keep their generation-specific
+request behavior. This SDK default controls request serialization; the
+selected model must still support each feature in the Google API.
 
 Google also supports some model specific settings that are not part of the [standard call settings](/docs/ai-sdk-core/settings).
 You can pass them as an options argument:
@@ -127,28 +129,29 @@ await generateText({
 
 The following optional provider options are available for Google models:
 
-- **cachedContent** _string_
+- **cachedContent** *string*
 
   Optional. The name of the cached content used as context to serve the prediction.
-  Format: cachedContents/\{cachedContent\}
+  Format: cachedContents/\{cachedContent}
 
-- **structuredOutputs** _boolean_
+- **structuredOutputs** *boolean*
 
   Optional. Enable structured output. Default is true.
 
-  This is useful when the JSON Schema contains elements that are
-  not supported by the OpenAPI schema version that
-  Google uses. You can use this to disable
-  structured outputs if you need to.
+  You can disable structured outputs when a schema is not supported or exceeds
+  Google's schema complexity limits. The model will still be instructed to
+  return JSON, but the schema will not be sent to Google.
 
   See [Troubleshooting: Schema Limitations](#schema-limitations) for more details.
 
-- **safetySettings** _Array\<\{ category: string; threshold: string \}\>_
+- **safetySettings** *Array\<\{ category: string; threshold: string }>*
 
   Optional. Safety settings for the model.
-  - **category** _string_
+
+  - **category** *string*
 
     The category of the safety setting. Can be one of the following:
+
     - `HARM_CATEGORY_UNSPECIFIED`
     - `HARM_CATEGORY_HATE_SPEECH`
     - `HARM_CATEGORY_DANGEROUS_CONTENT`
@@ -156,9 +159,10 @@ The following optional provider options are available for Google models:
     - `HARM_CATEGORY_SEXUALLY_EXPLICIT`
     - `HARM_CATEGORY_CIVIC_INTEGRITY`
 
-  - **threshold** _string_
+  - **threshold** *string*
 
     The threshold of the safety setting. Can be one of the following:
+
     - `HARM_BLOCK_THRESHOLD_UNSPECIFIED`
     - `BLOCK_LOW_AND_ABOVE`
     - `BLOCK_MEDIUM_AND_ABOVE`
@@ -166,36 +170,37 @@ The following optional provider options are available for Google models:
     - `BLOCK_NONE`
     - `OFF`
 
-- **responseModalities** _string[]_
+- **responseModalities** *string\[]*
   The modalities to use for the response. The following modalities are supported: `TEXT`, `IMAGE`. When not defined or empty, the model defaults to returning only text.
 
-- **thinkingConfig** _\{ thinkingLevel?: 'minimal' | 'low' | 'medium' | 'high'; thinkingBudget?: number; includeThoughts?: boolean \}_
+- **thinkingConfig** *\{ thinkingLevel?: 'minimal' | 'low' | 'medium' | 'high'; thinkingBudget?: number; includeThoughts?: boolean }*
 
   Optional. Configuration for the model's thinking process. Only supported by specific [Google models](https://ai.google.dev/gemini-api/docs/thinking).
-  - **thinkingLevel** _'minimal' | 'low' | 'medium' | 'high'_
+
+  - **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high'*
 
     Optional. Controls the thinking depth for Gemini 3 and later models. Gemini 3.1 Pro supports 'low', 'medium', and 'high', Gemini 3 Pro supports 'low' and 'high', while Gemini 3 Flash supports all four levels: 'minimal', 'low', 'medium', and 'high'.
 
-  - **thinkingBudget** _number_
+  - **thinkingBudget** *number*
 
     Optional. Gives the model guidance on the number of thinking tokens it can use when generating a response. Setting it to 0 disables thinking, if the model supports it.
     For more information about the possible value ranges for each model see [Google thinking documentation](https://ai.google.dev/gemini-api/docs/thinking#set-budget).
 
-    <Note>
-      This option is for Gemini 2.5 models. Gemini 3 and later models should use
-      `thinkingLevel` instead.
-    </Note>
+    This option is for Gemini 2.5 models. Gemini 3 and later models should use
+    `thinkingLevel` instead.
 
-  - **includeThoughts** _boolean_
+  - **includeThoughts** *boolean*
 
     Optional. If set to true, thought summaries are returned, which are synthesized versions of the model's raw thoughts and offer insights into the model's internal reasoning process.
 
-- **imageConfig** _\{ aspectRatio?: string, imageSize?: string \}_
+- **imageConfig** *\{ aspectRatio?: string, imageSize?: string }*
 
   Optional. Configuration for the models image generation. Only supported by specific [Google models](https://ai.google.dev/gemini-api/docs/image-generation).
-  - **aspectRatio** _string_
+
+  - **aspectRatio** *string*
 
     Model defaults to generate 1:1 squares, or to matching the output image size to that of your input image. Can be one of the following:
+
     - 1:1
     - 2:3
     - 3:2
@@ -207,21 +212,23 @@ The following optional provider options are available for Google models:
     - 16:9
     - 21:9
 
-  - **imageSize** _string_
+  - **imageSize** *string*
 
     Controls the output image resolution. Defaults to 1K. Can be one of the following:
+
     - 1K
     - 2K
     - 4K
 
-- **audioTimestamp** _boolean_
+- **audioTimestamp** *boolean*
 
   Optional. Enables timestamp understanding for audio-only files.
   See [Google Cloud audio understanding documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/audio-understanding).
 
-- **mediaResolution** _string_
+- **mediaResolution** *string*
 
   Optional. If specified, the media resolution specified will be used. Can be one of the following:
+
   - `MEDIA_RESOLUTION_UNSPECIFIED`
   - `MEDIA_RESOLUTION_LOW`
   - `MEDIA_RESOLUTION_MEDIUM`
@@ -229,12 +236,12 @@ The following optional provider options are available for Google models:
 
   See [Google API MediaResolution documentation](https://ai.google.dev/api/generate-content#MediaResolution).
 
-- **labels** _Record&lt;string, string&gt;_
+- **labels** *Record\<string, string>*
 
   Optional. Defines labels used in billing reports. Available on Vertex AI only.
   See [Google Cloud labels documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/add-labels-to-api-calls).
 
-- **serviceTier** _'standard' | 'flex' | 'priority'_
+- **serviceTier** *'standard' | 'flex' | 'priority'*
 
   Optional. The service tier to use for the request.
   Set to `'flex'` for 50% cheaper processing at the cost of increased latency.
@@ -246,7 +253,7 @@ The following optional provider options are available for Google models:
   [Priority inference](https://ai.google.dev/gemini-api/docs/priority-inference)
   and [Flex inference](https://ai.google.dev/gemini-api/docs/flex-inference).
 
-- **threshold** _string_
+- **threshold** *string*
 
   Optional. Standalone threshold setting that can be used independently of `safetySettings`.
   Uses the same values as the `safetySettings` threshold.
@@ -367,13 +374,12 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  The AI SDK will automatically download URLs if you pass them as data, except
-  for `https://generativelanguage.googleapis.com/v1beta/files/` and YouTube
-  URLs. You can use the Google Generative AI Files API to upload larger files to
-  that location. YouTube URLs (public or unlisted videos) are supported directly
-  - you can specify one YouTube video URL per request.
-</Note>
+The AI SDK will automatically download URLs if you pass them as data, except
+for `https://generativelanguage.googleapis.com/v1beta/files/` and YouTube
+URLs. You can use the Google Generative AI Files API to upload larger files to
+that location. YouTube URLs (public or unlisted videos) are supported directly
+
+- you can specify one YouTube video URL per request.
 
 See [File Parts](/docs/foundations/prompts#file-parts) for details on how to use files in prompts.
 
@@ -428,11 +434,9 @@ console.log('Cached tokens:', providerMetadata.google);
 // }
 ```
 
-<Note>
-  Usage metadata was added to `providerMetadata` in `@ai-sdk/google@1.2.23`. If
-  you are using an older version, usage metadata is available in the raw HTTP
-  `response` body returned as part of the return value from `generateText`.
-</Note>
+Usage metadata was added to `providerMetadata` in `@ai-sdk/google@1.2.23`. If
+you are using an older version, usage metadata is available in the raw HTTP
+`response` body returned as part of the return value from `generateText`.
 
 #### Explicit Caching
 
@@ -509,7 +513,7 @@ The response will contain the tool calls and results from the code execution.
 With [Google Search grounding](https://ai.google.dev/gemini-api/docs/google-search),
 the model has access to the latest information using Google Search.
 
-```ts highlight="8,17-19"
+```ts {8,17-19}
 import { google } from '@ai-sdk/google';
 import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
@@ -533,15 +537,17 @@ const safetyRatings = metadata?.safetyRatings;
 
 The `googleSearch` tool accepts the following optional configuration options:
 
-- **searchTypes** _object_
+- **searchTypes** *object*
 
   Enables specific search types. Both can be combined.
+
   - `webSearch`: Enable web search grounding (pass `{}` to enable). This is the default.
   - `imageSearch`: Enable [image search grounding](https://ai.google.dev/gemini-api/docs/image-generation#image-search) (pass `{}` to enable).
 
-- **timeRangeFilter** _object_
+- **timeRangeFilter** *object*
 
   Restricts search results to a specific time range. Both `startTime` and `endTime` are required.
+
   - `startTime`: Start time in ISO 8601 format (e.g. `'2025-01-01T00:00:00Z'`).
   - `endTime`: End time in ISO 8601 format (e.g. `'2025-12-31T23:59:59Z'`).
 
@@ -606,12 +612,10 @@ Example response:
 With [Enterprise Web Search](https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise),
 the model has access to a compliance-focused web index designed for highly-regulated industries such as finance, healthcare, and public sector.
 
-<Note>
-  Enterprise Web Search is only available on Vertex AI. You must use the Google
-  Vertex provider (`@ai-sdk/google-vertex`) instead of the standard Google
-  provider (`@ai-sdk/google`) to use this feature. Requires Gemini 2.0 or newer
-  models.
-</Note>
+Enterprise Web Search is only available on Vertex AI. You must use the Google
+Vertex provider (`@ai-sdk/google-vertex`) instead of the standard Google
+provider (`@ai-sdk/google`) to use this feature. Requires Gemini 2.0 or newer
+models.
 
 ```ts
 import { createGoogleVertex } from '@ai-sdk/google-vertex';
@@ -641,7 +645,7 @@ Enterprise Web Search provides the following benefits:
 
 The [File Search tool](https://ai.google.dev/gemini-api/docs/file-search) lets Gemini retrieve context from your own documents that you have indexed in File Search stores. The provider enables this tool for Gemini 2.5 and Gemini 3-and-later model IDs, including unrecognized future Gemini IDs.
 
-```ts highlight="9-13"
+```ts {9-13}
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
@@ -668,7 +672,7 @@ Google provides a provider-defined URL context tool.
 
 The URL context tool allows you to provide specific URLs that you want the model to analyze directly in from the prompt.
 
-```ts highlight="9,13-15"
+```ts {9,13-15}
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
@@ -729,24 +733,22 @@ With the URL context tool, you will also get the `groundingMetadata`.
             "groundingChunkIndices": [
                 0
             ]
-        },
+        }
     ]
 }
 ```
 
-<Note>You can add up to 20 URLs per request.</Note>
+You can add up to 20 URLs per request.
 
-<Note>
-  The URL context tool is only supported for Gemini 2.0 Flash models and above.
-  Check the [supported models for URL context
-  tool](https://ai.google.dev/gemini-api/docs/url-context#supported-models).
-</Note>
+The URL context tool is only supported for Gemini 2.0 Flash models and above.
+Check the [supported models for URL context
+tool](https://ai.google.dev/gemini-api/docs/url-context#supported-models).
 
 #### Combine URL Context with Search Grounding
 
 You can combine the URL context tool with search grounding to provide the model with the latest information from the web.
 
-```ts highlight="9-10"
+```ts {9-10}
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
@@ -770,7 +772,7 @@ const urlContextMetadata = metadata?.urlContextMetadata;
 With [Google Maps grounding](https://ai.google.dev/gemini-api/docs/maps-grounding),
 the model has access to Google Maps data for location-aware responses. This enables providing local data and geospatial context, such as finding nearby restaurants.
 
-```ts highlight="7-16"
+```ts {7-16}
 import { google, type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
@@ -815,7 +817,7 @@ When Google Maps grounding is enabled, the model's response will include sources
 }
 ```
 
-<Note>Google Maps grounding is supported on Gemini 2.0 and newer models.</Note>
+Google Maps grounding is supported on Gemini 2.0 and newer models.
 
 ### RAG Engine Grounding
 
@@ -823,13 +825,11 @@ With [RAG Engine Grounding](https://cloud.google.com/vertex-ai/generative-ai/doc
 the model has access to your custom knowledge base using the Vertex RAG Engine.
 This enables the model to provide answers based on your specific data sources and documents.
 
-<Note>
-  RAG Engine Grounding is only supported with Vertex Gemini models. You must use
-  the Google Vertex provider (`@ai-sdk/google-vertex`) instead of the standard
-  Google provider (`@ai-sdk/google`) to use this feature.
-</Note>
+RAG Engine Grounding is only supported with Vertex Gemini models. You must use
+the Google Vertex provider (`@ai-sdk/google-vertex`) instead of the standard
+Google provider (`@ai-sdk/google`) to use this feature.
 
-```ts highlight="5-8,13-17,25-27"
+```ts {5-8,13-17,25-27}
 import { createGoogleVertex } from '@ai-sdk/google-vertex';
 import { GoogleProviderMetadata } from '@ai-sdk/google';
 import { generateText } from 'ai';
@@ -943,11 +943,9 @@ for (const file of result.files) {
 }
 ```
 
-<Note>
-  If you primarily want to generate images without text output, you can also use
-  Gemini image models with the `generateImage()` function. See [Gemini Image
-  Models](#gemini-image-models) for details.
-</Note>
+If you primarily want to generate images without text output, you can also use
+Gemini image models with the `generateImage()` function. See [Gemini Image
+Models](#gemini-image-models) for details.
 
 ### Safety Ratings
 
@@ -996,16 +994,23 @@ Example response excerpt:
 
 #### Schema Limitations
 
-The Google Generative AI API uses a subset of the OpenAPI 3.0 schema,
-which does not support features such as unions.
-The errors that you get in this case look like this:
+The Google Generative AI API supports a subset of JSON Schema. Google notes that
+[very large or deeply nested schemas may be rejected](https://ai.google.dev/gemini-api/docs/structured-output#limitations).
+When a schema exceeds Google's complexity limit, the API may return the following
+generic error:
 
-`GenerateContentRequest.generation_config.response_schema.properties[occupation].type: must be specified`
+`Request contains an invalid argument.`
+
+You can work around this by simplifying the schema sent to Google. For example,
+remove unnecessary constraints or reduce nesting while preserving the fields
+and types the model needs to generate. If you need stricter client-side
+validation than the schema sent to Google, use [`jsonSchema`](/docs/reference/ai-sdk-core/json-schema)
+with a custom validation function or validate the generated output separately.
 
 By default, structured outputs are enabled (and for tool calling they are required).
-You can disable structured outputs for object generation as a workaround:
+You can also disable provider-enforced structured outputs for object generation:
 
-```ts highlight="3,8"
+```ts {3,8}
 const { output } = await generateText({
   model: google('gemini-3.8-flash'),
   providerOptions: {
@@ -1033,44 +1038,39 @@ const { output } = await generateText({
 });
 ```
 
-The following Zod features are known to not work with Google:
-
-- `z.union`
-- `z.record`
+When `structuredOutputs` is `false`, Google still receives the JSON response MIME type
+but not the schema. Describe the required schema in your prompt. AI SDK
+will still validate the response against the schema in `Output.object`.
 
 ### Model Capabilities
 
 | Model                                 | Image Input | Object Generation | Tool Usage | Tool Streaming | Google Search | URL Context |
 | ------------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------- | ----------- |
-| `gemini-3.8-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.7-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.6-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.5-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.5-flash-lite`               | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.1-pro-preview`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.1-flash-image-preview`      | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3.1-flash-lite-preview`       | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3-pro-preview`                | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3-pro-image-preview`          | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-3-flash-preview`              | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-2.5-pro`                      | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-2.5-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-2.5-flash-lite`               | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-2.5-flash-lite-preview-06-17` | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
-| `gemini-2.0-flash`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check />     | <Check />   |
+| `gemini-3.8-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.7-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.6-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.5-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.5-flash-lite`               | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.1-pro-preview`              | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.1-flash-image-preview`      | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3.1-flash-lite-preview`       | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3-pro-preview`                | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3-pro-image-preview`          | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-3-flash-preview`              | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-2.5-pro`                      | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-2.5-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-2.5-flash-lite`               | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-2.5-flash-lite-preview-06-17` | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-2.0-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 
-<Note>
-  The table above lists popular models. Please see the [Google Generative AI
-  docs](https://ai.google.dev/gemini-api/docs/models/) for a full list of
-  available models. The table above lists popular models. You can also pass any
-  available provider model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [Google Generative AI
+docs](https://ai.google.dev/gemini-api/docs/models/) for a full list of
+available models. The table above lists popular models. You can also pass any
+available provider model ID as a string if needed.
 
 ### Batch
 
-<Note type="warning">
-  Batch support is experimental and the API may change in patch releases.
-</Note>
+Batch support is experimental and the API may change in patch releases.
 
 The Google provider supports asynchronous text generation through the [Gemini
 Batch API](https://ai.google.dev/gemini-api/docs/batch-api). Pass the Google
@@ -1119,7 +1119,7 @@ When the serialized batch creation body is under 20 MB, the provider sends the r
 
 ## Realtime Models
 
-<Note type="warning">Realtime is an experimental feature.</Note>
+Realtime is an experimental feature.
 
 You can create models that call the [Gemini Live API](https://ai.google.dev/gemini-api/docs/live)
 using the `.experimental_realtime()` factory method.
@@ -1147,6 +1147,18 @@ Gemini lifecycle signals that do not have provider-neutral equivalents are
 emitted as custom events. Inspect `rawType` for `goAway`,
 `sessionResumptionUpdate`, and `generationComplete` and use the event's `raw`
 payload for provider-specific details.
+
+With input audio transcription enabled, `parseServerEvent` emits
+`input-transcription-completed` events with a stable `itemId` for each user
+utterance. Each `transcript` contains the accumulated text so far. If you consume
+these events directly, replace the text for that `itemId` with `transcript` on
+each event. The realtime session handles this automatically.
+
+Google's `finished` transcription marker ends an utterance even when the marker
+contains no text. For payloads without this marker, response completion and
+interruption provide fallback boundaries. These fallback boundaries cannot
+unambiguously associate all delayed transcription fragments. Input item IDs use
+their own sequence and need not match the model's response IDs.
 
 ### Live Translation
 
@@ -1233,7 +1245,7 @@ user input to continue.
 
 ## Translation Models
 
-<Note type="warning">Speech translation is an experimental feature.</Note>
+Speech translation is an experimental feature.
 
 For server-side streaming translation, you can create models that call the
 [Gemini Live API](https://ai.google.dev/gemini-api/docs/live) using the
@@ -1271,7 +1283,7 @@ not supported). Unsupported settings surface as call warnings.
 
 The following provider options are available:
 
-- **echoTargetLanguage** _boolean_
+- **echoTargetLanguage** *boolean*
   Whether input audio already in the target language should be echoed instead
   of producing silence.
   Optional.
@@ -1280,7 +1292,7 @@ The following provider options are available:
 
 | Model                               | Translated Audio | Translated Text | Source Transcript |
 | ----------------------------------- | ---------------- | --------------- | ----------------- |
-| `gemini-3.5-live-translate-preview` | <Check />        | <Check />       | <Check />         |
+| `gemini-3.5-live-translate-preview` | ✓                | ✓               | ✓                 |
 
 ## Interactions API
 
@@ -1308,12 +1320,10 @@ invoke a [managed agent](#managed-agents) you created on Google's side.
 The returned model can be passed to `generateText` and `streamText` like
 any other AI SDK language model.
 
-<Note>
-  Use `google(...)` for the standard `:generateContent` /
-  `:streamGenerateContent` endpoints, and `google.interactions(...)` for the new
-  Interactions endpoint. Pick one per model instance — they target different
-  request bodies and SSE event vocabularies.
-</Note>
+Use `google(...)` for the standard `:generateContent` /
+`:streamGenerateContent` endpoints, and `google.interactions(...)` for the new
+Interactions endpoint. Pick one per model instance — they target different
+request bodies and SSE event vocabularies.
 
 ### Provider Options
 
@@ -1341,47 +1351,43 @@ await generateText({
 
 The following optional provider options are available:
 
-- **previousInteractionId** _string_
+- **previousInteractionId** *string*
 
   Server-side interaction id from a prior turn. When set, the server pulls
   prior context from its own state and only the new user message is sent on
   the wire. Pair with the default `store: true` to chain stateful
   conversations. See [Stateful chaining](#stateful-chaining).
 
-- **store** _boolean_
+- **store** *boolean*
 
   Whether the server should persist the interaction. Defaults to `true`.
   Set to `false` for stateless multi-turn conversations where the full
   message history is re-sent on every turn.
 
-- **agent** _string_
+- **agent** *string*
 
   Name of a Gemini agent preset (e.g. `'deep-research-pro-preview-12-2025'`).
-
-      <Note>
 
   Prefer the factory form `google.interactions({ agent: '...' })` over
   setting `agent` in provider options — the factory is type-checked
   against the supported agent names.
 
-  </Note>
-
-- **agentConfig** _object_
+- **agentConfig** *object*
 
   Per-agent configuration. Currently supports `{ type: 'dynamic' }` and
   `{ type: 'deep-research', thinkingSummaries?, visualization?, collaborativePlanning? }`.
 
-- **thinkingLevel** _'minimal' | 'low' | 'medium' | 'high'_
+- **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high'*
 
   Controls reasoning depth for thinking-enabled models. Mapped onto the
   Interactions request's `thinking_level`.
 
-- **thinkingSummaries** _'auto' | 'none'_
+- **thinkingSummaries** *'auto' | 'none'*
 
   Whether the model returns synthesized thought summaries on reasoning
   parts. Defaults to the API default.
 
-- **responseFormat** _Array\<ResponseFormatEntry\>_
+- **responseFormat** *Array\<ResponseFormatEntry>*
 
   Output-format entries that map directly to the API's `response_format`
   array. Entries have the following shape:
@@ -1418,28 +1424,28 @@ The following optional provider options are available:
   For image entries, `aspectRatio` accepts `1:1`, `2:3`, `3:2`, `3:4`, `4:3`,
   `4:5`, `5:4`, `9:16`, `16:9`, `21:9`, `1:8`, `8:1`, `1:4`, `4:1`.
 
-- **imageConfig** _\{ aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' | '512' \}_ (deprecated)
+- **imageConfig** *\{ aspectRatio?: string; imageSize?: '1K' | '2K' | '4K' | '512' }* (deprecated)
 
   Use **responseFormat** with a `{ type: 'image', ... }` entry instead.
   Retained for backwards compatibility; the SDK translates `imageConfig`
   into a matching `response_format` image entry and emits a warning when
   set. Ignored when `responseFormat` already supplies an image entry.
 
-- **mediaResolution** _'low' | 'medium' | 'high' | 'ultra_high'_
+- **mediaResolution** *'low' | 'medium' | 'high' | 'ultra\_high'*
 
   Media resolution applied to image inputs / outputs.
 
-- **serviceTier** _'flex' | 'standard' | 'priority'_
+- **serviceTier** *'flex' | 'standard' | 'priority'*
 
   Service tier for the request. Mirrored back on
   `result.providerMetadata.google.serviceTier` for observability.
 
-- **systemInstruction** _string_
+- **systemInstruction** *string*
 
   Alternative to the AI SDK `system` message. If both are set, the AI SDK
   `system` message wins and a warning is emitted.
 
-- **background** _boolean_
+- **background** *boolean*
 
   Run the interaction in the background. Required for agents whose
   server-side workflow cannot complete within a single request/response;
@@ -1447,7 +1453,7 @@ The following optional provider options are available:
   the POST returns a non-terminal status and the SDK polls
   `GET /interactions/{id}` until the work completes.
 
-- **environment** _string \| object_
+- **environment** *string | object*
 
   Sandbox environment configuration for [managed agents](#managed-agents).
   Pass `'remote'` to provision a fresh sandbox, an `environment_id`
@@ -1455,7 +1461,7 @@ The following optional provider options are available:
   `{ type: 'remote', sources?, network? }` to preload files and/or
   constrain outbound traffic. Only applies to agent calls.
 
-- **pollingTimeoutMs** _number_
+- **pollingTimeoutMs** *number*
 
   Maximum time, in milliseconds, to poll a background interaction before
   giving up. Defaults to 30 minutes (1,800,000 ms). Long-running agents
@@ -1466,16 +1472,16 @@ The following optional provider options are available:
 `result.providerMetadata.google` (typed via `GoogleInteractionsProviderMetadata`)
 exposes:
 
-- **interactionId** _string_
+- **interactionId** *string*
 
   Server-side interaction id. Pass this back as `previousInteractionId` on
   the next turn to chain.
 
-- **serviceTier** _string_
+- **serviceTier** *string*
 
   Service tier the request actually ran on.
 
-- **signature** _string_
+- **signature** *string*
 
   Per-block signature hash, set by the SDK on output reasoning and
   tool-call or agentic video processing parts. Round-tripped automatically on
@@ -1483,12 +1489,12 @@ exposes:
 
 Agentic video custom parts additionally expose:
 
-- **processingId** _string_
+- **processingId** *string*
 
   ID of an agentic video `processing_call`. Present on
   `google.processing_call` custom parts.
 
-- **processingCallId** _string_
+- **processingCallId** *string*
 
   ID of the matching agentic video processing call. Present on
   `google.processing_result` custom parts.
@@ -1666,9 +1672,9 @@ tools under `google.tools.*` map onto Interactions tool descriptors:
 | `google.tools.urlContext`             | `url_context`          | Fetch URLs referenced in the prompt.      |
 | `google.tools.fileSearch`             | `file_search`          | Retrieval from File Search stores.        |
 | `google.tools.googleMaps`             | `google_maps`          | Maps grounding for nearby-places queries. |
-| _provider tool_ `google.computer_use` | `computer_use`         | Computer use (browser environment).       |
-| _provider tool_ `google.mcp_server`   | `mcp_server`           | Remote MCP server passthrough.            |
-| _provider tool_ `google.retrieval`    | `retrieval`            | Vertex AI Search retrieval.               |
+| *provider tool* `google.computer_use` | `computer_use`         | Computer use (browser environment).       |
+| *provider tool* `google.mcp_server`   | `mcp_server`           | Remote MCP server passthrough.            |
+| *provider tool* `google.retrieval`    | `retrieval`            | Vertex AI Search retrieval.               |
 
 Function tools (`type: 'function'`) defined with the AI SDK `tool(...)`
 helper are translated to Interactions `function` tool descriptors. Other
@@ -2095,13 +2101,14 @@ const { embeddings } = await embedMany({
 
 The following optional provider options are available for Google embedding models:
 
-- **outputDimensionality**: _number_
+- **outputDimensionality**: *number*
 
   Optional reduced dimension for the output embedding. If set, excessive values in the output embedding are truncated from the end.
 
-- **taskType**: _string_
+- **taskType**: *string*
 
   Optional. Specifies the task type for generating embeddings. Supported task types include:
+
   - `SEMANTIC_SIMILARITY`: Optimized for text similarity.
   - `CLASSIFICATION`: Optimized for text classification.
   - `CLUSTERING`: Optimized for clustering texts based on similarity.
@@ -2111,7 +2118,7 @@ The following optional provider options are available for Google embedding model
   - `FACT_VERIFICATION`: Optimized for verifying factual information.
   - `CODE_RETRIEVAL_QUERY`: Optimized for retrieving code blocks based on natural language queries.
 
-- **content**: _array_
+- **content**: *array*
 
   Optional. Per-value multimodal content parts for embedding non-text content (images, video, PDF, audio). Each entry corresponds to the embedding value at the same index — its parts are merged with the text value in the request. Use `null` for entries that are text-only. The array length must match the number of values being embedded. Each non-null entry is an array of parts, where each part can be `{ text: string }`, `{ inlineData: { mimeType: string, data: string } }` for inline base64 data, or `{ fileData: { fileUri: string, mimeType: string } }` to reference remote content via HTTP URL or Google Cloud Storage URI (`gs://...`). Supported by `gemini-embedding-2-preview`.
 
@@ -2119,9 +2126,9 @@ The following optional provider options are available for Google embedding model
 
 | Model                        | Default Dimensions | Custom Dimensions | Multimodal |
 | ---------------------------- | ------------------ | ----------------- | ---------- |
-| `gemini-embedding-001`       | 3072               | <Check />         | <Cross />  |
-| `gemini-embedding-2`         | 3072               | <Check />         | <Check />  |
-| `gemini-embedding-2-preview` | 3072               | <Check />         | <Check />  |
+| `gemini-embedding-001`       | 3072               | ✓                 | ✗          |
+| `gemini-embedding-2`         | 3072               | ✓                 | ✓          |
+| `gemini-embedding-2-preview` | 3072               | ✓                 | ✓          |
 
 ## Image Models
 
@@ -2179,17 +2186,13 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  Gemini image models do not support the `size` or `n` parameters. Use
-  `aspectRatio` instead of `size`. Mask-based inpainting is also not supported.
-</Note>
+Gemini image models do not support the `size` or `n` parameters. Use
+`aspectRatio` instead of `size`. Mask-based inpainting is also not supported.
 
-<Note>
-  For more advanced use cases where you need both text and image outputs, or
-  want more control over the generation process, you can use Gemini image models
-  directly with `generateText()`. See [Image Outputs](#image-outputs) for
-  details.
-</Note>
+For more advanced use cases where you need both text and image outputs, or
+want more control over the generation process, you can use Gemini image models
+directly with `generateText()`. See [Image Outputs](#image-outputs) for
+details.
 
 #### Google Search Grounding
 
@@ -2218,16 +2221,14 @@ console.log(result.providerMetadata?.google?.groundingMetadata);
 
 | Model                            | Image Generation | Image Editing | Aspect Ratios                                       |
 | -------------------------------- | ---------------- | ------------- | --------------------------------------------------- |
-| `gemini-2.5-flash-image`         | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3-pro-image-preview`     | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3.1-flash-image-preview` | <Check />        | <Check />     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-2.5-flash-image`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3-pro-image-preview`     | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| `gemini-3.1-flash-image-preview` | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
 
-<Note>
-  `gemini-3-pro-image-preview` supports additional features including up to 14
-  reference images for editing (6 objects, 5 humans), resolution options (1K,
-  2K, 4K via `providerOptions.google.imageConfig.imageSize`), and Google Search
-  grounding.
-</Note>
+`gemini-3-pro-image-preview` supports additional features including up to 14
+reference images for editing (6 objects, 5 humans), resolution options (1K,
+2K, 4K via `providerOptions.google.imageConfig.imageSize`), and Google Search
+grounding.
 
 ## Speech Models
 
@@ -2245,7 +2246,7 @@ The `voice` argument can be set to one of Gemini's [30 prebuilt voices](https://
 e.g. `Kore`, `Puck`, `Zephyr`, or `Charon`. Voice names are case-sensitive.
 The default voice is `Kore`. Custom voice IDs and replication keys are not supported.
 
-```ts highlight="6"
+```ts {6}
 import { generateSpeech } from 'ai';
 import { google } from '@ai-sdk/google';
 
@@ -2361,21 +2362,19 @@ Older models continue to use labelled transcripts, such as
 `text: 'Joe: How are you? Jane: Doing great, thanks!'`, with
 `multiSpeakerVoiceConfig` and without `turns`.
 
-<Note>
-  Gemini TTS models do not support the `speed` or `language` options; passing
-  them adds a warning to `result.warnings`. Language is detected automatically
-  from the input text.
-</Note>
+Gemini TTS models do not support the `speed` or `language` options; passing
+them adds a warning to `result.warnings`. Language is detected automatically
+from the input text.
 
 ### Model Capabilities
 
 | Model                          | Multi-speaker | Style via instructions |
 | ------------------------------ | ------------- | ---------------------- |
-| `gemini-2.5-flash-preview-tts` | <Check />     | <Check />              |
-| `gemini-2.5-pro-preview-tts`   | <Check />     | <Check />              |
-| `gemini-3.1-flash-tts-preview` | <Check />     | <Check />              |
-| `gemini-3.8-flash-tts`         | <Check />     | <Check />              |
-| `gemini-3.8-flash-lite-tts`    | <Check />     | <Check />              |
+| `gemini-2.5-flash-preview-tts` | ✓             | ✓                      |
+| `gemini-2.5-pro-preview-tts`   | ✓             | ✓                      |
+| `gemini-3.1-flash-tts-preview` | ✓             | ✓                      |
+| `gemini-3.8-flash-tts`         | ✓             | ✓                      |
+| `gemini-3.8-flash-lite-tts`    | ✓             | ✓                      |
 
 ## Evaluation Models
 
@@ -2428,53 +2427,10 @@ use Gateway by default, or an explicitly configured default provider with an
 `evaluationModel` method. See
 [model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

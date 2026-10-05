@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "93c36332e173d63c985f7cbb418a9d57e184c5f29f3c80605b8fb6d8469e7437"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a99dd0b36b6c46abe6d6580253532f81c749ebc311fb8960c1a477c27f1db6f9"
 ---
 
 # Redirects
@@ -34,9 +34,9 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to implement an emergency redirect without re-deploying your site.
-- [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn the different ways to handle redirects in Next.js.
-- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [How do I perform Vercel redirects based on query strings?](https://vercel.com/kb/guide/how-do-i-perform-vercel-redirects-based-on-query-strings?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — When using redirects with the \\`vercel.json\\` or \\`next.config.js\\` configuration file, your URL may contain query param
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 - [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Frouting%2Fredirects&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
@@ -239,9 +239,9 @@ For the permanent redirect example, expect `308` and a `Location` pointing to `h
 
 ## Observing redirects
 
-You can observe your redirect performance using Observability. The **Edge Requests** tab shows request counts and cache status for your redirected routes, helping you understand traffic patterns and validate that redirects are working as expected. You can filter by redirect location to analyze specific redirect paths.
+You can observe your redirect performance using Observability. The **CDN Requests** tab shows request counts and cache status for your redirected routes, helping you understand traffic patterns and validate that redirects are working as expected. You can filter by redirect location to analyze specific redirect paths.
 
-Learn more in the [Observability Insights](/docs/observability/insights#edge-requests) documentation.
+Learn more in the [Observability Insights](/docs/observability/insights#cdn-requests) documentation.
 
 ## Draining redirects
 

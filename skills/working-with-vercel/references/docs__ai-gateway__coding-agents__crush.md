@@ -14,8 +14,8 @@ related:
 summary: Configure the Crush terminal coding agent with AI Gateway. Set up provider credentials and models and monitor request usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/crush.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "149155f809f26ccc833e763e27902e7c0d74cad374c015567e5caed772059b7f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7a0bfabbd26ca27b9920bc3921e528dc533388c71b3800d7ab11cc5039aa79bb"
 ---
 
 # Crush with AI Gateway
@@ -28,11 +28,12 @@ sha256: "149155f809f26ccc833e763e27902e7c0d74cad374c015567e5caed772059b7f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 - [Cline with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cline?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spe
 - [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=related) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/crush.graph.md](/docs/ai-gateway/coding-agents/crush.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcrush&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

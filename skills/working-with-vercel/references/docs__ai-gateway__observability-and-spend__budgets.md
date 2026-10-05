@@ -10,15 +10,15 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/authentication-and-byok/api-keys
+  - /docs/rest-api
   - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/sign-in-with-vercel/tokens
   - /docs/cli/tokens
-  - /docs/ai-gateway/authentication-and-byok/byok
 summary: Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "91e256aca1fd999749c9a4196be780fb7f17bbc23da966fc15ed17991077f162"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5160f7fba6b11ee3bf81c2e0549772477c1af0976e66d4ed1d1c6ce2a97e9973"
 ---
 
 # AI Gateway Budgets and Spend Limits
@@ -37,11 +37,10 @@ A budget caps AI Gateway spend at one of four scopes:
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related)
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Spend Management](https://vercel.com/docs/spend-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Learn how to get notified about your account spend and configure a webhook.
-- [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=related) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fbudgets&source_site=vercel-docs&relationship=graph)
@@ -55,6 +54,8 @@ Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/bud
 AI Gateway checks every budget in scope before each request and rejects further requests once a limit is exceeded, until the budget resets or you raise it. Budgets are optional, and a team, project, key, or member without one has unlimited spend.
 
 To create, view, or delete the API keys themselves, see [API Keys](/docs/ai-gateway/authentication-and-byok/api-keys).
+
+The API examples on this page use a [Vercel access token](/docs/rest-api#creating-an-access-token), your team ID in `VERCEL_TEAM_ID`, and resource IDs where required.
 
 ## How budgets work
 
@@ -190,7 +191,7 @@ Writing is more restricted. Besides the Owner role, an Owner can grant a member 
 
 API key budgets are the one exception to the Budget Manager grant. They follow key-editing permission, so a Budget Manager changes them through their base role rather than the grant.
 
-These rules apply the same way whether you use the dashboard or the [CLI](/docs/cli/ai-gateway#budgets).
+These rules apply the same way whether you use the dashboard, the [CLI](/docs/cli/ai-gateway#budgets), or the Vercel API.
 
 ## Team and project budgets
 
@@ -227,6 +228,35 @@ vercel ai-gateway budgets set project my-project --limit 200 --refresh-period mo
 | `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).          |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly` (default), or `none`. |
 
+#### API
+
+Set a team budget with `scopeType: "team"`:
+
+```bash filename="terminal"
+curl -X PUT "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "scopeType": "team",
+    "limitAmount": 500,
+    "refreshPeriod": "monthly"
+  }'
+```
+
+For a project budget, pass the project ID:
+
+```bash filename="terminal"
+curl -X PUT "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"scopeType\": \"project\",
+    \"projectId\": \"$VERCEL_PROJECT_ID\",
+    \"limitAmount\": 200,
+    \"refreshPeriod\": \"monthly\"
+  }"
+```
+
 ### Check a team or project budget
 
 #### Dashboard
@@ -248,6 +278,15 @@ vercel ai-gateway budgets list
   project    storefront     $100    $100.00    monthly
 ```
 
+#### API
+
+List every budget for the team, or add `scopeType=team` or `scopeType=project` to filter the response:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/ai-gateway/budgets/list?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
 ### Change or remove a team or project budget
 
 #### Dashboard
@@ -267,6 +306,24 @@ vercel ai-gateway budgets remove project my-project
 
 ```text filename="Output"
 ✓ Removed         team budget
+```
+
+#### API
+
+To change a budget, send another `PUT` request with the scope and its new values. To remove one, send `DELETE` with the scope in the query string.
+
+Remove the team budget:
+
+```bash filename="terminal"
+curl -X DELETE "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID&scopeType=team" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
+Remove a project budget:
+
+```bash filename="terminal"
+curl -X DELETE "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID&scopeType=project&projectId=$VERCEL_PROJECT_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
 ```
 
 ### Project default budgets
@@ -293,6 +350,35 @@ vercel ai-gateway budgets set project --default --limit 200 --refresh-period mon
 ```
 
 List defaults with `vercel ai-gateway budgets list --defaults`, and remove the project default with `vercel ai-gateway budgets remove project --default`.
+
+#### API
+
+Set the project default:
+
+```bash filename="terminal"
+curl -X PUT "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "scopeType": "project",
+    "limitAmount": 200,
+    "refreshPeriod": "monthly"
+  }'
+```
+
+List all defaults:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/ai-gateway/budgets/defaults/list?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
+Remove the project default:
+
+```bash filename="terminal"
+curl -X DELETE "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCEL_TEAM_ID&scopeType=project" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
 
 ## API key budgets
 
@@ -390,6 +476,15 @@ Both commands accept `--format json` for scripting; in the JSON output, a key wi
 > **💡 Note:** A key shows no budget both when it never had one and after you remove its
 > budget. The value can lag right after a change.
 
+#### API
+
+List API key budgets and their current spend:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/ai-gateway/budgets/list?teamId=$VERCEL_TEAM_ID&scopeType=api-key" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
 ### Add or change an API key budget
 
 Give an existing key a budget, or change the one it has, from the dashboard or the CLI.
@@ -466,6 +561,35 @@ vercel ai-gateway budgets set api-key --default --limit 50 --refresh-period mont
 
 List defaults with `vercel ai-gateway budgets list --defaults`, and remove the API key default with `vercel ai-gateway budgets remove api-key --default`.
 
+#### API
+
+Set the API key default:
+
+```bash filename="terminal"
+curl -X PUT "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "scopeType": "api-key",
+    "limitAmount": 50,
+    "refreshPeriod": "monthly"
+  }'
+```
+
+List all defaults:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/ai-gateway/budgets/defaults/list?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
+Remove the API key default:
+
+```bash filename="terminal"
+curl -X DELETE "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCEL_TEAM_ID&scopeType=api-key" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
 > **💡 Note:** Budget changes take effect after a short delay, typically tens of seconds and
 > up to about 5 minutes for a key in active use. If a change doesn't appear
 > right away, wait and retry rather than re-applying it.
@@ -503,6 +627,22 @@ vercel ai-gateway budgets set user teammate@example.com --limit 100 --refresh-pe
 | `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).          |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly` (default), or `none`. |
 
+#### API
+
+Set a budget for a team member by user ID:
+
+```bash filename="terminal"
+curl -X PUT "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"scopeType\": \"user\",
+    \"userId\": \"$VERCEL_USER_ID\",
+    \"limitAmount\": 100,
+    \"refreshPeriod\": \"monthly\"
+  }"
+```
+
 ### Check a user budget
 
 #### Dashboard
@@ -523,6 +663,15 @@ vercel ai-gateway budgets list
 
 User-scoped budgets are listed by member handle.
 
+#### API
+
+List user budgets and their current spend:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/ai-gateway/budgets/list?teamId=$VERCEL_TEAM_ID&scopeType=user" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
 ### Change or remove a user budget
 
 #### Dashboard
@@ -541,6 +690,15 @@ vercel ai-gateway budgets remove user teammate@example.com
 
 ```text filename="Output"
 ✓ Removed         budget for teammate
+```
+
+#### API
+
+To change a user budget, send another `PUT` request with the same `userId` and new values. To remove it:
+
+```bash filename="terminal"
+curl -X DELETE "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID&scopeType=user&userId=$VERCEL_USER_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
 ```
 
 ### User default budgets
@@ -567,6 +725,35 @@ vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
 ```
 
 List defaults with `vercel ai-gateway budgets list --defaults`, and remove the user default with `vercel ai-gateway budgets remove user --default`.
+
+#### API
+
+Set the user default:
+
+```bash filename="terminal"
+curl -X PUT "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "scopeType": "user",
+    "limitAmount": 50,
+    "refreshPeriod": "monthly"
+  }'
+```
+
+List all defaults:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/ai-gateway/budgets/defaults/list?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
+
+Remove the user default:
+
+```bash filename="terminal"
+curl -X DELETE "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCEL_TEAM_ID&scopeType=user" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
+```
 
 ## Budgets and credits
 

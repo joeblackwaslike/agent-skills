@@ -1,16 +1,20 @@
 ---
+title: Rendering UI with Language Models
+description: Rendering UI with Language Models
+url: "https://ai-sdk.dev/docs/advanced/rendering-ui-with-language-models"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/rendering-ui-with-language-models.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "95c6f9b37e6f04d3b585565fe1085ba461758b9b704d7093726d1c59d7dfc43b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "bb3dee795a4d6df5771b25b2a367aa021767ba04f7d633183519a7130b429ff5"
 ---
 
-# Rendering User Interfaces with Language Models
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Language models generate text, so at first it may seem like you would only need to render text in your application.
 
-```tsx highlight="16" filename="app/actions.tsx"
+```tsx {16} title="app/actions.tsx"
 const text = generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a friendly assistant',
   prompt: 'What is the weather in SF?',
   tools: {
@@ -33,9 +37,9 @@ const text = generateText({
 
 Above, the language model is passed a [tool](/docs/ai-sdk-core/tools-and-tool-calling) called `getWeather` that returns the weather information as text. However, instead of returning text, if you return a JSON object that represents the weather information, you can use it to render a React component instead.
 
-```tsx highlight="18-23" filename="app/action.ts"
+```tsx {18-23} title="app/action.ts"
 const text = generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a friendly assistant',
   prompt: 'What is the weather in SF?',
   tools: {
@@ -49,7 +53,7 @@ const text = generateText({
       }),
       execute: async ({ city, unit }) => {
         const weather = getWeather({ city, unit });
-        const { temperature, unit, description, forecast } = weather;
+        const { temperature, description, forecast } = weather;
 
         return {
           temperature,
@@ -65,7 +69,7 @@ const text = generateText({
 
 Now you can use the object returned by the `getWeather` function to conditionally render a React component `<WeatherCard/>` that displays the weather information by passing the object as props.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 return (
   <div>
     {messages.map(message => {
@@ -99,11 +103,9 @@ return (
 Here's a little preview of what that might look like.
 
 <div className="not-prose flex flex-col">
-  <CardPlayer
-    type="weather"
-    title="Weather"
-    description="An example of an assistant that renders the weather information in a streamed component."
-  />
+  #### Weather
+
+  An example of an assistant that renders the weather information in a streamed component.
 </div>
 
 Rendering interfaces as part of language model generations elevates the user experience of your application, allowing people to interact with language models beyond text.
@@ -125,7 +127,7 @@ Most applications have multiple tools that are called by the language model, and
 
 For example, a tool that searches for courses can return a list of courses, while a tool that searches for people can return a list of people. As this list grows, the complexity of your application will grow as well and it can become increasingly difficult to manage these user interfaces.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 {
   message.parts.map(part => {
     if (part.state !== 'output-available') return null;
@@ -158,15 +160,15 @@ The **AI SDK RSC (`@ai-sdk/rsc`)** takes advantage of RSCs to solve the problem 
 
 Rather than conditionally rendering user interfaces on the client based on the data returned by the language model, you can directly stream them from the server during a model generation.
 
-```tsx highlight="3,22-31,38" filename="app/action.ts"
-import { createStreamableUI } from '@ai-sdk/rsc'
+```tsx {3,22-31,38} title="app/action.ts"
+import { createStreamableUI } from '@ai-sdk/rsc';
 
 const uiStream = createStreamableUI();
 
 const text = generateText({
-  model: __MODEL__,
-  instructions: 'you are a friendly assistant'
-  prompt: 'what is the weather in SF?'
+  model: "anthropic/claude-sonnet-5.5",
+  instructions: 'you are a friendly assistant',
+  prompt: 'what is the weather in SF?',
   tools: {
     getWeather: {
       description: 'Get the weather for a location',
@@ -174,37 +176,37 @@ const text = generateText({
         city: z.string().describe('The city to get the weather for'),
         unit: z
           .enum(['C', 'F'])
-          .describe('The unit to display the temperature in')
+          .describe('The unit to display the temperature in'),
       }),
       execute: async ({ city, unit }) => {
-        const weather = getWeather({ city, unit })
-        const { temperature, unit, description, forecast } = weather
+        const weather = getWeather({ city, unit });
+        const { temperature, description, forecast } = weather;
 
         uiStream.done(
           <WeatherCard
             weather={{
               temperature: 47,
               unit: 'F',
-              description: 'sunny'
+              description: 'sunny',
               forecast,
             }}
-          />
-        )
-      }
-    }
-  }
-})
+          />,
+        );
+      },
+    },
+  },
+});
 
 return {
-  display: uiStream.value
-}
+  display: uiStream.value,
+};
 ```
 
 The [`createStreamableUI`](/docs/reference/ai-sdk-rsc/create-streamable-ui) function belongs to the `@ai-sdk/rsc` module and creates a stream that can send React components to the client.
 
 On the server, you render the `<WeatherCard/>` component with the props passed to it, and then stream it to the client. On the client side, you only need to render the UI that is streamed from the server.
 
-```tsx filename="app/page.tsx" highlight="4"
+```tsx title="app/page.tsx" {4}
 return (
   <div>
     {messages.map(message => (
@@ -225,21 +227,10 @@ Now the steps involved are simplified:
 
 Check out this [example](/examples/next-app/interface/stream-component-updates) for a full illustration of how to stream component updates with React Server Components in Next.js App Router.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

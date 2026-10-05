@@ -15,8 +15,8 @@ related:
 summary: Learn how to add LMNT connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/lmnt.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a342408e897921f3bf6e573c6d8c9799b6606a9a1fce084123c5bdd6a92d582f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "08e37be2caf1f29980ca46e19a7bc5738044724a6ceed312d176f1d254b5d7a4"
 ---
 
 # Vercel LMNT Integration
@@ -62,22 +62,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

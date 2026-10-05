@@ -17,8 +17,8 @@ related:
 summary: Enable automatic prompt caching and provider-side cache affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f05091e37ad5365919e39d07a69eed06bcace279ce243af239d29f0d38545654"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "60d6945a7b98d00bc57d50f8127706bb5556c3774d10b2fc6f9045d30542b9ba"
 ---
 
 # AI Gateway Automatic Prompt Caching
@@ -33,10 +33,11 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 
 - [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
-- [Caching](https://ai-sdk.dev/docs/advanced/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
-- [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
+- [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
+- [Caching](https://ai-sdk.dev/docs/advanced/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — How to handle caching when working with the AI SDK
+- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to use the Amazon Bedrock provider.
+- [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to create a caching middleware for local development.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

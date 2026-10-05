@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a03b984fe8ad05aaf4dcf0ecb7f1582008efd0aff182b3dba9c925dd3ed7450e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "900d77b9ad3b11a5a1c4cbac93720d570ad00e38669df7fad77ff487275fd66b"
 ---
 
 # Queues concepts
@@ -30,14 +30,13 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
-- [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Build a custom framework integration using the Workflow SDK compiler and runtime.
+- [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Build a custom framework integration using the Workflow SDK compiler and combined runtime handler.
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related)
-- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
-- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -122,7 +121,7 @@ Once Vercel accepts a message, it retries delivery until the message is successf
 
 ### At-least-once delivery
 
-Vercel Queues provides **at-least-once** delivery semantics. Every accepted message is delivered to each consumer group at least one time. In most cases, a message is delivered exactly once, but there are edge cases where a message may be delivered more than once:
+Vercel Queues provides **at-least-once** delivery semantics. Every accepted message is delivered to each consumer group at least one time, as long as it becomes visible before its retention period (TTL) expires. In most cases, a message is delivered exactly once, but there are edge cases where a message may be delivered more than once:
 
 - **Consumer timeouts**: If your function processes a message but doesn't acknowledge it before the visibility timeout expires, Vercel assumes the delivery failed and redelivers the message.
 - **Infrastructure events**: During rare events like availability zone failovers, a message that was already delivered may be redelivered.
@@ -301,7 +300,7 @@ In practice, this means:
 - **Push and poll mode consumers** never receive the duplicate message. It's filtered out before delivery. The original message is unaffected.
 - **ReceiveMessageById** returns a `409` response with the `originalMessageId` if you try to receive a duplicate by its ID. This lets you follow the redirect to the original message.
 
-The deduplication window lasts for the entire lifetime of the original message (up to its TTL). As long as the original message hasn't expired, any republish with the same idempotency key is deduplicated. This means you're protected from duplicate messages for the full retention period, whether that's 60 seconds or 7 days.
+The deduplication window is the message's retention period, capped at 24 hours: `min(retention, 24 hours)`. Within that window, any republish with the same idempotency key is deduplicated. A message with a retention period shorter than 24 hours is deduplicated for its full retention period. A message with a longer retention period (up to 7 days) is only deduplicated for the first 24 hours.
 
 This is useful when your producer might retry a publish (for example, after a network timeout) and you need to guarantee exactly-once publishing.
 

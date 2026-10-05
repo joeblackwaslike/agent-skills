@@ -1,10 +1,14 @@
 ---
+title: Scorecard
+description: Monitoring and evaluating LLM applications with Scorecard
+url: "https://ai-sdk.dev/providers/observability/scorecard"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/scorecard.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d127c8139627fd5c2b8ce0d249b0e7cd3741a9e9095b9382727b3e6188d4f16c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "bf187db099073feb3866767f87bde7f985aceb39a2a708af733162b3adfb6745"
 ---
 
-# Scorecard
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Scorecard](https://www.scorecard.io/) is an observability platform for monitoring and evaluating LLM applications.
 After integrating with the AI SDK, you can use Scorecard to trace, monitor, and analyze your LLM providers, prompts, and application flows.
@@ -12,7 +16,7 @@ After integrating with the AI SDK, you can use Scorecard to trace, monitor, and 
 ## Setup
 
 Scorecard supports [AI SDK telemetry data](/docs/ai-sdk-core/telemetry).
-You'll need to sign up at https://app.scorecard.io and get your API Key from your [settings page](https://app.scorecard.io/settings).
+You'll need to sign up at [https://app.scorecard.io](https://app.scorecard.io) and get your API Key from your [settings page](https://app.scorecard.io/settings).
 
 ### Next.js
 
@@ -25,7 +29,7 @@ OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer <Your Scorecard API Key>"
 
 Next, install `@ai-sdk/otel` and create an `instrumentation.ts` file in your project root to initialize OpenTelemetry and register the AI SDK telemetry integration:
 
-```typescript filename="instrumentation.ts"
+```typescript title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
@@ -67,30 +71,10 @@ After integrating, you'll be able to view in your Scorecard dashboard:
 - [Scorecard Tracing Quickstart](https://docs.scorecard.io/intro/tracing-quickstart)
 - [Scorecard Documentation](https://docs.scorecard.io/)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

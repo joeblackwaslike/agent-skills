@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/using-issues/creating-an-issue.md"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "733e6d347db302782260a85ea9b01ec9f022c3270039d7cf8c9d38a8a9c499d6"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "877bd6864ea518fb5da4747fbbc102603cc4acfab281405ab0be6e058132c2ee"
 ---
 
 Issues can be used to keep track of bugs, enhancements, or other requests. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/learning-about-issues/about-issues).
@@ -135,25 +135,17 @@ You can also specify assignees, labels, milestones, and projects.
 gh issue create --title "TITLE" --body "ISSUE-DESCRIPTION" --assignee @me,USERNAME --label "LABEL-1,LABEL-2" --project PROJECT-NAME --milestone "MILESTONE-NAME"
 ```
 
-{% ifversion issue-types %}
-
 To set the issue type, use the `--type` flag.
 
 ```shell
 gh issue create --title "TITLE" --body "ISSUE-DESCRIPTION" --type "ISSUE-TYPE"
 ```
 
-{% endif %}
-
-{% ifversion sub-issues %}
-
 To create the issue as a sub-issue of an existing parent, use the `--parent` flag with an issue number or URL.
 
 ```shell
 gh issue create --title "TITLE" --body "ISSUE-DESCRIPTION" --parent PARENT-ISSUE-NUMBER
 ```
-
-{% endif %}
 
 {% ifversion fpt or ghec %}
 
@@ -176,7 +168,7 @@ Creating issues manually can be repetitive and time-consuming. With {% data vari
 
 ## Creating an issue from {% data variables.copilot.copilot_chat_short %} in {% data variables.product.prodname_vscode_shortname %}
 
-You can also create an issue directly from {% data variables.copilot.copilot_chat_short %} in {% data variables.product.prodname_vscode_shortname %}, using the Model Context Protocol (MCP). See [AUTOTITLE](/copilot/how-tos/provide-context/use-mcp-in-your-ide/extend-copilot-chat-with-mcp).
+You can also create an issue directly from {% data variables.copilot.copilot_chat_short %} in {% data variables.product.prodname_vscode_shortname %}, using the Model Context Protocol (MCP). See [AUTOTITLE](/copilot/how-tos/copilot-in-your-ide/customize-copilot/extend-copilot-with-tools-and-context/extend-copilot-chat-with-mcp).
 
 {% endif %}
 

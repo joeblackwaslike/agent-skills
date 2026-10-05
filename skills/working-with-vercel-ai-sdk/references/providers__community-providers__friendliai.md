@@ -1,10 +1,14 @@
 ---
+title: FriendliAI
+description: Learn how to use the FriendliAI Provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/friendliai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/friendliai.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "0af1c21e21065d9625a2b6184f9e1c8174a0d1e8b7ba9f2d6f8773f8cc71a094"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "88a4876d102ec5ccc1af59cd6e40d3460a4acfcee61ab516786c2fa193a08da0"
 ---
 
-# FriendliAI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [FriendliAI](https://friendli.ai/) provider supports both open-source LLMs via [Friendli Serverless Endpoints](https://friendli.ai/products/serverless-endpoints) and custom models via [Dedicated Endpoints](https://friendli.ai/products/dedicated-endpoints).
 
@@ -15,7 +19,7 @@ It creates language model objects that can be used with the `generateText` and `
 The Friendli provider is available via the `@friendliai/ai-provider` module.
 You can install it with:
 
-<InstallPackages packages="@friendliai/ai-provider" />
+**Packages:** `@friendliai/ai-provider`
 
 ### Credentials
 
@@ -31,7 +35,7 @@ Check the [FriendliAI documentation](https://friendli.ai/docs/guides/personal_ac
 
 ## Provider Instance
 
-You can import the default provider instance `friendliai` from `@friendliai/ai-provider`:
+You can import the default provider instance `friendli` from `@friendliai/ai-provider`:
 
 ```ts
 import { friendli } from '@friendliai/ai-provider';
@@ -93,7 +97,7 @@ This feature is available with both `generateText` and `streamText` functions.
 
 For a deeper understanding of how to effectively use regex patterns with LLMs, check out our detailed guide in the [Structured Output LLM Agents](https://friendli.ai/blog/structured-output-llm-agents) blog post.
 
-```ts highlight="6"
+```ts {6}
 import { friendli } from '@friendliai/ai-provider';
 import { generateText } from 'ai';
 
@@ -135,13 +139,13 @@ console.log(output);
 
 ### Example: Using built-in tools
 
-<Note type="warning">Built-in tools are currently in beta.</Note>
+Built-in tools are currently in beta.
 
 If you use `@friendliai/ai-provider`, you can use the [built-in tools](https://friendli.ai/docs/guides/serverless_endpoints/tools/built_in_tools) via the `tools` option.
 
 Built-in tools allow models to use tools to generate better answers. For example, a `web:search` tool can provide up-to-date answers to current questions.
 
-```ts highlight="1,5,6,7"
+```ts {1,5,6,7}
 import { friendli } from '@friendliai/ai-provider';
 import { streamText } from 'ai';
 
@@ -176,14 +180,14 @@ console.log(text);
 
 You can use the code below to force requests to dedicated endpoints. By default, they are auto-detected.
 
-```ts highlight="5,6,7"
+```ts {5,6,7}
 import { friendli } from '@friendliai/ai-provider';
 import { generateText } from 'ai';
 
 const { text } = await generateText({
-  model: friendli("YOUR_ENDPOINT_ID", {
-    endpoint: "dedicated",
-  });
+  model: friendli('YOUR_ENDPOINT_ID', {
+    endpoint: 'dedicated',
+  }),
   prompt: 'What is the meaning of life?',
 });
 
@@ -197,16 +201,14 @@ FriendliAI language models can also be used in the `streamText` function and sup
 
 | Model                         | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `deepseek-r1`                 | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `meta-llama-3.3-70b-instruct` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama-3.1-8b-instruct`  | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `deepseek-r1`                 | ✗           | ✓                 | ✗          | ✗              |
+| `meta-llama-3.3-70b-instruct` | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama-3.1-8b-instruct`  | ✗           | ✓                 | ✓          | ✓              |
 
-<Note>
-  To access [more models](https://friendli.ai/models), visit the [Friendli
-  Dedicated Endpoints
-  documentation](https://friendli.ai/docs/guides/dedicated_endpoints/quickstart)
-  to deploy your custom models.
-</Note>
+To access [more models](https://friendli.ai/models), visit the [Friendli
+Dedicated Endpoints
+documentation](https://friendli.ai/docs/guides/dedicated_endpoints/quickstart)
+to deploy your custom models.
 
 ### OpenAI Compatibility
 
@@ -232,68 +234,10 @@ const friendli = createOpenAI({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

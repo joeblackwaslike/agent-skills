@@ -13,8 +13,8 @@ related:
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8cbf00dd2c806bb1598a65c9b08c272764beb7bee097ed694a222439dde8511c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dd0db301efc1bf7b7f1c72f1b6fcb6a1b595b1547ea9b058c9e43e4f80018061"
 ---
 
 # Supported Node.js versions
@@ -62,7 +62,7 @@ To override the [default](#default-and-available-versions) version and set a dif
 3. On the [**Build and Deployment**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Go+to+Build+Settings) page, navigate to the **Node.js Version** section.
 4. Select the version you want to use from the dropdown. This Node.js version will be used for new deployments.
 
-![Image](`/front/docs/functions/node-version-light.png`)
+![Select your Node.js version in Project Settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/functions/node-version-light.png)
 
 ## Version overrides in `package.json`
 

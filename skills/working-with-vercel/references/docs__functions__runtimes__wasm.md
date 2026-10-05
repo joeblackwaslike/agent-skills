@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WebAssembly (Wasm) to enable low-level languages to run on Vercel Functions and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/wasm.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "35b36c5d03dc4462afa47b4494b76fde6b092b1d06bb2bf35afaf8c99654cddf"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "858459572f295f1eee2ab8ccaf125aa96487c039a9bbfb0276290a73a0f6b346"
 ---
 
 # Using WebAssembly (Wasm)
@@ -33,12 +33,12 @@ sha256: "35b36c5d03dc4462afa47b4494b76fde6b092b1d06bb2bf35afaf8c99654cddf"
 
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Introducing support for WebAssembly at the Edge](https://vercel.com/blog/introducing-support-for-webassembly-at-the-edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related)
-- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
-- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/functions/runtimes/wasm.graph.md](/docs/functions/runtimes/wasm.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fwasm&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

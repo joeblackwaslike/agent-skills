@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar in production and local environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "42b6634749ba0798a12a9b96b46c6f4df5751238ba7b758e30d9738ecf6df572"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "54c15932085ae966a174ea6a031a68dab27b74d8f394305328c2e6b4507c65dc"
 ---
 
 # Add the Vercel Toolbar to local and production environments
@@ -36,10 +36,10 @@ The Vercel Toolbar is available by default on all [preview environments](/docs/d
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Vercel MCP tools for toolbar.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Flags Explorer](https://vercel.com/docs/flags/flags-explorer?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — View and override your application's feature flags from the Vercel Toolbar
+- [Comments Overview](https://vercel.com/docs/comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
 
 Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost.graph.md](/docs/vercel-toolbar/in-production-and-localhost.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

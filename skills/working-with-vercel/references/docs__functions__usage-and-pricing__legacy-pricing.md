@@ -17,8 +17,8 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "826c4cbe10d5c16a5c34fa35a9b6c9f0124b57c0d9603608400be245bb5a9461"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e90c2ce9ac71eed8e46032af29472e9c98823d8558d548b318b2a82c9b3c93cc"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -37,14 +37,14 @@ Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/man
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
-- [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
-- [Vercel Functions Limits](https://vercel.com/docs/functions/limitations?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about the limits and restrictions of using Vercel Functions.
+- [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's policies regarding load tests.
+- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Legacy Metrics](https://vercel.com/docs/pricing/legacy?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=related) — Learn about the pricing for Vercel Blob.
 
 Full cross-link map for this page: [/docs/functions/usage-and-pricing/legacy-pricing.graph.md](/docs/functions/usage-and-pricing/legacy-pricing.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing%2Flegacy-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -127,7 +127,7 @@ When using [Incremental Static Regeneration](/docs/incremental-static-regenerati
 
 When viewing your Functions Invocations graph, you can group by **Ratio** to see a total of all invocations across your team's projects that finished [successfully](# "Successfully"), [errored](# "Errored"), or [timed out](# "Timeout").
 
-Executing a Vercel Function will increase Edge Request usage as well. Caching your Vercel Function reduces the GB-hours of your functions but does not reduce the Edge Request usage that comes with executing it.
+Executing a Vercel Function will increase CDN Request usage as well. Caching your Vercel Function reduces the GB-hours of your functions but does not reduce the CDN Request usage that comes with executing it.
 
 ### Optimizing function invocations
 

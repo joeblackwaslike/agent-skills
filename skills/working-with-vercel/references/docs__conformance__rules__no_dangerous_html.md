@@ -12,13 +12,13 @@ related:
 summary: Prevent the unsafe creation of DOM via HTML methods in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_dangerous_html.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b297c8f6154f071b901d24e702cd85efe2fce795ae20f3aa4b546b80c7369a6a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "119a1d18511945937074d78d9ced6a5f24a620d46eedcb6a60a15458f88349e9"
 ---
 
 # NO_DANGEROUS_HTML
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Unsafe creation of DOM can be done a variety of ways:
 

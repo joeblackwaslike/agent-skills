@@ -1,19 +1,21 @@
 ---
+title: Tool Approvals
+description: Add manual and automatic approval flows to ToolLoopAgent tools.
+url: "https://ai-sdk.dev/docs/agents/tool-approvals"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "84b17467346f0c51b5d23c0a7012a2fdeb7b26b6654731948e1d8b2e7470de4a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "81dd367fed77090cc4076ba376397a0ebe13c0305214f3842b1490feff1ace60"
 ---
 
-# Tool Approvals
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 By default, tools with an `execute` function run automatically when the model calls them. Use `toolApproval` on `ToolLoopAgent` to review, approve, or deny selected tool calls before they execute.
 
 `toolApproval` is useful for tools that can modify data, spend money, execute code, send messages, access private data, or perform any other sensitive action.
 
-<Note>
-  `toolApproval` applies to tools executed by the AI SDK. Provider-executed
-  tools run provider-side and do not use AI SDK tool approvals.
-</Note>
+`toolApproval` applies to tools executed by the AI SDK. Provider-executed
+tools run provider-side and do not use AI SDK tool approvals.
 
 ## Statuses
 
@@ -41,13 +43,12 @@ Approval functions can also return `undefined`, which is treated the same as `'n
 
 Use a per-tool map when each tool has a simple policy.
 
-```ts highlight="13-15"
+```ts {13-15}
 import { ToolLoopAgent, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     runCommand: tool({
       inputSchema: z.object({ command: z.string() }),
@@ -66,13 +67,12 @@ When `runCommand` is called, the agent returns a `tool-approval-request` instead
 
 Use a per-tool approval function when the decision depends on the parsed tool input. The function receives the typed input plus `toolCallId`, `messages`, `toolContext`, and `runtimeContext`.
 
-```ts highlight="17-24"
+```ts {17-24}
 import { ToolLoopAgent, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     processPayment: tool({
       inputSchema: z.object({
@@ -100,9 +100,9 @@ In this example, non-admin users are denied automatically, large payments requir
 
 Pass a function directly as `toolApproval` when approval depends on the full tool call, shared state across tools, or the complete tool set. This is called a `GenericToolApprovalFunction`.
 
-```ts highlight="13-16,18-20,22-23"
+```ts {13-16,18-20,22-23}
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     readFile: tool({
       inputSchema: z.object({ path: z.string() }),
@@ -139,13 +139,12 @@ The generic function receives:
 
 Because `toolApproval` is an agent setting, you can also return it from `prepareCall`. This is useful when approval policy depends on call options, tenant policy, or user permissions.
 
-```ts highlight="7-17"
+```ts {7-17}
 import { ToolLoopAgent, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   callOptionsSchema: z.object({
     canRunCommands: z.boolean(),
   }),
@@ -176,7 +175,7 @@ Manual approval requires two calls:
 4. Add a `tool-approval-response` to the messages.
 5. Call the agent again with the updated messages.
 
-```ts highlight="5-6,10-18,21-24,26"
+```ts {5-6,10-18,21-24,26}
 import { type ModelMessage, type ToolApprovalResponse } from 'ai';
 
 const messages: ModelMessage[] = [{ role: 'user', content: 'Delete temp.txt' }];
@@ -207,17 +206,15 @@ const finalResult = await agent.generate({ messages });
 
 If approved, the tool runs on the second call. If denied, the model receives the denial and can respond without the tool result.
 
-<Note>
-  When a tool execution is denied, consider adding an instruction such as "When
-  a tool execution is not approved, do not retry it" to prevent repeated
-  approval requests for the same action.
-</Note>
+When a tool execution is denied, consider adding an instruction such as "When
+a tool execution is not approved, do not retry it" to prevent repeated
+approval requests for the same action.
 
 ## Use with `useChat`
 
 When streaming an agent to a chat UI, approval requests appear as tool parts with `state: 'approval-requested'`. Respond with `addToolApprovalResponse`.
 
-```tsx highlight="7-9,17-40"
+```tsx {7-9,17-40}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -303,9 +300,9 @@ If your tools perform sensitive operations (modifying data, spending money, call
 
 When you provide a secret, the server HMAC-signs each approval request at issuance and verifies the signature when the approval is replayed. A forged or tampered approval is rejected before the tool executes. Configure the secret on `ToolLoopAgent` (or pass it directly to `generateText` or `streamText`).
 
-```ts highlight="6"
+```ts {6}
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { deleteFile, runQuery },
   toolApproval: { deleteFile: 'user-approval', runQuery: 'user-approval' },
   experimental_toolApprovalSecret: process.env.TOOL_APPROVAL_SECRET,
@@ -338,14 +335,12 @@ Every serverless instance that might handle a request needs the same secret, sin
 - No secret configured: approvals work as before (backward compatible)
 - The secret is never sent to the client or included in the stream
 
-<Note>
-  `WorkflowAgent` also supports `experimental_toolApprovalSecret`. It signs in
-  a workflow step before writing the durable approval request. Pass an
-  environment variable reference, such as
-  `{ environmentVariable: 'TOOL_APPROVAL_SECRET' }`, so the raw secret is read
-  only inside signing and verification steps. Only the signature is persisted
-  and sent to the client.
-</Note>
+`WorkflowAgent` also supports `experimental_toolApprovalSecret`. It signs in
+a workflow step before writing the durable approval request. Pass an
+environment variable reference, such as
+`{ environmentVariable: 'TOOL_APPROVAL_SECRET' }`, so the raw secret is read
+only inside signing and verification steps. Only the signature is persisted
+and sent to the client.
 
 ## Related APIs
 
@@ -354,20 +349,10 @@ Every serverless instance that might handle a request needs the same secret, sin
 - Use `needsApproval` only with [`WorkflowAgent`](/docs/agents/workflow-agent), where approvals suspend and resume durable workflow execution.
 - Subagent tools cannot use `toolApproval`; see [Subagents](/docs/agents/subagents#no-tool-approvals-in-subagents).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

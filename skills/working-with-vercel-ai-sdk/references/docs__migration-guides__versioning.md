@@ -1,10 +1,14 @@
 ---
+title: Versioning
+description: Understand how the AI SDK approaches versioning.
+url: "https://ai-sdk.dev/docs/migration-guides/versioning"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/versioning.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "5459bbfce622cbcfdb3d0592601b043539debf2e266674a36bbbfce11d55c8d3"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7a3727da2dded939a8a9fe2468fd4ec16e13a3151795c918619b66fd582f07ec"
 ---
 
-# Versioning
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Each version number follows the format: `MAJOR.MINOR.PATCH`
 
@@ -28,11 +32,9 @@ APIs prefixed with `experimental_` or `Experimental_` (e.g. `experimental_genera
 2. Review release notes before upgrading
 3. Prepare for potential code updates
 
-<Note type="warning">
-  If you use experimental APIs, make sure to pin your AI SDK version number
-  exactly (avoid using ^ or ~ version ranges) to prevent unexpected breaking
-  changes.
-</Note>
+If you use experimental APIs, make sure to pin your AI SDK version number
+exactly (avoid using ^ or \~ version ranges) to prevent unexpected breaking
+changes.
 
 ### Deprecated APIs
 
@@ -41,26 +43,13 @@ APIs marked as `deprecated` will be removed in future major releases. You can wa
 1. Switch to the recommended alternative API
 2. Follow the migration guide (released alongside major releases)
 
-<Note>
-  For major releases, we provide automated codemods where possible to help
-  migrate your code to the new version.
-</Note>
+For major releases, we provide automated codemods where possible to help
+migrate your code to the new version.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

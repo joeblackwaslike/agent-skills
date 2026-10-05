@@ -13,8 +13,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/tokens.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c0941e47a139548df95dc48bfe90f0835361486785b9373680c1775dbb66fa45"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2f5694442fef3ac9047a0e1da96ee921795a01654a627b8638bdb2f8589a89cd"
 ---
 
 # Tokens
@@ -29,12 +29,12 @@ There are three tokens your application will work with when using Sign in with V
 
 - [Introducing new token formats and secret scanning](https://vercel.com/changelog/new-token-formats-and-secret-scanning?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related)
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — An Access Token is required in order to use the Vercel API. Tokens can be created and managed at the level of your accou
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
-- [Tokens](https://vercel.com/docs/connect/concepts/tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=related) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/tokens.graph.md](/docs/sign-in-with-vercel/tokens.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Ftokens&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

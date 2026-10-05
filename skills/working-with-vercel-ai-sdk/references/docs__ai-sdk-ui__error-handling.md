@@ -1,10 +1,14 @@
 ---
+title: Error Handling
+description: Learn how to handle errors in the AI SDK UI
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/error-handling"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/error-handling.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "e440944bdc098496a233795e1ce6b1df3973308fe9dcbfae56e16c394c1c45e4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "384dc48ba9c4d9099f817f817eb33e320f1ceb993d4821f1d45ec69bbc14d3b5"
 ---
 
-# Error Handling and warnings
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Warnings
 
@@ -57,13 +61,11 @@ globalThis.AI_SDK_LOG_WARNINGS = ({ warnings, provider, model }) => {
 Each AI SDK UI hook also returns an [error](/docs/reference/ai-sdk-ui/use-chat#error) object that you can use to render the error in your UI.
 You can use the error object to show an error message, disable the submit button, or show a retry button.
 
-<Note>
-  We recommend showing a generic error message to the user, such as "Something
-  went wrong." This is a good practice to avoid leaking information from the
-  server.
-</Note>
+We recommend showing a generic error message to the user, such as "Something
+went wrong." This is a good practice to avoid leaking information from the
+server.
 
-```tsx file="app/page.tsx" highlight="8,28-35,41"
+```tsx title="app/page.tsx" {8,28-35,41}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -118,7 +120,7 @@ Alternatively, you can write a custom submit handler that replaces the failed
 user message with new input. If the assistant response started streaming before
 the error, remove both the partial assistant response and its user message.
 
-```tsx file="app/page.tsx" highlight="13-19,21-22,39"
+```tsx title="app/page.tsx" {13-19,21-22,39}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -184,7 +186,7 @@ AI SDK-created client errors use exported error classes with marker-based
 Errors thrown by custom fetch implementations, callbacks, and stream parsers
 continue to propagate unchanged.
 
-```tsx file="app/page.tsx" highlight="2,9-15"
+```tsx title="app/page.tsx" {2,9-15}
 import { useChat } from '@ai-sdk/react';
 import { APICallError, EmptyResponseBodyError } from 'ai';
 
@@ -216,29 +218,16 @@ generic message to users to avoid leaking server information.
 You might want to create errors for testing.
 You can easily do so by throwing an error in your route handler:
 
-```ts file="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 export async function POST(req: Request) {
   throw new Error('This is a test error');
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

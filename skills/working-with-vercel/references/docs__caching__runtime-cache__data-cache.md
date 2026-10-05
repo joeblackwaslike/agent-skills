@@ -17,13 +17,13 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e3d0d9ebdf166e20e25d996e1ba027c5c544cb73f274bec539185ae5b1ded303"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6cf0c7cac6bc2dc5ac4326726ae74ac72dcef47183c1cb1148bd007fbc6d0794"
 ---
 
 # Data Cache for Next.js
 
-> **🔒 Permissions Required**: Data Cache (Beta)
+> **Availability**: Data Cache (Beta) is available on all plans
 
 Data cache is a specialized, granular cache introduced with Next.js 13 for storing [segment-level data](https://nextjs.org/docs/app/getting-started/fetching-data) while using [Next.js App Router](/docs/frameworks/full-stack/nextjs). When using [Next.js caching APIs](https://nextjs.org/docs/app/getting-started/caching) such as `fetch` or `unstable_cache`, Vercel automatically scaffolds globally distributed infrastructure for you with no additional configuration.
 
@@ -35,15 +35,16 @@ Data cache is a specialized, granular cache introduced with Next.js 13 for stori
 
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related)
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
 - [Introducing the Vercel Data Cache: Optimized caching for React Server Components](https://vercel.com/changelog/introducing-vercel-data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related)
+- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
+- [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
 - [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to revalidate cached data using time-based and on-demand strategies.
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
-- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/caching/runtime-cache/data-cache.graph.md](/docs/caching/runtime-cache/data-cache.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fruntime-cache%2Fdata-cache&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

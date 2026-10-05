@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/cost-tracking.md"
-fetched_at: "2026-09-28T10:38:50.037Z"
-sha256: "90750106d8acb0256f308dfa7dbb1b7c717dda41f775e16d4592d25e4998aac4"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "c8dbcebd749ede5f74c09b331421949cfd86babb51fb5900dd85039d355bbf19"
 ---
 
 > ## Documentation Index
@@ -95,11 +95,11 @@ In streaming input mode, read call totals as described in [Track costs in stream
 
 The three result-level fields differ in what they count when the agent spawns [subagents](/docs/en/agent-sdk/subagents). Use `modelUsage`, or `model_usage` in Python, for whole-tree token accounting; the `usage` field undercounts as soon as nesting occurs.
 
-| Field                        | Subagent activity                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------------------------- |
-| `usage`                      | Excluded. Counts only the top-level agent loop, so tokens consumed inside subagents are not added |
-| `total_cost_usd`             | Included. Counts subagent requests alongside the top-level loop                                   |
-| `modelUsage` / `model_usage` | Included. Counts subagent requests alongside the top-level loop, broken down by model             |
+| Field | Subagent activity |
+| - | - |
+| `usage` | Excluded. Counts only the top-level agent loop, so tokens consumed inside subagents are not added |
+| `total_cost_usd` | Included. Counts subagent requests alongside the top-level loop |
+| `modelUsage` / `model_usage` | Included. Counts subagent requests alongside the top-level loop, broken down by model |
 
 In [single message input mode](/docs/en/agent-sdk/streaming-vs-single-mode#single-message-input), when background subagents are still running at the end of the final turn, Claude Code waits for them, up to the cap described in [background tasks at exit](/docs/en/headless#background-tasks-at-exit), before emitting the result. The result's `total_cost_usd`, `duration_api_ms`, and `modelUsage`, or `model_usage` in Python, include the work done during that wait.
 

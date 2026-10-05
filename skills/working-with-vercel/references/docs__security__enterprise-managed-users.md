@@ -15,8 +15,8 @@ related:
 summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "ce1cb98a47b78baa79225dac627c63de5e4ad6725fa1e2abff8295972ab120f1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4fed6a3e2ceb6e1c58bd77a3af7dcebd83f5d010355f37a521c4a28cd3473cd3"
 ---
 
 # Enterprise Managed Users (EMU)
@@ -30,22 +30,23 @@ Enterprise Managed Users (EMU) lets your team own and control each member's Verc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related)
-- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related)
+- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
 - [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
-- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
+- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users.graph.md](/docs/security/enterprise-managed-users.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fenterprise-managed-users&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 This guide explains the prerequisites for enabling EMU, how to enable it for your team, what changes for your members, and how existing Hobby teams on your verified domains are handled.
 
-> **🔒 Permissions Required**: Enterprise Managed Users
+> **Availability**: Enterprise Managed Users are available on Enterprise plans
 
 ## When to use Enterprise Managed Users
 
@@ -68,26 +69,46 @@ EMU connects your identity provider to Vercel and manages accounts through your 
 - **Managed accounts**: Members with an email on a selected verified domain receive a managed account that your team owns, dedicated to work.
 - **Existing accounts**: Some members may already have a personal Vercel account on a verified domain. When you enable EMU, they continue their team work through a new managed account, starting from their next SSO sign-in. The existing personal account is archived automatically if it has no personal content, or its owner decides what happens to it through the account update flow. The Hobby team transition is in Beta and available on request. See [What happens to existing Hobby teams](#what-happens-to-existing-hobby-teams).
 
+### Find your scenario
+
+| Your situation | Start here |
+| --- | --- |
+| You're setting up EMU on a team for the first time | [Before you begin](#before-you-begin), then [Enable Enterprise Managed Users](#enable-enterprise-managed-users) |
+| Your team already uses Directory Sync role mappings | [Role mappings and EMU](#role-mappings-and-emu) |
+| Your members already have Vercel accounts with their work email | [What happens to existing Hobby teams](#what-happens-to-existing-hobby-teams) |
+| You have several teams, or acquired a company with its own Vercel team | [Add a second team or an acquired company's team](#add-a-second-team-or-an-acquired-company's-team) |
+| Your members are moving to a new email domain | [Migrate your organization to a new domain with EMU](#migrate-your-organization-to-a-new-domain-with-emu) |
+| Your CI pipelines or scripts use members' personal access tokens | [Step 4: Move shared automation to a service account](#step-4:-move-shared-automation-to-a-service-account) |
+
 ## Before you begin
 
-EMU builds on your team's existing identity setup. Confirm that your team meets every requirement below, and complete the setup in the order shown in [Complete the prerequisites in this order](#complete-the-prerequisites-in-this-order): Directory Sync role mappings come last, after EMU is enabled.
+EMU builds on your team's existing identity setup. Confirm that your team meets every requirement below, and complete the setup in the order shown in [Complete the prerequisites in this order](#complete-the-prerequisites-in-this-order). If you're setting up Directory Sync for the first time or have existing mappings, add new mappings after EMU is enabled.
 
 | Requirement | Details |
 | --- | --- |
-| Verified domain | At least one domain must be verified under **Team Settings → Security & Privacy → Manage Domains**. The domain determines which sign-in identities your team manages. You verify and select domains in the Manage Domains sheet during [Step 2: Turn on Enterprise Managed Users](#step-2:-turn-on-enterprise-managed-users). |
 | SAML SSO configured | [SAML SSO](/docs/saml) must be set up with your identity provider. |
 | SAML SSO enforcement on | [SAML SSO enforcement](/docs/saml#enforcing-saml) must be turned on so that members sign in through your identity provider. |
 | Directory Sync / SCIM active | Directory Sync (SCIM) must be connected and active. EMU cannot be enabled without it. |
+| Verified email domain | At least one email domain must be verified for EMU. The domain determines which sign-in identities your team manages. You verify it inside the **Manage Domains** sheet that opens when you turn on the toggle in [Step 2: Turn on Enterprise Managed Users](#step-2:-turn-on-enterprise-managed-users). This is separate from adding a domain to a project on the **Domains** page, and uses its own DNS TXT record. |
 
-If your members belong to multiple teams, we recommend enabling EMU for all of those teams. This ensures that the same managed users can access each team under EMU. To do this, each team must meet the requirements listed above before you enable EMU. Once each team meets the requirements, add them using the **Manage** button on the Enterprise Managed Users row.
+If your members work in more than one team, enable EMU on each of those teams, and make sure every one of them meets the requirements above. See [Add a second team or an acquired company's team](#add-a-second-team-or-an-acquired-company's-team) for who can do this.
 
 ### Complete the prerequisites in this order
 
 1. Configure [SAML SSO](/docs/saml) with your identity provider.
 2. Turn on [SAML SSO enforcement](/docs/saml#enforcing-saml).
-3. Connect [Directory Sync](/docs/directory-sync), but leave role mappings empty.
+3. Connect [Directory Sync](/docs/directory-sync). Don’t add new role mappings until step 5. Existing mappings won’t be affected, but users with unmanaged accounts will later need to [transition to managed accounts](/docs/security/enterprise-managed-users-account-update).
 4. Enable Enterprise Managed Users: turn on the toggle, verify your domains, and select the teams you want to become Enterprise Managed.
-5. Complete your Directory Sync role mappings. Mapped users are provisioned as managed accounts on their next SSO sign-in.
+5. Add or update your Directory Sync role mappings. Users in mapped groups get a managed account the next time they sign in with SSO, and no invitation emails are sent.
+
+#### Role mappings and EMU
+
+| Your Directory Sync setup | What to do |
+| --- | --- |
+| No role mappings yet | Add role mappings in step 5, after EMU is enabled. |
+| Role mappings already in place | Keep them in place while you enable EMU. Add or change mappings after EMU is enabled, if needed. |
+
+Mappings saved before EMU is enabled send standard invitations, and people who accept them join with unmanaged accounts that later need the [Hobby team transition](/docs/security/enterprise-managed-users-account-update). If you start mapping groups before EMU is on, the dashboard asks whether to set up EMU first.
 
 ## Enable Enterprise Managed Users
 
@@ -105,7 +126,7 @@ Enabling Enterprise Managed Users consists of two parts:
 
 Turn on the **Enterprise Managed Users** toggle. This does not enable EMU yet: it opens the **Manage Domains** sheet, where you complete the setup.
 
-If no domains appear, verify a domain in the sheet to make it available for managed sign-in.
+If no domains appear, select **Configure Domain** (or **Configure** under **Configure another domain**). A setup page opens where you add a DNS TXT record for your email domain. When you're done, you return to **Security & Privacy**. Open the sheet again (turn on the toggle, or select **Manage** if EMU is already on) to check that the verified domain appears in the list.
 
 ### Step 3: Select domains and teams, then confirm
 
@@ -123,9 +144,19 @@ If no domains appear, verify a domain in the sheet to make it available for mana
 
 3. Select **Confirm**. EMU is now active for the selected teams. From this point, all new members signing in via SAML SSO will be provisioned a managed account.
 
-![Image](`/docs-assets/static/docs/enterprise-managed-users/emu-settings-light.png`)
+![Enterprise Managed Users enabled for the team.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/enterprise-managed-users/emu-settings-light.png)
 
 After EMU is enabled, use the **Manage** button on the Enterprise Managed Users row to change your domains and teams.
+
+### Step 4: Move shared automation to a service account
+
+Do this after EMU is enabled and before you run the [Hobby team transition](/docs/security/enterprise-managed-users-account-update). Enabling EMU doesn't affect any tokens, but the transition invalidates the personal access tokens of every member it converts. If CI/CD pipelines, scripts, or integrations authenticate with a member's personal token, move them first:
+
+1. Create a service account in your identity provider with an email on your verified domain, and assign it to Vercel in a group you've mapped to a role. Because EMU is already on, it is provisioned as a managed account.
+2. Sign in once through SSO as the service account. Creating a token requires a signed-in session.
+3. Create team-scoped tokens from the service account and swap them into each integration.
+
+Don't create the service account before EMU is enabled. It would be a regular account, go through the transition like any other member, and its tokens would stop working. Tokens owned by a managed service account keep working when members transition or leave. For details, see [Move shared automation to a service account](/docs/security/enterprise-managed-users-account-update#move-shared-automation-to-a-service-account).
 
 ### Enterprise Managed Users restrictions
 
@@ -135,11 +166,10 @@ After EMU is enabled, use the **Manage** button on the Enterprise Managed Users 
 
 > **💡 Note:** **If you configured Directory Sync group mappings before enabling EMU**,
 > invitations that were sent but not yet accepted stop working when EMU is
-> enabled, and signing in with SSO alone does not recover them. To fix an
-> affected user: remove them from the directory group in your identity provider,
-> then add them back. This provisions them a managed account on their next SSO
-> sign-in. Before enabling EMU, check your identity provider for pending
-> unaccepted invitations.
+> enabled. Affected users can sign in through your identity provider, for
+> example from the Vercel app tile, to get a managed account with their mapped
+> role. If that doesn't work, remove them from the directory group in your
+> identity provider, then add them back.
 
 ## What changes for managed users
 
@@ -171,7 +201,14 @@ When someone creates a Vercel account through standard sign-up, Vercel automatic
 
 Resolving these Hobby teams is a one-time cleanup, not an ongoing task. After you enable EMU, new members are provisioned through SSO with a managed account and no Hobby team, and new personal sign-ups with an email on your verified domains are blocked.
 
-When the transition runs, each Hobby team on a verified domain is handled based on what is on it. Hobby teams with no personal content or activity are archived automatically, and their owners land directly in their new managed account on their next SSO sign-in. Hobby teams with personal content go through a guided flow where the owner decides what happens to the projects.
+When the transition runs, each existing account is handled based on who owns it and what is on it:
+
+| Account | What happens |
+| --- | --- |
+| Team member with a work email and no personal content | The Hobby team is archived automatically. Their next SSO sign-in lands directly in their new managed account. |
+| Team member with a work email and personal content | They go through a guided flow and decide what happens to their personal projects, then continue in their new managed account. |
+| Team member with no email on a verified domain | Removed from the team. They need an email on a verified domain, provisioned through your identity provider, to rejoin. |
+| Account on a verified domain that isn't a team member | Prompted to move the account to a personal email. It never gains access to your team. |
 
 > **💡 Note:** **Archived means locked, not deleted.** An archived account can no longer be
 > signed in to or used, but its data is preserved. If a member later needs
@@ -255,11 +292,20 @@ Once a member has signed in and their account is managed, change their email in 
 
 ### Add a second team or an acquired company's team
 
-Enabling EMU does not prevent you from adding more teams later. Managed users can join any team in your organization that is also EMU-enabled. To add a team:
+Enabling EMU does not prevent you from adding more teams later. Managed users can join any team in your organization that also uses EMU, so the goal is for every team your members work in to use EMU on the same email domains.
 
-1. Ensure the team is on an Enterprise plan with SAML enforced and Directory Sync connected.
-2. Select it in the EMU enable flow. You must be an Owner of every team you select, and every selected team must meet the prerequisites.
-3. Assign members through your identity provider. Members join with the role from your directory group mapping, with no invitations needed.
+Before you start, make sure the new team meets the [prerequisites](#before-you-begin): an Enterprise plan, SAML SSO enforced, and Directory Sync connected. In **Select Teams**, a team that's missing a prerequisite can't be selected. Hover over it to see what's missing, or select **Configure** next to it to open that team's settings.
+
+Who turns on EMU for the new team depends on whether one person is an Owner of both teams:
+
+| Situation | Who turns on EMU | How |
+| --- | --- | --- |
+| One person is an Owner of both teams | That Owner | On the team that already uses EMU, open [Security & Privacy](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity\&title=Security+%26+Privacy), select **Manage** on the Enterprise Managed Users row, keep your domains selected, select the new team in **Select Teams**, and confirm. The selected domains are applied to the new team. The Owner must be signed in to both teams with SAML SSO. |
+| No one is an Owner of both teams | An Owner of the new team | On the new team, open [Security & Privacy](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity\&title=Security+%26+Privacy), turn on the **Enterprise Managed Users** toggle, verify the same email domains on that team (plus any domain of its own), select them, and confirm. |
+
+A managed account can't join a team that doesn't use EMU yet. If every Owner of your EMU team has a managed account, which is common after an acquisition, have an Owner of the new team turn on EMU there (the second row of the table).
+
+After EMU is on for the new team, assign members through your identity provider. Members join with the role from your directory group mapping, with no invitations needed. Existing members of the new team go through the [Hobby team transition](/docs/security/enterprise-managed-users-account-update) (Beta) like any other team. The transition runs on every EMU team owned by the person who starts it. If no one owns both teams, it runs separately for each.
 
 If the acquired company keeps its own email domain, verify and claim that domain as an additional EMU domain instead of migrating emails. Members on that domain are then provisioned and managed like any other member. Multi-domain organizations, including dedicated subdomains for contractors, are fully supported.
 

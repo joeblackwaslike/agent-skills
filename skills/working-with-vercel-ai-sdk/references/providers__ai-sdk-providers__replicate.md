@@ -1,10 +1,14 @@
 ---
+title: Replicate
+description: Learn how to use Replicate models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "206465fa44956e4452c9a88898aa9b6bc769e387454cc2c23a5cb87908a38b89"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f6e71f275291c83ddb1a63c28c3b61f9b356771e308db9d372ae1d67ef1dbc3b"
 ---
 
-# Replicate Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Replicate](https://replicate.com/) is a platform for running open-source AI models.
 It is a popular choice for running image generation models.
@@ -13,7 +17,7 @@ It is a popular choice for running image generation models.
 
 The Replicate provider is available via the `@ai-sdk/replicate` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/replicate" />
+**Packages:** `@ai-sdk/replicate`
 
 ## Provider Instance
 
@@ -36,21 +40,21 @@ const replicate = createReplicate({
 
 You can use the following optional settings to customize the Replicate provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.replicate.com/v1`.
 
-- **apiToken** _string_
+- **apiToken** *string*
 
   API token that is being sent using the `Authorization` header. It defaults to
   the `REPLICATE_API_TOKEN` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -59,12 +63,10 @@ You can use the following optional settings to customize the Replicate provider 
 You can create Replicate image models using the `.image()` factory method.
 For more on image generation with the AI SDK see [generateImage()](/docs/reference/ai-sdk-core/generate-image).
 
-<Note>
-  Model support for `size` and other parameters varies by model. Check the
-  model's documentation on [Replicate](https://replicate.com/explore) for
-  supported options and additional parameters that can be passed via
-  `providerOptions.replicate`.
-</Note>
+Model support for `size` and other parameters varies by model. Check the
+model's documentation on [Replicate](https://replicate.com/explore) for
+supported options and additional parameters that can be passed via
+`providerOptions.replicate`.
 
 ### Supported Image Models
 
@@ -116,9 +118,7 @@ You can also use [versioned models](https://replicate.com/docs/topics/models/ver
 The id for versioned models is the Replicate model id followed by a colon and the version ID (`$modelId:$versionId`), e.g.
 `bytedance/sdxl-lightning-4step:5599ed30703defd1d160a25a63321b4dec97101d98b4674bcc56e41f62f35637`.
 
-<Note>
-  You can also pass any available Replicate model ID as a string if needed.
-</Note>
+You can also pass any available Replicate model ID as a string if needed.
 
 ### Basic Usage
 
@@ -140,7 +140,7 @@ console.log('Image saved as image.webp');
 
 ### Model-specific options
 
-```ts highlight="9-11"
+```ts {9-11}
 import { replicate, type ReplicateImageModelOptions } from '@ai-sdk/replicate';
 import { generateImage } from 'ai';
 
@@ -240,82 +240,35 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Flux-2 models use a different input format internally (`input_image`,
-  `input_image_2`, etc.) which is handled automatically. Note that Flux-2 models
-  do not support mask-based inpainting.
-</Note>
+Flux-2 models use a different input format internally (`input_image`,
+`input_image_2`, etc.) which is handled automatically. Note that Flux-2 models
+do not support mask-based inpainting.
 
-<Note>
-  Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
-  base64-encoded strings. Different Replicate models have different parameter
-  names and capabilities — check the model's documentation on
-  [Replicate](https://replicate.com/explore) for details.
-</Note>
+Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
+base64-encoded strings. Different Replicate models have different parameter
+names and capabilities — check the model's documentation on
+[Replicate](https://replicate.com/explore) for details.
 
 ### Provider Options
 
 Common provider options for image generation:
 
-- **maxWaitTimeInSeconds** _number_ - Maximum time in seconds to wait for the prediction to complete in sync mode. By default, Replicate uses [sync mode](https://replicate.com/docs/topics/predictions/create-a-prediction#timeout-duration) with a 60-second timeout. Set to a positive number to use a custom duration (e.g., `120` for 2 minutes). When not specified, uses the default 60-second wait.
-- **pollIntervalMillis** _number_ - Interval in milliseconds between polling attempts when a prediction does not complete within the synchronous wait duration. Defaults to 500 milliseconds.
-- **maxPollAttempts** _number_ - Maximum number of polling attempts before giving up. Defaults to 240 attempts.
-- **guidance_scale** _number_ - Guidance scale for classifier-free guidance. Higher values make the output more closely match the prompt.
-- **num_inference_steps** _number_ - Number of denoising steps. More steps = higher quality but slower.
-- **negative_prompt** _string_ - Negative prompt to guide what to avoid in the generation.
-- **output_format** _'png' | 'jpg' | 'webp'_ - Output image format.
-- **output_quality** _number (1-100)_ - Output image quality. Only applies to jpg and webp.
-- **strength** _number (0-1)_ - Strength of the transformation for img2img. Lower values keep more of the original image.
+- **maxWaitTimeInSeconds** *number* - Maximum time in seconds to wait for the prediction to complete in sync mode. By default, Replicate uses [sync mode](https://replicate.com/docs/topics/predictions/create-a-prediction#timeout-duration) with a 60-second timeout. Set to a positive number to use a custom duration (e.g., `120` for 2 minutes). When not specified, uses the default 60-second wait.
+- **pollIntervalMillis** *number* - Interval in milliseconds between polling attempts when a prediction does not complete within the synchronous wait duration. Defaults to 500 milliseconds.
+- **maxPollAttempts** *number* - Maximum number of polling attempts before giving up. Defaults to 240 attempts.
+- **guidance\_scale** *number* - Guidance scale for classifier-free guidance. Higher values make the output more closely match the prompt.
+- **num\_inference\_steps** *number* - Number of denoising steps. More steps = higher quality but slower.
+- **negative\_prompt** *string* - Negative prompt to guide what to avoid in the generation.
+- **output\_format** *'png' | 'jpg' | 'webp'* - Output image format.
+- **output\_quality** *number (1-100)* - Output image quality. Only applies to jpg and webp.
+- **strength** *number (0-1)* - Strength of the transformation for img2img. Lower values keep more of the original image.
 
 For more details, see the [Replicate models page](https://replicate.com/explore).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

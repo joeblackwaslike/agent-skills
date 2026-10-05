@@ -1,14 +1,16 @@
 ---
+title: Batch
+description: Learn how to process asynchronous batches with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/batch"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/batch.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d304fe41232fda1bd347c61d1986c58b22a8d698aabe958a43672c8ca66496b9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f6fa819643f4776f0129157af86d24b979f3479d2272b6ada2a7cf2e35374d59"
 ---
 
-# Batch
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  Batch support is experimental and the API may change in patch releases.
-</Note>
+Batch support is experimental and the API may change in patch releases.
 
 Batches let you submit multiple independent requests for asynchronous
 processing. The provider processes the batch in the background, so your
@@ -72,7 +74,7 @@ Responses API, not `openai.chat()`.
 ## Starting a batch
 
 Pass a provider and one or more uniquely identified requests to `startBatch`.
-Each request must specify `type: 'text'`, a model ID, and either a text `prompt`
+Each text request must specify `type: 'text'`, a model ID, and either a text `prompt`
 or a `messages` array. Requests can use different model IDs when supported by
 the provider. Each request can also use the usual text-generation settings such
 as `instructions`, `maxOutputTokens`, `temperature`, `topP`, `topK`,
@@ -371,40 +373,10 @@ These controls affect communication with the provider. They do not change the
 provider's processing deadline or cancel a batch that has already been
 submitted.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

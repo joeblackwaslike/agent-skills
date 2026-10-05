@@ -1,5 +1,5 @@
 ---
-title: Authentication
+title: Authentication in Vercel Connect
 product: vercel
 url: /docs/connect/concepts/authentication
 canonical_url: "https://vercel.com/docs/connect/concepts/authentication"
@@ -17,11 +17,11 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "47f1b1cc794eccff8994f00c77b74d2e5c32766a1fd3f57caefbafca18525ebd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1fc67d3393d8e44abafbd5262312c1d4529bd4a790daaca8d26e2281784c3f94"
 ---
 
-# Authentication
+# Authentication in Vercel Connect
 
 Vercel Connect sits between your code and a provider. Each token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the provider. Understanding both is the fastest way to debug "why did this token request fail."
 
@@ -32,15 +32,15 @@ Vercel Connect sits between your code and a provider. Each token request has two
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

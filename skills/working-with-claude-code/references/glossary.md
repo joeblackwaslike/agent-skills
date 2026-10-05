@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/glossary.md"
-fetched_at: "2026-09-28T10:38:50.037Z"
-sha256: "d64a02e68edbcea2b509a7a0b20123d386fd078a93e0c66da41ca01d861ea8db"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "13491643c25a857bcb6f334a422971873455cf60581b7f214269d582866beb06"
 ---
 
 > ## Documentation Index
@@ -48,7 +48,7 @@ Learn more: [How Claude Code works](/docs/en/how-claude-code-works#the-agentic-l
 
 ### Artifact
 
-A live, interactive web page Claude Code publishes from your session to a private URL on claude.ai, so you can see output visually or share it instead of reading terminal text. The page updates in place when the session republishes. Artifacts you create from Claude Code appear in the same gallery as artifacts created in claude.ai conversations. Sharing depends on your plan: on Pro and Max, a public link that anyone can open; on Team and Enterprise, sharing within your organization, plus public links once an Owner enables them.
+A live, interactive web page Claude Code publishes from your session to a private URL on claude.ai, so you can see output visually or share it instead of reading terminal text. The page updates in place when the session republishes. Artifacts you create from Claude Code appear in the same gallery as artifacts created in claude.ai conversations. Sharing options depend on your plan: see [Share an artifact](/docs/en/artifacts#share-an-artifact).
 
 Learn more: [Share session output as artifacts](/docs/en/artifacts)
 
@@ -274,7 +274,7 @@ Learn more: [Remote Control](/docs/en/remote-control)
 
 ### Rules
 
-Modular instruction files in `.claude/rules/` that load alongside CLAUDE.md. A rule can be path-scoped with YAML `paths:` frontmatter so it only loads when Claude reads a matching file, keeping context lean until it's relevant.
+Modular instruction files in `.claude/rules/` that load alongside CLAUDE.md. A rule can be path-scoped with YAML `paths:` frontmatter so it only loads when Claude reads, writes, or edits a matching file, keeping context lean until it's relevant.
 
 Learn more: [Organize rules with `.claude/rules/`](/docs/en/memory#organize-rules-with-claude/rules/)
 
@@ -357,6 +357,12 @@ An action Claude can take: read a file, edit code, run a shell command, search t
 
 Learn more: [Tools available to Claude](/docs/en/tools-reference)
 
+### Transcript
+
+The stored record of a [session](#session). The conversation is what you and Claude exchange; the transcript is that conversation kept as a file, by default at `~/.claude/projects/<project>/<session-id>.jsonl`. Claude Code reads the file back when you resume, which is how a conversation continues after the session ends. For the on-screen view of the same conversation, see the [transcript viewer](/docs/en/interactive-mode#transcript-viewer).
+
+Learn more: [Where transcripts are stored](/docs/en/sessions#where-transcripts-are-stored)
+
 ### Turn
 
 One complete response from Claude within a [session](#session). A turn begins when you send a message and ends when Claude finishes responding, with any number of [tool](#tool) calls in between. [Stop hooks](#hook) fire at the end of each turn. A session consists of many turns, and the [agentic loop](#agentic-loop) describes what happens inside one.
@@ -385,9 +391,9 @@ Learn more: [Run parallel sessions with git worktrees](/docs/en/worktrees)
 
 These terms appear in older docs, blog posts, and community content. Use the current name when searching this site.
 
-| Old term                                                                | Now called                                    | Notes                                                                         |
-| ----------------------------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------- |
-| Headless mode                                                           | [Non-interactive mode](#non-interactive-mode) | Same `-p` flag, same behavior                                                 |
-| Web session; "Claude Code on the web" as the name for any cloud session | [Cloud session](#cloud-session)               | "Claude Code on the web" now names only the browser surface at claude.ai/code |
-| Custom commands                                                         | [Skills](#skill)                              | `.claude/commands/` files still work                                          |
-| Slash commands                                                          | Commands                                      | "Slash" dropped from product copy                                             |
+| Old term | Now called | Notes |
+| - | - | - |
+| Headless mode | [Non-interactive mode](#non-interactive-mode) | Same `-p` flag, same behavior |
+| Web session; "Claude Code on the web" as the name for any cloud session | [Cloud session](#cloud-session) | "Claude Code on the web" now names only the browser surface at claude.ai/code |
+| Custom commands | [Skills](#skill) | `.claude/commands/` files still work |
+| Slash commands | Commands | "Slash" dropped from product copy |

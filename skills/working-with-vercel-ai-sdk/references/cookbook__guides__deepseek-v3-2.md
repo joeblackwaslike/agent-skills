@@ -1,17 +1,22 @@
 ---
+title: Get started with DeepSeek V3.2
+description: Get started with DeepSeek V3.2 using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/deepseek-v3-2"
+docs_index: /llms.txt
+tags:
+  - getting-started
+  - agents
 source: "https://ai-sdk.dev/cookbook/guides/deepseek-v3-2.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "1959b9ec3a3d2a9a0089744b61034df7444b6d9525ff99bfb9211e58b79e6fd4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b380eb1597708b8cdbb32ddcaf5ebdb9a208357dbe9343d9b1a77bf33404be08"
 ---
 
-# Get started with DeepSeek V3.2
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  DeepSeek retired the `deepseek-chat` and `deepseek-reasoner` API aliases on
-  July 24, 2026. The examples in this historical V3.2 guide are preserved for
-  reference and no longer run against the current service. For current
-  applications, use `deepseek-v4-flash` or `deepseek-v4-pro`.
-</Note>
+DeepSeek retired the `deepseek-chat` and `deepseek-reasoner` API aliases on
+July 24, 2026. The examples in this historical V3.2 guide are preserved for
+reference and no longer run against the current service. For current
+applications, use `deepseek-v4-flash` or `deepseek-v4-pro`.
 
 With the [release of DeepSeek V3.2](https://api-docs.deepseek.com/news/news251201), there has never been a better time to start building AI applications that require advanced reasoning and agentic capabilities.
 
@@ -32,17 +37,17 @@ DeepSeek V3.2 models excel in both reasoning and agentic tasks, delivering compe
 
 **Reasoning Capabilities**
 
-- **AIME 2025 (Pass@1)**: 96.0% (Speciale)
-- **HMMT 2025 (Pass@1)**: 99.2% (Speciale)
-- **HLE (Pass@1)**: 30.6%
+- **AIME 2025 (Pass\@1)**: 96.0% (Speciale)
+- **HMMT 2025 (Pass\@1)**: 99.2% (Speciale)
+- **HLE (Pass\@1)**: 30.6%
 - **Codeforces (Rating)**: 2701 (Speciale)
 
 **Agentic Capabilities**
 
 - **SWE Verified (Resolved)**: 73.1%
 - **Terminal Bench 2.0 (Acc)**: 46.4%
-- **τ2 Bench (Pass@1)**: 80.3%
-- **Tool Decathlon (Pass@1)**: 35.2%
+- **τ2 Bench (Pass\@1)**: 80.3%
+- **Tool Decathlon (Pass\@1)**: 35.2%
 
 [Source](https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/assets/paper.pdf)
 
@@ -85,11 +90,13 @@ Let's explore building an agent with [Next.js](https://nextjs.org), the AI SDK, 
 
 In a new Next.js application, first install the AI SDK and the DeepSeek provider:
 
-<Snippet text="pnpm install ai @ai-sdk/deepseek @ai-sdk/react" />
+```
+pnpm install ai @ai-sdk/deepseek @ai-sdk/react
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { deepSeek } from '@ai-sdk/deepseek';
 import {
   convertToModelMessages,
@@ -115,7 +122,7 @@ export async function POST(req: Request) {
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -169,7 +176,7 @@ One of the key strengths of DeepSeek V3.2 is its agentic capabilities. You can e
 
 Let's add a weather tool to your agent. Update your route handler at `app/api/chat/route.ts`:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { deepSeek } from '@ai-sdk/deepseek';
 import {
   convertToModelMessages,
@@ -221,28 +228,10 @@ Ready to dive in? Here's how you can begin:
 3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) at [ai-sdk.dev/docs/guides](/cookbook/guides).
 4. Use ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

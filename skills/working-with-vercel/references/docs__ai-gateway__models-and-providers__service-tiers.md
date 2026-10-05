@@ -9,13 +9,14 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/sdks-and-apis/responses/websockets
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/observability-and-spend/logs
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6e5b81631f10a8f2f5961148eaa12d077bc029c069e731cdbddec46c728410ea"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b3946922f716ef5541d524d9993a6859d6f2064a9427c0e2f8ab9053c5297355"
 ---
 
 # AI Gateway Service Tiers
@@ -29,11 +30,11 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Learn how to use the OpenAI provider for the AI SDK.
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Learn how to use the Azure OpenAI provider for the AI SDK.
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
-- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
-- [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
-- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=related) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fservice-tiers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -45,15 +46,154 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/servic
 
 ## Supported values
 
-| Value      | Description                                                 |
-| ---------- | ----------------------------------------------------------- |
-| `default`  | Standard processing tier                                    |
-| `priority` | Higher availability and faster processing at increased cost |
-| `flex`     | Lower cost with potentially higher latency                  |
+| Value       | Description                                                 |
+| ----------- | ----------------------------------------------------------- |
+| `default`   | Standard processing tier                                    |
+| `priority`  | Higher availability and faster processing at increased cost |
+| `flex`      | Lower cost with potentially higher latency                  |
+| `ultrafast` | OpenAI's fastest tier, at a significantly higher cost       |
 
 If you don't specify a service tier, requests use the standard tier.
 
 SpaceXAI supports `priority` as an alternative to the standard tier. Setting the unified `gateway.serviceTier` to `flex` on a SpaceXAI model has no effect. The per-provider `spacexai.serviceTier` and `xai.serviceTier` options accept `default` or `priority`. SpaceXAI service tiers require AI SDK 6 or later when using the AI SDK.
+
+### Ultrafast
+
+`ultrafast` is an OpenAI-only tier, currently available for GPT-6 Astra. Set it with `openai.serviceTier` (AI SDK 6 or later) or `service_tier` on Chat Completions, Responses, and [Responses WebSocket](/docs/ai-gateway/sdks-and-apis/responses/websockets) requests. OpenAI recommends WebSocket mode for ultrafast because a persistent connection keeps per-turn overhead low. The unified `gateway.serviceTier` option doesn't accept `ultrafast`. Ultrafast is limited to US and global processing, so requests pinned to other regions run at the default tier.
+
+Set `AI_GATEWAY_API_KEY` before running these examples. Install `ai` for the AI SDK example and `openai` for the Python examples. The WebSocket examples list their additional dependencies below. Python SDKs use `/v1` as the base URL, then add the endpoint path.
+
+#### AI SDK
+
+```typescript filename="ultrafast-ai-sdk.ts"
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: 'openai/gpt-6-astra',
+  prompt: 'Investigate the failing tests and propose a fix.',
+  providerOptions: {
+    openai: { serviceTier: 'ultrafast' },
+    gateway: { only: ['openai'] },
+  },
+});
+
+console.log(text);
+```
+
+#### Responses API
+
+```python filename="ultrafast-responses.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ['AI_GATEWAY_API_KEY'],
+    base_url='https://ai-gateway.vercel.sh/v1',
+)
+
+response = client.responses.create(
+    model='openai/gpt-6-astra',
+    input='Investigate the failing tests and propose a fix.',
+    service_tier='ultrafast',
+    extra_body={'providerOptions': {'gateway': {'only': ['openai']}}},
+)
+print(response.output_text)
+```
+
+#### Chat Completions
+
+```python filename="ultrafast-chat-completions.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ['AI_GATEWAY_API_KEY'],
+    base_url='https://ai-gateway.vercel.sh/v1',
+)
+
+response = client.chat.completions.create(
+    model='openai/gpt-6-astra',
+    messages=[
+        {'role': 'user', 'content': 'Investigate the failing tests and propose a fix.'}
+    ],
+    service_tier='ultrafast',
+    extra_body={'providerOptions': {'gateway': {'only': ['openai']}}},
+)
+print(response.choices[0].message.content)
+```
+
+#### Responses WebSocket
+
+Install `ws`, `@types/ws`, and `tsx`, then run this TypeScript example with `tsx`. The second turn reuses the connection and the first response's context:
+
+```typescript filename="ultrafast-websocket.ts"
+import WebSocket from 'ws';
+
+const ws = new WebSocket('wss://ai-gateway.vercel.sh/v1/responses', {
+  headers: { Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}` },
+});
+const send = (input: string, previousResponseId?: string) =>
+  ws.send(
+    JSON.stringify({
+      type: 'response.create',
+      model: 'openai/gpt-6-astra',
+      service_tier: 'ultrafast',
+      input,
+      previous_response_id: previousResponseId,
+    }),
+  );
+
+let turnsCompleted = 0;
+ws.on('open', () => send('Investigate the failing tests.'));
+ws.on('message', (data) => {
+  const event = JSON.parse(data.toString());
+  if (event.type === 'response.output_text.delta') process.stdout.write(event.delta);
+  if (event.type === 'response.completed') {
+    console.log();
+    if (++turnsCompleted === 1) send('Suggest a fix.', event.response.id);
+    else ws.close();
+  }
+  if (['error', 'response.failed', 'response.incomplete'].includes(event.type)) {
+    console.error(event);
+    ws.close();
+  }
+});
+ws.on('error', console.error);
+```
+
+Send `service_tier` on every `response.create` frame, not just the first turn.
+
+#### AI SDK over WebSocket
+
+Install `@ai-sdk/openai` and `@vercel/ai-sdk-openai-websocket-fetch` alongside `ai`. Configure the WebSocket endpoint separately from the OpenAI provider's HTTP base URL. These requests reuse the connection but have independent prompts:
+
+```typescript filename="ultrafast-ai-sdk-websocket.ts"
+import { streamText } from 'ai';
+import { createOpenAI } from '@ai-sdk/openai';
+import { createWebSocketFetch } from '@vercel/ai-sdk-openai-websocket-fetch';
+
+const wsFetch = createWebSocketFetch({
+  url: 'wss://ai-gateway.vercel.sh/v1/responses',
+});
+const openai = createOpenAI({
+  baseURL: 'https://ai-gateway.vercel.sh/v1',
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  fetch: wsFetch,
+});
+
+try {
+  for (const prompt of ['Investigate the failing tests.', 'Suggest a fix.']) {
+    const result = streamText({
+      model: openai.responses('openai/gpt-6-astra'),
+      prompt,
+      providerOptions: { openai: { serviceTier: 'ultrafast' } },
+    });
+    console.log(await result.text);
+  }
+} finally {
+  wsFetch.close();
+}
+```
 
 ## Best-effort routing
 
@@ -440,7 +580,7 @@ console.log('Usage:', usage);
 
 ## Reading the applied service tier
 
-The AI SDK exposes the applied tier as `providerMetadata.gateway.serviceTier`. Chat Completions, Messages, and OpenResponses responses expose AI Gateway metadata under `provider_metadata.gateway.serviceTier`; OpenAI-compatible responses can also include `service_tier`. The Python beta may omit routing metadata, so inspect [request logs](/docs/ai-gateway/observability-and-spend/logs) when it is unavailable. AI Gateway only sets this field when the request was served at `flex` or `priority`. If the provider reports the standard tier, AI Gateway omits this field. If your client omits provider metadata, use request logs to confirm the applied tier.
+The AI SDK exposes the applied tier as `providerMetadata.gateway.serviceTier`. Chat Completions, Messages, and OpenResponses responses expose AI Gateway metadata under `provider_metadata.gateway.serviceTier`; OpenAI-compatible responses can also include `service_tier`. The Python beta may omit routing metadata, so inspect [request logs](/docs/ai-gateway/observability-and-spend/logs) when it is unavailable. AI Gateway only sets this field when the request was served at `flex`, `priority`, or `ultrafast`. If the provider reports the standard tier, AI Gateway omits this field. If your client omits provider metadata, use request logs to confirm the applied tier.
 
 ```typescript
 const { providerMetadata } = await generateText({

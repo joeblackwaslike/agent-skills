@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/comments"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "aa2814bcf64994c835327a89a53f8333ad01f94c07bbdaa481dc4f1a73ff405c"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "ba35abdd958cbaed8557f8241c8b0c06354509ac30740cfde6fb4b2a22d89262"
 ---
 
 # REST API endpoints for pull request review comments
@@ -188,6 +188,8 @@ application/vnd.github-commitcomment.full+json: Returns raw, text, and HTML repr
 ### HTTP response status codes
 
 * **200** - OK
+
+* **304** - Not modified
 
 * **404** - Resource not found
 

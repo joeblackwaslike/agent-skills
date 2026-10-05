@@ -13,13 +13,13 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "530a54ea4f4b1ce8163f6eea46b3d3cc978244aa23bba78db2321f5b05972e52"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c6ccdb87728f380f79d472b3673638d194eb18333039f3d237e404d4e7481839"
 ---
 
 # Connect to Amazon Web Services (AWS)
 
-> **🔒 Permissions Required**: Secure backend access with OIDC federation
+> **Availability**: Secure backend access with OIDC federation is available on all plans
 
 To understand how AWS supports OIDC, and for a detailed user guide on creating an OIDC identity provider with AWS, consult the [AWS OIDC documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html).
 
@@ -29,16 +29,17 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
+- [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
 - [AWS databases are now live on the Vercel Marketplace and v0](https://vercel.com/blog/aws-databases-are-now-live-on-the-vercel-marketplace-and-v0?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related)
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related)
-- [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [How can I use AWS SDK Environment Variables on Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-sdk-environment-variables-on-vercel?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — How to use AWS SDK Environment Variables on Vercel
 - [Functions API Reference](https://vercel.com/docs/functions/functions-api-reference?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Reserved environment variables](https://vercel.com/docs/environment-variables/reserved-environment-variables?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Reserved environment variables are reserved by Vercel Vercel Function runtimes.
+- [Mount remote storage](https://vercel.com/docs/sandbox/mount-remote-storage?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=related) — Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remo
 
 Full cross-link map for this page: [/docs/oidc/aws.graph.md](/docs/oidc/aws.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Faws&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,7 +56,7 @@ Full cross-link map for this page: [/docs/oidc/aws.graph.md](/docs/oidc/aws.grap
      - **Global**: `https://oidc.vercel.com`
   6. Enter `https://vercel.com/[TEAM_SLUG]` in the **Audience** field, replacing `[TEAM_SLUG]` with the path from your Vercel team URL
   7. Select **Add Provider**
-  ![Image](`/docs-assets/static/docs/concepts/oidc-tokens/aws-create-id-provider.png`)
+  ![Add provider values for the Global issuer mode setting. For the Team issuer mode setting, set the Provider URL to https://oidc.vercel.com/\[TEAM\_SLUG\]](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/oidc-tokens/aws-create-id-provider.png)
 
 - ### Create an IAM role
   To use AWS OIDC Federation you must have an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). [IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) require a "trust relationship" (also known as a "trust policy") that describes which "Principal(s)" are allowed to assume the role under certain "Condition(s)".
@@ -113,7 +114,7 @@ Full cross-link map for this page: [/docs/oidc/aws.graph.md](/docs/oidc/aws.grap
 - ### Define the role ARN as environment variable
   Once you have created the role, copy the [role's ARN](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns) and [declare it as an environment variable](/docs/environment-variables#creating-environment-variables) in your Vercel project with key name `AWS_ROLE_ARN`.
   ```env filename=".env.local"
-  AWS_ROLE_ARN=arn:aws:iam::accountid:user/username
+  AWS_ROLE_ARN=arn:aws:iam::accountid:role/rolename
   ```
   You are now ready to connect to your AWS resource in your project's code. Review the examples below.
 
@@ -164,7 +165,7 @@ Install the following packages:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @aws-sdk/client-s3 @vercel/oidc-aws-credentials-provider
+    yarn add @aws-sdk/client-s3 @vercel/oidc-aws-credentials-provider
     ```
   </Code>
   <Code tab="npm">
@@ -174,7 +175,7 @@ Install the following packages:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @aws-sdk/client-s3 @vercel/oidc-aws-credentials-provider
+    bun add @aws-sdk/client-s3 @vercel/oidc-aws-credentials-provider
     ```
   </Code>
 </CodeBlock>
@@ -207,7 +208,7 @@ export async function GET() {
       Bucket: S3_BUCKET_NAME,
     }),
   );
-  return result?.Contents?.map((object) => object.Key) ?? [];
+  return Response.json(result?.Contents?.map((object) => object.Key) ?? []);
 }
 ```
 
@@ -225,7 +226,7 @@ Install the following packages:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @aws-sdk/rds-signer @vercel/oidc-aws-credentials-provider pg
+    yarn add @aws-sdk/rds-signer @vercel/oidc-aws-credentials-provider pg
     ```
   </Code>
   <Code tab="npm">
@@ -235,7 +236,7 @@ Install the following packages:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @aws-sdk/rds-signer @vercel/oidc-aws-credentials-provider pg
+    bun add @aws-sdk/rds-signer @vercel/oidc-aws-credentials-provider pg
     ```
   </Code>
 </CodeBlock>
@@ -280,8 +281,8 @@ const pool = new Pool({
 
 // Export the route handler
 export async function GET() {
+  const client = await pool.connect();
   try {
-    const client = await pool.connect();
     const { rows } = await client.query('SELECT * FROM my_table');
     return Response.json(rows);
   } finally {

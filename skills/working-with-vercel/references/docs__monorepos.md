@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "6f865d8bb6897d2d56f30a363be391c08c6ad7504b60671b3861e78256fb168d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e819afd444ed760149d972a27293bb6ad3294fbfadc7ffe32104c5ccfb3386fb"
 ---
 
 # Using Monorepos
@@ -57,14 +57,14 @@ Get started with monorepos on Vercel in a few minutes by using one of our monore
 3. From the **Import Git Repository** section, select the **Import** button next to the repository you want to import.
 4. Before you deploy, you'll need to specify the directory within your monorepo that you want to deploy. Click the **Edit** button next to the [Root Directory setting](/docs/builds/configure-a-build#root-directory) to select the directory, or project, you want to deploy. This will configure the root directory of each project to its relevant directory in the repository:
 
-![Image](`/docs-assets/static/docs/concepts/projects/monorepo-import-light.png`)
+![Selecting a Root Directory for one of your new Projects.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/monorepo-import-light.png)
 
 5. Configure any necessary settings and click the **Deploy** button to deploy that project.
 6. Repeat steps 2-5 to [import each directory](/docs/git#deploying-a-git-repository) from your monorepo that you want to deploy.
 
 Once you've created a separate project for each of the directories within your Git repository, every commit will issue a deployment for all connected projects and display the resulting URLs on your pull requests and commits:
 
-![Image](`/docs-assets/static/docs/concepts/projects/github-comment-light.png`)
+![An example of Deployment URLs provided for a Deployment through Git.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/github-comment-light.png)
 
 The number of Vercel Projects connected with the same Git repository is [limited depending on your plan](/docs/limits#general-limits).
 

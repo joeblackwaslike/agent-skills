@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8193a77a0a559d40bbbbfab44aad3cdd044a0228b283b990232f446db7416b2d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bcc4ed0f71bc473f708d81801cc47b23666877063cef85ef40eb9eeba699c039"
 ---
 
 # Environment variables
@@ -58,7 +58,7 @@ To learn how to create and manage environment variables, see [Managing environme
 
 ## Environment variable size
 
-Developers on all plans using the runtimes stated below can use a total of **64 KB** in Environments Variables **per-Deployment** on Vercel. This [limit](/docs/limits#environment-variables) is for all variables combined, and so no **single** variable can be larger than 64 KB. The total size includes any variables configured through the dashboard or the [CLI](/docs/cli).
+Developers on all plans using the runtimes stated below can use a total of **64 KB** in Environment Variables **per-Deployment** on Vercel. This [limit](/docs/limits#environment-variables) is for all variables combined, and so no **single** variable can be larger than 64 KB. The total size includes any variables configured through the dashboard or the [CLI](/docs/cli).
 
 With support for 64 KB of environment variables, you can add large values for authentication tokens, JWTs, or certificates.
 
@@ -97,7 +97,7 @@ For each Environment Variable, you can select one or more Environments to apply 
 
 Preview environment variables are applied to deployments from any Git branch that does not match the [Production Branch](/docs/git#production-branch). When you add a preview environment variable, you can choose to apply to all non-production branches or you can select a specific branch.
 
-![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/env-var-section-light.png`)
+![Adding an Environment Variable](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/env-var-section-light.png)
 
 Any branch-specific variables will override other preview environment variables with the same name. This means you don't need to replicate all your existing preview environment variables for each branch – you only need to add the values you wish to override.
 
@@ -127,7 +127,7 @@ For more information, see [Environment variables for local development](/docs/de
 [Integrations](/docs/integrations) can automatically add environment variables to your Project Settings.
 In that case, the Integration that added the Variable will be displayed in your project settings:
 
-![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/integration-env-variable-light.png`)
+![An Environment Variable added by the MongoDB Integration.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/integration-env-variable-light.png)
 
 For Native Marketplace resources, the variable scope matches the environments on the project connection. The scope can include Production, Preview, Development, and individual Custom Environments. A Custom Environment uses the provider's Preview secret value when one exists. Otherwise, the Custom Environment uses the default secret value.
 

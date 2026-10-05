@@ -14,8 +14,8 @@ related:
 summary: Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5002ca78e9ce6aea407a8325b3da805c6db698fa22e4da23179a748b88640978"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c9ed5bb24e0737480c0a16b749f7b5329c4dc9055d45966e057729a484b1dba7"
 ---
 
 # AI Gateway Google and Vertex Reasoning
@@ -28,13 +28,13 @@ Gemini 2.5 and later models use an internal "thinking process" that improves the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
+- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Learn how to control reasoning across providers with the top-level reasoning parameter.
 - [Gemini 3.5 Flash on AI Gateway](https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
 - [Gemini 3.8 Live models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
+- [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Learn how to use the Gemini CLI provider to access Google's Gemini models.
+- [Get started with Gemini 3](https://ai-sdk.dev/cookbook/guides/gemini?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Get started with Gemini 3 using the AI SDK.
 - [Gemini 3.1 Pro is live on AI Gateway](https://vercel.com/changelog/gemini-3-1-pro-is-live-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related)
-- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/google.graph.md](/docs/ai-gateway/models-and-providers/reasoning/google.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning%2Fgoogle&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

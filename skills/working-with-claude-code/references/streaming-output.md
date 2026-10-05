@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/streaming-output.md"
-fetched_at: "2026-09-28T10:38:50.037Z"
-sha256: "ba995377a42f1e4895c87772948f51a200ee4c4e7dccaa3c27db283df9ff8794"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "3a43fda26f50c2b62bd7827699bb0542bf40df8556499d08443fee4b0de2d19d"
 ---
 
 > ## Documentation Index
@@ -92,14 +92,14 @@ Claude Code sets `user_message_uuid` on the turn's first non-ping stream event, 
 
 The `event` field contains the raw streaming event from the [Claude API](https://platform.claude.com/docs/en/build-with-claude/streaming#event-types). Common event types include:
 
-| Event Type            | Description                                     |
-| :-------------------- | :---------------------------------------------- |
-| `message_start`       | Start of a new message                          |
+| Event Type | Description |
+| :- | :- |
+| `message_start` | Start of a new message |
 | `content_block_start` | Start of a new content block (text or tool use) |
-| `content_block_delta` | Incremental update to content                   |
-| `content_block_stop`  | End of a content block                          |
-| `message_delta`       | Message-level updates (stop reason, usage)      |
-| `message_stop`        | End of the message                              |
+| `content_block_delta` | Incremental update to content |
+| `content_block_stop` | End of a content block |
+| `message_delta` | Message-level updates (stop reason, usage) |
+| `message_stop` | End of the message |
 
 ## Message flow
 

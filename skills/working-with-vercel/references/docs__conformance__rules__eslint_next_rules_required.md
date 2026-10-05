@@ -12,13 +12,13 @@ related:
 summary: Requires that a workspace package is configured with required Next.js plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/eslint_next_rules_required.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3845740d323b45b2b23c7cd2ffe42d27f40a91340cf736129aaeea9049eb3a74"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c5059bf08561d1a5216c89edb99ac37db4bc9bf25892ce60f58fc43f077b704e"
 ---
 
 # ESLINT_NEXT_RULES_REQUIRED
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 This Conformance check requires that ESLint plugins for Next.js are configured
 correctly in your application, including:

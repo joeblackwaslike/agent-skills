@@ -1,38 +1,32 @@
 ---
+title: getAIState
+description: Reference for the getAIState function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/get-ai-state"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/get-ai-state.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "91c5daa5825d9e2c7d23a0385bd60338ed026d558857b5de682798888d8af2ba"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a5e6475ccdf092be6e091c8aef8e46cafd71dd98813f55381909fb7d3f709efe"
 ---
 
-# `getAIState`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 Get the current AI state.
 
 ## Import
 
-<Snippet text={`import { getAIState } from "@ai-sdk/rsc"`} prompt={false} />
+```
+import { getAIState } from "@ai-sdk/rsc"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'key',
-      type: 'string',
-      isOptional: true,
-      description:
-        "Returns the value of the specified key in the AI state, if it's an object.",
-    },
-  ]}
-/>
+- `key?` (`string`): Returns the value of the specified key in the AI state, if it's an object.
 
 ### Returns
 
@@ -40,31 +34,12 @@ The AI state.
 
 ## Examples
 
-<ExampleLinks
-  examples={[
-    {
-      title:
-        'Learn to render a React component during a tool call made by a language model in Next.js',
-      link: '/examples/next-app/tools/render-interface-during-tool-call',
-    },
-  ]}
-/>
+- [Learn to render a React component during a tool call made by a language model in Next.js](/examples/next-app/tools/render-interface-during-tool-call)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

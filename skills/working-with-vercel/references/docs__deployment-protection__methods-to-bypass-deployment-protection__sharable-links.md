@@ -15,13 +15,13 @@ related:
 summary: Learn how to share your deployments with external users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "883e90490d858255a61d348d2400644a8c6026eaa4850eaeef9f6a93ed6408e5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7e6cdcba2daab7667c76f1b3aa8bf8a72ae52fd1c2d9d66971dd38e2319cb058"
 ---
 
 # Sharable Links
 
-> **🔒 Permissions Required**: Shareable Links
+> **Availability**: Shareable Links are available on all plans
 
 Shareable links allow external users to securely access your deployments through a query string parameter.
 Shareable links include the ability to leave [Comments](/docs/comments) on deployments which have them enabled.
@@ -38,11 +38,11 @@ Shareable links include the ability to leave [Comments](/docs/comments) on deplo
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related)
 - [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related)
-- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — Use get_access_to_vercel_url with Vercel MCP.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
-- [Project links](https://vercel.com/docs/connect/concepts/project-links?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=related) — A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-bypass-deployment-protection%2Fsharable-links&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -76,7 +76,7 @@ To manage Sharable Links, do the following:
 - ### Click Share button
   From the Deployment page, click **Share** to display the **Share** popover. From the popover, select **Anyone with the link** from the dropdown.
 
-  ![Image](`/docs-assets/static/docs/concepts/deployments/shareable-links-light.png`)
+  ![The Share settings modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/shareable-links-light.png)
 
 - ### Revoking a Sharable Link
   To revoke access for users, switch the dropdown option to **Only people with access**.
@@ -91,7 +91,7 @@ You can view and manage all the existing Shareable Links for your team in the fo
 2. Choose the **Access** section in the sidebar
 3. Click the **All Access** button and select **Shareable Links**
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/shareable-links-list.png`)
+![Dashboard > Settings > Deployment Protection > Access](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/shareable-links-list.png)
 
 
 ---

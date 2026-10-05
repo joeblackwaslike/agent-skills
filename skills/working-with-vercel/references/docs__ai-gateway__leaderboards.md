@@ -12,8 +12,8 @@ related:
 summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "75a3eb02605b67b30411e1f87b61d10a6f724ee92bbab50f9dbc23f8b786516c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bdcfdef101538274ab386a5e7d01432b45d217674988b674480c71b73d12fcf3"
 ---
 
 # AI Gateway Leaderboards
@@ -32,8 +32,9 @@ The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs,
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
 - [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
 - [Open-weight models take 56% of token volume, Astra doubles Fable 5.1 spend](https://vercel.com/blog/ai-gateway-production-index-september-2026?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
-- [DeepSeek overtakes Google on volume, cost per token falls 13.6%](https://vercel.com/blog/deepseek-overtakes-google-on-volume-cost-per-token-falls?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fleaderboards&source_site=vercel-docs&relationship=related) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 

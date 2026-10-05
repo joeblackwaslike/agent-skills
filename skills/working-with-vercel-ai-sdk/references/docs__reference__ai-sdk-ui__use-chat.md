@@ -1,491 +1,141 @@
 ---
+title: useChat
+description: API reference for the useChat hook.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1ff2b5c54d9fe9124952801475d26bf2319929b172acb5f9dded5dbb54de237c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ed2dd206206810f9ddfb09de7ea41c4b4d2f2fc9076021d014f28223fa27d1a0"
 ---
 
-# `useChat()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Allows you to easily create a conversational user interface for your chatbot application. It enables the streaming of chat messages from your AI provider, manages the chat state, and updates the UI automatically as new messages are received.
 
-<Note>
-  The `useChat` API has been significantly updated in AI SDK 5.0. It now uses a
-  transport-based architecture and no longer manages input state internally. See
-  the [migration
-  guide](/docs/migration-guides/migration-guide-5-0#usechat-changes) for
-  details.
-</Note>
+The `useChat` API has been significantly updated in AI SDK 5.0. It now uses a
+transport-based architecture and no longer manages input state internally. See
+the [migration
+guide](/docs/migration-guides/migration-guide-5-0#usechat-changes) for
+details.
 
 ## Import
 
-<Tabs items={['React', 'Svelte', 'Vue', 'Angular']}>
-  <Tab>
-    <Snippet
-      text="import { useChat } from '@ai-sdk/react'"
-      dark
-      prompt={false}
-    />
-  </Tab>
-  <Tab>
-    <Snippet text="import { Chat } from '@ai-sdk/svelte'" dark prompt={false} />
-  </Tab>
-  <Tab>
-    <Snippet text="import { useChat } from '@ai-sdk/vue'" dark prompt={false} />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="import { Chat } from '@ai-sdk/angular'"
-      dark
-      prompt={false}
-    />
-  </Tab>
-</Tabs>
+#### React
+
+```
+import { useChat } from '@ai-sdk/react'
+```
+
+#### Svelte
+
+```
+import { Chat } from '@ai-sdk/svelte'
+```
+
+#### Vue
+
+```
+import { useChat } from '@ai-sdk/vue'
+```
+
+#### Angular
+
+```
+import { Chat } from '@ai-sdk/angular'
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'chat',
-      type: 'Chat<UIMessage>',
-      isOptional: true,
-      description:
-        'An existing Chat instance to use. If provided, other parameters are ignored.',
-    },
-    {
-      name: 'transport',
-      type: 'ChatTransport',
-      isOptional: true,
-      description:
-        'The transport to use for sending messages. Defaults to DefaultChatTransport with `/api/chat` endpoint.',
-      properties: [
-        {
-          type: 'DefaultChatTransport',
-          parameters: [
-            {
-              name: 'api',
-              type: "string = '/api/chat'",
-              isOptional: true,
-              description: 'The API endpoint for chat requests.',
-            },
-            {
-              name: 'credentials',
-              type: 'RequestCredentials',
-              isOptional: true,
-              description: 'The credentials mode for fetch requests.',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string> | Headers',
-              isOptional: true,
-              description: 'HTTP headers to send with requests.',
-            },
-            {
-              name: 'body',
-              type: 'object',
-              isOptional: true,
-              description: 'Extra body object to send with requests.',
-            },
-            {
-              name: 'fetch',
-              type: 'FetchFunction',
-              isOptional: true,
-              description:
-                'Custom fetch implementation. You can use it as a middleware to intercept requests, or to provide a custom fetch implementation for e.g. testing.',
-            },
-            {
-              name: 'prepareSendMessagesRequest',
-              type: 'PrepareSendMessagesRequest',
-              isOptional: true,
-              description:
-                'A function to customize the request before chat API calls.',
-              properties: [
-                {
-                  type: 'PrepareSendMessagesRequest',
-                  parameters: [
-                    {
-                      name: 'options',
-                      type: 'PrepareSendMessageRequestOptions',
-                      description: 'Options for preparing the request',
-                      properties: [
-                        {
-                          type: 'PrepareSendMessageRequestOptions',
-                          parameters: [
-                            {
-                              name: 'id',
-                              type: 'string',
-                              description: 'The chat ID',
-                            },
-                            {
-                              name: 'messages',
-                              type: 'UIMessage[]',
-                              description: 'Current messages in the chat',
-                            },
-                            {
-                              name: 'requestMetadata',
-                              type: 'unknown',
-                              description: 'The request metadata',
-                            },
-                            {
-                              name: 'body',
-                              type: 'Record<string, any> | undefined',
-                              description: 'The request body',
-                            },
-                            {
-                              name: 'credentials',
-                              type: 'RequestCredentials | undefined',
-                              description: 'The request credentials',
-                            },
-                            {
-                              name: 'headers',
-                              type: 'HeadersInit | undefined',
-                              description: 'The request headers',
-                            },
-                            {
-                              name: 'api',
-                              type: 'string',
-                              description: `The API endpoint to use for the request. If not specified, it defaults to the transport’s API endpoint: /api/chat.`,
-                            },
-                            {
-                              name: 'trigger',
-                              type: "'submit-message' | 'regenerate-message'",
-                              description: 'The trigger for the request',
-                            },
-                            {
-                              name: 'messageId',
-                              type: 'string | undefined',
-                              description: 'The message ID if applicable',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'prepareReconnectToStreamRequest',
-              type: 'PrepareReconnectToStreamRequest',
-              isOptional: true,
-              description:
-                'A function to customize the request before reconnect API call.',
-              properties: [
-                {
-                  type: 'PrepareReconnectToStreamRequest',
-                  parameters: [
-                    {
-                      name: 'options',
-                      type: 'PrepareReconnectToStreamRequestOptions',
-                      description:
-                        'Options for preparing the reconnect request',
-                      properties: [
-                        {
-                          type: 'PrepareReconnectToStreamRequestOptions',
-                          parameters: [
-                            {
-                              name: 'id',
-                              type: 'string',
-                              description: 'The chat ID',
-                            },
-                            {
-                              name: 'requestMetadata',
-                              type: 'unknown',
-                              description: 'The request metadata',
-                            },
-                            {
-                              name: 'body',
-                              type: 'Record<string, any> | undefined',
-                              description: 'The request body',
-                            },
-                            {
-                              name: 'credentials',
-                              type: 'RequestCredentials | undefined',
-                              description: 'The request credentials',
-                            },
-                            {
-                              name: 'headers',
-                              type: 'HeadersInit | undefined',
-                              description: 'The request headers',
-                            },
-                            {
-                              name: 'api',
-                              type: 'string',
-                              description: `The API endpoint to use for the request. If not specified, it defaults to the transport’s API endpoint combined with the chat ID: /api/chat/{chatId}/stream.`,
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'id',
-      type: 'string',
-      isOptional: true,
-      description:
-        'A unique identifier for the chat. If not provided, a random one will be generated.',
-    },
-    {
-      name: 'messages',
-      type: 'UIMessage[]',
-      isOptional: true,
-      description: 'Initial chat messages to populate the conversation with.',
-    },
-    {
-      name: 'messageMetadataSchema',
-      type: 'FlexibleSchema',
-      isOptional: true,
-      description: 'Schema for validating message metadata.',
-    },
-    {
-      name: 'dataPartSchemas',
-      type: 'UIDataTypesToSchemas',
-      isOptional: true,
-      description: 'Schemas for validating data parts in messages.',
-    },
-    {
-      name: 'generateId',
-      type: 'IdGenerator',
-      isOptional: true,
-      description:
-        'A function to generate unique IDs for messages and the chat. If not provided, the default AI SDK generateId is used.',
-    },
-    {
-      name: 'onToolCall',
-      type: '({toolCall: ToolCall}) => void | Promise<void>',
-      isOptional: true,
-      description:
-        'Optional callback function that is invoked when a tool call is received. You must call addToolOutput to provide the tool result.',
-    },
-    {
-      name: 'sendAutomaticallyWhen',
-      type: '(options: { messages: UIMessage[] }) => boolean | PromiseLike<boolean>',
-      isOptional: true,
-      description:
-        'When provided, this function will be called when the stream is finished or a tool call is added to determine if the current messages should be resubmitted. You can use the lastAssistantMessageIsCompleteWithToolCalls helper for common scenarios.',
-    },
-    {
-      name: 'onFinish',
-      type: '(options: OnFinishOptions) => void',
-      isOptional: true,
-      description: 'Called when the assistant response has finished streaming.',
-      properties: [
-        {
-          type: 'OnFinishOptions',
-          parameters: [
-            {
-              name: 'message',
-              type: 'UIMessage',
-              description: 'The response message.',
-            },
-            {
-              name: 'messages',
-              type: 'UIMessage[]',
-              description: 'All messages including the response message',
-            },
-            {
-              name: 'isAbort',
-              type: 'boolean',
-              description:
-                'True when the request has been aborted by the client.',
-            },
-            {
-              name: 'isDisconnect',
-              type: 'boolean',
-              description:
-                'True if the server has been disconnected, e.g. because of a network error.',
-            },
-            {
-              name: 'isError',
-              type: 'boolean',
-              description: `True if errors during streaming caused the response to stop early.`,
-            },
-            {
-              name: 'finishReason',
-              type: "'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'",
-              isOptional: true,
-              description:
-                'The reason why the model finished generating the response. Undefined if the finish reason was not provided by the model.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onError',
-      type: '(error: Error) => void',
-      isOptional: true,
-      description:
-        'Callback function to be called when an error is encountered.',
-    },
-    {
-      name: 'onData',
-      type: '(dataPart: DataUIPart) => void',
-      isOptional: true,
-      description:
-        'Optional callback function that is called when a data part is received.',
-    },
-    {
-      name: 'throttle',
-      type: 'number',
-      isOptional: true,
-      description:
-        'React and Vue only. Custom throttle wait time in milliseconds for reactive chat message updates. Positive values reduce UI update frequency without delaying stream processing or callbacks, and the latest messages are published before a ready or error status. Default is undefined, which disables throttling.',
-    },
-    {
-      name: 'resume',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Whether to resume an ongoing chat generation stream. Defaults to false.',
-    },
-  ]}
-/>
+- `chat?` (`Chat<UIMessage>`): An existing Chat instance to use. If provided, other parameters are ignored.
+- `transport?` (`ChatTransport`): The transport to use for sending messages. Defaults to DefaultChatTransport with \`/api/chat\` endpoint.
+  - `DefaultChatTransport`
+    - `api?` (`string = '/api/chat'`): The API endpoint for chat requests.
+    - `credentials?` (`RequestCredentials`): The credentials mode for fetch requests.
+    - `headers?` (`Record<string, string> | Headers`): HTTP headers to send with requests.
+    - `body?` (`object`): Extra body object to send with requests.
+    - `fetch?` (`FetchFunction`): Custom fetch implementation. You can use it as a middleware to intercept requests, or to provide a custom fetch implementation for e.g. testing.
+    - `prepareSendMessagesRequest?` (`PrepareSendMessagesRequest`): A function to customize the request before chat API calls.
+      - `PrepareSendMessagesRequest`
+        - `options` (`PrepareSendMessageRequestOptions`): Options for preparing the request
+          - `PrepareSendMessageRequestOptions`
+            - `id` (`string`): The chat ID
+            - `messages` (`UIMessage[]`): Current messages in the chat
+            - `requestMetadata` (`unknown`): The request metadata
+            - `body` (`Record<string, any> | undefined`): The request body
+            - `credentials` (`RequestCredentials | undefined`): The request credentials
+            - `headers` (`HeadersInit | undefined`): The request headers
+            - `api` (`string`): The API endpoint to use for the request. If not specified, it defaults to the transport’s API endpoint: /api/chat.
+            - `trigger` (`'submit-message' | 'regenerate-message'`): The trigger for the request
+            - `messageId` (`string | undefined`): The message ID if applicable
+    - `prepareReconnectToStreamRequest?` (`PrepareReconnectToStreamRequest`): A function to customize the request before reconnect API call.
+      - `PrepareReconnectToStreamRequest`
+        - `options` (`PrepareReconnectToStreamRequestOptions`): Options for preparing the reconnect request
+          - `PrepareReconnectToStreamRequestOptions`
+            - `id` (`string`): The chat ID
+            - `requestMetadata` (`unknown`): The request metadata
+            - `body` (`Record<string, any> | undefined`): The request body
+            - `credentials` (`RequestCredentials | undefined`): The request credentials
+            - `headers` (`HeadersInit | undefined`): The request headers
+            - `api` (`string`): The API endpoint to use for the request. If not specified, it defaults to the transport’s API endpoint combined with the chat ID: /api/chat/\{chatId}/stream.
+- `id?` (`string`): A unique identifier for the chat. If not provided, a random one will be generated.
+- `messages?` (`UIMessage[]`): Initial chat messages to populate the conversation with.
+- `messageMetadataSchema?` (`FlexibleSchema`): Schema for validating message metadata.
+- `dataPartSchemas?` (`UIDataTypesToSchemas`): Schemas for validating data parts in messages.
+- `generateId?` (`IdGenerator`): A function to generate unique IDs for messages and the chat. If not provided, the default AI SDK generateId is used.
+- `onToolCall?` (`({toolCall: ToolCall}) => void | Promise<void>`): Optional callback function that is invoked when a tool call is received. You must call addToolOutput to provide the tool result.
+- `sendAutomaticallyWhen?` (`(options: { messages: UIMessage[] }) => boolean | PromiseLike<boolean>`): When provided, this function will be called when the stream is finished or a tool call is added to determine if the current messages should be resubmitted. You can use the lastAssistantMessageIsCompleteWithToolCalls helper for common scenarios.
+- `onFinish?` (`(options: OnFinishOptions) => void`): Called when the assistant response has finished streaming.
+  - `OnFinishOptions`
+    - `message` (`UIMessage`): The response message.
+    - `messages` (`UIMessage[]`): All messages including the response message
+    - `isAbort` (`boolean`): True when the request has been aborted by the client.
+    - `isDisconnect` (`boolean`): True if the server has been disconnected, e.g. because of a network error.
+    - `isError` (`boolean`): True if errors during streaming caused the response to stop early.
+    - `finishReason?` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason why the model finished generating the response. Undefined if the finish reason was not provided by the model.
+- `onError?` (`(error: Error) => void`): Callback function to be called when an error is encountered.
+- `onData?` (`(dataPart: DataUIPart) => void`): Optional callback function that is called when a data part is received.
+- `throttle?` (`number`): React and Vue only. Custom throttle wait time in milliseconds for reactive chat message updates. Positive values reduce UI update frequency without delaying stream processing or callbacks, and the latest messages are published before a ready or error status. Default is undefined, which disables throttling.
+- `resume?` (`boolean`): Whether to resume an ongoing chat generation stream. Defaults to false.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'id',
-      type: 'string',
-      description: 'The id of the chat.',
-    },
-    {
-      name: 'messages',
-      type: 'UIMessage[]',
-      description: 'The current array of chat messages.',
-      properties: [
-        {
-          type: 'UIMessage',
-          parameters: [
-            {
-              name: 'id',
-              type: 'string',
-              description: 'A unique identifier for the message.',
-            },
-            {
-              name: 'role',
-              type: "'system' | 'user' | 'assistant'",
-              description: 'The role of the message.',
-            },
-            {
-              name: 'parts',
-              type: 'UIMessagePart[]',
-              description:
-                'The parts of the message. Use this for rendering the message in the UI.',
-            },
-            {
-              name: 'metadata',
-              type: 'unknown',
-              isOptional: true,
-              description: 'The metadata of the message.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'status',
-      type: "'submitted' | 'streaming' | 'ready' | 'error'",
-      description:
-        'The current status of the chat: "ready" (idle), "submitted" (request sent), "streaming" (receiving response), or "error" (request failed).',
-    },
-    {
-      name: 'error',
-      type: 'Error | undefined',
-      description: 'The error object if an error occurred.',
-    },
-    {
-      name: 'sendMessage',
-      type: '(message?: { text: string; files?: FileList | FileUIPart[]; metadata?; messageId?: string } | CreateUIMessage, options?: ChatRequestOptions) => Promise<void>',
-      description:
-        'Function to send a new message to the chat. This will trigger an API call to generate the assistant response. If a messageId is provided, the message will be replaced (useful for editing). When replacing with a CreateUIMessage, provide its id to assign a new ID to the replacement. If no message is provided, resubmits the current messages (useful after adding tool outputs).',
-      properties: [
-        {
-          type: 'ChatRequestOptions',
-          parameters: [
-            {
-              name: 'headers',
-              type: 'Record<string, string> | Headers',
-              isOptional: true,
-              description:
-                'Additional headers that should be to be passed to the API endpoint.',
-            },
-            {
-              name: 'body',
-              type: 'object',
-              isOptional: true,
-              description:
-                'Additional body JSON properties that should be sent to the API endpoint.',
-            },
-            {
-              name: 'metadata',
-              type: 'unknown',
-              isOptional: true,
-              description: 'Additional data to be sent to the API endpoint.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'regenerate',
-      type: '(options?: { messageId?: string } & ChatRequestOptions) => Promise<void>',
-      description:
-        'Function to regenerate the last assistant message or a specific message. If no messageId is provided, regenerates the last assistant message. Accepts ChatRequestOptions for headers, body, and metadata.',
-    },
-    {
-      name: 'stop',
-      type: '() => void',
-      description:
-        'Function to abort the current streaming response from the assistant.',
-    },
-    {
-      name: 'clearError',
-      type: '() => void',
-      description: 'Clears the error state.',
-    },
-    {
-      name: 'resumeStream',
-      type: '() => void',
-      description:
-        'Function to resume an interrupted streaming response. Useful when a network error occurs during streaming.',
-    },
-    {
-      name: 'addToolOutput',
-      type: '(options: { tool: string; toolCallId: string; output: unknown } | { tool: string; toolCallId: string; state: "output-error", errorText: string }) => void',
-      description:
-        'Function to add a tool result to the chat. This will update the chat messages with the tool result. If sendAutomaticallyWhen is configured, it may trigger an automatic submission.',
-    },
-    {
-      name: 'addToolApprovalResponse',
-      type: '(options: { id: string; approved: boolean; reason?: string }) => void | PromiseLike<void>',
-      description:
-        'Function to respond to a tool approval request. The id should match the approval id from the tool call. If sendAutomaticallyWhen is configured, it may trigger an automatic submission.',
-    },
-    {
-      name: 'addToolResult',
-      type: '(options: { tool: string; toolCallId: string; output: unknown } | { tool: string; toolCallId: string; state: "output-error", errorText: string }) => void',
-      description: 'Deprecated. Use addToolOutput instead.',
-    },
-    {
-      name: 'setMessages',
-      type: '(messages: UIMessage[] | ((messages: UIMessage[]) => UIMessage[])) => void',
-      description:
-        'Function to update the messages state locally without triggering an API call. Useful for optimistic updates.',
-    },
-  ]}
-/>
+- `id` (`string`): The id of the chat.
+- `messages` (`UIMessage[]`): The current array of chat messages.
+  - `UIMessage`
+    - `id` (`string`): A unique identifier for the message.
+    - `role` (`'system' | 'user' | 'assistant'`): The role of the message.
+    - `parts` (`UIMessagePart[]`): The parts of the message. Use this for rendering the message in the UI.
+    - `metadata?` (`unknown`): The metadata of the message.
+- `status` (`'submitted' | 'streaming' | 'ready' | 'error'`): The current status of the chat: "ready" (idle), "submitted" (request sent), "streaming" (receiving response), or "error" (request failed).
+- `error` (`Error | undefined`): The error object if an error occurred.
+- `sendMessage` (`(message?: { text: string; files?: FileList | FileUIPart[]; metadata?; messageId?: string } | CreateUIMessage, options?: ChatRequestOptions) => Promise<void>`): Function to send a new message to the chat. This will trigger an API call to generate the assistant response. If a messageId is provided, the message will be replaced (useful for editing). When replacing with a CreateUIMessage, provide its id to assign a new ID to the replacement. If no message is provided, resubmits the current messages (useful after adding tool outputs).
+  - `ChatRequestOptions`
+    - `headers?` (`Record<string, string> | Headers`): Additional headers that should be to be passed to the API endpoint.
+    - `body?` (`object`): Additional body JSON properties that should be sent to the API endpoint.
+    - `metadata?` (`unknown`): Additional data to be sent to the API endpoint.
+- `regenerate` (`(options?: { messageId?: string } & ChatRequestOptions) => Promise<void>`): Function to regenerate the last assistant message or a specific message. If no messageId is provided, regenerates the last assistant message. Accepts ChatRequestOptions for headers, body, and metadata.
+- `stop` (`() => void`): Function to abort the current streaming response from the assistant.
+- `clearError` (`() => void`): Clears the error state.
+- `resumeStream` (`() => void`): Function to resume an interrupted streaming response. Useful when a network error occurs during streaming.
+- `addToolOutput` (`(options: { tool: string; toolCallId: string; output: unknown } | { tool: string; toolCallId: string; state: "output-error", errorText: string }) => void`): Function to add a tool result to the chat. This will update the chat messages with the tool result. If sendAutomaticallyWhen is configured, it may trigger an automatic submission.
+- `addToolApprovalResponse` (`(options: { id: string; approved: boolean; reason?: string }) => void | PromiseLike<void>`): Function to respond to a tool approval request. The id should match the approval id from the tool call. If sendAutomaticallyWhen is configured, it may trigger an automatic submission.
+- `addToolResult` (`(options: { tool: string; toolCallId: string; output: unknown } | { tool: string; toolCallId: string; state: "output-error", errorText: string }) => void`): Deprecated. Use addToolOutput instead.
+- `setMessages` (`(messages: UIMessage[] | ((messages: UIMessage[]) => UIMessage[])) => void`): Function to update the messages state locally without triggering an API call. Useful for optimistic updates.
+
+## React rendering and shared Chat instances
+
+In React, `messages`, `status`, and `error` describe the snapshot for the current render.
+The underlying `Chat` updates as stream chunks are processed. React may batch updates,
+and `throttle` can delay message rendering without delaying stream processing or callbacks.
+Status and error updates include the latest messages, so a completed or failed response
+is rendered with its final message snapshot.
+
+Each `useChat({ chat })` call subscribes independently. Consumers sharing a `Chat`
+can display different message snapshots when they use different throttle intervals.
+A functional `setMessages` updater receives the Chat's latest messages, which may be
+newer than the messages in the current render.
 
 ## Learn more
 
@@ -493,23 +143,10 @@ Allows you to easily create a conversational user interface for your chatbot app
 - [Chatbot with Tools](/docs/ai-sdk-ui/chatbot-tool-usage)
 - [UIMessage](/docs/reference/ai-sdk-core/ui-message)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

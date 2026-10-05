@@ -1,10 +1,14 @@
 ---
+title: Laminar
+description: Monitor your AI SDK applications with Laminar
+url: "https://ai-sdk.dev/providers/observability/laminar"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3625ebafd193e72f350cd8d8339c27c9e3777364fd842260d6d1bb059c7a7ed1"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "169625a6f986f055ab8dfb58e75b4987d73d538c8d352e2766ec21d1c5b540c5"
 ---
 
-# Laminar observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Laminar](https://laminar.sh) is an [open-source](https://github.com/lmnr-ai/lmnr), Otel-native observability platform purpose-built for AI agents.
 
@@ -15,10 +19,8 @@ Laminar features:
 - [Evaluations](https://laminar.sh/docs/evaluations/introduction),
 - [Agent Debugger](https://laminar.sh/docs/debugger/introduction)
 
-<Note>
-  A version of this guide is available in [Laminar's
-  docs](https://laminar.sh/docs/tracing/integrations/vercel-ai-sdk).
-</Note>
+A version of this guide is available in [Laminar's
+docs](https://laminar.sh/docs/tracing/integrations/vercel-ai-sdk).
 
 ## Setup
 
@@ -41,7 +43,7 @@ Copy the prompt below and paste it to your coding agent, for it to integrate ful
 
 To setup Laminar manually, first install the `@lmnr-ai/lmnr` package.
 
-<InstallPackages packages="@lmnr-ai/lmnr" />
+**Packages:** `@lmnr-ai/lmnr`
 
 ### Get your project API key and set in the environment
 
@@ -111,7 +113,7 @@ This will create spans for `ai.generateText`. Laminar collects and displays the 
 
 ### Older versions of Next.js
 
-If you are using 13.4 ≤ Next.js < 15, you will also need to enable the experimental instrumentation hook. Place the following in your `next.config.js`:
+If you are using 13.4 ≤ Next.js \< 15, you will also need to enable the experimental instrumentation hook. Place the following in your `next.config.js`:
 
 ```javascript
 module.exports = {
@@ -192,7 +194,7 @@ import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
 registerTelemetry(new LaminarAiSdkTelemetry());
 ```
 
-This must be done once in your application, as early as possible, but _after_ other tracing libraries (e.g. `@sentry/node`) are initialized.
+This must be done once in your application, as early as possible, but *after* other tracing libraries (e.g. `@sentry/node`) are initialized.
 
 Read more in Laminar [docs](https://laminar.sh/docs/tracing/introduction).
 
@@ -253,14 +255,16 @@ The two libraries allow for additional advanced configuration, but the default s
 import { registerTelemetry } from 'ai';
 import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
 
-registerTelemetry(new LaminarAiSdkTelemetry({
-  laminarOptions: {
-    projectApiKey: process.env.LMNR_PROJECT_API_KEY,
-    baseUrl: "http://localhost",
-    httpPort: 8000,
-    grpcPort: 8001,
-  },
-})));
+registerTelemetry(
+  new LaminarAiSdkTelemetry({
+    laminarOptions: {
+      projectApiKey: process.env.LMNR_PROJECT_API_KEY,
+      baseUrl: 'http://localhost',
+      httpPort: 8000,
+      grpcPort: 8001,
+    },
+  }),
+);
 ```
 
 ### Do not record inputs or outputs
@@ -271,10 +275,12 @@ By default, Laminar integration records all inputs and outputs, but you can disa
 import { registerTelemetry } from 'ai';
 import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
 
-registerTelemetry(new LaminarAiSdkTelemetry({
-  recordInputs: false, // default true
-  recordOutputs: false, // default true
-})));
+registerTelemetry(
+  new LaminarAiSdkTelemetry({
+    recordInputs: false, // default true
+    recordOutputs: false, // default true
+  }),
+);
 ```
 
 ### Adding a span for every agent step
@@ -286,9 +292,11 @@ configure this in the constructor options.
 import { registerTelemetry } from 'ai';
 import { LaminarAiSdkTelemetry } from '@lmnr-ai/lmnr';
 
-registerTelemetry(new LaminarAiSdkTelemetry({
-  createStepSpan: true, // default false
-})));
+registerTelemetry(
+  new LaminarAiSdkTelemetry({
+    createStepSpan: true, // default false
+  }),
+);
 ```
 
 ### Span name
@@ -309,7 +317,7 @@ const { text } = await generateText({
 
 If you want to trace not just the AI SDK calls, but also other functions in your application, you can use Laminar's `observe` wrapper.
 
-```javascript highlight="3"
+```javascript {3}
 import { observe } from '@lmnr-ai/lmnr';
 
 const result = await observe({ name: 'my-function' }, async () => {
@@ -395,30 +403,10 @@ const { text } = await generateText({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

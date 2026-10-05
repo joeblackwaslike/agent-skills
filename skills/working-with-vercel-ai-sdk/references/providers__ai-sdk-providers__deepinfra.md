@@ -1,10 +1,14 @@
 ---
+title: DeepInfra
+description: "Learn how to use DeepInfra's models with the AI SDK."
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "3370d548f4faea623b15c0346063d87a928ed49e364e1b4e919ed764e7ae821f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c36bb6abc0763499c558209f4ceacd11eaf2d7ade438b1393c4e104913844ebe"
 ---
 
-# DeepInfra Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [DeepInfra](https://deepinfra.com) provider contains support for state-of-the-art models through the DeepInfra API, including Llama 3, Mixtral, Qwen, and many other popular open-source models.
 
@@ -12,7 +16,7 @@ The [DeepInfra](https://deepinfra.com) provider contains support for state-of-th
 
 The DeepInfra provider is available via the `@ai-sdk/deepinfra` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/deepinfra" />
+**Packages:** `@ai-sdk/deepinfra`
 
 ## Provider Instance
 
@@ -34,7 +38,7 @@ const deepInfra = createDeepInfra({
 
 You can use the following optional settings to customize the DeepInfra provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.deepinfra.com/v1`.
@@ -42,16 +46,16 @@ You can use the following optional settings to customize the DeepInfra provider 
   Note: Language models and embeddings use OpenAI-compatible endpoints at `{baseURL}/openai`,
   while image models use `{baseURL}/inference`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `DEEPINFRA_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -78,36 +82,34 @@ DeepInfra language models can also be used in the `streamText` function (see [AI
 
 | Model                                               | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | --------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | <Check />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta-llama/Llama-4-Scout-17B-16E-Instruct`         | <Check />   | <Cross />         | <Cross />  | <Cross />      |
-| `meta-llama/Llama-3.3-70B-Instruct-Turbo`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Llama-3.3-70B-Instruct`                 | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Meta-Llama-3.1-405B-Instruct`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo`      | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Meta-Llama-3.1-70B-Instruct`            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo`       | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `meta-llama/Meta-Llama-3.1-8B-Instruct`             | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Llama-3.2-11B-Vision-Instruct`          | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `meta-llama/Llama-3.2-90B-Vision-Instruct`          | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `mistralai/Mixtral-8x7B-Instruct-v0.1`              | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `deepseek-ai/DeepSeek-V3`                           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-ai/DeepSeek-R1`                           | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`         | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `deepseek-ai/DeepSeek-R1-Turbo`                     | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `nvidia/Llama-3.1-Nemotron-70B-Instruct`            | <Cross />   | <Check />         | <Check />  | <Cross />      |
-| `Qwen/Qwen2-7B-Instruct`                            | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `Qwen/Qwen2.5-72B-Instruct`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `Qwen/Qwen2.5-Coder-32B-Instruct`                   | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `Qwen/QwQ-32B-Preview`                              | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `google/codegemma-7b-it`                            | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `google/gemma-2-9b-it`                              | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
-| `microsoft/WizardLM-2-8x22B`                        | <Cross />   | <Cross />         | <Cross />  | <Cross />      |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | ✓           | ✗                 | ✗          | ✗              |
+| `meta-llama/Llama-4-Scout-17B-16E-Instruct`         | ✓           | ✗                 | ✗          | ✗              |
+| `meta-llama/Llama-3.3-70B-Instruct-Turbo`           | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-3.3-70B-Instruct`                 | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Meta-Llama-3.1-405B-Instruct`           | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo`      | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Meta-Llama-3.1-70B-Instruct`            | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo`       | ✗           | ✓                 | ✓          | ✗              |
+| `meta-llama/Meta-Llama-3.1-8B-Instruct`             | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-3.2-11B-Vision-Instruct`          | ✓           | ✓                 | ✗          | ✗              |
+| `meta-llama/Llama-3.2-90B-Vision-Instruct`          | ✓           | ✓                 | ✗          | ✗              |
+| `mistralai/Mixtral-8x7B-Instruct-v0.1`              | ✗           | ✓                 | ✓          | ✗              |
+| `deepseek-ai/DeepSeek-V3`                           | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-R1`                           | ✗           | ✗                 | ✗          | ✗              |
+| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`         | ✗           | ✗                 | ✗          | ✗              |
+| `deepseek-ai/DeepSeek-R1-Turbo`                     | ✗           | ✗                 | ✗          | ✗              |
+| `nvidia/Llama-3.1-Nemotron-70B-Instruct`            | ✗           | ✓                 | ✓          | ✗              |
+| `Qwen/Qwen2-7B-Instruct`                            | ✗           | ✓                 | ✗          | ✗              |
+| `Qwen/Qwen2.5-72B-Instruct`                         | ✗           | ✓                 | ✓          | ✓              |
+| `Qwen/Qwen2.5-Coder-32B-Instruct`                   | ✗           | ✓                 | ✗          | ✗              |
+| `Qwen/QwQ-32B-Preview`                              | ✗           | ✓                 | ✗          | ✗              |
+| `google/codegemma-7b-it`                            | ✗           | ✗                 | ✗          | ✗              |
+| `google/gemma-2-9b-it`                              | ✗           | ✗                 | ✗          | ✗              |
+| `microsoft/WizardLM-2-8x22B`                        | ✗           | ✗                 | ✗          | ✗              |
 
-<Note>
-  The table above lists popular models. Please see the [DeepInfra
-  docs](https://deepinfra.com) for a full list of available models. You can also
-  pass any available provider model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [DeepInfra
+docs](https://deepinfra.com) for a full list of available models. You can also
+pass any available provider model ID as a string if needed.
 
 ## Image Models
 
@@ -125,12 +127,10 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  Model support for `size` and `aspectRatio` parameters varies by model. Please
-  check the individual model documentation on [DeepInfra's models
-  page](https://deepinfra.com/models/text-to-image) for supported options and
-  additional parameters.
-</Note>
+Model support for `size` and `aspectRatio` parameters varies by model. Please
+check the individual model documentation on [DeepInfra's models
+page](https://deepinfra.com/models/text-to-image) for supported options and
+additional parameters.
 
 ### Model-specific options
 
@@ -155,44 +155,42 @@ const { image } = await generateImage({
 The following options are available via `providerOptions.deepinfra`. You can
 type them with `DeepInfraImageModelOptions`.
 
-- **negative_prompt** _string_
+- **negative\_prompt** *string*
 
   Text description of what to avoid in the generated image.
 
-- **num_inference_steps** _number_
+- **num\_inference\_steps** *number*
 
   Number of denoising steps for models that expose this option.
 
-- **guidance_scale** _number_
+- **guidance\_scale** *number*
 
   Guidance scale for models that expose this option.
 
-- **guidance** _number_
+- **guidance** *number*
 
   Guidance value for image edit models that expose this option.
 
-- **response_format** _'b64_json'_
+- **response\_format** *'b64\_json'*
 
   Format for OpenAI-compatible image responses. DeepInfra currently supports
   `b64_json`.
 
-- **quality** _string_
+- **quality** *string*
 
   OpenAI-compatible image quality option.
 
-- **style** _string_
+- **style** *string*
 
   OpenAI-compatible image style option.
 
-- **user** _string_
+- **user** *string*
 
   Unique identifier for your end user.
 
-<Note>
-  DeepInfra image generation models expose model-specific parameters. Additional
-  fields can be passed through `providerOptions.deepinfra` and are validated by
-  DeepInfra.
-</Note>
+DeepInfra image generation models expose model-specific parameters. Additional
+fields can be passed through `providerOptions.deepinfra` and are validated by
+DeepInfra.
 
 ### Image Editing
 
@@ -250,11 +248,9 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
-  base64-encoded strings. DeepInfra uses an OpenAI-compatible image editing API
-  at `https://api.deepinfra.com/v1/openai/images/edits`.
-</Note>
+Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
+base64-encoded strings. DeepInfra uses an OpenAI-compatible image editing API
+at `https://api.deepinfra.com/v1/openai/images/edits`.
 
 ### Model Capabilities
 
@@ -317,58 +313,13 @@ const { embedding } = await embed({
 | `thenlper/gte-base`                                   | 768        | 512        |
 | `thenlper/gte-large`                                  | 1024       | 512        |
 
-<Note>
-  For a complete list of available embedding models, see the [DeepInfra
-  embeddings page](https://deepinfra.com/models/embeddings).
-</Note>
+For a complete list of available embedding models, see the [DeepInfra
+embeddings page](https://deepinfra.com/models/embeddings).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,10 +1,14 @@
 ---
+title: Agent Client Protocol
+description: Learn how to use Agent Client Protocol implementations through the AI SDK harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1a3348d85503e7104b60dd4f1a3c111fd9b59d7071907ac9437963cc19f76c42"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3a130860594969bfadaa7861047ae0d7976e94366b218bab60e280d752841937"
 ---
 
-# Agent Client Protocol Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Agent Client Protocol (ACP) harness adapter connects `HarnessAgent` to any
 harness compatible with ACP version 1. The generic adapter owns the bridge, ACP
@@ -15,14 +19,12 @@ All you need in addition to the ACP harness adapter is an ACP-compatible
 implementation that can be installed from NPM or with a trusted Bash command.
 You can then configure the ACP harness adapter with a few lines of code.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-acp @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-acp`, `@ai-sdk/sandbox-vercel`
 
 ## Basic Usage
 
@@ -150,7 +152,7 @@ try {
   random 32-byte token. Custom implementations must return a suitably secret
   token.
 - `clientApp`: optional client attribution with `name` and `version`. It
-  defaults to the installed `ai-sdk/harness-acp/<version>` identity and is
+  defaults to the installed `ai-sdk-harness-acp/<version>` identity and is
   available to Gateway environment placeholders.
 
 Runtime-specific package names, environment variables, modes, and session
@@ -549,7 +551,7 @@ modes enable Codex's internal sandbox, which must not run inside the sandbox
 already provided to `HarnessAgent`.
 
 The `client-app` placeholder resolves to the versioned
-`ai-sdk/harness-acp/<version>` identifier and sends it as both `User-Agent` and
+`ai-sdk-harness-acp/<version>` identifier and sends it as both `User-Agent` and
 `x-client-app`.
 Without Gateway credentials, this profile uses direct `CODEX_API_KEY` or
 `OPENAI_API_KEY` authentication. Gateway `env` values are added to the
@@ -706,20 +708,10 @@ requests sent through ACP, the adapter applies the configured Harness
 - [Harness tools](/docs/ai-sdk-harnesses/tools)
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

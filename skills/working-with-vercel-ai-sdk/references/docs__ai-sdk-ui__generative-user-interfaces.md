@@ -1,14 +1,16 @@
 ---
+title: Generative User Interfaces
+description: Learn how to build Generative UI with AI SDK UI.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/generative-user-interfaces"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/generative-user-interfaces.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "2846d26bb767affc181ba5e376027493ed9ad68483d1624117edcf8f57085a76"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c0ed941c575741e79d855436bdd3178b722dc1ae4ecd64050a26105a11267508"
 ---
 
-# Generative User Interfaces
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Generative user interfaces (generative UI) is the process of allowing a large language model (LLM) to go beyond text and "generate UI". This creates a more engaging and AI-native experience for users.
-
-<WeatherSearch />
 
 At the core of generative UI are [ tools ](/docs/ai-sdk-core/tools-and-tool-calling), which are functions you provide to the model to perform specialized tasks like getting the weather in a location. The model can decide when and how to use these tools based on the context of the conversation.
 
@@ -29,7 +31,7 @@ Let's create a chat interface that handles text-based conversations and incorpor
 
 Start with a basic chat implementation using the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -76,7 +78,7 @@ export default function Page() {
 
 To handle the chat requests and model responses, set up an API route:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -85,13 +87,12 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(request: Request) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'You are a friendly assistant!',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
@@ -111,7 +112,7 @@ Before enhancing your chat interface with dynamic UI elements, you need to creat
 
 Create a new file called `ai/tools.ts` with the following content:
 
-```ts filename="ai/tools.ts"
+```ts title="ai/tools.ts"
 import { tool as createTool } from 'ai';
 import { z } from 'zod';
 
@@ -137,7 +138,7 @@ In this file, you've created a tool called `weatherTool`. This tool simulates fe
 
 Update the API route to include the tool you've defined:
 
-```ts filename="app/api/chat/route.ts" highlight="10,15,20"
+```ts title="app/api/chat/route.ts" {10,15,20}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -146,14 +147,13 @@ import {
   toUIMessageStream,
   UIMessage,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { tools } from '@/ai/tools';
 
 export async function POST(request: Request) {
   const { messages }: { messages: UIMessage[] } = await request.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'You are a friendly assistant!',
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
@@ -172,7 +172,7 @@ Now that you've defined the tool and added it to your `streamText` call, let's b
 
 Create a new file called `components/weather.tsx`:
 
-```tsx filename="components/weather.tsx"
+```tsx title="components/weather.tsx"
 type WeatherProps = {
   temperature: number;
   weather: string;
@@ -200,7 +200,7 @@ To check if the model has called a tool, you can check the `parts` array of the 
 
 Update your `page.tsx` file:
 
-```tsx filename="app/page.tsx" highlight="4,9,14-15,19-46"
+```tsx title="app/page.tsx" {4,9,14-15,19-46}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -407,23 +407,10 @@ export default function Page() {
 
 By following this pattern, you can continue to add more tools and components, expanding the capabilities of your Generative UI application.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

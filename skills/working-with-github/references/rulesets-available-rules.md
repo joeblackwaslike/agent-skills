@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-09-14T09:42:34.465Z"
-sha256: "6f4f960c35093d73d2ddfaabcbaef3bf0a03ae2bf18efac8e81c989d78e15572"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "3cf173941862fdcf95db9d8c31b3afc140081dce5d1a9bdfc97cb0e84c52d522"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -116,9 +116,7 @@ For complex pull requests that require many reviews, requiring an approval from 
 
 Optionally, you can require all comments on the pull request to be resolved before it can be merged to a branch. This ensures that all comments are addressed or acknowledged before merge.
 
-{% ifversion repo-rules-merge-type %}
 Optionally, you can require a merge type of merge, squash, or rebase. This means the targeted branches may only be merged based on the allowed type. Additionally if the repository has disabled a merge method and the ruleset required a different method, the merge will be blocked. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github).
-{% endif %}
 
 {% ifversion repo-rules-copilot-extra-approval %}
 
@@ -246,6 +244,8 @@ For more information, see [AUTOTITLE](/code-security/concepts/code-quality/code-
 
 If your repository has {% data variables.product.prodname_code_quality %} enabled and code coverage data is being uploaded, you can use rulesets to prevent pull requests from being merged based on code coverage thresholds. For more information about uploading coverage data, see [AUTOTITLE](/code-security/how-tos/maintain-quality-code/set-up-code-coverage).
 
+The rule evaluates only coverage data that has already been uploaded and does not wait for coverage uploads to complete. To ensure that all expected coverage results are evaluated before a pull request can be merged, make each status check associated with an expected coverage upload a required status check.
+
 This rule blocks a pull request from being merged when either of two code coverage thresholds is not met:
 
 * **Minimum line coverage percentage**: the aggregated line coverage for the pull request branch is below the configured percentage.
@@ -321,7 +321,7 @@ When you add metadata restrictions to an existing branch or tag, the rules are e
 
 ## Restrict file paths
 
-Prevent commits that include changes in specified file paths from being pushed to the repository. {% ifversion available-rules-limit %}Limit is 200 entries and up to 200 characters in each entry.{% endif %}
+Prevent commits that include changes in specified file paths from being pushed to the repository. Limit is 200 entries and up to 200 characters in each entry.
 
 {% data reusables.repositories.rulesets-push-rules-path-example %}
 
@@ -339,7 +339,7 @@ Prevent commits that include file paths that exceed a specified character limit 
 
 ## Restrict file extensions
 
-Prevent commits that include files with specified file extensions from being pushed to the repository. {% ifversion available-rules-limit %}Limit is 200 entries and up to 200 characters in each entry.{% endif %}
+Prevent commits that include files with specified file extensions from being pushed to the repository. Limit is 200 entries and up to 200 characters in each entry.
 
 {% ifversion push-rule-allowed-exceptions %}
 

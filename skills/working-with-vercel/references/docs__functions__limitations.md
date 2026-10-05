@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "faae3d64234dd480ce7bd2b14af04ad8299b537eb3835342330c0e9a7d3b1961"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "09c7a62065c8a549c6b4934c524911b4a6759fcbf51516eaa7afade8622990f2"
 ---
 
 # Vercel Functions Limits
@@ -36,10 +36,10 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
 - [WebSocket support is now in Public Beta](https://vercel.com/changelog/websocket-support-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related)
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [Do Vercel Serverless Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Information on Vercel's support for WebSocket connections with Vercel Functions.
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
+- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Flimitations&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 

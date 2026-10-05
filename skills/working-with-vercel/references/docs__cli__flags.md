@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "ce2c1444b59b359c13fedb01a4523ae556f8cee81ab40eb59dffbe964120be97"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b6c75521af68921853d996e3ecc9d4391baa8d1fb8c84759e7c4a403d6b672d6"
 ---
 
 # vercel flags
@@ -38,8 +38,8 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=graph)

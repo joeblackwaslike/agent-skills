@@ -1,10 +1,14 @@
 ---
+title: Streaming Custom Data
+description: Learn how to stream custom data from the server to the client.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "e0ccfac883f133e3f2b05c6ccfa54b5f09916ddc31c887f7caed00758f74c6e2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3129c5fd1b86e708421d31ba2994c7445b00529eb45474721d0de9e71549c212"
 ---
 
-# Streaming Custom Data
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 It is often useful to send additional data alongside the model's response.
 For example, you may want to send status information, the message ids after storing them,
@@ -23,7 +27,7 @@ The data is streamed as part of the response stream using Server-Sent Events.
 
 First, define your custom message type with data part schemas for type safety:
 
-```tsx filename="ai/types.ts"
+```tsx title="ai/types.ts"
 import { UIMessage } from 'ai';
 
 // Define your custom message type with data part schemas
@@ -47,7 +51,7 @@ export type MyUIMessage = UIMessage<
 
 In your server-side route handler, you can create a `UIMessageStream` and then pass it to `createUIMessageStreamResponse`:
 
-```tsx filename="route.ts"
+```tsx title="route.ts"
 import { openai } from '@ai-sdk/openai';
 import {
   convertToModelMessages,
@@ -56,7 +60,6 @@ import {
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import type { MyUIMessage } from '@/ai/types';
 
 export async function POST(req: Request) {
@@ -94,7 +97,7 @@ export async function POST(req: Request) {
       });
 
       const result = streamText({
-        model: __MODEL__,
+        model: "anthropic/claude-sonnet-5.5",
         messages: await convertToModelMessages(messages),
         onEnd() {
           // 5. Update the same data part (reconciliation)
@@ -127,11 +130,9 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  You can also send stream data from custom backends, e.g. Python / FastAPI,
-  using the [UI Message Stream
-  Protocol](/docs/ai-sdk-ui/stream-protocol#data-stream-protocol).
-</Note>
+You can also send stream data from custom backends, e.g. Python / FastAPI,
+using the [UI Message Stream
+Protocol](/docs/ai-sdk-ui/stream-protocol#data-stream-protocol).
 
 ## Types of Streamable Data
 
@@ -205,7 +206,7 @@ The reconciliation happens automatically - simply use the same `id` when writing
 
 The `onData` callback is essential for handling streaming data, especially transient parts:
 
-```tsx filename="page.tsx"
+```tsx title="page.tsx"
 import { useChat } from '@ai-sdk/react';
 import type { MyUIMessage } from '@/ai/types';
 
@@ -234,7 +235,7 @@ const { messages } = useChat<MyUIMessage>({
 
 You can filter and render data parts from the message parts array:
 
-```tsx filename="page.tsx"
+```tsx title="page.tsx"
 const result = (
   <>
     {messages?.map(message => (
@@ -277,7 +278,7 @@ const result = (
 
 ### Complete Example
 
-```tsx filename="page.tsx"
+```tsx title="page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -406,23 +407,10 @@ writer.write({
 
 For more details on message metadata, see the [Message Metadata documentation](/docs/ai-sdk-ui/message-metadata).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

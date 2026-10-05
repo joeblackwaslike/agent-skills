@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-09-28
+Last updated: 2026-10-05
 
 ## GitHub Official
 

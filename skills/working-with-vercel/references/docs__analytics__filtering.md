@@ -15,8 +15,8 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "78dd93d8de5236b385fc6335ccd47018caa85ff36980985374189662028d09c8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1da14537e755cdeb4a046cacb7bd05cb892e817a3baac2d72c2f9626ad6f019b"
 ---
 
 # Filtering Analytics
@@ -37,9 +37,9 @@ to use it to answer specific questions.
 - [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
 - [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
@@ -72,7 +72,7 @@ visitors from the United States:
 1. Search for "United States" within the **Country** panel.
 2. Click on the row:
 
-![Image](https://vercel.com/docs-assets/static/docs/concepts/web-analytics/filter-us-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/web-analytics/filter-us-light.png)
 
 ## Examples of using filters
 

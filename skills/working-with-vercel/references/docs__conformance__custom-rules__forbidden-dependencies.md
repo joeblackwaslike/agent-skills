@@ -12,13 +12,13 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "209fffd9776d52767a6372c6fb3a99bfa6657665318ded285f9c3f075cbb8838"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1b204bcae9a27b08184a927d2fb1559b53f1fafb6f263ad7e75e6b07e4c4b8bc"
 ---
 
 # forbidden-dependencies
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The `forbidden-dependencies` rule type enables you to disallow one or more files from depending on one or more predefined modules.
 

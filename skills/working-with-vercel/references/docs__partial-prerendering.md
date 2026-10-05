@@ -16,13 +16,13 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c97826620824c3f7de70af27029c093eccdd66f2a02ac5163f2c22b67c64e5a7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0bb8ad9cc03bd53a373a9de725fd7ff277090c0557620b67a49691f18830512e"
 ---
 
 # Partial Prerendering (PPR)
 
-> **🔒 Permissions Required**: Partial Prerendering
+> **Availability**: Partial Prerendering is available on all plans
 
 Partial Prerendering (PPR) is a rendering strategy that combines fast cached static content with the ability to render fresh dynamic content, all in one response. This strategy allows you to personalize pages while still having a performant site.
 
@@ -33,17 +33,17 @@ Partial Prerendering (PPR) is a rendering strategy that combines fast cached sta
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploys are now up to 33% faster for apps with many ISR pages](https://vercel.com/changelog/deploys-are-now-up-to-33-faster-for-apps-with-many-isr-pages?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
+- [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
+- [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
 - [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
 - [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
-- [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
 - [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
-- [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
-- [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
+- [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
+- [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related)
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md?from=related&source_path=%2Fdocs%2Fpartial-prerendering&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -225,7 +225,7 @@ Two triggers can update the cached content for a shell:
 - **Time-based revalidation** runs automatically after a set interval
 - **On-demand revalidation** runs when you call an API
 
-After a revalidation, the next request will serve the last generated content and trigger an asynchronous background revalidation. On the next request, the new content will be served:
+Both triggers run in the background, so visitors keep receiving the last generated shell while your function generates the new one. Once the new shell is in the global ISR cache, the next request in each region pulls it into the regional CDN cache and serves it:
 
 ```mermaid
 flowchart LR

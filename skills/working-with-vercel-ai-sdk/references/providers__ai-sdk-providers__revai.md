@@ -1,10 +1,14 @@
 ---
+title: Rev.ai
+description: Learn how to use the Rev.ai provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/revai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "1e4c8a14eb8d05e81ef886d5cdfff44d0a0ca25dd48ac320c07c382b37517916"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "95c885d75a70fb3d53fac7544f1af9aecbc074e890cdfa4a30b3cb242d213ca1"
 ---
 
-# Rev.ai Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Rev.ai](https://www.rev.ai/) provider contains language model support for the Rev.ai transcription API.
 
@@ -12,7 +16,7 @@ The [Rev.ai](https://www.rev.ai/) provider contains language model support for t
 
 The Rev.ai provider is available in the `@ai-sdk/revai` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/revai" />
+**Packages:** `@ai-sdk/revai`
 
 ## Provider Instance
 
@@ -35,16 +39,16 @@ const revai = createRevai({
 
 You can use the following optional settings to customize the Rev.ai provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `REVAI_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -64,7 +68,7 @@ const model = revai.transcription('machine');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format can sometimes improve transcription performance if known beforehand.
 
-```ts highlight="7"
+```ts {7}
 import { transcribe } from 'ai';
 import { revai } from '@ai-sdk/revai';
 import { type RevaiTranscriptionModelOptions } from '@ai-sdk/revai';
@@ -81,116 +85,122 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **metadata** _string_
+- **metadata** *string*
 
   Optional metadata string to associate with the transcription job.
 
-- **notification_config** _object_
+- **notification\_config** *object*
 
   Configuration for webhook notifications when job is complete.
-  - **url** _string_ - URL to send the notification to.
-  - **auth_headers** _object_ - Optional authorization headers for the notification request.
-    - **Authorization** _string_ - Authorization header value.
 
-- **delete_after_seconds** _integer_
+  - **url** *string* - URL to send the notification to.
+  - **auth\_headers** *object* - Optional authorization headers for the notification request.
+    - **Authorization** *string* - Authorization header value.
+
+- **delete\_after\_seconds** *integer*
 
   Number of seconds after which the job will be automatically deleted.
 
-- **verbatim** _boolean_
+- **verbatim** *boolean*
 
   Whether to include filler words and false starts in the transcription.
 
-- **rush** _boolean_
+- **rush** *boolean*
 
-  [HIPAA Unsupported] Whether to prioritize the job for faster processing. Only available for human transcriber option.
+  \[HIPAA Unsupported] Whether to prioritize the job for faster processing. Only available for human transcriber option.
 
-- **test_mode** _boolean_
+- **test\_mode** *boolean*
 
   Whether to run the job in test mode. Default is `false`.
 
-- **segments_to_transcribe** _Array_
+- **segments\_to\_transcribe** *Array*
 
   Specific segments of the audio to transcribe.
-  - **start** _number_ - Start time of the segment in seconds.
-  - **end** _number_ - End time of the segment in seconds.
 
-- **speaker_names** _Array_
+  - **start** *number* - Start time of the segment in seconds.
+  - **end** *number* - End time of the segment in seconds.
+
+- **speaker\_names** *Array*
 
   Names to assign to speakers in the transcription.
-  - **display_name** _string_ - Display name for the speaker.
 
-- **skip_diarization** _boolean_
+  - **display\_name** *string* - Display name for the speaker.
+
+- **skip\_diarization** *boolean*
 
   Whether to skip speaker diarization. Default is `false`.
 
-- **skip_postprocessing** _boolean_
+- **skip\_postprocessing** *boolean*
 
   Whether to skip post-processing steps. Only available for English and Spanish languages. Default is `false`.
 
-- **skip_punctuation** _boolean_
+- **skip\_punctuation** *boolean*
 
   Whether to skip adding punctuation to the transcription. Default is `false`.
 
-- **remove_disfluencies** _boolean_
+- **remove\_disfluencies** *boolean*
 
   Whether to remove disfluencies (um, uh, etc.) from the transcription. Default is `false`.
 
-- **remove_atmospherics** _boolean_
+- **remove\_atmospherics** *boolean*
 
   Whether to remove atmospheric sounds (like `<laugh>`, `<affirmative>`) from the transcription. Default is `false`.
 
-- **filter_profanity** _boolean_
+- **filter\_profanity** *boolean*
 
   Whether to filter profanity from the transcription by replacing characters with asterisks except for the first and last. Default is `false`.
 
-- **speaker_channels_count** _integer_
+- **speaker\_channels\_count** *integer*
 
   Number of speaker channels in the audio. Only available for English, Spanish and French languages.
 
-- **speakers_count** _integer_
+- **speakers\_count** *integer*
 
   Expected number of speakers in the audio. Only available for English, Spanish and French languages.
 
-- **diarization_type** _string_
+- **diarization\_type** *string*
 
   Type of diarization to use. Possible values: "standard" (default), "premium".
 
-- **custom_vocabulary_id** _string_
+- **custom\_vocabulary\_id** *string*
 
   ID of a custom vocabulary to use for the transcription, submitted through the Custom Vocabularies API.
 
-- **custom_vocabularies** _Array_
+- **custom\_vocabularies** *Array*
 
   Custom vocabularies to use for the transcription.
 
-- **strict_custom_vocabulary** _boolean_
+- **strict\_custom\_vocabulary** *boolean*
 
   Whether to strictly enforce custom vocabulary.
 
-- **summarization_config** _object_
+- **summarization\_config** *object*
 
   Configuration for generating a summary of the transcription.
-  - **model** _string_ - Model to use for summarization. Possible values: "standard" (default), "premium".
-  - **type** _string_ - Format of the summary. Possible values: "paragraph" (default), "bullets".
-  - **prompt** _string_ - Custom prompt for the summarization (mutually exclusive with type).
 
-- **translation_config** _object_
+  - **model** *string* - Model to use for summarization. Possible values: "standard" (default), "premium".
+  - **type** *string* - Format of the summary. Possible values: "paragraph" (default), "bullets".
+  - **prompt** *string* - Custom prompt for the summarization (mutually exclusive with type).
+
+- **translation\_config** *object*
 
   Configuration for translating the transcription.
-  - **target_languages** _Array_ - Target languages for translation. Each item is an object with:
-    - **language** _string_ - Language code. Possible values: "en", "en-us", "en-gb", "ar", "pt", "pt-br", "pt-pt", "fr", "fr-ca", "es", "es-es", "es-la", "it", "ja", "ko", "de", "ru".
-  - **model** _string_ - Model to use for translation. Possible values: "standard" (default), "premium".
 
-- **language** _string_
+  - **target\_languages** *Array* - Target languages for translation. Each item is an object with:
+    - **language** *string* - Language code. Possible values: "en", "en-us", "en-gb", "ar", "pt", "pt-br", "pt-pt", "fr", "fr-ca", "es", "es-es", "es-la", "it", "ja", "ko", "de", "ru".
+  - **model** *string* - Model to use for translation. Possible values: "standard" (default), "premium".
 
-  Language of the audio content, provided as an ISO 639-1 language code. Default is "en".
+- **language** *string*
 
-- **forced_alignment** _boolean_
+  Language of the audio content, provided as an ISO 639-1 language code, with some exceptions such as region-qualified codes (for example "en-us"). Default is "en".
+
+- **forced\_alignment** *boolean*
 
   Whether to perform forced alignment, which provides improved accuracy for per-word timestamps.
   Default is `false`.
 
   Currently supported languages:
+
   - English (en, en-us, en-gb)
   - French (fr)
   - Italian (it)
@@ -201,59 +211,16 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model      | Transcription | Duration  | Segments  | Language  |
-| ---------- | ------------- | --------- | --------- | --------- |
-| `machine`  | <Check />     | <Check /> | <Check /> | <Check /> |
-| `low_cost` | <Check />     | <Check /> | <Check /> | <Check /> |
-| `fusion`   | <Check />     | <Check /> | <Check /> | <Check /> |
+| Model      | Transcription | Duration | Segments | Language |
+| ---------- | ------------- | -------- | -------- | -------- |
+| `machine`  | ✓             | ✓        | ✓        | ✓        |
+| `low_cost` | ✓             | ✓        | ✓        | ✓        |
+| `fusion`   | ✓             | ✓        | ✓        | ✓        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

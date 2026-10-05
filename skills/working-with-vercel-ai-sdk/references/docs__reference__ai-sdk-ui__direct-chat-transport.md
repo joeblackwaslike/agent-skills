@@ -1,10 +1,14 @@
 ---
+title: DirectChatTransport
+description: API Reference for the DirectChatTransport class.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ea9a417ebbccd8bbc5aedea5d954562ffb74bef56c017f3749715eca343054b4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0f981e6e08438d386eb664d940da08735d00a6a30362bf6650340972083ad513"
 ---
 
-# `DirectChatTransport`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 A transport that directly communicates with an [Agent](/docs/reference/ai-sdk-core/agent) in-process, without going through HTTP. This is useful for:
 
@@ -17,10 +21,9 @@ Unlike `DefaultChatTransport` which sends HTTP requests to an API endpoint, `Dir
 ```tsx
 import { useChat } from '@ai-sdk/react';
 import { DirectChatTransport, ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
 });
 
@@ -35,84 +38,24 @@ export default function Chat() {
 
 ## Import
 
-<Snippet text={`import { DirectChatTransport } from "ai"`} prompt={false} />
+```
+import { DirectChatTransport } from "ai"
+```
 
 ## Constructor
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'agent',
-      type: 'Agent',
-      isRequired: true,
-      description:
-        'The Agent instance to use for generating responses. The agent will be called with `stream()` for each message.',
-    },
-    {
-      name: 'options',
-      type: 'CALL_OPTIONS',
-      isOptional: true,
-      description:
-        'Options to pass to the agent when calling it. These are agent-specific options defined when creating the agent.',
-    },
-    {
-      name: 'originalMessages',
-      type: 'UIMessage[]',
-      isOptional: true,
-      description:
-        'The original messages. If provided, persistence mode is assumed, and a message ID is provided for the response message.',
-    },
-    {
-      name: 'generateMessageId',
-      type: 'IdGenerator',
-      isOptional: true,
-      description:
-        'Generate a message ID for the response message. If not provided, no message ID will be set for the response message.',
-    },
-    {
-      name: 'messageMetadata',
-      type: '(options: { part: TextStreamPart }) => METADATA | undefined',
-      isOptional: true,
-      description:
-        'Extracts message metadata that will be sent to the client. Called on `start` and `finish` events.',
-    },
-    {
-      name: 'sendReasoning',
-      type: 'boolean',
-      isOptional: true,
-      description: 'Send reasoning parts to the client. Defaults to true.',
-    },
-    {
-      name: 'sendSources',
-      type: 'boolean',
-      isOptional: true,
-      description: 'Send source parts to the client. Defaults to false.',
-    },
-    {
-      name: 'sendFinish',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Send the finish event to the client. Set to false if you are using additional streamText calls that send additional data. Defaults to true.',
-    },
-    {
-      name: 'sendStart',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Send the message start event to the client. Set to false if you are using additional streamText calls and the message start event has already been sent. Defaults to true.',
-    },
-    {
-      name: 'onError',
-      type: '(error: unknown) => string',
-      isOptional: true,
-      description:
-        "Process an error, e.g. to log it. Defaults to `() => 'An error occurred.'`. Return the error message to include in the data stream.",
-    },
-  ]}
-/>
+- `agent` (`Agent`): The Agent instance to use for generating responses. The agent will be called with \`stream()\` for each message.
+- `options?` (`CALL_OPTIONS`): Options to pass to the agent when calling it. These are agent-specific options defined when creating the agent.
+- `originalMessages?` (`UIMessage[]`): The original messages. If provided, persistence mode is assumed, and a message ID is provided for the response message (generated with \`generateMessageId\`, or reused from the last message when it is an assistant message).
+- `generateMessageId?` (`IdGenerator`): Generate a message ID for the response message. If not provided, no message ID will be set for the response message (unless the original messages are provided and the last message is an assistant message).
+- `messageMetadata?` (`(options: { part: TextStreamPart }) => METADATA | undefined`): Extracts message metadata that will be sent to the client. Called on \`start\` and \`finish\` events.
+- `sendReasoning?` (`boolean`): Send reasoning parts to the client. Defaults to true.
+- `sendSources?` (`boolean`): Send source parts to the client. Defaults to false.
+- `sendFinish?` (`boolean`): Send the finish event to the client. Set to false if you are using additional streamText calls that send additional data. Defaults to true.
+- `sendStart?` (`boolean`): Send the message start event to the client. Set to false if you are using additional streamText calls and the message start event has already been sent. Defaults to true.
+- `onError?` (`(error: unknown) => string`): Process an error, e.g. to log it. Defaults to \`() => 'An error occurred.'\`. Return the error message to include in the data stream.
 
 ## Methods
 
@@ -129,57 +72,14 @@ const stream = await transport.sendMessages({
 });
 ```
 
-<PropertiesTable
-  content={[
-    {
-      name: 'chatId',
-      type: 'string',
-      description: 'Unique identifier for the chat session.',
-    },
-    {
-      name: 'trigger',
-      type: "'submit-message' | 'regenerate-message'",
-      description:
-        'The type of message submission - either new message or regeneration.',
-    },
-    {
-      name: 'messageId',
-      type: 'string | undefined',
-      description:
-        'ID of the message to regenerate, or undefined for new messages.',
-    },
-    {
-      name: 'messages',
-      type: 'UIMessage[]',
-      description:
-        'Array of UI messages representing the conversation history.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal | undefined',
-      description: 'Signal to abort the request if needed.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string> | Headers',
-      isOptional: true,
-      description: 'Additional headers (ignored by DirectChatTransport).',
-    },
-    {
-      name: 'body',
-      type: 'object',
-      isOptional: true,
-      description:
-        'Additional body properties (ignored by DirectChatTransport).',
-    },
-    {
-      name: 'metadata',
-      type: 'unknown',
-      isOptional: true,
-      description: 'Custom metadata (ignored by DirectChatTransport).',
-    },
-  ]}
-/>
+- `chatId` (`string`): Unique identifier for the chat session.
+- `trigger` (`'submit-message' | 'regenerate-message'`): The type of message submission - either new message or regeneration.
+- `messageId` (`string | undefined`): ID of the message to regenerate, or undefined for new messages.
+- `messages` (`UIMessage[]`): Array of UI messages representing the conversation history.
+- `abortSignal` (`AbortSignal | undefined`): Signal to abort the request if needed.
+- `headers?` (`Record<string, string> | Headers`): Additional headers (ignored by DirectChatTransport).
+- `body?` (`object`): Additional body properties (ignored by DirectChatTransport).
+- `metadata?` (`unknown`): Custom metadata (ignored by DirectChatTransport).
 
 #### Returns
 
@@ -333,23 +233,10 @@ export default function Chat() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

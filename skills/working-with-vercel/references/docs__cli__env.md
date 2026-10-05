@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "75a98d1c5760c998475c1300ac5136d63b3118038cf960308b11657f957d91ab"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cc687972b6282a8d1dfd246261219ddaeadc25ef12e9ce6b5f2480f03d4f5242"
 ---
 
 # vercel env
@@ -43,7 +43,7 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 Full cross-link map for this page: [/docs/cli/env.graph.md](/docs/cli/env.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-To leverage environment variables in local tools (like `next dev` or `gatsby dev`) that want them in a file (like `.env`), run `vercel env pull <file>`. This will export your Project's environment variables to that file. After updating environment variables on Vercel (through the dashboard, `vercel env add`, or `vercel env rm`), you will have to run `vercel env pull <file>` again to get the updated values.
+To leverage environment variables in local tools (like `next dev` or `gatsby dev`) that want them in a file (like `.env`), run `vercel env pull <file>`. This will export your Project's environment variables to that file. After updating environment variables on Vercel (through the dashboard, `vercel env add`, or `vercel env rm`), you will have to run `vercel env pull <file>` again to get the updated values. When the target file already exists, `vercel env pull` merges the pulled values into it instead of discarding local-only entries. See [the pull merge behavior](#exporting-development-environment-variables) for details.
 
 To run a command with environment variables without writing them to a file, use `vercel env run -- <command>`. This fetches the environment variables directly from your linked Vercel project and passes them to the specified command.
 
@@ -60,6 +60,14 @@ To override environment variable values temporarily, use:
 ```bash filename="terminal"
 MY_ENV_VAR="temporary value" next dev
 ```
+
+#### How `vercel env pull` merges into an existing file
+
+When the target file already exists, `vercel env pull` merges the pulled values into it rather than overwriting the whole file:
+
+- Variables defined only in your local file, and not present in the pulled environment, are kept. The CLI logs `Kept <KEYS> (defined locally, not found in the <environment> Environment)`.
+- `VERCEL_OIDC_TOKEN` is never preserved from your local file. It is always refreshed from Vercel. The Vercel-managed analytics variables `VERCEL_ANALYTICS_ID`, `VERCEL_SPEED_INSIGHTS_ID`, and `VERCEL_WEB_ANALYTICS_ID` are also never preserved as local-only entries.
+- For sensitive variables whose values cannot be read from Vercel, the CLI keeps the real value already in your local file. If your local file has no real value for that key, the CLI writes a placeholder for you to replace with a local-only value.
 
 <br />
 
@@ -143,8 +151,8 @@ echo [value] | vercel env add [name] [environment]
 
 *Using the \`echo\` command to generate the value of the
 Environment Variable and piping that value into the
-\`vercel dev\` command. Warning: this will save the value
-in bash history, so this is not recommend for secrets.*
+\`vercel env add\` command. Warning: this will save the value
+in bash history, so this is not recommended for secrets.*
 
 ```bash filename="terminal"
 vercel env add [name] [environment] [gitbranch] < [file]

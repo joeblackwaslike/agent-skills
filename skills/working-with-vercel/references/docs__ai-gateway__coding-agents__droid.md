@@ -16,8 +16,8 @@ related:
 summary: Connect Factory Droid to AI Gateway with the Vercel CLI or bring-your-own-key custom model entries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/droid.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7d80897d67270e27c57fe8d55312fed5d82c2026500618fc9dbbba8a17e9ccf5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bd385da1870ddfb666be49ff33bfc6ad573ef2a3df883663ccdbfe546b0f84d2"
 ---
 
 # Factory Droid with AI Gateway
@@ -30,11 +30,12 @@ sha256: "7d80897d67270e27c57fe8d55312fed5d82c2026500618fc9dbbba8a17e9ccf5"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
-- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/droid.graph.md](/docs/ai-gateway/coding-agents/droid.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fdroid&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

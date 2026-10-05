@@ -15,8 +15,8 @@ related:
 summary: Learn how to assign a domain to a different Git branch with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5c7e473ffb23274e56296c17b86d126aee1f061df8e929e36cfe5663a6819fe1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "037e02bcb2da366de412e811f3ed4c8d46389a4bc83996901495e3880d49e79a"
 ---
 
 # Assigning a domain to a Git branch
@@ -34,6 +34,7 @@ Every commit pushed to the [Production Branch](/docs/git#production-branch) of y
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Branch Domains](https://vercel.com/blog/branch-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related)
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fassign-domain-to-a-git-branch&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
@@ -51,7 +52,7 @@ To automatically assign a domain to a different branch:
 4. Select **Preview** from the **Connect to an environment** section
 5. In the **Git Branch** field, enter the branch name to which you would like to assign the domain:
 
-![Image](`/docs-assets/static/docs/domains/assign-domain-to-git-branch-light.png`)
+![Assign domain to branch modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/domains/assign-domain-to-git-branch-light.png)
 
 Pro and Enterprise teams can also set branch tracking for their [custom environments](/docs/deployments/environments#custom-environments).
 

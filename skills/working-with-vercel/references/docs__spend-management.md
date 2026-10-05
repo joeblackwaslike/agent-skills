@@ -16,13 +16,13 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4dab9bd26b73d7a9af91d1538225357ca4a86ca8b097f2f3283a900ea22e8d94"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5ee5ffd656a1d1c90be62103c234bf727a6f889c56d21bbfa0302baea1ff034d"
 ---
 
 # Spend Management
 
-> **🔒 Permissions Required**: Spend Management
+> **Availability**: Spend Management is available on Enterprise and Pro plans (Enterprise teams require the Flexible Commitment plan)
 
 Spend management is a way for you to notify or to automatically take action on your account when your team hits a [set spend amount](#what-does-spend-management-include). The actions you can take are:
 
@@ -36,14 +36,14 @@ Spend management is a way for you to notify or to automatically take action on y
 - [Pause your project](https://vercel.com/kb/guide/pause-your-project?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Use a webhook to pause your project based on spend management.
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Spend Management now enabled by default on Pro](https://vercel.com/changelog/spend-management-now-enabled-by-default-on-pro?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -85,7 +85,7 @@ Because these checks are not continuous, notifications, webhooks, and project pa
 3. Select [**Billing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) from the list
 4. Under **Spend Management**, toggle the switch to enabled:
 
-![Image](https://vercel.com/docs-assets/static/docs/concepts/teams/spend-manage-light.png)
+![Spend Management section with toggle enabled.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/spend-manage-light.png)
 
 5. Set the **On-Demand Budget** amount in USD at which you would like to receive a notification or trigger an action
 6. Select the action(s) to happen when your spend amount is reached: [pause all your projects](#pausing-projects), [send notifications](#managing-alert-threshold-notifications), or [trigger a webhook URL](#configuring-a-webhook)

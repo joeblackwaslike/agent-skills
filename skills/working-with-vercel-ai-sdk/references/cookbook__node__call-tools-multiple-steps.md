@@ -1,10 +1,18 @@
 ---
+title: Call Tools in Multiple Steps
+description: Learn how to call tools with multiple steps using the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/call-tools-multiple-steps"
+docs_index: /llms.txt
+tags:
+  - node
+  - tool use
+  - agent
 source: "https://ai-sdk.dev/cookbook/node/call-tools-multiple-steps.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1c187573f4d3a896266cc657c00c4a4210e0a2a8f1cb14df93ef2195101b4adb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f087db5e86464ff72398f4db06e7e70856dfe10f226b198a2e066c7167483c5e"
 ---
 
-# Call Tools in Multiple Steps
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Models call tools to gather information or perform actions that are not directly available to the model.
 When tool results are available, the model can use them to generate another response.
@@ -12,7 +20,7 @@ When tool results are available, the model can use them to generate another resp
 You can enable multi-step tool calls in `generateText` by defining stopping conditions with `stopWhen`.
 This allows you to define the conditions for which your agent should stop when the model generates a tool call.
 
-```ts highlight={"7"}
+```ts {7}
 import { generateText, tool, isStepCount } from 'ai';
 import { z } from 'zod';
 
@@ -35,38 +43,10 @@ const { text, steps } = await generateText({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

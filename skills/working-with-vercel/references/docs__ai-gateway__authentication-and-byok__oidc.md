@@ -13,8 +13,8 @@ related:
 summary: Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens directly to the API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "556d483e3736068f05cb5bde07f146e04e88b4b6113b475d548afa7facf688a9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "411c8eb2c3859b16a9bba2167ab0001915b39a8e2f7d07e440cf1778185ae447"
 ---
 
 # AI Gateway OIDC Authentication
@@ -30,11 +30,11 @@ The [Vercel OIDC token](/docs/oidc) is a way to authenticate your requests to th
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/oidc.graph.md](/docs/ai-gateway/authentication-and-byok/oidc.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Foidc&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

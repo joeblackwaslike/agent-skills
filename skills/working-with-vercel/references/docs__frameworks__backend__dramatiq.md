@@ -17,13 +17,13 @@ related:
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1d55979b290dae1b733a85132d9c78b6249d349d8848811e2e58f67e3af341be"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9e236ac8f258287472ccf3ea215475082fde2572438b9f01806a44bc61de2339"
 ---
 
 # Deploy Dramatiq workers on Vercel
 
-> **🔒 Permissions Required**: Vercel Queues (Beta)
+> **Availability**: Vercel Queues (Beta) are available on all plans
 
 [Dramatiq](https://dramatiq.io/) is a distributed task processing library for
 Python. You declare functions as actors, send them messages, and workers run
@@ -35,14 +35,13 @@ them in the background.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related)
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
-- [Deploy a Django app on Vercel](https://vercel.com/docs/frameworks/full-stack/django?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work togeth
-- [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
-- [Vercel Workflows](https://vercel.com/docs/workflows?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/frameworks/backend/dramatiq.graph.md](/docs/frameworks/backend/dramatiq.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Fdramatiq&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

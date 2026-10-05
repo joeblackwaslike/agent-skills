@@ -17,13 +17,13 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "11498331e8b1b7771c4cc89d9fd04c4cc4920667977c8dc36312782982a974fe"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c0c6925266e84e73f3425b84cdce4583276b78e5367a8c54fbf276946c0ab408"
 ---
 
 # Restrict access to deployments with Vercel Authentication
 
-> **🔒 Permissions Required**: Vercel Authentication
+> **Availability**: Vercel Authentication is available on all plans
 
 Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments. When enabled, it allows only users with deployment access to view and comment on your site.
 
@@ -40,11 +40,11 @@ Vercel Authentication lets you restrict access to your public and non-public dep
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [\<script type="text/llms.txt"\>](https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related)
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related)
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Fvercel-authentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -64,12 +64,12 @@ After login, Vercel redirects the user and sets a cookie in the browser if they 
 
 ## Access requests
 
-> **🔒 Permissions Required**: Access requests
+> **Availability**: Access requests are available on all plans
 
 When a Vercel user visits your protected deployment, but they do not have permission to access it, they have the option to request access for their Vercel account.
 This request triggers an email and Vercel notification to the branch authors.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/request-access.png`)
+![External users can request access to protected deployments.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/request-access.png)
 
 The access request can be approved or declined. Additionally, granted access can be revoked for a user at any time.
 
@@ -84,13 +84,13 @@ You can manage access requests in the following way.
 2. Choose the **Requests** section in the sidebar to see pending requests
 3. Choose **Access** to manage existing access
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/manage-requests.png`)
+![Access requests can be approved and declined on the Dashboard > Settings > Deployment Protection > Requests section.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/manage-requests.png)
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/granted-access-list.png`)
+![Granted access requests can be managed on the Dashboard > Settings > Deployment Protection > Access section.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/granted-access-list.png)
 
 You can also manage access requests using the share modal on the deployment page.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/manage-access-v2-light.png`)
+![Access requests can be approved, declined and revoked in the deployment share modal.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/manage-access-v2-light.png)
 
 ## Vercel Authentication security considerations
 
@@ -122,28 +122,32 @@ You can manage Vercel Authentication through the dashboard, API, or Terraform:
   From the **Vercel Authentication** section:
   1. Use the toggle to enable the feature
   2. Select the [deployment environment](/docs/deployments/environments) you want to protect
-  3. Finally, Select **Save**
-  Vercel Authentication now protects all your existing and future deployments for the project. Next time when you access a deployment, you will be asked to log in with Vercel if you aren't already logged in, you will be redirected to the deployment URL and a cookie will be set in your browser for that deployment URL.
+  3. Select **Save**
+  Vercel Authentication now protects all your existing and future deployments in the environments you selected. Next time when you access a deployment, you will be asked to log in with Vercel if you aren't already logged in, you will be redirected to the deployment URL and a cookie will be set in your browser for that deployment URL.
 
-  ![Image](`/docs-assets/static/docs/concepts/projects/sso-protection-light.png`)
+  ![Enabling Vercel Authentication.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/sso-protection-light.png)
 
 ### How to manage Vercel Authentication with the API
 
-You can manage Vercel Authentication using the Vercel API endpoint to [update an existing project](/docs/rest-api/projects/update-an-existing-project) with the following body.
+You can manage Vercel Authentication using the Vercel API endpoint to [update an existing project](/docs/rest-api/projects/update-an-existing-project) with the following body. Set `deploymentType` to one of these values:
 
 - `prod_deployment_urls_and_all_previews`: Standard Protection
 - `all`: All Deployments
 - `preview`: Only Preview Deployments
 
-```typescript
-// enable / update Vercel Authentication
+To enable or update Vercel Authentication, send the `ssoProtection` object:
+
+```json
 {
   "ssoProtection": {
-    "deploymentType": "prod_deployment_urls_and_all_previews" | "all" | "preview"
+    "deploymentType": "prod_deployment_urls_and_all_previews"
   }
 }
+```
 
-// disable Vercel Authentication
+To disable Vercel Authentication, set `ssoProtection` to `null`:
+
+```json
 {
   "ssoProtection": null
 }

@@ -1,10 +1,14 @@
 ---
+title: Language Models as Routers
+description: Generative User Interfaces and Language Models as Routers
+url: "https://ai-sdk.dev/docs/advanced/model-as-router"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/model-as-router.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "4300e64300ca3707d128039accb4d3d4e83858cf9c6719f494aa125d32f4d78b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8d6ac5603f87d06a0acb7bae0e2f9d26b12e49b4496e3dd93dd8e3aac72ead46"
 ---
 
-# Generative User Interfaces
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Since language models can render user interfaces as part of their generations, the resulting model generations are referred to as generative user interfaces.
 
@@ -21,10 +25,10 @@ When language models are provided with a set of function definitions and instruc
 - Execute a function that is most relevant to the user query.
 - Not execute any function if the user query is out of bounds of the set of functions available to them.
 
-```tsx filename='app/actions.ts'
+```tsx title='app/actions.ts'
 const sendMessage = (prompt: string) =>
   generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'you are a friendly weather assistant!',
     prompt,
     tools: {
@@ -89,11 +93,9 @@ that have segments dependent on dynamic data, the language model can generate th
 For example, when you're in a search application, you can ask the language model to search for artworks from different artists. The language model will call the search function with the artist's name as a parameter and render the search results.
 
 <div className="not-prose">
-  <CardPlayer
-    type="media-search"
-    title="Media Search"
-    description="Let your users see more than words can say by rendering components directly within your search experience."
-  />
+  #### Media Search
+
+  Let your users see more than words can say by rendering components directly within your search experience.
 </div>
 
 ### Routing by sequence
@@ -109,32 +111,19 @@ For example, when you're in a calendar application, you can ask the language mod
 5. Create an event and send out invites to your friends
 
 <div className="not-prose">
-  <CardPlayer
-    type="event-planning"
-    title="Planning an Event"
-    description="The model calls functions and generates interfaces based on user intent, acting like a router."
-  />
+  #### Planning an Event
+
+  The model calls functions and generates interfaces based on user intent, acting like a router.
 </div>
 
 Just by defining functions to lookup contacts, pull events from a calendar, and search for nearby locations, the model is able to sequentially navigate the routes for you.
 
 To learn more, check out these [examples](/examples/next-app/interface) using the `streamUI` function to stream generative user interfaces to the client based on the response from the language model.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

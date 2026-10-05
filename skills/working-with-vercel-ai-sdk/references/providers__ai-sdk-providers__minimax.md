@@ -1,10 +1,14 @@
 ---
+title: MiniMax
+description: Learn how to use MiniMax models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "7cc73bb5b80c2e4818181c5f3fac45cf3673918061eefc4c0c386b34b8b25b60"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "515913bb39bba4ae8fdd102783e1ef7df5f525034614be6c6b1c813e08fbccb1"
 ---
 
-# MiniMax Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [MiniMax](https://www.minimax.io) provider offers access to the MiniMax-M
 series of language models through the MiniMax API, including models with
@@ -16,7 +20,7 @@ API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io
 
 The MiniMax provider is available via the `@ai-sdk/minimax` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/minimax" />
+**Packages:** `@ai-sdk/minimax`
 
 ## Provider Instance
 
@@ -38,31 +42,31 @@ const minimax = createMiniMax({
 
 You can use the following optional settings to customize the MiniMax provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls. This provider speaks MiniMax's
   Anthropic-compatible protocol, so the default prefix is
   `https://api.minimax.io/anthropic/v1` — not the OpenAI-compatible
   `https://api.minimax.io/v1`.
 
-- **videoBaseURL** _string_
+- **videoBaseURL** *string*
 
   Use a different URL prefix for video generation API calls. The video API uses
   the MiniMax V2 native endpoint (not the Anthropic-compatible endpoint).
   The default prefix is `https://api.minimax.io`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key for the MiniMax API. It defaults to the `MINIMAX_API_KEY` environment
   variable. Language models send it in the `x-api-key` header (the
   Anthropic-compatible protocol); video models send it as
   `Authorization: Bearer`.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation
 
@@ -121,20 +125,19 @@ See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details on 
 
 The following optional provider options are available for MiniMax language models:
 
-- **thinking** _object_
+- **thinking** *object*
 
   Controls the model's reasoning ("thinking") behavior.
-  - **type** _'adaptive' | 'disabled'_
+
+  - **type** *'adaptive' | 'disabled'*
     - `'adaptive'`: the model decides when to reason (deep reasoning enabled)
     - `'disabled'`: the model responds directly without reasoning, for higher
       throughput and lower latency
 
   When omitted, the model uses its provider-side default.
 
-  <Note>
-    Thinking control is only supported on `minimax-m3`. The M2.x models always
-    think, so `'disabled'` has no effect on them.
-  </Note>
+  Thinking control is only supported on `minimax-m3`. The M2.x models always
+  think, so `'disabled'` has no effect on them.
 
 ## Video Models
 
@@ -192,10 +195,8 @@ API requires a concrete ratio for text-only requests and does not accept
 `aspectRatio` is omitted. For **image-to-video** with frame images, the aspect
 ratio follows the input image.
 
-<Note>
-  Result URLs are time-limited. Download and persist the video to your own
-  storage promptly after generation.
-</Note>
+Result URLs are time-limited. Download and persist the video to your own
+storage promptly after generation.
 
 ### Asynchronous Generation
 
@@ -288,75 +289,74 @@ explicit `aspectRatio` is ignored.
 
 The following optional provider options are available for MiniMax video models:
 
-- **resolution** _'480P' | '768P' | '2K'_
+- **resolution** *'480P' | '768P' | '2K'*
 
   Output resolution. MiniMax-H3 supports `'768P'` and `'2K'` (the default).
   MiniMax-H3-Max supports `'480P'` and `'768P'` (the default).
 
-- **ratio** _'adaptive' | '21:9' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16'_
+- **ratio** *'adaptive' | '21:9' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16'*
 
   Aspect ratio of the generated video. Overrides the top-level `aspectRatio`.
 
-- **referenceAudioUrls** _string[]_
+- **referenceAudioUrls** *string\[]*
 
   Reference audio URLs (or `mm_file://` handles) for MiniMax-H3
   reference-to-video generation. Must be paired with at least one reference
   image or video. Up to 3. MiniMax-H3-Max does not support reference audio.
 
-- **aigcWatermark** _boolean_
+- **aigcWatermark** *boolean*
 
   Whether to embed an AIGC watermark in the output. Defaults to `false`.
 
-- **pollIntervalMs** _number_
+- **pollIntervalMs** *number*
 
   Interval in milliseconds between task status polls. Default: `10000`.
 
-- **pollTimeoutMs** _number_
+- **pollTimeoutMs** *number*
 
   Maximum time in milliseconds to poll before timing out. Default: `600000`.
 
-<Note>
-  MiniMax `mm_file://` handles are only forwarded as-is for
-  `referenceAudioUrls`. They cannot be used for `image`, `frameImages`, or
-  `inputReferences`: those inputs go through the AI SDK's file handling, which
-  base64-decodes any string that is not an `http(s)://` or `data:` URL. Pass
-  those inputs as public URLs, data URIs, or binary data instead.
-</Note>
+MiniMax `mm_file://` handles are only forwarded as-is for
+`referenceAudioUrls`. They cannot be used for `image`, `frameImages`, or
+`inputReferences`: those inputs go through the AI SDK's file handling, which
+base64-decodes any string that is not an `http(s)://` or `data:` URL. Pass
+those inputs as public URLs, data URIs, or binary data instead.
 
 ### Video Provider Metadata
 
 MiniMax video results include `providerMetadata.minimax`:
 
-- **taskId** _string_
+- **taskId** *string*
 
   ID of the MiniMax generation task.
 
-- **videoUrl** _string_
+- **videoUrl** *string*
 
   The MiniMax-hosted MP4 URL (the same URL as `video`). Time-limited.
 
-- **resolvedInputs** _object_
+- **resolvedInputs** *object*
 
   The inputs that were actually sent, after the caps and rejections H3 imposes
   (warnings report that an input was dropped, but not how many survived).
-  - **imageCount** _number_ — number of images sent (frame images or reference
+
+  - **imageCount** *number* — number of images sent (frame images or reference
     images).
-  - **referenceVideoUrls** _string[]_ — the URLs of the reference videos sent.
+  - **referenceVideoUrls** *string\[]* — the URLs of the reference videos sent.
     Inline video data is omitted, since it is sent as a data URI.
 
-- **duration** _number_
+- **duration** *number*
 
   Duration of the generated video in seconds, when reported by the API.
 
-- **ratio** _string_
+- **ratio** *string*
 
   Aspect ratio of the generated video, when reported by the API.
 
-- **resolution** _string_
+- **resolution** *string*
 
   Resolution tier of the generated video, when reported by the API.
 
-- **usage** _object_
+- **usage** *object*
 
   Billed seconds, when reported by the API: `totalSeconds`, `inputSeconds`,
   and `outputSeconds`.
@@ -365,68 +365,23 @@ MiniMax video results include `providerMetadata.minimax`:
 
 | Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ------------------------ | ----------- | ----------------- | ---------- | -------------- |
-| `minimax-m3`             | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2.7`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2.7-highspeed` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2.5`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2.5-highspeed` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2.1`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2.1-highspeed` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `minimax-m2`             | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `minimax-m3`             | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2.7`           | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2.7-highspeed` | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2.5`           | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2.5-highspeed` | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2.1`           | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2.1-highspeed` | ✗           | ✓                 | ✓          | ✓              |
+| `minimax-m2`             | ✗           | ✓                 | ✓          | ✓              |
 
-<Note>
-  Please see the [MiniMax docs](https://platform.minimax.io/docs) for a full
-  list of available models. You can also pass any available provider model ID as
-  a string if needed.
-</Note>
+Please see the [MiniMax docs](https://platform.minimax.io/docs) for a full
+list of available models. You can also pass any available provider model ID as
+a string if needed.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

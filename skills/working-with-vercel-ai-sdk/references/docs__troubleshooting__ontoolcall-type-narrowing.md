@@ -1,10 +1,14 @@
 ---
+title: Type Error with onToolCall
+description: How to handle TypeScript type errors when using the onToolCall callback
+url: "https://ai-sdk.dev/docs/troubleshooting/ontoolcall-type-narrowing"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/ontoolcall-type-narrowing.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "7659ffdb8f77facba08eff9d4569ce6e9b3043fbb65a846252450d388e3fb3c7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "696a9fe99f9e002f1b1dd8e768a74fb9cb4364e3bb018f6e8bcdb028e10231e4"
 ---
 
-# Type Error with onToolCall
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When using the `onToolCall` callback with TypeScript, you may encounter type errors when trying to pass tool properties directly to `addToolOutput`.
 
@@ -54,11 +58,9 @@ const { messages, sendMessage, addToolOutput } = useChat({
 });
 ```
 
-<Note>
-  If you're still using the deprecated `addToolResult` method, this solution
-  applies the same way. Consider migrating to `addToolOutput` for consistency
-  with the latest API.
-</Note>
+If you're still using the deprecated `addToolResult` method, this solution
+applies the same way. Consider migrating to `addToolOutput` for consistency
+with the latest API.
 
 ## Related
 
@@ -66,40 +68,10 @@ const { messages, sendMessage, addToolOutput } = useChat({
 - [Dynamic Tools](/docs/reference/ai-sdk-core/dynamic-tool)
 - [useChat Reference](/docs/reference/ai-sdk-ui/use-chat)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Azure OpenAI Slow to Stream](/docs/troubleshooting/azure-stream-slow)
-- [Server Actions in Client Components](/docs/troubleshooting/server-actions-in-client-components)
-- [useChat/useCompletion stream output contains 0:... instead of text](/docs/troubleshooting/strange-stream-output)
-- [Streamable UI Errors](/docs/troubleshooting/streamable-ui-errors)
-- [Tool Invocation Missing Result Error](/docs/troubleshooting/tool-invocation-missing-result)
-- [Streaming Not Working When Deployed](/docs/troubleshooting/streaming-not-working-when-deployed)
-- [Streaming Not Working When Proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
-- [Getting Timeouts When Deploying on Vercel](/docs/troubleshooting/timeout-on-vercel)
-- [Unclosed Streams](/docs/troubleshooting/unclosed-streams)
-- [useChat Failed to Parse Stream](/docs/troubleshooting/use-chat-failed-to-parse-stream)
-- [Server Action Plain Objects Error](/docs/troubleshooting/client-stream-error)
-- [useChat No Response](/docs/troubleshooting/use-chat-tools-no-response)
-- [Custom headers, body, and credentials not working with useChat](/docs/troubleshooting/use-chat-custom-request-options)
-- [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
-- [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
-- [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
-- [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
-- [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
-- [streamText fails silently](/docs/troubleshooting/stream-text-not-working)
-- [Streaming Status Shows But No Text Appears](/docs/troubleshooting/streaming-status-delay)
-- [Stale body values with useChat](/docs/troubleshooting/use-chat-stale-body-data)
-- [Type Error with onToolCall](/docs/troubleshooting/ontoolcall-type-narrowing)
-- [Unsupported model version error](/docs/troubleshooting/unsupported-model-version)
-- [Object generation failed with OpenAI](/docs/troubleshooting/no-object-generated-content-filter)
-- [Missing Tool Results Error](/docs/troubleshooting/missing-tool-results-error)
-- [Model is not assignable to type "LanguageModelV1"](/docs/troubleshooting/model-is-not-assignable-to-type)
-- [TypeScript error "Cannot find namespace 'JSX'"](/docs/troubleshooting/typescript-cannot-find-namespace-jsx)
-- [React error "Maximum update depth exceeded"](/docs/troubleshooting/react-maximum-update-depth-exceeded)
-- [Jest: cannot find module '@ai-sdk/rsc'](/docs/troubleshooting/jest-cannot-find-module-ai-rsc)
-- [High memory usage when processing many images](/docs/troubleshooting/high-memory-usage-with-images)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

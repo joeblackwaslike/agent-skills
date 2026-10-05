@@ -1,12 +1,17 @@
 ---
+title: useObject
+description: API reference for the useObject hook.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-object"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-object.md"
-fetched_at: "2026-07-13T06:59:02.188Z"
-sha256: "b98193e3e494006b645313b67ea66ad29f9dc20d6364c8a021871bd3f9b45556"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "10943e0455b900ca47cdd10d994208b9e47059c586411ab8b4fe4d4aec6cb58f"
 ---
 
-# `useObject()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>`useObject` is only available in React, Svelte, and Vue.</Note>
+`useObject` is available in React, Svelte, Vue, and the SolidJS community
+integration. Angular provides the equivalent `StructuredObject` service.
 
 Allows you to consume text streams that represent a JSON object and parse them into a complete object based on a schema.
 You can use it together with [`streamText`](/docs/reference/ai-sdk-core/stream-text) and [`Output.object()`](/docs/reference/ai-sdk-core/output#output-object) in the backend.
@@ -33,183 +38,58 @@ export default function Page() {
 
 ## Import
 
-<Tabs items={['React', 'Svelte', 'Vue']}>
-  <Tab>
-    <Snippet
-      text="import { useObject } from '@ai-sdk/react'"
-      dark
-      prompt={false}
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="import { StructuredObject } from '@ai-sdk/svelte'"
-      dark
-      prompt={false}
-    />
-  </Tab>
-  <Tab>
-    <Snippet
-      text="import { useObject } from '@ai-sdk/vue'"
-      dark
-      prompt={false}
-    />
-  </Tab>
-</Tabs>
+#### React
+
+```
+import { useObject } from '@ai-sdk/react'
+```
+
+#### Svelte
+
+```
+import { StructuredObject } from '@ai-sdk/svelte'
+```
+
+#### Vue
+
+```
+import { useObject } from '@ai-sdk/vue'
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'api',
-      type: 'string',
-      description:
-        'The API endpoint that is called to generate objects. It should stream JSON that matches the schema as chunked text. It can be a relative path (starting with `/`) or an absolute URL.',
-    },
-    {
-      name: 'schema',
-      type: 'Zod Schema | JSON Schema',
-      description:
-        'A schema that defines the shape of the complete object. You can either pass in a Zod schema or a JSON schema (using the `jsonSchema` function).',
-    },
-    {
-      name: 'id?',
-      type: 'string',
-      description:
-        'A unique identifier. If not provided, a random one will be generated. When provided, the `useObject` hook with the same `id` will have shared states across components.',
-    },
-    {
-      name: 'initialValue',
-      type: 'DeepPartial<RESULT> | undefined',
-      isOptional: true,
-      description: 'An value for the initial object. Optional.',
-    },
-    {
-      name: 'fetch',
-      type: 'FetchFunction',
-      isOptional: true,
-      description:
-        'A custom fetch function to be used for the API call. Defaults to the global fetch function. Optional.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string> | Headers',
-      isOptional: true,
-      description:
-        'A headers object to be passed to the API endpoint. Optional.',
-    },
-    {
-      name: 'credentials',
-      type: 'RequestCredentials',
-      isOptional: true,
-      description:
-        'The credentials mode to be used for the fetch request. Possible values are: "omit", "same-origin", "include". Optional.',
-    },
-    {
-      name: 'onError',
-      type: '(error: Error) => void',
-      isOptional: true,
-      description:
-        'Callback function to be called when an error is encountered. Optional.',
-    },
-    {
-      name: 'onFinish',
-      type: '(result: OnFinishResult) => void',
-      isOptional: true,
-      description: 'Called when the streaming response has finished.',
-      properties: [
-        {
-          type: 'OnFinishResult',
-          parameters: [
-            {
-              name: 'object',
-              type: 'T | undefined',
-              description:
-                'The generated object (typed according to the schema). Can be undefined if the final object does not match the schema.',
-            },
-            {
-              name: 'error',
-              type: 'Error | undefined',
-              description:
-                'Optional error object. This is e.g. a TypeValidationError when the final object does not match the schema.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `api` (`string`): The API endpoint that is called to generate objects. It should stream JSON that matches the schema as chunked text. It can be a relative path (starting with \`/\`) or an absolute URL.
+- `schema` (`Zod Schema | JSON Schema`): A schema that defines the shape of the complete object. You can either pass in a Zod schema or a JSON schema (using the \`jsonSchema\` function).
+- `id?` (`string`): A unique identifier. If not provided, a random one will be generated. When provided, the \`useObject\` hook with the same \`id\` will have shared states across components.
+- `initialValue?` (`DeepPartial<RESULT> | undefined`): An value for the initial object. Optional.
+- `fetch?` (`FetchFunction`): A custom fetch function to be used for the API call. Defaults to the global fetch function. Optional.
+- `headers?` (`Record<string, string> | Headers`): A headers object to be passed to the API endpoint. Optional.
+- `credentials?` (`RequestCredentials`): The credentials mode to be used for the fetch request. Possible values are: "omit", "same-origin", "include". Optional.
+- `onError?` (`(error: Error) => void`): Callback function to be called when an error is encountered. Optional.
+- `onFinish?` (`(result: OnFinishResult) => void`): Called when the streaming response has finished.
+  - `OnFinishResult`
+    - `object` (`T | undefined`): The generated object (typed according to the schema). Can be undefined if the final object does not match the schema.
+    - `error` (`Error | undefined`): Optional error object. This is e.g. a TypeValidationError when the final object does not match the schema.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'submit',
-      type: '(input: INPUT) => void',
-      description: 'Calls the API with the provided input as JSON body.',
-    },
-    {
-      name: 'object',
-      type: 'DeepPartial<RESULT> | undefined',
-      description:
-        'The current value for the generated object. Updated as the API streams JSON chunks.',
-    },
-    {
-      name: 'error',
-      type: 'Error | undefined',
-      description: 'The error object if the API call fails.',
-    },
-    {
-      name: 'isLoading',
-      type: 'boolean',
-      description:
-        'Boolean flag indicating whether a request is currently in progress.',
-    },
-    {
-      name: 'stop',
-      type: '() => void',
-      description: 'Function to abort the current API request.',
-    },
-    {
-      name: 'clear',
-      type: '() => void',
-      description: 'Function to clear the object state.',
-    },
-  ]}
-/>
+- `submit` (`(input: INPUT) => void`): Calls the API with the provided input as JSON body.
+- `object` (`DeepPartial<RESULT> | undefined`): The current value for the generated object. Updated as the API streams JSON chunks.
+- `error` (`Error | undefined`): The error object if the API call fails.
+- `isLoading` (`boolean`): Boolean flag indicating whether a request is currently in progress.
+- `stop` (`() => void`): Function to abort the current API request.
+- `clear` (`() => void`): Function to clear the object state.
 
 ## Examples
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Streaming Object Generation with useObject',
-      link: '/examples/next-pages/basics/streaming-object-generation',
-    },
-  ]}
-/>
+- [Streaming Object Generation with useObject](/examples/next-pages/basics/streaming-object-generation)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

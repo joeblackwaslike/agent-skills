@@ -1,15 +1,17 @@
 ---
+title: experimental_generateVideo
+description: API Reference for experimental_generateVideo.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "93a5d25649211758608e15e53df1a58a251f7e06f435286e92343c9e72c262bc"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7550b98815c1883b21cac9851f008e06a0c1f4dd2c056cccf230547541fb52ee"
 ---
 
-# `experimental_generateVideo()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Video generation is an experimental feature. The API may change in future
-  versions.
-</Note>
+Video generation is an experimental feature. The API may change in future
+versions.
 
 Generates videos based on a given prompt using a video model.
 
@@ -18,10 +20,9 @@ such as creating visual content, animations, or generating videos from images.
 
 ```ts
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { videos } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
   aspectRatio: '16:9',
 });
@@ -31,366 +32,66 @@ console.log(videos);
 
 ## Import
 
-<Snippet
-  text={`import { experimental_generateVideo } from "ai"`}
-  prompt={false}
-/>
+```
+import { experimental_generateVideo } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'VideoModelV4',
-      description: 'The video model to use.',
-    },
-    {
-      name: 'prompt',
-      type: 'string | GenerateVideoPrompt',
-      description: 'The input prompt to generate the video from.',
-      properties: [
-        {
-          type: 'GenerateVideoPrompt',
-          type: 'object',
-          description:
-            'A prompt object for video generation with optional input image',
-          parameters: [
-            {
-              name: 'image',
-              type: 'DataContent',
-              description:
-                'Input image for image-to-video generation. Can be a URL string, base64-encoded string, a `Uint8Array`, an `ArrayBuffer`, or a `Buffer`.',
-            },
-            {
-              name: 'text',
-              type: 'string',
-              description: 'The text prompt.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'n',
-      type: 'number',
-      isOptional: true,
-      description: 'Number of videos to generate. Default: 1.',
-    },
-    {
-      name: 'aspectRatio',
-      type: 'string',
-      isOptional: true,
-      description:
-        "Aspect ratio of the videos to generate. Format: `{width}:{height}`, or `'adaptive'` to inherit the ratio from the input media (e.g. a first-frame image or a source video). Support for `'adaptive'` is provider-specific.",
-    },
-    {
-      name: 'resolution',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Resolution of the videos to generate. Format: `{width}x{height}`.',
-    },
-    {
-      name: 'duration',
-      type: 'number',
-      isOptional: true,
-      description: 'Duration of the video in seconds.',
-    },
-    {
-      name: 'fps',
-      type: 'number',
-      isOptional: true,
-      description: 'Frames per second for the video.',
-    },
-    {
-      name: 'seed',
-      type: 'number',
-      isOptional: true,
-      description: 'Seed for the video generation.',
-    },
-    {
-      name: 'frameImages',
-      type: 'Array<{ image: DataContent; frameType: "first_frame" | "last_frame" }>',
-      isOptional: true,
-      description: 'Role-tagged image inputs for first-last-frame generation.',
-    },
-    {
-      name: 'inputReferences',
-      type: 'Array<DataContent | { data: DataContent; mediaType?: string }>',
-      isOptional: true,
-      description:
-        'Reference image or video inputs for reference-to-video generation. Use the object form with an explicit mediaType for URL-based video references. Providers route each reference by its media type and warn when a reference kind is unsupported.',
-    },
-    {
-      name: 'generateAudio',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Whether the model should generate audio alongside the video.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'ProviderOptions',
-      isOptional: true,
-      description: 'Additional provider-specific options.',
-    },
-    {
-      name: 'maxVideosPerCall',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Maximum number of videos to generate per API call. When n exceeds this value, multiple API calls will be made.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      isOptional: true,
-      description: 'Maximum number of retries. Default: 2.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isOptional: true,
-      description: 'An optional abort signal to cancel the call.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string>',
-      isOptional: true,
-      description: 'Additional HTTP headers for the request.',
-    },
-    {
-      name: 'download',
-      type: '(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>',
-      isOptional: true,
-      description:
-        'Custom download function for fetching videos from URLs. Use `createDownload()` from `ai` to create a download function with custom size limits, e.g. `createDownload({ maxBytes: 50 * 1024 * 1024 })`. Default: built-in download with 2 GiB limit.',
-    },
-    {
-      name: 'poll',
-      type: 'object',
-      isOptional: true,
-      description:
-        'Polling configuration for the asynchronous start/status flow.',
-      properties: [
-        {
-          type: 'object',
-          parameters: [
-            {
-              name: 'intervalMs',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Interval between status checks in milliseconds. Default: 5000.',
-            },
-            {
-              name: 'timeoutMs',
-              type: 'number',
-              isOptional: true,
-              description:
-                'Maximum time to wait for completion in milliseconds, including while waiting for a webhook notification. Default: 600000 (10 minutes).',
-            },
-            {
-              name: 'delay',
-              type: '(delayInMs: number, options?: { abortSignal?: AbortSignal }) => PromiseLike<void>',
-              isOptional: true,
-              description:
-                'Custom delay implementation for polling intervals and webhook timeouts. Useful for durable workflow sleep functions. Default: built-in timer-based delay.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'webhook',
-      type: '() => PromiseLike<{ url: string; received: PromiseLike<VideoModelV4OperationWebhook> }>',
-      isOptional: true,
-      description:
-        'Webhook factory for providers that support webhook notifications. When provided and the model supports webhooks, the SDK uses the webhook instead of polling. The factory should return a URL for the provider to notify and a `received` promise that resolves when the notification arrives. The `poll` option can also be provided to configure the webhook timeout and polling fallback.',
-    },
-  ]}
-/>
+- `model` (`VideoModelV4`): The video model to use.
+- `prompt` (`string | GenerateVideoPrompt`): The input prompt to generate the video from.
+  - `object`
+    - `image` (`DataContent`): Input image for image-to-video generation. Can be a URL string, base64-encoded string, a \`Uint8Array\`, an \`ArrayBuffer\`, or a \`Buffer\`.
+    - `text` (`string`): The text prompt.
+- `n?` (`number`): Number of videos to generate. Default: 1.
+- `aspectRatio?` (`string`): Aspect ratio of the videos to generate. Format: \`\{width}:\{height}\`, or \`'adaptive'\` to inherit the ratio from the input media (e.g. a first-frame image or a source video). Support for \`'adaptive'\` is provider-specific.
+- `resolution?` (`string`): Resolution of the videos to generate. Format: \`\{width}x\{height}\`.
+- `duration?` (`number`): Duration of the video in seconds.
+- `fps?` (`number`): Frames per second for the video.
+- `seed?` (`number`): Seed for the video generation.
+- `frameImages?` (`Array<{ image: DataContent; frameType: "first_frame" | "last_frame" }>`): Role-tagged image inputs for first-last-frame generation.
+- `inputReferences?` (`Array<DataContent | { data: DataContent; mediaType?: string }>`): Reference image or video inputs for reference-to-video generation. Use the object form with an explicit mediaType for URL-based video references. Providers route each reference by its media type and warn when a reference kind is unsupported.
+- `generateAudio?` (`boolean`): Whether the model should generate audio alongside the video.
+- `providerOptions?` (`ProviderOptions`): Additional provider-specific options.
+- `maxVideosPerCall?` (`number`): Maximum number of videos to generate per API call. When n exceeds this value, multiple API calls will be made.
+- `maxRetries?` (`number`): Maximum number of retries. Default: 2.
+- `abortSignal?` (`AbortSignal`): An optional abort signal to cancel the call.
+- `headers?` (`Record<string, string>`): Additional HTTP headers for the request.
+- `download?` (`(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>`): Custom download function for fetching videos from URLs. Use \`createDownload()\` from \`ai\` to create a download function with custom size limits, e.g. \`createDownload(\{ maxBytes: 50 \* 1024 \* 1024 })\`. Default: built-in download with 2 GiB limit.
+- `poll?` (`object`): Polling configuration for the asynchronous start/status flow.
+  - `object`
+    - `intervalMs?` (`number`): Interval between status checks in milliseconds. Default: 5000.
+    - `timeoutMs?` (`number`): Maximum time to wait for completion in milliseconds, including while waiting for a webhook notification. Default: 600000 (10 minutes).
+    - `delay?` (`(delayInMs: number, options?: { abortSignal?: AbortSignal }) => PromiseLike<void>`): Custom delay implementation for polling intervals and webhook timeouts. Useful for durable workflow sleep functions. Default: built-in timer-based delay.
+- `webhook?` (`() => PromiseLike<{ url: string; received: PromiseLike<VideoModelV4OperationWebhook> }>`): Webhook factory for providers that support webhook notifications. When provided and the model supports webhooks, the SDK uses the webhook instead of polling. The factory should return a URL for the provider to notify and a \`received\` promise that resolves when the notification arrives. The \`poll\` option can also be provided to configure the webhook timeout and polling fallback.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'video',
-      type: 'GeneratedFile',
-      description: 'The first video that was generated.',
-      properties: [
-        {
-          type: 'GeneratedFile',
-          parameters: [
-            {
-              name: 'base64',
-              type: 'string',
-              description: 'Video as a base64 encoded string.',
-            },
-            {
-              name: 'uint8Array',
-              type: 'Uint8Array',
-              description: 'Video as a Uint8Array.',
-            },
-            {
-              name: 'mediaType',
-              type: 'string',
-              description:
-                'The IANA media type of the video (e.g., video/mp4).',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'videos',
-      type: 'Array<GeneratedFile>',
-      description: 'All videos that were generated.',
-      properties: [
-        {
-          type: 'GeneratedFile',
-          parameters: [
-            {
-              name: 'base64',
-              type: 'string',
-              description: 'Video as a base64 encoded string.',
-            },
-            {
-              name: 'uint8Array',
-              type: 'Uint8Array',
-              description: 'Video as a Uint8Array.',
-            },
-            {
-              name: 'mediaType',
-              type: 'string',
-              description:
-                'The IANA media type of the video (e.g., video/mp4).',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'warnings',
-      type: 'Warning[]',
-      description:
-        'Warnings from the model provider (e.g. unsupported settings).',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'VideoModelProviderMetadata',
-      isOptional: true,
-      description:
-        'Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. A `videos` key is typically present in the metadata and is an array with the same length as the top level `videos` key. Details depend on the provider.',
-    },
-    {
-      name: 'responses',
-      type: 'Array<VideoModelResponseMetadata>',
-      description:
-        'Response metadata from the provider. There may be multiple responses if we made multiple calls to the model.',
-      properties: [
-        {
-          type: 'VideoModelResponseMetadata',
-          parameters: [
-            {
-              name: 'timestamp',
-              type: 'Date',
-              description: 'Timestamp for the start of the generated response.',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The ID of the response model that was used to generate the response.',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string>',
-              isOptional: true,
-              description: 'Response headers.',
-            },
-            {
-              name: 'providerMetadata',
-              type: 'VideoModelProviderMetadata',
-              isOptional: true,
-              description:
-                'Provider-specific metadata for this individual API call. Useful for accessing per-call metadata when multiple calls are made.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `video` (`GeneratedFile`): The first video that was generated.
+  - `GeneratedFile`
+    - `base64` (`string`): Video as a base64 encoded string.
+    - `uint8Array` (`Uint8Array`): Video as a Uint8Array.
+    - `mediaType` (`string`): The IANA media type of the video (e.g., video/mp4).
+- `videos` (`Array<GeneratedFile>`): All videos that were generated.
+  - `GeneratedFile`
+    - `base64` (`string`): Video as a base64 encoded string.
+    - `uint8Array` (`Uint8Array`): Video as a Uint8Array.
+    - `mediaType` (`string`): The IANA media type of the video (e.g., video/mp4).
+- `warnings` (`Warning[]`): Warnings from the model provider (e.g. unsupported settings).
+- `providerMetadata?` (`VideoModelProviderMetadata`): Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. A \`videos\` key is typically present in the metadata and is an array with the same length as the top level \`videos\` key. Details depend on the provider.
+- `responses` (`Array<VideoModelResponseMetadata>`): Response metadata from the provider. There may be multiple responses if we made multiple calls to the model.
+  - `VideoModelResponseMetadata`
+    - `timestamp` (`Date`): Timestamp for the start of the generated response.
+    - `modelId` (`string`): The ID of the response model that was used to generate the response.
+    - `headers?` (`Record<string, string>`): Response headers.
+    - `providerMetadata?` (`VideoModelProviderMetadata`): Provider-specific metadata for this individual API call. Useful for accessing per-call metadata when multiple calls are made.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

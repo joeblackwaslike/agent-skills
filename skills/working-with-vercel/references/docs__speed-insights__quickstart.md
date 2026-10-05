@@ -16,8 +16,8 @@ related:
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "390a243676b356f8d22a664cace5b6058def9dc8efd3be118ab33a6a66189293"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "110bba5267961eb7e73404559e9c722c4825d2bba36bcf0a4ed69b4fba12aa7f"
 ---
 
 # Getting started with Speed Insights
@@ -37,16 +37,16 @@ This guide will help you get started with using Vercel Speed Insights on your pr
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/speed-insights/quickstart.graph.md](/docs/speed-insights/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: Speed Insights
+> **Availability**: Speed Insights is available on all plans
 
 To view instructions on using the Vercel Speed Insights in your project for your framework, use the **Choose a framework** dropdown on the right (at the bottom in mobile view).
 
@@ -65,22 +65,22 @@ Help me add Vercel Speed Insights to this project. First, make sure the Vercel C
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i vercel
+    pnpm i -g vercel
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i vercel
+    yarn global add vercel
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i vercel
+    npm i -g vercel
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i vercel
+    bun add -g vercel
     ```
   </Code>
 </CodeBlock>
@@ -101,7 +101,7 @@ Help me add Vercel Speed Insights to this project. First, make sure the Vercel C
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/speed-insights
+      yarn add @vercel/speed-insights
       ```
     </Code>
     <Code tab="npm">
@@ -111,7 +111,7 @@ Help me add Vercel Speed Insights to this project. First, make sure the Vercel C
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/speed-insights
+      bun add @vercel/speed-insights
       ```
     </Code>
   </CodeBlock>

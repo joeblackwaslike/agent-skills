@@ -16,8 +16,8 @@ related:
 summary: Learn about advanced configurations for Vercel functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fc3bfd7620df3de78cc22ff86df34fe0cf78b73c889f73b517ccc1468cf81384"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7d634c4ef367ce089fbff0aa4a74f4a49fb493f4daed7b4d57a88ecd73dc8efd"
 ---
 
 # Advanced Node.js Usage
@@ -30,12 +30,15 @@ To use Node.js, create a file inside your project's `api` directory. No addition
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
+- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to work with build output limits for Next.js on Vercel.
+- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
+- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Understand why dependencies may not being installed during a build and how to fix.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
-- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
-- [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to configure the runtime for Vercel Functions.
+- [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn about the supported Node.js versions on Vercel.
+- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md](/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fadvanced-node-configuration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

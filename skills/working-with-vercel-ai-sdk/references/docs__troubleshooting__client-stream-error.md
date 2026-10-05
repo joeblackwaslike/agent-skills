@@ -1,10 +1,14 @@
 ---
+title: Server Action Plain Objects Error
+description: Troubleshooting errors related to using AI SDK Core functions with Server Actions.
+url: "https://ai-sdk.dev/docs/troubleshooting/client-stream-error"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/client-stream-error.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "448ade467e0fb3a93f09e4c77d7f3ca1d0f1f4592b95ed5f1a2261c5435b9536"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "91fea794dab32d5602e87de8efa9084101192ae9f92228d9a85b541e6a115aba"
 ---
 
-# "Only plain objects can be passed from client components" Server Action Error
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Issue
 
@@ -25,40 +29,10 @@ Here's an example that demonstrates how to implement this solution: [Streaming T
 
 This approach ensures that only serializable data (the text) is passed to the client, avoiding the "only plain objects" error.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Azure OpenAI Slow to Stream](/docs/troubleshooting/azure-stream-slow)
-- [Server Actions in Client Components](/docs/troubleshooting/server-actions-in-client-components)
-- [useChat/useCompletion stream output contains 0:... instead of text](/docs/troubleshooting/strange-stream-output)
-- [Streamable UI Errors](/docs/troubleshooting/streamable-ui-errors)
-- [Tool Invocation Missing Result Error](/docs/troubleshooting/tool-invocation-missing-result)
-- [Streaming Not Working When Deployed](/docs/troubleshooting/streaming-not-working-when-deployed)
-- [Streaming Not Working When Proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
-- [Getting Timeouts When Deploying on Vercel](/docs/troubleshooting/timeout-on-vercel)
-- [Unclosed Streams](/docs/troubleshooting/unclosed-streams)
-- [useChat Failed to Parse Stream](/docs/troubleshooting/use-chat-failed-to-parse-stream)
-- [Server Action Plain Objects Error](/docs/troubleshooting/client-stream-error)
-- [useChat No Response](/docs/troubleshooting/use-chat-tools-no-response)
-- [Custom headers, body, and credentials not working with useChat](/docs/troubleshooting/use-chat-custom-request-options)
-- [TypeScript performance issues with Zod and AI SDK 5](/docs/troubleshooting/typescript-performance-zod)
-- [useChat "An error occurred"](/docs/troubleshooting/use-chat-an-error-occurred)
-- [Repeated assistant messages in useChat](/docs/troubleshooting/repeated-assistant-messages)
-- [onEnd not called when stream is aborted](/docs/troubleshooting/stream-abort-handling)
-- [Tool calling with structured outputs](/docs/troubleshooting/tool-calling-with-structured-outputs)
-- [Abort and resumable streams](/docs/troubleshooting/abort-breaks-resumable-streams)
-- [streamText fails silently](/docs/troubleshooting/stream-text-not-working)
-- [Streaming Status Shows But No Text Appears](/docs/troubleshooting/streaming-status-delay)
-- [Stale body values with useChat](/docs/troubleshooting/use-chat-stale-body-data)
-- [Type Error with onToolCall](/docs/troubleshooting/ontoolcall-type-narrowing)
-- [Unsupported model version error](/docs/troubleshooting/unsupported-model-version)
-- [Object generation failed with OpenAI](/docs/troubleshooting/no-object-generated-content-filter)
-- [Missing Tool Results Error](/docs/troubleshooting/missing-tool-results-error)
-- [Model is not assignable to type "LanguageModelV1"](/docs/troubleshooting/model-is-not-assignable-to-type)
-- [TypeScript error "Cannot find namespace 'JSX'"](/docs/troubleshooting/typescript-cannot-find-namespace-jsx)
-- [React error "Maximum update depth exceeded"](/docs/troubleshooting/react-maximum-update-depth-exceeded)
-- [Jest: cannot find module '@ai-sdk/rsc'](/docs/troubleshooting/jest-cannot-find-module-ai-rsc)
-- [High memory usage when processing many images](/docs/troubleshooting/high-memory-usage-with-images)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

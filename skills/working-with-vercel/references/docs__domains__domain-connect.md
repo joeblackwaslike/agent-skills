@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "32b0036721e65ef93a7b5ea7f8c0af87df73ba98428311433103366ac31b911e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "070f08ed49edc085d28d22713c5f8552ce65b3fc3d34c54568168ea439ab0c85"
 ---
 
 # Domain Connect
@@ -32,11 +32,13 @@ sha256: "32b0036721e65ef93a7b5ea7f8c0af87df73ba98428311433103366ac31b911e"
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Automated DNS configuration with Domain Connect](https://vercel.com/changelog/automated-dns-configuration-with-domain-connect?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related)
 - [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=related) — Learn about nameservers and the benefits Vercel nameservers provide.
 
 Full cross-link map for this page: [/docs/domains/domain-connect.graph.md](/docs/domains/domain-connect.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fdomain-connect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

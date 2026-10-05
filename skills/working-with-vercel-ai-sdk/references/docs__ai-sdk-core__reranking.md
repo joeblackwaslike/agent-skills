@@ -1,10 +1,14 @@
 ---
+title: Reranking
+description: Learn how to rerank documents with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/reranking"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reranking.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "abb50523e60088b879c0adf4f337284d75211bb6c370badef1498d92e5a051cd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4c3262640306ae8e2b7fd45b5513798f2bcbf323822a8ea3b384032c0184758f"
 ---
 
-# Reranking
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Reranking is a technique used to improve search relevance by reordering a set of documents based on their relevance to a query.
 Unlike embedding-based similarity search, reranking models are specifically trained to understand the relationship between queries and documents,
@@ -102,7 +106,7 @@ Each item in the `ranking` array contains:
 
 Use `topN` to limit the number of results returned. This is useful for retrieving only the most relevant documents:
 
-```ts highlight={"8"}
+```ts {8}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -118,7 +122,7 @@ const { ranking } = await rerank({
 
 Reranking model settings can be configured using `providerOptions` for provider-specific parameters:
 
-```ts highlight={"8-12"}
+```ts {8-12}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -140,7 +144,7 @@ The `rerank` function accepts an optional `maxRetries` parameter of type `number
 that you can use to set the maximum number of retries for the reranking process.
 It defaults to `2` retries (3 attempts in total). You can set it to `0` to disable retries.
 
-```ts highlight={"8"}
+```ts {8}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -158,7 +162,7 @@ The `rerank` function accepts an optional `abortSignal` parameter of
 type [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 that you can use to abort the reranking process or set a timeout.
 
-```ts highlight={"8"}
+```ts {8}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -175,7 +179,7 @@ const { ranking } = await rerank({
 The `rerank` function accepts an optional `headers` parameter of type `Record<string, string>`
 that you can use to add custom headers to the reranking request.
 
-```ts highlight={"8"}
+```ts {8}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -191,7 +195,7 @@ const { ranking } = await rerank({
 
 The `rerank` function returns response information that includes the raw provider response:
 
-```ts highlight={"4,10"}
+```ts {4,10}
 import { cohere } from '@ai-sdk/cohere';
 import { rerank } from 'ai';
 
@@ -220,40 +224,10 @@ Several providers offer reranking models:
 | [Together.ai](/providers/ai-sdk-providers/togetherai#reranking-models)        | `Salesforce/Llama-Rank-v1`            |
 | [Together.ai](/providers/ai-sdk-providers/togetherai#reranking-models)        | `mixedbread-ai/Mxbai-Rerank-Large-V2` |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

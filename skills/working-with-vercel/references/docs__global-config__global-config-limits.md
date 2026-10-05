@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "010552f8b225aca52022e515ddd35bf8489e23cc22ebc73872945a85d7f6e1d0"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "25015922f4c8e3990bc6c6effb0c17ac5b3adf916f30e9a5df2a86d30d0757f4"
 ---
 
 # Global Config Limits and pricing
@@ -32,9 +32,10 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related)
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related)
 - [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
-- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
@@ -139,7 +140,7 @@ If reading from your Global Config seems slower than expected, ensure that the f
 - You are testing on your Vercel deployment, as the optimizations happen only
   when you deploy to Vercel
 
-![Image](https://vercel.com/docs-assets/static/docs/storage/global-config/global-config-env-icon-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/global-config-env-icon-light.png)
 
 *Global Config icon with connected environment variable*
 

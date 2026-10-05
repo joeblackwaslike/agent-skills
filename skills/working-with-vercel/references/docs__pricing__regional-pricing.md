@@ -16,8 +16,8 @@ related:
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "967a2a87869cc751b148dec858a87c9e9c048e6a9b1ce86337190f5b76bfc174"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "23f36b8623116bf7edc32671464755071043f67df72033a194833730461e7d13"
 ---
 
 # Regional Pricing
@@ -36,12 +36,12 @@ When using Managed Infrastructure resources on Vercel, some, but not all, are pr
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Runtime Cache](https://vercel.com/docs/caching/runtime-cache?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
 - [ISR Usage and Pricing](https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Networking](https://vercel.com/docs/networking?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=related) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing.graph.md](/docs/pricing/regional-pricing.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -58,14 +58,14 @@ The **On-demand** column lists the rate range Vercel charges for each resource w
 | Resource | On-demand (Billing Cycle) |
 | --- | --- |
 | Fast Data Transfer | 1 GB for $0.15 - $0.35 |
-| Edge Requests | 1,000,000 Requests for $2.00 - $3.20 |
+| CDN Requests | 1,000,000 Requests for $2.00 - $3.20 |
 | ISR Writes | 1,000,000 Write Units for $4.00 - $6.40 |
 | ISR Reads | 1,000,000 Read Units for $0.40 - $0.64 |
 | Runtime Cache Writes | 1,000,000 Write Units for $4.00 - $6.40 |
 | Runtime Cache Reads | 1,000,000 Read Units for $0.40 - $0.64 |
 | Fast Origin Transfer | 1 GB for $0.06 - $0.43 |
 | Queue API Operations | 1,000,000 Operations for $0.60 - $0.96 |
-| Edge Request CPU Duration | 1 Hour for $0.30 - $0.48 |
+| CDN Request CPU Duration | 1 Hour for $0.30 - $0.48 |
 | Active CPU | $0.128 - $0.221 per 1 Hour |
 | Provisioned Memory | $0.0106 - $0.0183 per 1 GB-hr |
 | Image Optimization Transformations | $0.05 - $0.0812 per 1K |

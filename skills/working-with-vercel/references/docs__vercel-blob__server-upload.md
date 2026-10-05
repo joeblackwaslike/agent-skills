@@ -14,13 +14,13 @@ related:
 summary: Learn how to upload files to Vercel Blob using Server Actions and Route Handlers
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "cf16f7e7fc22a2e67614c309cc864bbc0f90beab95dea0b7a0be2b20d49f955b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "461d6f04a5f9276b1fb1d32746b30a4f991cfd0e6e10a98fb103cd32a4f49184"
 ---
 
 # Server Uploads with Vercel Blob
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 In this guide, you'll learn how to do the following:
 
@@ -34,8 +34,8 @@ In this guide, you'll learn how to do the following:
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Example how to use AWS S3 library on Vercel
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fserver-upload&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
@@ -65,7 +65,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/blob
+    yarn add @vercel/blob
     ```
   </Code>
   <Code tab="npm">
@@ -75,7 +75,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/blob
+    bun add @vercel/blob
     ```
   </Code>
 </CodeBlock>
@@ -170,7 +170,7 @@ load_dotenv('.env.local') or load_dotenv()
 def on_progress(e: UploadProgressEvent) -> None:
     print(f"progress: {e.loaded}/{e.total} bytes ({e.percentage}%)")
 
-async def upload_avatar(form: dict) -> dict:
+async def upload_avatar(filename: str, file_bytes: bytes) -> dict:
     client = AsyncBlobClient()
 
     blob = await client.put(
@@ -488,6 +488,7 @@ You can upload files to Vercel Blob using Route Handlers/API Routes. The followi
   Example FastAPI route that accepts the upload and stores it in Vercel Blob:
   ```python filename="main.py"
   from fastapi import FastAPI, UploadFile, File
+  from fastapi.responses import HTMLResponse
   from vercel.blob import AsyncBlobClient
 
   app = FastAPI()

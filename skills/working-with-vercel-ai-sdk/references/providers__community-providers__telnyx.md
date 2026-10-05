@@ -1,10 +1,14 @@
 ---
+title: Telnyx
+description: Telnyx provider for AI SDK 7
+url: "https://ai-sdk.dev/providers/community-providers/telnyx"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/telnyx.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "80c6e1199ba8c5b5216f8b64bb88a856106c0b9c7118b77dfad6d945e1fef695"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "d46c6262c76d9911cc8fccc89cef9a4c97d25268ee73e250cda67986e9243e06"
 ---
 
-# Telnyx
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Telnyx](https://telnyx.com/) provides an AI SDK provider for the [Vercel AI SDK](https://ai-sdk.dev), giving developers access to chat models, embeddings, speech-to-text, and text-to-speech through a single package.
 
@@ -23,21 +27,29 @@ The `@telnyx/ai-sdk-provider` package (v2.0.0+) supports AI SDK 7 and the Provid
 
 Install it alongside AI SDK 7:
 
-<Tabs items={['pnpm', 'npm', 'yarn', 'bun']}>
-  <Tab>
-    <Snippet text="pnpm add @telnyx/ai-sdk-provider ai@^7 zod" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="npm install @telnyx/ai-sdk-provider ai@^7 zod" dark />
-  </Tab>
-  <Tab>
-    <Snippet text="yarn add @telnyx/ai-sdk-provider ai@^7 zod" dark />
-  </Tab>
+#### pnpm
 
-  <Tab>
-    <Snippet text="bun add @telnyx/ai-sdk-provider ai@^7 zod" dark />
-  </Tab>
-</Tabs>
+```
+pnpm add @telnyx/ai-sdk-provider ai@^7 zod
+```
+
+#### npm
+
+```
+npm install @telnyx/ai-sdk-provider ai@^7 zod
+```
+
+#### yarn
+
+```
+yarn add @telnyx/ai-sdk-provider ai@^7 zod
+```
+
+#### bun
+
+```
+bun add @telnyx/ai-sdk-provider ai@^7 zod
+```
 
 Set your Telnyx API key as an environment variable:
 
@@ -127,68 +139,10 @@ await audio.writeToFile('./speech.mp3');
 - [Telnyx Model Catalog](https://developers.telnyx.com/docs/inference/models)
 - [Telnyx Speech Docs](https://developers.telnyx.com/docs/tts-stt/overview)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

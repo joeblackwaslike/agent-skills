@@ -16,13 +16,13 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "346492307c02c4eeb776f0afd744f1b895f51bf9f473fbd745e1ee9f8b2eb9c4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d65b415c85306b84ea2b2039546e2e95e0c8c4f14bd660f1784022c7237df895"
 ---
 
 # Using Global Config with an integration
 
-> **🔒 Permissions Required**: Global Config integrations
+> **Availability**: Global Config integrations are available on all plans
 
 Vercel has partnered with A/B testing and feature flag services such as LaunchDarkly and Statsig to make it easier to integrate Global Config into your workflow. These integrations sync feature flag definitions into Global Config, allowing you to evaluate flags in the region closest to the user without making network calls to your preferred service provider.
 
@@ -33,11 +33,11 @@ Vercel has partnered with A/B testing and feature flag services such as LaunchDa
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related)
+- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related)
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
-- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=related) — HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

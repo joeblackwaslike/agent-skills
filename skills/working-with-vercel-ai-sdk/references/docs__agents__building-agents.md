@@ -1,10 +1,14 @@
 ---
+title: Building Agents
+description: Complete guide to creating agents with the ToolLoopAgent.
+url: "https://ai-sdk.dev/docs/agents/building-agents"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/building-agents.md"
-fetched_at: "2026-08-03T07:32:11.263Z"
-sha256: "da1435f7ea4adeaf83e7508f0128b552085c2f60bcfdbeeb7cee1b4b349a7eb4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f733621fcdca65515f5d2c6cd76d3e5ad9e55f3bef38a927c8aa7913b5eccf0d"
 ---
 
-# Building Agents
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The ToolLoopAgent provides a structured way to encapsulate LLM configuration, tools, and behavior into reusable components. It handles the agent loop for you, allowing the LLM to call tools multiple times in sequence to accomplish complex tasks. Define agents once and use them across your application.
 
@@ -25,10 +29,9 @@ Define an agent by instantiating the ToolLoopAgent class with your desired confi
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const myAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
   tools: {
     // Your tools here
@@ -44,10 +47,9 @@ The ToolLoopAgent accepts all the same settings as `generateText` and `streamTex
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are an expert software engineer.',
 });
 ```
@@ -58,11 +60,10 @@ Provide tools that the agent can use to accomplish tasks:
 
 ```ts
 import { ToolLoopAgent, tool } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const codeAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     runCode: tool({
       description: 'Execute Python code',
@@ -86,12 +87,12 @@ results. If a tool needs server-side values such as credentials, scoped
 permissions, or default settings, pass them through `toolsContext` and declare
 them with the tool's `contextSchema`.
 
-```ts highlight="12-15,20-27,31-40"
+```ts {12-15,20-27,31-40}
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     searchTickets: tool({
       description: 'Search support tickets',
@@ -141,12 +142,12 @@ Context](/docs/ai-sdk-core/runtime-and-tool-context).
 ### Tools That Use Experimental Sandboxes
 
 Pass `experimental_sandbox` when an agent tool needs a command or code execution
-environment. The experimental sandbox is a per-call value, so provide it to `generate()`,
-`stream()`, or the agent UI stream helper that invokes the agent.
+environment. The experimental sandbox is a per-call value, so provide it to
+`generate()`, `stream()`, or the agent UI stream helper that invokes the agent.
 
-```ts highlight="13,19-23,31"
+```ts {13,19-23,31}
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a coding assistant. Use the shell tool when needed.',
   tools: {
     shell: tool({
@@ -191,7 +192,7 @@ You can also require approval before a tool executes. Configure approval on the
 
 ```ts
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     runCode: tool({
       description: 'Execute Python code',
@@ -219,10 +220,9 @@ You can configure `stopWhen` differently to allow more steps. After each tool ex
 
 ```ts
 import { ToolLoopAgent, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   stopWhen: isStepCount(50), // Increase default from 20 to 50.
 });
 ```
@@ -238,10 +238,9 @@ You can combine multiple conditions:
 
 ```ts
 import { ToolLoopAgent, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   stopWhen: [
     isStepCount(20), // Maximum 20 steps
     yourCustomCondition(), // Custom logic for when to stop
@@ -257,10 +256,9 @@ Control how the agent uses tools:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     // your tools here
   },
@@ -274,10 +272,9 @@ You can also force the use of a specific tool:
 
 ```ts
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     weather: weatherTool,
     cityAttractions: attractionsTool,
@@ -295,11 +292,10 @@ Define structured output schemas:
 
 ```ts
 import { ToolLoopAgent, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const analysisAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       sentiment: z.enum(['positive', 'neutral', 'negative']),
@@ -324,7 +320,7 @@ Set the agent's role and expertise:
 
 ```ts
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions:
     'You are an expert data analyst. You provide clear insights from complex data.',
 });
@@ -336,7 +332,7 @@ Provide specific guidelines for agent behavior:
 
 ```ts
 const codeReviewAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: `You are a senior software engineer conducting code reviews.
 
   Your approach:
@@ -354,7 +350,7 @@ Set boundaries and ensure consistent behavior:
 
 ```ts
 const customerSupportAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: `You are a customer support specialist for an e-commerce platform.
 
   Rules:
@@ -377,7 +373,7 @@ Guide how the agent should use available tools:
 
 ```ts
 const researchAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: `You are a research assistant with access to search and document tools.
 
   When researching:
@@ -400,7 +396,7 @@ Control the output format and communication style:
 
 ```ts
 const technicalWriterAgent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: `You are a technical documentation writer.
 
   Writing style:
@@ -529,7 +525,7 @@ All lifecycle callbacks can be defined in the constructor for agent-wide trackin
 
 ```ts
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   onStepEnd: async ({ stepNumber, usage }) => {
     // Agent-wide logging
     console.log(`Agent step ${stepNumber}:`, usage.totalTokens);
@@ -563,7 +559,7 @@ export type MyAgentUIMessage = InferAgentUIMessage<typeof myAgent>;
 
 Use this type in your client components with `useChat`:
 
-```tsx filename="components/chat.tsx"
+```tsx title="components/chat.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -583,20 +579,10 @@ Now that you understand building agents, you can:
 - Learn about [loop control](/docs/agents/loop-control) for advanced execution control
 - See [manual loop examples](/cookbook/node/manual-agent-loop) for custom workflow implementations
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

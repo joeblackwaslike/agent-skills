@@ -1,10 +1,14 @@
 ---
+title: InferUITools
+description: API Reference for InferUITools.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tools"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/infer-ui-tools.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "c4da6f0fddee30371e042383591c3db449d9555d4b42c79645696d55a4c1b1d6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c9a24809b50718d33cf9c28a647139c171d9bde52e6345ef2442baaed6176190"
 ---
 
-# InferUITools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Infers the input and output types of a `ToolSet`.
 
@@ -20,15 +24,7 @@ import { InferUITools } from 'ai';
 
 ### Type Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'TOOLS',
-      type: 'ToolSet',
-      description: 'The tool set to infer types from.',
-    },
-  ]}
-/>
+- `TOOLS` (`ToolSet`): The tool set to infer types from.
 
 ### Returns
 
@@ -99,23 +95,10 @@ type MyUITools = InferUITools<typeof tools>;
 - [`InferUITool`](/docs/reference/ai-sdk-ui/infer-ui-tool) - Infer types for a single tool
 - [`useChat`](/docs/reference/ai-sdk-ui/use-chat) - Chat hook that supports typed tools
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

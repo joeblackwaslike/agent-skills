@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the São Paulo, Brazil (gru1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/gru1.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cea24e2b67c2207c2b2e9d84959be24f6b0a4b26a6c39d093ba15cbf2b85d188"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c8e8cdee59ba6bec65aae3918a460dd8ac51d7508e240faa91159c4aa60fff9d"
 ---
 
 # São Paulo, Brazil (gru1) pricing
@@ -42,7 +42,7 @@ Full cross-link map for this page: [/docs/pricing/regional-pricing/gru1.graph.md
 
 > **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
-The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
+The **On-demand (Billing Cycle)** column shows the rate for each resource in this region. For resources that include usage in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice), the column lists the included amount first, followed by the rate for any usage above that amount.
 
 > **💡 Note:** Vercel prices [Vercel Sandbox](/docs/sandbox) compute by region too. Its rates
 > live on a separate page because Sandbox runs in fewer regions than the
@@ -52,14 +52,14 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | Resource | On-demand (Billing Cycle) |
 | --- | --- |
 | [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) | $0.22 per 1 GB |
-| [Edge Requests](/docs/manage-cdn-usage#edge-requests) | $3.20 per 1,000,000 Requests |
+| [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $3.20 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $6.40 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.64 per 1,000,000 Read Units |
 | [Runtime Cache Writes](/docs/caching/runtime-cache) | $6.40 per 1,000,000 Write Units |
 | [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.64 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.41 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.96 per 1,000,000 Operations |
-| [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.48 per 1 Hour |
+| [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.48 per 1 Hour |
 | [Fluid Active CPU](/docs/functions/usage-and-pricing#active-cpu) | $0.221 per Hour |
 | [Fluid Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | $0.0183 per GB-hr |
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0812 per 1K |

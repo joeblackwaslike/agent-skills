@@ -1,10 +1,14 @@
 ---
+title: Clarifai
+description: Use Clarifai OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "b965c491fb69bdc28ba0d22aa2d066ee14f18dcc333af08b3d49c1aa98e6c50d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "7a110be411d71d2dc677a029b3156f8c7b98edb05efd9dc776adf9ed73ad21d5"
 ---
 
-# Clarifai Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Clarifai](https://docs.clarifai.com/getting-started/quickstart) is a platform for building, deploying, and scaling AI-powered applications. It provides a suite of tools and APIs for computer vision, natural language processing, and generative AI. Clarifai offers an OpenAI-compatible API through its full-stack AI development platform, making it easy to integrate powerful AI capabilities using the AI SDK.
 
@@ -12,7 +16,7 @@ sha256: "b965c491fb69bdc28ba0d22aa2d066ee14f18dcc333af08b3d49c1aa98e6c50d"
 
 The Clarifai provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 ## Provider Instance
 
@@ -28,12 +32,9 @@ const clarifai = createOpenAICompatible({
 });
 ```
 
-<Note>
-  You can obtain an API key by creating a Personal Access Token (PAT) in your Clarifai [account settings](https://clarifai.com/settings/security). Make sure to set the `CLARIFAI_PAT` environment variable with your PAT.
+You can obtain an API key by creating a Personal Access Token (PAT) in your Clarifai [account settings](https://clarifai.com/settings/security). Make sure to set the `CLARIFAI_PAT` environment variable with your PAT.
 
 New users can sign up for a free account on [Clarifai](https://clarifai.com/signup) to get started.
-
-</Note>
 
 ## Language Models
 
@@ -103,17 +104,10 @@ for await (const message of result.textStream) {
 
 For full list of available models, you can refer to the [Clarifai Model Gallery](https://clarifai.com/explore).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -17,8 +17,8 @@ related:
 summary: Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/hermes.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "1b4463cb53e697bb3271eecdb518a316b68a3e4dfd81a2a8b335f7dfcf3e7263"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a68e5d206f105d718b6fb5d28b5ceb3c38226b70a8bbe53dca54c038046675a2"
 ---
 
 # Hermes
@@ -36,11 +36,11 @@ instead of on your machine.
 
 - [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related)
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
-- [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related)
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Herdr](https://vercel.com/docs/sandbox/ecosystem/herdr?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locall
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/hermes.graph.md](/docs/sandbox/ecosystem/hermes.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fhermes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -13,13 +13,13 @@ related:
 summary: Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/agent-tools.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e7d0a7a2de2bda119e0a8f0361fe8f22f8a7f4a9224deccd807d4e2d5c30e03a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cb2bd5505f9ad08b03da626e28bef827fe6386bcd4d6a6be44412b3426148757"
 ---
 
 # Interact with Integrations using Agent Tools
 
-> **🔒 Permissions Required**: Agent Tools
+> **Availability**: Agent Tools are available on Enterprise and Pro plans
 
 With Agent Tools, you can interact with your installed integrations through a chat interface in the Vercel Dashboard. Instead of navigating through settings and forms, ask questions and run commands in natural language.
 
@@ -32,13 +32,11 @@ With Agent Tools, you can interact with your installed integrations through a ch
 - [Chat with Vercel Marketplace integrations using Vercel Agent](https://vercel.com/changelog/chat-with-vercel-marketplace-integrations-using-vercel-agent?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Vercel CLI for Marketplace integrations optimized for agents](https://vercel.com/changelog/vercel-cli-for-marketplace-integrations-optimized-for-agents?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [MCP Integrations](https://v0.app/docs/MCP?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Connect and use MCP servers directly in v0
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Tools](https://vercel.com/docs/agent-resources/vercel-mcp/tools?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Explore Vercel MCP tools for projects, deployments, domains, sandboxes, and more.
+- [Vercel Agent](https://vercel.com/docs/agent?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Use Vercel Agent to investigate production issues, review code, and take approved actions.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Integrate powerful AI services and models seamlessly into your Vercel projects.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=related) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/agent-tools.graph.md](/docs/integrations/install-an-integration/agent-tools.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fagent-tools&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

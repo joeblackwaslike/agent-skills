@@ -17,8 +17,8 @@ related:
 summary: Discover model reasoning capabilities and configure effort across AI SDK, Chat Completions, Messages, and Responses with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "e36743865afed7aa5caa1d652bf05b19817ea8e63766f6f24770a04b2b156894"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d85e187cdc2f45f1d3acb72ca2c706e7046b0605da32010479c414a0b7163a92"
 ---
 
 # AI Gateway Reasoning
@@ -31,13 +31,12 @@ Control how much a model reasons before answering. Use the [model catalog](https
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
-- [Moonshot AI](https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Learn how to use the OpenAI provider for the AI SDK.
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Learn how to use the Anthropic provider for the AI SDK.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [Evaluation Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/evaluation-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Escalate uncertain AI Gateway evaluation results to another model with confidence, probability, and compound conditions.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning.graph.md](/docs/ai-gateway/models-and-providers/reasoning.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Freasoning&source_site=vercel-docs&relationship=graph)
@@ -47,7 +46,7 @@ Use a shared effort setting for routine requests. Use provider-specific options 
 
 ## Discover model reasoning support
 
-Fetch `GET /v1/models` to find current model IDs and reasoning capabilities. This public endpoint requires no API key and works independently of the API format you use for generation.
+Fetch `GET /v1/models` to find current model IDs and reasoning capabilities. This public endpoint requires no API key and works independently of the API format you use for generation. To also check whether your team's configuration can serve each model, authenticate and pass `include_availability`; see [team availability annotations](/docs/ai-gateway/sdks-and-apis/rest-api#team-availability-annotations).
 
 - `tags` containing `reasoning` identify reasoning models.
 - `reasoning_options` describes the available controls. An `effort` entry lists allowed `values`; `budget_tokens` can include `min` and `max`; `toggle` identifies an on/off control.

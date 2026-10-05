@@ -13,8 +13,8 @@ related:
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9db4a44b9e225debec06ac49801e60aabc7049e785c459164d83b059511ed450"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ce837125b6ffba83bc30122bac057d114ddcc3e1fe538f3ff4a0f9e9456a58a8"
 ---
 
 # Vercel KMS Pricing and Limits
@@ -28,11 +28,11 @@ KMS is billed per signing operation. A signing operation is a single `signToken`
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related)
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 
 Full cross-link map for this page: [/docs/kms/pricing.graph.md](/docs/kms/pricing.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

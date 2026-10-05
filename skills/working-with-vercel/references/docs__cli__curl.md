@@ -3,7 +3,7 @@ title: vercel curl
 product: vercel
 url: /docs/cli/curl
 canonical_url: "https://vercel.com/docs/cli/curl"
-last_updated: 2026-08-21
+last_updated: 2026-10-02
 type: reference
 prerequisites:
   - /docs/cli
@@ -16,13 +16,11 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "67be8f19a342a598789fe2d5b0547eb32a8c2ae32bd9cb30f2d89570b94f5c1f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "73fa7aac033e48f8473bd2789a0dc1950048a24f811458b272ed883a7f501288"
 ---
 
 # vercel curl
-
-> **💡 Note:** The `vercel curl` command is currently in beta. Features and behavior may change.
 
 The `vercel curl` command works like `curl`, but automatically handles deployment protection bypass tokens for you. When your project has [Deployment Protection](/docs/deployment-protection) enabled, this command lets you test protected deployments without manually managing bypass secrets.
 
@@ -50,10 +48,16 @@ The command runs the system `curl` command with the same arguments you provide, 
 ## Usage
 
 ```bash filename="terminal"
-vercel curl [path]
+vercel curl [url|path]
 ```
 
 *Using the \`vercel curl\` command to make an HTTP request to a deployment.*
+
+The argument can be any of the following:
+
+- A full URL, such as `https://my-app-abc123.vercel.app/api/hello`.
+- A bare hostname, such as `my-app-abc123.vercel.app/api/hello`. The CLI adds `https://` automatically.
+- An API path, with or without a leading slash, such as `/api/hello` or `api/hello`. Relative paths target the linked project's latest production deployment.
 
 ## Examples
 
@@ -67,16 +71,33 @@ vercel curl /api/hello
 
 *Making a GET request to the \`/api/hello\` endpoint on your production deployment.*
 
-### POST request with data
+### Request a protected deployment by URL
 
-Send a POST request with JSON data. Use the `--` separator to pass flags through to the underlying `curl`:
+Pass a full URL to request a protected deployment directly. The CLI resolves the owning project from the URL to source the protection bypass token, so no linked project is required:
 
 ```bash filename="terminal"
-vercel curl /api/users -- --request POST --header "Content-Type: application/json" --data '{"name":"John"}'
+vercel curl https://my-app-abc123.vercel.app/api/hello
 ```
 
-*Making a POST request with JSON data to create a new user. The \`--\` separator
-passes everything after it to \`curl\`.*
+*Requesting a protected deployment by its full URL.*
+
+### POST request with data
+
+Pass curl flags directly to send a POST request with JSON data:
+
+```bash filename="terminal"
+vercel curl /api/users -X POST -H "Content-Type: application/json" -d '{"name":"John"}'
+```
+
+*Making a POST request with JSON data to create a new user. Any flag that is not a \`vercel curl\` option is passed through to \`curl\`.*
+
+When a curl flag collides with one of `vercel curl`'s own options, use the `--` separator and place the curl flag after it. For example, curl has its own `--json` flag, which also belongs to `vercel curl`, so pass curl's version after `--`:
+
+```bash filename="terminal"
+vercel curl /api/users -- --json '{"name":"John"}'
+```
+
+*Using the \`--\` separator so curl's own \`--json\` flag is passed through instead of being read as a \`vercel curl\` option.*
 
 ### Request specific deployment
 
@@ -91,10 +112,10 @@ deployment.*
 
 ### Verbose output
 
-See detailed request information by passing curl's `-v` flag after `--`:
+Pass curl's `-v` flag directly to see detailed request information:
 
 ```bash filename="terminal"
-vercel curl /api/data -- -v
+vercel curl /api/data -v
 ```
 
 *Using curl's \`-v\` flag for verbose output, which shows headers and connection details.*
@@ -120,11 +141,21 @@ When you run `vercel curl`:
 3. It retrieves or generates a deployment protection bypass token
 4. It runs the system `curl` command with the bypass token in the `x-vercel-protection-bypass` header
 
+When you pass a full URL or bare hostname, the CLI resolves the deployment's owning project from the URL to source the protection bypass token, so a linked project is not required.
+
+The CLI selects the bypass token in the following priority order:
+
+1. The `--protection-bypass` flag
+2. The `VERCEL_AUTOMATION_BYPASS_SECRET` environment variable
+3. An existing or newly created automation bypass token from the project's settings
+
+Any flag you pass that is not one of `vercel curl`'s own options is passed through to the underlying `curl`, so you don't need the `--` separator for most curl flags. Use `--` only when a curl flag collides with a `vercel curl` option: `--deployment`, `--protection-bypass`, `--yes`, `--trace`, `--json`, `--help`, or `--url`. Everything after `--` is always passed to `curl`.
+
 The command requires `curl` to be installed on your system.
 
 ## Unique options
 
-These are options that only apply to the `vercel curl` command. To pass flags through to the underlying `curl` command, place them after the `--` separator.
+These are options that only apply to the `vercel curl` command. When a curl flag collides with one of these option names, place it after the `--` separator so it is passed through to `curl`.
 
 ### Deployment
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content negotiation, discovery indexes,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "76dd1ec4b359cf77927ed1c76775f016db11e9e59b4f8ad33c4461d21cfdfd69"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3e846a87df1daafd39c68454bd57ae4a52d5ae1017d609b8dad2fdd6d36f0956"
 ---
 
 # Markdown and Agent Discovery
@@ -33,14 +33,14 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 - [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to serve markdown to agents and HTML for humans from the same URL
 - [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Docs Contribution Guide](https://nextjs.org/docs/community/contribution-guide?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to contribute to Next.js Documentation
 - [How to set up your Next.js project for AI coding agents](https://nextjs.org/docs/app/guides/ai-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated trainin
-- [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
+- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Learn how to deploy an AI application to production on Vercel
 - [AEO & GEO](https://docs.vercel.shop/docs/anatomy/aeo-geo?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Ship It](https://eve.dev/docs/tutorial/ship-it?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
-- [Agentic features](https://v0.app/docs/agentic-features?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — v0's intelligent agent capabilities for web search, browser use, terminal commands, error fixing, and external tool inte
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related)
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel agent](https://vercel.com/docs/cli/agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.md](/docs/agent-resources/markdown-access.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fmarkdown-access&source_site=vercel-docs&relationship=graph)

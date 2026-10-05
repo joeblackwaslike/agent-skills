@@ -13,13 +13,13 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "8970eb8989051e5fce82487960370136004aa145189ad96004ebc4ef76cdc79d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2e5255077dabd3265f455882bfce3f0b3f246f65ab2727a0ba27447861530856"
 ---
 
 # WAF Rate Limiting
 
-> **🔒 Permissions Required**: WAF Rate Limiting
+> **Availability**: WAF Rate Limiting is available on all plans
 
 Rate limiting allows you to control the number of times that a request from the same source can hit your application within a specific timeframe. This could happen due to multiple reasons, such as malicious activity or a software bug.
 
@@ -29,17 +29,17 @@ Rate limiting allows you to control the number of times that a request from the 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Add Rate Limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to implement rate limiting with Vercel
 - [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related)
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Add Rate Limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to implement rate limiting with Vercel
 - [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related)
+- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related)
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
 - [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Firewall concepts](https://vercel.com/docs/vercel-firewall/firewall-concepts?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=related) — Understand the fundamentals behind the Vercel Firewall.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -59,14 +59,14 @@ The use of rate limiting rules helps ensure that only intended traffic reaches y
 
       > **💡 Note:** All conditions must be true for the action to happen.
 
-      ![Image](`/docs-assets/static/docs/security/vercel-waf-custom-rule-configure-light.png`)
+      ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-custom-rule-configure-light.png)
 
    3. For the **Then** action, select **Rate Limit**
       - If this is the first time you are creating a rate limit rule, review the **Rate Limiting Pricing** dialog and select **Continue**
 
    4. Select [Fixed Window (all plans)](# "About the Fixed Window algorithm") or [Token Bucket (Enterprise)](# "About the Token Bucket algorithm") for the limiting strategy
 
-![Image](`/docs-assets/static/docs/security/vercel-waf-rate-limit-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-rate-limit-light.png)
 
 1. Update the **Time Window** field as needed (defaults to 60s) and the **Request Limit** field as needed (defaults to 100 requests)
    - The **Request Limit** defines the maximum number of requests allowed in the selected time window from a common source
@@ -79,9 +79,9 @@ The use of rate limiting rules helps ensure that only intended traffic reaches y
    - When you make any change, you will see a **Review Changes** button appear or update on the top right with the number of changes requested
    - Select **Review Changes** and review the changes to be applied
    - Select **Publish** to apply the changes to your production deployment
-6. Go to the Firewall overview page, select your Custom Rule from the traffic grouping drop-down and select the paramater(s) related to the condition(s) of your Custom Rule to observe the traffic and check whether it's working as expected:
+6. Go to the Firewall overview page, select your Custom Rule from the traffic grouping drop-down and select the parameter(s) related to the condition(s) of your Custom Rule to observe the traffic and check whether it's working as expected:
 
-![Image](`/docs-assets/static/docs/security/waf-overview-custom-rule-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/waf-overview-custom-rule-light.png)
 
 ## Limits
 

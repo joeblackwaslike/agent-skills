@@ -1,10 +1,14 @@
 ---
+title: Message Metadata
+description: Learn how to attach and use metadata with messages in AI SDK UI
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/message-metadata"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/message-metadata.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "dcf260a197490ad32ed7418117ab8a1747d2cce869ebb543f66ea77cad765944"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b80481ef633548fea6c69815c99c204a78f283b5ba9c05245089e6250127481f"
 ---
 
-# Message Metadata
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Message metadata allows you to attach custom information to messages at the message level. This is useful for tracking timestamps, model information, token usage, user context, and other message-level data.
 
@@ -20,7 +24,7 @@ Here's a simple example of using message metadata to track timestamps and model 
 
 First, define your metadata type for type safety:
 
-```tsx filename="app/types.ts"
+```tsx title="app/types.ts"
 import { UIMessage } from 'ai';
 import { z } from 'zod';
 
@@ -41,21 +45,20 @@ export type MyUIMessage = UIMessage<MessageMetadata>;
 
 Use the `messageMetadata` callback in `toUIMessageStream` to send metadata at different streaming stages:
 
-```ts filename="app/api/chat/route.ts" highlight="21-29,31-37"
+```ts title="app/api/chat/route.ts" {21-29,31-37}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import type { MyUIMessage } from '@/types';
 
 export async function POST(req: Request) {
   const { messages }: { messages: MyUIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -84,16 +87,14 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  To enable type-safe metadata return object in `messageMetadata`, pass in the
-  `originalMessages` parameter typed to your UIMessage type.
-</Note>
+To enable type-safe metadata return object in `messageMetadata`, pass in the
+`originalMessages` parameter typed to your UIMessage type.
 
 ### Accessing Metadata on the Client
 
 Access metadata through the `message.metadata` property:
 
-```tsx filename="app/page.tsx" highlight="8,20-23,33-36"
+```tsx title="app/page.tsx" {8,20-23,33-36}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -138,10 +139,8 @@ export default function Chat() {
 }
 ```
 
-<Note>
-  For streaming arbitrary data that changes during generation, consider using
-  [data parts](/docs/ai-sdk-ui/streaming-data) instead.
-</Note>
+For streaming arbitrary data that changes during generation, consider using
+[data parts](/docs/ai-sdk-ui/streaming-data) instead.
 
 ## Common Use Cases
 
@@ -160,23 +159,10 @@ Message metadata is ideal for:
 - [Streaming Data](/docs/ai-sdk-ui/streaming-data#message-metadata-vs-data-parts) - Comparison with data parts
 - [UIMessage Reference](/docs/reference/ai-sdk-core/ui-message) - Complete UIMessage type reference
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

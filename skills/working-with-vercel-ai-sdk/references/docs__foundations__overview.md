@@ -1,23 +1,23 @@
 ---
+title: Overview
+description: An overview of foundational concepts critical to understanding the AI SDK
+url: "https://ai-sdk.dev/docs/foundations/overview"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/overview.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a38e17561f260d7902586b6adcce23eec8a5091f3ca7c5e22cb5d9ff40acb07b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "95381ef59f76c56227e627cee9f3d4281c5927ba7f64381d440d7354a08a24ab"
 ---
 
-# Overview
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This page is a beginner-friendly introduction to high-level artificial
-  intelligence (AI) concepts. To dive right into implementing the AI SDK, feel
-  free to skip ahead to our [quickstarts](/docs/getting-started) or learn about
-  our [supported models and providers](/docs/foundations/providers-and-models).
-</Note>
+This page is a beginner-friendly introduction to high-level artificial
+intelligence (AI) concepts. To dive right into implementing the AI SDK, feel
+free to skip ahead to our [quickstarts](/docs/getting-started) or learn about
+our [supported models and providers](/docs/foundations/providers-and-models).
 
 The AI SDK standardizes integrating artificial intelligence (AI) models across [supported providers](/docs/foundations/providers-and-models). This enables developers to focus on building great AI applications, not waste time on technical details.
 
 For example, here’s how you can generate text with various models using the AI SDK:
-
-<PreviewSwitchProviders />
 
 To effectively leverage the AI SDK, it helps to familiarize yourself with the following concepts:
 
@@ -43,15 +43,10 @@ An **embedding model** is used to convert complex data (like words or images) in
 
 In the next section, you will learn about the difference between models providers and models, and which ones are available in the AI SDK.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/foundations/overview)
-- [Providers and Models](/docs/foundations/providers-and-models)
-- [Prompts](/docs/foundations/prompts)
-- [Tools](/docs/foundations/tools)
-- [Streaming](/docs/foundations/streaming)
-- [Provider Options](/docs/foundations/provider-options)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

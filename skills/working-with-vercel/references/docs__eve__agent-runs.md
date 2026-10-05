@@ -16,8 +16,8 @@ related:
 summary: Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/agent-runs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "952c163cf3063332d61f4a44141ece6f672335734c47b0b8d0b2ff57f8e11cbe"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "49e29de19bbf24ce7a6e7b2c426c5e8033329840eb4718842d589350ece17ff8"
 ---
 
 # Agent Runs
@@ -32,22 +32,20 @@ Vercel dashboard. It appears automatically for eve projects, with no instrumenta
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related)
-- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related)
 - [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and third-party exports.
+- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related)
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [Instrumentation](https://eve.dev/docs/observability/instrumentation?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
-- [Tracing](https://vercel.com/docs/tracing?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Learn how to trace your application to understand performance and infrastructure details.
+- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for agent runs.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Vercel Agent](https://vercel.com/docs/agent?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Use Vercel Agent to investigate production issues, review code, and take approved actions.
 - [How Software Factories Work](https://vercel.com/docs/eve/software-factory?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed chan
 
 Full cross-link map for this page: [/docs/eve/agent-runs.graph.md](/docs/eve/agent-runs.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: Agent Runs (Beta)
+> **Availability**: Agent Runs (Beta) are available on Enterprise and Pro and Hobby plans
 
 Agent Runs usage is billed at
 [Always-on Tracing rates](/docs/tracing/always-on-tracing#usage-and-pricing) during beta. All plans

@@ -1,10 +1,14 @@
 ---
+title: WorkflowChatTransport
+description: API Reference for the WorkflowChatTransport class.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-chat-transport"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-chat-transport.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "e3003f140e058eebe3cdc12cf928d455128aaafff32602124e73e34b51a69c33"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "08267f63ecfac9acf6b49a6aa39c07b615418e821ea989b72f9973d9ea8b6e43"
 ---
 
-# `WorkflowChatTransport`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 A [`ChatTransport`](/docs/ai-sdk-ui/transport) implementation for [`useChat`](/docs/reference/ai-sdk-ui/use-chat) that enables automatic stream reconnection for workflow-based chat apps. It posts messages to a chat endpoint, extracts the `x-workflow-run-id` response header, and reconnects to a `/{runId}/stream` endpoint on interruption (network failures, page refreshes, function timeouts).
 
@@ -30,75 +34,22 @@ export default function Chat() {
 
 ## Import
 
-<Snippet
-  text={`import { WorkflowChatTransport } from "@ai-sdk/workflow/client"`}
-  prompt={false}
-/>
+```
+import { WorkflowChatTransport } from "@ai-sdk/workflow/client"
+```
 
 ## Constructor
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'api',
-      type: 'string',
-      isOptional: true,
-      description:
-        "API endpoint for chat requests. The reconnection endpoint is derived from this as `{api}/{runId}/stream`. Default: '/api/chat'.",
-    },
-    {
-      name: 'fetch',
-      type: 'typeof fetch',
-      isOptional: true,
-      description:
-        'Custom fetch implementation to use for HTTP requests. Default: global fetch.',
-    },
-    {
-      name: 'maxConsecutiveErrors',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Maximum number of consecutive errors allowed during reconnection attempts before giving up. Default: 3.',
-    },
-    {
-      name: 'initialStartIndex',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Default chunk index to start from when reconnecting. Negative values read from the end of a durable UIMessageChunk stream (e.g., -50 fetches the last 50 chunks), useful for resuming after a page refresh without replaying the full conversation. Raw ModelCallStreamPart streams do not support negative UI chunk indexes. Can be overridden per-call via reconnectToStream options. Default: 0.',
-    },
-    {
-      name: 'onChatSendMessage',
-      type: '(response: Response, options: SendMessagesOptions) => void | Promise<void>',
-      isOptional: true,
-      description:
-        'Callback invoked after the initial POST request succeeds. Useful for inspecting response headers (e.g., extracting workflow run ID) or tracking chat history on the client side.',
-    },
-    {
-      name: 'onChatEnd',
-      type: '({ chatId, chunkIndex }) => void | Promise<void>',
-      isOptional: true,
-      description:
-        'Callback invoked when the stream ends (receives a finish chunk). Receives the chat ID and total chunk count. Useful for cleanup or state updates.',
-    },
-    {
-      name: 'prepareSendMessagesRequest',
-      type: 'PrepareSendMessagesRequest',
-      isOptional: true,
-      description:
-        'Function to customize the POST request before sending. Can override the API endpoint, headers, credentials, and body.',
-    },
-    {
-      name: 'prepareReconnectToStreamRequest',
-      type: 'PrepareReconnectToStreamRequest',
-      isOptional: true,
-      description:
-        'Function to customize the reconnection GET request. Can override the API endpoint, headers, and credentials.',
-    },
-  ]}
-/>
+- `api?` (`string`): API endpoint for chat requests. The reconnection endpoint is derived from this as \`\{api}/\{runId}/stream\`. Default: '/api/chat'.
+- `fetch?` (`typeof fetch`): Custom fetch implementation to use for HTTP requests. Default: global fetch.
+- `maxConsecutiveErrors?` (`number`): Maximum number of consecutive errors allowed during reconnection attempts before giving up. Default: 3.
+- `initialStartIndex?` (`number`): Default chunk index to start from when reconnecting. Negative values read from the end of a durable UIMessageChunk stream (e.g., -50 fetches the last 50 chunks), useful for resuming after a page refresh without replaying the full conversation. Raw ModelCallStreamPart streams do not support negative UI chunk indexes. Can be overridden per-call via reconnectToStream options. Default: 0.
+- `onChatSendMessage?` (`(response: Response, options: SendMessagesOptions) => void | Promise<void>`): Callback invoked after the initial POST request succeeds. Useful for inspecting response headers (e.g., extracting workflow run ID) or tracking chat history on the client side.
+- `onChatEnd?` (`({ chatId, chunkIndex }) => void | Promise<void>`): Callback invoked when the stream ends (receives a finish chunk). Receives the chat ID and total chunk count. Useful for cleanup or state updates.
+- `prepareSendMessagesRequest?` (`PrepareSendMessagesRequest`): Function to customize the POST request before sending. Can override the API endpoint, headers, credentials, and body.
+- `prepareReconnectToStreamRequest?` (`PrepareReconnectToStreamRequest`): Function to customize the reconnection GET request. Can override the API endpoint, headers, and credentials.
 
 ## Methods
 
@@ -117,38 +68,11 @@ const stream = await transport.sendMessages({
 });
 ```
 
-<PropertiesTable
-  content={[
-    {
-      name: 'chatId',
-      type: 'string',
-      description: 'Unique identifier for the chat session.',
-    },
-    {
-      name: 'trigger',
-      type: "'submit-message' | 'regenerate-message'",
-      description: 'The type of message submission.',
-    },
-    {
-      name: 'messageId',
-      type: 'string | undefined',
-      description:
-        'ID of the message to regenerate, or undefined for new messages.',
-    },
-    {
-      name: 'messages',
-      type: 'UIMessage[]',
-      description:
-        'Array of UI messages representing the conversation history.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal | undefined',
-      description:
-        'Signal to abort the request. Propagated to both the initial POST and any reconnection GET requests.',
-    },
-  ]}
-/>
+- `chatId` (`string`): Unique identifier for the chat session.
+- `trigger` (`'submit-message' | 'regenerate-message'`): The type of message submission.
+- `messageId` (`string | undefined`): ID of the message to regenerate, or undefined for new messages.
+- `messages` (`UIMessage[]`): Array of UI messages representing the conversation history.
+- `abortSignal` (`AbortSignal | undefined`): Signal to abort the request. Propagated to both the initial POST and any reconnection GET requests.
 
 #### Returns
 
@@ -165,28 +89,9 @@ const stream = await transport.reconnectToStream({
 });
 ```
 
-<PropertiesTable
-  content={[
-    {
-      name: 'chatId',
-      type: 'string',
-      description:
-        'The chat ID to reconnect to. Used to construct the reconnection URL.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal | undefined',
-      description: 'Signal to abort the reconnection request.',
-    },
-    {
-      name: 'startIndex',
-      type: 'number',
-      isOptional: true,
-      description:
-        "Override the start index for this reconnection. Negative values read from the end when the server's durable stream and tail-index header use the same UIMessageChunk index space. When omitted, falls back to the constructor's initialStartIndex.",
-    },
-  ]}
-/>
+- `chatId` (`string`): The chat ID to reconnect to. Used to construct the reconnection URL.
+- `abortSignal` (`AbortSignal | undefined`): Signal to abort the reconnection request.
+- `startIndex?` (`number`): Override the start index for this reconnection. Negative values read from the end when the server's durable stream and tail-index header use the same UIMessageChunk index space. When omitted, falls back to the constructor's initialStartIndex.
 
 #### Returns
 
@@ -300,7 +205,7 @@ export default function Chat() {
 
 ### Server-Side Endpoints (Next.js)
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
 import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { start } from 'workflow/api';
@@ -319,7 +224,7 @@ export async function POST(request: Request) {
 }
 ```
 
-```ts filename="app/api/chat/[runId]/stream/route.ts"
+```ts title="app/api/chat/[runId]/stream/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
 import { createUIMessageStreamResponse } from 'ai';
 import type { NextRequest } from 'next/server';
@@ -361,12 +266,10 @@ index `0`, then applies the transport's non-negative cursor after converting
 them to `UIMessageChunk` objects. Negative start indexes require a durable
 stream whose stored objects are already `UIMessageChunk` objects.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [WorkflowAgent](/docs/reference/ai-sdk-workflow/workflow-agent)
-- [WorkflowChatTransport](/docs/reference/ai-sdk-workflow/workflow-chat-transport)
-- [generateVideo](/docs/reference/ai-sdk-workflow/generate-video)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

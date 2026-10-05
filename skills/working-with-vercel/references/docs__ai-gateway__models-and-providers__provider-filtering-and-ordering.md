@@ -17,8 +17,8 @@ related:
 summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a4c8ca3bd6a033179afa7677c8e339b0c347c565b74eb63c80ad366f68afc226"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "809cedbabed53d2155fc571728aa0c6aa61a60444f5f6f778a6c2bc09cbca79e"
 ---
 
 # AI Gateway Provider Filtering, Ordering, and Sorting
@@ -33,12 +33,11 @@ By default, AI Gateway dynamically chooses providers based on recent uptime and 
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related)
 - [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related)
-- [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
 - [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
 - [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-filtering-and-ordering&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -1129,7 +1128,7 @@ This means sort optimizes for your chosen metric while still avoiding unhealthy 
 | ------- | ------------------------------ | -------------------------------------------------------------- |
 | `order` | `string[]`                     | Provider slugs in the order they should be attempted           |
 | `only`  | `string[]`                     | Restrict routing to only these provider slugs                  |
-| `sort`  | `'cost'` | `'ttft'` | `'tps'` | Sort providers by cost, time to first token, or tokens per second |
+| `sort`  | `'cost'` \| `'ttft'` \| `'tps'` | Sort providers by cost, time to first token, or tokens per second |
 
 All options are set under `providerOptions.gateway` in the AI SDK, or under `providerOptions` in the REST API / OpenAI-compatible Chat Completions API. The Chat Completions API also accepts a top-level `provider` shorthand (e.g., `"provider": { "sort": "tps" }`). See [Available Providers](/docs/ai-gateway/models-and-providers/provider-options#available-providers) for the full list of provider slugs.
 

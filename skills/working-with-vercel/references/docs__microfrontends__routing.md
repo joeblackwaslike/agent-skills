@@ -16,8 +16,8 @@ related:
 summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c3bfc01109928f93d05b3b398fa5ca494a78d44d44d215c44ba5014174cf9313"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e7a02dc3971024825aabe4cf0fbb0d88f95a58bdf949e242f4aee82f672f84a4"
 ---
 
 # Microfrontends Routing
@@ -33,19 +33,20 @@ Microfrontends routing determines which application handles a path and which dep
 - [Microfrontends previews now link across repositories](https://vercel.com/changelog/microfrontends-previews-now-link-across-repositories?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Vercel MCP tools for microfrontends.
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 
 Full cross-link map for this page: [/docs/microfrontends/routing.graph.md](/docs/microfrontends/routing.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 When Vercel receives a request to a domain that uses microfrontends, it reads the `microfrontends.json` file in the live deployment to determine which application handles the path. This happens within the same request. It is not a rewrite that results in a second outbound request to the child application's URL, so there is no additional network hop.
 
-![Image](`/docs-assets/static/docs/microfrontends/routing-diagram-light.png`)
+![How Vercel's network infrastructure routes microfrontend paths.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/routing-diagram-light.png)
 
 You can also route paths to a different microfrontend based on custom application logic using middleware.
 
@@ -135,7 +136,7 @@ To update the default route, visit the **Microfrontends Settings** page.
 2. Search for the **Default Route** setting
 3. Enter a new default path (starting with `/`) such as `/docs` and click **Save**
 
-![Image](`/docs-assets/static/docs/microfrontends/default-route-settings-light.png`)
+![Setting to specify the default route for the project.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/default-route-settings-light.png)
 
 Deployments created after this change will now use the provided path as the default route.
 
@@ -198,7 +199,7 @@ This is compatible with the [Flags SDK](https://flags-sdk.dev) or it can be used
   export const config = {
     matcher: [
       '/.well-known/vercel/microfrontends/client-config', // For prefetch optimizations for flagged paths
-      '/flagged/path',
+      '/flagged-path',
     ],
   };
   ```
@@ -218,7 +219,7 @@ Vercel automatically determines which deployment to route a request to for the m
 
 Domains that use this microfrontends routing will have an M icon next to the name on the deployment page.
 
-![Image](`/docs-assets/static/docs/microfrontends/mfe-domain-icon-light.png`)
+![The M icon on the deployment page indicates that the domain has microfrontends routing.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/mfe-domain-icon-light.png)
 
 Vercel sets microfrontends routing for a domain when the domain is created or updated, such as when a deployment is built, promoted, or rolled back. For each project in the microfrontends group, the domain or URL type determines which deployment Vercel selects:
 
@@ -259,7 +260,7 @@ To identify which microfrontend is responsible for serving a specific path, you 
 3. Open the **[Deployment Summary](/docs/deployments#resources-tab-and-deployment-summary)** for the deployment.
 4. Open up the Microfrontends accordion to see all paths that are served to that microfrontend. If viewing the default application, all paths for all microfrontends will be displayed.
 
-![Image](`/docs-assets/static/docs/microfrontends/deployment-summary-2-light.png`)
+![Listing of all paths served by a microfrontend in the Deployment Summary.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/deployment-summary-2-light.png)
 
 ### Using the Vercel Toolbar
 
@@ -267,7 +268,7 @@ To identify which microfrontend is responsible for serving a specific path, you 
 2. Open up the **Microfrontends Panel**.
 3. Look through the **Directory** of each microfrontend to find the application that serves the path. If no microfrontends match, the path is served by the default application.
 
-![Image](`/docs-assets/static/docs/microfrontends/toolbar/microfrontends-directory-3-light.png`)
+![Listing of all paths served by a microfrontend in the Vercel Toolbar.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/toolbar/microfrontends-directory-3-light.png)
 
 
 ---

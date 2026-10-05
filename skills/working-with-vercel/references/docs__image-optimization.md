@@ -16,13 +16,13 @@ related:
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "69b6b69845544359ae627cdbbad1ff4ce0b0957bf1fdf25f24788eed19d38c75"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8749bcca42e1cb2b29f3f407123c4406ef9332a8e852411af8ee8ae8ce63bdf5"
 ---
 
 # Image Optimization with Vercel
 
-> **🔒 Permissions Required**: Image Optimization
+> **Availability**: Image Optimization is available on all plans
 
 Vercel supports dynamically transforming unoptimized images to reduce the file size while maintaining high quality. These optimized images are cached on the [Vercel CDN](/docs/cdn), meaning they're available close to users whenever they're requested.
 
@@ -37,9 +37,9 @@ Vercel supports dynamically transforming unoptimized images to reduce the file s
 - [New Observability dashboard for Image Optimization](https://vercel.com/changelog/new-observability-dashboard-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
 - [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization?from=related&source_path=%2Fdocs%2Fimage-optimization&source_site=vercel-docs&relationship=related)
@@ -209,7 +209,7 @@ The cache key for remote images is based on the query string parameters, the `Ac
 - **Remote image cache expiration**:
   - TTL is determined by the [`Cache-Control`](/docs/headers#cache-control-header) `max-age` header from the upstream image or [`minimumCacheTTL`](https://nextjs.org/docs/app/api-reference/components/image#minimum-cache-ttl) config (default: `3600` seconds), whichever is larger.
 
-Once an image is cached, it remains so even if you update the source image. For remote images, users accessing a URL with a previously cached image will see the old version until the cache expires or the image is invalidated. Each time an image is requested, it counts towards your [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [Edge Request](/docs/manage-cdn-usage#edge-requests) usage for your billing cycle.
+Once an image is cached, it remains so even if you update the source image. For remote images, users accessing a URL with a previously cached image will see the old version until the cache expires or the image is invalidated. Each time an image is requested, it counts towards your [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) and [CDN Request](/docs/manage-cdn-usage#cdn-requests) usage for your billing cycle.
 
 See [Pricing](/docs/image-optimization/limits-and-pricing) for more information, and read more about [caching behavior](https://nextjs.org/docs/app/api-reference/components/image#caching-behavior) in the Next.js documentation.
 

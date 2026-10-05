@@ -16,13 +16,13 @@ related:
 summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "9b801fe2245ddbbcfc4cd420543537280c5234e35901b639e0a9fc2b2a7bb0df"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "179f3e504e2d90d5bdc6772e4c92fdced9229c8d495fc5130f7665c44b5f752a"
 ---
 
 # Getting Started with Code Owners
 
-> **🔒 Permissions Required**: Code Owners
+> **Availability**: Code Owners are available on Enterprise plans
 
 To [set up Code Owners](#setting-up-code-owners-in-your-repository) in your repository, you'll need to do the following:
 
@@ -73,22 +73,22 @@ enforcing review checks for merging PRs.
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm --package=@vercel-private/code-owners dlx vercel-code-owners init
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn --package=@vercel-private/code-owners dlx vercel-code-owners init
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx --package=@vercel-private/code-owners -- vercel-code-owners init
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx --package=@vercel-private/code-owners vercel-code-owners init
       ```
     </Code>
   </CodeBlock>
@@ -98,22 +98,22 @@ enforcing review checks for merging PRs.
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm vercel-code-owners
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn vercel-code-owners
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx vercel-code-owners
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx vercel-code-owners
       ```
     </Code>
   </CodeBlock>
@@ -140,22 +140,22 @@ enforcing review checks for merging PRs.
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm dlx vercel-code-owners validate
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn dlx vercel-code-owners validate
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx vercel-code-owners validate
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx vercel-code-owners validate
       ```
     </Code>
   </CodeBlock>

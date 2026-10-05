@@ -1,10 +1,14 @@
 ---
+title: Groq
+description: Learn how to use Groq.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/groq"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "48433d2fdcf068316c242ca2fd8feee042c08d3a23d64eda96762bbf6ccf8d4c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "18c05459ec6ef846bc21894e50d4d13ba2d438599192f9b14bbaed17487a82af"
 ---
 
-# Groq Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Groq](https://groq.com/) provider contains language model support for the Groq API.
 
@@ -13,7 +17,7 @@ The [Groq](https://groq.com/) provider contains language model support for the G
 The Groq provider is available via the `@ai-sdk/groq` module.
 You can install it with
 
-<InstallPackages packages="@ai-sdk/groq" />
+**Packages:** `@ai-sdk/groq`
 
 ## Provider Instance
 
@@ -36,21 +40,21 @@ const groq = createGroq({
 
 You can use the following optional settings to customize the Groq provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.groq.com/openai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `GROQ_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -93,20 +97,21 @@ const result = await generateText({
 
 The following optional provider options are available for Groq language models:
 
-- **reasoningFormat** _'parsed' | 'raw' | 'hidden'_
+- **reasoningFormat** *'parsed' | 'raw' | 'hidden'*
 
   Controls how reasoning is exposed in the generated text. Supported by reasoning models such as `qwen/qwen3.6-27b`; available formats depend on the model.
 
   For a complete list of reasoning models and their capabilities, see [Groq's reasoning models documentation](https://console.groq.com/docs/reasoning).
 
-- **reasoningEffort** _'low' | 'medium' | 'high' | 'none' | 'default'_
+- **reasoningEffort** *'low' | 'medium' | 'high' | 'none' | 'default'*
 
   Controls the level of effort the model will put into reasoning.
+
   - `qwen/qwen3.6-27b`
     - Supported values:
       - `none`: Disable reasoning. The model will not use any reasoning tokens.
       - `default`: Enable reasoning.
-  - `gpt-oss20b/gpt-oss120b`
+  - `openai/gpt-oss-20b` and `openai/gpt-oss-120b`
     - Supported values:
       - `low`: Use a low level of reasoning effort.
       - `medium`: Use a medium level of reasoning effort.
@@ -114,7 +119,7 @@ The following optional provider options are available for Groq language models:
 
   Defaults to `default` for `qwen/qwen3.6-27b`.
 
-- **structuredOutputs** _boolean_
+- **structuredOutputs** *boolean*
 
   Whether to use structured outputs.
 
@@ -122,7 +127,7 @@ The following optional provider options are available for Groq language models:
 
   When enabled, object generation will use the `json_schema` format instead of `json_object` format, providing more reliable structured outputs.
 
-- **strictJsonSchema** _boolean_
+- **strictJsonSchema** *boolean*
 
   Whether to use strict JSON schema validation. When `true`, the model uses constrained decoding to guarantee schema compliance.
 
@@ -130,25 +135,30 @@ The following optional provider options are available for Groq language models:
 
   Only used when `structuredOutputs` is enabled and a schema is provided. See [Groq's Structured Outputs documentation](https://console.groq.com/docs/structured-outputs) for details on strict mode limitations.
 
-- **parallelToolCalls** _boolean_
+- **parallelToolCalls** *boolean*
 
   Whether to enable parallel function calling during tool use. Defaults to `true`.
 
-- **user** _string_
+- **user** *string*
 
   A unique identifier representing your end-user, which can help with monitoring and abuse detection.
 
-- **serviceTier** _'on_demand' | 'performance' | 'flex' | 'auto'_
+- **serviceTier** *'on\_demand' | 'performance' | 'flex' | 'auto'*
 
   Service tier for the request. Defaults to `'on_demand'`.
+
   - `'on_demand'`: Default tier with consistent performance and fairness
   - `'performance'`: Prioritized tier for latency-sensitive workloads
   - `'flex'`: Higher throughput tier (10x rate limits) optimized for workloads that can handle occasional request failures
-  - `'auto'`: Uses on_demand rate limits first, then falls back to flex tier if exceeded
+  - `'auto'`: Uses on\_demand rate limits first, then falls back to flex tier if exceeded
 
   For more details about service tiers and their benefits, see [Groq's service tiers documentation](https://console.groq.com/docs/service-tiers).
 
-<Note>Only Groq reasoning models support the `reasoningFormat` option.</Note>
+Only Groq reasoning models support the
+
+`reasoningFormat`
+
+option.
 
 #### Structured Outputs
 
@@ -179,7 +189,7 @@ console.log(JSON.stringify(result.output, null, 2));
 
 You can disable structured outputs for models that don't support them:
 
-```ts highlight="9"
+```ts {9}
 import { groq, type GroqLanguageModelChatOptions } from '@ai-sdk/groq';
 import { generateText, Output } from 'ai';
 import { z } from 'zod';
@@ -206,13 +216,11 @@ const result = await generateText({
 console.log(JSON.stringify(result.output, null, 2));
 ```
 
-<Note type="warning">
-  Structured outputs are only supported by newer Groq models like
-  `moonshotai/kimi-k2-instruct-0905`. For unsupported models, you can disable
-  structured outputs by setting `structuredOutputs: false`. When disabled, Groq
-  uses the `json_object` format which requires the word "JSON" to be included in
-  your messages.
-</Note>
+Structured outputs are only supported by newer Groq models like
+`moonshotai/kimi-k2-instruct-0905`. For unsupported models, you can disable
+structured outputs by setting `structuredOutputs: false`. When disabled, Groq
+uses the `json_object` format which requires the word "JSON" to be included in
+your messages.
 
 ### Example
 
@@ -285,33 +293,31 @@ const { text } = await generateText({
 
 | Model                                           | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `gemma2-9b-it`                                  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `llama-3.1-8b-instant`                          | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `llama-3.3-70b-versatile`                       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/llama-guard-4-12b`                  | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| `deepseek-r1-distill-llama-70b`                 | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/llama-4-maverick-17b-128e-instruct` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/llama-4-scout-17b-16e-instruct`     | <Check />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/llama-prompt-guard-2-22m`           | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `meta-llama/llama-prompt-guard-2-86m`           | <Cross />   | <Check />         | <Cross />  | <Cross />      |
-| `moonshotai/kimi-k2-instruct-0905`              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `qwen/qwen3.6-27b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `llama-guard-3-8b`                              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `llama3-70b-8192`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `llama3-8b-8192`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `mixtral-8x7b-32768`                            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `qwen-qwq-32b`                                  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `qwen-2.5-32b`                                  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-r1-distill-qwen-32b`                  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `openai/gpt-oss-20b`                            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `openai/gpt-oss-120b`                           | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `gemma2-9b-it`                                  | ✗           | ✓                 | ✓          | ✓              |
+| `llama-3.1-8b-instant`                          | ✗           | ✓                 | ✓          | ✓              |
+| `llama-3.3-70b-versatile`                       | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/llama-guard-4-12b`                  | ✓           | ✓                 | ✗          | ✗              |
+| `deepseek-r1-distill-llama-70b`                 | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/llama-4-maverick-17b-128e-instruct` | ✓           | ✓                 | ✓          | ✓              |
+| `meta-llama/llama-4-scout-17b-16e-instruct`     | ✓           | ✓                 | ✓          | ✓              |
+| `meta-llama/llama-prompt-guard-2-22m`           | ✗           | ✓                 | ✗          | ✗              |
+| `meta-llama/llama-prompt-guard-2-86m`           | ✗           | ✓                 | ✗          | ✗              |
+| `moonshotai/kimi-k2-instruct-0905`              | ✗           | ✓                 | ✓          | ✓              |
+| `qwen/qwen3.6-27b`                              | ✗           | ✓                 | ✓          | ✓              |
+| `llama-guard-3-8b`                              | ✗           | ✓                 | ✓          | ✓              |
+| `llama3-70b-8192`                               | ✗           | ✓                 | ✓          | ✓              |
+| `llama3-8b-8192`                                | ✗           | ✓                 | ✓          | ✓              |
+| `mixtral-8x7b-32768`                            | ✗           | ✓                 | ✓          | ✓              |
+| `qwen-qwq-32b`                                  | ✗           | ✓                 | ✓          | ✓              |
+| `qwen-2.5-32b`                                  | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-r1-distill-qwen-32b`                  | ✗           | ✓                 | ✓          | ✓              |
+| `openai/gpt-oss-20b`                            | ✗           | ✓                 | ✓          | ✓              |
+| `openai/gpt-oss-120b`                           | ✗           | ✓                 | ✓          | ✓              |
 
-<Note>
-  The tables above list the most commonly used models. Please see the [Groq
-  docs](https://console.groq.com/docs/models) for a complete list of available
-  models. You can also pass any available provider model ID as a string if
-  needed.
-</Note>
+The tables above list the most commonly used models. Please see the [Groq
+docs](https://console.groq.com/docs/models) for a complete list of available
+models. You can also pass any available provider model ID as a string if
+needed.
 
 ## Browser Search Tool
 
@@ -324,10 +330,8 @@ Browser search is only available for these specific models:
 - `openai/gpt-oss-20b`
 - `openai/gpt-oss-120b`
 
-<Note type="warning">
-  Browser search will only work with the supported models listed above. Using it
-  with other models will generate a warning and the tool will be ignored.
-</Note>
+Browser search will only work with the supported models listed above. Using it
+with other models will generate a warning and the tool will be ignored.
 
 ### Basic Usage
 
@@ -404,11 +408,9 @@ const result = await generateText({
 // Warning: "Browser search is only supported on models: openai/gpt-oss-20b, openai/gpt-oss-120b"
 ```
 
-<Note>
-  For more details about browser search capabilities and limitations, see the
-  [Groq Browser Search
-  Documentation](https://console.groq.com/docs/browser-search).
-</Note>
+For more details about browser search capabilities and limitations, see the
+[Groq Browser Search
+Documentation](https://console.groq.com/docs/browser-search).
 
 ## Transcription Models
 
@@ -423,7 +425,7 @@ const model = groq.transcription('whisper-large-v3');
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format will improve accuracy and latency.
 
-```ts highlight="6"
+```ts {6}
 import { transcribe } from 'ai';
 import { groq, type GroqTranscriptionModelOptions } from '@ai-sdk/groq';
 import { readFile } from 'fs/promises';
@@ -439,85 +441,42 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **timestampGranularities** _string[]_
+- **timestampGranularities** *string\[]*
   The granularity of the timestamps in the transcription.
   Defaults to `['segment']`.
   Possible values are `['word']`, `['segment']`, and `['word', 'segment']`.
   Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.
   **Important:** Requires `responseFormat` to be set to `'verbose_json'`.
 
-- **responseFormat** _string_
+- **responseFormat** *string*
   The format of the response. Set to `'verbose_json'` to receive timestamps for audio segments and enable `timestampGranularities`.
   Set to `'text'` to return only the transcribed text.
   Optional.
 
-- **language** _string_
+- **language** *string*
   The language of the input audio. Supplying the input language in ISO-639-1 format (e.g. 'en') will improve accuracy and latency.
   Optional.
 
-- **prompt** _string_
+- **prompt** *string*
   An optional text to guide the model's style or continue a previous audio segment. The prompt should match the audio language.
   Optional.
 
-- **temperature** _number_
+- **temperature** *number*
   The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use log probability to automatically increase the temperature until certain thresholds are hit.
   Defaults to 0.
   Optional.
 
 ### Model Capabilities
 
-| Model                    | Transcription | Duration  | Segments  | Language  |
-| ------------------------ | ------------- | --------- | --------- | --------- |
-| `whisper-large-v3`       | <Check />     | <Check /> | <Check /> | <Check /> |
-| `whisper-large-v3-turbo` | <Check />     | <Check /> | <Check /> | <Check /> |
+| Model                    | Transcription | Duration | Segments | Language |
+| ------------------------ | ------------- | -------- | -------- | -------- |
+| `whisper-large-v3`       | ✓             | ✓        | ✓        | ✓        |
+| `whisper-large-v3-turbo` | ✓             | ✓        | ✓        | ✓        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

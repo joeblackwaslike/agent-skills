@@ -1,10 +1,14 @@
 ---
+title: Backpressure
+description: How to handle backpressure and cancellation when working with the AI SDK
+url: "https://ai-sdk.dev/docs/advanced/backpressure"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/backpressure.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "409c9d5bfaecf3fb7cb567a8f85be15621cd499904949bd8913554e152582687"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "cc81fc276d55e1a6c25ece5cb8b7580d8b301605baeaf2c4b615e658aa0c2934"
 ---
 
-# Stream Back-pressure and Cancellation
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 This page focuses on understanding back-pressure and cancellation when working with streams. You do not need to know this information to use the AI SDK, but for those interested, it offers a deeper dive on why and how the SDK optimally streams responses.
 
@@ -65,7 +69,7 @@ In this example, we create an async-generator that yields positive integers, a `
 
 If you were to run this program, you'd notice something funny. We'll see roughly 10 "yield" logs for every "read" log. This might seem obvious, the generator can push values 10x faster than the reader can pull them out. But it represents a problem, our `stream` has to maintain an ever expanding queue of items that have been pushed in but not pulled out.
 
-The problem stems from the way we wrap our generator into a stream. Notice the use of `for await (…)` inside our `start` handler. This is an **eager** for-loop, and it is constantly running to get the next value from our generator to be enqueued in our stream. This means our stream does not respect back-pressure, the signal from the consumer to the producer that more values aren't needed _yet_. We've essentially spawned a thread that will perpetually push more data into the stream, one that runs as fast as possible to push new data immediately. Worse, there's no way to signal to this thread to stop running when we don't need additional data.
+The problem stems from the way we wrap our generator into a stream. Notice the use of `for await (…)` inside our `start` handler. This is an **eager** for-loop, and it is constantly running to get the next value from our generator to be enqueued in our stream. This means our stream does not respect back-pressure, the signal from the consumer to the producer that more values aren't needed *yet*. We've essentially spawned a thread that will perpetually push more data into the stream, one that runs as fast as possible to push new data immediately. Worse, there's no way to signal to this thread to stop running when we don't need additional data.
 
 To fix this, `ReadableStream` allows a `pull` handler. `pull` is called every time the consumer attempts to read more data from our stream (if there's no data already queued internally). But it's not enough to just move the `for await(…)` into `pull`, we also need to convert from an eager enqueuing to a **lazy** one. By making these 2 changes, we'll be able to react to the consumer. If they need more data, we can easily produce it, and if they don't, then we don't need to spend any time doing unnecessary work.
 
@@ -140,7 +144,7 @@ run();
 
 We're back to yielding 10x the number of values read. But notice now, after we've read 3 values, we're continuing to yield new values. We know that our reader will never read another value, but our stream doesn't! The eager `for await (…)` will continue forever, loudly enqueuing new values into our stream's buffer and increasing our memory usage until it consumes all available program memory.
 
-The fix to this is exactly the same: use `pull` and manual iteration. By producing values _**lazily**_, we tie the lifetime of our integer generator to the lifetime of the reader. Once the reads stop, the yields will stop too:
+The fix to this is exactly the same: use `pull` and manual iteration. By producing values ***lazily***, we tie the lifetime of our integer generator to the lifetime of the reader. Once the reads stop, the yields will stop too:
 
 ```jsx
 // Wraps a generator into a ReadableStream
@@ -169,25 +173,12 @@ After a few seconds, the user gets bored and navigates away. Or maybe you're doi
 
 If you used the eager `for await (...)` approach, then the connection is still running and your server is asking for more and more data from AIBot. Our server spawned a "thread" and there's no signal when we can end the eager pulls. Eventually, the server is going to run out of memory (remember, there's no active fetch connection to read the buffering responses and free them).
 
-{/* When we started writing the streaming code for the AI SDK, we confirm aborting a fetch will end a streamed response from Next.js */}
-
 With the lazy approach, this is taken care of for you. Because the stream will only request new data from AIBot when the consumer requests it, navigating away from the page naturally frees all resources. The fetch connection aborts and the server can clean up the response. The `ReadableStream` tied to that response can now be garbage collected. When that happens, the connection it holds to AIBot can then be freed.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

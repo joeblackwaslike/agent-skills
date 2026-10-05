@@ -1,10 +1,14 @@
 ---
+title: Luma
+description: Learn how to use Luma AI models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/luma"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "70ec89c81c1a9991eb574f31711f98d3be7943b81d547cbbf57a2dbaa37f5a22"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "dc7eab1e2444cefd80a47a322587941647bab7d15f82924216fe27fbd6839b44"
 ---
 
-# Luma Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Luma AI](https://lumalabs.ai/) provides state-of-the-art image generation models through their Dream Machine platform. Their models offer ultra-high quality image generation with superior prompt understanding and unique capabilities like character consistency and multi-image reference support.
 
@@ -12,7 +16,7 @@ sha256: "70ec89c81c1a9991eb574f31711f98d3be7943b81d547cbbf57a2dbaa37f5a22"
 
 The Luma provider is available via the `@ai-sdk/luma` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/luma" />
+**Packages:** `@ai-sdk/luma`
 
 ## Provider Instance
 
@@ -38,21 +42,21 @@ const luma = createLuma({
 
 You can use the following optional settings to customize the Luma provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.lumalabs.ai`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `LUMA_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -102,16 +106,16 @@ const { image } = await generateImage({
 
 Since Luma processes images through an asynchronous queue system, these settings allow you to tune the polling behavior:
 
-- **maxImagesPerCall** _number_
+- **maxImagesPerCall** *number*
 
   Override the maximum number of images generated per API call. Defaults to 1.
 
-- **pollIntervalMillis** _number_
+- **pollIntervalMillis** *number*
 
   Control how frequently the API is checked for completed images while they are
   being processed. Defaults to 500ms.
 
-- **maxPollAttempts** _number_
+- **maxPollAttempts** *number*
 
   Limit how long to wait for results before timing out, since image generation
   is queued asynchronously. Defaults to 120 attempts.
@@ -171,7 +175,7 @@ await generateImage({
 });
 ```
 
-Learn more at https://docs.lumalabs.ai/docs/image-generation#modify-image.
+Learn more at [https://docs.lumalabs.ai/docs/image-generation#modify-image](https://docs.lumalabs.ai/docs/image-generation#modify-image).
 
 #### Reference an image
 
@@ -196,7 +200,7 @@ await generateImage({
 });
 ```
 
-Learn more at https://docs.lumalabs.ai/docs/image-generation#image-reference
+Learn more at [https://docs.lumalabs.ai/docs/image-generation#image-reference](https://docs.lumalabs.ai/docs/image-generation#image-reference)
 
 #### Style Reference
 
@@ -221,7 +225,7 @@ await generateImage({
 });
 ```
 
-Learn more at https://docs.lumalabs.ai/docs/image-generation#style-reference
+Learn more at [https://docs.lumalabs.ai/docs/image-generation#style-reference](https://docs.lumalabs.ai/docs/image-generation#style-reference)
 
 #### Character Reference
 
@@ -250,55 +254,12 @@ await generateImage({
 });
 ```
 
-Learn more at https://docs.lumalabs.ai/docs/image-generation#character-reference
+Learn more at [https://docs.lumalabs.ai/docs/image-generation#character-reference](https://docs.lumalabs.ai/docs/image-generation#character-reference)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,10 +1,14 @@
 ---
+title: Langfuse
+description: Monitor, evaluate and debug your AI SDK application with Langfuse
+url: "https://ai-sdk.dev/providers/observability/langfuse"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/langfuse.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "0054dcd030a2cd66a1f574e48f0751e03914e7ca3cf90584d2da4505fe6a245e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a58873e57e55224fc3cf569a7b2d8250573c2b91ba64ad91702fb48d4a480c91"
 ---
 
-# Langfuse Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Langfuse](https://langfuse.com/) ([GitHub](https://github.com/langfuse/langfuse)) is an open source LLM engineering platform that helps teams to collaboratively develop, monitor, and debug AI applications. Langfuse integrates with the AI SDK to provide:
 
@@ -30,19 +34,15 @@ You can set the Langfuse credentials via environment variables or directly to th
 
 To get your Langfuse API keys, you can [self-host Langfuse](https://langfuse.com/docs/deployment/self-host) or sign up for Langfuse Cloud [here](https://cloud.langfuse.com). Create a project in the Langfuse dashboard to get your `secretKey` and `publicKey`.
 
-<Tabs items={["Environment Variables", "Constructor"]}>
+#### Environment Variables
 
-<Tab>
-
-```bash filename=".env"
+```bash title=".env"
 LANGFUSE_SECRET_KEY="sk-lf-..."
 LANGFUSE_PUBLIC_KEY="pk-lf-..."
 LANGFUSE_BASE_URL="https://cloud.langfuse.com" # EU region, use "https://us.cloud.langfuse.com" for US region
 ```
 
-</Tab>
-
-<Tab>
+#### Constructor
 
 ```ts
 import { LangfuseSpanProcessor } from '@langfuse/otel';
@@ -55,19 +55,15 @@ new LangfuseSpanProcessor({
 });
 ```
 
-</Tab>
-</Tabs>
-
 Now register the Langfuse span processor with OpenTelemetry and register the Langfuse AI SDK telemetry integration once at application startup.
 
-<Tabs items={["Next.js","Node.js"]}>
-<Tab>
+#### Next.js
 
 Next.js has support for OpenTelemetry instrumentation on the framework level. Learn more about it in the [Next.js OpenTelemetry guide](https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry).
 
 Create or update your `instrumentation.ts` file:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LangfuseSpanProcessor } from '@langfuse/otel';
 import { LangfuseVercelAiSdkIntegration } from '@langfuse/vercel-ai-sdk';
@@ -86,8 +82,7 @@ registerTelemetry(new LangfuseVercelAiSdkIntegration());
 
 If you stream responses from a serverless route, flush the span processor after the response is scheduled so traces are exported before the function exits.
 
-</Tab>
-<Tab>
+#### Node.js
 
 Add `LangfuseSpanProcessor` to your OpenTelemetry setup and register `LangfuseVercelAiSdkIntegration` with the AI SDK:
 
@@ -122,9 +117,6 @@ async function main() {
 
 main().catch(console.error);
 ```
-
-</Tab>
-</Tabs>
 
 Done! Once the integration is registered, AI SDK v7 calls emit telemetry by default and Langfuse maps the spans into traces, generations, tool calls, embeddings, and reranks.
 
@@ -253,7 +245,7 @@ await sdk.shutdown();
 
 The resulting trace hierarchy will be:
 
-![Vercel nested trace in Langfuse UI](https://langfuse.com/images/docs/vercel-nested-trace.png)
+<img alt="Vercel nested trace in Langfuse UI" src="https://langfuse.com/images/docs/vercel-nested-trace.png" width="2498" height="1405" />
 
 ### Disable Tracking of Input/Output
 
@@ -303,30 +295,10 @@ const result = await generateText({
 - For more information about Langfuse's AI SDK v7 integration, see the [Langfuse Vercel AI SDK integration guide](https://langfuse.com/integrations/frameworks/vercel-ai-sdk).
 - For more information, see the [telemetry documentation](/docs/ai-sdk-core/telemetry) of the AI SDK.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

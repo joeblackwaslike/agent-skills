@@ -14,8 +14,8 @@ related:
 summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fb8be35775c26b116e129074838c0934850c3a4a88a9c3661d6454dce52f9642"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "20b5851aae92505a971e6cf0f4fabc0784adc3f29c18e6f351d868f25badaf95"
 ---
 
 # Claim Deployment
@@ -37,7 +37,7 @@ The Claim Deployment block provides a polished interface for platforms that depl
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Custom Domain](https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — A complete domain management interface with DNS verification and real-time status tracking.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/claim-deployment.graph.md](/docs/platforms/platform-elements/blocks/claim-deployment.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fclaim-deployment&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

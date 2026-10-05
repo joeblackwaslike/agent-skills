@@ -16,8 +16,8 @@ related:
 summary: Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate API and CLI requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts/access-tokens.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "11f9b4bdcdbbbf261bc1b8fac169b44798d3e0129ee47b4817b720e3f37be003"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9d0bb9b3e23256b01aee391842a335c3ec347ee9798245479470365d574b6429"
 ---
 
 # Access tokens
@@ -30,13 +30,13 @@ Vercel access tokens authenticate requests to the [Vercel REST API](/docs/rest-a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — An Access Token is required in order to use the Vercel API. Tokens can be created and managed at the level of your accou
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Project-scoped Tokens](https://vercel.com/changelog/project-scoped-tokens?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related)
 - [Make Your First Vercel API Request](https://vercel.com/docs/rest-api/getting-started?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
+- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 
 Full cross-link map for this page: [/docs/accounts/access-tokens.graph.md](/docs/accounts/access-tokens.graph.md?from=related&source_path=%2Fdocs%2Faccounts%2Faccess-tokens&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

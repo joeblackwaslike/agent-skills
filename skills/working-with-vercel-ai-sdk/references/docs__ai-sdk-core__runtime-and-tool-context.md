@@ -1,10 +1,14 @@
 ---
+title: Runtime and Tool Context
+description: Learn how runtime context, tool context, and telemetry context filtering work together.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/runtime-and-tool-context"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/runtime-and-tool-context.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5bd88fbdb0213f5f4dbb46c57cc709f5a3971c93811dd227c969c3cbff2dd5e1"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b3a5b23864c3aa6c9e44ae1aa876ee5fdf52b85d8844226bd7f5a0015711f964"
 ---
 
-# Runtime and Tool Context
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Context lets you pass server-side state through a generation or agent loop
 without putting that state into the prompt. The AI SDK separates shared runtime
@@ -52,7 +56,7 @@ events.
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Help the user plan their trip.',
   runtimeContext: {
     tenantId: 'tenant_123',
@@ -79,7 +83,7 @@ Use `toolsContext` for values that belong to a specific tool. Each tool declares
 the context it expects with `contextSchema`; the matching `toolsContext` entry is
 validated and passed to the tool as `context`.
 
-```ts highlight="9-12,25-30"
+```ts {9-12,25-30}
 import { generateText, tool } from 'ai';
 import { z } from 'zod';
 
@@ -102,7 +106,7 @@ const weatherTool = tool({
 });
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { weather: weatherTool },
   toolsContext: {
     weather: {
@@ -132,7 +136,7 @@ include selected top-level runtime context properties in telemetry, and
 `telemetry.includeToolsContext` to include selected top-level tool context
 properties per tool.
 
-```ts highlight="34-43"
+```ts {34-43}
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
@@ -155,7 +159,7 @@ const customerLookup = tool({
 });
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { customerLookup },
 });
 
@@ -188,11 +192,9 @@ const result = await agent.generate({
 In this example, telemetry receives `runtimeContext` with only `requestId` and the
 `customerLookup` context with only `region`.
 
-<Note>
-  Context filters only affect telemetry integrations, including OpenTelemetry
-  integrations. Tool execution, lifecycle callbacks, and returned results still
-  receive the full context values.
-</Note>
+Context filters only affect telemetry integrations, including OpenTelemetry
+integrations. Tool execution, lifecycle callbacks, and returned results still
+receive the full context values.
 
 Context telemetry filtering is shallow. For `telemetry.includeRuntimeContext`, only
 top-level properties marked as `true` are sent when it is configured; if it is
@@ -228,40 +230,10 @@ Learn more about [tools and tool calling](/docs/ai-sdk-core/tools-and-tool-calli
 [lifecycle callbacks](/docs/ai-sdk-core/lifecycle-callbacks), and
 [telemetry](/docs/ai-sdk-core/telemetry).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

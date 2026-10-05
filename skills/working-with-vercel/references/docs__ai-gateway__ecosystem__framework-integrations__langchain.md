@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "33a7b79a43e572ab07651221d599214887359719afd90f90931a755b244448ed"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b79865d6386042ad83a2f45ff61e538aea9c47b67babdf918d7e5031dd037b05"
 ---
 
 # LangChain with AI Gateway
@@ -33,9 +33,9 @@ with LangChain to access various AI models and providers.
 - [Building an AI chatbot with Next.js, Langchain, and OpenAI](https://vercel.com/kb/guide/nextjs-langchain-vercel-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Dive into the world of LangChain.js and Next.js with our detailed guide. Learn how to set up a chatbot, structure output
 - [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
 - [Langfuse with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log mo
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/langchain.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/langchain.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flangchain&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -60,7 +60,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i langchain @langchain/core @langchain/openai dotenv @types/node
+      yarn add langchain @langchain/core @langchain/openai dotenv @types/node
       ```
     </Code>
     <Code tab="npm">
@@ -70,7 +70,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
     </Code>
     <Code tab="bun">
       ```bash
-      bun i langchain @langchain/core @langchain/openai dotenv @types/node
+      bun add langchain @langchain/core @langchain/openai dotenv @types/node
       ```
     </Code>
   </CodeBlock>
@@ -129,22 +129,22 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm dlx tsx index.ts
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn dlx tsx index.ts
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx tsx index.ts
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx tsx index.ts
       ```
     </Code>
   </CodeBlock>

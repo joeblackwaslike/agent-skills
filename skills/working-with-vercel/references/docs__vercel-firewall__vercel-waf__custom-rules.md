@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c683615a8991c920acaac2d89848d4d2c5d8836d55c7964a2307ede2f62b6a4d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "43db1bd9c4613182f32c7377c5e0f116258c4aaee89d93a62f83c5083a75b032"
 ---
 
 # WAF Custom Rules
@@ -37,10 +37,10 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [New firewall challenge metrics now available](https://vercel.com/changelog/new-firewall-challenge-metrics-now-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [New one-click AI bot managed ruleset](https://vercel.com/changelog/new-one-click-ai-bot-managed-ruleset?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
 
@@ -49,7 +49,7 @@ Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/custom-rule
 
 [Get started](#get-started) by reviewing the [Best practices for applying rules](#best-practices-for-applying-rules) section.
 
-> **🔒 Permissions Required**: WAF Custom Rules
+> **Availability**: WAF Custom Rules are available on all plans
 
 ## Access roles
 
@@ -78,7 +78,7 @@ When you apply a [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting)
 
 ## Persistent actions
 
-> **🔒 Permissions Required**: Persistent Actions
+> **Availability**: Persistent Actions are available on Enterprise and Pro plans
 
 When a custom rule blocks a client's request, future requests from the same client can still pass through if they do not match the rule's condition. To deny all requests from that client, identify the client through [traffic monitoring](/docs/vercel-firewall/vercel-waf) and create an IP Address rule.
 
@@ -129,7 +129,7 @@ Learn how to create, test, and apply a Custom Rule.
 
 5. In the **Configure** section, add as many **If** conditions as needed. For each condition you add, choose how you will combine it with the previous condition using the **AND** (Both conditions need to be met) or the **OR** operator (One of the conditions need to be met)
 
-   ![Image](`/docs-assets/static/docs/security/vercel-waf-custom-rule-configure-and-or-light.png`)
+   ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-custom-rule-configure-and-or-light.png)
 
 6. Select **Log** for the **Then** action
    - For **Rate Limit**, review [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting#get-started)
@@ -141,9 +141,9 @@ Learn how to create, test, and apply a Custom Rule.
    - Select **Review Changes** and review the changes to be applied
    - Select **Publish** to apply the changes to your production deployment
 
-9. Go to the Firewall overview page, select your Custom Rule from the traffic grouping drop-down and select the paramater(s) related to the condition(s) of your Custom Rule to observe the traffic:
+9. Go to the Firewall overview page, select your Custom Rule from the traffic grouping drop-down and select the parameter(s) related to the condition(s) of your Custom Rule to observe the traffic:
 
-   ![Image](`/docs-assets/static/docs/security/waf-overview-custom-rule-light.png`)
+   ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/waf-overview-custom-rule-light.png)
 
 10. If you are satisfied with the traffic behavior, select **Configure**
 

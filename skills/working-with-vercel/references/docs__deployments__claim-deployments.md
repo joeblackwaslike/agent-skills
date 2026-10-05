@@ -16,8 +16,8 @@ related:
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3cdc1fe549a7108c43ac172604ef7e9aba7cb7043cbedf49e850d2296d1db751"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d69bd9095977cd798417193daff0d29f30f76845ad3562b79cd24725a5f4fc7b"
 ---
 
 # Claim Deployments
@@ -32,11 +32,11 @@ The Claim Deployments feature enables users to take control of deployments by tr
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related)
 - [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related)
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 - [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/deployments/claim-deployments.graph.md](/docs/deployments/claim-deployments.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fclaim-deployments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "460788a85b2f9615e607733479d2e3b5abaa13b23f99621895418682c66b63a2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c097dc400c259407df4793fc76a9e9eb2c184ac183fa431d2e6e1540e8219af9"
 ---
 
 # AI Gateway Image Generation via Chat Completions
@@ -30,10 +30,11 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related)
 - [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [generateImage](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-image?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — API Reference for generateImage.
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fimage-generation%2Fopenai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -308,7 +309,7 @@ def main():
 
             # Save image to file with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_file = f"output/output_image_{timestamp}_{i+1}.png"
+            output_file = f"output/output_image_{timestamp}_{i+1}.jpg"
             print(f"  Saving image to {output_file}")
             with open(output_file, "wb") as f:
                 f.write(image_bytes)

@@ -1,10 +1,14 @@
 ---
+title: Together.ai
+description: "Learn how to use Together.ai's models with the AI SDK."
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "5e3961c934b6ccf19c300d10f0c1379f99618b8295fc69a35fd9d2c1bf406e8c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "74a1080ec8521ac90e3656fe6d10dfbf8706880f66c45666c14c623292da22d4"
 ---
 
-# Together.ai Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Together.ai](https://together.ai) provider contains support for 200+ open-source models through the [Together.ai API](https://docs.together.ai/reference).
 
@@ -13,7 +17,7 @@ The [Together.ai](https://together.ai) provider contains support for 200+ open-s
 The Together.ai provider is available via the `@ai-sdk/togetherai` module. You can
 install it with
 
-<InstallPackages packages="@ai-sdk/togetherai" />
+**Packages:** `@ai-sdk/togetherai`
 
 ## Provider Instance
 
@@ -36,21 +40,21 @@ const togetherai = createTogetherAI({
 
 You can use the following optional settings to customize the Together.ai provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.together.xyz/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `TOGETHER_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -105,21 +109,19 @@ The Together.ai provider also supports [completion models](https://docs.together
 
 | Model                                               | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | --------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `moonshotai/Kimi-K2.5`                              | <Check />   | <Check />         | <Check />  | <Check />      |
-| `Qwen/Qwen3.5-397B-A17B`                            | <Check />   | <Check />         | <Check />  | <Check />      |
-| `MiniMaxAI/MiniMax-M2.5`                            | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `zai-org/GLM-5`                                     | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-ai/DeepSeek-V3.1`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `openai/gpt-oss-120b`                               | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `openai/gpt-oss-20b`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | <Check />   | <Check />         | <Check />  | <Check />      |
+| `moonshotai/Kimi-K2.5`                              | ✓           | ✓                 | ✓          | ✓              |
+| `Qwen/Qwen3.5-397B-A17B`                            | ✓           | ✓                 | ✓          | ✓              |
+| `MiniMaxAI/MiniMax-M2.5`                            | ✗           | ✓                 | ✓          | ✓              |
+| `zai-org/GLM-5`                                     | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-V3.1`                         | ✗           | ✓                 | ✓          | ✓              |
+| `openai/gpt-oss-120b`                               | ✗           | ✓                 | ✓          | ✓              |
+| `openai/gpt-oss-20b`                                | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | ✓           | ✓                 | ✓          | ✓              |
 
-<Note>
-  The table above lists popular models. Please see the [Together.ai
-  docs](https://docs.together.ai/docs/serverless-models) for a full list of
-  available models. You can also pass any available provider model ID as a
-  string if needed.
-</Note>
+The table above lists popular models. Please see the [Together.ai
+docs](https://docs.together.ai/docs/serverless-models) for a full list of
+available models. You can also pass any available provider model ID as a
+string if needed.
 
 ## Image Models
 
@@ -160,19 +162,19 @@ const { images } = await generateImage({
 
 The following provider options are available:
 
-- **steps** _number_
+- **steps** *number*
 
   Number of generation steps. Higher values can improve quality.
 
-- **guidance** _number_
+- **guidance** *number*
 
   Guidance scale for image generation.
 
-- **negative_prompt** _string_
+- **negative\_prompt** *string*
 
   Negative prompt to guide what to avoid.
 
-- **disable_safety_checker** _boolean_
+- **disable\_safety\_checker** *boolean*
 
   Disable the safety checker for image generation.
   When true, the API will not reject images flagged as potentially NSFW.
@@ -182,10 +184,8 @@ The following provider options are available:
 
 Together AI supports image editing through FLUX Kontext models. Pass input images via `prompt.images` to transform or edit existing images.
 
-<Note>
-  Together AI does not support mask-based inpainting. Instead, use descriptive
-  prompts to specify what you want to change in the image.
-</Note>
+Together AI does not support mask-based inpainting. Instead, use descriptive
+prompts to specify what you want to change in the image.
 
 #### Basic Image Editing
 
@@ -229,19 +229,26 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`,
-  base64-encoded strings, or URLs. Together AI only supports a single input
-  image per request.
-</Note>
+Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`,
+base64-encoded strings, or URLs. Together AI only supports a single input
+image per request.
 
 #### Supported Image Editing Models
 
-| Model                                  | Description                        |
-| -------------------------------------- | ---------------------------------- |
-| `black-forest-labs/FLUX.1-kontext-pro` | Production quality, balanced speed |
-| `black-forest-labs/FLUX.1-kontext-max` | Maximum image fidelity             |
-| `black-forest-labs/FLUX.1-kontext-dev` | Development and experimentation    |
+| Model                                  | Description                                             |
+| -------------------------------------- | ------------------------------------------------------- |
+| `black-forest-labs/FLUX.1-kontext-pro` | Production quality, balanced speed                      |
+| `black-forest-labs/FLUX.1-kontext-max` | Maximum image fidelity                                  |
+| `black-forest-labs/FLUX.1-kontext-dev` | Development and experimentation                         |
+| `black-forest-labs/FLUX.2-pro`         | High fidelity single-image editing                      |
+| `black-forest-labs/FLUX.2-flex`        | Single-image editing with adjustable steps and guidance |
+
+`supportsFileInputs` reports `true` for these models and `supportsMaskInputs`
+reports `false`. The provider sends the first standardized image input as
+`image_url`. FLUX.2 Dev and `google/gemini-3-pro-image` require `reference_images`,
+which this mapping does not send, so their standardized file-input capability is
+`false`. Unrecognized model IDs report `undefined` (unknown), including IDs under
+a known provider namespace.
 
 ### Model Capabilities
 
@@ -263,11 +270,9 @@ Together.ai image models support various image dimensions that vary by model. Co
 | `black-forest-labs/FLUX.1-kontext-max`     |
 | `black-forest-labs/FLUX.1-kontext-dev`     |
 
-<Note>
-  Please see the [Together.ai models
-  page](https://docs.together.ai/docs/serverless-models#image-models) for a full
-  list of available image models and their capabilities.
-</Note>
+Please see the [Together.ai models
+page](https://docs.together.ai/docs/serverless-models#image-models) for a full
+list of available image models and their capabilities.
 
 ## Embedding Models
 
@@ -292,10 +297,8 @@ const { embedding } = await embed({
 | `Alibaba-NLP/gte-modernbert-base`         | 768        | 8192       |
 | `intfloat/multilingual-e5-large-instruct` | 1024       | 514        |
 
-<Note>
-  For a complete list of available embedding models, see the [Together.ai models
-  page](https://docs.together.ai/docs/serverless-models#embedding-models).
-</Note>
+For a complete list of available embedding models, see the [Together.ai models
+page](https://docs.together.ai/docs/serverless-models#embedding-models).
 
 ## Reranking Models
 
@@ -362,7 +365,7 @@ const { ranking } = await rerank({
 
 The following provider options are available:
 
-- **rankFields** _string[]_
+- **rankFields** *string\[]*
 
   Array of field names to use for ranking when documents are JSON objects. If not specified, all fields are used.
 
@@ -372,53 +375,10 @@ The following provider options are available:
 | ------------------------------------- |
 | `mixedbread-ai/Mxbai-Rerank-Large-V2` |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

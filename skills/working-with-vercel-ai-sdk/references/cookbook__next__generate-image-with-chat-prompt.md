@@ -1,10 +1,20 @@
 ---
+title: Generate Image with Chat Prompt
+description: Learn how to generate an image with a chat prompt using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/generate-image-with-chat-prompt"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - chat
+  - image generation
+  - tools
 source: "https://ai-sdk.dev/cookbook/next/generate-image-with-chat-prompt.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e1837e9c717b8b62bdd14fdf905a994a5171a6e3ccee68e6cdf26eac875314fa"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "cf325f9bb196e8af4999e56b60cf5854484633caebbf87dda600f939827d0636"
 ---
 
-# Generate Image with Chat Prompt
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When building a chatbot, you may want to allow the user to generate an image. This can be done by creating a tool that generates an image using the [`generateImage`](/docs/reference/ai-sdk-core/generate-image) function from the AI SDK.
 
@@ -12,7 +22,8 @@ When building a chatbot, you may want to allow the user to generate an image. Th
 
 Let's create an endpoint at `/api/chat` that generates the assistant's response based on the conversation history. You will also define a tool called `generateImage` that will generate an image based on the assistant's response.
 
-```typescript filename='tools/generate-image.ts'
+```typescript title='tools/generate-image.ts'
+import { openai } from '@ai-sdk/openai';
 import { generateImage, tool } from 'ai';
 import z from 'zod';
 
@@ -32,7 +43,7 @@ export const generateImageTool = tool({
 });
 ```
 
-```typescript filename='app/api/chat/route.ts'
+```typescript title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -67,17 +78,15 @@ export async function POST(request: Request) {
 }
 ```
 
-<Note>
-  In production, you should save the generated image to a blob storage and
-  return a URL instead of the base64 image data. If you don't, the base64 image
-  data will be sent to the model which may cause the generation to fail.
-</Note>
+In production, you should save the generated image to a blob storage and
+return a URL instead of the base64 image data. If you don't, the base64 image
+data will be sent to the model which may cause the generation to fail.
 
 ## Client
 
 Let's create a simple chat interface with `useChat`. You will call the `/api/chat` endpoint to generate the assistant's response. If the assistant's response contains a `generateImage` tool invocation, you will display the tool result (the image in base64 format and the prompt) using the Next `Image` component.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -173,31 +182,10 @@ export default function Chat() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

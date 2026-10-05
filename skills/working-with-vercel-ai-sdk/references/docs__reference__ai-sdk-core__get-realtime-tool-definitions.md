@@ -1,15 +1,17 @@
 ---
+title: experimental_getRealtimeToolDefinitions
+description: API reference for experimental_getRealtimeToolDefinitions.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-realtime-tool-definitions"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-realtime-tool-definitions.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "46288eeefcc402347f4eec3d4cd4aa1f119446d1f6232a84c9e2276b7f241412"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c88392e6f39f77f9153273f5f7c850e8d7e0a887f00d7da12995fc63120ea3f5"
 ---
 
-# `experimental_getRealtimeToolDefinitions()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  `experimental_getRealtimeToolDefinitions` is part of the experimental realtime
-  API.
-</Note>
+`experimental_getRealtimeToolDefinitions` is part of the experimental realtime
+API.
 
 Converts an AI SDK `ToolSet` into provider-neutral realtime tool definitions
 that can be passed to a realtime session setup request.
@@ -45,44 +47,18 @@ const token = await openai.experimental_realtime.getToken({
 
 ## Import
 
-<Snippet
-  text={`import { experimental_getRealtimeToolDefinitions } from "ai"`}
-  prompt={false}
-/>
+```
+import { experimental_getRealtimeToolDefinitions } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'options',
-      type: 'Object',
-      description: 'The options for converting tools.',
-      properties: [
-        {
-          type: 'Object',
-          parameters: [
-            {
-              name: 'tools',
-              type: 'ToolSet',
-              description:
-                'The AI SDK tools to expose to the realtime model. Function and dynamic tools are converted to realtime function definitions. Provider tools are skipped.',
-            },
-            {
-              name: 'toolsContext',
-              type: 'InferToolSetContext<TOOLS>',
-              isOptional: true,
-              description:
-                'Per-tool context used when resolving dynamic tool descriptions.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `options` (`Object`): The options for converting tools.
+  - `Object`
+    - `tools` (`ToolSet`): The AI SDK tools to expose to the realtime model. Function and dynamic tools are converted to realtime function definitions. Provider tools are skipped.
+    - `toolsContext?` (`InferToolSetContext<TOOLS>`): Per-tool context used when resolving dynamic tool descriptions.
 
 ### Returns
 
@@ -90,31 +66,10 @@ A `Promise<Experimental_RealtimeToolDefinition[]>`.
 
 Each returned definition contains:
 
-<PropertiesTable
-  content={[
-    {
-      name: 'type',
-      type: "'function'",
-      description: 'The realtime tool definition type.',
-    },
-    {
-      name: 'name',
-      type: 'string',
-      description: 'The tool name from the input ToolSet.',
-    },
-    {
-      name: 'description',
-      type: 'string | undefined',
-      description: 'The tool description sent to the realtime model.',
-    },
-    {
-      name: 'parameters',
-      type: 'JSONSchema7',
-      description:
-        'The JSON schema converted from the tool inputSchema. The realtime model uses this schema to generate tool call arguments.',
-    },
-  ]}
-/>
+- `type` (`'function'`): The realtime tool definition type.
+- `name` (`string`): The tool name from the input ToolSet.
+- `description` (`string | undefined`): The tool description sent to the realtime model.
+- `parameters` (`JSONSchema7`): The JSON schema converted from the tool inputSchema. The realtime model uses this schema to generate tool call arguments.
 
 ## Notes
 
@@ -126,70 +81,10 @@ Each returned definition contains:
 - Dynamic tool descriptions are resolved with the matching value from
   `toolsContext` before the definitions are returned.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -13,8 +13,8 @@ related:
 summary: Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "faa49374bd4cba167b57b41082cebb27f3ed4869b5af65e858265608934146a7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a022b459e6b1c547ad15396f3775442f8ff72fa8d3ce7d6ad624e662c8caabd1"
 ---
 
 # Cleaning up after a full rollout
@@ -27,13 +27,15 @@ Once a feature is stable and the flag has been enabled in all environments for a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related)
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
-- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md](/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Fclean-up-after-rollout&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

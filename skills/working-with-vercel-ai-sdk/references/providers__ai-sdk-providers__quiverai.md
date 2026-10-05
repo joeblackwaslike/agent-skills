@@ -1,10 +1,14 @@
 ---
+title: QuiverAI
+description: Learn how to use QuiverAI models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "4ac088a594537efd260ec627e2d756fbda7125e8dbf2ce2efd867b82553237f6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "37d39341d708770921c2262656f077f9a9c534b851bdacfddcec9d619f3ce8a3"
 ---
 
-# QuiverAI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [QuiverAI](https://quiver.ai/) provides Arrow language models that can reason about and create SVG documents, plus native SVG generation, vectorization, editing, and animation endpoints. The AI SDK provider exposes Arrow 2 through `generateText` and `streamText` and exposes image operations through `generateImage`.
 
@@ -12,7 +16,7 @@ sha256: "4ac088a594537efd260ec627e2d756fbda7125e8dbf2ce2efd867b82553237f6"
 
 The QuiverAI provider is available via the `@ai-sdk/quiverai` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/quiverai" />
+**Packages:** `@ai-sdk/quiverai`
 
 ## Provider Instance
 
@@ -38,21 +42,21 @@ const quiverai = createQuiverAI({
 
 You can use the following optional settings to customize the QuiverAI provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.quiver.ai/v1`. It also reads `QUIVERAI_BASE_URL` from the environment.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is sent as a `Bearer` token in the `Authorization` header.
   It defaults to the `QUIVERAI_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -98,8 +102,8 @@ await generateText({
 });
 ```
 
-- **reasoningEffort** _'low' | 'medium' | 'high' | 'xhigh'_
-- **reasoningSummary** _'auto'_
+- **reasoningEffort** *'low' | 'medium' | 'high' | 'xhigh'*
+- **reasoningSummary** *'auto'*
 
 The provider does not request encrypted reasoning. During tool loops it replays
 the full conversation, matching tool calls and results, and opaque reasoning
@@ -207,6 +211,12 @@ QuiverAI supports the following Arrow models:
 | `arrow-1.1`     | Improved text-to-SVG model. Accepts up to 4 reference images.                                                                     |
 | `arrow-1.1-max` | Higher quality variant with extended context. Accepts up to 16 reference images.                                                  |
 
+All models in this table advertise `supportsFileInputs: true` and
+`supportsMaskInputs: false`. Other model IDs leave both capabilities unknown.
+File-input support includes reference images for generation; SVG editing and
+animation still require the corresponding `providerOptions.quiverai.operation`,
+supported input formats, and access to that operation for your API key.
+
 ### Provider Options
 
 You can fine-tune the request using `providerOptions.quiverai`:
@@ -233,35 +243,35 @@ await generateImage({
 
 Supported options:
 
-- **operation** _'generate' | 'vectorize' | 'edit' | 'animate'_
+- **operation** *'generate' | 'vectorize' | 'edit' | 'animate'*
 
   Choose between text-to-SVG generation (`generate`, default), image-to-SVG vectorization (`vectorize`), SVG editing (`edit`), and SVG animation (`animate`).
 
-- **instructions** _string_
+- **instructions** *string*
 
   Extra style guidance for prompt-based generation. This option is not used as the SVG edit instruction; use `prompt.text` for editing.
 
-- **reasoningEffort** _'low' | 'medium' | 'high' | 'xhigh'_
+- **reasoningEffort** *'low' | 'medium' | 'high' | 'xhigh'*
 
   Reasoning effort for generation, vectorization, or editing. When omitted, QuiverAI uses its default.
 
-- **attributes** _object_
+- **attributes** *object*
 
   Requested SVG root attributes. Supports `viewBox` with numeric `minX`, `minY`, and positive `width` and `height`. This is separate from the unsupported `size` and `aspectRatio` options.
 
-- **temperature** _number_ (0-2)
+- **temperature** *number* (0-2)
 
   Sampling temperature.
 
-- **topP** _number_ (0-1)
+- **topP** *number* (0-1)
 
   Nucleus sampling top-p value.
 
-- **presencePenalty** _number_ (-2 to 2)
+- **presencePenalty** *number* (-2 to 2)
 
   Presence penalty.
 
-- **maxOutputTokens** _number_
+- **maxOutputTokens** *number*
 
   Maximum number of output tokens. Arrow 2 and Arrow 2 Telos accept 1-65536. The provider retains its legacy validation bound of 131072 for other model IDs; the API may enforce a lower model-specific limit.
 
@@ -269,23 +279,23 @@ Supported options:
 
   Up to four optional reference images for SVG editing. URL references must use HTTP or HTTPS. Base64 references must decode to PNG, JPEG, WebP, GIF, or SVG data. Use `prepareQuiverAIImageReference` to convert binary, data URL, or URL inputs into this JSON-safe provider option shape.
 
-- **maxReviewSteps** _number_ (0-5)
+- **maxReviewSteps** *number* (0-5)
 
   Maximum number of edit review and redo steps after the initial edit.
 
-- **orchestratorMaxOutputTokens** _number_ (1-65536)
+- **orchestratorMaxOutputTokens** *number* (1-65536)
 
   Optional provider orchestrator token budget for SVG editing.
 
-- **shallowMaxOutputTokens** _number_ (1-65536)
+- **shallowMaxOutputTokens** *number* (1-65536)
 
   Optional provider shallow edit token budget for SVG editing.
 
-- **autoCrop** _boolean_
+- **autoCrop** *boolean*
 
   When vectorizing, automatically crop the input image. Only used with `operation: 'vectorize'`.
 
-- **targetSize** _number_ (128-4096)
+- **targetSize** *number* (128-4096)
 
   When vectorizing, target canvas size in pixels. Only used with `operation: 'vectorize'`.
 
@@ -435,53 +445,10 @@ Arrow 2 models return measured token counts in `result.usage`. Fixed-credit mode
 
 Model availability and supported operations depend on your organization and API key permissions. Consult QuiverAI's [model catalog](https://docs.quiver.ai/developers/models) for current capabilities and billing.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

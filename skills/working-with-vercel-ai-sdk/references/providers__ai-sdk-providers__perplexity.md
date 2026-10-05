@@ -1,10 +1,14 @@
 ---
+title: Perplexity
+description: "Learn how to use Perplexity's Agent API with the AI SDK."
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "b91cd35f7b83c194c3d9df537c8efe40e11dc65be477e88ca2429faf9b40dc03"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b61822d499e277e4fab8ac06e2d906ab008168bbf49e36883f9bb26d9f1406f6"
 ---
 
-# Perplexity Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Perplexity](https://www.perplexity.ai) provider offers access to the
 [Agent API](https://docs.perplexity.ai/docs/agent-api/quickstart). The Agent API
@@ -16,7 +20,7 @@ API keys can be obtained from the [Perplexity Platform](https://docs.perplexity.
 
 The Perplexity provider is available via the `@ai-sdk/perplexity` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/perplexity" />
+**Packages:** `@ai-sdk/perplexity`
 
 ## Provider Instance
 
@@ -38,21 +42,21 @@ const perplexity = createPerplexity({
 
 You can use the following optional settings to customize the Perplexity provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls.
   The default prefix is `https://api.perplexity.ai`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `PERPLEXITY_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -71,8 +75,13 @@ const { text } = await generateText({
 ```
 
 The Agent API provides the `fast`, `low`, `medium`, `high`, and `xhigh`
-presets. You can also pass an Agent API model ID directly, such as
-`perplexity/sonar`.
+presets. To select a model directly, pass its Agent API model ID, for example
+`perplexity('perplexity/sonar')`.
+
+These examples call Perplexity directly using `PERPLEXITY_API_KEY`. Passing a
+plain model string such as `model: 'perplexity/sonar'` to `generateText` or
+`streamText` uses the [AI Gateway](/providers/ai-sdk-providers/ai-gateway),
+which has its own model catalog and authentication.
 
 Version 5 uses the Agent API exclusively. Legacy Sonar model IDs and provider
 options are not mapped; see [Migrating from v4 Sonar to v5 Agent
@@ -201,32 +210,32 @@ console.log(result.providerMetadata);
 
 The following Agent API options are available:
 
-- **instructions** _string_
+- **instructions** *string*
 
   Top-level instructions for the Agent API run.
 
-- **tools** _array_
+- **tools** *array*
 
   Native Agent API tools and their configuration.
 
-- **models** _string[]_
+- **models** *string\[]*
 
   A fallback model list for Agent API routing.
 
-- **max_steps** _number_
+- **max\_steps** *number*
 
   The maximum number of agentic steps.
 
-- **max_tool_calls** _number_
+- **max\_tool\_calls** *number*
 
   The maximum number of native tool calls. Setting this to `0` disables all
   preset tools.
 
-- **previous_response_id** _string_
+- **previous\_response\_id** *string*
 
   Continue a conversation from an earlier Agent API response.
 
-- **store** _boolean_
+- **store** *boolean*
 
   Whether the response can be retrieved later. Setting `store: false` hides it
   from retrieval; it does not disable persistence, and the response can still
@@ -234,24 +243,22 @@ The following Agent API options are available:
   [conversation state documentation](https://docs.perplexity.ai/docs/agent-api/conversation-state)
   for retention behavior and account-specific zero data retention restrictions.
 
-- **language_preference** _string_
+- **language\_preference** *string*
 
   Preferred response language as an ISO 639-1 language code.
 
-- **reasoning** _object_
+- **reasoning** *object*
 
   Reasoning configuration. `effort` supports `'minimal'`, `'low'`, `'medium'`,
   `'high'`, and `'xhigh'`.
 
-- **skills** _array_
+- **skills** *array*
 
   Agent API skill configuration.
 
-<Note>
-  See the [Perplexity Agent API
-  documentation](https://docs.perplexity.ai/docs/agent-api/quickstart) for
-  details about native request fields.
-</Note>
+See the [Perplexity Agent API
+documentation](https://docs.perplexity.ai/docs/agent-api/quickstart) for
+details about native request fields.
 
 #### Provider Metadata
 
@@ -276,17 +283,13 @@ parts are not supported.
 
 ### Migrating from v4 Sonar to v5 Agent API
 
-<Note>
-  Version 5 is a breaking migration from Sonar Chat Completions to the Agent
-  API. It does not provide legacy model aliases, translate Sonar provider
-  options, or emit migration warnings at runtime.
-</Note>
+Version 5 is a breaking migration from Sonar Chat Completions to the Agent
+API. It does not provide legacy model aliases, translate Sonar provider
+options, or emit migration warnings at runtime.
 
-<Warning>
-  Perplexity supports Sonar Chat Completions only until September 27, 2026.
-  Upgrade language-generation applications to the Agent API before that date;
-  staying on version 4 does not preserve service after the Sonar shutdown.
-</Warning>
+Perplexity supports Sonar Chat Completions only until September 27, 2026.
+Upgrade language-generation applications to the Agent API before that date;
+staying on version 4 does not preserve service after the Sonar shutdown.
 
 Replace each Sonar model ID with an Agent API preset or direct Agent API model
 ID. These presets are suggested starting points, not equivalent aliases: a
@@ -358,12 +361,10 @@ const { embedding } = await embed({
 });
 ```
 
-<Note>
-  Perplexity returns **quantized** embeddings (not floating point). Values are
-  decoded to numbers — signed `int8` values (default) or packed bits per byte.
-  Compare `base64_int8` embeddings with cosine similarity and `base64_binary`
-  embeddings with Hamming distance.
-</Note>
+Perplexity returns **quantized** embeddings (not floating point). Values are
+decoded to numbers — signed `int8` values (default) or packed bits per byte.
+Compare `base64_int8` embeddings with cosine similarity and `base64_binary`
+embeddings with Hamming distance.
 
 When the API returns a cost breakdown, it is exposed via
 `providerMetadata.perplexity.cost` (`inputCost`, `totalCost`, `currency`):
@@ -399,13 +400,13 @@ const { embedding } = await embed({
 
 The following optional provider options are available for embedding models:
 
-- **dimensions** _number_
+- **dimensions** *number*
 
   The number of dimensions the resulting output embeddings should have.
   Ranges from 128 up to the model's full size (1024 for `0.6b` models, 2560 for
   `4b` models).
 
-- **encodingFormat** _'base64_int8' | 'base64_binary'_
+- **encodingFormat** *'base64\_int8' | 'base64\_binary'*
 
   The quantized encoding format returned by the API. Defaults to `base64_int8`.
 
@@ -420,64 +421,19 @@ The following optional provider options are available for embedding models:
 
 | Model    | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | -------- | ----------- | ----------------- | ---------- | -------------- |
-| `fast`   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `low`    | <Check />   | <Check />         | <Check />  | <Check />      |
-| `medium` | <Check />   | <Check />         | <Check />  | <Check />      |
-| `high`   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `xhigh`  | <Check />   | <Check />         | <Check />  | <Check />      |
+| `fast`   | ✓           | ✓                 | ✓          | ✓              |
+| `low`    | ✓           | ✓                 | ✓          | ✓              |
+| `medium` | ✓           | ✓                 | ✓          | ✓              |
+| `high`   | ✓           | ✓                 | ✓          | ✓              |
+| `xhigh`  | ✓           | ✓                 | ✓          | ✓              |
 
-<Note>
-  Please see the [Perplexity docs](https://docs.perplexity.ai) for detailed API
-  documentation and the latest updates.
-</Note>
+Please see the [Perplexity docs](https://docs.perplexity.ai) for detailed API
+documentation and the latest updates.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

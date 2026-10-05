@@ -1,19 +1,23 @@
 ---
+title: Get started with GPT-5
+description: Get started with GPT-5 using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/gpt-5"
+docs_index: /llms.txt
+tags:
+  - getting-started
 source: "https://ai-sdk.dev/cookbook/guides/gpt-5.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "6cce7ed2174806d8557fe2aa9bd3215248628be1741c509b004deb59785049c6"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3360b391ab9cb12709e3fd4ef5bde76332e6ff98872f234c141fb8948956975c"
 ---
 
-# Get started with OpenAI GPT-5
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 With the [release of OpenAI's GPT-5 model](https://openai.com/index/introducing-gpt-5), there has never been a better time to start building AI applications with advanced capabilities like verbosity control, web search, and native multi-modal understanding.
 
 The [AI SDK](/) is a powerful TypeScript toolkit for building AI applications with large language models (LLMs) like OpenAI GPT-5 alongside popular frameworks like React, Next.js, Vue, Svelte, Node.js, and more.
 
-<Note>
-  This guide covers GPT-5-specific behavior. For current models and examples,
-  see the [OpenAI provider documentation](/providers/ai-sdk-providers/openai).
-</Note>
+This guide covers GPT-5-specific behavior. For current models and examples,
+see the [OpenAI provider documentation](/providers/ai-sdk-providers/openai).
 
 ## OpenAI GPT-5
 
@@ -246,17 +250,19 @@ AI SDK Core can be paired with [AI SDK UI](/docs/ai-sdk-ui/overview), another po
 
 AI SDK UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
 
-With four main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
+With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
 
 Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and OpenAI GPT-5:
 
 In a new Next.js application, first install the AI SDK and the OpenAI provider:
 
-<Snippet text="pnpm install ai @ai-sdk/openai @ai-sdk/react" />
+```
+pnpm install ai @ai-sdk/openai @ai-sdk/react
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import {
   convertToModelMessages,
@@ -285,7 +291,7 @@ export async function POST(req: Request) {
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -340,28 +346,10 @@ Ready to get started? Here's how you can dive in:
 3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) and multi-modal chat at [ai-sdk.dev/cookbook/guides](/cookbook/guides).
 4. Check out ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

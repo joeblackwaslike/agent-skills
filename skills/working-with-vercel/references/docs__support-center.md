@@ -12,13 +12,13 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "1a1824f0a9333aec761026ae3eacb684c36d8a986655363f57d0ef97e9326f0b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dfbef8c6a3d758b3db4a914b07e3a11d2ad42d1452e0d5d9965d6f94d51b723a"
 ---
 
 # Support Center
 
-> **🔒 Permissions Required**: meta.title
+> **Availability**: meta.title is available on all plans
 
 The Vercel Support Center provides a secure and streamlined way for you to submit support cases. The Support Center allows you to create and view all cases, their statuses, and any messages from the Vercel Support team. All cases are securely stored to safeguard your data.
 
@@ -32,13 +32,13 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 - [Support Center is now available for Pro customers](https://vercel.com/changelog/support-center-on-pro?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
 - [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Information on how to get help from Vercel Support through the available channels.
 - [How long does it take to get a response from Vercel Support?](https://vercel.com/kb/guide/vercel-support-queue-time?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Information on how long it might take Vercel Support to respond to your request.
-- [Get support from the dashboard](https://vercel.com/blog/support-form?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
 - [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Get support from the dashboard](https://vercel.com/blog/support-form?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

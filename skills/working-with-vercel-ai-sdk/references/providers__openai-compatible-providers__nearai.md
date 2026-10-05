@@ -1,10 +1,14 @@
 ---
+title: NEAR AI Cloud
+description: Use the NEAR AI Cloud OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "cbebaea96365db1aa4a47c0c03e5f37c399c575737c607a20c4052478f9b3a87"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3a5e41aa157cb0c18c76ce26209a5c214a622c304971e9a20c98aa66ce0b2ec7"
 ---
 
-# NEAR AI Cloud Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [NEAR AI Cloud](https://cloud.near.ai) provides TEE-backed inference through an OpenAI-compatible API. You can use it with the AI SDK through the `@ai-sdk/openai-compatible` module.
 
@@ -12,7 +16,7 @@ sha256: "cbebaea96365db1aa4a47c0c03e5f37c399c575737c607a20c4052478f9b3a87"
 
 The NEAR AI Cloud provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 ## Provider Instance
 
@@ -32,10 +36,8 @@ const nearai = createOpenAICompatible({
 });
 ```
 
-<Note>
-  You can create an API key in [NEAR AI Cloud](https://cloud.near.ai). Make sure
-  to set the `NEARAI_API_KEY` environment variable with your API key.
-</Note>
+You can create an API key in [NEAR AI Cloud](https://cloud.near.ai). Make sure
+to set the `NEARAI_API_KEY` environment variable with your API key.
 
 ## Language Models
 
@@ -99,17 +101,10 @@ for await (const message of result.textStream) {
 
 You can use any supported `modelId` from the NEAR AI Cloud model catalog. Model metadata includes context length, modalities, and whether TEE attestation is supported for that model.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

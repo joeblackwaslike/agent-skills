@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the London, UK (lhr1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/lhr1.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "354240805318431e2872798f00a677c3bdc2ae241d16c729bc2b95bf7f03621a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "47f9acb1445dee7beb1b6b3f5c465d60f3955108114d5777252800bcb13309ae"
 ---
 
 # London, UK (lhr1) pricing
@@ -32,8 +32,8 @@ The table below shows Managed Infrastructure products with pricing specific to t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Flhr1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Flhr1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
 - [Tokyo, Japan \\(hnd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hnd1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Flhr1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Tokyo, Japan \\(hnd1\\) region.
+- [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Flhr1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Flhr1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Flhr1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
@@ -42,7 +42,7 @@ Full cross-link map for this page: [/docs/pricing/regional-pricing/lhr1.graph.md
 
 > **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).
 
-The **Included** column shows the amount of usage covered in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice). If you use more than this amount, the **Additional** column lists the rates for any extra usage.
+The **On-demand (Billing Cycle)** column shows the rate for each resource in this region. For resources that include usage in your [billing cycle](/docs/pricing/understanding-my-invoice#understanding-your-invoice), the column lists the included amount first, followed by the rate for any usage above that amount.
 
 > **💡 Note:** Vercel prices [Vercel Sandbox](/docs/sandbox) compute by region too. Its rates
 > live on a separate page because Sandbox runs in fewer regions than the
@@ -52,14 +52,14 @@ The **Included** column shows the amount of usage covered in your [billing cycle
 | Resource | On-demand (Billing Cycle) |
 | --- | --- |
 | [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) | $0.15 per 1 GB |
-| [Edge Requests](/docs/manage-cdn-usage#edge-requests) | $2.40 per 1,000,000 Requests |
+| [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $2.40 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.80 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.48 per 1,000,000 Read Units |
 | [Runtime Cache Writes](/docs/caching/runtime-cache) | $4.80 per 1,000,000 Write Units |
 | [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.48 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.890784 per 1,000,000 Operations |
-| [Edge Requests - Additional CPU Duration](/docs/manage-cdn-usage#edge-request-cpu-duration) | $0.36 per 1 Hour |
+| [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.36 per 1 Hour |
 | [Fluid Active CPU](/docs/functions/usage-and-pricing#active-cpu) | $0.177 per Hour |
 | [Fluid Provisioned Memory](/docs/functions/usage-and-pricing#provisioned-memory) | $0.0146 per GB-hr |
 | [Image Optimization Transformation](/docs/image-optimization/limits-and-pricing#image-transformations) | $0.0622 per 1K |

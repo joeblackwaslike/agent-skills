@@ -1,24 +1,26 @@
 ---
+title: Claude Code
+description: Learn how to use the Claude Code harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1f5e62d4b6d0bff59d372b442f3e8b68a66f671c8f0830cdca955c1225d6c983"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "55bb002a6a4e0a03ab55ae5eda353997bbe9364801d8b3a65520e9324d7a048c"
 ---
 
-# Claude Code Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Claude Code harness adapter connects `HarnessAgent` to Claude Code through
 `@anthropic-ai/claude-agent-sdk`. The adapter runs a bridge inside the sandbox
 and streams Claude Code events back to the host over a sandbox-exposed
 WebSocket.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-claude-code`, `@ai-sdk/sandbox-vercel`
 
 The adapter bootstraps the Claude Code bridge dependencies inside the sandbox
 when the first session starts.
@@ -107,6 +109,10 @@ Settings:
   the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
 - `maxTurns`: maximum internal turns before yielding.
+- `agentProgressSummaries`: enables periodic AI-generated summaries for running
+  sub-agents. Summaries are available on raw `task_progress` stream parts.
+- `forwardSubagentText`: forwards sub-agent text and thinking messages as raw
+  stream parts, in addition to the tool activity forwarded by default.
 - `env`: environment variables for the Claude Code process. Values are merged
   over the sandbox bridge process environment and take precedence.
 - `thinking`: extended-thinking configuration. `type` can be `enabled`,
@@ -217,20 +223,10 @@ Claude Code supports built-in tool approval requests when `permissionMode` is
 - [Harness tools](/docs/ai-sdk-harnesses/tools)
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

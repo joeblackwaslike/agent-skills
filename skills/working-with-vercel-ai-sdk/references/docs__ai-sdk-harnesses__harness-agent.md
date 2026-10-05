@@ -1,10 +1,14 @@
 ---
+title: HarnessAgent
+description: Create and run AI SDK HarnessAgent sessions.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "635458c0e1eb225c7e19aa3247ed730f3e92178f228909aedf4040c62f4dbca3"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "067f912f1dfb4e00dfc2d844752e89f6dde36af1972b6a8e48acfd5411287a9d"
 ---
 
-# HarnessAgent
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `HarnessAgent` is an AI SDK `Agent` implementation backed by a harness adapter.
 It gives you `generate()` and `stream()` methods that return AI SDK-compatible
@@ -14,7 +18,7 @@ results while a preconfigured harness powers these results.
 
 Install the core harness package, a harness adapter, and a sandbox adapter:
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-claude-code`, `@ai-sdk/sandbox-vercel`
 
 Bridge-backed harnesses such as Claude Code and Codex require using real network sandbox
 like `@ai-sdk/sandbox-vercel`. Host-runtime harnesses such as Pi can also run with
@@ -139,6 +143,39 @@ Harness runtimes execute their built-in tools internally. For those tools,
 lifecycle after the runtime reports the result. The callbacks are still
 delivered before the tool result is published to the result stream.
 
+## Runtime Context
+
+Set `runtimeContext` on `HarnessAgent` to make application context available to
+every turn. Use `prepareCall` to replace it for each new prompt turn. The
+prepared context is available through `generate()` and `stream()` and remains
+the same during in-memory continuations with `continueGenerate()` and
+`continueStream()`. Lifecycle callbacks receive the full context, and it is
+also available on each result's `finalStep.runtimeContext`.
+
+```ts
+const agent = new HarnessAgent({
+  harness: claudeCode,
+  runtimeContext: {
+    conversationId: 'conversation-123',
+    userId: 'user-456',
+  },
+  telemetry: {
+    includeRuntimeContext: {
+      conversationId: true,
+    },
+  },
+  onEnd: ({ runtimeContext }) => {
+    console.log(runtimeContext.userId);
+  },
+});
+```
+
+Runtime context is excluded from telemetry by default. Use
+`telemetry.includeRuntimeContext` to allowlist individual top-level properties;
+only properties set to `true` are sent to telemetry integrations. Lifecycle
+callbacks and results still receive the full context, so avoid storing secrets
+that those consumers should not access.
+
 ## Generate Structured Output
 
 Set `output` when constructing `HarnessAgent` to require the same typed output
@@ -207,6 +244,30 @@ This is different from model calls, where the application usually sends the full
 message history. In chat routes, persist and resume the harness session instead
 of relying on message replay.
 
+### Reading the Runtime's Own History
+
+The runtime's conversation can grow outside your process — the same
+conversation continued interactively in the agent's own CLI, for instance —
+and the live event stream never sees those exchanges. Adapters that can reach
+their runtime's store expose them through `session.readHistory()`:
+
+```ts
+const { messages, cursor } = await session.readHistory();
+// Messages use role/content shapes. Adapter-specific details, including the
+// runtime's raw record, are available under harnessMetadata.
+
+// Later: read only what was recorded since.
+const delta = await session.readHistory({ since: cursor });
+```
+
+History reads are adapter-specific; see the adapter capability table before
+calling this method.
+`readHistory()` throws `HarnessCapabilityUnsupportedError` when the adapter
+does not implement history reads, and `HarnessHistoryUnavailableError` when it
+does but cannot reach the runtime's store from this environment (for example,
+the store lives inside a remote sandbox). A conversation with no recorded
+messages yet is not an error; it resolves to an empty `messages` array.
+
 ## Session Lifecycle
 
 End every session explicitly:
@@ -228,7 +289,7 @@ HTTP routes that need multi-turn continuity.
 ## Change Settings Between Turns
 
 Use `callOptionsSchema` and `prepareCall` to derive `model`, `skills`,
-`instructions`, and `tools` for each new turn. This follows the same
+`instructions`, `tools`, and `runtimeContext` for each new turn. This follows the same
 call-options pattern as `ToolLoopAgent`:
 
 ```ts
@@ -254,6 +315,7 @@ const agent = new HarnessAgent({
     ...call,
     model: options.useCheaperModel ? 'claude-haiku-4-5' : undefined,
     instructions: `Work as the ${options.area} specialist.`,
+    runtimeContext: { area: options.area },
     skills: [options.area === 'frontend' ? frontendSkill : backendSkill],
     tools: options.enablePolicyTool ? { getPolicy } : undefined,
   }),
@@ -391,6 +453,7 @@ const session = await agent.createSession({
   sandboxSession,
   // Rebind this when the suspended turn used host-only tool context:
   toolsContext,
+  runtimeContext,
 });
 
 const result = await agent.continueStream({ session });
@@ -399,10 +462,12 @@ const result = await agent.continueStream({ session });
 Use `continueStream()` for incremental output, or `continueGenerate()` to drain
 the continued turn and return a `GenerateTextResult`.
 
-`toolsContext` is intentionally not stored in continuation state because it can
-contain credentials or non-serializable host objects. When a suspended turn
-used static or `prepareCall`-derived tool context, pass the same per-tool map to
-`createSession` to rebind it in the process that continues the turn.
+`toolsContext` and `runtimeContext` are intentionally not stored in
+continuation state because they can contain credentials or non-serializable
+host objects. When a suspended turn used context derived by `prepareCall`,
+pass the same values to `createSession` to rebind them in the process that
+continues the turn. After a process resume without rebinding, the continuation
+uses the agent's constructor-level `runtimeContext` and `toolsContext`.
 
 ## Stop After a Harness Step
 
@@ -482,9 +547,10 @@ const agent = new HarnessAgent({
 ```
 
 `workDir` is optional. When provided, it must be relative to the sandbox's
-default working directory and is used as the session working directory. When
-omitted, regular sessions use the default `<harnessId>-<sessionId>` directory,
-while `onBootstrap` receives the sandbox's default working directory.
+default working directory and is used as the session working directory. Set it
+to `'.'` to use the sandbox's default working directory itself. When omitted,
+regular sessions use the default `<harnessId>-<sessionId>` directory, while
+`onBootstrap` receives the sandbox's default working directory.
 
 ## Prepare Reusable Sandboxes
 
@@ -556,6 +622,8 @@ supplied, their values must match.
 - `stopWhen`: condition(s) for finishing a result slice after a completed
   harness tool step that can continue into another model step.
 - `tools`: AI SDK tools executed by the host when the harness calls them.
+- `runtimeContext`: application context forwarded to lifecycle callbacks and
+  results for every turn; `prepareCall` can replace it for a new prompt turn.
 - `activeTools`: allowlist of built-in and host-executed tools the harness can
   call.
 - `inactiveTools`: denylist of built-in and host-executed tools the harness
@@ -564,7 +632,9 @@ supplied, their values must match.
 - `permissionMode`: built-in tool permission mode.
 - `toolApproval`: approval status map for host-executed tools.
 - `sandboxConfig`: sandbox working-directory and lifecycle hook configuration.
-- `telemetry`, `debug`, and `onLog`: observability and diagnostics.
+- `telemetry`, `debug`, and `onLog`: observability and diagnostics. Use
+  `telemetry.includeRuntimeContext` to allowlist runtime context properties for
+  telemetry.
 
 Telemetry reports each turn's resolved model, instructions, and active
 host-defined tools. Skills are adapter context and do not have a corresponding
@@ -680,17 +750,10 @@ try {
   long-running turns.
 - [UI](/docs/ai-sdk-harnesses/ui) for `useChat` integration.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

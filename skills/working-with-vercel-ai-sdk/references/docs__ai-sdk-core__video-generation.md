@@ -1,25 +1,26 @@
 ---
+title: Video Generation
+description: Learn how to generate videos with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "31f1301b090e5264f843b5b9e3c155a1cf2579036fe487c1a6af98a6ec906b22"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0b2e301b5c291b879953329163c925632605274b68dadb83d169f7ff5c119871"
 ---
 
-# Video Generation
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  Video generation is an experimental feature. The API may change in future
-  versions.
-</Note>
+Video generation is an experimental feature. The API may change in future
+versions.
 
 The AI SDK provides the [`experimental_generateVideo`](/docs/reference/ai-sdk-core/generate-video)
 function to generate videos based on a given prompt using a video model.
 
 ```tsx
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
 });
 ```
@@ -38,12 +39,11 @@ const uint8Array = video.uint8Array; // Uint8Array video data
 The aspect ratio is specified as a string in the format `{width}:{height}`.
 Models only support a few aspect ratios, and the supported aspect ratios are different for each model and provider.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
   aspectRatio: '16:9',
 });
@@ -54,12 +54,11 @@ ratio from the input media instead of a fixed value. This is typically required
 for image-to-video, video editing, and video extension, where the output
 inherits the ratio of the input and an explicit ratio is rejected.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: { image: firstFrame, text: 'A cat walking on a treadmill' },
   aspectRatio: 'adaptive',
 });
@@ -70,12 +69,11 @@ const { video } = await generateVideo({
 The resolution is specified as a string in the format `{width}x{height}`.
 Models only support specific resolutions, and the supported resolutions are different for each model and provider.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A serene mountain landscape at sunset',
   resolution: '1280x720',
 });
@@ -85,12 +83,11 @@ const { video } = await generateVideo({
 
 Some video models support specifying the duration of the generated video in seconds.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A timelapse of clouds moving across the sky',
   duration: 5,
 });
@@ -100,12 +97,11 @@ const { video } = await generateVideo({
 
 Some video models allow you to specify the frames per second for the generated video.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A hummingbird in slow motion',
   fps: 24,
 });
@@ -115,12 +111,11 @@ const { video } = await generateVideo({
 
 Some video models can generate audio alongside the video. Use the `generateAudio` option to control this:
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A jazz band playing in a cozy club',
   generateAudio: true,
 });
@@ -130,21 +125,18 @@ const { video } = await generateVideo({
 
 `experimental_generateVideo` supports generating multiple videos at once:
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { videos } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A rocket launching into space',
   n: 3, // number of videos to generate
 });
 ```
 
-<Note>
-  `experimental_generateVideo` will automatically call the model as often as
-  needed (in parallel) to generate the requested number of videos.
-</Note>
+`experimental_generateVideo` will automatically call the model as often as
+needed (in parallel) to generate the requested number of videos.
 
 Each video model has an internal limit on how many videos it can generate in a single API call. The AI SDK manages this automatically by batching requests appropriately when you request multiple videos using the `n` parameter. Most video models only support generating 1 video per call due to computational cost.
 
@@ -152,7 +144,7 @@ If needed, you can override this behavior using the `maxVideosPerCall` setting:
 
 ```tsx
 const { videos } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A rocket launching into space',
   maxVideosPerCall: 2, // Override the default batch size
   n: 4, // Will make 2 calls of 2 videos each
@@ -163,12 +155,11 @@ const { videos } = await generateVideo({
 
 Some video models support generating videos from an input image. You can provide an image using the prompt object:
 
-```tsx highlight={"6-9"}
+```tsx {6-9}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: {
     image: 'https://example.com/my-image.png',
     text: 'Animate this image with gentle motion',
@@ -180,7 +171,7 @@ You can also provide the image as a base64-encoded string or `Uint8Array`:
 
 ```tsx
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: {
     image: imageBase64String, // or imageUint8Array
     text: 'Animate this image',
@@ -194,9 +185,9 @@ Some video models support first-last-frame generation, where you provide the
 starting and/or ending frames of the video. Use the `frameImages` option to pass
 role-tagged images in a provider-agnostic way:
 
-```tsx highlight={"4-13"}
+```tsx {4-13}
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'The cat walks across the scene and transforms into a dog by the end',
   frameImages: [
     {
@@ -217,9 +208,9 @@ Some video models support reference-to-video generation, where you provide one o
 more reference images or videos that the model incorporates into the generated video. Use the `inputReferences` option to pass
 these inputs in a provider-agnostic way:
 
-```tsx highlight={"4-7"}
+```tsx {4-7}
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'The two characters meet in a bustling market',
   inputReferences: [
     'https://example.com/character-1.png',
@@ -230,9 +221,9 @@ const { video } = await generateVideo({
 
 For URL-based video references, use the object form with an explicit `mediaType`:
 
-```tsx highlight={"4-9"}
+```tsx {4-9}
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'Match the motion in the reference clip',
   inputReferences: [
     {
@@ -252,12 +243,11 @@ only image references warn and ignore a video reference).
 You can provide a seed to the `experimental_generateVideo` function to control the output of the video generation process.
 If supported by the model, the same seed will always produce the same video.
 
-```tsx highlight={"7"}
+```tsx {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
   seed: 1234567890,
 });
@@ -270,7 +260,7 @@ You can pass such settings to the `experimental_generateVideo` function
 using the `providerOptions` parameter. The options for the provider
 become request body properties.
 
-```tsx highlight={"8-10"}
+```tsx {8-10}
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { fal } from '@ai-sdk/fal';
 
@@ -290,27 +280,24 @@ const { video } = await generateVideo({
 type [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 that you can use to abort the video generation process or set a timeout.
 
-```ts highlight={"7"}
+```ts {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
   abortSignal: AbortSignal.timeout(60000), // Abort after 60 seconds
 });
 ```
 
-<Note>
-  Video generation typically takes longer than image generation. Consider using
-  longer timeouts (60 seconds or more) depending on the model and video length.
-</Note>
+Video generation typically takes longer than image generation. Consider using
+longer timeouts (60 seconds or more) depending on the model and video length.
 
 ### Polling
 
 Video generation is an asynchronous process that can take several minutes to complete. The SDK automatically polls the provider to check if the video is ready. You can configure the polling behavior:
 
-```tsx highlight={"8-11"}
+```tsx {8-11}
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { fal } from '@ai-sdk/fal';
 
@@ -335,7 +322,7 @@ For models with native webhook support, pass a `webhook` factory that returns a
 public URL and a promise that resolves when your application receives the
 webhook request:
 
-```tsx highlight={"8-15"}
+```tsx {8-15}
 import { fal } from '@ai-sdk/fal';
 import { experimental_generateVideo as generateVideo } from 'ai';
 import { createWebhook } from './create-webhook';
@@ -368,12 +355,11 @@ provided interval and timeout.
 `experimental_generateVideo` accepts an optional `headers` parameter of type `Record<string, string>`
 that you can use to add custom headers to the video generation request.
 
-```ts highlight={"7"}
+```ts {7}
 import { experimental_generateVideo as generateVideo } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { video } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
   headers: { 'X-Custom-Header': 'custom-value' },
 });
@@ -385,7 +371,7 @@ If the model returns warnings, e.g. for unsupported parameters, they will be ava
 
 ```tsx
 const { video, warnings } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A cat walking on a treadmill',
 });
 ```
@@ -418,7 +404,7 @@ When generating multiple videos with `n > 1`, you can also access per-call metad
 
 ```tsx
 const { videos, responses } = await generateVideo({
-  model: __VIDEO_MODEL__,
+  model: "google/veo-3.1-generate-001",
   prompt: 'A rocket launching into space',
   n: 5, // May require multiple API calls
 });
@@ -487,40 +473,10 @@ try {
 
 Above are a small subset of the video models supported by the AI SDK providers. For more, see the respective provider documentation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -14,13 +14,13 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7b43e93ecaff0489e1237ee8947795a1fe5142a89b1310a5f9e32c0c2f435cea"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "49cc81482a1118b12257537c86d9f8ceef33e2361b687e008d33d32689e698c5"
 ---
 
 # Access Groups
 
-> **🔒 Permissions Required**: Access Groups
+> **Availability**: Access Groups are available on Enterprise plans
 
 Access Groups provide a way to manage groups of Vercel users across projects on your team. They are a set of project role assignations, a combination of Vercel users and the projects they work on.
 
@@ -32,11 +32,11 @@ Access Groups provide a way to manage groups of Vercel users across projects on 
 
 - [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Access groups now generally available on Enterprise plans](https://vercel.com/changelog/access-groups-now-generally-available-on-enterprise-plans?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related)
+- [Access Groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — Vercel MCP tools for access groups.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — GET /v1/access-groups — List access groups
 - [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — POST /v1/access-groups — Allows to create an access group
-- [List members of an access group](https://vercel.com/docs/rest-api/access-groups/list-members-of-an-access-group?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=related) — GET /v1/access-groups/{idOrName}/members — List members of an access group
 
 Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rbac/access-groups.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-groups&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -45,7 +45,7 @@ An Access Group consists of one or many projects in a team and assigns project r
 
 Team administrators can apply automatic role assignments for default roles. And for more restricted projects, you can ensure only a subset of users have access to those projects. This gets handled with project-level role-based access control (RBAC).
 
-![Image](`/front/docs/rbac/access-groups-light.png?lightbox`)
+![Example access group relationship diagram](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/access-groups-light.png?lightbox)
 
 ## Create an access group
 

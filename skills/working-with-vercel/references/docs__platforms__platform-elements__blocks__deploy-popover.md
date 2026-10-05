@@ -14,15 +14,15 @@ related:
 summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8111fa2b585e579f73b74f953361c8965845c96b5d9810e0ff8ad537290bf32d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9aa0d32299f0b4c7e94df753cc346c92ddc6585d108db57dc6cea811470ce55d"
 ---
 
 # Deploy Popover
 
 ## Overview
 
-The Deploy Popover component provides a user-friendly popover interface for deploying files to Vercel. It includes real-time deployment status tracking, error handling, and the ability to inspect or visit deployments once they're ready.
+The Deploy Popover component provides a popover interface for publishing a deployment to Vercel. It calls the [Deploy Files action](/docs/platforms/platform-elements/actions/deploy-files), tracks the deployment's status in real time, and links to the deployment once it's ready.
 
 
 <!-- docsgraph:related -->
@@ -31,12 +31,12 @@ The Deploy Popover component provides a user-friendly popover interface for depl
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related)
-- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying with Vercel Drop](https://vercel.com/docs/drop?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/deploy-popover.graph.md](/docs/platforms/platform-elements/blocks/deploy-popover.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Fdeploy-popover&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,14 +55,16 @@ You can also install it with the shadcn CLI:
 npx shadcn@latest add https://registry.platforms.guide/deploy-popover.json
 ```
 
+The block imports `deployFiles` and `getDeploymentStatus` from `../actions/deploy-files`. Install and configure the [Deploy Files action](/docs/platforms/platform-elements/actions/deploy-files) too, including its Vercel client and environment variables.
+
 ## Features
 
-- **One-click deployment**: Simple button interface to trigger deployments
+- **One-click deployment**: A **Publish to Production** button triggers a production deployment
 - **Real-time status tracking**: Monitor deployment progress with live updates
-- **Deployment states**: Clear visual feedback for deploying, building, ready, and error states
-- **Direct deployment access**: Links to inspect deployments during build or visit when ready
-- **Error handling**: Graceful error state management with user feedback
+- **Deployment states**: Visual feedback while the deployment starts, builds, and becomes ready
+- **Direct deployment access**: A **View your deployment** button opens the deployment URL in a new tab when it's ready
 - **Automatic polling**: Built-in SWR polling for deployment status updates
+- **Domain and visibility views**: UI for choosing a `.vercel.app` subdomain and public or private visibility, which you connect to your own logic
 
 ## Usage
 
@@ -80,83 +82,72 @@ export default function MyComponent() {
 
 ## Component states
 
-The component manages several deployment states:
+The component renders a **Publish** button that opens the popover, and manages several deployment states:
 
 ### Idle
 
-Initial state before any deployment action. Shows "Deploy to Vercel" button.
+Initial state before any deployment action. Shows the **Publish to Production** button.
 
 ### Deploying
 
-Active deployment in progress. Shows "Inspect Deployment" link.
+The `deployFiles` call is in progress. The button is disabled and shows "Starting deployment..."
 
 ### Polling
 
-Checking deployment status after initial deployment. Shows progress messages like "Building application..." or "Initializing deployment..."
+Checking deployment status after the deployment is created. The button is disabled and shows "Building application...", "Initializing deployment...", or "Checking deployment status..."
 
 ### Ready
 
-Deployment successfully completed. Shows "Visit Deployment" link.
+Deployment successfully completed. Shows the **View your deployment** button.
 
 ### Error
 
-Deployment failed. Shows error message with option to inspect the failed deployment.
+The deployment's `readyState` is `ERROR`. The state carries the message "Your deployment failed.", but the installed block doesn't render it. The button returns to **Publish to Production** so the user can retry. Render `state.message` in the block if you want to show the error.
 
 ## Customization
 
+The block is copied into your project as source code, so you customize it by editing the installed file.
+
 ### Custom files
 
-You can customize the files being deployed by modifying the `files` array:
-
-```tsx filename="deploy-popover.tsx"
-const files = [
-  {
-    file: 'index.html',
-    data: '<h1>Your custom content</h1>',
-  },
-  {
-    file: 'style.css',
-    data: 'body { font-family: system-ui; }',
-  },
-] satisfies InlinedFile[];
-```
+The popover doesn't define the files it deploys. It calls `deployFiles`, and the installed action deploys a hardcoded sample `index.html` file. To deploy different files, edit the action as shown in [Deploy your own files](/docs/platforms/platform-elements/actions/deploy-files#deploy-your-own-files), then pass the files in the popover's `deployFiles` call.
 
 ### Project configuration
 
-Set a specific Vercel project ID for deployments:
-
-```tsx filename="deploy-popover.tsx"
-const [projectId, setProjectId] = useState<string | null>(
-  'your-project-id-here',
-);
-```
+The popover doesn't choose a project. The Deploy Files action deploys to the project in the `DEPLOY_FILES_PROJECT_ID` environment variable, or to a project named after the deployment name when that variable isn't set.
 
 ### Deployment name
 
-Customize the deployment name in the `deployFiles` call:
+Customize the deployment name in the `deployFiles` call inside the block's `useDeployment` hook:
 
 ```tsx filename="deploy-popover.tsx"
-deployFiles(arg.paths, {
-  projectId: arg.projectId ?? undefined,
-  deploymentName: 'your-custom-deployment-name',
-});
+const { trigger: deploy, isMutating: isDeploying } = useSWRMutation(
+  '/api/deploy',
+  () =>
+    deployFiles({
+      deploymentName: 'your-custom-deployment-name',
+    }),
+);
 ```
+
+### Domain and visibility
+
+The **Customize Domain** and **Visibility** views store their values in component state only. The installed block doesn't pass either value to `deployFiles`, and its `handleAddDomain` handler only returns to the main view. To apply the chosen subdomain, pass it to `deployFiles` as the `domain` option, for example by passing `customDomain` into `useDeployment`.
 
 ## Integration with Deploy Files action
 
-This component works seamlessly with the Deploy Files server action:
+The block calls the Deploy Files Server Actions like this:
 
 ```tsx filename="deploy-popover.tsx"
-import { deployFiles, getDeploymentStatus } from '@/actions/deploy-files';
+import { deployFiles, getDeploymentStatus } from '../actions/deploy-files';
 
 // Deploy files to Vercel
-const result = await deployFiles(files, {
-  projectId: projectId ?? undefined,
-  deploymentName: 'platforms-deploy-test',
+const result = await deployFiles({
+  deploymentName: `platforms-deploy-test-${Date.now()}`.toLowerCase(),
 });
 
 // Check deployment status
-const status = await getDeploymentStatus(deploymentId);
+const status = await getDeploymentStatus(result.id);
 ```
 
 ## Polling configuration
@@ -172,11 +163,17 @@ You can adjust these in the `useSWR` configuration:
 ```tsx filename="deploy-popover.tsx"
 const REFRESH_INTERVAL = 10_000; // 10 seconds
 
-useSWR(deploymentId, getDeploymentStatus, {
-  refreshInterval: REFRESH_INTERVAL,
-  errorRetryCount: 3,
-  errorRetryInterval: 2000,
-});
+useSWR(
+  deploymentId ? deploymentId : null,
+  (nonNullDeploymentId) => getDeploymentStatus(nonNullDeploymentId),
+  {
+    refreshInterval: deploymentId ? REFRESH_INTERVAL : 0,
+    revalidateOnFocus: false,
+    shouldRetryOnError: true,
+    errorRetryCount: 3,
+    errorRetryInterval: 2000,
+  },
+);
 ```
 
 ## Related

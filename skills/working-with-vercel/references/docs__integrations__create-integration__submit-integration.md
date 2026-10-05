@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2366d50bc716aec9e1bbb457ebf070b7fa5bf8a06cf0c6f9d3226d5be634dfee"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2285fa470595976ab3a1cfb86b556e048f2e879fc9d24823ceb4957b99e18896"
 ---
 
 # Requirements for listing an Integration
@@ -31,17 +31,16 @@ Defining the content specs helps you create the main cover page of your integrat
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Lean more about when you may need to upgrade your Integration.
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Learn how to implement Partner API endpoints for your Vercel integration
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/submit-integration.graph.md](/docs/integrations/create-integration/submit-integration.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fsubmit-integration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/int-overview-new-light.png)
+![Integration overview page.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/int-overview-new-light.png)
 
 The following requirements are located in the integrations console, separated in logical sections.
 
@@ -54,7 +53,7 @@ The following requirements are located in the integrations console, separated in
 
 This is the integration title which appears on Integration overview. This title should be unique.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/int-name-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/int-name-light.png)
 
 ## URL Slug
 
@@ -74,7 +73,7 @@ https://vercel.com/integrations/<slug>
 
 The name of the integration owner, generally a legal name.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/details-dev-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/details-dev-light.png)
 
 ## Email
 
@@ -107,6 +106,8 @@ The integration tagline on the Marketplace card, and the Integrations overview i
 
 The image displayed in a circle, that appears throughout the dashboard and marketing pages. Like all assets, it will appear in both light and dark mode.
 
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/icon.png)
+
 You must make sure that the images adhere to the following dimensions and aspect ratios:
 
 | Spec Name | Ratio | Size    | Notes                                                            |
@@ -136,7 +137,7 @@ The category of your integration is used to help developers find your integratio
 - Observability
 - Checks
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/details-category-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/details-category-light.png)
 
 ## URLs
 
@@ -150,7 +151,7 @@ The following URLs must be submitted as part of your application:
 
 They are displayed in the Details section of the Marketplace integration page that Vercel users view before they install the integration.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/details-url-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/details-url-light.png)
 
 ## Overview
 
@@ -159,7 +160,7 @@ They are displayed in the Details section of the Marketplace integration page th
 
 This is a long description about the integration. It should describe why and when a user may want to use this integration. Markdown is supported.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/details-overview-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/details-overview-light.png)
 
 ## Additional Information
 
@@ -168,7 +169,7 @@ This is a long description about the integration. It should describe why and whe
 
 Additional steps to install or configure your integrations. Include environment variables and their purpose. Markdown is supported.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/details-add-info-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/details-add-info-light.png)
 
 ## Feature media
 
@@ -180,7 +181,7 @@ These gallery images will appear in both light and dark mode. Avoid long text, a
 
 Also consider the 20% safe zone around the edges of the image by placing the most important content of your images within the bounds. This will ensure that no information is cut when cropped.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/gallery.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/gallery.png)
 
 Your media should adhere to the following dimensions and aspect ratios:
 
@@ -221,7 +222,7 @@ After activation, your integration may collect specific user data based on the s
 - The privacy, security, and integrity of this user data
 - Compliance with [Vercel's Shared Responsibility Model](/docs/security/shared-responsibility#shared-responsibilities)
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/creating/api-scopes-light.png)
+![Select API Scopes for your integration.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/api-scopes-light.png)
 
 Learn more about API scope permissions in the [Extending Vercel](/docs/integrations/install-an-integration/manage-integrations-reference) documentation.
 
@@ -463,7 +464,7 @@ When enabled, integration users can choose a [Global Config](/docs/global-config
 
 When enabled, the integration user can configure a Log Drain for the Native integration. Once the `Delivery Format` is chosen, the integration user can define the Log Drain `Endpoint` and `Headers`, which can be replaced with the environment variables defined by the integration.
 
-![Image](https://vercel.com/docs-assets/static/docs/integrations/log-drains/logdrain-integration-console-settings-light.png)
+![Team and project roles relationship diagram](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/log-drains/logdrain-integration-console-settings-light.png)
 
 ### Checks API
 

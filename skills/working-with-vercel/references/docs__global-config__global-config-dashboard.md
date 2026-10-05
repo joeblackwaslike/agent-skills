@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "745839c8c795e1aa7533475db44f361949ca7ea9b890d2639ad762d3f9a9c473"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "114828e3f218822966ca3ac79aa8ea6e7b679e81f478415866c6b6c9dd93eba7"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -32,10 +32,10 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 - [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
-- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 
 Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -81,13 +81,13 @@ Your Global Config is now ready to be used. You can also [create a Global Config
 
 To view a list of all Global Configs available in your account or team, go to [**Storage**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores\&title=Go+to+Storage) then select **Global Config** from the drop-down.
 
-![Image](https://vercel.com/docs-assets/static/docs/storage/global-config/global-config-view-all-configs-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/global-config-view-all-configs-light.png)
 
 *List of Global Configs in a team account*
 
 In the **Used by** column, you can see in which project(s) the Global Config is used. The right column shows the size of the data contained in the config. To manage the Global Config, its store and tokens, click on the Global Config's row to open the detail page.
 
-![Image](https://vercel.com/docs-assets/static/docs/storage/global-config/config-details-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/config-details-light.png)
 
 *Global Config detail page*
 
@@ -157,7 +157,7 @@ The following snippet is an example of a schema that allows you to set boolean f
 
 ## Managing connected projects
 
-![Image](https://vercel.com/docs-assets/static/docs/storage/global-config/global-config-projects-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/global-config-projects-light.png)
 
 *List of connected projects*
 

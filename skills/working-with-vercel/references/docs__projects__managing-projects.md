@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "09f5b77c86ccc767a87dbfadb0748916c467567e67afad9f60c32a5463ae4867"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b271ea061f147f5ae3b8c2ef5e5aab1f8056a81a993bfbe86793f892026cc8ad"
 ---
 
 # Managing projects
@@ -32,11 +32,11 @@ You can manage your project on Vercel in your project's dashboard. To learn more
 
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
+- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — Vercel MCP tools for projects.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/projects/managing-projects.graph.md](/docs/projects/managing-projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects%2Fmanaging-projects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ To create a [new](/new) project:
 1. On the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), ensure you have selected the correct team from the team switcher.
 2. Click the **Add New…** drop-down button and select **Project**:
 
-![Image](`/docs-assets/static/docs/concepts/projects/add-new-project-light.png`)
+![ Creating a new project from the Vercel dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/add-new-project-light.png)
 
 3. You can either [import from an existing Git repository](/docs/git) or use one of our [templates](/templates). For more information, see our [Getting Started with Vercel](/docs/getting-started-with-vercel).
 4. If you choose to import from a Git repository, you'll be prompted to select the repository you want to deploy.
@@ -119,7 +119,6 @@ async function run() {
         type: 'github',
       },
       installCommand: '<install-command>',
-      name: '<project-name>',
       rootDirectory: '<root-directory>',
     },
   });
@@ -203,7 +202,7 @@ To delete a project:
 2. Open **Settings** in the sidebar.
 3. At the bottom of the **General** page, you’ll see the **Delete Project** section. Click the **Delete** button.
 
-![Image](`/docs-assets/static/docs/concepts/projects/delete-project-light.png`)
+![The Delete Project section.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/delete-project-light.png)
 
 4. In the **Delete Project** dialog, confirm that you'd like to delete the project by entering the project name and prompt. Then, click the **Continue** button.
 

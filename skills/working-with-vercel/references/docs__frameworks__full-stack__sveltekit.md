@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7157dbc0ca1beb769c13a4d67f1113060d3dfe9c7db6529a665cf0ebfb42fa5c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "58aad8b2469305da28ea6fd9fbb4f612078ecdd76c3b625f164bd84ff2c2d72c"
 ---
 
 # SvelteKit on Vercel
@@ -32,14 +32,17 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
+- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
+- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related)
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
+- [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=related) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/sveltekit.graph.md](/docs/frameworks/full-stack/sveltekit.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Ffull-stack%2Fsveltekit&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -75,7 +78,7 @@ The following instructions will guide you through adding the Vercel adapter to y
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @sveltejs/adapter-vercel
+      yarn add @sveltejs/adapter-vercel
       ```
     </Code>
     <Code tab="npm">
@@ -85,7 +88,7 @@ The following instructions will guide you through adding the Vercel adapter to y
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @sveltejs/adapter-vercel
+      bun add @sveltejs/adapter-vercel
       ```
     </Code>
   </CodeBlock>
@@ -207,7 +210,7 @@ export function load(event): PageServerLoad<any> {
     event.request.headers.get('x-vercel-ip-city') ?? 'unknown',
   );
   return {
-    topLevelExample: sleep({ data: "This won't be streamed" }, 2000)
+    topLevelExample: sleep({ data: "This won't be streamed" }, 2000),
     // Stream the location data to the client
     locationData: {
       details: sleep({ ip, city }, 1000),
@@ -238,7 +241,7 @@ export function load(event) {
     event.request.headers.get('x-vercel-ip-city') ?? 'unknown',
   );
   return {
-    topLevelExample: sleep({ data: "This won't be streamed" }, 2000)
+    topLevelExample: sleep({ data: "This won't be streamed" }, 2000),
     // Stream the location data to the client
     locationData: {
       details: sleep({ ip, city }, 1000),
@@ -343,18 +346,14 @@ export function load() {
 ```
 
 ```ts filename="+layout.server.ts" framework=all
-import { LayoutServerLoad } from './types';
+import type { LayoutServerLoad } from './$types';
 import { VERCEL_COMMIT_REF } from '$env/static/private';
 
-type DeploymentInfo = {
-  deploymentGitBranch: string;
-};
-
-export function load(): LayoutServerLoad<DeploymentInfo> {
+export const load: LayoutServerLoad = () => {
   return {
-    deploymentGitBranch: 'Test',
+    deploymentGitBranch: VERCEL_COMMIT_REF,
   };
-}
+};
 ```
 
 You could reference that variable in [a corresponding layout](https://kit.svelte.dev/docs/load#layout-data) as shown below:
@@ -446,7 +445,7 @@ import adapter from '@sveltejs/adapter-vercel';
 
 export default {
   kit: {
-    adapter({
+    adapter: adapter({
       images: {
         sizes: [640, 828, 1200, 1920, 3840],
         formats: ['image/avif', 'image/webp'],
@@ -463,7 +462,7 @@ import adapter from '@sveltejs/adapter-vercel';
 
 export default {
   kit: {
-    adapter({
+    adapter: adapter({
       images: {
         sizes: [640, 828, 1200, 1920, 3840],
         formats: ['image/avif', 'image/webp'],
@@ -571,7 +570,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/analytics
+    yarn add @vercel/analytics
     ```
   </Code>
   <Code tab="npm">
@@ -581,7 +580,7 @@ To track visitors and page views, we recommend first installing our `@vercel/ana
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/analytics
+    bun add @vercel/analytics
     ```
   </Code>
 </CodeBlock>
@@ -676,7 +675,7 @@ Deployments on Vercel automatically secure Draft Mode behind the same authentica
 
 You and your team members can toggle Draft Mode in the Vercel Toolbar in [production](/docs/vercel-toolbar/in-production-and-localhost/add-to-production), [localhost](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost), and [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production#comments). When you do so, the toolbar will become purple to indicate Draft Mode is active.
 
-![Image](`/docs-assets/static/docs/workflow-collaboration/draft-mode/draft-toolbar1-light.png`)
+![The Vercel toolbar when Draft Mode is enabled.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/draft-mode/draft-toolbar1-light.png)
 
 Users outside your Vercel team cannot toggle Draft Mode.
 

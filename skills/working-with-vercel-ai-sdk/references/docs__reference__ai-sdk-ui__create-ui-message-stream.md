@@ -1,16 +1,22 @@
 ---
+title: createUIMessageStream
+description: API Reference for createUIMessageStream.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "01983c8c10f8c798eb12334781f2c1c82abaa97482727cb2432e37b2c9e57b12"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "42433f5779cc44a069e5eaf0ae3c2b7e3f398226d6ceffb1676b783ffe70acc0"
 ---
 
-# `createUIMessageStream`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `createUIMessageStream` function allows you to create a readable stream for UI messages with advanced features like message merging, error handling, and finish callbacks.
 
 ## Import
 
-<Snippet text={`import { createUIMessageStream } from "ai"`} prompt={false} />
+```
+import { createUIMessageStream } from "ai"
+```
 
 ## Example
 
@@ -47,7 +53,7 @@ const stream = createUIMessageStream({
 
     // Merge another stream from streamText
     const result = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       prompt: 'Write a haiku about AI',
     });
 
@@ -63,7 +69,8 @@ const stream = createUIMessageStream({
       }),
     );
   },
-  onError: error => `Custom error: ${error.message}`,
+  onError: error =>
+    `Custom error: ${error instanceof Error ? error.message : String(error)}`,
   originalMessages: existingMessages,
   onEnd: ({ messages, isContinuation, outcome, responseMessage }) => {
     console.log('Stream ended with messages:', messages);
@@ -83,121 +90,25 @@ outcomes and call `setOutcome` once.
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'execute',
-      type: '(options: { writer: UIMessageStreamWriterWithOutcome }) => Promise<void> | void',
-      description:
-        'A function that receives a writer instance and can use it to write UI message chunks to the stream.',
-      properties: [
-        {
-          type: 'UIMessageStreamWriterWithOutcome',
-          parameters: [
-            {
-              name: 'write',
-              type: '(part: UIMessageChunk) => void',
-              description: 'Writes a UI message chunk to the stream.',
-            },
-            {
-              name: 'merge',
-              type: '(stream: ReadableStream<UIMessageChunk>) => void',
-              description:
-                'Merges the contents of another UI message stream into this stream.',
-            },
-            {
-              name: 'setOutcome',
-              type: '(outcome: UIMessageStreamOutcome) => void',
-              description:
-                "Declares the operation-level outcome of the composed stream. The first outcome declared through this method is retained, while fatal execution, merge, error-handling, or downstream processing failures override declarations. Supported statuses are 'completed', 'failed', 'aborted', and 'unknown'. Declaring an outcome does not write a chunk or close the stream.",
-            },
-            {
-              name: 'onError',
-              type: '(error: unknown) => string',
-              description:
-                'Error handler that is used by the stream writer for handling errors in merged streams.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onError',
-      type: '(error: unknown) => string',
-      description:
-        'A function that handles errors and returns an error message string. By default, it returns the error message.',
-    },
-    {
-      name: 'originalMessages',
-      type: 'UIMessage[] | undefined',
-      description:
-        'The original messages. If provided, persistence mode is assumed and a message ID is provided for the response message.',
-    },
-    {
-      name: 'onEnd',
-      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
-      description: 'A callback function that is called when the stream ends.',
-      properties: [
-        {
-          type: 'EndOptions',
-          parameters: [
-            {
-              name: 'messages',
-              type: 'UIMessage[]',
-              description: 'The updated list of UI messages.',
-            },
-            {
-              name: 'isContinuation',
-              type: 'boolean',
-              description:
-                'Indicates whether the response message is a continuation of the last original message, or if a new message was created.',
-            },
-            {
-              name: 'isAborted',
-              type: 'boolean',
-              description: 'Indicates whether the stream was aborted.',
-            },
-            {
-              name: 'isCancelled',
-              type: 'true | undefined',
-              description:
-                'Present and true when the consumer cancelled the stream before an outcome was declared, for example because the client disconnected.',
-            },
-            {
-              name: 'outcome',
-              type: "UIMessageStreamOutcome = { status: 'completed' } | { status: 'failed'; error?: unknown } | { status: 'aborted' } | { status: 'unknown' }",
-              description:
-                "The operation-level outcome of the stream. It reflects the stream owner declaration unless a fatal stream-processing failure occurs, and is separate from model finish reasons and individual error chunks. It remains 'unknown' when the consumer cancels before an outcome is declared; check isCancelled to distinguish that case from normal closure without a declared outcome.",
-            },
-            {
-              name: 'responseMessage',
-              type: 'UIMessage',
-              description:
-                'The message that was sent to the client as a response (including the original message if it was extended).',
-            },
-            {
-              name: 'finishReason',
-              type: 'FinishReason | undefined',
-              description:
-                "The reason why the generation finished. One of: 'stop', 'length', 'content-filter', 'tool-calls', 'error', or 'other'.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'onFinish',
-      type: '(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void',
-      description: 'Deprecated alias for `onEnd`.',
-    },
-    {
-      name: 'generateId',
-      type: 'IdGenerator | undefined',
-      description:
-        'A function to generate unique IDs for messages. Uses the default ID generator if not provided.',
-    },
-  ]}
-/>
+- `execute` (`(options: { writer: UIMessageStreamWriterWithOutcome }) => Promise<void> | void`): A function that receives a writer instance and can use it to write UI message chunks to the stream.
+  - `UIMessageStreamWriterWithOutcome`
+    - `write` (`(part: UIMessageChunk) => void`): Writes a UI message chunk to the stream.
+    - `merge` (`(stream: ReadableStream<UIMessageChunk>) => void`): Merges the contents of another UI message stream into this stream.
+    - `setOutcome` (`(outcome: UIMessageStreamOutcome) => void`): Declares the operation-level outcome of the composed stream. The first outcome declared through this method is retained, while fatal execution, merge, error-handling, or downstream processing failures override declarations. Supported statuses are 'completed', 'failed', 'aborted', and 'unknown'. Declaring an outcome does not write a chunk or close the stream.
+    - `onError` (`(error: unknown) => string`): Error handler that is used by the stream writer for handling errors in merged streams.
+- `onError` (`(error: unknown) => string`): A function that handles errors and returns an error message string. By default, it returns \`"An error occurred."\` so server-side error details are not sent to the client.
+- `originalMessages` (`UIMessage[] | undefined`): The original messages. If provided, persistence mode is assumed and a message ID is provided for the response message.
+- `onEnd` (`(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void`): A callback function that is called when the stream ends.
+  - `EndOptions`
+    - `messages` (`UIMessage[]`): The updated list of UI messages.
+    - `isContinuation` (`boolean`): Indicates whether the response message is a continuation of the last original message, or if a new message was created.
+    - `isAborted` (`boolean`): Indicates whether the stream was aborted.
+    - `isCancelled` (`true | undefined`): Present and true when the consumer cancelled the stream before an outcome was declared, for example because the client disconnected.
+    - `outcome` (`UIMessageStreamOutcome = { status: 'completed' } | { status: 'failed'; error?: unknown } | { status: 'aborted' } | { status: 'unknown' }`): The operation-level outcome of the stream. It reflects the stream owner declaration unless a fatal stream-processing failure occurs, and is separate from model finish reasons and individual error chunks. It remains 'unknown' when the consumer cancels before an outcome is declared; check isCancelled to distinguish that case from normal closure without a declared outcome.
+    - `responseMessage` (`UIMessage`): The message that was sent to the client as a response (including the original message if it was extended).
+    - `finishReason` (`FinishReason | undefined`): The reason why the generation finished. One of: 'stop', 'length', 'content-filter', 'tool-calls', 'error', or 'other'.
+- `onFinish` (`(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void`): Deprecated alias for \`onEnd\`.
+- `generateId` (`IdGenerator | undefined`): A function to generate unique IDs for messages. Uses the default ID generator if not provided.
 
 ### Returns
 
@@ -205,23 +116,10 @@ outcomes and call `setOutcome` once.
 
 A readable stream that emits UI message chunks. The stream automatically handles error propagation, merging of multiple streams, and proper cleanup when all operations are complete.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [useChat](/docs/reference/ai-sdk-ui/use-chat)
-- [useCompletion](/docs/reference/ai-sdk-ui/use-completion)
-- [useObject](/docs/reference/ai-sdk-ui/use-object)
-- [experimental_useRealtime](/docs/reference/ai-sdk-ui/use-realtime)
-- [convertToModelMessages](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-- [pruneMessages](/docs/reference/ai-sdk-ui/prune-messages)
-- [createUIMessageStream](/docs/reference/ai-sdk-ui/create-ui-message-stream)
-- [createUIMessageStreamResponse](/docs/reference/ai-sdk-ui/create-ui-message-stream-response)
-- [pipeUIMessageStreamToResponse](/docs/reference/ai-sdk-ui/pipe-ui-message-stream-to-response)
-- [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
-- [InferUITools](/docs/reference/ai-sdk-ui/infer-ui-tools)
-- [InferUITool](/docs/reference/ai-sdk-ui/infer-ui-tool)
-- [experimental_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
-- [DirectChatTransport](/docs/reference/ai-sdk-ui/direct-chat-transport)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

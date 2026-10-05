@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "64fad3fc553791c74521988cee5a747f53e5b2b2aee05a88aff02b303acd7f1b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8064a2aa911fa055b131debcb11c3690b73f26308b5f3e86f9f5942316faabd6"
 ---
 
 # LiteLLM with AI Gateway
@@ -30,11 +30,12 @@ with LiteLLM to access various AI models and providers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [LiteLLM server now supported on Vercel](https://vercel.com/changelog/litellm-server-now-supported-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related)
+- [What is a Large Language Model \\(LLM\\)?](https://vercel.com/kb/guide/what-is-a-large-language-model?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Learn what Large Language Models \\(LLMs\\) are, how they work, and how you can use them to generate UI, debug code, and i
 - [LlamaIndex with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Use Vercel Sandbox with the agent frameworks, model SDKs, and coding agents you already work with.
 - [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 - [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Learn how to add LMNT connectable account integration with Vercel.
-- [Pydantic AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/litellm.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/litellm.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Flitellm&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

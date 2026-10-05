@@ -1,5 +1,5 @@
 ---
-title: Installations
+title: Connector installations in Vercel Connect
 product: vercel
 url: /docs/connect/concepts/installations
 canonical_url: "https://vercel.com/docs/connect/concepts/installations"
@@ -15,11 +15,11 @@ related:
 summary: Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, each with its own grant.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/installations.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fd2a9e35c711aa6cfca8db469999a7d29c1aa2ea6650750b2205a163ffd09e64"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ed19954064e7b10108951f3806eb0058f27408162698c25fb519b9adeb4a88e0"
 ---
 
-# Installations
+# Connector installations in Vercel Connect
 
 A single connector represents your **integration** with a provider. An **installation** represents a single tenant within that integration, where a tenant is an account on the provider's side: one Slack workspace, one GitHub organization, one Microsoft Entra directory, one Salesforce org. One connector can have many installations, each with its own authorization grant.
 
@@ -30,13 +30,12 @@ A single connector represents your **integration** with a provider. An **install
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related)
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
-- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/connect/concepts/installations.graph.md](/docs/connect/concepts/installations.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Finstallations&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

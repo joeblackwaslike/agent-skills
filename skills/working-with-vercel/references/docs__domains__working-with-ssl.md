@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel uses SSL certification to keep your site secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-ssl.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "7d522158c14602fc4b581b71c385b85fb063abfafde334beae624fbbc80c155c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "caad5d9eea84d96dcb039ece65aeab92612cddc730e3eab7712855c0fa3e023f"
 ---
 
 # Working with SSL Certificates
@@ -32,27 +32,28 @@ An SSL certificate enables encrypted communication between user's browser and yo
 
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related)
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Information on why a Vercel domain may not be verified and how to verify it.
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Pre-Generate SSL Certificates](https://vercel.com/docs/domains/pre-generating-ssl-certs?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — test
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/domains/working-with-ssl.graph.md](/docs/domains/working-with-ssl.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-ssl&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 SSL certificates are issued from a [certificate authority (CA)](# "certificate authority (CA)") for each domain. While it is possible to [create and upload your own custom certificate](/docs/domains/custom-SSL-certificate), Vercel will automatically try to generate a certificate for every domain once it is added to a project, regardless of if it was registered through Vercel or not. However, it will only work once the certificate validation request is successful, which happens once DNS records are added and propagated.
 
-Vercel uses LetsEncrypt for certificates. For all non-wildcard domains, we use the [HTTP-01 challenge method](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) and providing the request can make it to Vercel, then our infrastructure will deal with it.
+Vercel uses Let's Encrypt for certificates. For all non-wildcard domains, we use the [HTTP-01 challenge method](https://letsencrypt.org/docs/challenge-types/#http-01-challenge) and providing the request can make it to Vercel, then our infrastructure will deal with it.
 For wildcard requests, we use the [DNS-01 challenge method](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge). This is why we require nameservers to be with Vercel to use wildcard domains - if the DNS isn't with us, we can't make the DNS record to approve it.
 
 Issuing a certificate happens in the following way:
 
-1. Vercel asks LetsEncrypt for a certificate for that domain and asks how it can prove control of the domain
+1. Vercel asks Let's Encrypt for a certificate for that domain and asks how it can prove control of the domain
 2. Let's Encrypt reviews the domain and issues Vercel with a [challenge](https://letsencrypt.org/docs/challenge-types/) to authorise the certificate to be generated. This is usually in the format of creating a file or DNS record with a particular code.
-3. Vercel creates that file with the code on the HTTP-01 or DNS-01 validation path and tells LetsEncrypt it's done
-4. LetsEncrypt then check to see if the file is there and if they can see the file, they send us the certificate
+3. Vercel completes the challenge by creating the file (HTTP-01) or the DNS record (DNS-01) with that code, and tells Let's Encrypt it's done
+4. Let's Encrypt then checks for the file or DNS record and, if the challenge succeeds, sends Vercel the certificate
 5. Vercel then adds the certificate to our infrastructure and it then starts working on HTTPS
 
 The [/.well-known](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only

@@ -15,8 +15,8 @@ related:
 summary: Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "95f1d153a349d0e44f5436f08ae9057cb66cc749db95f1f13804ad80db49afae"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0c30af3086c6e9580700c21c2a645de6fdbee896517ced35e0b8271f21331296"
 ---
 
 # Troubleshoot project collaboration
@@ -31,10 +31,11 @@ This guide will help you troubleshoot deployment failures related to project col
 
 - [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related)
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,

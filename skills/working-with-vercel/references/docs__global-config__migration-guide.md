@@ -16,8 +16,8 @@ related:
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "b92c1954b195927eace57cdd360f422f55d64cb6a31c5aa7290a35a7baefa88c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9dc70d88f7a70b097d31f17dacdee3f1a394842f0ce99cf960df6cc8c6baa08d"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -38,6 +38,7 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
 - [Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
 - [Vercel Edge Config is now generally available](https://vercel.com/blog/vercel-edge-config-is-now-generally-available?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 
 Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -78,7 +79,7 @@ Use `@vercel/global-config` as a drop-in replacement for `@vercel/edge-config`:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/global-config
+    yarn add @vercel/global-config
     ```
   </Code>
   <Code tab="npm">
@@ -88,7 +89,7 @@ Use `@vercel/global-config` as a drop-in replacement for `@vercel/edge-config`:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/global-config
+    bun add @vercel/global-config
     ```
   </Code>
 </CodeBlock>

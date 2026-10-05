@@ -1,18 +1,22 @@
 ---
+title: Get started with Llama 3.1
+description: Get started with Llama 3.1 using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/llama-3_1"
+docs_index: /llms.txt
+tags:
+  - getting-started
 source: "https://ai-sdk.dev/cookbook/guides/llama-3_1.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "cf0ffbd533e860bca77e24d79c5a9ca4fcc5d94eefc8c4897f548ce91128c7e7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "98ab607a8c37cf9149345f8478a53f0cf6730e7a5a39f8f993203c794397908c"
 ---
 
-# Get started with Llama 3.1
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  The current generation of Llama models is 3.3. Please note that while this
-  guide focuses on Llama 3.1, the newer Llama 3.3 models are now available and
-  may offer improved capabilities. The concepts and integration techniques
-  described here remain applicable, though you may want to use the latest
-  generation models for optimal performance.
-</Note>
+The current generation of Llama models is 3.3. Please note that while this
+guide focuses on Llama 3.1, the newer Llama 3.3 models are now available and
+may offer improved capabilities. The concepts and integration techniques
+described here remain applicable, though you may want to use the latest
+generation models for optimal performance.
 
 With the [release of Llama 3.1](https://ai.meta.com/blog/meta-llama-3-1/), there has never been a better time to start building AI applications.
 
@@ -26,7 +30,8 @@ The release of Meta's Llama 3.1 is an important moment in AI development. As the
 
 Llama 3.1 surpasses most available open-source chat models on common industry benchmarks and even outperforms some closed-source models, offering superior performance in language nuances, contextual understanding, and complex multi-step tasks. The models' refined post-training processes significantly improve response alignment, reduce false refusal rates, and enhance answer diversity, making Llama 3.1 a powerful and accessible tool for building generative AI applications.
 
-![Llama 3.1 Benchmarks](/images/llama-3_1-benchmarks.png)
+<img alt="Llama 3.1 Benchmarks" src={__img0} placeholder="blur" />
+
 Source: [Meta AI - Llama 3.1 Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md)
 
 ## Choosing Model Size
@@ -53,17 +58,15 @@ const { text } = await generateText({
 });
 ```
 
-<Note>
-  Llama 3.1 is available to use with many AI SDK providers including
-  [DeepInfra](/providers/ai-sdk-providers/deepinfra), [Amazon
-  Bedrock](/providers/ai-sdk-providers/amazon-bedrock),
-  [Baseten](/providers/ai-sdk-providers/baseten)
-  [Fireworks](/providers/ai-sdk-providers/fireworks), and more.
-</Note>
+Llama 3.1 is available to use with many AI SDK providers including
+[DeepInfra](/providers/ai-sdk-providers/deepinfra), [Amazon
+Bedrock](/providers/ai-sdk-providers/amazon-bedrock),
+[Baseten](/providers/ai-sdk-providers/baseten)
+[Fireworks](/providers/ai-sdk-providers/fireworks), and more.
 
 AI SDK Core abstracts away the differences between model providers, allowing you to focus on building great applications. Prefer to use [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)? The unified interface also means that you can easily switch between models by changing just two lines of code.
 
-```tsx highlight="2,5"
+```tsx {2,5}
 import { generateText } from 'ai';
 import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 
@@ -195,11 +198,11 @@ AI SDK Core can be paired with [AI SDK UI](/docs/ai-sdk-ui/overview), another po
 
 AI SDK UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
 
-With four main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
+With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
 
 Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and Llama 3.1 (via [DeepInfra](https://deepinfra.com)):
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { deepInfra } from '@ai-sdk/deepinfra';
 import {
   convertToModelMessages,
@@ -226,7 +229,7 @@ export async function POST(req: Request) {
 }
 ```
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -282,7 +285,7 @@ Let's dive into how you can leverage tools with [AI SDK RSC](/docs/ai-sdk-rsc/ov
 
 First, create a Server Action.
 
-```tsx filename="app/actions.tsx"
+```tsx title="app/actions.tsx"
 'use server';
 
 import { streamUI } from '@ai-sdk/rsc';
@@ -318,7 +321,7 @@ In this example, if the model decides to use the `getWeather` tool, it will firs
 
 On the frontend, you can call this Server Action like any other asynchronous function in your application. In this case, the function returns a regular React component.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -378,7 +381,7 @@ const { text } = await generateText({
 Thanks to the unified API, the core structure of the code remains the same. The main differences are:
 
 1. Creating a DeepInfra client
-2. Changing the model name from `openai("gpt-6-astra")` to `deepinfra("meta-llama/Meta-Llama-3.1-70B-Instruct")`.
+2. Changing the model name from `openai("gpt-6-astra")` to `deepInfra("meta-llama/Meta-Llama-3.1-70B-Instruct")`.
 
 With just these few changes, you've migrated from using OpenAI's GPT-6 Astra to Meta's Llama 3.1 hosted on DeepInfra. The `generateText` function and its usage remain identical, showcasing the power of the AI SDK's unified API.
 
@@ -422,28 +425,10 @@ Ready to get started? Here's how you can dive in:
 3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) and multi-modal chat at [ai-sdk.dev/docs/guides](/cookbook/guides).
 4. Check out ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

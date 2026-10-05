@@ -1,10 +1,14 @@
 ---
+title: Helicone
+description: Monitor and optimize your AI SDK applications with minimal configuration using Helicone
+url: "https://ai-sdk.dev/providers/observability/helicone"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/helicone.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "9abd867e4d6c84e47048b3a6ff81b15393721668d8c7123787f44b9889693d15"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "52029b1edc27f40e6233c2cc8461adc0ec1cbb5cc151181c51ee0a1ace3a9533"
 ---
 
-# Helicone Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Helicone](https://helicone.ai) is an open-source LLM observability platform that helps you monitor, analyze, and optimize your AI applications. Built-in observability tracks every request automatically, providing comprehensive insights into performance, costs, user behavior, and model usage without requiring additional instrumentation.
 
@@ -12,14 +16,14 @@ sha256: "9abd867e4d6c84e47048b3a6ff81b15393721668d8c7123787f44b9889693d15"
 
 The Helicone provider is available in the `@helicone/ai-sdk-provider` package. Install it with:
 
-<InstallPackages packages="@helicone/ai-sdk-provider" />
+**Packages:** `@helicone/ai-sdk-provider`
 
 Setting up Helicone:
 
 1. Create a Helicone account at [helicone.ai](https://helicone.ai)
 2. Get your API key from the [Helicone Dashboard](https://us.helicone.ai/settings/api-keys)
 3. Set your API key as an environment variable:
-   ```bash filename=".env"
+   ```bash title=".env"
    HELICONE_API_KEY=your-helicone-api-key
    ```
 4. Use Helicone in your application:
@@ -277,30 +281,10 @@ for await (const chunk of result.textStream) {
 - [Discord Community](https://discord.gg/7aSCGCGUeu)
 - [Supported Models](https://helicone.ai/models)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

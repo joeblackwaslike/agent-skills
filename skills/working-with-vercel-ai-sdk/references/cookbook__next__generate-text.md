@@ -1,22 +1,24 @@
 ---
+title: Generate Text
+description: Learn how to generate text using the AI SDK and Next.js.
+url: "https://ai-sdk.dev/cookbook/next/generate-text"
+docs_index: /llms.txt
+tags:
+  - next
 source: "https://ai-sdk.dev/cookbook/next/generate-text.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "cf65a10e9a761b1ac630d161a84d2470168b200ecd431eaa0ae8e64b4612a43e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3e5c34e6b15216f5fdac0995e934f8f1f5a5b76129149b3ee689fe02e6e273f3"
 ---
 
-# Generate Text
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 A situation may arise when you need to generate text based on a prompt. For example, you may want to generate a response to a question or summarize a body of text. The `generateText` function can be used to generate text based on the input prompt.
-
-<Browser>
-  <TextGeneration />
-</Browser>
 
 ## Client
 
 Let's create a simple React component that will make a POST request to the `/api/completion` endpoint when a button is clicked. The endpoint will generate text based on the input prompt.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -27,7 +29,7 @@ export default function Page() {
 
   return (
     <div>
-      <div
+      <button
         onClick={async () => {
           setIsLoading(true);
 
@@ -45,7 +47,7 @@ export default function Page() {
         }}
       >
         Generate
-      </div>
+      </button>
 
       {isLoading ? 'Loading...' : generation}
     </div>
@@ -57,7 +59,7 @@ export default function Page() {
 
 Let's create a route handler for `/api/completion` that will generate text based on the input prompt. The route will call the `generateText` function from the `ai` module, which will then generate text based on the input prompt and return it.
 
-```typescript filename='app/api/completion/route.ts'
+```typescript title='app/api/completion/route.ts'
 import { generateText } from 'ai';
 
 export async function POST(req: Request) {
@@ -73,35 +75,14 @@ export async function POST(req: Request) {
 }
 ```
 
+***
+
+[View Example on GitHub](https://github.com/vercel/ai/blob/main/examples/next-openai-pages/pages/basics/generate-text/index.tsx)
+
 ---
 
-<GithubLink link="https://github.com/vercel/ai/blob/main/examples/next-openai-pages/pages/basics/generate-text/index.tsx" />
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-## Navigation
-
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
-
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

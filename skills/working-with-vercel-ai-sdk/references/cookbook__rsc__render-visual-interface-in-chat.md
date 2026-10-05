@@ -1,10 +1,17 @@
 ---
+title: Render Visual Interface in Chat
+description: Learn how to generate text using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/render-visual-interface-in-chat"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - generative user interface
 source: "https://ai-sdk.dev/cookbook/rsc/render-visual-interface-in-chat.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e151a8bb991dc48c2143314b9c481bea46296992a2066ccaaa1bfeacc4e79132"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "17b873e7fe73065292e565ccd5926fa6e83cb285b364dad9dbe89e10b7488a48"
 ---
 
-# Render Visual Interface in Chat
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 We've now seen how a language model can call a function and render a component based on a conversation with the user.
 
@@ -12,7 +19,7 @@ When we define multiple functions in [`tools`](/docs/reference/ai-sdk-core/gener
 
 ## Client
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -69,11 +76,12 @@ export default function Home() {
 }
 ```
 
-```tsx filename='components/stock.tsx'
+```tsx title='components/stock.tsx'
 export async function Stock({ symbol, numOfMonths }) {
-  const data = await fetch(
+  const response = await fetch(
     `https://api.example.com/stock/${symbol}/${numOfMonths}`,
   );
+  const data = await response.json();
 
   return (
     <div>
@@ -92,9 +100,12 @@ export async function Stock({ symbol, numOfMonths }) {
 }
 ```
 
-```tsx filename='components/flight.tsx'
+```tsx title='components/flight.tsx'
 export async function Flight({ flightNumber }) {
-  const data = await fetch(`https://api.example.com/flight/${flightNumber}`);
+  const response = await fetch(
+    `https://api.example.com/flight/${flightNumber}`,
+  );
+  const data = await response.json();
 
   return (
     <div>
@@ -109,7 +120,7 @@ export async function Flight({ flightNumber }) {
 
 ## Server
 
-```tsx filename='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
 import { getMutableAIState, streamUI } from '@ai-sdk/rsc';
@@ -204,7 +215,7 @@ export async function continueConversation(
 }
 ```
 
-```typescript filename='app/ai.ts'
+```typescript title='app/ai.ts'
 import { createAI } from '@ai-sdk/rsc';
 import { ServerMessage, ClientMessage, continueConversation } from './actions';
 
@@ -217,22 +228,10 @@ export const AI = createAI<ServerMessage[], ClientMessage[]>({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

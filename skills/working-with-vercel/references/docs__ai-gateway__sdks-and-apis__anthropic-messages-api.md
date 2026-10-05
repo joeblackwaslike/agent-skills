@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images, and extended thinking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "061dc7b04cf35c8871705fb600079a824fbc13ae4075f1b8fe2d8b70b4678254"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "af37f38865082b3bd2da82a87730e2bbfe7c188cfebc7f41f20ee0455b83db88"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -31,12 +31,13 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
+- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
 - [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related)
+- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Learn how to use the Claude Platform on AWS provider.
 - [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 
@@ -102,7 +103,7 @@ For advanced features, see:
   ```bash
   alias claude-vercel='ANTHROPIC_BASE_URL="https://ai-gateway.vercel.sh" ANTHROPIC_AUTH_TOKEN="your-api-key-here" ANTHROPIC_API_KEY="" claude'
   ```
-  Then reload your shell:
+  Then reload your shell. If you added the alias to `~/.bashrc`, run `source ~/.bashrc` instead:
   ```bash
   source ~/.zshrc
   ```

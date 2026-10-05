@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/structured-outputs.md"
-fetched_at: "2026-08-31T10:37:20.620Z"
-sha256: "e7e708a14472f4f6ef64941ab543658ad7bb353ef00a3a6a147557c41868ea23"
+fetched_at: "2026-10-05T11:13:49.762Z"
+sha256: "69d551b2fd0fcbba983229b3f7bd7a8f042685255d77a15ad9b7456cf337f5aa"
 ---
 
 > ## Documentation Index
@@ -388,9 +388,9 @@ Structured output generation can fail when the agent cannot produce valid JSON m
 
 When an error occurs, the result message has a `subtype` indicating what went wrong:
 
-| Subtype                               | Meaning                                                                                                                         |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `success`                             | Output was generated and validated successfully                                                                                 |
+| Subtype | Meaning |
+| - | - |
+| `success` | Output was generated and validated successfully |
 | `error_max_structured_output_retries` | No valid output remained after multiple attempts (validation failures, or a model-fallback retraction with no successful retry) |
 
 A result can also end with subtype `success` but no `structured_output` value, for example when the run completes without the agent producing a structured output. Treat that case as a failure as well. The troubleshooting entry [structured\_output is None but the result says success](/docs/en/agent-sdk/troubleshooting#structured_output-is-none-but-the-result-says-success) covers this case. The example below treats a result as successful only when the `subtype` is `success` and `structured_output` is present, and handles every other result as a failure:

@@ -12,8 +12,8 @@ related:
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8cbf69a03a47c297ac60cd4de93a2600e3f81072a51095c00dc733bf6520d0c4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "17d164676d74c6a2e422db84cc38e223b611dbbf8684962a7f77f4dfee210dd1"
 ---
 
 # Content Security Policy
@@ -31,11 +31,13 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 - [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
 - [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Understand the mechanics and risks of Cross-Site Request Forgery \\(CSRF\\) attacks, and discover crucial development prac
 - [Enhancing Security for Redirects and Rewrites](https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how security measures in URI handling can prevent semantic attacks, where malicious hosts exploit redirects and re
-- [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
+- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
+- [Understanding the SameSite cookie attribute](https://vercel.com/kb/guide/understanding-the-samesite-cookie-attribute?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Explore the SameSite cookie attribute's significance in ensuring web security and user privacy to strike the right balan
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
-- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
 Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md?from=related&source_path=%2Fdocs%2Fcdn-security%2Fsecurity-headers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -65,7 +67,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self' cdn.example.com; 
 
 This policy permits:
 
-- All content to be loaded only from the site's own origin.
+- Content to be loaded only from the site's own origin by default (`default-src`), unless a more specific directive below allows other sources.
 - Scripts to be loaded from the site's own origin and cdn.example.com.
 - Images from the site's own origin and img.example.com
 - Styles only from the site's origin.
@@ -75,7 +77,7 @@ This policy permits:
 - Before enforcing a CSP, start with the `Content-Security-Policy-Report-Only` header. You can do this to keep an eye on possible violations without actually blocking any content. Change to enforcing mode once you know your policy won't break any features.
 - Avoid using `unsafe-inline` and `unsafe-eval` . The use of `eval()` and inline scripts/styles can pose security risks. Avoid enabling these unless absolutely necessary as a best practice. Use nonces or hashes to allowlist particular scripts or styles if you need to allow inline scripts or styles.
 - Use nonces for inline scripts and styles. To allow that particular inline content, a nonce (number used once) can be added to a script or style tag, the CSP header, or both. This ensures that only the inline scripts and styles you have explicitly permitted will be used.
-- Be as detailed as you can, and avoid using too general sources like `.` . List the specific subdomains you want to allow rather than allowing all subdomains (`.domain.com`).
+- Be as detailed as you can, and avoid using too general sources like `*`. List the specific subdomains you want to allow rather than allowing all subdomains (`*.domain.com`).
 - Keep directives updated. As your project evolves, the sources from which you load content might change. Ensure you update your CSP directives accordingly.
 
 Keep in mind that while CSP is a robust security measure, it's part of a multi-layered security strategy. Input validation, output encoding, and other security practices remain crucial.

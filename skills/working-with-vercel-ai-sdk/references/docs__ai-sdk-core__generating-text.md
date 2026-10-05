@@ -1,10 +1,14 @@
 ---
+title: Generating Text
+description: Learn how to generate text with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "77e4c6c08b2104cad02878218772d7e4464975af4045a4c1c61dd795db4a5644"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8ce7a1c35d37b93dd50f363ce7210f1b7bed4ae6a9a875bbb3006632fb6bb002"
 ---
 
-# Generating and Streaming Text
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Large language models (LLMs) can generate text in response to a prompt, which can contain instructions and information to process.
 For example, you can ask a model to come up with a recipe, draft an email, or summarize a document.
@@ -22,10 +26,9 @@ You can generate text using the [`generateText`](/docs/reference/ai-sdk-core/gen
 
 ```tsx
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a vegetarian lasagna recipe for 4 people.',
 });
 ```
@@ -34,10 +37,9 @@ You can use more [advanced prompts](/docs/foundations/prompts) to generate text 
 
 ```tsx
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const { text } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions:
     'You are a professional writer. ' +
     'You write simple, clear, and concise content.',
@@ -98,12 +100,11 @@ When using `generateText`, you can provide an `onEnd` callback that is triggered
 ).
 It contains the text, usage information, finish reason, messages, steps, total usage, and more:
 
-```tsx highlight="7-10"
+```tsx {7-10}
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   onEnd({ text, finishReason, usage, responseMessages, steps, totalUsage }) {
     // your own logic, e.g. for saving the chat history or recording usage
@@ -115,10 +116,8 @@ const result = await generateText({
 
 ### Lifecycle callbacks (experimental)
 
-<Note type="warning">
-  Experimental callbacks are subject to breaking changes in incremental package
-  releases.
-</Note>
+Experimental callbacks are subject to breaking changes in incremental package
+releases.
 
 `generateText` provides several experimental lifecycle callbacks that let you hook into different phases of the generation process.
 These are useful for logging, observability, debugging, and custom telemetry.
@@ -126,10 +125,9 @@ Errors thrown inside these callbacks are silently caught and do not break the ge
 
 ```tsx
 import { generateText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'What is the weather in San Francisco?',
   tools: {
     // ... your tools
@@ -201,10 +199,9 @@ AI SDK Core provides the [`streamText`](/docs/reference/ai-sdk-core/stream-text)
 
 ```ts
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 
@@ -214,14 +211,10 @@ for await (const textPart of result.textStream) {
 }
 ```
 
-<Note>
-  `result.textStream` is both a `ReadableStream` and an `AsyncIterable`.
-</Note>
+`result.textStream` is both a `ReadableStream` and an `AsyncIterable`.
 
-<Note type="warning">
-  `streamText` immediately starts streaming and suppresses errors to prevent
-  server crashes. Use the `onError` callback to log errors.
-</Note>
+`streamText` immediately starts streaming and suppresses errors to prevent
+server crashes. Use the `onError` callback to log errors.
 
 You can use `streamText` on its own or in combination with [AI SDK
 UI](/examples/next-pages/basics/streaming-text-generation) and [AI SDK
@@ -233,10 +226,8 @@ The `result.stream` can be passed to several standalone helpers to make the inte
 - `createTextStreamResponse({ stream: toTextStream({ stream: result.stream }) })`: Creates a simple text stream HTTP response.
 - `pipeTextStreamToResponse({ stream: toTextStream({ stream: result.stream }), response })`: Writes text delta output to a Node.js response-like object.
 
-<Note>
-  `streamText` is using backpressure and only generates tokens as they are
-  requested. You need to consume the stream in order for it to finish.
-</Note>
+`streamText` is using backpressure and only generates tokens as they are
+requested. You need to consume the stream in order for it to finish.
 
 It also provides several promises that resolve when the stream is finished:
 
@@ -263,12 +254,11 @@ Errors become part of the stream and are not thrown to prevent e.g. servers from
 
 To log errors, you can provide an `onError` callback that is triggered when an error occurs.
 
-```tsx highlight="7-9"
+```tsx {7-9}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   onError({ error }) {
     console.error(error); // your error logging logic here
@@ -309,12 +299,11 @@ It receives all stream part types from `stream`, including:
 - `error`
 - `raw`
 
-```tsx highlight="7-12"
+```tsx {7-12}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   onChunk({ chunk }) {
     // implement your own logic here, e.g.:
@@ -332,12 +321,11 @@ When using `streamText`, you can provide an `onEnd` callback that is triggered w
 ).
 It contains the text, usage information, finish reason, messages, steps, total usage, and more:
 
-```tsx highlight="7-10"
+```tsx {7-10}
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
   onEnd({ text, finishReason, usage, responseMessages, steps, totalUsage }) {
     // your own logic, e.g. for saving the chat history or recording usage
@@ -349,10 +337,8 @@ const result = streamText({
 
 ### Lifecycle callbacks (experimental)
 
-<Note type="warning">
-  Experimental callbacks are subject to breaking changes in incremental package
-  releases.
-</Note>
+Experimental callbacks are subject to breaking changes in incremental package
+releases.
 
 `streamText` provides several experimental lifecycle callbacks that let you hook into different phases of the streaming process.
 These are useful for logging, observability, debugging, and custom telemetry.
@@ -360,10 +346,9 @@ Errors thrown inside these callbacks are silently caught and do not break the st
 
 ```tsx
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'What is the weather in San Francisco?',
   tools: {
     // ... your tools
@@ -431,11 +416,10 @@ Here is an example of how to use the `stream` property:
 
 ```tsx
 import { streamText } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     cityAttractions: {
       inputSchema: z.object({ city: z.string() }),
@@ -556,7 +540,7 @@ If you e.g. have a transformation that changes all text to uppercase, the `onEnd
 The AI SDK Core provides a [`smoothStream` function](/docs/reference/ai-sdk-core/smooth-stream) that
 can be used to smooth out text and reasoning streaming.
 
-```tsx highlight="6"
+```tsx {6}
 import { smoothStream, streamText } from 'ai';
 
 const result = streamText({
@@ -691,7 +675,7 @@ const stopWordTransform =
 
 You can also provide multiple transformations. They are applied in the order they are provided.
 
-```tsx highlight="4"
+```tsx {4}
 const result = streamText({
   model,
   prompt,
@@ -766,78 +750,20 @@ You can see `generateText` and `streamText` in action using various frameworks i
 
 ### `generateText`
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to generate text in Node.js',
-      link: '/examples/node/generating-text/generate-text',
-    },
-    {
-      title:
-        'Learn to generate text in Next.js with Route Handlers (AI SDK UI)',
-      link: '/examples/next-pages/basics/generating-text',
-    },
-    {
-      title:
-        'Learn to generate text in Next.js with Server Actions (AI SDK RSC)',
-      link: '/examples/next-app/basics/generating-text',
-    },
-  ]}
-/>
+- [Learn to generate text in Node.js](/examples/node/generating-text/generate-text)
+- [Learn to generate text in Next.js with Route Handlers (AI SDK UI)](/examples/next-pages/basics/generating-text)
+- [Learn to generate text in Next.js with Server Actions (AI SDK RSC)](/examples/next-app/basics/generating-text)
 
 ### `streamText`
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to stream text in Node.js',
-      link: '/examples/node/generating-text/stream-text',
-    },
-    {
-      title: 'Learn to stream text in Next.js with Route Handlers (AI SDK UI)',
-      link: '/examples/next-pages/basics/streaming-text-generation',
-    },
-    {
-      title: 'Learn to stream text in Next.js with Server Actions (AI SDK RSC)',
-      link: '/examples/next-app/basics/streaming-text-generation',
-    },
-  ]}
-/>
+- [Learn to stream text in Node.js](/examples/node/generating-text/stream-text)
+- [Learn to stream text in Next.js with Route Handlers (AI SDK UI)](/examples/next-pages/basics/streaming-text-generation)
+- [Learn to stream text in Next.js with Server Actions (AI SDK RSC)](/examples/next-app/basics/streaming-text-generation)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

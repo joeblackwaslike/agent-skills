@@ -1,24 +1,26 @@
 ---
+title: Grok Build
+description: Learn how to use the Grok Build harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "53f6023227894153464c8a7ebe38b054dc72d0e5a079c83eb6c670c858f29e34"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "19c7a5c7af26ce48f4e210193b18c230f115c5e463a24b5f9dbf3fef20d1f23d"
 ---
 
-# Grok Build Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Grok Build harness adapter connects `HarnessAgent` to the
 [Grok Build CLI](https://x.ai/cli) through the Agent Client Protocol (ACP).
 The adapter delegates ACP installation, sessions, streaming, tools, and
 lifecycle management to `@ai-sdk/harness-acp`.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-grok-build @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-grok-build`, `@ai-sdk/sandbox-vercel`
 
 The ACP harness installs the pinned Grok Build CLI inside the sandbox when the
 first session starts.
@@ -240,20 +242,10 @@ safe built-in operations internally without sending a permission request.
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 - [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

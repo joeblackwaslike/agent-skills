@@ -12,13 +12,13 @@ related:
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "676a5eaa0612dac90006957c79744f314afbdb3e317fc2a9156860a333535970"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "325204816871f8b7a6a2d2c57b3124980b0f1ffeeffb6d5dc7b6a59e2143b24d"
 ---
 
 # Connect to your own API
 
-> **🔒 Permissions Required**: Secure backend access with OIDC federation
+> **Availability**: Secure backend access with OIDC federation is available on all plans
 
 ## Validate the tokens
 
@@ -33,8 +33,8 @@ To configure your own API to accept Vercel's OIDC tokens, you need to validate t
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Connect to Google Cloud Platform \\(GCP\\)](https://vercel.com/docs/oidc/gcp?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/api.graph.md](/docs/oidc/api.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Fapi&source_site=vercel-docs&relationship=graph)
@@ -52,7 +52,7 @@ Install the following package:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i jose
+    yarn add jose
     ```
   </Code>
   <Code tab="npm">
@@ -62,7 +62,7 @@ Install the following package:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i jose
+    bun add jose
     ```
   </Code>
 </CodeBlock>
@@ -76,7 +76,7 @@ import * as jose from 'jose';
 const ISSUER_URL = `https://oidc.vercel.com/[TEAM_SLUG]`;
 // or use `https://oidc.vercel.com` if your issuer mode is set to Global.
 
-const JWKS = jose.createRemoteJWKSet(new URL(ISSUER_URL, '/.well-known/jwks'));
+const JWKS = jose.createRemoteJWKSet(new URL(`${ISSUER_URL}/.well-known/jwks`));
 
 const server = http.createServer(async (req, res) => {
   const token = req.headers['authorization']?.split('Bearer ')[1];
@@ -126,7 +126,7 @@ Install the following package:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/oidc
+    yarn add @vercel/oidc
     ```
   </Code>
   <Code tab="npm">
@@ -136,7 +136,7 @@ Install the following package:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/oidc
+    bun add @vercel/oidc
     ```
   </Code>
 </CodeBlock>

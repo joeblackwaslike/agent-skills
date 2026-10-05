@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "fdc714f60b392be58bc0c7a964a4853b936c9290e15ad725be14601e8216a90c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8b7a8cde5aeef0327f3d91d2927785f0c1c08821e08876696bea19f6b7798e1a"
 ---
 
 # Calculating usage of resources
@@ -30,16 +30,15 @@ Understanding how usage and accrual happen on Vercel helps you make the best cho
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related)
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related)
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related)
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fhow-does-vercel-calculate-usage-of-resources&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -67,9 +66,9 @@ The following sections outline the resources used at each stage of the user jour
 
 ### 1. User enters the site
 
-![Image](https://vercel.com/front/docs/pricing/enters-site-light.png)
+![1. User enters your site](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/pricing/enters-site-light.png)
 
-The browser requests the page from Vercel. Since it's static and cached on our global [CDN](/docs/cdn), this only involves [Edge Requests](/docs/manage-cdn-usage#edge-requests) (the network requests required to get the content of the page) and [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) (the amount of content sent back to the browser).
+The browser requests the page from Vercel. Since it's static and cached on our global [CDN](/docs/cdn), this only involves [CDN Requests](/docs/manage-cdn-usage#cdn-requests) (the network requests required to get the content of the page) and [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) (the amount of content sent back to the browser).
 
 **Priced resources**
 
@@ -80,9 +79,9 @@ The browser requests the page from Vercel. Since it's static and cached on our g
 
 ### 2. Product browsing
 
-![Image](https://vercel.com/front/docs/pricing/browse-products-light.png)
+![2. User browses products](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/pricing/browse-products-light.png)
 
-During the user's visit to the site, they browse the **All Products** page, which is populated with a list of cached product images and price details. The request to view the page triggers an [Edge Request](/docs/manage-cdn-usage#edge-requests) to Vercel's CDN, which serves the static assets from the [cache](/docs/caching/cdn-cache).
+During the user's visit to the site, they browse the **All Products** page, which is populated with a list of cached product images and price details. The request to view the page triggers an [CDN Request](/docs/manage-cdn-usage#cdn-requests) to Vercel's CDN, which serves the static assets from the [cache](/docs/caching/cdn-cache).
 
 **Priced resources**
 
@@ -93,7 +92,7 @@ During the user's visit to the site, they browse the **All Products** page, whic
 
 ### 3. Viewing updated product details
 
-![Image](https://vercel.com/front/docs/pricing/updated-product-light.png)
+![3. User browses updated products](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/pricing/updated-product-light.png)
 
 The user decides to view the details of a product. This product's price was recently updated and the first view of the page shows the stale content from the cache due to the revalidation period having ended.
 
@@ -114,7 +113,7 @@ Upon viewing a product, if the discount data is already in the Data Cache and st
 
 ### 4. Dynamic interactions (Cart)
 
-![Image](https://vercel.com/front/docs/pricing/dynamic-cart-light.png)
+![4. User interacts with dynamic cart](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/pricing/dynamic-cart-light.png)
 
 The user decides to add a product to their cart. The cart is a dynamic feature that requires real-time updates. When the user adds an item to their cart, [Vercel Marketplace Redis integrations](/docs/marketplace-storage) are used to store the cart state. If the user leaves and returns to the site, the cart state is retrieved from the Redis store, ensuring a seamless experience across sessions.
 
@@ -134,7 +133,7 @@ The user decides to add a product to their cart. The cart is a dynamic feature t
 
 ### 5. Engaging with A/B testing for personalized content
 
-![Image](https://vercel.com/front/docs/pricing/a-b-test-light.png)
+![5. User is shown a variant of the site based on their behavior or demographics](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/pricing/a-b-test-light.png)
 
 Having added an item to the cart, the user decides to continue browsing the site. They scroll to the bottom of the page and are shown a product carousel. This carousel is part of an A/B test using [Middleware](/docs/routing-middleware), and the user is shown a variant based on their behavior or demographics.
 

@@ -1,10 +1,14 @@
 ---
+title: SigNoz
+description: Monitor, observe and debug your AI SDK application with SigNoz
+url: "https://ai-sdk.dev/providers/observability/signoz"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/signoz.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "0c10e870875b5f4727193c93662b9c17be08e6fc6957fe5dcc2fb954ed8c4a6e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c15cccd09125f2c23970bd36eef3c3a5fa667500b3783c2bcd4f94998aa1718b"
 ---
 
-# SigNoz Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [SigNoz](https://signoz.io/) is a single tool for all your monitoring and observability needs. Here are a few reasons why you should choose SigNoz:
 
@@ -145,30 +149,10 @@ Your Vercel AI SDK commands should now automatically emit traces, spans, and eve
 
 Finally, you should be able to view this data in Signoz Cloud under the traces tab.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

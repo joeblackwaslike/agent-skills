@@ -1,10 +1,14 @@
 ---
+title: Transport
+description: Learn how to use custom transports with useChat.
+url: "https://ai-sdk.dev/docs/ai-sdk-ui/transport"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/transport.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "01c799b348f00f5cbbb009b6a00ca215d3a1d3bfcfba7ba3795a3f9748e98697"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "fa4295228cb7fc80cf9c4aa2446d459e039e1367c54a99427da77c771389aec3"
 ---
 
-# Transport
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `useChat` transport system provides fine-grained control over how messages are sent to your API endpoints and how responses are processed. This is particularly useful for alternative communication protocols like WebSockets, custom authentication patterns, or specialized backend integrations.
 
@@ -110,10 +114,9 @@ This is useful for:
 ```tsx
 import { useChat } from '@ai-sdk/react';
 import { DirectChatTransport, ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: weatherTool,
@@ -149,11 +152,9 @@ const transport = new DirectChatTransport({
 });
 ```
 
-<Note>
-  `DirectChatTransport` does not support stream reconnection since there is no
-  persistent server-side stream. The `reconnectToStream()` method always returns
-  `null`.
-</Note>
+`DirectChatTransport` does not support stream reconnection since there is no
+persistent server-side stream. The `reconnectToStream()` method always returns
+`null`.
 
 For complete API details, see the [DirectChatTransport reference](/docs/reference/ai-sdk-ui/direct-chat-transport).
 
@@ -216,23 +217,10 @@ These implementations show you exactly how to:
 
 The transport system gives you complete control over how your chat application communicates, enabling integration with any backend protocol or service.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-ui/overview)
-- [Chatbot](/docs/ai-sdk-ui/chatbot)
-- [Chatbot Message Persistence](/docs/ai-sdk-ui/chatbot-message-persistence)
-- [Chatbot Resume Streams](/docs/ai-sdk-ui/chatbot-resume-streams)
-- [Chatbot Tool Usage](/docs/ai-sdk-ui/chatbot-tool-usage)
-- [Generative User Interfaces](/docs/ai-sdk-ui/generative-user-interfaces)
-- [Completion](/docs/ai-sdk-ui/completion)
-- [Object Generation](/docs/ai-sdk-ui/object-generation)
-- [Streaming Custom Data](/docs/ai-sdk-ui/streaming-data)
-- [Error Handling](/docs/ai-sdk-ui/error-handling)
-- [Transport](/docs/ai-sdk-ui/transport)
-- [Reading UIMessage Streams](/docs/ai-sdk-ui/reading-ui-message-streams)
-- [Message Metadata](/docs/ai-sdk-ui/message-metadata)
-- [Stream Protocols](/docs/ai-sdk-ui/stream-protocol)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

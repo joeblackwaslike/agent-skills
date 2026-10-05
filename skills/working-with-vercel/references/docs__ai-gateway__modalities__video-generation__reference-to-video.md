@@ -17,8 +17,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "adc57ee64e48c2be2a3206608b4334c218089d5a0fc88c350aba5c1557bc881a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f1e36f30430d9b5e2a86d7850fd64a4f434811b51c0a8ea4a5500e7ff0eebe80"
 ---
 
 # AI Gateway Reference-to-Video Generation
@@ -32,15 +32,13 @@ Generate a completely new video scene featuring characters from reference media.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Learn how to use ByteDance Seedance video and Seedream image models with the AI SDK.
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
 - [Seedance 2.5 now available on Vercel AI Gateway](https://vercel.com/changelog/seedance-2-5-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related)
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Freference-to-video&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -90,14 +88,14 @@ Veo 3.1 can incorporate reference images into a generated video. The references 
 | ----------------------------------------- | ------------- | -------- | ---------------------------------------------------------------------------------------------- |
 | `prompt`                                  | `string`      | Yes      | Scene description for the generated video                                                      |
 | `inputReferences`                         | `Array<image>` | No       | Reference images as base64-encoded strings or Buffers that guide assets and style in the scene. HTTPS URLs are not supported |
-| `duration`                                | `4` | `6` | `8` | No   | Video length in seconds. Defaults to 8                                                         |
+| `duration`                                | `4` \| `6` \| `8` | No   | Video length in seconds. Defaults to 8                                                         |
 | `aspectRatio`                             | `string`      | No       | Aspect ratio (`'16:9'`, `'9:16'`). Defaults to `'16:9'`                                        |
-| `resolution`                              | `string`      | No       | Resolution (`'720p'`, `'1080p'`). Defaults to `'720p'`                                         |
+| `resolution`                              | `string`      | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p). Defaults to 720p                                         |
 | `generateAudio`                           | `boolean`     | No       | Generate audio alongside the video                                                             |
 | `providerOptions.vertex.referenceImages`  | `array`       | No       | Legacy alternative to `inputReferences`. Used when `inputReferences` is omitted                |
 | `providerOptions.vertex.enhancePrompt`    | `boolean`     | No       | Use Gemini to enhance prompts. Defaults to `true`                                            |
 | `providerOptions.vertex.negativePrompt`   | `string`      | No       | What to discourage in the generated video                                                      |
-| `providerOptions.vertex.personGeneration` | `'dont_allow'` | `'allow_adult'` | `'allow_all'` | No | Whether to allow person generation. Defaults to `'allow_adult'` |
+| `providerOptions.vertex.personGeneration` | `'dont_allow'` \| `'allow_adult'` \| `'allow_all'` | No | Whether to allow person generation. Defaults to `'allow_adult'` |
 | `providerOptions.vertex.pollIntervalMs`   | `number`      | No       | How often to check task status. Defaults to `5000`                                             |
 | `providerOptions.vertex.pollTimeoutMs`    | `number`      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                           |
 
@@ -145,7 +143,7 @@ KlingAI image-to-video models support reference-to-video when you pass `inputRef
 | `inputReferences`                        | `Array<image>`     | No       | Reference images. URLs, base64 strings, or buffers. Passing them selects reference-to-video behavior. |
 | `aspectRatio`                            | `string`           | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`). Defaults to `'16:9'`.                    |
 | `duration`                               | `number`           | No       | Video length in seconds. 5 or 10 for v2.x, 3-15 for v3.0. Defaults to `5`.             |
-| `providerOptions.klingai.mode`           | `'std'` | `'pro'` | No       | `'std'` for standard quality. `'pro'` for professional quality. Defaults to `'std'`. |
+| `providerOptions.klingai.mode`           | `'std'` \| `'pro'` | No       | `'std'` for standard quality. `'pro'` for professional quality. Defaults to `'std'`. |
 | `providerOptions.klingai.negativePrompt` | `string`           | No       | What to avoid in the video. Max 2500 characters.                                       |
 | `providerOptions.klingai.cfgScale`       | `number`           | No       | Prompt adherence (0-1). Higher = stricter. Defaults to `0.5`. Not supported on v2.x. |
 | `providerOptions.klingai.pollIntervalMs` | `number`           | No       | How often to check task status. Defaults to `5000`.                                    |
@@ -199,7 +197,7 @@ Wan's reference-to-video models can incorporate multiple characters from referen
 | `providerOptions.alibaba.referenceUrls`  | `string[]`              | No       | Legacy alternative to `inputReferences`. Array of reference URLs, used when `inputReferences` is omitted                                                                |
 | `generateAudio`                          | `boolean`               | No       | Generate audio. Standard models default to `true`, flash models default to `false`                                                                                      |
 | `providerOptions.alibaba.negativePrompt` | `string`                | No       | What to avoid in the video. Max 500 characters                                                                                                                          |
-| `providerOptions.alibaba.shotType`       | `'single'` | `'multi'` | No       | `'single'` for continuous shot. `'multi'` for multiple camera angles                                                                                                    |
+| `providerOptions.alibaba.shotType`       | `'single'` \| `'multi'` | No       | `'single'` for continuous shot. `'multi'` for multiple camera angles                                                                                                    |
 | `providerOptions.alibaba.watermark`      | `boolean`               | No       | Add watermark to the video. Defaults to `false`                                                                                                                         |
 | `providerOptions.alibaba.pollIntervalMs` | `number`                | No       | How often to check task status. Defaults to `5000`                                                                                                                      |
 | `providerOptions.alibaba.pollTimeoutMs`  | `number`                | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                                                                                                    |
@@ -288,7 +286,7 @@ To edit or extend an existing video instead, see [Video editing](/docs/ai-gatewa
 | `aspectRatio`                                 | `string`               | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`, and others)                                     |
 | `providerOptions.spacexai.mode`               | `'reference-to-video'` | No       | Selects reference-to-video mode explicitly. Auto-selected when `inputReferences` is passed |
 | `providerOptions.spacexai.referenceImageUrls` | `string[]`             | No       | Legacy alternative to `inputReferences`. Used when `inputReferences` is omitted            |
-| `providerOptions.spacexai.resolution`         | `'480p'` | `'720p'`   | No       | Video resolution. Defaults to `'480p'`                                                     |
+| `providerOptions.spacexai.resolution`         | `'480p'` \| `'720p'`   | No       | Video resolution. Defaults to `'480p'`                                                     |
 | `providerOptions.spacexai.pollIntervalMs`     | `number`               | No       | How often to check task status. Defaults to `5000`                                         |
 | `providerOptions.spacexai.pollTimeoutMs`      | `number`               | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                       |
 

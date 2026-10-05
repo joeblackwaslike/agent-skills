@@ -12,13 +12,13 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from importing one or more predefined modules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-imports.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "55389e647a01b7fa1db32350b4dbed3b93c3da36db9293587b748150b62bef49"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5c915668f04098d6a36318d3ef08faaa2c95f1671d6a2b9e3159b91c3fa49bed"
 ---
 
 # forbidden-imports
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The `forbidden-imports` rule type enables you to disallow one or more files from importing one or more predefined modules.
 

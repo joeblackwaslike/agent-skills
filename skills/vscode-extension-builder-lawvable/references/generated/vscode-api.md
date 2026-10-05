@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-09-28T10:38:19.765Z"
-sha256: "fa88af03702e782401164694d98ce136ec80ed654c32c5afbb661c00f614cd14"
+fetched_at: "2026-10-05T11:12:49.290Z"
+sha256: "9258b7765a763ecacdd4371188b243dcb85915c7227b3a585bf5ce7dd1a14a4a"
 ---
 
 # VS Code API
@@ -13128,7 +13128,7 @@ label: stringThe human-readable name of the server.
 
 uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The URI of the server.
 
-headers?: Record<string, string>Optional additional heads included with each request to the server.
+headers?: Record<string, string>Optional additional headers included with requests to the server's origin.
 
 version?: string
 ReturnsDescription
@@ -13138,7 +13138,8 @@ ReturnsDescription
 
 headers: Record<string, string>
 
-Optional additional heads included with each request to the server.
+Optional additional headers included with requests to the server's origin.
+These headers are not sent to a different origin, including across redirects.
 
 label: string
 

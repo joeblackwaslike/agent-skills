@@ -1,10 +1,14 @@
 ---
+title: Raindrop
+description: Monitor AI SDK calls and agent traces with Raindrop
+url: "https://ai-sdk.dev/providers/observability/raindrop"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/raindrop.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "5d978878a032fa7f3c6bc69cbf24d8c2a992cc2b856f58e54a135b16bde4098e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b4368a2f4bf37cfaa99379d955deca6fe306bee8dcaf190fa9b7f0724813a26f"
 ---
 
-# Raindrop Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Raindrop](https://www.raindrop.ai/) provides observability for AI applications. Its AI SDK integration records events and traces for `generateText`, `streamText`, `generateObject`, `streamObject`, model calls, tool calls, errors, latency, and token usage.
 
@@ -14,17 +18,17 @@ Raindrop supports the AI SDK v7 telemetry interface directly, so you can use `re
 
 Install the Raindrop AI SDK integration:
 
-<InstallPackages packages="@raindrop-ai/ai-sdk" />
+**Packages:** `@raindrop-ai/ai-sdk`
 
 Set your Raindrop write key (create one in the [Raindrop dashboard](https://www.raindrop.ai/)):
 
-```bash filename=".env.local"
+```bash title=".env.local"
 RAINDROP_WRITE_KEY="..."
 ```
 
 Then register Raindrop once at application startup. `raindrop()` reads `RAINDROP_WRITE_KEY` automatically and needs no `@ai-sdk/otel` or OpenTelemetry setup:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { raindrop } from '@raindrop-ai/ai-sdk';
 
@@ -54,7 +58,7 @@ Raindrop records an event once a `userId` is available, so set the Raindrop `con
 
 If Raindrop event fields such as `userId`, `convoId`, or `eventName` change per request, pass a Raindrop integration through `telemetry.integrations` for that call:
 
-```ts highlight="8-10,15-19,21"
+```ts {8-10,15-19,21}
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { raindrop } from '@raindrop-ai/ai-sdk';
@@ -78,17 +82,15 @@ const { text } = await generateText({
 await raindropTelemetry.flush();
 ```
 
-<Note>
-  Per-call `telemetry.integrations` replace globally registered integrations for
-  that call. If you also use another telemetry integration, include it in the
-  same `integrations` array.
-</Note>
+Per-call `telemetry.integrations` replace globally registered integrations for
+that call. If you also use another telemetry integration, include it in the
+same `integrations` array.
 
 ## Streaming
 
 Streaming calls work the same way. For AI SDK UI routes, return the v7 stream helpers and flush Raindrop when the stream finishes:
 
-```ts filename="app/api/chat/route.ts" highlight="15-27"
+```ts title="app/api/chat/route.ts" {15-27}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -156,30 +158,10 @@ Credential-shaped values in provider options are stripped from traces by default
 - [Raindrop AI SDK integration](https://www.raindrop.ai/docs/integrations/vercel-ai-sdk/)
 - [AI SDK telemetry documentation](/docs/ai-sdk-core/telemetry)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -15,8 +15,8 @@ related:
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "13070d56b94c73e67bc0cfd2daffbca235af18bbe17f6bc08067389a390e8eb4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b89ac6301783ea3cb6cb76c88696df0ea53ff4a540f110accb679751d35c8453"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -64,7 +64,7 @@ To change the default function memory size:
 4. Select **Advanced Settings**
 5. In the **Function CPU** section, select your preferred memory size option:
 
-![Image](https://vercel.com/front/docs/functions/configure-mem-light.png)
+![The Function CPU setting in a Vercel project's dashboard](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/functions/configure-mem-light.png)
 
 6. The change will be applied to all future deployments made by your team. You must create a new deployment for your changes to take effect
 

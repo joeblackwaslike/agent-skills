@@ -1,98 +1,48 @@
 ---
+title: createStreamableValue
+description: Reference for the createStreamableValue function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/create-streamable-value"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/create-streamable-value.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "54780144d4a231c286adddf1383e79bc9a3f56750c888e44b8881f107ab206b2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3ccc42985df2e2c32f3f5c88c1e6e462eec18c4696eba672da30c8143caa4c06"
 ---
 
-# `createStreamableValue`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 Create a stream that sends values from the server to the client. The value can be any serializable data.
 
 ## Import
 
-<Snippet
-  text={`import { createStreamableValue } from "@ai-sdk/rsc"`}
-  prompt={false}
-/>
+```
+import { createStreamableValue } from "@ai-sdk/rsc"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'value',
-      type: 'any',
-      description: 'Any data that RSC supports. Example, JSON.',
-    },
-  ]}
-/>
+- `value` (`any`): Any data that RSC supports. Example, JSON.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'value',
-      type: 'StreamableValue',
-      description:
-        'The value of the streamable. This can be returned from a Server Action and received by the client. To read the streamed values, use the `readStreamableValue` or `useStreamableValue` APIs.',
-    },
-  ]}
-/>
+- `value` (`StreamableValue`): The value of the streamable. This can be returned from a Server Action and received by the client. To read the streamed values, use the \`readStreamableValue\` or \`useStreamableValue\` APIs.
 
 ### Methods
 
-<PropertiesTable
-  content={[
-    {
-      name: 'update',
-      type: '(value: T) => StreamableValueWrapper',
-      description: 'Updates the current value with a new one.',
-    },
-    {
-      name: 'append',
-      type: '(value: T) => StreamableValueWrapper',
-      description:
-        'Appends a delta string to the current value. It requires the current value of the streamable to be a string.',
-    },
-    {
-      name: 'done',
-      type: '(value?: T) => StreamableValueWrapper',
-      description:
-        'Marks the value as finalized. You can either call it without any parameters or with a new value as the final state. Once called, the value cannot be updated or appended anymore. This method is always required to be called, otherwise the response will be stuck in a loading state.',
-    },
-    {
-      name: 'error',
-      type: '(error: any) => StreamableValueWrapper',
-      description:
-        'Signals that there is an error in the value stream. It will be thrown on the client side when consumed via `readStreamableValue` or `useStreamableValue`.',
-    },
-  ]}
-/>
+- `update` (`(value: T) => StreamableValueWrapper`): Updates the current value with a new one.
+- `append` (`(value: T) => StreamableValueWrapper`): Appends a delta string to the current value. It requires the current value of the streamable to be a string.
+- `done` (`(value?: T) => StreamableValueWrapper`): Marks the value as finalized. You can either call it without any parameters or with a new value as the final state. Once called, the value cannot be updated or appended anymore. This method is always required to be called, otherwise the response will be stuck in a loading state.
+- `error` (`(error: any) => StreamableValueWrapper`): Signals that there is an error in the value stream. It will be thrown on the client side when consumed via \`readStreamableValue\` or \`useStreamableValue\`.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

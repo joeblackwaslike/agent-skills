@@ -1,5 +1,5 @@
 ---
-title: Better Auth
+title: Better Auth with Vercel Connect
 product: vercel
 url: /docs/connect/frameworks/better-auth
 canonical_url: "https://vercel.com/docs/connect/frameworks/better-auth"
@@ -17,13 +17,13 @@ related:
 summary: Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/better-auth.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "88456096bf0530295eb4007145b2785596ba7ed8d555759dd89cd47d76bf808d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "91747b4f565ad1e7130af75ee04cfd69ac7dc31f1879225bab549e0a26409780"
 ---
 
-# Better Auth
+# Better Auth with Vercel Connect
 
-> **🔒 Permissions Required**: Vercel Connect
+> **Availability**: Vercel Connect is available on all plans
 
 The `@vercel/connect/betterauth` adapter lets your application sign users in
 through a Vercel Connect connector. It configures Better Auth's
@@ -37,14 +37,13 @@ plugin to use the Vercel Connect OAuth gateway.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related)
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
-- [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related)
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/connect/frameworks/better-auth.graph.md](/docs/connect/frameworks/better-auth.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Fbetter-auth&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -107,7 +106,7 @@ your application.
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/connect better-auth pg
+      yarn add @vercel/connect better-auth pg
       ```
     </Code>
     <Code tab="npm">
@@ -117,7 +116,7 @@ your application.
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/connect better-auth pg
+      bun add @vercel/connect better-auth pg
       ```
     </Code>
   </CodeBlock>

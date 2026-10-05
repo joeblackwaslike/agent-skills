@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "0cfd7ce7853f791cea54732eaf9282fd07b5dd024ea35e2b46af107833ab1328"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "890130caa00ac55f6aa96d2762ca2b003fb23fc4eb805f081abcb7a2f642931a"
 ---
 
 # What is Compute?
@@ -34,14 +34,14 @@ Compute is the work a server performs to respond to a request, such as rendering
 - [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
 - [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — How to create high-performance database connection pools without leaking connections
 - [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [Fluid compute: Evolving serverless for AI workloads](https://vercel.com/blog/fluid-compute-evolving-serverless-for-ai-workloads?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [Fluid compute: Evolving serverless for AI workloads](https://vercel.com/blog/fluid-compute-evolving-serverless-for-ai-workloads?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel Functions](https://vercel.com/docs/functions?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/fundamentals/what-is-compute.graph.md](/docs/fundamentals/what-is-compute.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,7 +56,7 @@ Web applications involve two main locations:
   - **CDN (Content Delivery Network)**: This stores static content, such as HTML, in multiple locations around the globe, placed between the client who is requesting and the origin server that is responding. When a user sends a request, the closest CDN will respond with its cached response.
   - **Global Network**: Vercel's global network consists of Points of Presence (PoPs) and compute regions distributed around the world. This architecture allows Vercel to cache content and execute code in the region closest to the user, reducing latency and improving performance.
 
-![Image](`/docs-assets/static/docs/concepts/functions/request-response.png`)
+![The request-response cycle between client and server.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/functions/request-response.png)
 
 ## Compute in practice
 
@@ -64,7 +64,7 @@ To demonstrate an example of what this looks like in practice, we'll use the exa
 
 When you start a deployment of your Next.js app to Vercel, Vercel's [build process](/docs/builds#build-process) creates a build output that contains artifacts such as [bundled Vercel Functions](/docs/functions/configuring-functions/advanced-configuration#bundling-vercel-functions) or static assets. It will then deploy either to Vercel's CDN or, in the case of a function, to a [specified region](/docs/functions/configuring-functions/region).
 
-Now that the deployment is ready to serve traffic, a user can visit your site. When they do, the request is sent to the closest region, which will then either serve the static assets or execute the function. The function will then run, and the response will be sent back to the user. At a very high-level this looks like:
+Now that the deployment is ready to serve traffic, a user can visit your site. When they do, the request is sent to the closest CDN region, which will then either serve the static assets or route the request to the region where the function is deployed. The function will then run, and the response will be sent back to the user. At a very high-level this looks like:
 
 1. **User Action**: The user interacts with a website by clicking a link, submitting a form, or entering a URL.
 2. **HTTP Request**: The user's browser sends a request to the server, asking for the resources needed to display the webpage.
@@ -81,11 +81,11 @@ Fluid compute is the execution model for Vercel Functions, and the default for n
 
 In the traditional serverless model, one instance processes one request at a time. When traffic increases, the platform starts more instances, even though a single instance rarely uses all of its resources while it waits on I/O. You pay for that unused capacity.
 
-![Image](`/docs-assets/static/docs/fluid/serverless-light.png`)
+![How multiple requests are processed in the traditional serverless compute model.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/fluid/serverless-light.png)
 
 Fluid compute starts a new instance only when no running instance has spare capacity. Additional requests reuse existing instances while they're still processing work, so one instance serves many invocations concurrently. Vercel calls this *optimized concurrency*, and it's available with the Node.js and Python runtimes. Optimized concurrency reduces the number of running instances, makes fuller use of each instance's CPU, and lowers compute costs.
 
-![Image](`/docs-assets/static/docs/fluid/optimized-concurrency-light.png`)
+![How multiple requests are processed in the Fluid compute model with optimized concurrency.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/fluid/optimized-concurrency-light.png)
 
 ### Benefits of Fluid compute
 

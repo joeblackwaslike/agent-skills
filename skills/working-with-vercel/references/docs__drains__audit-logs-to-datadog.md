@@ -13,13 +13,13 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-datadog.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "a40430d444316dc320a39ea576d2cddc61cfb019d7a6ee2ba1dd27f45b4c7e9d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "39c67b1921b0f3a2c8839009ea9d36f9579d89821eb3c769df3e14a8741c5c36"
 ---
 
 # Drain Audit Logs to Datadog
 
-> **🔒 Permissions Required**: Audit Log Drains
+> **Availability**: Audit Log Drains are available on Enterprise plans
 
 Audit Log Drains can forward team activity events to [Datadog](https://www.datadoghq.com/) using the [Datadog Logs API](https://docs.datadoghq.com/api/latest/logs/). Use this setup to ingest audit logs into Datadog for security monitoring, compliance review, and alerting.
 
@@ -30,13 +30,13 @@ Audit Log Drains can forward team activity events to [Datadog](https://www.datad
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related)
-- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related)
+- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Drain Audit Logs to Panther](https://vercel.com/docs/drains/audit-logs-to-panther?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-datadog.graph.md](/docs/drains/audit-logs-to-datadog.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Faudit-logs-to-datadog&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

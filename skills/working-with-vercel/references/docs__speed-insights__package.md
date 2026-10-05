@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-insights npm package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/package.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "d811f6eb831061c02de5d291c4573c0ed8f0c61d0ef71ac690bfd77225fb063e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5b73805fc2cbc2c6b521cf5b61183c278cb65abd9ae1fda593b328aed9257526"
 ---
 
 # Speed Insights Configuration with @vercel/speed-insights
@@ -117,7 +117,7 @@ The `scriptSrc` option allows you to load the Speed Insights script from a diffe
 
 ## Dynamic configuration
 
-In version 2, Vercel passes default client options at build time with a JSON string under a `speedInsights` key:
+In version 2, Vercel passes default client options at build time as a JSON string. The options are an object under a `speedInsights` key:
 
 ```json
 {

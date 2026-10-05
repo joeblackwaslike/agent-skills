@@ -1,16 +1,21 @@
 ---
+title: Send Custom Body from useChat
+description: Learn how to send a custom body from the useChat hook using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/send-custom-body-from-use-chat"
+docs_index: /llms.txt
+tags:
+  - next
+  - chat
 source: "https://ai-sdk.dev/cookbook/next/send-custom-body-from-use-chat.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e99c47c73ab1cda376b3a9fc92ddd5f03019c8d5c76d5268c1297405de2d3673"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "65ec1e6e2cb98e61976d1fbeb8e6d7b4912c8524966bc33c8774c8ca0ed12682"
 ---
 
-# Send Custom Body from useChat
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  If you are looking to send custom values alongside each message, check out the
-  [chatbot request configuration
-  documentation](https://ai-sdk.dev/docs/ai-sdk-ui/chatbot#request-configuration).
-</Note>
+If you are looking to send custom values alongside each message, check out the
+[chatbot request configuration
+documentation](https://ai-sdk.dev/docs/ai-sdk-ui/chatbot#request-configuration).
 
 By default, `useChat` sends all messages as well as information from the request to the server.
 However, it is often desirable to control the entire body content that is sent to the server, e.g. to:
@@ -25,12 +30,12 @@ It should return the body content that will be sent to the server.
 
 ## Example
 
-This example shows how to only send the text of the last message to the server.
+This example shows how to only send the last message to the server.
 This can be useful if you want to reduce the amount of data sent to the server.
 
 ### Client
 
-```typescript filename='app/page.tsx' highlight="3,7-14"
+```typescript title='app/page.tsx' {3,7-14}
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -83,7 +88,7 @@ export default function Chat() {
 We need to adjust the server to receive the custom request format with the chat ID and last message.
 The rest of the message history can be loaded from storage.
 
-```tsx filename='app/api/chat/route.ts' highlight="12,15-16,21"
+```tsx title='app/api/chat/route.ts' {12,15-16,21}
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -120,31 +125,10 @@ export async function POST(req: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

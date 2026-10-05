@@ -15,13 +15,13 @@ related:
 summary: Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pull.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "264cfca4dac0341dca036b07622ca7e194bbb73f86d2b66d89fe80a61b0549e1"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8b0585ca83aa664e0db956af753956474563d383a1c9ba401bb1e25ee0a222f4"
 ---
 
 # vercel pull
 
-The `vercel pull` command is used to store [Environment Variables](/docs/environment-variables) and Project Settings in a local cache (under `.vercel/.env.$target.local.`) for offline use of `vercel build` and `vercel dev`. **If you aren't using those commands, you don't need to run `vercel pull`**.
+The `vercel pull` command is used to store [Environment Variables](/docs/environment-variables) and Project Settings in a local cache (under `.vercel/.env.$target.local`) for offline use of `vercel build` and `vercel dev`. **If you aren't using those commands, you don't need to run `vercel pull`**.
 
 
 <!-- docsgraph:related -->

@@ -1,16 +1,18 @@
 ---
+title: streamUI
+description: Reference for the streamUI function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "2e5ef4d2fa260aebf5788fc71526bb39ed5762631bf5e7d7e6d0d330b17a757e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "428b576aa0a0591ca695bcbe13d5a72cae0d6063410ffd993718a6bb15c59a1b"
 ---
 
-# `streamUI`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 A helper function to create a streamable UI from LLM providers. This function is similar to AI SDK Core APIs and supports the same model interfaces.
 
@@ -18,777 +20,150 @@ To see `streamUI` in action, check out [these examples](#examples).
 
 ## Import
 
-<Snippet text={`import { streamUI } from "@ai-sdk/rsc"`} prompt={false} />
+```
+import { streamUI } from "@ai-sdk/rsc"
+```
 
 ## Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'LanguageModel',
-      description: 'The language model to use. Example: openai("gpt-6-astra")',
-    },
-    {
-      name: 'initial',
-      isOptional: true,
-      type: 'ReactNode',
-      description: 'The initial UI to render.',
-    },
-    {
-      name: 'instructions',
-      type: 'Instructions',
-      description:
-        'Instructions to use that specify the behavior of the model.'
-    },
-    {
-      name: 'prompt',
-      type: 'string',
-      description: 'The input prompt to generate the text from.',
-    },
-    {
-      name: 'messages',
-      type: 'Array<SystemModelMessage | UserModelMessage | AssistantModelMessage | ToolModelMessage> | Array<UIMessage>',
-      description:
-        'A list of messages that represent a conversation. Automatically converts UI messages from the useChat hook.',
-      properties: [
-        {
-          type: 'SystemModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'system'",
-              description: 'The role for the system message.',
-            },
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The content of the message.',
-            },
-          ],
-        },
-        {
-          type: 'UserModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'user'",
-              description: 'The role for the user message.',
-            },
-            {
-              name: 'content',
-              type: 'string | Array<TextPart | ImagePart | FilePart>',
-              description: 'The content of the message.',
-              properties: [
-                {
-                  type: 'TextPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'text'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The text content of the message part.',
-                    },
-                  ],
-                },
-                {
-                  type: 'ImagePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'image'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'image',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The image content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      isOptional: true,
-                      description:
-                        'The IANA media type of the image. Optional.',
-                    },
-                  ],
-                },
-                {
-                  type: 'FilePart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'file'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'data',
-                      type: 'string | Uint8Array | Buffer | ArrayBuffer | URL',
-                      description:
-                        'The file content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.',
-                    },
-                    {
-                      name: 'mediaType',
-                      type: 'string',
-                      description: 'The IANA media type of the file.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'AssistantModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'assistant'",
-              description: 'The role for the assistant message.',
-            },
-            {
-              name: 'content',
-              type: 'string | Array<TextPart | ToolCallPart>',
-              description: 'The content of the message.',
-              properties: [
-                {
-                  type: 'TextPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'text'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'text',
-                      type: 'string',
-                      description: 'The text content of the message part.',
-                    },
-                  ],
-                },
-                {
-                  type: 'ToolCallPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'tool-call'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'toolCallId',
-                      type: 'string',
-                      description: 'The id of the tool call.',
-                    },
-                    {
-                      name: 'toolName',
-                      type: 'string',
-                      description:
-                        'The name of the tool, which typically would be the name of the function.',
-                    },
-                    {
-                      name: 'args',
-                      type: 'object based on zod schema',
-                      description:
-                        'Parameters generated by the model to be used by the tool.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          type: 'ToolModelMessage',
-          parameters: [
-            {
-              name: 'role',
-              type: "'tool'",
-              description: 'The role for the assistant message.',
-            },
-            {
-              name: 'content',
-              type: 'Array<ToolResultPart>',
-              description: 'The content of the message.',
-              properties: [
-                {
-                  type: 'ToolResultPart',
-                  parameters: [
-                    {
-                      name: 'type',
-                      type: "'tool-result'",
-                      description: 'The type of the message part.',
-                    },
-                    {
-                      name: 'toolCallId',
-                      type: 'string',
-                      description:
-                        'The id of the tool call the result corresponds to.',
-                    },
-                    {
-                      name: 'toolName',
-                      type: 'string',
-                      description:
-                        'The name of the tool the result corresponds to.',
-                    },
-                    {
-                      name: 'result',
-                      type: 'unknown',
-                      description:
-                        'The result returned by the tool after execution.',
-                    },
-                    {
-                      name: 'isError',
-                      type: 'boolean',
-                      isOptional: true,
-                      description:
-                        'Whether the result is an error or an error message.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'allowSystemInMessages',
-      type: 'boolean',
-      isOptional: true,
-      description:
-        'Whether system messages are allowed in the `prompt` or `messages` fields. Defaults to false. System messages in the `instructions` option are always allowed. Enabling this for user-controlled messages can create a prompt injection risk.',
-    },
-    {
-      name: 'maxOutputTokens',
-      type: 'number',
-      isOptional: true,
-      description: 'Maximum number of tokens to generate.',
-    },
-    {
-      name: 'temperature',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Temperature setting. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either `temperature` or `topP`, but not both.',
-    },
-    {
-      name: 'topP',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Nucleus sampling. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either `temperature` or `topP`, but not both.',
-    },
-    {
-      name: 'topK',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Only sample from the top K options for each subsequent token. Used to remove "long tail" low probability responses. Recommended for advanced use cases only. You usually only need to use temperature.',
-    },
-    {
-      name: 'presencePenalty',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Presence penalty setting. It affects the likelihood of the model to repeat information that is already in the prompt. The value is passed through to the provider. The range depends on the provider and model.',
-    },
-    {
-      name: 'frequencyPenalty',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Frequency penalty setting. It affects the likelihood of the model to repeatedly use the same words or phrases. The value is passed through to the provider. The range depends on the provider and model.',
-    },
-    {
-      name: 'stopSequences',
-      type: 'string[]',
-      isOptional: true,
-      description:
-        'Sequences that will stop the generation of the text. If the model generates any of these sequences, it will stop generating further text.',
-    },
-    {
-      name: 'seed',
-      type: 'number',
-      isOptional: true,
-      description:
-        'The seed (integer) to use for random sampling. If set and supported by the model, calls will generate deterministic results.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      isOptional: true,
-      description:
-        'Maximum number of retries. Set to 0 to disable retries. Default: 2.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isOptional: true,
-      description:
-        'An optional abort signal that can be used to cancel the call.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string>',
-      isOptional: true,
-      description:
-        'Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.',
-    },
-    {
-      name: 'tools',
-      type: 'ToolSet',
-      description:
-        'Tools that are accessible to and can be called by the model.',
-      properties: [
-        {
-          type: 'Tool',
-          parameters: [
-            {
-              name: 'description',
-              isOptional: true,
-              type: 'string',
-              description:
-                'Information about the purpose of the tool including details on how and when it can be used by the model.',
-            },
-            {
-              name: 'inputSchema',
-              type: 'zod schema',
-              description:
-                'The typed schema that describes the parameters of the tool that can also be used to validation and error handling.',
-            },
-            {
-              name: 'generate',
-              isOptional: true,
-              type: '(async (parameters) => ReactNode) | AsyncGenerator<ReactNode, ReactNode, void>',
-              description:
-                'A function or a generator function that is called with the arguments from the tool call and yields React nodes as the UI.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'toolChoice',
-      isOptional: true,
-      type: '"auto" | "none" | "required" | { "type": "tool", "toolName": string }',
-      description:
-        'The tool choice setting. It specifies how tools are selected for execution. The default is "auto". "none" disables tool execution. "required" requires tools to be executed. { "type": "tool", "toolName": string } specifies a specific tool to execute.',
-    },
-    {
-      name: 'text',
-      isOptional: true,
-      type: '(Text) => ReactNode',
-      description: 'Callback to handle the generated tokens from the model.',
-      properties: [
-        {
-          type: 'Text',
-          parameters: [
-            {
-              name: 'content',
-              type: 'string',
-              description: 'The full content of the completion.',
-            },
-            { name: 'delta', type: 'string', description: 'The delta.' },
-            { name: 'done', type: 'boolean', description: 'Is it done?' },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'providerOptions',
-      type: 'Record<string,JSONObject> | undefined',
-      isOptional: true,
-      description:
-        'Provider-specific options. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.',
-    },
-    {
-      name: 'onFinish',
-      type: '(result: OnFinishResult) => void',
-      isOptional: true,
-      description:
-        'Callback that is called when the LLM response and all request tool executions (for tools that have a `generate` function) are finished.',
-      properties: [
-        {
-          type: 'OnFinishResult',
-          parameters: [
-            {
-              name: 'usage',
-              type: 'LanguageModelUsage',
-              description: 'The token usage of the generated text.',
-              properties: [
-                {
-                  type: 'LanguageModelUsage',
-                  parameters: [
-                    {
-                      name: 'inputTokens',
-                      type: 'number | undefined',
-                      description: 'The total number of input (prompt) tokens used.',
-                    },
-                    {
-                      name: 'inputTokenDetails',
-                      type: 'LanguageModelInputTokenDetails',
-                      description:
-                        'Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelInputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'noCacheTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of non-cached input (prompt) tokens used.',
-                            },
-                            {
-                              name: 'cacheReadTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens read.',
-                            },
-                            {
-                              name: 'cacheWriteTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens written.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'outputTokens',
-                      type: 'number | undefined',
-                      description: 'The number of total output (completion) tokens used.',
-                    },
-                    {
-                      name: 'outputTokenDetails',
-                      type: 'LanguageModelOutputTokenDetails',
-                      description:
-                        'Detailed information about the output (completion) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelOutputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'textTokens',
-                              type: 'number | undefined',
-                              description: 'The number of text tokens used.',
-                            },
-                            {
-                              name: 'reasoningTokens',
-                              type: 'number | undefined',
-                              description: 'The number of reasoning tokens used.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'totalTokens',
-                      type: 'number | undefined',
-                      description: 'The total number of tokens used.',
-                    },
-                    {
-                      name: 'raw',
-                      type: 'object | undefined',
-                      isOptional: true,
-                      description: 'Raw usage information from the provider. This is the provider\'s original usage information and may include additional fields.',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: 'value',
-              type: 'ReactNode',
-              description: 'The final ui node that was generated.',
-            },
-            {
-              name: 'warnings',
-              type: 'Warning[] | undefined',
-              description:
-                'Warnings from the model provider (e.g. unsupported settings).',
-            },
-            {
-              name: 'response',
-              type: 'Response',
-              description: 'Optional response data.',
-              properties: [
-                {
-                  type: 'Response',
-                  parameters: [
-                    {
-                      name: 'headers',
-                      isOptional: true,
-                      type: 'Record<string, string>',
-                      description: 'Response headers.',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-
-]}
-/>
+- `model` (`LanguageModel`): The language model to use. Example: openai("gpt-6-astra")
+- `initial?` (`ReactNode`): The initial UI to render.
+- `instructions?` (`Instructions`): Instructions to use that specify the behavior of the model.
+- `prompt` (`string`): The input prompt to generate the text from.
+- `messages` (`Array<SystemModelMessage | UserModelMessage | AssistantModelMessage | ToolModelMessage> | Array<UIMessage>`): A list of messages that represent a conversation. Automatically converts UI messages from the useChat hook.
+  - `SystemModelMessage`
+    - `role` (`'system'`): The role for the system message.
+    - `content` (`string`): The content of the message.
+  - `UserModelMessage`
+    - `role` (`'user'`): The role for the user message.
+    - `content` (`string | Array<TextPart | ImagePart | FilePart>`): The content of the message.
+      - `TextPart`
+        - `type` (`'text'`): The type of the message part.
+        - `text` (`string`): The text content of the message part.
+      - `ImagePart`
+        - `type` (`'image'`): The type of the message part.
+        - `image` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The image content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType?` (`string`): The IANA media type of the image. Optional.
+      - `FilePart`
+        - `type` (`'file'`): The type of the message part.
+        - `data` (`string | Uint8Array | Buffer | ArrayBuffer | URL`): The file content of the message part. String are either base64 encoded content, base64 data URLs, or http(s) URLs.
+        - `mediaType` (`string`): The IANA media type of the file.
+  - `AssistantModelMessage`
+    - `role` (`'assistant'`): The role for the assistant message.
+    - `content` (`string | Array<TextPart | ToolCallPart>`): The content of the message.
+      - `TextPart`
+        - `type` (`'text'`): The type of the message part.
+        - `text` (`string`): The text content of the message part.
+      - `ToolCallPart`
+        - `type` (`'tool-call'`): The type of the message part.
+        - `toolCallId` (`string`): The id of the tool call.
+        - `toolName` (`string`): The name of the tool, which typically would be the name of the function.
+        - `args` (`object based on zod schema`): Parameters generated by the model to be used by the tool.
+  - `ToolModelMessage`
+    - `role` (`'tool'`): The role for the tool message.
+    - `content` (`Array<ToolResultPart>`): The content of the message.
+      - `ToolResultPart`
+        - `type` (`'tool-result'`): The type of the message part.
+        - `toolCallId` (`string`): The id of the tool call the result corresponds to.
+        - `toolName` (`string`): The name of the tool the result corresponds to.
+        - `result` (`unknown`): The result returned by the tool after execution.
+        - `isError?` (`boolean`): Whether the result is an error or an error message.
+- `allowSystemInMessages?` (`boolean`): Whether system messages are allowed in the \`prompt\` or \`messages\` fields. Defaults to false. System messages in the \`instructions\` option are always allowed. Enabling this for user-controlled messages can create a prompt injection risk.
+- `maxOutputTokens?` (`number`): Maximum number of tokens to generate.
+- `temperature?` (`number`): Temperature setting. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either \`temperature\` or \`topP\`, but not both.
+- `topP?` (`number`): Nucleus sampling. The value is passed through to the provider. The range depends on the provider and model. It is recommended to set either \`temperature\` or \`topP\`, but not both.
+- `topK?` (`number`): Only sample from the top K options for each subsequent token. Used to remove "long tail" low probability responses. Recommended for advanced use cases only. You usually only need to use temperature.
+- `presencePenalty?` (`number`): Presence penalty setting. It affects the likelihood of the model to repeat information that is already in the prompt. The value is passed through to the provider. The range depends on the provider and model.
+- `frequencyPenalty?` (`number`): Frequency penalty setting. It affects the likelihood of the model to repeatedly use the same words or phrases. The value is passed through to the provider. The range depends on the provider and model.
+- `stopSequences?` (`string[]`): Sequences that will stop the generation of the text. If the model generates any of these sequences, it will stop generating further text.
+- `seed?` (`number`): The seed (integer) to use for random sampling. If set and supported by the model, calls will generate deterministic results.
+- `maxRetries?` (`number`): Maximum number of retries. Set to 0 to disable retries. Default: 2.
+- `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
+- `headers?` (`Record<string, string>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
+- `tools` (`ToolSet`): Tools that are accessible to and can be called by the model.
+  - `Tool`
+    - `description?` (`string`): Information about the purpose of the tool including details on how and when it can be used by the model.
+    - `inputSchema` (`zod schema`): The typed schema that describes the parameters of the tool that can also be used to validation and error handling.
+    - `generate?` (`(parameters) => ReactNode | Promise<ReactNode> | Generator<ReactNode, ReactNode, void> | AsyncGenerator<ReactNode, ReactNode, void>`): A function or a generator function that is called with the arguments from the tool call and yields React nodes as the UI.
+- `toolChoice?` (`"auto" | "none" | "required" | { "type": "tool", "toolName": string }`): The tool choice setting. It specifies how tools are selected for execution. The default is "auto". "none" disables tool execution. "required" requires tools to be executed. \{ "type": "tool", "toolName": string } specifies a specific tool to execute.
+- `text?` (`(Text) => ReactNode`): Callback to handle the generated tokens from the model.
+  - `Text`
+    - `content` (`string`): The full content of the completion.
+    - `delta` (`string`): The delta.
+    - `done` (`boolean`): Is it done?
+- `providerOptions?` (`Record<string,JSONObject> | undefined`): Provider-specific options. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
+- `onFinish?` (`(result: OnFinishResult) => void`): Callback that is called when the LLM response and all request tool executions (for tools that have a \`generate\` function) are finished.
+  - `OnFinishResult`
+    - `usage` (`LanguageModelUsage`): The token usage of the generated text.
+      - `LanguageModelUsage`
+        - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.
+        - `inputTokenDetails` (`LanguageModelInputTokenDetails`): Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+          - `LanguageModelInputTokenDetails`
+            - `noCacheTokens` (`number | undefined`): The number of non-cached input (prompt) tokens used.
+            - `cacheReadTokens` (`number | undefined`): The number of cached input (prompt) tokens read.
+            - `cacheWriteTokens` (`number | undefined`): The number of cached input (prompt) tokens written.
+        - `outputTokens` (`number | undefined`): The number of total output (completion) tokens used.
+        - `outputTokenDetails` (`LanguageModelOutputTokenDetails`): Detailed information about the output (completion) tokens.
+          - `LanguageModelOutputTokenDetails`
+            - `textTokens` (`number | undefined`): The number of text tokens used.
+            - `reasoningTokens` (`number | undefined`): The number of reasoning tokens used.
+        - `totalTokens` (`number | undefined`): The total number of tokens used.
+        - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
+    - `value` (`ReactNode`): The final ui node that was generated.
+    - `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
+    - `response` (`Response`): Optional response data.
+      - `Response`
+        - `headers?` (`Record<string, string>`): Response headers.
 
 ## Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'value',
-      type: 'ReactNode',
-      description: 'The user interface based on the stream output.',
-    },
-    {
-      name: 'response',
-      type: 'Response',
-      isOptional: true,
-      description: 'Optional response data.',
-      properties: [
-        {
-          type: 'Response',
-          parameters: [
-            {
-              name: 'headers',
-              isOptional: true,
-              type: 'Record<string, string>',
-              description: 'Response headers.',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'warnings',
-      type: 'Warning[] | undefined',
-      description:
-        'Warnings from the model provider (e.g. unsupported settings).',
-    },
-    {
-      name: 'stream',
-      type: 'AsyncIterable<StreamPart> & ReadableStream<StreamPart>',
-      description:
-        'A stream with all events, including text deltas, tool calls, tool results, and errors. You can use it as either an AsyncIterable or a ReadableStream. When an error occurs, the stream will throw the error.',
-      properties: [
-        {
-          type: 'StreamPart',
-          parameters: [
-            {
-              name: 'type',
-              type: "'text-delta'",
-              description: 'The type to identify the object as text delta.',
-            },
-            {
-              name: 'textDelta',
-              type: 'string',
-              description: 'The text delta.',
-            },
-          ],
-        },
-        {
-          type: 'StreamPart',
-          parameters: [
-            {
-              name: 'type',
-              type: "'tool-call'",
-              description: 'The type to identify the object as tool call.',
-            },
-            {
-              name: 'toolCallId',
-              type: 'string',
-              description: 'The id of the tool call.',
-            },
-            {
-              name: 'toolName',
-              type: 'string',
-              description:
-                'The name of the tool, which typically would be the name of the function.',
-            },
-            {
-              name: 'args',
-              type: 'object based on zod schema',
-              description:
-                'Parameters generated by the model to be used by the tool.',
-            },
-          ],
-        },
-        {
-          type: 'StreamPart',
-          parameters: [
-            {
-              name: 'type',
-              type: "'error'",
-              description: 'The type to identify the object as error.',
-            },
-            {
-              name: 'error',
-              type: 'Error',
-              description:
-                'Describes the error that may have occurred during execution.',
-            },
-          ],
-        },
-        {
-          type: 'StreamPart',
-          parameters: [
-            {
-              name: 'type',
-              type: "'finish'",
-              description: 'The type to identify the object as finish.',
-            },
-            {
-              name: 'finishReason',
-              type: "'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'",
-              description: 'The reason the model finished generating the text.',
-            },
-            {
-              name: 'usage',
-              type: 'LanguageModelUsage',
-              description: 'The token usage of the generated text.',
-              properties: [
-                {
-                  type: 'LanguageModelUsage',
-                  parameters: [
-                    {
-                      name: 'inputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The total number of input (prompt) tokens used.',
-                    },
-                    {
-                      name: 'inputTokenDetails',
-                      type: 'LanguageModelInputTokenDetails',
-                      description:
-                        'Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelInputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'noCacheTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of non-cached input (prompt) tokens used.',
-                            },
-                            {
-                              name: 'cacheReadTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens read.',
-                            },
-                            {
-                              name: 'cacheWriteTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of cached input (prompt) tokens written.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'outputTokens',
-                      type: 'number | undefined',
-                      description:
-                        'The number of total output (completion) tokens used.',
-                    },
-                    {
-                      name: 'outputTokenDetails',
-                      type: 'LanguageModelOutputTokenDetails',
-                      description:
-                        'Detailed information about the output (completion) tokens.',
-                      properties: [
-                        {
-                          type: 'LanguageModelOutputTokenDetails',
-                          parameters: [
-                            {
-                              name: 'textTokens',
-                              type: 'number | undefined',
-                              description: 'The number of text tokens used.',
-                            },
-                            {
-                              name: 'reasoningTokens',
-                              type: 'number | undefined',
-                              description:
-                                'The number of reasoning tokens used.',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                    {
-                      name: 'totalTokens',
-                      type: 'number | undefined',
-                      description: 'The total number of tokens used.',
-                    },
-                    {
-                      name: 'raw',
-                      type: 'object | undefined',
-                      isOptional: true,
-                      description:
-                        "Raw usage information from the provider. This is the provider's original usage information and may include additional fields.",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `value` (`ReactNode`): The user interface based on the stream output.
+- `response?` (`Response`): Optional response data.
+  - `Response`
+    - `headers?` (`Record<string, string>`): Response headers.
+- `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
+- `stream` (`AsyncIterable<StreamPart> & ReadableStream<StreamPart>`): A stream with all events, including text deltas, tool calls, tool results, and errors. You can use it as either an AsyncIterable or a ReadableStream. When an error occurs, the stream will throw the error.
+  - `StreamPart`
+    - `type` (`'text-delta'`): The type to identify the object as text delta.
+    - `textDelta` (`string`): The text delta.
+  - `StreamPart`
+    - `type` (`'tool-call'`): The type to identify the object as tool call.
+    - `toolCallId` (`string`): The id of the tool call.
+    - `toolName` (`string`): The name of the tool, which typically would be the name of the function.
+    - `args` (`object based on zod schema`): Parameters generated by the model to be used by the tool.
+  - `StreamPart`
+    - `type` (`'error'`): The type to identify the object as error.
+    - `error` (`Error`): Describes the error that may have occurred during execution.
+  - `StreamPart`
+    - `type` (`'finish'`): The type to identify the object as finish.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+    - `usage` (`LanguageModelUsage`): The token usage of the generated text.
+      - `LanguageModelUsage`
+        - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.
+        - `inputTokenDetails` (`LanguageModelInputTokenDetails`): Detailed information about the input (prompt) tokens. See also: cached tokens and non-cached tokens.
+          - `LanguageModelInputTokenDetails`
+            - `noCacheTokens` (`number | undefined`): The number of non-cached input (prompt) tokens used.
+            - `cacheReadTokens` (`number | undefined`): The number of cached input (prompt) tokens read.
+            - `cacheWriteTokens` (`number | undefined`): The number of cached input (prompt) tokens written.
+        - `outputTokens` (`number | undefined`): The number of total output (completion) tokens used.
+        - `outputTokenDetails` (`LanguageModelOutputTokenDetails`): Detailed information about the output (completion) tokens.
+          - `LanguageModelOutputTokenDetails`
+            - `textTokens` (`number | undefined`): The number of text tokens used.
+            - `reasoningTokens` (`number | undefined`): The number of reasoning tokens used.
+        - `totalTokens` (`number | undefined`): The total number of tokens used.
+        - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
 
 ## Examples
 
-<ExampleLinks
-  examples={[
-    {
-      title:
-        'Learn to render a React component as a function call using a language model in Next.js',
-      link: '/examples/next-app/state-management/ai-ui-states',
-    },
-    {
-      title: 'Learn to persist and restore states UI/AI states in Next.js',
-      link: '/examples/next-app/state-management/save-and-restore-states',
-    },
-    {
-      title:
-        'Learn to route React components using a language model in Next.js',
-      link: '/examples/next-app/interface/route-components',
-    },
-    {
-      title: 'Learn to stream component updates to the client in Next.js',
-      link: '/examples/next-app/interface/stream-component-updates',
-    },
-  ]}
-/>
+- [Learn to render a React component as a function call using a language model in Next.js](/examples/next-app/state-management/ai-ui-states)
+- [Learn to persist and restore states UI/AI states in Next.js](/examples/next-app/state-management/save-and-restore-states)
+- [Learn to route React components using a language model in Next.js](/examples/next-app/interface/route-components)
+- [Learn to stream component updates to the client in Next.js](/examples/next-app/interface/stream-component-updates)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

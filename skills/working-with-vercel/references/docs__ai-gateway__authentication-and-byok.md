@@ -16,8 +16,8 @@ related:
 summary: Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key (BYOK) credentials for model providers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c832c2337586e2ac4f2746c7b63db22ca7a0b1dc79ccf9e16b4287dfcfbfdd0c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "12d3a11535346bdb5a37f0d5d8b58714401304cd5c40886df3836bea3eb8e954"
 ---
 
 # AI Gateway Authentication and BYOK
@@ -36,6 +36,8 @@ Every request to AI Gateway requires Vercel authentication. Use an AI Gateway AP
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Jev for Python engineers](https://vercel.com/blog/jev-for-python-engineers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Integrate your Vercel project with OpenAI's powerful suite of models.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi

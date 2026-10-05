@@ -1,17 +1,15 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github.md"
-fetched_at: "2026-08-17T04:47:04.101Z"
-sha256: "9430ae218866c8b2293e98ba3e9ffe759c867820f13609cb117f7c9d8c7dbf36"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "6f3716453fb0d60374026506efce2f43747bc07f25370e0439a4e6135f15d403"
 ---
 
 {% data reusables.pull_requests.configure_pull_request_merges_intro %} You can enforce one type of merge method, such as commit squashing or rebasing, by only enabling the desired method for your repository.
 
 > [!NOTE]
 > When using the merge queue, you no longer get to choose the merge method, as this is controlled by the queue. {% data reusables.pull_requests.merge-queue-references %}
-{% ifversion repo-rules-merge-type -%}
 >
 > Merge methods set on the repository that conflict with the merge method rule will prevent merging. For example if you do not allow rebase merging for the repository, and the merge rule only allows rebase on a branch, that merge will not be possible. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets#require-a-pull-request-before-merging).
-{%- endif %}
 
 {% data reusables.pull_requests.default_merge_option %}
 

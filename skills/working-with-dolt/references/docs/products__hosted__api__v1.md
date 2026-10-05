@@ -2,8 +2,8 @@
 title: "Hosted API v1"
 description: The Hosted Dolt v1 API — an explicit, versioned, OpenAPI-defined contract for deployments.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1.md"
-fetched_at: "2026-09-21T09:41:04.785Z"
-sha256: "5e70e89fa8c52daa31e99f7ab5ac5c3986ec852e3f23df414b7844cbd43580b7"
+fetched_at: "2026-10-05T11:16:16.598Z"
+sha256: "8d299e7ac97022c40049adddf7aa8d4416b95ac89ef72e369785ca20a5c16d65"
 ---
 
 # Hosted API v1
@@ -52,6 +52,7 @@ See [Authentication](/products/hosted/api/v1/authentication) for how to create a
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/instances` | [List a deployment's instances](/products/hosted/api/v1/deployment#listDeploymentInstances) |
 | **POST** | `/api/v1/deployments/{owner}/{deployment}/instances` | [Add a read replica to a deployment](/products/hosted/api/v1/deployment#addDeploymentInstance) |
 | **DELETE** | `/api/v1/deployments/{owner}/{deployment}/instances/{id}` | [Remove an instance from a deployment](/products/hosted/api/v1/deployment#deleteDeploymentInstance) |
+| **POST** | `/api/v1/deployments/{owner}/{deployment}/instances/{id}/reboot` | [Reboot one of a deployment's instances](/products/hosted/api/v1/deployment#rebootDeploymentInstance) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/config` | [Get a deployment's configuration](/products/hosted/api/v1/deployment#getDeploymentConfig) |
 | **PATCH** | `/api/v1/deployments/{owner}/{deployment}/config` | [Change some of a deployment's configuration overrides](/products/hosted/api/v1/deployment#patchDeploymentConfig) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/logs` | [Read a deployment's logs](/products/hosted/api/v1/deployment#getDeploymentLogs) |
@@ -60,6 +61,13 @@ See [Authentication](/products/hosted/api/v1/authentication) for how to create a
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/metrics` | [List a deployment's metrics](/products/hosted/api/v1/deployment#listDeploymentMetrics) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/metrics/{metric}` | [Read one of a deployment's metrics](/products/hosted/api/v1/deployment#getDeploymentMetric) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/backups` | [List a deployment's backups](/products/hosted/api/v1/deployment#listDeploymentBackups) |
+| **POST** | `/api/v1/deployments/{owner}/{deployment}/backups` | [Take a backup of a deployment](/products/hosted/api/v1/deployment#createDeploymentBackup) |
+| **GET** | `/api/v1/deployments/{owner}/{deployment}/database-version` | [List the versions a deployment can run](/products/hosted/api/v1/deployment#listDeploymentDatabaseVersions) |
+| **POST** | `/api/v1/deployments/{owner}/{deployment}/database-version` | [Roll a deployment's database engine to another version](/products/hosted/api/v1/deployment#updateDeploymentDatabaseVersion) |
+| **GET** | `/api/v1/deployments/{owner}/{deployment}/dolt-credentials` | [Read a deployment's Dolt credentials](/products/hosted/api/v1/deployment#getDeploymentDoltCredentials) |
+| **POST** | `/api/v1/deployments/{owner}/{deployment}/dolt-credentials` | [Issue Dolt credentials for a deployment](/products/hosted/api/v1/deployment#createDeploymentDoltCredentials) |
+| **DELETE** | `/api/v1/deployments/{owner}/{deployment}/dolt-credentials` | [Remove a deployment's Dolt credentials](/products/hosted/api/v1/deployment#deleteDeploymentDoltCredentials) |
+| **POST** | `/api/v1/deployments/{owner}/{deployment}/dolt-credentials/reroll` | [Replace a deployment's Dolt credentials](/products/hosted/api/v1/deployment#rerollDeploymentDoltCredentials) |
 | **POST** | `/api/v1/deployments/{owner}/{deployment}/disable` | [Disable a deployment](/products/hosted/api/v1/deployment#disableDeployment) |
 
 ### Pull request
@@ -70,6 +78,12 @@ See [Authentication](/products/hosted/api/v1/authentication) for how to create a
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/pulls/{id}/comments` | [List a pull request's comments](/products/hosted/api/v1/pull-request#listDeploymentPullComments) |
 | **POST** | `/api/v1/deployments/{owner}/{deployment}/pulls/{id}/comments` | [Comment on a pull request](/products/hosted/api/v1/pull-request#createDeploymentPullComment) |
 | **GET** | `/api/v1/deployments/{owner}/{deployment}/pulls/{id}/logs` | [List a pull request's activity log](/products/hosted/api/v1/pull-request#listDeploymentPullLogs) |
+
+### Operation
+
+| Method | Path | What it does |
+|--------|------|--------------|
+| **GET** | `/api/v1/operations/{id}` | [Get the status of queued work](/products/hosted/api/v1/operation#getOperation) |
 
 ## Response shape
 
@@ -126,9 +140,13 @@ Instance changes are also `202`, but there is no per-instance `state` field to p
 
 [Exposing or unexposing a service](/products/hosted/api/v1/deployment#exposeDeploymentService) is `202` too, and is polled on the deployment itself: read it back until `expose_remotesapi_endpoint` or `expose_mcp` reports the value you asked for, which is written once the change reaches the instances. The `202` body echoes the request rather than the deployment's current state. Exposing the remotesapi endpoint needs a WebPKI certificate — `webpki_cert` on the deployment says whether it has one, and without it the request is a `400` rather than a queued change.
 
+[Taking a backup](/products/hosted/api/v1/deployment#createDeploymentBackup), [rolling the database version](/products/hosted/api/v1/deployment#updateDeploymentDatabaseVersion), and [rebooting an instance](/products/hosted/api/v1/deployment#rebootDeploymentInstance) return `202` with an [OperationRef](/products/hosted/api/v1/models#model-operationref). Follow its `href`, or pass its `id` to [Get an operation](/products/hosted/api/v1/operation#getOperation), and poll with a delay until `status` is `succeeded` or `failed`. Completion means different things for each action: a version roll waits for every instance to report the requested version, backup completion is inferred from successful backup timestamps, and a reboot succeeds when the platform accepts the request, before the database is necessarily ready. A failed operation does not imply rollback, and a transient HTTP error while polling is not a reason to submit the action again.
+
+[Issuing](/products/hosted/api/v1/deployment#createDeploymentDoltCredentials), [removing](/products/hosted/api/v1/deployment#deleteDeploymentDoltCredentials), or [replacing Dolt credentials](/products/hosted/api/v1/deployment#rerollDeploymentDoltCredentials) also returns `202` with an OperationRef to poll. These credentials let the deployment access private databases on DoltHub. After issuing or replacing them succeeds, [read the public key](/products/hosted/api/v1/deployment#getDeploymentDoltCredentials) and add it to the appropriate DoltHub account. After removal succeeds, that read returns `404`. Replacement can temporarily leave instances with different credentials, and a failed operation does not roll back changes.
+
 Deployment names are unique within an owner, which makes creates idempotent by name: retrying after an ambiguous failure returns `409 Conflict` rather than provisioning a second deployment.
 
-> **Creating a deployment incurs cost.** Disabling one tears down its instances and their storage — [take a backup first](/products/hosted/api/v1/deployment#listDeploymentBackups) if you want the data.
+> **Creating a deployment incurs cost.** Disabling one tears down its instances and their storage — [take a backup first](/products/hosted/api/v1/deployment#createDeploymentBackup) and confirm completion if you want the data.
 
 ## Stability
 

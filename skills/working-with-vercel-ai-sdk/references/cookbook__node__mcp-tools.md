@@ -1,16 +1,27 @@
 ---
+title: Model Context Protocol (MCP) Tools
+description: Learn how to use MCP tools with the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/mcp-tools"
+docs_index: /llms.txt
+tags:
+  - node
+  - tool use
+  - agent
+  - mcp
 source: "https://ai-sdk.dev/cookbook/node/mcp-tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "474fcd8a9b1e1b00cdfb8976c3921c61f8c500857b59655aff8ca14036629cba"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "1c400538df8d48ef9afd2ec59befe19c16f2530db198634a45d683a851ff9f20"
 ---
 
-# MCP Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK supports Model Context Protocol (MCP) tools by offering a lightweight client that exposes a `tools` method for retrieving tools from a MCP server. After use, the client should always be closed to release resources.
 
 If you prefer to use the official transports (optional), install the official Model Context Protocol TypeScript SDK.
 
-<Snippet text="pnpm install @modelcontextprotocol/sdk" />
+```
+pnpm install @modelcontextprotocol/sdk
+```
 
 ```ts
 import { createMCPClient } from '@ai-sdk/mcp';
@@ -33,12 +44,12 @@ try {
     args: ['src/stdio/dist/server.js'],
   });
 
-  const clientOne = await createMCPClient({
+  clientOne = await createMCPClient({
     transport,
   });
 
   // Connect to an HTTP MCP server directly via the client transport config
-  const clientTwo = await createMCPClient({
+  clientTwo = await createMCPClient({
     transport: {
       type: 'http',
       url: 'http://localhost:3000/mcp',
@@ -52,7 +63,7 @@ try {
   });
 
   // Connect to a Server-Sent Events (SSE) MCP server directly via the client transport config
-  const clientThree = await createMCPClient({
+  clientThree = await createMCPClient({
     transport: {
       type: 'sse',
       url: 'http://localhost:3000/sse',
@@ -97,45 +108,17 @@ try {
   console.error(error);
 } finally {
   await Promise.all([
-    clientOne.close(),
-    clientTwo.close(),
-    clientThree.close(),
+    clientOne?.close(),
+    clientTwo?.close(),
+    clientThree?.close(),
   ]);
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

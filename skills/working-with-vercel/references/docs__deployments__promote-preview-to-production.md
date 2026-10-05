@@ -16,8 +16,8 @@ related:
 summary: Test a preview deployment and promote it to production using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promote-preview-to-production.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "59c1b226306598d1f6181933bd8778eda549cbcd69512647afe1a5ffb9af2351"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a3fe9097100c45e09f8d53d85c3f089bdedb33de3fe6c35f91b6ff799380e554"
 ---
 
 # Promoting a preview deployment to production
@@ -31,14 +31,14 @@ Use this guide to verify a preview deployment and promote it to production. You'
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to promote deployments to production on Vercel.
 - [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
+- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to automatically alias a Vercel preview deployment.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
-- [Debugging production 500 errors](https://vercel.com/docs/observability/debug-production-errors?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=related) — Find, fix, and verify production 500 errors using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/deployments/promote-preview-to-production.graph.md](/docs/deployments/promote-preview-to-production.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Fpromote-preview-to-production&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

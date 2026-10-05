@@ -15,13 +15,13 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4d3681295223103c7eb7ce417a3966ab4832fd06532ee007fab9052f2f371d5b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5bfd0b54463a85aa0d9ad2e521d22dee665e48c14a2dce71bc491832b6306a50"
 ---
 
 # AI Gateway Speech to Text
 
-Transcribe recorded audio into text with transcription models such as `openai/whisper-1`, `openai/gpt-4o-transcribe`, and `google/gemini-3.5-transcribe`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
+Transcribe recorded audio into text with transcription models such as `openai/whisper-1`, `openai/gpt-4o-transcribe`, `google/gemini-3.5-transcribe`, and `microsoft/mai-transcribe-2`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
 
 
 <!-- docsgraph:related -->
@@ -32,9 +32,13 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 - [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
 - [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
+- [ElevenLabs](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Learn how to use the ElevenLabs provider for the AI SDK.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
-- [ElevenLabs](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
-- [Cartesia](https://ai-sdk.dev/providers/ai-sdk-providers/cartesia?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
+- [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related)
+- [transcribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — API Reference for transcribe.
+- [experimental_streamTranscribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — API Reference for experimental_streamTranscribe.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -125,7 +129,7 @@ for await (const part of result.fullStream) {
 console.log(await result.text);
 ```
 
-Streaming transcription is available for models such as `openai/gpt-realtime-whisper`, `spacexai/grok-stt`, and `google/gemini-3.5-transcribe-live`. To find models that support it, filter the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription\&features=websockets) by WebSockets. See the AI SDK [streaming transcription docs](https://ai-sdk.dev/docs/ai-sdk-core/transcription#streaming-transcription) for the full API, including stream part types and provider options.
+Streaming transcription is available for models such as `openai/gpt-realtime-whisper`, `spacexai/grok-stt`, `google/gemini-3.5-transcribe-live`, and `microsoft/mai-transcribe-2-streaming`. To find models that support it, filter the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription\&features=websockets) by WebSockets. See the AI SDK [streaming transcription docs](https://ai-sdk.dev/docs/ai-sdk-core/transcription#streaming-transcription) for the full API, including stream part types and provider options.
 
 ### Stream from the browser
 
@@ -262,11 +266,37 @@ const result = await transcribe({
 console.log(result.text);
 ```
 
+AI Gateway serves Microsoft models through Azure, so their options go under `providerOptions.azure`. For example, request word timestamps, speaker labels, and a clean transcript from `microsoft/mai-transcribe-2`:
+
+```typescript filename="transcribe-microsoft.ts" {8-15}
+import { transcribe } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { readFile } from 'node:fs/promises';
+
+const result = await transcribe({
+  model: gateway.transcriptionModel('microsoft/mai-transcribe-2'),
+  audio: await readFile('meeting.mp3'),
+  providerOptions: {
+    azure: {
+      timestamps: 'word',
+      transcribeStyle: 'clean',
+      diarization: { enabled: true },
+      phraseList: { phrases: ['Vercel', 'AI Gateway'] },
+    },
+  },
+});
+
+console.log(result.text);
+```
+
+Speaker IDs and word timing are in `result.providerMetadata.azure.phrases`. `microsoft/mai-transcribe-1.5` supports only `locales` and `phraseList`. Both models accept WAV, MP3, FLAC, and Ogg/Opus audio, but not WebM or MP4. For more options, see the [AI SDK Azure transcription documentation](https://ai-sdk.dev/providers/ai-sdk-providers/azure#mai-transcribe).
+
 ## Limitations
 
 - Audio for the REST API is sent base64-encoded in a JSON body. Multipart file uploads are not supported.
 - The REST API returns the full transcript in a single JSON response. To stream results, use `experimental_streamTranscribe` with the AI SDK.
 - Recorded audio and streaming support different model sets. Browse [transcription models](/ai-gateway/models?modality=audio:transcription) and add the [WebSockets filter](/ai-gateway/models?modality=audio:transcription\&features=websockets) to see which models support streaming.
+- Microsoft transcription models reject unsupported options, such as `timestamps` on `microsoft/mai-transcribe-1.5`, with a 400 error.
 
 
 ---

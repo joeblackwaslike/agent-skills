@@ -1,10 +1,14 @@
 ---
+title: MCP Apps
+description: Learn how to connect to MCP Apps and render interactive tool UIs with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "392ae2938a22dda41a302af5e29a04581e7d3d0addea5ffb5bca2a3326828c09"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "863674fd1cb3a5e2736a756f69543ea37364dae5fc11ea3bfd188df256016aa1"
 ---
 
-# MCP Apps
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 MCP Apps extend [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools) tools with interactive UI resources. The model still calls ordinary MCP tools, but tools can point to a `ui://` resource containing HTML that your app renders in a sandboxed iframe.
 
@@ -18,11 +22,11 @@ The AI SDK provides two pieces for building MCP Apps hosts:
 An MCP Apps host usually does the following:
 
 1. Connect to the MCP server with MCP Apps client capabilities.
-1. List tools and split them by MCP Apps visibility.
-1. Pass only model-visible tools to `streamText` or `generateText`.
-1. Read the app's `ui://` resource when a tool part includes MCP App metadata.
-1. Render the HTML resource in a sandboxed iframe.
-1. Proxy allowed iframe requests, such as app-visible `tools/call`, back to the MCP server.
+2. List tools and split them by MCP Apps visibility.
+3. Pass only model-visible tools to `streamText` or `generateText`.
+4. Read the app's `ui://` resource when a tool part includes MCP App metadata.
+5. Render the HTML resource in a sandboxed iframe.
+6. Proxy allowed iframe requests, such as app-visible `tools/call`, back to the MCP server.
 
 ## Connect With MCP Apps Support
 
@@ -47,7 +51,7 @@ Only advertise these capabilities if your host can fetch and render MCP App reso
 
 MCP Apps tools can declare `_meta.ui.visibility`. Tools with `"model"` visibility can be passed to the model. Tools with only `"app"` visibility should be kept for iframe requests and not exposed to the model.
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { splitMCPAppTools } from '@ai-sdk/mcp';
 import {
   convertToModelMessages,
@@ -93,9 +97,9 @@ When the model calls an app-backed tool, the MCP client preserves the app metada
 
 Use `readMCPAppResource` to read and normalize an app resource before sending it to the browser host.
 
-```ts filename="app/api/mcp-app-host/route.ts"
+```ts title="app/api/mcp-app-host/read-resource/route.ts"
 import { readMCPAppResource } from '@ai-sdk/mcp';
-import { createMCPAppsClient } from '../chat/mcp-client';
+import { createMCPAppsClient } from '../../chat/mcp-client';
 
 export async function POST(req: Request) {
   const requestUrl = new URL(req.url);
@@ -118,11 +122,11 @@ The iframe cannot connect directly to your MCP server. It sends JSON-RPC message
 
 For app-initiated tool calls, validate that the requested tool is app-visible before calling the MCP server.
 
-```ts filename="app/api/mcp-app-host/route.ts"
+```ts title="app/api/mcp-app-host/call-tool/route.ts"
 import { splitMCPAppTools } from '@ai-sdk/mcp';
-import { createMCPAppsClient } from '../chat/mcp-client';
+import { createMCPAppsClient } from '../../chat/mcp-client';
 
-export async function callAppVisibleTool(req: Request) {
+export async function POST(req: Request) {
   const requestUrl = new URL(req.url);
   const { name, arguments: toolArguments } = await req.json();
   const client = await createMCPAppsClient(requestUrl.origin);
@@ -156,12 +160,10 @@ In production, add any policy and user approval checks your app needs before for
 
 In your React chat UI, render normal message parts as usual and pass tool parts to `experimental_MCPAppRenderer`.
 
-<Note type="warning">
-  `experimental_MCPAppRenderer` is experimental and may change in a future
-  release.
-</Note>
+`experimental_MCPAppRenderer` is experimental and may change in a future
+release.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import {
@@ -243,7 +245,7 @@ export default function Chat() {
 }
 ```
 
-`experimental_MCPAppRenderer` renders nothing for ordinary tools. For app-backed tools, it loads the resource, creates the sandbox bridge, sends tool input and result notifications to the iframe, and forwards supported app requests through your handlers.
+For ordinary tools, `experimental_MCPAppRenderer` renders the provided `fallback` (or nothing when no fallback is provided). For app-backed tools, it loads the resource, creates the sandbox bridge, sends tool input and result notifications to the iframe, and forwards supported app requests through your handlers.
 
 ## Best Practices
 
@@ -256,53 +258,13 @@ export default function Chat() {
 
 ## Reference
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'MCP Apps helpers',
-      link: '/docs/reference/ai-sdk-core/mcp-apps',
-    },
-    {
-      title: 'MCP App Renderer',
-      link: '/docs/reference/ai-sdk-ui/mcp-app-renderer',
-    },
-  ]}
-/>
+- [MCP Apps helpers](/docs/reference/ai-sdk-core/mcp-apps)
+- [MCP App Renderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

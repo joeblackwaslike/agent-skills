@@ -17,8 +17,8 @@ related:
 summary: Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, and monitor usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/hermes.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "17ffbdf46882edb9242118437fe2a879ab8e86e93eeac25f6fda7483126ccc40"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "275a63c3c4bebec5f096dfdd6d8be7c947518289b0e46b79a2b7c6f229c3dc02"
 ---
 
 # Hermes with AI Gateway
@@ -33,10 +33,10 @@ sha256: "17ffbdf46882edb9242118437fe2a879ab8e86e93eeac25f6fda7483126ccc40"
 
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
 - [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/hermes.graph.md](/docs/ai-gateway/coding-agents/hermes.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fhermes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

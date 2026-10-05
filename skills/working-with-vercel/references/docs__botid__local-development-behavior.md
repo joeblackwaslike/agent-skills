@@ -12,8 +12,8 @@ related:
 summary: How BotID behaves in local development environments and testing options
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/local-development-behavior.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e3c50984a2018cd34d544e3fbb6b8054ec9fce096665612362a1d41fda23ff09"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "41eb9154e768f3200a70d21ee4d6573b57c6a545fe9692865d7a891460d4ddac"
 ---
 
 # Local Development Behavior
@@ -30,18 +30,19 @@ During local development, BotID behaves differently than in production to facili
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Why does my Serverless Function work locally but not when deployed?](https://vercel.com/kb/guide/why-does-my-serverless-function-work-locally-but-not-when-deployed?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot your Serverless Functions.
+- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
-- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related)
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in production and local environments.
-- [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=related) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 
 Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md?from=related&source_path=%2Fdocs%2Fbotid%2Flocal-development-behavior&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ### Using developmentOptions
 
-If you need to test BotID's different return values in local development, you can use the `developmentBypass` option:
+If you need to test BotID's different return values in local development, you can use the `developmentOptions.bypass` option:
 
 ```ts filename="app/api/sensitive/route.ts"
 import { checkBotId } from 'botid/server';

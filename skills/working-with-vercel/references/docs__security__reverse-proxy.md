@@ -13,8 +13,8 @@ related:
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "0a29589d510b04b92ea15763c565069b719a764908ae64a961b4f13d643fa3c9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7e4616e02f612a52deb0f998ee931a28612248df5aa917c429126001418a85ff"
 ---
 
 # Reverse Proxy Servers and Vercel
@@ -27,16 +27,16 @@ sha256: "0a29589d510b04b92ea15763c565069b719a764908ae64a961b4f13d643fa3c9"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Information on using Cloudflare together with Vercel.
+- [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn about using self-hosted or reverse proxies with Vercel deployments.
 - [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performan
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Information on using Cloudflare together with Vercel.
-- [Can I use a proxy on top of my Vercel Deployment?](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — General information about using an external proxy to serve a Vercel Deployment.
-- [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn about using self-hosted or reverse proxies with Vercel deployments.
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel encrypts data in transit and at rest.
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 
 Full cross-link map for this page: [/docs/security/reverse-proxy.graph.md](/docs/security/reverse-proxy.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Freverse-proxy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -79,7 +79,7 @@ Verified Proxy is automatically enabled for the providers listed below on all pl
 
 ### Self-hosted reverse proxies (Verified Proxy Advanced)
 
-> **🔒 Permissions Required**: Verified Proxy Advanced
+> **Availability**: Verified Proxy Advanced is available on Enterprise plans
 
 Ensure that the following requirements are met if you are running self-hosted reverse proxies:
 

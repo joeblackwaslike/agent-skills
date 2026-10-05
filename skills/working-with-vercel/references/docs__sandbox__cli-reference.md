@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "bb09035910f8a2556f17d2e74f5be64cf7fdcbab0017c1178f0d64447431e6b4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7e69137ce02428370e422c8f1a21d153d373d13d79e9ce9f521dcc42ceb61739"
 ---
 
 # Sandbox CLI Reference
@@ -37,10 +37,10 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for sandboxes.
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=graph)
@@ -57,22 +57,22 @@ Install the Sandbox CLI globally to use all commands:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i sandbox
+    pnpm i -g sandbox
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i sandbox
+    yarn global add sandbox
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i sandbox
+    npm i -g sandbox
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i sandbox
+    bun add -g sandbox
     ```
   </Code>
 </CodeBlock>
@@ -1015,7 +1015,7 @@ sandbox sessions list my-sandbox --sort-order asc --limit 100
 
 ## `sandbox drives`
 
-> **🔒 Permissions Required**: Drives (Beta)
+> **Availability**: Drives (Beta) are available on all plans
 
 Drives are persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 

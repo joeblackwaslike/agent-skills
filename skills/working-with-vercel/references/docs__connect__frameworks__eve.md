@@ -1,5 +1,5 @@
 ---
-title: eve
+title: eve with Vercel Connect
 product: vercel
 url: /docs/connect/frameworks/eve
 canonical_url: "https://vercel.com/docs/connect/frameworks/eve"
@@ -17,13 +17,13 @@ related:
 summary: Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, and authenticate inbound...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "90f6a3d0f751736ec5a6d6efdb24f32475a5f9b61f9123cce04e381c55a435c3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1e1814e930ab12df8de424b682079177e7d2be421790c251bf77a5430cbe80d1"
 ---
 
-# eve
+# eve with Vercel Connect
 
-> **🔒 Permissions Required**: Vercel Connect
+> **Availability**: Vercel Connect is available on all plans
 
 The `@vercel/connect/eve` entrypoint adapts Vercel Connect credentials to
 eve's connection and channel APIs. It uses your deployment's
@@ -37,15 +37,15 @@ tokens, so your app doesn't store provider refresh tokens.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
-- [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related)
-- [eve with MCP](https://vercel.com/docs/mcp/integrations/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
-- [Chat SDK](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI SDK and MCP](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [eve](https://vercel.com/docs/eve?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=related) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 
 Full cross-link map for this page: [/docs/connect/frameworks/eve.graph.md](/docs/connect/frameworks/eve.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fframeworks%2Feve&source_site=vercel-docs&relationship=graph)

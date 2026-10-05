@@ -12,8 +12,8 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "39a3181a9f04c3d931f8b22046169cead4d84ef1636a6a896513df2ee73d4f69"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f0e2c827f40c80b505668e4fc4561d8fa624843ee0af839bf8117d1d49c77aa9"
 ---
 
 # Fluid compute pricing
@@ -35,7 +35,7 @@ Vercel prices Functions on fluid compute based on your plan and resource usage. 
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 

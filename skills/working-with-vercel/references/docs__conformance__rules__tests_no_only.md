@@ -12,13 +12,13 @@ related:
 summary: Requires that focused tests (i.e. it.only()) are unfocused.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/tests_no_only.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d6cb9480d6643caa8684cb12fc78cb02a9f776ce9c3833ea7516323dd9d6a6de"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "72d304f1ae74243b81b42debfdda09cc1cc1bc261ed4f9fcd3a641102d47fbe7"
 ---
 
 # TESTS_NO_ONLY
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Focusing tests can help to write and debug test suites, but focused tests
 should be unfocused before committing changes.

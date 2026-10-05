@@ -1,10 +1,17 @@
 ---
+title: Dynamic Prompt Caching
+description: Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives.
+url: "https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching"
+docs_index: /llms.txt
+tags:
+  - caching
+  - cost-optimization
 source: "https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "62237819854792f60080ff2d8813668d3af247571e0608194fe8419c052861bb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "395595df108b072f988bda9703a1121a7dd1f752b33321342cb6e7fdc78210d4"
 ---
 
-# Dynamic Prompt Caching
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 When building agents, API costs can add up quickly as conversations grow. Many providers offer prompt caching features that allow you to cache conversation prefixes, significantly reducing costs for repeated context.
 
@@ -23,7 +30,7 @@ The utility adds Anthropic's `cacheControl` directive to your messages, marking 
 
 ### How it works
 
-The function detects the model provider and applies the appropriate caching strategy. In this implementation, it checks for Anthropic models by examining the provider name and model ID. When it finds an Anthropic model, it adds `providerOptions` to the last message in your array with `cacheControl: { type: "ephemeral" }`. Per Anthropic's documentation: "Mark the final block of the final message with cache_control so the conversation can be incrementally cached."
+The function detects the model provider and applies the appropriate caching strategy. In this implementation, it checks for Anthropic models by examining the provider name and model ID. When it finds an Anthropic model, it adds `providerOptions` to the last message in your array with `cacheControl: { type: "ephemeral" }`. Per Anthropic's documentation: "Mark the final block of the final message with cache\_control so the conversation can be incrementally cached."
 
 For non-Anthropic models, the function returns your messages unchanged. You can extend this pattern to support other providers by adding detection logic and provider-specific options.
 
@@ -116,7 +123,7 @@ import { addCacheControlToMessages } from './add-cache-control-to-messages';
 
 async function main() {
   const result = await generateText({
-    model: anthropic('claude-sonnet-5'),
+    model: anthropic('claude-sonnet-5-5'),
     prompt: 'Help me analyze this codebase and suggest improvements.',
     stopWhen: isStepCount(10),
     tools: {
@@ -166,38 +173,10 @@ When using this utility, keep these points in mind:
 3. **Cache lifetime** - Anthropic's ephemeral cache has a 5-minute TTL. Inactive conversations lose their cache. Check your provider's documentation for cache duration details.
 4. **Cost structure** - With Anthropic, cached tokens cost 10% of input tokens, but cache writes cost 25% more. You save money when cache hits exceed cache misses. Cost structures vary by provider.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

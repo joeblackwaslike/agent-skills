@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a63c0dec4bfe6706b887c6021e15c7538c98573d82f2473b2c3126a56e057a45"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5974ab398807eb3a0fadcf292bd683e2709b852dba0afa8dc2c00ef68d4765cc"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -36,7 +36,9 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 - [Link Component](https://nextjs.org/docs/app/api-reference/components/link?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Enable fast client-side navigation with the built-in `next/link` component.
 - [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Next.js fully supports building Single-Page Applications (SPAs).
 - [generateMetadata](https://nextjs.org/docs/app/api-reference/functions/generate-metadata?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to add Metadata to your Next.js application for improved search engine optimization (SEO) and web shareability
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
+- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Split integration.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=graph)
@@ -634,7 +636,7 @@ injectAnalytics({ debug: true });
 ```
 
 ```js {3} filename="src/routes/+layout.js" framework=sveltekit
-import { dev } from '$app/environment';
+import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
 injectAnalytics({ debug: true });
 ```
@@ -883,7 +885,7 @@ export default function App() {
       </head>
       <body>
         <Analytics
-          beforeSend={(event: BeforeSendEvent) => {
+          beforeSend={(event) => {
             if (event.url.includes('/private')) {
               return null;
             }
@@ -994,7 +996,7 @@ const beforeSend = (event) => {
 
 ```tsx {2, 4-9, 13} filename="src/App.vue" framework=vue
 <script setup lang="ts">
-import { Analytics, type BeforeSendEvent } from '@vercel/analytics/nuxt';
+import { Analytics, type BeforeSendEvent } from '@vercel/analytics/vue';
 
 const beforeSend = (event: BeforeSendEvent) => {
   if (event.url.includes('/private')) {
@@ -1012,7 +1014,7 @@ const beforeSend = (event: BeforeSendEvent) => {
 
 ```jsx {4-9, 13} filename="src/App.vue" framework=vue
 <script setup>
-import { Analytics } from '@vercel/analytics/nuxt';
+import { Analytics } from '@vercel/analytics/vue';
 
 const beforeSend = (event) => {
   if (event.url.includes('/private')) {

@@ -15,8 +15,8 @@ related:
 summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "cdeaaf2410d74073901a6c38eaa1673ebd5c682d5b55e1f5e8cb051ad1491112"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "94b87e2a078259ae3c1ad8043a22eaa90d6675babd43a99dc675d827fb161219"
 ---
 
 # Microfrontends local development
@@ -30,13 +30,13 @@ To provide a seamless local development experience, `@vercel/microfrontends` pro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
+- [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
+- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to manage your microfrontends on Vercel.
-- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Configure your microfrontends.json.
-- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Using Monorepos](https://vercel.com/docs/monorepos?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Vercel provides support for monorepos. Learn how to deploy a monorepo here.
+- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=related) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 
 Full cross-link map for this page: [/docs/microfrontends/local-development.graph.md](/docs/microfrontends/local-development.graph.md?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Flocal-development&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -280,7 +280,7 @@ When setting up your monorepo without turborepo, the `proxy` command used inside
 
 For example, if you are running the **Web** and **Docs** microfrontends locally, this command would set up the local proxy to route requests locally for those applications, and requests for the remaining applications to their fallbacks:
 
-```json filename="package.json"
+```bash
 microfrontends proxy microfrontends.json --local-apps web docs
 ```
 
@@ -293,39 +293,45 @@ Therefore, you can run `npm run docs-dev` and `npm run docs-proxy` to get the fu
 
 ## Falling back to protected deployments
 
-To fall back to a Vercel deployment protected with [Deployment Protection](/docs/deployment-protection), set an environment variable with the value of the [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation).
+When the local proxy falls back to a Vercel deployment protected with [Deployment Protection](/docs/deployment-protection), it needs a [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) secret to reach the protected deployment.
 
-You must name the environment variable `AUTOMATION_BYPASS_<transformed app name>`. The name is transformed to be uppercase, and any non letter or number is replaced with an underscore.
+The preferred approach is to set a single shared `VERCEL_AUTOMATION_BYPASS_SECRET` in the default application's local environment. The local proxy reads this value and sends it as the `x-vercel-protection-bypass` header when proxying to protected child project deployments. When Protection Bypass for Automation is enabled on the default application's project, Vercel sets `VERCEL_AUTOMATION_BYPASS_SECRET` automatically as a system environment variable, so running `vercel env pull` in the default app brings it down to your local environment.
 
-For example, the env var name for an app named `my-docs-app` would be:
-`AUTOMATION_BYPASS_MY_DOCS_APP`.
+For one shared secret to authorize requests to every protected child project, each child project must recognize the same bypass secret value. Copy the default application's secret and add it to each protected child project.
 
-### Set the protection bypass environment variable
+### Share one bypass secret across projects
 
-- ### Enable the Protection Bypass for Automation for your project
-  1. Navigate to the Vercel **project for the protected fallback deployment**
+- ### Enable Protection Bypass for Automation on the default app
+  1. Navigate to the Vercel project for the **default application**
   2. Click on the **Settings** tab
   3. Click on **Deployment Protection**
-  4. If not enabled, create a new [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)
+  4. Under **Protection Bypass for Automation**, create a secret if one does not already exist
   5. Copy the value of the secret
 
-- ### Set the environment variable in the default app project
-  1. Navigate to the Vercel project for the **default application** (may or may not be the same project)
+- ### Add the same secret to each protected child project
+  1. Navigate to the Vercel project for a **protected child application**
   2. Click on the **Settings** tab
-  3. Click on **Environment Variables**
-  4. Add a new variable with the name `AUTOMATION_BYPASS_<transformed app name>` (e.g. `AUTOMATION_BYPASS_MY_DOCS_APP`) and the value of the secret from the previous step
-  5. Set the selected environments for the variable to `Development`
-  6. Click on **Save**
+  3. Click on **Deployment Protection**
+  4. Under **Protection Bypass for Automation**, set the secret to the same value you copied from the default app
+  5. Repeat for every protected child project you want the proxy to reach
 
-- ### Import the secret using vc env pull
-  1. Ensure you have [vc](https://vercel.com/cli) installed
+- ### Pull the secret into your local environment
+  1. Ensure you have the [Vercel CLI](https://vercel.com/cli) installed
   2. Navigate to the root of the default app folder
-  3. Run `vc login` to authenticate with Vercel
-  4. Run `vc link` to link the folder to the Vercel project
-  5. Run `vc env pull` to pull the secret into your local environment
+  3. Run `vercel login` to authenticate with Vercel
+  4. Run `vercel link` to link the folder to the Vercel project
+  5. Run `vercel env pull` to pull `VERCEL_AUTOMATION_BYPASS_SECRET` into your local environment file (for example, `.env.local`)
 
 - ### Update your README.md
-  Include [the previous step](#import-the-secret-using-vc-env-pull) in your repository setup instructions, so that other users will also have the secret available.
+  Include [the previous step](#share-one-bypass-secret-across-projects) in your repository setup instructions, so that other developers pull the secret and have it available locally.
+
+### Use a per-app secret for distinct bypass values
+
+If a project needs its own distinct bypass secret rather than a shared one, set a per-app environment variable named `AUTOMATION_BYPASS_<transformed app name>` in the default application's local environment. When both `VERCEL_AUTOMATION_BYPASS_SECRET` and the per-app variable are set for an application, the per-app variable takes precedence.
+
+The name is transformed to be uppercase, and any character that is not a letter or number is replaced with an underscore. For example, the variable name for an app named `my-docs-app` would be `AUTOMATION_BYPASS_MY_DOCS_APP`.
+
+Set this variable to the value of the protected project's [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) secret, scope it to the `Development` environment on the default application's project, and run `vercel env pull` in the default app to bring it down locally.
 
 
 ---

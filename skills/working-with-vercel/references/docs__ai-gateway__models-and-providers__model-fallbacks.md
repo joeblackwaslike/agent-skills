@@ -16,8 +16,8 @@ related:
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "6331a8d06d4b5811862f93690d451b33971fcb93c209cbde6ae5d0e187cbf29c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0095e274e86a7ee44107ca42f0e56f8e8ffafc693b4baa8b208af8d7d87f567a"
 ---
 
 # AI Gateway Model Fallbacks
@@ -34,13 +34,11 @@ You can configure model failover to specify backups that are tried in order if t
 - [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [Claude Fable 5 access restored on AI Gateway](https://vercel.com/changelog/claude-fable-5-access-restored-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
-- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
-- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
+- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Learn how to work with multiple providers and models
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=graph)

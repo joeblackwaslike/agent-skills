@@ -16,8 +16,8 @@ related:
 summary: Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "06416f637b54146dfbeb8b13a8d4b2fc14978dcbd55cbe7b970781deb1a49508"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e19b6ed8c8535faa3aeb16d17c4e98e4d970bfef539648cf21008406efa510ea"
 ---
 
 # eve
@@ -33,17 +33,17 @@ Build durable backend AI agents with eve, an open-source, filesystem-first frame
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [The Agent Stack](https://vercel.com/blog/agent-stack?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related)
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
 - [Next.js](https://eve.dev/docs/guides/frontend/nextjs?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent and a Next.js app as one project with withEve.
-- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
 - [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 
 Full cross-link map for this page: [/docs/eve.graph.md](/docs/eve.graph.md?from=related&source_path=%2Fdocs%2Feve&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

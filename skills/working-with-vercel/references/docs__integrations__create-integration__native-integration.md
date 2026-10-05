@@ -17,8 +17,8 @@ related:
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "960ea8e25869274ef24fef9b7b8d8c03726036e96b0472a47e99cb4d76feed17"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "01f55529505ba2f282d1f3042236d9762ed915c457e92544896fd20d72c00084"
 ---
 
 # Native integration concepts
@@ -170,7 +170,7 @@ See [Project connection events](/docs/webhooks/webhooks-api#integration-resource
 
 When a user connects a resource to a Vercel project, Vercel creates environment variables from the secrets your integration provides during [provisioning](/docs/integrations/create-integration/marketplace-flows#submit-store-creation) or through the [Update Resource Secrets endpoint](/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets-by-id).
 
-These environment variables are the same across all projects connected to a resource. For example, if your integration provisions a database with a `DATABASE_URL` secret, every connected project receives the same `DATABASE_URL` variable.
+By default, these environment variables are the same across all projects connected to a resource. For example, if your integration provisions a database with a `DATABASE_URL` secret, every connected project receives the same `DATABASE_URL` variable. A connection that uses a [prefix](#differentiate-variables-with-prefixes) receives prefixed variable names instead.
 
 ### Differentiate variables with prefixes
 

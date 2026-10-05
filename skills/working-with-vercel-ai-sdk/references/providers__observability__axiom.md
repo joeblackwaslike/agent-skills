@@ -1,10 +1,14 @@
 ---
+title: Axiom
+description: Measure, observe, and improve your AI SDK application with Axiom
+url: "https://ai-sdk.dev/providers/observability/axiom"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/axiom.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "0efad2fcf6af6dc1bb83c6195dcdc26852f88a3cc28886b019cefca4c90ec113"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5e9453f7c2efadce3567fde4fbc2b3e513be31618403a1d5b2f8e4fdd8ef2041"
 ---
 
-# Axiom Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 **Axiom** is a data platform with specialized features for **AI engineering workflows**, helping you build sophisticated AI systems with confidence.
 
@@ -24,13 +28,13 @@ First, you'll need an Axiom organization, a dataset to send traces to, and an AP
 
 Install the Axiom package in your project:
 
-<InstallPackages packages="axiom" />
+**Packages:** `axiom`
 
 ### 3. Set Environment Variables
 
 Configure your environment variables in a `.env` file. This uses the standard OpenTelemetry configuration to send traces directly to your Axiom dataset.
 
-```bash filename=".env"
+```bash title=".env"
 # Axiom Configuration
 AXIOM_TOKEN="YOUR_AXIOM_API_TOKEN"
 AXIOM_DATASET="your-axiom-dataset-name"
@@ -52,11 +56,11 @@ To send data to Axiom, configure a tracer. For example, use a dedicated instrume
 
 1. Install dependencies:
 
-<InstallPackages packages="dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api" />
+**Packages:** `dotenv`, `@opentelemetry/exporter-trace-otlp-http`, `@opentelemetry/resources`, `@opentelemetry/sdk-node`, `@opentelemetry/sdk-trace-node`, `@opentelemetry/semantic-conventions`, `@opentelemetry/api`
 
 2. Create instrumentation file:
 
-```typescript filename="src/instrumentation.ts"
+```typescript title="src/instrumentation.ts"
 import { trace } from '@opentelemetry/api';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
 import type { Resource } from '@opentelemetry/resources';
@@ -139,30 +143,10 @@ To learn more about these features, see the [Axiom AI SDK Instrumentation guide]
 - [Axiom AI SDK on GitHub](https://github.com/axiomhq/ai)
 - [Full Quickstart Guide](https://axiom.co/docs/ai-engineering/quickstart)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -12,13 +12,13 @@ related:
 summary: "Learn how to set custom rules to disallow reading from, writing to, and/or calling one or more properties"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-properties.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "f547807f3409d37330fa030b10b118d7a46a6a8620ba5c10f3ac973a67734b9b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "380b78fdd11712f1f54ba4846f994c00215479af9cc1a69c4f5e71decff883f7"
 ---
 
 # forbidden-properties
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The `forbidden-properties` rule type enables you to disallow reading from,
 writing to, and/or calling one or more properties.

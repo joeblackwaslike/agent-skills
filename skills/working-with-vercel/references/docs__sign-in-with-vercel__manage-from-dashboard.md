@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "f56454cccd9048f0e7545e2662d6979c27a59e2427c6df23a6c2f4887a0ee79a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6c906b095c872818b301a4a994fe7609de18ee12d50b30d839ba3812e591a747"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -33,12 +33,14 @@ To manage any third-party apps, or create a new one yourself, you need to create
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

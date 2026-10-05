@@ -17,8 +17,8 @@ related:
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6ed596c097ee26422f89b790f3571902213323a923c64854b15c355fb735f14c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "555bca0ea5f68b93fc8ffe72cbdaaace85c77dc595038118bc9fccae4a1bdf92"
 ---
 
 # Deployment integration actions
@@ -37,7 +37,7 @@ With deployment integration actions, integration providers can enable [integrati
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
-- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
+- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

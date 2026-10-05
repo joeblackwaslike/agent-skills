@@ -1,17 +1,22 @@
 ---
+title: Overview
+description: Learn what AI SDK harnesses are and how they fit into the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/overview"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/overview.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "088380140f5ae315da1ab41bebd85bd8219eea61fd60075092489a963e4adc26"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "8dea1ccac7388befc11ba504c1f6b6e3c570b61bad3c4a9960c4ddfc2f9acdd0"
 ---
 
-# AI SDK Harnesses
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK harness abstraction lets you run established agent harnesses through a
 single AI SDK surface. A harness is a complete agent runtime, such as Claude
 Code, Codex, or Pi. It owns capabilities that are larger than a model call:
 workspace access, built-in coding tools, native session state, compaction,
-permission flows, and runtime-specific configuration. Additionally, all AI SDK
-agent harnesses operate in a sandbox, keeping the host environment safe.
+permission flows, and runtime-specific configuration. Harness adapters can run
+the runtime in a sandbox, but their execution environments differ by adapter;
+review the adapter's runtime location and security guidance before use.
 
 The AI SDK harness abstraction is separate from the provider/model abstraction.
 Providers expose models to AI SDK Core functions such as `generateText` and
@@ -31,10 +36,8 @@ harness runtimes have different concepts from lower-level language models.
 Configuration follows AI SDK patterns where they fit and diverges where the
 harness runtime has different behavior.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## When to Use a Harness
 
@@ -116,17 +119,10 @@ returned by `session.detach()` or `session.stop()`.
 - [UI](/docs/ai-sdk-harnesses/ui) for `useChat` routes.
 - [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui) for `@ai-sdk/tui`.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Environment variables that cannot be decrypted once created.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7835b6dfc4d9f8eccd420b4d5acc4c2f46349db2a7a02d9bc00318f531f5c9fe"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1dd8f33aa27a32568770364c00f350205a8a083f5bd34a9cdd3d66a57b0b62e6"
 ---
 
 # Sensitive environment variables
@@ -35,13 +35,13 @@ Sensitive environment variables are [environment variables](/docs/environment-va
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
 - [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related)
-- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
 
 Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fsensitive-environment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -70,7 +70,7 @@ Sensitive environment variables can be created at the project or team level:
 3. Fill in the details to create a new environment variable.
 4. In the environment variable table, sensitive environment variables are marked with a "Sensitive" tag:
 
-![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/listed-sev.png`)
+![Sensitive environment variables labeled with a 'Sensitive' tag on the dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/listed-sev.png)
 
 #### cURL
 
@@ -144,7 +144,7 @@ Users with the [owner](/docs/rbac/access-roles#owner-role) role can set a team-w
 2. From the left navigation, click **Security & Privacy**.
 3. From the **Environment Variable Policies** section, toggle the **Enforce Sensitive Environment Variables** switch to **Enabled**:
 
-![Image](`/docs-assets/static/docs/concepts/projects/environment-variables/env-var-policies-2.png`)
+![Set environment variable policy from your team's Security settings.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/env-var-policies-2.png)
 
 
 ---

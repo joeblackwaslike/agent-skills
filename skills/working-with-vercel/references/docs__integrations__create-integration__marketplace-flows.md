@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "454b90afe895bcb78db844545a80f46cc14061a64736fc9e0582d6fe8f885a44"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e05a69ceabf67645ab63dbc08299460ff845415b49cbfe9fcddab4362ec60b83"
 ---
 
 # Native Integration Flows
@@ -31,6 +31,7 @@ As a Vercel integration provider, when you [create a native product integration]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Learn how you can add a product to your Vercel project through a native integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-flows&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market

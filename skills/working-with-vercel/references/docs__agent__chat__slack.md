@@ -17,13 +17,13 @@ related:
 summary: Use Vercel Agent in Slack by mentioning @Vercel in a supported channel or thread
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/slack.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "6cbfbb50ffc6c3ea2c728fd2108c722e2c05b29e374fe9fff20c01e2d4a5f46d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c64063cb2b1a9a68303f0a11367eb9f7d7e3b456cd3b59954fe8ec77dac8bca7"
 ---
 
 # Slack
 
-> **🔒 Permissions Required**: Vercel Agent in Slack (Public Beta)
+> **Availability**: Vercel Agent in Slack (Public Beta) is available on Enterprise and Pro plans
 
 Mention `@Vercel` in a Slack channel or thread to investigate deployments, review pull requests, or turn a discussion into code changes and open a pull request after you approve the proposed work. Vercel Agent uses the surrounding discussion to understand your request and provide relevant context.
 

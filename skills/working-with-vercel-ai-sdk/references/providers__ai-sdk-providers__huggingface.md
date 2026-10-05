@@ -1,10 +1,14 @@
 ---
+title: Hugging Face
+description: Learn how to use Hugging Face Provider.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "8e9419b9da5ff07dcb2ec2e06a8f2a4d210e1c39245f1f7133101c2d6ff0af41"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5975a2eb9c8a1d46a02e9441fb7327e400515e9f7c5d17eefeb8bdd2653e057c"
 ---
 
-# Hugging Face Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Hugging Face](https://huggingface.co/) provider offers access to thousands of language models through [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/index), including models from Meta, DeepSeek, Qwen, and more.
 
@@ -14,7 +18,7 @@ API keys can be obtained from [Hugging Face Settings](https://huggingface.co/set
 
 The Hugging Face provider is available via the `@ai-sdk/huggingface` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/huggingface" />
+**Packages:** `@ai-sdk/huggingface`
 
 ## Provider Instance
 
@@ -36,22 +40,22 @@ const huggingFace = createHuggingFace({
 
 You can use the following optional settings to customize the Hugging Face provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://router.huggingface.co/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `HUGGINGFACE_API_KEY` environment variable. You can get your API key
   from [Hugging Face Settings](https://huggingface.co/settings/tokens).
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -104,19 +108,19 @@ const { text } = await generateText({
 
 The following provider options are available:
 
-- **metadata** _Record&lt;string, string&gt;_
+- **metadata** *Record\<string, string>*
 
   Additional metadata to include with the request.
 
-- **instructions** _string_
+- **instructions** *string*
 
   Instructions for the model. Can be used to provide additional context or guidance.
 
-- **strictJsonSchema** _boolean_
+- **strictJsonSchema** *boolean*
 
   Whether to use strict JSON schema validation for structured outputs. Defaults to `false`.
 
-- **reasoningEffort** _string_
+- **reasoningEffort** *string*
 
   Controls the reasoning effort for reasoning models like DeepSeek-R1. Higher values result in more thorough reasoning.
 
@@ -208,75 +212,30 @@ You can also pass image URLs:
 
 | Model                                           | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ----------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `meta-llama/Llama-3.1-8B-Instruct`              | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Llama-3.1-70B-Instruct`             | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Llama-3.3-70B-Instruct`             | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `meta-llama/Llama-4-Maverick-17B-128E-Instruct` | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-ai/DeepSeek-V3.1`                     | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-ai/DeepSeek-V3-0324`                  | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-ai/DeepSeek-R1`                       | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`     | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `Qwen/Qwen3-32B`                                | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `Qwen/Qwen3-Coder-480B-A35B-Instruct`           | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `Qwen/Qwen2.5-VL-7B-Instruct`                   | <Check />   | <Check />         | <Check />  | <Check />      |
-| `google/gemma-3-27b-it`                         | <Cross />   | <Check />         | <Check />  | <Check />      |
-| `moonshotai/Kimi-K2-Instruct`                   | <Cross />   | <Check />         | <Check />  | <Check />      |
+| `meta-llama/Llama-3.1-8B-Instruct`              | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-3.1-70B-Instruct`             | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-3.3-70B-Instruct`             | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct` | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-V3.1`                     | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-V3-0324`                  | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-R1`                       | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`     | ✗           | ✓                 | ✓          | ✓              |
+| `Qwen/Qwen3-32B`                                | ✗           | ✓                 | ✓          | ✓              |
+| `Qwen/Qwen3-Coder-480B-A35B-Instruct`           | ✗           | ✓                 | ✓          | ✓              |
+| `Qwen/Qwen2.5-VL-7B-Instruct`                   | ✓           | ✓                 | ✓          | ✓              |
+| `google/gemma-3-27b-it`                         | ✗           | ✓                 | ✓          | ✓              |
+| `moonshotai/Kimi-K2-Instruct`                   | ✗           | ✓                 | ✓          | ✓              |
 
-<Note>
-  The table above lists popular models. You can explore all available models on
-  the [Hugging Face Inference Models](https://huggingface.co/inference/models)
-  page. The capabilities depend on the specific model you're using. Check the
-  model documentation on Hugging Face Hub for detailed information about each
-  model's features.
-</Note>
+The table above lists popular models. You can explore all available models on
+the [Hugging Face Inference Models](https://huggingface.co/inference/models)
+page. The capabilities depend on the specific model you're using. Check the
+model documentation on Hugging Face Hub for detailed information about each
+model's features.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

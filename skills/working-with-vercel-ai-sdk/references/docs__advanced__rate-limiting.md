@@ -1,10 +1,14 @@
 ---
+title: Rate Limiting
+description: Learn how to rate limit your application.
+url: "https://ai-sdk.dev/docs/advanced/rate-limiting"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/rate-limiting.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "4843a3c69522d75a2ed7b5943d181d19920f17f1e7fd4d874d5ee3a4bfd8d4fc"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "20729f5b5a3d049c7a16d5e050fade537751e01eb7d4aa7d1fbc2be5593673e3"
 ---
 
-# Rate Limiting
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Rate limiting helps you protect your APIs from abuse. It involves setting a
 maximum threshold on the number of requests a client can make within a
@@ -16,13 +20,12 @@ unnecessary costs.
 
 In this example, you will protect an API endpoint using [Upstash Redis](https://upstash.com/redis) and [Upstash Ratelimit](https://github.com/upstash/ratelimit).
 
-```tsx filename='app/api/generate/route.ts'
+```tsx title='app/api/generate/route.ts'
 import {
   createUIMessageStreamResponse,
   streamText,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 import { NextRequest } from 'next/server';
@@ -49,7 +52,7 @@ export async function POST(req: NextRequest) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages,
   });
 
@@ -65,21 +68,10 @@ With Upstash Redis and Upstash Ratelimit, it is possible to protect your APIs
 from such attacks with ease. To learn more about how Ratelimit works and
 how it can be configured to your needs, see [Ratelimit Documentation](https://upstash.com/docs/oss/sdks/ts/ratelimit/overview).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

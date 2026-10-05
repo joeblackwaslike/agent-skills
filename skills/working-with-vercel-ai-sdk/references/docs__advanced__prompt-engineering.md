@@ -1,10 +1,14 @@
 ---
+title: Prompt Engineering
+description: Learn how to engineer prompts for LLMs with the AI SDK
+url: "https://ai-sdk.dev/docs/advanced/prompt-engineering"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/prompt-engineering.md"
-fetched_at: "2026-07-20T06:52:37.869Z"
-sha256: "9737c0c684f835ab19f52959f67d2973902aef73adb6e51466bb279f2f9db23e"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "407f7d82da05fc9020408da0296c0385585cee39a96617699c602d491dcc7eaf"
 ---
 
-# Prompt Engineering
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## What is a Large Language Model (LLM)?
 
@@ -30,11 +34,7 @@ Imagine you want to build a slogan generator for marketing campaigns. Creating c
 
 First, you'll need a prompt that makes it clear what you want. Let's start with an instruction. Submit this prompt to generate your first completion.
 
-<InlinePrompt initialInput="Create a slogan for a coffee shop." />
-
 Not bad! Now, try making your instruction more specific.
-
-<InlinePrompt initialInput="Create a slogan for an organic coffee shop." />
 
 Introducing a single descriptive term to our prompt influences the completion. Essentially, crafting your prompt is the means by which you "instruct" or "program" the model.
 
@@ -42,22 +42,9 @@ Introducing a single descriptive term to our prompt influences the completion. E
 
 Clear instructions are key for quality outcomes, but that might not always be enough. Let's try to enhance your instruction further.
 
-<InlinePrompt initialInput="Create three slogans for a coffee shop with live music." />
-
 These slogans are fine, but could be even better. It appears the model overlooked the 'live' part in our prompt. Let's change it slightly to generate more appropriate suggestions.
 
 Often, it's beneficial to both demonstrate and tell the model your requirements. Incorporating examples in your prompt can aid in conveying patterns or subtleties. Test this prompt that carries a few examples.
-
-<InlinePrompt
-  initialInput={`Create three slogans for a business with unique features.
-
-Business: Bookstore with cats
-Slogans: "Purr-fect Pages", "Books and Whiskers", "Novels and Nuzzles"
-Business: Gym with rock climbing
-Slogans: "Peak Performance", "Reach New Heights", "Climb Your Way Fit"
-Business: Coffee shop with live music
-Slogans:`}
-/>
 
 Great! Incorporating examples of expected output for a certain input prompted the model to generate the kind of names we aimed for.
 
@@ -68,19 +55,6 @@ Apart from designing prompts, you can influence completions by tweaking model se
 You might have seen that the same prompt, when repeated, yielded the same or nearly the same completions. This happens when your temperature is at 0.
 
 Attempt to re-submit the identical prompt a few times with temperature set to 1.
-
-<InlinePrompt
-  initialInput={`Create three slogans for a business with unique features.
-
-Business: Bookstore with cats
-Slogans: "Purr-fect Pages", "Books and Whiskers", "Novels and Nuzzles"
-Business: Gym with rock climbing
-Slogans: "Peak Performance", "Reach New Heights", "Climb Your Way Fit"
-Business: Coffee shop with live music
-Slogans:`}
-showTemp={true}
-initialTemperature={1}
-/>
 
 Notice the difference? With a temperature above 0, the same prompt delivers varied completions each time.
 
@@ -96,21 +70,10 @@ Prompt Engineering is evolving rapidly, with new methods and research papers sur
 - [Brex Prompt Engineering](https://github.com/brexhq/prompt-engineering)
 - [Prompt Engineering Guide by Dair AI](https://www.promptingguide.ai/)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Prompt Engineering](/docs/advanced/prompt-engineering)
-- [Stopping Streams](/docs/advanced/stopping-streams)
-- [Backpressure](/docs/advanced/backpressure)
-- [Caching](/docs/advanced/caching)
-- [Multiple Streamables](/docs/advanced/multiple-streamables)
-- [Rate Limiting](/docs/advanced/rate-limiting)
-- [Rendering UI with Language Models](/docs/advanced/rendering-ui-with-language-models)
-- [Language Models as Routers](/docs/advanced/model-as-router)
-- [Multistep Interfaces](/docs/advanced/multistep-interfaces)
-- [Sequential Generations](/docs/advanced/sequential-generations)
-- [Vercel Deployment Guide](/docs/advanced/vercel-deployment-guide)
-- [Secure URL Fetching](/docs/advanced/secure-url-fetching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -1,10 +1,17 @@
 ---
+title: Save Messages To Database
+description: Learn how to save messages to an external database using the AI SDK and React Server Components
+url: "https://ai-sdk.dev/cookbook/rsc/save-messages-to-database"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - tool use
 source: "https://ai-sdk.dev/cookbook/rsc/save-messages-to-database.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "eff6467b403c905d0d3690ae6651e1266d65436b94cfa9e2bd596245738e75d8"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "48e9eacc97dbedfdf5267c85e60a5680c50518c15854d2453fabf238bd012f12"
 ---
 
-# Save Messages To Database
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Sometimes conversations with language models can get interesting and you might want to save the state of so you can revisit it or continue the conversation later.
 
@@ -12,7 +19,7 @@ Sometimes conversations with language models can get interesting and you might w
 
 ## Client
 
-```tsx filename='app/layout.tsx'
+```tsx title='app/layout.tsx'
 import { ServerMessage } from './actions';
 import { AI } from './ai';
 
@@ -36,7 +43,7 @@ export default function RootLayout({
 }
 ```
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -97,7 +104,7 @@ export default function Home() {
 
 We will use the callback function to listen to state changes and save the conversation once we receive a `done` event.
 
-```tsx filename='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
 import { getAIState, getMutableAIState, streamUI } from '@ai-sdk/rsc';
@@ -174,7 +181,7 @@ export async function continueConversation(
 }
 ```
 
-```ts filename='app/ai.ts'
+```ts title='app/ai.ts'
 import { createAI } from '@ai-sdk/rsc';
 import { ServerMessage, ClientMessage, continueConversation } from './actions';
 
@@ -204,22 +211,10 @@ export const AI = createAI<ServerMessage[], ClientMessage[]>({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

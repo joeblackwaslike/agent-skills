@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Replicate connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/replicate.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "760b9c3dc737fcd1c4d21a596919bd835970a71d20a4a5ef56a065cea4ede2f7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ded0adac0530c697127f56c02a506ab3d82ca46d979eb20a392fffb5137251d8"
 ---
 
 # Vercel Replicate Integration
@@ -68,22 +68,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

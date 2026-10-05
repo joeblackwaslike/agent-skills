@@ -1,10 +1,19 @@
 ---
+title: Add Skills to Your Agent
+description: Learn how to extend your agent with specialized capabilities loaded at runtime with Agent Skills.
+url: "https://ai-sdk.dev/cookbook/guides/agent-skills"
+docs_index: /llms.txt
+tags:
+  - agent
+  - skills
+  - tools
+  - extensibility
 source: "https://ai-sdk.dev/cookbook/guides/agent-skills.md"
-fetched_at: "2026-08-17T04:48:04.925Z"
-sha256: "3974ac80d05e85e9edea59f3f56c4a8dd498c5fea135c221b191b3bd59cfa9cf"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c68d05a155323172b37e5696c0e8d263c21dbfb9704cae0f4938a02e129801c8"
 ---
 
-# Add Skills to Your Agent
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will learn how to extend your agent with [Agent Skills](https://agentskills.io), a lightweight, open format for adding specialized knowledge and workflows that load at runtime from markdown files.
 
@@ -72,13 +81,11 @@ assets, or scripts, give the agent tools that can access or run those resources.
 
 ## Step 1: Define a Sandbox Abstraction
 
-<Note>
-  This guide uses a generic sandbox abstraction for flexibility across
-  environments. If you're building for Node.js, you can use `fs/promises` and
-  `child_process` directly instead. You can also replace this abstraction with
-  bundled asset imports or network requests when your agent does not need a
-  filesystem.
-</Note>
+This guide uses a generic sandbox abstraction for flexibility across
+environments. If you're building for Node.js, you can use `fs/promises` and
+`child_process` directly instead. You can also replace this abstraction with
+bundled asset imports or network requests when your agent does not need a
+filesystem.
 
 Create a generic sandbox interface that provides a consistent way to interact with the filesystem. This abstraction lets you implement it differently depending on your environment (Node.js fs, a containerized sandbox, cloud storage, etc.):
 
@@ -318,28 +325,10 @@ The agent sees the skill directory path in the tool result and prepends it when 
 - [Reference library](https://github.com/agentskills/agentskills/tree/main/skills-ref) to validate skills and generate prompt XML
 - [skills.sh](https://skills.sh) to browse and discover community skills
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

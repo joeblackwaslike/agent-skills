@@ -17,8 +17,8 @@ related:
 summary: Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Hosted Machines Team Pool with one isolated microVM per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/cursor.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "1bbef04c05cc3a42b14ac28947b23a8a16b209b489ac0b3d14738027beef07f4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "124f00e6ada367ff9c4d4305c51e876cbe2d778eaf6befd43a69d667bece0091"
 ---
 
 # Cursor Cloud Agents
@@ -37,10 +37,9 @@ clones code, runs commands, edits files, and executes tests.
 - [Cursor Cloud Agents can now run in Vercel Sandbox](https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
+- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Learn how to use the Cursor harness adapter.
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
-- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related)
-- [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
+- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
 - [OpenAI Agents API](https://vercel.com/docs/sandbox/ecosystem/openai-agents-api?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
 - [Cursor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cursor?from=related&source_path=%2Fdocs%2Fsandbox%2Fecosystem%2Fcursor&source_site=vercel-docs&relationship=related) — Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, an
 

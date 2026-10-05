@@ -1,52 +1,31 @@
 ---
+title: Stream Object
+description: Learn how to stream object using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/stream-object"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - streaming
+  - structured data
 source: "https://ai-sdk.dev/cookbook/rsc/stream-object.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "b105bdc2a151c505cabe7bfc86bc0504b2805956fb7325608a58c1dff7a2c11c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c87d1caf2a03dc3216442488c879fec415a5debb9397bd7f507947ea13d35604"
 ---
 
-# Stream Object
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This example uses React Server Components (RSC). If you want to client side
-  rendering and hooks instead, check out the ["streaming object generation"
-  example with
-  useObject](/examples/next-pages/basics/streaming-object-generation).
-</Note>
+This example uses React Server Components (RSC). If you want to client side
+rendering and hooks instead, check out the ["streaming object generation"
+example with
+useObject](/examples/next-pages/basics/streaming-object-generation).
 
 Object generation can sometimes take a long time to complete, especially when you're generating a large schema. In such cases, it is useful to stream the object generation process to the client in real-time. This allows the client to display the generated object as it is being generated, rather than have users wait for it to complete before displaying the result.
 
-<Browser>
-  <ObjectGeneration
-    stream
-    object={{
-      notifications: [
-        {
-          name: 'Jamie Roberts',
-          message: "Hey! How's the study grind going? Need a coffee boost?",
-          minutesAgo: 15,
-        },
-        {
-          name: 'Prof. Morgan',
-          message:
-            'Reminder: Your term paper is due promptly at 8 AM tomorrow. Please ensure it meets the submission guidelines outlined.',
-          minutesAgo: 46,
-        },
-        {
-          name: 'Alex Chen',
-          message:
-            "Dude, urgent! Borrow your notes for tomorrow's exam? I swear mine got eaten by my dog!",
-          minutesAgo: 30,
-        },
-      ],
-    }}
-  />
-</Browser>
-
 ## Client
 
-Let's create a simple React component that will call the `getNotifications` function when a button is clicked. The function will generate a list of notifications as described in the schema.
+Let's create a simple React component that will call the `generate` function when a button is clicked. The function will generate a list of notifications as described in the schema.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -87,7 +66,7 @@ export default function Home() {
 
 Now let's implement the `generate` function. We'll use the `streamText` function with `Output.object` to stream the list of fictional notifications based on the schema we defined earlier.
 
-```typescript filename='app/actions.ts'
+```typescript title='app/actions.ts'
 'use server';
 
 import { streamText, Output } from 'ai';
@@ -128,22 +107,10 @@ export async function generate(input: string) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

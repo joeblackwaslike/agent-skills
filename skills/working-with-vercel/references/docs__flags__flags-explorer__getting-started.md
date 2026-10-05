@@ -17,13 +17,13 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "08c5a4139edc6ae330152cdc960a43d3d5825b443de34698731814d37f0e14d8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5184f77e8402b1b59281cd3fd350ad8608b8c10c1d859619be10b467abc6eae1"
 ---
 
 # Getting started with Flags Explorer
 
-> **🔒 Permissions Required**: Flags Explorer
+> **Availability**: Flags Explorer is available on all plans
 
 This guide walks you through connecting your application to the Flags Explorer, so you can use it to view and override your application's feature flags. This works with any framework, any feature flag provider and even custom setups.
 
@@ -41,7 +41,6 @@ This guide walks you through connecting your application to the Flags Explorer, 
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Marketplace](https://vercel.com/docs/flags/marketplace?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/getting-started.graph.md](/docs/flags/flags-explorer/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -59,22 +58,22 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>
@@ -95,7 +94,7 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i flags
+      yarn add flags
       ```
     </Code>
     <Code tab="npm">
@@ -105,7 +104,7 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
     </Code>
     <Code tab="bun">
       ```bash
-      bun i flags
+      bun add flags
       ```
     </Code>
   </CodeBlock>
@@ -265,7 +264,7 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 - ### Emitting flag values (optional)
   You can optionally make the Flags Explorer aware of the actual value each feature flag resolved to while rendering the current page by rendering a `<FlagValues />` component. This is useful for debugging. Learn how to emit flag values in the [Flags Explorer Reference](/docs/flags/flags-explorer/reference#values).
 
-  ![Image](`/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-default-value-light.png`)
+  ![Flags Explorer showing flag values.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-default-value-light.png)
 
   If you emit flag values to the client it's further possible to annotate your Web Analytics events with the feature flags you emitted. Learn how to [integrate with Web Analytics](/docs/flags/observability/web-analytics).
 

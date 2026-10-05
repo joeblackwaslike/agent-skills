@@ -1,10 +1,14 @@
 ---
+title: Prodia
+description: Learn how to use Prodia models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "a1a5e52a6e008ed373fd94fd19d4b9dcafbe028e4c4b61c0bf3fbac087fb704c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ec2ba49bcce5e25694cd51fa467a9e4631500f706b6b68421152839d09b15361"
 ---
 
-# Prodia Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Prodia](https://prodia.com/) is a fast inference platform for generative AI, offering high-speed image generation with FLUX and Stable Diffusion models.
 
@@ -12,7 +16,7 @@ sha256: "a1a5e52a6e008ed373fd94fd19d4b9dcafbe028e4c4b61c0bf3fbac087fb704c"
 
 The Prodia provider is available via the `@ai-sdk/prodia` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/prodia" />
+**Packages:** `@ai-sdk/prodia`
 
 ## Provider Instance
 
@@ -38,21 +42,21 @@ const prodia = createProdia({
 
 You can use the following optional settings to customize the Prodia provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls.
   The default prefix is `https://inference.prodia.com/v2`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header as a Bearer token.
   It defaults to the `PRODIA_TOKEN` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
@@ -89,11 +93,9 @@ Prodia offers fast inference for various image generation models. Here are the s
 | `inference.flux-fast.schnell.txt2img.v2` | Fast FLUX Schnell model for text-to-image generation |
 | `inference.flux.schnell.txt2img.v2`      | FLUX Schnell model for text-to-image generation      |
 
-<Note>
-  Prodia supports additional model IDs. Check the [Prodia
-  documentation](https://docs.prodia.com/) for the full list of available
-  models.
-</Note>
+Prodia supports additional model IDs. Check the [Prodia
+documentation](https://docs.prodia.com/) for the full list of available
+models.
 
 ### Image Size
 
@@ -134,12 +136,12 @@ const { image } = await generateImage({
 
 The following provider options are supported:
 
-- **width** _number_ - Output width in pixels (256–1920). When set, this overrides any width derived from `size`.
-- **height** _number_ - Output height in pixels (256–1920). When set, this overrides any height derived from `size`.
-- **steps** _number_ - Number of computational iterations (1–4). More steps typically produce higher quality results.
-- **stylePreset** _string_ - Apply a visual theme to the output image. Supported presets: `3d-model`, `analog-film`, `anime`, `cinematic`, `comic-book`, `digital-art`, `enhance`, `fantasy-art`, `isometric`, `line-art`, `low-poly`, `neon-punk`, `origami`, `photographic`, `pixel-art`, `texture`, `craft-clay`.
-- **loras** _string[]_ - Augment the output with up to 3 LoRA models.
-- **progressive** _boolean_ - When using JPEG output, return a progressive JPEG.
+- **width** *number* - Output width in pixels (256–1920). When set, this overrides any width derived from `size`.
+- **height** *number* - Output height in pixels (256–1920). When set, this overrides any height derived from `size`.
+- **steps** *number* - Number of computational iterations (1–4). More steps typically produce higher quality results.
+- **stylePreset** *string* - Apply a visual theme to the output image. Supported presets: `3d-model`, `analog-film`, `anime`, `cinematic`, `comic-book`, `digital-art`, `enhance`, `fantasy-art`, `isometric`, `line-art`, `low-poly`, `neon-punk`, `origami`, `photographic`, `pixel-art`, `texture`, `craft-clay`.
+- **loras** *string\[]* - Augment the output with up to 3 LoRA models.
+- **progressive** *boolean* - When using JPEG output, return a progressive JPEG.
 
 ### Seed
 
@@ -160,12 +162,12 @@ const { image } = await generateImage({
 
 The `generateImage` response includes provider-specific metadata in `providerMetadata.prodia.images[]`. Each image object may contain the following properties:
 
-- **jobId** _string_ - The unique identifier for the generation job.
-- **seed** _number_ - The seed used for generation. Useful for reproducing results.
-- **elapsed** _number_ - Generation time in seconds.
-- **iterationsPerSecond** _number_ - Processing speed metric.
-- **createdAt** _string_ - Timestamp when the job was created.
-- **updatedAt** _string_ - Timestamp when the job was last updated.
+- **jobId** *string* - The unique identifier for the generation job.
+- **seed** *number* - The seed used for generation. Useful for reproducing results.
+- **elapsed** *number* - Generation time in seconds.
+- **iterationsPerSecond** *number* - Processing speed metric.
+- **createdAt** *string* - Timestamp when the job was created.
+- **updatedAt** *string* - Timestamp when the job was last updated.
 
 ```ts
 import { prodia } from '@ai-sdk/prodia';
@@ -183,53 +185,10 @@ console.log('Seed:', metadata?.seed);
 console.log('Elapsed:', metadata?.elapsed);
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

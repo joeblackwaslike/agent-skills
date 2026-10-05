@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3fd64467de003cfa94c2837e3e7cdb7831f13d81bbc2136018059507a1c91be2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e46a4e27bad039ea53002edd72a5ca8900909f9d74fbbf6744f5a3e39763494f"
 ---
 
 # Vercel CLI Overview
@@ -30,14 +30,14 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
 - [Terminal commands](https://v0.app/docs/terminal-commands?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — v0 can run bash commands in your project sandbox to test, debug, and use platform CLIs. Control its autonomy with three
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
 - [Configure weighted traffic splits for Vercel Flags from the Vercel CLI](https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
 - [Copy-to-Prompt instructions now available for Flags](https://vercel.com/changelog/copy-to-prompt-instructions-now-available-for-flags?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
 - [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
+- [Experimental native binaries for Vercel CLI](https://vercel.com/changelog/experimental-native-binaries-for-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
@@ -55,22 +55,22 @@ To download and install Vercel CLI, run the following command:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i vercel
+    pnpm i -g vercel
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i vercel
+    yarn global add vercel
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i vercel
+    npm i -g vercel
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i vercel
+    bun add -g vercel
     ```
   </Code>
 </CodeBlock>
@@ -84,22 +84,22 @@ If you have installed our command-line interface through [npm](http://npmjs.org/
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i vercel
+    pnpm i -g vercel@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i vercel
+    yarn global add vercel@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i vercel
+    npm i -g vercel@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i vercel
+    bun add -g vercel@latest
     ```
   </Code>
 </CodeBlock>
@@ -305,7 +305,7 @@ vercel comments resolve <thread> -m 'Fixed in the latest deployment.'
 
 ### connect
 
-Manage connectors: create, list, attach to projects, request runtime tokens, and remove them. This is a beta command.
+Manage connectors: create, list, attach to projects, request runtime tokens, and remove them.
 
 ```bash
 vercel connect create <service>
@@ -347,7 +347,7 @@ vercel crons run /api/cron
 
 ### curl
 
-Make HTTP requests to your Vercel deployments with automatic deployment protection bypass. This is a beta command.
+Make HTTP requests to your Vercel deployments with automatic deployment protection bypass.
 
 ```bash
 vercel curl [path]
@@ -826,6 +826,18 @@ vercel security check [check-name]
 ```
 
 [Learn more about the security command](/docs/cli/security)
+
+### setup
+
+Set up coding agents for Vercel: install the Vercel plugin for Claude Code and Codex, and connect your agents to AI Gateway.
+
+```bash
+vercel setup
+vercel setup --gateway
+vercel setup --dry-run
+```
+
+[Learn more about the setup command](/docs/cli/setup)
 
 ### signup
 

@@ -16,8 +16,8 @@ related:
 summary: Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "962d071b742d969d93a0ac57588a9f83c055211c064087ffe9b861527d9d5199"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fb748e8b1fb307ba95790737d54eeae34c41db477bf41b227fce1da7de0c7dc3"
 ---
 
 # Vercel Functions
@@ -94,7 +94,7 @@ export default {
 
 When you deploy your application, Vercel automatically sets up the tools and optimizations for your chosen [framework](/docs/frameworks). It ensures low latency by routing traffic through Vercel's [CDN](/docs/cdn), and placing your functions in a specific region when you need more control over [data locality](/docs/functions#functions-and-your-data-source).
 
-![Image](https://vercel.com/front/docs/vercel-functions/first_image_light.png)
+![Functions location within Vercel's managed infrastructure](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/vercel-functions/first_image_light.png)
 
 ## Build APIs and agent request handlers
 

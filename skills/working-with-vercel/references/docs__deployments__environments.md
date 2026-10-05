@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "79e991b1eb0487fa875181f24b61d65fb5c7d232cde6ebfa66232e4b6de7efab"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f5e3d36d2dbd8b1acbdb4a605b0a0ec461ae8c7ed3f5c0bcc246b96508e3898e"
 ---
 
 # Environments
@@ -184,7 +184,7 @@ After that first production deployment, later deployments follow the usual rules
 
 ## Custom Environments
 
-> **🔒 Permissions Required**: Custom environments
+> **Availability**: Custom environments are available on Enterprise and Pro plans
 
 Custom environments are useful for longer-running pre-production environments like `staging`, `QA`, or any other specialized workflow you require.
 
@@ -212,7 +212,7 @@ curl --request POST \
   --header "Content-Type: application/json" \
   --data '{
     "slug": "<environment_name_slug>",
-    "description": "<environment_description>",
+    "description": "<environment_description>"
   }'
 ```
 

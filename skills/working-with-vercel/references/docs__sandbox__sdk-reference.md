@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a79a4eb0769e20e6508325cadecf9cc8250df2efb748b893e77a1ac3120d0fc4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "14744bdc040a05c272445dec4686988157fd19db513860852a34974a1748b27b"
 ---
 
 # JS SDK Reference
@@ -37,11 +37,10 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
 - [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 - [Stop a session](https://vercel.com/docs/rest-api/sandboxes/stop-a-session?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/stop — Stops a running session and releases its allocated resources. All running
-- [Update a sandbox](https://vercel.com/docs/rest-api/sandboxes/update-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — PATCH /v2/sandboxes/{name} — Updates the configuration of a sandbox. Only the provided fields will be modified; omitted
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -60,7 +59,7 @@ Install the SDK:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/sandbox
+    yarn add @vercel/sandbox
     ```
   </Code>
   <Code tab="npm">
@@ -70,7 +69,7 @@ Install the SDK:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/sandbox
+    bun add @vercel/sandbox
     ```
   </Code>
 </CodeBlock>
@@ -85,7 +84,7 @@ After installation, link your project and pull environment variables with `verce
 | [`SandboxUser`](#sandboxuser-class)         | Runs commands and file operations as a Linux user  | `const user = await sandbox.createUser('alice')` |
 | [`Session`](#session-class)                 | Represents a single running VM inside a sandbox    | `const session = sandbox.currentSession()`      |
 | [`FileSystem`](#filesystem-class)           | Provides a `node:fs/promises`-compatible API       | `await sandbox.fs.readFile('/tmp/a.txt')`       |
-| [`Command`](#command-class)                 | Handles running commands inside the sandbox        | `const cmd = await sandbox.runCommand()`        |
+| [`Command`](#command-class)                 | Handles running commands inside the sandbox        | `const cmd = await sandbox.runCommand('ls')`    |
 | [`CommandFinished`](#commandfinished-class) | Contains the result after a command completes      | Access `cmd.exitCode` and `cmd.stdout()`        |
 | [`NetworkPolicy`](#networkpolicy-class)     | Defines firewall rules for sandbox traffic         | `Sandbox.create({ networkPolicy: 'deny-all' })` |
 | [`Snapshot`](#snapshot-class)               | Represents a saved sandbox state for fast restarts | `const snapshot = await sandbox.snapshot()`     |
@@ -369,6 +368,10 @@ for await (const sandbox of result) {
 
 `Sandbox.create()` launches a new microVM with your chosen image, source, and resource settings. Defaults to an empty workspace when no source is provided. Pass `source.depth` when cloning large repositories to shorten setup time.
 
+The promise resolves when the sandbox is ready to run commands and access files. Creation time includes startup and, when using a snapshot, the wait to restore it. Restoring a snapshot that isn't cached can take longer.
+
+To compare end-to-end performance, measure from the start of creation through completion of the same first command or file operation.
+
 Sandboxes are persistent by default: when the sandbox stops, the filesystem is automatically snapshotted and restored on the next resume. Pass `persistent: false` to opt out.
 
 **Returns:** `Promise<Sandbox>`.
@@ -429,7 +432,7 @@ const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 
 #### `Sandbox.getOrCreate()`
 
-`Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it resumes the sandbox if it exists or creates it if it doesn't. Use `onCreate` for one-time setup and `onResume` for setup that should run on every session start.
+`Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it retrieves the sandbox if it exists, or creates it if it doesn't. An existing sandbox resumes on the first SDK call, or immediately when you pass `resume: true`. Use `onCreate` for one-time setup and `onResume` for setup that should run on every session start.
 
 Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, call [`sandbox.update()`](#sandbox.update).
 
@@ -1492,7 +1495,7 @@ The `deny-all` mode can be set to restrict sandbox network access. It blocks all
 
 #### `allow`
 
-> **🔒 Permissions Required**: Transformation and forwarding rules
+> **Availability**: Transformation and forwarding rules are available on Enterprise and Pro plans
 
 The `allow` property allows the user to provide a list of website or API domains to allow access to.
 Traffic identification is based on SNI (server-name indicator), hence only TLS traffic is currently supported.
@@ -1729,7 +1732,7 @@ await snapshot.delete();
 
 ## Drive class
 
-> **🔒 Permissions Required**: Drives (Private Beta)
+> **Availability**: Drives (Private Beta) are available to Enterprise and Pro plans
 
 A `Drive` represents persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 
@@ -1745,7 +1748,7 @@ Once you are added to the [private beta](https://vercel.com/changelog/drives-for
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/sandbox@beta
+    yarn add @vercel/sandbox@beta
     ```
   </Code>
   <Code tab="npm">
@@ -1755,7 +1758,7 @@ Once you are added to the [private beta](https://vercel.com/changelog/drives-for
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/sandbox@beta
+    bun add @vercel/sandbox@beta
     ```
   </Code>
 </CodeBlock>

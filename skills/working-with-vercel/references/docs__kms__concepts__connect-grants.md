@@ -15,8 +15,8 @@ related:
 summary: How a Connect grant lets Vercel Connect provision and sign with a KMS issuer on behalf of your team, identified by a Connect client ID.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/connect-grants.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "461bad37948f0337541b2cc3cd3896bdba3213fa1923b1296cb4cb6e3dda7021"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2cbf4ddfb8b1c1963be5eb7d1d43b43e313f54cf447930cee82ca20242910ea8"
 ---
 
 # Vercel KMS Connect Grants
@@ -31,11 +31,11 @@ A Connect grant is an issuer policy (`connex-grant`) that lets [Vercel Connect](
 
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related)
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
-- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/kms/concepts/connect-grants.graph.md](/docs/kms/concepts/connect-grants.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fconnect-grants&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

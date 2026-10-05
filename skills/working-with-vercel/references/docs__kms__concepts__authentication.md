@@ -17,8 +17,8 @@ related:
 summary: How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel access token, and how relying...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/authentication.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9869c8c3a94f7861c74579d7a8e95d9657f662cbda3b5e231968b464cfd8b8c4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d924ee833c6de0b6edcd198e90bf2622abfe92ac44de4ed014aeafded6a91086"
 ---
 
 # Vercel KMS Authentication
@@ -34,9 +34,9 @@ KMS authorizes requests differently depending on what you are doing. Signing is 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
-- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
 Full cross-link map for this page: [/docs/kms/concepts/authentication.graph.md](/docs/kms/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "974a778b2178506e7b6295c7e0f251b62e1e33a7906e291c715664894df0ea0e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a78188ac3de6fc0fd6791d08a4ad3a4c5773182042c6fe992d44b3d8b1f81471"
 ---
 
 # OpenResponses Structured Outputs with AI Gateway
@@ -33,8 +33,8 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) can constr
 - [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
-- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fopenresponses%2Fstructured-outputs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

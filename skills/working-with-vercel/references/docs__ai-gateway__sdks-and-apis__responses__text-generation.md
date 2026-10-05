@@ -13,8 +13,8 @@ related:
 summary: Generate text responses with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "ace22a6ea674eb472791da1c59dd4bba2d363f69d9c24cacb178c823f72ca36d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "915712ae6e995ebebc332c6e0f2fee43df9c3313cdf39807b077c4e38dfbc4cf"
 ---
 
 # OpenAI Responses Text Generation with AI Gateway
@@ -33,6 +33,7 @@ Set your SDK's base URL to AI Gateway and use your API key for authentication:
 - [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate and stream text responses using AI Gateway.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md](/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses%2Ftext-generation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

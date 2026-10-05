@@ -13,8 +13,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "f02c4eee14fbb81e2d339c97cc2fff88452b4e9b03944c13428b1ece995d53d9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "fe3eedc51f1e1795f161c3cecefffc82d1a68157f96fde5205016644af4b2820"
 ---
 
 # vercel rolling-release
@@ -31,7 +31,7 @@ Use the `vercel rolling-release` command (also available as `vercel rr`) to mana
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel rollback](https://vercel.com/docs/cli/rollback?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Vercel MCP tools for rolling releases.
 
 Full cross-link map for this page: [/docs/cli/rolling-release.graph.md](/docs/cli/rolling-release.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

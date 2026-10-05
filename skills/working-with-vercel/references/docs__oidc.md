@@ -16,13 +16,13 @@ related:
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "93b826e1c35ad4367606786725c12c4093184107b43f05ce550a3e782317c95e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b4d9d68f5b5b32e1f9e5d557e14a18f2c07d2a030799ef6d3cd1776a2e19c731"
 ---
 
 # OpenID Connect (OIDC) Federation
 
-> **🔒 Permissions Required**: Secure backend access with OIDC federation
+> **Availability**: Secure backend access with OIDC federation is available on all plans
 
 When you create long-lived, persistent credentials in your backend to allow access from your web applications, you increase the security risk of these credentials being leaked and hacked. You can mitigate this risk with OpenID Connect (OIDC) federation which issues short-lived, non-persistent tokens that are signed by Vercel's OIDC Identity Provider (IdP).
 
@@ -32,7 +32,7 @@ When you create long-lived, persistent credentials in your backend to allow acce
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Authentication](https://eve.dev/docs/guides/auth-and-route-protection?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Secure your agent's HTTP routes with an ordered auth walk, verifier helpers, and connection OAuth via Vercel Connect.
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related)
 - [The skills.sh API is now available](https://vercel.com/changelog/the-skills-sh-api-is-now-available?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related)
@@ -40,7 +40,7 @@ When you create long-lived, persistent credentials in your backend to allow acce
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Run Cursor Cloud Agents on Vercel Sandbox](https://vercel.com/kb/guide/cursor-vercel-sandbox?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Learn how to run Cursor Cloud Agents on Vercel Sandbox with BYOM worker pools, durable workflows, isolated microVMs, and
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
-- [Build a web research agent with Workflow SDK](https://vercel.com/kb/guide/durable-web-research-agent-with-workflow-sdk?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Build a web research agent that searches the web and returns a cited report. Powered by AI SDK and Workflow SDK, it jour
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related)
 - [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available?from=related&source_path=%2Fdocs%2Foidc&source_site=vercel-docs&relationship=related)

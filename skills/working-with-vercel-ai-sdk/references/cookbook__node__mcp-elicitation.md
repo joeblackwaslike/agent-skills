@@ -1,10 +1,18 @@
 ---
+title: Model Context Protocol (MCP) Elicitation
+description: Learn how to handle elicitation requests from MCP servers with the AI SDK
+url: "https://ai-sdk.dev/cookbook/node/mcp-elicitation"
+docs_index: /llms.txt
+tags:
+  - node
+  - mcp
+  - elicitation
 source: "https://ai-sdk.dev/cookbook/node/mcp-elicitation.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "a6a784590b3d1c4243a0958b2d0cc3c32cca1ad3a2e0d1c3741ed515c1c1fa44"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "72241ae5af7edf77203161c60479a543731eaa64c165c0c31b5aedb4f98ca274"
 ---
 
-# MCP Elicitation
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Elicitation is a mechanism where MCP servers can request additional information from the client during tool execution. This example demonstrates how to handle elicitation requests, such as collecting user registration information.
 
@@ -91,11 +99,9 @@ Your handler must return an object with an `action` field:
 
 ## Important Notes
 
-<Note type="warning">
-  It is up to the client application to handle elicitation requests properly.
-  The MCP client simply surfaces these requests from the server to your
-  application code.
-</Note>
+It is up to the client application to handle elicitation requests properly.
+The MCP client simply surfaces these requests from the server to your
+application code.
 
 The elicitation handler should:
 
@@ -104,38 +110,10 @@ The elicitation handler should:
 3. Validate the input matches the requested schema
 4. Return the appropriate action and content
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

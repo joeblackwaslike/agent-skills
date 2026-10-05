@@ -14,8 +14,8 @@ related:
 summary: Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and API key scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "258720ae92c712da0b4a36fd5b2f7e1c761cc76181f46c1d16758928b3575038"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1ac711f55dfe089148898075ae40d55c762e19a78c5c633a96c0a56d65ac8bed"
 ---
 
 # AI Gateway Observability
@@ -33,12 +33,11 @@ The AI Gateway logs spend, model usage, and observability metrics related to you
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
-- [Observability added to AI Gateway alpha](https://vercel.com/changelog/observability-added-to-ai-gateway-alpha?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related)
-- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=related) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/observability.graph.md](/docs/ai-gateway/observability-and-spend/observability.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fobservability-and-spend%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -57,7 +56,7 @@ You can view these metrics in two ways:
 
 The **Usage** section displays four metrics to help you monitor your AI Gateway activity. For extended timeframes and further retention, you need [Observability Plus](/docs/observability/observability-plus).
 
-![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/overview-observability/graphs-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/overview-observability/graphs-light.png)
 
 ### Requests by model
 
@@ -83,13 +82,13 @@ The **Requests** section displays summaries by project, API key, and a detailed 
 
 View usage grouped by project. Use this view to associate usage and spend with specific projects. Click into a project for more detailed information.
 
-![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/overview-observability/projects-summary-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/overview-observability/projects-summary-light.png)
 
 ### API keys
 
 View usage grouped by API key. Use this view to track usage by a specific person or part of your organization. Click into an API key for more detailed information.
 
-![Image](https://vercel.com/docs-assets/static/docs/ai-gateway/overview-observability/apikeys-summary-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/overview-observability/apikeys-summary-light.png)
 
 ### Logs
 

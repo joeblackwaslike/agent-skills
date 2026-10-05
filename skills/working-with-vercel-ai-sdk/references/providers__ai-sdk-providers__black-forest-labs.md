@@ -1,18 +1,22 @@
 ---
+title: Black Forest Labs
+description: Learn how to use Black Forest Labs models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "79c94e638788d72e415a25816f307da11dcffdd0ab27de8df6af8ff5d4083fa7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "19693c2dab63e9c32f977a5076035d3028065e406fad7ab98e420ed9f1556b33"
 ---
 
-# Black Forest Labs Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-[Black Forest Labs](https://bfl.ai/) provides a generative image platform for developers with FLUX-based models. Their platform offers fast, high quality, and in-context image generation and editing with precise and coherent results.
+[Black Forest Labs](https://bfl.ai/) provides a generative media platform for developers with FLUX-based models. Their platform offers fast, high quality, and in-context image generation and editing, plus video generation with FLUX 3.
 
 ## Setup
 
 The Black Forest Labs provider is available via the `@ai-sdk/black-forest-labs` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/black-forest-labs" />
+**Packages:** `@ai-sdk/black-forest-labs`
 
 ## Provider Instance
 
@@ -38,32 +42,32 @@ const blackForestLabs = createBlackForestLabs({
 
 You can use the following optional settings to customize the Black Forest Labs provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use a regional endpoint.
   The default prefix is `https://api.bfl.ai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `x-key` header.
   It defaults to the `BFL_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
-- **pollIntervalMillis** _number_
+- **pollIntervalMillis** *number*
 
   Interval in milliseconds between polling attempts when waiting for generation to complete.
   Defaults to 500ms for image models and 2000ms for video models.
 
-- **pollTimeoutMillis** _number_
+- **pollTimeoutMillis** *number*
 
   Overall timeout in milliseconds for polling before giving up.
   Defaults to 60000ms (60 seconds) for image models and 600000ms (10 minutes) for video models.
@@ -94,15 +98,28 @@ console.log(`Image saved to ${filename}`);
 
 Black Forest Labs offers many models optimized for different use cases. Here are a few popular examples. For a full list of models, see the [Black Forest Labs Models Page](https://bfl.ai/models).
 
-| Model                | Description                                                                                                                |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `flux-kontext-pro`   | FLUX.1 Kontext [pro] handles both text and reference images as inputs, enabling targeted edits and complex transformations |
-| `flux-kontext-max`   | FLUX.1 Kontext [max] with improved prompt adherence and typography generation                                              |
-| `flux-pro-1.1-ultra` | Ultra-fast, ultra high-resolution image creation                                                                           |
-| `flux-pro-1.1`       | Fast, high-quality image generation from text.                                                                             |
-| `flux-pro-1.0-fill`  | Inpainting model for filling masked regions of images with new content                                                     |
+| Model                | Description                                                                                                                 |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `flux-2-pro`         | FLUX.2 \[pro] for text-to-image and reference-based editing in one endpoint                                                 |
+| `flux-2-max`         | FLUX.2 \[max] for the highest prompt adherence and detail in the FLUX.2 family                                              |
+| `flux-2-flex`        | FLUX.2 \[flex] exposes `steps` and `guidance` so you can trade speed against quality                                        |
+| `flux-2-klein-9b`    | FLUX.2 \[klein] 9B, an open-weight distilled model                                                                          |
+| `flux-2-klein-4b`    | FLUX.2 \[klein] 4B, the smallest and cheapest open-weight FLUX.2 model                                                      |
+| `flux-kontext-pro`   | FLUX.1 Kontext \[pro] handles both text and reference images as inputs, enabling targeted edits and complex transformations |
+| `flux-kontext-max`   | FLUX.1 Kontext \[max] with improved prompt adherence and typography generation                                              |
+| `flux-pro-1.1-ultra` | Ultra-fast, ultra high-resolution image creation                                                                            |
+| `flux-pro-1.1`       | Fast, high-quality image generation from text.                                                                              |
+| `flux-pro-1.0-fill`  | Inpainting model for filling masked regions of images with new content                                                      |
 
 Black Forest Labs models support aspect ratios from 3:7 (portrait) to 7:3 (landscape).
+
+FLUX.2 models take reference images on the same `prompt.images` field as the
+Kontext models, so a single model ID covers both text-to-image and editing. See
+[Image Editing](#image-editing) below.
+
+FLUX.2 generations can take longer than the 60 second default polling timeout,
+especially with reference images. Raise `pollTimeoutMillis` when a request
+reports `Black Forest Labs generation timed out.`
 
 ### Image Editing
 
@@ -156,10 +173,51 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Input images can be provided as URLs or base64-encoded strings. They support
-  up to 20MB or 20 megapixels per image.
-</Note>
+Input images can be provided as URLs or base64-encoded strings. They support
+up to 20MB or 20 megapixels per image.
+
+#### FLUX.2 Editing
+
+FLUX.2 models accept reference images on the same `prompt.images` field, so no
+separate editing model ID is needed:
+
+```ts
+import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { generateImage } from 'ai';
+
+const { image } = await generateImage({
+  model: blackForestLabs.image('flux-2-pro'),
+  prompt: {
+    text: 'Place this logo on a plain ceramic mug.',
+    images: ['https://example.com/logo.png'],
+  },
+  providerOptions: {
+    blackForestLabs: {
+      pollTimeoutMillis: 240000,
+    },
+  },
+});
+```
+
+`flux-2-flex` additionally accepts `steps` and `guidance`, which let you trade
+generation time against quality:
+
+```ts
+import { blackForestLabs } from '@ai-sdk/black-forest-labs';
+import { generateImage } from 'ai';
+
+const { image } = await generateImage({
+  model: blackForestLabs.image('flux-2-flex'),
+  prompt: 'A detailed macro shot of a dew-covered leaf',
+  providerOptions: {
+    blackForestLabs: {
+      steps: 50,
+      guidance: 4,
+      pollTimeoutMillis: 240000,
+    },
+  },
+});
+```
 
 #### Inpainting
 
@@ -185,37 +243,35 @@ The mask image should be a grayscale image where white areas indicate regions to
 
 Black Forest Labs image models support flexible provider options through the `providerOptions.blackForestLabs` object. The supported parameters depend on the used model ID:
 
-- **width** _number_ - Output width in pixels (256–1920). When set, this overrides any width derived from `size`.
-- **height** _number_ - Output height in pixels (256–1920). When set, this overrides any height derived from `size`.
-- **outputFormat** _string_ - Desired format of the output image (`"jpeg"` or `"png"`).
-- **steps** _number_ - Number of inference steps. Higher values may improve quality but increase generation time.
-- **guidance** _number_ - Guidance scale for generation. Higher values follow the prompt more closely.
-- **imagePrompt** _string_ - Base64-encoded image to use as additional visual context for generation.
-- **imagePromptStrength** _number_ - Strength of the image prompt influence on generation (0.0 to 1.0).
-- **promptUpsampling** _boolean_ - If true, performs upsampling on the prompt.
-- **raw** _boolean_ - Enable raw mode for more natural, authentic aesthetics.
-- **safetyTolerance** _number_ - Moderation level for inputs and outputs (0 = most strict, 6 = more permissive).
-- **pollIntervalMillis** _number_ - Interval in milliseconds between polling attempts (default 500ms).
-- **pollTimeoutMillis** _number_ - Overall timeout in milliseconds for polling before timing out (default 60s).
-- **webhookUrl** _string_ - URL for asynchronous completion notification. Must be a valid HTTP/HTTPS URL.
-- **webhookSecret** _string_ - Secret for webhook signature verification, sent in the `X-Webhook-Secret` header.
+- **width** *number* - Output width in pixels (256–1920). When set, this overrides any width derived from `size`.
+- **height** *number* - Output height in pixels (256–1920). When set, this overrides any height derived from `size`.
+- **outputFormat** *string* - Desired format of the output image (`"jpeg"` or `"png"`).
+- **steps** *number* - Number of inference steps. Higher values may improve quality but increase generation time.
+- **guidance** *number* - Guidance scale for generation. Higher values follow the prompt more closely.
+- **imagePrompt** *string* - Base64-encoded image to use as additional visual context for generation.
+- **imagePromptStrength** *number* - Strength of the image prompt influence on generation (0.0 to 1.0).
+- **promptUpsampling** *boolean* - If true, performs upsampling on the prompt.
+- **raw** *boolean* - Enable raw mode for more natural, authentic aesthetics.
+- **safetyTolerance** *number* - Moderation level for inputs and outputs (0 = most strict, 6 = more permissive).
+- **pollIntervalMillis** *number* - Interval in milliseconds between polling attempts (default 500ms).
+- **pollTimeoutMillis** *number* - Overall timeout in milliseconds for polling before timing out (default 60s).
+- **webhookUrl** *string* - URL for asynchronous completion notification. Must be a valid HTTP/HTTPS URL.
+- **webhookSecret** *string* - Secret for webhook signature verification, sent in the `X-Webhook-Secret` header.
 
-<Note>
-  To pass reference images for editing, use `prompt.images` instead of provider
-  options. This supports up to 10 images as URLs or base64-encoded strings.
-</Note>
+To pass reference images for editing, use `prompt.images` instead of provider
+options. This supports up to 10 images as URLs or base64-encoded strings.
 
 ### Provider Metadata
 
 The `generateImage` response includes provider-specific metadata in `providerMetadata.blackForestLabs.images[]`. Each image object may contain the following properties:
 
-- **seed** _number_ - The seed used for generation. Useful for reproducing results.
-- **start_time** _number_ - Unix timestamp when generation started.
-- **end_time** _number_ - Unix timestamp when generation completed.
-- **duration** _number_ - Generation duration in seconds.
-- **cost** _number_ - Cost of the generation request.
-- **inputMegapixels** _number_ - Input image size in megapixels.
-- **outputMegapixels** _number_ - Output image size in megapixels.
+- **seed** *number* - The seed used for generation. Useful for reproducing results.
+- **start\_time** *number* - Unix timestamp when generation started.
+- **end\_time** *number* - Unix timestamp when generation completed.
+- **duration** *number* - Generation duration in seconds.
+- **cost** *number* - Cost of the generation request.
+- **inputMegapixels** *number* - Input image size in megapixels.
+- **outputMegapixels** *number* - Output image size in megapixels.
 
 ```ts
 import { blackForestLabs } from '@ai-sdk/black-forest-labs';
@@ -292,10 +348,8 @@ FLUX 3 fit the duration to the content.
 Audio is generated by default, so `generateAudio` only has to be set to turn it
 off. `fps` and `seed` are not supported by the API and are reported as warnings.
 
-<Note>
-  The URL in provider metadata is time-limited. Persist the returned `video`
-  bytes to your own storage.
-</Note>
+The URL in provider metadata is time-limited. Persist the returned `video`
+bytes to your own storage.
 
 ### Resolution and aspect ratio
 
@@ -426,47 +480,45 @@ const enhanced = await generateVideo({
 });
 ```
 
-<Note>
-  A draft and its enhance are two separate generations, and each is billed
-  separately.
-</Note>
+A draft and its enhance are two separate generations, and each is billed
+separately.
 
 ### Video Provider Options
 
 The following optional provider options are available for FLUX 3 video:
 
-- **resolution** _'hd' | 'fhd'_
+- **resolution** *'hd' | 'fhd'*
 
   Output resolution tier. Takes precedence over the top-level `resolution`.
 
-- **aspectRatio** _'21:9' | '2:1' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16' | 'auto'_
+- **aspectRatio** *'21:9' | '2:1' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16' | 'auto'*
 
   Aspect ratio of the generated video. Takes precedence over the top-level
   `aspectRatio`, and unlike it can be set to `auto`.
 
-- **keyframes** _Array&lt;string | [number, string]&gt;_
+- **keyframes** *Array\<string | \[number, string]>*
 
   Keyframes for image-to-video generation, for the shapes `image` and
   `frameImages` cannot express: more than two images, or images pinned to a
   specific second. Takes precedence over both.
 
-- **safetyTolerance** _number_
+- **safetyTolerance** *number*
 
   Moderation strictness from 0 (strictest) to 4. Defaults to 2. Sexual content is
   capped at 3 and hate content at 2 regardless of the request, and any request
   carrying conditioning media is capped at 2.
 
-- **draft** _boolean_
+- **draft** *boolean*
 
   Render a fast, lower-quality preview instead of the finished video. Defaults to
   `false`.
 
-- **draftCache** _string_
+- **draftCache** *string*
 
   Encrypted draft-cache bundle from a prior `draft` generation, which switches the
   request to draft-enhance mode.
 
-- **version** _string_
+- **version** *string*
 
   Model version to pin. Only `latest` is available today.
 
@@ -475,16 +527,16 @@ The following optional provider options are available for FLUX 3 video:
 FLUX 3 video results include `providerMetadata.blackForestLabs.videos[]`. Each
 video object may contain the following properties:
 
-- **id** _string_ - ID of the Black Forest Labs generation request.
-- **videoUrl** _string_ - The signed MP4 URL (the same URL as `video`). Time-limited.
-- **draftCache** _string_ - Download URL for the draft bundle. Present only on a `draft` generation.
-- **seed** _number_ - The seed used for generation, when reported by the API.
-- **start_time** _number_ - Unix timestamp when generation started.
-- **end_time** _number_ - Unix timestamp when generation completed.
-- **duration** _number_ - Duration reported by the API, in seconds.
-- **cost** _number_ - Cost of the generation request in credits.
-- **inputMegapixels** _number_ - Input size in megapixels.
-- **outputMegapixels** _number_ - Output size in megapixels.
+- **id** *string* - ID of the Black Forest Labs generation request.
+- **videoUrl** *string* - The signed MP4 URL (the same URL as `video`). Time-limited.
+- **draftCache** *string* - Download URL for the draft bundle. Present only on a `draft` generation.
+- **seed** *number* - The seed used for generation, when reported by the API.
+- **start\_time** *number* - Unix timestamp when generation started.
+- **end\_time** *number* - Unix timestamp when generation completed.
+- **duration** *number* - Duration reported by the API, in seconds.
+- **cost** *number* - Cost of the generation request in credits.
+- **inputMegapixels** *number* - Input size in megapixels.
+- **outputMegapixels** *number* - Output size in megapixels.
 
 ### Video Model Capabilities
 
@@ -492,53 +544,10 @@ video object may contain the following properties:
 | -------------- | -------------------------------------------------------------------------------------------------------- |
 | `flux-3-video` | Up to full-HD and 20 seconds, with synchronized audio. Text-to-video, keyframes, and video continuation. |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

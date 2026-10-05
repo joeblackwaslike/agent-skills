@@ -1,31 +1,37 @@
 ---
+title: LangSmith
+description: Monitor and evaluate your AI SDK application with LangSmith
+url: "https://ai-sdk.dev/providers/observability/langsmith"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "769ff28223bfa22ab35e4372e400cf0219eee4875f75ce3b19a3690bbe2465b9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9b4d35d0d00bb3eb8d41b6f880626b6dbdde842b13e42c89b1ca0c14649bc697"
 ---
 
-# LangSmith Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [LangSmith](https://docs.langchain.com/langsmith/) is a platform for building production-grade LLM applications.
 It allows you to closely monitor and evaluate your application, so you can ship quickly and with confidence.
 
 Use of LangChain's open-source frameworks is not necessary.
 
-<Note>
-  A version of this guide is also available in the [LangSmith
-  documentation](https://docs.langchain.com/langsmith/trace-with-vercel-ai-sdk).
-  If you are using AI SDK v4 an older version of the `langsmith` client, see the
-  legacy guide linked from that page.
-</Note>
+A version of this guide is also available in the [LangSmith
+documentation](https://docs.langchain.com/langsmith/trace-with-vercel-ai-sdk).
+If you are using AI SDK v4 an older version of the `langsmith` client, see the
+legacy guide linked from that page.
 
 ## Setup
 
-<Note>The steps in this guide assume you are using `langsmith>=0.3.63.`.</Note>
+The steps in this guide assume you are using
+
+`langsmith>=0.3.63`
+
+.
 
 Install an [AI SDK model provider](/providers/ai-sdk-providers) and the [LangSmith client SDK](https://npmjs.com/package/langsmith).
 The code snippets below will use the [AI SDK's OpenAI provider](/providers/ai-sdk-providers/openai), but you can use any [other supported provider](/providers/ai-sdk-providers) as well.
 
-<InstallPackages packages="@ai-sdk/openai langsmith" />
+**Packages:** `@ai-sdk/openai`, `langsmith`
 
 Next, set required environment variables.
 
@@ -40,7 +46,7 @@ export OPENAI_API_KEY=<your-openai-api-key> # The examples use OpenAI (replace w
 
 To start tracing, you will need to import and call the `wrapAISDK` method at the start of your code:
 
-```ts highlight="6"
+```ts {6}
 import { openai } from '@ai-sdk/openai';
 import * as ai from 'ai';
 
@@ -168,30 +174,10 @@ And once you've set up LangSmith tracing for your project, try gathering a datas
 
 - [LangSmith evaluation](https://docs.langchain.com/langsmith/evaluation)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

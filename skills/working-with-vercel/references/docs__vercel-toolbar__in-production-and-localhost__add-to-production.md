@@ -17,8 +17,8 @@ related:
 summary: Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access the toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a75f5af12da26f21495e9b229bfb8509b20214f0df790f6cc25ddac2a4ec865a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a7703c3195ea024534a0f68baf03669f3422696f05515668b4a055872fd13cc7"
 ---
 
 # Add the Vercel Toolbar to your production environment
@@ -36,11 +36,11 @@ As a [team owner](/docs/rbac/access-roles#owner-role) or [member](/docs/rbac/acc
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
 - [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related)
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Vercel MCP tools for toolbar.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Comments Overview](https://vercel.com/docs/comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md](/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-production&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -65,7 +65,7 @@ For team members that do not use the browser extension or if you have more compl
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/toolbar
+      yarn add @vercel/toolbar
       ```
     </Code>
     <Code tab="npm">
@@ -75,7 +75,7 @@ For team members that do not use the browser extension or if you have more compl
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/toolbar
+      bun add @vercel/toolbar
       ```
     </Code>
   </CodeBlock>
@@ -306,7 +306,7 @@ Alternatively to using the package, you can enable access to the Vercel Toolbar 
 4. Under each environment (**Preview** and **Production**), select either **On** or **Off** from the dropdown to determine the visibility of the Vercel Toolbar for that environment.
 5. Once set at the team level, you can optionally choose to allow the setting to be overridden at the project level.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png`)
+![The dashboard setting to enable or disable the toolbar at the team level.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png)
 
 ### Disabling the toolbar
 

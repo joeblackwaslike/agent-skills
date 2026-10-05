@@ -16,8 +16,8 @@ related:
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7efd9b5e6550b7a2b712a0db7dd51d48372824808abc073b4b2cafee74c217fd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1b3c0a5d27b3989a3f1a3c86ca1ae373629422e1c14965e3b759e4ef49b98043"
 ---
 
 # Rotating environment variables
@@ -33,16 +33,16 @@ When you need to rotate API keys, tokens, or other credentials stored in your [e
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Rotate Hypertune API keys with zero-downtime.
-- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — This will guide you how to update the password for a Redis databse.
 - [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — This will guide you how to update the password for a Neon project.
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — This will guide you how to update the password for a Redis databse.
+- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Rotate Hypertune API keys with zero-downtime.
 - [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related)
 - [Implementing secrets rotation](https://vercel.com/docs/integrations/create-integration/secrets-rotation?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
+- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Vercel MCP tools for environment variables.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
-- [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=related) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
 
 Full cross-link map for this page: [/docs/environment-variables/rotating-secrets.graph.md](/docs/environment-variables/rotating-secrets.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Frotating-secrets&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

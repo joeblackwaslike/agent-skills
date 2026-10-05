@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the fal native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/fal.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "ed6b17e3aac7401211959b8a99963db62030ed4958f749b558fbaee987b92e44"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2b5ecadaab3ddf21f160f2c7b3ad7ecea7994e1ef93a6beb7b384cf801de066f"
 ---
 
 # Vercel fal Integration
@@ -67,22 +67,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

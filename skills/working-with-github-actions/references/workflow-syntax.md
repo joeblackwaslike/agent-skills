@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/workflow-syntax.md"
-fetched_at: "2026-09-28T10:42:29.141Z"
-sha256: "ea7c2b9180921f43165b5fa9788da047812e611baccd8791770d25095257c4a9"
+fetched_at: "2026-10-05T11:18:27.705Z"
+sha256: "f122bdbe8361180f02b3712748323c2a0fe93e6972d22b6c4ee21d90ec327c85"
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -296,6 +296,10 @@ A boolean specifying whether the secret must be supplied.
 ## `on.workflow_run.<branches|branches-ignore>`
 
 {% data reusables.actions.workflows.section-specifying-branches %}
+
+## `on.workflow_run.workflows`
+
+{% data reusables.actions.workflows.section-specifying-workflows %}
 
 ## `on.workflow_dispatch`
 
@@ -1623,7 +1627,7 @@ Allowed expression contexts: `github`, `needs`, and `secrets`.
 
 ## Filter pattern cheat sheet
 
-You can use special characters in path, branch, and tag filters.
+You can use special characters in path, branch, tag, and workflow name filters.
 
 * `*`: Matches zero or more characters, but does not match the `/` character. For example, `Octo*` matches `Octocat`.
 * `**`: Matches zero or more of any character.

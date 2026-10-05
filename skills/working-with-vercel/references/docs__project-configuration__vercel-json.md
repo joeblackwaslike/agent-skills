@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ff40b61e29235c07fff8f521f29febe7161d377091f25ac247d1e9c81231a661"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "029c5dfed921bd3256a0a12a246fa29f13c935070628120c4785b5d0b15406b8"
 ---
 
 # Static Configuration with vercel.json
@@ -38,8 +38,8 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 - [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=graph)
@@ -97,7 +97,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 ## bunVersion
 
-> **🔒 Permissions Required**: The Bun runtime (Beta)
+> **Availability**: The Bun runtime (Beta) is available on all plans
 
 **Type:** `string`
 
@@ -736,7 +736,7 @@ This example uses regex path matching to redirect requests to any path under `/p
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/post/:path(\\d{1,})",
+      "source": "/posts/:path(\\d{1,})",
       "destination": "/news/:path*"
     }
   ]
@@ -918,7 +918,7 @@ You can also set `regions` on individual functions using the [`functions`](/docs
 
 ## functionFailoverRegions
 
-> **🔒 Permissions Required**: Setting failover regions for Vercel functions
+> **Availability**: Setting failover regions for Vercel functions are available on Enterprise plans
 
 Set this property to specify the [region](/docs/functions/configuring-functions/region) to which a Vercel Function should fallback when the default region(s) are unavailable.
 

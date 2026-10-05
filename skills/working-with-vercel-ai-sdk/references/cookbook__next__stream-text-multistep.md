@@ -1,10 +1,17 @@
 ---
+title: streamText Multi-Step Cookbook
+description: Learn how to create several streamText steps with different settings
+url: "https://ai-sdk.dev/cookbook/next/stream-text-multistep"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
 source: "https://ai-sdk.dev/cookbook/next/stream-text-multistep.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "ab99085d7909b27cece75bd4eec386cdb41ba634232f99d3419d481f0f02bfce"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "04685bafc4b6e7268e9ad0c918c3dfdb8870a2d6b89c621e4e6d9d2dc4acb65f"
 ---
 
-# streamText Multi-Step Agent
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You may want to have different steps in your stream where each step has different settings,
 e.g. models, tools, or system prompts.
@@ -15,7 +22,7 @@ allowing you to have different steps in a single assistant UI message.
 
 ## Server
 
-```typescript filename='app/api/chat/route.ts'
+```typescript title='app/api/chat/route.ts'
 import {
   convertToModelMessages,
   createUIMessageStream,
@@ -31,11 +38,13 @@ export async function POST(req: Request) {
 
   const stream = createUIMessageStream({
     execute: async ({ writer }) => {
+      const modelMessages = await convertToModelMessages(messages);
+
       // step 1 example: forced tool call
       const result1 = streamText({
         model: 'openai/gpt-6-luna',
         instructions: 'Extract the user goal from the conversation.',
-        messages,
+        messages: modelMessages,
         toolChoice: 'required', // force the model to call a tool
         tools: {
           extractGoal: tool({
@@ -60,10 +69,7 @@ export async function POST(req: Request) {
         instructions:
           'You are a helpful assistant with a different system prompt. Repeat the extract user goal in your answer.',
         // continue the workflow stream with the messages from the previous step:
-        messages: [
-          ...convertToModelMessages(messages),
-          ...(await result1.response).messages,
-        ],
+        messages: [...modelMessages, ...(await result1.response).messages],
       });
 
       // forward the 2nd result to the client (incl. the finish event):
@@ -79,7 +85,7 @@ export async function POST(req: Request) {
 
 ## Client
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -119,31 +125,10 @@ export default function Chat() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

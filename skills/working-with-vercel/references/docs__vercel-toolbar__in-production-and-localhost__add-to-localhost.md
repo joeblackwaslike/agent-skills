@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar in your local environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "bef477f0348cbabcb187c2ff2a54a9fb83ea682c1c4c72c756c13dfc3fe9f47b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7a849aadb6dd5a06ee987fd6f0dbc922e2cd25491365975973c4a5a2e37204d7"
 ---
 
 # Add the Vercel Toolbar to your local environment
@@ -31,10 +31,11 @@ To enable the toolbar in your local environment, add it to your project using th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related)
+- [How do I generate a “sitemap.xml” for my Next.js app on Vercel?](https://vercel.com/kb/guide/how-do-i-generate-a-sitemap-for-my-nextjs-app-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Guidance on how to generate a "sitemap.xml" at build time and runtime.
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related)
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Vercel MCP tools for toolbar.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fvercel-toolbar%2Fin-production-and-localhost%2Fadd-to-localhost&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
@@ -51,7 +52,7 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/toolbar
+      yarn add @vercel/toolbar
       ```
     </Code>
     <Code tab="npm">
@@ -61,7 +62,7 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/toolbar
+      bun add @vercel/toolbar
       ```
     </Code>
   </CodeBlock>
@@ -80,22 +81,22 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm dlx nuxt module add @vercel/toolbar
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn dlx nuxt module add @vercel/toolbar
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx nuxt module add @vercel/toolbar
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx nuxt module add @vercel/toolbar
       ```
     </Code>
   </CodeBlock>
@@ -214,7 +215,7 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
   ```jsx filename="app/layout.jsx" framework=nextjs-app
   import { VercelToolbar } from '@vercel/toolbar/next';
 
-  export default function RootLayout(children) {
+  export default function RootLayout({ children }) {
     const shouldInjectToolbar = process.env.NODE_ENV === 'development';
     return (
       <html lang="en">

@@ -15,8 +15,8 @@ related:
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b957684d73ed64b9e9d6619528035536eb2fd03e510a89f6d75cae68512728eb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f5d2571b1c72203b2070cc88600c515255dac44080ef8f63a9b06599a39bb4b5"
 ---
 
 # For Service Providers
@@ -29,13 +29,14 @@ If you are a service owner, this page covers what your service needs to support 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Connect now accepts service submissions](https://vercel.com/changelog/vercel-connect-service-submissions?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
-- [SDK Reference](https://vercel.com/docs/connect/ts-sdk-reference?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
-- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -69,7 +70,7 @@ How much your users configure by hand depends on what your service supports:
 
 ### Publish your discovery documents
 
-Publish authorization server metadata under [RFC 8414](https://datatracker.ietf.org/doc/html/rfc8414), an [OpenID Connect discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) document, or both. Everything else on this page is a field in one of them.
+Publish authorization server metadata under [RFC 8414](https://datatracker.ietf.org/doc/html/rfc8414), an [OpenID Connect discovery](https://openid.net/specs/openid-connect-discovery-1_0.html) document, or both. Most of the requirements on this page are fields in one of them.
 
 Vercel Connect checks the standard well-known locations. If your server URL has a path, such as `https://auth.example.com/tenant1`, it also checks the path-suffixed form from RFC 8414 Section 3.1, so multi-tenant servers work either way. Serve the documents as `application/json`.
 
@@ -226,6 +227,83 @@ The CLI discovers your well-known endpoints and will automatically register the 
 | Your API receives requests with expired tokens                       | Token responses omit `expires_in`, so Vercel Connect infers the lifetime                                 |
 | Your users re-authorize more often than expected                     | `grant_types_supported` omits `refresh_token`, or rotation returns no new refresh token                   |
 | A capability you support never appears in Vercel                     | It isn't in your discovery documents. Vercel Connect reads capabilities from them rather than probing     |
+
+## Submit your service to Vercel Connect
+
+Use [**Submit a Service**](#how-to-submit-a-service) to describe your service, test it with Vercel Connect, and send it to Vercel for review.
+
+### Key terms
+
+The Submit a Service page uses these terms:
+
+| Term              | Meaning                                                                                                                                             |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connection method | One way your users authenticate to your service, either OAuth or an API key.                                                                        |
+| Target            | A resource your users connect to, such as a REST API or an MCP server. Targets are optional.                                                        |
+| Test connector    | A real connector in your team, built from a connection method's current configuration. It proves Vercel Connect can authorize against your service. |
+| Token test        | Requesting a token through a test connector. A passing test marks the connector **Token retrieved**.                                                |
+| Draft             | Your in-progress submission. It's saved in the browser, for your account and team only.                                                             |
+
+### How to submit a service
+
+To submit your service:
+
+1. Open [**Submit a Service**](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fconnect%2Fsubmit-service\&title=Submit+a+Service) in the Vercel dashboard. It's also linked from your team's **Connect** > **Browse Connectors** page. You need permission to create connectors in the team.
+2. Enter your **Service Name**, upload an optional SVG icon, and complete **Service Information**.
+3. Optionally, add **Targets**.
+4. In **Connection Methods**, select **Add OAuth** or **Add API Key**, then configure the method.
+5. [Test each OAuth method](#test-an-oauth-method).
+6. Select **Review Submission**, check the configuration, then select **Submit for Review**.
+
+### Which connection methods need a test
+
+Only OAuth methods need a test. Vercel checks the test on its servers when you submit, so the test connector and its token must still exist in your team.
+
+| Connection method | Test required                                     | Status after submitting |
+| ----------------- | ------------------------------------------------- | ----------------------- |
+| OAuth             | Yes. Create a test connector and retrieve a token | **Token Verified**      |
+| API key           | No. Vercel validates the configuration only       | **Configuration Valid** |
+
+### Test an OAuth method
+
+To test an OAuth method with a real token:
+
+1. Open the OAuth method and select **Preview & Test**. If you entered a **Server URL**, discovery runs automatically.
+2. Select **Set Up Test Connector**. How you create the OAuth client depends on **Automatic Registration**:
+   - **On**: Vercel Connect registers the client through DCR or CIMD. You only need a connector name.
+   - **Off**, or endpoints entered manually: register an application with your service using the redirect URL `https://connect.vercel.com/callback`, then enter its client ID, plus a client secret if your service issues one. The draft doesn't save these credentials.
+3. Select **Create Test Connector**. The connector appears under **Test Connectors** and is selected for submission.
+4. Select **Test User Token** to authorize as a user in a popup, or **Test App Token** to use client credentials. Keep the method's default scopes selected.
+5. When the connector shows **Token retrieved**, the method is ready to submit.
+
+The **Automatic Registration** toggle appears only when your discovery documents advertise DCR or CIMD, and it's on by default. Test with it on to prove automatic registration works, or turn it off to submit manual setup only.
+
+If your endpoints use URL placeholders, such as `{tenant}`, the test connector uses each field's **Value for Testing**.
+
+### When to test again
+
+A token test only counts for the exact configuration it tested. Create a new test connector and test a token again after you:
+
+- Change the method's URLs, OAuth settings, template fields, or **Automatic Registration**. Older connectors then show **Earlier configuration**.
+- Edit or delete the test connector.
+- Change your discovery documents.
+
+### After you submit
+
+- The page shows **Service Submitted**, a submission ID, and each method's status.
+- Vercel reviews your submission and publishes your service. If Vercel needs more details, it contacts you at your **Contact Email**.
+- To make changes, select **Edit and Resubmit**.
+- Test connectors stay in your team. **Reset Draft** clears the browser draft but doesn't delete them.
+
+### Common submission errors
+
+| Message                                                                                                        | What to do                                                                                                                         |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Create a matching test connector and retrieve a token.                                                         | The selected connector has no token, or it tested an earlier configuration. Create a new test connector and test a token.          |
+| Test the default scopes configured for this connection method.                                                 | Test the token again with the method's default scopes selected.                                                                    |
+| Create a fresh connector with automatic registration, or disable automatic registration and test manual setup. | The test didn't use automatic registration. Create a new test connector with **Automatic Registration** on, or turn it off.        |
+| Obtain a new token for the current connector configuration and discovered metadata.                            | The connector or your discovery documents changed after the test. Create a new test connector and test a token.                    |
+| These OAuth overrides require manual setup. Turn off Auto Registration to test this configuration.             | The method customizes scopes or other OAuth settings. Turn off **Automatic Registration** and enter a client ID from your service. |
 
 ## Next steps
 

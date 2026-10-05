@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2976a4c4380bf66fc4b101c43685b676143893cc1552ac861a0bf64f55296d86"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "531ffae83fb21e2054c3ea901747cc277e746e6123bd26bcf3b2406b2963de5b"
 ---
 
 # Pricing on Vercel
@@ -34,9 +34,9 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
-- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -67,8 +67,8 @@ For content delivery, you can pay on demand or through [Flat Rate CDN](/docs/pri
 |----------|-------|----------------|-----------------|
 | [Fast Data Transfer](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 100 GB |
 | [Fast Origin Transfer](/docs/pricing/regional-pricing) | Regional | Usage-based | First 10 GB |
-| [Edge Requests](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 1,000,000 |
-| [Edge Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour | N/A |
+| [CDN Requests](/docs/pricing/regional-pricing) | Regional | Flat Rate CDN | First 1,000,000 |
+| [CDN Request CPU Duration](/docs/pricing/regional-pricing) | Regional | 1 Hour | N/A |
 
 
 #### [Vercel Functions](/docs/functions/usage-and-pricing)

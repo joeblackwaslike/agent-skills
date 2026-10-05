@@ -1,9 +1,9 @@
 ---
 description: translate English to other languages
-model: opencode/gpt-5.6-sol
+model: opencode/gpt-6-sol
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/translate.md"
-fetched_at: "2026-07-27T07:36:29.111Z"
-sha256: "88cc12811fb4ae7ec8a69b7252e681d0367bbed3346e9b437fb66cb85a8277f2"
+fetched_at: "2026-10-05T11:19:21.899Z"
+sha256: "7ecab0823ee3ae86b3bb731af3fd8d6c5625c16dd74020e015f5b6926c32886e"
 ---
 
 run git diff and translate changed english doc and UI copy files to other international languages. Translate all languages in parallel to save time.

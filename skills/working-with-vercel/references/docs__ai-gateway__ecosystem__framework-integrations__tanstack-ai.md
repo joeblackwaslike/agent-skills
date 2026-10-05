@@ -17,8 +17,8 @@ related:
 summary: Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "8c3f5e0b54b6e6b0c211e4b4a75cda87d7beed8ff56b3dc33a6f969a389c78b5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "38c4478e0a6db6624d45926d82bbd699c35d03ae84f3608f27332ea679e548f8"
 ---
 
 # TanStack AI with AI Gateway
@@ -40,9 +40,8 @@ Connect [TanStack AI](https://tanstack.com/ai) to [AI Gateway](/docs/ai-gateway)
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related)
 - [TanStack AI with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration,
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
-- [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fecosystem%2Fframework-integrations%2Ftanstack-ai&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -63,7 +62,7 @@ Install TanStack AI and its AI Gateway adapter in your project:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @tanstack/ai @tanstack/ai-vercel-gateway
+    yarn add @tanstack/ai @tanstack/ai-vercel-gateway
     ```
   </Code>
   <Code tab="npm">
@@ -73,7 +72,7 @@ Install TanStack AI and its AI Gateway adapter in your project:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @tanstack/ai @tanstack/ai-vercel-gateway
+    bun add @tanstack/ai @tanstack/ai-vercel-gateway
     ```
   </Code>
 </CodeBlock>

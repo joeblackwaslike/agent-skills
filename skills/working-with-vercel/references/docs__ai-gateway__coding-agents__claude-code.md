@@ -15,8 +15,8 @@ related:
 summary: Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "bbbf55900542bd0b90597ecac009f41bc6abef716d5e35037d0cfd7bbf57e3e6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a22d641dfa7a3083a276fa73d5e90480bf5a6fcb83cf853172aaa3eceb17d693"
 ---
 
 # Claude Code and Claude Agent SDK with AI Gateway
@@ -31,11 +31,13 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 
 - [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
 - [Claude Code Max via AI Gateway, available now for Claude Code](https://vercel.com/changelog/claude-code-max-via-ai-gateway-available-now-for-claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
 - [Claude Opus 5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
-- [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
+- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Claude Code](https://ai-sdk.dev/providers/community-providers/claude-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related) — Learn how to use the Claude Code provider to access Claude models through the Claude Agent SDK.
 - [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fclaude-code&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 

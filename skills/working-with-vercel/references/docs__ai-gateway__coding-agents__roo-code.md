@@ -13,8 +13,8 @@ related:
 summary: Connect the Roo Code VS Code extension to AI Gateway. Configure your API key and models to access multiple providers and monitor spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d87e402e8387277ecfeabd123b229d2ae26f4d56107e1cb25d371c16d0a7ea52"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a414ee7957bd4cfc98083bd4d6e1029ad45c51c1f8012e200090d4857fd224cf"
 ---
 
 # Roo Code with AI Gateway
@@ -29,9 +29,9 @@ sha256: "d87e402e8387277ecfeabd123b229d2ae26f4d56107e1cb25d371c16d0a7ea52"
 
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=related) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/roo-code.graph.md](/docs/ai-gateway/coding-agents/roo-code.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Froo-code&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

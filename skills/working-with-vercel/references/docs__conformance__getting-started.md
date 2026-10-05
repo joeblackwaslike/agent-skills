@@ -16,13 +16,13 @@ related:
 summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "8636d91c9364500cc389b3e2dfc5e5fee94fa8f2f2ec6085df646aa8f5a54a60"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "4277235b338c8b4cf3d5862a4f2a5181a0f08e48d5f9b4634d30eff6884c9f24"
 ---
 
 # Getting Started with Conformance
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 To [set up Conformance](#setting-up-conformance-in-your-repository) in your repository, you must:
 
@@ -69,22 +69,22 @@ This section guides you through setting up Conformance for your repository.
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm --package=@vercel-private/conformance dlx vercel-conformance init
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn --package=@vercel-private/conformance dlx vercel-conformance init
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx --package=@vercel-private/conformance -- vercel-conformance init
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx --package=@vercel-private/conformance vercel-conformance init
       ```
     </Code>
   </CodeBlock>
@@ -94,22 +94,22 @@ This section guides you through setting up Conformance for your repository.
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i 
+      pnpm conformance
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i 
+      yarn conformance
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i 
+      npx conformance
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i 
+      bunx conformance
       ```
     </Code>
   </CodeBlock>

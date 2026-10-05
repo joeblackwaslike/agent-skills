@@ -2,8 +2,8 @@
 title: Correctness
 description: Dolt's SQL correctness measured against the MySQL test suite.
 source: "https://www.dolthub.com/docs/sql-reference/benchmarks/correctness.md"
-fetched_at: "2026-09-28T10:40:30.810Z"
-sha256: "c0d589d43925dba6c3423351176cc66cd2344f918070d4923489fb55888d0e55"
+fetched_at: "2026-10-05T11:16:16.598Z"
+sha256: "659da6b5bd677074115f1173bba5dce778d9aa90268dac0805b3821886327f49"
 ---
 
 # SQL Correctness
@@ -58,7 +58,7 @@ AND col3 IN (3,9,0))))) OR col4 <= 4.25 OR ((col3 = 5))) OR (((col0 >
 0)) AND col0 > 6 AND (col4 >= 6.56)))
 ```
 
-Here are Dolt's sqllogictest results for version `2.3.5`.  Tests that
+Here are Dolt's sqllogictest results for version `2.4.0`.  Tests that
 did not run could not complete due to a timeout earlier in the run.
 <!-- START___DOLT___CORRECTNESS_RESULTS_TABLE -->
 | Results |  Count  |

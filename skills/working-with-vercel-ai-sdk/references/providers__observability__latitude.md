@@ -1,10 +1,14 @@
 ---
+title: Latitude
+description: Monitor and debug your AI SDK application with Latitude
+url: "https://ai-sdk.dev/providers/observability/latitude"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/latitude.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "4eb229a8f7cf51528de0b2b90a72dead7a31f4c3a4373750820b012b6254d2df"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3806f2fe3ec172add4f7721af0abd1aef36e85e36222aececee46ba4e1e1e5da"
 ---
 
-# Latitude Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Latitude](https://latitude.so) ([GitHub](https://github.com/latitude-dev/latitude-llm)) is an open-source MIT-licensed platform for AI agent observability with semantic trace search and issue tracking. It integrates with the AI SDK to capture:
 
@@ -18,11 +22,11 @@ Latitude's SDK registers a global OpenTelemetry tracer. Once you register the AI
 
 Install both packages:
 
-<InstallPackages packages="@latitude-data/telemetry @ai-sdk/otel" />
+**Packages:** `@latitude-data/telemetry`, `@ai-sdk/otel`
 
 Sign in at [app.latitude.so](https://app.latitude.so) and grab your API key and project slug from the dashboard. Set them in your environment:
 
-```bash filename=".env"
+```bash title=".env"
 LATITUDE_API_KEY="..."
 LATITUDE_PROJECT_SLUG="..."
 ```
@@ -70,30 +74,10 @@ await capture('generate-support-reply', async () => {
 - [Latitude documentation](https://docs.latitude.so)
 - [GitHub repository](https://github.com/latitude-dev/latitude-llm)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

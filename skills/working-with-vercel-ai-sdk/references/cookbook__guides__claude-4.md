@@ -1,10 +1,16 @@
 ---
+title: Get started with Claude 4
+description: Get started with Claude 4 using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/claude-4"
+docs_index: /llms.txt
+tags:
+  - getting-started
 source: "https://ai-sdk.dev/cookbook/guides/claude-4.md"
-fetched_at: "2026-08-10T05:31:58.738Z"
-sha256: "3ac43953e03964b469015ed500a6eb58ae7bf236d249d34ad67711b168fcd031"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9ff1dae719c8d160f54e50aae1f90df9a828556db1bd3b7d5d25cc4cba5655ad"
 ---
 
-# Get started with Claude 4
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 With the release of Claude 4, there has never been a better time to start building AI applications, particularly those that require complex reasoning capabilities and advanced intelligence.
 
@@ -81,11 +87,13 @@ Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK,
 
 In a new Next.js application, first install the AI SDK and the Anthropic provider:
 
-<Snippet text="pnpm install ai @ai-sdk/anthropic" />
+```
+pnpm install ai @ai-sdk/anthropic
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { anthropic, AnthropicLanguageModelOptions } from '@ai-sdk/anthropic';
 import {
   streamText,
@@ -120,14 +128,12 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  You can forward the model's reasoning tokens to the client with
-  `sendReasoning: true` in the `toUIMessageStream` helper.
-</Note>
+You can forward the model's reasoning tokens to the client with
+`sendReasoning: true` in the `toUIMessageStream` helper.
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -208,11 +214,9 @@ export default function Page() {
 }
 ```
 
-<Note>
-  You can access the model's reasoning tokens with the `reasoning` part on the
-  message `parts`. The reasoning text is available in the `text` property of the
-  reasoning part.
-</Note>
+You can access the model's reasoning tokens with the `reasoning` part on the
+message `parts`. The reasoning text is available in the `text` property of the
+reasoning part.
 
 The useChat hook on your root page (`app/page.tsx`) will make a request to your LLM provider endpoint (`app/api/chat/route.ts`) whenever the user submits a message. The messages are then displayed in the chat UI.
 
@@ -232,28 +236,10 @@ Ready to dive in? Here's how you can begin:
 3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) at [ai-sdk.dev/docs/guides](/cookbook/guides).
 4. Use ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

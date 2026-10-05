@@ -16,8 +16,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "7e1f202d8cc3c493208404ce14b9757c11bc40e1becbf0808dd1a761c336b5b9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9597f0495d0139ce9c67869d0acb30d0d5f9e8a9d5c8f2ae44cb20ce9a870c88"
 ---
 
 # Realtime Voice with AI Gateway
@@ -33,11 +33,12 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
-- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
+- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Learn how to build realtime voice conversations with the AI SDK.
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [AI SDK 7](https://vercel.com/blog/ai-sdk-7?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

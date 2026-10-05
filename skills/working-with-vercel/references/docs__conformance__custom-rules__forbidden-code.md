@@ -12,13 +12,13 @@ related:
 summary: Learn how to set custom rules to disallow code and code patterns through string and regular expression matches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-code.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "92ec9d9a871a8e8734ab067b57e59695eb7291899a8045a9173688aa59484211"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a8e6928e3f8486f9a67651ae5b9ebb70f6c6860c222e4ea5aed06c37572f68d7"
 ---
 
 # forbidden-code
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 The `forbidden-code` rule type enables you to disallow code and code patterns through string and regular expression matches.
 

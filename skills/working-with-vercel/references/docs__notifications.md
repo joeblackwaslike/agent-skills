@@ -16,13 +16,13 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "215826ae0db2da2f32b8686d8ce19b33687f31f03add8dcf640e86727a19ec6d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ac9a71e24faa6e2fc2571df05bbe529dda85644070ec66ef629f6716d90d5600"
 ---
 
 # Notifications
 
-> **🔒 Permissions Required**: Notifications
+> **Availability**: Notifications are available on all plans
 
 Vercel sends configurable notifications to you through the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and email. These notifications enable you to view and manage important alerts about your [deployments](/docs/deployments), [domains](/docs/domains), [integrations](/docs/integrations), [account](/docs/accounts), and [usage](/docs/pricing/manage-and-optimize-usage).
 
@@ -36,12 +36,13 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
+- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Improved web notifications are now generally available](https://vercel.com/changelog/improved-web-notifications-now-generally-available?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related)
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Configure alert rules and notification destinations for Vercel Observability alerts.
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Alerts](https://vercel.com/docs/alerts?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
+- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md?from=related&source_path=%2Fdocs%2Fnotifications&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -88,7 +89,7 @@ You can receive feedback on your deployments with the Comments feature. When som
 
 ### On-demand usage notifications
 
-> **🔒 Permissions Required**: Customizing on-demand usage notifications
+> **Availability**: Customizing on-demand usage notifications is available on Pro plans
 
 You'll receive notifications as you accrue usage past the [included amounts](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines) for products like Vercel Functions, Image Optimization, and more.
 

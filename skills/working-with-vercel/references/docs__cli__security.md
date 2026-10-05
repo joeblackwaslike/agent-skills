@@ -15,8 +15,8 @@ related:
 summary: "Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope the report to a project."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/security.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "be08b11d6b5d4d8b883c9dbd9075a511c6d1abf38844ddfd2ab0c7262b629125"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "553068a25542e0b945a58e919c96616c09fd00bd31d9735b683b03a6aee233c6"
 ---
 
 # vercel security
@@ -34,7 +34,7 @@ The `vercel security` command runs your team's security checks and prints them i
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 
 Full cross-link map for this page: [/docs/cli/security.graph.md](/docs/cli/security.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

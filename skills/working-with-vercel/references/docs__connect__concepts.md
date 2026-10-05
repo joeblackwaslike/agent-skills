@@ -16,8 +16,8 @@ related:
 summary: "Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and authentication."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "23fed4e3ab793807063816b9630c99500486e641072eeab22e779deb1fefdaa7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9cde2fefdafb1af46d3193d2e601759e9b873f54e09086e6fd9970ac7fc51029"
 ---
 
 # Vercel Connect Concepts
@@ -33,8 +33,8 @@ Vercel Connect is built around six primitives. Read these in order if you want a
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Vercel Connect](https://v0.app/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Connect your v0 apps and agents to third-party services – no API keys required.
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect — short-
-- [For Service Providers](https://vercel.com/docs/connect/providers?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAu
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 - [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.

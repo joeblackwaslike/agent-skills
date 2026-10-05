@@ -16,13 +16,13 @@ related:
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "bb12c4dce1b561d2148906206858a2e4d830bfc5e105439337e327512a404ba7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2d9f61b5585be6b7b6c3e130c4d45a696e1af317f9a3fa259c828246945d12e7"
 ---
 
 # Vercel WAF
 
-> **🔒 Permissions Required**: Vercel WAF
+> **Availability**: Vercel WAF is available on all plans
 
 The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security controls to [monitor](/docs/vercel-firewall/firewall-observability#traffic) and [control](/docs/vercel-firewall/firewall-observability#traffic) the internet traffic to your site through logging, blocking and challenging. When you apply a configuration change to the firewall, it takes effect globally within 300ms and can be instantly [rolled back](#instant-rollback) to prior configurations.
 
@@ -41,9 +41,9 @@ The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
-- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf.graph.md](/docs/vercel-firewall/vercel-waf.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

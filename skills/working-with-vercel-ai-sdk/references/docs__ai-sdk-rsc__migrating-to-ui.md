@@ -1,10 +1,14 @@
 ---
+title: Migrating from RSC to UI
+description: Learn how to migrate from AI SDK RSC to AI SDK UI.
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "628a8ea9362fcc98db7a9938fc23ea38985cd85b977f843e518450d48418f988"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "53285e190e9eda9b2b7382b8858975d48bceec6d479055e5d601568d66146b84"
 ---
 
-# Migrating from RSC to UI
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 This guide helps you migrate from AI SDK RSC to AI SDK UI.
 
@@ -36,7 +40,7 @@ The `streamUI` function executes as part of a server action as illustrated below
 
 #### Before: Handle generation and rendering in a single server action
 
-```tsx filename="@/app/actions.tsx"
+```tsx title="@/app/actions.tsx"
 import { openai } from '@ai-sdk/openai';
 import { getMutableAIState, streamUI } from '@ai-sdk/rsc';
 
@@ -67,7 +71,7 @@ export async function sendMessage(message: string) {
 
 The chat interface calls the server action. The response is then saved using the `useUIState` hook.
 
-```tsx filename="@/app/page.tsx"
+```tsx title="@/app/page.tsx"
 'use client';
 
 import { useState, ReactNode } from 'react';
@@ -83,7 +87,8 @@ export default function Page() {
       {messages.map(message => message)}
 
       <form
-        onSubmit={async () => {
+        onSubmit={async event => {
+          event.preventDefault();
           const response: ReactNode = await sendMessage(input);
           setMessages(msgs => [...msgs, response]);
         }}
@@ -102,7 +107,7 @@ The `streamUI` function combines generating text and rendering the user interfac
 
 The `streamText` function executes as part of a route handler and streams the response to the client. The `useChat` hook on the client decodes this stream and renders the response within the chat interface.
 
-```ts filename="@/app/api/chat/route.ts"
+```ts title="@/app/api/chat/route.ts"
 import {
   createUIMessageStreamResponse,
   streamText,
@@ -114,7 +119,7 @@ export async function POST(request) {
   const { messages } = await request.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'you are a friendly assistant!',
     messages,
     tools: {
@@ -130,7 +135,7 @@ export async function POST(request) {
 
 #### After: Update client to use chat hook
 
-```tsx filename="@/app/page.tsx"
+```tsx title="@/app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -180,7 +185,7 @@ The `streamUI` function uses `tools` as a way to execute functions based on user
 
 #### Before: Render components within the server action and stream to client
 
-```tsx filename="@/app/actions.tsx"
+```tsx title="@/app/actions.tsx"
 import { z } from 'zod';
 import { streamUI } from '@ai-sdk/rsc';
 import { openai } from '@ai-sdk/openai';
@@ -219,7 +224,7 @@ As mentioned earlier, `streamUI` generates text and renders the React component 
 
 The `streamText` function streams the props data as response to the client, while `useChat` decode the stream as `toolInvocations` and renders the chat interface.
 
-```ts filename="@/app/api/chat/route.ts"
+```ts title="@/app/api/chat/route.ts"
 import { z } from 'zod';
 import { openai } from '@ai-sdk/openai';
 import { getWeather } from '@/utils/queries';
@@ -233,7 +238,7 @@ export async function POST(request) {
   const { messages } = await request.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'you are a friendly assistant!',
     messages,
     tools: {
@@ -259,7 +264,7 @@ export async function POST(request) {
 
 #### After: Update client to use chat hook and render components using tool invocations
 
-```tsx filename="@/app/page.tsx"
+```tsx title="@/app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -324,7 +329,7 @@ With AI SDK RSC, components streamed to the client can trigger subsequent genera
 
 #### Before: Use actions hook to send messages
 
-```tsx filename="@/app/components/list-flights.tsx"
+```tsx title="@/app/components/list-flights.tsx"
 'use client';
 
 import { useActions, useUIState } from '@ai-sdk/rsc';
@@ -358,7 +363,7 @@ export function ListFlights({ flights }) {
 
 After switching to AI SDK UI, these messages are synced by initializing the `useChat` hook in the component with the same `id` as the parent component.
 
-```tsx filename="@/app/components/list-flights.tsx"
+```tsx title="@/app/components/list-flights.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -395,7 +400,7 @@ In AI SDK RSC, you can use the `initial` parameter of `streamUI` to define the c
 
 #### Before: Use `loading` to show loading indicator
 
-```tsx filename="@/app/actions.tsx"
+```tsx title="@/app/actions.tsx"
 import { openai } from '@ai-sdk/openai';
 import { streamUI } from '@ai-sdk/rsc';
 
@@ -419,7 +424,7 @@ With AI SDK UI, you can use the tool invocation state to show a loading indicato
 
 #### After: Use tool invocation state to show loading indicator
 
-```tsx filename="@/app/components/message.tsx"
+```tsx title="@/app/components/message.tsx"
 'use client';
 
 export function Message({ role, content, toolInvocations }) {
@@ -468,7 +473,7 @@ Before implementing `streamUI` as a server action, you should create an `<AI/>` 
 
 #### Before: Save chats using callback function of context provider
 
-```ts filename="@/app/actions.ts"
+```ts title="@/app/actions.ts"
 import { createAI } from '@ai-sdk/rsc';
 import { saveChat } from '@/utils/queries';
 
@@ -492,7 +497,7 @@ export const AI = createAI({
 
 With AI SDK UI, you will save chats using the `onEnd` callback function of `streamText` in your route handler.
 
-```ts filename="@/app/api/chat/route.ts"
+```ts title="@/app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import { saveChat } from '@/utils/queries';
 import {
@@ -508,7 +513,7 @@ export async function POST(request) {
   const coreMessages = await convertToModelMessages(messages);
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: 'you are a friendly assistant!',
     messages: coreMessages,
     onEnd: async ({ responseMessages }) => {
@@ -537,7 +542,7 @@ Similar to how you typically save chats in AI SDK RSC, you should use the `onGet
 
 #### Before: Load chat from database using callback function of context provider
 
-```ts filename="@/app/actions.ts"
+```ts title="@/app/actions.ts"
 import { createAI } from '@ai-sdk/rsc';
 import { loadChatFromDB, convertToUIState } from '@/utils/queries';
 
@@ -562,7 +567,7 @@ As messages are typically loaded from the database, we can use a server actions 
 
 #### After: Load chat from database during static generation of page
 
-```tsx filename="@/app/chat/[id]/page.tsx"
+```tsx title="@/app/chat/[id]/page.tsx"
 import { Chat } from '@/app/components/chat';
 import { getChatById } from '@/utils/queries';
 
@@ -584,7 +589,7 @@ export default async function Page({ params }: { params: any }) {
 
 #### After: Pass chat messages as props and load into chat hook
 
-```tsx filename="@/app/components/chat.tsx"
+```tsx title="@/app/components/chat.tsx"
 'use client';
 
 import { Message } from 'ai';
@@ -621,7 +626,7 @@ The `createStreamableValue` function streams any serializable data from the serv
 
 #### Before: Use streamable value to stream object generations
 
-```ts filename="@/app/actions.ts"
+```ts title="@/app/actions.ts"
 import { Output, streamText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { createStreamableValue } from '@ai-sdk/rsc';
@@ -634,7 +639,7 @@ export async function generateSampleNotifications() {
 
   (async () => {
     const { partialOutputStream } = streamText({
-      model: __MODEL__,
+      model: "anthropic/claude-sonnet-5.5",
       instructions: 'generate sample ios messages for testing',
       prompt: 'messages from a family group chat during diwali, max 4',
       output: Output.object({ schema: notificationsSchema }),
@@ -643,9 +648,9 @@ export async function generateSampleNotifications() {
     for await (const partialObject of partialOutputStream) {
       stream.update(partialObject);
     }
-  })();
 
-  stream.done();
+    stream.done();
+  })();
 
   return { partialNotificationsStream: stream.value };
 }
@@ -653,7 +658,7 @@ export async function generateSampleNotifications() {
 
 #### Before: Read streamable value and update object
 
-```tsx filename="@/app/page.tsx"
+```tsx title="@/app/page.tsx"
 'use client';
 
 import { useState } from 'react';
@@ -690,7 +695,7 @@ To migrate to AI SDK UI, you should use the `useObject` hook and implement `stre
 
 #### After: Replace with route handler and stream text response
 
-```ts filename="@/app/api/object/route.ts"
+```ts title="@/app/api/object/route.ts"
 import { Output, createTextStreamResponse, streamText, toTextStream } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { notificationSchema } from '@/utils/schemas';
@@ -699,7 +704,7 @@ export async function POST(req: Request) {
   const context = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     output: Output.object({ schema: notificationSchema }),
     prompt:
       `Generate 3 notifications for a messages app in this context:` + context,
@@ -713,7 +718,7 @@ export async function POST(req: Request) {
 
 #### After: Use object hook to decode stream and update object
 
-```tsx filename="@/app/page.tsx"
+```tsx title="@/app/page.tsx"
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -742,19 +747,10 @@ export default function Page() {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

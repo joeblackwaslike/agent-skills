@@ -1,10 +1,14 @@
 ---
+title: transcribe
+description: API Reference for transcribe.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d8819fb634b3d3e88485e4e65b67a653b4900a3aecd58cd011b0e3b505d15002"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0210d4d31a582ca6c46f60244ba02b47f3061f4c09b86eb53ca3c09b5b327984"
 ---
 
-# `transcribe()`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Generates a transcript from an audio file.
 
@@ -23,194 +27,41 @@ console.log(transcript);
 
 ## Import
 
-<Snippet text={`import { transcribe } from "ai"`} prompt={false} />
+```
+import { transcribe } from "ai"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'model',
-      type: 'TranscriptionModelV4',
-      description: 'The transcription model to use.',
-    },
-    {
-      name: 'audio',
-      type: 'DataContent (string | Uint8Array | ArrayBuffer | Buffer) | URL',
-      description: 'The audio file to generate the transcript from.',
-    },
-    {
-      name: 'providerOptions',
-      type: 'Record<string, JSONObject>',
-      isOptional: true,
-      description: 'Additional provider-specific options.',
-    },
-    {
-      name: 'maxRetries',
-      type: 'number',
-      isOptional: true,
-      description: 'Maximum number of retries. Default: 2.',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isOptional: true,
-      description: 'An optional abort signal to cancel the call.',
-    },
-    {
-      name: 'headers',
-      type: 'Record<string, string>',
-      isOptional: true,
-      description: 'Additional HTTP headers for the request.',
-    },
-    {
-      name: 'download',
-      type: '(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>',
-      isOptional: true,
-      description:
-        'Custom download function for fetching audio from URLs. Use `createDownload()` from `ai` to create a download function with custom size limits, e.g. `createDownload({ maxBytes: 50 * 1024 * 1024 })`. Default: built-in download with 2 GiB limit.',
-    },
-  ]}
-/>
+- `model` (`TranscriptionModelV4`): The transcription model to use.
+- `audio` (`DataContent (string | Uint8Array | ArrayBuffer | Buffer) | URL`): The audio file to generate the transcript from.
+- `providerOptions?` (`Record<string, JSONObject>`): Additional provider-specific options.
+- `maxRetries?` (`number`): Maximum number of retries. Default: 2.
+- `abortSignal?` (`AbortSignal`): An optional abort signal to cancel the call.
+- `headers?` (`Record<string, string>`): Additional HTTP headers for the request.
+- `telemetry?` (`TelemetryOptions`): Telemetry configuration. Supports functionId, recordInputs, recordOutputs, isEnabled, and per-call integrations.
+- `download?` (`(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>`): Custom download function for fetching audio from URLs. Use \`createDownload()\` from \`ai\` to create a download function with custom size limits, e.g. \`createDownload(\{ maxBytes: 50 \* 1024 \* 1024 })\`. Default: built-in download with 2 GiB limit.
 
 ### Returns
 
-<PropertiesTable
-  content={[
-    {
-      name: 'text',
-      type: 'string',
-      description: 'The complete transcribed text from the audio input.',
-    },
-    {
-      name: 'segments',
-      type: 'Array<{ text: string; startSecond: number; endSecond: number }>',
-      description:
-        'An array of transcript segments, each containing a portion of the transcribed text along with its start and end times in seconds.',
-    },
-    {
-      name: 'language',
-      type: 'string | undefined',
-      description:
-        'The language of the transcript in ISO-639-1 format e.g. "en" for English.',
-    },
-    {
-      name: 'durationInSeconds',
-      type: 'number | undefined',
-      description: 'The duration of the transcript in seconds.',
-    },
-    {
-      name: 'warnings',
-      type: 'Warning[]',
-      description:
-        'Warnings from the model provider (e.g. unsupported settings).',
-    },
-    {
-      name: 'providerMetadata',
-      type: 'Record<string, JSONObject>',
-      isOptional: true,
-      description:
-        'Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.',
-    },
-    {
-      name: 'responses',
-      type: 'Array<TranscriptionModelResponseMetadata>',
-      description:
-        'Response metadata from the provider. There may be multiple responses if we made multiple calls to the model.',
-      properties: [
-        {
-          type: 'TranscriptionModelResponseMetadata',
-          parameters: [
-            {
-              name: 'timestamp',
-              type: 'Date',
-              description: 'Timestamp for the start of the generated response.',
-            },
-            {
-              name: 'modelId',
-              type: 'string',
-              description:
-                'The ID of the response model that was used to generate the response.',
-            },
-            {
-              name: 'headers',
-              type: 'Record<string, string>',
-              isOptional: true,
-              description: 'Response headers.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `text` (`string`): The complete transcribed text from the audio input.
+- `segments` (`Array<{ text: string; startSecond: number; endSecond: number }>`): An array of transcript segments, each containing a portion of the transcribed text along with its start and end times in seconds.
+- `language` (`string | undefined`): The language of the transcript in ISO-639-1 format e.g. "en" for English.
+- `durationInSeconds` (`number | undefined`): The duration of the transcript in seconds.
+- `warnings` (`Warning[]`): Warnings from the model provider (e.g. unsupported settings).
+- `providerMetadata?` (`Record<string, JSONObject>`): Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
+- `responses` (`Array<TranscriptionModelResponseMetadata>`): Response metadata from the provider. There may be multiple responses if we made multiple calls to the model.
+  - `TranscriptionModelResponseMetadata`
+    - `timestamp` (`Date`): Timestamp for the start of the generated response.
+    - `modelId` (`string`): The ID of the response model that was used to generate the response.
+    - `headers?` (`Record<string, string>`): Response headers.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persistence, and network policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f2625c21e8090d615d7ae97da2d6b8c1b33d16c0bd58095b8152560eab8fb8ac"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "b855a744d9461e469d0a17a97d525f27b53da2b800f8f190ac5e727cf1633736"
 ---
 
 # Python SDK Reference
@@ -32,13 +32,14 @@ Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run process
 
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Create snapshot-backed persistent sandboxes on Vercel.
-- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Create snapshot-backed persistent sandboxes on Vercel.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
+- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for sandboxes.
 - [Tags](https://vercel.com/docs/sandbox/concepts/tags?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 
 Full cross-link map for this page: [/docs/sandbox/python-sdk-reference.graph.md](/docs/sandbox/python-sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=graph)

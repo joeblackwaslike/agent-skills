@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2a1509015191427fcbfd5a242d2226c897e2a80d5e770ff21bdaf02b39b95147"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7580fed2803fa84f748537567762b19793c84fbfa2eae6e291af03f8e5f198a5"
 ---
 
 # Incremental Migration to Vercel
@@ -34,11 +34,8 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends
 - [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Netlify to Vercel
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
-- [Headless Salesforce: An incremental migration from monolith to composable](https://vercel.com/blog/salesforce-incremental-migration?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related)
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Redirects](https://vercel.com/docs/routing/redirects?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes?from=related&source_path=%2Fdocs%2Fincremental-migration&source_site=vercel-docs&relationship=related) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 
@@ -75,7 +72,7 @@ Despite requiring more effort to make the new and legacy sites work concurrently
 
 ## Incremental migration strategies
 
-![Image](`/docs-assets/static/docs/incremental-migration/incremental-migration-steps-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/incremental-migration/incremental-migration-steps-light.png)
 
 *Incremental migration process*
 
@@ -116,7 +113,7 @@ Follow these steps to incrementally migrate your website to Vercel. Two possible
 
 In this approach, you make Vercel [the entry point for all your production traffic](/docs/domains/working-with-domains/add-a-domain). When you begin, all traffic will be sent to the legacy server with [rewrites](/docs/routing/rewrites) and/or fallbacks. As you migrate different aspects of your site to Vercel, you can remove the rewrites/fallbacks to the migrated paths so that they are now served by Vercel.
 
-![Image](`/docs-assets/static/docs/incremental-migration/approach-1-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/incremental-migration/approach-1-light.png)
 
 *Point your domain to Vercel approach*
 
@@ -209,7 +206,7 @@ Repeat this process until all the paths are migrated to Vercel and all rewrites 
 
 In this approach, once you have tested a specific feature on your new Vercel application, you configure your legacy server or proxy to send the traffic on that path to the path on the Vercel deployment where the feature is deployed.
 
-![Image](`/docs-assets/static/docs/incremental-migration/approach-2-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/incremental-migration/approach-2-light.png)
 
 *Keep your domain on the legacy server approach*
 
@@ -235,7 +232,7 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 ```
 
-When deployed, your new feature will be available at `https://my-new-app.vercel.app/`.
+When deployed, your new feature will be available at `https://my-new-app.vercel.app/new-feature`.
 
 You can then use the following nginx configuration to send the traffic for that feature from the legacy server to the new implementation:
 
@@ -245,7 +242,7 @@ server {
     server_name legacy-server.com www.legacy-server.com;
 
     location /feature-path-on-legacy-server {
-        proxy_pass https://my-new-app.vercel.app/;
+        proxy_pass https://my-new-app.vercel.app/new-feature;
     }
 }
 ```
@@ -279,8 +276,8 @@ export async function middleware(request: NextRequest) {
 
     // If `isNewVersionActive` is false, rewrite to the legacy server URL
     if (!isNewVersionActive) {
-      req.nextUrl.pathname = `/legacy-path`;
-      return NextResponse.rewrite(req.nextUrl);
+      request.nextUrl.pathname = `/legacy-path`;
+      return NextResponse.rewrite(request.nextUrl);
     }
   } catch (error) {
     console.error(error);

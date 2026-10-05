@@ -1,10 +1,17 @@
 ---
+title: Slackbot Agent Guide
+description: Learn how to use the AI SDK to build an AI Agent in Slack.
+url: "https://ai-sdk.dev/cookbook/guides/slackbot"
+docs_index: /llms.txt
+tags:
+  - agents
+  - chatbot
 source: "https://ai-sdk.dev/cookbook/guides/slackbot.md"
-fetched_at: "2026-08-24T04:50:41.759Z"
-sha256: "f6aa978a86acccb489d6242e70b6705bdff7f5bfe7c6f46cac7e69c2e132f019"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5f3d457a9414ab73090437ec495d9d4566cbc6e6d0c5889dfe51051fd824d050"
 ---
 
-# Building an AI Agent in Slack with the AI SDK
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this guide, you will learn how to build a Slackbot powered by the AI SDK. The bot will be able to respond to direct messages and mentions in channels using the full context of the thread.
 
@@ -38,17 +45,17 @@ This project uses the following stack:
 
 1. Clone [the repository](https://github.com/vercel-labs/ai-sdk-slackbot) and check out the `starter` branch
 
-<Snippet
-  text={[
-    'git clone https://github.com/vercel-labs/ai-sdk-slackbot.git',
-    'cd ai-sdk-slackbot',
-    'git checkout starter',
-  ]}
-/>
+```
+git clone https://github.com/vercel-labs/ai-sdk-slackbot.git
+cd ai-sdk-slackbot
+git checkout starter
+```
 
 2. Install dependencies
 
-<Snippet text={['pnpm install']} />
+```
+pnpm install
+```
 
 ## Project Structure
 
@@ -153,10 +160,10 @@ When a user mentions your bot in a channel, the `app_mention` event is triggered
 
 Here's the code for the `handleNewAppMention` function:
 
-```typescript filename="lib/handle-app-mention.ts"
+```typescript title="lib/handle-app-mention.ts"
 import { AppMentionEvent } from '@slack/web-api';
 import { client, getThread } from './slack-utils';
-import { generateResponse } from './ai';
+import { generateResponse } from './generate-response';
 
 const updateStatusUtil = async (
   initialStatus: string,
@@ -219,7 +226,7 @@ When a user starts a thread with your assistant, the `assistant_thread_started` 
 
 Here's the code for the `assistantThreadMessage` function:
 
-```typescript filename="lib/handle-messages.ts"
+```typescript title="lib/handle-messages.ts"
 import type { AssistantThreadStartedEvent } from '@slack/web-api';
 import { client } from './slack-utils';
 
@@ -265,10 +272,10 @@ For direct messages to your bot, the `message` event is triggered and the event 
 
 Here's the code for the `handleNewAssistantMessage` function:
 
-```typescript filename="lib/handle-messages.ts"
+```typescript title="lib/handle-messages.ts"
 import type { GenericMessageEvent } from '@slack/web-api';
 import { client, getThread } from './slack-utils';
-import { generateResponse } from './ai';
+import { generateResponse } from './generate-response';
 
 export async function handleNewAssistantMessage(
   event: GenericMessageEvent,
@@ -317,16 +324,15 @@ The core of our application is the `generateResponse` function in `lib/generate-
 
 Here's how to implement it:
 
-```typescript filename="lib/generate-response.ts"
+```typescript title="lib/generate-response.ts"
 import { generateText, ModelMessage } from 'ai';
-__PROVIDER_IMPORT__;
 
 export const generateResponse = async (
   messages: ModelMessage[],
   updateStatus?: (status: string) => void,
 ) => {
   const { text } = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: `You are a Slack bot assistant. Keep your responses concise and to the point.
     - Do not tag users.
     - Current date is: ${new Date().toISOString().split('T')[0]}`,
@@ -348,9 +354,8 @@ This basic implementation:
 
 The real power of the AI SDK comes from tools that enable your bot to perform actions. Let's add two useful tools:
 
-```typescript filename="lib/generate-response.ts"
+```typescript title="lib/generate-response.ts"
 import { generateText, tool, ModelMessage, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 import { exa } from './utils';
 
@@ -359,7 +364,7 @@ export const generateResponse = async (
   updateStatus?: (status: string) => void,
 ) => {
   const { text } = await generateText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     instructions: `You are a Slack bot assistant. Keep your responses concise and to the point.
     - Do not tag users.
     - Current date is: ${new Date().toISOString().split('T')[0]}
@@ -454,11 +459,15 @@ The tools are automatically invoked based on the user's intent. For example, if 
 
 1. Install the Vercel CLI
 
-<Snippet text={['pnpm install -g vercel']} />
+```
+pnpm install -g vercel
+```
 
 2. Deploy the app
 
-<Snippet text={['vercel deploy']} />
+```
+vercel deploy
+```
 
 3. Copy the deployment URL and update the Slack app's Event Subscriptions to point to your Vercel URL
 4. Go to your project's deployment settings (Your project -> Settings -> Environment Variables) and add your environment variables
@@ -470,9 +479,7 @@ OPENAI_API_KEY=your_openai_api_key
 EXA_API_KEY=your_exa_api_key
 ```
 
-<Note>
-  Make sure to redeploy your app after updating environment variables.
-</Note>
+Make sure to redeploy your app after updating environment variables.
 
 5. Head back to the [https://api.slack.com/](https://api.slack.com/) and navigate to the "Event Subscriptions" page. Enable events and add your deployment URL.
 
@@ -496,35 +503,15 @@ You've built a Slack chatbot powered by the AI SDK! Here are some ways you could
 3. Add support for rich message formatting with blocks
 4. Add analytics to track usage patterns
 
-<Note>
-  In a production environment, it is recommended to implement a robust queueing
-  system to ensure messages are properly handled.
-</Note>
+In a production environment, it is recommended to implement a robust queueing
+system to ensure messages are properly handled.
 
 For a framework-managed alternative with durable threaded sessions, typing indicators, approval buttons, and multichannel support, see [eve's Slack channel](https://eve.dev/docs/channels/slack).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -12,13 +12,13 @@ related:
 summary: Prevent usage of force-dynamic as a dynamic page rendering strategy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_dynamic_auto.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "fe5c493a3608ecbe1f48b8d6d79ee5458d6befd5a0243b277827ed6574ce76e6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cd03d65460cf39022173463c27f43c3e72e76654bdc201f376ada0e881f1adb2"
 ---
 
 # NEXTJS_NO_DYNAMIC_AUTO
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Changing the dynamic behavior of a layout or page using "force-dynamic" is
 not recommended in App Router. This is because this will force only dynamic rendering

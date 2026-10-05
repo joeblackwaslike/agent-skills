@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "475fa29685def376c94ca80a11b561b553a7f31e6d8814c3fc1277fb9496e273"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "596d51c4f5be8c934560142324b0f55000a8a61d3c3a728894ee5fcc86dc9005"
 ---
 
 # Vercel Enterprise Plan
@@ -37,11 +37,11 @@ Vercel offers an Enterprise plan for organizations and enterprises that need hig
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
 - [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
-- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
+- [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/plans/enterprise.graph.md](/docs/plans/enterprise.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -12,8 +12,8 @@ related:
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "f5c559d6816218ce123c8b52f450d9ea7227ab508410936b5b85f90307991e43"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "550fa2f3f204c1b1afb20cd9bd1868ca7b5c438b1f823d6feede3a1cfe61da6f"
 ---
 
 # Container Registry limits and pricing
@@ -32,14 +32,15 @@ sha256: "f5c559d6816218ce123c8b52f450d9ea7227ab508410936b5b85f90307991e43"
 
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
+- [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [Container Images](https://vercel.com/docs/functions/container-images?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Deploy OCI container images with a Dockerfile or Containerfile on Vercel Functions.
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/container-registry/limits-and-pricing.graph.md](/docs/container-registry/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

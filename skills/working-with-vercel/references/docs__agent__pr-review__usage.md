@@ -14,8 +14,8 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e1c3bd182960ed3684a8cd92c92713fd6d14dd0e17334875a347b51545f9ff48"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d846ad0425b4e80671165e244bddc04832d4215449b63d941ed3bd5643017f86"
 ---
 
 # Managing Code Reviews
@@ -32,14 +32,14 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

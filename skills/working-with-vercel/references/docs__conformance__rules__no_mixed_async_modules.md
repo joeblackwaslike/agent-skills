@@ -12,13 +12,13 @@ related:
 summary: Prevent imports to modules that contain top-level awaits in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_mixed_async_modules.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "81131160fc3e74e6486ddc913dca9b17e96c98c28f28bbe1f05b058733086c14"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "51e50a27b29ed524014ee6d01f4d701a4cf6348f35df782b1e7c2f6898dd9559"
 ---
 
 # NO_MIXED_ASYNC_MODULES
 
-> **🔒 Permissions Required**: Conformance
+> **Availability**: Conformance is available on Enterprise plans
 
 Top-level await expressions in modules that are imported by other modules in sync
 prevent possible lazy module optimizations from being deployed on the module containing

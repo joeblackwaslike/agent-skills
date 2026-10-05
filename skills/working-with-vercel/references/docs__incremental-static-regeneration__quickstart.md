@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fe04e2fa2465c4ab8c6b40623d0e6d5648675e06cb9919f2b571fbf4b1ab46b4"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "92880804bc5a04f27e2e42e4ce1c22be803c3e22a16de8f05626d21d2d1399a0"
 ---
 
 # Getting started with ISR
@@ -28,18 +28,16 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
 - [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
-- [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/pages/guides/incremental-static-regeneration?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
 - [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
+- [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/quickstart.graph.md](/docs/incremental-static-regeneration/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -220,23 +218,18 @@ export const config = {
 	}
 };
 
-export interface Post {
-	title: string;
-	id: number;
-}
-
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
 	const res = await fetch('https://api.vercel.app/blog');
 	return {
-		posts: (await res.json()) as Post[]
+		posts: await res.json()
 	};
 }
 ```
 
 > For \['sveltekit']:
 
-Then, create a `+page.svelte.ts` file that renders the list of blog posts:
+Then, create a `+page.svelte` file that renders the list of blog posts:
 
 **routes/blog-posts/+page.svelte**
 
@@ -455,7 +448,7 @@ Tag-based revalidation is the recommended approach for granular control. Instead
 
 To trigger revalidation with SvelteKit:
 
-1. Set an `BYPASS_TOKEN` Environment Variable with a secret value
+1. Set a `BYPASS_TOKEN` Environment Variable with a secret value
 2. Assign your Environment Variable to the `bypassToken` config option for your route:
 
 **routes/example-route/+page.server.ts**
@@ -494,7 +487,7 @@ x-prerender-revalidate: bypass_token_here
 
 To trigger revalidation with Nuxt:
 
-1. Set an `BYPASS_TOKEN` Environment Variable with a secret value
+1. Set a `BYPASS_TOKEN` Environment Variable with a secret value
 2. Assign your Environment Variable to the `bypassToken` config option in `nitro.config` file:
 
 **nitro.config.ts**
@@ -530,7 +523,7 @@ export default defineNuxtConfig({
   nitro: {
     vercel: {
       config: {
-        bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+        bypassToken: process.env.BYPASS_TOKEN,
       },
     },
   },
@@ -544,7 +537,7 @@ export default defineNuxtConfig({
   nitro: {
     vercel: {
       config: {
-        bypassToken: process.env.VERCEL_BYPASS_TOKEN,
+        bypassToken: process.env.BYPASS_TOKEN,
       },
     },
   },
@@ -564,7 +557,7 @@ To revalidate a page on demand with Next.js:
 1. Create an Environment Variable which will store a revalidation secret
 2. Create an API Route that checks for the secret, then triggers revalidation
 
-The following example demonstrates an API route that triggers revalidation if the query paramater `?secret` matches a secret Environment Variable:
+The following example demonstrates an API route that triggers revalidation if the query parameter `?secret` matches a secret Environment Variable:
 
 ```js v0="build" filename="pages/api/revalidate.js" framework=nextjs
 export default async function handler(request, response) {

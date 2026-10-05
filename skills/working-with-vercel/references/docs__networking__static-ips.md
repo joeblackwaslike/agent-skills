@@ -16,13 +16,13 @@ related:
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4e68b415c5712ed3edd2a4d9ef2ffe6d1144b41e679e0c5ac45aba08711c195c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0242be923101668a92763f6dcf4a62c76ade66bc4c4a4d1496aef7fe9f1a6fea"
 ---
 
 # Static IPs
 
-> **🔒 Permissions Required**: Static IPs
+> **Availability**: Static IPs are available on Enterprise and Pro plans
 
 With Static IPs (shared pool), you can access backend services that require IP allowlisting through static egress IPs. It's designed for Pro and Enterprise teams who need static IP functionality without the dedicated network or security features of [Secure Compute](/docs/networking/secure-compute).
 
@@ -32,18 +32,18 @@ With Static IPs (shared pool), you can access backend services that require IP a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Secure Compute and Static IP builds start 64% faster](https://vercel.com/changelog/secure-compute-and-static-ip-builds-start-64-faster?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related)
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -84,10 +84,10 @@ Read our [getting started guide](/docs/networking/static-ips/getting-started) to
 When you enable Static IPs, you get:
 
 - **Shared infrastructure**: Each VPC serves a small group of customers
-- **Static egress**: All outbound traffic routes through shared static IP pairs
+- **Static egress**: Outbound traffic from your Vercel Functions routes through shared static IP pairs. This doesn't include [Routing Middleware](#routing-middleware-support)
 - **Logical isolation**: Subnet-level isolation maintains security between customers on the same VPC
 - **NAT gateway**: Traffic exits through a managed NAT gateway for consistent IPs
-- **Build traffic**: Traffic from both deployed functions and builds will route through the static IPs
+- **Build traffic**: You can also route build traffic through the static IPs by [enabling it for your project](#routing-build-traffic)
 
 ## Managing your static IPs
 

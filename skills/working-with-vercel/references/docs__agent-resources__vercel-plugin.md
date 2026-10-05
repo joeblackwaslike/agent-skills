@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "afbd32cedc76a5a545749c3bc21c15f7029b388d74f170af59149f044f910c9a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d8ce28cb4a3276b72a42232e435c76231790e94564c11eff3833bf7a38fe2549"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -34,10 +34,10 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
-- [Build a web research agent with Workflow SDK](https://vercel.com/kb/guide/durable-web-research-agent-with-workflow-sdk?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a web research agent that searches the web and returns a cited report. Powered by AI SDK and Workflow SDK, it jour
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -46,7 +46,7 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md
 
 ### Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenAI Codex](https://openai.com/codex), [Grok Build](https://x.ai/news/grok-build-cli), [Cursor](https://www.cursor.com), [GitHub Copilot](https://github.com/features/copilot), or [Kimi Code](https://kimi.com)
+- One of the [supported tools](#supported-tools)
 - Node.js 18 or later
 - [Bun](https://bun.sh)
 
@@ -79,14 +79,19 @@ After installation, session context is injected automatically only for empty dir
 
 ## Supported tools
 
-| Tool                                                          | Status      |
-| ------------------------------------------------------------- | ----------- |
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | Supported   |
-| [OpenAI Codex](https://openai.com/codex)               | Supported   |
-| [Grok Build](https://x.ai/news/grok-build-cli)                 | Supported   |
-| [Cursor](https://www.cursor.com)                              | Supported   |
-| [GitHub Copilot](https://github.com/features/copilot)          | Supported   |
-| [Kimi Code](https://kimi.com)                                  | Supported   |
+The plugin installs into these coding tools. Each tool has its own installation flow.
+
+| Tool                                                                            | Status    |
+| ------------------------------------------------------------------------------- | --------- |
+| [ChatGPT](https://chatgpt.com)                                                  | Supported |
+| [Claude Code](https://code.claude.com/docs)                                     | Supported |
+| [Codex CLI](https://learn.chatgpt.com/docs/codex/cli)                           | Supported |
+| [Cursor](https://www.cursor.com)                                                | Supported |
+| [GitHub Copilot](https://github.com/features/copilot)                           | Supported |
+| [GitHub Copilot CLI](https://github.com/github/copilot-cli)                     | Supported |
+| [Grok Build](https://x.ai/build)                                                | Supported |
+| [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code)                        | Supported |
+| [VS Code](https://code.visualstudio.com)                                        | Supported |
 
 ## How it works
 
@@ -105,7 +110,7 @@ The plugin includes 28 skills covering the Vercel ecosystem:
 
 | Skill                   | Covers                                                                                                  |
 | ----------------------- | ------------------------------------------------------------------------------------------------------- |
-| `ai-gateway`            | Unified model API, provider routing, failover, cost tracking, 100+ models                               |
+| `ai-gateway`            | Unified model API, provider routing, failover, cost tracking, and hundreds of models                    |
 | `ai-sdk`                | AI SDK v6, including text and object generation, streaming, tool calling, agents, MCP, and embeddings  |
 | `auth`                  | Authentication integrations for Clerk, Descope, and Auth0 with Marketplace provisioning                 |
 | `bootstrap`             | Project bootstrapping, including linking, environment provisioning, database setup, and first-run tasks |

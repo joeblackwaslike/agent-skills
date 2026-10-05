@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "111ef6b6c02f184b022024e1a1768f25c51b0a4c0f7adeec8e9c25047bbda5b3"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "233af10a4a346bf653a81cd1ef02f62608c7ebd141394aaea676b5fe4bdc5754"
 ---
 
 # Managing Team Members
@@ -30,37 +30,37 @@ As the team owner, you have the ability to manage your team's composition and th
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn about the project level roles and their permissions.
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
 - [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn about the project level roles and their permissions.
 
 Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
 ## Adding team members and assigning roles
 
-> **🔒 Permissions Required**: Inviting new team members
+> **Availability**: Inviting new team members is available on Enterprise and Pro plans
 
 1. From the dashboard, select your team from the team switcher
 2. Open **Settings** in the sidebar and go to [**Members**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers\&title=Go+to+Members+settings)
 3. Enter the email address of the person you would like to invite, assign their [role](/docs/rbac/access-roles), and select the **Invite** button. You can invite multiple people at once using the **Add more** button:
 
-![Image](https://vercel.com/front/docs/rbac/rbac-settings-members-light.png)
+![Inviting new members to your team.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/rbac-settings-members-light.png)
 
 4. By default only the team level roles are visible in the dropdown. If you choose to assign the [contributor role](/docs/rbac/access-roles#contributor-role) to the new member, a second dropdown will be accessible by selecting the **Assign Project Roles** button. You can then select the project, and their role on that project you want to assign the contributor to:
 
-> **🔒 Permissions Required**: Assigning project roles
+> **Availability**: Assigning project roles is available on Enterprise plans
 
-![Image](https://vercel.com/front/docs/rbac/rbac-settings-assign-contributor-light.png)
+![Assigning a contributor role to a new member.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/rbac-settings-assign-contributor-light.png)
 
 5. You can view all pending invites in the **Pending Invitations** section in the sidebar. When you issue an invite the recipient is not automatically added to the team. They have 7 days to accept the invite (30 days for SAML enforced teams) and join the team. After 7 days (or 30 days for SAML enforced teams), the invite will show as expired in the **Pending Invitations** section in the sidebar. Once a member has accepted an invitation to the team, they'll be displayed as team members with their assigned role.
 6. Once a member has been accepted onto the team, you can edit their role using the **Manage Role** button located alongside their assigned role in the **Team Members** section in the sidebar.
 
-![Image](https://vercel.com/front/docs/rbac/project-rbac-settings-manage-team-role-light.png)
+![Changing a member's role.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/project-rbac-settings-manage-team-role-light.png)
 
 ## Assigning project roles
 
-> **🔒 Permissions Required**: Assigning project roles
+> **Availability**: Assigning project roles is available on Enterprise plans
 
 Team [owners](/docs/rbac/access-roles#owner-role) can assign project roles to team members with the [contributor role](/docs/rbac/access-roles#contributor-role), enabling control over their project-related actions. You can assign these roles during team invitations or to existing members.
 
@@ -69,7 +69,7 @@ Team [owners](/docs/rbac/access-roles#owner-role) can assign project roles to te
 3. Select **Access** from the left navigation, then inside the **Project Access** section select the team members email from the dropdown
 4. Select the role you want to assign to the member on the project
 
-![Image](https://vercel.com/front/docs/rbac/rbac-project-settings-assign-role-light.png)
+![Assigning a project role to a member.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/rbac-project-settings-assign-role-light.png)
 
 ## Delete a member
 

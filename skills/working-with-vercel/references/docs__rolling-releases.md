@@ -16,13 +16,13 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5afb4c9ffa40d92dadbfca46905089228c6f98f138444f49d8a2ddc351b12d2d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e39a5862666dc0b13cf7be011e7d4df83f5928549d6efd16ee3534661f6cf61c"
 ---
 
 # Rolling Releases
 
-> **🔒 Permissions Required**: Rolling Releases
+> **Availability**: Rolling Releases are available on Enterprise and Pro plans
 
 Rolling Releases allow you to roll out new deployments to a small fraction of your users before promoting them to everyone.
 
@@ -41,9 +41,9 @@ Rolling Releases allow you to roll out new deployments to a small fraction of yo
 - [Releasing safe and cost-efficient blue-green deployments](https://vercel.com/blog/releasing-safe-and-cost-efficient-blue-green-deployments?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related)
-- [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — POST /v1/projects/{idOrName}/rolling-release/complete — Force-complete a Rolling Release. The canary deployment will beg
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Vercel MCP tools for rolling releases.
 - [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
+- [Deployment Checks](https://vercel.com/docs/deployment-checks?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=related) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 
 Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md?from=related&source_path=%2Fdocs%2Frolling-releases&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -99,9 +99,9 @@ a new rolling release. This includes:
 
 The rolling release will proceed to its first stage, sending a portion of traffic to the release candidate.
 
-If a rolling release is in progress when one of the **promote** actions triggers, the project's
+If a rolling release is in progress when one of the **promote** actions triggers for a different deployment, the project's
 state won't change. The active rolling release must be resolved (either completed or aborted) before starting
-a new one.
+a new one. Promoting the current release candidate while its rolling release is in progress completes the rollout to 100%.
 
 #### CI/CD pipelines
 

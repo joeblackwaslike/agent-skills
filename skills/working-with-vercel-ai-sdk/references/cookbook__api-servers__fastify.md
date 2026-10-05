@@ -1,10 +1,17 @@
 ---
+title: Fastify
+description: Learn how to use the AI SDK in a Fastify server
+url: "https://ai-sdk.dev/cookbook/api-servers/fastify"
+docs_index: /llms.txt
+tags:
+  - api servers
+  - streaming
 source: "https://ai-sdk.dev/cookbook/api-servers/fastify.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "5a79c06553620ce78278c8de948bdaa1f88210eeec7515ad148fb07774fcc06b"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5beab6cc68f8f0eaa73d5da8bde78f9fa17589979dc803de685d8b57aec98887"
 ---
 
-# Fastify
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can use the AI SDK in a [Fastify](https://fastify.dev/) server to generate and stream text and objects to the client.
 
@@ -16,10 +23,8 @@ The examples start a simple HTTP server that listens on port 8080. You can e.g. 
 curl -X POST http://localhost:8080
 ```
 
-<Note>
-  The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
-  set in the `AI_GATEWAY_API_KEY` environment variable.
-</Note>
+The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
+set in the `AI_GATEWAY_API_KEY` environment variable.
 
 **Full example**: [github.com/vercel/ai/examples/fastify](https://github.com/vercel/ai/tree/main/examples/fastify)
 
@@ -27,7 +32,7 @@ curl -X POST http://localhost:8080
 
 You can use the `toUIMessageStream` helper to convert the result stream to a UI message stream and then send it in the response.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import { streamText, toUIMessageStream } from 'ai';
 import Fastify from 'fastify';
 
@@ -51,7 +56,7 @@ fastify.listen({ port: 8080 });
 
 `createUIMessageStream` can be used to send custom data to the client.
 
-```ts filename='index.ts' highlight="12-17"
+```ts title='index.ts' {12-17}
 import { createUIMessageStream, streamText, toUIMessageStream } from 'ai';
 import Fastify from 'fastify';
 
@@ -98,7 +103,7 @@ fastify.listen({ port: 8080 });
 
 You can use the `textStream` property to get a text stream from the result and then pipe it to the response.
 
-```ts filename='index.ts' highlight="14"
+```ts title='index.ts' {14}
 import { streamText } from 'ai';
 import Fastify from 'fastify';
 
@@ -122,14 +127,10 @@ fastify.listen({ port: 8080 });
 
 - Streaming not working when [proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Node.js HTTP Server](/cookbook/api-servers/node-http-server)
-- [Express](/cookbook/api-servers/express)
-- [Hono](/cookbook/api-servers/hono)
-- [Fastify](/cookbook/api-servers/fastify)
-- [Nest.js](/cookbook/api-servers/nest)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

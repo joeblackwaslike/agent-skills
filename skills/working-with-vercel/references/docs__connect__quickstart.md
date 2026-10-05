@@ -16,13 +16,13 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "9281f15fdabc70efb9e03f6bd09b074ffddfa4b85bedef89d64d4dc51cedd225"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "42d874cc430ea6cc87506a0960dc428eb3eae168efc9d4ef127a5a15fd3ba6aa"
 ---
 
 # Quickstart
 
-> **🔒 Permissions Required**: Vercel Connect
+> **Availability**: Vercel Connect is available on all plans
 
 This guide shows you how to create your first connector in Vercel Connect and request a runtime provider token from your code.
 
@@ -41,8 +41,7 @@ This guide shows you how to create your first connector in Vercel Connect and re
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Auth.js](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Connectors](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

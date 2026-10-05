@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues.md"
-fetched_at: "2026-06-22T05:59:23.731Z"
-sha256: "a22acf03425e2351c4fb6b51d77052ea27f0bb3a2a864a070ffdfdbd1f8c2a8a"
+fetched_at: "2026-10-05T11:18:57.736Z"
+sha256: "a889f590dcfa42777d48cb652c95c4a747b80cd0cc45854e1e18caab0e263693"
 ---
 
 You can add sub-issues to an issue to break down larger pieces of work into tasks. Your sub-issues show their relationship to the parent issue allowing you to track your work across {% data variables.product.github %}. Parent issues and sub-issue progress is also available in your {% data variables.projects.projects_v2 %}, allowing you to build views, filter, and group by parent issue.
@@ -15,7 +15,7 @@ You can add up to {% data variables.projects.sub-issue_limit %} sub-issues per p
 1. Navigate to the issue that you want to add a sub-issue to.
 1. At the bottom of the issue description, click **Create sub-issue**.
 1. In the dialog, type the title for your sub-issue.
-1. Optionally, type the description for your issue, and set {% ifversion issue-types %}the issue type and{% endif %} any assignees, labels, projects, and milestones.
+1. Optionally, type the description for your issue, and set the issue type and any assignees, labels, projects, and milestones.
 1. Optionally, if you want to continue create sub-issues for this parent issue, select **Create more sub-issues**.
 1. Click **Create**.
 

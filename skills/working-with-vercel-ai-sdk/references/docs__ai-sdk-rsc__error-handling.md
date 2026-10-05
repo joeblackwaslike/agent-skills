@@ -1,16 +1,18 @@
 ---
+title: Error Handling
+description: Learn how to handle errors with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/error-handling"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/error-handling.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "1ff2211801c8206a526689326b86e7ffd935a590d5a5d2107945ee3b832617f2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "827f73631115ec62f7a5510c2b79e48c6d8fedc6c32bc0164577dc88db310f0b"
 ---
 
-# Error Handling
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 Two categories of errors can occur when working with the RSC API: errors while streaming user interfaces and errors while streaming other values.
 
@@ -18,7 +20,7 @@ Two categories of errors can occur when working with the RSC API: errors while s
 
 To handle errors while generating UI, the [`streamableUI`](/docs/reference/ai-sdk-rsc/create-streamable-ui) object exposes an `error()` method.
 
-```tsx filename='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
 import { createStreamableUI } from '@ai-sdk/rsc';
@@ -40,7 +42,9 @@ export async function getStreamedUI() {
 
 With this method, you can catch any error with the stream, and return relevant UI. On the client, you can also use a [React Error Boundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) to wrap the streamed component and catch any additional errors.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
+'use client';
+
 import { getStreamedUI } from '@/actions';
 import { useState } from 'react';
 import { ErrorBoundary } from './ErrorBoundary';
@@ -68,7 +72,7 @@ export default function Page() {
 
 To handle other errors while streaming, you can return an error object that the receiver can use to determine why the failure occurred.
 
-```tsx filename='app/actions.tsx'
+```tsx title='app/actions.tsx'
 'use server';
 
 import { createStreamableValue } from '@ai-sdk/rsc';
@@ -94,19 +98,10 @@ export const getStreamedData = async () => {
 };
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

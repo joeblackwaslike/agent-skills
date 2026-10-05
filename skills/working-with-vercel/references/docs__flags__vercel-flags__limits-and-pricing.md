@@ -13,8 +13,8 @@ related:
 summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ba616fca427ba438e1cce86dc5ae65a1957eeab0dfc56b1ccf171fb9444ce6fa"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d662cbf5fcdac52766c127b1e194e50364049e8c1ebb20365bf7ad020eec49f9"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -100,7 +100,7 @@ All variant IDs referenced in rules must exist in the flag's variants array. Seg
 | ---------------------------- | -------------- |
 | Entity types                 | 32             |
 | Attributes per entity        | 32             |
-| Labels per attribute         | 128            |
+| Labels per attribute         | 256            |
 | Entity kind string length    | 128 characters |
 | Entity label string length   | 128 characters |
 | Attribute key string length  | 128 characters |

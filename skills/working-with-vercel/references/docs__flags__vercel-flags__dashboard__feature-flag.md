@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "aa9e04338e401e2cac771ef34123e947cfee62c5d1058040f8c6bc144a44a3c6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ea90779c3ab2b951b311b9c0450de9ce90cee86779987ca9306f24d69b81c8e6"
 ---
 
 # Feature Flag Configuration
@@ -40,7 +40,6 @@ When you select a flag from the Flags overview, you can configure how it behaves
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/feature-flag.graph.md](/docs/flags/vercel-flags/dashboard/feature-flag.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Ffeature-flag&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -177,7 +176,7 @@ You can also use a weighted split as the outcome of an individual rule, not only
 
 ### Progressive rollout
 
-Use a progressive rollout when you want traffic to move from one variant to another over time. Progressive rollouts are different from weighted splits: they follow a schedule and finish at 100% of the `roll to` variant.
+Use a progressive rollout when you want traffic to move from one variant to another over time. Progressive rollouts are different from weighted splits: they follow a schedule and finish at a configurable final percentage of the `roll to` variant, which defaults to 100%.
 
 You can configure a progressive rollout as the fallthrough or as the outcome of an individual rule.
 
@@ -187,9 +186,12 @@ You can configure a progressive rollout as the fallthrough or as the outcome of 
 4. Choose **Roll from**, **Roll to**, and **Fallback**
 5. Choose whether the rollout should start when you save or at a specific time
 6. Add one or more schedule steps with a percentage and a duration for each step
-7. Save the flag
+7. Optionally, change the **Final Percentage** served from then on, after the last step finishes. It defaults to 100% and accepts values from 0 to 100 with up to three decimal places
+8. Save the flag
 
-After you save, the dashboard shows the start time, current percentage, and time until the next stage. After the last listed step finishes, the rollout serves 100% of the `roll to` variant indefinitely. If the selected entity attribute is missing during evaluation, the flag serves the fallback variant.
+After you save, the dashboard shows the start time, current percentage, and time until the next stage. After the last listed step finishes, the rollout serves the final percentage of the `roll to` variant indefinitely: 100% by default, or the value you configured. If the selected entity attribute is missing during evaluation, the flag serves the fallback variant.
+
+> **💡 Note:** Final percentages below 100% require `@vercel/flags-core` version 1.9.0 or later. Older SDK versions ignore the final percentage and finish the rollout at 100% of the `roll to` variant. The dashboard warns you when the project has received evaluations from SDK versions that are too old.
 
 Boolean flags prefill the rollout as `false` to `true`. String, Number, and JSON flags let you choose any existing variants.
 

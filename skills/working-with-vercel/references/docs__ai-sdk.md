@@ -12,8 +12,8 @@ related:
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "d421c82f458b43eadbc007d97e769153935dc4f4d9df2f0e9731838126a29038"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0292e60f3574eb77dc7a11ad606306ad58f7254bd5c29311818f5a2642a207a8"
 ---
 
 # AI SDK
@@ -28,18 +28,17 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Vercel AI SDK 3.1: ModelFusion joins the team](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Get started with Llama 3.1](https://ai-sdk.dev/cookbook/guides/llama-3_1?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related)
+- [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — The AI SDK is the TypeScript toolkit for building AI applications and agents with React, Next.js, Vue, Svelte, Node.js,
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/ai-sdk.graph.md](/docs/ai-sdk.graph.md?from=related&source_path=%2Fdocs%2Fai-sdk&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -197,7 +196,7 @@ The AI SDK is available as a package. To install it, run the following command:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i ai
+    yarn add ai
     ```
   </Code>
   <Code tab="npm">
@@ -207,7 +206,7 @@ The AI SDK is available as a package. To install it, run the following command:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i ai
+    bun add ai
     ```
   </Code>
 </CodeBlock>

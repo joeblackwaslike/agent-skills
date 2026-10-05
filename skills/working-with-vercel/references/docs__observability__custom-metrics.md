@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "834ed87aaa5585c72404575307caccf96d84928efa11eaca9adb350ac60913eb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c3e09e71fe845509351e29fc1df5a9ddc241588882c2ed247838b40382622357"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -54,7 +54,7 @@ For example, you could emit metrics to measure database queries latency, record 
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/functions
+    yarn add @vercel/functions
     ```
   </Code>
   <Code tab="npm">
@@ -64,7 +64,7 @@ For example, you could emit metrics to measure database queries latency, record 
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/functions
+    bun add @vercel/functions
     ```
   </Code>
 </CodeBlock>

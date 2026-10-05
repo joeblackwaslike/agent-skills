@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "0f8610ef10bd022054c0969f6db6aacb527658608232faf5baf84221bc108239"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "20634909b39b90723f06288e4d230d50a5e57cbc7650df38dda5f1f374323efd"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
@@ -34,14 +34,13 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
+- [AI Gateway adds Browserbase Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
+- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
-- [DeepSeek V4 Flash now runs updated weights on AI Gateway](https://vercel.com/changelog/deepseek-v4-flash-now-runs-updated-weights-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related)
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [Evaluation](https://vercel.com/docs/ai-gateway/modalities/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Evaluate shared state against typed questions and get back structured choices, scores, and boolean probabilities through
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=related) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/byok.graph.md](/docs/ai-gateway/authentication-and-byok/byok.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fauthentication-and-byok%2Fbyok&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

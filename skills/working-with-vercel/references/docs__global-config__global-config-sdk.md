@@ -16,8 +16,8 @@ related:
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "c0a1965838b169d573dd2d2167b3abddb921acdd81d43add760bd439a0be5e50"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "24a623b042c72fcbd0fa57899f7f42b29d496b7864660bf3ae4deed20940e5b8"
 ---
 
 # @vercel/global-config
@@ -33,9 +33,9 @@ The [Global Config](/docs/global-config) client SDK is the most ergonomic way to
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related)
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Global Config Limits and pricing](https://vercel.com/docs/global-config/global-config-limits?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — Learn about the Global Configs limits and pricing based on account plans.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/global-config-sdk.graph.md](/docs/global-config/global-config-sdk.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-sdk&source_site=vercel-docs&relationship=graph)
@@ -65,7 +65,7 @@ To get started, install the SDK:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/global-config
+    yarn add @vercel/global-config
     ```
   </Code>
   <Code tab="npm">
@@ -75,7 +75,7 @@ To get started, install the SDK:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/global-config
+    bun add @vercel/global-config
     ```
   </Code>
 </CodeBlock>
@@ -99,7 +99,7 @@ To do so, you must use the `createClient` helper.
 
 The `createClient` helper method takes a connection string and returns an object that lets you use helper methods on the associated Global Config. Using `createClient`, you can store multiple Global Configs as environment variables and read data from all of them.
 
-```typescript filename="example.ts
+```typescript filename="example.ts"
 import { createClient } from '@vercel/global-config';
 
 // Fetch a single value from one config

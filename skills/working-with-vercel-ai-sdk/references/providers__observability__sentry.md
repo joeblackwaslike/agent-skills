@@ -1,10 +1,14 @@
 ---
+title: Sentry
+description: Monitor AI SDK calls and agent traces with Sentry
+url: "https://ai-sdk.dev/providers/observability/sentry"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/sentry.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3346f8de4516a9b1ef2eade6df7a18c47e99a8ab95a52661ac259c136514aaf1"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "77244b0244b4530fa6d229c4bf78bfd056e4c5297c289ed4ea2633073947e637"
 ---
 
-# Sentry Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Sentry](https://sentry.io/) helps you monitor errors, traces, latency, and
 token usage for AI applications. Sentry's Next.js and Node.js SDKs instrument
@@ -16,12 +20,10 @@ Sentry captures spans for `generateText`, `streamText`, model calls, tool calls,
 embeddings, reranking, token usage, and errors. Add a `functionId` with the AI
 SDK `telemetry` option to make traces easier to find and group in Sentry.
 
-<Note>
-  AI SDK v7 support requires `@sentry/node`, `@sentry/nextjs`, or another Sentry
-  server SDK version `10.62.0` or later. The native telemetry channel is
-  available in the Node.js runtime; use a Node.js route or server process for
-  these traces.
-</Note>
+AI SDK v7 support requires `@sentry/node`, `@sentry/nextjs`, or another Sentry
+server SDK version `10.62.0` or later. The native telemetry channel is
+available in the Node.js runtime; use a Node.js route or server process for
+these traces.
 
 ## Setup
 
@@ -41,7 +43,7 @@ pnpm add @sentry/nextjs
 Create or update your Sentry server config and enable tracing with
 `tracesSampleRate` or `tracesSampler`:
 
-```ts filename="sentry.server.config.ts"
+```ts title="sentry.server.config.ts"
 import * as Sentry from '@sentry/nextjs';
 
 Sentry.init({
@@ -53,7 +55,7 @@ Sentry.init({
 If you are setting up Sentry manually in Next.js, make sure your
 `instrumentation.ts` loads the server config for the Node.js runtime:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
     await import('./sentry.server.config');
@@ -70,7 +72,7 @@ pnpm add @sentry/node
 Initialize Sentry at the start of your server entry point and enable tracing with
 `tracesSampleRate` or `tracesSampler`:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import * as Sentry from '@sentry/node';
 
 Sentry.init({
@@ -95,7 +97,7 @@ Sentry.init({
 Use the AI SDK normally. No `registerTelemetry(new OpenTelemetry())` call and no
 `telemetry.isEnabled: true` flag are required for Sentry.
 
-```ts filename="app/api/generate/route.ts"
+```ts title="app/api/generate/route.ts"
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 
@@ -103,7 +105,7 @@ export const runtime = 'nodejs';
 
 export async function POST() {
   const result = await generateText({
-    model: anthropic('claude-sonnet-5'),
+    model: anthropic('claude-sonnet-5-5'),
     prompt: 'What is the weather in Tokyo?',
     telemetry: {
       functionId: 'anthropic-weather-demo',
@@ -117,7 +119,7 @@ export async function POST() {
 For a standalone Node.js script, wrap the AI SDK call in a Sentry span so the AI
 spans have a parent trace, then flush before the process exits:
 
-```ts filename="index.ts"
+```ts title="index.ts"
 import './instrumentation';
 import * as Sentry from '@sentry/node';
 import { openai } from '@ai-sdk/openai';
@@ -184,30 +186,10 @@ to `false`.
 - [Sentry Vercel AI SDK integration documentation for Node.js](https://docs.sentry.io/platforms/javascript/guides/node/configuration/integrations/vercelai/)
 - [AI SDK telemetry documentation](/docs/ai-sdk-core/telemetry)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

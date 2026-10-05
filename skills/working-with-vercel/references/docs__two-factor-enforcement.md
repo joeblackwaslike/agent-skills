@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2618b0087194c85ae1cc5b9e738d776c8e3b609899f8015c72fa9b54a1c03d82"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "951d4cdd61d04d1dbc37227c9ff3528d06e0a3a1255ba08120ef5c29246cd6ac"
 ---
 
 # Two-factor enforcement
@@ -32,8 +32,8 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -54,7 +54,7 @@ For more information on how to set up two-factor authentication for your account
 
 Team owners can view the two-factor authentication status of all team members in the [team members page](/docs/rbac/managing-team-members). Users without 2FA will have a label indicating their state. A filter is available on the same page to show members with two-factor authentication enabled or disabled.
 
-![Image](https://vercel.com/front/docs/two-factor/members-2fa-light.png)
+![Two-factor authentication status on the Members page.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/members-2fa-light.png)
 
 ## Enabling team 2FA enforcement
 
@@ -66,7 +66,7 @@ Steps to follow:
 2. Toggle the switch to enforce 2FA
 3. Click the **Save** button to confirm the action
 
-![Image](https://vercel.com/front/docs/two-factor/team-2fa-enforcement-light.png)
+![Two-factor authentication enforcement team setting.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/team-2fa-enforcement-light.png)
 
 
 ---

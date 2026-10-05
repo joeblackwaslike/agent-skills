@@ -1,20 +1,16 @@
 ---
+title: MLflow
+description: Track, visualize, and debug Vercel AI SDK traces with MLflow Tracing
+url: "https://ai-sdk.dev/providers/observability/mlflow"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/mlflow.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "415f61f681e2f7a0227b674e132f7038f27137c311667db776e59b3e78f61fbd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "60e0b02414c2d8c00c7193f1980d447585413ec3f3e564ae75f11b7d83618516"
 ---
 
-# MLflow Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<video
-  src="https://mlflow.org/docs/latest/images/llms/tracing/vercel-ai-tracing.mp4"
-  autoplay
-  muted
-  loop
-  controls
-  playsinline
-  aria-label="MLflow Tracing Vercel AI SDK"
->
+<video src="https://mlflow.org/docs/latest/images/llms/tracing/vercel-ai-tracing.mp4" autoplay muted loop controls playsinline aria-label="MLflow Tracing Vercel AI SDK">
   <a href="https://mlflow.org/docs/latest/images/llms/tracing/vercel-ai-tracing.mp4">
     MLflow Tracing Vercel AI SDK demo video
   </a>
@@ -33,10 +29,8 @@ When enabled, MLflow records:
 
 It is fairly straightforward to enable MLflow tracing for Vercel AI SDK if you are using NextJS.
 
-<Note>
-  No app handy? Try Vercel’s demo chatbot:
-  https://vercel.com/templates/next.js/ai-chatbot-telemetry
-</Note>
+No app handy? Try Vercel’s demo chatbot:
+[https://vercel.com/templates/next.js/ai-chatbot-telemetry](https://vercel.com/templates/next.js/ai-chatbot-telemetry)
 
 ### 1. Start MLflow Tracking Server
 
@@ -50,7 +44,7 @@ You can also start the server with Docker Compose; see the [MLflow Setup Guide](
 
 Add these to `.env.local`:
 
-```bash filename=".env.local"
+```bash title=".env.local"
 OTEL_EXPORTER_OTLP_ENDPOINT=<your-mlflow-tracking-server-endpoint>
 OTEL_EXPORTER_OTLP_TRACES_HEADERS=x-mlflow-experiment-id=<your-experiment-id>
 OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=http/protobuf
@@ -68,7 +62,7 @@ pnpm i @opentelemetry/api @vercel/otel @ai-sdk/otel
 
 Create `instrumentation.ts` in your project root and register the `LegacyOpenTelemetry` alongside your OTel provider setup:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 import { registerOTel } from '@vercel/otel';
@@ -82,7 +76,7 @@ export async function register() {
 
 Once the integration is registered, telemetry is emitted automatically for your AI SDK calls:
 
-```ts filename="route.ts"
+```ts title="route.ts"
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
@@ -110,7 +104,7 @@ Start your NextJS app and open MLflow UI at the tracking server endpoint (e.g., 
 
 For other Node.js frameworks, wire up the OpenTelemetry Node SDK and OTLP exporter manually.
 
-```ts filename="main.ts"
+```ts title="main.ts"
 import { init } from 'mlflow-tracing';
 import { registerTelemetry, generateText } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
@@ -177,30 +171,10 @@ To disable tracing for Vercel AI SDK, set `telemetry: { isEnabled: false }` on t
   - [MCP Server](https://mlflow.org/docs/latest/genai/mcp/): Connect your coding agent with MLflow MCP Server to interact with MLflow traces programmatically and improve your LLM applications.
 - For more information about tracing in AI SDK, see the [telemetry documentation](/docs/ai-sdk-core/telemetry).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

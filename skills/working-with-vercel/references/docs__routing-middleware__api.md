@@ -15,8 +15,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c80998b6975b2d1e2e6b99932e1b29ca20f037553604558e948e5707edca6b24"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bcfa79405408330a532688bf6d5fb91bcc9bcac884d93993e43e1dd723a568b2"
 ---
 
 # Routing Middleware API
@@ -35,14 +35,14 @@ The Routing Middleware file should be named `middleware.ts` and placed at the ro
 - [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to filter query parameters in your Middleware.
 - [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to modify request headers in your Middleware.
 - [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to render different content based on the user agent in your Middleware.
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
-- [Proxy](https://nextjs.org/docs/pages/api-reference/file-conventions/proxy?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use Proxy to run code before a request is completed.
-- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related)
-- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,21 +55,11 @@ export default function middleware() {}
 
 To use a different name or directory, set [`proxy.entrypoint`](/docs/project-configuration/vercel-json#proxy) in `vercel.json`.
 
-> For \['nextjs', 'nextjs-app']:
-
-> **💡 Note:** **Next.js 16 users:** Next.js 16 renamed the middleware file from
-> `middleware.ts` to `proxy.ts` and changed the function export from
-> `middleware` to `proxy`. When using Next.js 16 or later, use `proxy.ts`
-> instead of `middleware.ts`. The proxy function runs on Node.js only (Edge
-> runtime is not supported). See the [Next.js proxy
-> documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy)
-> for details.
-
 ## `config` object
 
 Routing Middleware will be invoked for **every route in your project**. If you only want it to be run on specific paths, you can define those either with a [custom matcher config](#match-paths-based-on-custom-matcher-config) or with [conditional statements](/docs/routing-middleware/api#match-paths-based-on-conditional-statements).
 
-You can also use the [`runtime` option](#config-properties) to [specify which runtime](#specify-runtime) you would like to use. The default is `edge`.
+You can also use the [`runtime` option](#config-properties) to [specify which runtime](#specify-runtime) you would like to use. The default is `nodejs`.
 
 While the `config` option is the preferred method, **as it does not get invoked on every request**, you can also use conditional statements to only run the Routing Middleware when it matches specific paths.
 
@@ -154,11 +144,11 @@ See the [helper methods](#routing-middleware-helper-methods) below for more info
 
 ### Specify runtime
 
-To change the runtime from the `edge` default, update the `runtime` option as follows:
+To set the runtime explicitly, update the `runtime` option as follows:
 
 ```ts filename="middleware.ts"
 export const config = {
-  runtime: 'nodejs', // or 'edge' (default)
+  runtime: 'nodejs',
 };
 ```
 
@@ -176,7 +166,7 @@ To use the Bun runtime with Routing Middleware, set the [`bunVersion`](/docs/pro
 | Property  | Type                          | Description                                                                        |
 | --------- | ----------------------------- | ---------------------------------------------------------------------------------- |
 | `matcher` | `string / string[]`           | A string or array of strings that define the paths the Middleware should be run on |
-| `runtime` | `string` (`edge` or `nodejs`) | A string that defines the Middleware runtime and defaults to `edge`                |
+| `runtime` | `string` (`nodejs`)           | A string that defines the Middleware runtime and defaults to `nodejs`              |
 
 ## Routing Middleware signature
 
@@ -502,7 +492,7 @@ Add the `@vercel/functions` package to your project with:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/functions
+    yarn add @vercel/functions
     ```
   </Code>
   <Code tab="npm">
@@ -512,7 +502,7 @@ Add the `@vercel/functions` package to your project with:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/functions
+    bun add @vercel/functions
     ```
   </Code>
 </CodeBlock>
@@ -724,7 +714,7 @@ export default function handler(request: Request, context: RequestContext) {
   context.waitUntil(getAlbum().then((json) => console.log({ json })));
 
   return new Response(
-    `Hello there, from ${request.url} I'm an Vercel Function!`,
+    `Hello there, from ${request.url} I'm a Vercel Function!`,
   );
 }
 
@@ -746,7 +736,7 @@ export default function handler(request, context) {
   context.waitUntil(getAlbum().then((json) => console.log({ json })));
 
   return new Response(
-    `Hello there, from ${request.url} I'm an Vercel Function!`,
+    `Hello there, from ${request.url} I'm a Vercel Function!`,
   );
 }
 
@@ -754,7 +744,7 @@ export const config = {
   matcher: '/',
 };
 
-const wait = (number) => new Promise((resolve) => setTimeout(resolve, ms));
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function getAlbum() {
   const res = await fetch('https://jsonplaceholder.typicode.com/albums/1');
@@ -894,9 +884,8 @@ export function middleware(request: NextRequest) {
 
 ```js filename="middleware.js" framework=nextjs
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
 
-export function middleware(request: NextRequest) {
+export function middleware(request) {
   // Clone the request headers and set a new header `x-hello-from-middleware1`
   const requestHeaders = new Headers(request.headers)
   requestHeaders.set('x-hello-from-middleware1', 'hello')
@@ -970,7 +959,7 @@ export function middleware(request) {
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/functions
+    yarn add @vercel/functions
     ```
   </Code>
   <Code tab="npm">
@@ -980,7 +969,7 @@ export function middleware(request) {
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/functions
+    bun add @vercel/functions
     ```
   </Code>
 </CodeBlock>

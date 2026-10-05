@@ -1,10 +1,14 @@
 ---
+title: Alibaba
+description: Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "c77d4f06679a8769b478637c1601e91ce2ca8918e49ee8f146a33265c2240324"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "255f0cc964595ecdd3e1c9876f839ed569d438511f7ef23b0a1479d70fa4879f"
 ---
 
-# Alibaba Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Alibaba Cloud Model Studio](https://modelstudio.console.alibabacloud.com/) provides access to the Qwen model series, including advanced reasoning capabilities.
 
@@ -14,7 +18,7 @@ API keys can be obtained from the [Console](https://modelstudio.console.alibabac
 
 The Alibaba provider is available via the `@ai-sdk/alibaba` module. You can install it with:
 
-<InstallPackages packages="@ai-sdk/alibaba" />
+**Packages:** `@ai-sdk/alibaba`
 
 ## Provider Instance
 
@@ -36,37 +40,37 @@ const alibaba = createAlibaba({
 
 You can use the following optional settings to customize the Alibaba provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers or regional endpoints.
   The default prefix is `https://dashscope-intl.aliyuncs.com/compatible-mode/v1`.
 
-- **videoBaseURL** _string_
+- **videoBaseURL** *string*
 
   Use a different URL prefix for video generation API calls. The video API uses the DashScope
   native endpoint (not the OpenAI-compatible endpoint).
   The default prefix is `https://dashscope-intl.aliyuncs.com`.
 
-- **embeddingBaseURL** _string_
+- **embeddingBaseURL** *string*
 
   Use a different URL prefix for embedding API calls. The embedding API uses the DashScope
   native endpoint (not the OpenAI-compatible endpoint).
   The default prefix is `https://dashscope-intl.aliyuncs.com/api/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `ALIBABA_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
-- **includeUsage** _boolean_
+- **includeUsage** *boolean*
 
   Include usage information in streaming responses. When enabled, token usage will be included in the final chunk.
   Defaults to `true`.
@@ -98,16 +102,16 @@ Alibaba language models can be used in the `streamText` function
 
 The following optional provider options are available for Alibaba models:
 
-- **enableThinking** _boolean_
+- **enableThinking** *boolean*
 
   Enable thinking/reasoning mode for supported models. When enabled, the model generates reasoning content before the response.
   Defaults to `false`.
 
-- **thinkingBudget** _number_
+- **thinkingBudget** *number*
 
   Maximum number of reasoning tokens to generate. Limits the length of thinking content.
 
-- **preserveThinking** _boolean_
+- **preserveThinking** *boolean*
 
   Preserve reasoning from previous assistant messages for supported models.
   When enabled, reasoning is sent separately as Alibaba `reasoning_content` and
@@ -117,7 +121,7 @@ The following optional provider options are available for Alibaba models:
   [preserved-thinking documentation](https://docs.qwencloud.com/developer-guides/text-generation/thinking#preserve-thinking-in-multi-turn)
   for the list of supported models.
 
-- **parallelToolCalls** _boolean_
+- **parallelToolCalls** *boolean*
 
   Whether to enable parallel function calling during tool use.
   Defaults to `true`.
@@ -350,17 +354,17 @@ const { embeddings } = await embedMany({
 Alibaba embedding models support additional provider options that can be passed via
 `providerOptions.alibaba`:
 
-- **textType** _'query' | 'document'_
+- **textType** *'query' | 'document'*
 
   Differentiates query text from document text for asymmetric retrieval tasks.
   Defaults to `document`.
 
-- **dimension** _number_
+- **dimension** *number*
 
   The dimension of the output embedding vectors. Defaults to 1024.
   `text-embedding-v4` also supports 1536 and 2048 dimensions.
 
-- **outputType** _'dense' | 'sparse' | 'dense&sparse'_
+- **outputType** *'dense' | 'sparse' | 'dense\&sparse'*
 
   Specifies the output vector type. Defaults to `dense`.
   The AI SDK embedding interface returns dense `number[]` vectors, so sparse-only
@@ -375,10 +379,8 @@ Alibaba embedding models support additional provider options that can be passed 
 | `text-embedding-v4` | 1024               | 64, 128, 256, 512, 768, 1024, 1536, 2048 | 10                  |
 | `text-embedding-v3` | 1024               | 512, 768, 1024                           | 10                  |
 
-<Note>
-  The tables above list currently documented Alibaba text embedding models. You
-  can also pass any available provider model ID as a string if needed.
-</Note>
+The tables above list currently documented Alibaba text embedding models. You
+can also pass any available provider model ID as a string if needed.
 
 ## Video Models
 
@@ -553,15 +555,15 @@ const { video } = await generateVideo({
 
 The following provider options are available via `providerOptions.alibaba`:
 
-- **negativePrompt** _string_
+- **negativePrompt** *string*
 
   A description of what to avoid in the generated video (max 500 characters).
 
-- **audioUrl** _string_
+- **audioUrl** *string*
 
   URL to an audio file for audio-video sync (WAV/MP3, 3-30 seconds, max 15MB).
 
-- **promptExtend** _boolean_
+- **promptExtend** *boolean*
 
   Enable prompt extension/rewriting for better generation quality. Defaults to `true`.
 
@@ -569,20 +571,20 @@ The following provider options are available via `providerOptions.alibaba`:
 
   Shot type for video generation. `'multi'` enables multi-shot cinematic narrative (wan2.6 models only).
 
-- **watermark** _boolean_
+- **watermark** *boolean*
 
   Whether to add a watermark to the generated video. Defaults to `false`.
 
-- **audio** _boolean_
+- **audio** *boolean*
 
   Whether to generate audio (for `wan2.6` I2V and R2V models; `wan2.7` models always generate audio).
 
-- **referenceUrls** _string[]_
+- **referenceUrls** *string\[]*
 
   Array of reference image/video URLs for reference-to-video mode (`wan2.6` models). Supports 0-5 images and 0-3 videos, max 5 total.
   Prefer the top-level `inputReferences` option when passing reference images.
 
-- **media** _Array&lt;\{ type, url, referenceVoice? \}&gt;_
+- **media** *Array\<\{ type, url, referenceVoice? }>*
 
   Explicit media array for reference-to-video mode (`wan2.7` models). Each item has a `type`
   (`'reference_image'`, `'reference_video'`, or `'first_frame'`), a `url` (public URL, or a
@@ -594,19 +596,17 @@ The following provider options are available via `providerOptions.alibaba`:
   Aspect ratio (`wan2.7` text-to-video and reference-to-video models).
   The top-level `aspectRatio` option is mapped to this parameter automatically.
 
-- **pollIntervalMs** _number_
+- **pollIntervalMs** *number*
 
   Polling interval in milliseconds for checking task status. Defaults to 5000.
 
-- **pollTimeoutMs** _number_
+- **pollTimeoutMs** *number*
 
   Maximum wait time in milliseconds for video generation. Defaults to 600000 (10 minutes).
 
-<Note>
-  Video generation is an asynchronous process that can take several minutes.
-  Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
-  reliable operation.
-</Note>
+Video generation is an asynchronous process that can take several minutes.
+Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
+reliable operation.
 
 ### Video Model Capabilities
 
@@ -635,10 +635,8 @@ The following provider options are available via `providerOptions.alibaba`:
 | `wan2.7-r2v`            | Yes      | 720P, 1080P | 2-10s (with video ref), 2-15s |
 | `wan2.7-r2v-2026-06-12` | Yes      | 720P, 1080P | 2-10s (with video ref), 2-15s |
 
-<Note>
-  The tables above list models available in the Singapore International region.
-  You can also pass any available provider model ID as a string if needed.
-</Note>
+The tables above list models available in the Singapore International region.
+You can also pass any available provider model ID as a string if needed.
 
 ## Model Capabilities
 
@@ -646,53 +644,10 @@ Please see the [Alibaba Cloud Model Studio docs](https://www.alibabacloud.com/he
 list of available models. You can also pass any available provider model ID as
 a string if needed.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

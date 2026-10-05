@@ -16,8 +16,8 @@ related:
 summary: A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "3e9b3fcc88c7215f64cd39c835e68819fb8e3b3797c7c0232bff0acf605f011d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "78c6f0f0b44a3dc0ec050f9572b7e0a5ed0b254a7bdd1d8124c0f2899b65644e"
 ---
 
 # Projects overview
@@ -39,7 +39,7 @@ Everything you deploy on Vercel lives in a project: a frontend, backend APIs, ba
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Programmatically host code for user-generated or AI-generated applications on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects&source_site=vercel-docs&relationship=graph)

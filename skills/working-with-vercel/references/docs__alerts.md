@@ -16,13 +16,13 @@ related:
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4184893fbe0062b542d2939f99e2e63da455d264f197dbbf1322d3e417112748"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dad2c6ed79f9faadfed488a49f0d8537fc87e59005b9e27ad57e2ec7f212bbc6"
 ---
 
 # Alerts
 
-> **🔒 Permissions Required**: Alerts
+> **Availability**: Alerts are available on Enterprise and Pro plans with Observability Plus
 
 Alerts let you know when something's wrong with your Vercel projects, like a spike in failed function invocations or unusual usage patterns. You can get these alerts by email, through Slack, or set up a webhook so you can respond to issues.
 
@@ -42,8 +42,8 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
 
 Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -76,7 +76,7 @@ Usage anomaly alerts support these metrics:
   - [Function invocations](/docs/functions/usage-and-pricing#invocations)
   - [Routing Middleware invocations](/docs/routing-middleware#observability)
 - [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer)
-- [Edge requests](/docs/manage-cdn-usage#edge-requests)
+- [CDN Requests](/docs/manage-cdn-usage#cdn-requests)
 
 ## Configure alerts
 

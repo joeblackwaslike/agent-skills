@@ -1,16 +1,18 @@
 ---
+title: Saving and Restoring States
+description: Saving and restoring AI and UI states with onGetUIState and onSetAIState
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/saving-and-restoring-states"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/saving-and-restoring-states.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "13f77de4f71a2364b0d8b42217ac08cce41dca35d873a5af6b33bb4d4f6d6b0a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "00b27b7a712cdc92a3a0d748bf1e20492cc52021e8527d6bfaf0e7423d63bce5"
 ---
 
-# Saving and Restoring States
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 AI SDK RSC provides convenient methods for saving and restoring AI and UI state. This is useful for saving the state of your application after every model generation, and restoring it when the user revisits the generations.
 
@@ -20,7 +22,7 @@ AI SDK RSC provides convenient methods for saving and restoring AI and UI state.
 
 The AI state can be saved using the [`onSetAIState`](/docs/reference/ai-sdk-rsc/create-ai#on-set-ai-state) callback, which gets called whenever the AI state is updated. In the following example, you save the chat history to a database whenever the generation is marked as done.
 
-```tsx filename='app/ai.ts'
+```tsx title='app/ai.ts'
 export const AI = createAI<ServerMessage[], ClientMessage[]>({
   actions: {
     continueConversation,
@@ -39,7 +41,7 @@ export const AI = createAI<ServerMessage[], ClientMessage[]>({
 
 The AI state can be restored using the [`initialAIState`](/docs/reference/ai-sdk-rsc/create-ai#initial-ai-state) prop passed to the context provider created by the [`createAI`](/docs/reference/ai-sdk-rsc/create-ai) function. In the following example, you restore the chat history from a database when the component is mounted.
 
-```tsx file='app/layout.tsx'
+```tsx title='app/layout.tsx'
 import { ReactNode } from 'react';
 import { AI } from './ai';
 
@@ -68,7 +70,7 @@ The UI state cannot be saved directly, since the contents aren't yet serializabl
 
 The UI state can be restored using the AI state as a proxy. In the following example, you restore the chat history from the AI state when the component is mounted. You use the [`onGetUIState`](/docs/reference/ai-sdk-rsc/create-ai#on-get-ui-state) callback to listen for SSR events and restore the UI state.
 
-```tsx filename='app/ai.ts'
+```tsx title='app/ai.ts'
 export const AI = createAI<ServerMessage[], ClientMessage[]>({
   actions: {
     continueConversation,
@@ -101,23 +103,14 @@ export const AI = createAI<ServerMessage[], ClientMessage[]>({
 
 To learn more, check out this [example](/examples/next-app/state-management/save-and-restore-states) that persists and restores states in your Next.js application.
 
----
+***
 
 Next, you will learn how you can use `@ai-sdk/rsc` functions like `useActions` and `useUIState` to create interactive, multistep interfaces.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

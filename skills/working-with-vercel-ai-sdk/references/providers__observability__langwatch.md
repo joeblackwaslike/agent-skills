@@ -1,10 +1,14 @@
 ---
+title: LangWatch
+description: Track, monitor, guardrail and evaluate your AI SDK applications with LangWatch.
+url: "https://ai-sdk.dev/providers/observability/langwatch"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/langwatch.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8412f8a27bee72e80f08241a3c292d402c8af56b3f72991a4b2adf506eddaf50"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "2757dcde285034e8231d551a7e8c2e0c0d752aec4bfc74cc0e0e6e8a9e62fa48"
 ---
 
-# LangWatch Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [LangWatch](https://langwatch.ai/) ([GitHub](https://github.com/langwatch/langwatch)) is an LLM Ops platform for monitoring, experimenting, measuring and improving LLM pipelines, with a fair-code distribution model.
 
@@ -12,21 +16,17 @@ sha256: "8412f8a27bee72e80f08241a3c292d402c8af56b3f72991a4b2adf506eddaf50"
 
 Obtain your `LANGWATCH_API_KEY` from the [LangWatch dashboard](https://app.langwatch.com/).
 
-<InstallPackages packages="langwatch" />
+**Packages:** `langwatch`
 
 Ensure `LANGWATCH_API_KEY` is set:
 
-<Tabs items={["Environment variables", "Client parameters"]} >
+#### Environment variable
 
-<Tab title="Environment variable">
-
-```bash filename=".env"
+```bash title=".env"
 LANGWATCH_API_KEY='your_api_key_here'
 ```
 
-</Tab>
-
-<Tab title="Client parameters">
+#### Client parameters
 
 ```typescript
 import { LangWatch } from 'langwatch';
@@ -35,10 +35,6 @@ const langwatch = new LangWatch({
   apiKey: 'your_api_key_here',
 });
 ```
-
-</Tab>
-
-</Tabs>
 
 ## Basic Concepts
 
@@ -62,8 +58,7 @@ npm install @vercel/otel langwatch @opentelemetry/api-logs @opentelemetry/instru
 
 Then, set up the OpenTelemetry for your application, follow one of the tabs below depending whether you are using AI SDK with Next.js or on Node.js:
 
-<Tabs items={['Next.js', 'Node.js']}>
-<Tab title="Next.js">
+#### Next.js
 
 You need to enable the `instrumentationHook` in your `next.config.js` file if you haven't already:
 
@@ -118,8 +113,8 @@ const result = await generateText({
 });
 ```
 
-</Tab>
-<Tab title="Node.js">
+#### Node.js
+
 For Node.js, start by following the official OpenTelemetry guide:
 
 - [OpenTelemetry Node.js Getting Started](https://opentelemetry.io/docs/languages/js/getting-started/nodejs/)
@@ -137,12 +132,9 @@ const sdk = new NodeSDK({
 });
 ```
 
-</Tab>
-</Tabs>
-
 That's it! Your messages will now be visible on LangWatch:
 
-![AI SDK](https://mintlify.s3.us-west-1.amazonaws.com/langwatch/images/integration/vercel-ai-sdk.png)
+<img alt="AI SDK" src="https://mintlify.s3.us-west-1.amazonaws.com/langwatch/images/integration/vercel-ai-sdk.png" width="2060" height="1274" />
 
 ### Example Project
 
@@ -205,30 +197,10 @@ If you have questions or need help, join our community:
 - [LangWatch Discord](https://discord.gg/kT4PhDS2gH)
 - [Email support](mailto:support@langwatch.ai)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

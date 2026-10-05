@@ -1,10 +1,14 @@
 ---
+title: UI
+description: Use AI SDK harnesses with useChat.
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "2cc77a790037e64eae4cd30883495716bf4592d34bd0ee5598a315d1759af2e7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b1a1541fb17992ea2872c22eda9270a82b7c41c735fe7de074bcbec8b6c951f0"
 ---
 
-# Harnesses with AI SDK UI
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Harness streams are compatible with AI SDK UI message streams. You can use
 `useChat()` on the client and stream `HarnessAgent` output from a server route.
@@ -16,7 +20,7 @@ history into a model.
 
 ## Client
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -80,7 +84,7 @@ export default function Page() {
 
 Define the `HarnessAgent` on the server:
 
-```ts filename='app/api/chat/agent.ts'
+```ts title='app/api/chat/agent.ts'
 import { HarnessAgent } from '@ai-sdk/harness/agent';
 import { claudeCode } from '@ai-sdk/harness-claude-code';
 
@@ -98,7 +102,7 @@ the continuation state internally. The chat id can also be the harness
 `sessionId`. Here we derive a stable `sandboxId` from that known chat id. If
 you do not derive one, persist the returned `sandboxSession.id` separately.
 
-```ts filename='app/api/chat/session-store.ts'
+```ts title='app/api/chat/session-store.ts'
 import type { HarnessAgentResumeSessionState } from '@ai-sdk/harness/agent';
 import {
   createVercelNetworkSandboxSession,
@@ -152,7 +156,7 @@ resume function reattaches an existing one.
 Convert UI messages to model messages, run the harness turn, and convert the
 result stream back to a UI message stream:
 
-```ts filename='app/api/chat/route.ts'
+```ts title='app/api/chat/route.ts'
 import { agent } from './agent';
 import { detachAndPersist, resumeOrCreateSession } from './session-store';
 import { getHarnessErrorMessage } from '@ai-sdk/harness/agent';
@@ -253,17 +257,10 @@ export type HarnessMessage = UIMessage<
 
 Then use `useChat<HarnessMessage>()` on the client.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text from hundreds of models through AI Gateway, with tool calling and structured output.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "736ebf252c2f6f494ac23d2e89b3c53cda527ab3087eaaa3054588655b0bc065"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "41367c95a13440442c18558d5d64fb2aad5f377de5593464e802cd6334274a67"
 ---
 
 # AI Gateway Text Generation
@@ -31,11 +31,11 @@ Text generation is the default modality in AI Gateway. You send a prompt and a m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related)
+- [Migrate AI SDK 5.x to 6.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Learn how to upgrade AI SDK 5.x to 6.0.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
 - [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=related) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-generation.graph.md](/docs/ai-gateway/modalities/text-generation.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-generation&source_site=vercel-docs&relationship=graph)

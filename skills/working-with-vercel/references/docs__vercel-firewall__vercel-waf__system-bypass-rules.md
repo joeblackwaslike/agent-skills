@@ -17,13 +17,13 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "1e32e1fd34855b5c69f1b7c4ac34e2140700620fddfb839996240ba09861fe10"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "f6332f03bd58688f3a54f6213d778c399d72026dffb04ff2c2eab362273acdfc"
 ---
 
 # WAF System Bypass Rules
 
-> **🔒 Permissions Required**: WAF System Bypass Rules
+> **Availability**: WAF System Bypass Rules are available on Enterprise and Pro plans
 
 While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-firewall/ddos-mitigation)) safeguard your websites and applications, it can happen that they block traffic from legitimate sources like proxies or shared networks in situations where traffic from these sources was identified as malicious.
 

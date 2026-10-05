@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "4858f4fa1e2a3d8ce1dcd417ef603cdb437fb2fc81cadedc096a583d67c7de8a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bb25df1dfa337827bcfa47921b6c1a606a254841660c002324a4edf0d2ff71d8"
 ---
 
 # Using the Integrations REST API
@@ -35,7 +35,7 @@ Learn how to authenticate and use the Integrations REST API to build your native
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
 - [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
-- [Authentication](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fmarketplace-api&source_site=vercel-docs&relationship=graph)
@@ -670,7 +670,7 @@ async function handleInvoiceNotPaid(webhook: WebhookPayload) {
   // Request fresh invoice
   const invoiceDetails = await getInvoiceDetails(invoiceId);
 
-  if (invocieDetails.state === 'notpaid') {
+  if (invoiceDetails.state === 'notpaid') {
     // Update invoice status
     await updateInvoiceRecord(invoiceId, {
       status: 'not_paid',
@@ -679,22 +679,22 @@ async function handleInvoiceNotPaid(webhook: WebhookPayload) {
 
     // Check if this is the final attempt (you may need to query invoice status)
     // Prefer `marketplace.invoice.overdue`
-    const isFinalAttempt = checkAttempts(inoviceId);
+    const isFinalAttempt = checkAttempts(invoiceId);
     if (isFinalAttempt) {
       // Suspend resources after final payment failure
       const resources = await getResourcesForInstallation(configuration.id);
       for (const resource of resources) {
         await suspendResource(resource.id, {
           reason: 'payment_failed',
-          invoiceId: inoviceId,
+          invoiceId,
         });
       }
 
       // Notify customer
-      await sendPaymentFailureNotification(configuration.id, inoviceId);
+      await sendPaymentFailureNotification(configuration.id, invoiceId);
     } else {
       // Schedule retry or send reminder
-      await schedulePaymentRetry(inoviceId);
+      await schedulePaymentRetry(invoiceId);
     }
   }
 }

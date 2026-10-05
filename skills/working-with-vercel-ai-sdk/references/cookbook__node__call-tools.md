@@ -1,10 +1,17 @@
 ---
+title: Call Tools
+description: Learn how to call tools using the AI SDK and Node
+url: "https://ai-sdk.dev/cookbook/node/call-tools"
+docs_index: /llms.txt
+tags:
+  - node
+  - tool use
 source: "https://ai-sdk.dev/cookbook/node/call-tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "18199bd9edf154f09f8c1ed273da65d63ab54f0a9083e80675bc9fe9734927a8"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0e09daf6849ab869a9d89466e47ff6e615e0e4ebef3f5938be5e61dac6663044"
 ---
 
-# Call Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Some models allow developers to provide a list of tools that can be called at any time during a generation.
 This is useful for extending the capabilities of a language model to either use logic or data to interact with systems external to the model.
@@ -39,7 +46,7 @@ const result = await generateText({
 
 If the model decides to call a tool, it will generate a tool call. You can access the tool call by checking the `toolCalls` property on the result.
 
-```ts highlight="31-44"
+```ts {31-44}
 import { generateText, tool } from 'ai';
 import dotenv from 'dotenv';
 import { z } from 'zod';
@@ -98,7 +105,7 @@ main().catch(console.error);
 
 You can access the result of a tool call by checking the `toolResults` property on the result.
 
-```ts highlight="31-41"
+```ts {31-41}
 import { generateText, tool } from 'ai';
 import dotenv from 'dotenv';
 import { z } from 'zod';
@@ -150,9 +157,7 @@ async function main() {
 main().catch(console.error);
 ```
 
-<Note>
-  `toolResults` will only be available if the tool has an `execute` function.
-</Note>
+`toolResults` will only be available if the tool has an `execute` function.
 
 ## Model Response
 
@@ -162,38 +167,10 @@ Many use cases will require the model to summarize the results of the tool call 
 You can achieve this by [using `stopWhen`](/cookbook/node/call-tools-multiple-steps)
 which will automatically send toolResults to the model to trigger another generation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/node/generate-text)
-- [Retrieval Augmented Generation](/cookbook/node/retrieval-augmented-generation)
-- [Knowledge Base Agent](/cookbook/node/knowledge-base-agent)
-- [Generate Text with Chat Prompt](/cookbook/node/generate-text-with-chat-prompt)
-- [Generate Text with Image Prompt](/cookbook/node/generate-text-with-image-prompt)
-- [Stream Text](/cookbook/node/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/node/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/node/stream-text-with-image-prompt)
-- [Stream Text with File Prompt](/cookbook/node/stream-text-with-file-prompt)
-- [Generate Object with a Reasoning Model](/cookbook/node/generate-object-reasoning)
-- [Generate Object](/cookbook/node/generate-object)
-- [Stream Object](/cookbook/node/stream-object)
-- [Stream Object with Image Prompt](/cookbook/node/stream-object-with-image-prompt)
-- [Record Token Usage After Streaming Object](/cookbook/node/stream-object-record-token-usage)
-- [Record Final Object after Streaming Object](/cookbook/node/stream-object-record-final-object)
-- [Call Tools](/cookbook/node/call-tools)
-- [Call Tools in Parallel](/cookbook/node/call-tools-in-parallel)
-- [Call Tools with Image Prompt](/cookbook/node/call-tools-with-image-prompt)
-- [Call Tools in Multiple Steps](/cookbook/node/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/node/mcp-tools)
-- [Manual Agent Loop](/cookbook/node/manual-agent-loop)
-- [Web Search Agent](/cookbook/node/web-search-agent)
-- [Model Context Protocol (MCP) Elicitation](/cookbook/node/mcp-elicitation)
-- [Embed Text](/cookbook/node/embed-text)
-- [Embed Text in Batch](/cookbook/node/embed-text-batch)
-- [Intercepting Fetch Requests](/cookbook/node/intercept-fetch-requests)
-- [Local Caching Middleware](/cookbook/node/local-caching-middleware)
-- [Repair Malformed JSON with jsonrepair](/cookbook/node/repair-json-with-jsonrepair)
-- [Dynamic Prompt Caching](/cookbook/node/dynamic-prompt-caching)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

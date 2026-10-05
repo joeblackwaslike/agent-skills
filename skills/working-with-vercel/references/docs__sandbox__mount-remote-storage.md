@@ -16,8 +16,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4040e1b1b3c1d0b454323da262b05f3ac9e246f3c8f04cfb8a7bc07db375bf59"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "465ecd98524b91b333fe059bd2bec85d2ea50aaf9bb6691cfb983a83a148e6da"
 ---
 
 # Mount remote storage
@@ -33,11 +33,10 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 - [Vercel Sandbox now supports FUSE-based filesystems](https://vercel.com/changelog/vercel-sandbox-now-supports-fuse-based-filesystems?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
 - [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
+- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
 - [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 
 Full cross-link map for this page: [/docs/sandbox/mount-remote-storage.graph.md](/docs/sandbox/mount-remote-storage.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fmount-remote-storage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

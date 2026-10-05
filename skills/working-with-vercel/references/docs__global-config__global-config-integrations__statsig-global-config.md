@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6144d5b3a0ee4282d34a062b98f21d90731a28af426d68ff1b8f42c168a0fa78"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "5b81d384fde97b2ace2ddff1b1b2a64675ff4f88743f655f5a07c1c7fc479572"
 ---
 
 # Using Global Config with Statsig
@@ -35,9 +35,9 @@ This guide will help you get started with using Vercel's Statsig integration wit
 - [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related)
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for integrations.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
-- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/statsig-global-config.graph.md](/docs/global-config/global-config-integrations/statsig-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fstatsig-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,22 +52,22 @@ Before using this integration, you should have:
    <CodeBlock>
      <Code tab="pnpm">
        ```bash
-       pnpm i vercel
+       pnpm i -g vercel@latest
        ```
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i vercel
+       yarn global add vercel@latest
        ```
      </Code>
      <Code tab="npm">
        ```bash
-       npm i vercel
+       npm i -g vercel@latest
        ```
      </Code>
      <Code tab="bun">
        ```bash
-       bun i vercel
+       bun add -g vercel@latest
        ```
      </Code>
    </CodeBlock>
@@ -76,22 +76,22 @@ Before using this integration, you should have:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm create next-app@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn create next-app@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npx create-next-app@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bunx create-next-app@latest
     ```
   </Code>
 </CodeBlock>
@@ -107,7 +107,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i @vercel/global-config
+       yarn add @vercel/global-config
        ```
      </Code>
      <Code tab="npm">
@@ -117,7 +117,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="bun">
        ```bash
-       bun i @vercel/global-config
+       bun add @vercel/global-config
        ```
      </Code>
    </CodeBlock>

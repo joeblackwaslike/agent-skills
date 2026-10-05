@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "2b2d93de6b28917c36c6650ea10c20f7b1ce08bb7d6bd5ae1c23ec75123859e8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7778e4e30dba009b5b9039012839b94c85e539b8a0d12936cefef8250e537dd3"
 ---
 
 # Runtimes
@@ -30,7 +30,7 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
+- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how to deploy an AI application to production on Vercel
 - [waitUntil is now available for Vercel Functions](https://vercel.com/changelog/waituntil-is-now-available-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
@@ -39,9 +39,9 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build image overview](https://vercel.com/docs/builds/build-image?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn about the container image used for Vercel builds.
-- [Managing Cron Jobs](https://vercel.com/docs/cron-jobs/manage-cron-jobs?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency
 
 Full cross-link map for this page: [/docs/functions/runtimes.graph.md](/docs/functions/runtimes.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,10 +1,14 @@
 ---
+title: xAI Grok
+description: Learn how to use xAI Grok and Imagine.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/xai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "9f95e893629d3f65c48d36ce4377ae170a4d73f3ded1e05aeb418cd53de00346"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "89069a9aa4a5831a09050ca23bd5a9f1a34e52b69811135d0f06dddbc08286cb"
 ---
 
-# xAI Grok Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [xAI Grok](https://x.ai) provider contains language model support for the [xAI API](https://x.ai/api).
 
@@ -13,7 +17,7 @@ The [xAI Grok](https://x.ai) provider contains language model support for the [x
 The xAI Grok provider is available via the `@ai-sdk/xai` module. You can
 install it with
 
-<InstallPackages packages="@ai-sdk/xai" />
+**Packages:** `@ai-sdk/xai`
 
 ## Provider Instance
 
@@ -36,21 +40,21 @@ const xai = createXai({
 
 You can use the following optional settings to customize the xAI provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.x.ai/v1`.
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `XAI_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -117,19 +121,17 @@ The AI SDK option accepts these values, but each xAI model supports a subset:
 - `'xhigh'` — Uses the most reasoning tokens for the most challenging tasks.
   This level is only supported by `grok-4.6`.
 
-<Note>
-  Support and defaults are model-specific. `grok-4.3` supports `'none'`,
-  `'low'`, `'medium'`, and `'high'`. `grok-4.5` supports `'low'`, `'medium'`,
-  and `'high'`, defaults to `'high'`, and cannot disable reasoning. `grok-4.6`
-  supports `'low'`, `'medium'`, `'high'`, and `'xhigh'`, and defaults to
-  `'high'`. The `grok-4.20-reasoning` and `grok-4.20-non-reasoning` variants do
-  not accept this option. For `grok-4.20-multi-agent`, `'low'`, `'medium'`, and
-  `'high'` control the number of agents instead of reasoning depth. See xAI's
-  [reasoning
-  docs](https://docs.x.ai/developers/model-capabilities/text/reasoning) and
-  [Grok 4.6 model page](https://docs.x.ai/developers/models/grok-4.6) for
-  current details.
-</Note>
+Support and defaults are model-specific. `grok-4.3` supports `'none'`,
+`'low'`, `'medium'`, and `'high'`. `grok-4.5` supports `'low'`, `'medium'`,
+and `'high'`, defaults to `'high'`, and cannot disable reasoning. `grok-4.6`
+supports `'low'`, `'medium'`, `'high'`, and `'xhigh'`, and defaults to
+`'high'`. The `grok-4.20-reasoning` and `grok-4.20-non-reasoning` variants do
+not accept this option. For `grok-4.20-multi-agent`, `'low'`, `'medium'`, and
+`'high'` control the number of agents instead of reasoning depth. See xAI's
+[reasoning
+docs](https://docs.x.ai/developers/model-capabilities/text/reasoning) and
+[Grok 4.6 model page](https://docs.x.ai/developers/models/grok-4.6) for
+current details.
 
 ### Priority Processing
 
@@ -162,7 +164,7 @@ docs](https://docs.x.ai/developers/advanced-api-usage/priority-processing).
 
 ## Realtime Models
 
-<Note type="warning">Realtime is an experimental feature.</Note>
+Realtime is an experimental feature.
 
 You can create models that call the [xAI Realtime API](https://docs.x.ai/docs/guides/realtime)
 using the `.experimental_realtime()` factory method.
@@ -195,13 +197,13 @@ const model = xai.responses('grok-4.7');
 
 The Responses API provides server-side tools that the model can autonomously execute during its reasoning process:
 
-- **web_search**: Real-time web search and page browsing
-- **x_search**: Search X (Twitter) posts, users, and threads
-- **code_execution**: Execute Python code for calculations and data analysis
-- **view_image**: View and analyze images
-- **view_x_video**: View and analyze videos from X posts
-- **mcp_server**: Connect to remote MCP servers and use their tools
-- **file_search**: Search through documents in vector stores (collections)
+- **web\_search**: Real-time web search and page browsing
+- **x\_search**: Search X (Twitter) posts, users, and threads
+- **code\_execution**: Execute Python code for calculations and data analysis
+- **view\_image**: View and analyze images
+- **view\_x\_video**: View and analyze videos from X posts
+- **mcp\_server**: Connect to remote MCP servers and use their tools
+- **file\_search**: Search through documents in vector stores (collections)
 
 ### Vision
 
@@ -290,19 +292,19 @@ console.log('Citations:', sources);
 
 #### Web Search Parameters
 
-- **allowedDomains** _string[]_
+- **allowedDomains** *string\[]*
 
   Only search within specified domains (max 5). Cannot be used with `excludedDomains`.
 
-- **excludedDomains** _string[]_
+- **excludedDomains** *string\[]*
 
   Exclude specified domains from search (max 5). Cannot be used with `allowedDomains`.
 
-- **enableImageSearch** _boolean_
+- **enableImageSearch** *boolean*
 
   Allow the model to perform image search as a separate Web Search mode when images are useful for the answer. The model can choose between regular web search and image search; responses can include Markdown image embeds when relevant.
 
-- **enableImageUnderstanding** _boolean_
+- **enableImageUnderstanding** *boolean*
 
   Enable the model to view and analyze images found during search. Increases token usage. To allow explicitly searching for images, use `enableImageSearch`.
 
@@ -328,27 +330,27 @@ const { text, sources } = await generateText({
 
 #### X Search Parameters
 
-- **allowedXHandles** _string[]_
+- **allowedXHandles** *string\[]*
 
   Only search posts from specified X handles (max 10). Cannot be used with `excludedXHandles`.
 
-- **excludedXHandles** _string[]_
+- **excludedXHandles** *string\[]*
 
   Exclude posts from specified X handles (max 10). Cannot be used with `allowedXHandles`.
 
-- **fromDate** _string_
+- **fromDate** *string*
 
   Start date for posts in ISO8601 format (`YYYY-MM-DD`).
 
-- **toDate** _string_
+- **toDate** *string*
 
   End date for posts in ISO8601 format (`YYYY-MM-DD`).
 
-- **enableImageUnderstanding** _boolean_
+- **enableImageUnderstanding** *boolean*
 
   Enable the model to view and analyze images in X posts.
 
-- **enableVideoUnderstanding** _boolean_
+- **enableVideoUnderstanding** *boolean*
 
   Enable the model to view and analyze videos in X posts.
 
@@ -423,18 +425,17 @@ The tool result also contains the prompt that the model wrote for the image mode
 
 #### Image Generation Parameters
 
-- **action** _'auto' | 'generate' | 'edit'_
+- **action** *'auto' | 'generate' | 'edit'*
 
   Restricts what the tool can do. Defaults to `'auto'`.
+
   - `'auto'`: the model can generate and edit images.
   - `'generate'`: text-to-image generation only.
   - `'edit'`: image editing only (edits images already in the conversation, including images the model generated earlier).
 
-<Note>
-  The tool takes no size or format parameters; the model picks an aspect ratio
-  for each call. To control it, ask in your prompt (e.g. "in a 9:16 vertical
-  aspect ratio").
-</Note>
+The tool takes no size or format parameters; the model picks an aspect ratio
+for each call. To control it, ask in your prompt (e.g. "in a 9:16 vertical
+aspect ratio").
 
 ### MCP Server Tool
 
@@ -457,27 +458,27 @@ const { text } = await generateText({
 
 #### MCP Server Parameters
 
-- **serverUrl** _string_ (required)
+- **serverUrl** *string* (required)
 
   The URL of the remote MCP server.
 
-- **serverLabel** _string_
+- **serverLabel** *string*
 
   A label to identify the MCP server.
 
-- **serverDescription** _string_
+- **serverDescription** *string*
 
   A description of what the MCP server provides.
 
-- **allowedTools** _string[]_
+- **allowedTools** *string\[]*
 
   List of tool names that the model is allowed to use from the MCP server. If not specified, all tools are allowed.
 
-- **headers** _Record&lt;string, string&gt;_
+- **headers** *Record\<string, string>*
 
   Custom headers to include when connecting to the MCP server.
 
-- **authorization** _string_
+- **authorization** *string*
 
   Authorization header value for authenticating with the MCP server (e.g., `'Bearer token123'`).
 
@@ -508,25 +509,23 @@ const result = streamText({
 
 #### File Search Parameters
 
-- **vectorStoreIds** _string[]_ (required)
+- **vectorStoreIds** *string\[]* (required)
 
   The IDs of the vector stores (collections) to search.
 
-- **maxNumResults** _number_
+- **maxNumResults** *number*
 
   The maximum number of results to return from the search.
 
 #### Provider Options for File Search
 
-- **include** _Array&lt;'file_search_call.results'&gt;_
+- **include** *Array\<'file\_search\_call.results'>*
 
   Include file search results in the response. When set to `['file_search_call.results']`, the response will contain the actual search results with file content and scores.
 
-<Note>
-  File search requires grok-4 family models (including grok-4.20) and the
-  Responses API. Vector stores can be created using the [xAI
-  API](https://docs.x.ai/docs/guides/using-collections/api).
-</Note>
+File search requires grok-4 family models (including grok-4.20) and the
+Responses API. Vector stores can be created using the [xAI
+API](https://docs.x.ai/docs/guides/using-collections/api).
 
 ### Multiple Tools
 
@@ -583,68 +582,64 @@ const result = await generateText({
 
 The following provider options are available:
 
-- **reasoningEffort** _'none' | 'low' | 'medium' | 'high'_
+- **reasoningEffort** *'none' | 'low' | 'medium' | 'high' | 'xhigh'*
 
   Control the reasoning effort for supported models. See [Reasoning Effort](#reasoning-effort) for model-specific values and defaults.
 
-- **logprobs** _boolean_
+- **logprobs** *boolean*
 
   Return log probabilities for output tokens. This is silently ignored by `grok-4.20` and newer models.
 
-- **topLogprobs** _number_
+- **topLogprobs** *number*
 
   Number of most likely tokens to return per token position (0-8). When set, `logprobs` is automatically enabled. This is silently ignored by `grok-4.20` and newer models.
 
-- **minP** _number_
+- **minP** *number*
 
   Set the min-p sampling threshold between 0 and 1. Tokens whose probability is below `minP` times the most likely token's probability are excluded. Unlike the standard AI SDK `topK` option, `minP` is xAI-specific and must be set in `providerOptions.xai`.
 
-- **maxTurns** _number_
+- **maxTurns** *number*
 
   Set the maximum number of assistant/server-side tool turns xAI may perform within one API request. This limits xAI's internal loop for provider-executed tools such as web search; it is separate from AI SDK's `stopWhen`, which limits the outer loop of AI SDK steps and API requests.
 
-- **parallelToolCalls** _boolean_
+- **parallelToolCalls** *boolean*
 
   Allow the model to call tools in parallel. Defaults to `true`.
 
-- **promptCacheKey** _string_
+- **promptCacheKey** *string*
 
   Route requests with shared prompt prefixes to improve cache reuse.
 
-- **safetyIdentifier** _string_
+- **safetyIdentifier** *string*
 
   Provide a stable, preferably hashed end-user identifier for safety monitoring.
 
-- **user** _string_
+- **user** *string*
 
   Provide an end-user identifier for abuse monitoring.
 
-- **include** _Array&lt;'file_search_call.results' | 'web_search_call.action.sources' | 'code_interpreter_call.outputs' | 'reasoning.encrypted_content' | 'no_inline_citations'&gt;_
+- **include** *Array\<'file\_search\_call.results' | 'web\_search\_call.action.sources' | 'code\_interpreter\_call.outputs' | 'reasoning.encrypted\_content' | 'no\_inline\_citations'>*
 
   Include file-search results, web-search sources, code-interpreter outputs, or encrypted reasoning content, or disable inline citations.
 
-- **store** _boolean_
+- **store** *boolean*
 
   Whether to store the input message(s) and model response for later retrieval. Defaults to `true`.
 
-- **previousResponseId** _string_
+- **previousResponseId** *string*
 
   The ID of the previous response from the model. You can use it to continue a conversation.
 
-- **serviceTier** _'default' | 'priority'_
+- **serviceTier** *'default' | 'priority'*
 
   Scheduling priority for the request. `'priority'` buys lower time-to-first-token and faster inter-token latency at a premium per-token price. The tier xAI actually applied comes back on `providerMetadata.xai.serviceTier`, and is `'default'` when priority capacity was unavailable. See [Priority Processing](https://docs.x.ai/developers/advanced-api-usage/priority-processing).
 
-<Note>
-  The Responses API only supports server-side tools. You cannot mix server-side
-  tools with client-side function tools in the same request.
-</Note>
+The Responses API only supports server-side tools. You cannot mix server-side
+tools with client-side function tools in the same request.
 
 ## Batch
 
-<Note type="warning">
-  Batch support is experimental and the API may change in patch releases.
-</Note>
+Batch support is experimental and the API may change in patch releases.
 
 The xAI provider supports asynchronous text generation through the [Batch
 API](https://docs.x.ai/developers/advanced-api-usage/batch-api). Pass the xAI
@@ -654,34 +649,30 @@ for the complete workflow, including polling, persistence, and result handling.
 Each request specifies its `type` and `model`. xAI supports using different
 text models within the same batch.
 
-<Note>
-  The xAI Batch API does not support per-batch webhooks. When you provide a
-  `webhookUrl`, the provider returns an unsupported warning and starts the batch
-  without a webhook.
-</Note>
+The xAI Batch API does not support per-batch webhooks. When you provide a
+`webhookUrl`, the provider returns an unsupported warning and starts the batch
+without a webhook.
 
 ## Model Capabilities
 
 | Model                         | Image Input | Object Generation | Tool Usage | Tool Streaming | Reasoning |
 | ----------------------------- | ----------- | ----------------- | ---------- | -------------- | --------- |
-| `grok-4.6`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `grok-4.5`                    | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `grok-4.20-reasoning`         | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `grok-4.20-non-reasoning`     | <Check />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `grok-4-1-fast-reasoning`     | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `grok-4-1-fast-non-reasoning` | <Check />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `grok-4-1`                    | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `grok-4-fast-reasoning`       | <Check />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `grok-4-fast-non-reasoning`   | <Check />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `grok-code-fast-1`            | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
-| `grok-3`                      | <Cross />   | <Check />         | <Check />  | <Check />      | <Cross /> |
-| `grok-3-mini`                 | <Cross />   | <Check />         | <Check />  | <Check />      | <Check /> |
+| `grok-4.6`                    | ✓           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-4.5`                    | ✓           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-4.20-reasoning`         | ✓           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-4.20-non-reasoning`     | ✓           | ✓                 | ✓          | ✓              | ✗         |
+| `grok-4-1-fast-reasoning`     | ✓           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-4-1-fast-non-reasoning` | ✓           | ✓                 | ✓          | ✓              | ✗         |
+| `grok-4-1`                    | ✗           | ✓                 | ✓          | ✓              | ✗         |
+| `grok-4-fast-reasoning`       | ✓           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-4-fast-non-reasoning`   | ✓           | ✓                 | ✓          | ✓              | ✗         |
+| `grok-code-fast-1`            | ✗           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-3`                      | ✗           | ✓                 | ✓          | ✓              | ✗         |
+| `grok-3-mini`                 | ✗           | ✓                 | ✓          | ✓              | ✓         |
 
-<Note>
-  The table above lists popular models. Please see the [xAI
-  docs](https://docs.x.ai/docs#models) for a full list of available models. You
-  can also pass any available provider model ID as a string if needed.
-</Note>
+The table above lists popular models. Please see the [xAI
+docs](https://docs.x.ai/docs#models) for a full list of available models. You
+can also pass any available provider model ID as a string if needed.
 
 ## Speech Models
 
@@ -711,34 +702,32 @@ const result = await generateSpeech({
 
 ### Supported Parameters
 
-- **text** _string_ (required)
+- **text** *string* (required)
 
   Text to synthesize. You can include xAI speech tags such as `[pause]`,
   `[laugh]`, or `<whisper>...</whisper>` directly in the text.
 
-- **voice** _string_
+- **voice** *string*
 
   The xAI voice ID. Defaults to `'eve'`. Built-in voice IDs are `'eve'`,
   `'ara'`, `'rex'`, `'sal'`, and `'leo'`; custom voice IDs are also accepted.
 
-- **language** _string_
+- **language** *string*
 
   A BCP-47 language code or `'auto'` for automatic detection. Defaults to
   `'auto'` when omitted.
 
-- **speed** _number_
+- **speed** *number*
 
   Speech rate multiplier from `0.7` to `1.5`.
 
-- **outputFormat** _string_
+- **outputFormat** *string*
 
   The audio codec to generate. Supported values are `'mp3'`, `'wav'`, `'pcm'`,
   `'mulaw'`, and `'alaw'`. Defaults to `'mp3'`.
 
-<Note>
-  xAI does not expose a separate `instructions` field for text-to-speech. Use
-  speech tags in `text` to control expressive delivery.
-</Note>
+xAI does not expose a separate `instructions` field for text-to-speech. Use
+speech tags in `text` to control expressive delivery.
 
 ### Provider Options
 
@@ -763,30 +752,30 @@ const result = await generateSpeech({
 });
 ```
 
-- **sampleRate** _8000 | 16000 | 22050 | 24000 | 44100 | 48000_
+- **sampleRate** *8000 | 16000 | 22050 | 24000 | 44100 | 48000*
 
   Sample rate of the output audio in Hz.
 
-- **bitRate** _32000 | 64000 | 96000 | 128000 | 192000_
+- **bitRate** *32000 | 64000 | 96000 | 128000 | 192000*
 
   MP3 bit rate in bits per second. Only applies when `outputFormat` is
   `'mp3'`.
 
-- **optimizeStreamingLatency** _0 | 1 | 2_
+- **optimizeStreamingLatency** *0 | 1 | 2*
 
   Latency optimization level. Higher values reduce time to first audio with a
   quality tradeoff at chunk boundaries.
 
-- **textNormalization** _boolean_
+- **textNormalization** *boolean*
 
   Whether to normalize written-form input text before synthesizing speech.
 
-- **withTimestamps** _boolean_
+- **withTimestamps** *boolean*
 
   Return character-level timing metadata alongside the audio. The timing data
   and total duration are exposed via `providerMetadata.xai` (see below).
 
-- **replace** _Record&lt;string, string&gt;_
+- **replace** *Record\<string, string>*
 
   Map of phrases to spoken substitutions applied before synthesis. Values may
   be respellings (`{ 'Acme Mobile': 'Acme Mobull' }`) or IPA phonetics
@@ -797,11 +786,11 @@ const result = await generateSpeech({
 xAI speech results include provider-specific metadata under
 `providerMetadata.xai`:
 
-- **traceId** _string_ — the xAI trace ID for the request, useful for
+- **traceId** *string* — the xAI trace ID for the request, useful for
   debugging with xAI support.
-- **duration** _number_ — total audio duration in seconds (only with
+- **duration** *number* — total audio duration in seconds (only with
   `withTimestamps`).
-- **contentType** _string_ — MIME type of the decoded audio, e.g.
+- **contentType** *string* — MIME type of the decoded audio, e.g.
   `'audio/mpeg'` (only with `withTimestamps`).
 - **audioTimestamps** `{ graphChars: string[]; graphTimes: [number, number][] }` —
   per-character alignment data (only with `withTimestamps`). `graphChars[i]`
@@ -822,18 +811,20 @@ const { traceId, duration, audioTimestamps } = result.providerMetadata.xai;
 
 ### Model Capabilities
 
-| Model     | Language  | Speed     | Output Formats             |
-| --------- | --------- | --------- | -------------------------- |
-| `default` | <Check /> | <Check /> | mp3, wav, pcm, mulaw, alaw |
+| Model     | Language | Speed | Output Formats             |
+| --------- | -------- | ----- | -------------------------- |
+| `default` | ✓        | ✓     | mp3, wav, pcm, mulaw, alaw |
 
 ## Transcription Models
 
 You can create models that call the [xAI Speech to Text API](https://docs.x.ai/developers/model-capabilities/audio/speech-to-text)
-using the `.transcription()` factory method. xAI's batch transcription endpoint
-does not require a model identifier.
+using the `.transcription()` factory method. The model identifier is optional:
+pass `grok-voice-transcribe-2.0` to pin a model, or omit it to use xAI's
+default transcription model. `grok-voice-transcribe-1.0` is retired, and
+requests to it are routed to `grok-voice-transcribe-2.0`.
 
 ```ts
-const model = xai.transcription();
+const model = xai.transcription('grok-voice-transcribe-2.0');
 ```
 
 Use xAI transcription models with the `transcribe` function:
@@ -872,74 +863,83 @@ const result = await transcribe({
 });
 ```
 
-- **audioFormat** _`pcm` | `mulaw` | `alaw`_
+- **audioFormat** *`pcm` | `mulaw` | `alaw` | `opus`*
 
-  Audio encoding for raw, headerless input audio.
+  Input audio encoding for raw, headerless audio (`pcm`, `mulaw`, `alaw`).
+  Container formats such as Ogg/Opus are auto-detected, so do not set
+  `audioFormat` for them. `opus` is supported for streaming transcription only:
+  each audio chunk must be exactly one raw Opus packet (not Ogg), and an
+  `audio/opus` input audio type maps to `opus` automatically.
 
-- **sampleRate** _8000 | 16000 | 22050 | 24000 | 44100 | 48000_
+- **sampleRate** *8000 | 16000 | 22050 | 24000 | 44100 | 48000*
 
   Sample rate of the input audio in Hz.
 
-- **language** _string_
+- **language** *string*
 
   Language code used for inverse text normalization.
 
-- **format** _boolean_
+- **format** *boolean*
 
   Enables inverse text normalization. Requires `language`.
 
-- **multichannel** _boolean_
+- **multichannel** *boolean*
 
   Enables per-channel transcription for interleaved multichannel audio.
 
-- **channels** _2 | 3 | 4 | 5 | 6 | 7 | 8_
+- **channels** *2 | 3 | 4 | 5 | 6 | 7 | 8*
 
   Number of interleaved audio channels.
 
-- **diarize** _boolean_
+- **diarize** *boolean*
 
   Enables speaker diarization.
 
-- **keyterm** _string | string[]_
+- **keyterm** *string | string\[]*
 
   One or more terms to bias transcription toward.
 
-- **fillerWords** _boolean_
+- **fillerWords** *boolean*
 
   Includes filler words such as `uh` and `um` in the transcript.
 
-- **streaming** _object_
+- **vadThreshold** *number*
+
+  Voice activity detection threshold. Range: 0.0-1.0. Defaults to `0.5` for
+  `transcribe` and `0.08` for streaming. `0` disables the filter.
+
+- **streaming** *object*
 
   Options for streaming speech-to-text over WebSocket. Use with `experimental_streamTranscribe`.
-  - **interimResults** _boolean_
+
+  - **interimResults** *boolean*
 
     Emits partial transcripts while speech is being processed.
 
-  - **endpointing** _number_
+  - **endpointing** *number*
 
     Silence duration in milliseconds before an utterance-final event. Range: 0-5000.
 
-  - **smartTurn** _number_
+  - **smartTurn** *number*
 
     End-of-turn detection threshold. When set, enables Smart Turn. Range: 0.0-1.0.
 
-  - **smartTurnTimeout** _number_
+  - **smartTurnTimeout** *number*
 
     Maximum silence duration in milliseconds before forcing `speech_final`. Range: 1-5000.
 
 ### Model Capabilities
 
-| Model     | Request/Response | Streaming | Word Timestamps | Diarization | Multichannel |
-| --------- | ---------------- | --------- | --------------- | ----------- | ------------ |
-| `default` | <Check />        | <Check /> | <Check />       | <Check />   | <Check />    |
+| Model                       | Request/Response | Streaming | Word Timestamps | Diarization | Multichannel |
+| --------------------------- | ---------------- | --------- | --------------- | ----------- | ------------ |
+| `default`                   | ✓                | ✓         | ✓               | ✓           | ✓            |
+| `grok-voice-transcribe-2.0` | ✓                | ✓         | ✓               | ✓           | ✓            |
 
-<Note>
-  Word timestamps, diarization results, and segments are only returned on the
-  request/response path (`transcribe`). Streaming transcription
-  (`experimental_streamTranscribe`) emits partial and final transcript text with
-  utterance-level timing, but does not surface per-word timestamps, speaker
-  labels, or segments.
-</Note>
+Word timestamps, diarization results, and segments are only returned on the
+request/response path (`transcribe`). Streaming transcription
+(`experimental_streamTranscribe`) emits partial and final transcript text with
+utterance-level timing, but does not surface per-word timestamps, speaker
+labels, or segments.
 
 ## Image Models
 
@@ -955,20 +955,16 @@ const { image } = await generateImage({
 });
 ```
 
-<Note>
-  The xAI image model does not support the `size` parameter. Use `aspectRatio`
-  instead. Supported aspect ratios: `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`,
-  `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, and `auto`.
-</Note>
+The xAI image model does not support the `size` parameter. Use `aspectRatio`
+instead. Supported aspect ratios: `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`,
+`2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, and `auto`.
 
 ### Image Editing
 
 xAI supports image editing through the `grok-imagine-image` model. Pass input images via `prompt.images` to transform or edit existing images.
 
-<Note>
-  xAI image editing does not support masks. Editing is prompt-driven - describe
-  what you want to change in the text prompt.
-</Note>
+xAI image editing does not support masks. Editing is prompt-driven - describe
+what you want to change in the text prompt.
 
 #### Basic Image Editing
 
@@ -1028,10 +1024,8 @@ const { images } = await generateImage({
 });
 ```
 
-<Note>
-  Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
-  base64-encoded strings.
-</Note>
+Input images can be provided as `Buffer`, `ArrayBuffer`, `Uint8Array`, or
+base64-encoded strings.
 
 ### Image Provider Options
 
@@ -1054,22 +1048,29 @@ const { images } = await generateImage({
 });
 ```
 
-- **resolution** _'1k' | '2k'_
+- **resolution** *'1k' | '1.5k' | '2k'*
 
-  Output resolution. `1k` produces ~1024×1024 images, `2k` produces ~2048×2048
-  images (actual dimensions vary based on aspect ratio). Available for
-  `grok-imagine-image-pro`.
+  Output resolution: `1k` (default, \~1024×1024), `1.5k` (\~1408×1408), or `2k`
+  (\~2048×2048). Actual dimensions vary based on aspect ratio.
+  `grok-imagine-image` does not support `1.5k`.
 
-- **quality** _'low' | 'medium' | 'high'_
+- **quality** *'low' | 'medium' | 'high' | 'auto'*
 
-  Image quality level. Higher quality may increase generation time.
+  Image quality level. Only supported by `grok-imagine-image-2.0`, which accepts
+  `low`, `medium`, and `auto`. `auto` is the default when omitted: it serves
+  `low` for generation and `medium` for editing, billed at the quality served.
+  `high` is not documented by xAI but is still accepted by older models, and is
+  kept for backward compatibility.
 
 ### Image Model Capabilities
 
-| Model                    | Resolution | Aspect Ratios                                                                                               | Image Editing |
-| ------------------------ | ---------- | ----------------------------------------------------------------------------------------------------------- | ------------- |
-| `grok-imagine-image-pro` | `1k`, `2k` | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, `auto` | <Check />     |
-| `grok-imagine-image`     | `1k`       | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, `auto` | <Check />     |
+| Model                    | Resolution         | Aspect Ratios                                                                                                              | Image Editing |
+| ------------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `grok-imagine-image-2.0` | `1k`, `1.5k`, `2k` | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, `21:9`, `5:2`, `auto` | ✓             |
+| `grok-imagine-image-pro` | `1k`, `1.5k`, `2k` | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, `auto`                | ✓             |
+| `grok-imagine-image`     | `1k`               | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3`, `2:1`, `1:2`, `19.5:9`, `9:19.5`, `20:9`, `9:20`, `auto`                | ✓             |
+
+`grok-imagine-image-2.0` is xAI's latest image model.
 
 ## Video Models
 
@@ -1148,11 +1149,9 @@ const { video } = await generateVideo({
 });
 ```
 
-<Note>
-  `grok-imagine-video-1.5` supports first-last-frame interpolation. Earlier
-  models ignore a `last_frame` entry with a warning. Use `extend-video` when you
-  want to continue an existing video rather than pin its final frame.
-</Note>
+`grok-imagine-video-1.5` supports first-last-frame interpolation. Earlier
+models ignore a `last_frame` entry with a warning. Use `extend-video` when you
+want to continue an existing video rather than pin its final frame.
 
 ### Video Editing
 
@@ -1175,11 +1174,9 @@ const { video } = await generateVideo({
 });
 ```
 
-<Note>
-  Video editing accepts input videos up to 8.7 seconds long. The `duration`,
-  `aspectRatio`, and `resolution` parameters are not supported for editing - the
-  output matches the input video's properties (capped at 720p).
-</Note>
+Video editing accepts input videos up to 8.7 seconds long. The `duration`,
+`aspectRatio`, and `resolution` parameters are not supported for editing - the
+output matches the input video's properties (capped at 720p).
 
 ### Chaining and Concurrent Edits
 
@@ -1274,11 +1271,9 @@ const extended = await generateVideo({
 });
 ```
 
-<Note>
-  Video extension does not support custom `aspectRatio` or `resolution` — the
-  output inherits those from the source video. `duration` is supported and
-  controls how long the extension is (not the total video length).
-</Note>
+Video extension does not support custom `aspectRatio` or `resolution` — the
+output inherits those from the source video. `duration` is supported and
+controls how long the extension is (not the total video length).
 
 ### Reference-to-Video (R2V)
 
@@ -1381,35 +1376,31 @@ Ids are case-insensitive, and an unknown id returns a `400` response listing the
 available voices. `referenceVoiceIds` is ignored with a warning when the
 resolved operation is not reference-to-video.
 
-<Note>
-  Preset voices are generally available. Caller-supplied voice clips are
-  available to trusted partners on request. xAI accepts at most three audio
-  references per request.
-</Note>
+Preset voices are generally available. Caller-supplied voice clips are
+available to trusted partners on request. xAI accepts at most three audio
+references per request.
 
-<Note>
-  Reference-to-video supports `duration`, `aspectRatio`, and `resolution`. Use
-  `mode` to select the operation — each mode is mutually exclusive.
-  `inputReferences` takes precedence over the legacy `referenceImageUrls`
-  provider option and can be combined with pinned frames. Reference-to-video is
-  supported by the `grok-imagine-video` and `grok-imagine-video-1.5` models;
-  native 1080p requires `grok-imagine-video-1.5`.
-</Note>
+Reference-to-video supports `duration`, `aspectRatio`, and `resolution`. Use
+`mode` to select the operation — each mode is mutually exclusive.
+`inputReferences` takes precedence over the legacy `referenceImageUrls`
+provider option and can be combined with pinned frames. Reference-to-video is
+supported by the `grok-imagine-video` and `grok-imagine-video-1.5` models;
+native 1080p requires `grok-imagine-video-1.5`.
 
 ### Video Provider Options
 
 The following provider options are available via `providerOptions.xai`.
 You can validate the provider options using the `XaiVideoModelOptions` type.
 
-- **pollIntervalMs** _number_
+- **pollIntervalMs** *number*
 
   Polling interval in milliseconds for checking task status. Defaults to 5000.
 
-- **pollTimeoutMs** _number_
+- **pollTimeoutMs** *number*
 
   Maximum wait time in milliseconds for video generation. Defaults to 600000 (10 minutes).
 
-- **resolution** _'480p' | '720p' | '1080p'_
+- **resolution** *'480p' | '720p' | '1080p'*
 
   Video resolution. When using the SDK's standard `resolution` parameter,
   `1920x1080` maps to `1080p`, `1280x720` maps to `720p`, and `854x480` maps
@@ -1418,7 +1409,7 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   text-to-video and image-to-video; reference-to-video is capped at `720p`
   (a `1080p` request is downgraded with a warning).
 
-- **user** _string_
+- **user** *string*
 
   Optional identifier for the end user responsible for the request. xAI uses
   this value for abuse monitoring. It is sent unchanged for video generation
@@ -1426,21 +1417,22 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   when not configured. It is not sent for video extension requests. Use an
   opaque stable identifier and avoid sending unnecessary personal information.
 
-- **mode** _'edit-video' | 'extend-video' | 'reference-to-video'_
+- **mode** *'edit-video' | 'extend-video' | 'reference-to-video'*
 
   Selects the explicit video operation. Each mode is mutually exclusive:
+
   - `'edit-video'` — edit an existing video (requires `videoUrl`)
   - `'extend-video'` — extend a video from its last frame (requires `videoUrl`)
   - `'reference-to-video'` — generate from reference images (requires `referenceImageUrls`)
 
   When omitted, standard generation is used. Legacy inputs are still auto-detected from fields for backward compatibility.
 
-- **videoUrl** _string_
+- **videoUrl** *string*
 
   URL of a source video. Used with `mode: 'edit-video'` for video editing
   and `mode: 'extend-video'` for video extension.
 
-- **referenceImageUrls** _string[]_
+- **referenceImageUrls** *string\[]*
 
   Array of reference image URLs (1–7 images) or base64 data URIs for
   reference-to-video (R2V) generation. The model incorporates visual
@@ -1448,7 +1440,7 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   `<IMAGE_1>`, `<IMAGE_2>`, etc. in the prompt to reference specific
   images. Used with `mode: 'reference-to-video'`.
 
-- **referenceVoiceIds** _string[]_
+- **referenceVoiceIds** *string\[]*
 
   Up to 3 xAI preset voice ids that give the subject a voice in
   reference-to-video (R2V) generation. Preset voices only — audio clips
@@ -1459,14 +1451,14 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   Ignored with a warning outside reference-to-video. Reference audio is
   documented as US-only and limited to trusted partners.
 
-- **storageOptions** _object_
+- **storageOptions** *object*
 
   Stores the generated video in the xAI Files API. Set `filename` and
   optionally `expiresAfter` (up to 30 days) and `publicUrl`. Stored-file
   details and storage errors are returned in `providerMetadata.xai.fileOutput`
   and `providerMetadata.xai.storageError`.
 
-- **keyframes** _Array\<\{ imageUrl: string; timestampSeconds: number \}\>_
+- **keyframes** *Array\<\{ imageUrl: string; timestampSeconds: number }>*
 
   Up to four mid-video image anchors. Each timestamp must fall strictly inside
   the video duration. Keyframes are supported by `grok-imagine-video-1.5` and
@@ -1495,12 +1487,10 @@ const { video } = await generateVideo({
 an unsupported-feature warning and omits the field for other model IDs. A
 `first_frame` is sent as xAI's standard `image` input.
 
-<Note>
-  Video generation is an asynchronous process that can take several minutes.
-  Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
-  reliable operation. Generated video URLs are ephemeral and should be
-  downloaded promptly.
-</Note>
+Video generation is an asynchronous process that can take several minutes.
+Consider setting `pollTimeoutMs` to at least 10 minutes (600000ms) for
+reliable operation. Generated video URLs are ephemeral and should be
+downloaded promptly.
 
 ### Aspect Ratio and Resolution
 
@@ -1528,65 +1518,20 @@ request is downgraded to `720p` with a warning.
 
 ### Video Model Capabilities
 
-| Model                    | Duration | Aspect Ratios                                     | Resolution                | Image-to-Video | Editing   | Extension | R2V       |
-| ------------------------ | -------- | ------------------------------------------------- | ------------------------- | -------------- | --------- | --------- | --------- |
-| `grok-imagine-video`     | 1–15s    | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3` | `480p`, `720p`            | <Check />      | <Check /> | <Check /> | <Check /> |
-| `grok-imagine-video-1.5` | 1–15s    | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3` | `480p`, `720p`, `1080p`\* | <Check />      | <Check /> | <Check /> | <Check /> |
+| Model                    | Duration | Aspect Ratios                                     | Resolution                | Image-to-Video | Editing | Extension | R2V |
+| ------------------------ | -------- | ------------------------------------------------- | ------------------------- | -------------- | ------- | --------- | --- |
+| `grok-imagine-video`     | 1–15s    | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3` | `480p`, `720p`            | ✓              | ✓       | ✓         | ✓   |
+| `grok-imagine-video-1.5` | 1–15s    | `1:1`, `16:9`, `9:16`, `4:3`, `3:4`, `3:2`, `2:3` | `480p`, `720p`, `1080p`\* | ✓              | ✓       | ✓         | ✓   |
 
 \* Native `1080p` applies to text-to-video and image-to-video. Reference-to-video
 is capped at `720p` — a `1080p` request is downgraded with a warning.
 
-<Note>
-  You can also pass any available provider model ID as a string if needed.
-</Note>
+You can also pass any available provider model ID as a string if needed.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

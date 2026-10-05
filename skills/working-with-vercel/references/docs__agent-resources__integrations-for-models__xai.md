@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the xAI native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/xai.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "2c27306dd8a1010eb32bf23c8450648518d25b545fecddfd22f9a5dd82f31e53"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "43a12bc751838ed2e243bd955303d7b8d572ac287797a0793c9076a3412ac6a7"
 ---
 
 # Vercel xAI Integration
@@ -64,22 +64,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

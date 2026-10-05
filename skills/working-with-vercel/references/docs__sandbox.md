@@ -16,8 +16,8 @@ related:
 summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "25dcd45409c89a5e34052a47fbc196df8e411f6b8fde899cb3c0a4037af938dd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "06711ff77a92d53d46460920f45b9788b17e98c9620a3c171f6ad2f82ea6c03e"
 ---
 
 # Vercel Sandbox
@@ -33,6 +33,9 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Security Model](https://eve.dev/docs/concepts/security-model?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
@@ -41,9 +44,6 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 - [Data downloaded by Vercel Sandbox is now free](https://vercel.com/changelog/data-downloaded-by-vercel-sandbox-is-now-free?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [Ship social posts from Slack with eve and Typefully](https://vercel.com/kb/guide/eve-typefully-social-media-agent?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=related) — A Slack-based social media agent built on eve. It drafts posts and threads for X, LinkedIn, Threads, Bluesky, and Mastod
 
 Full cross-link map for this page: [/docs/sandbox.graph.md](/docs/sandbox.graph.md?from=related&source_path=%2Fdocs%2Fsandbox&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,10 +1,14 @@
 ---
+title: Weave
+description: Monitor and evaluate LLM applications with Weave.
+url: "https://ai-sdk.dev/providers/observability/weave"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/weave.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "fbca27f3a983d82f168142187f0f6b096d36dce2059149b7970e947ec0ed8477"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "46ca818e7147b4dcb3cf9051597a94e525fa5395d184e68118a275ab4188e395"
 ---
 
-# Weave Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Weave](https://wandb.ai/site/weave) is a toolkit built by [Weights & Biases](https://wandb.ai/site/) for tracking, experimenting with, evaluating, deploying, and improving LLM-based applications.
 
@@ -26,7 +30,7 @@ Note the output. You'll use it in your environment configuration.
 
 ### Project Configuration
 
-Your W&B project ID identifies where your telemetry data will be logged.
+Your W\&B project ID identifies where your telemetry data will be logged.
 It follows the format `<YOUR_TEAM_NAME>/<YOUR_PROJECT_NAME>`.
 
 1. Navigate to the [Weights & Biases dashboard](https://wandb.ai/home).
@@ -45,7 +49,7 @@ OTEL_EXPORTER_OTLP_HEADERS="Authorization=Basic <BASE64_AUTH_STRING>,project_id=
 
 Install `@ai-sdk/otel` and register the `LegacyOpenTelemetry` in your `instrumentation.ts` file:
 
-```typescript filename="instrumentation.ts"
+```typescript title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 
@@ -76,30 +80,10 @@ const result = await generateText({
 - [OpenTelemetry Documentation](https://opentelemetry.io/docs/)
 - [AI SDK Telemetry Guide](/docs/ai-sdk-core/telemetry)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

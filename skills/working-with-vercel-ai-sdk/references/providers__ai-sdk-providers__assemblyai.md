@@ -1,10 +1,14 @@
 ---
+title: AssemblyAI
+description: Learn how to use the AssemblyAI provider for the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "7ca5d528235dd75ca4a3ccb7152666dea2982f513a02a2779eca410c0bdf2b47"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "2746c78c4cbca9ccf4bcd46e335c47f63e5652adbea93d6c02548d5dd312e2a4"
 ---
 
-# AssemblyAI Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [AssemblyAI](https://assemblyai.com/) provider contains transcription model support for the AssemblyAI transcription API.
 
@@ -12,7 +16,7 @@ The [AssemblyAI](https://assemblyai.com/) provider contains transcription model 
 
 The AssemblyAI provider is available in the `@ai-sdk/assemblyai` module. You can install it with
 
-<InstallPackages packages="@ai-sdk/assemblyai" />
+**Packages:** `@ai-sdk/assemblyai`
 
 ## Provider Instance
 
@@ -35,16 +39,16 @@ const assemblyai = createAssemblyAI({
 
 You can use the following optional settings to customize the AssemblyAI provider instance:
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `ASSEMBLYAI_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
   Defaults to the global `fetch` function.
@@ -75,7 +79,7 @@ using them emits an informational warning (not a deprecation) suggesting
 
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the `contentSafety` option will enable content safety filtering.
 
-```ts highlight="7"
+```ts {7}
 import { transcribe } from 'ai';
 import { assemblyai } from '@ai-sdk/assemblyai';
 import { type AssemblyAITranscriptionModelOptions } from '@ai-sdk/assemblyai';
@@ -94,245 +98,245 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **audioEndAt** _number_
+- **audioEndAt** *number*
 
   End time of the audio in milliseconds.
   Optional.
 
-- **audioStartFrom** _number_
+- **audioStartFrom** *number*
 
   Start time of the audio in milliseconds.
   Optional.
 
-- **autoChapters** _boolean_
+- **autoChapters** *boolean*
 
   Whether to automatically generate chapters for the transcription.
   Optional.
 
-- **autoHighlights** _boolean_
+- **autoHighlights** *boolean*
 
   Whether to automatically generate highlights for the transcription.
   Optional.
 
-- **boostParam** _enum_
+- **boostParam** *enum*
 
   Boost parameter for `wordBoost`.
   Allowed values: `'low'`, `'default'`, `'high'`.
   **Deprecated** — only applies to the deprecated `wordBoost`; use `keytermsPrompt` instead.
   Optional.
 
-- **contentSafety** _boolean_
+- **contentSafety** *boolean*
 
   Whether to enable content safety filtering.
   Optional.
 
-- **contentSafetyConfidence** _number_
+- **contentSafetyConfidence** *number*
 
   Confidence threshold for content safety filtering (25-100).
   Optional.
 
-- **customSpelling** _array of objects_
+- **customSpelling** *array of objects*
 
   Custom spelling rules for the transcription.
   Each object has `from` (array of strings) and `to` (string) properties.
   Optional.
 
-- **disfluencies** _boolean_
+- **disfluencies** *boolean*
 
   Whether to include disfluencies (um, uh, etc.) in the transcription.
   Optional.
 
-- **domain** _string_
+- **domain** *string*
 
   Enable a domain-specific model for specialized terminology.
   Currently supports `'medical-v1'` (Medical Mode).
   Optional.
 
-- **entityDetection** _boolean_
+- **entityDetection** *boolean*
 
   Whether to detect entities in the transcription.
   Optional.
 
-- **filterProfanity** _boolean_
+- **filterProfanity** *boolean*
 
   Whether to filter profanity in the transcription.
   Optional.
 
-- **formatText** _boolean_
+- **formatText** *boolean*
 
   Whether to format the text in the transcription.
   Optional.
 
-- **iabCategories** _boolean_
+- **iabCategories** *boolean*
 
   Whether to include IAB categories in the transcription.
   Optional.
 
-- **keytermsPrompt** _array of strings_
+- **keytermsPrompt** *array of strings*
 
   Domain-specific keyterms to boost recognition for (max 6 words per phrase).
   Replaces `wordBoost` for newer models — supported by `universal-3-pro`,
   `universal-3-5-pro`, and `slam-1` (and `universal-2` when enabled).
   Optional.
 
-- **languageCode** _string_
+- **languageCode** *string*
 
   Language code for the audio.
   Supports numerous ISO-639-1 and ISO-639-3 language codes.
   Optional.
 
-- **languageConfidenceThreshold** _number_
+- **languageConfidenceThreshold** *number*
 
   Confidence threshold for language detection.
   Optional.
 
-- **languageDetection** _boolean_
+- **languageDetection** *boolean*
 
   Whether to enable language detection.
   Optional.
 
-- **languageDetectionOptions** _object_
+- **languageDetectionOptions** *object*
 
   Options for automatic language detection: `expectedLanguages` (array of
   strings), `fallbackLanguage` (string), `codeSwitching` (boolean),
   `codeSwitchingConfidenceThreshold` (number, 0-1).
   Optional.
 
-- **multichannel** _boolean_
+- **multichannel** *boolean*
 
   Whether to process multiple audio channels separately.
   Optional.
 
-- **prompt** _string_
+- **prompt** *string*
 
   Natural-language context (up to 1,500 words) to steer the model.
   Only supported by `universal-3-pro`, `universal-3-5-pro`, and `slam-1`.
   Optional.
 
-- **punctuate** _boolean_
+- **punctuate** *boolean*
 
   Whether to add punctuation to the transcription.
   Optional.
 
-- **redactPii** _boolean_
+- **redactPii** *boolean*
 
   Whether to redact personally identifiable information.
   Optional.
 
-- **redactPiiAudio** _boolean_
+- **redactPiiAudio** *boolean*
 
   Whether to redact PII in the audio file.
   Optional.
 
-- **redactPiiAudioOptions** _object_
+- **redactPiiAudioOptions** *object*
 
   Options for PII-redacted audio: `returnRedactedNoSpeechAudio` (boolean),
   `overrideAudioRedactionMethod` (`'silence'`). Requires `redactPiiAudio`.
   Optional.
 
-- **redactPiiAudioQuality** _enum_
+- **redactPiiAudioQuality** *enum*
 
   Quality of the redacted audio file.
   Allowed values: `'mp3'`, `'wav'`.
   Optional.
 
-- **redactPiiPolicies** _array of enums_
+- **redactPiiPolicies** *array of enums*
 
   Policies for PII redaction, specifying which types of information to redact.
   Supports numerous types like `'person_name'`, `'phone_number'`, etc.
   Optional.
 
-- **redactPiiReturnUnredacted** _boolean_
+- **redactPiiReturnUnredacted** *boolean*
 
   Return the original unredacted transcript alongside the redacted one.
   Requires `redactPii`.
   Optional.
 
-- **redactPiiSub** _enum_
+- **redactPiiSub** *enum*
 
   Substitution method for redacted PII.
   Allowed values: `'entity_name'`, `'hash'`.
   Optional.
 
-- **redactStaticEntities** _object_
+- **redactStaticEntities** *object*
 
   Map of user-defined labels to exact terms to redact, e.g.
   `{ INTERNAL_TOOL: ['Bearclaw'] }`. Applied on top of standard PII redaction.
   Requires `redactPii`.
   Optional.
 
-- **removeAudioTags** _enum_
+- **removeAudioTags** *enum*
 
   Remove inline annotations from rich transcripts.
   Allowed values: `'all'` (all annotations), `'speaker'` (speaker cues only).
   Universal-3 Pro models.
   Optional.
 
-- **sentimentAnalysis** _boolean_
+- **sentimentAnalysis** *boolean*
 
   Whether to perform sentiment analysis on the transcription.
   Optional.
 
-- **speakerLabels** _boolean_
+- **speakerLabels** *boolean*
 
   Whether to label different speakers in the transcription.
   Optional.
 
-- **speakerOptions** _object_
+- **speakerOptions** *object*
 
   Options for speaker diarization: `minSpeakersExpected` (number),
   `maxSpeakersExpected` (number).
   Optional.
 
-- **speakersExpected** _number_
+- **speakersExpected** *number*
 
   Expected number of speakers in the audio.
   Optional.
 
-- **speechThreshold** _number_
+- **speechThreshold** *number*
 
   Threshold for speech detection (0-1).
   Optional.
 
-- **summarization** _boolean_
+- **summarization** *boolean*
 
   Whether to generate a summary of the transcription.
   Optional.
 
-- **summaryModel** _enum_
+- **summaryModel** *enum*
 
   Model to use for summarization.
   Allowed values: `'informative'`, `'conversational'`, `'catchy'`.
   Optional.
 
-- **summaryType** _enum_
+- **summaryType** *enum*
 
   Type of summary to generate.
   Allowed values: `'bullets'`, `'bullets_verbose'`, `'gist'`, `'headline'`, `'paragraph'`.
   Optional.
 
-- **temperature** _number_
+- **temperature** *number*
 
   Sampling temperature (0-1) controlling randomness.
   Universal-3 Pro models.
   Optional.
 
-- **webhookAuthHeaderName** _string_
+- **webhookAuthHeaderName** *string*
 
   Name of the authentication header for webhook requests.
   Optional.
 
-- **webhookAuthHeaderValue** _string_
+- **webhookAuthHeaderValue** *string*
 
   Value of the authentication header for webhook requests.
   Optional.
 
-- **webhookUrl** _string_
+- **webhookUrl** *string*
 
   URL to send webhook notifications to.
   Optional.
 
-- **wordBoost** _array of strings_
+- **wordBoost** *array of strings*
 
   List of words to boost in the transcription.
   **Deprecated** — rejected by `universal-3-pro`, `universal-3-5-pro`, and `slam-1`
@@ -386,60 +390,17 @@ AssemblyAI's documentation for per-language availability.
 
 ### Model Capabilities
 
-| Model               | Transcription | Duration  | Segments  | Language  |
-| ------------------- | ------------- | --------- | --------- | --------- |
-| `universal-3-5-pro` | <Check />     | <Check /> | <Check /> | <Check /> |
-| `universal-3-pro`   | <Check />     | <Check /> | <Check /> | <Check /> |
-| `universal-2`       | <Check />     | <Check /> | <Check /> | <Check /> |
-| `best`              | <Check />     | <Check /> | <Check /> | <Check /> |
+| Model               | Transcription | Duration | Segments | Language |
+| ------------------- | ------------- | -------- | -------- | -------- |
+| `universal-3-5-pro` | ✓             | ✓        | ✓        | ✓        |
+| `universal-3-pro`   | ✓             | ✓        | ✓        | ✓        |
+| `universal-2`       | ✓             | ✓        | ✓        | ✓        |
+| `best`              | ✓             | ✓        | ✓        | ✓        |
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [AI Gateway](/providers/ai-sdk-providers/ai-gateway)
-- [xAI Grok](/providers/ai-sdk-providers/xai)
-- [OpenAI](/providers/ai-sdk-providers/openai)
-- [Azure OpenAI](/providers/ai-sdk-providers/azure)
-- [Anthropic](/providers/ai-sdk-providers/anthropic)
-- [Open Responses](/providers/ai-sdk-providers/open-responses)
-- [Claude Platform on AWS](/providers/ai-sdk-providers/anthropic-aws)
-- [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock)
-- [Groq](/providers/ai-sdk-providers/groq)
-- [Fal](/providers/ai-sdk-providers/fal)
-- [AssemblyAI](/providers/ai-sdk-providers/assemblyai)
-- [GMI Cloud](/providers/ai-sdk-providers/gmicloud)
-- [TypeSafe](/providers/ai-sdk-providers/typesafe-ai)
-- [DeepInfra](/providers/ai-sdk-providers/deepinfra)
-- [Deepgram](/providers/ai-sdk-providers/deepgram)
-- [Black Forest Labs](/providers/ai-sdk-providers/black-forest-labs)
-- [Gladia](/providers/ai-sdk-providers/gladia)
-- [Google](/providers/ai-sdk-providers/google)
-- [Hume](/providers/ai-sdk-providers/hume)
-- [Google Vertex AI](/providers/ai-sdk-providers/google-vertex)
-- [Rev.ai](/providers/ai-sdk-providers/revai)
-- [Baseten](/providers/ai-sdk-providers/baseten)
-- [Hugging Face](/providers/ai-sdk-providers/huggingface)
-- [QuiverAI](/providers/ai-sdk-providers/quiverai)
-- [Fish Audio](/providers/ai-sdk-providers/fish-audio)
-- [Mistral AI](/providers/ai-sdk-providers/mistral)
-- [Z.AI](/providers/ai-sdk-providers/zai)
-- [Together.ai](/providers/ai-sdk-providers/togetherai)
-- [Cohere](/providers/ai-sdk-providers/cohere)
-- [Fireworks](/providers/ai-sdk-providers/fireworks)
-- [Voyage AI](/providers/ai-sdk-providers/voyage)
-- [DeepSeek](/providers/ai-sdk-providers/deepseek)
-- [Moonshot AI](/providers/ai-sdk-providers/moonshotai)
-- [Alibaba](/providers/ai-sdk-providers/alibaba)
-- [MiniMax](/providers/ai-sdk-providers/minimax)
-- [Cerebras](/providers/ai-sdk-providers/cerebras)
-- [Replicate](/providers/ai-sdk-providers/replicate)
-- [Prodia](/providers/ai-sdk-providers/prodia)
-- [Perplexity](/providers/ai-sdk-providers/perplexity)
-- [Luma](/providers/ai-sdk-providers/luma)
-- [ByteDance](/providers/ai-sdk-providers/bytedance)
-- [Kling AI](/providers/ai-sdk-providers/klingai)
-- [ElevenLabs](/providers/ai-sdk-providers/elevenlabs)
-- [Cartesia](/providers/ai-sdk-providers/cartesia)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

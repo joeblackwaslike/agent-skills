@@ -1,10 +1,17 @@
 ---
+title: Express
+description: Learn how to use the AI SDK in an Express server
+url: "https://ai-sdk.dev/cookbook/api-servers/express"
+docs_index: /llms.txt
+tags:
+  - api servers
+  - streaming
 source: "https://ai-sdk.dev/cookbook/api-servers/express.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d011a35a7ef5a7709b9fa1c5b4f8761ce1d5026c6f88047acff325fa74942cbd"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "0b00d454aad1b191f0e156c0578bc5d34fa35e60897abc023c2f3a0a5a065cfe"
 ---
 
-# Express
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can use the AI SDK in an [Express](https://expressjs.com/) server to generate and stream text and objects to the client.
 
@@ -16,10 +23,8 @@ The examples start a simple HTTP server that listens on port 8080. You can e.g. 
 curl -X POST http://localhost:8080
 ```
 
-<Note>
-  The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
-  set in the `AI_GATEWAY_API_KEY` environment variable.
-</Note>
+The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
+set in the `AI_GATEWAY_API_KEY` environment variable.
 
 **Full example**: [github.com/vercel/ai/examples/express](https://github.com/vercel/ai/tree/main/examples/express)
 
@@ -27,7 +32,7 @@ curl -X POST http://localhost:8080
 
 You can use the `pipeUIMessageStreamToResponse` helper to pipe the stream data to the server response.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import {
   pipeUIMessageStreamToResponse,
   streamText,
@@ -58,7 +63,7 @@ app.listen(8080, () => {
 
 `pipeUIMessageStreamToResponse` can be used to send custom data to the client.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import {
   createUIMessageStream,
   pipeUIMessageStreamToResponse,
@@ -105,7 +110,7 @@ app.listen(8080, () => {
 
 You can send a text stream to the client using `pipeTextStreamToResponse`.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import { pipeTextStreamToResponse, streamText, toTextStream } from 'ai';
 import express, { Request, Response } from 'express';
 
@@ -132,14 +137,10 @@ app.listen(8080, () => {
 
 - Streaming not working when [proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Node.js HTTP Server](/cookbook/api-servers/node-http-server)
-- [Express](/cookbook/api-servers/express)
-- [Hono](/cookbook/api-servers/hono)
-- [Fastify](/cookbook/api-servers/fastify)
-- [Nest.js](/cookbook/api-servers/nest)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

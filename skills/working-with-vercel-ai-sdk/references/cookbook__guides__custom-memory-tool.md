@@ -1,10 +1,14 @@
 ---
+title: Build a Custom Memory Tool
+description: Build an agent that persists memories using a filesystem-backed memory tool.
+url: "https://ai-sdk.dev/cookbook/guides/custom-memory-tool"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/cookbook/guides/custom-memory-tool.md"
-fetched_at: "2026-06-29T05:45:09.899Z"
-sha256: "22629b4a0c9ef909156e6c3260fcdf918b83e14e326f1515535a5ee7f40ef382"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5e53b62e3e453a04c145382ca85ab42e536d302888ecd46bd2698f9a88198eac"
 ---
 
-# Build a Custom Memory Tool
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Memory means saving the right information at the right time, in the right place, and injecting it back into the conversation when it matters. Without memory, your agent treats every conversation as its first. With memory, your agent builds context over time, recalls previous interactions, and adapts to the user.
 
@@ -303,7 +307,7 @@ A typical interaction looks like this:
 - [just-bash](https://github.com/vercel-labs/just-bash) for the JavaScript-based bash interpreter and AST parser
 - [AI SDK examples](https://github.com/vercel/ai/tree/main/examples) for more agent patterns
 
----
+***
 
 ## Appendix: Implementation Details
 
@@ -557,28 +561,10 @@ export function findUnapprovedCommand(commandLine: string): string | null {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

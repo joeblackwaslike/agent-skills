@@ -14,8 +14,8 @@ related:
 summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b1c7abeaf37455f173ea86035d3a66d57a5505f12d7b9b853bea4d85613c3243"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3f7532658293f6bafffbd2006edb0a7c8ef8325c896768cbd1347513d0c9898d"
 ---
 
 # Runtimes
@@ -36,8 +36,8 @@ Vercel Sandbox provides a secure, isolated environment for running your code. Th
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox now runs on Vercel Managed Images](https://vercel.com/changelog/vercel-sandbox-managed-images?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/runtimes.graph.md](/docs/sandbox/concepts/runtimes.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fruntimes&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,10 +1,14 @@
 ---
+title: ModelRush
+description: Use the ModelRush OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/modelrush"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/modelrush.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "bf106b501c49b20469b5837187e681d8ce96f4c7af78b4aacaa28eb49f25e1bb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "fe7113a0fbd4f63f26a60581e04025b5be09dfba7d9fd59d3c10e073a1d9a8a1"
 ---
 
-# ModelRush Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [ModelRush](https://modelrush.ai/) provides access to AI models through an OpenAI-compatible API. You can use its Chat Completions endpoint with the AI SDK through the `@ai-sdk/openai-compatible` module.
 
@@ -12,7 +16,7 @@ sha256: "bf106b501c49b20469b5837187e681d8ce96f4c7af78b4aacaa28eb49f25e1bb"
 
 Install the OpenAI Compatible provider:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 Create a ModelRush API key and set it as a server-side environment variable:
 
@@ -79,17 +83,10 @@ Use the [ModelRush models endpoint](https://modelrush.ai/docs/api/models) or [mo
 - [ModelRush Chat Completions documentation](https://modelrush.ai/docs/models/chat)
 - [AI SDK OpenAI Compatible provider](/providers/openai-compatible-providers)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

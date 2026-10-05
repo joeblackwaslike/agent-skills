@@ -9,11 +9,12 @@ prerequisites:
   - /docs/analytics
 related:
   - /docs/analytics/quickstart
+  - /docs/security/reverse-proxy
 summary: Learn how to troubleshoot common issues with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/troubleshooting.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "d3fb8f13573baf4185dd3d7c14ce33676e3b91908dc47c0fe392a4fded0ad65c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e063690410e80950070a99031c43ce25f1dcb84cdbfc96d2b862fba46be00ed7"
 ---
 
 # Vercel Web Analytics Troubleshooting
@@ -30,11 +31,10 @@ sha256: "d3fb8f13573baf4185dd3d7c14ce33676e3b91908dc47c0fe392a4fded0ad65c"
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
-- [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
-- [Nuxt analytics available on Vercel Analytics](https://vercel.com/changelog/nuxt-analytics-available-on-vercel-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related)
+- [How to troubleshoot stale content returned from the Vercel CDN when using an external proxy or CDN](https://vercel.com/kb/guide/how-to-troubleshoot-stale-content-returned-from-the-edge-network-when-using-an-external-proxy-or-cdn?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to diagnose and fix stale content issues when using external proxies or CDNs with Vercel. Understand troublesh
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
-- [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering?from=related&source_path=%2Fdocs%2Fanalytics%2Ftroubleshooting&source_site=vercel-docs&relationship=related) — Learn how filters allow you to explore insights about your website's visitors.
 
@@ -47,14 +47,13 @@ Full cross-link map for this page: [/docs/analytics/troubleshooting.graph.md](/d
 2. Re-deploy your app to Vercel.
 3. Promote your latest deployment to production. To do so, visit the project in your [dashboard](/dashboard), and open [**Deployments**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fdeployments\&title=Go+to+Deployments) in the sidebar. From there, select the three dots to the right of the most recent deployment and select **Promote to Production**.
 
-## Web Analytics is not working with a proxy (e.g., Cloudflare)
+## Web Analytics behind a reverse proxy
 
-**Issue**: Web Analytics may not function when using a proxy, such as Cloudflare.
+We do not recommend placing a reverse proxy in front of Vercel. A proxy can affect IP-based data, including **country**. It can also affect visitor identification, which uses a hash created from the incoming request.
 
-**How to fix**:
+It can also prevent Web Analytics from receiving events if it does not forward the requests.
 
-1. Check your proxy configuration to make sure that all desired pages are correctly proxied to the deployment.
-2. Additionally, forward all requests to `/_vercel/insights/*` and `/<unique-path>` to the deployments so Web Analytics works through the proxy.
+Point your domain directly to Vercel. If you must use a proxy, review the [reverse proxy guidance](/docs/security/reverse-proxy) for supported options and requirements. Make sure your proxy forwards all pages you want to track, plus requests to `/_vercel/insights/*` and `/<unique-path>/*`, to your Vercel deployment.
 
 ## Routes are not visible in Web Analytics dashboard
 

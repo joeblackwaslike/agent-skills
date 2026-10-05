@@ -12,17 +12,17 @@ related:
   - /docs/deployments/managing-deployments
   - /docs/microfrontends
   - /docs/deployment-retention
-  - /docs/query/monitoring
+  - /docs/query
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9b5f68cf591c8faa1c3d0c4db6dee77708d921205773a980dbc63ac116c64cef"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9d060fa28363c131cb18e9cf1e1dcf021a9626ac525f2f8be84a9a0793eb1a40"
 ---
 
 # Skew Protection
 
-> **🔒 Permissions Required**: Skew Protection
+> **Availability**: Skew Protection is available on Enterprise and Pro plans
 
 [Version skew](https://www.industrialempathy.com/posts/version-skew/) occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior. For example, imagine your newest deployment modifies the data structure by adding a required field to a user's profile. Older clients wouldn't expect this new field, leading to errors when they submit it.
 
@@ -37,10 +37,10 @@ sha256: "9b5f68cf591c8faa1c3d0c4db6dee77708d921205773a980dbc63ac116c64cef"
 - [Skew Protection max age now supports the full deployment lifetime](https://vercel.com/changelog/skew-protection-max-age-now-supports-the-full-deployment-lifetime?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection now supports prebuilt deployments](https://vercel.com/changelog/skew-protection-now-supports-prebuilt-deployments?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
 - [Skew Protection is now generally available](https://vercel.com/changelog/skew-protection-is-now-generally-available?from=related&source_path=%2Fdocs%2Fskew-protection&source_site=vercel-docs&relationship=related)
@@ -50,7 +50,7 @@ Full cross-link map for this page: [/docs/skew-protection.graph.md](/docs/skew-p
 
 Vercel's Skew Protection resolves this problem at the platform and framework layer by using [version locking](https://www.industrialempathy.com/posts/version-skew/#version-locking), which ensures client and server use the exact same version. In our example, outdated clients continue to communicate with servers that understand the old data structure, while updated clients use the most recent deployment.
 
-![Image](`/front/docs/deployments-basics/nested-layouts-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/deployments-basics/nested-layouts-light.png)
 
 By implementing Skew Protection, you can reduce user-facing errors during new rolling releases and boost developer productivity, minimizing concerns about API compatibility across versions.
 
@@ -86,7 +86,7 @@ For older projects, you can enable Skew Protection in your project's settings.
 6. You can optionally [set a custom maximum age](#configure-maximum-age) (see [limitations](#limitations))
 7. [Redeploy](/docs/deployments/managing-deployments#redeploy-a-project) your latest production deployment.
 
-![Image](`/front/docs/projects/skew-protection-light.jpg`)
+![A screenshot of the Skew Protection section containing an enabled/disabled toggle switch.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/projects/skew-protection-light.jpg)
 
 ## Allowed domains for cross-site fetch
 
@@ -150,17 +150,17 @@ Once you deploy a fix, you can set a Skew Protection threshold with the followin
 3. Click **Skew Protection Threshold**
 4. Click **Set** to apply the changes
 
-![Image](`/front/docs/skew-protection/configure-skew-protection-light.png`)
+![A screenshot of the popover menu containing a menu item for Skew Protection Threshold.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/skew-protection/configure-skew-protection-light.png)
 
 ## Monitor Skew Protection
 
-You can observe how many requests are protected from version skew by visiting the [Monitoring](/docs/query/monitoring) page in the Vercel dashboard.
+You can observe how many requests are protected from version skew by creating a [query](/docs/query) in the **Observability** section of the Vercel dashboard.
 
-For example, on the `requests` event, filter where `skew_protection = 'active'`.
+For example, on the **Requests** event type, filter where the [`Skew Protection`](/docs/query/reference#group-by-and-where-fields) field is `active`.
 
-You can view Edge Requests that are successfully fulfilled without the need for skew protection by using `skew_protection = 'inactive'`.
+You can view CDN Requests that are successfully fulfilled without the need for skew protection by filtering where `Skew Protection` is `inactive`.
 
-![Image](`/front/docs/projects/skew-protection-monitoring-query-light-colinUpdate.png`)
+![A screenshot of a query of requests filtered by active skew protection.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/projects/skew-protection-monitoring-query-light-colinUpdate.png)
 
 ## Supported frameworks
 

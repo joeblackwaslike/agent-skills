@@ -16,8 +16,8 @@ related:
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "3203192eefb1d474c8544a59e6ae9affc03f3aa66d2952afa23a2145e3df959c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "3aaddf0c85a384d301cfff7b3506b626a75a23daaa10e25d8c89dcfd0baebe93"
 ---
 
 # Getting started with Vercel Functions
@@ -32,12 +32,13 @@ In this guide, you'll learn how to get started with Vercel Functions using your 
 
 - [Function invocations now billed per unit](https://vercel.com/changelog/function-invocations-now-billed-per-unit?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Vercel Functions now have faster and fewer cold starts](https://vercel.com/changelog/vercel-functions-now-have-faster-and-fewer-cold-starts?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related)
+- [How to Use ML Models from Hugging Face in Vercel Functions](https://vercel.com/kb/guide/ml-models-hugging-face?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — This guide provides step-by-step instructions on how to integrate ML models from Hugging Face into Vercel Functions
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
-- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
-- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Build fast, memory-safe serverless functions with Rust on Vercel.
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
+- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
 Full cross-link map for this page: [/docs/functions/quickstart.graph.md](/docs/functions/quickstart.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -61,22 +62,22 @@ Help me create a Vercel Function in this project. First, make sure the Vercel CL
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm create next-app@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn create next-app@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npx create-next-app@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bunx create-next-app@latest
     ```
   </Code>
 </CodeBlock>

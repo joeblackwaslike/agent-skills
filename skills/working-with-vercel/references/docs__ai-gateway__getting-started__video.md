@@ -17,8 +17,8 @@ related:
 summary: Generate a video from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "c3e6e3f38c7c4b6f9c83d148303ca3a0000ad118a834ea3443e81901b319dbf2"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9369906a5f01c4f861fe7ff41953254f11afbe4595e6861c84be6b7e1627b727"
 ---
 
 # Video Generation Quickstart
@@ -38,6 +38,7 @@ Generate a video through AI Gateway and save it to a file. Video generation can 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/video.graph.md](/docs/ai-gateway/getting-started/video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fvideo&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

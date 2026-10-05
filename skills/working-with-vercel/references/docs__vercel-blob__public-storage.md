@@ -16,13 +16,13 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "4c8fc5d4d8059d581bff40bf7447719b8dc27d1bd6ed8ab60b240f7e0985e7ea"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7e7a73db2edd2ec6be6308bd7bb43ac036fff817a3be5a757b75a151d6acd7f2"
 ---
 
 # Public Storage
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 Public Blob stores make files accessible to anyone with the URL. Use public storage for images, videos, large media, and public assets where authentication isn't needed.
 
@@ -33,11 +33,11 @@ Public Blob stores make files accessible to anyone with the URL. Use public stor
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.

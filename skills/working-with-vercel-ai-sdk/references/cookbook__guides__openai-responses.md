@@ -1,10 +1,17 @@
 ---
+title: OpenAI Responses API
+description: Get started with the OpenAI Responses API using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/openai-responses"
+docs_index: /llms.txt
+tags:
+  - getting-started
+  - agents
 source: "https://ai-sdk.dev/cookbook/guides/openai-responses.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "594c2db8a96b9d562cbb11f8c17bccfa75b74d1684b50cc562fbf7164676cde9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ddb459472a6d0324f8430fc44c729d665503598c6d4c3c7f075e661ee40313c3"
 ---
 
-# Get started with OpenAI Responses API
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 With the [release of OpenAI's responses API](https://openai.com/index/new-tools-for-building-agents/), there has never been a better time to start building AI applications, particularly those that require a deeper understanding of the world.
 
@@ -65,7 +72,7 @@ This code snippet will generate a type-safe recipe that conforms to the specifie
 The Responses API supports tool calling out of the box, allowing it to interact with external systems and perform discrete tasks. Here's an example of using tool calling with the AI SDK:
 
 ```ts
-import { generateText, tool } from 'ai';
+import { generateText, isStepCount, tool } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { z } from 'zod';
 
@@ -167,7 +174,7 @@ There are two options available to use persistence:
 
 ### With previousResponseId
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -193,7 +200,7 @@ You can use the [Conversation API](https://platform.openai.com/docs/api-referenc
 
 Once you have created a conversation, you can continue it:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -211,7 +218,7 @@ const result = await generateText({
 
 ## Migrating from Completions API
 
-Migrating from the OpenAI Completions API (via the AI SDK) to the new Responses API is simple. To migrate, simply change your provider instance from `openai(modelId)` to `openai.responses(modelId)`:
+Migrating from the OpenAI Chat Completions API to the Responses API is simple. To select each API explicitly, change your provider instance from `openai.chat(modelId)` to `openai.responses(modelId)`. The Responses API is also the default for `openai(modelId)`:
 
 ```ts
 import { generateText } from 'ai';
@@ -268,28 +275,10 @@ Ready to get started? Here's how you can dive in:
 3. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) and multi-modal chat at [ai-sdk.dev/docs/guides](/cookbook/guides).
 4. Check out ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

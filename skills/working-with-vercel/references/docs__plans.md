@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "9d342cc332e14657649c54e997574c4788241ca00c83b3dadcec8e534a44a4b8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9e3134784a4a8aea0a248a42c93b82cdda3c8fe8b258b5ac3c3ba03467b1e9aa"
 ---
 
 # Account Plans on Vercel
@@ -39,7 +39,7 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about pricing for Vercel Web Analytics.
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
 - [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=graph)

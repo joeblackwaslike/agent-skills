@@ -1,10 +1,14 @@
 ---
+title: Expo
+description: Learn how to build your first agent with the AI SDK and Expo.
+url: "https://ai-sdk.dev/docs/getting-started/expo"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/expo.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "e67dd9e29f04f02f8e8c5f135ce9ee565d322d6858f0d4eaa633bb3806aaa1bc"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "fd7263a7a474b183b1c94bbe16c14118b43e7851a140ea462fe3c03408805725"
 ---
 
-# Expo Quickstart
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 In this quickstart tutorial, you'll build a simple agent with a streaming chat user interface with [Expo](https://expo.dev/). Along the way, you'll learn key concepts and techniques that are fundamental to using the SDK in your own projects.
 
@@ -17,57 +21,59 @@ To follow this quickstart, you'll need:
 - Node.js 22+ and pnpm installed on your local development machine.
 - A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
 
-If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai&title=Go+to+AI+Gateway) on the Vercel website.
+If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
 ## Create Your Application
 
 Start by creating a new Expo application. This command will create a new directory named `my-ai-app` and set up a basic Expo application inside it.
 
-<Snippet text="pnpm create expo-app@latest my-ai-app" />
+```
+pnpm create expo-app@latest my-ai-app
+```
 
 Navigate to the newly created directory:
 
-<Snippet text="cd my-ai-app" />
+```
+cd my-ai-app
+```
 
-<Note>This guide requires Expo 52 or higher.</Note>
+This guide requires Expo 52 or higher.
 
 ### Install dependencies
 
 Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
-<Note>
-  This guide uses the Vercel AI Gateway provider so you can access hundreds of
-  models from different providers with one API key, but you can switch to any
-  provider or model by installing its package. Check out available [AI SDK
-  providers](/providers/ai-sdk-providers) for more information.
-</Note>
+This guide uses the Vercel AI Gateway provider so you can access hundreds of
+models from different providers with one API key, but you can switch to any
+provider or model by installing its package. Check out available [AI SDK
+providers](/providers/ai-sdk-providers) for more information.
 
-<InstallPackages packages="ai @ai-sdk/react zod" />
+**Packages:** `ai`, `@ai-sdk/react`, `zod`
 
 ### Configure your AI Gateway API key
 
 Create a `.env.local` file in your project root and add your AI Gateway API key. This key authenticates your application with the Vercel AI Gateway.
 
-<Snippet text="touch .env.local" />
+```
+touch .env.local
+```
 
 Edit the `.env.local` file:
 
-```env filename=".env.local"
+```dotenv title=".env.local"
 AI_GATEWAY_API_KEY=xxxxxxxxx
 ```
 
 Replace `xxxxxxxxx` with your actual Vercel AI Gateway API key.
 
-<Note className="mb-4">
-  The AI SDK's Vercel AI Gateway Provider will default to using the
-  `AI_GATEWAY_API_KEY` environment variable.
-</Note>
+The AI SDK's Vercel AI Gateway Provider will default to using the
+`AI_GATEWAY_API_KEY` environment variable.
 
 ## Create an API Route
 
 Create a route handler, `app/api/chat+api.ts` and add the following code:
 
-```tsx filename="app/api/chat+api.ts"
+```tsx title="app/api/chat+api.ts"
 import {
   streamText,
   UIMessage,
@@ -75,13 +81,12 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
   });
 
@@ -104,12 +109,10 @@ Let's take a look at what is happening in this code:
 
 This API route creates a POST request endpoint at `/api/chat`.
 
-<Note>
-  If a deployed Expo API Route buffers the response despite the streaming
-  headers above, test the same handler without the deployment adapter to isolate
-  the cause. As a workaround, host the chat endpoint in a separate Vercel
-  Function and set `EXPO_PUBLIC_API_BASE_URL` to that function's base URL.
-</Note>
+If a deployed Expo API Route buffers the response despite the streaming
+headers above, test the same handler without the deployment adapter to isolate
+the cause. As a workaround, host the chat endpoint in a separate Vercel
+Function and set `EXPO_PUBLIC_API_BASE_URL` to that function's base URL.
 
 ## Choosing a Provider
 
@@ -118,7 +121,7 @@ The AI SDK supports dozens of model providers through [first-party](/providers/a
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
-model: __MODEL__;
+model: "anthropic/claude-sonnet-5.5";
 ```
 
 You can also explicitly import and use the gateway provider in two other equivalent ways:
@@ -126,18 +129,18 @@ You can also explicitly import and use the gateway provider in two other equival
 ```ts
 // Option 1: Import from 'ai' package (included by default)
 import { gateway } from 'ai';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 
 // Option 2: Install and import from '@ai-sdk/gateway' package
 import { gateway } from '@ai-sdk/gateway';
-model: gateway('anthropic/claude-sonnet-5');
+model: gateway('anthropic/claude-sonnet-5.5');
 ```
 
 ### Using other providers
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-<InstallPackages packages="@ai-sdk/openai" />
+**Packages:** `@ai-sdk/openai`
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -157,7 +160,7 @@ Now that you have an API route that can query an LLM, it's time to setup your fr
 
 Update your root page (`app/(tabs)/index.tsx`) with the following code to show a list of chat messages and provide a user message input:
 
-```tsx filename="app/(tabs)/index.tsx"
+```tsx title="app/(tabs)/index.tsx"
 import { generateAPIUrl } from '@/utils';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
@@ -232,16 +235,14 @@ The component uses local state (`useState`) to manage the input field value, and
 
 The LLM's response is accessed through the message `parts` array. Each message contains an ordered array of `parts` that represents everything the model generated in its response. These parts can include plain text, reasoning tokens, and more that you will see later. The `parts` array preserves the sequence of the model's outputs, allowing you to display or process each component in the order it was generated.
 
-<Note>
-  You use the expo/fetch function instead of the native node fetch to enable
-  streaming of chat responses. This requires Expo 52 or higher.
-</Note>
+You use the expo/fetch function instead of the native node fetch to enable
+streaming of chat responses. This requires Expo 52 or higher.
 
 ### Create the API URL Generator
 
 Because you're using expo/fetch for streaming responses instead of the native fetch function, you'll need an API URL generator to ensure you are using the correct base url and format depending on the client environment (e.g. web or mobile). Create a new file called `utils.ts` in the root of your project and add the following code:
 
-```ts filename="utils.ts"
+```ts title="utils.ts"
 import Constants from 'expo-constants';
 
 export const generateAPIUrl = (relativePath: string) => {
@@ -265,24 +266,22 @@ export const generateAPIUrl = (relativePath: string) => {
 
 This utility function handles URL generation for both development and production environments, ensuring your API calls work correctly across different devices and configurations.
 
-<Note>
-  Before deploying to production, you must set the `EXPO_PUBLIC_API_BASE_URL`
-  environment variable in your production environment. This variable should
-  point to the base URL of your API server.
-</Note>
+Before deploying to production, you must set the `EXPO_PUBLIC_API_BASE_URL`
+environment variable in your production environment. This variable should
+point to the base URL of your API server.
 
 ## Running Your Application
 
 With that, you have built everything you need for your chatbot! To start your application, use the command:
 
-<Snippet text="pnpm expo" />
+```
+pnpm expo
+```
 
-Head to your browser and open http://localhost:8081. You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Expo.
+Head to your browser and open [http://localhost:8081](http://localhost:8081). You should see an input field. Test it out by entering a message and see the AI chatbot respond in real-time! The AI SDK makes it fast and easy to build AI chat interfaces with Expo.
 
-<Note>
-  If you experience "Property `structuredClone` doesn't exist" errors on mobile,
-  add the [polyfills described below](#polyfills).
-</Note>
+If you experience "Property `structuredClone` doesn't exist" errors on mobile,
+add the [polyfills described below](#polyfills).
 
 ## Enhance Your Chatbot with Tools
 
@@ -298,7 +297,7 @@ Let's enhance your chatbot by adding a simple weather tool.
 
 Modify your `app/api/chat+api.ts` file to include the new weather tool:
 
-```tsx filename="app/api/chat+api.ts" highlight="9,18-32"
+```tsx title="app/api/chat+api.ts" {9,18-32}
 import {
   streamText,
   UIMessage,
@@ -307,14 +306,13 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
     tools: {
       weather: tool({
@@ -353,26 +351,22 @@ In this updated code:
 
 Now your chatbot can "fetch" weather information for any location the user asks about. When the model determines it needs to use the weather tool, it will generate a tool call with the necessary input. The `execute` function will then be automatically run, and the tool output will be added to the `messages` as a `tool` message.
 
-<Note>
-  You may need to restart your development server for the changes to take
-  effect.
-</Note>
+You may need to restart your development server for the changes to take
+effect.
 
 Try asking something like "What's the weather in New York?" and see how the model uses the new tool.
 
 Notice the blank response in the UI? This is because instead of generating a text response, the model generated a tool call. You can access the tool call and subsequent tool result on the client via the `tool-weather` part of the `message.parts` array.
 
-<Note>
-  Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
-  you used when defining the tool. In this case, since we defined the tool as
-  `weather`, the part type is `tool-weather`.
-</Note>
+Tool parts are always named `tool-{toolName}`, where `{toolName}` is the key
+you used when defining the tool. In this case, since we defined the tool as
+`weather`, the part type is `tool-weather`.
 
 ### Update the UI
 
 To display the weather tool invocation in your UI, update your `app/(tabs)/index.tsx` file:
 
-```tsx filename="app/(tabs)/index.tsx" highlight="31-35"
+```tsx title="app/(tabs)/index.tsx" {31-35}
 import { generateAPIUrl } from '@/utils';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
@@ -444,10 +438,8 @@ export default function App() {
 }
 ```
 
-<Note>
-  You may need to restart your development server for the changes to take
-  effect.
-</Note>
+You may need to restart your development server for the changes to take
+effect.
 
 With this change, you're updating the UI to handle different message parts. For text parts, you display the text content as before. For weather tool invocations, you display a JSON representation of the tool call and its result.
 
@@ -463,7 +455,7 @@ To solve this, you can enable multi-step tool calls using `stopWhen`. By default
 
 Modify your `app/api/chat+api.ts` file to include the `stopWhen` condition:
 
-```tsx filename="app/api/chat+api.ts" highlight="19"
+```tsx title="app/api/chat+api.ts" {19}
 import {
   streamText,
   UIMessage,
@@ -473,14 +465,13 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {
@@ -510,10 +501,8 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  You may need to restart your development server for the changes to take
-  effect.
-</Note>
+You may need to restart your development server for the changes to take
+effect.
 
 Head back to the Expo app and ask about the weather in a location. You should now see the model using the weather tool results to answer your question.
 
@@ -523,7 +512,7 @@ By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 
 
 Update your `app/api/chat+api.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
-```tsx filename="app/api/chat+api.ts" highlight="34-47"
+```tsx title="app/api/chat+api.ts" {34-47}
 import {
   streamText,
   UIMessage,
@@ -533,14 +522,13 @@ import {
   createUIMessageStreamResponse,
   toUIMessageStream,
 } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
 
   const result = streamText({
-    model: __MODEL__,
+    model: "anthropic/claude-sonnet-5.5",
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {
@@ -584,16 +572,14 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  You may need to restart your development server for the changes to take
-  effect.
-</Note>
+You may need to restart your development server for the changes to take
+effect.
 
 ### Update the UI for the new tool
 
 To display the temperature conversion tool invocation in your UI, update your `app/(tabs)/index.tsx` file to handle the new tool part:
 
-```tsx filename="app/(tabs)/index.tsx" highlight="39-45"
+```tsx title="app/(tabs)/index.tsx" {39-45}
 import { generateAPIUrl } from '@/utils';
 import { useChat } from '@ai-sdk/react';
 import { DefaultChatTransport } from 'ai';
@@ -666,10 +652,8 @@ export default function App() {
 }
 ```
 
-<Note>
-  You may need to restart your development server for the changes to take
-  effect.
-</Note>
+You may need to restart your development server for the changes to take
+effect.
 
 Now, when you ask "What's the weather in New York in celsius?", you should see a more complete interaction:
 
@@ -688,11 +672,11 @@ Several functions that are internally used by the AI SDK might not available in 
 
 First, install the following packages:
 
-<InstallPackages packages="@ungap/structured-clone @stardazed/streams-text-encoding" />
+**Packages:** `@ungap/structured-clone`, `@stardazed/streams-text-encoding`
 
 Then create a new file in the root of your project with the following polyfills:
 
-```ts filename="polyfills.js"
+```ts title="polyfills.js"
 import { Platform } from 'react-native';
 import structuredClone from '@ungap/structured-clone';
 
@@ -720,7 +704,7 @@ export {};
 
 Finally, import the polyfills in your root `_layout.tsx`:
 
-```ts filename="_layout.tsx"
+```ts title="_layout.tsx"
 import '@/polyfills';
 ```
 
@@ -732,19 +716,10 @@ You've built an AI chatbot using the AI SDK! From here, you have several paths t
 - If you're interested in diving deeper with guides, check out the [RAG (retrieval-augmented generation)](/cookbook/guides/rag-chatbot) and [multi-modal chatbot](/cookbook/guides/multi-modal-chatbot) guides.
 - To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Choosing a Provider](/docs/getting-started/choosing-a-provider)
-- [Navigating the Library](/docs/getting-started/navigating-the-library)
-- [Next.js App Router](/docs/getting-started/nextjs-app-router)
-- [Next.js Pages Router](/docs/getting-started/nextjs-pages-router)
-- [Svelte](/docs/getting-started/svelte)
-- [Vue.js (Nuxt)](/docs/getting-started/nuxt)
-- [Node.js](/docs/getting-started/nodejs)
-- [Expo](/docs/getting-started/expo)
-- [TanStack Start](/docs/getting-started/tanstack-start)
-- [Coding Agents](/docs/getting-started/coding-agents)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

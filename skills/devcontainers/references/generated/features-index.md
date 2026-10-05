@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-09-28T10:38:04.080Z"
-sha256: "f35c67d8ebf0ecec47f2ffefc97675d5e792a2f439005997407944b69dc3e6d7"
+fetched_at: "2026-10-05T11:12:30.813Z"
+sha256: "b0bbe94ec140cdd0c6dc4693370c591080ed92699643cb4c23ca0458b34760d0"
 ---
 
 # Available features index
@@ -112,7 +112,7 @@ Features
 | Conda | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/conda:2` | `2.0.1` |
 | GitHub Copilot CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/copilot-cli:1` | `1.1.3` |
 | Light-weight Desktop | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/desktop-lite:1` | `1.2.10` |
-| Docker (Docker-in-Docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-in-docker:4` | `4.1.1` |
+| Docker (Docker-in-Docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-in-docker:4` | `4.1.2` |
 | Docker (docker-outside-of-docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-outside-of-docker:1` | `1.10.1` |
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
 | Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.8` |
@@ -415,7 +415,7 @@ Features
 | Google Cloud CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1` | `1.0.4` |
 | Gel CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/gel-cli:1` | `1.0.1` |
 | Github CLI Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:1` | `1.0.4` |
-| Google Cloud CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/google-cloud-cli:1` | `1.0.0` |
+| Google Cloud CLI | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/google-cloud-cli:1` | `1.0.1` |
 | Lamdera | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/lamdera:1` | `1.0.2` |
 | Mount pnpm Store | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store:1` | `1.1.0` |
 | OpenCode Persistence | Joshua Ji | `ghcr.io/joshuanianji/devcontainer-features/opencode-persistence:1` | `1.0.0` |
@@ -446,7 +446,7 @@ Features
 | OpenTofu | John Rowley | `ghcr.io/robbert229/devcontainer-features/opentofu:1` | `1.0.0` |
 | OperatorSDK | John Rowley | `ghcr.io/robbert229/devcontainer-features/operator-sdk:1` | `1.0.0` |
 | PostgreSQL Client | John Rowley | `ghcr.io/robbert229/devcontainer-features/postgresql-client:1` | `1.0.0` |
-| Android SDK | Filiph Siitam Sandström | `ghcr.io/nordcominc/devcontainer-features/android-sdk:1` | `1.2.0` |
+| Android SDK | Filiph Siitam Sandström | `ghcr.io/nordcominc/devcontainer-features/android-sdk:2` | `2.0.0` |
 | Wine | Maxim Slipenko | `ghcr.io/maks1ms/devcontainers-features/wine:0` | `0.0.5` |
 | Container Structure Tests | Ty Schlichenmeyer | `ghcr.io/schlich/cst-devcontainer-feature/container-structure-test:1` | `1.0.0` |
 | Container Structure Tests | Ty Schlichenmeyer | `ghcr.io/schlich/devcontainer-features/container-structure-test:1` | `1.0.0` |
@@ -615,15 +615,14 @@ Features
 | Frida Core devkit | Vero | `ghcr.io/veronoicc/devcontainer-features/frida-core-devkit:1` | `1.0.3` |
 | Frida Gum devkit | Vero | `ghcr.io/veronoicc/devcontainer-features/frida-gum-devkit:1` | `1.0.1` |
 | LuaJIT 2.1.0-beta3 | Vero | `ghcr.io/veronoicc/devcontainer-features/luajit-2.1.0-beta3:1` | `1.0.0` |
-| install-php-extensions | leocavalcante | `ghcr.io/opencodeco/devcontainers/install-php-extensions:0` | `0.1.225` |
 | difftastic | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/difftastic:1` | `1.1.0` |
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
-| AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.29` |
+| AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.30` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.22` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.136` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.40` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.40` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.78` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.138` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.41` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.41` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.79` |
 | Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.40` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
@@ -1296,7 +1295,6 @@ Features
 | Python Virtualenv | Jonathan Mills | `ghcr.io/itsalljustdata/devcontainers-custom-features/python-virtualenv:1` | `1.0.0` |
 | kcat | irfansofyana | `ghcr.io/irfansofyana/devcontainer-features/kcat-apt:1` | `1.0.0` |
 | lazydocker | irfansofyana | `ghcr.io/irfansofyana/devcontainer-features/lazydocker-binary-release:1` | `1.0.0` |
-| dart-sass | Matthew Jorgensen (prplecake) | `ghcr.io/prplecake/devcontainer-features/dart-sass:1` | `1.0.0` |
 | k6 | Grafana Labs | `ghcr.io/grafana/devcontainer-features/k6:1` | `1.1.3` |
 | xk6 | Grafana Labs | `ghcr.io/grafana/devcontainer-features/xk6:1` | `1.1.0` |
 | Struct Python Module Installer | httpdss | `ghcr.io/httpdss/devcontainers-features/struct:1` | `1.0.0` |
@@ -1396,10 +1394,10 @@ Features
 | ClickHouse Local CLI | ProxayFox | `ghcr.io/proxayfox/devcontainer-features/clickhouse-local:1` | `1.0.0` |
 | lazydocker | ProxayFox | `ghcr.io/proxayfox/devcontainer-features/lazydocker:1` | `1.1.0` |
 | Databricks CLI | KingBain | `ghcr.io/kingbain/devcontainer-features-databricks/databricks-cli:0` | `0.0.1` |
-| .config/ | devcontainer-config | `ghcr.io/devcontainer-config/features/dot-config:4` | `4.0.0` |
+| .config/ | devcontainer-config | `ghcr.io/devcontainer-config/features/dot-config:5` | `5.0.0` |
 | Features | devcontainer-config | `ghcr.io/devcontainer-config/features/features:0` | `0.1.0` |
 | Unset Git Credential Helper | devcontainer-config | `ghcr.io/devcontainer-config/features/unset-git-credential-helper:0` | `0.1.0` |
-| Initialize User | devcontainer-config | `ghcr.io/devcontainer-config/features/user-init:3` | `3.0.0` |
+| Initialize User | devcontainer-config | `ghcr.io/devcontainer-config/features/user-init:4` | `4.0.0` |
 | Android Debug Bridge (adb) and Fastboot | Evit15 | `ghcr.io/Evit15/devcontainer-features/adb-fastboot:1` | `1.0.1` |
 | fexec | roboslone | `ghcr.io/roboslone/go-framework/fexec:1` | `1.0.0` |
 | Oh My Posh | Bipin Paul | `ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1` | `1.1.0` |
@@ -1501,7 +1499,7 @@ Features
 | GitLab CI Local | rosstaco | `ghcr.io/rosstaco/devcontainer-features/gitlab-ci-local:1` | `1.0.0` |
 | Microsoft Security DevOps CLI | rosstaco | `ghcr.io/rosstaco/devcontainer-features/microsoft-security-devops-cli:1` | `1.0.0` |
 | Oh My Posh | rosstaco | `ghcr.io/rosstaco/devcontainer-features/ohmyposh:1` | `1.0.0` |
-| Package Source Overrides | rosstaco | `ghcr.io/rosstaco/devcontainer-features/package-source-overrides:1` | `1.0.0` |
+| Package Source Overrides | rosstaco | `ghcr.io/rosstaco/devcontainer-features/package-source-overrides:1` | `1.1.0` |
 | Prompty Dumpty | rosstaco | `ghcr.io/rosstaco/devcontainer-features/prompty-dumpty:1` | `1.0.0` |
 | Conan Package Manager (1.x) | nkdui | `ghcr.io/nkdui/devcontainer-features/conan:1` | `1.0.0` |
 | Trunk (Rust WASM bundler) | mrhornsby | `ghcr.io/mrhornsby/trunk-devcontainer-feature/trunk:1` | `1.0.0` |

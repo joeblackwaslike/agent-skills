@@ -16,8 +16,8 @@ related:
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "884532d63f6b20f0fd29be2e32c15cbd9dec00196ddfcb47b7ed1230c6ba753b"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a53a6cf0870b656d5475af9d1880f18ca099b76ea4381dd89db01fdad4ee037b"
 ---
 
 # Manage and optimize usage for Observability
@@ -67,11 +67,17 @@ Events are single units of information that represent a measurement of a specifi
 
 Vercel bills event usage only for projects that are on Speed Insights Plus. See [limits and pricing](/docs/speed-insights/limits-and-pricing) for more information.
 
+> **💡 Note:** The usage chart counts every raw event collected across all Web Vitals
+> metrics (TTFB, FCP, LCP, CLS, INP, and FID), device types, and environments.
+> This count can be higher than the event counts shown on a project's [Speed
+> Insights dashboard](/docs/speed-insights/using-speed-insights), which are
+> scoped to one metric, device type, environment, and date range.
+
 ### Optimizing Speed Insights events
 
 - To reduce cost, change the sample rate at a project level by using the `@vercel/speed-insights` package as explained in [Sample rate](/docs/speed-insights/package#samplerate). You can also set a cost limit under your team's Billing settings page to stop event collection for the rest of the billing period after your team reaches the limit
 - Use [beforeSend](/docs/speed-insights/package#beforesend) to exclude page views and events that might not be relevant
-- [Downgrade to Speed Insights](/docs/speed-insights/using-speed-insights#downgrading-from-speed-insights-plus) if your project no longer needs detailed performance insights.
+- [Turn off Speed Insights Plus](/docs/speed-insights/using-speed-insights#downgrading-from-speed-insights-plus) if your project no longer needs detailed performance insights.
 
 ## Managing Monitoring events
 

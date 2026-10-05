@@ -1,35 +1,31 @@
 ---
+title: Call Tools
+description: Learn how to call tools using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/call-tools"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - tool use
 source: "https://ai-sdk.dev/cookbook/rsc/call-tools.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "55d01fff1efa01b9b4c37b895dea1021075799be871bdd09d2b34226a8ed3fa7"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b09e8d593637267455d9c1b09d9f8e418ea60b5aa7157119ba1a4c4c7695c701"
 ---
 
-# Call Tools
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Some models allow developers to provide a list of tools that can be called at any time during a generation. This is useful for extending the capabilities of a language model to either use logic or data to interact with systems external to the model.
 
-<Browser>
-  <ChatGeneration
-    history={[
-      { role: 'User', content: 'How is it going?' },
-      { role: 'Assistant', content: 'All good, how may I help you?' },
-    ]}
-    inputMessage={{
-      role: 'User',
-      content: 'What is 24 celsius in fahrenheit?',
-    }}
-    outputMessage={{
-      role: 'Assistant',
-      content: '24°C is 75.20°F',
-    }}
-  />
-</Browser>
+User: How is it going?
+
+Assistant: All good, how may I help you?
+
+What is 24 celsius in fahrenheit?
 
 ## Client
 
 Let's create a simple conversation between a user and model and place a button that will call `continueConversation`.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -84,7 +80,7 @@ Now, let's implement the `continueConversation` action that uses `generateText` 
 
 We will use zod to specify the schema for the `celsiusToFahrenheit` function's parameters.
 
-```tsx filename='app/actions.ts'
+```tsx title='app/actions.ts'
 'use server';
 
 import { generateText } from 'ai';
@@ -130,22 +126,10 @@ export async function continueConversation(history: Message[]) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

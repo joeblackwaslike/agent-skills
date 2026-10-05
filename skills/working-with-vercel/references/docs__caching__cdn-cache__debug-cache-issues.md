@@ -17,8 +17,8 @@ related:
 summary: Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/debug-cache-issues.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "860fcce27206277eebac1cfa09a905f1a3f15ade27b5a60d16083328cd870f12"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7c5e62ad62f3398f74021cb80f29682fc8ecc44f7b046cc56481979bbcaa1aa7"
 ---
 
 # Diagnosing and fixing cache issues
@@ -33,14 +33,14 @@ Use this guide to diagnose and fix cache-related issues. You'll identify whether
 
 - [How to troubleshoot stale content returned from the Vercel CDN when using an external proxy or CDN](https://vercel.com/kb/guide/how-to-troubleshoot-stale-content-returned-from-the-edge-network-when-using-an-external-proxy-or-cdn?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to diagnose and fix stale content issues when using external proxies or CDNs with Vercel. Understand troublesh
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Caching audits: Five antipatterns that cost performance and money](https://vercel.com/kb/guide/caching-antipatterns?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
+- [Why is running another CDN on top of Vercel not recommended?](https://vercel.com/kb/guide/why-running-another-cdn-on-top-of-vercel-is-not-recommended?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Information about possible strategies when using a CDN on top of Vercel.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=related) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/debug-cache-issues.graph.md](/docs/caching/cdn-cache/debug-cache-issues.graph.md?from=related&source_path=%2Fdocs%2Fcaching%2Fcdn-cache%2Fdebug-cache-issues&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

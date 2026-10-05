@@ -1,10 +1,14 @@
 ---
+title: WorkflowAgent
+description: "Build durable, resumable agents with the WorkflowAgent from @ai-sdk/workflow."
+url: "https://ai-sdk.dev/docs/agents/workflow-agent"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "161a54b3b66824f1ef1378bbe5cd1f645c0e30cb6213dde85cc9e3252cd2ffe2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c416cb2f776cd6919c8cb5f50477e104e44bb3c7daf023a9f81105d21f894ced"
 ---
 
-# WorkflowAgent
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `WorkflowAgent` from `@ai-sdk/workflow` is designed for building **durable, resumable agents** that run inside a [workflow](https://vercel.com/docs/workflow). It provides the same agent loop as the [`ToolLoopAgent`](/docs/agents/building-agents), but adds automatic state persistence, tool schema serialization, and built-in tool approval flows that survive workflow step boundaries.
 
@@ -21,16 +25,16 @@ A standard `ToolLoopAgent` runs entirely in memory — if the process crashes, a
 
 ## When to Use WorkflowAgent vs ToolLoopAgent
 
-|                         | ToolLoopAgent             | WorkflowAgent                                   |
-| ----------------------- | ------------------------- | ----------------------------------------------- |
-| **Package**             | `ai`                      | `@ai-sdk/workflow`                              |
-| **Runtime**             | In-memory                 | Workflow                                        |
-| **Durability**          | Lost on crash             | Survives restarts                               |
-| **Tool retries**        | Manual                    | Automatic (via workflow steps)                  |
-| **Human approval**      | Built-in                  | Built-in + survives suspension                  |
-| **`generate()` method** | Available                 | Not available                                   |
-| **`stream()` method**   | Available                 | Primary API                                     |
-| **Stream output**       | `streamText` return value | `writable` parameter with `ModelCallStreamPart` |
+|                         | ToolLoopAgent             | WorkflowAgent                                    |
+| ----------------------- | ------------------------- | ------------------------------------------------ |
+| **Package**             | `ai`                      | `@ai-sdk/workflow`                               |
+| **Runtime**             | In-memory                 | Workflow                                         |
+| **Durability**          | Lost on crash             | Survives restarts                                |
+| **Tool retries**        | Manual                    | Automatic (via workflow steps)                   |
+| **Human approval**      | Built-in                  | Built-in + survives suspension                   |
+| **`generate()` method** | Available                 | Available with durable non-streaming model calls |
+| **`stream()` method**   | Available                 | Primary API                                      |
+| **Stream output**       | `streamText` return value | `writable` parameter with `ModelCallStreamPart`  |
 
 For simpler use cases that don't need durability, use [`ToolLoopAgent`](/docs/agents/building-agents) from the `ai` package.
 
@@ -52,7 +56,7 @@ import { tool } from 'ai';
 import { z } from 'zod';
 
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   instructions: 'You are a helpful assistant.',
   tools: {
     weather: tool({
@@ -75,7 +79,7 @@ The `model` parameter accepts two forms:
 
 ```ts
 // String — AI Gateway model ID
-new WorkflowAgent({ model: 'anthropic/claude-sonnet-5' });
+new WorkflowAgent({ model: 'anthropic/claude-sonnet-5.5' });
 
 // Provider instance
 import { openai } from '@ai-sdk/openai';
@@ -92,7 +96,7 @@ new WorkflowAgent({ model: openai('gpt-6-astra') });
 
 ### End-to-End Example
 
-```ts filename="workflow/agent-chat.ts"
+```ts title="workflow/agent-chat.ts"
 import { WorkflowAgent, type ModelCallStreamPart } from '@ai-sdk/workflow';
 import { convertToModelMessages, tool, type UIMessage } from 'ai';
 import { getWritable } from 'workflow';
@@ -104,7 +108,7 @@ export async function chat(messages: UIMessage[]) {
   const modelMessages = await convertToModelMessages(messages);
 
   const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-5',
+    model: 'anthropic/claude-sonnet-5.5',
     instructions: 'You are a flight booking assistant.',
     tools: {
       searchFlights: tool({
@@ -136,7 +140,7 @@ export async function chat(messages: UIMessage[]) {
 }
 ```
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
 import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { start } from 'workflow/api';
@@ -195,7 +199,7 @@ the retried output.
 
 Workflow functions can time out or be interrupted by network failures. `WorkflowChatTransport` is a [`ChatTransport`](/docs/ai-sdk-ui/transport) implementation that handles these interruptions automatically — it detects when a stream ends without a `finish` event and reconnects to resume from where it left off.
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -220,7 +224,7 @@ export default function Chat() {
 
 The transport requires your POST endpoint to return an `x-workflow-run-id` response header, and a GET endpoint at `{api}/{runId}/stream` for reconnection:
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
 import { createUIMessageStreamResponse, type UIMessage } from 'ai';
 import { start } from 'workflow/api';
@@ -239,7 +243,7 @@ export async function POST(request: Request) {
 }
 ```
 
-```ts filename="app/api/chat/[runId]/stream/route.ts"
+```ts title="app/api/chat/[runId]/stream/route.ts"
 import { createModelCallToUIChunkTransform } from '@ai-sdk/workflow';
 import { createUIMessageStreamResponse } from 'ai';
 import type { NextRequest } from 'next/server';
@@ -329,7 +333,7 @@ the writable stream. The workflow suspends until the user approves or denies:
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   tools: {
     bookFlight: tool({
       description: 'Book a flight',
@@ -361,9 +365,9 @@ Client-supplied message history can be modified before it is replayed to the
 workflow. For tools that perform sensitive operations, configure
 `experimental_toolApprovalSecret` to authenticate approval requests:
 
-```ts highlight="4"
+```ts {4}
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   experimental_toolApprovalSecret: {
     environmentVariable: 'TOOL_APPROVAL_SECRET',
   },
@@ -404,11 +408,9 @@ Unlike `ToolLoopAgent`, `WorkflowAgent` does not apply a default step limit.
 When `stopWhen` is omitted, it continues until the model stops calling tools or
 another natural termination condition is met.
 
-<Note>
-  A model that repeatedly calls tools can make an unlimited number of model
-  calls. Configure an explicit stop condition when you need to bound execution
-  time and cost.
-</Note>
+A model that repeatedly calls tools can make an unlimited number of model
+calls. Configure an explicit stop condition when you need to bound execution
+time and cost.
 
 Control how many steps the agent can take:
 
@@ -470,7 +472,7 @@ Pass server-side state through the agent loop without putting it into the prompt
 - `runtimeContext` is shared agent state that flows through `prepareStep`, lifecycle callbacks, and `onEnd`. Treat it as immutable; return a new value from `prepareStep` to update it for the current and subsequent steps.
 - `toolsContext` is a per-tool map keyed by tool name. Each tool's `execute` only sees its own validated entry as `context`. Tools that declare a `contextSchema` validate their entry against the schema before execution.
 
-```ts filename="workflow/agent-chat.ts"
+```ts title="workflow/agent-chat.ts"
 import { WorkflowAgent } from '@ai-sdk/workflow';
 import { tool } from 'ai';
 import { z } from 'zod';
@@ -518,7 +520,7 @@ Because `WorkflowAgent` runs inside the Workflow runtime, context values may be 
 
 This differs from `ToolLoopAgent`, which runs in memory and can carry richer JavaScript values for the lifetime of a single process. With `WorkflowAgent`, treating context as durable data keeps workflow replay and step execution reliable.
 
-### experimental_sandbox
+### experimental\_sandbox
 
 Pass a sandbox session when tools need an execution environment. The sandbox is
 available to tool descriptions and `execute` functions as
@@ -527,7 +529,7 @@ current step:
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   tools: {
     shell: tool({
       description: 'Run a shell command in the sandbox.',
@@ -562,7 +564,7 @@ Called once before the agent loop starts. Use it to transform model, instruction
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
   prepareCall: async ({ model, tools, messages }) => {
     return {
       instructions: `Current time: ${new Date().toISOString()}`,
@@ -598,7 +600,7 @@ Agents provide lifecycle callbacks for logging, observability, and custom teleme
 
 ```ts
 const agent = new WorkflowAgent({
-  model: 'anthropic/claude-sonnet-5',
+  model: 'anthropic/claude-sonnet-5.5',
 
   onStart({ messages }) {
     console.log(`Agent started with ${messages.length} messages`);
@@ -683,7 +685,7 @@ export type MyAgentUIMessage = InferWorkflowAgentUIMessage<typeof myAgent>;
 
 - const agent = new DurableAgent({
 + const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-5',
+    model: 'anthropic/claude-sonnet-5.5',
     instructions: 'You are a helpful assistant.',
     tools: { /* ... */ },
   });
@@ -786,9 +788,28 @@ For persistence, store `UIMessage[]` as your source of truth and call [`convertT
 + return { messages: result.messages };
 ```
 
-### No `generate()` method
+### Non-streaming generation
 
-`WorkflowAgent` only exposes `stream()`. If you were calling `agent.generate()`, switch to `stream()` and read `result.messages` / `result.output` once the promise resolves.
+Use `agent.generate()` when you need the completed result without streaming:
+
+```ts
+export async function summarize(modelId: string, text: string) {
+  'use workflow';
+
+  const agent = new WorkflowAgent({
+    model: modelId,
+    instructions: 'Summarize the text briefly.',
+  });
+  const result = await agent.generate({ prompt: text });
+  return { text: result.text, usage: result.usage };
+}
+```
+
+Generation uses the provider's `doGenerate()` method and the same durable tool loop as streaming. It defaults to a maximum of 20 steps, while `stream()` remains unbounded unless you set `stopWhen`. Generation failures reject; stream model errors retain their existing `result.error` behavior.
+
+The generated result uses core's final-step text and all-step content, tool results, warnings, and usage semantics. `responseMessages` contains generated messages only. `output` defaults to text and supports constructor or per-call output specifications. End callbacks run before complete-output parsing.
+
+Use result getters inside the workflow, then return selected serializable fields through `run.returnValue`. Returning the whole result class is not supported. For now, use `stream()` for approval round trips; transport-independent generation approvals are separate follow-up work. See the [generate reference](/docs/reference/ai-sdk-workflow/workflow-agent#generate) for options and remaining differences.
 
 ### Replace `experimental_context` with `runtimeContext` and `toolsContext`
 
@@ -796,7 +817,7 @@ For persistence, store `UIMessage[]` as your source of truth and call [`convertT
 
 ```diff
   const agent = new WorkflowAgent({
-    model: 'anthropic/claude-sonnet-5',
+    model: 'anthropic/claude-sonnet-5.5',
     tools: { weather: weatherTool },
 -   experimental_context: { tenantId: 'tenant_123', apiKey: 'sk-...' },
 +   runtimeContext: { tenantId: 'tenant_123' },
@@ -815,20 +836,10 @@ Other options carry over with the same names: `prepareStep`, `onStart`, `onStepS
 - [Building Agents](/docs/agents/building-agents) for the in-memory `ToolLoopAgent` alternative
 - [Loop Control](/docs/agents/loop-control) for advanced stop conditions
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/agents/overview)
-- [Building Agents](/docs/agents/building-agents)
-- [Workflow Patterns](/docs/agents/workflows)
-- [Loop Control](/docs/agents/loop-control)
-- [Configuring Call Options](/docs/agents/configuring-call-options)
-- [Memory](/docs/agents/memory)
-- [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals)
-- [Subagents](/docs/agents/subagents)
-- [Tool Approvals](/docs/agents/tool-approvals)
-- [WorkflowAgent](/docs/agents/workflow-agent)
-- [Terminal UI](/docs/agents/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

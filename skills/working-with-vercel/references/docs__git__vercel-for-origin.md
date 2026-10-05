@@ -15,13 +15,13 @@ related:
 summary: Connect Origin to Vercel to create automatic Preview and Production Deployments from your repositories.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-origin.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "5aa7952b048d1d1ceee4c8e95ca29dbacbcd059b74450b80b580a2f699b4f958"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "075e1d61611bffb4c6165e551ff7be6e22c8f92ece644ea9a51abd47c0e9b34f"
 ---
 
 # Deploying Origin Repositories with Vercel
 
-> **🔒 Permissions Required**: Deploying Origin Repositories with Vercel (Beta)
+> **Availability**: Deploying Origin Repositories with Vercel (Beta) is available on Enterprise and Pro plans
 
 [Origin](https://cursor.com/origin) is Cursor's Git platform. Vercel for Origin automatically deploys your Origin repositories, providing [preview deployment URLs](/docs/deployments/environments#preview-environment-pre-production) for pull requests and automatic [production deployments](/docs/deployments/environments#production-environment) from your production branch.
 

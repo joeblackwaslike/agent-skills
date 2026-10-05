@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel automatically scales your functions to handle traffic surges.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/concurrency-scaling.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "9efc42b2e7ff7ab494373568dfb517c7d998c6b7eade8ccd49171dd62cac8005"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c7ef2d0df1c4f7dcf9b6d88900c7692710894f6599fc4954f4fc51f6c21d75d8"
 ---
 
 # Concurrency scaling
@@ -31,17 +31,17 @@ Vercel automatically scales your functions to handle traffic surges, ensuring op
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Python function bundles now include precompiled bytecode](https://vercel.com/changelog/python-function-bundles-now-include-precompiled-bytecode?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related)
 - [Vercel Functions now scale 12x faster for high-volume requests](https://vercel.com/changelog/vercel-functions-now-scale-12x-faster-for-high-volume-requests?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related)
 - [What should I do if I receive a 503 error on Vercel?](https://vercel.com/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about when Serverless Functions return a 503 status code and what can be done about them.
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related)
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
 - [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about Vercel's policies regarding load tests.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Understand the limits and features available for Vercel for Platforms.
 - [Usage & Pricing for Cron Jobs](https://vercel.com/docs/cron-jobs/usage-and-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about cron jobs usage and pricing details.
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/functions/concurrency-scaling.graph.md](/docs/functions/concurrency-scaling.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconcurrency-scaling&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

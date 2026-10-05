@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c6b0cf3ceb7f987c8fe55edc397c2c6317ef3c221c7580065e7f25c4a528d07f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c06fc7bdd988e5440e83eb295a0e8a7d0ed31fde867714bc91ba6fcd5b332414"
 ---
 
 # ISR Usage and Pricing
@@ -39,9 +39,9 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 - [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
+- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/limits-and-pricing.graph.md](/docs/incremental-static-regeneration/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fincremental-static-regeneration%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,7 +56,7 @@ Full cross-link map for this page: [/docs/incremental-static-regeneration/limits
 
 The table below shows the metrics for the [**ISR**](/docs/incremental-static-regeneration/limits-and-pricing) section of the [**Usage** dashboard](/docs/pricing/manage-and-optimize-usage#viewing-usage).
 
-To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column. The cost for each metric is based on the request location. See the [pricing section](/docs/incremental-static-regeneration/limits-and-pricing#pricing) and choose the region from the dropdown for specific information.
+To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column. The cost for each metric is based on your [ISR cache region](#isr-cache-region), which follows your project's default Function region. See the [pricing section](/docs/incremental-static-regeneration/limits-and-pricing#pricing) and choose the region from the dropdown for specific information.
 
 ### Storage
 

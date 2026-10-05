@@ -1,10 +1,14 @@
 ---
+title: Experimental_StdioMCPTransport
+description: Create a transport for Model Context Protocol (MCP) clients to communicate with MCP servers using standard input and output streams
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "1e0fdd1cd2e88922c5d93490efefd8b948eb7246ed9ba49cdaab4db21312f435"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "73b2d59758c98e1b4495b992e01d99aac9642228b1c2ab155f64dd84de3b19bb"
 ---
 
-# `Experimental_StdioMCPTransport`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Creates a transport for Model Context Protocol (MCP) clients to communicate with MCP servers using standard input and output streams. This transport is only supported in Node.js environments.
 
@@ -12,126 +16,26 @@ This feature is experimental and may change or be removed in the future.
 
 ## Import
 
-<Snippet
-  text={`import { Experimental_StdioMCPTransport } from "@ai-sdk/mcp/mcp-stdio"`}
-  prompt={false}
-/>
+```
+import { Experimental_StdioMCPTransport } from "@ai-sdk/mcp/mcp-stdio"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'config',
-      type: 'StdioConfig',
-      description: 'Configuration for the MCP client.',
-      properties: [
-        {
-          type: 'StdioConfig',
-          parameters: [
-            {
-              name: 'command',
-              type: 'string',
-              description: 'The command to run the MCP server.',
-            },
-            {
-              name: 'args',
-              type: 'string[]',
-              isOptional: true,
-              description: 'The arguments to pass to the MCP server.',
-            },
-            {
-              name: 'env',
-              type: 'Record<string, string>',
-              isOptional: true,
-              description:
-                'The environment variables to set for the MCP server.',
-            },
-            {
-              name: 'stderr',
-              type: 'IOType | Stream | number',
-              isOptional: true,
-              description: "The stream to write the MCP server's stderr to.",
-            },
-            {
-              name: 'cwd',
-              type: 'string',
-              isOptional: true,
-              description: 'The current working directory for the MCP server.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `config` (`StdioConfig`): Configuration for the MCP client.
+  - `StdioConfig`
+    - `command` (`string`): The command to run the MCP server.
+    - `args?` (`string[]`): The arguments to pass to the MCP server.
+    - `env?` (`Record<string, string>`): The environment variables to set for the MCP server.
+    - `stderr?` (`IOType | Stream | number`): The stream to write the MCP server's stderr to.
+    - `cwd?` (`string`): The current working directory for the MCP server.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

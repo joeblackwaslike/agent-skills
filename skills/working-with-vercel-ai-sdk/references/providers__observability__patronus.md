@@ -1,10 +1,14 @@
 ---
+title: Patronus
+description: Monitor, evaluate and debug your AI SDK application with Patronus
+url: "https://ai-sdk.dev/providers/observability/patronus"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/patronus.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1b90885cd064fad5f3c0c5f4beb9a71c2856c6e0efeacf7183ac4ba9c30773ea"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "97395d75086fad6a895f714bc5e2e565c3cc697e2497ab1e0768f1dcc5879d33"
 ---
 
-# Patronus Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Patronus AI](https://patronus.ai) provides an end-to-end system to evaluate, monitor and improve performance of an LLM system, enabling developers to ship AI products safely and confidently. Learn more [here](https://docs.patronus.ai/docs).
 
@@ -18,14 +22,14 @@ Patronus exposes a fully‑managed OTEL endpoint. Configure an **OTLP exporter**
 
 #### Environment variables (recommended)
 
-```bash filename=".env.local"
+```bash title=".env.local"
 OTEL_EXPORTER_OTLP_ENDPOINT=https://otel.patronus.ai/v1/traces
-OTEL_EXPORTER_OTLP_HEADERS="x-api-key:<PATRONUS_API_KEY>"
+OTEL_EXPORTER_OTLP_HEADERS="x-api-key=<PATRONUS_API_KEY>"
 ```
 
 #### With `@vercel/otel`
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerOTel } from '@vercel/otel';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
 import { BatchSpanProcessor } from '@opentelemetry/sdk-trace-node';
@@ -51,11 +55,9 @@ export function register() {
 registerTelemetry(new LegacyOpenTelemetry());
 ```
 
-<Note>
-  If you need gRPC instead of HTTP, swap the exporter for
-  `@opentelemetry/exporter-trace-otlp-grpc` and use
-  `https://otel.patronus.ai:4317`.
-</Note>
+If you need gRPC instead of HTTP, swap the exporter for
+`@opentelemetry/exporter-trace-otlp-grpc` and use
+`https://otel.patronus.ai:4317`.
 
 ### 2. Register the integration and enable telemetry
 
@@ -81,7 +83,7 @@ Every attribute inside `metadata` becomes an OTEL attribute and is indexed by Pa
 
 ## Example — tracing and automated evaluation
 
-```ts filename="app/api/chat/route.ts"
+```ts title="app/api/chat/route.ts"
 import { trace } from '@opentelemetry/api';
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
@@ -137,30 +139,10 @@ Result: a single trace containing the root HTTP request, the LLM generation span
 - [Patronus docs](https://docs.patronus.ai)
 - [OpenTelemetry SDK (JS)](https://opentelemetry.io/docs/instrumentation/js/)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

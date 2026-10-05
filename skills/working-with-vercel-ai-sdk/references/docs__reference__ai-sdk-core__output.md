@@ -1,20 +1,23 @@
 ---
+title: Output
+description: API Reference for Output.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/output"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/output.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "ea1e4fc350d7332103b957c4936b0f70533e8c1a9463d2dfde01db910b9df797"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "eb8c7be9a15f48d5d3db7035077fcc85b5c0561649c844f45f7d44d1b3383564"
 ---
 
-# `Output`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `Output` object provides output specifications for structured data generation with [`generateText`](/docs/reference/ai-sdk-core/generate-text) and [`streamText`](/docs/reference/ai-sdk-core/stream-text). It allows you to specify the expected shape of the generated data and handles validation automatically.
 
 ```ts
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { output } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       name: z.string(),
@@ -27,7 +30,9 @@ const { output } = await generateText({
 
 ## Import
 
-<Snippet text={`import { Output } from "ai"`} prompt={false} />
+```
+import { Output } from "ai"
+```
 
 ## Output Types
 
@@ -54,7 +59,9 @@ No parameters required.
 
 An `Output<string, string>` specification that generates plain text without schema validation.
 
----
+***
+
+<span id="output-object" />
 
 ### `Output.object()`
 
@@ -80,30 +87,9 @@ const { output } = await generateText({
 
 #### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'schema',
-      type: 'FlexibleSchema<OBJECT>',
-      description:
-        'The schema that defines the structure of the object to generate. Supports Zod schemas, Standard JSON schemas, and custom JSON schemas.',
-    },
-    {
-      name: 'name',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.',
-    },
-    {
-      name: 'description',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.',
-    },
-  ]}
-/>
+- `schema` (`FlexibleSchema<OBJECT>`): The schema that defines the structure of the object to generate. Supports Zod schemas, Standard JSON schemas, and custom JSON schemas.
+- `name?` (`string`): Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.
+- `description?` (`string`): Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.
 
 #### Returns
 
@@ -112,13 +98,11 @@ An `Output<OBJECT, DeepPartial<OBJECT>>` specification where:
 - Complete output is fully validated against the schema
 - Partial output (during streaming) is a deep partial version of the schema type
 
-<Note>
-  Partial outputs streamed via `streamText` cannot be validated against your
-  provided schema, as incomplete data may not yet conform to the expected
-  structure.
-</Note>
+Partial outputs streamed via `streamText` cannot be validated against your
+provided schema, as incomplete data may not yet conform to the expected
+structure.
 
----
+***
 
 ### `Output.array()`
 
@@ -146,44 +130,11 @@ const { output } = await generateText({
 
 #### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'element',
-      type: 'FlexibleSchema<ELEMENT>',
-      description:
-        'The schema that defines the structure of each array element. Supports Zod schemas, Valibot schemas, or JSON schemas.',
-    },
-    {
-      name: 'minItems',
-      type: 'number',
-      isOptional: true,
-      description:
-        'The minimum number of elements to generate. Must be a non-negative integer.',
-    },
-    {
-      name: 'maxItems',
-      type: 'number',
-      isOptional: true,
-      description:
-        'The maximum number of elements to generate. Must be a non-negative integer and greater than or equal to minItems.',
-    },
-    {
-      name: 'name',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.',
-    },
-    {
-      name: 'description',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.',
-    },
-  ]}
-/>
+- `element` (`FlexibleSchema<ELEMENT>`): The schema that defines the structure of each array element. Supports Zod schemas, Valibot schemas, or JSON schemas.
+- `minItems?` (`number`): The minimum number of elements to generate. Must be a non-negative integer.
+- `maxItems?` (`number`): The maximum number of elements to generate. Must be a non-negative integer and greater than or equal to minItems.
+- `name?` (`string`): Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.
+- `description?` (`string`): Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.
 
 #### Returns
 
@@ -224,15 +175,13 @@ for await (const hero of elementStream) {
 }
 ```
 
-<Note>
-  Each element emitted by `elementStream` is complete and validated against your
-  element schema, ensuring type safety for each item as it is generated. If the
-  model generates more than `maxItems`, `elementStream` errors before emitting
-  the first excess element. Provider generation is not aborted automatically,
-  and the final `output` promise also rejects.
-</Note>
+Each element emitted by `elementStream` is complete and validated against your
+element schema, ensuring type safety for each item as it is generated. If the
+model generates more than `maxItems`, `elementStream` errors before emitting
+the first excess element. Provider generation is not aborted automatically,
+and the final `output` promise also rejects.
 
----
+***
 
 ### `Output.choice()`
 
@@ -253,30 +202,9 @@ const { output } = await generateText({
 
 #### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'options',
-      type: 'Array<CHOICE>',
-      description:
-        'An array of string options that the model can choose from. The output will be exactly one of these values.',
-    },
-    {
-      name: 'name',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.',
-    },
-    {
-      name: 'description',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.',
-    },
-  ]}
-/>
+- `options` (`Array<CHOICE>`): An array of string options that the model can choose from. The output will be exactly one of these values.
+- `name?` (`string`): Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.
+- `description?` (`string`): Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.
 
 #### Returns
 
@@ -284,7 +212,7 @@ An `Output<CHOICE, CHOICE>` specification where:
 
 - Complete output is validated to be exactly one of the provided options
 
----
+***
 
 ### `Output.json()`
 
@@ -304,24 +232,8 @@ const { output } = await generateText({
 
 #### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'name',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.',
-    },
-    {
-      name: 'description',
-      type: 'string',
-      isOptional: true,
-      description:
-        'Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.',
-    },
-  ]}
-/>
+- `name?` (`string`): Optional name of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema name.
+- `description?` (`string`): Optional description of the output that should be generated. Used by some providers for additional LLM guidance, e.g. via tool or schema description.
 
 #### Returns
 
@@ -330,11 +242,9 @@ An `Output<JSONValue, JSONValue>` specification that:
 - Validates that the output is valid JSON
 - Does not enforce any specific structure
 
-<Note>
-  With `Output.json()`, the AI SDK only checks that the response is valid JSON;
-  it doesn't validate the structure or types of the values. If you need schema
-  validation, use `Output.object()` or `Output.array()` instead.
-</Note>
+With `Output.json()`, the AI SDK only checks that the response is valid JSON;
+it doesn't validate the structure or types of the values. If you need schema
+validation, use `Output.object()` or `Output.array()` instead.
 
 ## Error Handling
 
@@ -368,70 +278,10 @@ try {
 - [`zod-schema`](/docs/reference/ai-sdk-core/zod-schema)
 - [`json-schema`](/docs/reference/ai-sdk-core/json-schema)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

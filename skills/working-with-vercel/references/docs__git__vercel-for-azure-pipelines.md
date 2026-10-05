@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "c444a8d88d4d6ea8b5cc48d2af44af1b9d22fa292145084d1c85df44ed1e1d24"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "8d969c3f7d6d4c7cf07dac536d2bb9e145af2ee6ceaca5353f5ddd96d8aca7bd"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -30,14 +30,16 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel extension for Azure DevOps now available](https://vercel.com/changelog/vercel-extension-for-azure-devops-now-available?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related)
-- [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
+- [Vercel extension for Azure DevOps now available](https://vercel.com/changelog/vercel-extension-for-azure-devops-now-available?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related)
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md?from=related&source_path=%2Fdocs%2Fgit%2Fvercel-for-azure-pipelines&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -99,7 +101,7 @@ vercel project add <project-name>
 - ### Set up a basic pipeline
   This step assumes that your code exists as a repository in **Azure Repos** and that your Vercel Project is named `azure-devops-extension`.
 
-  ![Image](`/docs-assets/static/docs/concepts/deployments/git/Azure-pipeline-light.png`)
+  ![Azure Pipelines creation at the review stage to create variables and save/edit your pipeline](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/git/Azure-pipeline-light.png)
   - From the Azure DevOps portal, select **Pipelines** from the left side bar
   - Select the **New Pipeline** button
   - Select where your code is located. In this example, we uploaded the code as an **Azure Repos Git**: select **Azure Repos Git** and then select your uploaded repository.
@@ -165,7 +167,7 @@ To allow pull requests in Azure Repos to create a deployment and report back wit
 
 ### Create a build validation policy
 
-![Image](`/docs-assets/static/docs/concepts/deployments/git/Azure-build-policy-light.png`)
+![Azure Build Validation under Branch Policies of Project settings](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/git/Azure-build-policy-light.png)
 
 1. Go to your Azure DevOps Project's page
 2. Select **Project settings** in the lower left corner
@@ -184,7 +186,7 @@ Create a pull request to the `main` branch. This will trigger the pipeline, run 
 - From your Azure DevOps Project, select **Pipelines** from the left side bar
 - Select the pipeline that you want to edit by selecting the  icon
 - Select the **Variables** button and add a new secret variable called `AZURE_TOKEN` with the value of the Azure DevOps Personal Access Token you created earlier. Select **Ok**
-- Close the **Variables** window and paste the following code to replace the code in `vercel-pipelines.yml`
+- Close the **Variables** window and paste the following code to replace the code in `vercel-pipeline.yml`
 
 ```yaml filename="vercel-pipeline.yml"
 trigger:
@@ -239,7 +241,7 @@ Here, you can find a list of available properties for each of the available task
 
 | Property          | Required | Type    | Description                                                                                                                                                                                                                                         |
 | ----------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vercelProjectId` | No       | string  | The [ID of your Vercel Project](#value-of-vercelprojectid); starts with `project_`. It can alternatively be set as the environment variable `VERCEL_PROJECT_ID`                                                                                     |
+| `vercelProjectId` | No       | string  | The [ID of your Vercel Project](#value-of-vercelprojectid); starts with `prj_`. It can alternatively be set as the environment variable `VERCEL_PROJECT_ID`                                                                                         |
 | `vercelTeamId`    | No       | string  | The [ID of your Vercel Team](#value-of-vercelteamid); starts with `team_`. It can alternatively be set as the environment variable `VERCEL_TEAM_ID`                                                                                                 |
 | `vercelToken`     | No       | string  | A [Vercel personal access token](/docs/rest-api#creating-an-access-token) with deploy permissions for your Vercel Project. It can alternatively be set as the environment variable `VERCEL_TOKEN`                                                   |
 | `vercelCWD`       | No       | string  | The working directory where the Vercel deployment task will run. When omitted, the task will run in the current directory (default value is `System.DefaultWorkingDirectory`). It can alternatively be set as the environment variable `VERCEL_CWD` |

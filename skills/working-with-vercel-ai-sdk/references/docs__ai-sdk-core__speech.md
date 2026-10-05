@@ -1,10 +1,14 @@
 ---
+title: Speech
+description: Learn how to generate speech from text with the AI SDK.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/speech"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "19ff34ccf946732b00687108d42e55b265c4d1377d2c49af39f8095773bab403"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "e81804ecb3a94cfe945ae62f01d23b16b7ac5a4dd6f0bd4a428480b25a9d6051"
 ---
 
-# Speech
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK provides the [`generateSpeech`](/docs/reference/ai-sdk-core/generate-speech)
 function to generate speech from text using a speech model.
@@ -13,12 +17,33 @@ function to generate speech from text using a speech model.
 import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
-const audio = await generateSpeech({
+const result = await generateSpeech({
   model: openai.speech('gpt-4o-mini-tts'),
   text: 'Hello, world!',
   voice: 'alloy',
 });
 ```
+
+## Telemetry
+
+`generateSpeech` accepts the standard `telemetry` option. Registered
+integrations receive start, end, and error events with the provider and model,
+source text, generated audio byte length, media type and format, warnings,
+response metadata, provider metadata, and usage when the provider reports it.
+Raw generated audio is not included in telemetry events.
+
+```ts {5-7}
+const result = await generateSpeech({
+  model: openai.speech('gpt-4o-mini-tts'),
+  text: 'Hello from the AI SDK!',
+  telemetry: {
+    functionId: 'speak-greeting',
+  },
+});
+```
+
+Use `recordInputs: false` or `recordOutputs: false` when the text or output
+metadata should not be recorded by telemetry integrations.
 
 To access the generated audio:
 
@@ -34,7 +59,7 @@ const audioBase64 = result.audio.base64; // audio data as base64 string
 
 You can set model-specific settings with the `providerOptions` parameter.
 
-```ts highlight="7-11"
+```ts {7-11}
 import { generateSpeech } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
@@ -55,7 +80,7 @@ const audio = await generateSpeech({
 type [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 that you can use to abort the speech generation process or set a timeout.
 
-```ts highlight="7"
+```ts {7}
 import { openai } from '@ai-sdk/openai';
 import { generateSpeech } from 'ai';
 
@@ -71,7 +96,7 @@ const audio = await generateSpeech({
 `generateSpeech` accepts an optional `headers` parameter of type `Record<string, string>`
 that you can use to add custom headers to the speech generation request.
 
-```ts highlight="7"
+```ts {7}
 import { openai } from '@ai-sdk/openai';
 import { generateSpeech } from 'ai';
 
@@ -138,6 +163,10 @@ try {
 | [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `tts-1-hd`                          |
 | [OpenAI](/providers/ai-sdk-providers/openai#speech-models)               | `gpt-4o-mini-tts`                   |
 | [Mistral](/providers/ai-sdk-providers/mistral#speech-models)             | `voxtral-mini-tts-2603`             |
+| [Azure Speech](/providers/ai-sdk-providers/azure#mai-voice)              | `mai-voice-2.1-flash`               |
+| [Azure Speech](/providers/ai-sdk-providers/azure#mai-voice)              | `mai-voice-2.1`                     |
+| [Azure Speech](/providers/ai-sdk-providers/azure#mai-voice)              | `mai-voice-2-flash`                 |
+| [Azure Speech](/providers/ai-sdk-providers/azure#mai-voice)              | `mai-voice-2`                       |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_v3`                         |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_multilingual_v2`            |
 | [ElevenLabs](/providers/ai-sdk-providers/elevenlabs#speech-models)       | `eleven_flash_v2_5`                 |
@@ -165,40 +194,10 @@ try {
 
 Above are a small subset of the speech models supported by the AI SDK providers. For more, see the respective provider documentation.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

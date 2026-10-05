@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b06abe0117db52a63de59451e5e325fab4f63083829343b4e5124b5c7769b720"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6d2ce46453ebc09574a60571f4a17fe6af9ceae1fd0ce14dbb7ef4701a0b22bc"
 ---
 
 # Log Drains Reference
@@ -34,11 +34,11 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 - [Log drains now support log source selection](https://vercel.com/changelog/log-drains-now-support-log-source-selection?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related)
 - [Log Drains](https://vercel.com/blog/log-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=related) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 
 Full cross-link map for this page: [/docs/drains/reference/logs.graph.md](/docs/drains/reference/logs.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -113,8 +113,10 @@ Vercel supports the following formats for Log Drains. You can configure the form
 Vercel sends logs as JSON arrays containing log objects:
 
 ```json
-{ "id": "1573817187330377061717300000", "deploymentId": "dpl_233NRGRjVZX1caZrXWtz5g1TAksD", "source": "build", "host": "my-app-abc123.vercel.app", "timestamp": 1573817187330, "projectId": "gdufoJxB6b9b1fEqr1jUtFkyavUU", "level": "info", "message": "Build completed successfully", "buildId": "bld_cotnkcr76", "type": "stdout", "projectName": "my-app" }
-{ "id": "1573817250283254651097202070", "deploymentId": "dpl_233NRGRjVZX1caZrXWtz5g1TAksD", "source": "lambda", "host": "my-app-abc123.vercel.app", "timestamp": 1573817250283, "projectId": "gdufoJxB6b9b1fEqr1jUtFkyavUU", "level": "info", "message": "API request processed", "entrypoint": "api/index.js", "requestId": "643af4e3-975a-4cc7-9e7a-1eda11539d90", "statusCode": 200, "path": "/api/users", "executionRegion": "sfo1", "environment": "production", "traceId": "1b02cd14bb8642fd092bc23f54c7ffcd", "spanId": "f24e8631bd11faa7", "trace.id": "1b02cd14bb8642fd092bc23f54c7ffcd", "span.id": "f24e8631bd11faa7", "proxy": { "timestamp": 1573817250172, "method": "GET", "host": "my-app.vercel.app", "path": "/api/users?page=1", "userAgent": ["Mozilla/5.0..."], "referer": "https://my-app.vercel.app", "region": "sfo1", "statusCode": 200, "clientIp": "120.75.16.101", "scheme": "https", "vercelCache": "MISS" } }
+[
+  { "id": "1573817187330377061717300000", "deploymentId": "dpl_233NRGRjVZX1caZrXWtz5g1TAksD", "source": "build", "host": "my-app-abc123.vercel.app", "timestamp": 1573817187330, "projectId": "gdufoJxB6b9b1fEqr1jUtFkyavUU", "level": "info", "message": "Build completed successfully", "buildId": "bld_cotnkcr76", "type": "stdout", "projectName": "my-app" },
+  { "id": "1573817250283254651097202070", "deploymentId": "dpl_233NRGRjVZX1caZrXWtz5g1TAksD", "source": "lambda", "host": "my-app-abc123.vercel.app", "timestamp": 1573817250283, "projectId": "gdufoJxB6b9b1fEqr1jUtFkyavUU", "level": "info", "message": "API request processed", "entrypoint": "api/index.js", "requestId": "643af4e3-975a-4cc7-9e7a-1eda11539d90", "statusCode": 200, "path": "/api/users", "executionRegion": "sfo1", "environment": "production", "traceId": "1b02cd14bb8642fd092bc23f54c7ffcd", "spanId": "f24e8631bd11faa7", "trace.id": "1b02cd14bb8642fd092bc23f54c7ffcd", "span.id": "f24e8631bd11faa7", "proxy": { "timestamp": 1573817250172, "method": "GET", "host": "my-app.vercel.app", "path": "/api/users?page=1", "userAgent": ["Mozilla/5.0..."], "referer": "https://my-app.vercel.app", "region": "sfo1", "statusCode": 200, "clientIp": "120.75.16.101", "scheme": "https", "vercelCache": "MISS" } }
+]
 ```
 
 ### NDJSON

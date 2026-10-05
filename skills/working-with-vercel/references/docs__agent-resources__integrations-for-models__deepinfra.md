@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the Deep Infra native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "593603c10cc02d21d69883f4dfb2c6d5452ad0274b1509c834fd5cef3813d8ca"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "e6297fdeabd64344eea5a622fa1abe3516e8739a2378c68252237914f3b7a1b6"
 ---
 
 # Vercel Deep Infra Integration
@@ -68,22 +68,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

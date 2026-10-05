@@ -16,8 +16,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cde3d29850280529bdfe37b8556d1381be416972a0e158977e7da4ac09e62c91"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1a3217e3cac191b64b39a995fcfa49db33226d16fe78dfa30532f3ed313f3bd3"
 ---
 
 # AI Gateway Image-to-Video Generation
@@ -31,16 +31,14 @@ Animate a static image into a video. The image you provide becomes the video con
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Learn how to use the Kling AI provider for the AI SDK.
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Learn how to generate videos with the AI SDK.
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related)
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fimage-to-video&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -77,13 +75,13 @@ Google's Veo models support image-to-video generation, animating a starting imag
 | ----------------------------------------- | -------------------------------------------------- | -------- | -------------------------------------------------------------------- |
 | `prompt.image`                            | `string`                                           | Yes      | URL or base64-encoded image to animate                               |
 | `prompt.text`                             | `string`                                           | No       | Description of the motion or animation                               |
-| `duration`                                | `4` | `6` | `8`                                  | No       | Video length in seconds. Defaults to 8                               |
-| `resolution`                              | `string`                                           | No       | Resolution (`'720p'`, `'1080p'`). Defaults to `'720p'`               |
+| `duration`                                | `4` \| `6` \| `8`                                  | No       | Video length in seconds. Defaults to 8                               |
+| `resolution`                              | `string`                                           | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p). Defaults to 720p               |
 | `generateAudio`                           | `boolean`                                          | No       | Generate audio alongside the video                                   |
-| `providerOptions.vertex.resizeMode`       | `'pad'` | `'crop'`                                | No       | How to resize the image to fit video dimensions. Defaults to `'pad'` |
+| `providerOptions.vertex.resizeMode`       | `'pad'` \| `'crop'`                                | No       | How to resize the image to fit video dimensions. Defaults to `'pad'` |
 | `providerOptions.vertex.enhancePrompt`    | `boolean`                                          | No       | Use Gemini to enhance prompts. Defaults to `true`                    |
 | `providerOptions.vertex.negativePrompt`   | `string`                                           | No       | What to discourage in the generated video                            |
-| `providerOptions.vertex.personGeneration` | `'dont_allow'` | `'allow_adult'` | `'allow_all'` | No       | Whether to allow person generation. Defaults to `'allow_adult'`      |
+| `providerOptions.vertex.personGeneration` | `'dont_allow'` \| `'allow_adult'` \| `'allow_all'` | No       | Whether to allow person generation. Defaults to `'allow_adult'`      |
 | `providerOptions.vertex.pollIntervalMs`   | `number`                                           | No       | How often to check task status. Defaults to `5000`                   |
 | `providerOptions.vertex.pollTimeoutMs`    | `number`                                           | No       | Maximum wait time. Defaults to `600000` (10 minutes)                 |
 
@@ -149,7 +147,7 @@ KlingAI's image-to-video models animate images with standard or professional qua
 | `prompt.image`                           | `string \| Buffer` | Yes      | The image to animate. See [image requirements](#image-requirements) below.                                                                           |
 | `prompt.text`                            | `string`           | No       | Description of the motion. Max 2500 characters.                                                                                                      |
 | `duration`                               | `number`           | No       | Video length in seconds. 5 or 10 for v2.x, 3-15 for v3.0. Defaults to `5`.                                                                           |
-| `providerOptions.klingai.mode`           | `'std'` | `'pro'` | No       | `'std'` for standard quality. `'pro'` for professional quality. Defaults to `'std'`.                                                                 |
+| `providerOptions.klingai.mode`           | `'std'` \| `'pro'` | No       | `'std'` for standard quality. `'pro'` for professional quality. Defaults to `'std'`.                                                                 |
 | `providerOptions.klingai.negativePrompt` | `string`           | No       | What to avoid in the video. Max 2500 characters.                                                                                                     |
 | `providerOptions.klingai.cfgScale`       | `number`           | No       | Prompt adherence (0-1). Higher = stricter. Defaults to `0.5`. Not supported on v2.x.                                                                 |
 | `generateAudio`                          | `boolean`          | No       | Generate audio. Defaults to `false`. Requires v2.6+.                                                                                                 |
@@ -239,7 +237,7 @@ If you omit `frameImages`, you can still set the last frame through the legacy `
 
 ### KlingAI voice generation
 
-Add speech to your video using voice IDs. Requires v2.6+ models with `generateAudio: true`.
+Add speech to your video using voice IDs. Requires v3.0+ models with `generateAudio: true`.
 
 Reference voices in your prompt using `<<<voice_1>>>` syntax, where the number matches the order in `voiceList`:
 
@@ -257,7 +255,7 @@ const result = await generateVideo({
   providerOptions: {
     klingai: {
       mode: 'std',
-      voiceList: [{ voiceId: 'your_voice_id' }],
+      voiceList: [{ voice_id: 'your_voice_id' }],
     },
   },
 });
@@ -503,7 +501,7 @@ Grok Imagine Video (by SpaceXAI) can animate images into videos. The output defa
 | `prompt.image`                            | `string`                      | No       | URL of the image to animate. Used when `frameImages` is omitted                         |
 | `duration`                                | `number`                      | No       | Video length in seconds (1-15)                                                          |
 | `aspectRatio`                             | `string`                      | No       | Override the input image's aspect ratio (stretches the image)                           |
-| `providerOptions.spacexai.resolution`     | `'480p'` | `'720p'`          | No       | Video resolution. Defaults to 480p                                                      |
+| `providerOptions.spacexai.resolution`     | `'480p'` \| `'720p'`          | No       | Video resolution. Defaults to 480p                                                      |
 | `providerOptions.spacexai.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `5000`                                      |
 | `providerOptions.spacexai.pollTimeoutMs`  | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
 
@@ -556,7 +554,7 @@ ByteDance's Seedance models animate images into videos with support for first-an
 | `providerOptions.bytedance.watermark`       | `boolean`               | No       | Add a watermark to the video. v1.x only                                                                                                |
 | `providerOptions.bytedance.cameraFixed`     | `boolean`               | No       | Fix the camera position during generation. v1.x only                                                                                   |
 | `providerOptions.bytedance.returnLastFrame` | `boolean`               | No       | Return the last frame of the generated video. v1.x only                                                                                |
-| `providerOptions.bytedance.serviceTier`     | `'default'` | `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost and higher latency. v1.x only                                       |
+| `providerOptions.bytedance.serviceTier`     | `'default'` \| `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost and higher latency. v1.x only                                       |
 | `providerOptions.bytedance.pollIntervalMs`  | `number`                | No       | How often to check task status. Defaults to `3000`                                                                                     |
 | `providerOptions.bytedance.pollTimeoutMs`   | `number`                | No       | Maximum wait time. Defaults to `300000` (5 minutes)                                                                                    |
 

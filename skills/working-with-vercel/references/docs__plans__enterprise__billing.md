@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "bd431f36f030308ccaf4dfcd3b74c86f6b33f414f490238c26e5fb995714002d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "95511a12a82e4e9ae6cada2b58ea939d4c8ee19c9ec51bd8688094a3f9508f10"
 ---
 
 # Billing FAQ for Enterprise Plan
@@ -37,7 +37,7 @@ The Vercel Enterprise plan is perfect for [teams](/docs/accounts#creating-a-team
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=related) — Vercel MCP tools for billing and purchases.
 
 Full cross-link map for this page: [/docs/plans/enterprise/billing.graph.md](/docs/plans/enterprise/billing.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fenterprise%2Fbilling&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

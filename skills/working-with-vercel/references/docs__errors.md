@@ -12,8 +12,8 @@ related:
 summary: Use this guide to find specific solutions and insights for common Vercel errors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "2de5f75b808375c9d8ddb8363db6197b8748d765d3b875580680a6152f189484"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "245441bb887a84b112348b8156f33b239c2d48ad2afc3b6ecefc15d1c727a222"
 ---
 
 # Error Codes
@@ -29,12 +29,13 @@ When developing your application with Vercel, you may encounter a variety of err
 - [Vercel now supports customizing platform error pages](https://vercel.com/changelog/vercel-now-supports-customizing-platform-error-pages?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related)
 - [View specific error codes in runtime logs](https://vercel.com/changelog/view-specific-error-codes-in-runtime-logs?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related)
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
+- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
 - [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
 - [Custom error pages](https://vercel.com/docs/custom-error-pages?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn how to configure custom error pages for 5xx server errors on Vercel.
 - [REST API Errors](https://vercel.com/docs/rest-api/errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — General and specific errors you may encounter when using the Vercel REST API.
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/errors.graph.md](/docs/errors.graph.md?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

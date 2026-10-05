@@ -14,8 +14,8 @@ related:
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "518bca93a8cdae361a64d619d919ef187c7c6f23647b9561f4010c88df19164d"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ce3ac49c4d64f7b466d33410cb0ce05ca64532fafd918e14dc2a0f4e6adaf0d1"
 ---
 
 # WAF IP Blocking
@@ -35,11 +35,11 @@ You can create custom rules to block a specific IP address or multiple IP addres
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related)
 - [Deny traffic from a set of IP addresses](https://vercel.com/kb/guide/deny-traffic-from-a-set-of-ip-addresses?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to block specific IP addresses with the Vercel WAF API.
 - [Blocking traffic from a specific IP address.](https://vercel.com/kb/guide/traffic-spikes?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to block traffic from a specific IP address.
-- [Custom firewall rules for IP blocking](https://vercel.com/changelog/custom-firewall-rules-for-ip-blocking?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related)
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md](/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fip-blocking&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -58,7 +58,7 @@ For cases such as complying with specific laws and regulations or restricting ac
 
 ## Project level IP Blocking
 
-> **🔒 Permissions Required**: Project level IP Blocking
+> **Availability**: Project level IP Blocking is available on all plans
 
 To block an IP address, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Go+to+Firewall) in the sidebar of your project and follow these steps:
 
@@ -78,7 +78,7 @@ To block an IP address, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5
 
 ## Account-level IP Blocking
 
-> **🔒 Permissions Required**: Account-level IP Blocking
+> **Availability**: Account-level IP Blocking is available on Enterprise plans
 
 ### How to add an IP block rule
 

@@ -14,13 +14,13 @@ related:
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "5e92f4032a285f993fdb0b024115686d62910e17b33f195b28225cc5768c496e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "30aa1f2561d3b3ad3203f0611bcea51eb4da4da9221ed67f706f61e8fc5278ce"
 ---
 
 # Configure alerts
 
-> **🔒 Permissions Required**: Alerts
+> **Availability**: Alerts are available on Enterprise and Pro plans with Observability Plus
 
 Use alert rules to notify your team when Vercel detects error or usage anomalies.
 
@@ -36,8 +36,8 @@ Use alert rules to notify your team when Vercel detects error or usage anomalies
 - [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Investigation](https://vercel.com/docs/agent/investigation?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=related) — Let AI investigate your error alerts to help you debug faster
 
 Full cross-link map for this page: [/docs/alerts/configure-alerts.graph.md](/docs/alerts/configure-alerts.graph.md?from=related&source_path=%2Fdocs%2Falerts%2Fconfigure-alerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,7 +55,7 @@ Built-in alert rules use Vercel-defined detections for Error anomaly and Usage a
    - **Usage anomaly**: Trigger when 5-minute usage is more than four standard deviations above the 24-hour average and crosses Vercel's minimum activity threshold.
 4. Configure the trigger filters:
    - For **Error anomaly**, choose the HTTP group to monitor. By default, error anomalies track **5xx** status codes. Select **4xx** to monitor client error detections.
-   - For **Usage anomaly**, choose the usage metric to monitor, such as Function invocations, Function duration, Function CPU duration, Fast Data Transfer, or Edge Requests.
+   - For **Usage anomaly**, choose the usage metric to monitor, such as Function invocations, Function duration, Function CPU duration, Fast Data Transfer, or CDN Requests.
 5. Click **Next**.
 6. In **Configure alert rule**, enter a rule name. This name appears in the **Alert Rules** table and notifications.
 7. Choose the project scope for the rule. You can apply the rule to all projects, specific projects, or all projects except selected projects.

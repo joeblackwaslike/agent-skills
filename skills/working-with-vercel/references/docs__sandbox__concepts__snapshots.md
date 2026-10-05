@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "a55e0ee19ae663bf452f80f7e6d4b9795a2269af8887c88995518b2b0301a540"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "59fe50ca909fbe9fb269627e4191e432728efb89877cf50352f05c61abe68693"
 ---
 
 # Snapshots
@@ -42,7 +42,6 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to transfer a project between Vercel teams.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=related) — Learn how to run your first code in a Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fsnapshots&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -156,6 +155,8 @@ asyncio.run(main())
 In the CLI, the `--stop` flag confirms that the sandbox will stop when snapshotting. Snapshots expire 30 days after their last use by default. Use `--expiration` (for example, `--expiration 14d`) to set a custom expiration time, or `--expiration 0` to prevent the snapshot from expiring.
 
 ## Create a sandbox from a snapshot
+
+Creation waits until the sandbox is ready, including restoring the snapshot. A snapshot that isn't cached can take longer to restore, and that wait is included in creation time.
 
 Pass the snapshot ID when creating a new sandbox:
 

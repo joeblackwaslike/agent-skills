@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing React websites. Follow our...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/makeswift.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "089d5efa1ba69056ac869bc5b406c9cf867df3a5a8e5b3830c4616cd3666d502"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "73f161b06a61cc2e236e11596847f03a76c6908ee3e7e743a44967c6e032d03e"
 ---
 
 # Vercel Makeswift Integration
@@ -27,14 +27,14 @@ Makeswift is a no-code website builder designed for creating and managing React 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn best practices for using databases in a serverless environment with Vercel
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related)
-- [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 - [Vercel Formspree Integration](https://vercel.com/docs/integrations/cms/formspree?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on you
-- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 
 Full cross-link map for this page: [/docs/integrations/cms/makeswift.graph.md](/docs/integrations/cms/makeswift.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fmakeswift&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -50,22 +50,22 @@ Or, follow the steps below to install the integration:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

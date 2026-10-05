@@ -14,8 +14,8 @@ related:
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "61c5cb2fd59ec4720af9da51bbcf3be793bfe2ef48483ddee5a8b867169102e7"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "57991d31b9cefd0f8a92982de285639453d39061f25d243f33430776a1538203"
 ---
 
 # Instrumentation
@@ -28,7 +28,7 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [MLflow](https://ai-sdk.dev/providers/observability/mlflow?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
+- [MLflow](https://ai-sdk.dev/providers/observability/mlflow?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Track, visualize, and debug Vercel AI SDK traces with MLflow Tracing
 - [How to set up instrumentation](https://nextjs.org/docs/app/guides/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Learn how to use instrumentation to run code at server startup in your Next.js app
 - [How to set up instrumentation](https://nextjs.org/docs/pages/guides/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Learn how to use instrumentation to run code at server startup in your Next.js app
 - [How to instrument your Next.js app with OpenTelemetry](https://nextjs.org/docs/pages/guides/open-telemetry?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Learn how to instrument your Next.js app with OpenTelemetry.
@@ -36,10 +36,10 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [Instrument and trace applications with the OpenTelemetry collector](https://vercel.com/changelog/instrument-and-trace-applications-with-the-opentelemetry-collector?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
-- [SigNoz](https://ai-sdk.dev/providers/observability/signoz?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Instrumentation](https://eve.dev/docs/observability/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
 - [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
+- [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Finstrumentation&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,7 +56,7 @@ To get started, install the following packages:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @opentelemetry/api @vercel/otel
+    yarn add @opentelemetry/api @vercel/otel
     ```
   </Code>
   <Code tab="npm">
@@ -66,7 +66,7 @@ To get started, install the following packages:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @opentelemetry/api @vercel/otel
+    bun add @opentelemetry/api @vercel/otel
     ```
   </Code>
 </CodeBlock>

@@ -13,8 +13,8 @@ related:
 summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ae4e0347ba985e39a6bfa698f81b77fc8c1654c13236d31ba02aa7b842633f58"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cf7f5f4c01ed68af8b3f6b680c79e57ae4420723b57dbac51f8a08e182d9f265"
 ---
 
 # AI Gateway Video Editing
@@ -34,7 +34,7 @@ Edit existing videos using text prompts. Describe the changes you want and the m
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
 - [AI Gateway Video Extension](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related)
-- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Generate a video from a text prompt using AI Gateway.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-editing.graph.md](/docs/ai-gateway/modalities/video-generation/video-editing.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fvideo-generation%2Fvideo-editing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,10 +1,14 @@
 ---
+title: MiniMax
+description: Learn how to use MiniMax provider with the AI SDK.
+url: "https://ai-sdk.dev/providers/community-providers/minimax"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/minimax.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "92a79fb22e7bb8abfb380f1f73ba11038f5fa490814d36ca9007605c17e844ae"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "5d375683e3c8219524e58852e01ea7dba526b0e8d33388a2588e96524b733fcf"
 ---
 
-# MiniMax Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [vercel-minimax-ai-provider](https://github.com/MiniMax-AI/vercel-minimax-ai-provider) is a community provider that provides access to the latest [MiniMax-M2 model](https://platform.minimax.io/docs/guides/text-generation) from [MiniMax](https://www.minimax.io/).
 
@@ -14,7 +18,7 @@ API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io
 
 The MiniMax provider is available via the `vercel-minimax-ai-provider` module. You can install it with:
 
-<InstallPackages packages="vercel-minimax-ai-provider" />
+**Packages:** `vercel-minimax-ai-provider`
 
 ## Provider Instance
 
@@ -58,22 +62,23 @@ const minimax = createMinimax({
 
 You can use the following optional settings to customize the MiniMax provider instance:
 
-- **baseURL** _string_
+- **baseURL** *string*
 
   Use a different URL prefix for API calls.
+
   - Anthropic-compatible default: `https://api.minimax.io/anthropic/v1`
   - OpenAI-compatible default: `https://api.minimax.io/v1`
 
-- **apiKey** _string_
+- **apiKey** *string*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `MINIMAX_API_KEY` environment variable.
 
-- **headers** _Record&lt;string,string&gt;_
+- **headers** *Record\<string,string>*
 
   Custom headers to include in the requests.
 
-- **fetch** _(input: RequestInfo, init?: RequestInit) => Promise&lt;Response&gt;_
+- **fetch** *(input: RequestInfo, init?: RequestInit) => Promise\<Response>*
 
   Custom [fetch](https://developer.mozilla.org/en-US/docs/Web/API/fetch) implementation.
 
@@ -92,15 +97,13 @@ Both formats access the same MiniMax models with the same capabilities.
 
 | Model               | Text Generation | Object Generation | Image Input | Tool Usage | Tool Streaming |
 | ------------------- | --------------- | ----------------- | ----------- | ---------- | -------------- |
-| `MiniMax-M2`        | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
-| `MiniMax-M2-Stable` | <Check />       | <Check />         | <Cross />   | <Check />  | <Check />      |
+| `MiniMax-M2`        | ✓               | ✓                 | ✗           | ✓          | ✓              |
+| `MiniMax-M2-Stable` | ✓               | ✓                 | ✗           | ✓          | ✓              |
 
-<Note>
-  Please see the [MiniMax
-  docs](https://platform.minimax.io/docs/api-reference/text-intro) for a full
-  list of available models and their capabilities. The provider accepts any
-  model ID as a string for forward compatibility.
-</Note>
+Please see the [MiniMax
+docs](https://platform.minimax.io/docs/api-reference/text-intro) for a full
+list of available models and their capabilities. The provider accepts any
+model ID as a string for forward compatibility.
 
 ## Example Usage
 
@@ -134,68 +137,10 @@ for await (const chunk of result.textStream) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

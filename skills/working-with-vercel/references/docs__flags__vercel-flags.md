@@ -16,13 +16,13 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "501ac671dcb707ebddbaa401ea7d3c988dfe106796196df3ce6a448d63aa4cfa"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1fd51b15cdd578763fd3b9ecfba86010ad8bb390c0db6f694b274b65d58bb5db"
 ---
 
 # Vercel Flags
 
-> **🔒 Permissions Required**: Vercel Flags
+> **Availability**: Vercel Flags are available on all plans
 
 Vercel Flags is a feature flag provider built into the Vercel platform. Create flags, define targeting rules, run progressive rollouts, and run A/B tests, all from the Vercel Dashboard without adding another service to your stack.
 
@@ -35,11 +35,13 @@ Vercel Flags is a feature flag provider built into the Vercel platform. Create f
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags now supports JSON values](https://vercel.com/changelog/vercel-flags-now-supports-json-values?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
+- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 
@@ -61,7 +63,7 @@ Flags can return boolean, string, number, or JSON values. This lets you use Verc
 
 Beyond feature management, Vercel Flags also supports A/B testing and experimentation. Split users into buckets, then measure the results through [Web Analytics](/docs/flags/observability) or your own analytics platform and data warehouse.
 
-![Image](`/docs-assets/static/docs/flags/flags-tab-light.png`)
+![Flags in Vercel Dashboard](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/flags/flags-tab-light.png)
 
 ## How it works
 

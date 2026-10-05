@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ed82fdd6e16ba891859cc293a34b7dc0887607cedb0f5e3956607d17d2344015"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "39501ed796d303c84209d54981b5143b87a6fc1f7fefdb19a3c7be910da15f1a"
 ---
 
 # Backends on Vercel
@@ -38,8 +38,7 @@ Backends deployed to Vercel receive the benefits of Vercel's infrastructure, inc
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
-- [Zero-config backends on Vercel AI Cloud](https://vercel.com/blog/zero-config-backends-on-vercel-ai-cloud?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related)
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Vercel Functions](https://vercel.com/docs/functions?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=related) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 
 Full cross-link map for this page: [/docs/frameworks/backend.graph.md](/docs/frameworks/backend.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "ae45fe16a256911688dc48970f33fda79fbbc5458ac232e90fe3ba287becbefb"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "340cc078ea2d9fbdd2089508b04439a355c08c7fe34095551f9314b40db9ba72"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -53,7 +53,7 @@ Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbo
 | Sandbox Active CPU | 5 hours/month | $0.128/hour | $0.128/hour |
 | Sandbox Provisioned Memory | 420 GB-hours/month | $0.0212/GB-hour | $0.0212/GB-hour |
 | Sandbox Creations | 5,000/month | $0.60/1M | $0.60/1M |
-| Sandbox Data Transfer | 20 GB/month | $0.15/GB | $0.15/GB |
+| Sandbox Data Transfer | 20 GB/month | Included in Flat Rate CDN | $0.15/GB |
 | Snapshot Storage | 15 GB (lifetime) | $0.08/GB-month | $0.08/GB-month |
 | Drive Storage | 15 GB (lifetime) | $0.05/GB-month | $0.05/GB-month |
 | Drive Reads | 30 GB/month | $0.0015/GB | $0.0015/GB |
@@ -199,7 +199,7 @@ The number of concurrently running sandboxes is limited by plan.
 
 The rate at which you can allocate vCPUs to new sandboxes increases with sustained usage instead of being a fixed cap. The initial value is your plan's starting rate, and sustained usage increases the allowed rate toward the maximum at the quota shown below. After 10 minutes without creating sandboxes, the rate goes back to the starting rate. See [dynamic quotas](/docs/limits#dynamic-quotas) for more details.
 
-For example, with a Pro team that was idle, the initial rate is 150 vCPUs per minute, which covers 18 sandboxes with 8 vCPUs each. The team can keep creating sandboxes and the allowed rate increases to a maximum of 500 vCPUs per minute until it reaches 5,000.
+For example, with a Pro team that was idle, the initial rate is 150 vCPUs per minute, which covers 18 sandboxes with 8 vCPUs each. As the team keeps creating sandboxes, the allowed rate climbs by 500 vCPUs per minute every minute until it reaches the maximum of 5,000 vCPUs per minute.
 
 [Contact sales](/contact/sales) if you need higher allocation quotas on Enterprise.
 

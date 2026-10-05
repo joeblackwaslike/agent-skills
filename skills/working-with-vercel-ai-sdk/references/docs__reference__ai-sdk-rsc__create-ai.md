@@ -1,75 +1,39 @@
 ---
+title: createAI
+description: Reference for the createAI function from the AI SDK RSC
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/create-ai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/create-ai.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "a5eec6ad9c33ed40ff53d1e796803c401d47bcccfea0689be3894883fd1522f9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4b0ff184f93719de16fbe49a49f6ea9dbf8beb0f8fd0d5146b8bdf339dec87ea"
 ---
 
-# `createAI`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
 Creates a client-server context provider that can be used to wrap parts of your application tree to easily manage both UI and AI states of your application.
 
 ## Import
 
-<Snippet text={`import { createAI } from "@ai-sdk/rsc"`} prompt={false} />
+```
+import { createAI } from "@ai-sdk/rsc"
+```
 
 ## API Signature
 
 ### Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'actions',
-      type: 'Record<string, Action>',
-      description: 'Server side actions that can be called from the client.',
-    },
-    {
-      name: 'initialAIState',
-      type: 'any',
-      description: 'Initial AI state to be used in the client.',
-    },
-    {
-      name: 'initialUIState',
-      type: 'any',
-      description: 'Initial UI state to be used in the client.',
-    },
-    {
-      name: 'onGetUIState',
-      type: '() => UIState',
-      description: 'is called during SSR to compare and update UI state.',
-    },
-    {
-      name: 'onSetAIState',
-      type: '(Event) => void',
-      description:
-        'is triggered whenever an update() or done() is called by the mutable AI state in your action, so you can safely store your AI state in the database.',
-      properties: [
-        {
-          type: 'Event',
-          parameters: [
-            {
-              name: 'state',
-              type: 'AIState',
-              description: 'The resulting AI state after the update.',
-            },
-            {
-              name: 'done',
-              type: 'boolean',
-              description:
-                'Whether the AI state updates have been finalized or not.',
-            },
-          ],
-        },
-      ],
-    },
-  ]}
-/>
+- `actions` (`Record<string, Action>`): Server side actions that can be called from the client.
+- `initialAIState` (`any`): Initial AI state to be used in the client.
+- `initialUIState` (`any`): Initial UI state to be used in the client.
+- `onGetUIState` (`() => Promise<UIState | undefined>`): is called during SSR to compare and update UI state.
+- `onSetAIState` (`(Event) => void`): is triggered whenever an update() or done() is called by the mutable AI state in your action, so you can safely store your AI state in the database.
+  - `Event`
+    - `state` (`AIState`): The resulting AI state after the update.
+    - `done` (`boolean`): Whether the AI state updates have been finalized or not.
 
 ### Returns
 
@@ -77,34 +41,13 @@ It returns an `<AI/>` context provider.
 
 ## Examples
 
-<ExampleLinks
-  examples={[
-    {
-      title: 'Learn to manage AI and UI states in Next.js',
-      link: '/examples/next-app/state-management/ai-ui-states',
-    },
-    {
-      title: 'Learn to persist and restore states UI/AI states in Next.js',
-      link: '/examples/next-app/state-management/save-and-restore-states',
-    },
-  ]}
-/>
+- [Learn to manage AI and UI states in Next.js](/examples/next-app/state-management/ai-ui-states)
+- [Learn to persist and restore states UI/AI states in Next.js](/examples/next-app/state-management/save-and-restore-states)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [streamUI](/docs/reference/ai-sdk-rsc/stream-ui)
-- [createAI](/docs/reference/ai-sdk-rsc/create-ai)
-- [createStreamableUI](/docs/reference/ai-sdk-rsc/create-streamable-ui)
-- [createStreamableValue](/docs/reference/ai-sdk-rsc/create-streamable-value)
-- [readStreamableValue](/docs/reference/ai-sdk-rsc/read-streamable-value)
-- [getAIState](/docs/reference/ai-sdk-rsc/get-ai-state)
-- [getMutableAIState](/docs/reference/ai-sdk-rsc/get-mutable-ai-state)
-- [useAIState](/docs/reference/ai-sdk-rsc/use-ai-state)
-- [useActions](/docs/reference/ai-sdk-rsc/use-actions)
-- [useUIState](/docs/reference/ai-sdk-rsc/use-ui-state)
-- [useStreamableValue](/docs/reference/ai-sdk-rsc/use-streamable-value)
-- [render (Removed)](/docs/reference/ai-sdk-rsc/render)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

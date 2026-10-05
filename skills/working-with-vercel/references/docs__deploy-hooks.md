@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-hooks.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "ffca2af6edd0ff92e58ec6b1dd95dd03dd32b984c8f7f530bc0edcfdb3f7c227"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "dd9cf3d2b7888488400a4ad30af3efd7f756ffae04ba3a6aed21b558b0a58fcf"
 ---
 
 # Creating & Triggering Deploy Hooks
@@ -33,13 +33,13 @@ Deploy Hooks allow you to create URLs that accept HTTP `POST` requests to trigge
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
 - [Introducing Deploy Hooks](https://vercel.com/blog/introducing-deploy-hooks?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
 
 Full cross-link map for this page: [/docs/deploy-hooks.graph.md](/docs/deploy-hooks.graph.md?from=related&source_path=%2Fdocs%2Fdeploy-hooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -58,7 +58,7 @@ Once your project is connected, navigate to its **Settings** page and then selec
 
 In the "Deploy Hooks" section, choose a name for your Deploy Hook and select the branch that will be deployed when the generated URL is requested.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/git/deploy-hooks-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/git/deploy-hooks-light.png)
 
 *Creating a new Deploy Hook.*
 
@@ -101,7 +101,7 @@ curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_98g22o5YUFVHlKOzj
 
 After sending a request, you can see that it triggered a deployment on your project dashboard.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/git/deploy-hook-deployed-light.png`)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/git/deploy-hook-deployed-light.png)
 
 *Deployments triggered by a Deploy Hook are marked in the list.*
 

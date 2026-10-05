@@ -16,13 +16,13 @@ related:
 summary: Protected Source Maps gates requests for browser source maps behind Vercel Authentication, so only authorized users can view your production source...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/protected-source-maps.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "37e9d73935e0323211108f834aee2efe554c90c934d67be7491277cf085c6f39"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "be3a678923fb045e4c6731d570ba3c2aef52bf0606ac641503877bfa7a4ff96f"
 ---
 
 # Restrict access to production source maps
 
-> **🔒 Permissions Required**: Protected Source Maps
+> **Availability**: Protected Source Maps are available on all plans
 
 Protected Source Maps gates requests for browser source maps behind [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication). When enabled, your deployment serves `.map` files only to users who can already access the deployment, and returns `404 Not Found` to everyone else.
 
@@ -35,9 +35,9 @@ Protected Source Maps gates requests for browser source maps behind [Vercel Auth
 - [Protected Source Maps: Ship browser source maps securely](https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Protect who can see your deployments.
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
+- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related)
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
-- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fprotected-source-maps&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 

@@ -1,10 +1,14 @@
 ---
+title: Prompts
+description: Learn about the Prompt structure used in the AI SDK.
+url: "https://ai-sdk.dev/docs/foundations/prompts"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/prompts.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "8e6089c776fde3c4fe50d2ba6eb69b89a275a8a635da2b240f3b3ab75d8fd2bb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "42b1e83aa41e291b4b9d04e26381985e3f263175d4cf7c0da63833565ef443db"
 ---
 
-# Prompts
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Prompts are instructions that you give a [large language model (LLM)](/docs/foundations/overview#large-language-models) to tell it what to do.
 It's like when you ask someone for directions; the clearer your question, the better the directions you'll get.
@@ -23,18 +27,18 @@ e.g. repeatedly generating content for variants of the same prompt text.
 You can set text prompts using the `prompt` property made available by AI SDK functions like [`streamText`](/docs/reference/ai-sdk-core/stream-text) or [`generateText`](/docs/reference/ai-sdk-core/generate-text).
 You can structure the text in any way and inject variables, e.g. using a template literal.
 
-```ts highlight="3"
+```ts {3}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Invent a new holiday and describe its traditions.',
 });
 ```
 
 You can also use template literals to provide dynamic data to your prompt.
 
-```ts highlight="3-5"
+```ts {3-5}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt:
     `I am planning a trip to ${destination} for ${lengthOfStay} days. ` +
     `Please suggest the best tourist activities for me to do.`,
@@ -48,16 +52,14 @@ You can set system prompts using the `instructions` property.
 System prompts work with both the `prompt` and the `messages` properties.
 System messages in `prompt` or `messages` are rejected by default; use the `instructions` property for system instructions, or set `allowSystemInMessages: true` when you need to send existing message histories that contain system messages.
 
-<Note type="warning">
-  Opting in with `allowSystemInMessages` can create a prompt injection risk
-  where users can override or set the system prompt by injecting system
-  messages. In most cases, only trusted server-side code should set system
-  instructions via the `instructions` property.
-</Note>
+Opting in with `allowSystemInMessages` can create a prompt injection risk
+where users can override or set the system prompt by injecting system
+messages. In most cases, only trusted server-side code should set system
+instructions via the `instructions` property.
 
-```ts highlight="3-6"
+```ts {3-6}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions:
     `You help planning travel itineraries. ` +
     `Respond to the users' request with a list ` +
@@ -76,9 +78,9 @@ You can use the `messages` property to set message prompts.
 
 Each message has a `role` and a `content` property. The content can either be text (for user and assistant messages), or an array of relevant parts (data) for that message type.
 
-```ts highlight="3-7"
+```ts {3-7}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     { role: 'user', content: 'Hi!' },
     { role: 'assistant', content: 'Hello, how can I help?' },
@@ -89,12 +91,10 @@ const result = await generateText({
 
 Instead of sending a text in the `content` property, you can send an array of parts that includes a mix of text and other content parts.
 
-<Note type="warning">
-  Not all language models support all message and content types. For example,
-  some models might not be capable of handling multi-modal inputs or tool
-  messages. [Learn more about the capabilities of select
-  models](./providers-and-models#model-capabilities).
-</Note>
+Not all language models support all message and content types. For example,
+some models might not be capable of handling multi-modal inputs or tool
+messages. [Learn more about the capabilities of select
+models](./providers-and-models#model-capabilities).
 
 ### Provider Options
 
@@ -123,7 +123,7 @@ For granular control over applying provider options at the message level, you ca
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: {
     role: 'system',
     content: 'Cached system message',
@@ -168,15 +168,13 @@ const messages: ModelMessage[] = [
 ];
 ```
 
-<Note type="warning">
-  AI SDK UI hooks like [`useChat`](/docs/reference/ai-sdk-ui/use-chat) return
-  arrays of `UIMessage` objects, which do not support provider options. We
-  recommend using the
-  [`convertToModelMessages`](/docs/reference/ai-sdk-ui/convert-to-model-messages)
-  function to convert `UIMessage` objects to
-  [`ModelMessage`](/docs/reference/ai-sdk-core/model-message) objects before
-  applying or appending message(s) or message parts with `providerOptions`.
-</Note>
+AI SDK UI hooks like [`useChat`](/docs/reference/ai-sdk-ui/use-chat) return
+arrays of `UIMessage` objects, which do not support provider options. We
+recommend using the
+[`convertToModelMessages`](/docs/reference/ai-sdk-ui/convert-to-model-messages)
+function to convert `UIMessage` objects to
+[`ModelMessage`](/docs/reference/ai-sdk-core/model-message) objects before
+applying or appending message(s) or message parts with `providerOptions`.
 
 ### User Messages
 
@@ -187,9 +185,9 @@ Text content is the most common type of content. It is a string that is passed t
 If you only need to send text content in a message, the `content` property can be a string,
 but you can also use it to send multiple content parts.
 
-```ts highlight="7-10"
+```ts {7-10}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     {
       role: 'user',
@@ -221,7 +219,7 @@ User messages can include image parts. An image can be one of the following:
 
 ##### Example: Binary image (Buffer)
 
-```ts highlight="8-11"
+```ts {8-11}
 const result = await generateText({
   model,
   messages: [
@@ -242,9 +240,9 @@ const result = await generateText({
 
 ##### Example: Base-64 encoded image (string)
 
-```ts highlight="8-11"
+```ts {8-11}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     {
       role: 'user',
@@ -263,9 +261,9 @@ const result = await generateText({
 
 ##### Example: Image URL (string)
 
-```ts highlight="8-12"
+```ts {8-12}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     {
       role: 'user',
@@ -284,14 +282,12 @@ const result = await generateText({
 
 #### File Parts
 
-<Note type="warning">
-  Only a few providers and models currently support file parts: [Google
-  Generative AI](/providers/ai-sdk-providers/google), [Google Vertex
-  AI](/providers/ai-sdk-providers/google-vertex),
-  [OpenAI](/providers/ai-sdk-providers/openai) (for `wav` and `mp3` audio with
-  `gpt-4o-audio-preview`), [Anthropic](/providers/ai-sdk-providers/anthropic),
-  [OpenAI](/providers/ai-sdk-providers/openai) (for `pdf`).
-</Note>
+Only a few providers and models currently support file parts: [Google
+Generative AI](/providers/ai-sdk-providers/google), [Google Vertex
+AI](/providers/ai-sdk-providers/google-vertex),
+[OpenAI](/providers/ai-sdk-providers/openai) (for `wav` and `mp3` audio with
+`gpt-4o-audio-preview`), [Anthropic](/providers/ai-sdk-providers/anthropic),
+[OpenAI](/providers/ai-sdk-providers/openai) (for `pdf`).
 
 User messages can include file parts. A file can be one of the following:
 
@@ -310,7 +306,7 @@ You need to specify the MIME type of the file you are sending.
 
 ##### Example: PDF file from Buffer
 
-```ts highlight="12-15"
+```ts {12-15}
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
@@ -335,7 +331,7 @@ const result = await generateText({
 
 ##### Example: mp3 audio file from Buffer
 
-```ts highlight="12-14"
+```ts {12-14}
 import { openai } from '@ai-sdk/openai';
 import { generateText } from 'ai';
 
@@ -367,7 +363,7 @@ Custom download function can be passed via the `experimental_download` property:
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   experimental_download: async (
     requestedDownloads: Array<{
       url: URL;
@@ -396,10 +392,8 @@ const result = await generateText({
 });
 ```
 
-<Note>
-  The `experimental_download` option is experimental and may change in future
-  releases.
-</Note>
+The `experimental_download` option is experimental and may change in future
+releases.
 
 ### Assistant Messages
 
@@ -409,9 +403,9 @@ and can contain text, reasoning, and tool call parts.
 
 #### Example: Assistant message with text content
 
-```ts highlight="5"
+```ts {5}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     { role: 'user', content: 'Hi!' },
     { role: 'assistant', content: 'Hello, how can I help?' },
@@ -421,9 +415,9 @@ const result = await generateText({
 
 #### Example: Assistant message with text content in array
 
-```ts highlight="7"
+```ts {7}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     { role: 'user', content: 'Hi!' },
     {
@@ -436,9 +430,9 @@ const result = await generateText({
 
 #### Example: Assistant message with tool call content
 
-```ts highlight="7-14"
+```ts {7-14}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     { role: 'user', content: 'How many calories are in this block of cheese?' },
     {
@@ -458,14 +452,12 @@ const result = await generateText({
 
 #### Example: Assistant message with file content
 
-<Note>
-  This content part is for model-generated files. Only a few models support
-  this, and only for file types that they can generate.
-</Note>
+This content part is for model-generated files. Only a few models support
+this, and only for file types that they can generate.
 
-```ts highlight="9-11"
+```ts {9-11}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     { role: 'user', content: 'Generate an image of a roquefort cheese!' },
     {
@@ -484,19 +476,17 @@ const result = await generateText({
 
 ### Tool messages
 
-<Note>
-  [Tools](/docs/foundations/tools) (also known as function calling) are programs
-  that you can provide an LLM to extend its built-in functionality. This can be
-  anything from calling an external API to calling functions within your UI.
-  Learn more about Tools in [the next section](/docs/foundations/tools).
-</Note>
+[Tools](/docs/foundations/tools) (also known as function calling) are programs
+that you can provide an LLM to extend its built-in functionality. This can be
+anything from calling an external API to calling functions within your UI.
+Learn more about Tools in [the next section](/docs/foundations/tools).
 
 For models that support [tool](/docs/foundations/tools) calls, assistant messages can contain tool call parts, and tool messages can contain tool output parts.
 A single assistant message can call multiple tools, and a single tool message can contain multiple tool results.
 
-```ts highlight="14-42"
+```ts {14-42}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     {
       role: 'user',
@@ -553,9 +543,9 @@ const result = await generateText({
 Tool results can be multi-part and multi-modal, e.g. a text and an image.
 You can use `output: { type: 'content', value: [...] }` to specify multi-part tool results.
 
-```ts highlight="14-27"
+```ts {14-27}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   messages: [
     // ...
     {
@@ -609,11 +599,13 @@ const result = await generateText({
 ### System Messages
 
 System messages are messages that are sent to the model before the user messages to guide the assistant's behavior.
+Sending system messages in `messages` requires `allowSystemInMessages: true`.
 You can alternatively use the `instructions` property.
 
-```ts highlight="4"
+```ts {3,5}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
+  allowSystemInMessages: true,
   messages: [
     { role: 'system', content: 'You help planning travel itineraries.' },
     {
@@ -625,15 +617,10 @@ const result = await generateText({
 });
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/foundations/overview)
-- [Providers and Models](/docs/foundations/providers-and-models)
-- [Prompts](/docs/foundations/prompts)
-- [Tools](/docs/foundations/tools)
-- [Streaming](/docs/foundations/streaming)
-- [Provider Options](/docs/foundations/provider-options)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

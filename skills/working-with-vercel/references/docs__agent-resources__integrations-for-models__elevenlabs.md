@@ -15,8 +15,8 @@ related:
 summary: Learn how to add the ElevenLabs connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "7b2109eea9b9f67a5e78b807c5f8c4d0ff28ddcdd44e36c9db073af4fa5804ac"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "9748b6fa8b5988925d8655af0d287ae936fd9ac7908420f1640dcd20d3461d82"
 ---
 
 # Vercel ElevenLabs Integration
@@ -32,6 +32,7 @@ applications, ideal for creating interactive media experiences.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
 - [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add LMNT connectable account integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Felevenlabs&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
@@ -66,22 +67,22 @@ To follow this guide, you'll need the following:
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

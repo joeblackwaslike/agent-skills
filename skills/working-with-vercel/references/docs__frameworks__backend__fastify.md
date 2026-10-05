@@ -17,8 +17,8 @@ related:
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "7a0a0e70b290d1ebe8128aaac9fae1d86316512783f55b9fbd6fb062002bd888"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "57b4ac971f779add4b3ab85354581688a397f50a8723eb3a7bb00128cd2261c9"
 ---
 
 # Fastify on Vercel
@@ -36,10 +36,8 @@ Fastify is a web framework highly focused on providing the best developer experi
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy NestJS applications to Vercel with zero configuration.
-- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=related) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastify.graph.md](/docs/frameworks/backend/fastify.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastify&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

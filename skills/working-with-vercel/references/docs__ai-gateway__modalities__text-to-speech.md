@@ -15,13 +15,13 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "87e892c88f258478daabf7071ca125ac3f8962d95fd4f9056e18e60473d8f2d9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "0377880d0a5325b2d1dd2bbcadaf1b2f7f8828f460b9045b27b9216c8a9d9585"
 ---
 
 # AI Gateway Text to Speech
 
-Generate spoken audio from text with Google and OpenAI speech models. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
+Generate spoken audio from text with Google, Microsoft, and OpenAI speech models. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
 
 
 <!-- docsgraph:related -->
@@ -31,11 +31,12 @@ Generate spoken audio from text with Google and OpenAI speech models. Use this f
 
 - [Gemini 3.8 text-to-speech models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
+- [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — API Reference for generateSpeech.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
-- [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
-- [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Generate speech and transcribe it using AI Gateway.
-- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
+- [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-to-speech.graph.md](/docs/ai-gateway/modalities/text-to-speech.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Ftext-to-speech&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -51,6 +52,10 @@ Use this to turn text into spoken audio. For live, two-way voice, see [Realtime]
 | --- | --- |
 | Google | `google/gemini-3.8-flash-lite-tts` |
 | Google | `google/gemini-3.8-flash-tts` |
+| Microsoft | `microsoft/mai-voice-2` |
+| Microsoft | `microsoft/mai-voice-2-flash` |
+| Microsoft | `microsoft/mai-voice-2.1` |
+| Microsoft | `microsoft/mai-voice-2.1-flash` |
 | OpenAI | `openai/tts-1` |
 | OpenAI | `openai/tts-1-hd` |
 
@@ -240,6 +245,54 @@ console.log('Saved dialogue.wav');
 
 A turn's `speechMetadata.style` overrides `instructions`. Turns without a style inherit `instructions`. For more options, see the [AI SDK Google speech documentation](https://ai-sdk.dev/providers/ai-sdk-providers/google#speech-models).
 
+### Generate speech with Microsoft
+
+Use `microsoft/mai-voice-2.1` or `microsoft/mai-voice-2` for high-fidelity, long-form narration, and `microsoft/mai-voice-2.1-flash` or `microsoft/mai-voice-2-flash` for low-latency voice agents. All four models use `gateway.speechModel()` and share the same voices and options.
+
+Choose a prebuilt voice such as `en-US-Harper`, `de-DE-Mia`, or `es-MX-Valeria`. Each voice name includes its locale, which sets the spoken language, and the default is `en-US-Harper`. Set `providerOptions.azure.style` to control delivery, and `styleDegree` to set its intensity:
+
+```typescript filename="generate-microsoft-speech.ts"
+import { generateSpeech } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: gateway.speechModel('microsoft/mai-voice-2-flash'),
+  text: 'Thanks for calling! Your order shipped this morning.',
+  voice: 'en-US-Ethan',
+  outputFormat: 'mp3',
+  providerOptions: {
+    azure: { style: 'excited', styleDegree: 1.5 },
+  },
+});
+
+await writeFile('order-update.mp3', result.audio.uint8Array);
+
+console.log('Saved order-update.mp3');
+```
+
+```javascript filename="generate-microsoft-speech.js"
+import { generateSpeech } from 'ai';
+import { gateway } from '@ai-sdk/gateway';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: gateway.speechModel('microsoft/mai-voice-2-flash'),
+  text: 'Thanks for calling! Your order shipped this morning.',
+  voice: 'en-US-Ethan',
+  outputFormat: 'mp3',
+  providerOptions: {
+    azure: { style: 'excited', styleDegree: 1.5 },
+  },
+});
+
+await writeFile('order-update.mp3', result.audio.uint8Array);
+
+console.log('Saved order-update.mp3');
+```
+
+Microsoft returns MP3 audio by default. MAI-Voice also supports `wav`, `pcm`, and `opus` through `outputFormat`. When you omit `voice`, `language` picks a default voice for that language, such as `de-DE-Mia` for `de`. For more options, see the [AI SDK Azure speech documentation](https://ai-sdk.dev/providers/ai-sdk-providers/azure#mai-voice).
+
 ## Request options
 
 | Option         | Description                                                              |
@@ -336,6 +389,8 @@ The response is a JSON object with the base64-encoded audio:
 
 - Audio returns base64-encoded in a JSON response. Streaming audio output is not supported.
 - Google speech models don't support `speed` or `language`. Set pacing through `instructions` since the model detects the language from the text.
+- Microsoft speech models don't support `instructions`. Set the delivery with `providerOptions.azure.style` instead.
+- Microsoft speech models reject unknown voices and unsupported styles.
 
 
 ---

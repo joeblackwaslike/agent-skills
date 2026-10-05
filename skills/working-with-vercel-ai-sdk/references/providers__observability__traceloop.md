@@ -1,10 +1,14 @@
 ---
+title: Traceloop
+description: Monitoring and evaluating LLM applications with Traceloop
+url: "https://ai-sdk.dev/providers/observability/traceloop"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/traceloop.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "abb16327d6658ee7cbbdf1429db405d49bc15b70d0eaf5c5a1411ec6adb12357"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "867bdecaeb62636e089ef05ba20ced7b1f0ef727665546bc2673f624d8c18657"
 ---
 
-# Traceloop
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Traceloop](https://www.traceloop.com/) is a development platform for building reliable AI applications.
 After integrating with the AI SDK, you can use Traceloop to trace, monitor, and experiment with LLM providers, prompts and flows.
@@ -12,7 +16,7 @@ After integrating with the AI SDK, you can use Traceloop to trace, monitor, and 
 ## Setup
 
 Traceloop supports [AI SDK telemetry data](/docs/ai-sdk-core/telemetry) through [OpenTelemetry](https://opentelemetry.io/docs/).
-You'll need to sign up at https://app.traceloop.com and get an API Key.
+You'll need to sign up at [https://app.traceloop.com](https://app.traceloop.com) and get an API Key.
 
 ### Next.js
 
@@ -25,7 +29,7 @@ OTEL_EXPORTER_OTLP_HEADERS="Authorization=Bearer <Your API Key>"
 
 Install `@ai-sdk/otel` and register the `LegacyOpenTelemetry` in your `instrumentation.ts` file:
 
-```typescript filename="instrumentation.ts"
+```typescript title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { LegacyOpenTelemetry } from '@ai-sdk/otel';
 
@@ -34,7 +38,7 @@ registerTelemetry(new LegacyOpenTelemetry());
 
 You can then use the `telemetry` option to enable telemetry on supported AI SDK function calls:
 
-```typescript highlight="7-12"
+```typescript {7-12}
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
@@ -55,30 +59,10 @@ const result = await generateText({
 - [Traceloop demo chatbot](https://www.traceloop.com/docs/demo)
 - [Traceloop docs](https://www.traceloop.com/docs)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

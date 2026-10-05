@@ -1,10 +1,14 @@
 ---
+title: Confident AI
+description: Trace and monitor your AI SDK applications with Confident AI
+url: "https://ai-sdk.dev/providers/observability/confident-ai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/confident-ai.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "cd428f2cc2f39c513295767a696ac5241be2e6824084e9a9baff638357a47198"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c78095cefb655a56c7027f33a69fc3a06fdd91e392ec9fcec4948253f9044363"
 ---
 
-# Confident AI Observability
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Confident AI](https://confident-ai.com/) is an LLM observability and evaluation platform for teams building reliable AI applications in development and production.
 
@@ -31,14 +35,12 @@ npm install confident-trace @ai-sdk/otel
 
 Sign up or log in to [Confident AI](https://app.confident-ai.com) to get your project API key, then set it as an environment variable:
 
-```bash filename=".env"
+```bash title=".env"
 CONFIDENT_API_KEY="YOUR-PROJECT-API-KEY"
 ```
 
-<Note>
-  For users in the EU region set
-  `CONFIDENT_OTEL_ENDPOINT="https://eu.otel.confident-ai.com/v1/traces"`
-</Note>
+For users in the EU region set
+`CONFIDENT_OTEL_ENDPOINT="https://eu.otel.confident-ai.com/v1/traces"`
 
 ### 3. Register the Telemetry Integration
 
@@ -47,7 +49,7 @@ Confident AI's span types. Pass it to `OpenTelemetry` and register that once at
 application startup, before any AI SDK call. `init()` sets up the exporter that
 ships the spans to your project:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerTelemetry } from 'ai';
 import { OpenTelemetry } from '@ai-sdk/otel';
 import { init } from 'confident-trace';
@@ -63,7 +65,7 @@ In Next.js, put this in `instrumentation.ts` at your project root — Next.js ca
 `register()` for you. For Node.js applications without Next.js, run the same two
 lines at the top level of your entry file:
 
-```ts filename="index.ts"
+```ts title="index.ts"
 import { generateText, registerTelemetry } from 'ai';
 import { openai } from '@ai-sdk/openai';
 import { OpenTelemetry } from '@ai-sdk/otel';
@@ -91,20 +93,16 @@ Your AI SDK calls stay exactly as they are. Every span carries the `Vercel AI SD
 - **Tool calls** — [tool spans](https://www.confident-ai.com/docs/llm-tracing/features/span-types#tool-spans) with the tool name, its input, and its result, nested under the step that ran them.
 - **Content** — prompt and response text, captured by default with no size limit unless you configure one, and subject to the [content policy](https://www.confident-ai.com/docs/llm-tracing/features/masking).
 
-<Note>
-  Reasoning and binary content parts are marked but not exported, and raw
-  request headers, arbitrary SDK metadata, and exception messages are left out.
-  Embeddings, reranking, and the image and audio APIs are outside this
-  integration's scope.
-</Note>
+Reasoning and binary content parts are marked but not exported, and raw
+request headers, arbitrary SDK metadata, and exception messages are left out.
+Embeddings, reranking, and the image and audio APIs are outside this
+integration's scope.
 
-<Note>
-  Initialize once, shut down once. In a long-running server, call `init()` at
-  startup and `runtime.shutdown()` during graceful shutdown, after in-flight
-  requests and streams finish — never per request. In a serverless function,
-  call `runtime.flush()` at the end of the handler instead, once any stream has
-  finished, so spans are exported before the function freezes.
-</Note>
+Initialize once, shut down once. In a long-running server, call `init()` at
+startup and `runtime.shutdown()` during graceful shutdown, after in-flight
+requests and streams finish — never per request. In a serverless function,
+call `runtime.flush()` at the end of the handler instead, once any stream has
+finished, so spans are exported before the function freezes.
 
 ## Advanced Features
 
@@ -112,7 +110,7 @@ Your AI SDK calls stay exactly as they are. Every span carries the `Vercel AI SD
 
 You can configure what happens to your incoming traces on Confident AI's [workflows page](https://www.confident-ai.com/docs/llm-tracing/workflows).
 
-![Confident AI workflows page](https://confident-docs.s3.us-east-1.amazonaws.com/confident-trace-workflows.png)
+<img alt="Confident AI workflows page" src="https://confident-docs.s3.us-east-1.amazonaws.com/confident-trace-workflows.png" width="2880" height="1570" />
 
 Here's the workflows you can configure:
 
@@ -151,7 +149,7 @@ const { text } = await traceContext(
 
 ### Group Traces Into Threads
 
-`confident-trace` provides a `turn()` method you can use to group two sequential AI SDK calls into one turn. Reuse the same thread ID on later turns to group them into one thread you can view and evaluate on Confident AI:
+`confident-trace` provides a `turn()` method you can use to group sequential AI SDK calls into one turn. Reuse the same thread ID on later turns to group them into one thread you can view and evaluate on Confident AI:
 
 ```ts
 import { generateText } from 'ai';
@@ -187,30 +185,10 @@ For anything else, see [Confident AI's troubleshooting guide](https://www.confid
 - [Need help integrating? Talk to a human.](https://www.confident-ai.com/book-a-demo)
 - [AI SDK Telemetry documentation](/docs/ai-sdk-core/telemetry)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Arize AX](/providers/observability/arize-ax)
-- [Axiom](/providers/observability/axiom)
-- [Braintrust](/providers/observability/braintrust)
-- [Confident AI](/providers/observability/confident-ai)
-- [Helicone](/providers/observability/helicone)
-- [Laminar](/providers/observability/laminar)
-- [Langfuse](/providers/observability/langfuse)
-- [LangSmith](/providers/observability/langsmith)
-- [LangWatch](/providers/observability/langwatch)
-- [Latitude](/providers/observability/latitude)
-- [Maxim](/providers/observability/maxim)
-- [MLflow](/providers/observability/mlflow)
-- [Patronus](/providers/observability/patronus)
-- [PostHog](/providers/observability/posthog)
-- [Raindrop](/providers/observability/raindrop)
-- [Respan](/providers/observability/respan)
-- [Scorecard](/providers/observability/scorecard)
-- [Sentry](/providers/observability/sentry)
-- [SigNoz](/providers/observability/signoz)
-- [Traceloop](/providers/observability/traceloop)
-- [Weave](/providers/observability/weave)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

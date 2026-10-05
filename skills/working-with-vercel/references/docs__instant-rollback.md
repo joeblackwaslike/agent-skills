@@ -16,8 +16,8 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "f4fce4c8e0294ee80814acb644c39242702a7cb16f73084732b1cbea24a512e9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "166cd956051d831809ac770e7cf742bd183be01901953df1f44c864250ddd450"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -60,7 +60,7 @@ To initiate an Instant Rollback from the Vercel dashboard:
 - ### Select your project
   On the project's overview page, you will see the [Production Deployment tile](# "Production Deployment tile"). From there, click **Instant Rollback**.
 
-  ![Image](`/docs-assets/static/docs/concepts/deployments/instant-rollback.png`)
+  ![Access Instant Rollback from the production deployment tile.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/instant-rollback.png)
 
 - ### Select the deployment to roll back to
   After selecting Instant Rollback, you'll see an dialog that displays your current production deployment and the eligible deployments that you can roll back to.
@@ -69,7 +69,7 @@ To initiate an Instant Rollback from the Vercel dashboard:
 
   Select the deployment that you'd like to roll back to and click **Continue**.
 
-  ![Image](`/docs-assets/static/docs/concepts/deployments/rollback-process.png`)
+  ![Dialog showing the current and previous deployments.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/rollback-process.png)
 
 - ### Verify the information
   Once you've selected the deployment to roll back to, verify the roll back information:
@@ -80,7 +80,7 @@ To initiate an Instant Rollback from the Vercel dashboard:
 - ### Confirm the rollback
   Once you have verified the details, click the **Confirm Rollback** button. At this point, you'll get confirmation details about the successful rollback.
 
-  ![Image](`/docs-assets/static/docs/concepts/deployments/rollback-success.png`)
+  ![Message for a successful roll back session.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/rollback-success.png)
   > **⚠️ Warning:** If you have custom aliases, ensure the domains listed above are correct. The
   > rolled-back deployment does not include custom aliases since these are not a
   > part of your project’s domain settings. Custom aliases will only be included
@@ -91,7 +91,7 @@ To initiate an Instant Rollback from the Vercel dashboard:
 
   After a rollback, Vercel turns off auto-assignment of production domains. This means new pushes to your production branch won't replace the rolled-back deployment. To restore normal deployment behavior, see [Undo a rollback](#undo-a-rollback).
 
-  ![Image](`/docs-assets/static/docs/concepts/deployments/rollback-on-production-tile.png`)
+  ![Production tile showing details about the rolled-back deployment.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/rollback-on-production-tile.png)
 
 > **💡 Note:** You cannot run parallel roll backs on the same projectOnly one deployment can be rolled back at a time for every project.
 > However, a rolled back deployment stays disabled in your deployment list
@@ -103,7 +103,7 @@ You can also roll back from the main **Deployments** section in your dashboard. 
 
 Click the vertical ellipses (⋮) next to the deployment row and select the **Instant Rollback** option from the context menu.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/rollback-from-deploys-list.png`)
+![Perform instant roll back on any of your main branch's deployments.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/rollback-from-deploys-list.png)
 
 ## Undo a rollback
 

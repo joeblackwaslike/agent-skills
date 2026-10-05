@@ -1,42 +1,23 @@
 ---
+title: Stream Object
+description: Learn how to stream object using the AI SDK and Next.js
+url: "https://ai-sdk.dev/cookbook/next/stream-object"
+docs_index: /llms.txt
+tags:
+  - next
+  - streaming
+  - structured data
 source: "https://ai-sdk.dev/cookbook/next/stream-object.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "6ea6ef91ee37abee20e274d1b15d5e8ebaadb9a174fe8e31fe1e76599bd07be2"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "6e34000018e11d71ebfe4844c77915edc370154233c145978adfc906f7de8e09"
 ---
 
-# Stream Object
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Object generation can sometimes take a long time to complete, especially when you're generating a large schema.
 In such cases, it is useful to stream the object generation process to the client in real-time.
 This allows the client to display the generated object as it is being generated,
 rather than have users wait for it to complete before displaying the result.
-
-<Browser>
-  <ObjectGeneration
-    stream
-    object={{
-      notifications: [
-        {
-          name: 'Jamie Roberts',
-          message: "Hey! How's the study grind going? Need a coffee boost?",
-          minutesAgo: 15,
-        },
-        {
-          name: 'Prof. Morgan',
-          message:
-            'Reminder: Your term paper is due promptly at 8 AM tomorrow. Please ensure it meets the submission guidelines outlined.',
-          minutesAgo: 46,
-        },
-        {
-          name: 'Alex Chen',
-          message:
-            "Dude, urgent! Borrow your notes for tomorrow's exam? I swear mine got eaten by my dog!",
-          minutesAgo: 30,
-        },
-      ],
-    }}
-  />
-</Browser>
 
 ## Object Mode
 
@@ -46,7 +27,7 @@ The `streamText` function with `Output` allows you to specify different output s
 
 It is helpful to set up the schema in a separate file that is imported on both the client and server.
 
-```ts filename='app/api/use-object/schema.ts'
+```ts title='app/api/use-object/schema.ts'
 import { z } from 'zod';
 
 // define a schema for the notifications
@@ -67,7 +48,7 @@ The client uses [`useObject`](/docs/reference/ai-sdk-ui/use-object) to stream th
 The results are partial and are displayed as they are received.
 Please note the code for handling `undefined` values in the JSX.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -100,7 +81,7 @@ export default function Page() {
 
 On the server, we use [`streamText`](/docs/reference/ai-sdk-core/stream-text) with `Output.object` to stream the object generation process.
 
-```typescript filename='app/api/use-object/route.ts'
+```typescript title='app/api/use-object/route.ts'
 import { streamText, Output, createTextStreamResponse, toTextStream } from 'ai';
 import { notificationSchema } from './schema';
 
@@ -127,7 +108,7 @@ export async function POST(req: Request) {
 You can use the `loading` state to display a loading indicator while the object is being generated.
 You can also use the `stop` function to stop the object generation process.
 
-```tsx filename='app/page.tsx' highlight="7,16,21,24"
+```tsx title='app/page.tsx' {7,16,21,24}
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -176,7 +157,7 @@ The `Output.array` mode allows you to stream an array of objects one element at 
 
 First, update the schema to generate a single object (remove the `z.array()`).
 
-```ts filename='app/api/use-object/schema.ts'
+```ts title='app/api/use-object/schema.ts'
 import { z } from 'zod';
 
 // define a schema for a single notification
@@ -190,11 +171,11 @@ export const notificationSchema = z.object({
 
 On the client, you wrap the schema in `z.array()` to generate an array of objects.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useObject } from '@ai-sdk/react';
-import { notificationSchema } from '../api/use-object/schema';
+import { notificationSchema } from './api/use-object/schema';
 import z from 'zod';
 
 export default function Page() {
@@ -236,7 +217,7 @@ export default function Page() {
 
 On the server, specify `Output.array` to generate an array of objects.
 
-```typescript filename='app/api/use-object/route.ts'
+```typescript title='app/api/use-object/route.ts'
 import { streamText, Output, createTextStreamResponse, toTextStream } from 'ai';
 import { notificationSchema } from './schema';
 
@@ -264,7 +245,7 @@ export async function POST(req: Request) {
 
 ### Client
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useObject } from '@ai-sdk/react';
@@ -304,7 +285,7 @@ export default function Page() {
 
 On the server, specify `Output.json()`.
 
-```typescript filename='app/api/use-object/route.ts'
+```typescript title='app/api/use-object/route.ts'
 import { streamText, Output, createTextStreamResponse, toTextStream } from 'ai';
 
 export const maxDuration = 30;
@@ -326,31 +307,10 @@ export async function POST(req: Request) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/next/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/next/generate-text-with-chat-prompt)
-- [Generate Image with Chat Prompt](/cookbook/next/generate-image-with-chat-prompt)
-- [Caching Middleware](/cookbook/next/caching-middleware)
-- [Stream Text](/cookbook/next/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/next/stream-text-with-chat-prompt)
-- [Stream Text with Image Prompt](/cookbook/next/stream-text-with-image-prompt)
-- [Chat with PDFs](/cookbook/next/chat-with-pdf)
-- [streamText Multi-Step Cookbook](/cookbook/next/stream-text-multistep)
-- [Markdown Chatbot with Memoization](/cookbook/next/markdown-chatbot-with-memoization)
-- [Generate Object](/cookbook/next/generate-object)
-- [Generate Object with File Prompt through Form Submission](/cookbook/next/generate-object-with-file-prompt)
-- [Stream Object](/cookbook/next/stream-object)
-- [Call Tools](/cookbook/next/call-tools)
-- [Call Tools in Multiple Steps](/cookbook/next/call-tools-multiple-steps)
-- [Model Context Protocol (MCP) Tools](/cookbook/next/mcp-tools)
-- [Share useChat State Across Components](/cookbook/next/use-shared-chat-context)
-- [Human-in-the-Loop with Next.js](/cookbook/next/human-in-the-loop)
-- [Track Agent Token Usage](/cookbook/next/track-agent-token-usage)
-- [Send Custom Body from useChat](/cookbook/next/send-custom-body-from-use-chat)
-- [Streaming with Custom Format](/cookbook/next/custom-stream-format)
-- [Render Visual Interface in Chat](/cookbook/next/render-visual-interface-in-chat)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

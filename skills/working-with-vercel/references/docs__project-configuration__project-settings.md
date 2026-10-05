@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "dd68c671a7538d89d002c126192ba5086a80a53f756ee6cf8f945a3ae049dc32"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1f7f45a4c487eaedff8bc89ecccddb6d805fb2738f84677f1c833f209c28bc2c"
 ---
 
 # Project settings
@@ -31,11 +31,12 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

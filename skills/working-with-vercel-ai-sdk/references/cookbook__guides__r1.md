@@ -1,17 +1,22 @@
 ---
+title: Get started with DeepSeek R1
+description: Get started with DeepSeek R1 using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/r1"
+docs_index: /llms.txt
+tags:
+  - getting-started
+  - reasoning
 source: "https://ai-sdk.dev/cookbook/guides/r1.md"
-fetched_at: "2026-08-31T10:43:45.904Z"
-sha256: "da22402671a1c7b86b52d5ebda230941537d06c89dd528c9bc4758c5500aa5eb"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "29ee654641007b916297609df81dbfc92d6e7b716d59b85b05dc1f547b315271"
 ---
 
-# Get started with DeepSeek R1
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  DeepSeek retired the `deepseek-reasoner` API alias on July 24, 2026. Direct
-  DeepSeek API examples in this historical guide are preserved for reference and
-  no longer run against the current service. For current DeepSeek reasoning
-  workloads, use `deepseek-v4-pro`.
-</Note>
+DeepSeek retired the `deepseek-reasoner` API alias on July 24, 2026. Direct
+DeepSeek API examples in this historical guide are preserved for reference and
+no longer run against the current service. For current DeepSeek reasoning
+workloads, use `deepseek-v4-pro`.
 
 With the [release of DeepSeek R1](https://api-docs.deepseek.com/news/news250528), there has never been a better time to start building AI applications, particularly those that require complex reasoning capabilities.
 
@@ -107,7 +112,6 @@ const { reasoningText, text } = await generateText({
 });
 ```
 
-<Note id="deepseek-r1-middleware">
 The AI SDK provides a [middleware](/docs/ai-sdk-core/middleware)
 (`extractReasoningMiddleware`) that can be used to extract the reasoning
 tokens from the model's output.
@@ -115,15 +119,13 @@ tokens from the model's output.
 When using DeepSeek-R1 series models with third-party providers like Together AI, we recommend using the `startWithReasoning`
 option in the `extractReasoningMiddleware` function, as they tend to bypass thinking patterns.
 
-</Note>
-
 ### Model Provider Comparison
 
 You can use DeepSeek R1 with the AI SDK through various providers. Here's a comparison of the providers that support DeepSeek R1:
 
 | Provider                                                | Model ID                                                                                                          | Reasoning Tokens    |
 | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [DeepSeek](/providers/ai-sdk-providers/deepseek)        | [`deepseek-reasoner`](https://api-docs.deepseek.com/guides/reasoning_model)                                       | <Check />           |
+| [DeepSeek](/providers/ai-sdk-providers/deepseek)        | [`deepseek-reasoner`](https://api-docs.deepseek.com/guides/reasoning_model)                                       | ✓                   |
 | [Fireworks](/providers/ai-sdk-providers/fireworks)      | [`accounts/fireworks/models/deepseek-r1`](https://fireworks.ai/models/fireworks/deepseek-r1)                      | Requires Middleware |
 | [Groq](/providers/ai-sdk-providers/groq)                | [`deepseek-r1-distill-llama-70b`](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B)               | Requires Middleware |
 | [Azure](/providers/ai-sdk-providers/azure)              | [`DeepSeek-R1`](https://ai.azure.com/explore/models/DeepSeek-R1/version/1/registry/azureml-deepseek#code-samples) | Requires Middleware |
@@ -137,17 +139,19 @@ AI SDK Core can be paired with [AI SDK UI](/docs/ai-sdk-ui/overview), another po
 
 AI SDK UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
 
-With four main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
+With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
 
 Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and DeepSeek R1:
 
 In a new Next.js application, first install the AI SDK and the DeepSeek provider:
 
-<Snippet text="pnpm install ai @ai-sdk/deepseek @ai-sdk/react" />
+```
+pnpm install ai @ai-sdk/deepseek @ai-sdk/react
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { deepSeek } from '@ai-sdk/deepseek';
 import {
   convertToModelMessages,
@@ -174,14 +178,12 @@ export async function POST(req: Request) {
 }
 ```
 
-<Note>
-  You can forward the model's reasoning tokens to the client with
-  `sendReasoning: true` in the `toUIMessageStream` helper.
-</Note>
+You can forward the model's reasoning tokens to the client with
+`sendReasoning: true` in the `toUIMessageStream` helper.
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
@@ -228,10 +230,8 @@ export default function Page() {
 }
 ```
 
-<Note>
-  You can access the model's reasoning tokens through the `parts` array on the
-  `message` object, where reasoning parts have `type: 'reasoning'`.
-</Note>
+You can access the model's reasoning tokens through the `parts` array on the
+`message` object, where reasoning parts have `type: 'reasoning'`.
 
 The useChat hook on your root page (`app/page.tsx`) will make a request to your AI provider endpoint (`app/api/chat/route.ts`) whenever the user submits a message. The messages are then displayed in the chat UI.
 
@@ -253,28 +253,10 @@ Ready to dive in? Here's how you can begin:
 
 DeepSeek R1 opens new opportunities for reasoning-intensive AI applications. Start building today and leverage the power of advanced reasoning in your AI projects.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

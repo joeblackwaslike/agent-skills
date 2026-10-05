@@ -1,10 +1,14 @@
 ---
+title: Heroku
+description: Use a Heroku OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "a9be83bcc4dda69f95689791e5fee94937288316bc195d5d5011a9e5040c8019"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ee34ddb0ae2d7492d4b310c85955b99a355f5942338a5eaa7a5d64c8779e19e6"
 ---
 
-# Heroku Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Heroku](https://heroku.com/) is a cloud platform that allows you to deploy and run applications, including AI models with OpenAI API compatibility.
 You can deploy models that are OpenAI API compatible and use them with the AI SDK.
@@ -14,14 +18,15 @@ You can deploy models that are OpenAI API compatible and use them with the AI SD
 The Heroku provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+**Packages:** `@ai-sdk/openai-compatible`
 
 ### Heroku Setup
 
-1. Create a test app in Heroku:
+1. Create a test app in Heroku, replacing `your-app-name` with a unique app name:
 
 ```bash
-heroku create
+export APP_NAME=your-app-name
+heroku create $APP_NAME
 ```
 
 2. Inference using claude-3-5-haiku:
@@ -109,17 +114,10 @@ for await (const message of result.textStream) {
 
 Heroku language models also support structured data generation with [`Output`](/docs/reference/ai-sdk-core/output).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [ModelRush](/providers/openai-compatible-providers/modelrush)
-- [Cheaper Inference](/providers/openai-compatible-providers/cheaper-inference)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

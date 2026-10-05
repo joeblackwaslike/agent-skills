@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "ade56747490a39dda46862b3d590c95860b3f785b2a5c07ec6c0b183b9b2c2c5"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2b9c30e8c33146d273fcc67c79c49342208fe902c1aff80d3de74d203ff2e9ee"
 ---
 
 # Getting started with Global Config
@@ -35,8 +35,8 @@ Global Config is a distributed key-value store that allows you to store and retr
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Statsig integration.
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, and deploy your first project.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fget-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -60,7 +60,7 @@ Help me set up Global Config in this project. First, make sure the Vercel CLI is
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @vercel/global-config
+      yarn add @vercel/global-config
       ```
     </Code>
     <Code tab="npm">
@@ -70,7 +70,7 @@ Help me set up Global Config in this project. First, make sure the Vercel CLI is
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @vercel/global-config
+      bun add @vercel/global-config
       ```
     </Code>
   </CodeBlock>
@@ -80,22 +80,22 @@ Help me set up Global Config in this project. First, make sure the Vercel CLI is
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i vercel
+    pnpm i -g vercel@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i vercel
+    yarn global add vercel@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i vercel
+    npm i -g vercel@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i vercel
+    bun add -g vercel@latest
     ```
   </Code>
 </CodeBlock>

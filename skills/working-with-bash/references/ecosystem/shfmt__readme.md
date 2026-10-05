@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-09-28T10:38:26.295Z"
-sha256: "6909b58ba427ba20d2a6f37051944d66e9d9b662d3065c5e018cf2fde312b012"
+fetched_at: "2026-10-05T11:13:13.412Z"
+sha256: "aa5efaed151661acb8a5d3e3ecbc2ee74617a1f5dec93758e19468a912d9f696"
 ---
 
 # sh
@@ -49,6 +49,8 @@ Monthly tiers include benefits like your logo on a README,
 prioritized issues, or direct support in your company's chat app.
 One-time tiers offer a call about one of my projects
 or a Go consulting or mentorship session.
+
+[![CI powered by Namespace](https://namespace.so/oss/badge.svg)](https://namespace.so/github-actions/?utm_source=oss&utm_campaign=sh)
 
 ### Contributing
 

@@ -1,52 +1,31 @@
 ---
+title: Generate Object
+description: Learn how to generate object using the AI SDK and React Server Components.
+url: "https://ai-sdk.dev/cookbook/rsc/generate-object"
+docs_index: /llms.txt
+tags:
+  - rsc
+  - structured data
 source: "https://ai-sdk.dev/cookbook/rsc/generate-object.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "82917227f831375fbcadb0d41743d352bbe7a34037ee2dbd943e75c57468857d"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "fa8a0ffaeb4cc7e1041b8a4d28480f27634a01aeb541e12c8195524a86500b18"
 ---
 
-# Generate Object
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This example uses React Server Components (RSC). If you want to client side
-  rendering and hooks instead, check out the ["generate object" example with
-  useState](/examples/next-pages/basics/generating-object).
-</Note>
+This example uses React Server Components (RSC). If you want to client side
+rendering and hooks instead, check out the ["generate object" example with
+useState](/examples/next-pages/basics/generating-object).
 
 You can use `generateText` with `Output` to generate structured data like JSON. By providing a schema that describes the structure of your desired object, the SDK will validate the generated output and ensure that it conforms to the specified structure.
 
 The `Output.object` function requires you to provide a schema using [zod](https://zod.dev), a library for defining schemas for JavaScript objects.
 
-<Browser>
-  <ObjectGeneration
-    object={{
-      notifications: [
-        {
-          name: 'Jamie Roberts',
-          message: "Hey! How's the study grind going? Need a coffee boost?",
-          minutesAgo: 15,
-        },
-        {
-          name: 'Prof. Morgan',
-          message:
-            'Reminder: Your term paper is due promptly at 8 AM tomorrow. Please ensure it meets the submission guidelines outlined.',
-          minutesAgo: 46,
-        },
-        {
-          name: 'Alex Chen',
-          message:
-            "Dude, urgent! Borrow your notes for tomorrow's exam? I swear mine got eaten by my dog!",
-          minutesAgo: 30,
-        },
-      ],
-    }}
-  />
-</Browser>
-
 ## Client
 
 Let's create a simple React component that will call the `getNotifications` function when a button is clicked. The function will generate a list of notifications as described in the schema.
 
-```tsx filename='app/page.tsx'
+```tsx title='app/page.tsx'
 'use client';
 
 import { useState } from 'react';
@@ -82,7 +61,7 @@ export default function Home() {
 
 Now let's implement the `getNotifications` function. We'll use the `generateText` function with `Output.object` to generate the list of notifications based on the schema we defined earlier.
 
-```typescript filename='app/actions.ts'
+```typescript title='app/actions.ts'
 'use server';
 
 import { generateText, Output } from 'ai';
@@ -112,22 +91,10 @@ export async function getNotifications(input: string) {
 }
 ```
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Generate Text](/cookbook/rsc/generate-text)
-- [Generate Text with Chat Prompt](/cookbook/rsc/generate-text-with-chat-prompt)
-- [Stream Text](/cookbook/rsc/stream-text)
-- [Stream Text with Chat Prompt](/cookbook/rsc/stream-text-with-chat-prompt)
-- [Generate Object](/cookbook/rsc/generate-object)
-- [Stream Object](/cookbook/rsc/stream-object)
-- [Call Tools](/cookbook/rsc/call-tools)
-- [Call Tools in Parallel](/cookbook/rsc/call-tools-in-parallel)
-- [Save Messages To Database](/cookbook/rsc/save-messages-to-database)
-- [Restore Messages From Database](/cookbook/rsc/restore-messages-from-database)
-- [Render Visual Interface in Chat](/cookbook/rsc/render-visual-interface-in-chat)
-- [Stream Updates to Visual Interfaces](/cookbook/rsc/stream-updates-to-visual-interfaces)
-- [Record Token Usage after Streaming User Interfaces](/cookbook/rsc/stream-ui-record-token-usage)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

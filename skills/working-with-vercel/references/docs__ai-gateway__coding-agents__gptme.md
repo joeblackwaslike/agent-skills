@@ -16,8 +16,8 @@ related:
 summary: Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/gptme.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e53eaf6342e0877595235a76e1a57bac3740c92ac7f374e830bc2b0125011c87"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c5a6e53873a4dd97964d128d2cfa23435238530ca5bb74b9f4e8919eb6d92db5"
 ---
 
 # gptme with AI Gateway
@@ -31,10 +31,10 @@ sha256: "e53eaf6342e0877595235a76e1a57bac3740c92ac7f374e830bc2b0125011c87"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=related) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [Goose with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/goose?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=related) — Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-compatible provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/gptme.graph.md](/docs/ai-gateway/coding-agents/gptme.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fgptme&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

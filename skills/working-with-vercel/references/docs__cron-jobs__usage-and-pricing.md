@@ -15,13 +15,13 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "02a7f63c844d962e1514c53f7f96a37f6f3fd2b2f3e668cdea8db74ac5f59c00"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "cb8b480f30e821947e98f88b3036e35097ec9bb15159b40d277fde48dc4cf300"
 ---
 
 # Usage & Pricing for Cron Jobs
 
-> **🔒 Permissions Required**: Cron Jobs
+> **Availability**: Cron Jobs are available on all plans
 
 Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage](/docs/limits) and [pricing](/pricing) limits will apply.
 
@@ -34,14 +34,15 @@ Cron jobs invoke [Vercel Functions](/docs/functions). This means the same [usage
 - [CLI](https://chat-sdk.dev/docs/create-chat-sdk?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Scaffold a Chat SDK bot app with a single command.
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
+- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/cron-jobs/usage-and-pricing.graph.md](/docs/cron-jobs/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fcron-jobs%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

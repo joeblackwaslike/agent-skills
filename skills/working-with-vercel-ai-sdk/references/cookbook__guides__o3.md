@@ -1,16 +1,21 @@
 ---
+title: Get started with OpenAI o3-mini
+description: Get started with OpenAI o3-mini using the AI SDK.
+url: "https://ai-sdk.dev/cookbook/guides/o3"
+docs_index: /llms.txt
+tags:
+  - getting-started
+  - reasoning
 source: "https://ai-sdk.dev/cookbook/guides/o3.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "d5e4869c6f8ac01195fc143552b55818cdbb3ec59f62869b2b9aab90149bd438"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "3191446b78352567f46990c859520fbc762772dedd7d2bb03898576950741fef"
 ---
 
-# Get started with OpenAI o3-mini
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note>
-  This guide covers o3-mini and keeps its model ID intentionally. For current
-  models, see the [OpenAI provider
-  documentation](/providers/ai-sdk-providers/openai).
-</Note>
+This guide covers o3-mini and keeps its model ID intentionally. For current
+models, see the [OpenAI provider
+documentation](/providers/ai-sdk-providers/openai).
 
 With the [release of OpenAI's o3-mini model](https://openai.com/index/openai-o3-mini/), there has never been a better time to start building AI applications, particularly those that require complex STEM reasoning capabilities.
 
@@ -22,13 +27,13 @@ OpenAI recently released a new AI model optimized for STEM reasoning that excels
 
 o3-mini offers three reasoning effort levels:
 
-1. [**Low**]: Optimized for speed while maintaining solid reasoning capabilities
-2. [**Medium**]: Balanced approach matching o1's performance levels
-3. [**High**]: Enhanced reasoning power exceeding o1 in many STEM domains
+1. \[**Low**]: Optimized for speed while maintaining solid reasoning capabilities
+2. \[**Medium**]: Balanced approach matching o1's performance levels
+3. \[**High**]: Enhanced reasoning power exceeding o1 in many STEM domains
 
 | Model   | Streaming | Tool Calling | Structured Output | Reasoning Effort | Image Input |
 | ------- | --------- | ------------ | ----------------- | ---------------- | ----------- |
-| o3-mini | <Check /> | <Check />    | <Check />         | <Check />        | <Cross />   |
+| o3-mini | ✓         | ✓            | ✓                 | ✓                | ✗           |
 
 ### Benchmarks
 
@@ -39,7 +44,7 @@ OpenAI o3-mini demonstrates impressive performance across technical domains:
 - 2130 Elo rating on competitive programming (Codeforces)
 - 49.3% accuracy on verified software engineering tasks (SWE-bench)
 
-<Note>These benchmark results are using high reasoning effort setting.</Note>
+These benchmark results are using high reasoning effort setting.
 
 [Source](https://openai.com/index/openai-o3-mini/)
 
@@ -69,20 +74,16 @@ const { text } = await generateText({
 });
 ```
 
-<Note>
-  To use o3-mini, you must be using @ai-sdk/openai version 1.1.9 or greater.
-</Note>
+To use o3-mini, you must be using @ai-sdk/openai version 1.1.9 or greater.
 
-<Note>
-  System messages are automatically converted to OpenAI developer messages.
-</Note>
+System messages are automatically converted to OpenAI developer messages.
 
 ### Refining Reasoning Effort
 
 You can control the amount of reasoning effort expended by o3-mini through the `reasoningEffort` parameter.
 This parameter can be set to `low`, `medium`, or `high` to adjust how much time and computation the model spends on internal reasoning before producing a response.
 
-```ts highlight="9"
+```ts {9}
 import { generateText } from 'ai';
 import { openai } from '@ai-sdk/openai';
 
@@ -159,17 +160,19 @@ AI SDK Core can be paired with [AI SDK UI](/docs/ai-sdk-ui/overview), another po
 
 AI SDK UI provides robust abstractions that simplify the complex tasks of managing chat streams and UI updates on the frontend, enabling you to develop dynamic AI-driven interfaces more efficiently.
 
-With four main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
+With three main hooks — [`useChat`](/docs/reference/ai-sdk-ui/use-chat), [`useCompletion`](/docs/reference/ai-sdk-ui/use-completion), and [`useObject`](/docs/reference/ai-sdk-ui/use-object) — you can incorporate real-time chat capabilities, text completions, streamed JSON, and interactive assistant features into your app.
 
 Let's explore building a chatbot with [Next.js](https://nextjs.org), the AI SDK, and OpenAI o3-mini:
 
 In a new Next.js application, first install the AI SDK and the OpenAI provider:
 
-<Snippet text="pnpm install ai @ai-sdk/openai @ai-sdk/react" />
+```
+pnpm install ai @ai-sdk/openai @ai-sdk/react
+```
 
 Then, create a route handler for the chat endpoint:
 
-```tsx filename="app/api/chat/route.ts"
+```tsx title="app/api/chat/route.ts"
 import { openai } from '@ai-sdk/openai';
 import {
   convertToModelMessages,
@@ -198,24 +201,41 @@ export async function POST(req: Request) {
 
 Finally, update the root page (`app/page.tsx`) to use the `useChat` hook:
 
-```tsx filename="app/page.tsx"
+```tsx title="app/page.tsx"
 'use client';
 
 import { useChat } from '@ai-sdk/react';
+import { type FormEvent, useState } from 'react';
 
 export default function Page() {
-  const { messages, input, handleInputChange, handleSubmit, error } = useChat();
+  const { messages, sendMessage } = useChat();
+  const [input, setInput] = useState('');
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (input.trim()) {
+      sendMessage({ text: input });
+      setInput('');
+    }
+  }
 
   return (
     <>
       {messages.map(message => (
         <div key={message.id}>
           {message.role === 'user' ? 'User: ' : 'AI: '}
-          {message.content}
+          {message.parts.map((part, index) =>
+            part.type === 'text' ? <span key={index}>{part.text}</span> : null,
+          )}
         </div>
       ))}
       <form onSubmit={handleSubmit}>
-        <input name="prompt" value={input} onChange={handleInputChange} />
+        <input
+          name="prompt"
+          value={input}
+          onChange={event => setInput(event.currentTarget.value)}
+        />
         <button type="submit">Submit</button>
       </form>
     </>
@@ -235,28 +255,10 @@ Ready to get started? Here's how you can dive in:
 4. Dive deeper with advanced guides on topics like Retrieval-Augmented Generation (RAG) and multi-modal chat at [ai-sdk.dev/docs/guides](/cookbook/guides).
 5. Check out ready-to-deploy AI templates at [vercel.com/templates?type=ai](https://vercel.com/templates?type=ai).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [RAG Agent](/cookbook/guides/rag-chatbot)
-- [Multi-Modal Agent](/cookbook/guides/multi-modal-chatbot)
-- [Slackbot Agent Guide](/cookbook/guides/slackbot)
-- [Natural Language Postgres](/cookbook/guides/natural-language-postgres)
-- [Get started with Computer Use](/cookbook/guides/computer-use)
-- [Add Skills to Your Agent](/cookbook/guides/agent-skills)
-- [Build a Custom Memory Tool](/cookbook/guides/custom-memory-tool)
-- [Compact Agent Context](/cookbook/guides/agent-context-compaction)
-- [Get started with Gemini 3](/cookbook/guides/gemini)
-- [Get started with Claude 4](/cookbook/guides/claude-4)
-- [OpenAI Responses API](/cookbook/guides/openai-responses)
-- [Google Gemini Image Generation](/cookbook/guides/google-gemini-image-generation)
-- [Get started with Claude 3.7 Sonnet](/cookbook/guides/sonnet-3-7)
-- [Get started with Llama 3.1](/cookbook/guides/llama-3_1)
-- [Get started with GPT-5](/cookbook/guides/gpt-5)
-- [Get started with OpenAI o1](/cookbook/guides/o1)
-- [Get started with OpenAI o3-mini](/cookbook/guides/o3)
-- [Get started with DeepSeek R1](/cookbook/guides/r1)
-- [Get started with DeepSeek V3.2](/cookbook/guides/deepseek-v3-2)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

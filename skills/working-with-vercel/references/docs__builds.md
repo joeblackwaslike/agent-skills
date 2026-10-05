@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6fbf06c315d40a5fbc5cac8634c62abeb6196119bdb1c61d8009e6dc38a6aa69"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1c676116a490cf12fa8b8ed54ceac9763c77cd8ad662077447438da409db8546"
 ---
 
 # Builds
@@ -37,9 +37,9 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 - [Deployments are now up to 7 seconds faster](https://vercel.com/changelog/deployments-are-now-up-to-7-seconds-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
+- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 

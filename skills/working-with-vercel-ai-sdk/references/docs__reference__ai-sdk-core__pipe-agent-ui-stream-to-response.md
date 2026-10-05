@@ -1,19 +1,22 @@
 ---
+title: pipeAgentUIStreamToResponse
+description: API Reference for the pipeAgentUIStreamToResponse utility.
+url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "4f06655ef8cbf8b89aa95653c378be6ff62bccf09a629ac946b590c68495e7d4"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "b5128946f3e1f140bd5180ef4037248d63a301628f4cdb108c892d58c6a790ba"
 ---
 
-# `pipeAgentUIStreamToResponse`
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `pipeAgentUIStreamToResponse` function runs an [Agent](/docs/reference/ai-sdk-core/agent) and streams the resulting UI message output directly to a Node.js [`ServerResponse`](https://nodejs.org/api/http.html#class-httpserverresponse) object. This is ideal for building real-time streaming API endpoints (for chat, tool use, etc.) in Node.js-based frameworks like Express, Hono, or custom Node servers.
 
 ## Import
 
-<Snippet
-  text={`import { pipeAgentUIStreamToResponse } from "ai"`}
-  prompt={false}
-/>
+```
+import { pipeAgentUIStreamToResponse } from "ai"
+```
 
 ## Usage
 
@@ -39,87 +42,18 @@ export async function handler(req, res) {
 
 ## Parameters
 
-<PropertiesTable
-  content={[
-    {
-      name: 'response',
-      type: 'ServerResponse',
-      isRequired: true,
-      description:
-        'The Node.js ServerResponse object to pipe UI message stream output into.',
-    },
-    {
-      name: 'agent',
-      type: 'Agent',
-      isRequired: true,
-      description:
-        'An agent instance implementing `.stream({ prompt, ... })` and defining a `tools` property.',
-    },
-    {
-      name: 'uiMessages',
-      type: 'unknown[]',
-      isRequired: true,
-      description:
-        'Array of input UI messages sent to the agent (such as user/assistant message objects).',
-    },
-    {
-      name: 'abortSignal',
-      type: 'AbortSignal',
-      isRequired: false,
-      description:
-        'Optional abort signal to cancel streaming (e.g., on client disconnect). Supply an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal), for example from an `AbortController`.',
-    },
-    {
-      name: 'timeout',
-      type: 'number | { totalMs?: number }',
-      isRequired: false,
-      description:
-        'Timeout in milliseconds. Can be specified as a number or as an object with a totalMs property. The call will be aborted if it takes longer than the specified timeout. Can be used alongside abortSignal.',
-    },
-    {
-      name: 'experimental_sandbox',
-      type: 'Experimental_SandboxSession',
-      isRequired: false,
-      description:
-        'Optional experimental sandbox environment that is passed through to tool execution. Tools can access it from their execution context.',
-    },
-    {
-      name: 'options',
-      type: 'CALL_OPTIONS',
-      isRequired: false,
-      description:
-        'Optional agent call options, for agents configured with generic parameter `CALL_OPTIONS`.',
-    },
-    {
-      name: 'experimental_transform',
-      type: 'StreamTextTransform | StreamTextTransform[]',
-      isRequired: false,
-      description:
-        'Optional stream text transformation(s) applied to agent output.',
-    },
-    {
-      name: 'onStepEnd',
-      type: 'GenerateTextOnStepEndCallback',
-      isRequired: false,
-      description:
-        'Callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage, per-step performance, or logging intermediate steps.',
-    },
-    {
-      name: 'onStepFinish',
-      type: 'GenerateTextOnStepFinishCallback',
-      isRequired: false,
-      description:
-        'Deprecated. Use `onStepEnd` instead. This alias is only used as a fallback when `onStepEnd` is not provided.',
-    },
-    {
-      name: '...UIMessageStreamResponseInit & UIMessageStreamOptions',
-      type: 'object',
-      isRequired: false,
-      description:
-        'Options for streaming headers, status, SSE stream config, and additional UI message stream control.',
-    },
-  ]}
-/>
+- `response` (`ServerResponse`): The Node.js ServerResponse object to pipe UI message stream output into.
+- `agent` (`Agent`): An agent instance implementing \`.stream(\{ prompt, ... })\` and defining a \`tools\` property.
+- `uiMessages` (`unknown[]`): Array of input UI messages sent to the agent (such as user/assistant message objects).
+- `convertDataPart` (`(part: DataUIPart) => TextPart | FilePart | undefined`): Converts custom UI data parts into text or file parts for the model. Data parts are ignored when this callback is omitted or returns undefined.
+- `abortSignal` (`AbortSignal`): Optional abort signal to cancel streaming (e.g., on client disconnect). Supply an \[\`AbortSignal\`]\(https\://developer.mozilla.org/en-US/docs/Web/API/AbortSignal), for example from an \`AbortController\`.
+- `timeout` (`number | { totalMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with a totalMs property. The call will be aborted if it takes longer than the specified timeout. Can be used alongside abortSignal.
+- `experimental_sandbox` (`Experimental_SandboxSession`): Optional experimental sandbox environment that is passed through to tool execution. Tools can access it from their execution context.
+- `options` (`CALL_OPTIONS`): Optional agent call options, for agents configured with generic parameter \`CALL\_OPTIONS\`.
+- `experimental_transform` (`StreamTextTransform | StreamTextTransform[]`): Optional stream text transformation(s) applied to agent output.
+- `onStepEnd` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage, per-step performance, or logging intermediate steps.
+- `onStepFinish` (`GenerateTextOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
+- `...UIMessageStreamResponseInit & UIMessageStreamOptions` (`object`): Options for streaming headers, status, SSE stream config, and additional UI message stream control.
 
 ## Returns
 
@@ -167,70 +101,10 @@ app.post('/chat', async (req, res) => {
 - [`Agent`](/docs/reference/ai-sdk-core/agent)
 - [`UIMessage`](/docs/reference/ai-sdk-core/ui-message)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [generateText](/docs/reference/ai-sdk-core/generate-text)
-- [streamText](/docs/reference/ai-sdk-core/stream-text)
-- [embed](/docs/reference/ai-sdk-core/embed)
-- [embedMany](/docs/reference/ai-sdk-core/embed-many)
-- [rerank](/docs/reference/ai-sdk-core/rerank)
-- [generateImage](/docs/reference/ai-sdk-core/generate-image)
-- [experimental_streamTranscribe](/docs/reference/ai-sdk-core/stream-transcribe)
-- [experimental_streamTranslate](/docs/reference/ai-sdk-core/stream-translate)
-- [transcribe](/docs/reference/ai-sdk-core/transcribe)
-- [generateSpeech](/docs/reference/ai-sdk-core/generate-speech)
-- [experimental_generateVideo](/docs/reference/ai-sdk-core/generate-video)
-- [experimental_evaluate](/docs/reference/ai-sdk-core/evaluate)
-- [uploadFile](/docs/reference/ai-sdk-core/upload-file)
-- [uploadSkill](/docs/reference/ai-sdk-core/upload-skill)
-- [Agent (Interface)](/docs/reference/ai-sdk-core/agent)
-- [ToolLoopAgent](/docs/reference/ai-sdk-core/tool-loop-agent)
-- [createAgentUIStream](/docs/reference/ai-sdk-core/create-agent-ui-stream)
-- [createAgentUIStreamResponse](/docs/reference/ai-sdk-core/create-agent-ui-stream-response)
-- [pipeAgentUIStreamToResponse](/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response)
-- [experimental_startBatch](/docs/reference/ai-sdk-core/start-batch)
-- [tool](/docs/reference/ai-sdk-core/tool)
-- [experimental_getBatchStatus](/docs/reference/ai-sdk-core/get-batch-status)
-- [dynamicTool](/docs/reference/ai-sdk-core/dynamic-tool)
-- [experimental_getBatchResults](/docs/reference/ai-sdk-core/get-batch-results)
-- [experimental_cancelBatch](/docs/reference/ai-sdk-core/cancel-batch)
-- [createMCPClient](/docs/reference/ai-sdk-core/create-mcp-client)
-- [experimental_getRealtimeToolDefinitions](/docs/reference/ai-sdk-core/get-realtime-tool-definitions)
-- [toolSearch](/docs/reference/ai-sdk-core/tool-search)
-- [experimental_listBatches](/docs/reference/ai-sdk-core/list-batches)
-- [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
-- [Experimental_StdioMCPTransport](/docs/reference/ai-sdk-core/mcp-stdio-transport)
-- [jsonSchema](/docs/reference/ai-sdk-core/json-schema)
-- [zodSchema](/docs/reference/ai-sdk-core/zod-schema)
-- [valibotSchema](/docs/reference/ai-sdk-core/valibot-schema)
-- [Output](/docs/reference/ai-sdk-core/output)
-- [filterActiveTools](/docs/reference/ai-sdk-core/filter-active-tools)
-- [ModelMessage](/docs/reference/ai-sdk-core/model-message)
-- [UIMessage](/docs/reference/ai-sdk-core/ui-message)
-- [validateUIMessages](/docs/reference/ai-sdk-core/validate-ui-messages)
-- [safeValidateUIMessages](/docs/reference/ai-sdk-core/safe-validate-ui-messages)
-- [Experimental_SandboxSession](/docs/reference/ai-sdk-core/sandbox)
-- [createProviderRegistry](/docs/reference/ai-sdk-core/provider-registry)
-- [customProvider](/docs/reference/ai-sdk-core/custom-provider)
-- [cosineSimilarity](/docs/reference/ai-sdk-core/cosine-similarity)
-- [wrapLanguageModel](/docs/reference/ai-sdk-core/wrap-language-model)
-- [wrapImageModel](/docs/reference/ai-sdk-core/wrap-image-model)
-- [LanguageModelV4Middleware](/docs/reference/ai-sdk-core/language-model-v2-middleware)
-- [extractReasoningMiddleware](/docs/reference/ai-sdk-core/extract-reasoning-middleware)
-- [simulateStreamingMiddleware](/docs/reference/ai-sdk-core/simulate-streaming-middleware)
-- [defaultInstructionsMiddleware](/docs/reference/ai-sdk-core/default-instructions-middleware)
-- [defaultSettingsMiddleware](/docs/reference/ai-sdk-core/default-settings-middleware)
-- [addToolInputExamplesMiddleware](/docs/reference/ai-sdk-core/add-tool-input-examples-middleware)
-- [extractJsonMiddleware](/docs/reference/ai-sdk-core/extract-json-middleware)
-- [isStepCount](/docs/reference/ai-sdk-core/is-step-count)
-- [hasToolCall](/docs/reference/ai-sdk-core/has-tool-call)
-- [isLoopFinished](/docs/reference/ai-sdk-core/loop-finished)
-- [simulateReadableStream](/docs/reference/ai-sdk-core/simulate-readable-stream)
-- [smoothStream](/docs/reference/ai-sdk-core/smooth-stream)
-- [generateId](/docs/reference/ai-sdk-core/generate-id)
-- [createIdGenerator](/docs/reference/ai-sdk-core/create-id-generator)
-- [DefaultGeneratedFile](/docs/reference/ai-sdk-core/default-generated-file)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

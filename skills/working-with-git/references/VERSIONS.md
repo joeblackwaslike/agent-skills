@@ -1,12 +1,12 @@
 ---
 source: "generated"
-fetched_at: "2026-09-28T10:41:34.131Z"
-sha256: "82afdabf243997d7c561a077d261c4a48f5bc51fa14a32e6244023bf6ba8c6f1"
+fetched_at: "2026-10-05T11:17:19.359Z"
+sha256: "a1ea8f0a20053edd61b7a2ba0cdb14df6e59fa71417696f745e1545b2a4f03fb"
 ---
 
 # Pinned versions
 
-Auto-stamped by `scripts/update_docs.js`. Last run: 2026-09-28
+Auto-stamped by `scripts/update_docs.js`. Last run: 2026-10-05
 
 - **Git:** `2.54.0` (`v2.54.0`) — resolved via Homebrew stable. Command/concept docs in `references/cli/` are the AsciiDoc sources from `git/git` at this tag.
 - **Pro Git book:** 2nd edition, fetched from `progit/progit2` `main` (the book is maintained as a living document; not version-tagged to Git releases).

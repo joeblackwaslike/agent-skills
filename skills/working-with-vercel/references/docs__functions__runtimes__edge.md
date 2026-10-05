@@ -6,8 +6,7 @@ canonical_url: "https://vercel.com/docs/functions/runtimes/edge"
 last_updated: 2026-08-03
 type: reference
 prerequisites:
-  - /docs/functions/runtimes
-  - /docs/functions
+  []
 related:
   - /docs/fluid-compute
   - /docs/functions/usage-and-pricing
@@ -17,8 +16,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "cb684be72f7a0a765fa6ae7b4ea257ecc51f8700fe4bf33e17a6c1567f701a2c"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ad251090191893ad71e9467ca3ab8a360758c46141cf535e7321b83f6bcc944a"
 ---
 
 # Edge Runtime
@@ -32,40 +31,13 @@ sha256: "cb684be72f7a0a765fa6ae7b4ea257ecc51f8700fe4bf33e17a6c1567f701a2c"
 
 To convert your Vercel Function to use the Edge runtime, add the following code to your function:
 
-
-<!-- docsgraph:related -->
-## Related pages
-
-> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
-
-- [Edge Functions are now generally available](https://vercel.com/changelog/edge-functions-are-now-generally-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
-- [Improved Node.js compatibility for Edge Middleware and Edge Functions](https://vercel.com/changelog/improved-node-js-compatibility-for-edge-middleware-and-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
-- [New execution duration limit for Edge Functions](https://vercel.com/changelog/new-execution-duration-limit-for-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
-- [Edge Runtime](https://nextjs.org/docs/pages/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
-- [Edge Runtime](https://nextjs.org/docs/app/api-reference/edge?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — API Reference for the Edge Runtime.
-- [Introducing the Edge Runtime](https://vercel.com/blog/introducing-the-edge-runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related)
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions.
-
-Full cross-link map for this page: [/docs/functions/runtimes/edge.graph.md](/docs/functions/runtimes/edge.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fedge&source_site=vercel-docs&relationship=graph)
-<!-- /docsgraph:related -->
-
-```ts {3-5} filename="api/runtime-example.ts" framework=other
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
+```ts {1-3} filename="api/runtime-example.ts" framework=other
 export const config = {
   runtime: 'edge', // this is a pre-requisite
 };
 
-export default function handler(
-  request: VercelRequest,
-  response: VercelResponse,
-) {
-  return response.status(200).json({ text: 'I am an Vercel Function!' });
+export default function handler(request: Request) {
+  return Response.json({ text: 'I am a Vercel Function!' });
 }
 ```
 
@@ -74,8 +46,8 @@ export const config = {
   runtime: 'edge', // this is a pre-requisite
 };
 
-export default function handler(request, response) {
-  return response.status(200).json({ text: 'I am an Vercel Function!' });
+export default function handler(request) {
+  return Response.json({ text: 'I am a Vercel Function!' });
 }
 ```
 
@@ -102,9 +74,9 @@ export const config = {
   regions: ['iad1', 'hnd1'],
 };
 
-export default function handler(request: Request, response: Response) {
-  return response.status(200).json({
-    text: `I am an Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
+export default function handler(request: Request) {
+  return Response.json({
+    text: `I am a Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
   });
 }
 ```
@@ -116,9 +88,9 @@ export const config = {
   regions: ['iad1', 'hnd1'],
 };
 
-export default function handler(request, response) {
-  return response.status(200).json({
-    text: `I am an Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
+export default function handler(request) {
+  return Response.json({
+    text: `I am a Vercel Function! (executed on ${process.env.VERCEL_REGION})`,
   });
 }
 ```
@@ -166,7 +138,7 @@ The following tables list the APIs that are available in the Edge runtime.
 | [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob)                                | Represents a blob                                                                                      |
 | [`Event`](https://developer.mozilla.org/docs/Web/API/Event)                              | Represents an event                                                                                    |
 | [`EventTarget`](https://developer.mozilla.org/docs/Web/API/EventTarget)                  | Represents an object that can handle events                                                            |
-| [`PromiseRejectEvent`](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) | Represents an event that is sent to the global scope of a script when a JavaScript Promise is rejected |
+| [`PromiseRejectionEvent`](https://developer.mozilla.org/docs/Web/API/PromiseRejectionEvent) | Represents an event that is sent to the global scope of a script when a JavaScript Promise is rejected |
 
 ### Encoding APIs
 
@@ -350,7 +322,7 @@ You may continue streaming a response beyond that time and you can continue with
 | Pro        | 2 MB                           |
 | Enterprise | 4 MB                           |
 
-The maximum size for an Vercel Function using the Edge runtime includes your JavaScript code, imported libraries and files (such as fonts), and all files bundled in the function.
+The maximum size for a Vercel Function using the Edge runtime includes your JavaScript code, imported libraries and files (such as fonts), and all files bundled in the function.
 
 If you reach the limit, make sure the code you are importing in your function is used and is not too heavy. You can use a package size checker tool like [bundle](https://bundle.js.org/) to check the size of a package and search for a smaller alternative.
 

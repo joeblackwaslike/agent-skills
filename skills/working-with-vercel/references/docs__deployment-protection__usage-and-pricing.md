@@ -16,8 +16,8 @@ related:
 summary: Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/usage-and-pricing.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "bc3eff213858a7eff2c31c29df2002f3a0323487fd2afe58f1a829ff178b3a5f"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "52b6509a0e24e7a752a6c637c259cb8df7c89b648abe193d061b3324728af31b"
 ---
 
 # Usage & Pricing for Deployment Protection
@@ -39,8 +39,8 @@ Most Deployment Protection features are available on all plans at no additional 
 - [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/deployment-protection/usage-and-pricing.graph.md](/docs/deployment-protection/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -55,7 +55,7 @@ The following table lists fixed Deployment Protection charges. Usage from reques
 | [Standard Protection](/docs/deployment-protection#standard-protection) | Included | Included | Included |
 | [All Deployments](/docs/deployment-protection#all-deployments) | Included | Included | Included |
 | [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) | Not available | $20 per month per protected project | Included for every project at the team level |
-| [Passport](/docs/passport) | Not available | Not available | Included |
+| [Passport](/docs/passport) | Not available | Not available | Custom |
 | [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) | Not available | Not available | Included |
 | [Only Production Deployments](/docs/deployment-protection#only-production-deployments) | Not available | Not available | Included with Trusted IPs |
 | [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions) | Included | Included | Included |

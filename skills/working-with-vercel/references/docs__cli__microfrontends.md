@@ -14,8 +14,8 @@ related:
 summary: Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects, and pull configuration for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2203fcf3c037a8e2ce9b711f8ff977678f75a85cf68501de60383cbc8187e5d6"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "1a36fde167923770bde72ee53db5ab8471db612b841b4c68b9e9bc8eddd01b8c"
 ---
 
 # vercel microfrontends
@@ -29,11 +29,11 @@ The `vercel microfrontends` command (alias: `vercel mf`) provides utilities for 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Microfrontends with AI Agents and the CLI](https://vercel.com/changelog/manage-vercel-microfrontends-with-ai-agents-and-the-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related)
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Vercel MCP tools for microfrontends.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
-- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli/microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

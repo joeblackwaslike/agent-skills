@@ -13,8 +13,8 @@ related:
 summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b2ce99eb2e2735bb671f632cf86d275f7afbad12b46ace1589ffd5754f65ab98"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "c5d0315974547cf74dbaf897c24fe084df6aea182559acb7995c1db64359cad0"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -30,10 +30,10 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related)
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related)
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Emit Custom Metrics from Vercel Functions](https://vercel.com/docs/observability/custom-metrics?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 
 Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

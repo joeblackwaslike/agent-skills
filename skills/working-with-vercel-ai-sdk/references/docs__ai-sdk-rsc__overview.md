@@ -1,21 +1,21 @@
 ---
+title: Overview
+description: An overview of AI SDK RSC.
+url: "https://ai-sdk.dev/docs/ai-sdk-rsc/overview"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/overview.md"
-fetched_at: "2026-06-11T15:39:44.005Z"
-sha256: "de771bf17daeff0f14714255f04c2af69575bcbfa0f3add36e9eddb9b3864285"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "ff299feaa84f95d5854dddd21ddb22ac46335bd9fe443d79fea163d0f3079dbe"
 ---
 
-# AI SDK RSC
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
-<Note type="warning">
-  AI SDK RSC is currently experimental. We recommend using [AI SDK
-  UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
-  RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
-</Note>
+AI SDK RSC is currently experimental. We recommend using [AI SDK
+UI](/docs/ai-sdk-ui/overview) for production. For guidance on migrating from
+RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 
-<Note>
-  The `@ai-sdk/rsc` package is compatible with frameworks that support React
-  Server Components.
-</Note>
+The `@ai-sdk/rsc` package is compatible with frameworks that support React
+Server Components.
 
 [React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components) (RSC) allow you to write UI that can be rendered on the server and streamed to the client. RSCs enable [ Server Actions ](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#with-client-components), a new way to call server-side code directly from the client just like any other function with end-to-end type-safety. This combination opens the door to a new way of building AI applications, allowing the large language model (LLM) to generate and stream UI directly from the server to the client.
 
@@ -39,25 +39,14 @@ AI SDK RSC has various functions designed to help you build AI-native applicatio
 
 Check out the following templates to see AI SDK RSC in action.
 
-<Templates type="generative-ui" />
-
 ## API Reference
 
 Please check out the [AI SDK RSC API Reference](/docs/reference/ai-sdk-rsc) for more details on each function.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-rsc/overview)
-- [Streaming React Components](/docs/ai-sdk-rsc/streaming-react-components)
-- [Managing Generative UI State](/docs/ai-sdk-rsc/generative-ui-state)
-- [Saving and Restoring States](/docs/ai-sdk-rsc/saving-and-restoring-states)
-- [Multistep Interfaces](/docs/ai-sdk-rsc/multistep-interfaces)
-- [Streaming Values](/docs/ai-sdk-rsc/streaming-values)
-- [Handling Loading State](/docs/ai-sdk-rsc/loading-state)
-- [Error Handling](/docs/ai-sdk-rsc/error-handling)
-- [Handling Authentication](/docs/ai-sdk-rsc/authentication)
-- [Migrating from RSC to UI](/docs/ai-sdk-rsc/migrating-to-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

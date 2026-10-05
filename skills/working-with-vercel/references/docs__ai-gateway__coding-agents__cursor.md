@@ -14,8 +14,8 @@ related:
 summary: Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, and model IDs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d27f2e9fc41af34e46dccbb442f075e14077ceac134c3352923374d9cc1006c9"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6ae32ecdf17935c3390487528008cbf69d3fd35c47f5ea5e655c4b061a22a04f"
 ---
 
 # Cursor with AI Gateway
@@ -28,12 +28,12 @@ sha256: "d27f2e9fc41af34e46dccbb442f075e14077ceac134c3352923374d9cc1006c9"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Learn how to use the Cursor harness adapter.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cursor.graph.md](/docs/ai-gateway/coding-agents/cursor.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fcursor&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -46,14 +46,14 @@ Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Cursor:
 npx vercel ai-gateway setup --agent cursor
 ```
 
-The command provisions a key, exports it as `AI_GATEWAY_API_KEY`, and prints the remaining setup steps with your values filled in. Cursor keeps API-key settings in its account-synced store instead of a file on disk, so you must finish the setup in Cursor.
+The command provisions a key, exports it as `AI_GATEWAY_API_KEY` from your shell startup file, and prints the remaining setup steps with your values filled in. Cursor keeps API-key settings in its account-synced store instead of a file on disk, so you must finish the setup in Cursor.
 
 ## Configuring Cursor
 
 Complete these steps in Cursor after running the Vercel CLI. If you don't use the CLI, create an API key in the first step.
 
 - ### Get your API key
-  If you ran the Vercel CLI setup command on macOS, copy the key from your environment without displaying it in the terminal:
+  If you ran the Vercel CLI setup command on macOS, open a new terminal so your shell loads the `AI_GATEWAY_API_KEY` export, then copy the key without displaying it in the terminal:
   ```bash filename="terminal"
   printf %s "$AI_GATEWAY_API_KEY" | pbcopy
   ```

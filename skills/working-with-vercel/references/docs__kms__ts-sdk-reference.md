@@ -11,11 +11,11 @@ related:
   - /docs/oidc
   - /docs/kms/quickstart
   - /docs/kms/concepts/authentication
-summary: API reference for @vercel/kms, including signToken, signMessage, region resolution, and signing the KMS API directly without the SDK.
+summary: API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly without the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/ts-sdk-reference.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "767adbf13faa239572fde94dd0ada4029f104919390c8c94ae91838a9effac53"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "d7e71823d57d6b9dba0ca17422e5a1a65a27e2961e89b5c4765f726512da7a9f"
 ---
 
 # Vercel KMS SDK Reference
@@ -32,13 +32,13 @@ The `@vercel/kms` package wraps the KMS signing API and fetches the function's [
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
-- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
-- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
+- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys th
 
 Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/kms/ts-sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fts-sdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **⚠️ Warning:** `signToken` and `signMessage` resolve the function's OIDC token at call time,
+> **⚠️ Warning:** `signJWT` and `signMessage` resolve the function's OIDC token at call time,
 > which requires an active request context. Call them inside a [route
 > handler](https://nextjs.org/docs/app/getting-started/route-handlers) or Server
 > Component, not at the module top level, where no request context exists.
@@ -49,15 +49,15 @@ Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/k
 pnpm i @vercel/kms
 ```
 
-## signToken
+## signJWT
 
-Signs a JWT for an issuer and resolves to the compact JWT string. KMS sets the `iat`, `nbf`, and `exp` claims.
+Signs a JWT for an issuer using its managed signing key and resolves to `{ token, keyId, algorithm, fingerprint }`. `token` is the compact JWT, `keyId` matches the JWKS `kid`, `algorithm` is the signing key's algorithm, and `fingerprint` is the SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`). KMS sets the `iat`, `nbf`, and `exp` claims.
 
 ```ts filename="app/api/sign/route.ts"
-import { signToken } from '@vercel/kms';
+import { signJWT } from '@vercel/kms';
 
 export async function GET() {
-  const token = await signToken({
+  const { token } = await signJWT({
     issuerId: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
     claims: { sub: 'user_123', scope: 'read:data' },
     ttl: 300, // seconds
@@ -67,16 +67,27 @@ export async function GET() {
 }
 ```
 
-| Parameter  | Type                     | Required | Description                                                                       |
-| ---------- | ------------------------ | -------- | --------------------------------------------------------------------------------- |
-| `issuerId` | `string`                 | Yes      | The ID of the issuer to sign with.                                                |
-| `claims`   | `Record<string, unknown>` | No       | Custom claims to include in the token payload.                                    |
-| `ttl`      | `number`                 | No       | Token lifetime in seconds. Defaults to 300 seconds.                               |
-| `region`   | `string`                 | No       | The KMS region to call. See [Region resolution](#region-resolution).             |
+| Parameter  | Type                      | Required | Description                                                                                                  |
+| ---------- | ------------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `issuerId` | `string`                  | Yes      | The ID of the issuer to sign with.                                                                          |
+| `claims`   | `Record<string, unknown>` | No       | Custom claims to include in the token payload.                                                              |
+| `headers`  | `Record<string, unknown>` | No       | Additional headers to include in the token header.                                                         |
+| `ttl`      | `number \| null`          | No       | Token lifetime in seconds. Defaults to 300 seconds.                                                         |
+| `token`    | `string`                  | No       | An explicit Vercel OIDC token to authenticate with. When omitted, the function's OIDC token is fetched automatically via [`@vercel/oidc`](/docs/oidc). |
+| `region`   | `string`                  | No       | The KMS region to call. See [Region resolution](#region-resolution).                                       |
+| `baseUrl`  | `string`                  | No       | Overrides the API base URL. Takes precedence over `region`.                                                |
+
+## signToken
+
+> **⚠️ Warning:** `signToken` is deprecated in favor of [`signJWT`](#signjwt). It resolves to
+> only the compact JWT string, while `signJWT` also returns the signing key's
+> `keyId`, `algorithm`, and `fingerprint`.
+
+Signs a JWT for an issuer and resolves to the compact JWT string. Its options are the same as [`signJWT`](#signjwt)'s. Use `signJWT` instead.
 
 ## signMessage
 
-Signs an arbitrary message and resolves to `{ signature, keyId, algorithm }`. `signature` is a `Uint8Array` of the raw signature bytes. Pass the message as a `string` (treated as UTF-8) or a `Uint8Array` of raw bytes. `@vercel/kms` base64-encodes it before sending. Use [`signToken`](#signtoken) to mint JWTs. Message signing is rejected when the issuer's policy defines `tokenClaims` or the issuer defines a claims schema.
+Signs an arbitrary message and resolves to `{ signature, keyId, algorithm, fingerprint }`. `signature` is a `Uint8Array` of the raw signature bytes, `keyId` matches the JWKS `kid`, `algorithm` is the signing key's algorithm, and `fingerprint` is the SHA-256 fingerprint of the signing key's public key (`SHA256:<base64>`). Pass the message as a `string` (treated as UTF-8) or a `Uint8Array` of raw bytes. `@vercel/kms` base64-encodes it before sending. Use [`signJWT`](#signjwt) to mint JWTs. Message signing is rejected when the issuer's policy defines `tokenClaims` or the issuer defines a claims schema.
 
 This example signs the HTTP method, URL, and body as a single message, then sends the POST with the signature in the `x-signature` header:
 
@@ -110,11 +121,13 @@ export async function GET() {
 
 The verifier must reconstruct the same message bytes you signed. Use `keyId` to select the key from the issuer's JWKS after rotation, then verify the signature with that public key using `crypto.verify` or Web Crypto.
 
-| Parameter  | Type                     | Required | Description                                                            |
-| ---------- | ------------------------ | -------- | ---------------------------------------------------------------------- |
-| `issuerId` | `string`                 | Yes      | The ID of the issuer to sign with.                                     |
-| `message`  | `string \| Uint8Array`   | Yes      | The message to sign. A string is signed as UTF-8 bytes.                |
-| `region`   | `string`                 | No       | The KMS region to call. See [Region resolution](#region-resolution).  |
+| Parameter  | Type                   | Required | Description                                                                                                 |
+| ---------- | ---------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `issuerId` | `string`               | Yes      | The ID of the issuer to sign with.                                                                        |
+| `message`  | `string \| Uint8Array` | Yes      | The message to sign. A string is signed as UTF-8 bytes.                                                   |
+| `token`    | `string`               | No       | An explicit Vercel OIDC token to authenticate with. When omitted, the function's OIDC token is fetched automatically via [`@vercel/oidc`](/docs/oidc). |
+| `region`   | `string`               | No       | The KMS region to call. See [Region resolution](#region-resolution).                                      |
+| `baseUrl`  | `string`               | No       | Overrides the API base URL. Takes precedence over `region`.                                               |
 
 ## Region resolution
 

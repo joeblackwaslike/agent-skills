@@ -16,8 +16,8 @@ related:
 summary: Send images, PDFs, audio, and video to AI Gateway models, and connect models to application functions with tool use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "3074ef12597e5fcacd786a46e4cb51d06c3efd3affce88d82601cfea91e11dbd"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "53751c4336b95d0783066df804c1773b3595ba73bf64083dc3b0040d1f58ba10"
 ---
 
 # AI Gateway Inputs and Tools
@@ -32,9 +32,9 @@ Choose a guide for the input you have or the function you want a model to call. 
 
 - [AI Gateway Model Modalities](https://vercel.com/docs/ai-gateway/modalities?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=related) — The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, r
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
+- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=related) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools.graph.md](/docs/ai-gateway/inputs-and-tools.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

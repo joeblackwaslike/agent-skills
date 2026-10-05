@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "2a2e9082e2e3535a3b955f082e632d81103728b26a36f10fc031c5ee4bd678cc"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "6baa17d76004c7d1f7d44a25ddeff25f746f2062123567b6520d55761ef60efc"
 ---
 
 # Using Global Config with Split
@@ -31,19 +31,20 @@ This guide will help you get started with using Vercel's Split integration with 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for integrations.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
 - [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
+- [Streaming](https://nextjs.org/docs/app/guides/streaming?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how streaming works in Next.js and how to use it to progressively render UI as data becomes available.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 - [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
-- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-integrations%2Fsplit-global-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
-> **🔒 Permissions Required**: The Split Global Config integration (Beta)
+> **Availability**: The Split Global Config integration (Beta) is available on all plans
 
 Split is a feature flag provider that tracks event data, enabling you to release features, target them to audiences, and measure their impact on customer experience metrics securely.
 
@@ -57,22 +58,22 @@ Before using this integration, you should have:
    <CodeBlock>
      <Code tab="pnpm">
        ```bash
-       pnpm i vercel
+       pnpm i -g vercel@latest
        ```
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i vercel
+       yarn global add vercel@latest
        ```
      </Code>
      <Code tab="npm">
        ```bash
-       npm i vercel
+       npm i -g vercel@latest
        ```
      </Code>
      <Code tab="bun">
        ```bash
-       bun i vercel
+       bun add -g vercel@latest
        ```
      </Code>
    </CodeBlock>
@@ -81,22 +82,22 @@ Before using this integration, you should have:
 <CodeBlock>
   <Code tab="pnpm">
     ```bash
-    pnpm i 
+    pnpm create next-app@latest
     ```
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i 
+    yarn create next-app@latest
     ```
   </Code>
   <Code tab="npm">
     ```bash
-    npm i 
+    npx create-next-app@latest
     ```
   </Code>
   <Code tab="bun">
     ```bash
-    bun i 
+    bunx create-next-app@latest
     ```
   </Code>
 </CodeBlock>
@@ -112,7 +113,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="yarn">
        ```bash
-       yarn i @vercel/global-config
+       yarn add @vercel/global-config
        ```
      </Code>
      <Code tab="npm">
@@ -122,7 +123,7 @@ Before using this integration, you should have:
      </Code>
      <Code tab="bun">
        ```bash
-       bun i @vercel/global-config
+       bun add @vercel/global-config
        ```
      </Code>
    </CodeBlock>
@@ -189,7 +190,7 @@ Before using this integration, you should have:
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
+      yarn add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
       ```
     </Code>
     <Code tab="npm">
@@ -199,7 +200,7 @@ Before using this integration, you should have:
     </Code>
     <Code tab="bun">
       ```bash
-      bun i @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
+      bun add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
       ```
     </Code>
   </CodeBlock>
@@ -245,9 +246,9 @@ Before using this integration, you should have:
       debug: ErrorLogger(),
     }).client();
 
-    await new Promise((resolve) => {
-      client.on(client.Event.SDK_READY, () => resolve);
-      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve);
+    await new Promise<void>((resolve) => {
+      client.on(client.Event.SDK_READY, () => resolve());
+      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve());
     });
 
     // Replace this with the feature flag you want
@@ -308,8 +309,8 @@ Before using this integration, you should have:
     }).client();
 
     await new Promise((resolve) => {
-      client.on(client.Event.SDK_READY, () => resolve);
-      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve);
+      client.on(client.Event.SDK_READY, () => resolve());
+      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve());
     });
 
     // Replace this with the feature flag you want
@@ -374,9 +375,9 @@ Before using this integration, you should have:
     }).client();
 
     // Wait until
-    await new Promise((resolve) => {
-      client.on(client.Event.SDK_READY, () => resolve);
-      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve);
+    await new Promise<void>((resolve) => {
+      client.on(client.Event.SDK_READY, () => resolve());
+      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve());
     });
 
     // Replace this with the feature flag you want
@@ -438,8 +439,8 @@ Before using this integration, you should have:
 
     // Wait until
     await new Promise((resolve) => {
-      client.on(client.Event.SDK_READY, () => resolve);
-      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve);
+      client.on(client.Event.SDK_READY, () => resolve());
+      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve());
     });
 
     // Replace this with the feature flag you want
@@ -504,9 +505,9 @@ Before using this integration, you should have:
     }).client();
 
     // Wait until
-    await new Promise((resolve) => {
-      client.on(client.Event.SDK_READY, () => resolve);
-      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve);
+    await new Promise<void>((resolve) => {
+      client.on(client.Event.SDK_READY, () => resolve());
+      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve());
     });
 
     // Replace this with the feature flag you want
@@ -526,8 +527,8 @@ Before using this integration, you should have:
   }
   ```
   ```js filename="pages/api/marketing-example.js" framework=other
-    SplitFactory,
   import {
+    SplitFactory,
     PluggableStorage,
     ErrorLogger,
   } from '@splitsoftware/splitio-browserjs';
@@ -568,8 +569,8 @@ Before using this integration, you should have:
 
     // Wait until
     await new Promise((resolve) => {
-      client.on(client.Event.SDK_READY, () => resolve);
-      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve);
+      client.on(client.Event.SDK_READY, () => resolve());
+      client.on(client.Event.SDK_READY_TIMED_OUT, () => resolve());
     });
 
     // Replace this with the feature flag you want
@@ -594,7 +595,7 @@ Before using this integration, you should have:
   ```bash filename="terminal"
   vercel dev
   ```
-  1. Navigate to <http://localhost:3000/api/split-example?userKey=Joe>. You should see either `New marketing page` or `Old marketing page` based on how your feature flags are configured in Split
+  1. Navigate to <http://localhost:3000/api/marketing-example?userKey=Joe>. You should see either `New marketing page` or `Old marketing page` based on how your feature flags are configured in Split
      - Try changing the `userKey` search param's value to `Bobby`, or deleting it altogether, to see different responses when you visit the route
 
 ## Next steps

@@ -10,14 +10,15 @@ prerequisites:
   - /docs/platforms
 related:
   - /docs/domains/working-with-nameservers
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/domains/custom-ssl-certificate
   - /docs/rest-api
   - /docs/deployments/generated-urls
 summary: Understand the limits and features available for Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/limits.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "66b842b3f63e35a4ff1136fe98de7a7f50f56d9160328888b1c387b10c1ae830"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "186f1093f4a62001a422462f8079f3d31f198475f86d5a176f686db818a3d9a4"
 ---
 
 # Multi-tenant Limits
@@ -31,11 +32,12 @@ This page provides an overview of the limits and feature availability for Vercel
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=related) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/limits.graph.md](/docs/platforms/multi-tenant-platforms/limits.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fmulti-tenant-platforms%2Flimits&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -56,11 +58,12 @@ Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/limit
 ### Wildcard domains
 
 - **All plans**: Support for wildcard domains (e.g., `*.acme.com`)
-- **Requirement**: Must use [Vercel's nameservers](/docs/domains/working-with-nameservers) for wildcard SSL certificate generation
+- **Requirement**: Vercel must be able to answer the DNS challenge for the wildcard SSL certificate. Use [Vercel's nameservers](/docs/domains/working-with-nameservers), or [delegate certificate validation](/docs/domains/working-with-domains/add-a-domain#use-wildcard-domains-with-an-external-dns-provider) if you can't change nameservers
 
 ### Custom domains
 
-- **All plans**: Unlimited custom domains per project
+- **Hobby**: Up to 50 custom domains per project
+- **Pro and Enterprise**: Unlimited custom domains per project, subject to the soft limits above
 - **SSL certificates**: Automatically issued for all verified domains
 - **Verification**: Required for domains already in use on Vercel
 

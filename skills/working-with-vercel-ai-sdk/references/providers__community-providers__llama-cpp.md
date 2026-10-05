@@ -1,10 +1,14 @@
 ---
+title: llama.cpp
+description: Learn how to use the llama.cpp provider.
+url: "https://ai-sdk.dev/providers/community-providers/llama-cpp"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/llama-cpp.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "24cee59899b086c088fc48e8b0893262ed1b85d665199558d35d9847ffa0fe8a"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "96f1bdd15b193494dddfaa1eefc469c71c0808a079d11ac42234ff4b24311b0e"
 ---
 
-# llama.cpp Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [lgrammel/ai-sdk-llama-cpp](https://github.com/lgrammel/ai-sdk-llama-cpp) is a community provider that enables local LLM inference using [llama.cpp](https://github.com/ggerganov/llama.cpp) directly within Node.js via native C++ bindings.
 
@@ -20,10 +24,8 @@ This provider loads llama.cpp directly into Node.js memory, eliminating the need
 - **Chat Templates**: Automatic or configurable chat template formatting (llama3, chatml, gemma, etc.)
 - **GGUF Support**: Load any GGUF-format model
 
-<Note>
-  This provider currently only supports **macOS** (Apple Silicon or Intel).
-  Windows and Linux are not supported.
-</Note>
+This provider currently only supports **macOS** (Apple Silicon or Intel).
+Windows and Linux are not supported.
 
 ## Prerequisites
 
@@ -46,7 +48,7 @@ brew install cmake
 
 The llama.cpp provider is available in the `ai-sdk-llama-cpp` module. You can install it with:
 
-<InstallPackages packages="ai-sdk-llama-cpp" />
+**Packages:** `ai-sdk-llama-cpp`
 
 The installation will automatically compile llama.cpp as a static library with Metal support and build the native Node.js addon.
 
@@ -58,7 +60,7 @@ You can import `llamaCpp` from `ai-sdk-llama-cpp` and create a model instance:
 import { llamaCpp } from 'ai-sdk-llama-cpp';
 
 const model = llamaCpp({
-  modelPath: './models/llama-3.2-1b-instruct.Q4_K_M.gguf',
+  modelPath: './models/Llama-3.2-1B-Instruct-Q4_K_M.gguf',
 });
 ```
 
@@ -66,27 +68,27 @@ const model = llamaCpp({
 
 You can customize the model instance with the following options:
 
-- **modelPath** _string_ (required)
+- **modelPath** *string* (required)
 
   Path to the GGUF model file.
 
-- **contextSize** _number_
+- **contextSize** *number*
 
   Maximum context size. Default: `2048`.
 
-- **gpuLayers** _number_
+- **gpuLayers** *number*
 
   Number of layers to offload to GPU. Default: `99` (all layers). Set to `0` to disable GPU.
 
-- **threads** _number_
+- **threads** *number*
 
   Number of CPU threads. Default: `4`.
 
-- **debug** _boolean_
+- **debug** *boolean*
 
   Enable verbose debug output from llama.cpp. Default: `false`.
 
-- **chatTemplate** _string_
+- **chatTemplate** *string*
 
   Chat template to use for formatting messages. Default: `"auto"` (uses the template embedded in the GGUF model file). Available templates include: `llama3`, `chatml`, `gemma`, `mistral-v1`, `mistral-v3`, `phi3`, `phi4`, `deepseek`, and more.
 
@@ -111,7 +113,7 @@ import { generateText } from 'ai';
 import { llamaCpp } from 'ai-sdk-llama-cpp';
 
 const model = llamaCpp({
-  modelPath: './models/llama-3.2-1b-instruct.Q4_K_M.gguf',
+  modelPath: './models/Llama-3.2-1B-Instruct-Q4_K_M.gguf',
 });
 
 try {
@@ -135,7 +137,7 @@ import { streamText } from 'ai';
 import { llamaCpp } from 'ai-sdk-llama-cpp';
 
 const model = llamaCpp({
-  modelPath: './models/llama-3.2-1b-instruct.Q4_K_M.gguf',
+  modelPath: './models/Llama-3.2-1B-Instruct-Q4_K_M.gguf',
 });
 
 try {
@@ -253,11 +255,9 @@ wget -P models/ https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/reso
 
 ## Resource Management
 
-<Note type="warning">
-  Always call `model.dispose()` when done to unload the model and free GPU/CPU
-  resources. This is especially important when loading multiple models to
-  prevent memory leaks.
-</Note>
+Always call `model.dispose()` when done to unload the model and free GPU/CPU
+resources. This is especially important when loading multiple models to
+prevent memory leaks.
 
 ```ts
 const model = llamaCpp({
@@ -283,68 +283,10 @@ try {
 - [npm Package](https://www.npmjs.com/package/ai-sdk-llama-cpp)
 - [llama.cpp](https://github.com/ggerganov/llama.cpp) - The underlying inference engine
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

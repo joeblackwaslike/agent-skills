@@ -1,10 +1,17 @@
 ---
+title: Hono
+description: Example of using the AI SDK in a Hono server.
+url: "https://ai-sdk.dev/cookbook/api-servers/hono"
+docs_index: /llms.txt
+tags:
+  - api servers
+  - streaming
 source: "https://ai-sdk.dev/cookbook/api-servers/hono.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "3370d008df94e89470c0704918aa7848764d34a0dcdeadd566026e1bb77eebe9"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "9fbf91d7028b5101431a9c04122efe9e8b7ae69ac1159b611cd92e32a18cd19b"
 ---
 
-# Hono
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 You can use the AI SDK in a [Hono](https://hono.dev/) server to generate and stream text and objects to the client.
 
@@ -16,10 +23,8 @@ The examples start a simple HTTP server that listens on port 8080. You can e.g. 
 curl -X POST http://localhost:8080
 ```
 
-<Note>
-  The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
-  set in the `AI_GATEWAY_API_KEY` environment variable.
-</Note>
+The examples use the Vercel AI Gateway. Ensure that your AI Gateway API key is
+set in the `AI_GATEWAY_API_KEY` environment variable.
 
 **Full example**: [github.com/vercel/ai/examples/hono](https://github.com/vercel/ai/tree/main/examples/hono)
 
@@ -27,7 +32,7 @@ curl -X POST http://localhost:8080
 
 You can use `createUIMessageStreamResponse` with `toUIMessageStream` to create a properly formatted streaming response.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import { serve } from '@hono/node-server';
 import {
   createUIMessageStreamResponse,
@@ -55,7 +60,7 @@ serve({ fetch: app.fetch, port: 8080 });
 
 You can use `createTextStreamResponse` with `toTextStream` to return a text stream response.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import { serve } from '@hono/node-server';
 import { createTextStreamResponse, streamText, toTextStream } from 'ai';
 import { Hono } from 'hono';
@@ -79,7 +84,7 @@ serve({ fetch: app.fetch, port: 8080 });
 
 You can use `createUIMessageStream` and `createUIMessageStreamResponse` to send custom data to the client.
 
-```ts filename='index.ts'
+```ts title='index.ts'
 import { serve } from '@hono/node-server';
 import {
   createUIMessageStream,
@@ -132,14 +137,10 @@ serve({ fetch: app.fetch, port: 8080 });
 
 - Streaming not working when [proxied](/docs/troubleshooting/streaming-not-working-when-proxied)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Node.js HTTP Server](/cookbook/api-servers/node-http-server)
-- [Express](/cookbook/api-servers/express)
-- [Hono](/cookbook/api-servers/hono)
-- [Fastify](/cookbook/api-servers/fastify)
-- [Nest.js](/cookbook/api-servers/nest)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

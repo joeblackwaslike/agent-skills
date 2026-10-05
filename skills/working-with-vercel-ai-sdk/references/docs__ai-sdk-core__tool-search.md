@@ -1,10 +1,14 @@
 ---
+title: Tool Search
+description: Let models discover tools on demand, with direct calling or cache-preserving code mode.
+url: "https://ai-sdk.dev/docs/ai-sdk-core/tool-search"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tool-search.md"
-fetched_at: "2026-09-21T09:43:58.833Z"
-sha256: "84f365deaee6f31d22861e6b21d7951116b587500368ac56874fcfea82ccf182"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "32c2e413332c487386883ecdd84cc7573e98ece88e237bdf06f4a9465a3db909"
 ---
 
-# Tool Search
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `toolSearch()` lets a model find the tools it needs without loading every tool's
 definition into its initial context. Register tools with `deferLoading: true`;
@@ -12,8 +16,9 @@ search matches their names and descriptions and makes them available on the
 **next model step**.
 
 Use it with `generateText`, `streamText`, `ToolLoopAgent`, or `WorkflowAgent` from
-`@ai-sdk/workflow`. The factory takes no arguments; the model supplies a search
-query. `WorkflowAgent` supports direct tool calling; the other APIs also support
+`@ai-sdk/workflow`. The model supplies a search query; the factory optionally
+accepts an application-defined `search` callback and a `maxResults` limit.
+`WorkflowAgent` supports direct tool calling; the other APIs also support
 cache-preserving code mode.
 
 ## Direct Tool Calling
@@ -34,7 +39,7 @@ const weather = tool({
 });
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { search: toolSearch(), weather },
   stopWhen: isStepCount(5),
   prompt: 'Will it rain in Bangalore tomorrow?',
@@ -55,7 +60,7 @@ Using the `weather` tool defined above:
 import { experimental_codeModeTool as codeModeTool } from '@ai-sdk/code-mode';
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     code: codeModeTool({ toolDiscovery: 'conversation' }),
     search: toolSearch(),
@@ -74,48 +79,53 @@ The model first runs `tools.search({ query: 'weather forecast' })`. On the next
 step, it receives the updated capability catalog and can call
 `tools.weather({ city: 'Bangalore' })`.
 
-In both modes, search loads up to five matches, respects `activeTools` and caller
-routing, and keeps discovered tools available for the rest of the generation.
+In both modes, search loads up to five matches by default, respects `activeTools`
+and caller routing, and keeps discovered tools available for the rest of the
+generation.
 MCP client tools work too: add `deferLoading: true` to the tools returned by
 `client.tools()`.
+
+Set `maxResults` to change the number of matching tools loaded per search:
+
+```ts
+const search = toolSearch({ maxResults: 10 });
+```
+
+`maxResults` must be a positive safe integer. A larger limit can load related
+tools in one search, but also adds more tool definitions to the model context.
+It does not change keyword matching or ranking.
+
+## Custom Search
+
+Provide a `search` callback when your application needs different matching or
+ranking. It receives the query and all eligible deferred tool names and resolved
+descriptions, and returns ranked names. It can be synchronous or asynchronous.
+
+```ts
+const search = toolSearch({
+  search: ({ query, tools }) => {
+    // Discover related Gmail actions together, in the application's preferred order.
+    const preferred = /\bgmail\b/i.test(query)
+      ? ['gmail_list_messages', 'gmail_get_message']
+      : [];
+    return preferred.filter(name => tools.some(tool => tool.name === name));
+  },
+});
+```
+
+The SDK filters unknown names and duplicates before keeping the first `maxResults`
+valid results (five by default). Tools excluded by `activeTools` or caller routing
+remain unavailable.
+Discovery still takes effect on the next model step. Without a callback, search
+keeps its default keyword matching and ranking.
 
 See the [`toolSearch()` reference](/docs/reference/ai-sdk-core/tool-search) for
 input, output, and matching details.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

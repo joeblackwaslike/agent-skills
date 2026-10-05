@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "fce861df4ca14c1fa4fb4a9d42897d63de45454f9063d039b24f9b888ef9150e"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "2f9de9b756185d1b0aa32dec3291313eab750b6b1503aef08d7e3815505c910b"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -44,7 +44,7 @@ your repository.
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
+- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=related) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastapi.graph.md](/docs/frameworks/backend/fastapi.graph.md?from=related&source_path=%2Fdocs%2Fframeworks%2Fbackend%2Ffastapi&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

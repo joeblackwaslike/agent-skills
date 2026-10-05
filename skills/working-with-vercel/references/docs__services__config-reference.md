@@ -15,8 +15,8 @@ related:
 summary: Options available for service configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/config-reference.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "625436bcdae2b400ed02ece6fda524cfaff021cc3e3c92a7f423118651da5f0a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "83e5918719918d3d2fca5f8285928ac76eb1fbff9fd475dd818a8bdf637d08f3"
 ---
 
 # Service configuration reference
@@ -36,8 +36,8 @@ A service is configured like any standalone Vercel project, using the same build
 - [Services](https://vercel.com/docs/build-output-api/services?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=related) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Project Configuration](https://vercel.com/docs/project-configuration?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=related) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=related) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 
 Full cross-link map for this page: [/docs/services/config-reference.graph.md](/docs/services/config-reference.graph.md?from=related&source_path=%2Fdocs%2Fservices%2Fconfig-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

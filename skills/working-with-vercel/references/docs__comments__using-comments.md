@@ -13,8 +13,8 @@ related:
 summary: This guide will help you get started with using Comments with your Vercel Preview Deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/using-comments.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7be2774a3a4317169524761a669b61d34abace93c8598f174a62beee34106415"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "a625b18f5094e2b10191929d2f442bcf85397af644c27597eb64770540ae4563"
 ---
 
 # Using Comments with Preview Deployments
@@ -51,17 +51,17 @@ Alternatively, select the **Comment** option in the toolbar menu. You can then s
 
 You can use `@` to mention team members and alert them to your comment. For example, you might want to request Jennifer's input by writing "Hey @Jennifer, how do you feel about this?"
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/comment-light.png`)
+![A comment using the @ symbol to mention someone.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/comment-light.png)
 
 ### Add emojis to a comment
 
 You can add emojis by entering `:` (the colon symbol) into your comment input box, then entering the name of the emoji. For example, add a smile by entering `:smile:`. As you enter the name of the emoji you want, suggestions will be offered in a popup modal above the input box. You can select one of the suggestions with your cursor.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/emojis-light.png`)
+![Emoji suggestions appear as you type.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/emojis-light.png)
 
 To add a reaction, select the emoji icon to the right of the name of the commenter whose comment you want to react to. You can then search for the emoji you want to react with.
 
-![Image](`/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/reaction-screenshot-light.png`)
+![A comment with reactions.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/reaction-screenshot-light.png)
 
 > **💡 Note:** Custom emoji from your Slack organization are supported when you integrate the
 > [Vercel app for Slack](/docs/comments/integrations#use-the-vercel-app-for-slack).

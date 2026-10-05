@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "316f62263e0c3f4ed8872086e91ef4cd760340504289db444f93bdc3cfdc312a"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "96294da46d92986ff4fb533c8dbd92d2f069f0ea5bbd0f15cda7d6420fc25ae4"
 ---
 
 # Using Web Analytics
@@ -39,10 +39,11 @@ To access Web Analytics:
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related)
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related)
+- [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related)
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 
 Full cross-link map for this page: [/docs/analytics/using-web-analytics.graph.md](/docs/analytics/using-web-analytics.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fusing-web-analytics&source_site=vercel-docs&relationship=graph)
@@ -66,7 +67,7 @@ Full cross-link map for this page: [/docs/analytics/using-web-analytics.graph.md
    - **Devices**: Distinction between mobile, tablet, and desktop devices.
    - **Operating System**: Your visitors' operating systems.
 
-![Image](https://vercel.com/front/docs/observability/page-panel-light.png)
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/observability/page-panel-light.png)
 
 ## Specifying a timeframe
 
@@ -94,7 +95,7 @@ The export will include up to 250 entries from the panel, not just the top entri
 2. Remove the `@vercel/analytics` package from your codebase and dependencies to prevent your app from sending analytics events to Vercel.
 3. If events have been collected, click on the ellipsis on the top-right of the **Web Analytics** page and select **Disable Web Analytics**. If no data has been collected yet then you will see an **Awaiting Data** popup. From here you can click the **Disable Web Analytics** button:
 
-![Image](`/docs-assets/static/docs/concepts/web-analytics/getting-started-light.png`)
+![Awaiting Web Analytics data popup.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/web-analytics/getting-started-light.png)
 
 
 ---

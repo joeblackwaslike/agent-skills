@@ -14,13 +14,13 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "61adbaeaf2d0cf8571bad6ae5628b042bbeb13b198e2aa819852fbd90eb7f523"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "ab2a76404049fd2e694bda3e7ad543635409a2b259db215aa597b016edac9695"
 ---
 
 # Client Uploads with Vercel Blob
 
-> **🔒 Permissions Required**: Vercel Blob
+> **Availability**: Vercel Blob is available on all plans
 
 In this guide, you'll learn how to do the following:
 
@@ -59,7 +59,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   </Code>
   <Code tab="yarn">
     ```bash
-    yarn i @vercel/blob
+    yarn add @vercel/blob
     ```
   </Code>
   <Code tab="npm">
@@ -69,7 +69,7 @@ Vercel Blob works with any frontend framework. First, install the package:
   </Code>
   <Code tab="bun">
     ```bash
-    bun i @vercel/blob
+    bun add @vercel/blob
     ```
   </Code>
 </CodeBlock>
@@ -459,7 +459,7 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
   import { handleUpload } from '@vercel/blob/client';
 
   export default async function handler(request, response) {
-    const body = await request.json();
+    const body = request.body;
 
     try {
       const jsonResponse = await handleUpload({

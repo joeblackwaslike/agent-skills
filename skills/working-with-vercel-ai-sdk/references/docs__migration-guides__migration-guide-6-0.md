@@ -1,18 +1,22 @@
 ---
+title: Migrate AI SDK 5.x to 6.0
+description: Learn how to upgrade AI SDK 5.x to 6.0.
+url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0.md"
-fetched_at: "2026-07-27T07:36:45.119Z"
-sha256: "d5fa8f7e27702058150f18a457ddf283dda2b03b5b7318bfd1f0567805703d8f"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "f09b277d4d1ada05f5dd27138b2aea7d56761ca1bd7ad5dacd7126ffa9d1d75a"
 ---
 
-# Migrate AI SDK 5.x to 6.0
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 ## Recommended Migration Process
 
 1. Backup your project. If you use a versioning control system, make sure all previous versions are committed.
-1. Upgrade to AI SDK 6.0.
-1. Follow the breaking changes guide below.
-1. Verify your project is working as expected.
-1. Commit your changes.
+2. Upgrade to AI SDK 6.0.
+3. Follow the breaking changes guide below.
+4. Verify your project is working as expected.
+5. Commit your changes.
 
 ## AI SDK 6.0 Package Versions
 
@@ -45,10 +49,8 @@ from the root of your project:
 npx @ai-sdk/codemod v6
 ```
 
-<Note>
-  There is also an `npx @ai-sdk/codemod upgrade` command, but it runs all
-  codemods from all versions (v4, v5, and v6). Use `v6` when upgrading from v5.
-</Note>
+There is also an `npx @ai-sdk/codemod upgrade` command, but it runs all
+codemods from all versions (v4, v5, and v6). Use `v6` when upgrading from v5.
 
 Individual codemods can be run by specifying the name of the codemod:
 
@@ -62,11 +64,9 @@ For example, to run a specific v6 codemod:
 npx @ai-sdk/codemod v6/rename-text-embedding-to-embedding src/
 ```
 
-<Note>
-  Codemods are intended as a tool to help you with the upgrade process. They may
-  not cover all of the changes you need to make. You may need to make additional
-  changes manually.
-</Note>
+Codemods are intended as a tool to help you with the upgrade process. They may
+not cover all of the changes you need to make. You may need to make additional
+changes manually.
 
 ## Codemod Table
 
@@ -90,12 +90,11 @@ The `Experimental_Agent` class has been replaced with the `ToolLoopAgent` class.
 1. The `system` parameter has been renamed to `instructions`
 2. The default `stopWhen` has changed from `isStepCount(1)` to `isStepCount(20)`
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { Experimental_Agent as Agent, isStepCount } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new Agent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   system: 'You are a helpful assistant.',
   tools: {
     // your tools here
@@ -108,12 +107,11 @@ const result = await agent.generate({
 });
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { ToolLoopAgent } from 'ai';
-__PROVIDER_IMPORT__;
 
 const agent = new ToolLoopAgent({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   instructions: 'You are a helpful assistant.',
   tools: {
     // your tools here
@@ -132,23 +130,21 @@ Learn more about [building agents](/docs/agents/building-agents).
 
 The deprecated `CoreMessage` type and related functions have been removed ([PR #10710](https://github.com/vercel/ai/pull/10710)). Replace `convertToCoreMessages` with `convertToModelMessages`.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { convertToCoreMessages, type CoreMessage } from 'ai';
 
 const coreMessages = convertToCoreMessages(messages); // CoreMessage[]
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { convertToModelMessages, type ModelMessage } from 'ai';
 
 const modelMessages = await convertToModelMessages(messages); // ModelMessage[]
 ```
 
-<Note>
-  Use the `rename-core-message-to-model-message` and
-  `rename-converttocoremessages-to-converttomodelmessages` codemods to
-  automatically update your codebase.
-</Note>
+Use the `rename-core-message-to-model-message` and
+`rename-converttocoremessages-to-converttomodelmessages` codemods to
+automatically update your codebase.
 
 ### `generateObject` and `streamObject` Deprecation
 
@@ -156,13 +152,12 @@ const modelMessages = await convertToModelMessages(messages); // ModelMessage[]
 They will be removed in a future version.
 Use `generateText` and `streamText` with an `output` setting instead.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { generateObject } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { object } = await generateObject({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -174,13 +169,12 @@ const { object } = await generateObject({
 });
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { generateText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { output } = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -198,13 +192,12 @@ const { output } = await generateText({
 
 For streaming structured data, replace `streamObject` with `streamText`:
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { streamObject } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { partialObjectStream } = streamObject({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   schema: z.object({
     recipe: z.object({
       name: z.string(),
@@ -220,13 +213,12 @@ for await (const partialObject of partialObjectStream) {
 }
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { streamText, Output } from 'ai';
-__PROVIDER_IMPORT__;
 import { z } from 'zod';
 
 const { partialOutputStream } = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   output: Output.object({
     schema: z.object({
       recipe: z.object({
@@ -252,22 +244,20 @@ Learn more about [generating structured data](/docs/ai-sdk-core/generating-struc
 
 `convertToModelMessages()` is async in AI SDK 6 to support async `Tool.toModelOutput()`.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { convertToModelMessages } from 'ai';
 
 const modelMessages = convertToModelMessages(uiMessages);
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { convertToModelMessages } from 'ai';
 
 const modelMessages = await convertToModelMessages(uiMessages);
 ```
 
-<Note>
-  Use the `add-await-converttomodelmessages` codemod to automatically update
-  your codebase.
-</Note>
+Use the `add-await-converttomodelmessages` codemod to automatically update
+your codebase.
 
 ### `Tool.toModelOutput` changes
 
@@ -275,7 +265,7 @@ const modelMessages = await convertToModelMessages(uiMessages);
 
 In AI SDK 5, the `output` was the arguments.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { tool } from 'ai';
 
 const someTool = tool({
@@ -286,7 +276,7 @@ const someTool = tool({
 });
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { tool } from 'ai';
 
 const someTool = tool({
@@ -297,10 +287,8 @@ const someTool = tool({
 });
 ```
 
-<Note>
-  Use the `wrap-tomodeloutput-parameter` codemod to automatically update your
-  codebase.
-</Note>
+Use the `wrap-tomodeloutput-parameter` codemod to automatically update your
+codebase.
 
 ### Remove `name` from Function Tool Definitions
 
@@ -313,7 +301,7 @@ tool definition.
 Remove `name` from `tool()` and use the intended name as the key in the `tools`
 object:
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -326,7 +314,7 @@ const tools = {
 };
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { tool } from 'ai';
 import { z } from 'zod';
 
@@ -350,23 +338,20 @@ and `reasoningTokens` with `outputTokenDetails.reasoningTokens`.
 The `ToolCallOptions` type has been renamed to `ToolExecutionOptions`
 and is now deprecated.
 
-<Note>
-  Use the `rename-tool-call-options-to-tool-execution-options` codemod to
-  automatically update your codebase.
-</Note>
+Use the `rename-tool-call-options-to-tool-execution-options` codemod to
+automatically update your codebase.
 
 ### Per-Tool Strict Mode
 
 Strict mode for tools is now controlled by setting `strict` on each tool ([PR #10817](https://github.com/vercel/ai/pull/10817)). This enables fine-grained control over strict tool calls, which is important since strict mode depends on the specific tool input schema.
 
-```tsx filename="AI SDK 5"
-__PROVIDER_IMPORT__;
+```tsx title="AI SDK 5"
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
 // Tool strict mode was controlled by strictJsonSchema
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     calculator: tool({
       description: 'A simple calculator',
@@ -387,13 +372,12 @@ const result = streamText({
 });
 ```
 
-```tsx filename="AI SDK 6"
-__PROVIDER_IMPORT__;
+```tsx title="AI SDK 6"
 import { streamText, tool } from 'ai';
 import { z } from 'zod';
 
 const result = streamText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: {
     calculator: tool({
       description: 'A simple calculator',
@@ -418,7 +402,7 @@ AI SDK 6 introduces more flexible tool output and result content support ([PR #9
 
 The `system` parameter in the `ToolCallRepairFunction` type now accepts `SystemModelMessage` in addition to `string` ([PR #10635](https://github.com/vercel/ai/pull/10635)). This allows for more flexible system message configuration, including provider-specific options like caching.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import type { ToolCallRepairFunction } from 'ai';
 
 const repairToolCall: ToolCallRepairFunction<MyTools> = async ({
@@ -433,7 +417,7 @@ const repairToolCall: ToolCallRepairFunction<MyTools> = async ({
 };
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import type { ToolCallRepairFunction, SystemModelMessage } from 'ai';
 
 const repairToolCall: ToolCallRepairFunction<MyTools> = async ({
@@ -454,7 +438,7 @@ const repairToolCall: ToolCallRepairFunction<MyTools> = async ({
 
 The `textEmbeddingModel` and `textEmbedding` methods on providers have been renamed to `embeddingModel` and `embedding` respectively. Additionally, generics have been removed from `EmbeddingModel`, `embed`, and `embedMany` ([PR #10592](https://github.com/vercel/ai/pull/10592)).
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
@@ -470,7 +454,7 @@ const { embedding } = await embed({
 });
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { openai } from '@ai-sdk/openai';
 import { embed } from 'ai';
 
@@ -486,10 +470,8 @@ const { embedding } = await embed({
 });
 ```
 
-<Note>
-  Use the `rename-text-embedding-to-embedding` codemod to automatically update
-  your codebase.
-</Note>
+Use the `rename-text-embedding-to-embedding` codemod to automatically update
+your codebase.
 
 ### Warning Logger
 
@@ -505,7 +487,7 @@ export AI_SDK_LOG_WARNINGS=false
 
 Separate warning types for each generation function have been consolidated into a single `Warning` type exported from the `ai` package ([PR #10631](https://github.com/vercel/ai/pull/10631)).
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 // Separate warning types for each generation function
 import type {
   CallWarning,
@@ -515,7 +497,7 @@ import type {
 } from 'ai';
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 // Single Warning type for all generation functions
 import type { Warning } from 'ai';
 ```
@@ -532,7 +514,7 @@ AI SDK 6 adds `approval-requested`, `approval-responded`, and `output-denied`
 to the tool UI part `state` union. Update exhaustive `switch` statements and
 other state handling to cover the three approval states.
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 switch (part.state) {
   case 'input-streaming':
     return 'Loading input';
@@ -562,7 +544,7 @@ The tool UI part helper functions have been renamed to better reflect their purp
 
 The `isToolUIPart` function has been renamed to `isStaticToolUIPart` to clarify that it checks for static tool parts only.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { isToolUIPart } from 'ai';
 
 // Check if a part is a tool UI part
@@ -571,7 +553,7 @@ if (isToolUIPart(part)) {
 }
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { isStaticToolUIPart } from 'ai';
 
 // Check if a part is a static tool UI part
@@ -584,7 +566,7 @@ if (isStaticToolUIPart(part)) {
 
 The `isToolOrDynamicToolUIPart` function has been renamed to `isToolUIPart`. The old name is deprecated but still available.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { isToolOrDynamicToolUIPart } from 'ai';
 
 // Check if a part is either a static or dynamic tool UI part
@@ -593,7 +575,7 @@ if (isToolOrDynamicToolUIPart(part)) {
 }
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { isToolUIPart } from 'ai';
 
 // Check if a part is either a static or dynamic tool UI part
@@ -606,14 +588,14 @@ if (isToolUIPart(part)) {
 
 The `getToolName` function has been renamed to `getStaticToolName` to clarify that it returns the tool name from static tool parts only.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { getToolName } from 'ai';
 
 // Get the tool name from a tool part
 const name = getToolName(toolPart);
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { getStaticToolName } from 'ai';
 
 // Get the tool name from a static tool part
@@ -624,14 +606,14 @@ const name = getStaticToolName(toolPart);
 
 The `getToolOrDynamicToolName` function has been renamed to `getToolName`. The old name is deprecated but still available.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { getToolOrDynamicToolName } from 'ai';
 
 // Get the tool name from either a static or dynamic tool part
 const name = getToolOrDynamicToolName(toolPart);
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { getToolName } from 'ai';
 
 // Get the tool name from either a static or dynamic tool part
@@ -648,7 +630,7 @@ The `strictJsonSchema` setting for JSON outputs and tool calls is enabled by def
 
 However, strict mode is stricter about schema requirements. If you receive schema rejection errors, adjust your schema (for example, use `null` instead of `undefined`) or disable strict mode.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 import { z } from 'zod';
@@ -663,7 +645,7 @@ const result = await generateObject({
 });
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { openai } from '@ai-sdk/openai';
 import { generateObject } from 'ai';
 import { z } from 'zod';
@@ -702,14 +684,14 @@ The `structuredOutputs` provider option has been removed from chat models ([PR #
 
 The `@ai-sdk/azure` provider now uses the Responses API by default when calling `azure()` ([PR #9868](https://github.com/vercel/ai/pull/9868)). To use the previous Chat Completions API behavior, use `azure.chat()` instead.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { azure } from '@ai-sdk/azure';
 
 // Used Chat Completions API
 const model = azure('gpt-4o');
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { azure } from '@ai-sdk/azure';
 
 // Now uses Responses API by default
@@ -722,17 +704,15 @@ const chatModel = azure.chat('gpt-4o');
 const responsesModel = azure.responses('gpt-4o');
 ```
 
-<Note>
-  The Responses and Chat Completions APIs have different behavior and defaults.
-  If you depend on the Chat Completions API, switch your model instance to
-  `azure.chat()` and audit your configuration.
-</Note>
+The Responses and Chat Completions APIs have different behavior and defaults.
+If you depend on the Chat Completions API, switch your model instance to
+`azure.chat()` and audit your configuration.
 
 #### Responses API `providerMetadata` and `providerOptions` Key
 
 For the **Responses API**, the `@ai-sdk/azure` provider now uses `azure` as the key for `providerMetadata` and `providerOptions` instead of `openai`. The `openai` key is still supported for `providerOptions` input, but resulting `providerMetadata` output now uses `azure`.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { azure } from '@ai-sdk/azure';
 import { generateText } from 'ai';
 
@@ -751,7 +731,7 @@ const result = await generateText({
 console.log(result.providerMetadata?.openai?.responseId);
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { azure } from '@ai-sdk/azure';
 import { generateText } from 'ai';
 
@@ -783,7 +763,7 @@ The available modes are:
 - `'jsonTool'`: Use a special JSON tool to specify the structured output format
 - `'auto'` (default): Use `'outputFormat'` when supported by the model, otherwise fall back to `'jsonTool'`
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateObject } from 'ai';
 import { z } from 'zod';
@@ -810,7 +790,7 @@ const result = await generateObject({
 
 The `@ai-sdk/google-vertex` provider now uses `vertex` as the key for `providerMetadata` and `providerOptions` instead of `google`. The `google` key is still supported for `providerOptions` input, but resulting `providerMetadata` output now uses `vertex`.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import { vertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
@@ -830,7 +810,7 @@ const result = await generateText({
 console.log(result.providerMetadata?.google?.safetyRatings);
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import { vertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
@@ -850,10 +830,8 @@ const result = await generateText({
 console.log(result.providerMetadata?.vertex?.safetyRatings);
 ```
 
-<Note>
-  Use the `rename-vertex-provider-metadata-key` codemod to automatically update
-  your codebase.
-</Note>
+Use the `rename-vertex-provider-metadata-key` codemod to automatically update
+your codebase.
 
 ## `ai/test`
 
@@ -861,7 +839,7 @@ console.log(result.providerMetadata?.vertex?.safetyRatings);
 
 V2 mock classes have been removed from the `ai/test` module. Use the new V3 mock classes instead for testing.
 
-```tsx filename="AI SDK 5"
+```tsx title="AI SDK 5"
 import {
   MockEmbeddingModelV2,
   MockImageModelV2,
@@ -872,7 +850,7 @@ import {
 } from 'ai/test';
 ```
 
-```tsx filename="AI SDK 6"
+```tsx title="AI SDK 6"
 import {
   MockEmbeddingModelV3,
   MockImageModelV3,
@@ -883,25 +861,12 @@ import {
 } from 'ai/test';
 ```
 
-<Note>
-  Use the `rename-mock-v2-to-v3` codemod to automatically update your codebase.
-</Note>
+Use the `rename-mock-v2-to-v3` codemod to automatically update your codebase.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Versioning](/docs/migration-guides/versioning)
-- [Migrate AI SDK 6.x to 7.0](/docs/migration-guides/migration-guide-7-0)
-- [Migrate AI SDK 5.x to 6.0](/docs/migration-guides/migration-guide-6-0)
-- [Migrate Your Data to AI SDK 5.0](/docs/migration-guides/migration-guide-5-0-data)
-- [Migrate AI SDK 4.x to 5.0](/docs/migration-guides/migration-guide-5-0)
-- [Migrate AI SDK 4.1 to 4.2](/docs/migration-guides/migration-guide-4-2)
-- [Migrate AI SDK 4.0 to 4.1](/docs/migration-guides/migration-guide-4-1)
-- [Migrate AI SDK 3.4 to 4.0](/docs/migration-guides/migration-guide-4-0)
-- [Migrate AI SDK 3.3 to 3.4](/docs/migration-guides/migration-guide-3-4)
-- [Migrate AI SDK 3.2 to 3.3](/docs/migration-guides/migration-guide-3-3)
-- [Migrate AI SDK 3.1 to 3.2](/docs/migration-guides/migration-guide-3-2)
-- [Migrate AI SDK 3.0 to 3.1](/docs/migration-guides/migration-guide-3-1)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

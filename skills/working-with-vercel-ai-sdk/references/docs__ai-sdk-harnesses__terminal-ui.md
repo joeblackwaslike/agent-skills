@@ -1,10 +1,14 @@
 ---
+title: Terminal UI
+description: "Use @ai-sdk/tui with HarnessAgent."
+url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/terminal-ui"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/terminal-ui.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "44891df4534da0ef97d70897a735440e7e637b612bb5832cef8c7d0298eb7080"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "c7c6ffc26cbdd3f52d86203d0bcdc32d79d211d68df902fc824913c06d10b8a8"
 ---
 
-# Harnesses with Terminal UI
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `@ai-sdk/tui` can render harness streams, tool calls, reasoning sections, and
 approval prompts in a terminal. Because `HarnessAgent` requires a session on
@@ -13,11 +17,11 @@ session for the lifetime of the terminal UI.
 
 ## Installation
 
-<InstallPackages packages="@ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/tui`, `@ai-sdk/harness`, `@ai-sdk/harness-codex`, `@ai-sdk/sandbox-vercel`
 
 ## Example
 
-```ts filename='tui.ts'
+```ts title='tui.ts'
 import { HarnessAgent, type HarnessAgentSession } from '@ai-sdk/harness/agent';
 import { codex } from '@ai-sdk/harness-codex';
 import { createVercelNetworkSandboxSession } from '@ai-sdk/sandbox-vercel';
@@ -84,17 +88,10 @@ state from `session.detach()` or `session.stop()` if you need to resume later.
 - [runAgentTUI API Reference](/docs/reference/ai-sdk-tui/run-agent-tui)
 - [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-harnesses/overview)
-- [HarnessAgent](/docs/ai-sdk-harnesses/harness-agent)
-- [Tools](/docs/ai-sdk-harnesses/tools)
-- [Skills](/docs/ai-sdk-harnesses/skills)
-- [Harness Adapters](/docs/ai-sdk-harnesses/harness-adapters)
-- [Workflow Utilities](/docs/ai-sdk-harnesses/workflow-utilities)
-- [UI](/docs/ai-sdk-harnesses/ui)
-- [Terminal UI](/docs/ai-sdk-harnesses/terminal-ui)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

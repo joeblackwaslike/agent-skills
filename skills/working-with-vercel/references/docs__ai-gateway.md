@@ -16,8 +16,8 @@ related:
 summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "b461538884da0ab9816ff6c60b24f77543824d5eae385191fed06600af8ffed8"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "748be90db84133e6740b40164c2f954fe3bde740498f4184f1bee993cf6c4a57"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -32,8 +32,9 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
 - [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
@@ -43,7 +44,6 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [Auto-recharge available in AI Gateway](https://vercel.com/changelog/auto-recharge-available-in-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [Claude Opus 4.1 is now supported in Vercel AI Gateway](https://vercel.com/changelog/claude-4-1-opus-is-now-supported-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 
 Full cross-link map for this page: [/docs/ai-gateway.graph.md](/docs/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -78,7 +78,7 @@ curl https://ai-gateway.vercel.sh/v1/chat/completions \
   }'
 ```
 
-> **🔒 Permissions Required**: AI Gateway
+> **Availability**: AI Gateway is available on all plans
 
 ## Use AI Gateway across modalities and clients
 

@@ -17,13 +17,13 @@ related:
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "5b4177c557771abc15c8715e98f7c8e0d73cebe96a17245105dbadce492c36fa"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "325aea5a834512874a0fd67d7970ae4f7bde6801c1d60b4d50ae9f3e0bb507b6"
 ---
 
 # Restrict deployment access by IP address
 
-> **🔒 Permissions Required**: Trusted IPs
+> **Availability**: Trusted IPs are available on Enterprise plans
 
 With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips#manage-trusted-ips) at the level of your [project](/docs/project-configuration/project-settings), only visitors from an allowed IP address can access your deployment. The deployment URL will return `404` [No Deployment Found](/docs/errors#404:-deployment_not_found) for all other requests. Trusted IPs is configured by specifying a list of IPv4 addresses and IPv4 CIDR ranges.
 
@@ -37,7 +37,7 @@ With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deploy
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Learn about using self-hosted or reverse proxies with Vercel deployments.
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs edge infrastructure layer, covering framework s
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Trusted IPs for Deployment Protection is now Generally Available](https://vercel.com/changelog/trusted-ips-is-now-generally-available-for-enterprise-customers?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related)
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related)
 - [OPTIONS Allowlist](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist?from=related&source_path=%2Fdocs%2Fdeployment-protection%2Fmethods-to-protect-deployments%2Ftrusted-ips&source_site=vercel-docs&relationship=related) — Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
@@ -49,7 +49,7 @@ Full cross-link map for this page: [/docs/deployment-protection/methods-to-prote
 
 Trusted IPs works well if you access Vercel deployments through a specific IP address. For example, you can limit preview deployment access to your VPN. You can also enable Trusted IPs in production to restrict incoming access to only requests through your external proxy.
 
-![Image](https://vercel.com/front/docs/security/trusted-ips-dash-light.png)
+![Enabling Trusted IPs.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/trusted-ips-dash-light.png)
 
 ## What to know before enabling Trusted IPs
 
@@ -115,16 +115,21 @@ You can manage Trusted IPs using the Vercel API endpoint to [update an existing 
 | `addresses[].note`  | string | No       | Optional note about the address                                                                                                                                                                          |
 | `protectionMode`    | string | Yes      | Set to `additional` so the IP is required along with other enabled protection methods (recommended)                                                                                                      |
 
-```typescript
-// enable / update trusted ips
+To enable or update Trusted IPs, send the `trustedIps` object:
+
+```json
 {
   "trustedIps": {
-      "deploymentType": "all" | "preview" | "production" | "prod_deployment_urls_and_all_previews",
-      "addresses": { "value": "<value>"; "note": "<note>" | undefined }[],
-      "protectionMode": "additional"
+    "deploymentType": "all",
+    "addresses": [{ "value": "203.0.113.0/24", "note": "Office network" }],
+    "protectionMode": "additional"
   }
 }
-// disable trusted ips
+```
+
+To disable Trusted IPs, set `trustedIps` to `null`:
+
+```json
 {
   "trustedIps": null
 }

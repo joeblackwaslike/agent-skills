@@ -16,13 +16,13 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "2b1ff730de509ada3426f310d7467f568c3d749b372eb341bb302c1b7c424e13"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "47923d265be540685ad32234b8995b6118f8bd5cbbc08de4027193e8122d070d"
 ---
 
 # Tracking custom events
 
-> **🔒 Permissions Required**: Custom Events
+> **Availability**: Custom Events are available on Enterprise and Pro plans
 
 Vercel Web Analytics allows you to track custom events in your application using the `track()` function.
 This is useful for tracking user interactions, such as button clicks, form submissions, or purchases.
@@ -37,11 +37,11 @@ This is useful for tracking user interactions, such as button clicks, form submi
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Custom events now available for Web Analytics](https://vercel.com/changelog/custom-events-now-available-for-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related)
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -79,12 +79,12 @@ To track an event:
       (window.vaq = window.vaq || []).push(arguments);
     };
 </script>
-{/* Place it above this script tag when already added */}
+<!-- Place it above this script tag when already added -->
 <script defer src="/<unique-path>/script.js"></script>
 ```
 
 2. In most cases you will want to track an event when a user performs an action, such as clicking a button or submitting a form, so you should use this on the button handler. Send an event with the name of the event you want to track as the first argument. You can also send [custom data](#tracking-an-event-with-custom-data) by using the `data` property with key-value pairs as the second argument:
-   ```html filename="index.html"
+   ```js
    va('event', { name: 'Signup' });
    ```
    For example, if you have a button that says **Sign Up**, you can track an event when the user clicks the button:

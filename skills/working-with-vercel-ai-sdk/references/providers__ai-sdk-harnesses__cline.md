@@ -1,10 +1,14 @@
 ---
+title: Cline
+description: Learn how to use the Cline harness adapter.
+url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "1d4f2cd4d0a5ef5577c33405dd8d22dce47d8db21586ad76f7b8ad2df5d0d00c"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "243da0c49e04231b4959484d54e8e748405b6d3d6715407201889c0a502aacb0"
 ---
 
-# Cline Harness
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Cline harness adapter connects `HarnessAgent` to the
 [Cline SDK](https://docs.cline.bot/sdk/overview) agent runtime
@@ -12,14 +16,12 @@ The Cline harness adapter connects `HarnessAgent` to the
 — no bridge — while its built-in tools execute against the session sandbox,
 so the workspace the model reasons about lives entirely inside the sandbox.
 
-<Note>
-  Harness packages are **experimental**. Expect breaking changes between
-  releases as this early API gets further refined.
-</Note>
+Harness packages are **experimental**. Expect breaking changes between
+releases as this early API gets further refined.
 
 ## Setup
 
-<InstallPackages packages="@ai-sdk/harness @ai-sdk/harness-cline @ai-sdk/sandbox-vercel" />
+**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-cline`, `@ai-sdk/sandbox-vercel`
 
 The Cline runtime has no bootstrap step: nothing is installed inside the
 sandbox when a session starts.
@@ -214,20 +216,10 @@ runtime and throws `HarnessCapabilityUnsupportedError`.
 - [Harness tools](/docs/ai-sdk-harnesses/tools)
 - [Harness adapters](/docs/ai-sdk-harnesses/harness-adapters)
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Claude Code](/providers/ai-sdk-harnesses/claude-code)
-- [Codex](/providers/ai-sdk-harnesses/codex)
-- [Pi](/providers/ai-sdk-harnesses/pi)
-- [OpenCode](/providers/ai-sdk-harnesses/opencode)
-- [Deep Agents](/providers/ai-sdk-harnesses/deepagents)
-- [Agent Client Protocol](/providers/ai-sdk-harnesses/acp)
-- [Grok Build](/providers/ai-sdk-harnesses/grok-build)
-- [Cline](/providers/ai-sdk-harnesses/cline)
-- [Cursor](/providers/ai-sdk-harnesses/cursor)
-- [fx](/providers/ai-sdk-harnesses/fx)
-- [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

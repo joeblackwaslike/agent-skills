@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on your static website without...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/formspree.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a48a89e2e05747296e946e66da84a762d6bf417438d4e9d845c21db90a52b526"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "bfcc4aa211e12a3568e8c3e0e35214520d6c684352067adf87a11b8816d66446"
 ---
 
 # Vercel Formspree Integration
@@ -28,6 +28,8 @@ Formspree is a form backend platform that handles form submissions on static web
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploying React Forms Using Formspree with Vercel](https://vercel.com/kb/guide/deploying-react-forms-using-formspree-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Create and deploy a React form with the help of Formspree and Vercel.
+- [Using a Headless CMS with Vercel](https://vercel.com/kb/guide/using-a-headless-cms-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn best practices for using databases in a serverless environment with Vercel
+- [How to Integrate Next.js with Prismic's Headless CMS](https://vercel.com/kb/guide/how-to-integrate-nextjs-with-prismic?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to connect Next.js with Prismic's CMS and deploy the integrated website to Vercel
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift?from=related&source_path=%2Fdocs%2Fintegrations%2Fcms%2Fformspree&source_site=vercel-docs&relationship=related) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
@@ -46,22 +48,22 @@ To get started with Formspree on Vercel, follow the steps below to install the i
   <CodeBlock>
     <Code tab="pnpm">
       ```bash
-      pnpm i vercel
+      pnpm i -g vercel@latest
       ```
     </Code>
     <Code tab="yarn">
       ```bash
-      yarn i vercel
+      yarn global add vercel@latest
       ```
     </Code>
     <Code tab="npm">
       ```bash
-      npm i vercel
+      npm i -g vercel@latest
       ```
     </Code>
     <Code tab="bun">
       ```bash
-      bun i vercel
+      bun add -g vercel@latest
       ```
     </Code>
   </CodeBlock>

@@ -13,8 +13,8 @@ related:
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "c2d739cfcc79f4548e1645c5a2b97a6b39739172ac6bf6bd99aea76f1ad8fd68"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "96923348697d5b69b2eba732be0e18fe44454828ff31cfd69ef8cf874df81e7d"
 ---
 
 # Rolling out a new feature
@@ -30,12 +30,13 @@ This workflow creates a Boolean feature flag, adds the entity context needed for
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=related) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/roll-out-feature.graph.md](/docs/flags/vercel-flags/cli/roll-out-feature.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fcli%2Froll-out-feature&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

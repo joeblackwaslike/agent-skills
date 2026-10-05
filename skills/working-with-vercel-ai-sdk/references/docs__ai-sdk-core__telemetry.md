@@ -1,10 +1,16 @@
 ---
+title: Telemetry
+description: Using OpenTelemetry with AI SDK Core
+url: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-09-28T10:43:29.656Z"
-sha256: "f35f0ac750cc7231f272f2fc6a54ea1beea01c41d2e5b94fa8c6ca28aba2fa54"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "4b74fd7602f65312ba36ee988c7bf3244f811590cb46f2d938aeac1d6ec1502b"
 ---
 
-# Telemetry
+> For an index of all documentation, see [/llms.txt](/llms.txt).
+
+<span id="telemetry" />
 
 The AI SDK uses [OpenTelemetry](https://opentelemetry.io/) to collect telemetry data.
 OpenTelemetry is an open-source observability framework designed to provide
@@ -34,7 +40,7 @@ registerTelemetry(new OpenTelemetry());
 
 For Next.js applications, create an `instrumentation.ts` file in your project root and register the AI SDK telemetry integration alongside your OpenTelemetry provider setup:
 
-```ts filename="instrumentation.ts"
+```ts title="instrumentation.ts"
 import { registerOTel } from '@vercel/otel';
 import { registerTelemetry } from 'ai';
 import { OpenTelemetry } from '@ai-sdk/otel';
@@ -54,12 +60,15 @@ For Node.js applications (without Next.js), register the integration at the top 
 
 ### Step 2: Enabling Telemetry
 
-Once a telemetry integration is registered, all AI SDK calls emit telemetry events by default.
+Once a telemetry integration is registered, supported AI SDK calls emit
+telemetry events by default. This includes text and object generation,
+embeddings, reranking, speech generation, and both non-streaming and streaming
+transcription.
 You can still pass `telemetry` to attach metadata (like `functionId`) or to opt out of a specific call:
 
-```ts highlight="4-6"
+```ts {4-6}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a short story about a cat.',
   telemetry: {
     functionId: `story-agent`,
@@ -72,13 +81,41 @@ By default, both inputs and outputs are recorded. You can disable them by settin
 Disabling the recording of inputs and outputs can be useful for privacy, data transfer, and performance reasons.
 You might for example want to disable recording inputs if they contain sensitive information.
 
+For `generateSpeech`, input telemetry contains the source text and output
+telemetry contains the generated audio byte length, media type, and format.
+For `transcribe` and `experimental_streamTranscribe`, telemetry contains the
+input audio byte length and media type plus the output transcript. Raw audio is
+never included in telemetry events. Streaming transcription reports its final
+byte length when the audio stream has been consumed and the transcription
+finishes.
+
+Custom integrations receive stable `generateSpeech` and `transcribe`
+operations through `onStart` and `onEnd`. To keep the experimental API isolated,
+`experimental_streamTranscribe` uses
+`experimental_onStreamTranscriptionStart` and
+`experimental_onStreamTranscriptionEnd`; all three operations report failures
+through `onError`.
+
+An integration that wraps or delegates to another integration must explicitly
+forward the experimental streaming transcription callbacks. Forwarding only
+the stable `onStart` and `onEnd` callbacks does not observe
+`experimental_streamTranscribe`.
+
+The built-in OpenTelemetry integrations record numeric provider usage by
+default, preserving each reported unit. The modern integration uses attributes
+such as `gen_ai.usage.characters`, `gen_ai.usage.seconds`, and
+`gen_ai.usage.input_tokens`; `LegacyOpenTelemetry` uses the corresponding
+`ai.usage.*` attributes. The provider-native usage object remains available to
+callbacks, and can also be included as the supplemental `ai.response.usage`
+attribute by enabling `usage: true`.
+
 ### Opting out
 
 Telemetry is opt-out. To disable telemetry for a specific call, set `isEnabled: false`:
 
 ```ts
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a short story about a cat.',
   telemetry: { isEnabled: false },
 });
@@ -93,9 +130,9 @@ and `runtimeContext` to include additional information in the telemetry data.
 For the broader context model, see
 [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context).
 
-```ts highlight="4-10"
+```ts {4-10}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a short story about a cat.',
   runtimeContext: {
     userId: 'user_123',
@@ -111,9 +148,9 @@ const result = await generateText({
 
 `runtimeContext` can contain values that are useful inside your application but should not be sent to telemetry providers, such as user identifiers, tenant IDs, or credentials. Use `telemetry.includeRuntimeContext` to mark the top-level `runtimeContext` properties that should be included in telemetry:
 
-```ts highlight="8-10"
+```ts {8-10}
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   prompt: 'Write a short story about a cat.',
   runtimeContext: {
     userId: 'user_123',
@@ -129,18 +166,16 @@ const result = await generateText({
 
 In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, `ToolLoopAgent`, `embed`, `embedMany`, `rerank`, and `experimental_evaluate`.
 
-<Note>
-  `telemetry.includeRuntimeContext` only filters telemetry integrations,
-  including OpenTelemetry integrations. Lifecycle callbacks and returned results
-  still receive the full `runtimeContext`.
-</Note>
+`telemetry.includeRuntimeContext` only filters telemetry integrations,
+including OpenTelemetry integrations. Lifecycle callbacks and returned results
+still receive the full `runtimeContext`.
 
 ### Tool context
 
 Tool-specific context can also contain values that are useful during execution but should not be sent to telemetry providers, such as API keys or access tokens.
 Use `telemetry.includeToolsContext` to include selected top-level properties from a tool's `context` in telemetry:
 
-```ts highlight="16-20,23-28"
+```ts {16-20,23-28}
 const weatherTool = tool({
   inputSchema: z.object({
     location: z.string(),
@@ -154,7 +189,7 @@ const weatherTool = tool({
 });
 
 const result = await generateText({
-  model: __MODEL__,
+  model: "anthropic/claude-sonnet-5.5",
   tools: { weather: weatherTool },
   toolsContext: {
     weather: {
@@ -176,19 +211,17 @@ const result = await generateText({
 In this example, telemetry integrations receive `toolsContext.weather` and tool execution telemetry event `toolContext` as `{ defaultUnit: 'fahrenheit' }`.
 Properties set to `false` or omitted are excluded. If `telemetry.includeToolsContext` is omitted, no tool context properties are included. `telemetry.includeToolsContext` is supported by `generateText`, `streamText`, and `ToolLoopAgent`.
 
-<Note>
-  `telemetry.includeToolsContext` only filters telemetry integrations, including
-  OpenTelemetry integrations. Tool execution, lifecycle callbacks, and returned
-  results still receive the full tool context. See [Runtime and Tool
-  Context](/docs/ai-sdk-core/runtime-and-tool-context) for the difference
-  between tool execution context and telemetry event context.
-</Note>
+`telemetry.includeToolsContext` only filters telemetry integrations, including
+OpenTelemetry integrations. Tool execution, lifecycle callbacks, and returned
+results still receive the full tool context. See [Runtime and Tool
+Context](/docs/ai-sdk-core/runtime-and-tool-context) for the difference
+between tool execution context and telemetry event context.
 
 ## Custom Tracer
 
 If you want your traces to use a `TracerProvider` other than the one provided by the `@opentelemetry/api` singleton, pass a custom `Tracer` to the `OpenTelemetry` constructor:
 
-```ts highlight="6-8"
+```ts {6-8}
 import { registerTelemetry } from 'ai';
 import { OpenTelemetry } from '@ai-sdk/otel';
 
@@ -220,18 +253,18 @@ registerTelemetry(new OpenTelemetry());
 You can also register multiple integrations in a single call by passing them as additional arguments. They all receive the same lifecycle events:
 
 ```ts
-import { registerTelemetryIntegration } from 'ai';
+import { registerTelemetry } from 'ai';
 import { OpenTelemetry } from '@ai-sdk/otel';
 import { DevToolsTelemetry } from '@ai-sdk/devtools';
 
-registerTelemetryIntegration(new OpenTelemetry(), DevToolsTelemetry());
+registerTelemetry(new OpenTelemetry(), DevToolsTelemetry());
 ```
 
 ### Per-call integrations
 
 You can also pass one or more integrations to individual `generateText` or `streamText` calls. When per-call integrations are provided, they replace the globally registered integrations for that call:
 
-```ts highlight="6-8"
+```ts {6-8}
 import { streamText } from 'ai';
 import { DevToolsTelemetry } from '@ai-sdk/devtools';
 
@@ -324,6 +357,10 @@ class MyIntegration implements Telemetry {
   async onAbort(event) {
     console.log('Stream aborted after', event.steps.length, 'finished steps');
   }
+
+  async onError(event) {
+    console.error('Generation failed:', event.callId, event.error);
+  }
 }
 
 export function myIntegration(): Telemetry {
@@ -333,94 +370,22 @@ export function myIntegration(): Telemetry {
 
 ### Available lifecycle methods
 
-<PropertiesTable
-  content={[
-    {
-      name: 'onStart',
-      type: '(event: GenerateTextStartEvent) => void | PromiseLike<void>',
-      description:
-        'Called when the generation operation begins, before any LLM calls.',
-    },
-    {
-      name: 'onStepStart',
-      type: '(event: GenerateTextStepStartEvent) => void | PromiseLike<void>',
-      description:
-        'Called when a step (LLM call) begins, before the provider is called.',
-    },
-    {
-      name: 'onLanguageModelCallStart',
-      type: '(event: LanguageModelCallStartEvent) => void | PromiseLike<void>',
-      description:
-        'Called immediately before the provider model call begins. Useful for model-only spans or logging.',
-    },
-    {
-      name: 'onLanguageModelCallEnd',
-      type: '(event: LanguageModelCallEndEvent) => void | PromiseLike<void>',
-      description:
-        'Called after the model response has been normalized and parsed, but before any client-side tool execution begins. Includes provider-specific metadata when available.',
-    },
-    {
-      name: 'onToolExecutionStart',
-      type: '(event: ToolExecutionStartEvent) => void | PromiseLike<void>',
-      description: "Called when a tool's execute function is about to run.",
-    },
-    {
-      name: 'onToolExecutionEnd',
-      type: '(event: ToolExecutionEndEvent) => void | PromiseLike<void>',
-      description: "Called when a tool's execute function completes or errors.",
-    },
-    {
-      name: 'onStepEnd',
-      type: '(event: GenerateTextStepEndEvent) => void | PromiseLike<void>',
-      description: 'Called when a step (LLM call) completes.',
-    },
-    {
-      name: 'onEmbedEnd',
-      type: '(event: EmbeddingModelCallEndEvent) => void | PromiseLike<void>',
-      description: 'Called when an individual embedding model call completes.',
-    },
-    {
-      name: 'onRerankEnd',
-      type: '(event: RerankingModelCallEndEvent) => void | PromiseLike<void>',
-      description: 'Called when an individual reranking model call completes.',
-    },
-    {
-      name: 'experimental_onEvaluateStart',
-      type: '(event: Experimental_EvaluateStartEvent) => void | PromiseLike<void>',
-      description: 'Called when an experimental evaluation operation begins.',
-    },
-    {
-      name: 'experimental_onEvaluationModelCallStart',
-      type: '(event: Experimental_EvaluationModelCallStartEvent) => void | PromiseLike<void>',
-      description:
-        'Called when the logical evaluation model call begins. The call includes any provider retries.',
-    },
-    {
-      name: 'experimental_onEvaluationModelCallEnd',
-      type: '(event: Experimental_EvaluationModelCallEndEvent) => void | PromiseLike<void>',
-      description:
-        'Called when the logical evaluation model call, including any retries, completes.',
-    },
-    {
-      name: 'experimental_onEvaluateEnd',
-      type: '(event: Experimental_EvaluateEndEvent) => void | PromiseLike<void>',
-      description:
-        'Called when an experimental evaluation operation completes.',
-    },
-    {
-      name: 'onEnd',
-      type: '(event: GenerateTextEndEvent) => void | PromiseLike<void>',
-      description:
-        'Called when the entire generation completes (all steps finished).',
-    },
-    {
-      name: 'onAbort',
-      type: '(event: GenerateTextAbortEvent) => void | PromiseLike<void>',
-      description:
-        'Called when a streaming text generation operation is aborted before it completes.',
-    },
-  ]}
-/>
+- `onStart` (`(event: GenerateTextStartEvent) => void | PromiseLike<void>`): Called when the generation operation begins, before any LLM calls.
+- `onStepStart` (`(event: GenerateTextStepStartEvent) => void | PromiseLike<void>`): Called when a step (LLM call) begins, before the provider is called.
+- `onLanguageModelCallStart` (`(event: LanguageModelCallStartEvent) => void | PromiseLike<void>`): Called immediately before the provider model call begins. Useful for model-only spans or logging.
+- `onLanguageModelCallEnd` (`(event: LanguageModelCallEndEvent) => void | PromiseLike<void>`): Called after the model response has been normalized and parsed, but before any client-side tool execution begins. Includes provider-specific metadata when available.
+- `onToolExecutionStart` (`(event: ToolExecutionStartEvent) => void | PromiseLike<void>`): Called when a tool's execute function is about to run.
+- `onToolExecutionEnd` (`(event: ToolExecutionEndEvent) => void | PromiseLike<void>`): Called when a tool's execute function completes or errors.
+- `onStepEnd` (`(event: GenerateTextStepEndEvent) => void | PromiseLike<void>`): Called when a step (LLM call) completes.
+- `onEmbedEnd` (`(event: EmbeddingModelCallEndEvent) => void | PromiseLike<void>`): Called when an individual embedding model call completes.
+- `onRerankEnd` (`(event: RerankingModelCallEndEvent) => void | PromiseLike<void>`): Called when an individual reranking model call completes.
+- `experimental_onEvaluateStart` (`(event: Experimental_EvaluateStartEvent) => void | PromiseLike<void>`): Called when an experimental evaluation operation begins.
+- `experimental_onEvaluationModelCallStart` (`(event: Experimental_EvaluationModelCallStartEvent) => void | PromiseLike<void>`): Called when the logical evaluation model call begins. The call includes any provider retries.
+- `experimental_onEvaluationModelCallEnd` (`(event: Experimental_EvaluationModelCallEndEvent) => void | PromiseLike<void>`): Called when the logical evaluation model call, including any retries, completes.
+- `experimental_onEvaluateEnd` (`(event: Experimental_EvaluateEndEvent) => void | PromiseLike<void>`): Called when an experimental evaluation operation completes.
+- `onEnd` (`(event: GenerateTextEndEvent) => void | PromiseLike<void>`): Called when the entire generation completes (all steps finished).
+- `onAbort` (`(event: GenerateTextAbortEvent) => void | PromiseLike<void>`): Called when a streaming text generation operation is aborted before it completes.
+- `onError` (`(event: { callId: string; error: unknown }) => void | PromiseLike<void>`): Called when an unrecoverable error occurs. The event identifies the operation and contains the thrown value.
 
 Experimental evaluation events use the four `experimental_*` callbacks above.
 They are not included in the stable `onStart` and `onEnd` event unions.
@@ -445,6 +410,7 @@ For `generateText` and `streamText`, the integration records 3 types of spans:
 - **`invoke_agent {modelId}`** (root span, `INTERNAL`): covers the full operation including all steps and tool calls.
 
   Initial attributes:
+
   - `gen_ai.operation.name`: `"invoke_agent"`
   - `gen_ai.provider.name`: the provider (e.g. `"openai"`, `"anthropic"`)
   - `gen_ai.request.model`: the requested model ID
@@ -461,6 +427,7 @@ For `generateText` and `streamText`, the integration records 3 types of spans:
   - `gen_ai.request.seed`: the seed value
 
   Attributes set on finish:
+
   - `gen_ai.response.finish_reasons`: array of finish reasons (e.g. `["stop"]`, `["tool_call"]`)
   - `gen_ai.usage.input_tokens`: the number of input tokens used
   - `gen_ai.usage.output_tokens`: the number of output tokens used
@@ -471,6 +438,7 @@ For `generateText` and `streamText`, the integration records 3 types of spans:
 - **`chat {modelId}`** (step span, `CLIENT`): one span per LLM provider call, nested under the root span.
 
   Initial attributes:
+
   - `gen_ai.operation.name`: `"chat"`
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the requested model ID
@@ -480,6 +448,7 @@ For `generateText` and `streamText`, the integration records 3 types of spans:
   - `gen_ai.tool.definitions`: the tool definitions as stringified JSON (when `recordInputs` is enabled)
 
   Attributes set on finish:
+
   - `gen_ai.response.finish_reasons`: array of finish reasons
   - `gen_ai.response.id`: the response ID from the provider
   - `gen_ai.response.model`: the model that generated the response (may differ from the requested model)
@@ -496,10 +465,8 @@ For `generateText` and `streamText`, the integration records 3 types of spans:
 
 #### Deprecated object APIs (generateObject / streamObject)
 
-<Note type="warning">
-  `generateObject` and `streamObject` are deprecated. Use `generateText` and
-  `streamText` with the `output` property instead.
-</Note>
+`generateObject` and `streamObject` are deprecated. Use `generateText` and
+`streamText` with the `output` property instead.
 
 The deprecated object APIs emit the same span hierarchy as `generateText`/`streamText` with these additional attributes on the root span:
 
@@ -514,6 +481,7 @@ For `embed` and `embedMany`, the integration records spans with `CLIENT` kind:
 - **`embeddings {modelId}`** (root span): covers the full embedding operation.
 
   Initial attributes:
+
   - `gen_ai.operation.name`: `"embeddings"`
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the requested model ID
@@ -523,11 +491,13 @@ For `embed` and `embedMany`, the integration records spans with `CLIENT` kind:
   creates one inner span per provider batch call.
 
   Initial attributes:
+
   - `gen_ai.operation.name`: `"embeddings"`
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the model ID
 
   Attributes set on finish:
+
   - `gen_ai.usage.input_tokens`: the number of tokens used
 
 Usage is recorded only on inner provider-request spans. For `embedMany`, sum
@@ -540,6 +510,7 @@ For `rerank`, the integration records spans with `CLIENT` kind:
 - **`rerank {modelId}`** (root span): covers the full rerank operation.
 
   Initial attributes:
+
   - `gen_ai.operation.name`: `"rerank"`
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the requested model ID
@@ -547,11 +518,29 @@ For `rerank`, the integration records spans with `CLIENT` kind:
 - **`rerank {modelId}`** (inner span): one span per provider rerank call, nested under the root span.
 
   Initial attributes:
+
   - `gen_ai.operation.name`: `"rerank"`
   - `gen_ai.provider.name`: the provider
   - `gen_ai.request.model`: the model ID
 
-#### experimental_evaluate
+#### generateSpeech / transcribe / experimental\_streamTranscribe
+
+Each call records a single `CLIENT` span named `{operationId} {modelId}`, where
+`operationId` is `ai.generateSpeech`, `ai.transcribe`, or `ai.streamTranscribe`.
+
+- `gen_ai.output.type`: `"speech"` for speech generation and `"text"` for transcription.
+- `gen_ai.request.stream`: `true` for streaming transcription and `false` otherwise.
+- `gen_ai.input.messages`: speech generation input text as a user message with a text part, when `recordInputs` is enabled.
+- `gen_ai.output.messages`: the completed transcript as an assistant message with a text part, when `recordOutputs` is enabled. Streaming transcription records this once on completion.
+
+The existing `ai.request.text` and `ai.response.text` attributes are also retained.
+Audio byte length, media type, and output format remain in the
+`ai.request.audio.*` and `ai.response.audio.*` attributes, subject to the
+corresponding input/output recording controls. Raw audio is not captured, so
+transcription input and speech output do not populate message attributes with
+audio content or placeholder audio parts.
+
+#### experimental\_evaluate
 
 For `experimental_evaluate`, the integration records two spans with `CLIENT`
 kind: an **`evaluate {modelId}`** root span for the whole operation and one
@@ -793,10 +782,8 @@ This is the legacy format. Consider migrating to the `OpenTelemetry` for better 
 
 #### Deprecated object APIs
 
-<Note type="warning">
-  `generateObject` and `streamObject` are deprecated. Use `generateText` and
-  `streamText` with the `output` property instead.
-</Note>
+`generateObject` and `streamObject` are deprecated. Use `generateText` and
+`streamText` with the `output` property instead.
 
 If you still run deprecated object APIs, you will see legacy span names:
 
@@ -908,40 +895,10 @@ Tool call spans (`ai.toolCall`) contain the following attributes:
 - `ai.toolCall.args`: the input parameters of the tool call
 - `ai.toolCall.result`: the output result of the tool call. Only available if the tool call is successful and the result is serializable.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Overview](/docs/ai-sdk-core/overview)
-- [Generating Text](/docs/ai-sdk-core/generating-text)
-- [Generating Structured Data](/docs/ai-sdk-core/generating-structured-data)
-- [Tool Calling](/docs/ai-sdk-core/tools-and-tool-calling)
-- [Model Context Protocol (MCP)](/docs/ai-sdk-core/mcp-tools)
-- [MCP Apps](/docs/ai-sdk-core/mcp-apps)
-- [Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)
-- [Code Mode](/docs/ai-sdk-core/code-mode)
-- [Tool Search](/docs/ai-sdk-core/tool-search)
-- [Prompt Engineering](/docs/ai-sdk-core/prompt-engineering)
-- [Settings](/docs/ai-sdk-core/settings)
-- [Reasoning](/docs/ai-sdk-core/reasoning)
-- [Embeddings](/docs/ai-sdk-core/embeddings)
-- [Reranking](/docs/ai-sdk-core/reranking)
-- [Evaluation](/docs/ai-sdk-core/evaluation)
-- [Image Generation](/docs/ai-sdk-core/image-generation)
-- [Realtime](/docs/ai-sdk-core/realtime)
-- [Transcription](/docs/ai-sdk-core/transcription)
-- [Translation](/docs/ai-sdk-core/translation)
-- [Speech](/docs/ai-sdk-core/speech)
-- [Video Generation](/docs/ai-sdk-core/video-generation)
-- [File Uploads](/docs/ai-sdk-core/file-uploads)
-- [Language Model Middleware](/docs/ai-sdk-core/middleware)
-- [Skill Uploads](/docs/ai-sdk-core/skill-uploads)
-- [Batch](/docs/ai-sdk-core/batch)
-- [Provider & Model Management](/docs/ai-sdk-core/provider-management)
-- [Error Handling](/docs/ai-sdk-core/error-handling)
-- [Testing](/docs/ai-sdk-core/testing)
-- [Telemetry](/docs/ai-sdk-core/telemetry)
-- [DevTools](/docs/ai-sdk-core/devtools)
-- [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

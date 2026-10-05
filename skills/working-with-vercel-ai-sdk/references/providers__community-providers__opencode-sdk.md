@@ -1,10 +1,14 @@
 ---
+title: OpenCode
+description: Learn how to use the OpenCode provider to access multiple AI models through a unified interface.
+url: "https://ai-sdk.dev/providers/community-providers/opencode-sdk"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/opencode-sdk.md"
-fetched_at: "2026-09-14T09:43:19.624Z"
-sha256: "e94f82b1d135f75ce2d5f4b44f621768eeb46d334403238a77c8f92b30e80877"
+fetched_at: "2026-10-05T11:19:46.520Z"
+sha256: "a2f79abd04c0cdc7347319b4bac539506d96b1f7bf288ca4ef199cd9a8ede96a"
 ---
 
-# OpenCode Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [ai-sdk-provider-opencode-sdk](https://github.com/ben-vargas/ai-sdk-provider-opencode-sdk) community provider enables using multiple AI providers (Anthropic, OpenAI, Google) through the [OpenCode SDK](https://www.npmjs.com/package/@opencode-ai/sdk). OpenCode is a terminal-based AI coding assistant that provides a unified interface to various AI models.
 
@@ -25,7 +29,7 @@ npm install ai-sdk-provider-opencode-sdk@ai-sdk-v5 ai@^5.0.0
 
 ## Setup
 
-<InstallPackages packages="ai-sdk-provider-opencode-sdk" />
+**Packages:** `ai-sdk-provider-opencode-sdk`
 
 ## Provider Instance
 
@@ -51,11 +55,11 @@ const opencode = createOpencode({
 
 Provider settings:
 
-- **hostname** _string_ - Server hostname (default: `127.0.0.1`).
-- **port** _number_ - Server port (default: `4096`).
-- **autoStartServer** _boolean_ - Auto-start the OpenCode server (default: `true`).
-- **serverTimeout** _number_ - Server startup timeout in milliseconds (default: `10000`).
-- **defaultSettings** _object_ - Default settings applied to all model calls.
+- **hostname** *string* - Server hostname (default: `127.0.0.1`).
+- **port** *number* - Server port (default: `4096`).
+- **autoStartServer** *boolean* - Auto-start the OpenCode server (default: `true`).
+- **serverTimeout** *number* - Server startup timeout in milliseconds (default: `10000`).
+- **defaultSettings** *object* - Default settings applied to all model calls.
 
 ## Language Models
 
@@ -120,17 +124,15 @@ const model = opencode('anthropic/claude-opus-4-5-20251101', {
 
 | Provider  | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | --------- | ----------- | ----------------- | ---------- | -------------- |
-| Anthropic | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| OpenAI    | <Check />   | <Check />         | <Cross />  | <Cross />      |
-| Google    | <Check />   | <Check />         | <Cross />  | <Cross />      |
+| Anthropic | ✓           | ✓                 | ✗          | ✗              |
+| OpenAI    | ✓           | ✓                 | ✗          | ✗              |
+| Google    | ✓           | ✓                 | ✗          | ✗              |
 
-<Note>
-  Tool Usage and Tool Streaming show ❌ because this provider does not support
-  AI SDK custom tools (Zod schemas passed to `generateText`/`streamText`).
-  Custom tool definitions are explicitly ignored. OpenCode executes tools
-  server-side, which can be observed via streaming events. Image input supports
-  data URLs and base64 only. Object generation uses prompt-based JSON mode.
-</Note>
+Tool Usage and Tool Streaming show ❌ because this provider does not support
+AI SDK custom tools (Zod schemas passed to `generateText`/`streamText`).
+Custom tool definitions are explicitly ignored. OpenCode executes tools
+server-side, which can be observed via streaming events. Image input supports
+data URLs and base64 only. Object generation uses prompt-based JSON mode.
 
 ## Server Management
 
@@ -156,68 +158,10 @@ The client manager automatically cleans up on process exit (SIGINT, SIGTERM).
 
 For more details, see the [provider documentation](https://github.com/ben-vargas/ai-sdk-provider-opencode-sdk).
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/community-providers/custom-providers)
-- [A2A](/providers/community-providers/a2a)
-- [ACP (Agent Client Protocol)](/providers/community-providers/acp)
-- [Aihubmix](/providers/community-providers/aihubmix)
-- [AI/ML API](/providers/community-providers/aimlapi)
-- [Anthropic Vertex](/providers/community-providers/anthropic-vertex-ai)
-- [Automatic1111](/providers/community-providers/automatic1111)
-- [Azure AI](/providers/community-providers/azure-ai)
-- [Browser AI](/providers/community-providers/browser-ai)
-- [Claude Code](/providers/community-providers/claude-code)
-- [Cloudflare AI Gateway](/providers/community-providers/cloudflare-ai-gateway)
-- [Cloudflare Workers AI](/providers/community-providers/cloudflare-workers-ai)
-- [Codex CLI](/providers/community-providers/codex-cli)
-- [Crosshatch](/providers/community-providers/crosshatch)
-- [Dify](/providers/community-providers/dify)
-- [Firemoon](/providers/community-providers/firemoon)
-- [FriendliAI](/providers/community-providers/friendliai)
-- [Gemini CLI](/providers/community-providers/gemini-cli)
-- [Helicone](/providers/community-providers/helicone)
-- [Inflection AI](/providers/community-providers/inflection-ai)
-- [Jina AI](/providers/community-providers/jina-ai)
-- [LangDB](/providers/community-providers/langdb)
-- [Letta](/providers/community-providers/letta)
-- [llama.cpp](/providers/community-providers/llama-cpp)
-- [LlamaGate](/providers/community-providers/llamagate)
-- [MCP Sampling AI Provider](/providers/community-providers/mcp-sampling)
-- [Mem0](/providers/community-providers/mem0)
-- [MiniMax](/providers/community-providers/minimax)
-- [Mixedbread](/providers/community-providers/mixedbread)
-- [Ollama](/providers/community-providers/ollama)
-- [OpenCode](/providers/community-providers/opencode-sdk)
-- [OpenRouter](/providers/community-providers/openrouter)
-- [Portkey](/providers/community-providers/portkey)
-- [Qwen](/providers/community-providers/qwen)
-- [React Native Apple](/providers/community-providers/react-native-apple)
-- [Requesty](/providers/community-providers/requesty)
-- [Runpod](/providers/community-providers/runpod)
-- [SambaNova](/providers/community-providers/sambanova)
-- [SAP AI Core](/providers/community-providers/sap-ai)
-- [Sarvam](/providers/community-providers/sarvam)
-- [Soniox](/providers/community-providers/soniox)
-- [Spark](/providers/community-providers/spark)
-- [Supermemory](/providers/community-providers/supermemory)
-- [Voyage AI](/providers/community-providers/voyage-ai)
-- [Zhipu AI (Z.AI)](/providers/community-providers/zhipu)
-- [vectorstores](/providers/community-providers/vectorstores)
-- [Codex CLI (App Server)](/providers/community-providers/codex-app-server)
-- [Apertis](/providers/community-providers/apertis)
-- [OLLM](/providers/community-providers/ollm)
-- [Cencori](/providers/community-providers/cencori)
-- [Hindsight](/providers/community-providers/hindsight)
-- [Nia](/providers/community-providers/nia)
-- [ZeroEntropy](/providers/community-providers/zeroentropy)
-- [Crusoe](/providers/community-providers/crusoe)
-- [Neon AI Gateway](/providers/community-providers/neon-ai-gateway)
-- [QVAC](/providers/community-providers/qvac)
-- [Interfaze](/providers/community-providers/interfaze)
-- [Telnyx](/providers/community-providers/telnyx)
-- [Flowise](/providers/community-providers/flowise)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

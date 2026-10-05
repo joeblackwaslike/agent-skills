@@ -16,8 +16,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more with Monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "22bd4f140497219551cbb762cbc4f027a67c5b4d0af6226c2ccfdc5e2dd23e31"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "7e4daa97a17b82f543a1012f53a041b0986a6554de81376c5cc57edcc9c01738"
 ---
 
 # Monitoring
@@ -37,8 +37,8 @@ Monitoring is now
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/query/monitoring.graph.md](/docs/query/monitoring.graph.md?from=related&source_path=%2Fdocs%2Fquery%2Fmonitoring&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ for monitoring your project.
 
 **Monitoring** allows you to visualize and quantify the performance and traffic of your projects on Vercel. You can use [example queries](/docs/query/monitoring/monitoring-reference#example-queries) or create [custom queries](/docs/query/monitoring/quickstart#create-a-new-query) to debug and optimize bandwidth, errors, performance, and bot traffic issues in a production or preview deployment.
 
-> **🔒 Permissions Required**: Monitoring
+> **Availability**: Monitoring is available on Enterprise plans
 
 ## Monitoring chart
 
@@ -101,7 +101,7 @@ Get the most comprehensive suite of tools, including queries, by enabling [Obser
 
 ## Manage IP Address visibility for Monitoring
 
-> **🔒 Permissions Required**: Managing IP Address visibility
+> **Availability**: Managing IP Address visibility is available on Enterprise and Pro plans
 
 Vercel creates events each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used.
 
@@ -118,7 +118,7 @@ For a complete list of fields, see the [visualize clause](/docs/query/monitoring
 
 ## Monitoring sunset
 
-From the end of billing cycle in Nov 2025, Vercel will sunset Monitoring for pro plans. Pro users will no longer see the Monitoring tab. Current enterprise users with monitoring access will keep the deprecated version of monitoring.
+Vercel sunset Monitoring for Pro plans at the end of the November 2025 billing cycle. Pro users no longer see the Monitoring tab. Enterprise users who already had Monitoring access keep the deprecated version of Monitoring.
 If you want to continue using the full Monitoring capabilities or purchase a product similar to Monitoring, consider moving to [Query](/docs/query).
 
 - Enable [Observability Plus](/docs/observability/observability-plus) to continue using query features.

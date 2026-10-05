@@ -14,8 +14,8 @@ related:
 summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "fb08fc5d7e0d15ddb6a2a2da9f005fbc3b350ae509440299a58e341e1503c148"
+fetched_at: "2026-10-05T11:22:20.527Z"
+sha256: "935a10054aed4844866b8a347fbc5523935810683b3785708ced1d64dc112737"
 ---
 
 # SDK Keys
@@ -28,9 +28,9 @@ Vercel Flags supports OpenID Connect (OIDC) for applications in the same Vercel 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related)
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related)
 - [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fsdk-keys&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
