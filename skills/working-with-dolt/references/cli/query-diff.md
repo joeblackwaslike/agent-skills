@@ -1,5 +1,5 @@
 ---
-source: "dolt query-diff --help @ 2.1.7"
+source: "dolt query-diff --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "489deb5481f1e7fd8717491235f55080001ca996a6b3c7a70048cfa9c59b538e"
 ---

@@ -1,5 +1,5 @@
 ---
-source: "dolt docs diff --help @ 2.1.7"
+source: "dolt docs diff --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "c89127103f4c81b601220c90e27b46761716d08f48cfb7de4e5a0eca35200b5e"
 ---

@@ -1,6 +1,6 @@
 # Workflows — the core loop
 
-The day-to-day beads loop. Commands verified against `bd 1.0.5`.
+The day-to-day beads loop. Commands verified against `bd 1.3.1`.
 
 ## The loop
 
@@ -19,6 +19,7 @@ Key verified details:
 - **`bd note <id> "text"`** appends a timestamped note. `bd update <id> --append-notes "text"` is the equivalent on the update command (with newline separation). Prefer `bd note` for quick progress logging.
 - **`bd comment <id> "text"`** is a *separate* stream from notes — use comments for discussion/review, notes for working state. Both accept `--file` and `--stdin`.
 - **`bd close <id> --reason "..."`** (alias `bd done`). Add `--suggest-next` to see newly-unblocked issues, or `--continue` to auto-advance within a molecule.
+- **`bd unclaim <id>`** releases a claim you hold, resetting status back to `open`. Use when an agent crashes mid-work or you need to abandon a task. The current assignee can release freely; releasing another's claim requires `--force` (prefer `bd reclaim` for stale leases instead).
 
 ## Note discipline (this is what makes survival work)
 

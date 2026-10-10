@@ -1,5 +1,5 @@
 ---
-source: "dolt rebase --help @ 2.1.7"
+source: "dolt rebase --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "d294e39793b5719e7e2986cf807e56eb9e6ed18023282f67f8711a36592c4a8f"
 ---

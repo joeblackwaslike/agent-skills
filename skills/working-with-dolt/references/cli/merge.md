@@ -1,5 +1,5 @@
 ---
-source: "dolt merge --help @ 2.1.7"
+source: "dolt merge --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "ec0518603eb35d729b9819059da967afac8373eb35c2f9fedf8fad8b2625b918"
 ---

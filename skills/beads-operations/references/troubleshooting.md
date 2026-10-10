@@ -1,6 +1,6 @@
 # Troubleshooting — the runbook
 
-Symptom-first. Each entry: **Symptom → Diagnosis (exact command) → Recovery (exact steps).** All commands verified against `bd 1.0.5` (Homebrew). Where a recovery step could not be verified live without mutating Joe's state, it's flagged **[unverified]**.
+Symptom-first. Each entry: **Symptom → Diagnosis (exact command) → Recovery (exact steps).** All commands verified against `bd 1.3.1` (Homebrew). Where a recovery step could not be verified live without mutating Joe's state, it's flagged **[unverified]**.
 
 > First move for almost anything: `bd doctor` (and `bd doctor --agent` for prose explanations + remediation commands). It checks `.beads/` presence, schema, server reachability, git hooks, and circular deps. `bd doctor --fix` repairs many issues with confirmation.
 
@@ -156,25 +156,37 @@ bd hooks install
 
 ---
 
-### BeadBoard dashboard shows stale data / `.beads/issues.jsonl` drift
+### Merge conflicts after `bd dolt pull`
 
-Symptom: the BeadBoard dashboard (or any consumer of `.beads/issues.jsonl`) shows an outdated
-issue set, but `bd list`/`bd ready` in the terminal are correct. The Dolt DB is the source of
-truth and is fine; the JSONL export it feeds the dashboard is stale. Root cause is almost always
-`export.auto` left at its **`false` default** — `bd` only rewrites the JSONL on a manual `bd export`.
+Symptom: `bd dolt pull` (or `bd sync`) reports conflicts; `bd list` shows stale or missing items.
 
 **Diagnosis:**
 ```sh
-bd config get export.auto         # false (or empty) → auto-export is OFF; this is the cause
+bd conflicts list                  # which tables and issues are conflicted
+bd conflicts show                  # every conflicted row, field by field
+bd conflicts show <id>             # drill into one issue
 ```
 
 **Recovery:**
 ```sh
-bd config set export.auto true    # auto-export after writes (throttled 60s)
-bd export                         # force one immediate export to un-stale the JSONL now
+bd conflicts resolve <id> --ours   # keep your side for one issue
+bd conflicts resolve <id> --theirs # take the remote's side
+bd conflicts resolve --all --ours  # take all ours (or --theirs for all remote)
 ```
-Setting `export.auto true` is idempotent; do it on every project. Confirm with
-`bd config get export.auto | grep -q true || bd config set export.auto true`.
+After resolving, re-run `bd dolt push` to publish the resolved state. If `bd ready` still
+hides work that should be visible, run `bd recompute-blocked` (see general recovery checklist).
+
+---
+
+### `bd ready` hides work / shows blocked issues that should be unblocked
+
+Symptom: `bd ready` is empty or shows wrong issues after a pull or manual conflict resolution.
+Root cause: the denormalized `is_blocked` flag went stale.
+
+**Recovery:**
+```sh
+bd recompute-blocked    # full recompute, idempotent — safe to run anytime
+```
 
 ---
 
@@ -217,9 +229,10 @@ bd dolt status                        # reachable? right port/db?
 # 4. Diagnose data + config integrity.
 bd doctor --agent                     # prose diagnosis + remediation commands
 bd doctor --fix                       # apply safe fixes (confirms each)
+bd recompute-blocked                  # fix stale is_blocked flags (safe, idempotent)
 bd prime                              # re-anchor the agent's workflow context
 
-# 5. Confirm the project sees its data, and that auto-export is on (JSONL/dashboard freshness).
+# 5. Confirm the project sees its data, and that auto-export is on (JSONL freshness).
 bd status
 bd ready
 bd config get export.auto | grep -q true || bd config set export.auto true

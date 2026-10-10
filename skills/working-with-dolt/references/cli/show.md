@@ -1,5 +1,5 @@
 ---
-source: "dolt show --help @ 2.1.7"
+source: "dolt show --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "dede9966e53ee8921ba24bbc576a76b192a6939c8770d80fe35f146e262db1f2"
 ---

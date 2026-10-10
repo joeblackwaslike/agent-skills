@@ -1,5 +1,5 @@
 ---
-source: "dolt constraints verify --help @ 2.1.7"
+source: "dolt constraints verify --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "d76062ee029d77ac5e8c5651d558608b305c54e7a42720de4c0d6989a799847c"
 ---

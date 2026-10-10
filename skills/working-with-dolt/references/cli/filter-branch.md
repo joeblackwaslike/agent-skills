@@ -1,5 +1,5 @@
 ---
-source: "dolt filter-branch --help @ 2.1.7"
+source: "dolt filter-branch --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "7242bb13a669b1f29cbfd5d711bea79039ffe0b8ef7890d48372d22bf13e584a"
 ---

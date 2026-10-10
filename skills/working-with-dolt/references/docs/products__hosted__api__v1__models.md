@@ -2,7 +2,7 @@
 title: "Models"
 description: Request and response schemas for the Hosted v1 API.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/models.md"
-fetched_at: "2026-10-05T11:16:16.598Z"
+fetched_at: "2026-10-10T20:16:32.123Z"
 sha256: "e3308b7452dd72ca01dfe9441b5b5e7fedeeac225b1dabd1c96d8e1f2dbe1a51"
 ---
 

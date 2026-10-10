@@ -2,7 +2,7 @@
 title: "Hosted API v1"
 description: The Hosted Dolt v1 API — an explicit, versioned, OpenAPI-defined contract for deployments.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1.md"
-fetched_at: "2026-10-05T11:16:16.598Z"
+fetched_at: "2026-10-10T20:16:32.123Z"
 sha256: "8d299e7ac97022c40049adddf7aa8d4416b95ac89ef72e369785ca20a5c16d65"
 ---
 

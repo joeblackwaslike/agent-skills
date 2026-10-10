@@ -1,5 +1,5 @@
 ---
-source: "dolt cherry-pick --help @ 2.1.7"
+source: "dolt cherry-pick --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "1067bb67e8b2ff48975139fb841fad1fd33781b10d755db76a43d0e42514a302"
 ---

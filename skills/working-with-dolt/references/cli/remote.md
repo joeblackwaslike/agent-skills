@@ -1,7 +1,7 @@
 ---
-source: "dolt remote --help @ 2.1.7"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "9bc7b381cb40645e1113b6673da34f6fcdefdd26a0102d29150f923a6668538c"
+source: "dolt remote --help @ 2.4.2"
+fetched_at: "2026-10-10T20:16:32.123Z"
+sha256: "3f4a869430100de59db7b2a2932b1647b8eb00287fb9ae1c8f9765d002b0fddf"
 ---
 
 NAME
@@ -20,8 +20,8 @@ DESCRIPTION
 	Adds a remote named <name> for the repository at <url>. The command dolt fetch <name> can then be used to create and
 	update remote-tracking branches <name>/<branch>.
 	
-	The <url> parameter supports url schemes of http, https, aws, gs, and file. The url prefix defaults to https. If the
-	<url> parameter is in the format <organization>/<repository> then dolt will use the remotes.default_host from your
+	The <url> parameter supports url schemes of http, https, aws, s3, gs, and file. The url prefix defaults to https. If
+	the <url> parameter is in the format <organization>/<repository> then dolt will use the remotes.default_host from your
 	configuration file (Which will be dolthub.com unless changed).
 	
 	AWS cloud remote urls should be of the form aws://[dynamo-table:s3-bucket]/database.  You may configure your aws cloud
@@ -33,6 +33,17 @@ DESCRIPTION
 		role: Use the credentials installed for the current user
 		env: Looks for environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 		file: Uses the credentials file specified by the parameter aws-creds-file
+	S3-compatible remote urls should be of the form s3://bucket/database. They work against any object store implementing
+	the S3 API with conditional writes, including AWS S3, Cloudflare R2, and MinIO, and require no DynamoDB table.
+	Credentials always come from the standard AWS SDK chain and are never accepted in the url.
+	
+	A non-AWS provider is addressed with query parameters: endpoint (the provider host), region (the signing region, auto
+	for R2), and path-style (true/false, needed by providers without wildcard DNS such as MinIO). Endpoint and region
+	otherwise resolve from AWS_ENDPOINT_URL_S3, AWS_REGION and the shared config file. Because the url carries them, one
+	repository can address several providers, for example:
+	
+		dolt remote add r2 's3://bucket/db?endpoint=https://<account>.r2.cloudflarestorage.com&region=auto'
+	
 	GCP remote urls should be of the form gs://gcs-bucket/database and will use the credentials setup using the gcloud
 	command line available from Google.
 	

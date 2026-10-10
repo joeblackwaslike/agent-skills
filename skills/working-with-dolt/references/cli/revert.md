@@ -1,5 +1,5 @@
 ---
-source: "dolt revert --help @ 2.1.7"
+source: "dolt revert --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "335154156af3c516033c6a79300378034178d478710acb818fd1c16d2647f669"
 ---

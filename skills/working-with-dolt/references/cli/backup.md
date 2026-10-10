@@ -1,7 +1,7 @@
 ---
-source: "dolt backup --help @ 2.1.7"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "64778d0eccc924eb1c692702b3ebbbbdaa0b66abd7634653923cb21001f8c94b"
+source: "dolt backup --help @ 2.4.2"
+fetched_at: "2026-10-10T20:16:32.123Z"
+sha256: "990d265a1195dbeb1144114bfd60db1124e424456eb2815bf646264264b75ab5"
 ---
 
 NAME
@@ -12,8 +12,8 @@ SYNOPSIS
 	dolt backup add [--aws-region <region>] [--aws-creds-type <creds-type>] [--aws-creds-file <file>] [--aws-creds-profile <profile>] <name> <url>
 	dolt backup remove <name>
 	dolt backup restore [--aws-region <region>] [--aws-creds-type <creds-type>] [--aws-creds-file <file>] [--aws-creds-profile <profile>] [--force] <url> <name>
-	dolt backup sync <name>
-	dolt backup sync-url [--aws-region <region>] [--aws-creds-type <creds-type>] [--aws-creds-file <file>] [--aws-creds-profile <profile>] <url>
+	dolt backup sync [--prune-with-grace-period <duration>] <name>
+	dolt backup sync-url [--aws-region <region>] [--aws-creds-type <creds-type>] [--aws-creds-file <file>] [--aws-creds-profile <profile>] [--prune-with-grace-period <duration>] <url>
 
 DESCRIPTION
 	
@@ -60,6 +60,16 @@ DESCRIPTION
 	Snapshot the database and upload the backup to <url>. Like sync, this includes branches, tags, working sets, and remote
 	tracking refs, but it does not require you to create a named backup.
 	
+	A sync that is interrupted after uploading a storage file but before committing the backup's manifest leaves that file
+	behind, unreferenced and never reused. For file:// backups, sync and sync-url accept --prune-with-grace-period
+	<duration> to reclaim them before uploading.
+	
+	A prune infers that there are no concurrent in flight writers by checking if the destination is idle. If any file there
+	has been modified within <duration>, nothing at all is deleted. The supplied duration must be shorter than the interval
+	between your syncs or the previous sync's own files will always veto the prune. It should be long enough to cover the
+	final steps of a sync, during which a writer is reading and processing newly landed files without touching any of them.
+	The minimum accepted duration is 10m. 1h is a reasonable choice for most sync sizes on most hardware.
+	
 
 OPTIONS
 	<region>
@@ -91,4 +101,10 @@ OPTIONS
 	
 	--aws-creds-profile=<profile>
 	  AWS profile to use
+	
+	--prune-with-grace-period=<duration>
+	  Only valid with sync and sync-url against a file:// backup. Before syncing, delete table files in the destination that
+	  no manifest references and that are older than <duration> (e.g. 1h, 30m). Nothing is deleted if any file in the
+	  destination has been modified more recently than <duration>, so the duration must be shorter than the interval between
+	  syncs for a prune to ever run.
 	

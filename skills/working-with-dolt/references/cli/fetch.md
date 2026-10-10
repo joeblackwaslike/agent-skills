@@ -1,5 +1,5 @@
 ---
-source: "dolt fetch --help @ 2.1.7"
+source: "dolt fetch --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "590cb0e28d06bd86992acd543fcc980988df993f303935241e070402180df192"
 ---

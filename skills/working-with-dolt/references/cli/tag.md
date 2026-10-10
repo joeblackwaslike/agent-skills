@@ -1,5 +1,5 @@
 ---
-source: "dolt tag --help @ 2.1.7"
+source: "dolt tag --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "0aef319dbf998707d3a2083d3c52cf0c88ddfbf930bf9277459e02082d4f7b91"
 ---

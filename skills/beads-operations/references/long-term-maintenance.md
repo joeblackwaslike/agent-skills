@@ -1,51 +1,79 @@
 # Long-term maintenance
 
-Keeping beads, the pinned CLI docs, the third-party plugin, and the databases healthy over time. Commands verified against `bd 1.0.5` (Homebrew).
+Keeping beads, the pinned CLI docs, and the databases healthy over time. Commands verified against `bd 1.3.1` (Homebrew).
 
 ## Version pin workflow
 
 The `working-with-beads` skill regenerates its CLI reference from a **pinned** `bd` binary so docs match a known version. The pin lives in [`../../working-with-beads/PINNED_VERSION`](../../working-with-beads/PINNED_VERSION):
 
 ```
-bd=1.0.5
+bd=1.3.1
 plugin=1.0.4
-tag=v1.0.5
+tag=v1.3.1
 ```
 
-`beads` is held by `brew pin` so routine `brew upgrade` won't move it out from under the docs. Confirm with `brew list --pinned | grep beads`.
+Both `beads` and its dependency `dolt` are held by `brew pin` so routine `brew upgrade` won't move them. Confirm with `brew list --pinned | grep -E 'beads|dolt'`.
+
+> **Note:** The third-party `beads` plugin is currently installed-but-disabled (`enabledPlugins` in `~/.claude/settings.json` has no entry for it). The `plugin=` line is kept for reference. The beads workflow context is injected via user-level `bd prime` hooks in `~/.claude/settings.json` instead.
 
 ### Bumping the pin
 
 ```sh
 # 1. Edit the pin file to the new version.
-$EDITOR skills/working-with-beads/PINNED_VERSION   # bd=, plugin=, tag=
+$EDITOR skills/working-with-beads/PINNED_VERSION   # bd=, tag= (plugin= is informational)
 
 # 2. Upgrade the actual binary (it's pinned, so unpin → upgrade → re-pin).
-brew unpin beads && brew upgrade beads && brew pin beads
-bd version   # confirm it matches the new bd= line
+#    beads depends on dolt; if dolt is also pinned, unpin it first.
+brew unpin dolt beads && brew upgrade beads && brew pin beads dolt
+bd --version   # confirm it matches the new bd= line
+dolt version   # note the new dolt version
 
-# 3. Regenerate the CLI reference from the new binary.
+# 3. If dolt was upgraded, update its PINNED_VERSION too.
+$EDITOR skills/working-with-dolt/PINNED_VERSION   # dolt=
+
+# 4. Run the database migration (required on first run of the new binary).
+bd migrate --dry-run        # preview: "Would update Dolt version: X → Y"
+bd migrate --force          # force-migrate (you are the designated migrator)
+bd dolt push                # publish migrated schema to remote
+
+# 5. Regenerate the CLI reference from the new binary.
 make update-working-with-beads
+make update-working-with-dolt   # if dolt was also bumped
 
-# 4. Review the diff — flag/subcommand changes, removed commands, new behavior.
+# 6. Review the diff — flag/subcommand changes, removed commands, new behavior.
 git diff skills/working-with-beads/references/
+git status skills/working-with-beads/references/cli/ | grep "^?"   # new command files
 
-# 5. Commit with signoff.
-git add skills/working-with-beads
+# 7. Update beads-operations references for any new/changed commands.
+# 8. Commit with signoff.
+git add skills/working-with-beads skills/working-with-dolt skills/beads-operations
 git commit -s -m "chore(beads): bump pinned bd to <new-version>"
 ```
 
-Always sign off (`-s` / `git commit --signoff`). After committing this repo, also refresh the installed plugin cache (Joe's convention): `/plugin update agent-skills@agent-marketplace`.
+After committing, refresh the installed plugin cache: `claude plugin update agent-skills@agent-marketplace`.
 
-## Keeping the third-party plugin in lockstep
+## Agent lease management — reclaim + heartbeat
 
-The bundled `beads` plugin (hooks, commands, task-agent) tracks the `plugin=` line in `PINNED_VERSION`. When you bump it, update the installed plugin too:
+For multi-agent setups where an agent can die mid-task:
+
+- **`bd heartbeat <id>`** — keeps a claim lease alive for long-running tasks. A claim TTL expires after a fixed duration; heartbeat pushes `lease_expires_at` forward so the work isn't reclaimed while the agent is legitimately busy.
+- **`bd reclaim`** — scans for `in_progress` issues whose lease has expired (died without closing), clears the assignee, and resets status to `ready`. Run periodically from a supervisor:
+
+  ```sh
+  bd reclaim --older-than 10m    # reclaim leases expired 10+ min ago
+  ```
+
+  The `--older-than` window is a grace period past expiry — prevents reclaiming a briefly paused but live agent.
+
+## Single-command full sync
+
+`bd sync` replaces the hand-rolled pull → conflict-check → recompute-blocked → push loop:
 
 ```sh
-/plugin update beads@beads-marketplace
+bd sync     # pull, check conflicts, recompute is_blocked, push (with retry on race)
 ```
 
-This skill **supersedes** that plugin's convention guidance (especially server setup) — the plugin is kept for its lifecycle hooks and agent, not its docs.
+Use for routine multi-machine sync. For interactive conflict resolution, step through manually (`bd dolt pull` → `bd conflicts list` → `bd conflicts resolve` → `bd dolt push`).
 
 ## Shared Dolt server lifecycle
 

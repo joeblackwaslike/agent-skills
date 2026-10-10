@@ -2,8 +2,8 @@
 title: CLI
 description: Full reference for the dolt command-line interface — every command, every flag, with examples.
 source: "https://www.dolthub.com/docs/cli-reference/cli.md"
-fetched_at: "2026-07-13T06:56:02.638Z"
-sha256: "73cfe19fec8983217005c8a461c855c6cae4f5f503b6214157df0dea99262dda"
+fetched_at: "2026-10-10T20:16:32.123Z"
+sha256: "61f722591430b237f49e03df9de552605c586a5f7a09098be13466e4ebf11eb3"
 ---
 
 # Command Line Interface Reference
@@ -775,6 +775,10 @@ Valid configuration variables:
 	- remotesapi.credential_helper - sets a global credential helper for remotesapi requests. This option is ignored in repository local config.
 
 	- push.autoSetupRemote - if set to "true" assume --set-upstream on default push when no upstream tracking exists for the current branch.
+
+	- git-remote.max-history-commits - maximum reachable Git data commits (default 64). Accepts a non-negative integer; 0 means unlimited.
+
+	- git-remote.reset-history-on-prune - reset Git history when obsolete storage entries are removed (default true). Accepts exactly "true" or "false".
 
 Credential helpers use the Bazel credential helper protocol. Dolt invokes the configured executable with the `get` argument and sends the canonical remotesapi origin on stdin:
 

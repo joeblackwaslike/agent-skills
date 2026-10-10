@@ -1,5 +1,5 @@
 ---
-source: "dolt schema import --help @ 2.1.7"
+source: "dolt schema import --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "f3ffb9bcb5c816e8ab9719e0e632466682a0e96707706d8d9ce6db9f4abd371f"
 ---

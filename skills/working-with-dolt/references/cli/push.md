@@ -1,5 +1,5 @@
 ---
-source: "dolt push --help @ 2.1.7"
+source: "dolt push --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "dad5584a319b14f8a040b8aeccb2ec885866fdf78657e196a83213ba599ab314"
 ---

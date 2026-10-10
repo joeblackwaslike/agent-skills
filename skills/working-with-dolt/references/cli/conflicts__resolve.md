@@ -1,5 +1,5 @@
 ---
-source: "dolt conflicts resolve --help @ 2.1.7"
+source: "dolt conflicts resolve --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "5c28e3708bebd5ca3edbfc4efbdcf9d4499a12df3ee53aac202cb5d5454f2e7a"
 ---

@@ -1,5 +1,5 @@
 ---
-source: "dolt debug --help @ 2.1.7"
+source: "dolt debug --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "81e69dcdbd6314c9870d38b45b81a56f5e9d327630cd11fb2d2dd4eb4a658392"
 ---

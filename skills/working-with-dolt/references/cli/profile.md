@@ -1,7 +1,7 @@
 ---
-source: "dolt profile --help @ 2.1.7"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "09c1d4451ab98a3f4c027f5357b629ae9a6bfc1e49cd2d77d5169f46ce04d417"
+source: "dolt profile --help @ 2.4.2"
+fetched_at: "2026-10-10T20:16:32.123Z"
+sha256: "d8251a8cc31eb355d9e9b87029d423dd033240dda279998fd9287a146487b0a4"
 ---
 
 NAME
@@ -44,6 +44,10 @@ OPTIONS
 	--data-dir=<data-dir>
 	  Defines a data directory whose subdirectories should all be dolt data repositories accessible as independent databases.
 	  Defaults to the current directory.
+	
+	-C <dir>, --directory=<dir>
+	  Run the command as if executed in the directory provided. When repeated, each relative path is resolved from the
+	  preceding directory. Matches git -C behaviour.
 	
 	--doltcfg-dir=<doltcfg-dir>
 	  Defines a directory that contains configuration files for dolt. Defaults to `$data-dir/.doltcfg`. Will only be created

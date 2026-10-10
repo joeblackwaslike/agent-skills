@@ -1,7 +1,7 @@
 ---
-source: "dolt sql --help @ 2.1.7"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "7e40c70115fbe56c775e11a397cb21f8cbf20bc68e9793fc162aa28b2e22adec"
+source: "dolt sql --help @ 2.4.2"
+fetched_at: "2026-10-10T20:16:32.123Z"
+sha256: "068605f71fdd99785f05fb7678fbee11fbcbd8cd6b545375fafc5ddddd6aac36"
 ---
 
 NAME
@@ -33,7 +33,7 @@ OPTIONS
 	  Runs a single query and exits.
 	
 	-r <result output format>, --result-format=<result output format>
-	  How to format result output. Valid values are tabular, csv, json, vertical, and parquet. Defaults to tabular.
+	  How to format result output. Valid values are tabular, csv, json, jsonl, vertical, and parquet. Defaults to tabular.
 	
 	-s <saved query name>, --save=<saved query name>
 	  Used with --query, save the query to the query catalog with the name provided. Saved queries can be examined in the

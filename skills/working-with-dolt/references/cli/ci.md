@@ -1,5 +1,5 @@
 ---
-source: "dolt ci --help @ 2.1.7"
+source: "dolt ci --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "8a3d55e24ea9489d353f99a5afa9cc36d00e9fb54a357ccd535efe362e6045aa"
 ---

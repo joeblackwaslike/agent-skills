@@ -1,5 +1,5 @@
 ---
-source: "dolt schema update-tag --help @ 2.1.7"
+source: "dolt schema update-tag --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "ffc45509c825e1d5539a9b79935739583a12bd9da91573bab014a9b1d82ba9d7"
 ---

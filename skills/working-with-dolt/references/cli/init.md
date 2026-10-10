@@ -1,5 +1,5 @@
 ---
-source: "dolt init --help @ 2.1.7"
+source: "dolt init --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "335501d63a8343cd9737f5b298a4ebf0c2e5e730ca68e2e23aa3fea097d15420"
 ---

@@ -2,7 +2,7 @@
 title: "Operation"
 description: Polling background work in the Hosted v1 API.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/operation.md"
-fetched_at: "2026-10-05T11:16:16.598Z"
+fetched_at: "2026-10-10T20:16:32.123Z"
 sha256: "18a428745eb547ff31b02f07177df42f139750a69ab879795d22869ca4b016ff"
 ---
 

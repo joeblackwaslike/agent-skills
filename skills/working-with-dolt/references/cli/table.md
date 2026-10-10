@@ -1,5 +1,5 @@
 ---
-source: "dolt table --help @ 2.1.7"
+source: "dolt table --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "c9d6d923308a2deb0d2b886a13ff01073cc481f3b09c12e1834061a9975fecb7"
 ---
