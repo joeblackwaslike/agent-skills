@@ -1,5 +1,5 @@
 ---
-source: "dolt reset --help @ 2.1.7"
+source: "dolt reset --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "6f9d17a3a4fc909be44517454472e90586d98fdbe226d5aa12edcf80afa1b852"
 ---

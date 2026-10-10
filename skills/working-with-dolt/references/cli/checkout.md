@@ -1,5 +1,5 @@
 ---
-source: "dolt checkout --help @ 2.1.7"
+source: "dolt checkout --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "c54cfe81ca21c9d3422416957c73c97d86be4782d1686902a65277beeae28103"
 ---

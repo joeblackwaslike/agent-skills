@@ -1,7 +1,7 @@
 ---
-source: "bd linear sync --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "2fd5360b86a724ad431d304215ec916b7f5f9b159c44e8a06a616574446a940d"
+source: "bd linear sync --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "bf40aae8550fc4db1f19a6b79bccc155ee147ca267bf3fb0d277e4260c2171e2"
 ---
 
 Synchronize issues between beads and Linear.
@@ -32,6 +32,18 @@ Type Filtering (--push only):
   --include-ephemeral       Include ephemeral issues (wisps, etc.); default is to exclude
   --parent TICKET           Only push this ticket and its descendants
   --relations               Import Linear relations as bd dependencies on pull
+
+Persistent push-direction ID filters (workflow artifacts, sandbox beads, etc.):
+  bd config set linear.exclude_id_prefix "hw-mol-"
+  bd config set linear.exclude_id_patterns "-wisp-,sandbox-,scratch-"
+
+  exclude_id_prefix is a single case-sensitive prefix on the bead ID.
+  exclude_id_patterns is a comma-separated list of case-sensitive substrings
+  (matched anywhere in the ID). Both are combined as a union: a bead
+  matching either rule is skipped from push (no create, no update). Beads
+  with an existing external_ref that NOW match are silently skipped on
+  future syncs; the Linear-side issue persists — archive/delete it manually
+  if desired.
 
 Conflict Resolution:
   By default, newer timestamp wins. Override with:
@@ -77,13 +89,16 @@ Flags:
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
   -q, --quiet                     Suppress non-essential output (errors only)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push

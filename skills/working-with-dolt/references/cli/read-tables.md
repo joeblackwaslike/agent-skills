@@ -1,5 +1,5 @@
 ---
-source: "dolt read-tables --help @ 2.1.7"
+source: "dolt read-tables --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "25304e2bd97bb74093e4eec0b71c02997f490c380bb1e3aa657792c7f442ff2f"
 ---

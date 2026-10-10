@@ -1,5 +1,5 @@
 ---
-source: "dolt dump --help @ 2.1.7"
+source: "dolt dump --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "c03d6abcecf6a6a9128a2aa573a0ee02acd4e9b6c0951e32820a666f027bdeeb"
 ---

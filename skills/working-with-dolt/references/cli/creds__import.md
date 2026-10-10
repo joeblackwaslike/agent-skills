@@ -1,5 +1,5 @@
 ---
-source: "dolt creds import --help @ 2.1.7"
+source: "dolt creds import --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "11fc072516e64d2b7391dea24b4400d620d92bcb269cf57e47eeb5476a0ac716"
 ---

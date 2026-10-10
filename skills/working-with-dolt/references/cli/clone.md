@@ -1,5 +1,5 @@
 ---
-source: "dolt clone --help @ 2.1.7"
+source: "dolt clone --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "971cf8039c7c683ef35533460f7ba40063547ab00f6babddea07b0b77de4b191"
 ---

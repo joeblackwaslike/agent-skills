@@ -1,5 +1,5 @@
 ---
-source: "dolt clean --help @ 2.1.7"
+source: "dolt clean --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "28bc93123b14bbf02a5ccb4bd78a5c763c12e0ac58e5b3d2cf5b16ad16c42fdc"
 ---

@@ -1,5 +1,5 @@
 ---
-source: "dolt log --help @ 2.1.7"
+source: "dolt log --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "282cbd02503192dd4cbfcf5681b51b63756f20d5ba48069e082ffea405ed9bf1"
 ---

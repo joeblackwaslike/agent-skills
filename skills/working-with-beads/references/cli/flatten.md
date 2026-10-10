@@ -1,7 +1,7 @@
 ---
-source: "bd flatten --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "3111aa74b4b4590d6a2c98cce5f90fa2aa2519847be936be1012871be20a91d0"
+source: "bd flatten --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "e30ef91994d3239150bc00a57ccb223c7f960e136507cb432ea638335bd78755"
 ---
 
 Nuclear option: squash ALL Dolt commit history into a single commit.
@@ -11,7 +11,15 @@ This uses the Tim Sehn recipe:
   2. Soft-reset to the initial commit (preserving all data)
   3. Commit everything as a single snapshot
   4. Swap main branch to the new flattened branch
-  5. Run Dolt GC to reclaim space from old history
+  5. Prune remote-tracking refs (they would keep the old history alive;
+     the next push or fetch re-creates them at the new tip)
+  6. Run a full Dolt GC (all storage generations) to reclaim the old history
+
+The GC pass is a full collection: Dolt storage is generational, and a default
+GC never revisits data an earlier GC moved to the old generation. On any store
+that has been GC'd before (bd gc, or a previous flatten or compact), only a
+full collection reclaims the squashed history. A full GC can take minutes on
+multi-gigabyte stores.
 
 This is irreversible — all commit history is lost. The resulting database
 has exactly one commit containing all current data.
@@ -36,13 +44,16 @@ Flags:
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
   -q, --quiet                     Suppress non-essential output (errors only)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push

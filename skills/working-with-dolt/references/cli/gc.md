@@ -1,7 +1,7 @@
 ---
-source: "dolt gc --help @ 2.1.7"
-fetched_at: "2026-06-15T20:08:28.186Z"
-sha256: "135415a8191d4a031cf9fba020e72efae8f33bf8e18b9947876c097c4d9b04d6"
+source: "dolt gc --help @ 2.4.2"
+fetched_at: "2026-10-10T20:16:32.123Z"
+sha256: "0d288ba3d3ecb6c0d7a06659fc98773818f853441a2150bc14599e1591d94e10"
 ---
 
 NAME
@@ -14,7 +14,7 @@ DESCRIPTION
 	Searches the repository for data that is no longer referenced and no longer needed.
 	
 	Dolt GC is generational. When a GC is run, everything reachable from any commit on any branch
-	is put into the old generation. Data which is only reachable from uncommited branch HEADs is kept in
+	is put into the old generation. Data which is only reachable from uncommitted branch HEADs is kept in
 	the new generation. By default, Dolt GC will only visit data in the new generation, and so will never
 	collect data from deleted branches which has previously made its way to the old generation from being
 	copied during a prior garbage collection.

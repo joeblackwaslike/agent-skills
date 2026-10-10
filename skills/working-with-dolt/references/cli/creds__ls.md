@@ -1,5 +1,5 @@
 ---
-source: "dolt creds ls --help @ 2.1.7"
+source: "dolt creds ls --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "fc89c6fa2764fc317af14f8e6acb739e659936af57e9ef6279853b4aa8ff6ac1"
 ---

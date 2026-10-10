@@ -1,7 +1,7 @@
 ---
-source: "bd init-safety --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "42059003a8d0a80ffb4e9b8b73b937cd50ef4e1fe22b4f066ffec44caebea158"
+source: "bd init-safety --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "47e35a34efb94264ec9fb5802bfdeb2568e15cd017f09afa602a032362b0c232"
 ---
 
 bd init flag safety contract.
@@ -29,6 +29,11 @@ FLAG SURFACE
   bd init --force               Deprecated alias for --reinit-local.
                                 Kept working for ≥2 releases.
 
+  bd init --from-jsonl          Import from configured import.path. If
+                                origin has Dolt data, this refuses unless
+                                --discard-remote authorizes replacing that
+                                remote history.
+
 ADOPTING A REMOTE
 
   If you want to use the remote's existing history, use:
@@ -39,8 +44,10 @@ ADOPTING A REMOTE
 
 DESTROY-TOKEN (non-interactive only)
 
-  When running with no TTY (CI, agents, piped input), --discard-remote
-  requires an explicit --destroy-token value. The token format is:
+  When running with no TTY (CI, agents, piped input), a destructive
+  re-init requires an explicit --destroy-token value. That covers both
+  --discard-remote and --reinit-local over existing issues. The token
+  format is:
 
       DESTROY-<issue-prefix>
 
@@ -51,19 +58,22 @@ DESTROY-TOKEN (non-interactive only)
   In interactive (TTY) mode you confirm via a typed prompt instead. The
   token is not echoed by bd's runtime error messages — this is a
   deliberate guard against pattern-matched one-liners (see
-  docs/adr/0002-init-safety-invariants.md).
+  engdocs/adr/0002-init-safety-invariants.md).
 
 EXIT CODES
 
-  10    refused: remote has Dolt history and you passed --force/--reinit-local
+  10    refused: remote has Dolt history and you selected local history
         without --discard-remote
   11    refused: existing local data and you declined the destroy confirm
-  12    refused: --discard-remote passed without a valid --destroy-token
-        (non-interactive mode)
+        (interactive mode only)
+  12    refused: destructive re-init (--discard-remote, or --reinit-local
+        over existing issues) without a valid --destroy-token
+        (non-interactive mode); also returned when the interactive
+        --discard-remote typed-token confirmation is declined
 
 RECOVERY
 
-  If you hit a refusal, see docs/RECOVERY.md for step-by-step recovery
+  If you hit a refusal, see docs/recovery/init-safety.md for step-by-step recovery
   playbooks for each exit code.
 
 
@@ -75,13 +85,16 @@ Flags:
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
   -q, --quiet                     Suppress non-essential output (errors only)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push

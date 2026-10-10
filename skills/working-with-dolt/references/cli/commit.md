@@ -1,5 +1,5 @@
 ---
-source: "dolt commit --help @ 2.1.7"
+source: "dolt commit --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "359019db218be8c63e25196ed5880f2ba633ca4156322999db497fb691a7267d"
 ---

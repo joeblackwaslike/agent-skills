@@ -1,5 +1,5 @@
 ---
-source: "dolt stash --help @ 2.1.7"
+source: "dolt stash --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "46a6157279df7ad695c4d1323b8e9c9e47f2339e0fb507254e5e22c7e3b8411b"
 ---

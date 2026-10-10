@@ -1,7 +1,7 @@
 ---
-source: "bd hooks run --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "2f1396ecb31c8974427556055bf275dcf7296d37e71da7c83319df00214e87a5"
+source: "bd hooks run --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "3935cf41cea3ea59e3bab6c88ccf6a3de821dc7b3acc79780cbf6a720c7eeb9e"
 ---
 
 Execute the logic for a git hook. This command is typically called by
@@ -14,8 +14,9 @@ Supported hooks:
   - post-checkout: Run chained hooks after branch checkout
   - prepare-commit-msg: Add agent identity trailers for forensics
 
-The thin shim pattern ensures hook logic is always in sync with the
-installed bd version - upgrading bd automatically updates hook behavior.
+The thin shim keeps delegated hook logic in sync with the installed bd
+version. Upgrading bd updates that delegated behavior. To adopt changes to the
+shim's generated shell policy, refresh it with 'bd hooks install'.
 
 Usage:
   bd hooks run <hook-name> [args...] [flags]
@@ -25,13 +26,16 @@ Flags:
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
   -q, --quiet                     Suppress non-essential output (errors only)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push

@@ -1,7 +1,7 @@
 ---
-source: "bd config --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "24d2dfac9af84e14851ad6111159ecac842f93457aacd2ec51c696bace720eb2"
+source: "bd config --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "514a450ec4554298db42c3c9e944949b47804fdccc333465de9849b60e93659c"
 ---
 
 Manage configuration settings for external integrations and preferences.
@@ -14,9 +14,14 @@ Common namespaces:
   - jira.*            Jira integration settings
   - linear.*          Linear integration settings
   - github.*          GitHub integration settings
+  - gitlab.*          GitLab integration settings
+  - ado.*             Azure DevOps integration settings
+  - notion.*          Notion integration settings
   - custom.*          Custom integration settings
   - status.*          Issue status configuration
+  - claim.*           Claim arbitration settings (pool-aware claiming)
   - doctor.suppress.* Suppress specific bd doctor warnings (GH#1095)
+  - lint.*            Additional per-type lint sections (stored in config.yaml)
 
 Auto-Export (config.yaml):
   Optional JSONL export to .beads/issues.jsonl after write commands (throttled).
@@ -49,6 +54,18 @@ Custom Status States:
   This enables issues to use statuses like 'awaiting_review' in addition to
   the built-in statuses (open, in_progress, blocked, deferred, closed).
 
+Claim Pools:
+  A dispatcher can pre-assign issues to a pool pseudo-assignee (e.g.
+  "fable-crew") and let any actor take them with --claim. List the pool
+  aliases in the claim.pools config key, comma-separated:
+
+    bd config set claim.pools "fable-crew,night-crew"
+
+  Issues assigned to a real actor (or to an alias not in the list) keep
+  their anti-steal protection. Pool takes carry the normal lease; note
+  that if a taker's lease expires, bd reclaim returns the issue to the
+  unassigned pool, not to the pool alias it was dispatched to.
+
 Suppressing Doctor Warnings:
   Suppress specific bd doctor warnings by check name slug:
     bd config set doctor.suppress.pending-migrations true
@@ -65,9 +82,11 @@ Examples:
   bd config set jira.url "https://company.atlassian.net"
   bd config set jira.project "PROJ"
   bd config set status.custom "awaiting_review,awaiting_testing"
+  bd config set claim.pools "fable-crew,night-crew"    # Pool aliases claimable by any actor
   bd config set doctor.suppress.pending-migrations true
   bd config set dolt.debug true                        # Enable Dolt sql-server debug mode (loglevel=debug, --prof cpu)
   bd config set dolt.local-only true                   # Skip wiring a Dolt sync remote during bd init
+  bd config set lint.sections.epic "Standards scorecard, Cost"   # Extra sections bd lint requires for epics
   bd config get export.auto
   bd config list
   bd config unset jira.url
@@ -91,13 +110,16 @@ Flags:
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
   -q, --quiet                     Suppress non-essential output (errors only)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push

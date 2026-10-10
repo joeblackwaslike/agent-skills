@@ -1,5 +1,5 @@
 ---
-source: "dolt login --help @ 2.1.7"
+source: "dolt login --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "fbfb43ff50cc99196dac47df09b1641c0c2d3b9b054dfa7f8a48885e1dc49758"
 ---

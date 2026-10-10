@@ -1,5 +1,5 @@
 ---
-source: "dolt fsck --help @ 2.1.7"
+source: "dolt fsck --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "ea5ec6e5d2d311ce4e6875cc61bc55f96c4d05255bd76c07febcf2b8ce1b89fb"
 ---

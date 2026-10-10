@@ -1,5 +1,5 @@
 ---
-source: "dolt sql-server --help @ 2.1.7"
+source: "dolt sql-server --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "c4ba092954915519982e1b4d3fdb2adb12d7e40b3ff2aa851949f094c3f33e86"
 ---

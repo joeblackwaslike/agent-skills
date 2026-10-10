@@ -2,7 +2,7 @@
 title: "Deployment"
 description: Creating, listing, and reading Hosted Dolt deployments and their instances.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/deployment.md"
-fetched_at: "2026-10-05T11:16:16.598Z"
+fetched_at: "2026-10-10T20:16:32.123Z"
 sha256: "140767b2a4e339750d3236ccf5b6f0ea5a89c654a9f49677698db3f895f5bcd7"
 ---
 

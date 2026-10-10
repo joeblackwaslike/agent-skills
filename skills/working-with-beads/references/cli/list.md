@@ -1,7 +1,7 @@
 ---
-source: "bd list --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "7b2b21f89a1c4cb49d76a1f84e3a616d8cf51e24f3d61fc32e8fa7d93e96b8f2"
+source: "bd list --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "135fdfddf72c5c16404759b68eb6b27c0d62b2842cdbb5f196cc50963c3d3545"
 ---
 
 List issues
@@ -12,6 +12,7 @@ Usage:
 Flags:
       --all                          Show all issues including closed (overrides default filter)
   -a, --assignee string              Filter by assignee
+      --brief                        Omit the free-form text (description, design, acceptance criteria, notes, payload, waiters) from each row. Filters that read those fields, such as --desc-contains, still select on them. An omitted field is indistinguishable from an empty one in --json; fetch a whole issue with bd show.
       --closed-after string          Filter issues closed after date (YYYY-MM-DD or RFC3339)
       --closed-before string         Filter issues closed before date (YYYY-MM-DD or RFC3339)
       --created-after string         Filter issues created after date (YYYY-MM-DD or RFC3339)
@@ -19,19 +20,23 @@ Flags:
       --defer-after string           Filter issues deferred after date (supports relative: +6h, tomorrow)
       --defer-before string          Filter issues deferred before date (supports relative: +6h, tomorrow)
       --deferred                     Show only issues with defer_until set
+      --deps string[="scheduling"]   Annotate tree with dependency edges and order siblings by them: 'scheduling' (bare --deps) or 'all'
       --desc-contains string         Filter by description substring (case-insensitive)
       --due-after string             Filter issues due after date (supports relative: +6h, tomorrow)
       --due-before string            Filter issues due before date (supports relative: +6h, tomorrow)
       --empty-description            Filter issues with empty or missing description
       --exclude-label strings        Exclude issues that have ANY of these labels
       --exclude-type strings         Exclude issue types from results (comma-separated or repeatable, e.g., --exclude-type=convoy,epic)
+      --external-contains string     Filter by external ref substring (case-insensitive)
+      --external-ref string          Filter by exact external_ref value
       --flat                         Disable tree format and use legacy flat list output
       --format string                Output format: 'digraph' (for golang.org/x/tools/cmd/digraph), 'dot' (Graphviz), or Go template
       --has-metadata-key string      Filter issues that have this metadata key set
   -h, --help                         help for list
       --id string                    Filter by specific issue IDs (comma-separated, e.g., bd-1,bd-5,bd-10)
+      --include-ephemeral            Include ephemeral wisp-plane rows in output (normally hidden)
       --include-gates                Include gate issues in output (normally hidden)
-      --include-infra                Include infrastructure beads (agent/rig/role/message) in output
+      --include-infra                Include infrastructure beads (agent/role/message) in output
       --include-templates            Include template molecules in output
   -l, --label strings                Filter by labels (AND: must have ALL). Can combine with --label-any
       --label-any strings            Filter by labels (OR: must have AT LEAST ONE). Can combine with --label
@@ -39,6 +44,7 @@ Flags:
       --label-regex string           Filter by label regex pattern (e.g., 'tech-(debt|legacy)')
   -n, --limit int                    Limit results (default 50, use 0 for unlimited) (default 50)
       --long                         Show detailed multi-line output for each issue
+      --max-rows int                 Hard upper bound on rows returned. Returns a non-zero exit (code 2) and an error to stderr if exceeded. 0 disables (the default). Overrides BEADS_MAX_ROWS for this invocation. Useful in CI/agent rigs that want a circuit breaker against pathological queries. Honored on both the direct and the --proxied-server route.
       --metadata-field stringArray   Filter by metadata field (key=value, repeatable)
       --mol-type string              Filter by molecule type: swarm, patrol, or work
       --no-assignee                  Filter issues with no assignee
@@ -47,6 +53,7 @@ Flags:
       --no-parent                    Exclude child issues (show only top-level issues)
       --no-pinned                    Exclude pinned issues
       --notes-contains string        Filter by notes substring (case-insensitive)
+      --offset int                   Skip the first N matching results (0-based). Only supported under --proxied-server.
       --overdue                      Show only issues with due_at in the past (not closed)
       --parent string                Filter by parent issue ID (shows children of specified issue)
       --pinned                       Show only pinned issues
@@ -59,7 +66,7 @@ Flags:
       --skip-labels                  Skip label hydration. The labels field in output will be empty regardless of actual labels. Use only when the caller does not depend on label data. Cannot combine with --label, --label-any, --label-pattern, --label-regex, --exclude-label, or --no-labels.
       --sort string                  Sort by field: priority, created, updated, closed, status, id, title, type, assignee
       --spec string                  Filter by spec_id prefix
-  -s, --status string                Filter by stored status (open, in_progress, blocked, deferred, closed). Comma-separated for multiple: --status open,in_progress
+  -s, --status string                Filter by stored status (open, in_progress, blocked, deferred, closed). Comma-separated for multiple: --status open,in_progress. Note: repeating -s/--status silently overwrites the previous value — always use the comma-separated form for multi-status filters.
       --title string                 Filter by title text (case-insensitive substring match)
       --title-contains string        Filter by title substring (case-insensitive)
       --tree                         Hierarchical tree format (default: true; use --flat to disable) (default true)
@@ -71,13 +78,16 @@ Flags:
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
   -q, --quiet                     Suppress non-essential output (errors only)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push

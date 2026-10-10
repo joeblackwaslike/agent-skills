@@ -2,7 +2,7 @@
 name: working-with-beads
 description: Use when working with the beads CLI (`bd`) — issue/task tracking, dependencies, the full command surface (create, ready, dep, epic, gate, swarm, federation, dolt, worktree, compaction), `bd prime`, and the beads data model. Provides an offline CLI reference generated verbatim from the pinned `bd` binary plus the upstream repo docs, pinned to a known version. Invoke for any `bd <command>` question, flag lookup, or beads concept. For Joe's operating conventions and troubleshooting, use `beads-operations`.
 metadata:
-  last_updated: "2026-06-12"
+  last_updated: "2026-10-10"
 ---
 
 # Working with beads (`bd`)

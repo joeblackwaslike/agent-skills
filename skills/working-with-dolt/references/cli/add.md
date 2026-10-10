@@ -1,5 +1,5 @@
 ---
-source: "dolt add --help @ 2.1.7"
+source: "dolt add --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "fcbb213944b12e1cbddb04f538c70cead0e212a468eb19bf5a46e46bca17ba42"
 ---

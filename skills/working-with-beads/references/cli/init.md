@@ -1,14 +1,14 @@
 ---
-source: "bd init --help @ 1.0.5"
-fetched_at: "2026-06-12T18:59:04.430Z"
-sha256: "2c95cd7d5630a68069da0932088dd7ac19407af76c7f6135320e688865140924"
+source: "bd init --help @ 1.3.1"
+fetched_at: "2026-10-10T20:16:16.873Z"
+sha256: "263e0fe677991d58c22fc56e742812e3f537e206c94b00346a66f65ce31ff175"
 ---
 
 Initialize bd in the current directory by creating a .beads/ directory
-and Dolt database. Optionally specify a custom issue prefix.
+and its storage (a Dolt database by default). Optionally specify a custom issue prefix.
 
-Dolt is the default (and only supported) storage backend. The legacy SQLite
-backend has been removed. Use --backend=sqlite to see migration instructions.
+Dolt is the default and only supported storage backend, with full version
+control (history, branching, sync).
 
 Use --database to specify an existing server database name, overriding the
 default prefix-based naming. This is useful when an external tool (e.g. an orchestrator)
@@ -42,58 +42,68 @@ Usage:
   bd init [flags]
 
 Flags:
-      --agents-file string                             Custom filename for agent instructions (default: AGENTS.md)
-      --agents-profile string                          AGENTS.md profile: 'minimal' (default, pointer to bd prime) or 'full' (complete command reference)
-      --agents-template string                         Path to custom AGENTS.md template (overrides embedded default)
-      --backend string                                 Storage backend (default: dolt). --backend=sqlite prints deprecation notice.
-      --contributor                                    Run OSS contributor setup wizard
-      --database string                                Use existing server database name (overrides prefix-based naming)
-      --debug                                          Run the managed Dolt sql-server with --loglevel=debug and CPU profiling (--prof cpu). Persisted to config.yaml as dolt.debug. No effect on externally-managed servers.
-      --destroy-token string                           Explicit confirmation token for destructive re-init in non-interactive mode (format: 'DESTROY-<prefix>')
-      --discard-remote                                 Authorize discarding the configured remote's Dolt history when re-initializing. Requires --destroy-token in non-interactive mode; see 'bd help init-safety'.
-      --external                                       Server is externally managed (skip server startup); use with --shared-server or --server
-      --force                                          Deprecated alias for --reinit-local. Bypasses only the LOCAL data-safety guard; does NOT authorize remote divergence (see 'bd help init-safety').
-      --from-jsonl                                     Import issues from configured import.path instead of git history
-  -h, --help                                           help for init
-      --non-interactive                                Skip all interactive prompts (auto-detected in CI or non-TTY environments)
-  -p, --prefix string                                  Issue prefix (default: current directory name)
-      --proxied-server                                 [EXPERIMENTAL] Use a per-workspace proxied dolt sql-server (proxy + child dolt) rooted at .beads/proxieddb
-      --proxied-server-config-path string              [EXPERIMENTAL] Absolute path to an existing dolt sql-server YAML config (proxied-server mode only). When set, bd uses this file instead of auto-generating one. Relative paths are rejected.
-      --proxied-server-external-host string            [EXPERIMENTAL] Hostname or IP of an externally-managed dolt sql-server the proxy should front (proxied-server mode only). Mutually exclusive with --proxied-server-external-socket-path.
-      --proxied-server-external-keep-alive duration    [EXPERIMENTAL] TCP keepalive period for the proxy→external connection. Zero uses the package default (30s).
-      --proxied-server-external-port int               [EXPERIMENTAL] TCP port of the externally-managed dolt sql-server (proxied-server mode only). Required when --proxied-server-external-host is set.
-      --proxied-server-external-socket-path string     [EXPERIMENTAL] Absolute unix socket path of the externally-managed dolt sql-server (proxied-server mode only). Mutually exclusive with --proxied-server-external-host. Relative paths are rejected.
-      --proxied-server-external-tls                    [EXPERIMENTAL] Require TLS when connecting to the externally-managed dolt sql-server (proxied-server mode only).
-      --proxied-server-external-tls-cert-path string   [EXPERIMENTAL] Absolute path to a client TLS certificate (for mTLS to the externally-managed dolt sql-server). Must be paired with --proxied-server-external-tls-key-path. Relative paths are rejected.
-      --proxied-server-external-tls-key-path string    [EXPERIMENTAL] Absolute path to the client TLS private key (for mTLS to the externally-managed dolt sql-server). Must be paired with --proxied-server-external-tls-cert-path. Relative paths are rejected.
-      --proxied-server-external-user string            [EXPERIMENTAL] MySQL user for the externally-managed dolt sql-server (proxied-server mode only). Defaults to "root" when empty. Password is read at runtime from $BEADS_PROXIED_SERVER_EXTERNAL_PASSWORD and is never persisted to disk.
-      --proxied-server-log-path string                 [EXPERIMENTAL] Absolute path to the proxied dolt sql-server log file (proxied-server mode only). Default: <beadsDir>/proxieddb/server.log. Relative paths are rejected.
-      --proxied-server-root-path string                [EXPERIMENTAL] Absolute directory holding the proxied dolt sql-server's lockfiles, pidfiles, and child .dolt repository (proxied-server mode only). Default: <beadsDir>/proxieddb. May not exist yet — bd will create it. Relative paths are rejected.
-  -q, --quiet                                          Suppress output (quiet mode)
-      --reinit-local                                   Re-initialize local .beads/ over existing local data. Does NOT authorize remote divergence; see --discard-remote.
-      --remote string                                  Dolt remote URL to clone from and persist as sync.remote
-      --role string                                    Set beads role without prompting: "maintainer" or "contributor"
-      --server                                         Use external dolt sql-server instead of embedded engine
-      --server-host string                             Dolt server host (default: 127.0.0.1)
-      --server-port int                                Dolt server port (default: 3307)
-      --server-socket string                           Unix domain socket path (overrides host/port)
-      --server-user string                             Dolt server MySQL user (default: root)
-      --setup-exclude                                  Configure .git/info/exclude to keep beads files local (for forks)
-      --shared-server                                  Enable shared Dolt server mode (all projects share one server at ~/.beads/shared-server/)
-      --skip-agents                                    Skip AGENTS.md and Claude/Codex setup generation
-      --skip-hooks                                     Skip git hooks installation
-      --stealth                                        Enable stealth mode: global gitattributes and gitignore, no local repo tracking
-      --team                                           Run team workflow setup wizard
+      --agents-file string                                Custom filename for agent instructions (default: AGENTS.md)
+      --agents-profile string                             AGENTS.md profile: 'minimal' (default, pointer to bd prime) or 'full' (complete command reference)
+      --agents-template string                            Path to custom AGENTS.md template (overrides embedded default)
+      --backend string                                    Storage backend: dolt (default). Removed backends (postgres, mysql, sqlite) print migration guidance.
+      --contributor                                       Run OSS contributor setup wizard
+      --debug                                             Run the managed Dolt sql-server with --loglevel=debug and CPU profiling (--prof cpu). Persisted to config.yaml as dolt.debug. No effect on externally-managed servers.
+      --destroy-token string                              Explicit confirmation token for destructive re-init in non-interactive mode (format: 'DESTROY-<prefix>')
+      --discard-remote                                    Authorize discarding the configured remote's Dolt history when re-initializing. Requires --destroy-token in non-interactive mode; see 'bd help init-safety'.
+      --external                                          Server is externally managed (skip server startup); use with --shared-server or --server
+      --force                                             Deprecated alias for --reinit-local. Bypasses only the LOCAL data-safety guard; does NOT authorize remote divergence (see 'bd help init-safety').
+      --from-jsonl                                        Import issues from configured import.path; refuses remote history unless --discard-remote authorizes replacement
+  -h, --help                                              help for init
+      --init-if-missing                                   If the workspace is already initialized, skip init and exit 0 instead of failing (idempotent init for scaffolds)
+      --non-interactive                                   Skip all interactive prompts (auto-detected in CI or non-TTY environments)
+  -p, --prefix string                                     Issue prefix (default: current directory name)
+      --proxied-server                                    [EXPERIMENTAL] Use a per-workspace proxied dolt sql-server (proxy + child dolt) rooted at .beads/dolt
+      --proxied-server-config-path string                 [EXPERIMENTAL] Absolute path to an existing dolt sql-server YAML config (proxied-server mode only). When set, bd uses this file instead of auto-generating one. Relative paths are rejected. Managed mode requires listener.host to be a numeric loopback IP (hostnames including localhost, non-loopback addresses, listener.socket, remotesapi, and cluster config are rejected); the same policy applies to BEADS_PROXIED_SERVER_CONFIG.
+      --proxied-server-external-host string               [EXPERIMENTAL] Hostname or IP of an externally-managed dolt sql-server the proxy should front (proxied-server mode only). Mutually exclusive with --proxied-server-external-socket-path.
+      --proxied-server-external-keep-alive duration       [EXPERIMENTAL] TCP keepalive period for the proxy→external connection. Zero uses the package default (30s).
+      --proxied-server-external-port int                  [EXPERIMENTAL] TCP port of the externally-managed dolt sql-server (proxied-server mode only). Required when --proxied-server-external-host is set.
+      --proxied-server-external-socket-path string        [EXPERIMENTAL] Absolute unix socket path of the externally-managed dolt sql-server (proxied-server mode only). Mutually exclusive with --proxied-server-external-host. Relative paths are rejected.
+      --proxied-server-external-tls                       [EXPERIMENTAL] Require TLS when connecting to the externally-managed dolt sql-server (proxied-server mode only).
+      --proxied-server-external-tls-ca-cert-path string   [EXPERIMENTAL] Absolute path to a CA certificate (PEM) used to verify the externally-managed dolt sql-server. Empty uses the system trust store. Relative paths are rejected.
+      --proxied-server-external-tls-cert-path string      [EXPERIMENTAL] Absolute path to a client TLS certificate (for mTLS to the externally-managed dolt sql-server). Must be paired with --proxied-server-external-tls-key-path. Relative paths are rejected.
+      --proxied-server-external-tls-key-path string       [EXPERIMENTAL] Absolute path to the client TLS private key (for mTLS to the externally-managed dolt sql-server). Must be paired with --proxied-server-external-tls-cert-path. Relative paths are rejected.
+      --proxied-server-external-tls-server-name string    [EXPERIMENTAL] Server name to verify in the external dolt sql-server's TLS certificate. Defaults to the external host. Required with a unix socket unless --proxied-server-external-tls-skip-verify is set.
+      --proxied-server-external-tls-skip-verify           [EXPERIMENTAL] Skip TLS certificate verification for the external dolt sql-server. Insecure; testing only.
+      --proxied-server-external-user string               [EXPERIMENTAL] MySQL user for the externally-managed dolt sql-server (proxied-server mode only). Defaults to "root" when empty. Password is read at runtime from $BEADS_PROXIED_SERVER_EXTERNAL_PASSWORD and is never persisted to disk.
+      --proxied-server-idle-timeout duration              [EXPERIMENTAL] Idle duration after which the proxy shuts down its loopback listener and backend (proxied-server mode only). Omit for the built-in default (30s); 0 keeps the proxy and backend alive indefinitely; a positive value sets the window.
+      --proxied-server-log-path string                    [EXPERIMENTAL] Absolute path to the proxied dolt sql-server log file (proxied-server mode only). Default: <beadsDir>/dolt/server.log. Relative paths are rejected.
+      --proxied-server-port int                           [EXPERIMENTAL] Fixed TCP port for the proxy's loopback listener (proxied-server mode only). Default 0 = an OS-assigned free port. Startup fails if the port is already in use.
+      --proxied-server-root-path string                   [EXPERIMENTAL] Absolute directory holding the proxied dolt sql-server's lockfiles, pidfiles, and child .dolt repository (proxied-server mode only). Default: <beadsDir>/dolt. May not exist yet — bd will create it. Relative paths are rejected.
+  -q, --quiet                                             Suppress output (quiet mode)
+      --reinit-local                                      Re-initialize local .beads/ over existing local data. Does NOT authorize remote divergence; see --discard-remote.
+      --remote string                                     Dolt remote URL to clone from and persist as sync.remote
+      --role string                                       Set beads role without prompting: "maintainer" or "contributor"
+      --server                                            Use external dolt sql-server instead of embedded engine
+      --server-host string                                Dolt server host (default: 127.0.0.1)
+      --server-port int                                   Dolt server port (default: 3307)
+      --server-socket string                              Unix domain socket path (overrides host/port; pass '' to ignore an ambient BEADS_DOLT_SERVER_SOCKET and use TCP)
+      --server-tls                                        Require TLS for the init-time Dolt server connection (overrides BEADS_DOLT_SERVER_TLS for this run; not persisted - set the env var or credentials file for later commands)
+      --server-user string                                Dolt server MySQL user (default: root)
+      --setup-exclude                                     Configure .git/info/exclude to keep beads files local (for forks)
+      --shared-server                                     Enable shared Dolt server mode (all projects share one server at ~/.beads/shared-server/)
+      --skip-agents                                       Skip AGENTS.md and Claude/Codex/Cursor setup generation
+      --skip-hooks                                        Skip git hooks installation
+      --stealth                                           Enable stealth mode: global gitattributes and gitignore, no local repo tracking
+      --team                                              Run team workflow setup wizard
+      --team-server                                       [EXPERIMENTAL] The shared database's schema is managed by beads-team-server (bts): bd never creates the database or runs schema migrations, only verifies the schema version (proxied-server mode only). Not related to --team.
 
 Global Flags:
       --actor string              Actor name for audit trail (default: $BEADS_ACTOR, git user.name, $USER)
-      --db string                 Database path (default: auto-discover .beads/*.db)
+      --cpu-profile               Generate CPU profile for performance analysis
+      --database string           Run against a different server database for this invocation, without changing the project's configured database (proxied-server mode only)
+      --db string                 Database path (default: auto-discover .beads/*.db). In proxied-server mode, a value that isn't an existing path is treated as a database name override (see --database)
   -C, --directory string          Change to this directory before running the command (like git -C)
-      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then. SIGTERM/SIGHUP flush pending batch commits. Default: off. Override via config key dolt.auto-commit
+      --dolt-auto-commit string   Dolt auto-commit policy (off|on|batch). 'on': commit after each write. 'batch': defer commits to bd dolt commit; uncommitted changes persist in the working set until then (a live batch-mode bd process also flushes on SIGTERM/SIGHUP, except in proxied-server mode, where bd dolt commit is the only flush point). In proxied-server mode the deferral covers the writes the CLI makes on that route, including config and version metadata; explicit commit points (bd batch, bd mol bond/pour/squash, bd mol wisp create, and the wisp half of bd mol burn) still commit, and a bd serve process on the same database is unaffected. Default: on. Override via config key dolt.auto-commit
       --global                    Use the global shared-server database (beads_global)
       --ignore-schema-skew        Proceed despite forward schema drift (some queries may fail)
       --json                      Output in JSON format
-      --profile                   Generate CPU profile for performance analysis
+      --mem-profile string        Write heap profile to FILE on exit (also respects BEADS_MEM_PROFILE)
+      --no-color                  Disable color output (also: NO_COLOR=1 or CLICOLOR=0)
       --readonly                  Read-only mode: block write operations (for worker sandboxes)
       --sandbox                   Sandbox mode: disables Dolt auto-push
   -v, --verbose                   Enable verbose/debug output

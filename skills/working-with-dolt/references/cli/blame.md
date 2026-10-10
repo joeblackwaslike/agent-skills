@@ -1,5 +1,5 @@
 ---
-source: "dolt blame --help @ 2.1.7"
+source: "dolt blame --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "59ff7c728fff585b82f230cb4035feeabac9bf062ce80306eacf925f6aca9216"
 ---

@@ -1,5 +1,5 @@
 ---
-source: "dolt table cp --help @ 2.1.7"
+source: "dolt table cp --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "3940e8a57c09f8a57a2a4be1dd97f5af433e2b1f3defedffebe76fc6967b82a8"
 ---

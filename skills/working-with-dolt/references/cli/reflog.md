@@ -1,5 +1,5 @@
 ---
-source: "dolt reflog --help @ 2.1.7"
+source: "dolt reflog --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "1efc46117cc7c161de577cc486d27414a25f40b506661809e20fadf59abc3bd8"
 ---

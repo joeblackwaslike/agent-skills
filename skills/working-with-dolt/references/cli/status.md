@@ -1,5 +1,5 @@
 ---
-source: "dolt status --help @ 2.1.7"
+source: "dolt status --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "5ddb9b4b1c4e279ed06d7a3b2fc0aa0e6cb63e6593ee466348324d7077052988"
 ---

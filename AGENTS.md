@@ -15,6 +15,8 @@ Doc-wrapping skills keep `references/` current via `skills/<name>/scripts/update
 
 Fetched docs carry `source`/`fetched_at`/`sha256` frontmatter (the sha drives change-detection, so unchanged content doesn't churn timestamps); each `SKILL.md` carries `metadata.last_updated`. Both flow through `scripts/lib/doc-frontmatter.cjs`. See `authoring-agent-skills` for the full doc-fetching + freshness cookbook (`withFrontmatter`/`setSkillLastUpdated`, `node scripts/backfill-last-updated.cjs`).
 
+**Local auto-update:** a `SessionStart` hook bundled in the plugin (`.claude-plugin/hooks/hooks.json` → `.claude-plugin/hooks/auto-update.sh`) runs `claude plugin update agent-skills@agent-marketplace` once per week (on first session start after the Monday workflow commits). To opt out, set `AGENT_SKILLS_AUTO_UPDATE=false` in your environment or under `env` in `~/.claude/settings.json`.
+
 ## Releasing — this plugin ships by commit SHA, not by a version string
 
 **Do not add a `version` field to `.claude-plugin/plugin.json`.** With `version` omitted from
@@ -87,5 +89,3 @@ The full skill catalog — one row per skill with when-to-invoke triggers — li
 **Resuming or auditing prior work:** `recovering-session-context` reconstructs what happened in earlier sessions from their transcripts and surfaces what was never resolved. Two modes — resume (the last session, then continue) and audit (a lookback window, then report). Backs the `/pickup` and `/outstanding` commands, and is worth invoking directly before declaring a thread finished.
 
 **Dolt / the data engine under beads:** `working-with-dolt` for the `dolt` CLI reference + dolthub.com docs and the shared `dolt sql-server` runbook (port 3308).
-
-**BeadBoard (multi-agent dashboard on top of beads):** `beadboard-operations` for operating its macOS launchd services (the `:3000` dashboard, the daemon), the dashboard HTTP API, the Dolt↔JSONL sync, and the operating/maintenance runbooks (mirrors the `beadboard-ops` repo docs). The agent-side coordination contract — the Iron Law, session lifecycle, mail, evidence — is the `beadboard-driver` skill.

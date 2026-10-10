@@ -1,5 +1,5 @@
 ---
-source: "dolt ls --help @ 2.1.7"
+source: "dolt ls --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "88b94431eaa983ba5f29a401376a1584891ea9076f53df4acb8d04959f6a2aad"
 ---

@@ -1,5 +1,5 @@
 ---
-source: "dolt branch --help @ 2.1.7"
+source: "dolt branch --help @ 2.4.2"
 fetched_at: "2026-06-15T20:08:28.186Z"
 sha256: "9012c624b5a0ebf8105650840171fa663240ec7ac567427ef570798c4db16e1f"
 ---
