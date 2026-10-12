@@ -1,11 +1,11 @@
 ---
 description: Remove AI code slop
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/rmslop.md"
-fetched_at: "2026-06-15T05:56:15.706Z"
-sha256: "066e981569517dc46dc34360e17bc40a02e4790ebbc75c4a360ce0745c377c64"
+fetched_at: "2026-10-12T11:48:23.877Z"
+sha256: "5fd9332ca2f88d6f1ec90232f78cdd93978ba0841df4a377eb2827792c271c8b"
 ---
 
-Check the diff against dev, and remove all AI generated slop introduced in this branch.
+Check the diff against `origin/dev`, and remove all AI generated slop introduced in this branch.
 
 This includes:
 

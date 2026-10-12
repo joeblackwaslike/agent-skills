@@ -9,15 +9,15 @@ prerequisites:
   - /docs/environment-variables
 related:
   - /docs/cli/project-linking
+  - /docs/environment-variables/sensitive-environment-variables
   - /docs/cli/env
   - /docs/cli/pull
   - /docs/cli/target
-  - /docs/environment-variables
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d36e97f73e7d1a579014d4ffd47c643172397728fac9ba94f8764378b6591fff"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "38de69ba486b09307f427a5690ba711f9f34b89a254e5206c2abdb26f9b63e5b"
 ---
 
 # Managing environment variables across environments
@@ -38,8 +38,8 @@ Use this guide to manage environment variables across multiple environments. You
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Vercel MCP tools for environment variables.
 - [Environments](https://vercel.com/docs/deployments/environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
-- [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
 
 Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fmanage-across-environments&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -64,7 +64,7 @@ vercel env ls development
 vercel env add DATABASE_URL production
 vercel env add DATABASE_URL preview
 
-# 4. Add a sensitive variable (hidden in dashboard, extra security)
+# 4. Add a Secret variable (write-only after saving)
 vercel env add API_SECRET production --sensitive
 
 # 5. Add a branch-specific preview variable
@@ -140,15 +140,21 @@ vercel env add DATABASE_URL preview
 vercel env add DATABASE_URL development
 ```
 
-## 4. Add sensitive variables
+## 4. Add Secret variables
 
-For secrets like API keys and tokens, use the `--sensitive` flag. This adds extra security measures and hides the value in the Vercel Dashboard:
+For credentials like API keys and tokens, use `--sensitive` or `--type secret`. Secret values are write-only after saving in the dashboard.
 
 ```bash filename="terminal"
-vercel env add API_SECRET production --sensitive
+vercel env add API_SECRET production --sensitive --yes
 ```
 
-Sensitive variables behave the same at runtime but their values are non-readable once created. They are only available in production and preview environments.
+Secrets are now allowed in Development. This reverses the earlier rule that limited Sensitive variables to Production and Preview.
+
+```bash filename="terminal"
+vercel env add DEV_API_SECRET development --sensitive --yes
+```
+
+For non-sensitive configuration that stays readable after saving, use `--no-sensitive` or `--type config`. See [Config and Secret environment variables](/docs/environment-variables/sensitive-environment-variables) for type behavior and team policies.
 
 ## 5. Add branch-specific variables
 

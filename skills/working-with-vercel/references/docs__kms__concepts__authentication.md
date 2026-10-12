@@ -17,8 +17,8 @@ related:
 summary: How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel access token, and how relying...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/authentication.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d924ee833c6de0b6edcd198e90bf2622abfe92ac44de4ed014aeafded6a91086"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "07715ebcd19c1ca5b562422f10ed1b6cc2b80f9cc85df7f0f6fee33542371a00"
 ---
 
 # Vercel KMS Authentication
@@ -36,7 +36,7 @@ KMS authorizes requests differently depending on what you are doing. Signing is 
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/kms/concepts/authentication.graph.md](/docs/kms/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -45,7 +45,7 @@ Full cross-link map for this page: [/docs/kms/concepts/authentication.graph.md](
 
 Signing requests are authorized with a Vercel OIDC token in the `Authorization: Bearer <token>` header. Inside a Vercel Function, the deployment's OIDC token is used automatically, so you do not manage any credentials yourself. To learn more about the token, see [OIDC federation](/docs/oidc).
 
-The [`@vercel/kms`](/docs/kms/ts-sdk-reference) SDK resolves the function's OIDC token for you through [`@vercel/oidc`](/docs/oidc). Because the token is resolved at call time, call `signToken` and `signMessage` inside an active request context, not at the module top level.
+The [`@vercel/kms`](/docs/kms/ts-sdk-reference) SDK resolves the function's OIDC token for you through [`@vercel/oidc`](/docs/oidc). Because the token is resolved at call time, call `signJWT` and `signMessage` inside an active request context, not at the module top level.
 
 ## Authorize management with an access token
 

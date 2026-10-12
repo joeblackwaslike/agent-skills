@@ -11,13 +11,13 @@ related:
   - /docs/sign-in-with-vercel/scopes-and-permissions
   - /docs/sign-in-with-vercel/tokens
   - /docs/sign-in-with-vercel/manage-from-dashboard
+  - /docs/oidc
   - /docs/functions
-  - /docs/kms
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7d5c348bba29f4c0bbe25712eda75dadc5cb1e50f1e90541cc6bec8ac54a3f9a"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "81efbd1873bf18e0a90abd9c708ea6cf1a7c804c7af008d9934f4a717d79e575"
 ---
 
 # Authorization Server API
@@ -30,13 +30,12 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Learn how to get started with Sign in with Vercel
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
+- [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Connect to your own API](https://vercel.com/docs/oidc/api?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
+- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fauthorization-server-api&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -143,12 +142,12 @@ export async function GET(req: NextRequest) {
 The Token Endpoint is used to exchange the `code` returned from the Authorization Endpoint, or a Refresh Token for a new [Access Token](/docs/sign-in-with-vercel/tokens#access-token) and [Refresh Token](/docs/sign-in-with-vercel/tokens#refresh-token) pair.
 
 | Parameter       | Required     | Description                                                                                                                                                                                                                                                                                                      |
-| --------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `grant_type`    | **Yes**      | Either `authorization_code` or `refresh_token`.<br />- If the user signs in from the application then `authorization_code` should be used.<br />- If the user is already signed in but the [Access Token](/docs/sign-in-with-vercel/tokens#access-token) has expired, then `refresh_token` should be used.         |
 | `client_id`     | **Yes**      | The ID of the App located in the [**Manage**](/docs/sign-in-with-vercel/manage-from-dashboard) page.                                                                                                                                                                                                             |
-| `client_secret`         | **Optional** | The client secret generated in the [**Manage**](/docs/sign-in-with-vercel/manage-from-dashboard) page. Omit this parameter if client authentication is set to `none`, or if you authenticate with a [JWT assertion](#authenticate-with-a-jwt-assertion) using `client_assertion` and `client_assertion_type`. |
-| `client_assertion`      | No           | Required when authenticating with a JWT assertion instead of `client_secret`. A signed JWT that proves the client's identity.                                                                                                                                                                                    |
-| `client_assertion_type` | No           | Required when using `client_assertion`. Must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`.                                                                                                                                                                                                        |
+| `client_secret`         | **Optional** | The client secret generated in the [**Manage**](/docs/sign-in-with-vercel/manage-from-dashboard) page. Omit this parameter if client authentication is set to `none`, or if you authenticate with a [JWT assertion](#authenticate-with-a-jwt-assertion) or an [OIDC token](#authenticate-with-an-oidc-token) using `client_assertion` and `client_assertion_type`. |
+| `client_assertion`      | No           | Required when authenticating with `client_assertion` instead of `client_secret`. A JWT that proves the client's identity, either a [JWT assertion](#authenticate-with-a-jwt-assertion) you sign or an [OIDC token](#authenticate-with-an-oidc-token) from a trusted issuer. |
+| `client_assertion_type` | No           | Required when using `client_assertion`. Must be `urn:ietf:params:oauth:client-assertion-type:jwt-bearer` for a [JWT assertion](#authenticate-with-a-jwt-assertion), or `urn:vercel:params:oauth:client-assertion-type:oidc-bearer` for an [OIDC token](#authenticate-with-an-oidc-token). |
 | `code`                  | No           | If `grant_type` is `authorization_code` then this parameter is required. The value is obtained during the [Authorization Endpoint](#authorization-endpoint) flow.                                                                                                                                                |
 | `code_verifier` | No           | If `grant_type` is `authorization_code` then this parameter is required. It should be the code verifier bound to the `code_challenge` from the authorization request.                                                                                                                                            |
 | `redirect_uri`  | No           | If `grant_type` is `authorization_code` then this parameter is required. It should be the same value used in the [Authorization Endpoint](#authorization-endpoint).                                                                                                                                              |
@@ -294,6 +293,61 @@ The expected response from the Token Endpoint is a JSON object with the followin
 }
 ```
 
+### Authenticate with an OIDC token
+
+You can authenticate to the Token Endpoint and [Revoke Token Endpoint](#revoke-token-endpoint) using an OIDC token issued by a trusted issuer, such as GitHub Actions or [Vercel](/docs/oidc), instead of sending a `client_secret`. [Enable OIDC-based authentication](/docs/sign-in-with-vercel/manage-from-dashboard#configure-oidc-based-authentication) and configure trusted issuers for your app.
+
+Once configured, send `client_id`, `client_assertion` (the OIDC token), and `client_assertion_type` in the request body, setting `client_assertion_type` to `urn:vercel:params:oauth:client-assertion-type:oidc-bearer`. Vercel then verifies the token's signature against the issuer's published keys and checks the token's claims against the claims you configured.
+
+The following example runs as a [Vercel Function](/docs/functions) and exchanges an authorization code using the deployment's own [Vercel OIDC token](/docs/oidc). `getVercelOidcToken()` from `@vercel/oidc` returns the token, which carries `iss` of `https://oidc.vercel.com/<team-slug>`, `aud` of `https://vercel.com/<team-slug>`, and `sub` of `owner:<team-slug>:project:<project-name>:environment:production`. The example assumes a trusted issuer configured in the [dashboard](/docs/sign-in-with-vercel/manage-from-dashboard#choose-your-client-authentication-method) with:
+
+- An issuer URL of `https://oidc.vercel.com/<team-slug>`
+- A `sub` claim set to `owner:<team-slug>:project:<project-name>:environment:production`
+- An `aud` claim set to `https://vercel.com/<team-slug>`, which permits the Vercel OIDC token's default audience in place of the token endpoint default
+
+The configured `sub` must match the environment the function runs in. A preview deployment presents `environment:preview` and would not match this entry. The issuer and claim formats shown are for team-level OIDC tokens.
+
+```ts filename="app/api/auth/callback/route.ts"
+import { getVercelOidcToken } from '@vercel/oidc';
+import type { NextRequest } from 'next/server';
+
+const APP_ID = 'your_app_id_here';
+const TOKEN_ENDPOINT = 'https://api.vercel.com/login/oauth/token';
+
+export async function GET(request: NextRequest) {
+  const url = new URL(request.url);
+  const code = url.searchParams.get('code');
+  const codeVerifier = request.cookies.get('oauth_code_verifier')?.value;
+
+  if (!code || !codeVerifier) {
+    return Response.json(
+      { error: 'Missing authorization code or code verifier' },
+      { status: 400 },
+    );
+  }
+
+  const oidcToken = await getVercelOidcToken();
+
+  const tokenResponse = await fetch(TOKEN_ENDPOINT, {
+    method: 'POST',
+    body: new URLSearchParams({
+      grant_type: 'authorization_code',
+      client_id: APP_ID,
+      client_assertion_type:
+        'urn:vercel:params:oauth:client-assertion-type:oidc-bearer',
+      client_assertion: oidcToken,
+      code,
+      code_verifier: codeVerifier,
+      redirect_uri: `${url.origin}/api/auth/callback`,
+    }),
+  });
+
+  return Response.json(await tokenResponse.json(), {
+    status: tokenResponse.status,
+  });
+}
+```
+
 ### Authenticate with a JWT assertion
 
 You can authenticate to the Token Endpoint and [Revoke Token Endpoint](#revoke-token-endpoint) with a JWT client assertion instead of sending a `client_secret`. This follows [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523).
@@ -368,11 +422,11 @@ If your app runs as a [Vercel Function](/docs/functions), [Vercel KMS](/docs/kms
 
 KMS sets `kid`, `nbf`, and `exp`. Pass `iss` and `sub` as your client ID so they override the default KMS issuer URL. Set `ttl` to `60` so the assertion expires after 60 seconds.
 
-> **💡 Note:** Call `signToken` inside a route handler. It resolves the function's
+> **💡 Note:** Call `signJWT` inside a route handler. It resolves the function's
 > [OIDC token](/docs/oidc) at call time and cannot run at the module top level.
 
 ```ts filename="app/api/auth/callback/route.ts"
-import { signToken } from '@vercel/kms';
+import { signJWT } from '@vercel/kms';
 import type { NextRequest } from 'next/server';
 
 const CLIENT_ID = 'your_client_id_here';
@@ -380,7 +434,7 @@ const ISSUER_ID = 'your_kms_issuer_id_here';
 const TOKEN_ENDPOINT = 'https://api.vercel.com/login/oauth/token';
 
 async function createClientAssertion(): Promise<string> {
-  return signToken({
+  const { token } = await signJWT({
     issuerId: ISSUER_ID,
     claims: {
       iss: CLIENT_ID,
@@ -390,6 +444,8 @@ async function createClientAssertion(): Promise<string> {
     },
     ttl: 60,
   });
+
+  return token;
 }
 
 export async function GET(request: NextRequest) {
@@ -425,8 +481,6 @@ export async function GET(request: NextRequest) {
   });
 }
 ```
-
-The [Revoke Token Endpoint](#revoke-token-endpoint) accepts the same `client_assertion` and `client_assertion_type` parameters.
 
 ## Revoke Token Endpoint
 

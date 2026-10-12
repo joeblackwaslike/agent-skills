@@ -1,13 +1,47 @@
 ---
 title: "Extension Anatomy"
 source: "https://code.visualstudio.com/api/get-started/extension-anatomy"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "3aec722beb3f3e929d6f83f639b7ede5cc2ec488759a824c25dc4ff44eb58c34"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "9fd217fccf47bdc3d6a868331aaa6660901b3cd8dc08539de9d25022af2281bd"
 ---
 
 # Extension Anatomy
 
 Source: https://code.visualstudio.com/api/get-started/extension-anatomy
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/get-started/extension-anatomy.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fget-started%2Fextension-anatomy%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fget-started%2Fextension-anatomy%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fget-started%2Fextension-anatomy%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 In the last topic, you were able to get a basic extension running. How does it work under the hood?
 
@@ -146,4 +180,4 @@ export function deactivate() {}
 
 
  
- 9/30/2026
+ 10/7/2026

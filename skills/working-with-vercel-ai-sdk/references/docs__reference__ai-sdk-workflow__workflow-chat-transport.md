@@ -4,8 +4,8 @@ description: API Reference for the WorkflowChatTransport class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-chat-transport"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-chat-transport.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "08267f63ecfac9acf6b49a6aa39c07b615418e821ea989b72f9973d9ea8b6e43"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "8c2b1c5abf9a41d3fcc71f129ff441f80aa5e8533e396e9a607655c1554087ab"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -44,7 +44,7 @@ import { WorkflowChatTransport } from "@ai-sdk/workflow/client"
 
 - `api?` (`string`): API endpoint for chat requests. The reconnection endpoint is derived from this as \`\{api}/\{runId}/stream\`. Default: '/api/chat'.
 - `fetch?` (`typeof fetch`): Custom fetch implementation to use for HTTP requests. Default: global fetch.
-- `maxConsecutiveErrors?` (`number`): Maximum number of consecutive errors allowed during reconnection attempts before giving up. Default: 3.
+- `maxConsecutiveErrors?` (`number`): Maximum number of consecutive errors allowed during reconnection attempts before giving up. Streams that end without receiving any UI message chunks count as errors. Default: 3.
 - `initialStartIndex?` (`number`): Default chunk index to start from when reconnecting. Negative values read from the end of a durable UIMessageChunk stream (e.g., -50 fetches the last 50 chunks), useful for resuming after a page refresh without replaying the full conversation. Raw ModelCallStreamPart streams do not support negative UI chunk indexes. Can be overridden per-call via reconnectToStream options. Default: 0.
 - `onChatSendMessage?` (`(response: Response, options: SendMessagesOptions) => void | Promise<void>`): Callback invoked after the initial POST request succeeds. Useful for inspecting response headers (e.g., extracting workflow run ID) or tracking chat history on the client side.
 - `onChatEnd?` (`({ chatId, chunkIndex }) => void | Promise<void>`): Callback invoked when the stream ends (receives a finish chunk). Receives the chat ID and total chunk count. Useful for cleanup or state updates.
@@ -105,7 +105,7 @@ The transport follows this flow:
 2. **Stream** the SSE response, counting chunks as they arrive.
 3. **Detect interruption**: If the stream closes without a `finish` event (e.g., function timeout, network error), the transport knows the response is incomplete.
 4. **Reconnect** via GET to `{api}/{runId}/stream?startIndex={chunkIndex}` to resume from the last received chunk.
-5. **Retry**: If the reconnection stream also interrupts, retry up to `maxConsecutiveErrors` times.
+5. **Retry**: If the reconnection stream also interrupts, resume from the updated chunk index. Streams that end without receiving any UI message chunks count toward `maxConsecutiveErrors`, as do stream parsing errors. A successfully parsed stream that receives chunks resets the consecutive error count.
 6. **Complete**: Once a `finish` event is received, call `onChatEnd` and close the stream.
 
 ### Negative Start Index

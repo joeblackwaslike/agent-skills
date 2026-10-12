@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0ddbfb8649672ede1b35a3a0f9285e2bb5239c04a27e2205d48a551c73ca3ab2"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "51246349c2bce4e0c45640e07cbd492e35ee0fa7cde7220e8744df03ea8b750f"
 ---
 
 # Managing microfrontends
@@ -92,7 +92,7 @@ Run the following command from the project directory and follow the interactive 
 vercel microfrontends remove-from-group
 ```
 
-After removal, update `microfrontends.json` in the default application to remove the project's entry. The CLI will warn you if the project is still referenced in the configuration but will not block the removal.
+After removal, update `microfrontends.json` in the default application to remove the project's entry. If the project is still referenced, the CLI warns you and asks for an extra confirmation. In a non-interactive environment, pass `--yes` or the removal fails.
 
 **Using the dashboard:**
 
@@ -118,10 +118,10 @@ Run the following command and follow the interactive prompts. The CLI will show 
 vercel microfrontends delete-group
 ```
 
-To pre-select the group, pass it as a flag. A confirmation prompt will still be required:
+To delete a group without prompts, pass the group and confirmation flags together:
 
 ```bash filename="terminal"
-vercel mf delete-group --group="My Group"
+vercel mf delete-group --group="My Group" --yes
 ```
 
 **Using the dashboard:**

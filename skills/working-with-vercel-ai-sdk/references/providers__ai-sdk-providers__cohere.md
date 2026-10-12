@@ -4,8 +4,8 @@ description: Learn how to use the Cohere provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1f5d7f9e1aeed5566380b6cf12e36f638fecb63097e78c5fabf57e9b23aeae99"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d6715081555e84876f4587cc334709d649471d4457bc90051f18b8cb66ecfb51"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Cohere](https://cohere.com/) provider contains language and embedding model
 
 The Cohere provider is available in the `@ai-sdk/cohere` module. You can install it with
 
-**Packages:** `@ai-sdk/cohere`
+```bash
+pnpm add @ai-sdk/cohere
+```
 
 ## Provider Instance
 
@@ -283,6 +285,13 @@ The following provider options are available:
   - `classification`: Used for embeddings passed through a text classifier.
   - `clustering`: Used for embeddings run through a clustering algorithm.
 
+- **outputDimension** *256 | 512 | 768 | 1024 | 1536 | 2048*
+
+  The number of dimensions of the output embedding. Available for Embed v4.0
+  and newer models. Embed v4.0 supports `256`, `512`, `1024`, and `1536`
+  (default). Embed v5.0 Pro and Fast also support `768` and `2048` (default).
+  When omitted, the API uses the model's default dimension.
+
 - **truncate** *'NONE' | 'START' | 'END'*
 
   Specifies how the API will handle inputs longer than the maximum token length.
@@ -294,15 +303,18 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                           | Embedding Dimensions |
-| ------------------------------- | -------------------- |
-| `embed-english-v3.0`            | 1024                 |
-| `embed-multilingual-v3.0`       | 1024                 |
-| `embed-english-light-v3.0`      | 384                  |
-| `embed-multilingual-light-v3.0` | 384                  |
-| `embed-english-v2.0`            | 4096                 |
-| `embed-english-light-v2.0`      | 1024                 |
-| `embed-multilingual-v2.0`       | 768                  |
+| Model                           | Embedding Dimensions                      |
+| ------------------------------- | ----------------------------------------- |
+| `embed-v5.0-pro`                | 256, 512, 768, 1024, 1536, 2048 (default) |
+| `embed-v5.0-fast`               | 256, 512, 768, 1024, 1536, 2048 (default) |
+| `embed-v4.0`                    | 256, 512, 1024, 1536 (default)            |
+| `embed-english-v3.0`            | 1024                                      |
+| `embed-multilingual-v3.0`       | 1024                                      |
+| `embed-english-light-v3.0`      | 384                                       |
+| `embed-multilingual-light-v3.0` | 384                                       |
+| `embed-english-v2.0`            | 4096                                      |
+| `embed-english-light-v2.0`      | 1024                                      |
+| `embed-multilingual-v2.0`       | 768                                       |
 
 ## Reranking Models
 

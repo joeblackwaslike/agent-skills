@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/best-practices.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "f4c5d66cbd7e0b5cdbe448a94f93ba3cc143bace79fbeb511170fa417aeda526"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "3f2d4f1a6eeba4cb13141e68c9f45b7e5af95224ad3b0c62a13b886d144ea86f"
 ---
 
 > ## Documentation Index
@@ -145,7 +145,7 @@ You can provide rich data to Claude in several ways:
 
 * **Reference files with `@`** instead of describing where code lives. Claude reads the file before responding.
 * **Paste images directly**. Copy/paste or drag and drop images into the prompt.
-* **Give URLs** for documentation and API references. Use `/permissions` to allowlist frequently-used domains.
+* **Give URLs** for documentation and API references. Use `/permissions` to allowlist frequently used domains.
 * **Pipe in data** by running `cat error.log | claude -p "explain this error"` to send file contents directly.
 * **Let Claude fetch what it needs**. Tell Claude to pull context itself using Bash commands, MCP tools, or by reading files.
 
@@ -187,7 +187,7 @@ Keep it concise. For each line, ask: *"Would removing this cause Claude to make 
 | Repository etiquette (branch naming, PR conventions) | Information that changes frequently |
 | Architectural decisions specific to your project | Long explanations or tutorials |
 | Developer environment quirks (required env vars) | File-by-file descriptions of the codebase |
-| Common gotchas or non-obvious behaviors | Self-evident practices like "write clean code" |
+| Common gotchas or behaviors that aren't self-evident | Self-evident practices like "write clean code" |
 
 If Claude keeps doing something you don't want despite having a rule against it, the file is probably too long and the rule is getting lost. If Claude asks you questions that are answered in CLAUDE.md, the phrasing might be ambiguous. Treat CLAUDE.md like code: review it when things go wrong, prune it regularly, and test changes by observing whether Claude's behavior actually shifts. For a checked-in CLAUDE.md, run [`/doctor`](/docs/en/commands#all-commands) and Claude proposes cuts for content it can derive from the codebase.
 

@@ -14,8 +14,8 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d846ad0425b4e80671165e244bddc04832d4215449b63d941ed3bd5643017f86"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ebaf67fbc8a797610e853cfbbf738b924388932adaa3d792258c888e954fc2e2"
 ---
 
 # Managing Code Reviews
@@ -37,8 +37,8 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related)
 - [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpr-review%2Fusage&source_site=vercel-docs&relationship=graph)

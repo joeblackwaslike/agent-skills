@@ -13,8 +13,8 @@ related:
 summary: Verify a Passport token forwarded to your backend as a signed JWT.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/verify-identity.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "df4762e82d5b596a4f0dca551cb8b4848057b63c1445e13943dc099116712eec"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "34cc5f08c9440565bf63c6788f5f79e52a5fbd0777d212f12efb5d83f0379e8c"
 ---
 
 # Verify forwarded Passport tokens
@@ -35,7 +35,7 @@ When a Passport-protected app forwards a token to another backend, the receiving
 - [Forward Passport identity to another backend](https://vercel.com/docs/passport/forward-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Forward a Passport visitor identity to another backend that you operate.
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
+- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/passport/verify-identity.graph.md](/docs/passport/verify-identity.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fverify-identity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

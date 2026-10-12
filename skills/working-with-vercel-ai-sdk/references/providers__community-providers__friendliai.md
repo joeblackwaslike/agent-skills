@@ -4,8 +4,8 @@ description: Learn how to use the FriendliAI Provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/friendliai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/friendliai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "88a4876d102ec5ccc1af59cd6e40d3460a4acfcee61ab516786c2fa193a08da0"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0d59a092c527d4f0b74714a54818bfaa8a7decb1fac6702e46658200e34c5600"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,7 +19,9 @@ It creates language model objects that can be used with the `generateText` and `
 The Friendli provider is available via the `@friendliai/ai-provider` module.
 You can install it with:
 
-**Packages:** `@friendliai/ai-provider`
+```bash
+pnpm add @friendliai/ai-provider
+```
 
 ### Credentials
 

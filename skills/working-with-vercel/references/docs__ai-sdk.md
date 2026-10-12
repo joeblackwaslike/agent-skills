@@ -3,7 +3,7 @@ title: AI SDK
 product: ai-sdk
 url: /docs/ai-sdk
 canonical_url: "https://vercel.com/docs/ai-sdk"
-last_updated: 2026-09-22
+last_updated: 2026-10-05
 type: integration
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0292e60f3574eb77dc7a11ad606306ad58f7254bd5c29311818f5a2642a207a8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "dd30a538107dc2ba114486842100ff4aa1d58e9ab8caf21524f1a7faedef3bc5"
 ---
 
 # AI SDK
@@ -228,10 +228,11 @@ and handle tool approval.
 
 ## Use Jev with AI SDK
 
-[Jev](/kb/jev-from-typesafe-ai), an evaluation model from TypeSafe AI, returns typed choices, scores, and
+[Jev](/kb/jev-from-typesafe-ai), a decision model from TypeSafe AI, returns typed choices, scores, and
 boolean probabilities that your application can use to classify requests, route
 work, and assess proposed actions. Call Jev through AI Gateway with the
-experimental `evaluate` API in AI SDK 7 or later.
+experimental `decide` API in `ai` 7.0.128 or later. The previous
+`experimental_evaluate` export still works as a deprecated alias.
 
 Learn how to [classify, route, and score with Jev and AI SDK](/kb/guide/typesafe-jev-and-ai-sdk),
 or follow [Route form submissions with Jev and AI SDK](/kb/guide/jev-ai-sdk-form-router)

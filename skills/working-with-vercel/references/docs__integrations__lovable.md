@@ -16,8 +16,8 @@ related:
 summary: Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/lovable.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d8702ee824ac5e6bcb80f78f0fbba177a2dbd28fc2a5fcc4b89a42c5c0f9f2e6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "226857f6e268bf209f96dd8d25ed4cea69b5bceb75d0a5591245a8dc84dfeb57"
 ---
 
 # Deploy a Lovable app on Vercel
@@ -39,8 +39,8 @@ sha256: "d8702ee824ac5e6bcb80f78f0fbba177a2dbd28fc2a5fcc4b89a42c5c0f9f2e6"
 - [How to Deploy a Jekyll Site with Vercel](https://vercel.com/kb/guide/deploying-jekyll-with-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Create a Jekyll website and deploy it live with Vercel.
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/integrations/lovable.graph.md](/docs/integrations/lovable.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Flovable&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

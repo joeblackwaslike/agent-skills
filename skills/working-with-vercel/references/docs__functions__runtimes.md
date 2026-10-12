@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7778e4e30dba009b5b9039012839b94c85e539b8a0d12936cefef8250e537dd3"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "24b586598c2ab4ba24604806c0f2b3f5e699e2345d8beb8982126786348e5419"
 ---
 
 # Runtimes
@@ -52,16 +52,17 @@ Runtimes transform your source code into [Functions](/docs/functions), which are
 
 Vercel Functions support the following official runtimes:
 
-| Runtime                                     | Description                                                                                                                                                 |
-| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Node.js](/docs/functions/runtimes/node-js) | The Node.js runtime takes an entrypoint of a Node.js function, builds its dependencies (if any) and bundles them into a Vercel Function.                    |
-| [Bun](/docs/functions/runtimes/bun)         | The Bun runtime takes an entrypoint of a Bun function, builds its dependencies (if any) and bundles them into a Vercel Function.                            |
-| [Python](/docs/functions/runtimes/python)   | The Python runtime runs ASGI and WSGI applications, such as FastAPI, Flask, and Django, as Vercel Functions.                                         |
-| [Rust](/docs/functions/runtimes/rust)       | The Rust runtime takes an entrypoint of a Rust function using the `vercel_runtime` crate and compiles it into a Vercel Function.                            |
-| [Go](/docs/functions/runtimes/go)                           | The Go runtime takes in a Go program that defines a singular HTTP handler and outputs it as a Vercel Function.                                              |
-| [Ruby](/docs/functions/runtimes/ruby)       | The Ruby runtime takes in a Ruby program that defines a singular HTTP handler and outputs it as a Vercel Function.                                          |
-| [Wasm](/docs/functions/runtimes/wasm)       | The Wasm runtime takes in a pre-compiled WebAssembly program and outputs it as a Vercel Function.                                                           |
-| [Edge](/docs/functions/runtimes/edge)       | The Edge runtime is built on top of the V8 engine, allowing it to run in isolated execution environments that don't require a container or virtual machine. |
+| Runtime                                         | Description                                                                                                                                                 |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Node.js](/docs/functions/runtimes/node-js)     | The Node.js runtime takes an entrypoint of a Node.js function, builds its dependencies (if any) and bundles them into a Vercel Function.                    |
+| [Bun](/docs/functions/runtimes/bun)             | The Bun runtime takes an entrypoint of a Bun function, builds its dependencies (if any) and bundles them into a Vercel Function.                            |
+| [Python](/docs/functions/runtimes/python)       | The Python runtime runs ASGI and WSGI applications, such as FastAPI, Flask, and Django, as Vercel Functions.                                                |
+| [Rust](/docs/functions/runtimes/rust)           | The Rust runtime takes an entrypoint of a Rust function using the `vercel_runtime` crate and compiles it into a Vercel Function.                            |
+| [Go](/docs/functions/runtimes/go)                               | The Go runtime takes in a Go program that defines a singular HTTP handler and outputs it as a Vercel Function.                                              |
+| [Ruby](/docs/functions/runtimes/ruby)           | The Ruby runtime takes in a Ruby program that defines a singular HTTP handler and outputs it as a Vercel Function.                                          |
+| [Wasm](/docs/functions/runtimes/wasm)           | The Wasm runtime takes in a pre-compiled WebAssembly program and outputs it as a Vercel Function.                                                           |
+| [Edge](/docs/functions/runtimes/edge)           | The Edge runtime is built on top of the V8 engine, allowing it to run in isolated execution environments that don't require a container or virtual machine. |
+| [Container](/docs/functions/runtimes/container) | The Container runtime runs any code and library from an OCI container image built from a `Dockerfile.vercel` file.                                          |
 
 ## Community runtimes
 
@@ -76,10 +77,6 @@ The following community runtimes are recommended by Vercel:
 | PHP     | `vercel-php`   | https://github.com/vercel-community/php  |
 
 You can create a community runtime by using the [Runtime API](https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md). Alternatively, you can use the [Build Output API](/docs/build-output-api).
-
-## Container Images
-
-Vercel Functions support deploying custom OCI container images stored in the [Vercel Container Registry (VCR)](/docs/container-registry). Learn more about [deploying container images](/docs/functions/container-images).
 
 ## Features
 

@@ -12,8 +12,8 @@ related:
 summary: View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "05fb591ab9717101e49512d4ebedb9f6ff2595fc9f5b68c559397473934bbfbe"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "78e476cb726f04d19b0b9b1598c294e830bf94f690e550bddfef2eae2e952154"
 ---
 
 # vercel logs
@@ -30,9 +30,9 @@ The `vercel logs` command displays request logs for your project or streams live
 - [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -169,7 +169,7 @@ vercel logs --request-id req_xxxxx
 
 ### Since
 
-The `--since` option returns logs from after a specific time. You can use ISO 8601 format or relative values like `1h` or `30m`. The default is 24 hours ago.
+The `--since` option, shorthand `-s`, returns logs from after a specific time. You can use ISO 8601 format or relative values like `1h` or `30m`. The default is 24 hours ago.
 
 ```bash filename="terminal"
 vercel logs --since 1h
@@ -178,7 +178,7 @@ vercel logs --since 2026-01-15T10:00:00Z
 
 ### Until
 
-The `--until` option returns logs up until a specific time. You can use ISO 8601 format or relative values. The default is now.
+The `--until` option, shorthand `-u`, returns logs up until a specific time. You can use ISO 8601 format or relative values. The default is now.
 
 ```bash filename="terminal"
 vercel logs --since 2h --until 1h

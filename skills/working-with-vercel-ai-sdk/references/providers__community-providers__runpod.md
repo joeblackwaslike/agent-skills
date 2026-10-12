@@ -4,8 +4,8 @@ description: Runpod Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/runpod"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/runpod.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0908c02199a0e790418bf94d58b65f6dea15984c12b3efa888b7874078cfe3f7"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4fa1ae620ccded5393089c99bfe9ba368223d53d938de377dabbfca4d78e61a6"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The official [Runpod](https://runpod.io) provider contains language model and im
 
 The Runpod provider is available in the `@runpod/ai-sdk-provider` module. You can install it with:
 
-**Packages:** `@runpod/ai-sdk-provider`
+```bash
+pnpm add @runpod/ai-sdk-provider
+```
 
 ## Provider Instance
 

@@ -4,8 +4,8 @@ description: Learn how to use the fx harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f3b4dcad8c321527069d74e77096b72e57955501579582413879b4a4a147eaa3"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "1a1c1d574bb78fc2946e520061a4dbc6a7be950506db37d30496d15146be17f3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,7 +19,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-fx`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-fx @ai-sdk/sandbox-vercel
+```
 
 The ACP harness runs the [canonical fx installer](https://fx.sh/docs/getting-started/installation)
 inside the sandbox when the first session starts. The installer tracks the

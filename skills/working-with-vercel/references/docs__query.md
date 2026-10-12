@@ -8,6 +8,7 @@ type: how-to
 prerequisites:
   []
 related:
+  - /docs/cli/metrics
   - /docs/observability/observability-plus
   - /docs/plans/enterprise
   - /docs/query/reference
@@ -15,8 +16,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "dd86ef3b35a6f941969bee14527bb07d24cb67ae33a1a664e1fecc3652f5de33"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "10ec1f280710f5e9dd7dd7353d319f3799db90ff3b7602024bd08b09bd48da5c"
 ---
 
 # Query
@@ -36,12 +37,12 @@ You can use Query to get deeper visibility into your application when debugging 
 - [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Query data on external API requests in Vercel Observability](https://vercel.com/changelog/query-data-on-external-api-requests-in-vercel-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
+- [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related)
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/query.graph.md](/docs/query.graph.md?from=related&source_path=%2Fdocs%2Fquery&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,6 +53,8 @@ Full cross-link map for this page: [/docs/query.graph.md](/docs/query.graph.md?f
 - Track build and deployment behavior across your projects
 - Save queries to notebooks for reuse and team collaboration
 - Customize dashboards and automate reporting or alerts
+
+To query these metrics from your terminal, use [`vercel metrics` (`vc metrics`)](/docs/cli/metrics). The CLI supports filtering, grouping, aggregations, and JSON output.
 
 ## Getting started
 

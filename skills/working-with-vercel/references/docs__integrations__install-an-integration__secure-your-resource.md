@@ -14,13 +14,13 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "33554af65cde497c0985d64de0375acf83ae2fc72c2417daa5e33e58772da9f8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "70dc5f7d206ca08fc2664712e97bc816a2970a487f8be92e827cb2dbe399aa0d"
 ---
 
 # Secure Your Resource
 
-Secure a native integration resource by controlling where projects can connect to it. When you set a resource to **Production only**, Vercel removes non-production access and protects credentials as [Sensitive environment variables](/docs/environment-variables/sensitive-environment-variables), so secret values are not readable from the dashboard or CLI.
+Secure a native integration resource by controlling where projects can connect to it. When you set a resource to **Production only**, Vercel removes non-production access and protects credentials as [Secret environment variables](/docs/environment-variables/sensitive-environment-variables), so secret values are not readable from the dashboard or CLI.
 
 
 <!-- docsgraph:related -->

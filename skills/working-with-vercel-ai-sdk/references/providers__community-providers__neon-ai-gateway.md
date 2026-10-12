@@ -4,8 +4,8 @@ description: Learn how to use the Neon AI Gateway provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/neon-ai-gateway"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/neon-ai-gateway.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0bb654f55c7961193eca8ab2e2d88a61130f5304dbc215e4cd2dd261ef515ae1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cbf7c288d9f3469042695fece4cdbf6f2d90bde8d690eacf844488e838a48bff"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -23,7 +23,9 @@ Gateway overview](https://neon.com/docs/ai-gateway/overview).
 
 The Neon provider is available in the [`@neon/ai-sdk-provider`](https://www.npmjs.com/package/@neon/ai-sdk-provider) package. It requires Node.js 22 or later. Install it alongside AI SDK 7 with:
 
-**Packages:** `ai`, `@neon/ai-sdk-provider`
+```bash
+pnpm add ai @neon/ai-sdk-provider
+```
 
 In the [Neon Console](https://console.neon.tech), open your branch and create a credential with the `ai_gateway:invoke` scope. Set the branch's AI Gateway URL and credential in your environment:
 

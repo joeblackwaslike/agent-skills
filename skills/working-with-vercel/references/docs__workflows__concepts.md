@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "2fcf35cf0e96fb0a6e2267660155845218808bfea5c8903128a51b533604ed31"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "cfcf435713a036f5fb77a464af86c4a0336a5db982e043c4f744cb838224e031"
 ---
 
 # Workflow Concepts
@@ -32,11 +32,11 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
-- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
 - [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Understand the two function types that make up a workflow.
-- [Starting workflows](https://workflow-sdk.dev/docs/foundations/starting-workflows?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Trigger workflows and track their execution using the start() function.
+- [Python](https://workflow-sdk.dev/docs/getting-started/python?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Set up the Workflow Python SDK in your Python application.
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related) — Control how steps handle failures and customize retry behavior.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md?from=related&source_path=%2Fdocs%2Fworkflows%2Fconcepts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

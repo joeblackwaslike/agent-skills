@@ -4,8 +4,8 @@ description: "Learn how to use Cerebras's models with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e2b87dc8c287a2771fd6bb4c4e529c24bb5f06da930c2286d68270275dc2a68b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "db4afb1e916b476767adca3f97378c9cccb59a92be2a57050584a89e5599df42"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [Cerebras Platform](https://cloud.cerebras.ai)
 
 The Cerebras provider is available via the `@ai-sdk/cerebras` module. You can install it with:
 
-**Packages:** `@ai-sdk/cerebras`
+```bash
+pnpm add @ai-sdk/cerebras
+```
 
 ## Provider Instance
 

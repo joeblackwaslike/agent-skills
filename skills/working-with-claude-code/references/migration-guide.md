@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/migration-guide.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "3a0cd0e40e7480ab3eccd0bb4db15d28f569478939e853aacee0bfc2f1cf5265"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "fe17b0ad3a92aab2b6ce91bce941ba6723b5e734099259ed8b9dfa891a1ee67f"
 ---
 
 > ## Documentation Index
@@ -14,7 +14,7 @@ sha256: "3a0cd0e40e7480ab3eccd0bb4db15d28f569478939e853aacee0bfc2f1cf5265"
 
 ## Overview
 
-The Claude Code SDK has been renamed to the **Claude Agent SDK** and its documentation has been reorganized. This change reflects the SDK's broader capabilities for building AI agents beyond just coding tasks.
+The Claude Code SDK has been renamed to the **Claude Agent SDK** and its documentation has been reorganized. This change reflects the SDK's broader capabilities for building AI agents beyond coding tasks.
 
 Migrating from the OpenAI Agents SDK instead? The [OpenAI Agents SDK migration recipe](https://platform.claude.com/cookbook/claude-agent-sdk-04-migrating-from-openai-agents-sdk) maps each primitive onto the Claude Agent SDK through a single worked example.
 
@@ -28,7 +28,9 @@ Migrating from the OpenAI Agents SDK instead? The [OpenAI Agents SDK migration r
 
 ## Migration Steps
 
-### For TypeScript/JavaScript Projects
+<span id="for-typescript/javascript-projects" />
+
+### Migrate a TypeScript or JavaScript project
 
 **1. Uninstall the old package:**
 
@@ -62,7 +64,9 @@ If `@anthropic-ai/claude-code` is still listed in your `package.json`, replace i
 
 Make any code changes needed to complete the migration.
 
-### For Python Projects
+<span id="for-python-projects" />
+
+### Migrate a Python project
 
 **1. Uninstall the old package:**
 

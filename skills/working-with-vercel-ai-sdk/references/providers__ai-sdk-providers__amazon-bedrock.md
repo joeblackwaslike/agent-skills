@@ -4,8 +4,8 @@ description: Learn how to use the Amazon Bedrock provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0a419a61626bdf79768266ec6a69f00095d85f8a46a969af9d9c1d689ad99550"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d6d120264a564000e8f7fe33465ae0da3d7cedc445d9631d6dcd7436782cd3c2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The Amazon Bedrock provider for the [AI SDK](/docs) contains language model supp
 
 The Bedrock provider is available in the `@ai-sdk/amazon-bedrock` module. You can install it with
 
-**Packages:** `@ai-sdk/amazon-bedrock`
+```bash
+pnpm add @ai-sdk/amazon-bedrock
+```
 
 ### Prerequisites
 
@@ -99,7 +101,9 @@ When using AWS SDK, the SDK will automatically use the credentials chain to dete
 
 `@aws-sdk/credential-providers` package provides a set of credential providers that can be used to create a credential provider chain.
 
-**Packages:** `@aws-sdk/credential-providers`
+```bash
+pnpm add @aws-sdk/credential-providers
+```
 
 ```ts
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
@@ -327,7 +331,7 @@ import { amazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: amazonBedrock('us.anthropic.claude-haiku-4-5-20251001-v1:0'),
+  model: amazonBedrock('us.anthropic.claude-haiku-5-5'),
   messages: [
     {
       role: 'user',
@@ -627,6 +631,24 @@ Amazon Bedrock supports model creator-specific reasoning features:
 
 - Anthropic (e.g. `claude-sonnet-4-5-20250929`): enable via the `reasoningConfig` provider option and specifying a thinking budget in tokens (minimum: `1024`, maximum: `64000`).
 - Amazon (e.g. `us.amazon.nova-2-lite-v1:0`): enable via the `reasoningConfig` provider option and specifying a maximum reasoning effort level (`'low' | 'medium' | 'high'`).
+
+You can also use the top-level `reasoning` parameter. For Amazon Nova 2, `'xhigh'` and `'max'` are mapped to `'high'` with a compatibility warning. Anthropic and OpenAI effort mappings preserve `'max'`.
+
+Bedrock combines partial `providerOptions.amazonBedrock.reasoningConfig` with
+portable reasoning, preserving explicit values and deriving missing fields for
+the model's reasoning API. An explicit `maxReasoningEffort` replaces the effort
+mapping without emitting a coercion warning for the overridden value. For
+budget-based Anthropic models, `{ budgetTokens: 5000 }` preserves that budget and
+uses portable reasoning to fill a missing `type: 'enabled'`. Type-only,
+display-only, and empty configurations also retain portable reasoning.
+
+Effort-based Anthropic models can combine portable effort with an explicit
+thinking configuration. A disabled type prevents effort/budget derivation;
+portable `reasoning: 'none'` disables thinking on Anthropic models even when an
+enabled type or budget is supplied. Omitting portable reasoning or using
+`'provider-default'` leaves the provider configuration unchanged. The legacy
+`bedrock` provider options key follows the same rules. See the
+[reasoning guide](/docs/ai-sdk-core/reasoning#precedence-rules) for precedence details.
 
 ```ts
 import {
@@ -1787,6 +1809,7 @@ on how to integrate reasoning into your chatbot.
 | `us.anthropic.claude-fable-5-1`                | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-sonnet-5-5`               | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-sonnet-5`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-haiku-5-5`                | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-fable-5`                  | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-opus-4-8`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-opus-4-7`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |

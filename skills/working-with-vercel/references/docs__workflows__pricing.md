@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "639106b3a3140574d67f2901a4cf58ff530a22403f4ee4672ccd233414292988"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "adcc4ccdb51249a3584db674b97389367c6a429f0fbb012e2f469baa417fe486"
 ---
 
 # Workflow Pricing and Limits
@@ -38,8 +38,8 @@ Vercel bills Workflows usage across three resources:
 - [Workflow SDK vs AWS Step Functions](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-step-functions?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — AWS Step Functions is a managed state-machine orchestrator authored in declarative ASL JSON. The Workflow SDK expresses
 - [Runtime tuning](https://workflow-sdk.dev/docs/configuration/runtime-tuning?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Tune Workflow runtime behavior where workflows execute.
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Control how steps handle failures and customize retry behavior.
-- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Select and configure Local, Postgres, Vercel, or custom Worlds.
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Select and configure Local, Postgres, Vercel, or custom Worlds.
 - [Limits](https://vercel.com/docs/limits?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts?from=related&source_path=%2Fdocs%2Fworkflows%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 
@@ -130,6 +130,7 @@ The following limits apply to all Workflow runs.
 Requests include any event creation or stream write operation, as well as any operation for reading events, stream chunks, metadata, or event data.
 For any request made from your deployment, exceeding the rate limit will automatically re-try with backoff. This includes the initial request to start the workflow. If the call to `start()` does not throw an error, the workflow will eventually start and run to completion or failure.
 This means hitting the rate limit will not cause your workflow to fail, but it will slow down the rate at which your workflows run.
+A rate-limited write that records a step's result is retried for as long as the function invocation runs, so the step doesn't run again or use up one of its retries.
 
 | Plan       | Requests per minute |
 | ---------- | ------------------- |

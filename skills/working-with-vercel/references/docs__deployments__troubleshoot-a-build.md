@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ae44af31d32757df88f216f79203778f746b7f9c8d33fe0b973fbe7fdfcfad71"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "80c6357f9aeaae9a542c208cc6c9a34b973fabcea1250af5a820290484d5fbe4"
 ---
 
 # Troubleshooting Build Errors
@@ -157,7 +157,7 @@ A Build can last for a maximum of 45 minutes. If the build exceeds this time, th
 
 ### Caching
 
-The maximum size of the Build's cache is 1 GB. It is retained for one month and it applies at the level of each [Build cache key](#caching-process).
+The maximum size of the build cache depends on the [build machine type](/docs/builds/managing-builds#build-machines). See [Build cache maximum size](/docs/limits#build-cache-maximum-size) for the limits for Basic, Standard, Enhanced, and Turbo machines. Elastic build machines use the limit of the machine type assigned to each build. The cache is retained for one month and applies at the level of each [Build cache key](#caching-process).
 
 It is not possible to manually configure which files are cached at this time.
 

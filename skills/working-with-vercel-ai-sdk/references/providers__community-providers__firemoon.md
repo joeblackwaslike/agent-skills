@@ -4,8 +4,8 @@ description: Firemoon provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/firemoon"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/firemoon.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "cd0268ce486a9e072dfca8cb381b5eccc8dbe32e055d30e4f9c5841e5effb635"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3f298ee11328cec5096e551b6b1d59a880ece15e16e416e402ed648a2fcf694c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,9 @@ The Firemoon provider for the AI SDK enables you to use these models with a simp
 
 The Firemoon provider is available via the `@firemoon/ai-provider` module. You can install it with:
 
-**Packages:** `@firemoon/ai-provider`
+```bash
+pnpm add @firemoon/ai-provider
+```
 
 ## Provider Instance
 

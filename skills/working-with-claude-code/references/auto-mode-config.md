@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/auto-mode-config.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "e1a22289da67929137f0f370c65bd171059e1c0168e31eac7aa02136c94521d9"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "22735f1d1ee1f3083cd5f208f653aae71eab00264bbf867ce1f07c738efc2064"
 ---
 
 > ## Documentation Index
@@ -325,7 +325,7 @@ Both `defaults` and `config` print the four rule lists as a single JSON object, 
 {
   "allow": [
     ...
-    "Test Artifacts: Hardcoded test API keys, placeholder credentials in examples, or hardcoding test cases. Placeholder means authored as a placeholder �� a file or value copied from a real secret or sensitive path is never a test artifact (see Sensitive-Source Provenance).",
+    "Test Artifacts: Hardcoded test API keys, placeholder credentials in examples, or hardcoding test cases. Placeholder means authored as a placeholder — a file or value copied from a real secret or sensitive path is never a test artifact (see Sensitive-Source Provenance).",
     ...
   ],
   "soft_deny": [
@@ -341,7 +341,7 @@ Both `defaults` and `config` print the four rule lists as a single JSON object, 
 }
 ```
 
-Get AI feedback on your custom `allow`, `soft_deny`, and `hard_deny` rules:
+Get AI feedback on your custom `allow`, `soft_deny`, `hard_deny`, and `environment` entries:
 
 ```bash theme={null}
 claude auto-mode critique
@@ -369,7 +369,9 @@ To see what the classifier blocked, find the tool call in the conversation. If t
 
 Two other places on screen that report denials leave out the command or URL: the notice near the input box, such as `bash denied by auto mode · [Data Exfiltration] · /permissions`, gives the tool and the reason, and the **Recently denied** tab lists a shell command by the description Claude wrote for it. To capture the exact input of these denials programmatically, add a [`PermissionDenied` hook](/docs/en/hooks#permissiondenied), which receives it as `tool_input`.
 
-The text beneath the call tells you whether there is anything to fix. Text that reports a problem with the classifier itself, such as a model that `is temporarily unavailable` or a classifier error, means Claude Code blocked the call without a final verdict from the classifier; see [Auto mode cannot determine the safety of an action](/docs/en/errors#auto-mode-cannot-determine-the-safety-of-an-action) for what to do. Otherwise, a line reading `Denied by auto mode classifier` with a reason such as `[Production Deploy]` or `Blocked by classifier` means the classifier judged the call unsafe, so pick the fix from what the call was trying to reach or do:
+The text beneath the call tells you whether there is anything to fix. A dim `Not run · auto mode's check had no usable answer` row, or text that reports a problem with the classifier itself, such as `Auto mode could not evaluate this action`, means Claude Code blocked the call without a verdict from the classifier. For a `Not run` row, press `Ctrl+O` to read the full message, then see [Auto mode cannot determine the safety of an action](/docs/en/errors#auto-mode-cannot-determine-the-safety-of-an-action) or [The server returned no safety verdict](/docs/en/errors#the-server-returned-no-safety-verdict) for what to do.
+
+Otherwise, a line reading `Denied by auto mode classifier` with a reason such as `[Production Deploy]` or `Blocked by classifier` means the classifier judged the call unsafe, so pick the fix from what the call was trying to reach or do:
 
 * A destination Claude needs throughout the task, such as a package registry, an internal domain, or a repository host: add it to `autoMode.environment`.
 * A command you want to run without review from now on: add an `allow` rule.

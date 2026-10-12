@@ -14,8 +14,8 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7382145375c1f2a0cd36bf1b03349b4a03b4c9424b221fdaf00445c581b701d6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "46c5a58f8e2c0389327d7a7eb5eddb9046e2091c88beb9ae1565df563db2540e"
 ---
 
 # Networking
@@ -28,6 +28,7 @@ Connect your projects to backend services that require IP allowlisting or dedica
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe

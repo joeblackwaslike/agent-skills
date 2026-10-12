@@ -4,8 +4,8 @@ description: Learn how to process asynchronous batches with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/batch"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/batch.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f6fa819643f4776f0129157af86d24b979f3479d2272b6ada2a7cf2e35374d59"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "497a73ec087299942a9f64c8379d4d07a279868e8279613daeecd1a4da8ce796"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -95,13 +95,13 @@ const batch = await startBatch({
     {
       id: 'capital-france',
       type: 'text',
-      model: 'claude-haiku-4-5',
+      model: 'claude-haiku-5-5',
       prompt: 'What is the capital of France?',
     },
     {
       id: 'capital-germany',
       type: 'text',
-      model: 'claude-haiku-4-5',
+      model: 'claude-haiku-5-5',
       prompt: 'What is the capital of Germany?',
     },
   ],

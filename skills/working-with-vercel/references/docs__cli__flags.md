@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/flags/vercel-flags
   - /docs/flags/vercel-flags/dashboard/entities
+  - /docs/flags/vercel-flags/dashboard/feature-flag
   - /docs/flags/vercel-flags/dashboard
   - /docs/flags/vercel-flags/dashboard/segments
-  - /docs/cli/global-options
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b6c75521af68921853d996e3ecc9d4391baa8d1fb8c84759e7c4a403d6b672d6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c661bbdc374c3075a1b74cf0253f81356ec5bb0e93c1019eb93a48dd7e537835"
 ---
 
 # vercel flags
@@ -37,10 +37,10 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Vercel Flags are now optimized for agents](https://vercel.com/changelog/vercel-flags-are-now-optimized-for-agents?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
+- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fflags&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -86,7 +86,7 @@ vercel flags evaluations [flag]
 ```
 
 *Using the \`vercel flags evaluations\` command to display evaluation metrics
-for a feature flag.*
+for one feature flag, or every flag in the project when you omit the argument.*
 
 ```bash filename="terminal"
 vercel flags open [flag]
@@ -360,7 +360,7 @@ If revision `0` has no saved message, version history shows `Flag created`. When
 
 ### Viewing flag evaluations
 
-Use `vercel flags evaluations <flag>` to see how many times a flag evaluated to each variant during a time range. Pass a flag slug or ID. By default, `vercel flags evaluations` uses the linked project.
+Use `vercel flags evaluations [flag]` to view evaluation metrics during a time range. Pass a flag slug or ID to query one flag, or omit it to query every flag in the project. By default, the command uses the linked project and groups by `variant` for one flag or `flag` for the whole project.
 
 ```bash filename="terminal"
 vercel flags evaluations new-checkout --since 1h --granularity 15m
@@ -368,11 +368,27 @@ vercel flags evaluations new-checkout --since 1h --granularity 15m
 
 *Viewing evaluations for each \`new-checkout\` variant in 15-minute buckets.*
 
+Use `--group-by` to break evaluations down by other dimensions. You can repeat it to group by several dimensions at once:
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --group-by sdk-key --group-by client
+```
+
+*Viewing which SDK keys and clients evaluate \`new-checkout\`.*
+
+Without a flag, the command groups evaluations by flag across the whole project:
+
+```bash filename="terminal"
+vercel flags evaluations --group-by sdk-key --since 24h
+```
+
+*Viewing which SDK keys evaluated flags in the project during the last 24 hours.*
+
 #### Arguments
 
 | Argument | Type | Required | Default | Description |
 | - | - | - | - | - |
-| `<flag>` | string | Yes | — | Feature flag slug or ID. |
+| `[flag]` | string | No | All flags in the project | Feature flag slug or ID. Omit it to query every flag in the project. |
 
 #### Options
 
@@ -382,6 +398,7 @@ vercel flags evaluations new-checkout --since 1h --granularity 15m
 | `-s, --since <TIME>` | string | No | `1h` | Start time as a relative duration or ISO 8601 timestamp. |
 | `-u, --until <TIME>` | string | No | Current time | End time as a relative duration or ISO 8601 timestamp. |
 | `-g, --granularity <SIZE>` | string | No | Automatic | Time bucket size. Supports `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`. |
+| `--group-by <DIM>` | string\[] | No | `variant` with a flag, `flag` without one | Dimension to group evaluations by. Supports `variant`, `flag`, `sdk-key`, `client`, `environment`, and `reason`. Repeat the option to group by several dimensions. Deleted SDK keys appear as their hash. |
 | `--json` | boolean | No | `false` | Outputs exact bucket data as JSON instead of a human-readable summary. |
 
 When you run the command outside the linked project directory, use the global `--cwd` option to select it:
@@ -394,7 +411,7 @@ vercel flags evaluations new-checkout --cwd /path/to/project
 
 #### Human-readable output
 
-By default, `vercel flags evaluations` shows the aligned UTC time range, bucket interval, and project. It also shows per-variant totals, statistics, and sparklines. The CLI displays current variants with their configured values and labels. It labels evaluations without a variant as `Default in Code` and displays deleted or unknown variant IDs unchanged.
+By default, `vercel flags evaluations` shows the aligned UTC time range, bucket interval, and project. It also shows totals, statistics, and sparklines for each group. When grouping one flag by variant, the CLI displays current variants with their configured values and labels. It labels evaluations without a variant as `Default in Code` and displays deleted or unknown variant IDs unchanged. SDK keys show their label, or their hash when the key is deleted or unknown.
 
 For example, the command above can return:
 
@@ -416,7 +433,7 @@ If the selected period has no evaluation data, the command prints `No data found
 
 #### JSON output
 
-Pass `--json` to output exact bucket data without text formatting. Each `buckets` entry includes the timestamp, evaluation count, and either a variant ID or `null`. A `null` variant represents `Default in Code`. The `variants` object maps current variant IDs to their configured values.
+Pass `--json` to output exact bucket data without text formatting. The `groupBy` array lists the dimensions in use. Each `buckets` entry includes the timestamp, the evaluation count, and one or more fields for the grouped dimensions. When grouping by variant, `variantId` is the variant ID or `null` for `Default in Code`, and `variantValue` contains the configured value. When you pass a flag, the `variants` object maps current variant IDs to their configured values. Without a flag, `flag` is `null` and the output has no `variants` object.
 
 ```bash filename="terminal"
 vercel flags evaluations new-checkout --since 1h --granularity 15m --json
@@ -425,10 +442,12 @@ vercel flags evaluations new-checkout --since 1h --granularity 15m --json
 ```json filename="stdout"
 {
   "flag": "new-checkout",
+  "groupBy": ["variant"],
   "variants": {
     "off": false,
     "on": true
   },
+  "groupBy": ["variant"],
   "startTime": "2026-07-10T10:00:00.000Z",
   "endTime": "2026-07-10T11:00:00.000Z",
   "granularity": {
@@ -438,42 +457,50 @@ vercel flags evaluations new-checkout --since 1h --granularity 15m --json
   "buckets": [
     {
       "timestamp": "2026-07-10T10:00:00.000Z",
-      "variant": "off",
+      "variantId": "off",
+      "variantValue": false,
       "evaluations": 30
     },
     {
       "timestamp": "2026-07-10T10:00:00.000Z",
-      "variant": "on",
+      "variantId": "on",
+      "variantValue": true,
       "evaluations": 10
     },
     {
       "timestamp": "2026-07-10T10:15:00.000Z",
-      "variant": "off",
+      "variantId": "off",
+      "variantValue": false,
       "evaluations": 50
     },
     {
       "timestamp": "2026-07-10T10:15:00.000Z",
-      "variant": "on",
+      "variantId": "on",
+      "variantValue": true,
       "evaluations": 20
     },
     {
       "timestamp": "2026-07-10T10:30:00.000Z",
-      "variant": "off",
+      "variantId": "off",
+      "variantValue": false,
       "evaluations": 40
     },
     {
       "timestamp": "2026-07-10T10:30:00.000Z",
-      "variant": "on",
+      "variantId": "on",
+      "variantValue": true,
       "evaluations": 40
     },
     {
       "timestamp": "2026-07-10T10:45:00.000Z",
-      "variant": "off",
+      "variantId": "off",
+      "variantValue": false,
       "evaluations": 60
     },
     {
       "timestamp": "2026-07-10T10:45:00.000Z",
-      "variant": "on",
+      "variantId": "on",
+      "variantValue": true,
       "evaluations": 30
     }
   ]
@@ -482,13 +509,53 @@ vercel flags evaluations new-checkout --since 1h --granularity 15m --json
 
 *Returning exact bucket data for \`new-checkout\` as JSON.*
 
+Each dimension adds its own fields to a bucket:
+
+| Dimension | Bucket fields |
+| - | - |
+| `variant` | `variantId` and `variantValue`. Evaluations without a variant have an empty `variantId` and the `variantValue` `"Default in Code"`. Deleted or unknown variants have a `null` `variantValue`. |
+| `flag` | `flagKey` |
+| `sdk-key` | `sdkKeyId` (the key hash), `sdkKeyLabel`, and `sdkKeyEnvironment`. The label and environment are `null` for deleted or unknown keys. |
+| `client` | `clientName` |
+| `environment` | `environment` |
+| `reason` | `reason` |
+
+```bash filename="terminal"
+vercel flags evaluations --group-by flag --group-by sdk-key --since 24h --granularity 1d --json
+```
+
+```json filename="stdout"
+{
+  "flag": null,
+  "groupBy": ["flag", "sdk-key"],
+  "startTime": "2026-07-09T00:00:00.000Z",
+  "endTime": "2026-07-11T00:00:00.000Z",
+  "granularity": {
+    "days": 1
+  },
+  "truncated": false,
+  "buckets": [
+    {
+      "timestamp": "2026-07-10T00:00:00.000Z",
+      "flagKey": "new-checkout",
+      "sdkKeyId": "a1b2c3d4e5f6",
+      "sdkKeyLabel": "storefront-production",
+      "sdkKeyEnvironment": "production",
+      "evaluations": 280
+    }
+  ]
+}
+```
+
+*Returning project-wide bucket data grouped by flag and SDK key as JSON.*
+
 `vercel flags evaluations` rounds the start time down and the end time up to bucket boundaries. The JSON `startTime` and `endTime` fields contain the aligned range. The `buckets` array includes only returned buckets and doesn't add buckets with no data.
 
 When the selected period has no evaluation data, the `buckets` array is empty.
 
 #### Limits
 
-`vercel flags evaluations` returns up to the 100 most evaluated variants. Human-readable output warns when additional variants are omitted. In JSON output, `truncated` is `true` when the limit omits less frequently evaluated variants.
+`vercel flags evaluations` returns up to the 100 most evaluated groups, such as variants, flags, or SDK keys. Human-readable output warns when additional groups are omitted. In JSON output, `truncated` is `true` when the limit omits less frequently evaluated groups.
 
 #### Errors
 
@@ -496,8 +563,9 @@ When the selected period has no evaluation data, the `buckets` array is empty.
 
 | Code | Cause |
 | - | - |
-| `MISSING_FLAG` | The required `<flag>` argument is missing. |
+| `MISSING_FLAG` | You grouped by `variant` without passing a flag. Variants belong to one flag, so pass a flag or group the project by another dimension. |
 | `INVALID_GRANULARITY` | `--granularity` isn't one of the six supported values. |
+| `INVALID_GROUP_BY` | A `--group-by` value isn't one of the supported dimensions. |
 | `INVALID_TIME` | A time value is invalid, or the start time isn't before the end time. |
 | `NOT_LINKED` | The current directory isn't linked and `--project` wasn't provided. |
 | `PROJECT_NOT_FOUND` | The project passed to `--project` wasn't found in the current scope. |
@@ -599,7 +667,7 @@ vercel flags rollout redesigned-checkout --environment production --by user.id \
 
 *Configuring a Boolean rollout in production using \`user.id\` for bucketing.*
 
-Each `--stage` defines the percentage of traffic sent to the rollout variant and how long that stage lasts. After the last stage finishes, the environment serves 100% of the target variant indefinitely.
+Each `--stage` defines the percentage of traffic sent to the rollout variant and how long that stage lasts. After the last stage finishes, the environment serves the final percentage of the target variant indefinitely. The final percentage is 100% unless you set [`--final-percentage`](#final-percentage).
 
 ```bash filename="terminal"
 vercel flags rollout welcome-message --environment production --by user.id \
@@ -733,6 +801,49 @@ The CLI also accepts `on-or-after` and `on-or-before` as legacy spellings of `at
 Pass the value as an ISO 8601 date and time, such as `2026-04-16T09:00:00Z`, or as epoch milliseconds, such as `1776330000000`. The date and time must include at least hours and minutes, so the CLI rejects date-only values such as `2026-04-16`. A date and time without a timezone uses the timezone of the machine that runs the command. The CLI rejects epoch values in seconds.
 
 Your application must pass timestamp values as epoch milliseconds in the evaluation context, for example `Date.now()`. See [entity attribute types](/docs/flags/vercel-flags/dashboard/entities#attribute-types).
+
+### Direct targets
+
+Use `vercel flags targets` to assign a fixed variant to specific entity values in a flag environment. With targeting active, [targets evaluate before conditional rules](/docs/flags/vercel-flags/dashboard/feature-flag#targets-and-rules). Define the [entity and attribute](#entities) first.
+
+Saving targets doesn't activate targeting. If the environment serves a static value or reuses another environment, the CLI warns that the saved targets don't affect evaluation. Run `vercel flags use-targeting <flag> --environment <environment>` to activate targeting while keeping the current fallthrough outcome.
+
+List the direct targets for a flag:
+
+```bash filename="terminal"
+vercel flags targets list my-feature --environment production
+vercel flags targets ls my-feature -e production --json
+```
+
+*List production targets as a table or JSON.*
+
+Add one or more targets as `entity.attribute=value`. Boolean flags default to the `true` variant. For other flag types, pass `--variant` with a variant ID or value. A value already assigned to another variant moves to the selected variant.
+
+```bash filename="terminal"
+vercel flags targets add my-feature -e production user.id=user_123 user.id=user_456
+vercel flags targets add welcome-message -e preview --variant treatment team.id=team_789
+```
+
+*Assign a fixed variant to specific users or teams.*
+
+Append `|label` to set the attribute value's label in the same command. Quote the argument so your shell doesn't treat `|` as a pipe:
+
+```bash filename="terminal"
+vercel flags targets add my-feature -e production "team.id=team_789|Vercel"
+```
+
+*Add a target and label its entity value.*
+
+Remove targets with `remove` or its `rm` alias:
+
+```bash filename="terminal"
+vercel flags targets remove my-feature -e production user.id=user_123
+vercel flags targets rm my-feature -e production user.id=user_456
+```
+
+*Remove direct targets so other targeting rules can apply.*
+
+All three subcommands accept `--project`, `--environment` (`-e`), and `--json`. `add` and `remove` also accept `--message` for a revision message. Pass the environment explicitly in scripts and when using `--json`.
 
 ### Enabling and disabling flags
 
@@ -1000,10 +1111,11 @@ vercel flags sdk-keys ls
 all SDK keys.*
 
 ```bash filename="terminal"
-vercel flags sdk-keys add --type server --environment production
+vercel flags sdk-keys create --type server --environment production
 ```
 
-*Creating a server SDK key for the production environment.*
+*Creating a server SDK key for the production environment. \`vercel flags
+&#x20; sdk-keys add\` still works as an alias.*
 
 ```bash filename="terminal"
 vercel flags sdk-keys rm [hash-key]
@@ -1111,6 +1223,19 @@ vercel flags evaluations new-checkout --since 24h --until 1h
 
 *Viewing evaluations from 24 hours ago through one hour ago.*
 
+### Group by
+
+The `--group-by` option selects dimensions for `vercel flags evaluations`: `variant`, `flag`, `sdk-key`, `client`, `environment`, or `reason`. Repeat it to combine dimensions. Grouping by `variant` requires a flag argument. Deleted SDK keys appear as their hash.
+
+To find SDK keys still evaluating flags after a key rotation, query the whole project:
+
+```bash filename="terminal"
+vercel flags evaluations --group-by sdk-key --since 24h
+vercel flags evaluations new-checkout --group-by sdk-key --group-by client
+```
+
+*Find SDK key usage across project flags, or group one flag by SDK key and client.*
+
 ### Granularity
 
 The `--granularity` option, shorthand `-g`, sets the time bucket size for `vercel flags evaluations`. Supported values are `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`.
@@ -1133,6 +1258,16 @@ vercel flags evaluations new-checkout --since 7d --granularity 4h
 ```
 
 *Viewing seven days of evaluations in four-hour buckets.*
+
+### Group by
+
+The `--group-by` option sets the dimensions `vercel flags evaluations` groups results by. Supported values are `variant`, `flag`, `sdk-key`, `client`, `environment`, and `reason`. Repeat the option to group by several dimensions. If you omit it, the command groups by `variant` when you pass a flag, and by `flag` when you query the whole project. Grouping by `variant` requires a flag.
+
+```bash filename="terminal"
+vercel flags evaluations new-checkout --group-by environment --group-by reason
+```
+
+*Viewing \`new-checkout\` evaluations by environment and evaluation reason.*
 
 ### JSON
 
@@ -1295,7 +1430,7 @@ vercel flags rules add my-feature --environment production \
 
 ### Environment
 
-The `--environment` option, shorthand `-e`, specifies the target environment for `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, `vercel flags rules`, and `vercel flags sdk-keys add`. When using `vercel flags versions` or `vercel flags versions list`, it filters versions by the environment that changed. Valid values are `production`, `preview`, and `development`.
+The `--environment` option, shorthand `-e`, specifies the target environment for `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, `vercel flags rules`, and `vercel flags sdk-keys create`. When using `vercel flags versions` or `vercel flags versions list`, it filters versions by the environment that changed. Valid values are `production`, `preview`, and `development`.
 
 ```bash filename="terminal"
 vercel flags set welcome-message --environment production --variant control
@@ -1369,7 +1504,7 @@ vercel flags update welcome-message --variant control --value welcome-back
 
 ### Label
 
-The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, an entity label when using `vercel flags entities create` or `vercel flags entities update`, or an SDK key label when using `vercel flags sdk-keys add`.
+The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, an entity label when using `vercel flags entities create` or `vercel flags entities update`, or an SDK key label when using `vercel flags sdk-keys create`.
 
 ```bash filename="terminal"
 vercel flags update welcome-message --variant control --label "Welcome back"
@@ -1399,6 +1534,19 @@ vercel flags rollout redesigned-checkout --environment production --by user.id \
 
 *Defining four rollout stages with repeated \`--stage\` options.*
 
+### Final percentage
+
+The `--final-percentage` option sets the percentage of the rollout variant that is served indefinitely after the last stage finishes when using `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Pass a value from 0 to 100 with up to three decimal places. New rollouts default to 100. If you rerun a command without `--final-percentage`, the CLI keeps the current value.
+
+```bash filename="terminal"
+vercel flags rollout redesigned-checkout --environment production --by user.id \
+  --stage 5,6h --stage 25,12h --final-percentage 50
+```
+
+*Finishing a rollout at 50% of the target variant.*
+
+Final percentages below 100% require `@vercel/flags-core` version 1.9.0 or later. Older SDK versions ignore the final percentage and finish the rollout at 100% of the target variant.
+
 ### Start
 
 The `--start` option controls when a rollout begins when using `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Use `now`, a future relative duration like `1h`, or an ISO 8601 datetime.
@@ -1424,13 +1572,13 @@ vercel flags rules move my-feature rule_123 --environment production \
 
 ### Type
 
-The `--type` option specifies the type of SDK key when using `vercel flags sdk-keys add`.
+The `--type` option specifies the type of SDK key when using `vercel flags sdk-keys create`.
 
 ```bash filename="terminal"
-vercel flags sdk-keys add --type server --environment production
+vercel flags sdk-keys create --type server --environment production
 ```
 
-*Using the \`vercel flags sdk-keys add\` command with the \`--type\` option.*
+*Using the \`vercel flags sdk-keys create\` command with the \`--type\` option.*
 
 ### Yes
 

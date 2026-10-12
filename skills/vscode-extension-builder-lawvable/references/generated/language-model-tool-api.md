@@ -1,13 +1,47 @@
 ---
 title: "Language Model Tool API"
 source: "https://code.visualstudio.com/api/extension-guides/tools"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "13094040314bdeac405e2ebcb0557dd2468c7b2b23725e337d69b40482b04c5f"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "95c38a4fd206154072e081156fc7280816eb24ef2f7861f0c64f361baf5b12a2"
 ---
 
 # Language Model Tool API
 
 Source: https://code.visualstudio.com/api/extension-guides/tools
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/extension-guides/ai/tools.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fai%2Ftools%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fai%2Ftools%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fai%2Ftools%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 Language model tools enable you to extend the functionality of a large language model (LLM) in chat with domain-specific capabilities. To process a user's chat prompt, [agents](https://code.visualstudio.com/docs/chat/chat-overview) in VS Code can automatically invoke these tools to perform specialized tasks as part of the conversation.
 
@@ -346,4 +380,4 @@ Get more best practices for creating tools in the [OpenAI documentation](https:/
 - [Use MCP tools in agent mode](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
  
- 9/30/2026
+ 10/7/2026

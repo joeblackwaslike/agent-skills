@@ -3,7 +3,7 @@ title: AI Gateway Model Modalities
 product: vercel
 url: /docs/ai-gateway/modalities
 canonical_url: "https://vercel.com/docs/ai-gateway/modalities"
-last_updated: 2026-09-16
+last_updated: 2026-10-05
 type: conceptual
 prerequisites:
   - /docs/ai-gateway
@@ -16,13 +16,13 @@ related:
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f95097eeafde8497530f4694e30797b08a758e4acb2f4ac8863d82481bcf7833"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "5313bc678c929dd1eb7f14474aa517d2ac0655f41a3465a2c77749caea7d238c"
 ---
 
 # AI Gateway Model Modalities
 
-Modalities are the kinds of input and output models work with. Through AI Gateway you can generate text, images, and video, transcribe and synthesize speech, hold realtime voice conversations, create embeddings, rerank documents, and evaluate state against typed questions, all through a unified API so you don't need separate integrations for each provider. For cross-cutting abilities like reasoning and web search, see [Models & Providers](/docs/ai-gateway/models-and-providers).
+Modalities are the kinds of input and output models work with. Through AI Gateway you can generate text, images, and video, transcribe and synthesize speech, hold realtime voice conversations, create embeddings, rerank documents, and answer typed questions about state, all through a unified API so you don't need separate integrations for each provider. For cross-cutting abilities like reasoning and web search, see [Models & Providers](/docs/ai-gateway/models-and-providers).
 
 
 <!-- docsgraph:related -->
@@ -35,6 +35,7 @@ Modalities are the kinds of input and output models work with. Through AI Gatewa
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
 
@@ -53,7 +54,7 @@ For image understanding, documents, recorded audio, video analysis, and function
 - **Spoken audio**: Generate voiceovers and spoken responses from text with [Text to Speech](/docs/ai-gateway/modalities/text-to-speech)
 - **Semantic search**: Generate vector embeddings for search, similarity matching, and RAG with [Embeddings](/docs/ai-gateway/modalities/embeddings)
 - **Improved retrieval**: Re-score candidate documents by relevance for better RAG results with [Reranking](/docs/ai-gateway/modalities/reranking)
-- **Structured decisions**: Answer typed questions about shared state with [Evaluation](/docs/ai-gateway/modalities/evaluation)
+- **Structured decisions**: Answer typed questions about shared state with [Decision](/docs/ai-gateway/modalities/decision)
 
 ## Modalities overview
 
@@ -67,7 +68,7 @@ For image understanding, documents, recorded audio, video analysis, and function
 | [Text to Speech](/docs/ai-gateway/modalities/text-to-speech)      | Generate spoken audio from text           | Google, Microsoft, and OpenAI voices, multiple formats, speed and tone control |
 | [Embeddings](/docs/ai-gateway/modalities/embeddings)              | Generate vector representations of text   | Semantic search, similarity matching, RAG pipelines                            |
 | [Reranking](/docs/ai-gateway/modalities/reranking)                | Re-score documents by relevance           | Improve RAG retrieval accuracy, multi-provider support                         |
-| [Evaluation](/docs/ai-gateway/modalities/evaluation)              | Answer typed questions about state        | Boolean, choice, and score answers, many questions per request                 |
+| [Decision](/docs/ai-gateway/modalities/decision)                  | Answer typed questions about state        | Boolean, choice, and score answers, many questions per request                 |
 
 ## Text generation
 
@@ -135,9 +136,9 @@ Speech to Text and Text to Speech process recorded or generated audio in a singl
 
 Generate vector embeddings for semantic search, similarity matching, and RAG, then re-score candidate documents by relevance to improve retrieval accuracy. See the [Embeddings docs](/docs/ai-gateway/modalities/embeddings) and [Reranking docs](/docs/ai-gateway/modalities/reranking) for implementation details.
 
-## Evaluation
+## Decision
 
-Evaluate shared state against typed questions and get structured answers back: boolean probabilities, a choice from a named set, or a score along an ordered scale. Many questions can be answered in one request. See the [Evaluation docs](/docs/ai-gateway/modalities/evaluation) for implementation details.
+Ask typed questions about shared state and get structured answers back: boolean probabilities, a choice from a named set, or a score along an ordered scale. Many questions can be answered in one request. See the [Decision docs](/docs/ai-gateway/modalities/decision) for implementation details.
 
 ## Next steps
 
@@ -149,7 +150,7 @@ Evaluate shared state against typed questions and get structured answers back: b
 - [Generate speech](/docs/ai-gateway/modalities/text-to-speech) with Text to Speech
 - [Generate embeddings](/docs/ai-gateway/modalities/embeddings) for semantic search and RAG
 - [Rerank documents](/docs/ai-gateway/modalities/reranking) to improve retrieval accuracy
-- [Evaluate state](/docs/ai-gateway/modalities/evaluation) to get structured answers to typed questions
+- [Make decisions](/docs/ai-gateway/modalities/decision) to get structured answers to typed questions
 
 For cross-cutting abilities, see [Models & Providers](/docs/ai-gateway/models-and-providers). For monitoring and spend, see [Observability and Spend](/docs/ai-gateway/observability-and-spend). For data privacy and governance, see [Security and Compliance](/docs/ai-gateway/security-and-compliance).
 

@@ -16,8 +16,8 @@ related:
 summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7e69137ce02428370e422c8f1a21d153d373d13d79e9ce9f521dcc42ceb61739"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "6487fbf0ce49c2af55448cbd059c8b7d0fa2ebc14c2825f9be49c70f8542033b"
 ---
 
 # Sandbox CLI Reference
@@ -40,8 +40,8 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for sandboxes.
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
+- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for sandboxes.
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -1027,6 +1027,7 @@ sandbox drives <subcommand>
 
 - `list`: List drives for the specified account and project. \[alias: `ls`]
 - `get-or-create`: Create a drive if it doesn't exist, or retrieve the existing drive.
+- `fork`: Create a new drive from an existing drive's data.
 - `delete`: Delete one or more drives. \[aliases: `rm`, `remove`]
 
 ## `sandbox drives list`
@@ -1110,6 +1111,49 @@ sandbox drives get-or-create cache --region sfo1
 | Argument | Description                           |
 | -------- | ------------------------------------- |
 | `<name>` | The name of the drive to get or create. |
+
+## `sandbox drives fork`
+
+> **Availability**: Drive forks (Private Beta) are available to Enterprise and Pro plans
+
+Create a new drive from an existing drive's data. The fork belongs to the same project and inherits the source drive's region and maximum size. You can mount and update the fork independently of the source drive.
+
+> **💡 Note:** A drive must be mounted read-write and written to at least once before you can create a fork from it. Creating a fork of a drive that has never been written to fails with a `drive_not_initialized` error.
+
+Use the source drive name and a new unique name for the fork:
+
+```bash filename="terminal"
+sandbox drives fork [OPTIONS] <parent> <name>
+```
+
+### Sandbox drives fork example
+
+Fork an existing `cache` drive:
+
+```bash filename="terminal"
+sandbox drives fork cache cache-fork
+```
+
+### Sandbox drives fork options
+
+| Option                | Alias    | Description                                                                                                                                                  |
+| --------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you omit it, the CLI uses a stored token or prompts you to log in.       |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) that owns the source drive and the fork.                                   |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                  |
+
+### Sandbox drives fork flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox drives fork arguments
+
+| Argument   | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| `<parent>` | The name of the existing drive to fork.                      |
+| `<name>`   | The name of the new drive. Must be unique within the project. |
 
 ## `sandbox drives delete`
 

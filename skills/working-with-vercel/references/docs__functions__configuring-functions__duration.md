@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "3959f491459813f4093dcaa7cb619e22587a1870ffc5c83c8dedfd3c1a434051"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d084673b4df27b9148140f05d64ed183d06d06db23f77fffc8206c9f07fe8b11"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -331,7 +331,6 @@ During the beta, durations above 800 seconds must be configured for each functio
 
 Extended max duration is supported for the following runtimes during the beta:
 
-- `nodejs20.x`
 - `nodejs22.x`
 - `nodejs24.x`
 - Bun `1.x` and `1.4.x`

@@ -4,8 +4,8 @@ description: Learn how to use the Claude Platform on AWS provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "90f086cdd83264dea0b25f03ebbce05c32cdf6ab71021d9bbd6ee1dd4c7f8775"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "f67ed205d32f75361fb724c174d5c4543050942a09a16125156f5616d7268b2e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ This differs from [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock) i
 
 The Claude Platform on AWS provider is available in the `@ai-sdk/anthropic-aws` module. You can install it with:
 
-**Packages:** `@ai-sdk/anthropic-aws`
+```bash
+pnpm add @ai-sdk/anthropic-aws
+```
 
 ### Prerequisites
 

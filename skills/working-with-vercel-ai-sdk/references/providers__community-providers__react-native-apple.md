@@ -4,8 +4,8 @@ description: Learn how to use the Apple provider for on-device AI.
 url: "https://ai-sdk.dev/providers/community-providers/react-native-apple"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/react-native-apple.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4d4b9f699b2a8f62ba5834b07b70efcea9bd895872306fa06718d6499297a1d4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "de2af20f03b17475a1bbd85916ef6e7a4ebc5ec0ebae4278c7e27cb6c67b7576"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "4d4b9f699b2a8f62ba5834b07b70efcea9bd895872306fa06718d6499297a1d4"
 
 The Apple provider is available in the `@react-native-ai/apple` module. You can install it with:
 
-**Packages:** `@react-native-ai/apple`
+```bash
+pnpm add @react-native-ai/apple
+```
 
 ### Prerequisites
 

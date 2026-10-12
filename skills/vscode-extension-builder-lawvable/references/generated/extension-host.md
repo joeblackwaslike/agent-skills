@@ -1,13 +1,47 @@
 ---
 title: "Extension Host"
 source: "https://code.visualstudio.com/api/advanced-topics/extension-host"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "7b200e773f6543eff018b9fc75ba8e75d98e29c2f4b23c974acaa3e66fc01746"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "3565b6acdb3e8f4f3b6aa2633240db9b53aa1b809e55c9984e2b366cd0f62b26"
 ---
 
 # Extension Host
 
 Source: https://code.visualstudio.com/api/advanced-topics/extension-host
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/advanced-topics/extension-host.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fadvanced-topics%2Fextension-host%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fadvanced-topics%2Fextension-host%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fadvanced-topics%2Fextension-host%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 The **Extension Host** is responsible for running extensions.
 
@@ -93,4 +127,4 @@ VS Code aims to deliver a stable and high performance editor to users, and misbe
 Additionally, VS Code lets extensions declare their [Activation Events](https://code.visualstudio.com/api/references/activation-events) and loads them lazily. For example, the Markdown extension should only be loaded when a user opens a Markdown file. This makes sure that extensions do not consume unnecessary CPU and memory.
 
  
- 9/30/2026
+ 10/7/2026

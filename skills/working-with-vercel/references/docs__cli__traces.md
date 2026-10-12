@@ -15,8 +15,8 @@ related:
 summary: Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5b26a0349a9901003943e9955cd2f3b81b30a70cdc7e47f39290c3d1a295f0eb"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "74ab30dc412e00ab6f88f8b611de748d102a5a989a71aa46cb4cac93ba66424d"
 ---
 
 # vercel traces
@@ -33,9 +33,9 @@ The `vercel traces` command lets you search spans, inspect request traces, captu
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related)
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 
 Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftraces&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -46,8 +46,8 @@ For more information about tracing, see the [Tracing documentation](/docs/tracin
 
 The `vercel traces` command supports the following operations:
 
-- [`search`](#search) - Search project spans
-- [`get`](#get) - Fetch a captured trace by request ID
+- [`search`](#search) - Search spans across team projects
+- [`inspect`](#inspect) - Inspect a captured trace by request ID
 - [`create`](#create) - Capture a session trace for a request
 - [`config`](#manage-trace-sampling-rules) - Manage trace sampling rules
 
@@ -55,7 +55,9 @@ The `vercel traces` command supports the following operations:
 
 ### `search`
 
-`vercel traces search` returns up to 100 spans from one project, or up to 1,000 with `--limit`. By default, it searches the last hour and lists the newest spans first.
+`vercel traces search` returns up to 100 spans across all projects in the selected team, or up to 1,000 with `--limit`. Pass `--project` to search one project. By default, it searches the last hour and lists the newest spans first.
+
+Search requires a team scope. If you're using a personal account with no team selected, pass `--scope <team>` or run `vercel switch <team>`.
 
 ```bash filename="terminal"
 vercel traces search
@@ -65,7 +67,7 @@ vercel traces search
 
 **Options:**
 
-- `--project <name-or-id>`, `-p`: Project name or ID, defaulting to the linked project
+- `--project <name-or-id>`, `-p`: Search only this project. When omitted, search all projects in the selected team
 - `--environment <environment>`: Filter by `production` or `preview`, case-insensitive
 - `--service <name>`: Filter by service name
 - `--name <name>`: Filter by span name
@@ -76,8 +78,8 @@ vercel traces search
 - `--trace-id <id>`: Filter by trace ID
 - `--span-id <id>`: Filter by span ID
 - `--root`: Filter root spans only
-- `--since <time>`: Start time. Defaults to one hour ago
-- `--until <time>`: End time. Defaults to now
+- `-s, --since <time>`: Start time. Defaults to one hour ago
+- `-u, --until <time>`: End time. Defaults to now
 - `--limit <number>`, `-n`: Maximum spans to return, from 1 to 1,000. Defaults to 100
 - `--query <kql>`, `-q`: Filter spans using a KQL field expression
 - `--columns <list>`: Comma-separated column keys in display order. Cannot be combined with `--json`
@@ -195,17 +197,19 @@ When no spans match, table output prints `No spans found for this period.` and J
 
 ## Inspect a request trace
 
-### `get`
+### `inspect`
+
+`get` remains a supported alias, but prints a deprecation warning. Use `inspect` for new commands.
 
 Fetch a captured trace by request ID. The command prints a summary in the terminal by default.
 
 ```bash filename="terminal"
-vercel traces get req_1234567890
+vercel traces inspect req_1234567890
 ```
 
-*Using the \`vercel traces get\` command to inspect a request trace.*
+*Using the \`vercel traces inspect\` command to inspect a request trace.*
 
-`get` is the default subcommand, so `vercel traces req_1234567890` returns the same trace.
+`inspect` is the default subcommand, so `vercel traces req_1234567890` returns the same trace. Unlike `search`, it defaults to the linked project.
 
 **Options:**
 
@@ -220,16 +224,16 @@ vercel traces get req_1234567890
 
 ```bash filename="terminal"
 # Fetch a trace from a specific team and project
-vercel traces get req_1234567890 --scope my-team --project my-app
+vercel traces inspect req_1234567890 --scope my-team --project my-app
 
 # Open a trace in the dashboard tree view
-vercel traces get req_1234567890 --open --view tree
+vercel traces inspect req_1234567890 --open --view tree
 
 # Output the raw trace as JSON
-vercel traces get req_1234567890 --json
+vercel traces inspect req_1234567890 --json
 ```
 
-A request ID in search results does not guarantee that `get` can retrieve the trace. Lookup requires a matching root span in the same project within 30 minutes after the request ID timestamp. If no matching root span exists, `get` returns 404. Use the same `--scope` and `--project` values for `search` and `get`.
+A request ID in search results does not guarantee that `inspect` can retrieve the trace. Lookup requires a matching root span in the same project within 30 minutes after the request ID timestamp. If no matching root span exists, `inspect` returns 404. When inspecting a team-wide search result, pass its project with `--project` and use the same team scope.
 
 ## Capture a session trace
 

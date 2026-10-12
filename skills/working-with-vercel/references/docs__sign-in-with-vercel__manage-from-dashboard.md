@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/sign-in-with-vercel/authorization-server-api
   - /docs/rest-api
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
   - /docs/kms
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
-  - /docs/sign-in-with-vercel/scopes-and-permissions
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "6c906b095c872818b301a4a994fe7609de18ee12d50b30d839ba3812e591a747"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "785d33466256cf3980494a65aa1621c622fba5c912dfac59cf5f28ea8b9b5f8d"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -34,13 +34,12 @@ To manage any third-party apps, or create a new one yourself, you need to create
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
-- [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fmanage-from-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -69,8 +68,28 @@ The client authentication method determines how your app will authenticate with 
 | `client_secret_basic` | HTTP Basic Authentication Scheme                      | Client credentials are sent via HTTP Basic Authentication header (Authorization: Basic `<base64-encoded-credentials>`) | Suitable for server-side applications that can securely store credentials                         |
 | `client_secret_post`  | HTTP request body as a form parameter                 | Client credentials are included as form parameters in the request body (`client_id` and `client_secret`)               | The same as `client_secret_basic`                                                                 |
 | `client_secret_jwt`   | JWT signed with the client secret                     | Client authenticates using a JWT signed with HS256, HS384, or HS512. Vercel verifies the assertion against each active client secret. | Provides additional security by avoiding the transmission of the client secret in requests        |
+| `oidc_token`          | OIDC token issued by a trusted issuer                 | Client authenticates with an OIDC token issued by a trusted issuer, such as GitHub Actions or Vercel. Vercel verifies the token's signature against the issuer's published keys and matches its claims against the issuer policies you configure. | Suitable for workloads that already have OIDC support and cannot or should not store long-lived secrets |
 | `private_key_jwt`     | JWT signed with the app's private key                 | Client authenticates using a JWT signed with a private key. Vercel verifies the signature using public keys from your JWKS URL. Include a `kid` header when the JWKS has more than one key. | Suitable for server-side applications that store a private key and publish public keys at a JWKS URL |
 | `none`                | For public, unauthenticated, non-confidential clients | No client authentication required - suitable for public applications that cannot securely store secrets                | For single page applications (SPAs), mobile apps, and CLIs that cannot securely store credentials |
+
+## Configure OIDC-based authentication
+
+To enable OIDC-based authentication after you create an app:
+
+1. Navigate to the **Manage** page for your app
+2. Open **Authentication** in the sidebar
+3. Under **OpenID Connect**, select **oidc\_token**
+4. Click **Add Issuer** and choose an issuer. The menu offers templates such as GitHub Actions, plus a Custom option.
+5. Configure the **Issuer URL** and the claims the token must present
+6. Click **Save**
+
+You must configure at least one complete issuer before saving. If no issuer is complete, the dashboard rejects the save and asks you to add an issuer with an issuer URL and matching claims, or turn off OpenID Connect.
+
+Each issuer entry is an issuer URL plus claims, where claims map a claim name to a list of allowed values. Within one entry, Vercel ANDs the claim names and ORs the allowed values for each claim. Matching uses exact string equality, so `*` is a literal character rather than a wildcard, the same semantics as [Deployment Protection trusted sources](/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources). Multiple entries may share an issuer URL to express alternatives, and any one matching entry authenticates. You can configure up to 10 issuer entries per app. The issuer URL must be a valid URL up to 2048 characters. Each entry has 1 to 20 claim names, each claim has 1 to 20 allowed values, claim names can be up to 64 characters, and claim values can be up to 256 characters.
+
+Learn how to present an OIDC token when requesting a token in [Authenticate with an OIDC token](/docs/sign-in-with-vercel/authorization-server-api#authenticate-with-an-oidc-token).
+
+## Configure private key-based authentication
 
 To enable `private_key_jwt` after you create an app:
 
@@ -85,6 +104,8 @@ The JWKS URL must use HTTPS and can be up to 2048 characters. You must provide a
 Learn how to build and send JWT client assertions in [Authenticate with a JWT assertion](/docs/sign-in-with-vercel/authorization-server-api#authenticate-with-a-jwt-assertion). To sign with KMS instead of a local private key, see [Sign the assertion with Vercel KMS](/docs/sign-in-with-vercel/authorization-server-api#sign-the-assertion-with-vercel-kms).
 
 ## Generate a client secret
+
+A client secret is only necessary if you plan to use the `client_secret_basic`, `client_secret_post`, or `client_secret_jwt` authentication methods.
 
 Client secrets are used to authenticate your app with the Vercel Authorization Server. You can generate a client secret by clicking the **Generate** button.
 

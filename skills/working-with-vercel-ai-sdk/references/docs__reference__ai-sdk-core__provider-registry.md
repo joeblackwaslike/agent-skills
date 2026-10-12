@@ -4,8 +4,8 @@ description: Registry for managing multiple providers and models (API Reference)
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "2c1fd951146083425eb31e45ae7e680760d5a6cc0fd444766c1da7541dbd8162"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "43090cf8f97ba17083a112ebe7c31509d3ee8530670e25e172c8ca8eed1cb9f1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -165,22 +165,22 @@ The `createProviderRegistry` function returns a `Provider` instance. It has the 
 - `files` (`(providerId: string) => FilesV4`): A function that returns a provider files API interface by provider id.
 - `skills` (`(providerId: string) => SkillsV4`): A function that returns a provider skills API interface by provider id.
 
-## Experimental evaluation models
+## Experimental decision models
 
-The inferred return type also exposes `evaluationModel('providerId:modelId')`,
-returning `Experimental_EvaluationModelV4`. The provider must expose an
-`evaluationModel` factory. Custom separators and model ID
+The inferred return type also exposes `decisionModel('providerId:modelId')`,
+returning `Experimental_DecisionModelV4`. The provider must expose an
+`decisionModel` factory. Custom separators and model ID
 inference work as they do for video models. Language and image middleware do not
-wrap evaluation models. `ProviderRegistryProvider` remains a stable interface;
-use the inferred return type or `Experimental_EvaluationProviderRegistry` to
-retain experimental evaluation access.
+wrap decision models. `ProviderRegistryProvider` remains a stable interface;
+use the inferred return type or `Experimental_DecisionProviderRegistry` to
+retain experimental decision access.
 
-Unavailable evaluation capabilities or models throw `NoSuchModelError` with
-`modelType: 'evaluationModel'`; unknown registry providers throw
+Unavailable decision capabilities or models throw `NoSuchModelError` with
+`modelType: 'decisionModel'`; unknown registry providers throw
 `NoSuchProviderError`. These capabilities are structural extensions and are not
-added to the stable `ProviderV4` contract. Direct evaluation string IDs default
+added to the stable `ProviderV4` contract. Direct decision string IDs default
 to Gateway when no default provider is configured.
-See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
+See [Decisions](/docs/ai-sdk-core/decisions#model-aliases-and-registries)
 for runnable usage patterns.
 
 ---

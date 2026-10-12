@@ -3,22 +3,22 @@ title: Virtual Models
 product: vercel
 url: /docs/ai-gateway/models-and-providers/virtual-models
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models"
-last_updated: 2026-09-17
+last_updated: 2026-10-02
 type: how-to
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/models-and-providers/model-fallbacks
-  - /docs/ai-gateway/models-and-providers/evaluation-fallbacks
+  - /docs/ai-gateway/models-and-providers/decision-fallbacks
   - /docs/cli/ai-gateway
   - /docs/ai-gateway
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: Bundle an AI Gateway model with provider routing, fallback behavior, observability tags, and more under one custom slug your app calls.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "86ccc43dff63f32551318be4383980de89cfd668e59c4f48b3207fb2e8bd3ea2"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "2e6db774859275193d936a1c64aeac2843e140795db8894fabc66cf0071dadd5"
 ---
 
 # Virtual Models
@@ -32,7 +32,7 @@ A virtual model is useful when you want to:
 - Set up the model configurations you commonly use once, then update the model or routing at any time without pushing new code.
 - Pin a slug to a specific provider or order providers to try, per slug instead of per request.
 - Give a slug its own fallback chain, fast mode, provider sort, service tier, or prompt caching behavior.
-- Escalate uncertain evaluation answers through one reusable evaluation fallback policy.
+- Escalate uncertain decision answers through one reusable decision fallback policy.
 - Restrict a slug's routing for compliance: zero data retention, HIPAA, or blocking provider training on request data.
 - Attach arbitrary provider options, such as Anthropic's reasoning effort, to every request through the slug.
 - Tag every request to a slug with custom labels for usage attribution and reporting.
@@ -59,7 +59,7 @@ A virtual model is useful when you want to:
 - ### Set behavior (optional)
   Under **Model Fallbacks**, add models AI Gateway should try when every provider of the primary model fails, in order.
 
-  For an evaluation model, use **Evaluation Fallback** to select one fallback model or virtual model and define the request question conditions that should rerun the complete evaluation. Question IDs are free-form because a virtual model does not know the questions a future request will send. AI Gateway validates the IDs and question types when the request arrives.
+  For a decision model, select **Add Condition** on the first model fallback to define the request question conditions that should rerun the complete decision on it. Question IDs are free-form because a virtual model does not know the questions a future request will send. AI Gateway validates the IDs and question types when the request arrives.
 
   Toggle **Fast Mode** to serve the model's fast tier when available. **Fallback From Fast Mode** is on by default and drops the request back to the base model when the fast tier fails.
 
@@ -169,7 +169,7 @@ A few details worth knowing:
 - **Required capabilities replace, so check `has: ['free']`.** A virtual model's capability list replaces the request's rather than adding to it, so a request using `has: ['free']` to stay on free providers loses that guard if the slug sets its own capabilities.
 - **Compliance settings only tighten.** Zero data retention, HIPAA, and blocking prompt training turn on when either side enables them. A virtual model can't relax a restriction the request set, and a request can't relax one the virtual model set. In exchange, these fields reject the `@default` sentinel described below.
 - **Model fallbacks resolve per attempt.** You can also use `vmc/<slug>` anywhere in a request's own [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks) array. Each model in a chain resolves independently, so a virtual model's routing and settings apply only to its own attempt and don't carry over to the next model in the list.
-- **Evaluation fallbacks rerun the full request.** An evaluation virtual model can store one conditional policy. When it matches, AI Gateway reruns every question with the fallback and returns only that complete result. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks#store-the-fallback-policy-in-a-virtual-model).
+- **Decision fallbacks rerun the full request.** A decision virtual model can store one conditional policy. When it matches, AI Gateway reruns every question with the fallback and returns only that complete result. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks#store-the-fallback-policy-in-a-virtual-model).
 
 ## Unset, `@default`, and cleared settings
 
@@ -192,7 +192,7 @@ Changes to a virtual model, including archive and restore, take effect for new r
 
 To manage virtual models from the terminal, use the [`vercel ai-gateway virtual-models`](/docs/cli/ai-gateway#virtual-models) command. It covers the same lifecycle as the dashboard: `create`, `list`, `inspect`, `edit`, `remove`, and `restore`.
 
-To edit a virtual model, open it and use the sections on the Configure tab. You can change the model, provider routing, inference region, fallback chain, evaluation fallback, fast mode, sort, service tier, prompt caching, required capabilities, compliance settings, provider options, observability tags, display name, and description. The slug is immutable.
+To edit a virtual model, open it and use the sections on the Configure tab. You can change the model, provider routing, inference region, fallback chain, decision fallback, fast mode, sort, service tier, prompt caching, required capabilities, compliance settings, provider options, observability tags, display name, and description. The slug is immutable.
 
 To archive a virtual model, open the menu on its row and click **Archive**. Archived virtual models stop serving traffic and return 404 to any request that uses their slug. The row stays visible in the Archived section at the bottom of the list. Open the menu on an archived row and click **Restore** to start serving traffic again.
 
@@ -205,7 +205,7 @@ Any member of your team can use a virtual model in their application. Only team 
 - [`vercel ai-gateway virtual-models` CLI reference](/docs/cli/ai-gateway#virtual-models)
 - [AI Gateway overview](/docs/ai-gateway)
 - [Provider filtering, ordering, and sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering)
-- [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks)
+- [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks)
 
 
 ---

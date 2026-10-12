@@ -12,8 +12,8 @@ related:
 summary: Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-nameservers.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "05b39a18df1088efd939a6629822c1a20dcf587493a4e34c61603a02116e5919"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c72b657b7e12527d629fc0f7feb7a32e5b68c1cd044f1f0d252a6075932eb501"
 ---
 
 # Managing Nameservers
@@ -35,7 +35,7 @@ sha256: "05b39a18df1088efd939a6629822c1a20dcf587493a4e34c61603a02116e5919"
 - [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/domains/managing-nameservers.graph.md](/docs/domains/managing-nameservers.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-nameservers&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

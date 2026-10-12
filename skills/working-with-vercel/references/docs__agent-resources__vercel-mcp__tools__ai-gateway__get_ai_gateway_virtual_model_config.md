@@ -13,8 +13,8 @@ related:
 summary: Use get_ai_gateway_virtual_model_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway/get_ai_gateway_virtual_model_config.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b8544d59254931cf40c3898f1afda1c5598cfbea551e9e719b347801ac8945fd"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4d5362adffef98fe8613691923aff0aed66f1c82b78df82fda983cf73d26bf4e"
 ---
 
 # get_ai_gateway_virtual_model_config
@@ -27,9 +27,9 @@ Get virtual model config.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Delete virtual model config](https://vercel.com/docs/rest-api/ai-gateway/delete-virtual-model-config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — DELETE /ai-gateway/virtual-model-configs — Delete a virtual model config \\(soft delete\\)
-- [List virtual model configs](https://vercel.com/docs/rest-api/ai-gateway/list-virtual-model-configs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — GET /ai-gateway/virtual-model-configs/list — List virtual model configs. With \\`ownerId\\`, returns all of that team's VM
 - [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
+- [List virtual model configs](https://vercel.com/docs/rest-api/ai-gateway/list-virtual-model-configs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — GET /ai-gateway/virtual-model-configs/list — List virtual model configs. With \\`ownerId\\`, returns all of that team's VM
+- [Delete virtual model config](https://vercel.com/docs/rest-api/ai-gateway/delete-virtual-model-config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — DELETE /ai-gateway/virtual-model-configs — Delete a virtual model config \\(soft delete\\)
 - [get_configuration](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — Use get_configuration with Vercel MCP.
 - [Create virtual model config](https://vercel.com/docs/rest-api/ai-gateway/create-virtual-model-config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fai-gateway%2Fget_ai_gateway_virtual_model_config&source_site=vercel-docs&relationship=related) — POST /ai-gateway/virtual-model-configs — Create a virtual model config \\(VMC\\)
 

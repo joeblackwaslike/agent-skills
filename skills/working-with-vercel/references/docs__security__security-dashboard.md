@@ -16,8 +16,8 @@ related:
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "cc90fef8559f62bfbb438df940c96117fa4ee548697c2df5ea1ecada2db1c523"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "aac5632ffd02fc97a92989c0038f8e843cfa4416f2ae383b8cc3f3efa3cff178"
 ---
 
 # Security Dashboard
@@ -34,10 +34,10 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Unified security actions dashboard](https://vercel.com/changelog/unified-security-actions-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related)
 - [Vercel Security Dashboard is in private beta](https://vercel.com/changelog/vercel-security-dashboard-is-in-private-beta?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related)
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to preview and download Vercel compliance documents from the dashboard.
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
 Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fsecurity-dashboard&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -105,7 +105,7 @@ These checks cover your team's projects, their deployment settings, and their en
 | Long-lived credentials where OIDC is available                | High   | Static credentials stored as environment variables where a short-lived token would work instead.  | Replace the static credential with [OIDC federation](/docs/oidc) so your app exchanges a short-lived token at runtime.                            |
 | Projects without Git fork deploy prevention                   | High   | Projects where forked pull requests can deploy and read your environment variables without review. | Turn on [Git fork protection](/docs/project-configuration/security-settings#git-fork-protection) in the project's security settings.              |
 | Projects without preview deployment protection                | High   | Preview deployments that anyone with the URL can reach.                                            | Enable [deployment protection](/docs/deployment-protection) so only authorized users can open preview URLs.                                       |
-| Environment variables not marked Sensitive                    | Medium | Values that can be read back from the dashboard or API after they are written.                     | Mark the variable as [Sensitive](/docs/environment-variables/sensitive-environment-variables) so new values can't be read back once saved. Because the existing value was readable, [rotate it](/docs/environment-variables/rotating-secrets) when you make the change. |
+| Environment variables not marked Sensitive                    | Medium | Values that can be read back from the dashboard or API after they are written.                     | Store the variable as a [Secret](/docs/environment-variables/sensitive-environment-variables) so new values can't be read back once saved. Because the existing value was readable, [rotate it](/docs/environment-variables/rotating-secrets) when you make the change. |
 | Environment variables older than 90 days                      | Medium | Variables that have not been rotated in over 90 days.                                              | [Rotate the secret](/docs/environment-variables/rotating-secrets), or delete the variable if it's no longer needed.                               |
 | Environment variables exposed via a web application framework | Medium | Variables a web application framework exposes to the client, which increases the risk of a leak.   | Review your [framework environment variables](/docs/environment-variables/framework-environment-variables) and keep secrets server-only.          |
 

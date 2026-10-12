@@ -4,8 +4,8 @@ description: Learn how to use the Codex CLI App Server provider for mid-executio
 url: "https://ai-sdk.dev/providers/community-providers/codex-app-server"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/codex-app-server.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ed20ff9acae0eb60b484069a84bc760b7aa4c67896645ed1446d9ac3ebe4ba3c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ed9868327aa196a2e083c53878bf99a37cb8bbe6170d9ec2ac56caf515a16433"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -27,7 +27,9 @@ The [ai-sdk-provider-codex-app-server](https://github.com/pablof7z/ai-sdk-provid
 
 ## Setup
 
-**Packages:** `ai-sdk-provider-codex-app-server`
+```bash
+pnpm add ai-sdk-provider-codex-app-server
+```
 
 ## Provider Instance
 

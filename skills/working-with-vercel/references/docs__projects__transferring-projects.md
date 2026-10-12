@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "fc580102e828d6da5aa3abeab67a3748f16a76acad811310db6e12b3db22aa18"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "32c51bc23c41feafe71ceb571fec84115de2b6f73ed5ef99e9165991529802b5"
 ---
 
 # Transferring a project
@@ -41,7 +41,7 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 - [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Vercel MCP tools for projects.
 - [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — POST /projects/{idOrName}/transfer-request — Initiates a project transfer request from one team to another. \<br/\> Return
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — PUT /projects/transfer-request/{code} — Accept a project transfer request initated by another team. \<br/\> The \\`code\\` i
+- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=related) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 
 Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md?from=related&source_path=%2Fdocs%2Fprojects%2Ftransferring-projects&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

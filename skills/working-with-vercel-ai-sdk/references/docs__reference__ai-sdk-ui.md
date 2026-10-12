@@ -4,8 +4,8 @@ description: Reference documentation for the AI SDK UI
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4344a2151d6f5d0461175ce1486ce520514951aae811714e1f28aaa86eb86777"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3e8607a807f98e07a3cadc8d6e6514f2db112e1d0ddf451f8947fa43df6e04ac"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -54,6 +54,10 @@ Pipe a UI message stream to a Node.js ServerResponse object.
 #### [readUIMessageStream](/docs/reference/ai-sdk-ui/read-ui-message-stream)
 
 Transform a stream of UIMessageChunk objects into an AsyncIterableStream of UIMessage objects.
+
+#### [WebSocketChatTransport](/docs/reference/ai-sdk-ui/websocket-chat-transport)
+
+Send correlated chat requests and UI message streams over a persistent WebSocket connection.
 
 #### [experimental\_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 

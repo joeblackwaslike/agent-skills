@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4f4c6c7a689754676b648e8d163242e23220635d26f5a4808588bb6a52ca1077"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "f5d2ce7294aa42cf167a793ca8a4de5c12330cf671a6494005299c1aaa36faea"
 ---
 
 # Anthropic Messages Structured Outputs with AI Gateway
@@ -29,8 +29,8 @@ Structured outputs constrain completed model responses to a JSON Schema. Check f
 
 - [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Learn how to generate structured data with the AI SDK.
 - [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — API Reference for Output.
-- [Output Schema](https://eve.dev/docs/guides/client/output-schema?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Request structured results from eve client turns and read typed data from MessageResult.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
+- [Output Schema](https://eve.dev/docs/guides/client/output-schema?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Request structured results from eve client turns and read typed data from MessageResult.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
 - [Stream Object](https://ai-sdk.dev/cookbook/next/stream-object?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Learn how to stream object using the AI SDK and Next.js
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fanthropic-messages-api%2Fstructured-outputs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.

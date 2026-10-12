@@ -4,8 +4,8 @@ description: Monitor and evaluate your AI SDK application with LangSmith
 url: "https://ai-sdk.dev/providers/observability/langsmith"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/langsmith.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "9b4d35d0d00bb3eb8d41b6f880626b6dbdde842b13e42c89b1ca0c14649bc697"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3fb3e98d685d949bdf662f0ec60d61869cdb4a78dd2786fcfa14920522137ffd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -31,7 +31,9 @@ The steps in this guide assume you are using
 Install an [AI SDK model provider](/providers/ai-sdk-providers) and the [LangSmith client SDK](https://npmjs.com/package/langsmith).
 The code snippets below will use the [AI SDK's OpenAI provider](/providers/ai-sdk-providers/openai), but you can use any [other supported provider](/providers/ai-sdk-providers) as well.
 
-**Packages:** `@ai-sdk/openai`, `langsmith`
+```bash
+pnpm add @ai-sdk/openai langsmith
+```
 
 Next, set required environment variables.
 

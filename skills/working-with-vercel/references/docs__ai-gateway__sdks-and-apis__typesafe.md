@@ -3,21 +3,21 @@ title: TypeSafe API with AI Gateway
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis/typesafe
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe"
-last_updated: 2026-09-21
+last_updated: 2026-10-05
 type: conceptual
 prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/modalities/evaluation
+  - /docs/ai-gateway/modalities/decision
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/models-and-providers/evaluation-fallbacks
+  - /docs/ai-gateway/models-and-providers/decision-fallbacks
   - /docs/ai-gateway/models-and-providers
-summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One evaluation requests through it.
+summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f6d369661954b012df0433dfc4c3b2361672136233de0cafc50119e4dfec4ac9"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "56c8dbd697344bfab750d70a7d98f12f6879a009cdb9abbdcff5de33c02f32a4"
 ---
 
 # TypeSafe API with AI Gateway
@@ -32,12 +32,13 @@ Keep using the [TypeSafe SDK](https://docs.typesafe.ai/introduction) and route r
 
 - [AI Gateway now supports TypeSafe clients and an HTTP API for Jev](https://vercel.com/changelog/ai-gateway-now-supports-typesafe-clients-and-http-api-for-jev?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
 - [Laya decision model now available on AI Gateway, free through October 31](https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
+- [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
+- [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
-- [Evaluation](https://ai-sdk.dev/docs/ai-sdk-core/evaluation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Evaluate Choice, Score, and Boolean questions against shared state.
-- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Use TypeSafe System One models for typed evaluations with the AI SDK.
-- [Automatic Model Selection](https://eve.dev/docs/guides/evaluate?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Choose agent models automatically or evaluate typed questions in your tools and application code.
-- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Use TypeSafe System One models for typed decisions with the AI SDK.
+- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Decide answers to Choice, Score, and Boolean questions against shared state.
+- [Automatic Model Selection](https://eve.dev/docs/guides/decide?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Choose agent models automatically or ask typed questions in your tools and application code.
+- [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/typesafe.graph.md](/docs/ai-gateway/sdks-and-apis/typesafe.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Ftypesafe&source_site=vercel-docs&relationship=graph)
@@ -45,7 +46,7 @@ Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/typesafe.grap
 
 Requests are billed through AI Gateway and appear in your usage and observability alongside every other model you call.
 
-If you are writing new code rather than migrating, use the [evaluation API](/docs/ai-gateway/modalities/evaluation) instead. It is the same capability without TypeSafe-specific naming.
+If you are writing new code instead of migrating, use the [Decision API](/docs/ai-gateway/modalities/decision). It is the same capability without TypeSafe-specific naming.
 
 ## Base URL
 
@@ -100,8 +101,8 @@ console.log(result.answers.refund); // { type: 'noul', noul: 0.98 }
 
 ## Supported endpoints
 
-- `POST /typesafe/v1/systemone` evaluates state against typed questions
-- `GET /typesafe/v1/models` lists the evaluation models available to you
+- `POST /typesafe/v1/systemone` answers typed questions about state
+- `GET /typesafe/v1/models` lists the decision models available to you
 
 ## Request and response format
 
@@ -201,13 +202,13 @@ The response uses TypeSafe's field names:
 }
 ```
 
-## Evaluation fallbacks
+## Decision fallbacks
 
-Evaluation fallbacks are an AI Gateway extension to the TypeSafe request. Add one conditional object to `providerOptions.gateway.models` to rerun a successful but uncertain evaluation with another model.
+Decision fallbacks are an AI Gateway extension to the TypeSafe request. Add one conditional object to `providerOptions.gateway.models` to rerun a successful but uncertain decision with another model.
 
 The official TypeSafe SDK forwards additional request properties at runtime, but its request type does not currently include `providerOptions`. Supply the extension through an intermediate object:
 
-```typescript filename="typesafe-evaluation-fallback.ts" {21-30}
+```typescript filename="typesafe-decision-fallback.ts" {21-30}
 import { TypeSafeClient } from '@typesafe-ai/sdk';
 
 const client = new TypeSafeClient({
@@ -245,7 +246,7 @@ const result = await client.systemOne(request);
 
 > **💡 Note:** If a language model returns the final Choice or Score answer, `confidence: 0`
 > and `probabilities: {}` mean those values are unavailable. They do not mean
-> the model measured zero confidence. Native evaluation fallbacks preserve
+> the model measured zero confidence. Native decision-model fallbacks preserve
 > native confidence and probabilities.
 
 Noul returns the fallback model's final `P(true)` normally. The response's top-level `model` echoes the model ID you requested when the primary answered, and names the fallback model whenever a fallback answered. AI Gateway routing metadata lists each model attempt and marks the one your condition triggered. Triggered requests bill both stages and report their combined usage.
@@ -254,14 +255,17 @@ When a condition matches, the response also carries these headers, listed in `Ac
 
 | Header | Value |
 | --- | --- |
-| `x-ai-gateway-evaluation-fallback-triggered` | `true` |
-| `x-ai-gateway-evaluation-fallback-final-model` | The model that produced the returned answers |
-| `x-ai-gateway-evaluation-fallback-primary-model` | The primary model whose answers matched the condition |
-| `x-ai-gateway-evaluation-fallback-triggering-questions` | A percent-encoded JSON array of the question IDs that matched. Read it with `JSON.parse(decodeURIComponent(value))` |
+| `x-ai-gateway-decision-fallback-triggered` | `true` |
+| `x-ai-gateway-decision-fallback-final-model` | The model that produced the returned answers |
+| `x-ai-gateway-decision-fallback-primary-model` | The primary model whose answers matched the condition |
+| `x-ai-gateway-decision-fallback-triggering-questions` | A percent-encoded JSON array of the question IDs that matched. Read it with `JSON.parse(decodeURIComponent(value))` |
+| `x-ai-gateway-decision-fallback-triggering-questions-truncated` | `true` when the question list was cut short. `provider_metadata.gateway.routing` has the full list |
 
 AI Gateway omits these headers when the condition doesn't match. Use them to detect a fallback when your client only reads TypeSafe's typed response fields.
 
-See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks#use-the-typesafe-compatible-api) for Boolean probability conditions, compound policies, the complete sentinel response, and two-stage cost and latency.
+AI Gateway also sends the deprecated `x-ai-gateway-evaluation-fallback-*` headers with identical values. Read the `x-ai-gateway-decision-fallback-*` headers in new code.
+
+See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks#use-the-typesafe-compatible-api) for Boolean probability conditions, compound policies, the complete sentinel response, and two-stage cost and latency.
 
 ## Errors
 
@@ -278,8 +282,8 @@ Errors returned by the model provider are passed through unchanged, so a client 
 
 ## Related
 
-- [Evaluation](/docs/ai-gateway/modalities/evaluation) for the HTTP API and the AI SDK
-- [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks) for successful-response escalation
+- [Decision](/docs/ai-gateway/modalities/decision) for the HTTP API and the AI SDK
+- [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks) for successful-response escalation
 - Learn how to [classify, route, and score with Jev and AI SDK](/kb/guide/typesafe-jev-and-ai-sdk) and [route form submissions](/kb/guide/jev-ai-sdk-form-router)
 - Learn how to [automatically approve tool calls in eve with Jev](/kb/guide/auto-approve-tool-calls-eve-jev)
 - [Models and providers](/docs/ai-gateway/models-and-providers) for the full catalog

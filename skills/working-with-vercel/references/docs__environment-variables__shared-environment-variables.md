@@ -14,8 +14,8 @@ related:
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a375804c708f5bcfe667219501b1d3ee9806838b64f0c977ec974c4788b0059d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "fb678a44b0945c47e6369d9717d5f1bed1c11039074d92ad6397d0617a0943b7"
 ---
 
 # Shared environment variables
@@ -36,7 +36,7 @@ sha256: "a375804c708f5bcfe667219501b1d3ee9806838b64f0c977ec974c4788b0059d"
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related)
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related) — Vercel MCP tools for environment variables.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
-- [Sensitive environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related) — Environment variables that cannot be decrypted once created.
+- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Create one or more shared environment variables](https://vercel.com/docs/rest-api/environment/create-one-or-more-shared-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables%2Fshared-environment-variables&source_site=vercel-docs&relationship=related) — POST /v1/env — Creates shared environment variable\\(s\\) for a team.
 

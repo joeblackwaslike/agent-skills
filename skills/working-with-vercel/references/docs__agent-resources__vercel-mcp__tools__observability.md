@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8b6d72d3330f09ab363199ed7b71c9f4249a06d6a8ea66b5a1969984e6ff97e5"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4d469494d2caf65f96bec3f21f3184fdb94764c8e7bc031041f358a2c5067168"
 ---
 
 # Observability
@@ -30,8 +30,8 @@ Investigate errors and request behavior in your projects with runtime logs and t
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=related) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=related) — Vercel MCP tools for agent runs.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability.graph.md](/docs/agent-resources/vercel-mcp/tools/observability.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

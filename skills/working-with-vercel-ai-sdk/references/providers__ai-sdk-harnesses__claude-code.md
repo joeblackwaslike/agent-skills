@@ -4,8 +4,8 @@ description: Learn how to use the Claude Code harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "55bb002a6a4e0a03ab55ae5eda353997bbe9364801d8b3a65520e9324d7a048c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d06bd07f9d68a6db1b4ee8b65726a47dc8b487c276111c189d03cc5b8d09eaad"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-claude-code`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel
+```
 
 The adapter bootstraps the Claude Code bridge dependencies inside the sandbox
 when the first session starts.

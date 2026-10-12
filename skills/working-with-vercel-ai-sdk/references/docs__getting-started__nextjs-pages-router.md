@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Next.js Pag
 url: "https://ai-sdk.dev/docs/getting-started/nextjs-pages-router"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-pages-router.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c49766b67d0e892f42d02e381f550a202f6f656d69bb826e94ec71672e9cee21"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "5a4e6314c81177d33ca1d8a23c4d28d3ed92ba222a0c84bc5ee91fb67598b372"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -52,7 +52,9 @@ models from different providers with one API key, but you can switch to any
 provider or model by installing its package. Check out available [AI SDK
 providers](/providers/ai-sdk-providers) for more information.
 
-**Packages:** `ai`, `@ai-sdk/react`, `zod`
+```bash
+pnpm add ai @ai-sdk/react zod
+```
 
 ### Configure your AI Gateway API key
 
@@ -139,7 +141,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -396,7 +400,7 @@ export async function POST(req: Request) {
 
 Head back to the browser and ask about the weather in a location. You should now see the model using the weather tool results to answer your question.
 
-By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Celsius to Fahrenheit.
+By setting `stopWhen: isStepCount(5)`, you're allowing the model to use up to 5 "steps" for any given generation. This enables more complex interactions and allows the model to gather and process information over several steps if needed. You can see this in action by adding another tool to convert the temperature from Fahrenheit to Celsius.
 
 ### Add another tool
 

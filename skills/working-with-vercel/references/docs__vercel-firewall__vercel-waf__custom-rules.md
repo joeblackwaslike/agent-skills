@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "43db1bd9c4613182f32c7377c5e0f116258c4aaee89d93a62f83c5083a75b032"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c2afb66b9bb08c1b4c1711467a63ac4a89668a5542aa06aac4199dedb33670c9"
 ---
 
 # WAF Custom Rules
@@ -35,8 +35,8 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 - [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
+- [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [New firewall challenge metrics now available](https://vercel.com/changelog/new-firewall-challenge-metrics-now-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
-- [New one-click AI bot managed ruleset](https://vercel.com/changelog/new-one-click-ai-bot-managed-ruleset?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Fcustom-rules&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer

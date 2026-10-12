@@ -4,8 +4,8 @@ description: Use a Heroku OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/heroku.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ee34ddb0ae2d7492d4b310c85955b99a355f5942338a5eaa7a5d64c8779e19e6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d0d59fe9491f292f3528b9cc33b5de99ab20b85b6a9812d4d53298dd00d90574"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ You can deploy models that are OpenAI API compatible and use them with the AI SD
 The Heroku provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 ### Heroku Setup
 

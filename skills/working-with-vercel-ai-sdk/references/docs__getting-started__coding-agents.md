@@ -4,8 +4,8 @@ description: Learn how to set up the AI SDK for use with coding agents, includin
 url: "https://ai-sdk.dev/docs/getting-started/coding-agents"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/coding-agents.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4fc19b95a6973e27d001a2e4209680b715adba42a1e690c41139448e85a43ec4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "819ea47321abf0a914a0147b769d8c8e41a89c03abc842b95cce240d88b4dd00"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -36,7 +36,9 @@ Once you've installed the `ai` package, you already have the full AI SDK documen
 
 Install the `ai` package if you haven't already:
 
-**Packages:** `ai`
+```bash
+pnpm add ai
+```
 
 After installation, your agent can reference the bundled source code and documentation at paths like:
 
@@ -56,7 +58,9 @@ not use in production environments.
 
 Install the DevTools package:
 
-**Packages:** `@ai-sdk/devtools`
+```bash
+pnpm add @ai-sdk/devtools
+```
 
 ### Register the integration
 

@@ -1,13 +1,47 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "da39fbeba017f74538d7f3263af2668b745b59f1d6bcc26f067df9f0f8d2ea13"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "5b037529ea296e53377b3ff044f7766007a9264b27f375635a40b21b566f3d07"
 ---
 
 # Contribution Points
 
 Source: https://code.visualstudio.com/api/references/contribution-points
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/references/contribution-points.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Fcontribution-points%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Fcontribution-points%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Fcontribution-points%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 **Contribution Points** are a set of JSON declarations that you make in the `contributes` field of the `package.json` [Extension Manifest](https://code.visualstudio.com/api/references/extension-manifest). Your extension registers **Contribution Points** to extend various functionalities within Visual Studio Code. Here is a list of all available **Contribution Points**:
 
@@ -1244,6 +1278,8 @@ Currently extension writers can contribute to:
 
 - `editor/context` - editor context menu
 
+- `editor/context/copy` - **Copy as** submenu in the editor context menu
+
 - `editor/lineNumber/context` - editor line number context menu
 
 - `editor/title` - editor title menu bar
@@ -1314,6 +1350,9 @@ Menu location
 Arguments passed to the handler, in order
 
 `editor/context`
+The `Uri` of the document in which you opened the context menu.
+
+`editor/context/copy`
 The `Uri` of the document in which you opened the context menu.
 
 `explorer/context`
@@ -2130,4 +2169,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 9/30/2026
+ 10/7/2026

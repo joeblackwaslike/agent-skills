@@ -12,8 +12,8 @@ related:
 summary: Learn how the consent page works when users authorize your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/consent-page.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "fd914f1407d7d83d13e402c88460e8aac4eb5a70e2723d94c0385ad533af9624"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "a739e97fd5bdc187e15b2222efb0ea52409b83e450bdb46de425915be6eee8fb"
 ---
 
 # Consent Page
@@ -27,10 +27,10 @@ When users sign in to your application for the first time, Vercel shows them a c
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Vercel Connect product terms](https://vercel.com/docs/connect/legal?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=related) — Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, an
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/consent-page.graph.md](/docs/sign-in-with-vercel/consent-page.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fconsent-page&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

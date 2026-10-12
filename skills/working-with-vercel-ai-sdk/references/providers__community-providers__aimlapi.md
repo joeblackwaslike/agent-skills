@@ -4,8 +4,8 @@ description: Learn how to use the AI/ML API provider.
 url: "https://ai-sdk.dev/providers/community-providers/aimlapi"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/aimlapi.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "77ed911c2b7c8657f75631303c0dc6e175029813f85c77ca40289190a8dd9894"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "e46d846e8e06743ec42dfd0cb8ebb16281bb8dc8b5c2c38871865396d25fd572"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [AI/ML API](https://aimlapi.com/?utm_source=aimlapi-vercel-ai\&utm_medium=gi
 
 The AI/ML API provider is available via the `@ai-ml.api/aimlapi-vercel-ai` module. You can install it with:
 
-**Packages:** `@ai-ml.api/aimlapi-vercel-ai`
+```bash
+pnpm add @ai-ml.api/aimlapi-vercel-ai
+```
 
 ### API Key
 

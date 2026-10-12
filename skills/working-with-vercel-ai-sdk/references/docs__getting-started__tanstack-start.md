@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and TanStack St
 url: "https://ai-sdk.dev/docs/getting-started/tanstack-start"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/tanstack-start.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b84afb17c09a508a23c97d5485ed777678cc293248ac8fdca0de3d7ba4c4089a"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "6aa589e81a69e0a7a7045153e67d8d8f280014a67d0f779cf474f51c24ffa80b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -48,7 +48,9 @@ models from different providers with one API key, but you can switch to any
 provider or model by installing its package. Check out available [AI SDK
 providers](/providers/ai-sdk-providers) for more information.
 
-**Packages:** `ai`, `@ai-sdk/react`, `zod`
+```bash
+pnpm add ai @ai-sdk/react zod
+```
 
 ### Configure your AI Gateway API key
 
@@ -138,7 +140,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';

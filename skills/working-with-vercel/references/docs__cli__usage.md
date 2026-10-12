@@ -13,8 +13,8 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "a0de0b706b7869faffbc73c834073e274367192d73e9db18d097868a7bb45843"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "8cd228ddbea8008596205cf201ca1002156ad26f1f430a708dfac5705d5d3ad1"
 ---
 
 # vercel usage
@@ -28,11 +28,11 @@ The `vercel usage` command displays billing usage for the current billing period
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related)
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel pricing](https://vercel.com/docs/cli/pricing?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel contract](https://vercel.com/docs/cli/contract?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — Learn how to view contract commitment information for your Vercel account using the vercel contract CLI command.
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 
 Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fusage&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -49,7 +49,7 @@ vercel usage
 for the current billing period.*
 
 ```bash filename="terminal"
-vercel usage --from 2025-01-01 --to 2025-01-31
+vercel usage --since 2025-01-01 --until 2025-01-31
 ```
 
 *Using the \`vercel usage\` command to view billing usage
@@ -66,31 +66,33 @@ The command outputs a table showing:
 
 These are options that only apply to the `vercel usage` command.
 
-### From
+### Since
 
-The `--from` option specifies the start date for the usage query. The date is interpreted as midnight in Los Angeles (Pacific) time.
+The `--since` option, shorthand `-s`, specifies the start of the usage query. It accepts a `YYYY-MM-DD` date, an ISO 8601 timestamp, or a relative duration such as `7d`. Date-only values start at midnight in Los Angeles (Pacific) time. Relative durations count backward from now.
 
 ```bash filename="terminal"
-vercel usage --from 2025-01-01 --to 2025-01-31
+vercel usage --since 7d
 ```
 
 *Using the \`vercel usage\` command with a custom start
 date.*
 
-When using `--from`, you must also specify `--to`.
+When you provide `--since` alone, the end defaults to now. Omit both time options to query the current billing period.
 
-### To
+### Until
 
-The `--to` option specifies the end date for the usage query. The date is interpreted as end of day (23:59:59) in Los Angeles (Pacific) time.
+The `--until` option, shorthand `-u`, specifies the end of the usage query. It accepts the same formats as `--since`. A date-only value includes the full day in Los Angeles (Pacific) time, ending at the next midnight.
 
 ```bash filename="terminal"
-vercel usage --from 2025-01-01 --to 2025-01-31
+vercel usage --since 2025-01-01 --until 2025-01-31
 ```
 
 *Using the \`vercel usage\` command with a custom end
 date.*
 
-When using `--to`, you must also specify `--from`.
+When using `--until`, you must also specify `--since`.
+
+`--from` and `--to` remain supported, but print a deprecation warning. Use `--since` and `--until` for new commands.
 
 ### Breakdown
 
@@ -104,7 +106,7 @@ vercel usage --breakdown daily
 breakdown.*
 
 ```bash filename="terminal"
-vercel usage --from 2025-01-01 --to 2025-01-31 --breakdown weekly
+vercel usage --since 2025-01-01 --until 2025-01-31 --breakdown weekly
 ```
 
 *Combining \`--breakdown\` with a custom date range.*

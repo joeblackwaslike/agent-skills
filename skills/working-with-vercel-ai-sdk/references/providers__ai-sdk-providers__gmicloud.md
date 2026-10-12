@@ -4,8 +4,8 @@ description: "Learn how to use GMI Cloud's models with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "fec7040b5f2dd9072273c52da3e93b0641454483974129573a67282c25cb3ca7"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "f0fb905bd132dcc3edadd25e8b847c08bda18a0591eff787e29389cbed3c6ade"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [GMI Cloud console](https://console.gmicloud.a
 
 The GMI Cloud provider is available via the `@ai-sdk/gmicloud` module. You can install it with:
 
-**Packages:** `@ai-sdk/gmicloud`
+```bash
+pnpm add @ai-sdk/gmicloud
+```
 
 ## Provider Instance
 

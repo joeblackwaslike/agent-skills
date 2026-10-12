@@ -4,8 +4,8 @@ description: Learn how to use Nia with the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/nia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/nia.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ba4795ff6fe4b7a3538ed881346bf0b580eec88a79c6c47c83282efdad2f9bad"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ca601dca76b2e5dbee4f9eb4406c37647c39ab1663fa2b7a22e0f8482b2b6815"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -26,7 +26,9 @@ Learn more in the [Nia documentation](https://docs.trynia.ai/).
 
 The Nia adapter is available in the `@nozomioai/nia-ai-sdk` package. You can install it with:
 
-**Packages:** `@nozomioai/nia-ai-sdk`
+```bash
+pnpm add @nozomioai/nia-ai-sdk
+```
 
 If you want to use Nia middleware with a model provider, install that provider as well. For example:
 

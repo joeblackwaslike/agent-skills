@@ -13,16 +13,16 @@ related:
   - /docs/cli/cache
   - /docs/caching/cdn-cache
   - /docs/analytics
-summary: "Perform the following commands from the terminal for your Vercel Projects: list, add, inspect, update settings, rename, remove, and configure access,..."
+summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, remove, and configure..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "48fdfabfb632b77a54eea261d16920eefd6497e325176e9f4e44a80ea06d0e7c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "205c34c45e6dfb78834de3d93bc422f2c0820c3c8e761fa1bd640be4a7aeb588"
 ---
 
 # vercel project
 
-The `vercel project` command manages your Vercel Projects from the terminal: list, add, inspect, update, rename, and remove projects, pause and resume production traffic, plus configure framework and build settings, deployment checks, deployment protection, access groups, project members, Web Analytics, Speed Insights, Observability Plus, and project-scoped OIDC tokens.
+The `vercel project` command manages your Vercel Projects from the terminal: list, create, inspect, update, rename, and remove projects, pause and resume production traffic, plus configure framework and build settings, deployment checks, deployment protection, access groups, project members, Web Analytics, Speed Insights, Observability Plus, and project-scoped OIDC tokens.
 
 
 <!-- docsgraph:related -->
@@ -32,11 +32,12 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
 - [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
-- [Audit Logs](https://vercel.com/docs/audit-log?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to track and analyze your team members' activities.
 - [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
+- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -87,18 +88,20 @@ vercel project ls --update-required --format=json
 vercel project ls --filter my-app
 ```
 
-### `add`
+### `create`
 
-Create a new project. The `name` argument is required; `vercel project add` with no name (or with more than one positional) prints a usage error and exits.
+Aliases: `add`.
+
+Create a new project. The `name` argument is required; `vercel project create` with no name (or with more than one positional) prints a usage error and exits.
 
 ```bash filename="terminal"
-vercel project add <name>
+vercel project create <name>
 ```
 
 Wrap names that contain spaces in quotes:
 
 ```bash filename="terminal"
-vercel project add "My Project"
+vercel project create "My Project"
 ```
 
 ### `inspect`

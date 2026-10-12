@@ -13,8 +13,8 @@ related:
 summary: Learn what Deployment Storage includes, how Vercel measures it, and how to control your usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "31a70b1f703af84f79fe7b39ddf761bf36d0fff19878575eac2335deb63e6fb8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "7eeba0959f2a25cae7640e6840bc92bf5006f726a8af7e1a11ef68bda7e6ef5b"
 ---
 
 # Deployment Storage
@@ -28,6 +28,7 @@ Deployment Storage is cloud storage for the build output and Vercel Function bun
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related)
+- [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related)
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
 - [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fdeployment-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.

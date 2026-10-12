@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "794f549162ca76d85eb77e5ecadcf57aa670d78da37a628b460109a705df79e5"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1ba8e347a4d6a8ed8c45bddbf63e43ddf0a979a5fdfac1e5030d366d0d4aa7ec"
 ---
 
 # Vercel Connect Pricing
@@ -37,8 +37,8 @@ Vercel Connect is billed by token requests and triggers.
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 - [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 
 Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

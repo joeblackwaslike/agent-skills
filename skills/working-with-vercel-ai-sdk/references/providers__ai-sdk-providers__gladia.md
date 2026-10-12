@@ -4,8 +4,8 @@ description: Learn how to use the Gladia provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "417c685b1a1c2af4b9046e09969583f96b383a4f690638347c43421fb30b4859"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4acf4552281fdef8cc03db8c4d0596b177be0008dfff919d265899db45b5386a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Gladia](https://gladia.io/) provider contains language model support for th
 
 The Gladia provider is available in the `@ai-sdk/gladia` module. You can install it with
 
-**Packages:** `@ai-sdk/gladia`
+```bash
+pnpm add @ai-sdk/gladia
+```
 
 ## Provider Instance
 

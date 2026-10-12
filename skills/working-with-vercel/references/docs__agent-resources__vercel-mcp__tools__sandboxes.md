@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1f26a30c0c0fa37f656fbbb5f196185cb4e86455290a54a5ebbd79f1248450b1"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1cdd34aa3bf6608799e512aa2e7955e73d3c1b89c40528c0b12f78799dc18e89"
 ---
 
 # Sandboxes
@@ -27,7 +27,6 @@ Create sandboxes to run commands and work with files in isolated environments. Y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Python SDK Reference](https://vercel.com/docs/sandbox/python-sdk-reference?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persisten
 - [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.

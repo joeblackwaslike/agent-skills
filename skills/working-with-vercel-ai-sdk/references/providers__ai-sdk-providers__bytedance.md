@@ -4,8 +4,8 @@ description: Learn how to use ByteDance Seedance video and Seedream image models
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "243a911e7dab712cc1e8a7aff573c3603acaa05856b5b6410322ad8fa2eaf39c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "267d5e17c71cacf808d371f4e2ae2407c4785980bb2ff556b5907316c2b49a57"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [ByteDance](https://www.bytedance.com/) provider contains support for the Se
 
 The ByteDance provider is available via the `@ai-sdk/bytedance` module. You can install it with
 
-**Packages:** `@ai-sdk/bytedance`
+```bash
+pnpm add @ai-sdk/bytedance
+```
 
 ## Provider Instance
 

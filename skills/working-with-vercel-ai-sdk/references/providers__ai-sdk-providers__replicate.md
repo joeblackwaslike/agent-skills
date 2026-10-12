@@ -4,8 +4,8 @@ description: Learn how to use Replicate models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f6e71f275291c83ddb1a63c28c3b61f9b356771e308db9d372ae1d67ef1dbc3b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "fbdb8fc70fceabd850f783648b0bd3b587aa8712534c537ca4fc1a545d2f2df7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,9 @@ It is a popular choice for running image generation models.
 
 The Replicate provider is available via the `@ai-sdk/replicate` module. You can install it with
 
-**Packages:** `@ai-sdk/replicate`
+```bash
+pnpm add @ai-sdk/replicate
+```
 
 ## Provider Instance
 

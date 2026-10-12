@@ -4,8 +4,8 @@ description: Learn how to use the Soniox provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/soniox"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/soniox.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f2cf34c493074e5bb9962b458dff3253937341413efe2905a31374abeaa5dfbe"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "775275c4fd4db213dc19842e39c547502f7ff61561ee0c136d80ed51f2345e20"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -15,7 +15,9 @@ For more information, see the [Soniox Documentation](https://soniox.com/docs).
 
 ## Installation
 
-**Packages:** `@soniox/vercel-ai-sdk-provider`
+```bash
+pnpm add @soniox/vercel-ai-sdk-provider
+```
 
 ## Authentication
 

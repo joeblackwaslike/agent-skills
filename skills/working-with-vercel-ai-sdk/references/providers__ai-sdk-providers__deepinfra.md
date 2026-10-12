@@ -4,8 +4,8 @@ description: "Learn how to use DeepInfra's models with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c36bb6abc0763499c558209f4ceacd11eaf2d7ade438b1393c4e104913844ebe"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "8346eaa4ae9a22da1d2ddef3edc0845f965fe095db1a6371b3287e414c7bb901"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [DeepInfra](https://deepinfra.com) provider contains support for state-of-th
 
 The DeepInfra provider is available via the `@ai-sdk/deepinfra` module. You can install it with:
 
-**Packages:** `@ai-sdk/deepinfra`
+```bash
+pnpm add @ai-sdk/deepinfra
+```
 
 ## Provider Instance
 

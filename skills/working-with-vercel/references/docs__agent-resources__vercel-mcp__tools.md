@@ -17,8 +17,8 @@ related:
 summary: Explore Vercel MCP tools for projects, deployments, domains, sandboxes, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8ae8f2704670a8c74de79b9e37669dab89e1881ae1ebe63d07b148fa64d2960d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "f6b8adb9f281e49730d5bf21468131c74bf2fd9a74f00ca2e2e4e82876b9423a"
 ---
 
 # Tools
@@ -35,8 +35,8 @@ Vercel MCP tools let your AI assistant work with your projects, deployments, log
 - [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn about tools with the AI SDK.
 - [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — AI SDK tools for the v0 API
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
+- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 

@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-10-05
+last_updated: 2026-10-12
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-10-05T11:22:15.364Z"
-sha256: "8ba5876b58b74abaadf5b10a2f945d5cc399059f8affeb35ce60912b14ec013b"
+fetched_at: "2026-10-12T11:51:10.837Z"
+sha256: "5c79b79227355a41fd3ae786e060505e38af1e1c8535a1cbdeaaf81855bcf190"
 ---
 
 # Vercel REST API Reference
@@ -62,6 +62,12 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/ai-gateway/budgets/defaults/list`](/docs/rest-api/ai-gateway/list-ai-gateway-budget-defaults.md) | List AI Gateway budget defaults |
 | **PUT** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/upsert-ai-gateway-budget-default.md) | Upsert AI Gateway budget default |
 | **DELETE** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/archive-ai-gateway-budget-default.md) | Archive AI Gateway budget default |
+
+## API Ai Gateway
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/ai-gateway/routers`](/docs/rest-api/api-ai-gateway/list-ai-gateway-routers.md) | List AI Gateway routers |
 
 ## Artifacts
 
@@ -136,6 +142,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v1/connect/connectors`](/docs/rest-api/connect/create-a-connector.md) | Create a connector |
 | **PATCH** | [`/v2/connect/connectors/{connector}`](/docs/rest-api/connect/update-a-connector.md) | Update a connector |
 | **PATCH** | [`/v1/connect/connectors/{connector}/trigger-destinations`](/docs/rest-api/connect/update-connector-trigger-destinations.md) | Update connector trigger destinations |
+| **POST** | [`/v1/connect/connectors/{connector}/managed/eject`](/docs/rest-api/connect/eject-a-managed-connector.md) | Eject a managed connector |
 | **GET** | [`/v2/connect/connectors/{connector}/projects`](/docs/rest-api/connect/list-projects-for-a-connector.md) | List projects for a connector |
 | **GET** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/get-a-connector-project-connection.md) | Get a connector project connection |
 | **POST** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/create-or-update-a-connector-project-connection.md) | Create or update a connector project connection |
@@ -441,6 +448,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v9/projects/{idOrName}`](/docs/rest-api/projects/update-an-existing-project.md) | Update an existing project |
 | **DELETE** | [`/v9/projects/{idOrName}`](/docs/rest-api/projects/delete-a-project.md) | Delete a Project |
 | **POST** | [`/v1/projects/{idOrName}/avatar`](/docs/rest-api/projects/upload-a-project-avatar.md) | Upload a project avatar |
+| **DELETE** | [`/v1/projects/{idOrName}/avatar`](/docs/rest-api/projects/delete-a-project-avatar.md) | Delete a project avatar |
 | **GET** | [`/v9/projects/{idOrName}/domains`](/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name.md) | Retrieve project domains by project by id or name |
 | **GET** | [`/v9/projects/{idOrName}/domains/{domain}`](/docs/rest-api/projects/get-a-project-domain.md) | Get a project domain |
 | **PATCH** | [`/v9/projects/{idOrName}/domains/{domain}`](/docs/rest-api/projects/update-a-project-domain.md) | Update a project domain |
@@ -485,8 +493,10 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v2/sandboxes`](/docs/rest-api/sandboxes/list-sandboxes.md) | List sandboxes |
 | **POST** | [`/v2/sandboxes`](/docs/rest-api/sandboxes/create-a-named-sandbox.md) | Create a named sandbox |
 | **GET** | [`/v2/sandboxes/drives`](/docs/rest-api/sandboxes/list-drives.md) | List drives |
+| **GET** | [`/v2/sandboxes/drives/{nameOrId}`](/docs/rest-api/sandboxes/get-a-drive.md) | Get a drive |
 | **POST** | [`/v2/sandboxes/drives/{name}`](/docs/rest-api/sandboxes/get-or-create-a-drive.md) | Get or create a drive |
 | **DELETE** | [`/v2/sandboxes/drives/{name}`](/docs/rest-api/sandboxes/delete-a-drive.md) | Delete a drive |
+| **POST** | [`/v2/sandboxes/drives/{name}/fork`](/docs/rest-api/sandboxes/fork-a-drive.md) | Fork a drive |
 | **GET** | [`/v2/sandboxes/snapshots`](/docs/rest-api/sandboxes/list-snapshots.md) | List snapshots |
 | **GET** | [`/v2/sandboxes/snapshots/{snapshotId}`](/docs/rest-api/sandboxes/get-a-snapshot.md) | Get a snapshot |
 | **DELETE** | [`/v2/sandboxes/snapshots/{snapshotId}`](/docs/rest-api/sandboxes/delete-a-snapshot.md) | Delete a snapshot |
@@ -499,6 +509,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/cmd`](/docs/rest-api/sandboxes/execute-a-command.md) | Execute a command |
 | **GET** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}`](/docs/rest-api/sandboxes/get-a-command.md) | Get a command |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill`](/docs/rest-api/sandboxes/kill-a-command.md) | Kill a command |
+| **POST** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/stdin`](/docs/rest-api/sandboxes/write-to-command-stdin.md) | Write to command stdin |
 | **GET** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs`](/docs/rest-api/sandboxes/stream-command-logs.md) | Stream command logs |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/stop`](/docs/rest-api/sandboxes/stop-a-session.md) | Stop a session |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/extend-timeout`](/docs/rest-api/sandboxes/extend-session-timeout.md) | Extend session timeout |
@@ -597,6 +608,8 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **GET** | [`/v1/vercel-ci/repository-settings`](/docs/rest-api/vercel-ci/get-vercel-ci-settings-for-a-connected-repository.md) | Get Vercel CI settings for a connected repository |
+| **PATCH** | [`/v1/vercel-ci/repository-settings`](/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository.md) | Enable or disable Vercel CI for a connected repository |
 | **GET** | [`/v2/vercel-ci/invocations`](/docs/rest-api/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata.md) | List invocations for a team, optionally filtered by repository and invocation metadata |
 | **GET** | [`/v2/vercel-ci/branches`](/docs/rest-api/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team.md) | List Vercel CI branch suggestions for a team |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts`](/docs/rest-api/vercel-ci/list-all-attempts-for-an-invocation.md) | List all attempts for an invocation |

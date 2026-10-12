@@ -16,8 +16,8 @@ related:
 summary: Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/agent-runs.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "49e29de19bbf24ce7a6e7b2c426c5e8033329840eb4718842d589350ece17ff8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "999f9b2e224035fd4cf7e0f53f815681dddb37b44264a7f5f2f24f28facd55ee"
 ---
 
 # Agent Runs
@@ -37,9 +37,9 @@ Vercel dashboard. It appears automatically for eve projects, with no instrumenta
 - [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related)
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for agent runs.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+- [Tracing](https://vercel.com/docs/tracing?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Learn how to trace your application to understand performance and infrastructure details.
 - [How Software Factories Work](https://vercel.com/docs/eve/software-factory?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=related) — Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed chan
 
 Full cross-link map for this page: [/docs/eve/agent-runs.graph.md](/docs/eve/agent-runs.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fagent-runs&source_site=vercel-docs&relationship=graph)

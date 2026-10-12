@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "524505cd5be7c48deb2509193fcd3a34565971f76643ddac5ad3d1d340ffc9dc"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "09ed818b84d244752eaa8428229cba63eac3f67458623d445c1c848074c5eb8b"
 ---
 
 # Rate Limiting SDK
@@ -34,8 +34,8 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
 - [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related) — Learn how to protect your authentication endpoints against abuse.
-- [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
+- [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frate-limiting-sdk&source_site=vercel-docs&relationship=related)
@@ -185,6 +185,60 @@ export async function POST(request: Request) {
       },
     );
   }
+}
+```
+
+## Set a timeout for rate-limit checks
+
+Pass `timeout` to limit how long the rate-limit fetch can wait. This option applies to `checkRateLimit` and `unstable_checkRateLimit` in `@vercel/firewall` 1.2.6 and later:
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `timeout` | `number` | No timeout | Fetch timeout in milliseconds. The promise rejects with a `TimeoutError` when exceeded |
+
+The timeout limits the fetch duration, not the rate-limit counting window. For example, return a service-unavailable response if the check takes too long:
+
+```ts filename="rate-limit.ts"
+import { checkRateLimit } from '@vercel/firewall';
+
+export async function POST(request: Request) {
+  try {
+    const { rateLimited } = await checkRateLimit('update-object', {
+      request,
+      timeout: 1000,
+    });
+    if (rateLimited) {
+      return new Response('Rate limit exceeded', { status: 429 });
+    }
+  } catch (error) {
+    if (error instanceof Error && error.name === 'TimeoutError') {
+      return new Response('Rate-limit check timed out', { status: 503 });
+    }
+    throw error;
+  }
+  return new Response('Rate-limit check passed', { status: 200 });
+}
+```
+
+```js filename="rate-limit.js"
+import { checkRateLimit } from '@vercel/firewall';
+
+export async function POST(request) {
+  try {
+    const { rateLimited } = await checkRateLimit('update-object', {
+      request,
+      timeout: 1000,
+    });
+    if (rateLimited) {
+      return new Response('Rate limit exceeded', { status: 429 });
+    }
+  } catch (error) {
+    if (error instanceof Error && error.name === 'TimeoutError') {
+      return new Response('Rate-limit check timed out', { status: 503 });
+    }
+    throw error;
+  }
+  return new Response('Rate-limit check passed', { status: 200 });
 }
 ```
 

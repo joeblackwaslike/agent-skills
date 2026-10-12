@@ -4,8 +4,8 @@ description: Learn how to use Fireworks models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6aa2abadb3629538c2993e602c662fe561c420e5b25d13538ff26cfc1fee7fbc"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "2c856ef9aad6d521479d096d37ddca02a5a8321e796ba60222e2ce54fb7275cc"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "6aa2abadb3629538c2993e602c662fe561c420e5b25d13538ff26cfc1fee7fbc"
 
 The Fireworks provider is available via the `@ai-sdk/fireworks` module. You can install it with
 
-**Packages:** `@ai-sdk/fireworks`
+```bash
+pnpm add @ai-sdk/fireworks
+```
 
 ## Provider Instance
 
@@ -67,6 +69,13 @@ const model = fireworks('accounts/fireworks/models/firefunction-v1');
 ```
 
 ### Reasoning Models
+
+For models that support reasoning effort, use the top-level `reasoning` parameter.
+Fireworks maps `'minimal'` to `'low'` and `'xhigh'` or `'max'` to `'high'`, returning
+a compatibility warning whenever it coerces the effort. Streaming calls include
+the warning in the `stream-start` event. Explicit
+`providerOptions.fireworks.reasoningEffort` takes precedence over the top-level
+setting.
 
 Fireworks exposes the thinking of `deepseek-r1` in the generated text using the `<think>` tag.
 You can use the `extractReasoningMiddleware` to extract this reasoning and expose it as a `reasoning` property on the result:

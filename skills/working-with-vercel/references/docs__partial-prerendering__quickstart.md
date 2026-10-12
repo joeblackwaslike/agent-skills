@@ -12,8 +12,8 @@ related:
 summary: "Set up Partial Prerendering (PPR) in a Next.js App Router project: enable Cache Components, cache a static shell, and stream dynamic content per..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/quickstart.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c08eccb26758dd7341483a46981f24eb41ddfbca3c468a5a4a128d48299b0f94"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "cef91a578f0e5d8055dfd215a26f83956fc5bf1882830fbbebd708047b4cc31b"
 ---
 
 # Getting started with Partial Prerendering
@@ -30,11 +30,12 @@ This guide walks through setting up [Partial Prerendering (PPR)](/docs/partial-p
 - [Caching](https://nextjs.org/docs/app/getting-started/caching?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to cache data and UI in Next.js
 - [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
 - [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
-- [Building public pages](https://nextjs.org/docs/app/guides/public-static-pages?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to build public, "static" pages that share data across users, such as landing pages, list pages (products, blo
 - [Incremental Static Regeneration with Cache Components](https://nextjs.org/docs/app/guides/incremental-static-regeneration-cache-components?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to prerender a subset of dynamic routes, serve App Shells for the rest, and upgrade them after the first visit
 - [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
+- [Building public pages](https://nextjs.org/docs/app/guides/public-static-pages?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to build public, "static" pages that share data across users, such as landing pages, list pages (products, blo
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/partial-prerendering/quickstart.graph.md](/docs/partial-prerendering/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fpartial-prerendering%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

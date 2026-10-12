@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "055a6847e21f79d415ef022ccc73578db84098353f7e5c5eda4916569d6d2f09"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c8d09518c43ca209983466da2d0b558612974c6f1294217eac578a67f85c905b"
 ---
 
 # Configuring Functions
@@ -34,8 +34,8 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related)
 - [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn about available APIs when working with Vercel Functions in Python.
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/functions/configuring-functions.graph.md](/docs/functions/configuring-functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fconfiguring-functions&source_site=vercel-docs&relationship=graph)

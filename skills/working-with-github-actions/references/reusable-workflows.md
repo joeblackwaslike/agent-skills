@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/reuse-automations/reuse-workflows.md"
-fetched_at: "2026-09-28T10:42:29.141Z"
-sha256: "401f40579ac65c23d46423890de2f3004c8fd23d5c8266b0762c1f41d785adbd"
+fetched_at: "2026-10-12T11:47:21.460Z"
+sha256: "e82bcf052369edc6026fb984aca27ef74e74546546b9ab49b70c30e29cbc4883"
 ---
 
 ## Creating a reusable workflow
@@ -60,8 +60,14 @@ You can define inputs and secrets, which can be passed from the caller workflow 
 
    In the example above, `personal_access_token` is a secret that's defined at the repository or organization level.
 
+   To use an environment secret in a reusable workflow, set `environment` on the job in the reusable workflow. The job that calls the reusable workflow can't use the `environment` keyword. For more information, see [AUTOTITLE](/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments).
+
+   The caller workflow must still pass the secret. Use `secrets: inherit` or pass the secret by name, for example {% raw %}`MY_SECRET: ${{ secrets.MY_SECRET }}`{% endraw %}. You can pass a secret by name even if it only exists in the environment.
+
+   If an environment secret has the same name as a repository or organization secret, the environment secret takes precedence. This applies when the caller uses either `secrets: inherit` or {% raw %}`${{ secrets.MY_SECRET }}`{% endraw %}. The job that sets `environment` receives the environment secret's value.
+
    > [!WARNING]
-   > Environment secrets cannot be passed from the caller workflow as `on.workflow_call` does not support the `environment` keyword. If you include `environment` in the reusable workflow at the job level, the environment secret will be used, and not the secret passed from the caller workflow. For more information, see [AUTOTITLE](/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments) and [AUTOTITLE](/actions/reference/workflows-and-actions/workflow-syntax#onworkflow_call).
+   > If the caller workflow doesn't pass an environment secret, the secret resolves to an empty string in the reusable workflow. The workflow run doesn't show an error. To make the workflow run fail instead, set `required: true` for the secret in [`on.workflow_call.secrets`](/actions/reference/workflows-and-actions/workflow-syntax#onworkflow_callsecrets). This setting only checks whether the caller workflow passes the secret. It doesn't check whether the secret has a value.
 
 1. Pass the input or secret from the caller workflow.
 

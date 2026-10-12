@@ -12,8 +12,8 @@ related:
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e8a1623f3d42500bba01b0880877c7c7406760f2c1870ab7c9e748e4da109ead"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "2a425a5bf867194a111a2dd8c49362bf86959081352f0953e89119b3f32d0405"
 ---
 
 # vercel inspect
@@ -31,7 +31,7 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
-- [vercel bisect](https://vercel.com/docs/cli/bisect?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Finspect&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -66,7 +66,9 @@ vercel inspect https://example-app-6vd6bhoqt.vercel.app --timeout=5m
 
 ### Wait
 
-The `--wait` option will block the CLI until the specified deployment has completed.
+The `--wait` option blocks the CLI until the deployment completes or [`--timeout`](#timeout) expires. If the wait times out while the deployment is still in progress, the command exits with code `124`. A timeout does not mean the deployment is ready.
+
+This is a command-specific exception to the [CLI exit-code contract](/docs/cli/global-options#exit-codes).
 
 ```bash filename="terminal"
 vercel inspect https://example-app-6vd6bhoqt.vercel.app --wait

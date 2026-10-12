@@ -16,8 +16,8 @@ related:
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1c676116a490cf12fa8b8ed54ceac9763c77cd8ad662077447438da409db8546"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "38b958898d34e12ff15ea713d9032f1023344f9dc978c9dd8ce5a070386b6a1c"
 ---
 
 # Builds
@@ -37,7 +37,7 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 - [Deployments are now up to 7 seconds faster](https://vercel.com/changelog/deployments-are-now-up-to-7-seconds-faster?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fbuilds&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
@@ -120,7 +120,7 @@ Vercel can automatically inject **environment variables** such as API keys, data
 
 2. **Pull Locally**: Use `vercel env pull` to download environment variables for local development. This command populates your `.env.local` file.
 
-3. **Security**: Environment variables remain private within the build environment. If a sensitive environment variable value is 32 characters or longer and appears in build logs, Vercel replaces the value with `[REDACTED]`. Vercel always redacts the `VERCEL_AUTOMATION_BYPASS_SECRET` and `VERCEL_OIDC_TOKEN` system environment variables from build logs, regardless of value length.
+3. **Security**: Environment variables remain private within the build environment. If a Secret environment variable value is 32 characters or longer and appears in build logs, Vercel replaces the value with `[REDACTED]`. Vercel always redacts the `VERCEL_AUTOMATION_BYPASS_SECRET` and `VERCEL_OIDC_TOKEN` system environment variables from build logs, regardless of value length.
 
 ## Ignored files and folders
 
@@ -154,7 +154,18 @@ Behind the scenes, Vercel manages a sophisticated global infrastructure that:
 Vercel enforces certain limits to ensure reliable builds for all users:
 
 - **Build timeout**: The maximum build time is **45 minutes**. If your build exceeds this limit, it will be terminated, and the deployment fails.
-- **Build cache**: Each build cache can be up to **1 GB**. The [cache](/docs/deployments/troubleshoot-a-build#caching-process) is retained for one month. Restoring a build cache can speed up subsequent deployments.
+
+- **Build cache**: Each build cache is retained for one month. Restoring a build cache can speed up subsequent deployments. The maximum size depends on the [build machine type](/docs/builds/managing-builds#build-machines):
+
+  | Build machine | Cache limit |
+  | ------------- | ----------- |
+  | Basic         | 1.5 GB |
+  | Standard      | 1.5 GB |
+  | Enhanced      | 3 GB |
+  | Turbo         | 4.75 GB |
+
+  Elastic build machines use the limit of the machine type assigned to each build.
+
 - **Container resources**: Vercel creates a [build container](/docs/builds/build-image) with different resources depending on your plan:
 
   |            | Hobby   | Pro     | Enterprise |

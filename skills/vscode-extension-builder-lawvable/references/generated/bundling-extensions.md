@@ -1,13 +1,47 @@
 ---
 title: "Bundling Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/bundling-extension"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "238dbc626b415ea447f1254213f7238e0e0ca787a9b2c58ce1ccef7f06c755d0"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "cc649e78d62899fc74cbec37094b45e542f7d8ed0f168172c541768c088b5465"
 ---
 
 # Bundling Extensions
 
 Source: https://code.visualstudio.com/api/working-with-extensions/bundling-extension
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/working-with-extensions/bundling-extension.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Fbundling-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Fbundling-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Fbundling-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 The first reason to bundle your Visual Studio Code extension is to make sure it works for everyone using VS Code on any platform. Only bundled extensions can be used in VS Code for Web environments like [github.dev](https://github.dev/) and [vscode.dev](https://vscode.dev/). When VS Code is running in the browser, it can only load one file for your extension so the extension code needs to be bundled into one single web-friendly JavaScript file. This also applies to [Notebook Output Renderers](https://code.visualstudio.com/api/extension-guides/notebook#notebook-renderer), where VS Code will also only load one file for your renderer extension.
 
@@ -402,4 +436,4 @@ To address the warning, you should either:
 - [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) - Learn how to run extension CI builds on Azure Pipelines.
 
  
- 9/30/2026
+ 10/7/2026

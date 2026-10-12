@@ -4,8 +4,8 @@ description: Learn how to use the Google Vertex AI provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ed9bb8073623643ae865dad31f18c1e86fb5814e072e04ad604c24b269f6382b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4091e2883f2b0121e002f4b4db7d1633e7a83e39bcb6469882c638f096067e80"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -23,7 +23,9 @@ Runtime](#google-vertex-maas-edge-runtime) sections below.
 
 The Google Vertex, Google Vertex Anthropic, Google Vertex xAI, and Google Vertex MaaS providers are available in the `@ai-sdk/google-vertex` module. You can install it with
 
-**Packages:** `@ai-sdk/google-vertex`
+```bash
+pnpm add @ai-sdk/google-vertex
+```
 
 ## Google Vertex Provider Usage
 
@@ -953,17 +955,18 @@ The following Zod features are known to not work with Google Vertex:
 
 ### Model Capabilities
 
-| Model                   | Image Input | Object Generation | Tool Usage | Tool Streaming |
-| ----------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `gemini-3.8-flash`      | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-3.7-flash`      | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-3.6-flash`      | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-3.5-flash`      | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-3.5-flash-lite` | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-3-pro-preview`  | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-2.5-pro`        | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-2.5-flash`      | ✓           | ✓                 | ✓          | ✓              |
-| `gemini-2.0-flash-001`  | ✓           | ✓                 | ✓          | ✓              |
+| Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
+| ------------------------ | ----------- | ----------------- | ---------- | -------------- |
+| `gemini-nano-banana-2.1` | ✓           | ✗                 | ✗          | ✗              |
+| `gemini-3.8-flash`       | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.7-flash`       | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.6-flash`       | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.5-flash`       | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3.5-flash-lite`  | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-3-pro-preview`   | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-2.5-pro`         | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-2.5-flash`       | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-2.0-flash-001`   | ✓           | ✓                 | ✓          | ✓              |
 
 The table above lists popular models. Please see the [Google Vertex AI
 docs](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#supported-models)
@@ -1094,11 +1097,12 @@ directly with `generateText()`.
 
 ##### Gemini Image Model Capabilities
 
-| Model                            | Image Generation | Image Editing | Aspect Ratios                                       |
-| -------------------------------- | ---------------- | ------------- | --------------------------------------------------- |
-| `gemini-3.1-flash-image-preview` | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3-pro-image-preview`     | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-2.5-flash-image`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| Model                            | Image Generation | Image Editing | Aspect Ratios                                                           |
+| -------------------------------- | ---------------- | ------------- | ----------------------------------------------------------------------- |
+| `gemini-nano-banana-2.1`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1 |
+| `gemini-3.1-flash-image-preview` | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                     |
+| `gemini-3-pro-image-preview`     | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                     |
+| `gemini-2.5-flash-image`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                     |
 
 `gemini-3-pro-image-preview` supports additional features including up to 14
 reference images for editing (6 objects, 5 humans), resolution options (1K,

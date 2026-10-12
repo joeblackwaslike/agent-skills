@@ -1,11 +1,11 @@
 ---
 description: "Bump AI sdk dependencies minor / patch versions only"
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/ai-deps.md"
-fetched_at: "2026-06-15T05:56:15.706Z"
-sha256: "31bbd0ff021af312fe1dcc80943a266bdb282f0b2d5b176f372ea30098c6f2be"
+fetched_at: "2026-10-12T11:48:23.877Z"
+sha256: "bfa6b27ae7d46a8a307c2b1251bf2f521775423687397d46ed7f47ba7571951f"
 ---
 
-Please read @package.json and @packages/opencode/package.json.
+Please read @package.json and @packages/core/package.json.
 
 Your job is to look into AI SDK dependencies, figure out if they have versions that can be upgraded (minor or patch versions ONLY no major ignore major changes).
 

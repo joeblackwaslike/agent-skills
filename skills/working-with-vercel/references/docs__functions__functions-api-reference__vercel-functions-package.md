@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "29d6e025211a8d147240a69017da94bf2228a6148e723b98a5d99d50fa979905"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "27982923e3b4c0b89880b1b9805a0d8b4a4cc79aca550dd6724961c85a4aff33"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -426,7 +426,7 @@ export default {
 | -------------------- | ------------------------- | -------------------------------------------------- |
 | `keyHashFunction`    | `(key: string) => string` | Optional custom hash function for generating keys. |
 | `namespace`          | `String`                  | Optional namespace to prefix cache keys.           |
-| `namespaceSeparator` | `String`                  | Optional separator string for the namespace.       |
+| `namespaceSeparator` | `String`                  | Optional separator between the namespace and key. Defaults to `$`. |
 
 #### Specification
 
@@ -434,7 +434,7 @@ export default {
 
 | Method      | Description                                                                                                                                                                                     | Parameters                                                                                                                                                                                                |
 | :---------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `get`       | Retrieves a value from the Vercel Runtime Cache.                                                                                                                                                | `key: string`: The cache key                                                                                                                                                                              |
+| `get`       | Retrieves a value from the Vercel Runtime Cache. Resolves to `null` when the key is not found or has expired.                                                                                 | `key: string`: The cache key                                                                                                                                                                              |
 | `set`       | Stores a value in the Vercel Runtime Cache with optional `ttl` and/or `tags`. The `name` option allows a human-readable label to be associated with the cache entry for observability purposes. | `key: string`: The cache key`value: unknown`: The value to store`options?: { name?: string; tags?: string[]; ttl?: number }`<br /> Configuration object (not required) |
 | `delete`    | Removes a value from the Vercel Runtime Cache by key                                                                                                                                            | `key: string`: The cache key to delete                                                                                                                                                                    |
 | `expireTag` | Expires all cache entries associated with one or more tags                                                                                                                                      | `tag: string \| string[]`: Tag or array of tags to expire                                                                                                                                                 |
@@ -449,7 +449,7 @@ export default {
     // Get a value from cache
     const value = await cache.get('somekey');
 
-    if (value) {
+    if (value !== null) {
       return new Response(JSON.stringify(value));
     }
 

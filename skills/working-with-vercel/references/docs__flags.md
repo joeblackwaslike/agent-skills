@@ -16,8 +16,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "45c207f77ce316ba5d938e26943f77495a709f679727c4e0fe0978a945a27ca1"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "07aa5070485a1e53c65c027a8695fc9b9d09d17cef7e68afdb16a4c7a7e080e5"
 ---
 
 # Flags
@@ -37,8 +37,8 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
+- [Timestamp attributes are now supported in Vercel Flags](https://vercel.com/changelog/timestamp-attributes-are-now-supported-in-vercel-flags?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
 - [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related)
 - [Vercel Web Analytics](https://vercel.com/docs/analytics?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering?from=related&source_path=%2Fdocs%2Fflags&source_site=vercel-docs&relationship=related) — Learn how filters allow you to explore insights about your website's visitors.

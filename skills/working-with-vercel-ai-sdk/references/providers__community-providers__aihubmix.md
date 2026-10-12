@@ -4,8 +4,8 @@ description: Learn how to use Aihubmix with the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/aihubmix"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/aihubmix.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "66722d360dab6f5ff2ad31f4a4e0bed301876bdaec3015ab0bf200d95be701b3"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "6dbbb337ae08ec2aaf53ae7bfa4b6c31e72130e599834f9eb6b257f42e523058"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Aihubmix](https://aihubmix.com/) provider contains unified access to multip
 
 The Aihubmix provider is available in the `@aihubmix/ai-sdk-provider` module. You can install it with
 
-**Packages:** `@aihubmix/ai-sdk-provider`
+```bash
+pnpm add @aihubmix/ai-sdk-provider
+```
 
 ## Provider Instance
 

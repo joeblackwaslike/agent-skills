@@ -4,8 +4,8 @@ description: Helicone Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/helicone"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/helicone.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4b12f688cf1ba2c3c3ffde2ec3a060f5ad59302e9b9137fad1e12e91063b4fe1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0644699b71be08f0793b7fc8ad70ec2f6c0105e31208b6befb5d6ad6e2ea7afb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,7 +24,9 @@ Learn more about Helicone's capabilities in the [Helicone Documentation](https:/
 
 The Helicone provider is available in the `@helicone/ai-sdk-provider` package. You can install it with:
 
-**Packages:** `@helicone/ai-sdk-provider`
+```bash
+pnpm add @helicone/ai-sdk-provider
+```
 
 ## Get started
 

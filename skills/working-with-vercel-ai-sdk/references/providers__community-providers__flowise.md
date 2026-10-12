@@ -4,8 +4,8 @@ description: Learn how to use the Flowise provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/flowise"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/flowise.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "14679065e55625913a08b5adccffd0397fce4f7359b7690f7143784020bef53f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9738926ea71cde556887f17547775dfcb9878277a2c2e3dfd9cd4ed6c80e7c67"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The **[Flowise provider](https://github.com/ahmedrowaihi/flowise-ai-sdk-provider
 
 The Flowise provider is available in the `@ahmedrowaihi/flowise-vercel-ai-sdk-provider` module. You can install it with:
 
-**Packages:** `@ahmedrowaihi/flowise-vercel-ai-sdk-provider`
+```bash
+pnpm add @ahmedrowaihi/flowise-vercel-ai-sdk-provider
+```
 
 ## Provider Instance
 

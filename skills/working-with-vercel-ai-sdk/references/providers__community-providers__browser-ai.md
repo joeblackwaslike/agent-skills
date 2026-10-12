@@ -4,8 +4,8 @@ description: Learn how to use browser AI model providers for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/browser-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/browser-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "dd403e600b0492133f4918dc60cdf774b43656fd666c3e0a30b124c42123aeb8"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "017adfbbbbe29b112c378b9b583f44c866a55e9360f911d660433571eddcd2e5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,15 +17,21 @@ It currently provides a model provider for Chrome & Edge's native browser AI mod
 
 The `@browser-ai/core` (formerly `@built-in-ai`) package is the AI SDK provider for Chrome and Edge browser's built-in AI models. You can install it with:
 
-**Packages:** `@browser-ai/core`
+```bash
+pnpm add @browser-ai/core
+```
 
 The `@browser-ai/web-llm` package is the AI SDK provider for popular open-source models using the WebLLM inference engine. You can install it with:
 
-**Packages:** `@browser-ai/web-llm`
+```bash
+pnpm add @browser-ai/web-llm
+```
 
 The `@browser-ai/transformers-js` package is the AI SDK provider for popular open-source models using Transformers.js. You can install it with:
 
-**Packages:** `@browser-ai/transformers-js`
+```bash
+pnpm add @browser-ai/transformers-js
+```
 
 ## Provider Instances
 

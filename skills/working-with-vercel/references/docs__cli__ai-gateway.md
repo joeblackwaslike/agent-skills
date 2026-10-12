@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "13f3e5ab6f3f235875507bd1e2c3caac7d2c0f8e1ff7f76dc4991ddfa7ac89fd"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "0151270de4be1d3e09fb6d97c2a5b5748249ab45b1a3ae526ef98366b5256ff6"
 ---
 
 # vercel ai-gateway
@@ -36,6 +36,7 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 - [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fai-gateway&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
@@ -120,6 +121,17 @@ vercel ai-gateway api-keys ls
 | Option | Type | Description |
 | --- | --- | --- |
 | `--format <FORMAT>` | String | Set to `json` for the full key payload |
+| `--limit <NUMBER>` | Number | Maximum number of keys per page, not a dollar quota |
+| `--next <CURSOR>` | String | Fetch the next page using the cursor from `pagination.next` |
+
+JSON output includes `pagination.next` when another page is available. Human-readable output prints a next-page command hint. Fetch a page of 50 keys, then use the returned cursor:
+
+```bash filename="terminal"
+vercel ai-gateway api-keys ls --limit 50 --format json
+vercel ai-gateway api-keys ls --limit 50 --next='<cursor>' --format json
+```
+
+API key lookup by name, such as `budgets set api-key my-key`, searches all pages of keys.
 
 #### inspect
 
@@ -692,7 +704,7 @@ If at least one agent config can be written, the run exits `0` and lists the res
 
 - Open a new terminal after connecting so the shell exports load. Codex always reads `AI_GATEWAY_API_KEY` from your environment; in Keychain mode, every agent except Pi, Cline, ForgeCode, Kimi CLI, OpenHands, and ZCode reads its key from the shell.
 - Restart Claude Code so it picks up the new settings, and restart the OpenClaw gateway process so it loads the new provider.
-- The command exits `0` on success or a no-op, `1` on an operational failure or invalid input, and `2` when it shows help (`--help`).
+- The command follows the [CLI exit-code contract](/docs/cli/global-options#exit-codes): `0` for success, a no-op, or help; `1` for an operational failure; and `2` for a usage error.
 
 > **⚠️ Warning:** Your API key is sensitive. Human-readable output only shows it masked (for
 > example `vck_••••1234`), but the JSON payload includes it in full, and the

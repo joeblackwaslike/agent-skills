@@ -13,8 +13,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "fe3eedc51f1e1795f161c3cecefffc82d1a68157f96fde5205016644af4b2820"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "204285cb3ceec994b8654a6f9f0f41adeb30c190cc6911e17fb55f19e693c95e"
 ---
 
 # vercel rolling-release
@@ -31,7 +31,7 @@ Use the `vercel rolling-release` command (also available as `vercel rr`) to mana
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel rollback](https://vercel.com/docs/cli/rollback?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Vercel MCP tools for rolling releases.
+- [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/rolling-release.graph.md](/docs/cli/rolling-release.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Frolling-release&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -119,15 +119,17 @@ vercel rolling-release complete --dpl=dpl_abc
 *Using the \`vercel rolling-release complete\` command to
 finish a rolling release and fully promote the deployment.*
 
-### fetch
+### inspect
 
-Fetch details about a rolling release.
+Inspect details about a rolling release.
+
+`fetch` remains a supported alias, but prints a deprecation warning. Use `inspect` for new commands.
 
 ```bash filename="terminal"
-vercel rolling-release fetch
+vercel rolling-release inspect
 ```
 
-*Using the \`vercel rolling-release fetch\` command to get
+*Using the \`vercel rolling-release inspect\` command to get
 information about the current rolling release.*
 
 ## Unique Options

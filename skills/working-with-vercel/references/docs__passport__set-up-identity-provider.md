@@ -12,8 +12,8 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "3948f97813e83576e413e395245bdcb6a8b5e85d433a61661346dd755a895a2d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "e002d22e4d2a0e311909e261c4173d1f9f78630e4a0a2fdfd83c8456b81cb089"
 ---
 
 # Set up Passport with an identity provider
@@ -36,7 +36,7 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 - [Configure additional identity scopes](https://vercel.com/docs/passport/additional-identity-scopes?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Request group membership and other provider-specific identity claims when using Passport.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
-- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fset-up-identity-provider&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

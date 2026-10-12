@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ee4b8b33ca5f9c7c650b573d31668af86f24cde523b26cda9a771e07a3cc8887"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "dd034c7e5493410a9d55f93c48777d39b805b534631fe072d22434563eae4ac2"
 ---
 
 # Vercel Blob
@@ -395,6 +395,10 @@ const listOfBlobs = await list({
 You don't need to create folders. Upload a file with a path containing a slash `/`, and Vercel Blob will interpret the slashes as folder delimiters.
 
 In the Vercel Blob file browser on the Vercel dashboard, any pathname with a slash `/` is treated as a folder. However, these are not actual folders like in a traditional file system; they are used for organizing blobs in listings and the file browser.
+
+## Pathname characters
+
+Control characters in a `pathname` are not supported. If you upload a blob with one, the `pathname`, `url`, and `downloadUrl` returned by [`list()`](/docs/vercel-blob/using-blob-sdk#list-blobs) may not match the blob you stored, and operations that take them may not find it.
 
 ## Blob sorting and organization
 

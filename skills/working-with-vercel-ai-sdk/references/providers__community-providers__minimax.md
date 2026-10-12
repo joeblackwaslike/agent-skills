@@ -4,8 +4,8 @@ description: Learn how to use MiniMax provider with the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/minimax"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/minimax.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5d375683e3c8219524e58852e01ea7dba526b0e8d33388a2588e96524b733fcf"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3452fed9e627ee2c185e4338630af8593240ab4cbc7fce93777c503a48803ecf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io
 
 The MiniMax provider is available via the `vercel-minimax-ai-provider` module. You can install it with:
 
-**Packages:** `vercel-minimax-ai-provider`
+```bash
+pnpm add vercel-minimax-ai-provider
+```
 
 ## Provider Instance
 

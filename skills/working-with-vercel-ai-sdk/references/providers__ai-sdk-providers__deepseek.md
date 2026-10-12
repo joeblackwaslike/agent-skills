@@ -4,8 +4,8 @@ description: "Learn how to use DeepSeek's models with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f2657bdfb6a74d588ccb5e1e86270695cb54d295aa388dfdca24c930497db2d6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c920a42eda1ae62b80bd9602f21d4374d9d28cc9ae2d335a43fb7f4a514450bc"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [DeepSeek Platform](https://platform.deepseek.
 
 The DeepSeek provider is available via the `@ai-sdk/deepseek` module. You can install it with:
 
-**Packages:** `@ai-sdk/deepseek`
+```bash
+pnpm add @ai-sdk/deepseek
+```
 
 ## Provider Instance
 
@@ -117,8 +119,9 @@ The following optional provider options are available for DeepSeek models:
 
   Optional. Controls thinking strength for DeepSeek V4 reasoning models. When
   using the top-level `reasoning` setting, `minimal` is sent as `low`,
-  `medium` is sent as `high`, and `xhigh` is sent as `max`. A compatibility
-  warning is returned whenever the requested value is mapped.
+  `medium` is sent as `high`, `xhigh` is sent as `max`, and `max` is sent
+  directly. A compatibility warning is returned whenever the requested value
+  is mapped.
 
 For backwards compatibility, legacy provider options supplied at runtime are
 also mapped to documented values: `thinking.type: 'adaptive'` becomes

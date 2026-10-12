@@ -6,8 +6,8 @@ docs_index: /llms.txt
 tags:
   - getting-started
 source: "https://ai-sdk.dev/cookbook/guides/sonnet-3-7.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "a761223112b27a10846a43b9d4bfc4404a2993f2a28462804a7d0c9e45dae797"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0e627892d3ea2b4b316b051fda13c2cc55e98e1fcde8bf3a4433f6f4aae1cde9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -30,7 +30,7 @@ The AI SDK is the TypeScript toolkit designed to help developers build AI-powere
 
 The AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots, and allows you to go beyond text output to generate rich, interactive components.
 
-At the center of the AI SDK is [AI SDK Core](/docs/ai-sdk-core/overview), which provides a unified API to call any LLM. The code snippet below is all you need to call Claude 3.7 Sonnet with the AI SDK:
+At the center of the AI SDK is [AI SDK Core](/docs/ai-sdk-core/overview), which provides a unified API to call any LLM. The historical example below shows how Claude 3.7 Sonnet was called with the AI SDK before its retirement. It no longer works with the Anthropic API; for a current example, see the [Anthropic provider documentation](/providers/ai-sdk-providers/anthropic):
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';

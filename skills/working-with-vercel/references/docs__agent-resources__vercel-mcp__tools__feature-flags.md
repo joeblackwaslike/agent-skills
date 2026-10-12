@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f44135a0b2b57e4a318873b828f2cc30b49ab538edbd9fad31d93d78d6ddac1b"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "7a5eff7f18dbb56bcaa770aae4d74ff205f6ae6e9c15e15e200ef8d841a1008d"
 ---
 
 # Feature Flags
@@ -28,9 +28,9 @@ Create and update feature flags for your projects to control which behavior your
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=related) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=related) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Update project flag settings](https://vercel.com/docs/rest-api/feature-flags/update-project-flag-settings?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{projectIdOrName}/feature-flags/settings — Update feature flag settings for a project.
-- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
 - [Get a flag](https://vercel.com/docs/rest-api/feature-flags/get-a-flag?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Retrieve a specific feature flag by its ID or sl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags&source_site=vercel-docs&relationship=graph)

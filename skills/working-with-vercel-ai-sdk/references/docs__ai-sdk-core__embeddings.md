@@ -4,8 +4,8 @@ description: Learn how to embed values with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/embeddings.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f63650249660983a3bcd972a2287353b6da8bfc63e2a0a71aff37ced8c13be9c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4bb5afff963747a7e5599d806d49bb1e0138ebec80b1c8524aadfbe57cb8c23f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,6 +89,33 @@ console.log(usage); // { tokens: 10 }
 ```
 
 ## Settings
+
+### Output Dimensions
+
+Both `embed` and `embedMany` accept an optional `dimensions` parameter to request
+an output vector size. It must be a positive integer. When omitted, the model's
+existing behavior is unchanged. For `embedMany`, the same value is forwarded to
+every batch.
+
+```ts
+import { openai } from '@ai-sdk/openai';
+import { embed } from 'ai';
+
+const { embedding } = await embed({
+  model: openai.embedding('text-embedding-3-small'),
+  value: 'sunny day at the beach',
+  dimensions: 512,
+});
+```
+
+Providers map `dimensions` to their native output dimension setting. An explicit
+dimension setting in `providerOptions` takes precedence over `dimensions`.
+Other provider options can be combined with the top-level setting.
+
+Support and allowed dimension values depend on the model. The SDK forwards the
+requested size to the provider API without truncating or resizing the returned
+embeddings. AI Gateway forwards `dimensions` and `providerOptions` for resolution
+by the selected provider.
 
 ### Provider Options
 

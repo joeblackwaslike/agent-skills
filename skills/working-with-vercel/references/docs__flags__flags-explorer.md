@@ -16,8 +16,8 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7fe9d030192e00a89d49607cd3276174d8c8b65e4f184b82fa31bbed6d1bafc6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ed799cb660471d91f2a7ddb6ef25a3fe23c00d68b1a80485d5cc6bf6c103d57b"
 ---
 
 # Flags Explorer
@@ -43,7 +43,7 @@ The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) th
 - [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
 - [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
 - [View and override feature flags from the Vercel Toolbar](https://vercel.com/changelog/view-and-override-feature-flags-from-the-vercel-toolbar?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
-- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

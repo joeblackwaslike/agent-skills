@@ -4,8 +4,8 @@ description: Learn how to use MiniMax models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "515913bb39bba4ae8fdd102783e1ef7df5f525034614be6c6b1c813e08fbccb1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "939a851b67b77eec0f9e96662b8a808c0821b5d75477157f600133e92d78961a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io
 
 The MiniMax provider is available via the `@ai-sdk/minimax` module. You can install it with:
 
-**Packages:** `@ai-sdk/minimax`
+```bash
+pnpm add @ai-sdk/minimax
+```
 
 ## Provider Instance
 

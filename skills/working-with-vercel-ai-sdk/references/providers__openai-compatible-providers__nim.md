@@ -4,8 +4,8 @@ description: Use NVIDIA NIM OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/nim"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nim.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "666b43d1877d5c7a158f2d67368372a6a06eef0a2d8907168a380a98f626b605"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d4cdb5ee543580343e31e1c547a6e7584716f17f7754529f3f3407619b6ba2a5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,9 @@ sha256: "666b43d1877d5c7a158f2d67368372a6a06eef0a2d8907168a380a98f626b605"
 The NVIDIA NIM provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with:
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 ## Provider Instance
 

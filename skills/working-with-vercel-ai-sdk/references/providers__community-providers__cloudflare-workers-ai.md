@@ -4,8 +4,8 @@ description: Learn how to use the Cloudflare Workers AI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-workers-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "14cdb582a93ae3d306fd8ed81982f63357ec0497655138eb9d9722c5620ed0e6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9b086403cc016d24a695db72752af8fca59f8df7df5a394286ce36d13fb90cee"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "14cdb582a93ae3d306fd8ed81982f63357ec0497655138eb9d9722c5620ed0e6"
 
 The Cloudflare Workers AI provider is available in the `workers-ai-provider` module. You can install it with:
 
-**Packages:** `workers-ai-provider`
+```bash
+pnpm add workers-ai-provider
+```
 
 Then, setup an AI binding in your Cloudflare Workers project `wrangler.toml` file:
 

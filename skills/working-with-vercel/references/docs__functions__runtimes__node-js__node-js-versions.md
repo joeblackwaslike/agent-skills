@@ -13,8 +13,8 @@ related:
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "dd0db301efc1bf7b7f1c72f1b6fcb6a1b595b1547ea9b058c9e43e4f80018061"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "7ce89299fa8c1a86909e2cf57fab40d51c128ca248d9ee3e3dd3793d4e987ac9"
 ---
 
 # Supported Node.js versions
@@ -49,7 +49,6 @@ Current available versions are:
 
 - **24.x** (default)
 - **22.x**
-- **20.x**
 
 Only major versions are available. Vercel automatically rolls out minor and patch updates when needed, such as to fix a security issue.
 
@@ -76,15 +75,14 @@ You can define the major Node.js version in the `engines#node` section of the `p
 }
 ```
 
-For instance, when you set the Node.js version to **20.x** in the **Project Settings** and you specify a valid [semver range](https://semver.org/) for **Node.js 24** (e.g. `24.x`) in `package.json`, your project will be deployed with the **latest 24.x** version of Node.js.
+For instance, when you set the Node.js version to **22.x** in the **Project Settings** and you specify a valid [semver range](https://semver.org/) for **Node.js 24** (e.g. `24.x`) in `package.json`, your project will be deployed with the **latest 24.x** version of Node.js.
 
 The following table lists some example version ranges and the available Node.js version they map to:
 
 | Version in `package.json`               | Version deployed        |
 | --------------------------------------- | ----------------------- |
-| `24.x`<br /> `^24.0.0`<br /> `>=20.0.0` | latest **24.x** version |
+| `24.x`<br /> `^24.0.0`<br /> `>=22.0.0` | latest **24.x** version |
 | `22.x`<br /> `^22.0.0`                  | latest **22.x** version |
-| `20.x`<br /> `^20.0.0`                  | latest **20.x** version |
 
 ## Checking your deployment's Node.js version
 

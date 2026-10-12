@@ -4,8 +4,8 @@ description: Learn how to use the Grok Build harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "19c7a5c7af26ce48f4e210193b18c230f115c5e463a24b5f9dbf3fef20d1f23d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "78cb838752e6a94b9462ac27669da694ab81761eaa9e1b7876ab6ca7b81be99b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-grok-build`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-grok-build @ai-sdk/sandbox-vercel
+```
 
 The ACP harness installs the pinned Grok Build CLI inside the sandbox when the
 first session starts.

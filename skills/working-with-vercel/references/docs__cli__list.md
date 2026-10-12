@@ -14,8 +14,8 @@ related:
 summary: Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "54cd736cc228f9aafcf445f36a7138425acd1efce65c0a93d8e5160e1fbe85c4"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4ddcbe6d04384deabb163a636565582ecf7d0a2dacc465a9f43619705891b18f"
 ---
 
 # vercel list
@@ -31,8 +31,8 @@ The `vercel list` command, which can be shortened to `vercel ls`, provides a lis
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 
 Full cross-link map for this page: [/docs/cli/list.graph.md](/docs/cli/list.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

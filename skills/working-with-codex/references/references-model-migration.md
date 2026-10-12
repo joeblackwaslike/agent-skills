@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/references/model-migration.md"
-fetched_at: "2026-09-07T09:00:35.564Z"
-sha256: "bef46671036c8e483b7f65df931171217d55a8d26098851c2f89784db8edca2f"
+fetched_at: "2026-10-12T11:42:58.685Z"
+sha256: "138c05dd06047b069a7aab09e657b6a6a0d25b6959cbe2473baae95f47e72883"
 ---
 
 # Model migration and prompting
@@ -39,6 +39,7 @@ Treat returned guide URLs as opaque: fetch those exact URLs without deriving, su
 - Fetch `promptingGuideUrl` only when the user asks for prompting guidance or the migration requires a prompt change. Extract only `## Prompting best practices` through the next H2 heading.
 - For explicitly named-model prompting, fetch that model's official prompting guidance and extract only `## Prompting best practices` through the next H2 heading. Do not load a migration reference or run the resolver.
 - For an actual GPT-6 migration or implementation plan, fetch `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#migration-quickstart`. For specifically requested GPT-6 prompting, fetch `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#prompting-best-practices`. Read `references/upgrading-to-gpt-6-astra.md` only when fetched official guidance does not resolve needed compatibility gates, scoped code changes, tier-aware routing, validation, or other migration-specific judgment. Never load it for documentation-only questions about model tiers, the family alias, Pro mode, reasoning effort, or current guidance when the fetched official documentation already answers them.
+- Verify current official guidance and account availability before recommending or selecting a model. Preserve the selected model and apply its own compatibility rules; do not copy a sibling's reasoning defaults, tool support, or regional availability. A newer family member does not change the model returned by the latest-model resolver. For an explicitly requested model whose public guidance is not yet available, keep the requested target and state the unresolved compatibility facts instead of silently substituting another model.
 - Read `references/prompting-guide.md` only when prompting guidance or prompt changes are actually needed and current official guidance is unavailable.
 - Read `references/upgrade-guide.md` only when current official migration guidance is unavailable. Disclose when a bundled fallback was used.
 

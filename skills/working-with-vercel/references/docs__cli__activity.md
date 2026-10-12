@@ -13,8 +13,8 @@ related:
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "ba8ea548df83723efa9420ca999a45184a208f50e3def97677013b9103af76d6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1885ab89992069cf27364f5b59778276a09bfcd56272e48de4c55283fba1353a"
 ---
 
 # vercel activity
@@ -31,7 +31,7 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 
 Full cross-link map for this page: [/docs/cli/activity.graph.md](/docs/cli/activity.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Factivity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -75,7 +75,7 @@ vercel activity --type deployment,project-created
 
 ### Since
 
-The `--since` option shows events after a specific date. You can use ISO 8601 format or relative values like `1d`, `7d`, or `30d`.
+The `--since` option, shorthand `-s`, shows events after a specific date. You can use ISO 8601 format or relative values like `1d`, `7d`, or `30d`.
 
 ```bash filename="terminal"
 vercel activity --since 7d
@@ -84,7 +84,7 @@ vercel activity --since 2026-01-01T00:00:00Z
 
 ### Until
 
-The `--until` option shows events before a specific date. Accepts the same formats as `--since`.
+The `--until` option, shorthand `-u`, shows events before a specific date. Accepts the same formats as `--since`.
 
 ```bash filename="terminal"
 vercel activity --since 30d --until 7d

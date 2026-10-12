@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md"
-fetched_at: "2026-09-28T10:41:05.416Z"
-sha256: "39f17d8a39eb00ca2c95ee84534c257e60ed91e91bf19ea127ffa561a4318deb"
+fetched_at: "2026-10-12T11:44:59.166Z"
+sha256: "44d411858290a6cf90e178fa7bd4304f792f2d71b281096fc7858f06ff197ba6"
 ---
 
 # Gemini CLI configuration
@@ -2556,6 +2556,8 @@ see [Telemetry](../cli/telemetry.md).
   - **`otlpEndpoint`** (string): The endpoint for the OTLP Exporter.
   - **`otlpProtocol`** (string): The protocol for the OTLP Exporter (`grpc` or
     `http`).
+  - **`otlpHeaders`** (object): Custom headers to send with OTLP Exporter
+    requests.
   - **`logPrompts`** (boolean): Whether or not to include the content of user
     prompts in the logs.
   - **`outfile`** (string): The file to write telemetry to when `target` is
@@ -2772,6 +2774,11 @@ the `advanced.excludedEnvVars` setting in your `settings.json` file.
 - **`GEMINI_TELEMETRY_OTLP_PROTOCOL`**:
   - Sets the OTLP protocol (`grpc` or `http`).
   - Overrides the `telemetry.otlpProtocol` setting.
+- **`GEMINI_TELEMETRY_OTLP_HEADERS`**:
+  - Sets custom headers for OTLP exporter requests (as a JSON object string or
+    comma-separated `key=value` pairs; also falls back to
+    `OTEL_EXPORTER_OTLP_HEADERS`).
+  - Merges with and overrides headers in the `telemetry.otlpHeaders` setting.
 - **`GEMINI_TELEMETRY_LOG_PROMPTS`**:
   - Set to `true` or `1` to enable or disable logging of user prompts. Any other
     value is treated as disabling it.

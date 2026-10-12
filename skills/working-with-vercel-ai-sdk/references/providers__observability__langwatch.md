@@ -4,8 +4,8 @@ description: Track, monitor, guardrail and evaluate your AI SDK applications wit
 url: "https://ai-sdk.dev/providers/observability/langwatch"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/langwatch.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "2757dcde285034e8231d551a7e8c2e0c0d752aec4bfc74cc0e0e6e8a9e62fa48"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "8fe6ad00a857966fb8739199321caf7b6391c7dbea0025401501469195a2a70d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "2757dcde285034e8231d551a7e8c2e0c0d752aec4bfc74cc0e0e6e8a9e62fa48"
 
 Obtain your `LANGWATCH_API_KEY` from the [LangWatch dashboard](https://app.langwatch.com/).
 
-**Packages:** `langwatch`
+```bash
+pnpm add langwatch
+```
 
 Ensure `LANGWATCH_API_KEY` is set:
 

@@ -14,8 +14,8 @@ related:
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0432d3af784c5f17d07b949de73641095db79e576161259f9e5f713bfdd97e66"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "20471dab9785f82ceb8252687b63d66ea4a8e27e08d4ca941b042d5e978b8940"
 ---
 
 # vercel buy
@@ -29,11 +29,11 @@ The `vercel buy` command allows you to purchase Vercel products for your team di
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related)
+- [vercel pricing](https://vercel.com/docs/cli/pricing?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 - [buy_credits](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_credits?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Use buy_credits with Vercel MCP.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbuy&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -4,8 +4,8 @@ description: Learn how to use the Ollama provider.
 url: "https://ai-sdk.dev/providers/community-providers/ollama"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/ollama.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e5b4c9957866e6cddfceae7b33e5c37759202c411e0cc62399e9d76fbb7db606"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "875efd0857749cdbc6200cc1a3d0d506188118dd0c10e48831ea1582e7e483d0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -49,11 +49,15 @@ Choose and install your preferred Ollama provider:
 
 ### ollama-ai-provider-v2
 
-**Packages:** `ollama-ai-provider-v2`
+```bash
+pnpm add ollama-ai-provider-v2
+```
 
 ### ai-sdk-ollama
 
-**Packages:** `ai-sdk-ollama`
+```bash
+pnpm add ai-sdk-ollama
+```
 
 ## Provider Instance
 

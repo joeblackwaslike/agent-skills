@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "935f1c604e2b1efe6ab6fcbc90c6ba703c5ebfd017ee8114939c71b20e0af962"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "36a03c93901cdcd2c850a2a63d08cf087e0010ec48dc3a6cc665cb014d4646e3"
 ---
 
 # SDK Reference
@@ -175,7 +175,7 @@ The calling project and environment must be linked to the connector, just as the
 
 ### `ConnectTokenSubject`
 
-A discriminated union with three variants:
+A union with four variants:
 
 ```ts filename="@vercel/connect"
 type ConnectTokenSubject =
@@ -187,7 +187,8 @@ type ConnectTokenSubject =
       iss?: string;
       aud?: string;
       additionalClaims?: Record<string, unknown>;
-    };
+    }
+  | { type?: 'token'; token: string };
 ```
 
 | Variant      | Required fields | Optional fields                                                                                                          |
@@ -195,6 +196,9 @@ type ConnectTokenSubject =
 | `app`        | none            | none                                                                                                                     |
 | `user`       | `id`            | `issuer` (the OIDC issuer of the user id, when not the default)                                                          |
 | `jwt-bearer` | `sub`           | `iss` (defaults to the connector's OAuth client id), `aud` (defaults to the connector's OAuth token endpoint), `additionalClaims` |
+| `token` | `token` (a string) | `type` (defaults to `'token'` in SDK 2.4.0 and later) |
+
+The SDK infers `type: 'token'` for `subject: { token: '...' }` before sending the request. Other variants require their explicit `type`.
 
 ### `ConnectTokenResponse`
 

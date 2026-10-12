@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "1c447daf525e8da4787ca53d6064591b2239448b689e2ff965a1c4f77e675524"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "d735d4da249ca349cb691da09c5db7b85ac55cbc17faf9a4449cbab3d1ace76a"
 ---
 
 > ## Documentation Index
@@ -51,7 +51,7 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
         * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
         * The plugin is [not found in the marketplace](/docs/en/plugins/install#install-a-plugin): check the plugin name.
 
-        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to make the plugin's configure command available.
+        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to make the plugin's configure command available.
       </Step>
 
       <Step title="Configure your token">
@@ -129,7 +129,7 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
         * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
         * The plugin is [not found in the marketplace](/docs/en/plugins/install#install-a-plugin): check the plugin name.
 
-        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to make the plugin's configure command available.
+        When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects. Check the install summary: if it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to make the plugin's configure command available.
       </Step>
 
       <Step title="Configure your token">
@@ -196,7 +196,7 @@ Each supported channel is a plugin that requires [Bun](https://bun.sh). For a ha
 
         When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.
 
-        If the install summary reports `Run /reload-plugins to activate.`, you don't need to act on it here, because restarting in the next step picks up the plugin.
+        If the install summary reports `Run /reload-plugins to apply.`, you don't need to act on it here, because restarting in the next step picks up the plugin.
       </Step>
 
       <Step title="Restart with channels enabled">
@@ -253,7 +253,7 @@ To try the fakechat demo, you'll need:
 
     When the install asks for an installation scope, choose the user scope option so the plugin is available across all your projects.
 
-    If the install summary reports `Run /reload-plugins to activate.`, you don't need to act on it here, because restarting in the next step picks up the plugin.
+    If the install summary reports `Run /reload-plugins to apply.`, you don't need to act on it here, because restarting in the next step picks up the plugin.
   </Step>
 
   <Step title="Restart with the channel enabled">

@@ -6,8 +6,8 @@ docs_index: /llms.txt
 tags:
   - next
 source: "https://ai-sdk.dev/cookbook/next/track-agent-token-usage.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3943d5f3c8b8798ced6fc35543ea7fb4ef4817124ecd73eb97d91d659095d7db"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "269129c78fdfb24951faf67508f7651681784151ad26d87ade8e0e18d23b6bd1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -27,7 +27,7 @@ import { type InferAgentUIMessage, ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
 export const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   tools: {
     greet: tool({
       description: 'Greets a person by their name.',
@@ -114,7 +114,7 @@ import {
 import { z } from 'zod';
 
 export const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   tools: {
     greet: tool({
       description: 'Greets a person by their name.',
@@ -213,7 +213,7 @@ import {
 import { z } from 'zod';
 
 export const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   callOptionsSchema: z.object({
     lastInputTokens: z.number(),
   }),
@@ -292,7 +292,7 @@ type TContext = {
 };
 
 export const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   callOptionsSchema: z.object({
     lastInputTokens: z.number(),
   }),

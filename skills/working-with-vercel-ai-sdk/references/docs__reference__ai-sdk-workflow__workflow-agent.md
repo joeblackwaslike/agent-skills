@@ -4,8 +4,8 @@ description: API Reference for the WorkflowAgent class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5db5facc7a653707780e9916e17b3fee48ad66c5d2e1e3bb456f931359938b68"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b47093f76a9ca98d02ca0fc7a8d252913532c902b15ffa2ed23588dcee5c46d1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -156,14 +156,16 @@ Returns `Promise<WorkflowAgentGenerateResult>` with the core [`GenerateTextResul
 - `responseMessages` includes generated messages, even when `prepareStep` replaces the input history.
 - `output` defaults to text, or follows the constructor/per-call output specification. Reading it throws `NoOutputGeneratedError` when output is unavailable, such as a final `tool-calls` response.
 
+Inside a workflow, `timeout` bounds model calls, including retries and dispatch after suspension. It does not cancel a hook that a tool is waiting on. Use the Workflow runtime’s `run.cancel()` to stop a suspended run. See [deadlines, cancellation, and replay](/docs/agents/workflow-agent#deadlines-cancellation-and-replay).
+
 Generation failures reject. The end callback runs before complete-output parsing; a parsing failure can therefore reject after `onEnd` has run. Existing Workflow callback shapes and preparation precedence apply; they are not all identical to core's callback APIs.
 
 Use the result API inside workflow code and return selected serializable
 fields (for example, `text` and `usage`) through `run.returnValue`. Returning
-the whole result class is not supported. Transport-independent approval
-request creation is separate follow-up work; use `stream()` for approval round
-trips until that support is available. Performance data currently measures the
-model response; complete tool/step timing is not yet reported.
+the whole result class is not supported. Performance data currently measures
+the model response; complete tool/step timing is not yet reported.
+
+Approval requests appear in `content` and `responseMessages` without requiring a writable. To continue, append `responseMessages` to the original history and add a tool message containing the user's `tool-approval-response`. Preserve the request signature and tool-call input; use the same `experimental_toolApprovalSecret` environment-variable reference on continuation. Local approvals are validated before execution, and provider-executed approval responses are forwarded to the provider. See [approval round trips](/docs/agents/workflow-agent#approval-round-trips-without-streaming).
 
 ### `stream()`
 
@@ -184,7 +186,7 @@ const result = await agent.stream({
 - `toolChoice?` (`ToolChoice`): Override the tool choice strategy for this call. Default: 'auto'.
 - `activeTools?` (`ActiveTools<TTools>`): Limits the subset of tools available for this call without changing tool call and result types.
 - `output?` (`OutputSpecification`): Structured output specification. Use \`Output.object(\{ schema })\` for typed objects or \`Output.text()\` for text.
-- `timeout?` (`number`): Timeout in milliseconds. Creates an AbortSignal that aborts the operation after the given time.
+- `timeout?` (`number`): Model-call deadline in milliseconds. Inside a workflow, the absolute deadline is checked at dispatch and retry and remains in effect across suspension. It does not cancel a tool waiting on a Workflow hook; use run.cancel() to stop the suspended run.
 - `sendFinish?` (`boolean`): Whether to send a 'finish' chunk to the writable stream when streaming completes. Default: true.
 - `preventClose?` (`boolean`): Whether to prevent the writable stream from being closed after streaming completes. Default: false.
 - `includeRawChunks?` (`boolean`): Include raw, unprocessed chunks from the provider in the stream. Default: false.

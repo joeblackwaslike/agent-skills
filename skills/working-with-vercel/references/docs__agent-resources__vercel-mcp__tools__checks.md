@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for checks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "bd75730ce566637b75e976e9e2ead1170bdd753c78172d0294050e971e4806a2"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ae2670d9cdd2b2354d39b6bed5a56ef94b4805daa1ce6f1c14263f55d077994d"
 ---
 
 # Checks
@@ -29,8 +29,8 @@ Manage checks for your projects and deployments to track validation results. You
 
 - [Checks API Reference](https://vercel.com/docs/checks/checks-api?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=related) — The Vercel Checks API let you create tests and assertions that run after each deployment has been built, and are powered
 - [Create a check run](https://vercel.com/docs/rest-api/checks-v2/create-a-check-run?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=related) — POST /v2/deployments/{deploymentId}/check-runs — Creates a new check run for a deployment.
-- [List runs for a check](https://vercel.com/docs/rest-api/checks-v2/list-runs-for-a-check?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs — List all runs associated with a given check.
 - [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=related) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
+- [List runs for a check](https://vercel.com/docs/rest-api/checks-v2/list-runs-for-a-check?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs — List all runs associated with a given check.
 - [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=related) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/checks.graph.md](/docs/agent-resources/vercel-mcp/tools/checks.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fchecks&source_site=vercel-docs&relationship=graph)

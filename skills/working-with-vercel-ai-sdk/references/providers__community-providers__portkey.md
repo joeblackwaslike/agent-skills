@@ -4,8 +4,8 @@ description: Learn how to use the Portkey provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/portkey"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/portkey.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "de5e778a292fed9230d2c7d9a6d8ac820b01567f37b87cbdb8497b6cdad9de2b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "30bccff8ed413f231502fb5c9086eaeacc522938fa1cea53585ceb72892065e9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -25,7 +25,9 @@ Learn more at [Portkey docs for the AI SDK](https://docs.portkey.ai/docs/integra
 
 The Portkey provider is available in the `@portkey-ai/vercel-provider` module. You can install it with:
 
-**Packages:** `@portkey-ai/vercel-provider`
+```bash
+pnpm add @portkey-ai/vercel-provider
+```
 
 ## Provider Instance
 

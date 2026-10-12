@@ -13,8 +13,8 @@ related:
 summary: Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "39934246455f329996104c3bf7b9c370ddd4245a33c5cd632e8d670784728b2c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "40403bedd643cd220a50f0adf47be6d961111cf505d51be49fd930824de22fbb"
 ---
 
 # Public and Shared Repositories
@@ -31,8 +31,9 @@ Vercel Container Registry (VCR) repositories are private by default. Share a rep
 - [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related)
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related)
-- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
+- [List repositories](https://vercel.com/docs/rest-api/vcr/list-repositories?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — GET /v1/vcr/repository — List container registry repositories for a project.
+- [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=related) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
 
 Full cross-link map for this page: [/docs/container-registry/public-and-shared-repositories.graph.md](/docs/container-registry/public-and-shared-repositories.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fpublic-and-shared-repositories&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

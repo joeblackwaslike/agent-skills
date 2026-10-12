@@ -4,8 +4,8 @@ description: Learn how to use the Codex CLI provider to access OpenAI GPT-5 mode
 url: "https://ai-sdk.dev/providers/community-providers/codex-cli"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/codex-cli.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3e8c2728233186deaf6a1d158e44e1a6ede45673096041e72b183fe4427c1cd1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "6e5cbb2d461a82608c6bc8efef0ed04cfd6750752ab630167150ad8ed9b0003b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -29,7 +29,9 @@ npm install ai-sdk-provider-codex-cli@ai-sdk-v5 ai@^5.0.0
 
 ## Setup
 
-**Packages:** `ai-sdk-provider-codex-cli`
+```bash
+pnpm add ai-sdk-provider-codex-cli
+```
 
 ## Provider Instance
 

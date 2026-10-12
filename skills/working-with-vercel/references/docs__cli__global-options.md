@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/project-configuration/global-configuration
   - /docs/cli/link
+  - /docs/cli/inspect
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "d20564a49965fc74164c4b7cc440fa29b840973a40e538fc5cb84eeaa5d559c6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "cac63a2173c768a6eceb6c18e442c3c68214729671c314ace9a158ab4c972a1d"
 ---
 
 # Vercel CLI Global Options
@@ -28,10 +29,10 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 
 Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-options&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -215,6 +216,20 @@ vercel deploy --non-interactive
 
 *Using the \`vercel deploy\` command with the
 \`--non-interactive\` option.*
+
+## Exit codes
+
+Use the CLI's exit code to distinguish success, operational failures, and usage errors in scripts:
+
+| Code | Meaning | Examples |
+| --- | --- | --- |
+| `0` | Success or help | A successful command, `vercel --help`, or a bare command group such as `vercel env` |
+| `1` | Operational failure | A failed API request or deployment build |
+| `2` | Usage error | An unknown option or subcommand, a missing argument or option value, or an invalid flag value |
+
+`--help` and bare command groups print help to stdout and exit `0`. Help for a command path that doesn't exist exits `2`.
+
+Some commands define additional exit codes. For example, [`vercel inspect --wait`](/docs/cli/inspect#wait) exits `124` when its wait times out while the deployment is still in progress.
 
 
 ---

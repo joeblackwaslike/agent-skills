@@ -4,8 +4,8 @@ description: Learn how to fix AI_NoSuchModelError
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-model-error.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "9a1f727caf3608d1083e470a2c02727cef66965f0d0f33eba83537514ff120a2"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b5f94633f8ba9c6cfbc592cfc4eb5f502832b4f7e14d5cc172444258c682f62b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -30,9 +30,9 @@ if (NoSuchModelError.isInstance(error)) {
 }
 ```
 
-Experimental evaluation resolution uses `modelType: 'evaluationModel'`. This
-includes unavailable evaluation capabilities and unknown evaluation model or
-provider IDs. See [Evaluation](/docs/ai-sdk-core/evaluation#default-provider-strings).
+Experimental decision resolution uses `modelType: 'decisionModel'`. This
+includes unavailable decision capabilities and unknown decision model or
+provider IDs. See [Decisions](/docs/ai-sdk-core/decisions#default-provider-strings).
 
 ---
 

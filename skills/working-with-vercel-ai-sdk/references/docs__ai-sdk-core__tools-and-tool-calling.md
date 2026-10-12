@@ -4,8 +4,8 @@ description: Learn about tool calling and multi-step calls (using stopWhen) with
 url: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "15932041365ed97a402380b23e03710afeb1413c401b00affbfff8d6262fc042"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d1249f327dfe860847a09d2814bf99debcddf41b9a3615dda83afff91a0d1b6c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -381,7 +381,7 @@ With the `stopWhen` setting, you can enable multi-step calls in `generateText` a
 
 The AI SDK provides several built-in stopping conditions:
 
-- `isStepCount(count)` — stops after a specified number of steps (default: `isStepCount(20)`)
+- `isStepCount(count)` — stops after a specified number of steps (default: `isStepCount(1)` for `generateText` and `streamText`)
 - `hasToolCall(...toolNames)` — stops when any of the specified tools is called
 - `isLoopFinished()` — never triggers, letting the loop run until naturally finished
 
@@ -390,7 +390,7 @@ You can also combine multiple conditions in an array or create custom conditions
 The `stopWhen` conditions are only evaluated when the last step contains tool
 results.
 
-By default, when you use `generateText` or `streamText`, it triggers a single generation. This works well for many use cases where you can rely on the model's training data to generate a response. However, when you provide tools, the model now has the choice to either generate a normal text response, or generate a tool call. If the model generates a tool call, its generation is complete and that step is finished.
+By default, when you use `generateText` or `streamText`, it triggers a single generation. This works well for many use cases where you can rely on the model's training data to generate a response. However, when you provide tools, the model now has the choice to either generate a normal text response, or generate a tool call. A step includes one model generation and the execution of any local tools requested by that generation. If the model generates a tool call, the model generation finishes first; the step finishes after its local tool execution completes.
 
 You may want the model to generate text after the tool has been executed, either to summarize the tool results in the context of the users query. In many cases, you may also want the model to use multiple tools in a single response. This is where multi-step calls come in.
 

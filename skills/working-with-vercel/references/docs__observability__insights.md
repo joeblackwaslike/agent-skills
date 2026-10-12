@@ -16,8 +16,8 @@ related:
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7e762b8e419807bc882c82549ae6ae1d32be84c0f38eeacb57f56aa1efb22b16"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "5082e091255fa4cf5ff510d1eb43b526518c11c40242504259714c0906d68ea4"
 ---
 
 # Observability Insights
@@ -38,7 +38,7 @@ Vercel organizes Observability through sections that correspond to different fea
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -89,6 +89,16 @@ Additionally, Observability Plus users can:
 - Break down traffic by bot or category in the query builder
 - Filter traffic by redirect location
 - Break down traffic by redirect location in the query builder
+
+## AI Traffic
+
+The **AI Traffic** tab shows how AI bots interact with your site. You can see requests from AI bots over time, broken down by AI crawlers that index or train on your content and AI assistants that fetch pages on behalf of a user.
+
+It also shows:
+
+- Paths that AI crawlers request the most
+- Paths that AI assistants request the most from user-initiated sessions
+- Paths that AI bots requested but received an error
 
 ## Fast Data Transfer
 

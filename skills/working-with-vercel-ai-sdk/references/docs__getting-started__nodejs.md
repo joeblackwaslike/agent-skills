@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Node.js.
 url: "https://ai-sdk.dev/docs/getting-started/nodejs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c299460e33ba38599f5ff3adec45ad262dd6cfcab2a09c3a699f0e4388f2843c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b599b350ab36fabc14e03834590f16092b27ede1753c591f9d44288083fb6220"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -161,7 +161,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';

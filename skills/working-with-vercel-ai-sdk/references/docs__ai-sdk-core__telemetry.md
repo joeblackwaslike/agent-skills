@@ -4,8 +4,8 @@ description: Using OpenTelemetry with AI SDK Core
 url: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4b74fd7602f65312ba36ee988c7bf3244f811590cb46f2d938aeac1d6ec1502b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "033b5143b505826238fd4a376cb2c529566a34735dd8f5a462798ee8b3e76e4b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -121,7 +121,7 @@ const result = await generateText({
 });
 ```
 
-To disable telemetry globally, do not register any telemetry integrations via the `registerTelemetry()` function.
+Not registering integrations with `registerTelemetry()` prevents delivery to globally registered integrations, but does not disable per-call integrations or Node.js tracing-channel subscribers. To disable telemetry events for a call, including tracing-channel events, pass `telemetry: { isEnabled: false }`. Apply this setting to every call if you want to opt out throughout your application.
 
 ## Telemetry Metadata
 
@@ -164,7 +164,7 @@ const result = await generateText({
 });
 ```
 
-In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, `ToolLoopAgent`, `embed`, `embedMany`, `rerank`, and `experimental_evaluate`.
+In this example, telemetry integrations receive `runtimeContext` as `{ requestId: 'req_abc' }`. Properties set to `false` or omitted are excluded. If `telemetry.includeRuntimeContext` is omitted, no runtime context properties are included. `telemetry.includeRuntimeContext` is supported by `generateText`, `streamText`, `ToolLoopAgent`, `embed`, `embedMany`, `rerank`, and `experimental_decide`.
 
 `telemetry.includeRuntimeContext` only filters telemetry integrations,
 including OpenTelemetry integrations. Lifecycle callbacks and returned results
@@ -379,15 +379,15 @@ export function myIntegration(): Telemetry {
 - `onStepEnd` (`(event: GenerateTextStepEndEvent) => void | PromiseLike<void>`): Called when a step (LLM call) completes.
 - `onEmbedEnd` (`(event: EmbeddingModelCallEndEvent) => void | PromiseLike<void>`): Called when an individual embedding model call completes.
 - `onRerankEnd` (`(event: RerankingModelCallEndEvent) => void | PromiseLike<void>`): Called when an individual reranking model call completes.
-- `experimental_onEvaluateStart` (`(event: Experimental_EvaluateStartEvent) => void | PromiseLike<void>`): Called when an experimental evaluation operation begins.
-- `experimental_onEvaluationModelCallStart` (`(event: Experimental_EvaluationModelCallStartEvent) => void | PromiseLike<void>`): Called when the logical evaluation model call begins. The call includes any provider retries.
-- `experimental_onEvaluationModelCallEnd` (`(event: Experimental_EvaluationModelCallEndEvent) => void | PromiseLike<void>`): Called when the logical evaluation model call, including any retries, completes.
-- `experimental_onEvaluateEnd` (`(event: Experimental_EvaluateEndEvent) => void | PromiseLike<void>`): Called when an experimental evaluation operation completes.
+- `experimental_onDecideStart` (`(event: Experimental_DecideStartEvent) => void | PromiseLike<void>`): Called when an experimental decision operation begins.
+- `experimental_onDecisionModelCallStart` (`(event: Experimental_DecisionModelCallStartEvent) => void | PromiseLike<void>`): Called when the logical decision model call begins. The call includes any provider retries.
+- `experimental_onDecisionModelCallEnd` (`(event: Experimental_DecisionModelCallEndEvent) => void | PromiseLike<void>`): Called when the logical decision model call, including any retries, completes.
+- `experimental_onDecideEnd` (`(event: Experimental_DecideEndEvent) => void | PromiseLike<void>`): Called when an experimental decision operation completes.
 - `onEnd` (`(event: GenerateTextEndEvent) => void | PromiseLike<void>`): Called when the entire generation completes (all steps finished).
 - `onAbort` (`(event: GenerateTextAbortEvent) => void | PromiseLike<void>`): Called when a streaming text generation operation is aborted before it completes.
 - `onError` (`(event: { callId: string; error: unknown }) => void | PromiseLike<void>`): Called when an unrecoverable error occurs. The event identifies the operation and contains the thrown value.
 
-Experimental evaluation events use the four `experimental_*` callbacks above.
+Experimental decision events use the four `experimental_*` callbacks above.
 They are not included in the stable `onStart` and `onEnd` event unions.
 
 The event types for each method are the same as the corresponding [lifecycle callbacks](/docs/ai-sdk-core/lifecycle-callbacks). See the lifecycle callbacks documentation for the full property reference of each event.
@@ -540,30 +540,30 @@ corresponding input/output recording controls. Raw audio is not captured, so
 transcription input and speech output do not populate message attributes with
 audio content or placeholder audio parts.
 
-#### experimental\_evaluate
+#### experimental\_decide
 
-For `experimental_evaluate`, the integration records two spans with `CLIENT`
-kind: an **`evaluate {modelId}`** root span for the whole operation and one
-**`evaluate {modelId}`** child span for evaluation model work, including
+For `experimental_decide`, the integration records two spans with `CLIENT`
+kind: a **`decide {modelId}`** root span for the whole operation and one
+**`decide {modelId}`** child span for decision model work, including
 retries. Both include the provider and requested model with
-`gen_ai.operation.name: "evaluate"`. Token
-usage is recorded on the child span. When evaluation attributes are enabled,
+`gen_ai.operation.name: "decide"`. Token
+usage is recorded on the child span. When decision attributes are enabled,
 answers are recorded on both spans so the operation span contains its output.
 
-`evaluate` is an AI SDK-defined custom operation name, not a well-known
+`decide` is an AI SDK-defined custom operation name, not a well-known
 OpenTelemetry GenAI operation. OpenTelemetry permits custom operation names
 when no well-known value describes the operation.
 
 OpenTelemetry's `gen_ai.evaluation.result` event describes the result of
 evaluating a GenAI output for quality or other characteristics. In contrast,
-`experimental_evaluate` can evaluate arbitrary JSON state for classification,
+`experimental_decide` can use arbitrary JSON state for classification,
 routing, scoring, and similar tasks. The integration therefore does not emit a
 `gen_ai.evaluation.result` event.
 
-Evaluation state, questions, and answers also do not have applicable GenAI
-semantic-convention attributes. Enable the `experimental_evaluation`
+Decision state, questions, and answers also do not have applicable GenAI
+semantic-convention attributes. Enable the `experimental_decision`
 supplemental option to record them under AI SDK-specific
-`ai.evaluation.*` attributes.
+`ai.decision.*` attributes.
 
 #### GenAI span details
 
@@ -620,10 +620,10 @@ registerTelemetry(
 
 The callback runs when each span is created and receives:
 
-- `spanType`: the type of span being created (`operation`, `step`, `languageModel`, `tool`, `embedding`, `reranking`, or `experimental_evaluation`).
+- `spanType`: the type of span being created (`operation`, `step`, `languageModel`, `tool`, `embedding`, `reranking`, or `experimental_decision`).
 - `operationId`: the AI SDK operation ID for the current call, such as `ai.generateText` or `ai.streamText`.
 - `callId`: the unique ID for the current AI SDK call.
-- `runtimeContext`: the telemetry-filtered runtime context for text generation, embedding, reranking, and evaluation spans. Text generation spans also reflect updates from `prepareStep`.
+- `runtimeContext`: the telemetry-filtered runtime context for text generation, embedding, reranking, and decision spans. Text generation spans also reflect updates from `prepareStep`.
 
 Custom attributes are merged with AI SDK attributes on the span. AI SDK-owned
 attributes take precedence when a custom attribute uses the same key.
@@ -683,7 +683,7 @@ registerTelemetry(
     providerMetadata: true,
     embedding: true,
     reranking: true,
-    experimental_evaluation: true,
+    experimental_decision: true,
     runtimeContext: true,
     headers: true,
     toolChoice: true,
@@ -698,7 +698,7 @@ The available options are:
 - `providerMetadata`: `ai.response.providerMetadata` on operation, step, and model-call spans.
 - `embedding`: embedding inputs and outputs.
 - `reranking`: rerank input documents and ranking output.
-- `experimental_evaluation`: experimental evaluation state, questions, and answers.
+- `experimental_decision`: experimental decision state, questions, and answers.
 - `runtimeContext`: `ai.settings.context.*`.
 - `headers`: `ai.request.headers.*`.
 - `toolChoice`: `ai.prompt.toolChoice`.

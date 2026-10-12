@@ -4,8 +4,8 @@ description: Learn how to use Fal AI models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fal"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7580f7402d87e7fd37ed22478d1efa23325b7b1dfea2d2acc05509270c5158de"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9cfdc9f3617d80f3dcc1b0c4886c6e010892926b83a11dfe5a1bdd381f120701"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "7580f7402d87e7fd37ed22478d1efa23325b7b1dfea2d2acc05509270c5158de"
 
 The Fal provider is available via the `@ai-sdk/fal` module. You can install it with
 
-**Packages:** `@ai-sdk/fal`
+```bash
+pnpm add @ai-sdk/fal
+```
 
 ## Provider Instance
 
@@ -223,7 +225,7 @@ const result = await transcribe({
 
 The following provider options are available:
 
-- **language** *string*
+- **language** *string | null*
   Language of the audio file. Defaults to 'en'. If set to null, the language will be automatically detected.
   Accepts ISO language codes like 'en', 'fr', 'zh', etc.
   Optional.

@@ -4,8 +4,8 @@ description: Learn how to upgrade AI SDK 3.4 to 4.0.
 url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e65e7a4823cb6c6889bbec3fd260a2f193164d022185d749fbee5896e628af10"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "957703adf85cbaf61f45dcd2d1fb93a269d2ef9363ce68d4a56269301fd80aa5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -909,7 +909,7 @@ import { useAssistant } from '@ai-sdk/react';
 There is no codemod available for this change. Please review and update your
 code manually.
 
-The `threadId` and `messageId` parameters have been removed from the `AssistantResponse` function.
+The `threadId` and `messageId` properties have been removed from the argument passed to the `AssistantResponse` callback. The initial response options passed to `AssistantResponse` still require both IDs.
 Please use the `threadId` and `messageId` variables from the outer scope instead.
 
 ```ts title="AI SDK 3.4"

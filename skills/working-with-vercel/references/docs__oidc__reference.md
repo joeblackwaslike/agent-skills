@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ca85c5574359a4b3550a2af4f61242b0f5930e3e06cfde4b4f43833e99e08457"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "49a79bf2dc534ca9932eac4bd694bfdaf4a0b11a6bcd813e413011e5eeae9e2a"
 ---
 
 # OIDC Federation Reference
@@ -38,7 +38,6 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Learn how to Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=related) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md?from=related&source_path=%2Fdocs%2Foidc%2Freference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -69,8 +68,11 @@ const s3client = new s3.S3Client({
 
 ### Other cloud providers
 
-`getVercelOidcToken()` returns the OIDC token from the `VERCEL_OIDC_TOKEN` environment variable in
-builds and local development environments or the `x-vercel-oidc-token` in Vercel functions.
+In Node.js, `getVercelOidcToken()` from `@vercel/oidc` 4.0.0 and later checks the request context's `x-vercel-oidc-token` header first. If no header is present, it reads the file specified by `VERCEL_OIDC_TOKEN_FILE`, when set. Otherwise, it uses `VERCEL_OIDC_TOKEN`.
+
+The SDK reads the configured file on every call and trims surrounding whitespace. Rotating the file updates the token on the next call without a process restart. An unreadable or empty configured file throws an error; it does not fall back to the environment variable. Don't cache the returned token.
+
+The Edge Runtime entry point uses the request header or `VERCEL_OIDC_TOKEN`; it does not read `VERCEL_OIDC_TOKEN_FILE`.
 
 You can pass an optional `audience` to exchange the default token for one with a custom `aud` claim:
 

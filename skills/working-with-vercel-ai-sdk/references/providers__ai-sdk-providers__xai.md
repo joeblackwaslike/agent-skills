@@ -4,8 +4,8 @@ description: Learn how to use xAI Grok and Imagine.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/xai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "89069a9aa4a5831a09050ca23bd5a9f1a34e52b69811135d0f06dddbc08286cb"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "2f0c0b3329699e63bb0a57675f6c54e2be1da4d880125037ac58f3ff83141abe"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,9 @@ The [xAI Grok](https://x.ai) provider contains language model support for the [x
 The xAI Grok provider is available via the `@ai-sdk/xai` module. You can
 install it with
 
-**Packages:** `@ai-sdk/xai`
+```bash
+pnpm add @ai-sdk/xai
+```
 
 ## Provider Instance
 
@@ -332,11 +334,11 @@ const { text, sources } = await generateText({
 
 - **allowedXHandles** *string\[]*
 
-  Only search posts from specified X handles (max 10). Cannot be used with `excludedXHandles`.
+  Only search posts from specified X handles (max 20). Cannot be used with `excludedXHandles`.
 
 - **excludedXHandles** *string\[]*
 
-  Exclude posts from specified X handles (max 10). Cannot be used with `allowedXHandles`.
+  Exclude posts from specified X handles (max 20). Cannot be used with `allowedXHandles`.
 
 - **fromDate** *string*
 

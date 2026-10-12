@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/goal.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "6d563dd14b09f5ec51258985c14b948a80111f2ade7e96c92ba675afa832de22"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "ee86d204c45ddee9145fa4d47eab0c8232819e20e10ff6852bf6f2ba42299817"
 ---
 
 > ## Documentation Index
@@ -117,7 +117,7 @@ Claude Code carries the condition over but resets the turn count, timer, and tok
 claude -p "/goal CHANGELOG.md has an entry for every PR merged this week"
 ```
 
-With the default text output, nothing prints until the run ends, so a goal that runs many turns can look stuck. Add `--output-format stream-json --verbose` to emit each message as the loop runs.
+With the default text output, Claude's final response prints when the loop ends, so a goal that runs many turns can look stuck. Add `--output-format stream-json --verbose` to emit each message as the loop runs.
 
 Interrupt the process with Ctrl+C to stop a non-interactive goal before it resolves.
 

@@ -1,8 +1,8 @@
 ---
 title: "Extension Capabilities"
 source: "https://code.visualstudio.com/api/extension-capabilities/overview"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "2878952281456e8b20a1752aa234ab9f10745915ff0bc199b66fd4e783311487"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "f3f4667d9bccccc8115201ab07f0f1a7c0e4aef6e16079a3f1086072da63e8d8"
 ---
 
 # Extension Capabilities
@@ -10,6 +10,44 @@ sha256: "2878952281456e8b20a1752aa234ab9f10745915ff0bc199b66fd4e783311487"
 Source: https://code.visualstudio.com/api/extension-capabilities/overview
 
 Overview
+
+ 
+
+ 
+
+ Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/extension-capabilities/overview.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-capabilities%2Foverview%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-capabilities%2Foverview%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-capabilities%2Foverview%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 Visual Studio Code offers many ways for extensions to extend its capabilities. It can sometimes be hard to find the right [Contribution Points](https://code.visualstudio.com/api/references/contribution-points) and [VS Code API](https://code.visualstudio.com/api/references/vscode-api) to use. This topic splits extension capabilities into a few categories. Each category describes:
 
@@ -150,4 +188,4 @@ A custom style sheet provided by users or extensions would work against the DOM 
 Instead, VS Code aims to provide a well-designed extension API supporting UI customizations. The API is documented, comes with tooling and samples, and is kept stable across all upcoming releases of VS Code.
 
  
- 9/30/2026
+ 10/7/2026

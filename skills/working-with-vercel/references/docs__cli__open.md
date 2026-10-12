@@ -16,8 +16,8 @@ related:
 summary: Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/open.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "595918758ef8f6a5ffc4e3c9009065d738979b0957a42d571b1ae888d99af640"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "bb6291a01238d5bdf6c7998a095beb85a0648dee5d85318a0e1e1e8830006ba1"
 ---
 
 # vercel open
@@ -33,8 +33,8 @@ The `vercel open` command opens your current project in the Vercel Dashboard. It
 - [Open your Vercel dashboard from the Vercel CLI](https://vercel.com/changelog/open-your-vercel-dashboard-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related)
 - [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/open.graph.md](/docs/cli/open.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fopen&source_site=vercel-docs&relationship=graph)

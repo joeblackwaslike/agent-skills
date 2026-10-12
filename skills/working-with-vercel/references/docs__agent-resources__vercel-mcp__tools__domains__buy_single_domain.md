@@ -14,8 +14,8 @@ related:
 summary: Use buy_single_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "19c56bc84409e22885af31fda3b643bc524baea37e25abb06f1586cb3746a553"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "bb93baa3145444101d1971638af25b99d3a845009700f3018d7dc41b5df7e8c4"
 ---
 
 # buy_single_domain
@@ -28,6 +28,7 @@ To register a domain, use [`get_purchase_quote`](/docs/agent-resources/vercel-mc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fbuy_single_domain&source_site=vercel-docs&relationship=related) — Use buy_domains with Vercel MCP.
+- [Agents can now buy domains with the Vercel CLI](https://vercel.com/changelog/agents-can-now-buy-domains-with-the-vercel-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fbuy_single_domain&source_site=vercel-docs&relationship=related)
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fbuy_single_domain&source_site=vercel-docs&relationship=related) — Use get_domain_price with Vercel MCP.
 - [buy_credits_endpoint](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_credits_endpoint?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fbuy_single_domain&source_site=vercel-docs&relationship=related) — Use buy_credits_endpoint with Vercel MCP.
 - [get_domain_order](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_domain_order?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fbuy_single_domain&source_site=vercel-docs&relationship=related) — Use get_domain_order with Vercel MCP.

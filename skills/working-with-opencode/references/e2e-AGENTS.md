@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/app/e2e/AGENTS.md"
-fetched_at: "2026-08-10T05:31:39.739Z"
-sha256: "1db2e856de3de339da7eade27a8d8bbd0342b349caa51dcad07bb58dcdc864b2"
+fetched_at: "2026-10-12T11:48:23.877Z"
+sha256: "7af545cf8f3a230a2e0aa93dcbbbed7d82133ad28384fc5072bb2560428a9e38"
 ---
 
 ## Required Reading
@@ -20,3 +20,11 @@ sha256: "1db2e856de3de339da7eade27a8d8bbd0342b349caa51dcad07bb58dcdc864b2"
 - Do not retry state-changing actions. Retry idempotent readiness checks, then perform the action once and assert its outcome.
 - Keep action and assertion timeouts adaptive. Do not use short timeouts as readiness probes or rely on retries to hide flakes.
 - Assert exact outcomes and identities so stale state, duplicate rendering, and interactions with the wrong element cannot pass.
+
+## Test Ownership
+
+- Each product area has one keeper suite in `regression/` (for example tabs, settings, review, terminal, timeline history). A new regression is a new case in that suite, not a new spec file.
+- Build pages with the shared harness in `utils/` (`app.ts`, `workspace.ts`, `mock-server.ts` with `mockServers` and the mock PTY). Do not hand-write routing, storage seeding, or fixtures inside a spec. If the harness lacks something, add it to `utils/` once rather than copying setup.
+- Files in `utils/` must not end in `.spec.ts` or `.test.ts`, or Playwright runs them as tests.
+- Assert what the user sees and can do. Assert exact pixels or CSS values only when that measurement is the contract, and then only once, in the owning keeper.
+- `performance/` holds benchmarks that CI does not run. Never prove correctness with a benchmark, and never copy benchmark code into a regression spec; import it from `utils/`.

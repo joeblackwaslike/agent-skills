@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/mobile.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "841daae3f5b5da4429a5bac1aeb6aa420581bc6dcdb24a2ac7804b904ac47447"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "f609f816f5627da08af264044e36521cad33ae19dcb6b85ee2778c71dd2faa0c"
 ---
 
 > ## Documentation Index
@@ -83,7 +83,7 @@ Dispatch sends its own notification when a Code session it spawned finishes or n
 The mobile client covers most of what a session needs, with a few limitations:
 
 * **Local-only commands**: commands that only run in the terminal interface, such as `/plugin` and `/resume`, don't work from the app. The [Remote Control limitations](/docs/en/remote-control#limitations) list the commands that do work from mobile and how their behavior differs.
-* **Permission modes**: cloud sessions offer Accept edits, Plan, and Auto in the mode dropdown, and Remote Control sessions offer Manual, Accept edits, and Plan. You can't select Bypass permissions from the app in either case, and you can't select Auto for a Remote Control session. See [switch permission modes](/docs/en/permission-modes#switch-permission-modes).
+* **Permission modes**: cloud sessions offer Accept edits, Plan, and Auto, and Remote Control sessions offer Manual, Accept edits, Plan, and Auto. You can't select Bypass permissions from the app in either case. See [switch permission modes](/docs/en/permission-modes#switch-permission-modes) for when Auto is available.
 * **Dispatch plans**: Dispatch requires a Pro or Max plan and isn't available on Team or Enterprise.
 
 ## Related resources

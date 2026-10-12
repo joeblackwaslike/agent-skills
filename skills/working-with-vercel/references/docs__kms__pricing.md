@@ -13,13 +13,13 @@ related:
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ce837125b6ffba83bc30122bac057d114ddcc3e1fe538f3ff4a0f9e9456a58a8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b96e0cda1a2df47057b93a013aecbb7d46fde107f72a9ecdd0d3973ab9e2a650"
 ---
 
 # Vercel KMS Pricing and Limits
 
-KMS is billed per signing operation. A signing operation is a single `signToken` or `signMessage` call, and its rate depends on the key's algorithm. There is no per-key or per-issuer charge.
+KMS is billed per signing operation. A signing operation is a single `signJWT` or `signMessage` call, and its rate depends on the key's algorithm. There is no per-key or per-issuer charge.
 
 
 <!-- docsgraph:related -->
@@ -59,7 +59,7 @@ The Hobby plan includes 5,000 signing operations per month at no charge. Pro and
 
 ## How to stop being billed
 
-You stop per-operation charges when you stop calling `signToken` and `signMessage`. To remove an issuer entirely, delete it in the dashboard. A deleted issuer no longer publishes a JWKS, so relying parties can no longer verify tokens it signed.
+You stop per-operation charges when you stop calling `signJWT` and `signMessage`. To remove an issuer entirely, delete it in the dashboard. A deleted issuer no longer publishes a JWKS, so relying parties can no longer verify tokens it signed.
 
 ## Related
 

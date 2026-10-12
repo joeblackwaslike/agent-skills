@@ -3,7 +3,7 @@ title: TanStack AI with AI Gateway
 product: vercel
 url: /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 canonical_url: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai"
-last_updated: 2026-09-22
+last_updated: 2026-10-05
 type: how-to
 prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
@@ -17,8 +17,8 @@ related:
 summary: Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "38c4478e0a6db6624d45926d82bbd699c35d03ae84f3608f27332ea679e548f8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "bccf96be8c925faaeeb63770e949a6407632160da55a1a2707e162111cb1f604"
 ---
 
 # TanStack AI with AI Gateway
@@ -143,10 +143,10 @@ For JavaScript, run `node --env-file=.env index.mjs`. Your terminal displays str
 
 The adapter uses the [OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses) by default. To use [Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), pass `{ api: 'chat' }` as the second argument to `vercelGatewayText`.
 
-## Evaluate with Jev
+## Make decisions with Jev
 
 Use TanStack AI's `decide()` function with `vercelGatewayDecider` from
-`@tanstack/ai-vercel-gateway` to evaluate application state with [Jev](/kb/jev-from-typesafe-ai) through AI Gateway.
+`@tanstack/ai-vercel-gateway` to answer typed questions about application state with [Jev](/kb/jev-from-typesafe-ai) through AI Gateway.
 Jev returns typed choices, scores, and boolean probabilities that your code can use
 to classify content and decide what happens next.
 

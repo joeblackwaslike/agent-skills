@@ -13,8 +13,8 @@ related:
 summary: Use create_observability_query with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5dc2be2981f4fa1f998983a6689d2997b1e7062e8c507645a4298e4928b6aa89"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c42e8ba8a10255347e47bb08bd698ddf0d9541d796a95b8626a568898f9b1f30"
 ---
 
 # create_observability_query
@@ -30,8 +30,8 @@ Query observability data.
 - [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=related) — Use artifact_query with Vercel MCP.
 - [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=related) — Use get_observability_schema with Vercel MCP.
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=related) — Use create_project with Vercel MCP.
-- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [create_api_keys](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway/create_api_keys?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=related) — Use create_api_keys with Vercel MCP.
+- [join_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/join_team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=related) — Use join_team with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fcreate_observability_query&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

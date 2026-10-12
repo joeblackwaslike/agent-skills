@@ -13,8 +13,8 @@ related:
 summary: Use list_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8296d40b06888d3744d63c28b7e4f9bc5ab22bff740c55f69e3d193f3789f458"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "efeda618b0302a36728c373f835e77c716b8d7cfd8e6e454c828b38eea12fad4"
 ---
 
 # list_projects
@@ -27,7 +27,6 @@ List [projects](/docs/projects) in your account or selected team. The tool also 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Find Vercel Projects](https://v0.app/docs/api/v1/reference/integrations/find?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_projects&source_site=vercel-docs&relationship=related) — Retrieves Vercel projects available to the authenticated user or team scope.
 - [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_projects&source_site=vercel-docs&relationship=related) — Use list_access_group_projects with Vercel MCP.
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_projects&source_site=vercel-docs&relationship=related) — Use list_agent_run_projects with Vercel MCP.
 - [list_microfrontends_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/list_microfrontends_group_projects?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_projects&source_site=vercel-docs&relationship=related) — Use list_microfrontends_group_projects with Vercel MCP.

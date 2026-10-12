@@ -4,8 +4,8 @@ description: "Learn how to use the Gemini CLI provider to access Google's Gemini
 url: "https://ai-sdk.dev/providers/community-providers/gemini-cli"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/gemini-cli.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7c6f67d841db55eed9582a27a7b479819991db56f296e01729d4bcdf1d3d3807"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "e8f6bb395aaa2ad604639993febca0c245afd6802e069342956e2f6178f21bc7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -33,7 +33,9 @@ npm install ai-sdk-provider-gemini-cli@ai-sdk-v4 ai@^4.0.0
 
 ## Setup
 
-**Packages:** `ai-sdk-provider-gemini-cli`
+```bash
+pnpm add ai-sdk-provider-gemini-cli
+```
 
 ## Provider Instance
 

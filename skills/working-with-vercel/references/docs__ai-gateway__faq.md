@@ -16,8 +16,8 @@ related:
 summary: Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, model availability, uptime,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/faq.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "9b51a04c9b5b270d119087a118818d7ac427a87832fe9e1c8c1a86ad4a98e913"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d1b6c47dae9400c0ae416fb24ab9de9015b1468615f46f1966fa40566d7f904c"
 ---
 
 # AI Gateway FAQ
@@ -38,7 +38,6 @@ Answers to common questions about AI Gateway, including request errors, pricing,
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/faq.graph.md](/docs/ai-gateway/faq.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Ffaq&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

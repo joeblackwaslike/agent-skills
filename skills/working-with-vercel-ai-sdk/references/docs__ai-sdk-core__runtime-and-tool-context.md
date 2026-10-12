@@ -4,8 +4,8 @@ description: Learn how runtime context, tool context, and telemetry context filt
 url: "https://ai-sdk.dev/docs/ai-sdk-core/runtime-and-tool-context"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/runtime-and-tool-context.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b3a5b23864c3aa6c9e44ae1aa876ee5fdf52b85d8844226bd7f5a0015711f964"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3473894201e215b64e1bf1ea7c76d782839b4f2d6764e37f52ebfe19a3034613"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,14 +21,14 @@ should affect execution.
 
 ## Context Types
 
-| Concept                           | Where you define it                                                | Where you read it                                                                               | Use it for                                                    |
-| --------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `runtimeContext`                  | `generateText`, `streamText`, or `ToolLoopAgent` calls             | `prepareStep`, lifecycle callbacks, step results, and telemetry                                 | Shared generation or agent state                              |
-| `toolsContext`                    | `generateText`, `streamText`, or `ToolLoopAgent` calls             | `prepareStep`, approval callbacks, tool context resolution, and tool description functions      | A map of per-tool context values keyed by tool name           |
-| tool `context`                    | Each tool's `toolsContext` entry, validated by its `contextSchema` | Tool description functions, tool `execute`, `needsApproval`, and tool input lifecycle callbacks | Values needed by one tool                                     |
-| `toolContext`                     | Derived from one tool's context                                    | Tool approval callbacks and tool execution events                                               | The event/callback name for one tool's context                |
-| `telemetry.includeRuntimeContext` | The generation or agent call                                       | Telemetry filtering                                                                             | Top-level `runtimeContext` properties to include in telemetry |
-| `telemetry.includeToolsContext`   | The generation or agent call                                       | Telemetry filtering                                                                             | Top-level tool context properties to include in telemetry     |
+| Concept                           | Where you define it                                                             | Where you read it                                                                               | Use it for                                                    |
+| --------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `runtimeContext`                  | `generateText` or `streamText` calls; `ToolLoopAgent` settings or `prepareCall` | `prepareStep`, lifecycle callbacks, step results, and telemetry                                 | Shared generation or agent state                              |
+| `toolsContext`                    | `generateText` or `streamText` calls; `ToolLoopAgent` settings or `prepareCall` | `prepareStep`, approval callbacks, tool context resolution, and tool description functions      | A map of per-tool context values keyed by tool name           |
+| tool `context`                    | Each tool's `toolsContext` entry, validated by its `contextSchema`              | Tool description functions, tool `execute`, `needsApproval`, and tool input lifecycle callbacks | Values needed by one tool                                     |
+| `toolContext`                     | Derived from one tool's context                                                 | Tool approval callbacks and tool execution events                                               | The event/callback name for one tool's context                |
+| `telemetry.includeRuntimeContext` | The generation call or `ToolLoopAgent` settings                                 | Telemetry filtering                                                                             | Top-level `runtimeContext` properties to include in telemetry |
+| `telemetry.includeToolsContext`   | The generation call or `ToolLoopAgent` settings                                 | Telemetry filtering                                                                             | Top-level tool context properties to include in telemetry     |
 
 In agents, `runtimeContext` is the agent's shared runtime state. It flows
 through the loop and can be read or updated in `prepareStep` between model
@@ -36,7 +36,7 @@ calls. Tool-specific data stays in `toolsContext`, where each tool receives only
 its own validated `context`.
 
 ```txt
-generateText / streamText / ToolLoopAgent
+generateText / streamText / ToolLoopAgent settings
   -> runtimeContext
        -> prepareStep, lifecycle callbacks, step results
        -> telemetry, filtered by telemetry.includeRuntimeContext
@@ -128,6 +128,10 @@ Treat tool context as immutable inside tools. If you need to change tool context
 between steps, inspect the previous step in `prepareStep` and return an updated
 `toolsContext`.
 
+For `ToolLoopAgent`, set context in the constructor. For context that changes
+with each invocation, use `callOptionsSchema` and `prepareCall`. See
+[Configuring Call Options](/docs/agents/configuring-call-options).
+
 ## Telemetry Context Filtering
 
 Context often contains values that are useful inside your application but should
@@ -136,7 +140,7 @@ include selected top-level runtime context properties in telemetry, and
 `telemetry.includeToolsContext` to include selected top-level tool context
 properties per tool.
 
-```ts {34-43}
+```ts
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
@@ -161,10 +165,6 @@ const customerLookup = tool({
 const agent = new ToolLoopAgent({
   model: "anthropic/claude-sonnet-5.5",
   tools: { customerLookup },
-});
-
-const result = await agent.generate({
-  prompt: 'Check whether customer cust_123 is eligible for priority support.',
   runtimeContext: {
     requestId: 'req_abc',
     tenantId: 'tenant_123',
@@ -186,6 +186,10 @@ const result = await agent.generate({
       region: 'us',
     },
   },
+});
+
+const result = await agent.generate({
+  prompt: 'Check whether customer cust_123 is eligible for priority support.',
 });
 ```
 

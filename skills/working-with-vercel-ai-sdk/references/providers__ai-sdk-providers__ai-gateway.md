@@ -4,8 +4,8 @@ description: Learn how to use the AI Gateway provider with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ef607898f92882f45636250be07f3298915b4feea73dea9df38154c96d2bee23"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cf37ffc4236e94d0cc6ff4c13b963a9663cb1b558b320ad4a6b781242075d12c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -80,6 +80,16 @@ const gateway = createGateway({
 ```
 
 You can use the following optional settings to customize the AI Gateway provider instance:
+
+- **batchResultDownloads** *object*
+
+  Settings for downloading JSON Lines batch results.
+
+  - **maxLineBytes** *number*
+
+    Maximum UTF-8 bytes per row, excluding the LF delimiter. Defaults to 64 MiB
+    (67,108,864 bytes). Must be a positive safe integer. Oversized rows throw a
+    `DownloadError` and cancel the download.
 
 - **baseURL** *string*
 
@@ -235,7 +245,7 @@ import {
 // The receiver uses this token to look up the expected batch and signing
 // secret before trusting anything in the webhook body.
 const token = randomUUID();
-const model = 'anthropic/claude-haiku-4.5' as const;
+const model = 'anthropic/claude-haiku-5.5' as const;
 
 // Reserve the token before starting so an early delivery finds a retryable
 // pending record rather than an unknown callback.
@@ -1397,7 +1407,7 @@ import { gateway, streamText } from 'ai';
 
 // 1. Make requests with tags
 const result = streamText({
-  model: gateway('anthropic/claude-haiku-4.5'),
+  model: gateway('anthropic/claude-haiku-5.5'),
   prompt: 'Summarize this quarter's results',
   providerOptions: {
     gateway: {
@@ -1473,7 +1483,7 @@ The following gateway provider options are available:
 
 - **models** *string\[] | \[GatewayModelFallback, ...string\[]]*
 
-  Specifies fallback models in attempt order. String entries keep their existing behavior: the gateway tries them when the primary model fails or is unavailable. Evaluation requests can also start the list with one conditional `{ model, when }` entry to retry a successful but uncertain evaluation with another model. Only the first entry can be conditional, and only one conditional entry is allowed. If the primary model fails, the gateway also advances to the conditional entry under its existing error fallback behavior. Conditional entries are rejected on non-evaluation requests.
+  Specifies fallback models in attempt order. String entries keep their existing behavior: the gateway tries them when the primary model fails or is unavailable. Decision requests can also start the list with one conditional `{ model, when }` entry to retry a successful but uncertain decision with another model. Only the first entry can be conditional, and only one conditional entry is allowed. If the primary model fails, the gateway also advances to the conditional entry under its existing error fallback behavior. Conditional entries are rejected on non-decision requests.
 
   Example: `models: ['openai/gpt-5.4-nano', 'google/gemini-3.8-flash']` will try the fallback models in order if the primary model fails.
 
@@ -1613,15 +1623,15 @@ const { text } = await generateText({
 // 4. Return the result from the first model that succeeds
 ```
 
-#### Conditional Evaluation Fallbacks Example
+#### Conditional Decision Fallbacks Example
 
-Conditional model entries are available only for evaluation requests. Keep the
-configuration under `providerOptions.gateway.models`. `experimental_evaluate`
+Conditional model entries are available only for decision requests. Keep the
+configuration under `providerOptions.gateway.models`. `experimental_decide`
 does not have a top-level fallback option.
 
 ```ts
 import type { GatewayProviderOptions } from '@ai-sdk/gateway';
-import { experimental_evaluate } from 'ai';
+import { experimental_decide } from 'ai';
 
 const questions = {
   department: {
@@ -1635,7 +1645,7 @@ const questions = {
   },
 } as const;
 
-const result = await experimental_evaluate({
+const result = await experimental_decide({
   model: 'typesafe-ai/jev',
   state: 'I was charged twice. Please refund the duplicate.',
   questions,

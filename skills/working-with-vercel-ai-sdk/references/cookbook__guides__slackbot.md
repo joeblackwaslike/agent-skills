@@ -7,8 +7,8 @@ tags:
   - agents
   - chatbot
 source: "https://ai-sdk.dev/cookbook/guides/slackbot.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5f3d457a9414ab73090437ec495d9d4566cbc6e6d0c5889dfe51051fd824d050"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ef85b2b1cb5a8d498623067e3330c7a08ea83a11f89f10e078e6fd9094ae7d1f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -346,7 +346,7 @@ export const generateResponse = async (
 
 This basic implementation:
 
-1. Uses the AI SDK's `generateText` function to call Anthropic's `claude-sonnet-4.5` model
+1. Uses the AI SDK's `generateText` function to call the configured model
 2. Provides a system prompt to guide the model's behavior
 3. Formats the response for Slack's markdown format
 

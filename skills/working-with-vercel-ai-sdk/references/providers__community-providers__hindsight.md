@@ -4,8 +4,8 @@ description: Learn how to use Hindsight persistent memory with the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/hindsight"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/hindsight.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "a1315182a14cde0a06639a5df036127b79f42049e63d52451a573eecefaa30ac"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "6d5b7ece49ff8e9c553a3438427f73fdffe0fa16e44edff808a9e707fcf47650"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -42,7 +42,9 @@ Sign up and get your API URL from the [Hindsight dashboard](https://ui.hindsight
 
 ## Installation
 
-**Packages:** `@vectorize-io/hindsight-ai-sdk`, `@vectorize-io/hindsight-client`
+```bash
+pnpm add @vectorize-io/hindsight-ai-sdk @vectorize-io/hindsight-client
+```
 
 ## Creating Tools
 

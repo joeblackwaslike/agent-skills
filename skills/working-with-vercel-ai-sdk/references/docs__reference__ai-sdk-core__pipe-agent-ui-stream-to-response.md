@@ -4,8 +4,8 @@ description: API Reference for the pipeAgentUIStreamToResponse utility.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/pipe-agent-ui-stream-to-response.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b5128946f3e1f140bd5180ef4037248d63a301628f4cdb108c892d58c6a790ba"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "6d2fb4145896979ad7b30c1baf388022fb96329ea86bd57c9162ab3f00cdded1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -53,11 +53,14 @@ export async function handler(req, res) {
 - `experimental_transform` (`StreamTextTransform | StreamTextTransform[]`): Optional stream text transformation(s) applied to agent output.
 - `onStepEnd` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage, per-step performance, or logging intermediate steps.
 - `onStepFinish` (`GenerateTextOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
-- `...UIMessageStreamResponseInit & UIMessageStreamOptions` (`object`): Options for streaming headers, status, SSE stream config, and additional UI message stream control.
+- `onUIMessageStepEnd` (`UIMessageStreamOnStepEndCallback`): Callback invoked after each UI message step is assembled. It receives \`messages\`, \`isContinuation\`, and the accumulated \`responseMessage\` for intermediate persistence.
+- `...UIMessageStreamResponseInit & AgentUIMessageStreamOptions` (`object`): Options for streaming headers, status, SSE stream config, and additional UI message stream control.
 
 ## Returns
 
 A `Promise<void>`. The function completes when the UI message stream has been fully sent to the provided ServerResponse.
+
+Use `onUIMessageStepEnd` to persist the accumulated UI response after every agent step. It is awaited before the corresponding `finish-step` chunk is piped. Use idempotent writes and protect model output, reasoning, tool inputs, and tool outputs as sensitive conversation data. Use the existing `onStepEnd` callback when you need low-level generation usage, finish reasons, or raw step details instead.
 
 ## Example: Express Route Handler
 

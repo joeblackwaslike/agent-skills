@@ -4,8 +4,8 @@ description: Learn how to connect to Model Context Protocol (MCP) servers and us
 url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d807a523ad5c5b822cf64e729dc780d31e2b05565895fc6aff941571cc133e6e"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "8780929232901d8225b5db0ad51c7bbe5ab22ea90a0278d90fad6b62412f60d5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -200,6 +200,11 @@ authorization and reads the stored tokens again.
 
 The SDK also provides this context when invalidating stored tokens that lack an
 authorization server pin. Other invalidations can omit the context.
+
+If an authorization-code exchange returns `invalid_grant`, the SDK propagates
+the error without invalidating stored credentials or retrying the rejected code.
+A rejected authorization code does not indicate that existing access or refresh
+tokens are invalid.
 
 ### OAuth Authorization Server Validation
 

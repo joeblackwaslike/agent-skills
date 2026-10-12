@@ -4,8 +4,8 @@ description: Learn how to use the Open Responses provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "347dd0cff491e80ca44ba9cbe8ac9682a974be07bee3a9aa3e4fc3b2a3f6749d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cdcf048fd9565c8cc95b764819023943087c7342f777b72629764208353baeaf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,7 +24,9 @@ need OpenAI-specific provider options or built-in tools, use the
 
 The Open Responses provider is available in the `@ai-sdk/open-responses` module. You can install it with
 
-**Packages:** `@ai-sdk/open-responses`
+```bash
+pnpm add @ai-sdk/open-responses
+```
 
 ## Provider Instance
 

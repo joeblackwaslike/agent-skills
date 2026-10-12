@@ -4,8 +4,8 @@ description: Learn how to use the Cloudflare AI Gateway provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/cloudflare-ai-gateway.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "2565ad8e2a405c47171173c71b2953b1392c5e0e1b30250f3eb537416233a3a5"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "5288bd4bd851eaafb0c115dbfce97ac861871ca7f653afe0b3c83d3e19bebe29"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,7 +24,9 @@ The Cloudflare AI Gateway Provider is a library that integrates Cloudflare's AI 
 
 The Cloudflare AI Gateway Provider is available in the `ai-gateway-provider` module. Install it with:
 
-**Packages:** `ai-gateway-provider`
+```bash
+pnpm add ai-gateway-provider
+```
 
 ## Provider Instance
 

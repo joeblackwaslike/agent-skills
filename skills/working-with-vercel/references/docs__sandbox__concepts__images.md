@@ -15,8 +15,8 @@ related:
 summary: "Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1e8c8ee69ab54402a6503a8daa98bef4a0412904c981bfcfd19d49b05489937d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "9848a2a1bc0d3eab3611a01560b8cd9ecb18f261d3c5ddde83acb4782e11eb43"
 ---
 
 # Images
@@ -35,8 +35,8 @@ Custom images give you full control over the sandbox environment. Define the Lin
 - [Vercel Sandbox now provides 64 GB of storage](https://vercel.com/changelog/vercel-sandbox-64-gb-storage?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox now support Custom Images](https://vercel.com/changelog/vercel-sandbox-now-support-custom-images?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=related) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/images.graph.md](/docs/sandbox/concepts/images.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fimages&source_site=vercel-docs&relationship=graph)

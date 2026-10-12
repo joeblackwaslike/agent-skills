@@ -1,8 +1,8 @@
 ---
 title: "Webviews"
 source: "https://code.visualstudio.com/api/extension-guides/webview"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "a48682ed671d8074caa33a1c2751835f5f0afbb2ee279716179fff20ea49892a"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "ff1eb22eef7ccd3d4c24d8586c09f1dd41b074989594b7069850d12486b3cb3f"
 ---
 
 # Webviews
@@ -10,6 +10,44 @@ sha256: "a48682ed671d8074caa33a1c2751835f5f0afbb2ee279716179fff20ea49892a"
 Source: https://code.visualstudio.com/api/extension-guides/webview
 
 # Webview API
+
+ 
+
+ 
+
+ Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/extension-guides/webview.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fwebview%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fwebview%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fwebview%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 The webview API allows extensions to create fully customizable views within Visual Studio Code. For example, the built-in Markdown extension uses webviews to render Markdown previews. Webviews can also be used to build complex user interfaces beyond what VS Code's native APIs support.
 
@@ -1166,4 +1204,4 @@ If you'd like to learn more about VS Code extensibility, try these topics:
 - [Extension Capabilities](https://code.visualstudio.com/api/extension-capabilities/overview) - Take a look at other ways to extend VS Code.
 
  
- 9/30/2026
+ 10/7/2026

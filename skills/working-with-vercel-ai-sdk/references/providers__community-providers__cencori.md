@@ -4,8 +4,8 @@ description: Cencori Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/cencori"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/cencori.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "fc569c6286d51c90a5a879e2440747c3da3ac3b41813a5c9d37890d0423e3adc"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4e0bcba52d7676f7b93eb806df9323bb76b846fd4140d1e5bda1209c2f4eab1a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -23,7 +23,9 @@ With Cencori, you get:
 
 The Cencori provider is available in the `cencori` module. You can install it with:
 
-**Packages:** `cencori`
+```bash
+pnpm add cencori
+```
 
 ## Provider Instance
 

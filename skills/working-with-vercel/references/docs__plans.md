@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "9e3134784a4a8aea0a248a42c93b82cdda3c8fe8b258b5ac3c3ba03467b1e9aa"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "0930bf614cbe3a7e88343f4ce3987c7559a7f4c69c20a37fcda8a1565c1bb892"
 ---
 
 # Account Plans on Vercel
@@ -30,6 +30,7 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox maximum duration extended to 5 hours](https://vercel.com/changelog/vercel-sandbox-maximum-duration-extended-to-5-hours?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related)
 - [Run Cursor Cloud Agents on Vercel Sandbox](https://vercel.com/kb/guide/cursor-vercel-sandbox?from=related&source_path=%2Fdocs%2Fplans&source_site=vercel-docs&relationship=related) — Learn how to run Cursor Cloud Agents on Vercel Sandbox with BYOM worker pools, durable workflows, isolated microVMs, and

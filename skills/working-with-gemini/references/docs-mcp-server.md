@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md"
-fetched_at: "2026-09-07T09:02:18.333Z"
-sha256: "bc0c6cfeb2fa3ea6d8074233040902e3f3ad864308f0cb57085ac805a9787477"
+fetched_at: "2026-10-12T11:44:59.166Z"
+sha256: "5c7bf14a4415c00e7ce08e3a1cafcd1a5f17b8a9758488af3b7dd53a0543526b"
 ---
 
 # MCP servers with Gemini CLI
@@ -332,17 +332,31 @@ This feature will not work in:
 
 <!-- prettier-ignore -->
 > [!IMPORTANT]
-> To protect against OAuth Identity Provider (IdP) mix-up attacks, Gemini CLI
-> validates the `iss` (issuer) parameter per
-> [RFC 9207](https://www.rfc-editor.org/rfc/rfc9207). When an expected issuer is
-> discovered or configured, authorization servers **must** return the `iss`
-> parameter in the callback redirect matching the issuer URL. Responses missing
-> `iss` or with mismatched issuers are rejected with HTTP 400.
+> Gemini CLI validates the `iss` (issuer) parameter in OAuth authorization
+> responses per [RFC 9207](https://www.rfc-editor.org/rfc/rfc9207) and the MCP
+> specification:
+>
+> - Whenever the `iss` parameter is present in the callback redirect and an
+>   expected `issuer` is discovered or configured, `iss` **must** match the
+>   expected issuer URL.
+> - When the authorization server metadata sets
+>   `authorization_response_iss_parameter_supported: true`, the callback
+>   redirect **must** include the `iss` parameter.
+> - When the discovered authorization server metadata omits
+>   `authorization_response_iss_parameter_supported` or sets it to `false` (for
+>   example, providers that do not declare RFC 9207 support), callbacks without
+>   `iss` are accepted.
+> - When you configure `issuer` explicitly in `settings.json` and Gemini CLI
+>   doesn't discover authorization server metadata, the callback redirect
+>   **must** include the `iss` parameter. To accept callbacks without `iss` for
+>   such a server, set `authorizationResponseIssParameterSupported` to `false`
+>   in the `oauth` configuration.
 
 ##### Expected authorization callback example
 
-When the authorization server redirects the user back to Gemini CLI, the
-redirect URI must include the `iss` parameter:
+When the authorization server declares
+`authorization_response_iss_parameter_supported: true`, the redirect URI must
+include the `iss` parameter:
 
 ```http
 HTTP/1.1 302 Found
@@ -350,10 +364,14 @@ Location: http://localhost:<port>/oauth/callback?code=AUTH_CODE&state=STATE&iss=
 ```
 
 - **Valid response (accepted):** `iss` matches the configured or discovered
-  issuer (`https://auth.example.com`).
-- **Missing `iss` (rejected):**
-  `http://localhost:<port>/oauth/callback?code=AUTH_CODE&state=STATE` (fails
-  with HTTP 400: `Missing issuer parameter in response`).
+  issuer (`https://auth.example.com`), or `iss` is omitted when the discovered
+  metadata doesn't set `authorization_response_iss_parameter_supported` to
+  `true`.
+- **Missing `iss` when required (rejected):**
+  `http://localhost:<port>/oauth/callback?code=AUTH_CODE&state=STATE` when
+  `authorization_response_iss_parameter_supported` is `true`, or when `issuer`
+  is configured explicitly without discovered metadata (fails with HTTP 400:
+  `Missing issuer parameter in response`).
 - **Mismatched `iss` (rejected):** `iss` points to a different domain or
   includes userinfo (fails with HTTP 400: `Issuer mismatch`).
 
@@ -378,6 +396,12 @@ If your remote MCP server uses an authorization server with a known issuer URL:
   }
 }
 ```
+
+With this configuration, Gemini CLI requires the `iss` parameter in the
+authorization callback. If the authorization server doesn't return `iss` in its
+redirects, add `"authorizationResponseIssParameterSupported": false` to the
+`oauth` block. Gemini CLI then accepts callbacks without `iss` while still
+rejecting any `iss` value that doesn't match the configured `issuer`.
 
 #### Managing OAuth authentication
 
@@ -404,6 +428,11 @@ Use the `/mcp auth` command to manage OAuth authentication:
   if omitted)
 - **`issuer`** (string): Authorization server issuer URL (auto-discovered if
   omitted; validated per RFC 9207)
+- **`authorizationResponseIssParameterSupported`** (boolean): Whether the
+  authorization server returns the `iss` parameter in authorization responses
+  (RFC 9207). Auto-discovered from the authorization server metadata; defaults
+  to `true` when `issuer` is configured explicitly without discovered metadata.
+  Set to `false` to accept callbacks without `iss` for such a server.
 - **`tokenUrl`** (string): OAuth token endpoint (auto-discovered if omitted)
 - **`scopes`** (string[]): Required OAuth scopes
 - **`redirectUri`** (string): Custom redirect URI (defaults to an OS-assigned

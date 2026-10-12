@@ -1,13 +1,47 @@
 ---
 title: "Testing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/testing-extension"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "49a7b0ee4bfe850a80fd73244b18a1ffbbf1fe99c8d2efb972006095c49405ce"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "4e4d8e6091926a21a408b2bb7858e9a628b3e06a3fb29fcca933e34b814ed31d"
 ---
 
 # Testing Extensions
 
 Source: https://code.visualstudio.com/api/working-with-extensions/testing-extension
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/working-with-extensions/testing-extension.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Ftesting-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Ftesting-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Ftesting-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 Visual Studio Code supports running and debugging tests for your extension. These tests will run inside a special instance of VS Code named the **Extension Development Host**, and have full access to the VS Code API. We refer to these tests as integration tests, because they go beyond unit tests that can run without a VS Code instance. This documentation focuses on VS Code integration tests.
 
@@ -461,4 +495,4 @@ For more information on how to declare trust requirements in your extension mani
 - [Workspace Trust Extension Guide](https://code.visualstudio.com/api/extension-guides/workspace-trust) - Learn how to declare and handle workspace trust in your extension.
 
  
- 9/30/2026
+ 10/7/2026

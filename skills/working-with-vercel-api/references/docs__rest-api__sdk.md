@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-10-05
+last_updated: 2026-10-12
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-10-05T11:22:15.364Z"
-sha256: "380d2dd9868d305cf36558ffbae47f2dd58ac13287ee12b7937ad2cf58dc0640"
+fetched_at: "2026-10-12T11:51:10.837Z"
+sha256: "2394f3b3b95159a85fea4d2e1aa65a48f0e9830c312ad34a62660b24ec5c3162"
 ---
 
 # Vercel SDK Reference
@@ -40,27 +40,28 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **PATCH** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/update-an-access-group-project.md) | Update an access group project |
 | **DELETE** | [`/v1/access-groups/{accessGroupIdOrName}/projects/{projectId}`](/docs/rest-api/sdk/access-groups/delete-an-access-group-project.md) | Delete an access group project |
 
-## API Ai Gateway
-
-| Method | Endpoint | Description |
-|---|---|---|
-| **GET** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/get-virtual-model-config.md) | Get virtual model config |
-| **POST** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/create-virtual-model-config.md) | Create virtual model config |
-| **PATCH** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/update-virtual-model-config.md) | Update virtual model config |
-| **DELETE** | [`/v1/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/api-ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
-| **GET** | [`/v1/ai-gateway/virtual-model-configs/list`](/docs/rest-api/sdk/api-ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
-| **GET** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/api-ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
-| **PATCH** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/api-ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
-| **DELETE** | [`/v1/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/api-ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
-
 ## Ai Gateway
 
 | Method | Endpoint | Description |
 |---|---|---|
-| **GET** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/list-rules.md) | List rules |
-| **POST** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/create-rule.md) | Create rule |
-| **PATCH** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/update-rule.md) | Update rule |
-| **DELETE** | [`/v1/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/delete-rule.md) | Delete rule |
+| **GET** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/get-virtual-model-config.md) | Get virtual model config |
+| **POST** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/create-virtual-model-config.md) | Create virtual model config |
+| **PATCH** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/update-virtual-model-config.md) | Update virtual model config |
+| **DELETE** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/delete-virtual-model-config.md) | Delete virtual model config |
+| **GET** | [`/ai-gateway/virtual-model-configs/list`](/docs/rest-api/sdk/ai-gateway/list-virtual-model-configs.md) | List virtual model configs |
+| **GET** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
+| **PATCH** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
+| **DELETE** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
+| **GET** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/list-rules.md) | List rules |
+| **POST** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/create-rule.md) | Create rule |
+| **PATCH** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/update-rule.md) | Update rule |
+| **DELETE** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/delete-rule.md) | Delete rule |
+| **GET** | [`/ai-gateway/budgets/list`](/docs/rest-api/sdk/ai-gateway/list-ai-gateway-budgets.md) | List AI Gateway budgets |
+| **PUT** | [`/ai-gateway/budgets`](/docs/rest-api/sdk/ai-gateway/upsert-ai-gateway-budget.md) | Upsert AI Gateway budget |
+| **DELETE** | [`/ai-gateway/budgets`](/docs/rest-api/sdk/ai-gateway/archive-ai-gateway-budget.md) | Archive AI Gateway budget |
+| **GET** | [`/ai-gateway/budgets/defaults/list`](/docs/rest-api/sdk/ai-gateway/list-ai-gateway-budget-defaults.md) | List AI Gateway budget defaults |
+| **PUT** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/sdk/ai-gateway/upsert-ai-gateway-budget-default.md) | Upsert AI Gateway budget default |
+| **DELETE** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/sdk/ai-gateway/archive-ai-gateway-budget-default.md) | Archive AI Gateway budget default |
 
 ## Artifacts
 
@@ -135,6 +136,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v1/connect/connectors`](/docs/rest-api/sdk/connect/create-a-connector.md) | Create a connector |
 | **PATCH** | [`/v2/connect/connectors/{connector}`](/docs/rest-api/sdk/connect/update-a-connector.md) | Update a connector |
 | **PATCH** | [`/v1/connect/connectors/{connector}/trigger-destinations`](/docs/rest-api/sdk/connect/update-connector-trigger-destinations.md) | Update connector trigger destinations |
+| **POST** | [`/v1/connect/connectors/{connector}/managed/eject`](/docs/rest-api/sdk/connect/eject-a-managed-connector.md) | Eject a managed connector |
 | **GET** | [`/v2/connect/connectors/{connector}/projects`](/docs/rest-api/sdk/connect/list-projects-for-a-connector.md) | List projects for a connector |
 | **GET** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/get-a-connector-project-connection.md) | Get a connector project connection |
 | **POST** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/create-or-update-a-connector-project-connection.md) | Create or update a connector project connection |
@@ -440,6 +442,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **PATCH** | [`/v9/projects/{idOrName}`](/docs/rest-api/sdk/projects/update-an-existing-project.md) | Update an existing project |
 | **DELETE** | [`/v9/projects/{idOrName}`](/docs/rest-api/sdk/projects/delete-a-project.md) | Delete a Project |
 | **POST** | [`/v1/projects/{idOrName}/avatar`](/docs/rest-api/sdk/projects/upload-a-project-avatar.md) | Upload a project avatar |
+| **DELETE** | [`/v1/projects/{idOrName}/avatar`](/docs/rest-api/sdk/projects/delete-a-project-avatar.md) | Delete a project avatar |
 | **GET** | [`/v9/projects/{idOrName}/domains`](/docs/rest-api/sdk/projects/retrieve-project-domains-by-project-by-id-or-name.md) | Retrieve project domains by project by id or name |
 | **GET** | [`/v9/projects/{idOrName}/domains/{domain}`](/docs/rest-api/sdk/projects/get-a-project-domain.md) | Get a project domain |
 | **PATCH** | [`/v9/projects/{idOrName}/domains/{domain}`](/docs/rest-api/sdk/projects/update-a-project-domain.md) | Update a project domain |
@@ -484,8 +487,10 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v2/sandboxes`](/docs/rest-api/sdk/sandboxes/list-sandboxes.md) | List sandboxes |
 | **POST** | [`/v2/sandboxes`](/docs/rest-api/sdk/sandboxes/create-a-named-sandbox.md) | Create a named sandbox |
 | **GET** | [`/v2/sandboxes/drives`](/docs/rest-api/sdk/sandboxes/list-drives.md) | List drives |
+| **GET** | [`/v2/sandboxes/drives/{nameOrId}`](/docs/rest-api/sdk/sandboxes/get-a-drive.md) | Get a drive |
 | **POST** | [`/v2/sandboxes/drives/{name}`](/docs/rest-api/sdk/sandboxes/get-or-create-a-drive.md) | Get or create a drive |
 | **DELETE** | [`/v2/sandboxes/drives/{name}`](/docs/rest-api/sdk/sandboxes/delete-a-drive.md) | Delete a drive |
+| **POST** | [`/v2/sandboxes/drives/{name}/fork`](/docs/rest-api/sdk/sandboxes/fork-a-drive.md) | Fork a drive |
 | **GET** | [`/v2/sandboxes/snapshots`](/docs/rest-api/sdk/sandboxes/list-snapshots.md) | List snapshots |
 | **GET** | [`/v2/sandboxes/snapshots/{snapshotId}`](/docs/rest-api/sdk/sandboxes/get-a-snapshot.md) | Get a snapshot |
 | **DELETE** | [`/v2/sandboxes/snapshots/{snapshotId}`](/docs/rest-api/sdk/sandboxes/delete-a-snapshot.md) | Delete a snapshot |
@@ -528,6 +533,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/create-system-bypass-rule.md) | Create System Bypass Rule |
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/sdk/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
+| **GET** | [`/v1/security/firewall/events/summary`](/docs/rest-api/sdk/security/read-firewall-actions-summary-by-project.md) | Read Firewall Actions Summary by Project |
 | **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/sdk/security/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
 
 ## Storage
@@ -596,6 +602,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | Method | Endpoint | Description |
 |---|---|---|
 | **GET** | [`/v2/vercel-ci/invocations`](/docs/rest-api/sdk/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata.md) | List invocations for a team, optionally filtered by repository and invocation metadata |
+| **GET** | [`/v2/vercel-ci/branches`](/docs/rest-api/sdk/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team.md) | List Vercel CI branch suggestions for a team |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts`](/docs/rest-api/sdk/vercel-ci/list-all-attempts-for-an-invocation.md) | List all attempts for an invocation |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/tree`](/docs/rest-api/sdk/vercel-ci/get-an-invocation-with-its-jobs-and-tasks.md) | Get an invocation with its jobs and tasks |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}`](/docs/rest-api/sdk/vercel-ci/get-a-specific-invocation-attempt.md) | Get a specific invocation attempt |

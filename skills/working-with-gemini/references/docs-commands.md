@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/commands.md"
-fetched_at: "2026-08-24T04:47:30.586Z"
-sha256: "87d98e9435134f2bfaaa584f9f03a59dd378641f2403c47a9540546f95e303f0"
+fetched_at: "2026-10-12T11:44:59.166Z"
+sha256: "8e3c5433d6c96bcf53c8bc4504138c19e941cba7d5363fd9dac947c5647c4abf"
 ---
 
 # CLI commands
@@ -538,8 +538,9 @@ your prompt to Gemini. These commands include git-aware filtering.
     - `What is this file about? @README.md`
   - **Details:**
     - If a path to a single file is provided, the content of that file is read.
-    - If a path to a directory is provided, the command attempts to read the
-      content of files within that directory and any subdirectories.
+    - If a path to a directory is provided, the directory path is resolved and
+      passed to the model so it can inspect or list the directory using its
+      tools without eagerly reading every nested file into the prompt.
     - Spaces in paths should be escaped with a backslash (for example,
       `@My\ Documents/file.txt`).
     - The command uses the `read_many_files` tool internally. The content is

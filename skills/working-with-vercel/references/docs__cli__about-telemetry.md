@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "628babcada75ad27e331238b3a768f301453c128b89a996f741baf131ff4eb0a"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "67263bd5810c785412c24ced9a76c52033d1d56c8b89a6031ecfcac3a1f9ef0d"
 ---
 
 # Telemetry
@@ -36,10 +36,10 @@ Vercel CLI Telemetry collects telemetry to improve Vercel's products and service
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn what eve CLI telemetry collects and how to control it.
 - [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fabout-telemetry&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

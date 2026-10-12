@@ -4,8 +4,8 @@ description: API Reference for embed.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "933e9d8858c815f2d42e1eb733e9cb9ae1719a19b33718a50c5282ddc228b338"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "97061cfe435c1696afc2c7209ff8ca822f38168caebef0097f04c7f37137dbb1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -35,6 +35,7 @@ import { embed } from "ai"
 
 - `model` (`EmbeddingModel`): The embedding model to use. Example: openai.embeddingModel('text-embedding-3-small')
 - `value` (`VALUE`): The value to embed. The type depends on the model.
+- `dimensions?` (`number`): Requested output embedding dimensions. Must be a positive integer. Forwarded to the model; requires support in the provider implementation. Provider mappings are being added separately. Use providerOptions until your provider supports this setting.
 - `maxRetries?` (`number`): Maximum number of retries. Set to 0 to disable retries. Default: 2.
 - `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
 - `headers?` (`Record<string, string>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
@@ -55,6 +56,7 @@ import { embed } from "ai"
     - `operationId` (`string`): Identifies the operation type ('ai.embed').
     - `model` (`{ provider: string; modelId: string }`): The embedding model being used.
     - `value` (`string | Array<string>`): The value being embedded.
+    - `dimensions?` (`number`): Requested output embedding dimensions, when specified.
     - `maxRetries` (`number`): Maximum number of retries for failed requests.
     - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
     - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.

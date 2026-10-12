@@ -4,8 +4,8 @@ description: LlamaGate Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/llamagate"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/llamagate.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b661156b4475bc62d8958d7ef73c6326eae13c74f1099773c2f18ac701704812"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "51374755a5b6a9743e407296f04c51117895a28524ac9176b28302975ca04401"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -26,7 +26,9 @@ Learn more about LlamaGate's capabilities in the [LlamaGate Documentation](https
 
 The LlamaGate provider is available in the `@llamagate/ai-sdk-provider` module. You can install it with:
 
-**Packages:** `@llamagate/ai-sdk-provider`
+```bash
+pnpm add @llamagate/ai-sdk-provider
+```
 
 ## Provider Instance
 

@@ -3,7 +3,7 @@ title: vercel api
 product: vercel
 url: /docs/cli/api
 canonical_url: "https://vercel.com/docs/cli/api"
-last_updated: 2026-07-15
+last_updated: 2026-10-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -14,13 +14,11 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "3887ed2ab2b00e1fccfc87b4bc353c935ca403d0ff3aa9cf3829673b085584fe"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "62c6ae53fe18a306c74b05b5626949f9f6d45f7ecb252f2c3551eac783a40be8"
 ---
 
 # vercel api
-
-> **💡 Note:** The `vercel api` command is currently in beta. Features and behavior may change.
 
 The `vercel api` command lets you make authenticated HTTP requests to the Vercel API directly from your terminal. It handles authentication automatically using your CLI session, supports interactive endpoint discovery, and provides features like automatic pagination and request body construction.
 
@@ -32,8 +30,8 @@ The `vercel api` command lets you make authenticated HTTP requests to the Vercel
 
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [vercel tokens](https://vercel.com/docs/cli/tokens?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
+- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
 - [vercel comments](https://vercel.com/docs/cli/comments?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=related) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fapi&source_site=vercel-docs&relationship=graph)
@@ -251,6 +249,16 @@ vercel api /v2/user --verbose
 ### Raw
 
 The `--raw` flag outputs JSON without pretty-printing.
+
+When you pipe or capture stdout, JSON responses automatically use single-line JSON, equivalent to `--raw`. Interactive terminal output keeps its normal formatting. Use `--raw` to force single-line JSON in a terminal.
+
+JSON Lines responses, which contain one JSON value per line, print as text rather than a single parsed JSON document.
+
+For example, capture a JSON response for a script:
+
+```bash filename="terminal"
+vercel api /v2/user > user.json
+```
 
 ```bash filename="terminal"
 vercel api /v2/user --raw

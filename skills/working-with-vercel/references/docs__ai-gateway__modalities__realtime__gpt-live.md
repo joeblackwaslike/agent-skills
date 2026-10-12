@@ -15,8 +15,8 @@ related:
 summary: Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7b757e747babcaf536c937197f60b923ada7b131c2afead207c2070ce0ce4d60"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "24833dc77aeddcbd3a39b2af84b864d4d1699c581de3f104cda0074416b615d9"
 ---
 
 # GPT-Live
@@ -35,8 +35,8 @@ Build a voice conversation with `openai/gpt-live-1` through AI Gateway. GPT-Live
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Learn how to build realtime voice conversations with the AI SDK.
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related)
+- [Gemini 3.8 Live models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime/gpt-live.graph.md](/docs/ai-gateway/modalities/realtime/gpt-live.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

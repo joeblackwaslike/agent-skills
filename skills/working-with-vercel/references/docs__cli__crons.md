@@ -14,8 +14,8 @@ related:
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "6c9da186b8a5543a206628ee8e9fa8a073ffe26efc47b4e24214e5981da8a808"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "efc448d10b162624272f9113eee507f1f9b144694887e93c2fb5361110ca55c6"
 ---
 
 # vercel crons
@@ -36,8 +36,8 @@ The `vercel crons` command (alias `vercel cron`) manages [Cron Jobs](/docs/cron-
 - [Getting started with cron jobs](https://vercel.com/docs/cron-jobs/quickstart?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to schedule cron jobs to run at specific times or intervals.
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel webhooks](https://vercel.com/docs/cli/webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/crons.graph.md](/docs/cli/crons.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fcrons&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

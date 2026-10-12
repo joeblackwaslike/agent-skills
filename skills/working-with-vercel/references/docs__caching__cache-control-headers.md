@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "bc8b94530aa267cd589f6b6ce1378d50654f43dc07b3f7c3e0e8e856f49f9927"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "6f2b0017007ef01c0d07ec5fea73d982985a03d3a81f3e41326967c754fdb488"
 ---
 
 # Cache-Control headers
@@ -33,7 +33,6 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related)
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
 - [Proxied responses now cacheable via CDN-Cache-Control headers](https://vercel.com/changelog/proxied-responses-now-cacheable-via-cdn-cache-control-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related)
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Response headers](https://vercel.com/docs/headers/response-headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [System Headers](https://vercel.com/docs/headers?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status?from=related&source_path=%2Fdocs%2Fcaching%2Fcache-control-headers&source_site=vercel-docs&relationship=related) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass

@@ -4,8 +4,8 @@ description: Learn how to use the Hume provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/hume"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "352538964c0d81dba776930923808aa132c2aca449aa00a69f0ee5d90a00d3c7"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9ef1a96f1d8487ef8ffc43c7e94153617fb8615530aeeb1f3d187534f4a6a535"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Hume](https://hume.ai/) provider contains support for the Hume text-to-spee
 
 The Hume provider is available in the `@ai-sdk/hume` module. You can install it with
 
-**Packages:** `@ai-sdk/hume`
+```bash
+pnpm add @ai-sdk/hume
+```
 
 ## Provider Instance
 

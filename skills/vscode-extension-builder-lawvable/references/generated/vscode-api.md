@@ -1,13 +1,47 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "9258b7765a763ecacdd4371188b243dcb85915c7227b3a585bf5ce7dd1a14a4a"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "b0f3f1f52c675e5d442b606c56bd5375aca08ea8bdf9ca8e5d693f4b6c4a5592"
 ---
 
 # VS Code API
 
 Source: https://code.visualstudio.com/api/references/vscode-api
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/references/vscode-api.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Fvscode-api%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Fvscode-api%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Fvscode-api%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 **VS Code API** is a set of JavaScript APIs that you can invoke in your Visual Studio Code extension. This page lists all VS Code APIs available to extension authors.
 

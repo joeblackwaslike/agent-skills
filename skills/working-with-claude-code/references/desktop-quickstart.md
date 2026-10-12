@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-quickstart.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "a212782dd66fa22239a8c6aea3f76f82afaa224e9857149df0d7055e11a4e150"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "5ee223d2c8ae3ded78de9937030eb7f9de849b59d80a81d4c45a23bbbce0244f"
 ---
 
 > ## Documentation Index
@@ -116,7 +116,7 @@ You've made your first edit. For the full reference on everything Desktop can do
 
 **Use skills for repeatable tasks.** Type `/` or click **+** → **Slash commands** to browse [built-in commands](/docs/en/commands), [custom skills](/docs/en/skills), and plugin skills. Skills are reusable prompts you can invoke whenever you need them, like code review checklists or deployment steps.
 
-**Review changes before committing.** After Claude edits files, a `+12 -1` indicator appears. Click it to open the [diff view](/docs/en/desktop#review-changes-with-diff-view), review modifications file by file, and comment on specific lines. Claude reads your comments and revises. Click **Review code** to have Claude evaluate the diffs itself and leave inline suggestions.
+**Review changes before committing.** After Claude edits files, a `+12 -1` indicator appears. Click it to open the [diff view](/docs/en/desktop#review-changes-with-diff-view), review modifications file by file, and comment on specific lines. Claude reads your comments and revises. To have Claude review the changes itself, enter [`/code-review`](/docs/en/desktop#review-your-code) in the prompt box.
 
 **Adjust how much control you have.** Your [permission mode](/docs/en/desktop#choose-a-permission-mode) sets how much Claude can do without asking for approval:
 

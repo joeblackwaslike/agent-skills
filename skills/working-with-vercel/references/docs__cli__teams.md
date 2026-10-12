@@ -11,11 +11,11 @@ related:
   - /docs/accounts
   - /docs/rbac/managing-team-members
   - /docs/cli/global-options
-summary: Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
+summary: Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "d31627912978ce4ecaaeafb2d541a0fc90558d1b7877523f397b135f33a56551"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "7cd7ed6db96435a26bd59e2fba8a31cbb139089a5395bdaa3e2f33c7294f7a9c"
 ---
 
 # vercel teams
@@ -77,14 +77,14 @@ Paginate results (the value is the cursor in milliseconds since the UNIX epoch):
 vercel teams ls --next 1584722256178
 ```
 
-### `add`
+### `create`
 
-Aliases: `create`.
+Aliases: `add`.
 
 Create a new team. The interactive flow prompts for slug and display name; in non-interactive mode you must pass both `--slug` and `--name`.
 
 ```bash filename="terminal"
-vercel teams add [options]
+vercel teams create [options]
 ```
 
 #### Options
@@ -99,13 +99,13 @@ vercel teams add [options]
 Create a team interactively:
 
 ```bash filename="terminal"
-vercel teams add
+vercel teams create
 ```
 
 Create a team non-interactively:
 
 ```bash filename="terminal"
-vercel teams add --slug acme --name "Acme Corp"
+vercel teams create --slug acme --name "Acme Corp"
 ```
 
 ### `invite`

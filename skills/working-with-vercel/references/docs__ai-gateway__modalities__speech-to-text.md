@@ -15,8 +15,8 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5bfd0b54463a85aa0d9ad2e521d22dee665e48c14a2dce71bc491832b6306a50"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "9afc7389aa56ca12e07f7d4d807e9de5da2d3c4fe98aa584941aba21c7d85da4"
 ---
 
 # AI Gateway Speech to Text
@@ -38,7 +38,6 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 - [transcribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — API Reference for transcribe.
 - [experimental_streamTranscribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — API Reference for experimental_streamTranscribe.
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=related) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Fspeech-to-text&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

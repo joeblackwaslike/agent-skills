@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-09-17
+last_updated: 2026-10-07
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e46a4e27bad039ea53002edd72a5ca8900909f9d74fbbf6744f5a3e39763494f"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1c8be219511be2172a5fc1cbc712f07a2ab47cbc366a0db903740713a1832229"
 ---
 
 # Vercel CLI Overview
@@ -207,7 +207,7 @@ vercel alias ls
 
 ### api
 
-Make authenticated HTTP requests to the Vercel API from your terminal. This is a beta command.
+Make authenticated HTTP requests to the Vercel API from your terminal.
 
 ```bash
 vercel api [endpoint]
@@ -657,8 +657,8 @@ List and query metrics from your terminal, and inspect the schema to discover av
 vercel metrics schema
 vercel metrics schema <metric-or-prefix>
 vercel metrics database.duration_ms --filter 'plan:pro'
-vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
-vercel metrics <metric-id> --all --group-by projectId --since 24h --prod
+vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --prod
+vercel metrics <metric_name> --all --group-by projectId --since 24h --prod
 ```
 
 [Learn more about the metrics command](/docs/cli/metrics)
@@ -674,19 +674,6 @@ vercel microfrontends pull --dpl [deployment-id]
 
 [Learn more about the microfrontends command](/docs/cli/microfrontends)
 
-### oauth-apps
-
-Register Vercel Apps (OAuth) and manage team installations: register new apps, list and dismiss installation requests, install apps with permissions, and uninstall them.
-
-```bash
-vercel oauth-apps list-requests
-vercel oauth-apps register --name "My App" --slug my-app --redirect-uri https://app.example.com/oauth/callback
-vercel oauth-apps install --client-id cl_abc --permission read:project
-vercel oauth-apps remove inst_abc123 --yes
-```
-
-[Learn more about the oauth-apps command](/docs/cli/oauth-apps)
-
 ### open
 
 Open your current project in the Vercel Dashboard.
@@ -696,6 +683,18 @@ vercel open
 ```
 
 [Learn more about the open command](/docs/cli/open)
+
+### pricing
+
+Look up Hobby, Pro, and Enterprise features from the public pricing table.
+
+```bash
+vercel pricing
+vercel pricing "skew protection"
+vercel pricing firewall --json
+```
+
+[Learn more about the pricing command](/docs/cli/pricing)
 
 ### project
 
@@ -980,7 +979,7 @@ vercel vcr login docker
 
 ### webhooks
 
-Manage webhooks for your account. This command is in beta.
+Manage webhooks for your account.
 
 ```bash
 vercel webhooks list

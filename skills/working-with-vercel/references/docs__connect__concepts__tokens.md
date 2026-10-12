@@ -16,8 +16,8 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "daf3f319af9682d67e3d8639c440715ed4eca614ee0aa1ba33d13ef51c231c42"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1d85140d0434ef32cd066f8ff81af760c7316eeb7f03fc6ec037a6701b06e4d5"
 ---
 
 # Provider tokens in Vercel Connect
@@ -39,6 +39,7 @@ A token is a short-lived credential that Vercel Connect issues against a provide
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related)
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/connect/concepts/tokens.graph.md](/docs/connect/concepts/tokens.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftokens&source_site=vercel-docs&relationship=graph)
@@ -70,8 +71,11 @@ const token = await getToken('slack/acme-slack', {
 | `{ type: 'app' }`                                | Your application or bot | Service-level operations: posting from a bot account, calling a tenant-wide admin API.                                              |
 | `{ type: 'user', id: 'user_…' }`                 | A specific user         | Delegated operations: posting as the user, opening a PR with their name on it, querying their data.                                 |
 | `{ type: 'jwt-bearer', sub: 'user@example.com' }` | A federated subject     | Federated identity: exchange a trusted external JWT (from your own IDP, workload identity, etc.) for a provider token.              |
+| `{ token: 'your_subject_token_here' }` | The subject represented by an existing token | Exchange an existing subject token for a provider token. |
 
 For `jwt-bearer`, you can pass optional `iss` and `aud` claims to override the connector's OAuth client id and token endpoint, and `additionalClaims` to carry any extra fields the provider requires. See [SDK Reference](/docs/connect/ts-sdk-reference#types) for the full signature.
+
+For a token exchange subject, pass `{ token: '...' }` or `{ type: 'token', token: '...' }`. The `token` field must be a string. In `@vercel/connect` 2.4.0 and later, the SDK infers `type: 'token'` when you omit it. Other subject types still require `type`.
 
 ## Scoping a token
 

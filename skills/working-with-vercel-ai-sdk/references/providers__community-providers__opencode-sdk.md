@@ -4,8 +4,8 @@ description: Learn how to use the OpenCode provider to access multiple AI models
 url: "https://ai-sdk.dev/providers/community-providers/opencode-sdk"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/opencode-sdk.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "a2f79abd04c0cdc7347319b4bac539506d96b1f7bf288ca4ef199cd9a8ede96a"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "73a6b6decdb8567404a694909c44f3e4dca17b2fa9ef787387e815e2090826eb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -29,7 +29,9 @@ npm install ai-sdk-provider-opencode-sdk@ai-sdk-v5 ai@^5.0.0
 
 ## Setup
 
-**Packages:** `ai-sdk-provider-opencode-sdk`
+```bash
+pnpm add ai-sdk-provider-opencode-sdk
+```
 
 ## Provider Instance
 

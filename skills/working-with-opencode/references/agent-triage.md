@@ -1,14 +1,14 @@
 ---
 mode: primary
 hidden: true
-model: opencode/gpt-6-luna
+model: opencode/gpt-5.4-mini
 color: "#44BA81"
 tools:
   "*": false
   "github-triage": true
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/agent/triage.md"
-fetched_at: "2026-09-28T10:43:11.497Z"
-sha256: "7ba6df54df56ed5a7fa9730119a0eff7a3751fdd6f4e6b738ed653a15c6b0ca3"
+fetched_at: "2026-10-12T11:48:23.877Z"
+sha256: "254cb5e372d883cdd491943778e706c321f0bd5fd6f760e83e7f9ae250beab39"
 ---
 
 You are a triage agent responsible for triaging github issues.

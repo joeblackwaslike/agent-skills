@@ -4,8 +4,8 @@ description: A2A Protocol Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/a2a"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/a2a.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "da6d478e4a7ee5aa1cce0e2c41888a3941b6326334d1e965dbd07e0e885797a1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0a8ffa6bbba6d68b3498927bcd515e74101810c46a3e25f2a0542f40d009ffa3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -27,7 +27,9 @@ Learn more about A2A at the [A2A Project Site](https://a2aproject.github.io/A2A/
 
 Install the `a2a-ai-provider` from npm:
 
-**Packages:** `a2a-ai-provider`
+```bash
+pnpm add a2a-ai-provider
+```
 
 ## Provider Instance
 

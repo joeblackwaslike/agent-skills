@@ -12,8 +12,8 @@ related:
 summary: Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "37bd833dcb041079b56495cae18a5cc1c6f26c7bf17720ab4503c5bedd16d01c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4e525668d5460e21d8eb7478c341e4ee89ea15ca2fec03325ec7ce6ecb55e8dd"
 ---
 
 # vercel upgrade
@@ -29,8 +29,8 @@ The `vercel upgrade` command upgrades the Vercel CLI on your machine to the late
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/upgrade.graph.md](/docs/cli/upgrade.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

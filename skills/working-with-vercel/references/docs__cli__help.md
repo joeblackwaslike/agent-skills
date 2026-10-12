@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/help.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e6626cc15ab1c1f8913e5d831ebc6390ae38409bedd06b4344c8d389cd1a2205"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d554cd6b9295c06627e26002a8de4f52ce770ee25e8f38efef5094472541e17a"
 ---
 
 # vercel help
@@ -30,7 +30,7 @@ The `vercel help` command generates a list of all available Vercel CLI commands 
 - [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation?from=related&source_path=%2Fdocs%2Fcli%2Fhelp&source_site=vercel-docs&relationship=related) — Vercel MCP tools for documentation and cli.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fhelp&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fhelp&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fhelp&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fcli%2Fhelp&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
 
 Full cross-link map for this page: [/docs/cli/help.graph.md](/docs/cli/help.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fhelp&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

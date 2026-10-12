@@ -4,8 +4,8 @@ description: Learn how to use the llama.cpp provider.
 url: "https://ai-sdk.dev/providers/community-providers/llama-cpp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/llama-cpp.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "96f1bdd15b193494dddfaa1eefc469c71c0808a079d11ac42234ff4b24311b0e"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "2a26d63dea4b5b96ee10089421410a113ba5633edfd5b997d06bb3b88d8f700d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -48,7 +48,9 @@ brew install cmake
 
 The llama.cpp provider is available in the `ai-sdk-llama-cpp` module. You can install it with:
 
-**Packages:** `ai-sdk-llama-cpp`
+```bash
+pnpm add ai-sdk-llama-cpp
+```
 
 The installation will automatically compile llama.cpp as a static library with Metal support and build the native Node.js addon.
 

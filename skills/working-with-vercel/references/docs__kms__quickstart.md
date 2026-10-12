@@ -16,8 +16,8 @@ related:
 summary: Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/quickstart.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e35e7ea4c1af4bf7a069947586bc8438d47d780a5a34d6d61b381ba9bc365a44"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "61bf95b19eedb4a3974af9b0cef15acde5e46125df35d018320ff5d2938ba67a"
 ---
 
 # Vercel KMS Quickstart
@@ -59,16 +59,16 @@ Full cross-link map for this page: [/docs/kms/quickstart.graph.md](/docs/kms/qui
   ```
 
 - #### Sign a token from a Vercel Function
-  Call `signToken` inside a route handler. Inside a Vercel Function, the deployment's [OIDC token](/docs/oidc) authorizes the request automatically, so you pass no credentials:
-  > **⚠️ Warning:** `signToken` resolves the function's OIDC token at call time, which requires an
+  Call `signJWT` inside a route handler. Inside a Vercel Function, the deployment's [OIDC token](/docs/oidc) authorizes the request automatically, so you pass no credentials:
+  > **⚠️ Warning:** `signJWT` resolves the function's OIDC token at call time, which requires an
   > active request context. Call it inside a [route
   > handler](https://nextjs.org/docs/app/getting-started/route-handlers) or Server
   > Component, not at the module top level.
   ```ts filename="app/api/sign/route.ts"
-  import { signToken } from '@vercel/kms';
+  import { signJWT } from '@vercel/kms';
 
   export async function GET() {
-    const token = await signToken({
+    const { token } = await signJWT({
       issuerId: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
       claims: { sub: 'user_123', scope: 'read:data' },
       ttl: 300, // seconds

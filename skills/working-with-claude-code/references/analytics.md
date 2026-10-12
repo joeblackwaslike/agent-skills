@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/analytics.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "d60b3bb9f47184676de907d7d2db66a917307c8c337158cb8f85cf92e6fa0a0d"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "0b70ec467f3a1a3d82fa8bdab9e0757ce6a7d7a9907fcbd3214e9465ba635d8f"
 ---
 
 > ## Documentation Index
@@ -69,7 +69,7 @@ Data typically appears within 24 hours after enabling, with daily updates. If no
 * **"GitHub app required"**: install the GitHub app to view contribution metrics
 * **"Data processing in progress"**: check back in a few days and confirm the GitHub app is installed if data doesn't appear
 
-Contribution metrics support GitHub Cloud and GitHub Enterprise Server.
+Contribution metrics cover repositories hosted on github.com. For repositories on [GitHub Enterprise Server](/docs/en/github-enterprise-server), the analytics dashboard shows usage metrics only.
 
 ### Review summary metrics
 

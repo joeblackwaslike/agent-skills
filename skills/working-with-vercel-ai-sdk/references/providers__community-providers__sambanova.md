@@ -4,8 +4,8 @@ description: Learn how to use the SambaNova provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/sambanova"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/sambanova.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b82601463ee0953f5e5a22d59f2e0bbfd42d34bf80d49a2bb8ae3a4a6de4a2ea"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ad0e44b0d82fec137c2a31e7e92291d75c15e5187d61b67436c91fdc36c19c22"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [SambaNova Cloud Platform](https://cloud.samba
 
 The SambaNova provider is available via the `sambanova-ai-provider` module. You can install it with:
 
-**Packages:** `sambanova-ai-provider`
+```bash
+pnpm add sambanova-ai-provider
+```
 
 ### Environment variables
 

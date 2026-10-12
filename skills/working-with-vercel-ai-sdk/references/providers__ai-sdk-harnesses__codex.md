@@ -4,8 +4,8 @@ description: Learn how to use the Codex harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6fc68c7bb3ef07b8f9922e35427a96272e7056d6d76b46534dc89f82951c564e"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "360db62dfdcc3a6c036e575d270edd0df287ab341d901ad38f234a845a8f8612"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,7 +19,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-codex`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel
+```
 
 The adapter bootstraps the Codex bridge dependencies inside the sandbox when
 the first session starts.

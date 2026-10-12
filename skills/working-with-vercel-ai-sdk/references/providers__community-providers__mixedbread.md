@@ -4,8 +4,8 @@ description: Learn how to use the Mixedbread provider.
 url: "https://ai-sdk.dev/providers/community-providers/mixedbread"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/mixedbread.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c60ba2dcdcbd4ccf4ce70d2fede5d25d380c18051d044fa425b9dcc71dafabc8"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c1be4b2c7903ef0b6e3efaccbc2d92f435832cc736a3d41a0a1b280096074aac"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "c60ba2dcdcbd4ccf4ce70d2fede5d25d380c18051d044fa425b9dcc71dafabc8"
 
 The Mixedbread provider is available in the `mixedbread-ai-provider` module. You can install it with
 
-**Packages:** `mixedbread-ai-provider`
+```bash
+pnpm add mixedbread-ai-provider
+```
 
 ## Provider Instance
 

@@ -17,8 +17,8 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7816fb76a05f6fee46c518c58bdd9e000851b2e504a6e10890cdac80b7efb117"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "57a25e98d27fde0fd44d1c65052522710ed1710af8649f51e4c25e8da0b856df"
 ---
 
 # Drives
@@ -38,7 +38,7 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
 - [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/drives — Retrieves a paginated list of drives belonging to a specific project.
 
@@ -162,7 +162,7 @@ sandbox drives get-or-create workspace-cache \
   --region sfo1
 ```
 
-If you omit the maximum size, the drive defaults to 1 TiB (1 GiB for Hobby). Set `maxSize` in TypeScript, `max_size_bytes` in Python, or `--max-size` in the CLI to specify the maximum drive size in bytes. The default maximum quota is 16 TiB.
+If you omit the maximum size, the drive defaults to 1 TiB (1 GiB for Hobby). Set `maxSize` in TypeScript, `max_size_bytes` in Python, or `--max-size` in the CLI to specify the maximum drive size in bytes. The size must be a multiple of 4096 bytes. The default maximum quota is 16 TiB.
 
 Drives are created in `iad1` by default. Set `region` in the SDKs or `--region` in the CLI to store the drive in another [region](/docs/sandbox/concepts/regions#regions-and-drives).
 
@@ -170,7 +170,7 @@ A drive's region can't change after creation. Requesting an existing drive with 
 
 ### Mounting a drive
 
-Mount a drive by passing the drive name and mount path when creating a sandbox. The sandbox must run in the same [region](/docs/sandbox/concepts/regions#regions-and-drives) as the drive. Mount paths must be absolute and cannot overlap with each other.
+Mount a drive by passing the drive name and mount path when creating a sandbox. The sandbox's main [region](/docs/sandbox/concepts/regions#regions-and-drives) must match the drive's region. Mount paths must be absolute and cannot overlap with each other.
 
 Drives are mounted as read-write by default. Only one sandbox at a time can mount a given drive as read-write: use [snapshots](#snapshots) for shared access.
 
@@ -266,6 +266,36 @@ sandbox create --name reader-2 --mount shared:/data:snapshot
 ```
 
 In the CLI, `--mount` uses the format `drive:/path[:read-write|snapshot]`.
+
+### Forking a drive
+
+> **Availability**: Drive forks (Private Beta) are available to Enterprise and Pro plans
+
+You can fork an existing drive into a new drive, copying the drive's data and inheriting its region and maximum size. The fork belongs to the same project. Writes to a forked drive do not change the original drive, allowing you to safely edit a copy while preserving the source data. This can be useful to start a fleet of agents, each working independently on their own read-write copy forked from a base drive.
+
+> **💡 Note:** A drive must be mounted read-write and written to at least once before you can create a fork from it. Creating a fork of a drive that has never been written to fails with a `drive_not_initialized` error.
+
+**index.ts**
+
+```ts filename="index.ts"
+import { Drive, Sandbox } from '@vercel/sandbox';
+
+const drive = await Drive.get({ name: 'workspace-cache' });
+const forkedDrive = await drive.fork({ name: 'workspace-cache-fork' });
+
+const sandbox = await Sandbox.create({
+  region: forkedDrive.region,
+  mounts: { '/data': forkedDrive },
+});
+```
+
+**terminal.sh**
+
+```bash filename="terminal.sh"
+sandbox drives fork workspace-cache workspace-cache-fork
+```
+
+You can mount a forked drive like any other drive. A fork inherit its parent drive data but stores its own changes independently. Use `parentDriveId` to identify the source drive and `rootDriveId` to identify the original drive in a chain of forks.
 
 ### Listing drives
 

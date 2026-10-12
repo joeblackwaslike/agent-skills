@@ -16,8 +16,8 @@ related:
 summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "3f2e69e2458826ae1c7d434712621909777a1d1ae9bc27f6c496189541b7d372"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "27db6af83ee0daf005cf9b03abab68f42cf8a869d7227819d870e69592dd7c5f"
 ---
 
 # vercel firewall
@@ -35,10 +35,10 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to create scalable firewall configurations with Terraform
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related)
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to configure a custom rule with rate limit in your code.
-- [vercel flags](https://vercel.com/docs/cli/flags?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
+- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
 - [vercel routes](https://vercel.com/docs/cli/routes?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ffirewall&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -179,8 +179,8 @@ Each top list is its own query. A dimension your account cannot report marks tha
 
 - `--json`: Output as JSON, including the period, per-action totals and series, and each top list
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
-- `--since <time>`: Start of the window. Defaults to 24 hours ago
-- `--until <time>`: End of the window. Defaults to now
+- `-s, --since <time>`: Start of the window. Defaults to 24 hours ago
+- `-u, --until <time>`: End of the window. Defaults to now
 - `--top <number>`: Rows per top list. Defaults to 5
 - `--dimension <dim>`: Top list to include, from the dimensions above. Repeatable, or comma-separated. Defaults to every dimension except `country` and `action`
 - `--alert <alert-id>`: Scope the window and rule to one alert from [`alerts list`](#alerts-list)
@@ -238,8 +238,8 @@ The breakdown dimension defaults to whichever pairs best with the one being insp
 
 - `--json`: Output as JSON, including the period, totals, series, and the breakdown with a series per row
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
-- `--since <time>`: Start of the window. Defaults to 24 hours ago
-- `--until <time>`: End of the window. Defaults to now
+- `-s, --since <time>`: Start of the window. Defaults to 24 hours ago
+- `-u, --until <time>`: End of the window. Defaults to now
 - `--group-by <dim>`: Dimension to break the traffic down by. Defaults to the one that pairs with the inspected dimension
 - `--top <number>`: Rows in the breakdown. Defaults to 10
 - `--alert <alert-id>`: Scope the window and rule to one alert from [`alerts list`](#alerts-list)
@@ -288,8 +288,8 @@ vercel firewall alerts list
 
 - `--json`: Output as JSON
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
-- `--since <time>`: Start of the window, relative (`24h`, `7d`) or an ISO date. Defaults to 24 hours ago
-- `--until <time>`: End of the window. Defaults to now
+- `-s, --since <time>`: Start of the window, relative (`24h`, `7d`) or an ISO date. Defaults to 24 hours ago
+- `-u, --until <time>`: End of the window. Defaults to now
 
 **Examples:**
 
@@ -345,8 +345,8 @@ vercel firewall persistent-actions list
 
 - `--json`: Output as JSON
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
-- `--since <time>`: Start of the window, relative (`1h`, `6h`) or an ISO date. Defaults to one hour ago
-- `--until <time>`: End of the window. Defaults to now
+- `-s, --since <time>`: Start of the window, relative (`1h`, `6h`) or an ISO date. Defaults to one hour ago
+- `-u, --until <time>`: End of the window. Defaults to now
 - `--limit <number>`: Number of actions to show. Defaults to 10
 
 **Examples:**
@@ -375,8 +375,8 @@ vercel firewall persistent-actions inspect <ip>
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
 - `--host <hostname>`: Narrow to a hostname
 - `--action <action>`: Narrow to a mitigation, such as `challenge` or `deny`
-- `--since <time>`: Start of the window to search for the action. Defaults to one hour ago
-- `--until <time>`: End of the window. Defaults to now
+- `-s, --since <time>`: Start of the window to search for the action. Defaults to one hour ago
+- `-u, --until <time>`: End of the window. Defaults to now
 - `--paths`: Include the top request paths
 
 **Examples:**

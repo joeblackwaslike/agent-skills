@@ -10,20 +10,20 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/functions/limitations
+  - /docs/fluid-compute
+  - /docs/frameworks/backend/hono
   - /docs/functions/functions-api-reference
-  - /docs/services
-  - /docs/functions/runtimes/node-js/advanced-node-configuration
-  - /docs/functions/runtimes/node-js/node-js-versions
-summary: Learn how to use the Node.js runtime to create functions and deploy Node.js servers on Vercel.
+  - /docs/routing/rewrites
+summary: Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "acc9f4b587bd471aee22645fa7f76b4300fcb4f7a6d53b74a620b9093756cb6f"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "abdbdca87febb6e88e565f72dc65afe52406383e2d89d79b501429ff5afdf4f4"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
 
-Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions written in JavaScript or TypeScript.
+Use the Node.js runtime to run Vercel Functions written in JavaScript or TypeScript.
 
 
 <!-- docsgraph:related -->
@@ -42,7 +42,7 @@ Use the Node.js runtime to deploy Node.js HTTP servers or Vercel Functions writt
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -52,82 +52,15 @@ Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/
 - **More RAM and CPU power**: For computationally intense workloads, or functions that need the [Node.js bundle size limits](/docs/functions/limitations#bundle-size-limits), this runtime is ideal
 - **Complete Node.js compatibility**: The Node.js runtime offers access to all Node.js APIs, making it a powerful tool for many applications
 
-## Deploy a Node.js server
-
-Use a Node.js server when you want one HTTP server to route requests for your application. Vercel detects a `server` entrypoint and turns it into a Vercel Function.
-
-Vercel looks for a `server` entrypoint in the project root or the `src/` directory:
-
-- `server.{js,cjs,mjs,ts,cts,mts}`
-- `src/server.{js,cjs,mjs,ts,cts,mts}`
-
-Call `server.listen()` during module startup. Vercel uses that call to detect the HTTP server, then routes incoming requests to the server through an internal port. The port you pass to `listen()` is only used when you run the file locally and does not expose a public port on Vercel.
-
-**server.ts**
-
-```ts filename="server.ts" framework=all
-import { createServer } from 'node:http';
-
-const server = createServer((request, response) => {
-  const url = new URL(
-    request.url ?? '/',
-    `http://${request.headers.host ?? 'localhost'}`
-  );
-
-  if (request.method === 'GET' && url.pathname === '/health') {
-    response.writeHead(200, { 'Content-Type': 'application/json' });
-    response.end(JSON.stringify({ status: 'ok' }));
-    return;
-  }
-
-  response.writeHead(200, { 'Content-Type': 'text/plain' });
-  response.end('Hello from Node.js on Vercel');
-});
-
-server.listen(Number(process.env.PORT ?? 3000));
-```
-
-**server.js**
-
-```js filename="server.js" framework=all
-const { createServer } = require('node:http');
-
-const server = createServer((request, response) => {
-  const url = new URL(
-    request.url ?? '/',
-    `http://${request.headers.host ?? 'localhost'}`
-  );
-
-  if (request.method === 'GET' && url.pathname === '/health') {
-    response.writeHead(200, { 'Content-Type': 'application/json' });
-    response.end(JSON.stringify({ status: 'ok' }));
-    return;
-  }
-
-  response.writeHead(200, { 'Content-Type': 'text/plain' });
-  response.end('Hello from Node.js on Vercel');
-});
-
-server.listen(Number(process.env.PORT ?? 3000));
-```
-
-*A minimal Node.js HTTP server that Vercel can capture from \`server.ts\` or
-\`server.js\`.*
-
-> **💡 Note:** To use ES modules in JavaScript, name the file `server.mjs` or set `"type":
->   "module"` in `package.json`.
-
-Other Vercel Function formats, such as a [Web Handler](/docs/functions/functions-api-reference#function-signature) (`GET`, `POST`, and other method exports), the `fetch` [Web Standard export](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard), or a Node.js `(request, response)` handler, do not need `server.listen()`.
-
-Captured Node.js servers receive standard Node.js `IncomingMessage` and `ServerResponse` objects. They do not include the helper properties added to `/api` function handlers, such as `request.query`, `request.cookies`, and `request.body`.
-
-To deploy a Node.js server alongside a frontend such as a Next.js app within the same project, use [Services](/docs/services).
-
 ## Create a Node.js function in /api
 
-To use the Node.js runtime for an individual Vercel Function, create a file inside the `/api` directory with a function using the [`fetch` Web Standard export](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard). No additional configuration is needed:
+Vercel creates a separate function for each supported source file in the root `api/` directory. Avoid creating a separate function for each API endpoint. Keep related routes in a shared function so [Fluid compute](/docs/fluid-compute#optimized-concurrency) can reuse instances across routes and Vercel builds fewer functions.
 
-```ts filename="api/hello.ts"
+You can use a framework with routing support, such as [Hono](/docs/frameworks/backend/hono), or define a single [`fetch` handler](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard) that receives requests for all HTTP methods and routes them by URL pathname. Keep shared utilities and route modules outside `api/` and import them from your function entry point.
+
+Create a shared API entry point in the root `api/` directory using the [`fetch` Web Standard export](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard). As your API grows, add routing logic to this handler and configure [rewrites](/docs/routing/rewrites) to send related API paths to the same function:
+
+```ts filename="api/index.ts"
 export default {
   fetch(request: Request) {
     return new Response('Hello from Vercel!');
@@ -137,11 +70,15 @@ export default {
 
 Alternatively, you can export each HTTP method as a separate export instead of using the `fetch` Web Standard export:
 
-```ts filename="api/hello.ts"
+```ts filename="api/index.ts"
 export function GET(request: Request) {
   return new Response('Hello from Vercel!');
 }
 ```
+
+> **💡 Note:** To use native ES modules in JavaScript handlers, use `.mjs` (for example,
+> `api/index.mjs`) or set `"type": "module"` in the nearest `package.json`.
+> Otherwise, Vercel compiles ES module syntax in `.js` files to CommonJS.
 
 To learn more about creating Vercel Functions, see the [Functions API Reference](/docs/functions/functions-api-reference). If you need more advanced behavior, such as a custom build step or private npm modules, see the [advanced Node.js usage page](/docs/functions/runtimes/node-js/advanced-node-configuration).
 
@@ -169,8 +106,7 @@ If you need to select a specific version of a package manager, see [corepack](/d
 
 ## Using TypeScript with the Node.js runtime
 
-The Node.js runtime supports TypeScript files for server entrypoints and files
-inside of the `/api` directory.
+The Node.js runtime supports TypeScript files inside the `/api` directory.
 
 An example TypeScript file that exports a Web signature handler is as follows:
 
@@ -231,7 +167,7 @@ and \`request.body\` helpers. It returns greetings for the user specified using
 \`response.send()\`.*
 
 > **💡 Note:** If needed, you can opt-out of Vercel providing `helpers` using [advanced
-> configuration](#disabling-helpers-for-node.js).
+> configuration](/docs/functions/runtimes/node-js/advanced-node-configuration).
 
 ### Request body
 
@@ -305,60 +241,6 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 ## Using Express with Vercel
 
 Express.js is a popular framework used with Node.js. For information on how to use Express with Vercel, see the guide: [Using Express.js with Vercel](/kb/guide/using-express-with-vercel).
-
-## Using Node.js with middleware
-
-The Node.js runtime can be used as an experimental feature to run middleware. To enable, add the flag to your `next.config.ts` file:
-
-**next.config.ts**
-
-```ts filename="next.config.ts" framework=all
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
-  experimental: {
-    nodeMiddleware: true,
-  },
-};
-
-export default nextConfig;
-```
-
-**next.config.ts**
-
-```js filename="next.config.ts" framework=all
-const nextConfig = {
-  experimental: {
-    nodeMiddleware: true,
-  },
-};
-
-export default nextConfig;
-```
-
-Then in your middleware file, set the runtime to `nodejs` in the `config` object:
-
-**middleware.ts**
-
-```js {3} filename="middleware.ts" framework=all
-export const config = {
-  matcher: '/about/:path*',
-  runtime: 'nodejs',
-};
-```
-
-**middleware.ts**
-
-```ts {3} filename="middleware.ts" framework=all
-export const config = {
-  matcher: '/about/:path*',
-  runtime: 'nodejs',
-};
-```
-
-> **💡 Note:** Running middleware on the Node.js runtime incurs charges under [Vercel
-> Functions pricing](/docs/functions/usage-and-pricing#pricing). These functions
-> only run using [Fluid compute](/docs/fluid-compute#fluid-compute).
 
 
 ---

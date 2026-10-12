@@ -1,8 +1,8 @@
 ---
-model: opencode/gpt-6-luna
+model: opencode/gpt-5.4
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/.opencode/command/changelog.md"
-fetched_at: "2026-09-28T10:43:11.497Z"
-sha256: "f1861a12b139ef6fe98c8b9009aa86d0baedef2dfb7ee334bd2f68cf5dffa371"
+fetched_at: "2026-10-12T11:48:23.877Z"
+sha256: "e299dd8ca2911f8ea5320cc069a0edbd57dbfaacf5d644092ecdf6907201659d"
 ---
 
 Create `UPCOMING_CHANGELOG.md` from the structured changelog input below.

@@ -4,8 +4,8 @@ description: API Reference for streamText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "eba38d1df88d41826476032557638eb9cfe9b3644cf540d3efc4365591f5166f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "e9d5598ac7ff6749d976e86498173a2f9fcb08cd6a689b3e496c60fd0a70d820"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -115,11 +115,11 @@ import { streamText } from "ai"
 - `frequencyPenalty?` (`number`): Frequency penalty setting. It affects the likelihood of the model to repeatedly use the same words or phrases. The value is passed through to the provider. The range depends on the provider and model.
 - `stopSequences?` (`string[]`): Sequences that will stop the generation of the text. If the model generates any of these sequences, it will stop generating further text.
 - `seed?` (`number`): The seed (integer) to use for random sampling. If set and supported by the model, calls will generate deterministic results.
-- `reasoning?` (`'provider-default' | 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'`): Controls how much reasoning the model performs before generating a response. When omitted, the provider's default behavior is used. \`'provider-default'\` explicitly requests the provider's default. Providers that do not support reasoning will emit a warning. If reasoning-related \`providerOptions\` are also set, they take precedence and this parameter is ignored. See the \[reasoning guide]\(/docs/ai-sdk-core/reasoning) for provider-specific mapping details.
+- `reasoning?` (`'provider-default' | 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'max'`): Controls how much reasoning the model performs before generating a response. When omitted, the provider's default behavior is used. \`'provider-default'\` explicitly requests the provider's default. Providers that do not support reasoning will emit a warning. Provider-specific settings take precedence over corresponding mapped fields. Partial configurations may still use portable reasoning to fill missing fields; summary and display settings can be combined with it. See the \[reasoning guide]\(/docs/ai-sdk-core/reasoning) for provider-specific mapping details.
 - `maxRetries?` (`number`): Maximum number of retries. Set to 0 to disable retries. Default: 2.
 - `streamRetries?` (`number`): Maximum number of automatic retries for provider error events received after response streaming begins. Retries rerun only the current model step and preserve completed earlier steps and their tool results. Tool-related output and client-side tool work from failed attempts are discarded; other output already emitted cannot be retracted, but is excluded from the recovered step result, structured output parsing, response messages, and subsequent model steps. Final request and response metadata come from the recovered attempt. Open text and reasoning parts are ended before recovered output begins. onStepStart runs once for the logical step, onLanguageModelCallStart runs for each attempt, and onLanguageModelCallEnd runs for attempts that reach a model-call finish. Provider-executed tool work cannot be undone and may repeat. Set to 0 to disable automatic retries while allowing onError to request one callback-directed retry. With automatic retries configured, onError can request at most one additional retry after they are exhausted, bounding total recovery calls to streamRetries + 1. Omit to disable all stream retry behavior and preserve incremental tool streaming for existing onError observers. Default: 0.
-- `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
-- `timeout?` (``number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number; toolMs?: number; tools?: Partial<Record<`${toolName}Ms`, number>> }``): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, chunkMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each individual step (LLM call). firstChunkMs sets the timeout until the first content-bearing output in each step; metadata, stream starts, empty deltas, raw chunks, and transport activity do not satisfy it. chunkMs sets the timeout between content-bearing output chunks after output has started; non-content chunks do not reset it. toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern \{toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.
+- `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call. When it fires during streaming, pending result promises such as text and steps reject with the abort reason without waiting for onAbort or provider cancellation. Completed steps are available through onAbort.
+- `timeout?` (``number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number; toolMs?: number; tools?: Partial<Record<`${toolName}Ms`, number>> }``): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, chunkMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each complete step, including model generation, retries, and local tool execution. firstChunkMs sets the timeout until the first content-bearing output in each step; metadata, stream starts, empty deltas, raw chunks, and transport activity do not satisfy it. chunkMs starts with the first meaningful model output and limits gaps between subsequent meaningful model output chunks. Both output timers stop when the model response finishes and start fresh for each retry or later model call. Local tool results, including preliminary results, do not reset them; local tool execution is outside their scope. Provider-executed tools remain within the model response. toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern \{toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.
 - `headers?` (`Record<string, string | undefined>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
 - `telemetry?` (`TelemetryOptions`): Telemetry configuration.
   - `TelemetryOptions`
@@ -410,7 +410,7 @@ import { streamText } from "ai"
     - `include` (`{ requestBody?: boolean; requestMessages?: boolean } | undefined`): Settings for controlling what data is included in step results.
     - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object that flows through the entire generation lifecycle.
     - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`, keyed by tool name.
-- `onStepStart?` (`(event: GenerateTextStepStartEvent) => PromiseLike<void> | void`): Callback that is called when a step (LLM call) begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.
+- `onStepStart?` (`(event: GenerateTextStepStartEvent) => PromiseLike<void> | void`): Callback that is called when a step begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.
   - `GenerateTextStepStartEvent`
     - `stepNumber` (`number`): Zero-based index of the current step.
     - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
@@ -481,7 +481,7 @@ import { streamText } from "ai"
 
 ### Returns
 
-- `content` (`Promise<Array<ContentPart<TOOLS>>>`): The content that was generated in all steps. Automatically consumes the stream.
+- `content` (`Promise<Array<ContentPart<TOOLS>>>`): The content that was generated in all steps. Text parts can include an optional citations array of references supporting that text. Automatically consumes the stream.
 - `finishReason` (`PromiseLike<'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'>`): The reason why the generation finished. Automatically consumes the stream.
 - `rawFinishReason` (`PromiseLike<string | undefined>`): The raw reason why the generation finished (from the provider).
 - `usage` (`Promise<LanguageModelUsage>`): The total token usage of the generated response. When there are multiple steps, the usage is the sum of all step usages. Automatically consumes the stream.
@@ -601,6 +601,11 @@ import { streamText } from "ai"
 - `textStream` (`AsyncIterableStream<string>`): A text stream that returns only the generated text deltas. You can use it as either an AsyncIterable or a ReadableStream. Error parts are not surfaced in this stream. Use the \`onError\` callback or \`stream\` to observe them.
 - `finalStep` (`Promise<StepResult>`): The final step. This is a shortcut for \`steps.at(-1)\`. Automatically consumes the stream.
 - `stream` (`AsyncIterable<TextStreamPart<TOOLS>> & ReadableStream<TextStreamPart<TOOLS>>`): A stream with all events, including text deltas, tool calls, tool results, and errors. Well-formed mid-stream provider failures are emitted in error parts as StreamProviderError instances. You can use it as either an AsyncIterable or a ReadableStream. Only errors that stop the stream, such as network errors, are thrown.
+  - `TextStreamTextEndPart`
+    - `type` (`'text-end'`): The event type.
+    - `id` (`string`): The text block ID.
+    - `citations?` (`Array<Citation>`): References supporting this text block. Each citation contains a URL or document source, optional startIndex/endIndex offsets in this block, and an optional citedText passage from the source.
+    - `providerMetadata?` (`ProviderMetadata`): Additional provider metadata, including raw annotations.
   - `TextStreamPart`
     - `type` (`'text'`): The type to identify the object as text.
     - `text` (`string`): The text content.
@@ -729,6 +734,8 @@ import { streamText } from "ai"
 - `toUIMessageStream` (`(options?: UIMessageStreamOptions) => AsyncIterableStream<UIMessageChunk>`): Converts the result to a UI message stream. Returns an AsyncIterableStream that can be used as both an AsyncIterable and a ReadableStream. The stream includes tool approval request and response chunks, including automatic approval metadata when available.
   - `UIMessageStreamOptions`
     - `originalMessages?` (`UIMessage[]`): The original messages.
+    - `onStepEnd?` (`(event: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; }) => PromiseLike<void> | void`): Called after each step is converted to UI message parts. Receives the accumulated response message, including step metadata, for inspection or persistence. This UI conversion callback is separate from the generation callback passed to streamText.
+    - `onStepFinish?` (`(event: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; }) => PromiseLike<void> | void`): Deprecated alias for onStepEnd.
     - `onEnd?` (`(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void`): Callback function called when the stream ends. Provides the updated messages, continuation, abort and consumer-cancellation state, model finish reason, and operation-level outcome.
     - `onFinish?` (`(options: { messages: UIMessage[]; isContinuation: boolean; responseMessage: UIMessage; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; finishReason?: FinishReason; }) => PromiseLike<void> | void`): Deprecated alias for \`onEnd\`.
     - `messageMetadata?` (`(options: { part: TextStreamPart<TOOLS> & { type: "start" | "finish" | "start-step" | "finish-step"; }; }) => unknown`): Extracts message metadata that will be sent to the client. Called on start and finish events.

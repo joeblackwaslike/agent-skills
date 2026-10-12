@@ -14,8 +14,8 @@ related:
 summary: Use the Vercel CLI to query Speed Insights metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "7c6362699ccd424331ff034aa232df51eb2017b1aa003bf610d25ead0dd6c932"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "80d93c1061d38aa10def9fa130864e692e6d48371c410cf8ac9593f1e8922530"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -34,7 +34,7 @@ Use `vercel metrics` to query Speed Insights data from your terminal. You can re
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 
 Full cross-link map for this page: [/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md](/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Faccessing-metrics-with-vercel-cli&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8e1df6e297eacbecab7d4d1211ad0b82afa24645eaf319ff70df77afa561b654"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b692d7579f179fa448ce3eaa26817c63a578f2b4aae83475fb0bab07c5169d27"
 ---
 
 # Using Drains
@@ -92,7 +92,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
 
   **Payload Size**
 
-  Vercel batches drained data into payloads of up to 5 MB.
+  Vercel batches drained data into payloads of up to 1 MB.
 
   **Format**
 

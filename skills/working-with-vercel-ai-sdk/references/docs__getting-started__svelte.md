@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Svelte.
 url: "https://ai-sdk.dev/docs/getting-started/svelte"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/svelte.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "72d49ea1dccb80218f2cd51504b0ca47142a91881a9bbcc899f8438372a74ee3"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "1040c32e7e291e034df02f242fc6b1843023f000d4a499588ab4a98d976a968d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -48,7 +48,9 @@ models from different providers with one API key, but you can switch to any
 provider or model by installing its package. Check out available [AI SDK
 providers](/providers/ai-sdk-providers) for more information.
 
-**Packages:** `ai`, `@ai-sdk/svelte`, `zod`
+```bash
+pnpm add -D ai @ai-sdk/svelte zod
+```
 
 ### Configure your AI Gateway API key
 
@@ -142,7 +144,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';

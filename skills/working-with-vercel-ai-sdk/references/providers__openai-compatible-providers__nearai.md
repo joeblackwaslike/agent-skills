@@ -4,8 +4,8 @@ description: Use the NEAR AI Cloud OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/nearai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3a5e41aa157cb0c18c76ce26209a5c214a622c304971e9a20c98aa66ce0b2ec7"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "a93203d66bc646f82a8beaeff8915b8f06d1e65de7d8d4ec1809628e773ff664"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "3a5e41aa157cb0c18c76ce26209a5c214a622c304971e9a20c98aa66ce0b2ec7"
 
 The NEAR AI Cloud provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 ## Provider Instance
 

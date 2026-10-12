@@ -4,8 +4,8 @@ description: Learn how to use the Topaz Labs provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/topaz"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/topaz.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "bfc940776b73398a387c44df948edc64f1b80e20be3fe17763b70ccd3147db84"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3cba06f387c79db218dc4be407d47aaf8e40e087eaa666fb7f23c1d43a95eea5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ Topaz models **enhance media you supply**. They upscale, denoise, sharpen and re
 
 The Topaz Labs provider is available in the `@ai-sdk/topaz` module. You can install it with
 
-**Packages:** `@ai-sdk/topaz`
+```bash
+pnpm add @ai-sdk/topaz
+```
 
 ## Provider Instance
 

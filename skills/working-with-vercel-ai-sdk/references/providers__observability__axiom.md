@@ -4,8 +4,8 @@ description: Measure, observe, and improve your AI SDK application with Axiom
 url: "https://ai-sdk.dev/providers/observability/axiom"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/axiom.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5e9453f7c2efadce3567fde4fbc2b3e513be31618403a1d5b2f8e4fdd8ef2041"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "dce6f891b769a2e8a0da353eda241214f93b1b2b1972dc19c5f571fde4409433"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -28,7 +28,9 @@ First, you'll need an Axiom organization, a dataset to send traces to, and an AP
 
 Install the Axiom package in your project:
 
-**Packages:** `axiom`
+```bash
+pnpm add axiom
+```
 
 ### 3. Set Environment Variables
 
@@ -56,7 +58,9 @@ To send data to Axiom, configure a tracer. For example, use a dedicated instrume
 
 1. Install dependencies:
 
-**Packages:** `dotenv`, `@opentelemetry/exporter-trace-otlp-http`, `@opentelemetry/resources`, `@opentelemetry/sdk-node`, `@opentelemetry/sdk-trace-node`, `@opentelemetry/semantic-conventions`, `@opentelemetry/api`
+```bash
+pnpm add dotenv @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources @opentelemetry/sdk-node @opentelemetry/sdk-trace-node @opentelemetry/semantic-conventions @opentelemetry/api
+```
 
 2. Create instrumentation file:
 

@@ -4,8 +4,8 @@ description: Learn how to use the Anthropic Vertex provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/anthropic-vertex-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/anthropic-vertex-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f3ad37bd3d66cdaf239b866010eb3694c3b2e8c4ce05f634907800123a5bb7cc"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "896beacc1cfdd537bc22d8cfd50deb535abcfe3147ef4ca19cb3d884b97b90fe"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -23,7 +23,9 @@ provider](/providers/ai-sdk-providers).
 
 The AnthropicVertex provider is available in the `anthropic-vertex-ai` module. You can install it with:
 
-**Packages:** `anthropic-vertex-ai`
+```bash
+pnpm add anthropic-vertex-ai
+```
 
 ## Provider Instance
 

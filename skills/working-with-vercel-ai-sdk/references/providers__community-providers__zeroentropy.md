@@ -4,8 +4,8 @@ description: Learn how to use the ZeroEntropy community provider.
 url: "https://ai-sdk.dev/providers/community-providers/zeroentropy"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/zeroentropy.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "79645db7b7bb510b2ecb597ef714c18db7c3ff9dd617e0341e85123e0c9720ab"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "34f0b78eb03eb49d03257d6f0d4214745b8d92dc881bb8a624b835d065add1ac"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "79645db7b7bb510b2ecb597ef714c18db7c3ff9dd617e0341e85123e0c9720ab"
 
 The ZeroEntropy provider is available in the `zeroentropy-ai-provider` module. You can install it with:
 
-**Packages:** `zeroentropy-ai-provider`
+```bash
+pnpm add zeroentropy-ai-provider
+```
 
 ## Provider Instance
 

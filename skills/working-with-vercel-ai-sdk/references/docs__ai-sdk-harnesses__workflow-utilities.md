@@ -4,8 +4,8 @@ description: Run HarnessAgent turns as durable Workflow DevKit workflows.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6e6c2a95c811cecbb342cf4d7822708011f64bcb6d6e53cb5fb7331f7f437e0e"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "fe26cc51d207b1498b95c42a00ea16f45d09d2c99319470a37e81a6eda1be31a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -25,7 +25,9 @@ before following the examples.
 
 ## Installation
 
-**Packages:** `@ai-sdk/workflow-harness`, `workflow`
+```bash
+pnpm add @ai-sdk/workflow-harness workflow
+```
 
 In addition to the workflow specific packages, install the core harness package,
 a harness adapter, and a sandbox adapter as shown in

@@ -4,8 +4,8 @@ description: "Learn how to use Z.AI's GLM models with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/zai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "a0ee797ea2b6f53202f58c728eda9fda449e8a0fc816597e64dd62c646caf745"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "72583dbd41f303253710c1a29cec146a6242197b3aef766771e19ad62d6bf5f0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be created in the [Z.AI API key console](https://z.ai/manage-apikey
 
 The Z.AI provider is available through the `@ai-sdk/zai` package. Install it with:
 
-**Packages:** `@ai-sdk/zai`
+```bash
+pnpm add @ai-sdk/zai
+```
 
 Set the `ZAI_API_KEY` environment variable:
 

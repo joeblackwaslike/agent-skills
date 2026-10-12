@@ -4,8 +4,8 @@ description: Monitor and optimize your AI SDK applications with minimal configur
 url: "https://ai-sdk.dev/providers/observability/helicone"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/helicone.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "52029b1edc27f40e6233c2cc8461adc0ec1cbb5cc151181c51ee0a1ace3a9533"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "2e26d63a79a52b422ec6619c29ca022cf571d6beed32e352e8e4d87aee25ae99"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "52029b1edc27f40e6233c2cc8461adc0ec1cbb5cc151181c51ee0a1ace3a9533"
 
 The Helicone provider is available in the `@helicone/ai-sdk-provider` package. Install it with:
 
-**Packages:** `@helicone/ai-sdk-provider`
+```bash
+pnpm add @helicone/ai-sdk-provider
+```
 
 Setting up Helicone:
 

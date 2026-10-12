@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0619c1fe2b51fd544e819e60c514ffeb07102b78d80027375cdd2b5e6925f07c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c032ba6f994a650b9b107d49e00fa3da75b7abe6391b9c6373a7cf9e2fbcb388"
 ---
 
 # OpenAI Responses API with AI Gateway
@@ -33,10 +33,10 @@ The [OpenAI Responses API](https://developers.openai.com/api/reference/responses
 
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
+- [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [GPT-6.1 Sol now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-sol-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
-- [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
+- [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
-- [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related)
 - [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Get started with the OpenAI Responses API using the AI SDK.
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fresponses&source_site=vercel-docs&relationship=related) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.

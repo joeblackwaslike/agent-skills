@@ -4,8 +4,8 @@ description: Telnyx provider for AI SDK 7
 url: "https://ai-sdk.dev/providers/community-providers/telnyx"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/telnyx.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d46c6262c76d9911cc8fccc89cef9a4c97d25268ee73e250cda67986e9243e06"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "46cf79106bcc678956878d271992de348e3cd424feb3caae1646d7a0a863ccad"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -101,11 +101,11 @@ const { embedding } = await embed({
 console.log(embedding);
 ```
 
-### `experimental_transcribe`
+### `transcribe`
 
 ```typescript
 import { telnyx } from '@telnyx/ai-sdk-provider';
-import { experimental_transcribe as transcribe } from 'ai';
+import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
@@ -116,11 +116,11 @@ const result = await transcribe({
 console.log(result.text);
 ```
 
-### `experimental_generateSpeech`
+### `generateSpeech`
 
 ```typescript
 import { telnyx } from '@telnyx/ai-sdk-provider';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { generateSpeech } from 'ai';
 
 const { audio } = await generateSpeech({
   model: telnyx.speech('Telnyx.NaturalHD.astra'),

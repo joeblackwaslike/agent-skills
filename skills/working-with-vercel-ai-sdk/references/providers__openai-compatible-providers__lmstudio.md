@@ -4,8 +4,8 @@ description: Use the LM Studio OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7c60851f03d443c7d646bd4b9a0a931d46d2553d7466c914214cfeaa2879eb4f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "53d1b32dfe5eb7eb538a6640dd56d19edf13e6bd0495cdc055b3d0fbfa209fbf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ You can start the local server under the [Local Server tab](https://lmstudio.ai/
 The LM Studio provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API.
 You can install it with
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 ## Provider Instance
 
@@ -59,7 +61,7 @@ import { generateText } from 'ai';
 
 const lmstudio = createOpenAICompatible({
   name: 'lmstudio',
-  baseURL: 'https://localhost:1234/v1',
+  baseURL: 'http://localhost:1234/v1',
 });
 
 const { text } = await generateText({
@@ -88,7 +90,7 @@ import { embed } from 'ai';
 
 const lmstudio = createOpenAICompatible({
   name: 'lmstudio',
-  baseURL: 'https://localhost:1234/v1',
+  baseURL: 'http://localhost:1234/v1',
 });
 
 // 'embedding' is a single embedding object (number[])
@@ -113,7 +115,7 @@ import { embedMany } from 'ai';
 
 const lmstudio = createOpenAICompatible({
   name: 'lmstudio',
-  baseURL: 'https://localhost:1234/v1',
+  baseURL: 'http://localhost:1234/v1',
 });
 
 // 'embeddings' is an array of embedding objects (number[][]).

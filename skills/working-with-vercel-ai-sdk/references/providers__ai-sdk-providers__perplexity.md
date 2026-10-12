@@ -4,8 +4,8 @@ description: "Learn how to use Perplexity's Agent API with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b61822d499e277e4fab8ac06e2d906ab008168bbf49e36883f9bb26d9f1406f6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "86a6ba570f222b9a05898638e5b7e6ad2ad0b3b48667baee764db3b1c04ae449"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ API keys can be obtained from the [Perplexity Platform](https://docs.perplexity.
 
 The Perplexity provider is available via the `@ai-sdk/perplexity` module. You can install it with:
 
-**Packages:** `@ai-sdk/perplexity`
+```bash
+pnpm add @ai-sdk/perplexity
+```
 
 ## Provider Instance
 

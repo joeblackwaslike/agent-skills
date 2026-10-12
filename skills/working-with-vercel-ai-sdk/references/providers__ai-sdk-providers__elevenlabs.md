@@ -4,8 +4,8 @@ description: Learn how to use the ElevenLabs provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "9021d5819da9cb605cb6a31d5926953ef3498de240b3a15c36786a1d6d098426"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9fdf71f57e069f89b5c59c338e4969d549c9196b0de1d7c450b828d843296785"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [ElevenLabs](https://elevenlabs.io/) provider contains language model suppor
 
 The ElevenLabs provider is available in the `@ai-sdk/elevenlabs` module. You can install it with
 
-**Packages:** `@ai-sdk/elevenlabs`
+```bash
+pnpm add @ai-sdk/elevenlabs
+```
 
 ## Provider Instance
 

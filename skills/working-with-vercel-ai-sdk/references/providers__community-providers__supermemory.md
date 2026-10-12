@@ -4,8 +4,8 @@ description: Learn how to use the Supermemory AI SDK provider for the Vercel AI 
 url: "https://ai-sdk.dev/providers/community-providers/supermemory"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/supermemory.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b46d067ca5f51d57b3193310164ee0e8ab1537d514989790fca434a21136308e"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "66eedf0f3283bc29fda8681e9d3c8fd961ec56ffd3525d38a4d3998244c6d4e3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -25,7 +25,9 @@ Learn more about Supermemory's capabilities in the [Supermemory Documentation](h
 
 The Supermemory provider is available in the `@supermemory/tools` module. You can install it with:
 
-**Packages:** `@supermemory/tools`
+```bash
+pnpm add @supermemory/tools
+```
 
 ## Provider Instance
 

@@ -1,8 +1,8 @@
 ---
 title: "VS Code create dev container"
 source: "https://code.visualstudio.com/docs/devcontainers/create-dev-container"
-fetched_at: "2026-10-05T11:12:30.813Z"
-sha256: "5de6193b1e87f9abc6f111fe8f5c6681f0706b78c84329454bdf13d1b4184811"
+fetched_at: "2026-10-12T11:41:07.891Z"
+sha256: "c1bbd64a81024ebaec936a518ee263bcb422c977acb6969741dec5e3e8eab29b"
 ---
 
 # VS Code create dev container
@@ -12,6 +12,40 @@ Source: https://code.visualstudio.com/docs/devcontainers/create-dev-container
 # Create a Dev Container
 
 
+                
+                
+
+
+	
+		
+			
+			Copy as Markdown
+		
+		
+			
+		
+		
+			- Copy as Markdown
+
+			- View as Markdown
+
+			- 
+
+			- Ask in VS Code
+
+			- Ask in VS Code Insiders
+
+		
+
+	
+	
+		[Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fdevcontainers%2Fcreate-dev-container%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+	
+
+
+                
+                
+                
 The Visual Studio Code Dev Containers extension lets you use a Docker container as a full-featured development environment. It allows you to open any folder or repository inside a container and take advantage of Visual Studio Code's full feature set. A `devcontainer.json` file in your project tells VS Code how to access (or create) a development container with a well-defined tool and runtime stack. This container can be used to run an application or to provide separate tools, libraries, or runtimes needed for working with a codebase.
 
 
@@ -604,4 +638,4 @@ The path used for looking up the configuration is derived from the output of `gi
 
                 
                 
-                9/30/2026
+                10/7/2026

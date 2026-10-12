@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-scheduled-tasks.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "09b06688da8c5bd6216fd763505496d118d213f9949f488cd55f47d9bf76c9ef"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "9bd3f40f36f87702eafff5ba47fa826db66f860c5f18d11029b8a1b82e59f954"
 ---
 
 > ## Documentation Index
@@ -79,7 +79,7 @@ Tasks only run while the desktop app is running and your computer is awake. If y
 
 When the app starts or your computer wakes, Desktop checks whether each task missed any runs in the last seven days. If it did, Desktop starts exactly one catch-up run for the most recently missed time and discards anything older. A daily task that missed six days runs once on wake. Desktop shows a notification when a catch-up run starts.
 
-Keep this in mind when writing prompts. A task scheduled for 9am might run at 11pm if your computer was asleep all day. If timing matters, add guardrails to the prompt itself, for example: "Only review today's commits. If it's after 5pm, skip the review and just post a summary of what was missed."
+Keep this in mind when writing prompts. A task scheduled for 9am might run at 11pm if your computer was asleep all day. If timing matters, add guardrails to the prompt itself, for example: "Only review today's commits. If it's after 5pm, skip the review and post a summary of what was missed."
 
 ## Permissions for scheduled tasks
 

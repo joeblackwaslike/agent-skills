@@ -4,8 +4,8 @@ description: Learn how to control reasoning across providers with the top-level 
 url: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "aa1444102426286141cc4936ff176713fa7e61605705a725b6ff7f411f3a729d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "8df2304791fe3e0f8c977fd79fc747418892a787ebff4fb4b813eb306028bb27"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -34,7 +34,8 @@ The `reasoning` parameter accepts the following values:
 | `'low'`              | Fast, concise reasoning                                              |
 | `'medium'`           | Balanced reasoning                                                   |
 | `'high'`             | Thorough reasoning                                                   |
-| `'xhigh'`            | Maximum reasoning                                                    |
+| `'xhigh'`            | Extra-high reasoning                                                 |
+| `'max'`              | Maximum reasoning                                                    |
 
 ## Streaming
 
@@ -60,7 +61,7 @@ for await (const part of result.stream) {
 
 ## Precedence Rules
 
-The top-level `reasoning` parameter and provider-specific `providerOptions` are **never merged**. If you set reasoning-related options in `providerOptions`, they take full precedence and the top-level `reasoning` parameter is ignored.
+Provider-specific settings take precedence over the corresponding fields derived from `reasoning`. Partial configurations may still use portable reasoning to fill missing fields; summary and display settings can be used alongside it.
 
 ```ts
 import { generateText } from 'ai';
@@ -82,9 +83,15 @@ This design lets you use the portable `reasoning` parameter by default and fall 
 
 ## Provider Support
 
-The `reasoning` parameter is supported by the following providers: OpenAI, Anthropic, Google, xAI, Groq, DeepSeek, Fireworks, Amazon Bedrock, and Perplexity. Each provider translates the value to its native reasoning API. Some providers support all six levels natively, while others coerce to fewer levels (a warning is emitted when coercion occurs). Some providers use a numeric token budget instead of an enum for reasoning control; in those cases the top-level `reasoning` value is mapped to a budget calculated as a percentage of the model's maximum output tokens.
+The `reasoning` parameter is supported by providers including OpenAI, Anthropic, Google, xAI, Groq, DeepSeek, Moonshot AI, Fireworks, Amazon Bedrock, Mistral, Cohere, Alibaba, Open Responses, OpenAI Compatible, and Perplexity. Each provider translates the value to its native reasoning API.
 
-Providers that do not support reasoning (e.g. Mistral and Cohere) emit an `unsupported` warning and ignore the parameter.
+Providers with a distinct native maximum tier, such as supported OpenAI, Anthropic, DeepSeek, and Moonshot AI models, receive `'max'` directly. Amazon Bedrock preserves `'max'` for its Anthropic and OpenAI effort mappings, while Amazon Nova 2 maps `'xhigh'` and `'max'` to `'high'` with a compatibility warning. Providers whose highest native tier is lower coerce `'max'` to their closest supported tier and emit a compatibility warning when their adapter supports warning propagation. OpenAI-compatible and Open Responses endpoints receive `'max'` directly so compatible servers can interpret it.
+
+Some providers use a numeric token budget instead of an enum for reasoning control. In those cases, `'max'` maps to 95% of the model's maximum output tokens by default, subject to the provider's minimum and maximum reasoning budget limits.
+
+Maximum reasoning can substantially increase token usage, latency, cost, and the chance of reaching request or output limits. Use it when the model's additional reasoning depth is worth those tradeoffs.
+
+Providers and models that do not support reasoning configuration emit an `unsupported` warning and ignore the parameter.
 
 ## Migrating from `providerOptions`
 
@@ -193,7 +200,7 @@ const { text } = await generateText({
 });
 ```
 
-Note that `providerOptions` can still be used alongside `reasoning` for provider-specific features unrelated to reasoning effort. However, if `providerOptions` includes reasoning effort/budget settings (e.g. `reasoningEffort`, `thinking`, `thinkingConfig.thinkingBudget`), those take full precedence and the top-level `reasoning` parameter is ignored.
+You can combine `providerOptions` with `reasoning` for provider-specific features such as reasoning summaries or display settings. Explicit effort or budget values override the corresponding mapped fields; partial configurations may still use portable reasoning to fill missing fields. See [Precedence Rules](#precedence-rules) for details.
 
 ---
 

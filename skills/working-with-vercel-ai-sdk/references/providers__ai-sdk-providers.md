@@ -4,8 +4,8 @@ description: Learn how to use AI SDK providers.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "27bdd330a4b4fdf2046fbbb0d92cb9f0c83d0adf66536a506646802eea01c690"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cf2b6ea55731ab6ca315456bc0b47a2bf4259f9b595a692bd4a812d54daa63a9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -50,6 +50,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-5-5`                                   | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5-5`                                 | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5`                                   | ✓           | ✓                 | ✓          | ✓              |
+| [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-haiku-5-5`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5-1`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5`                                    | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-8`                                   | ✓           | ✓                 | ✓          | ✓              |

@@ -4,8 +4,8 @@ description: Add persistent memory to your agent using provider-defined tools, m
 url: "https://ai-sdk.dev/docs/agents/memory"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/memory.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "00453e473080a0a5c94649322e8ee82b563785c9db62da8d70446194f161fcb5"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cafbd33d2f905569d696bd6b6465ec3b6240e850ffe4afedb20dfea94a308b2c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -45,7 +45,7 @@ const memory = anthropic.tools.memory_20250818({
 });
 
 const agent = new ToolLoopAgent({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   tools: { memory },
 });
 

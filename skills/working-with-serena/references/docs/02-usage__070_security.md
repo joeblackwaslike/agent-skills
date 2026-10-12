@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/070_security.md"
-fetched_at: "2026-09-21T09:43:54.627Z"
-sha256: "4b3c88a839820994f603a99bfa621b6497289e867dc743ea562792b0506ffc00"
+fetched_at: "2026-10-12T11:48:42.891Z"
+sha256: "5b028dbe393d6202f1f4d98b7dcd1ea1584c7875515de9f5bbac0adff02b4f49"
 ---
 
 # Security Considerations
@@ -92,7 +92,7 @@ If a repository is not trustworthy, [sandboxing](sandboxing) is the answer, not 
 
 The set of trust-gated features is subject to change and can be expected to grow.
 The settings that require trust are annotated accordingly in the project configuration (see
-[configuration](050_configuration)); the two following current examples illustrate the principle:
+[configuration](050_configuration)); the following current examples illustrate the principle:
 
 - `activation_command` is a shell command that a project can request to be run whenever it is activated.
   Without trust gating, merely opening a repository in Serena would execute code chosen by its author,
@@ -101,6 +101,13 @@ The settings that require trust are annotated accordingly in the project configu
   which a language server is acquired.
   Without trust gating, a repository could thereby silently circumvent the supply chain protections described
   below (version pinning, host restrictions) and cause attacker-controlled code to be downloaded and executed.
+- Following a symlink that is contained in the project but resolves to a location outside of the project root.
+  Without trust gating, a repository could redirect Serena's file tools to arbitrary locations outside the
+  project root (e.g. `~/.ssh/id_rsa`) by committing such a symlink, without the user requesting anything
+  beyond working in the project.
+  In an untrusted project, Serena therefore ignores symbolic links entirely: they are neither followed when
+  the project's files are enumerated, nor accepted as a path when a file is requested explicitly.
+  A symlink to a location inside the project root remains accessible for trusted projects only.
 
 Note that the effective set of trusted paths depends on the age of your configuration: installations predating
 the introduction of this setting retain a pattern that trusts all projects, ensuring that existing workflows are

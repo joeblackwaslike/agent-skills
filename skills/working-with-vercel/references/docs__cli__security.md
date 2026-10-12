@@ -15,8 +15,8 @@ related:
 summary: "Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope the report to a project."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/security.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "553068a25542e0b945a58e919c96616c09fd00bd31d9735b683b03a6aee233c6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "56d417be2e7485330e94e1475679e157e87868964705a19fa649554808461317"
 ---
 
 # vercel security
@@ -33,8 +33,8 @@ The `vercel security` command runs your team's security checks and prints them i
 - [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/security.graph.md](/docs/cli/security.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsecurity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -4,8 +4,8 @@ description: Learn how to use Moonshot AI models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d41575640321c59c87e854d115b90adc1d674da0bf754deb570346a4a3b6fec4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b6443d9491d17cc448359aa18e6e9d2549ccb55499c5f245ce990900ad2f2271"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [Kimi API Platform](https://platform.kimi.ai/c
 
 The Moonshot AI provider is available via the `@ai-sdk/moonshotai` module. You can install it with:
 
-**Packages:** `@ai-sdk/moonshotai`
+```bash
+pnpm add @ai-sdk/moonshotai
+```
 
 ## Provider Instance
 
@@ -95,14 +97,12 @@ unchanged.
 
 #### Structured Outputs
 
-Native structured outputs are enabled for Kimi K models and the official
-Moonshot V1 text, auto, and vision models.
+Native structured outputs are enabled for all model IDs, including Kimi K
+models, the official Moonshot V1 text, auto, and vision models, and custom or
+future model IDs.
 
 The provider normalizes schemas to Moonshot's supported JSON Schema subset and
 enables strict schema validation by default.
-
-For unknown custom model IDs, object generation falls back to JSON mode instead
-of schema-constrained decoding.
 
 For best reliability, it is strongly recommended to include your schema requirements in your prompt in addition to passing the schema through `Output`.
 
@@ -511,7 +511,8 @@ The following optional provider options are available for Moonshot AI language m
 - **reasoningEffort** *'low' | 'high' | 'max'*
 
   Reasoning effort for Kimi K3. Defaults to `'max'`. You can also use the
-  generic `reasoning` setting.
+  generic `reasoning` setting. Portable `reasoning: 'max'` is sent directly;
+  `minimal` maps to `low`, while `medium` and `high` map to `high`.
 
 - **prediction** *\{ type: 'content'; content: string | Array\<\{ type: 'text'; text: string }> }*
 

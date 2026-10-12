@@ -17,8 +17,8 @@ related:
 summary: Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "75b91a1c2fac9e35411179c9d315a037a63c7ed568cd5f9dceb9ad0a766d6ec6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "6b4ce42cf28c6e73fc2b117cbf541c2bb4b795d0707aef44d249815ef846e50c"
 ---
 
 # AI Gateway Tool Use and Function Calling
@@ -34,8 +34,8 @@ Connect a model to functions in your application, such as a weather lookup or a 
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Tools](https://ai-sdk.dev/docs/foundations/tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn about tools with the AI SDK.
 - [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn how to build your first agent with the AI SDK and Node.js.
 - [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn how to call tools using the AI SDK and Node
+- [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Learn how to build your first agent with the AI SDK and Node.js.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Finputs-and-tools%2Ftool-use&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 

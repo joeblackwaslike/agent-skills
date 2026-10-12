@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/docs/protocol_v1.md"
-fetched_at: "2026-08-17T04:43:16.313Z"
-sha256: "197e48e07e652e813899824fcaccea49399d464b13df1b7fd35152c238f123ee"
+fetched_at: "2026-10-12T11:42:58.685Z"
+sha256: "b2233c0979daf3aed48b4ac332fbb1217c2ef885f82cb8c357fe4e622ad98ae2"
 ---
 
 Overview of Protocol defined in [protocol.rs](../protocol/src/protocol.rs) and [agent.rs](../core/src/agent.rs).
@@ -72,6 +72,7 @@ Since only 1 `Task` can be run at a time, for parallel tasks it is recommended t
 For complete documentation of the `Op` and `EventMsg` variants, refer to [protocol.rs](../protocol/src/protocol.rs). Some example payload types:
 
 - `Op`
+
   - `Op::UserTurn` – Any input from the user to kick off a `Turn`, including full per-turn context such as cwd, model, sandbox, approval policy, and optional `approvals_reviewer`
   - `Op::Interrupt` – Interrupts a running turn
   - `Op::ExecApproval` – Approve or deny code execution

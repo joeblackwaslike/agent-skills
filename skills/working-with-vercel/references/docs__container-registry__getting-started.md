@@ -16,8 +16,8 @@ related:
 summary: Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/getting-started.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "166651246d3b14d6d4277d77e03241c89bcba2bb80e9133f2185f7cfa0da64f8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b42d520db6f47f7d8e7a08a441d94ff5985aa83bf3091a035de9452daad95bcc"
 ---
 
 # Getting Started
@@ -39,6 +39,7 @@ Push your first image to Vercel Container Registry (VCR) with the Vercel CLI, th
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [vercel vcr](https://vercel.com/docs/cli/vcr?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Build image overview](https://vercel.com/docs/builds/build-image?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn about the container image used for Vercel builds.
 
 Full cross-link map for this page: [/docs/container-registry/getting-started.graph.md](/docs/container-registry/getting-started.graph.md?from=related&source_path=%2Fdocs%2Fcontainer-registry%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "5bf996a34531f5e92dea1e19887b13d177373ce4c76dbf44eefe607565130f51"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "0adfb745929b46c9ecd30cc80f7dc28d5be43140209a7d6299d803ff8cbda96f"
 ---
 
 > ## Documentation Index
@@ -122,7 +122,7 @@ For more details on cloud execution, see [Use Claude Code in the cloud](/docs/en
 
 * Review all suggested changes before approval
 * Use project-specific permission settings for sensitive repositories
-* Consider using [dev containers](/docs/en/devcontainer) for additional isolation
+* For additional isolation, run the whole Claude Code (local mode) process inside the [sandbox runtime](/docs/en/sandbox-environments#sandbox-runtime) or a [dev container](/docs/en/devcontainer)
 * Regularly audit your permission settings with `/permissions`
 
 ### Team security

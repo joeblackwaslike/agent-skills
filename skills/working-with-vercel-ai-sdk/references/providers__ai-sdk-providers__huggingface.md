@@ -4,8 +4,8 @@ description: Learn how to use Hugging Face Provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5975a2eb9c8a1d46a02e9441fb7327e400515e9f7c5d17eefeb8bdd2653e057c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ecc7d24a5470982554d9b2956a0bfddd2bf47ce21a639e3fd46c6d55d1b64276"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from [Hugging Face Settings](https://huggingface.co/set
 
 The Hugging Face provider is available via the `@ai-sdk/huggingface` module. You can install it with:
 
-**Packages:** `@ai-sdk/huggingface`
+```bash
+pnpm add @ai-sdk/huggingface
+```
 
 ## Provider Instance
 

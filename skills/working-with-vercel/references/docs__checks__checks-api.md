@@ -12,8 +12,8 @@ related:
 summary: The Vercel Checks API let you create tests and assertions that run after each deployment has been built, and are powered by Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks/checks-api.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ab69c46624735b8ffe12ef6476ebeb16bdc4f865414e62137d2ff6b9f8351477"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "a47c7c456223aada5c52f3889e7aa863b479f9c5c5f64b0a716ab04951da891a"
 ---
 
 # Checks API Reference
@@ -27,8 +27,8 @@ API endpoints allow integrations to interact with the Vercel platform. Integrati
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Checks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks?from=related&source_path=%2Fdocs%2Fchecks%2Fchecks-api&source_site=vercel-docs&relationship=related) — Vercel MCP tools for checks.
-- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check?from=related&source_path=%2Fdocs%2Fchecks%2Fchecks-api&source_site=vercel-docs&relationship=related) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check?from=related&source_path=%2Fdocs%2Fchecks%2Fchecks-api&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check?from=related&source_path=%2Fdocs%2Fchecks%2Fchecks-api&source_site=vercel-docs&relationship=related) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks?from=related&source_path=%2Fdocs%2Fchecks%2Fchecks-api&source_site=vercel-docs&relationship=related) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
 - [Update a check](https://vercel.com/docs/rest-api/checks-v2/update-a-check?from=related&source_path=%2Fdocs%2Fchecks%2Fchecks-api&source_site=vercel-docs&relationship=related) — PATCH /v2/projects/{projectIdOrName}/checks/{checkId} — Update an existing check.
 

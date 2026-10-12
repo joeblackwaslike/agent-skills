@@ -4,8 +4,8 @@ description: Learn how to use the Mem0 AI SDK provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/mem0"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/mem0.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "a8199d18a321e5bf47058b1d26875fee1098f5cef90ebf7aef3d9e260a4e5e93"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "df67aef3a45e0299049acc176dc3f4040bccd21c67f9b30ebdb71041b37f63a7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ This library brings enhanced AI interaction capabilities to your applications by
 
 The Mem0 provider is available in the `@mem0/vercel-ai-provider` module. You can install it with:
 
-**Packages:** `@mem0/vercel-ai-provider`
+```bash
+pnpm add @mem0/vercel-ai-provider
+```
 
 ## Provider Instance
 

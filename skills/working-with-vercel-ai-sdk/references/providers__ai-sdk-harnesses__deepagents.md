@@ -4,8 +4,8 @@ description: Learn how to use the Deep Agents harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b6667fa4b5fdb734372105940cdc352919bd6d6f7e9222ccd644c0e757227992"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "022911d251c9e46f38b91676238f8c3fb89a42daa916c7f0ac573501c0e23b06"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-deepagents`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-deepagents @ai-sdk/sandbox-vercel
+```
 
 The adapter bootstraps the bridge's Node dependencies (the `deepagents` package
 and LangChain) inside the sandbox via `pnpm` when the first session starts.

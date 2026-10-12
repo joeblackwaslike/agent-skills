@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4fc64d092d66ae886aca727505d5a5aada6606194693ad66dc843eb59d04e3cf"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "610eed1190ff15ef24ae820634b9ec3ad3e6ad0b34be653b3e1d37ff24729720"
 ---
 
 # BotID
@@ -41,8 +41,8 @@ sha256: "4fc64d092d66ae886aca727505d5a5aada6606194693ad66dc843eb59d04e3cf"
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Introduction](https://docs.vercel.shop/docs?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
-- [Shop Configuration](https://docs.vercel.shop/docs/reference/shop-config?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Choose optional storefront features and set your store's identity and locale.
+- [Introduction](https://vercel.shop/docs?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
+- [Shop Configuration](https://vercel.shop/docs/reference/shop-config?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related) — Choose optional storefront features and set your store's identity and locale.
 - [Billions of requests: Black Friday-Cyber Monday 2025](https://vercel.com/blog/bfcm-2025?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md?from=related&source_path=%2Fdocs%2Fbotid&source_site=vercel-docs&relationship=graph)

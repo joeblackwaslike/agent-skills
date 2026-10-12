@@ -4,8 +4,8 @@ description: Reference documentation for the AI SDK Core
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "58f771397834e343aac33188d35de435aa7f3593d5fb005d4ea598c10eab8c57"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "29847bfa9f0c5b3d9310d92e1ae9d8d97387da4c7e0fdcc7d276d46f49e71751"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -113,6 +113,10 @@ Filters a tool set to only the currently active tools.
 #### [createMCPClient()](/docs/reference/ai-sdk-core/create-mcp-client)
 
 Creates a client for connecting to MCP servers.
+
+#### [MCP Events](/docs/reference/ai-sdk-core/mcp-events)
+
+Experimental event methods, webhook delivery, and subscription types.
 
 #### [MCP Apps](/docs/reference/ai-sdk-core/mcp-apps)
 

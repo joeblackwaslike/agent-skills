@@ -4,8 +4,8 @@ description: Learn how to use the Claude Code provider to access Claude models t
 url: "https://ai-sdk.dev/providers/community-providers/claude-code"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/claude-code.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "dacaa1229d2802d077221dfb644ede3d2d410a36ed68ceac047276270b4475d9"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9d0754395c472a590f3cd0a4b478c29b59b1f0d8dd033a2796303570fe1324b7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -33,7 +33,9 @@ npm install ai-sdk-provider-claude-code@ai-sdk-v4 ai@^4.0.0
 
 ## Setup
 
-**Packages:** `ai-sdk-provider-claude-code`
+```bash
+pnpm add ai-sdk-provider-claude-code
+```
 
 ## Provider Instance
 

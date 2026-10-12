@@ -16,8 +16,8 @@ related:
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "fedaafe58e6bd389256b671e1bc8b14b49256fd1d836fa5b16c332783222dbfc"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ebca344645fb7dff3068e3aaa27e934f3e4749aac24a709ddd16ad2e6ff29eb2"
 ---
 
 # Vercel Documentation
@@ -39,6 +39,9 @@ vercel
 ```bash filename="terminal"
 # Plugin for Claude Code, Codex, Grok Build, Cursor, Copilot, Kimi Code
 npx plugins add vercel/vercel-plugin
+
+# Plugin for OpenCode
+opencode plugin add github:vercel/vercel-plugin
 
 # Skills for any other agent
 npx skills add vercel-labs/agent-skills
@@ -77,7 +80,7 @@ Set up the agent you code with, and the platform for the agents you ship. This p
 Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 ```
 
-**Vercel Plugin**: Give your coding agent deployment skills, framework best practices, and slash commands. Works with Claude Code, OpenAI Codex, Grok Build, Cursor, GitHub Copilot, and Kimi Code. [Learn more →](/docs/agent-resources/vercel-plugin)
+**Vercel Plugin**: Give your coding agent deployment skills, framework best practices, and slash commands. Works with Claude Code, OpenAI Codex, Grok Build, Cursor, GitHub Copilot, Kimi Code, and OpenCode. [Learn more →](/docs/agent-resources/vercel-plugin)
 
 **Agent Skills**: Install skills for any agent that supports them, covering Next.js, the AI SDK, Turborepo, and deploying to Vercel. [Learn more →](/docs/agent-resources/skills)
 
@@ -93,10 +96,10 @@ Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Oct 1, 2026: [Speed Insights deprecates First Input Delay on November 1st](https://vercel.com/changelog/speed-insights-deprecates-first-input-delay-on-november-first). Speed Insights is deprecating First Input Delay on November 1, with no action required.
-- Oct 1, 2026: [Laya decision model now available on AI Gateway, free through October 31](https://vercel.com/changelog/laya-decision-model-now-available-on-ai-gateway-free-through-october-31). Laya from Convai Innovations is available on Vercel AI Gateway and free through October 31, 2026, when served by Boundless.
-- Oct 1, 2026: [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway). Microsoft AI's latest audio models for speech and transcription are available on AI Gateway.&#x20;
-- Sep 30, 2026: [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries). Vercel Agent installs private npm packages using your team's shared environment variables. Add NPM\_TOKEN or NPM\_RC to authenticate with private and custom registries.
+- Oct 9, 2026: [Agents can now buy domains with the Vercel CLI](https://vercel.com/changelog/agents-can-now-buy-domains-with-the-vercel-cli). Agents can now use the Vercel CLI to purchase domains.
+- Oct 9, 2026: [New Pro teams now default to 30-day deployment retention](https://vercel.com/changelog/new-pro-teams-now-default-to-30-day-deployment-retention). New Pro teams use 30-day deployment retention by default, with the option to keep longer history.
+- Oct 9, 2026: [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams). Existing Pro teams will pay $0.10 per GB-month for Deployment Storage and Functions Storage, and the retention window moves to 30 days on October 23.
+- Oct 9, 2026: [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway). Call Microsoft's Decision-1 through Vercel AI Gateway with one API key to classify text, route requests, and track usage and spend
 
 ## Build with AI
 

@@ -4,8 +4,8 @@ description: Apertis AI Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/apertis"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/apertis.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e302ff1d386ca72660e462a26661d4cbaeb64b0e35b47ebc68c5820f3af6d090"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b09773ec06c53df0bc56337cd227cc3adb01e6ef7113580d4484917caae5236e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,9 @@ sha256: "e302ff1d386ca72660e462a26661d4cbaeb64b0e35b47ebc68c5820f3af6d090"
 
 ## Setup
 
-**Packages:** `@apertis/ai-sdk-provider`
+```bash
+pnpm add @apertis/ai-sdk-provider
+```
 
 ## Provider Instance
 

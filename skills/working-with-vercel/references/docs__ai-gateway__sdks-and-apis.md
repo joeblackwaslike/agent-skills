@@ -3,7 +3,7 @@ title: AI Gateway SDKs and APIs
 product: vercel
 url: /docs/ai-gateway/sdks-and-apis
 canonical_url: "https://vercel.com/docs/ai-gateway/sdks-and-apis"
-last_updated: 2026-09-19
+last_updated: 2026-10-07
 type: reference
 prerequisites:
   - /docs/ai-gateway
@@ -16,8 +16,8 @@ related:
 summary: Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere Rerank APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a4136c85845b1c3b6f35e0d43012e1d083b4afa54e4ab6d309f2c75a8193e8ec"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "19d73ae5f686c4945c191995efc5daa50b491d441097f30ac6c124705dc7519a"
 ---
 
 # AI Gateway SDKs and APIs
@@ -30,12 +30,12 @@ Use AI Gateway with the AI SDK, the AI SDK for Python beta, or compatible OpenAI
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related)
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis.graph.md](/docs/ai-gateway/sdks-and-apis.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis&source_site=vercel-docs&relationship=graph)
@@ -282,8 +282,9 @@ Switching surfaces is a client-side change. It does not change your billing, you
 | [Anthropic Messages API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api)       | Claude Code, Anthropic SDK users                                     | [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages), [Tools](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling), [Images](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images)       |
 | [OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses)                      | OpenAI Responses API users                                           | [Streaming](/docs/ai-gateway/sdks-and-apis/responses/streaming), [Tools](/docs/ai-gateway/sdks-and-apis/responses/tool-calling), [Structured output](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs)                             |
 | [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses)                         | New projects, provider-agnostic design                               | [Streaming](/docs/ai-gateway/sdks-and-apis/openresponses/streaming), [Tools](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling), [Images](/docs/ai-gateway/sdks-and-apis/openresponses/images)                                  |
+| [OpenAI-Compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions) | Decisions with the OpenAI SDK or plain HTTP | [Questions](/docs/ai-gateway/sdks-and-apis/openai-decisions#questions), [Provider options](/docs/ai-gateway/sdks-and-apis/openai-decisions#provider-options), [Errors](/docs/ai-gateway/sdks-and-apis/openai-decisions#errors) |
 | [Cohere Rerank API](/docs/ai-gateway/sdks-and-apis/cohere-rerank)                     | Reranking documents with the Cohere SDK or plain HTTP                | [Rerank](/docs/ai-gateway/sdks-and-apis/cohere-rerank#supported-endpoints), [Provider routing](/docs/ai-gateway/sdks-and-apis/cohere-rerank#provider-routing)                                                                                |
-| [TypeSafe API](/docs/ai-gateway/sdks-and-apis/typesafe)                              | Existing TypeSafe clients, evaluation over HTTP                      | [Migrating](/docs/ai-gateway/sdks-and-apis/typesafe#migrating-an-existing-client), [Endpoints](/docs/ai-gateway/sdks-and-apis/typesafe#supported-endpoints)                                                       |
+| [TypeSafe API](/docs/ai-gateway/sdks-and-apis/typesafe)                              | Existing TypeSafe clients, decisions over HTTP                       | [Migrating](/docs/ai-gateway/sdks-and-apis/typesafe#migrating-an-existing-client), [Endpoints](/docs/ai-gateway/sdks-and-apis/typesafe#supported-endpoints)                                                       |
 | [Python](/docs/ai-gateway/sdks-and-apis/python)                                       | Python developers                                                    | [Async](/docs/ai-gateway/sdks-and-apis/python#async-support), [Streaming](/docs/ai-gateway/sdks-and-apis/python#streaming), [Frameworks](/docs/ai-gateway/sdks-and-apis/python#framework-integrations)                                       |
 
 ## Capability coverage
@@ -299,7 +300,7 @@ Every cell links to that surface's page for the topic:
 | Reasoning | [Reasoning](/docs/ai-gateway/sdks-and-apis/ai-sdk#reasoning) | [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) | [Reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) | [Extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) | [Reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning) | [Reasoning](/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) |
 | Image input | [AI SDK docs](https://ai-sdk.dev/docs/foundations/prompts#file-parts) | [Multimodal inputs](/docs/ai-gateway/sdks-and-apis/ai-sdk-python#images-and-documents) | [File attachments](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) | [File attachments](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images) | [Images](/docs/ai-gateway/sdks-and-apis/responses/images) | [Images](/docs/ai-gateway/sdks-and-apis/openresponses/images) |
 
-Embeddings use the [OpenAI-compatible `/v1/embeddings` endpoint](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings), or the TypeScript and Python AI SDKs. Reranking uses the [Cohere-compatible Rerank API](/docs/ai-gateway/sdks-and-apis/cohere-rerank), or either AI SDK. These operations aren't Chat Completions, Messages, or Responses requests. See [modalities](/docs/ai-gateway/modalities) for image, video, audio, and realtime APIs.
+Embeddings use the [OpenAI-compatible `/v1/embeddings` endpoint](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/embeddings), or the TypeScript and Python AI SDKs. Decisions use the [OpenAI-compatible `/v1/decisions` endpoint](/docs/ai-gateway/sdks-and-apis/openai-decisions), the [TypeSafe API](/docs/ai-gateway/sdks-and-apis/typesafe), or the AI SDK. Reranking uses the [Cohere-compatible Rerank API](/docs/ai-gateway/sdks-and-apis/cohere-rerank), or either AI SDK. These operations aren't Chat Completions, Messages, or Responses requests. See [modalities](/docs/ai-gateway/modalities) for image, video, audio, and realtime APIs.
 
 Whether a given model supports a capability is a separate question from whether the surface exposes it. Check the [model list](/ai-gateway/models) for per-model support.
 

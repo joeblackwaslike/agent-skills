@@ -4,8 +4,8 @@ description: Build an agent that persists memories using a filesystem-backed mem
 url: "https://ai-sdk.dev/cookbook/guides/custom-memory-tool"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/cookbook/guides/custom-memory-tool.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5e53b62e3e453a04c145382ca85ab42e536d302888ecd46bd2698f9a88198eac"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "829ba96f8d4cccb953e219231a8453efe715291fb95e9f34702295cffa867259"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -244,7 +244,7 @@ import { ToolLoopAgent } from 'ai';
 const today = new Date().toISOString().slice(0, 10);
 
 const memoryAgent = new ToolLoopAgent({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   tools: { memory: memoryTool },
   prepareCall: async settings => {
     // user-defined function fetches the contents of /.memory/core.md on every turn

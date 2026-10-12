@@ -15,8 +15,8 @@ related:
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f3d1c9e64e53bc7607fb27c700cc65177626a8598595887b2f5157cd76b7c669"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "e088d2d9b089a0d39b50a4d0bfd174ed1797d4059f25eba2128d41ddb5210a49"
 ---
 
 # Queues Observability
@@ -35,7 +35,7 @@ The **Queues** observability tab provides visibility into your queue operations,
 - [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
-- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Vercel MCP tools for observability.
+- [Query](https://vercel.com/docs/query?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=related) — Query and visualize your Vercel usage, traffic, and more in observability.
 
 Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fobservability&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

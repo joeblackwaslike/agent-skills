@@ -4,8 +4,8 @@ description: Learn how to use Groq.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/groq"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "18c05459ec6ef846bc21894e50d4d13ba2d438599192f9b14bbaed17487a82af"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0a52716e0efd0a55d803ca83b7d6803b625ab5737b274f3905ab1805dce3a708"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,9 @@ The [Groq](https://groq.com/) provider contains language model support for the G
 The Groq provider is available via the `@ai-sdk/groq` module.
 You can install it with
 
-**Packages:** `@ai-sdk/groq`
+```bash
+pnpm add @ai-sdk/groq
+```
 
 ## Provider Instance
 
@@ -325,13 +327,15 @@ Groq provides a browser search tool that offers interactive web browsing capabil
 
 ### Supported Models
 
-Browser search is only available for these specific models:
+Browser search is available on Groq's GPT-OSS models, for example:
 
 - `openai/gpt-oss-20b`
 - `openai/gpt-oss-120b`
 
-Browser search will only work with the supported models listed above. Using it
-with other models will generate a warning and the tool will be ignored.
+Known model IDs without browser search support (such as the Llama, Qwen, and
+Kimi models) will generate a warning and the tool will be ignored. Unknown
+model IDs are forwarded with the tool, and the Groq API decides whether it is
+supported.
 
 ### Basic Usage
 
@@ -385,13 +389,13 @@ for await (const delta of result.stream) {
 ### Best Practices
 
 - Use `toolChoice: 'required'` to ensure the browser search is activated
-- Only supported on `openai/gpt-oss-20b` and `openai/gpt-oss-120b` models
+- Use a model that supports browser search, such as `openai/gpt-oss-20b` or `openai/gpt-oss-120b`
 - The tool works automatically - no configuration parameters needed
 - Server-side execution means no additional API keys or setup required
 
 ### Model Validation
 
-The provider automatically validates model compatibility:
+The provider ignores the tool for known model IDs without browser search support:
 
 ```ts
 // ✅ Supported - will work
@@ -405,7 +409,7 @@ const result = await generateText({
   model: groq('llama-3.1-8b-instant'),
   tools: { browser_search: groq.tools.browserSearch({}) },
 });
-// Warning: "Browser search is only supported on models: openai/gpt-oss-20b, openai/gpt-oss-120b"
+// Warning: "Browser search is not supported on model llama-3.1-8b-instant."
 ```
 
 For more details about browser search capabilities and limitations, see the

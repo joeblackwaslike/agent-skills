@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1f7f45a4c487eaedff8bc89ecccddb6d805fb2738f84677f1c833f209c28bc2c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "a92616cfea233d7414106e1a07b5c41d5de6ae7970e9cf50d6ad76d57479b4e5"
 ---
 
 # Project settings
@@ -34,8 +34,8 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Learn how to customize your deployments using Vercel's build features.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fproject-settings&source_site=vercel-docs&relationship=graph)
@@ -122,7 +122,7 @@ To learn more, [see the Domains documentation](/docs/domains)
 
 ## Environment Variables
 
-You can configure Environment Variables for each environment directly from your project's settings. This includes [linking Shared Environment Variables](/docs/environment-variables/shared-environment-variables#project-level-linking) and [creating Sensitive Environment Variables](/docs/environment-variables/sensitive-environment-variables)
+You can configure Environment Variables for each environment directly from your project's settings. This includes [linking Shared Environment Variables](/docs/environment-variables/shared-environment-variables#project-level-linking) and [creating Config and Secret Environment Variables](/docs/environment-variables/sensitive-environment-variables)
 
 To learn more, [see the Environment Variables documentation](/docs/environment-variables).
 

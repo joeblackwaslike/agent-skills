@@ -17,8 +17,8 @@ related:
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0d8173d8b6d92c3a27fd1470437e55d393c6282d4c3de9f7556bf02df869fcda"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b3cb6d6c8d008bc9c9998f44455ff903f933c56d2f7ff9d48424fb346e076a6e"
 ---
 
 # Using the Core Library
@@ -34,8 +34,8 @@ The `@vercel/flags-core` library provides direct access to the Vercel Flags eval
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related)
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fsdks%2Fcore&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
@@ -81,7 +81,9 @@ Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/core.graph.md]
 
 ## Creating a client
 
-Use the default client to authenticate with either Vercel OpenID Connect (OIDC) or the `FLAGS` environment variable:
+### Default client with OIDC
+
+Use the default client when your code runs on Vercel. It authenticates with Vercel OpenID Connect (OIDC) and needs no configuration:
 
 ```ts
 import { flagsClient } from '@vercel/flags-core';
@@ -89,7 +91,9 @@ import { flagsClient } from '@vercel/flags-core';
 const result = await flagsClient.evaluate('flag-name', false);
 ```
 
-Or create a client with the default Vercel OIDC authentication or the `FLAGS` environment variable:
+If the `FLAGS` environment variable is set, the default client uses that SDK key instead of OIDC.
+
+To pass [client options](#client-options), create your own client with `createClient()`. Without an argument, it authenticates with OIDC. It doesn't read the `FLAGS` environment variable:
 
 ```ts
 import { createClient } from '@vercel/flags-core';
@@ -97,7 +101,9 @@ import { createClient } from '@vercel/flags-core';
 const client = createClient();
 ```
 
-Use an [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) for manual authentication, such as reading flags from another project or running outside Vercel:
+### SDK keys
+
+Use an [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) when your code runs outside Vercel, such as on a custom backend, or when it reads flags from another project. Pass the key to `createClient()`:
 
 ```ts
 import { createClient } from '@vercel/flags-core';
@@ -236,7 +242,7 @@ During a build step (detected when `CI=1` or `NEXT_PHASE=phase-production-build`
 At runtime (the default, or when `buildStep: false` is set), the client uses real-time mechanisms first and falls back to static sources:
 
 1. **Stream**: Real-time updates via SSE, waits up to `initTimeoutMs` (default: 3000ms)
-2. **Polling**: Interval-based HTTP requests, waits up to `initTimeoutMs` (default: 10000ms)
+2. **Polling**: Interval-based HTTP requests, waits up to `initTimeoutMs` (default: 3000ms)
 3. **Provided datafile**: Uses the `datafile` option if provided
 4. **Embedded definitions**: Uses definitions [embedded at build time](#embedded-definitions)
 

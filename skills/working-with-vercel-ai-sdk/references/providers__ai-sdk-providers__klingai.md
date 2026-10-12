@@ -4,8 +4,8 @@ description: Learn how to use the Kling AI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0079f856d5b43973450581be3d227b119959a3f9456c034a371acf5e0a55cdd6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9e62207ca6670fedfc302faec7473c654f3517c1920065874df7c7b0729d5c81"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Kling AI](https://klingai.com/) provider contains support for Kling AI's vi
 
 The Kling AI provider is available in the `@ai-sdk/klingai` module. You can install it with
 
-**Packages:** `@ai-sdk/klingai`
+```bash
+pnpm add @ai-sdk/klingai
+```
 
 ## Provider Instance
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security-guidance.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "69a6f3fc1ed933679e0767d98be184405b1ac88d0d62c50ff0408257527c3671"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "85cff636dbe2d366203ddac627f7a978ad5609d6479b7a881b6ba101a6c94e66"
 ---
 
 > ## Documentation Index
@@ -46,7 +46,7 @@ If the install fails, match the message Claude Code reports:
 * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 * The plugin is [not found in the marketplace](/docs/en/plugins/install#install-a-plugin): check the plugin name.
 
-Check the install summary. If it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to activate the plugin in your current session.
+Check the install summary. If it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to activate the plugin in your current session.
 
 ### Enable for your team in local sessions
 
@@ -72,7 +72,9 @@ The plugin reviews Claude's work at three points, each at a different depth:
 
 You can extend each layer by [adding your own rules](#add-your-own-rules). Built-in checks cannot be removed individually, but you can [disable each layer](#disable-or-uninstall) independently.
 
-### On each file edit
+<span id="on-each-file-edit" />
+
+### Checks on each file edit
 
 When Claude writes to a file, the plugin scans the new content for known risky patterns. This is a pattern match with no model call, so it adds no usage cost.
 
@@ -87,7 +89,9 @@ The check runs after the edit lands and appends the warning to Claude's context 
 
 You can [add your own patterns](#add-custom-per-edit-patterns) to this layer with a `security-patterns.yaml` file.
 
-### At the end of each turn
+<span id="at-the-end-of-each-turn" />
+
+### Checks at the end of each turn
 
 A turn is one round of Claude responding: you send a message, Claude works and replies, and the turn ends. After each turn, the plugin computes a git diff of everything that changed in the working tree during the turn, including changes from Claude's edit tools, Bash commands, and subagents, and sends it to a separate Claude review focused on security. The review runs in the background, so Claude's reply is not delayed. If the review finds issues, Claude is re-prompted with the findings and addresses them as a follow-up.
 
@@ -101,7 +105,9 @@ This catches issues a string match cannot, such as:
 
 You see both the finding and Claude's resolution directly in your session. The review covers up to 30 changed files per turn and fires at most three times in a row before yielding back to you.
 
-### On each commit or push Claude makes
+<span id="on-each-commit-or-push-claude-makes" />
+
+### Checks on each commit or push Claude makes
 
 When Claude runs `git commit` or `git push` through its Bash tool, the plugin runs a deeper agentic review of the change in the background. This review reads surrounding code, including callers, sanitizers, and related files, to decide whether a finding is real before reporting it. The extra context keeps false positives low on patterns that look dangerous in isolation but are safe in your codebase.
 

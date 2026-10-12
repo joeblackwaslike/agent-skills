@@ -4,8 +4,8 @@ description: API reference for the useChat hook.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ed2dd206206810f9ddfb09de7ea41c4b4d2f2fc9076021d014f28223fa27d1a0"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "52501dde21b3990795ae91586440e86ea3f8a7c41619c13288bbae6a7ab944cf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -52,6 +52,7 @@ import { Chat } from '@ai-sdk/angular'
 - `transport?` (`ChatTransport`): The transport to use for sending messages. Defaults to DefaultChatTransport with \`/api/chat\` endpoint.
   - `DefaultChatTransport`
     - `api?` (`string = '/api/chat'`): The API endpoint for chat requests.
+    - `resumeStreamIsReplay?` (`boolean`): Defaults to true. Resets the interrupted response on the first resumed start chunk and rebuilds it from the replay. Set to false for endpoints that only send the remaining chunks of the same response.
     - `credentials?` (`RequestCredentials`): The credentials mode for fetch requests.
     - `headers?` (`Record<string, string> | Headers`): HTTP headers to send with requests.
     - `body?` (`object`): Extra body object to send with requests.
@@ -97,7 +98,7 @@ import { Chat } from '@ai-sdk/angular'
 - `onError?` (`(error: Error) => void`): Callback function to be called when an error is encountered.
 - `onData?` (`(dataPart: DataUIPart) => void`): Optional callback function that is called when a data part is received.
 - `throttle?` (`number`): React and Vue only. Custom throttle wait time in milliseconds for reactive chat message updates. Positive values reduce UI update frequency without delaying stream processing or callbacks, and the latest messages are published before a ready or error status. Default is undefined, which disables throttling.
-- `resume?` (`boolean`): Whether to resume an ongoing chat generation stream. Defaults to false.
+- `resume?` (`boolean`): Whether to automatically resume an ongoing chat generation stream on mount and after the page becomes visible again following a network disconnect. Defaults to false.
 
 ### Returns
 

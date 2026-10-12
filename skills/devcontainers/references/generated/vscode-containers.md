@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers guide"
 source: "https://code.visualstudio.com/docs/devcontainers/containers"
-fetched_at: "2026-10-05T11:12:30.813Z"
-sha256: "cfac39e7cfb1b97c1f29d58fdb6096fd0b057b655e696bbe50c43bd5dc48347d"
+fetched_at: "2026-10-12T11:41:07.891Z"
+sha256: "c1fd5e9abed86dfef753d27b578dd5994293cdbb6974f3b45b6f9dac8451e046"
 ---
 
 # VS Code Dev Containers guide
@@ -12,6 +12,40 @@ Source: https://code.visualstudio.com/docs/devcontainers/containers
 # Developing inside a Container
 
 
+                
+                
+
+
+	
+		
+			
+			Copy as Markdown
+		
+		
+			
+		
+		
+			- Copy as Markdown
+
+			- View as Markdown
+
+			- 
+
+			- Ask in VS Code
+
+			- Ask in VS Code Insiders
+
+		
+
+	
+	
+		[Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fdevcontainers%2Fcontainers%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+	
+
+
+                
+                
+                
 The Visual Studio Code Dev Containers extension lets you use a container as a full-featured development environment. It allows you to open any folder inside (or mounted into) a container and take advantage of Visual Studio Code's full feature set. A devcontainer.json file in your project tells VS Code how to access (or create) a development container with a well-defined tool and runtime stack. This container can be used to run an application or to separate tools, libraries, or runtimes needed for working with a codebase.
 
 
@@ -897,4 +931,4 @@ Check issue #8278 for a potential workaround.
 
                 
                 
-                9/30/2026
+                10/7/2026

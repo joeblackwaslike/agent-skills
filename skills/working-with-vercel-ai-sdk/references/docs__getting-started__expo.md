@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Expo.
 url: "https://ai-sdk.dev/docs/getting-started/expo"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/expo.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "fd7263a7a474b183b1c94bbe16c14118b43e7851a140ea462fe3c03408805725"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c90a31e5f7843878f365104319ed82c6be14c6e7ffb0c7271dead4f02e09757d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -48,7 +48,9 @@ models from different providers with one API key, but you can switch to any
 provider or model by installing its package. Check out available [AI SDK
 providers](/providers/ai-sdk-providers) for more information.
 
-**Packages:** `ai`, `@ai-sdk/react`, `zod`
+```bash
+pnpm add ai @ai-sdk/react zod
+```
 
 ### Configure your AI Gateway API key
 
@@ -103,7 +105,7 @@ export async function POST(req: Request) {
 Let's take a look at what is happening in this code:
 
 1. Define an asynchronous `POST` request handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation between you and the chatbot and provides the chatbot with the necessary context to make the next generation.
-2. Call [`streamText`](/docs/reference/ai-sdk-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (imported from `ai`) and `messages` (defined in step 1). You can pass additional [settings](/docs/ai-sdk-core/settings) to further customize the model's behavior.
+2. Call [`streamText`](/docs/reference/ai-sdk-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` ID string (resolved through AI Gateway) and `messages` (defined in step 1). You can pass additional [settings](/docs/ai-sdk-core/settings) to further customize the model's behavior.
 3. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-sdk-core/stream-text#result-object). Pass its `stream` to `toUIMessageStream` and return it with `createUIMessageStreamResponse` to create a streamed response object.
 4. Finally, return the result to the client to stream the response.
 
@@ -140,7 +142,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';
@@ -672,7 +676,9 @@ Several functions that are internally used by the AI SDK might not available in 
 
 First, install the following packages:
 
-**Packages:** `@ungap/structured-clone`, `@stardazed/streams-text-encoding`
+```bash
+pnpm add @ungap/structured-clone @stardazed/streams-text-encoding
+```
 
 Then create a new file in the root of your project with the following polyfills:
 

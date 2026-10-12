@@ -17,8 +17,8 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5184f77e8402b1b59281cd3fd350ad8608b8c10c1d859619be10b467abc6eae1"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4995e778153c7a236ae3da7c4812d1a7ea0ff269f705b3591826d2d505beee0d"
 ---
 
 # Getting started with Flags Explorer
@@ -114,7 +114,7 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 
   Run your application locally with Vercel Toolbar enabled and open Flags Explorer from the toolbar. Click on "Start setup" to begin the onboarding flow, then click on "Create secret" to automatically generate and add a new `FLAGS_SECRET` environment variable to your project.
 
-  This generates a separate value for each environment (Development, Preview, and Production) and marks the Preview and Production values as **Sensitive**.
+  This generates a separate value for each environment (Development, Preview, and Production) and stores the Preview and Production values as **Secret**.
 
   Pull your environment variables to make them available to your project locally.
   ```bash filename="Terminal"

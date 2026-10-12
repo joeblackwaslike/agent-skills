@@ -4,8 +4,8 @@ description: Learn how to use Alibaba Cloud Model Studio (Qwen) models with the 
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "255f0cc964595ecdd3e1c9876f839ed569d438511f7ef23b0a1479d70fa4879f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "f4e90a18bf605b28360a4439c0c86411b8d1bd742449ad0d187bff4709653358"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [Console](https://modelstudio.console.alibabac
 
 The Alibaba provider is available via the `@ai-sdk/alibaba` module. You can install it with:
 
-**Packages:** `@ai-sdk/alibaba`
+```bash
+pnpm add @ai-sdk/alibaba
+```
 
 ## Provider Instance
 

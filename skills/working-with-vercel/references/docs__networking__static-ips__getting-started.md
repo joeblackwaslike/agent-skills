@@ -15,8 +15,8 @@ related:
 summary: Learn how to set up Static IPs for your Vercel projects to connect to IP-restricted backend services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips/getting-started.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ebb524872b536a3989b619ce21122731133bdc23863ba729e9463d8336a81a51"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "235bddc4341a9b6d778d038b4a3d75a785cd54c635b48e7a448e3e93aebd863d"
 ---
 
 # Getting Started with Static IPs
@@ -32,6 +32,7 @@ This guide walks you through setting up Static IPs so you can access backend ser
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips%2Fgetting-started&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips%2Fgetting-started&source_site=vercel-docs&relationship=related) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips%2Fgetting-started&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips?from=related&source_path=%2Fdocs%2Fnetworking%2Fstatic-ips%2Fgetting-started&source_site=vercel-docs&relationship=related)

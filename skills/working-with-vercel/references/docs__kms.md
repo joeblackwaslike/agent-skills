@@ -16,8 +16,8 @@ related:
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "651d2f483a3e3a42883e71c02eaccb533efa6ae7d586f03773500b0fa962e232"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "084ebe828b9b12a16784cfcf3bb8400c27cccffd5bc6b9826facc1b704df86dd"
 ---
 
 # Key Management Service (KMS)
@@ -95,7 +95,7 @@ KMS is billed per signing operation, with no per-key or per-issuer charge. For t
 - **[Quickstart](/docs/kms/quickstart)**: Sign and verify your first token from a Vercel Function.
 - **[Key rotation](/docs/kms/concepts/key-rotation)**: Stage, schedule, and retire signing keys without downtime.
 - **[Authentication](/docs/kms/concepts/authentication)**: How signing and management requests are authorized, and how relying parties verify.
-- **[SDK Reference](/docs/kms/ts-sdk-reference)**: API reference for `@vercel/kms`, including `signToken` and `signMessage`.
+- **[SDK Reference](/docs/kms/ts-sdk-reference)**: API reference for `@vercel/kms`, including `signJWT` and `signMessage`.
 - **[Pricing and Limits](/docs/kms/pricing)**: Rates, platform limits, and how to stop being billed.
 
 ## Related

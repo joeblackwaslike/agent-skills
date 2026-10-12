@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c97098ccf16d25880d684dfbe61d3c03a7b6594a8e55adaefec3f43c59522aff"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4de800e143c0bd94b8b5d83758523fb183b7f2153fbc56a6efa75ab3dcd7f1a2"
 ---
 
 # Accessing Build Logs
@@ -62,7 +62,7 @@ Build logs are generated at build time for all [Deployments](/docs/deployments).
 
 In addition to the list of build actions, you can also find errors or warnings. These are highlighted with different colors, such as yellow for warnings and red for errors. This color coding makes it flexible to investigate why your build failed and which part of your website is affected. Build logs are stored indefinitely for each deployment.
 
-If a [sensitive environment variable](/docs/environment-variables/sensitive-environment-variables) value is 32 characters or longer and appears in build logs, Vercel replaces the value with `[REDACTED]`. Vercel always redacts the `VERCEL_AUTOMATION_BYPASS_SECRET` and `VERCEL_OIDC_TOKEN` system environment variables from build logs, regardless of value length. When Vercel redacts a sensitive environment variable value, Vercel records an [Activity Log](/docs/activity-log) event for each masked environment variable key.
+If a [Secret environment variable](/docs/environment-variables/sensitive-environment-variables) value is 32 characters or longer and appears in build logs, Vercel replaces the value with `[REDACTED]`. Vercel always redacts the `VERCEL_AUTOMATION_BYPASS_SECRET` and `VERCEL_OIDC_TOKEN` system environment variables from build logs, regardless of value length. When Vercel redacts a Secret environment variable value, Vercel records an [Activity Log](/docs/activity-log) event for each masked environment variable key.
 
 > **💡 Note:** Build logs will automatically be truncated, if the total size reaches over
 > 4MB.

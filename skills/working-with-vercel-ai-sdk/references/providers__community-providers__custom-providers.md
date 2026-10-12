@@ -4,8 +4,8 @@ description: Learn how to write a custom provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/custom-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1fad9668d73ab37a7242bd1b08efff6d4df157b5c1b90ce8f64be09623696776"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9240f6553cfcefb56ca910697601b37965adc1835e82b333b6a327c6b949af97"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -30,7 +30,7 @@ The Language Model Specification V4 creates a robust abstraction layer that work
 
 ### Architecture
 
-At its heart, the V4 specification defines three main interfaces:
+The V4 specification includes the following interfaces:
 
 1. **ProviderV4**: The top-level interface that serves as a factory for different model types
 2. **LanguageModelV4**: The primary interface for text generation models

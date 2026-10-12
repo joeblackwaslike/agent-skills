@@ -1,17 +1,17 @@
 ---
 title: Lifecycle Callbacks
-description: Observe AI SDK lifecycle events in generateText, streamText, embed, embedMany, rerank, and experimental_evaluate calls
+description: Observe AI SDK lifecycle events in generateText, streamText, embed, embedMany, rerank, and experimental_decide calls
 url: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "58a6fbd6e88b764fab0d956780e25273a1d8796f6f0e8f161e27097e64a3654b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "df2ef52f7f4d788cd14ba32696bee4a979d22dba722a8711c193871fd67b1d77"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Event callbacks let you run your own code at important points in an AI SDK call.
-You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, `rerank`, and `experimental_evaluate` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
+You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, `rerank`, and `experimental_decide` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
 
 They are especially useful when you want application-specific logic close to the call site:
 
@@ -384,10 +384,10 @@ for new code.
 - `onStart` (`(event: RerankStartEvent) => void | Promise<void>`): Called when the reranking operation begins, before the reranking model is called.
 - `onEnd` (`(event: RerankEndEvent) => void | Promise<void>`): Called when the reranking operation completes, after the reranking model returns.
 
-### `experimental_evaluate`
+### `experimental_decide`
 
-- `onStart` (`(event: Experimental_EvaluateStartEvent) => void | Promise<void>`): Called when the evaluation operation begins, before the evaluation model is called.
-- `onEnd` (`(event: Experimental_EvaluateEndEvent) => void | Promise<void>`): Called when the evaluation operation completes successfully.
+- `onStart` (`(event: Experimental_DecideStartEvent) => void | Promise<void>`): Called when the decision operation begins, before the decision model is called.
+- `onEnd` (`(event: Experimental_DecideEndEvent) => void | Promise<void>`): Called when the decision operation completes successfully.
 
 ## Event Data Reference
 
@@ -570,20 +570,20 @@ For `embed`, `value` is a single string. For `embedMany`, `value` is an array of
 - `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
 - `response` (`{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }`): Response data including headers and body.
 
-### Evaluation Events
+### Decision Events
 
-Evaluation callbacks are experimental. Their exported types are
-`Experimental_EvaluateStartEvent` and `Experimental_EvaluateEndEvent`.
+Decision callbacks are experimental. Their exported types are
+`Experimental_DecideStartEvent` and `Experimental_DecideEndEvent`.
 
 #### onStart
 
-- `callId` (`string`): Unique identifier for this evaluation call.
-- `operationId` (`'ai.evaluate'`): Evaluation operation identifier.
+- `callId` (`string`): Unique identifier for this decision call.
+- `operationId` (`'ai.decide'`): Decision operation identifier.
 - `runtimeContext` (`RUNTIME_CONTEXT`): Full user-defined runtime context.
-- `provider` (`string`): Provider identifier for the evaluation model.
-- `modelId` (`string`): Evaluation model identifier.
-- `state` (`string | object | array`): Shared state being evaluated.
-- `questions` (`Readonly<Record<string, Experimental_EvaluationQuestion>>`): Questions being evaluated against the shared state.
+- `provider` (`string`): Provider identifier for the decision model.
+- `modelId` (`string`): Decision model identifier.
+- `state` (`string | object | array`): Shared state used to make decisions.
+- `questions` (`Readonly<Record<string, Experimental_DecisionQuestion>>`): Questions to decide against the shared state.
 - `maxRetries` (`number`): Maximum number of retries for the model call.
 - `headers` (`Record<string, string> | undefined`): Additional HTTP headers sent with the request.
 - `providerOptions` (`ProviderOptions`): Provider-specific options.
@@ -592,9 +592,9 @@ Evaluation callbacks are experimental. Their exported types are
 
 Includes every `onStart` field plus:
 
-- `answers` (`Record<string, Experimental_EvaluationAnswer>`): Exactly one typed answer per question ID.
-- `usage` (`{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }`): Token usage for the evaluation operation.
-- `warnings` (`Array<Warning>`): Warnings from the evaluation model.
+- `answers` (`Record<string, Experimental_DecisionAnswer>`): Exactly one typed answer per question ID.
+- `usage` (`{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }`): Token usage for the decision operation.
+- `warnings` (`Array<Warning>`): Warnings from the decision model.
 - `rounding` (`{ probabilityDecimals?: number; scoreDecimals?: number } | undefined`): Provider-declared decimal precision for probabilities and scores.
 - `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
 - `response` (`{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }`): Response metadata including the resolved model and timestamp.

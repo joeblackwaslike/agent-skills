@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/user-input.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "bdff732e3af50c0c28252d84dd0a82c2496092ff55032a4271a5ecf9e4740341"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "ff01dec6260ddebd97cdaaa1e05349884a7a5363b01bba70bb0cb1b91db5f6b2"
 ---
 
 > ## Documentation Index
@@ -40,10 +40,13 @@ Pass a `canUseTool` callback in your query options. The callback fires whenever 
   ```
 
   ```typescript TypeScript theme={null}
-  async function handleToolRequest(toolName, input, options) {
+  import type { CanUseTool } from "@anthropic-ai/claude-agent-sdk";
+
+  const handleToolRequest: CanUseTool = async (toolName, input, options) => {
     // options includes { signal: AbortSignal, suggestions?: PermissionUpdate[] }
-    // Prompt user and return allow or deny
-  }
+    // Prompt the user here, then return allow or deny
+    return { behavior: "deny", message: "User declined" };
+  };
 
   const options = { canUseTool: handleToolRequest };
   ```
@@ -438,7 +441,8 @@ The following steps show how to handle clarifying questions:
           // Include AskUserQuestion in your tools list
           tools: ["Read", "Glob", "Grep", "AskUserQuestion"],
           canUseTool: async (toolName, input) => {
-            // Handle clarifying questions here
+            // Placeholder that approves every call. The Detect AskUserQuestion step replaces it.
+            return { behavior: "allow", updatedInput: input };
           }
         }
       })) {
@@ -751,6 +755,7 @@ Save the TypeScript version as `ask.ts` and run it with `npx tsx ask.ts`, or sav
 
   ```typescript TypeScript theme={null}
   import { query } from "@anthropic-ai/claude-agent-sdk";
+  import type { PermissionResult } from "@anthropic-ai/claude-agent-sdk";
   import * as readline from "readline/promises";
 
   // Helper to prompt user for input in the terminal
@@ -771,7 +776,7 @@ Save the TypeScript version as `ask.ts` and run it with `npx tsx ask.ts`, or sav
   }
 
   // Display Claude's questions and collect user answers
-  async function handleAskUserQuestion(input: any) {
+  async function handleAskUserQuestion(input: any): Promise<PermissionResult> {
     const answers: Record<string, string> = {};
 
     for (const q of input.questions) {

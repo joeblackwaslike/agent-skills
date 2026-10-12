@@ -4,8 +4,8 @@ description: Learn how to use Mistral.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "cae9dc4de97b937790abb748580a644a9cecfb65f0bfc4263a11ee7fe467a067"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "89fb224310bdcae041f1cd60d1d7c0400b409692aa8daea3b6d78b89ae1cf8e9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ APIs.
 
 The Mistral provider is available in the `@ai-sdk/mistral` module. You can install it with
 
-**Packages:** `@ai-sdk/mistral`
+```bash
+pnpm add @ai-sdk/mistral
+```
 
 ## Provider Instance
 
@@ -323,6 +325,107 @@ When using structured outputs, the SDK no longer injects an extra "answer with
 JSON" instruction. It relies on Mistral's native `json_schema`/`json_object`
 response formats instead. You can customize the schema name/description via
 the standard structured-output APIs.
+
+### Conversations API
+
+Use `mistral.conversation(modelId)` to create a model that calls Mistral's
+Conversations API (`/v1/conversations`). It supports `generateText` and
+`streamText`, including Mistral's built-in web search tools.
+
+#### Web Search
+
+The provider offers two tools:
+
+- `mistral.tools.webSearch()`: searches the web.
+- `mistral.tools.webSearchPremium()`: searches the web and accesses news articles
+  through Mistral's integrated news providers.
+
+Mistral executes these tools on the server. No `execute` function is needed.
+Search calls and results are available in `result.toolCalls` and
+`result.toolResults`, and URL citations are available in `result.sources`.
+
+```ts
+import { mistral } from '@ai-sdk/mistral';
+import { generateText } from 'ai';
+
+const result = await generateText({
+  model: mistral.conversation('mistral-medium-latest'),
+  tools: {
+    web_search: mistral.tools.webSearch(),
+  },
+  prompt:
+    "Use web search to find Mistral AI's official website. Cite your source.",
+});
+
+console.log(result.text);
+console.log(result.sources);
+```
+
+Replace `mistral.tools.webSearch()` with `mistral.tools.webSearchPremium()` to use
+premium search.
+
+Web search requires `mistral.conversation()`. The default `mistral()` factory
+and `mistral.chat()` use the Chat Completions API, which does not support
+these tools. See [Mistral's web search
+documentation](https://docs.mistral.ai/studio/agents/agent-tools/websearch).
+
+You can also stream the answer and access citations after the stream completes:
+
+```ts
+import { mistral } from '@ai-sdk/mistral';
+import { streamText } from 'ai';
+
+const result = streamText({
+  model: mistral.conversation('mistral-medium-latest'),
+  tools: {
+    web_search: mistral.tools.webSearch(),
+  },
+  prompt:
+    "Use web search to find Mistral AI's official website. Cite your source.",
+});
+
+for await (const text of result.textStream) {
+  process.stdout.write(text);
+}
+
+console.log(await result.sources);
+```
+
+#### Multi-Turn Conversations
+
+Pass the previous user messages and `responseMessages` into the next call.
+Keep the complete response history, including search calls and results, so
+follow-up questions can use the retrieved information. The model does not
+retain conversation history between calls.
+
+```ts
+import { mistral } from '@ai-sdk/mistral';
+import { generateText, type ModelMessage } from 'ai';
+
+const model = mistral.conversation('mistral-medium-latest');
+const tools = { web_search: mistral.tools.webSearch() };
+const messages: ModelMessage[] = [
+  {
+    role: 'user',
+    content: "Use web search to find Mistral AI's official website.",
+  },
+];
+
+const first = await generateText({ model, tools, messages });
+messages.push(...first.responseMessages);
+messages.push({
+  role: 'user',
+  content:
+    'Where is that company headquartered? Use web search and cite your source.',
+});
+
+const second = await generateText({ model, tools, messages });
+console.log(second.text);
+console.log(second.sources);
+```
+
+For `streamText`, consume the stream before appending
+`await result.responseMessages` to your message history.
 
 ### Model Capabilities
 

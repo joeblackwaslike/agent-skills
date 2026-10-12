@@ -4,8 +4,8 @@ description: Learn how to use the Letta provider with the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/letta"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/letta.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "77c04706669af568a27c2d64297b758a3c0fb3d90e40b639ee439b253cfa02c9"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c7a89044d8adf5c99b5977a80533839301cb74046740588f94e7d353f8cb5112"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -29,7 +29,9 @@ See the [Letta documentation](https://docs.letta.com/connecting-model-providers/
 
 You can install the Letta provider with:
 
-**Packages:** `@letta-ai/vercel-ai-sdk-provider`
+```bash
+pnpm add @letta-ai/vercel-ai-sdk-provider
+```
 
 ## Provider Instance
 

@@ -4,8 +4,8 @@ description: Learn how to use the Crosshatch provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/crosshatch"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/crosshatch.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c69c62fbe249d439d41b98dfb11c78b914ee2c8fbe04c0c91a820676d70abb8a"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4f66925a4a33c6de5ca9ffe8b7f6269cf1774c474aa39bd68715be36d851b0b1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -23,7 +23,9 @@ It creates language model objects that can be used with the `generateText` and `
 The Crosshatch provider is available via the `@crosshatch/ai-provider` module.
 You can install it with:
 
-**Packages:** `@crosshatch/ai-provider`
+```bash
+pnpm add @crosshatch/ai-provider
+```
 
 The [Crosshatch](https://crosshatch.io/) provider supports all of their available models such as OpenAI's GPT and Anthropic's Claude. This provider also supports the querying interface for controlling Crosshatch's custom data integration behaviors. This provider wraps the existing underlying providers ([@ai-sdk/openai](/providers/ai-sdk-providers/openai), [@ai-sdk/anthropic](/providers/ai-sdk-providers/openai).
 

@@ -14,8 +14,8 @@ related:
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "a964d0bcd0e8a3903b291b6b429cb61d9a45897f179d8525bf26023a6592b90a"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d875f4c6525ae4d44baffd5cb9ab74d8edb615135fcccdf8f16d31a76138dcb8"
 ---
 
 # vercel link
@@ -33,8 +33,8 @@ The `vercel link` command links your local directory to a [Vercel Project](/docs
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel git](https://vercel.com/docs/cli/git?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=related) — Learn how to manage your Git provider connections using the vercel git CLI command.
 
 Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flink&source_site=vercel-docs&relationship=graph)

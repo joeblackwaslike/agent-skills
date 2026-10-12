@@ -9,8 +9,8 @@ tags:
   - agent
   - web
 source: "https://ai-sdk.dev/cookbook/node/web-search-agent.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "44049558a49eeaef2c9deaf2389aa4c1e0cda1f3aec325f49830d9a652613cc5"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "a3ac78b94d8a9b2efd6bb1b352376cc23edf2f1e6f95cc11fdc7eeaae715b703"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -86,7 +86,9 @@ Perplexity's Agent API offers presets that combine models with native tools such
 
 Install `@ai-sdk/perplexity` and set `PERPLEXITY_API_KEY` in your environment to use the provider directly:
 
-**Packages:** `@ai-sdk/perplexity`
+```bash
+pnpm add @ai-sdk/perplexity
+```
 
 ```ts
 import { perplexity } from '@ai-sdk/perplexity';

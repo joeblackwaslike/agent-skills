@@ -4,8 +4,8 @@ description: Learn how to configure the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/settings"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/settings.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "84d13b03a548840e5c1119c24a4c2259a29046f9c131c40d8c51f4f418193266"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b10bfad6bcbb48665dd5f6bcddf77d69b8e86d46261d15250d2431afc0c3446b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -108,9 +108,10 @@ Controls how much reasoning the model performs before generating a response.
 | `'low'`              | Fast, concise reasoning                                              |
 | `'medium'`           | Balanced reasoning                                                   |
 | `'high'`             | Thorough reasoning                                                   |
-| `'xhigh'`            | Maximum reasoning                                                    |
+| `'xhigh'`            | Extra-high reasoning                                                 |
+| `'max'`              | Maximum reasoning                                                    |
 
-If you also set reasoning-related options in `providerOptions` (e.g. `openai.reasoningEffort` or `anthropic.thinking`), the provider-specific options take precedence and the top-level `reasoning` parameter is ignored.
+Provider-specific settings take precedence over the corresponding fields derived from `reasoning`. Partial configurations can still use portable reasoning to fill missing fields; summary and display options can be used alongside it. For example, Bedrock preserves an explicit thinking budget while deriving a missing enabled type from portable reasoning.
 
 See the [reasoning guide](/docs/ai-sdk-core/reasoning) for details on per-provider mapping and migration from `providerOptions`.
 
@@ -148,11 +149,13 @@ This is a convenience parameter that creates an abort signal internally. It can 
 You can specify the timeout either as a number (milliseconds) or as an object with the following properties:
 
 - `totalMs`: The total timeout for the entire call including all steps.
-- `stepMs`: The timeout for each individual step (LLM call). This is useful for multi-step generations where you want to limit the time spent on each step independently.
+- `stepMs`: The timeout for each complete step, including model generation, retries, and local tool execution. The budget is cumulative across provider attempts within the step.
 - `firstChunkMs`: The timeout until the first content-bearing output of each step (streaming only). Text deltas, reasoning deltas, tool-input deltas, generated files, and tool calls satisfy the timeout. Response metadata, stream starts, empty deltas, raw chunks, and transport activity do not satisfy or reset it.
-- `chunkMs`: The timeout between content-bearing output chunks after output has started (streaming only). Non-content chunks do not reset it. This is useful for detecting streams that stall after generation begins.
+- `chunkMs`: The timeout between meaningful model output chunks after output has started (streaming only). It starts with the first meaningful output; it does not limit the wait for that first output. Non-content chunks do not reset it. This is useful for detecting streams that stall after generation begins.
 - `toolMs`: The default timeout for all tool executions. If a tool takes longer, it aborts and returns a tool-error so the model can respond or retry.
 - `tools`: Per-tool timeout overrides using `{toolName}Ms` keys (e.g. `weatherMs`, `slowApiMs`). Takes precedence over `toolMs`. Tool names are type-checked for autocomplete.
+
+The `firstChunkMs` and `chunkMs` timers stop when the model response finishes, errors, closes, or is cancelled. Each provider retry or later model call gets fresh output timeout budgets. Retry backoff and local tool execution are outside these budgets. Provider-executed tools remain within the model response. The `stepMs` and `totalMs` budgets remain active across retries and local tool execution.
 
 #### Example: 5 second timeout (number format)
 

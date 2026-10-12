@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-teams.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "a2ed185b716d2550240752d988bfd1875cb2cad3f803be3a795f14054f3c0549"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "c7ccfd71d6e27ed15577ba1578ae70dc331bb613ff57092b2a056f06f828c0d6"
 ---
 
 > ## Documentation Index
@@ -150,6 +150,8 @@ Claude Code picks each teammate's model from the first of these that applies:
 2. For a teammate spawned from a [subagent definition](#use-subagent-definitions-for-teammates), the definition's `model`, where `inherit` selects the lead's model.
 3. [`CLAUDE_CODE_SUBAGENT_MODEL`](/docs/en/model-config#environment-variables), when it's set to anything other than `inherit`.
 4. The lead's current model.
+
+If an installed [mod](/docs/en/plugins/mods/overview) sets a model in its [`agent.spawn`](/docs/en/plugins/mods/reference#subagents) hook, Claude Code uses that model in place of the first source.
 
 If you set [`CLAUDE_CODE_SUBAGENT_MODEL_FORCE=1`](/docs/en/sub-agents#run-every-subagent-on-one-model), the first two sources don't apply. Claude Code picks every teammate's model from `CLAUDE_CODE_SUBAGENT_MODEL` when it's set to anything other than `inherit`, and from the lead's current model otherwise. Requires Claude Code v2.1.257 or later.
 

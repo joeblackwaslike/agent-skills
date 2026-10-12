@@ -4,8 +4,8 @@ description: Learn how to use the Deepgram provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "05113ce25dfb3ded433820f1a36a9b63a083f2d45189e9848bb4dd695497ba71"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "93f78de38c6cd968794f8bf9f07532e4ed69573ca67938818b878e17513b41ca"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Deepgram](https://deepgram.com/) provider contains language model support f
 
 The Deepgram provider is available in the `@ai-sdk/deepgram` module. You can install it with
 
-**Packages:** `@ai-sdk/deepgram`
+```bash
+pnpm add @ai-sdk/deepgram
+```
 
 ## Provider Instance
 

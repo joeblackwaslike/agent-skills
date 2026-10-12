@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "069d44ce2d18001f012c3de7391c8a9b461ecfcbad42e2b36b06b195dad18428"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "46661bcf76bc264e9a1c07e2e5f38d784379178c9161171d2187201bbb90fd5a"
 ---
 
 # Secure Compute
@@ -42,8 +42,8 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Secure Compute is now self-serve](https://vercel.com/changelog/secure-compute-is-now-self-serve?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
+- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
 - [VPC Peering now available as self-service for Vercel’s Secure Compute](https://vercel.com/changelog/vpc-peering-now-available-as-self-service-for-vercel-secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related)
-- [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=related) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md?from=related&source_path=%2Fdocs%2Fnetworking%2Fsecure-compute&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -102,15 +102,6 @@ Once your IP pair is ready, add it to your backend's access control list. You'll
 ## Specific region
 
 When you create a Secure Compute network, you select the [Vercel Function region](/docs/functions/configuring-functions/region) where it will be provisioned. For the best performance, pick the same [region](/docs/functions/configuring-functions/region) where your backend runs.
-
-Vercel applies Secure Compute to [Vercel Functions](/docs/functions) using the following runtimes:
-
-- [Node.js](/docs/functions/runtimes/node-js)
-- [Ruby](/docs/functions/runtimes/ruby)
-- [Go](/docs/functions/runtimes/go)
-- [Python](/docs/functions/runtimes/python)
-
-The [Edge Runtime](/docs/functions/runtimes/edge) **is not supported** meaning features like [Routing Middleware](/docs/routing-middleware) and Vercel Functions using the [`edge` runtime](/docs/functions/runtimes/edge) will **not** use the provided dedicated IP addresses.
 
 ### Region failover
 
@@ -230,6 +221,17 @@ When data transfer costs apply:
 Monitor your usage in the **Team Settings** **Usage** section in the sidebar under the **Private Data Transfer** section.
 
 ## Limits
+
+### Runtime and middleware support
+
+Secure Compute applies to [Vercel Functions](/docs/functions) using the following runtimes, plus build traffic when you include the build container:
+
+- [Node.js](/docs/functions/runtimes/node-js)
+- [Ruby](/docs/functions/runtimes/ruby)
+- [Go](/docs/functions/runtimes/go)
+- [Python](/docs/functions/runtimes/python)
+
+Secure Compute does not apply to [Routing Middleware](/docs/routing-middleware). Middleware runs at the edge before a request completes, so its outbound traffic never routes through the dedicated IP addresses. Vercel Functions using the [Edge Runtime](/docs/functions/runtimes/edge) are likewise **not supported** and will **not** use the provided dedicated IP addresses.
 
 ### Beta enhancements
 

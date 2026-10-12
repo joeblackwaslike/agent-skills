@@ -16,8 +16,8 @@ related:
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "2d9f61b5585be6b7b6c3e130c4d45a696e1af317f9a3fa259c828246945d12e7"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "f8e199de0292362ccccabd4ec5b60bdce4b0c2e7996776d61bd32b9dd8ba27a8"
 ---
 
 # Vercel WAF
@@ -33,6 +33,7 @@ The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
+- [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Vercel WAF for Blob is now generally available](https://vercel.com/changelog/vercel-waf-for-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
@@ -43,7 +44,6 @@ The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related)
 - [Vercel CDN overview](https://vercel.com/docs/cdn?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [CDN security](https://vercel.com/docs/cdn-security?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf.graph.md](/docs/vercel-firewall/vercel-waf.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

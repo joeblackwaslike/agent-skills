@@ -4,8 +4,8 @@ description: "Learn how to use Together.ai's models with the AI SDK."
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "74a1080ec8521ac90e3656fe6d10dfbf8706880f66c45666c14c623292da22d4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ee14587aa086b7c96aa7b2206f25af87dcd454c1a6039571dffab106dad95cc7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,9 @@ The [Together.ai](https://together.ai) provider contains support for 200+ open-s
 The Together.ai provider is available via the `@ai-sdk/togetherai` module. You can
 install it with
 
-**Packages:** `@ai-sdk/togetherai`
+```bash
+pnpm add @ai-sdk/togetherai
+```
 
 ## Provider Instance
 

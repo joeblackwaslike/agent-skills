@@ -4,8 +4,8 @@ description: Learn how to use provider-specific options to control reasoning, ca
 url: "https://ai-sdk.dev/docs/foundations/provider-options"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/provider-options.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "67668c42f9202187465d174a9ba440cb99f859e1f22d228e99cf64e8a069a73d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "977810d206decb06c69499676a0d6d606dc2460b68281114bfb088f718cadef3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -72,17 +72,18 @@ console.log(
 );
 ```
 
-| Value       | Behavior                                   |
-| ----------- | ------------------------------------------ |
-| `'none'`    | No reasoning (GPT-5.1 models only)         |
-| `'minimal'` | Bare-minimum reasoning                     |
-| `'low'`     | Fast, concise reasoning                    |
-| `'medium'`  | Balanced (default)                         |
-| `'high'`    | Thorough reasoning                         |
-| `'xhigh'`   | Maximum reasoning (GPT-5.1-Codex-Max only) |
+| Value       | Behavior                                 |
+| ----------- | ---------------------------------------- |
+| `'none'`    | No reasoning (GPT-5.1 models only)       |
+| `'minimal'` | Bare-minimum reasoning                   |
+| `'low'`     | Fast, concise reasoning                  |
+| `'medium'`  | Balanced (default)                       |
+| `'high'`    | Thorough reasoning                       |
+| `'xhigh'`   | Extra-high reasoning on supported models |
+| `'max'`     | Maximum reasoning on supported models    |
 
-`'none'` and `'xhigh'` are only supported on specific models. Using them with
-unsupported models will result in an error.
+Supported effort levels vary by model. Using an effort with an unsupported
+model will result in an error.
 
 ### Reasoning Summary
 

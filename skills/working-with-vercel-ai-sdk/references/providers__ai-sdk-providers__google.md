@@ -4,8 +4,8 @@ description: Learn how to use Google Provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "80f0d0cd6c7e05d2211565df64be644feeebedac0ca71f0c43a804b03f9efca4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c7dfb64747d68030297e82d4cd3fec384ee8013cd73f4133b11201cbd22db560"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,9 @@ the [Google](https://ai.google.dev/api/rest) APIs.
 
 The Google provider is available in the `@ai-sdk/google` module. You can install it with
 
-**Packages:** `@ai-sdk/google`
+```bash
+pnpm add @ai-sdk/google
+```
 
 ## Provider Instance
 
@@ -38,6 +40,16 @@ const google = createGoogle({
 ```
 
 You can use the following optional settings to customize the Google provider instance:
+
+- **batchResultDownloads** *object*
+
+  Settings for downloading file-based JSON Lines batch results.
+
+  - **maxLineBytes** *number*
+
+    Maximum UTF-8 bytes per row, excluding the LF delimiter. Defaults to 64 MiB
+    (67,108,864 bytes). Must be a positive safe integer. Oversized rows throw a
+    `DownloadError` and cancel the download.
 
 - **baseURL** *string*
 
@@ -649,7 +661,7 @@ The [File Search tool](https://ai.google.dev/gemini-api/docs/file-search) lets G
 import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
-const { text, sources } = await generateText({
+const { text, sources, providerMetadata } = await generateText({
   model: google('gemini-3.8-flash'),
   tools: {
     file_search: google.tools.fileSearch({
@@ -665,6 +677,9 @@ const { text, sources } = await generateText({
 ```
 
 File Search responses include citations via the normal `sources` field and expose raw [grounding metadata](#google-search) in `providerMetadata.google.groundingMetadata`.
+
+Custom metadata attached to the indexed documents is available in
+`groundingMetadata.groundingChunks[].retrievedContext.customMetadata`.
 
 ### URL Context
 
@@ -1046,6 +1061,7 @@ will still validate the response against the schema in `Output.object`.
 
 | Model                                 | Image Input | Object Generation | Tool Usage | Tool Streaming | Google Search | URL Context |
 | ------------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------- | ----------- |
+| `gemini-nano-banana-2.1`              | ✓           | ✗                 | ✗          | ✗              | ✓             | ✗           |
 | `gemini-3.8-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.7-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.6-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
@@ -2219,11 +2235,12 @@ console.log(result.providerMetadata?.google?.groundingMetadata);
 
 #### Gemini Image Model Capabilities
 
-| Model                            | Image Generation | Image Editing | Aspect Ratios                                       |
-| -------------------------------- | ---------------- | ------------- | --------------------------------------------------- |
-| `gemini-2.5-flash-image`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3-pro-image-preview`     | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
-| `gemini-3.1-flash-image-preview` | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9 |
+| Model                            | Image Generation | Image Editing | Aspect Ratios                                                           |
+| -------------------------------- | ---------------- | ------------- | ----------------------------------------------------------------------- |
+| `gemini-2.5-flash-image`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                     |
+| `gemini-3-pro-image-preview`     | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                     |
+| `gemini-3.1-flash-image-preview` | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                     |
+| `gemini-nano-banana-2.1`         | ✓                | ✓             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1 |
 
 `gemini-3-pro-image-preview` supports additional features including up to 14
 reference images for editing (6 objects, 5 humans), resolution options (1K,
@@ -2376,18 +2393,18 @@ from the input text.
 | `gemini-3.8-flash-tts`         | ✓             | ✓                      |
 | `gemini-3.8-flash-lite-tts`    | ✓             | ✓                      |
 
-## Evaluation Models
+## Decision Models
 
-Create an experimental evaluation model with `google.evaluationModel(modelId)`.
+Create an experimental decision model with `google.decisionModel(modelId)`.
 It uses Gemini structured output for Choice, Score, and Boolean questions. Choose a model
 that supports structured output, such as `gemini-3.5-flash-lite`.
 
 ```ts
 import { google } from '@ai-sdk/google';
-import { experimental_evaluate } from 'ai';
+import { experimental_decide } from 'ai';
 
-const { answers } = await experimental_evaluate({
-  model: google.evaluationModel('gemini-3.5-flash-lite'),
+const { answers } = await experimental_decide({
+  model: google.decisionModel('gemini-3.5-flash-lite'),
   state: 'I was charged twice.',
   questions: {
     requestsRefund: {
@@ -2419,13 +2436,13 @@ and rejects safety-blocked, truncated, or invalid output. It preserves usage
 Choice and Score answers do not include probability distributions. Boolean
 answers contain prompted estimates of P(true), validated to be finite and in
 `[0, 1]`. These estimates are not guaranteed to be calibrated. Apply thresholds
-in application code, for example `answers.requestsRefund.probability >= 0.5`. See [Evaluation](/docs/ai-sdk-core/evaluation).
+in application code, for example `answers.requestsRefund.probability >= 0.5`. See [Decisions](/docs/ai-sdk-core/decisions).
 
-Evaluation models can also be accessed through `customProvider` aliases or
-`createProviderRegistry().evaluationModel('provider:model')`. Direct string IDs
+Decision models can also be accessed through `customProvider` aliases or
+`createProviderRegistry().decisionModel('provider:model')`. Direct string IDs
 use Gateway by default, or an explicitly configured default provider with an
-`evaluationModel` method. See
-[model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
+`decisionModel` method. See
+[model aliases and registries](/docs/ai-sdk-core/decisions#model-aliases-and-registries).
 
 ---
 

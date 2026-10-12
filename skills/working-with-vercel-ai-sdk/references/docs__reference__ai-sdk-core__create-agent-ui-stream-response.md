@@ -4,8 +4,8 @@ description: API Reference for the createAgentUIStreamResponse utility.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream-response"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-agent-ui-stream-response.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "8d21ae2d6a42bd73433713ed71a0df8f2f6acc4b463593b7ac3987b4d284d595"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "fc1cfe61f86224780d9e06edb732068f5762421c1082150ffb2df141ae1f131e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -54,7 +54,8 @@ export async function POST(request: Request) {
 - `experimental_transform` (`StreamTextTransform | StreamTextTransform[]`): Optional stream transforms to post-process text output—the same as in lower-level streaming APIs.
 - `onStepEnd` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. Useful for tracking token usage or logging intermediate steps.
 - `onStepFinish` (`GenerateTextOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
-- `...UIMessageStreamOptions` (`UIMessageStreamOptions`): Other UI message output options—such as \`sendSources\` and more.
+- `onUIMessageStepEnd` (`UIMessageStreamOnStepEndCallback`): Callback invoked after each UI message step is assembled. It receives \`messages\`, \`isContinuation\`, and the accumulated \`responseMessage\` for intermediate persistence.
+- `...UIMessageStreamOptions` (`UIMessageStreamOptions`): Other UI message output options, including message IDs, metadata, final callbacks, sources, and reasoning.
 - `headers` (`HeadersInit`): Optional HTTP headers to include in the Response object.
 - `status` (`number`): Optional HTTP status code.
 - `statusText` (`string`): Optional HTTP status text.
@@ -63,6 +64,8 @@ export async function POST(request: Request) {
 ## Returns
 
 A `Promise<Response>` whose `body` is a streaming UI message output from the agent. Use this as the return value of API/server handlers in serverless, Next.js, Express, Hono, or edge runtime contexts.
+
+Use `onUIMessageStepEnd` to persist the accumulated UI response after every agent step. The callback is awaited before the corresponding `finish-step` chunk continues. Use idempotent writes and protect model output, reasoning, tool inputs, and tool outputs as sensitive conversation data. The existing `onStepEnd` callback remains the low-level generation callback for usage, finish reasons, and raw step details.
 
 ## Example: Next.js API Route Handler
 

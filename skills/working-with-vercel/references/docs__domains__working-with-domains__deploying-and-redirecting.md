@@ -17,8 +17,8 @@ related:
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1b4cc294b24ea2e1db2df79875de616638bb16c7b69c48e0ef120909f3cd1eeb"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "88f29d4c13fb384f7f8bde98f5deb6ecba6e361642b561312b61217dac445cdf"
 ---
 
 # Deploying & Redirecting Domains
@@ -41,7 +41,7 @@ Once the domain has been added to your project and configured, it is **automatic
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/deploying-and-redirecting.graph.md](/docs/domains/working-with-domains/deploying-and-redirecting.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fworking-with-domains%2Fdeploying-and-redirecting&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -9,12 +9,12 @@ prerequisites:
   - /docs/flags/vercel-flags
   - /docs/flags
 related:
-  []
+  - /docs/cli/flags
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "96923348697d5b69b2eba732be0e18fe44454828ff31cfd69ef8cf874df81e7d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "9f11d5dcb5cefd3746a24861d2fb50ac86fc46c66aad4306c1fe6cb8c3238631"
 ---
 
 # Rolling out a new feature
@@ -144,7 +144,7 @@ vercel flags rollout redesigned-checkout --environment production --by user.id \
 
 *Starting a staged production rollout based on \`user.id\`.*
 
-Each `--stage` defines the percentage of traffic sent to the `true` variant and how long that stage lasts. After the last stage finishes, Vercel serves 100% of the `true` variant indefinitely.
+Each `--stage` defines the percentage of traffic sent to the `true` variant and how long that stage lasts. After the last stage finishes, Vercel serves 100% of the `true` variant indefinitely by default. To end the rollout at a different percentage, pass `--final-percentage`. For example, `--final-percentage 50` serves 50% of the `true` variant after the last stage. Final percentages below 100% require `@vercel/flags-core` version 1.9.0 or later. See [`--final-percentage`](/docs/cli/flags#final-percentage) for details.
 
 ## 11. Inspect or adjust the rollout
 

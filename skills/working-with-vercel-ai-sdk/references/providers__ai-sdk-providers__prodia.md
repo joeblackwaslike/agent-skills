@@ -4,8 +4,8 @@ description: Learn how to use Prodia models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ec2ba49bcce5e25694cd51fa467a9e4631500f706b6b68421152839d09b15361"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "5a687dd68a672e76ed317ae780d02c1d6f52a79137ada9e5fef8f6d677d06970"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "ec2ba49bcce5e25694cd51fa467a9e4631500f706b6b68421152839d09b15361"
 
 The Prodia provider is available via the `@ai-sdk/prodia` module. You can install it with
 
-**Packages:** `@ai-sdk/prodia`
+```bash
+pnpm add @ai-sdk/prodia
+```
 
 ## Provider Instance
 

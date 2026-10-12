@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/authenticating-with-a-github-app/refreshing-user-access-tokens.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "73f85b6dfb5f0f7849c288ddc772e590fe887b3ffe3a0c9b09511e17761b7a6d"
+fetched_at: "2026-10-12T11:41:11.736Z"
+sha256: "c5991bba2ca5d34ed695b92f001a3c274e51d14e7318a2ea9ec68de32382ca09"
 ---
 
 ## About user access tokens that expire
@@ -15,6 +15,14 @@ You can use the refresh token to generate a new user access token and a new refr
 
 If your refresh token expires before you use it, you can regenerate a user access token and refresh token by sending users through the web application flow or device flow. For more information, see [AUTOTITLE](/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app).
 
+{% ifversion github-app-offline-access %}
+
+To test and gradually roll out support for expiring tokens, you can opt in for an individual user authorization by requesting the `offline_access` scope. When you request `offline_access`, you will receive an expiring user access token and a refresh token even if your app is configured not to use expiring user access tokens.
+
+The `scope` parameter does not grant permissions to a {% data variables.product.prodname_github_app %}. The only supported value is `offline_access`, which forces the user access token to expire.
+
+{% endif %}
+
 ## Configuring your app to use user access tokens that expire
 
 When you create your app, expiration of user access tokens is enabled unless you opt out. For more information, see [AUTOTITLE](/apps/creating-github-apps/registering-a-github-app/registering-a-github-app). You can also configure this setting after your app has been created.
@@ -27,7 +35,7 @@ When you create your app, expiration of user access tokens is enabled unless you
 
    {% data variables.product.company_short %} recommends that you opt in to this feature for improved security.
 
-If you opt into user access tokens that expire after you have already generated user access tokens, the previously generated user access tokens will not expire. You can delete these tokens by using the `DELETE /applications/CLIENT_ID/token` endpoint. For more information, see [AUTOTITLE](/rest/apps/oauth-applications#delete-an-app-token).
+If you re-enable expiring user access tokens after you've already signed in users and gotten their access token, those pre-existing user access tokens will not expire. You should delete these tokens by using the `DELETE /applications/CLIENT_ID/token` endpoint or have the users reauthenticate so that they get an expiring token. For more information, see [AUTOTITLE](/rest/apps/oauth-applications#delete-an-app-token).
 
 ## Refreshing a user access token with a refresh token
 

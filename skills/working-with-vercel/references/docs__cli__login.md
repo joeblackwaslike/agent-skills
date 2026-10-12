@@ -13,8 +13,8 @@ related:
 summary: Learn how to login into your Vercel account using the vercel login CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/login.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "1d199711e8472b5d288f6dd986ba10a83672d57cdb9cd54c9dd4e8eb342ff7ab"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "fe6a5cf89811209360201bfab9712afc9dae350398879807c509b8c4cccae981"
 ---
 
 # vercel login
@@ -31,8 +31,8 @@ The `vercel login` command allows you to login to your Vercel account through Ve
 - [vercel logout](https://vercel.com/docs/cli/logout?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [vercel whoami](https://vercel.com/docs/cli/whoami?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
 - [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
+- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/login.graph.md](/docs/cli/login.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

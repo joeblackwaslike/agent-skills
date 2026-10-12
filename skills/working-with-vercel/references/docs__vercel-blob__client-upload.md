@@ -14,8 +14,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ab2a76404049fd2e694bda3e7ad543635409a2b259db215aa597b016edac9695"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ac0e316303603de75c11a600b8ef7940f836eb6ce6a99a72698a07992f194140"
 ---
 
 # Client Uploads with Vercel Blob
@@ -40,6 +40,7 @@ In this guide, you'll learn how to do the following:
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Split integration.
+- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
 
 Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

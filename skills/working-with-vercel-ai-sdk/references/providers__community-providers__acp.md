@@ -4,8 +4,8 @@ description: ACP Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/acp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/acp.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "5255a776e7ade176fb76108facd2d72b49ace84e3db8195197e70994a082895c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "bdd3060cb1bbe042ea60c0ddb905ed3de445ecba73841f1eb6e0299e43fc88e8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -27,7 +27,9 @@ Learn more about ACP in the [Agent Client Protocol Documentation](https://agentc
 
 The ACP provider is available in the `@mcpc-tech/acp-ai-provider` module. You can install it with:
 
-**Packages:** `@mcpc-tech/acp-ai-provider`
+```bash
+pnpm add @mcpc-tech/acp-ai-provider
+```
 
 ## Provider Instance
 

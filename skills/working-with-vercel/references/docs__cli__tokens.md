@@ -12,8 +12,8 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "21b3628da24cdcabe13d3b8ff0c70f2f9c8a943328960645e8fce5458ed4833e"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "baebb7995cc241efedb288f6949e2b56da423265becf5acd3b328eee60cf265b"
 ---
 
 # vercel tokens
@@ -29,8 +29,8 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel connect](https://vercel.com/docs/cli/connect?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftokens&source_site=vercel-docs&relationship=graph)
@@ -70,12 +70,14 @@ vercel tokens ls --format json
 | `-F, --format <FORMAT>` | String | Output format (`json`) |
 | `--limit <NUMBER>` | Number | Maximum number of tokens to return (default 20, range 1-100) |
 
-### add (create)
+### create
+
+`add` is a supported alias.
 
 Creates a new personal authentication token with the given name. The plaintext token is printed to stdout; capture it before it scrolls away.
 
 ```bash filename="terminal"
-vercel tokens add "CI deploy"
+vercel tokens create "CI deploy"
 ```
 
 *Create a new token named \`CI deploy\`. The plaintext value is printed once.*
@@ -128,7 +130,7 @@ vercel tokens rm tok_abc123
 ### Create a token for CI/CD
 
 ```bash filename="terminal"
-vercel tokens add "GitHub Actions deploy"
+vercel tokens create "GitHub Actions deploy"
 ```
 
 *Capture the plaintext value from stdout and set it as \`VERCEL\_TOKEN\` in your
@@ -137,7 +139,7 @@ CI environment.*
 ### Scope a token to a single project
 
 ```bash filename="terminal"
-vercel tokens add "Preview deploy bot" --project prj_abc123
+vercel tokens create "Preview deploy bot" --project prj_abc123
 ```
 
 *The resulting token can only act on \`prj\_abc123\`. This narrows blast radius

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/tui/styles.md"
-fetched_at: "2026-09-28T10:39:25.885Z"
-sha256: "58808ac324dd93ce62894e5aa85fe8bd0c5985ebb92c8cab1f3d6688bfe8f1fc"
+fetched_at: "2026-10-12T11:42:58.685Z"
+sha256: "f85ff5a55881d0c1f7b0b53b1ad6da69e7f543fc4cf0e76cf42d99cb1c97fbad"
 ---
 
 # Headers, primary, and secondary text
@@ -15,7 +15,7 @@ sha256: "58808ac324dd93ce62894e5aa85fe8bd0c5985ebb92c8cab1f3d6688bfe8f1fc"
 - **Keyboard hints:** Use `key_hint` span helpers for compact, uniformly bold shortcut labels
   and readable secondary descriptions. Include `+`, `/`, and chord separators in the label's
   emphasis. The `?` shortcut reference uses readable accent-colored keys
-  without bold. Separate composer footer actions with ` · `.
+  without bold. Separate composer footer actions with `·`.
 
 # Foreground colors
 

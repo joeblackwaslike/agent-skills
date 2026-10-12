@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "77094b12cd8eaf992960a7574324137ca20c027adedb092d3929c1d44fbc978d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d4d5e2f9cf9415dcd25d4d7b4f55c406e221761889ec19ea4b273fb71ca514be"
 ---
 
 # Bot Management
@@ -569,6 +569,14 @@ DuckDuckBot is a web crawler for DuckDuckGo. DuckDuckBot’s job is to constantl
 
 View
 
+exasearchbot
+
+search\_engine\_crawler
+
+Crawls public web pages to build Exa's search index, enabling users and applications to find, retrieve, and cite content.
+
+View
+
 facebook-webhooks
 
 webhook
@@ -1006,6 +1014,22 @@ microsoftpreview
 preview
 
 MicrosoftPreview generates page snapshots for Microsoft products. It has desktop and mobile variants, with Chrome version dynamically updated to match the latest Microsoft Edge version.
+
+View
+
+mistralai-index
+
+ai\_assistant
+
+MistralAI-Index acrawls web content to build Mistral's search index for answering user questions in Vibe. Crawled content is not used for generative AI training.
+
+View
+
+mistralai-user
+
+ai\_assistant
+
+MistralAI-User fetches web pages in response to user questions in Vibe to help answer and link to sources. The content is not used for AI training.
 
 View
 

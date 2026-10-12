@@ -4,8 +4,8 @@ description: Learn how to use LangChain with the AI SDK.
 url: "https://ai-sdk.dev/providers/adapters/langchain"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/adapters/langchain.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "bd0f7be2579e517bb5d7ff3c56624155b005d79f9032c3c3c68263a6d0a57fd1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "54f2b35b0019322429e98a88602f9c73cacf62159dbb9bea5e60ac6f8e26fc22"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -23,7 +23,9 @@ enabling you to use LangChain models and LangGraph agents with AI SDK UI compone
 
 ## Installation
 
-**Packages:** `@ai-sdk/langchain`, `@langchain/core`
+```bash
+pnpm add @ai-sdk/langchain @langchain/core
+```
 
 `@langchain/core`
 

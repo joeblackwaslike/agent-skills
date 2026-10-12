@@ -16,8 +16,8 @@ related:
 summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f7a7309925fac5de250e0408c71321e3c26ba0e369fcc39dba101933b33b6471"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "5e58c1d77baa7e19827a13613176e55c45f1e6755b50b76e7f6b77f05d17ff65"
 ---
 
 # Mistral Vibe with AI Gateway
@@ -30,6 +30,7 @@ sha256: "f7a7309925fac5de250e0408c71321e3c26ba0e369fcc39dba101933b33b6471"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related)
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.

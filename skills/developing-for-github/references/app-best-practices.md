@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/about-creating-github-apps/best-practices-for-creating-a-github-app.md"
-fetched_at: "2026-08-17T04:40:36.479Z"
-sha256: "b8f1498d7e023a9fb8c35b25c69c3d4491fcbedece7cd35feab548f832e70334"
+fetched_at: "2026-10-12T11:41:11.736Z"
+sha256: "3b522aae74cb11bd95593accff8ccf79539571a59e0079249ebaa2e9d3b8516d"
 ---
 
 ## Select the minimum permissions required
@@ -94,6 +94,12 @@ After signing in a user, app developers must take additional steps to ensure tha
 ## Expire tokens
 
 {% data variables.product.company_short %} strongly encourages you to use user access tokens that expire. If you previously opted out of using user access tokens that expire but want to re-enable this feature, see [AUTOTITLE](/apps/maintaining-github-apps/activating-optional-features-for-github-apps).
+
+{% ifversion github-app-offline-access %}
+
+To test and gradually roll out support for expiring tokens, request the `offline_access` scope when you sign in a user. This scope gives you an expiring user access token and a refresh token for an individual authorization, even if your app is configured not to use expiring tokens. To confirm that you received an expiring token, check for the `expires_in` field in the token response.
+
+{% endif %}
 
 Installation access tokens expire after one hour, expiring user access tokens expire after eight hours, and refresh tokens expire after six months. However, you can also revoke tokens as soon as you no longer need them. For more information, see [`DELETE /installation/token`](/rest/apps/installations#revoke-an-installation-access-token) to revoke an installation access token and [`DELETE /applications/{client_id}/token`](/rest/apps/oauth-applications#delete-an-app-token) to revoke a user access token.
 

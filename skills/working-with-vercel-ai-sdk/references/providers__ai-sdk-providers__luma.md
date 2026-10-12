@@ -4,8 +4,8 @@ description: Learn how to use Luma AI models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/luma"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "dc7eab1e2444cefd80a47a322587941647bab7d15f82924216fe27fbd6839b44"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0bfaf3687c61100f7bbb8fde855592d2f5572547b12a35131fd73b737be26426"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "dc7eab1e2444cefd80a47a322587941647bab7d15f82924216fe27fbd6839b44"
 
 The Luma provider is available via the `@ai-sdk/luma` module. You can install it with
 
-**Packages:** `@ai-sdk/luma`
+```bash
+pnpm add @ai-sdk/luma
+```
 
 ## Provider Instance
 

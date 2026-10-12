@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "097f36b5e35f08d3ef95583260047ac502483763a860d1f105a8a815c342745b"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d7b1378f8cefdb04aaeafe997e3f50e2f4e25b08608ebb71d6f49fbf05510386"
 ---
 
 # Glossary
@@ -41,7 +41,7 @@ A full glossary of terms used in Vercel's products and documentation.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -104,7 +104,7 @@ The process Vercel runs on every deployment that compiles, bundles, and optimize
 
 ### Build Cache
 
-A cache that stores build artifacts and dependencies to speed up subsequent deployments. Each build cache holds up to 1 GB and is retained for one month.
+A cache that stores build artifacts and dependencies to speed up subsequent deployments. The [maximum size](/docs/limits#build-cache-maximum-size) depends on the build machine type. The cache is retained for one month.
 
 ### Build Command
 

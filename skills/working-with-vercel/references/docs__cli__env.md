@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "cc687972b6282a8d1dfd246261219ddaeadc25ef12e9ce6b5f2480f03d4f5242"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d4a7448d729770fc41d094af2cbee8c331aa8822e9fceec32e0063bf0efab2c4"
 ---
 
 # vercel env
@@ -38,7 +38,7 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/env.graph.md](/docs/cli/env.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fenv&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -67,7 +67,7 @@ When the target file already exists, `vercel env pull` merges the pulled values 
 
 - Variables defined only in your local file, and not present in the pulled environment, are kept. The CLI logs `Kept <KEYS> (defined locally, not found in the <environment> Environment)`.
 - `VERCEL_OIDC_TOKEN` is never preserved from your local file. It is always refreshed from Vercel. The Vercel-managed analytics variables `VERCEL_ANALYTICS_ID`, `VERCEL_SPEED_INSIGHTS_ID`, and `VERCEL_WEB_ANALYTICS_ID` are also never preserved as local-only entries.
-- For sensitive variables whose values cannot be read from Vercel, the CLI keeps the real value already in your local file. If your local file has no real value for that key, the CLI writes a placeholder for you to replace with a local-only value.
+- For Secret variables whose values cannot be read from Vercel, the CLI keeps the real value already in your local file. If your local file has no real value for that key, the CLI writes a placeholder for you to replace with a local-only value.
 
 <br />
 
@@ -274,75 +274,48 @@ The following options are available for `vercel env run`:
 
 These are options that only apply to the `vercel env` command.
 
-### Sensitive
+### Type
 
-When you add an Environment Variable with `vercel env add`, Vercel defaults to `sensitive` for production, preview, and custom environments. Sensitive values are stored securely by Vercel and cannot be viewed later in the dashboard or with `vercel env ls`. Sensitive values are still available to builds run within the Vercel build container and at runtime.
+`vercel env add` and `vercel env update` store each variable as Config or Secret. Use `--type config` or `--type secret` to set the type explicitly. The `--sensitive` and `--no-sensitive` flags map to Secret and Config. `--visibility` is a deprecated alias for `--type`.
 
-Development targets remain `encrypted` because the Vercel API does not allow sensitive Environment Variables in development.
+Success output includes a `Type` line (`Config` or `Secret`).
 
 | Target | Default type | Notes |
 | --- | --- | --- |
-| Production | `sensitive` | Pass `--no-sensitive` to opt out. Team policy may block opting out. |
-| Preview | `sensitive` | Pass `--no-sensitive` to opt out. Team policy may block opting out. |
-| Development | `encrypted` | Sensitive is not allowed. `--sensitive` returns an error. |
-| Custom environments | `sensitive` | The server decides whether sensitive is allowed for that environment. |
-
-If you select development with production or preview in the same command, `vercel env add` returns an error. Add development variables in a separate command.
-
-#### Team policy enforcement
-
-If your team enables [Enforce Sensitive Environment Variables](/docs/environment-variables/sensitive-environment-variables#environment-variables-policy), the CLI applies policy-aware behavior before it creates variables.
-
-Under this policy:
-
-- Development is disallowed for `vercel env add` and returns an error.
-- Production and preview writes are treated as sensitive, and the CLI logs a one-line notice so this behavior is explicit.
-- The interactive target picker labels development as `Development (disallowed)`.
-- The interactive `Make it sensitive?` prompt is skipped because policy fixes the outcome.
-- `--no-sensitive` is ignored for production and preview with this message: `--no-sensitive is ignored: your team enforces sensitive Environment Variables for Production and Preview.`
-
-When this policy is enabled, the CLI always creates production and preview variables as sensitive and shows that clearly in `--debug` output.
+| Production | `secret` | Use `--no-sensitive` or `--type config` for Config. |
+| Preview | `secret` | Use `--no-sensitive` or `--type config` for Config. |
+| Development | `config` | Use `--sensitive` or `--type secret` for Secret. Secrets are allowed in Development. |
+| Custom environments | `secret` | Use `--no-sensitive` or `--type config` for Config. |
 
 ```bash filename="terminal"
-vercel env add API_TOKEN --sensitive
+vercel env add API_URL production --value "https://api.example.com" --no-sensitive --yes
 ```
 
-*Using \`vercel env add\` with the
-\`--sensitive\` option to add a sensitive Environment
-Variable.*
+*Add a Config variable. \`--no-sensitive\` infers \`type: config\`.*
 
 ```bash filename="terminal"
-vercel env update API_TOKEN --sensitive
+vercel env add API_KEY production --value "sk_live_..." --sensitive --yes
 ```
 
-*Using \`vercel env update\` with the
-\`--sensitive\` option to update a variable and mark it
-as sensitive.*
-
-The `--sensitive` flag keeps its existing behavior and returns an error when you include a development target.
-
-The `--no-sensitive` flag opts out of the default sensitive behavior for production and preview.
+*Add a Secret variable. \`--sensitive\` infers \`type: secret\`.*
 
 ```bash filename="terminal"
-vercel env add API_TOKEN production --no-sensitive
+vercel env add DEV_API_KEY development --value "sk_test_..." --sensitive --yes
 ```
 
-*Using \`vercel env add\` with
-\`--no-sensitive\` to store a production Environment
-Variable as encrypted instead of sensitive.*
+*Add a Secret in Development.*
 
-Using `--sensitive` and `--no-sensitive` together returns an error.
+```bash filename="terminal"
+vercel env add API_URL production --type config --yes
+```
 
-#### Interactive prompt behavior
+*Set the type explicitly with \`--type config\` or \`--type secret\`.*
 
-The `Make it sensitive?` prompt (default `yes`) appears only when all of the following are true:
+Using `--sensitive` or `--no-sensitive` with a conflicting `--type` returns an error.
 
-1. You did not pass `--sensitive` or `--no-sensitive`.
-2. The selected targets include production or preview.
-3. Your team policy does not enforce sensitive environment variables.
-4. You are in an interactive terminal and confirmation prompts are not bypassed by `--yes`, `--value`, or stdin input.
+In an interactive terminal, the CLI asks `Environment Variable type?` unless you pass a type flag, `--yes`, `--value`, or a value through stdin. Variables with a public framework prefix, such as `NEXT_PUBLIC_`, are stored as Config.
 
-The prompt runs after target selection and value entry so it can evaluate the actual target set.
+The legacy **Enforce Sensitive Environment Variables** team policy is deprecated. The CLI no longer enforces that policy locally. See [Environment variables policy](/docs/environment-variables/sensitive-environment-variables#environment-variables-policy) for the replacement **Separate Production Secret Values** policy.
 
 ### Force
 

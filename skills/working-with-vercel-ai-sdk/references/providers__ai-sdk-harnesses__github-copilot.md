@@ -4,8 +4,8 @@ description: Learn how to use the GitHub Copilot harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "fad18add671f819d981d373d6ee930f60a16c8d9b7a07643ce496145c097aebc"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ed4ed7f837e3a77ad1ebe7fafc53a1704af913137317c6b9c09cdfccb1aa87c1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-github-copilot`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-github-copilot @ai-sdk/sandbox-vercel
+```
 
 The ACP harness installs the pinned GitHub Copilot CLI inside the sandbox when
 the first session starts. It never uses a host or globally installed Copilot

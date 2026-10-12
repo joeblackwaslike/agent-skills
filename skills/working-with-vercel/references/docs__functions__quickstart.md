@@ -9,15 +9,15 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/frameworks
+  - /docs/fluid-compute
+  - /docs/frameworks/backend/hono
   - /docs/functions/functions-api-reference
-  - /docs/functions/streaming-functions
-  - /docs/functions/runtimes
-  - /docs/functions/configuring-functions
+  - /docs/routing/rewrites
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "3aaddf0c85a384d301cfff7b3506b626a75a23daaa10e25d8c89dcfd0baebe93"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "3cb70b1a923b60b833f5bce268c073da02c6db6ec34f63671a9cc0c81eaa5f0b"
 ---
 
 # Getting started with Vercel Functions
@@ -32,21 +32,27 @@ In this guide, you'll learn how to get started with Vercel Functions using your 
 
 - [Function invocations now billed per unit](https://vercel.com/changelog/function-invocations-now-billed-per-unit?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related)
 - [Vercel Functions now have faster and fewer cold starts](https://vercel.com/changelog/vercel-functions-now-have-faster-and-fewer-cold-starts?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [How to Use ML Models from Hugging Face in Vercel Functions](https://vercel.com/kb/guide/ml-models-hugging-face?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — This guide provides step-by-step instructions on how to integrate ML models from Hugging Face into Vercel Functions
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Deploy Fastify applications to Vercel with zero configuration.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
 Full cross-link map for this page: [/docs/functions/quickstart.graph.md](/docs/functions/quickstart.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fquickstart&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
 
+For projects without a framework, Vercel creates a separate function for each supported source file in the root `api/` directory and doesn't automatically combine these files into one function.
+
+Avoid creating a separate function for each API endpoint. Keep related routes in a shared function so [Fluid compute](/docs/fluid-compute#optimized-concurrency) can reuse instances across routes and Vercel builds fewer functions. You can use a framework with routing support, such as [Hono](/docs/frameworks/backend/hono), or define a single [`fetch` handler](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard) that receives requests for all HTTP methods and routes them by URL pathname.
+
+With a `fetch` handler, you can keep routing logic in one handler without separate `GET`, `POST`, or other HTTP method exports. Configure [rewrites](/docs/routing/rewrites) to send your API paths to the same function.
+
 **Agent prompt**
 
 ```text
-Help me create a Vercel Function in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). Then: 1. Run `vercel link` to connect the project. 2. Create an API route handler at app/api/hello/route.ts that fetches data from https://api.vercel.app/products and returns it as JSON. Use the standard Web API Request/Response objects. 3. Test locally with `vercel dev`, then deploy with `vercel --prod`.
+Help me create a Vercel Function in this project. First, inspect the project to identify its framework and existing routing. Use the framework's routing conventions if one is present. For a project without a framework, avoid creating a separate function for each API endpoint. Keep related routes in a shared function so Fluid compute can reuse instances across routes and Vercel builds fewer functions. You can use a framework with routing support (Hono is one example), or define a single fetch handler in the default export using the standard Request and Response APIs. The fetch handler receives requests for all HTTP methods, so keep routing logic in that handler without separate GET or POST exports. Route by URL pathname and check request.method where needed. Configure rewrites to send the API paths to that function. Keep route handlers and shared utilities outside the root api/ directory. Vercel deploys each supported source file in that directory as a separate function and does not combine them automatically. Add a GET /api/hello route that fetches data from https://api.vercel.app/products and returns it as JSON. Make sure the Vercel CLI is installed (`npm i -g vercel`), run `vercel link` to connect the project, test locally with `vercel dev`, then deploy with `vercel --prod`.
 ```
 
 > Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Ffunctions%2Fquickstart) to create and deploy a Vercel Function with your coding agent.

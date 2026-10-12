@@ -1,13 +1,47 @@
 ---
 title: "Publishing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "d75db570615fc64981a7e271403fa88de13c136efdcd29b2c987352e57710ce7"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "e48aa8b70621be9dbd9d9056218905f331afcee6ec8749a68b680d09cce211a4"
 ---
 
 # Publishing Extensions
 
 Source: https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/working-with-extensions/publishing-extension.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Fpublishing-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Fpublishing-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fworking-with-extensions%2Fpublishing-extension%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 Once you have made a high-quality extension, you can publish it to the [VS Code Extension Marketplace](https://marketplace.visualstudio.com/vscode) so others can find, download, and use your extension. Alternatively, you can [package](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions) an extension into the installable VSIX format and share it with other users.
 
@@ -778,4 +812,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
 
  
- 9/30/2026
+ 10/7/2026

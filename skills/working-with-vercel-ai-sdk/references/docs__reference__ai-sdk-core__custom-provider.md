@@ -4,8 +4,8 @@ description: Custom provider that uses models from a different provider (API Ref
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "9b9edf5856de924e14c8d6edadbda3f5622213e5e364d42558b12c072be61b4f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3cab4ef609b7fdcbb75c6174a44a4d228f10f2a90c9a179a427558faa64b24b3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -94,22 +94,22 @@ The `customProvider` function returns a `Provider` instance. It has the followin
 - `files?` (`() => FilesV4`): A function that returns the custom provider files API interface, when configured directly or inherited from the fallback provider.
 - `skills?` (`() => SkillsV4`): A function that returns the custom provider skills API interface, when configured directly or inherited from the fallback provider.
 
-## Experimental evaluation models
+## Experimental decision models
 
-Pass `evaluationModels: Record<string, Experimental_EvaluationModel>` to define
-aliases for evaluation model instances or string IDs. The returned provider adds
-`evaluationModel(alias): Experimental_EvaluationModelV4`. String aliases resolve
+Pass `decisionModels: Record<string, Experimental_DecisionModel>` to define
+aliases for decision model instances or string IDs. The returned provider adds
+`decisionModel(alias): Experimental_DecisionModelV4`. String aliases resolve
 through Gateway by default, or an explicitly configured default provider with
-an `evaluationModel` method. Unknown aliases use the fallback provider's evaluation
+a `decisionModel` method. Unknown aliases use the fallback provider's decision
 factory when available; model failures and unsupported questions do not trigger
 substitution.
 
-Unavailable evaluation capabilities or models throw `NoSuchModelError` with
-`modelType: 'evaluationModel'`; unknown registry providers throw
+Unavailable decision capabilities or models throw `NoSuchModelError` with
+`modelType: 'decisionModel'`; unknown registry providers throw
 `NoSuchProviderError`. These capabilities are structural extensions and are not
-added to the stable `ProviderV4` contract. Direct evaluation string IDs default
+added to the stable `ProviderV4` contract. Direct decision string IDs default
 to Gateway when no default provider is configured.
-See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
+See [Decisions](/docs/ai-sdk-core/decisions#model-aliases-and-registries)
 for runnable usage patterns.
 
 ---

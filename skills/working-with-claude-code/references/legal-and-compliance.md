@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/legal-and-compliance.md"
-fetched_at: "2026-08-24T04:44:18.863Z"
-sha256: "4a4cc1762fb1d992a66347dcf94c60a27d328391d8074c13e8ae9d5c4182413b"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "4a5e4b4aff6f0e0525d41d2321a78049e886465f5c6686260d8c8bce67232f4c"
 ---
 
 > ## Documentation Index
@@ -40,7 +40,12 @@ Claude Code remains governed by Anthropic's standard terms (see the License and 
 
 ### Healthcare compliance (BAA)
 
-If a customer has executed a Business Associate Agreement (BAA) with Anthropic and has [Zero Data Retention (ZDR)](/docs/en/zero-data-retention) enabled for the relevant organization, that BAA extends to the customer's API traffic through Claude Code.
+If a customer has executed a Business Associate Agreement (BAA) with Anthropic, that BAA extends to Claude Code in two configurations, depending on what is available for your organization:
+
+* **HIPAA configuration**: the Claude Code CLI or the Code tab in Claude Desktop, used with a Claude for Enterprise account. The organization must have HIPAA enabled and the HIPAA configuration applied to Claude Code (local mode) and Cowork (local mode). See [Set up Claude Code (local mode) for a HIPAA-ready organization](/docs/en/hipaa-setup).
+* **Zero Data Retention**: Claude Code with [Zero Data Retention (ZDR)](/docs/en/zero-data-retention) enabled for the relevant organization. ZDR isn't available for all organizations.
+
+Under the HIPAA configuration, cloud sessions, Remote Control, Claude Code in the Claude mobile app, and Claude Code routed through a third-party cloud provider or a gateway aren't covered. Review the [Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6\&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide) for a full list of Eligible Services.
 
 ## Usage policy
 

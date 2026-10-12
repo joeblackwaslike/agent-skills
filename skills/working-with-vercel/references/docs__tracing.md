@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "020a6dd8b3eef039a3ba32c79ba9a54c6a4ad3b7b102dc46c62ca270f5225f9f"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "2c95896ed19daf2339f751d75c584df24884b83755a6dc795e930c0f9f963613"
 ---
 
 # Tracing
@@ -38,8 +38,8 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Learn how to instrument your Next.js app with OpenTelemetry.
-- [Tracing](https://workflow-sdk.dev/docs/observability/tracing?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Trace workflow execution end to end with OpenTelemetry.
 - [OpenTelemetry](https://eve.dev/docs/observability/otel?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Configure OpenTelemetry destinations, content capture, and third-party exports.
+- [Tracing](https://workflow-sdk.dev/docs/observability/tracing?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Trace workflow execution end to end with OpenTelemetry.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related)
 - [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Ftracing&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
 

@@ -15,8 +15,8 @@ related:
 summary: How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, project, and environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/project-grants.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "fe0a0a956a861267000d09abe9cd0529a4495500cd22d6b5b9d8b91e50ef6d9e"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d314af294b8a9c26d7b5d4d9d22e3c9239c864305fba39926542e79c98b00578"
 ---
 
 # Vercel KMS Project Grants
@@ -41,7 +41,7 @@ Full cross-link map for this page: [/docs/kms/concepts/project-grants.graph.md](
 
 ## What a project grant authorizes
 
-A project grant confers signing access and nothing more. A deployment whose OIDC token matches the grant can call `signToken` and `signMessage` for the issuer, but it cannot create or manage an issuer. Provisioning an issuer requires a [Connect grant](/docs/kms/concepts/connect-grants).
+A project grant confers signing access and nothing more. A deployment whose OIDC token matches the grant can call `signJWT` and `signMessage` for the issuer, but it cannot create or manage an issuer. Provisioning an issuer requires a [Connect grant](/docs/kms/concepts/connect-grants).
 
 ## Fields
 

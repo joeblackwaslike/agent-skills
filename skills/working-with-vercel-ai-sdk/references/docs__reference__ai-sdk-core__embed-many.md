@@ -4,8 +4,8 @@ description: API Reference for embedMany.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/embed-many.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "62e1de05f3131ba354df034644589cbda60d059a47dd0d600abc0d65ba4470f6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b9093146b47dacca0b982a14b4509d2a952820e45665222acc0790c77376fbcd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -44,6 +44,7 @@ import { embedMany } from "ai"
 
 - `model` (`EmbeddingModel`): The embedding model to use. Example: openai.embeddingModel('text-embedding-3-small')
 - `values` (`Array<string>`): The values to embed.
+- `dimensions?` (`number`): Requested output embedding dimensions. Must be a positive integer. Forwarded to the model; requires support in the provider implementation. Provider mappings are being added separately. Use providerOptions until your provider supports this setting.
 - `maxRetries?` (`number`): Maximum number of retries. Set to 0 to disable retries. Default: 2.
 - `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
 - `headers?` (`Record<string, string>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
@@ -65,6 +66,7 @@ import { embedMany } from "ai"
     - `operationId` (`string`): Identifies the operation type ('ai.embedMany').
     - `model` (`{ provider: string; modelId: string }`): The embedding model being used.
     - `value` (`string | Array<string>`): The values being embedded (array of strings for embedMany).
+    - `dimensions?` (`number`): Requested output embedding dimensions, when specified.
     - `maxRetries` (`number`): Maximum number of retries for failed requests.
     - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
     - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "27b3140a8ac3696238d6c7321c09ec7bac16dbae256198345e98b73af70b777d"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "5deadde65604a4ca137b1b4e609320278b8d441ccf299457ef4d4da37bdc063c"
 ---
 
 # OG Image Generation Examples
@@ -39,8 +39,8 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — API Reference for the ImageResponse constructor.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
-- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 
 Full cross-link map for this page: [/docs/og-image-generation/examples.graph.md](/docs/og-image-generation/examples.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

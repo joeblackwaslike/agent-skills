@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5095dbc77f09bc6b4948e5a7539d83403c8af5ab0106819be9f850bbe02c7fbe"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c4a96e52d6d1bb066774e31129201532e6978ed90526a30447ff12d1e52a40d0"
 ---
 
 # Getting Started with Routing Middleware
@@ -36,6 +36,7 @@ Routing Middleware lets you to run code before your pages load, giving you contr
 - [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to add a response header in your Middleware.
 - [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to render different content based on the user agent in your Middleware.
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related)
 - [Routing](https://vercel.com/docs/routing?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fgetting-started&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti

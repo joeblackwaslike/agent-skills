@@ -4,8 +4,8 @@ description: "How to fix the \"ToolInvocation must have a result\" error when us
 url: "https://ai-sdk.dev/docs/troubleshooting/tool-invocation-missing-result"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/tool-invocation-missing-result.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f6532dbc99173abe83aa26895488dd6bb98fb9762deca8ff17810bdbbf14f690"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "dfed14e470d9d3589473c72311a84b5c3d652b6c8d35df5013bbf3337e6516c8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -62,14 +62,14 @@ const { messages, sendMessage, addToolOutput } = useChat({
       try {
         const result = await getLocationData();
 
-        // Important: Don't await inside onToolCall to avoid deadlocks
+        // Important: Don't await addToolOutput inside onToolCall to avoid deadlocks
         addToolOutput({
           tool: 'getLocation',
           toolCallId: toolCall.toolCallId,
           output: result,
         });
       } catch (err) {
-        // Important: Don't await inside onToolCall to avoid deadlocks
+        // Important: Don't await addToolOutput inside onToolCall to avoid deadlocks
         addToolOutput({
           tool: 'getLocation',
           toolCallId: toolCall.toolCallId,

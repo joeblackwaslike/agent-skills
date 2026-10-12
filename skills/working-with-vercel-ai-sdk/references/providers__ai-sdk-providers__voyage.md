@@ -4,8 +4,8 @@ description: Learn how to use the Voyage AI provider for embedding and reranking
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "175844abb66827b88b6d4cb9911a49929d439aa5bf49cebe8d32c46d16f87d09"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9c347f92e5f1ed182a3f079145895b5ed6b29df929939627ea248036aab8ef45"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Voyage AI](https://www.voyageai.com/) provider contains embedding and reran
 
 The Voyage AI provider is available in the `@ai-sdk/voyage` module. You can install it with
 
-**Packages:** `@ai-sdk/voyage`
+```bash
+pnpm add @ai-sdk/voyage
+```
 
 ## Provider Instance
 

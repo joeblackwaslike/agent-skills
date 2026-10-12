@@ -4,8 +4,8 @@ description: Use the ModelRush OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/modelrush"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/modelrush.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "fe7113a0fbd4f63f26a60581e04025b5be09dfba7d9fd59d3c10e073a1d9a8a1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "464249eb3df76cb424baa84abd4e4457cd52e577c977c8471f2fe7e138341b5b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "fe7113a0fbd4f63f26a60581e04025b5be09dfba7d9fd59d3c10e073a1d9a8a1"
 
 Install the OpenAI Compatible provider:
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 Create a ModelRush API key and set it as a server-side environment variable:
 

@@ -4,8 +4,8 @@ description: OpenRouter Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/openrouter"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/openrouter.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c39c22ee74fcdcca82939493d8468835625f541917a1a783de46e31d8b694d0c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "7991e38ad284f67f0e1a32dce3a9d483e1f142b2fc301876e0573037bf3698e8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -25,7 +25,9 @@ Learn more about OpenRouter's capabilities in the [OpenRouter Documentation](htt
 
 The OpenRouter provider is available in the `@openrouter/ai-sdk-provider` module. You can install it with:
 
-**Packages:** `@openrouter/ai-sdk-provider`
+```bash
+pnpm add @openrouter/ai-sdk-provider
+```
 
 ## Provider Instance
 

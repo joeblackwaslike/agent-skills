@@ -4,8 +4,8 @@ description: Learn how to use Agent Client Protocol implementations through the 
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3a130860594969bfadaa7861047ae0d7976e94366b218bab60e280d752841937"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "15bf013b2ff1bafb4910cc008458d6d310b7528b60c4b5c8fbebfe14070a6407"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,7 +24,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-acp`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-acp @ai-sdk/sandbox-vercel
+```
 
 ## Basic Usage
 

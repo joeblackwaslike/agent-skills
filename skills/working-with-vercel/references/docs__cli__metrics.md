@@ -9,12 +9,13 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/observability/observability-plus
+  - /docs/observability/custom-metrics
   - /docs/cli/global-options
 summary: Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b3545b0b3704ee8e957e5796127e4efd384cfafd53c125fdb6e4694eafb6eebb"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "c2704f06049dcd23a4348c3b1911c4a8f81385c6408fb4e9174cf190e63bf672"
 ---
 
 # vercel metrics
@@ -29,10 +30,10 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Query Reference](https://vercel.com/docs/query/reference?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
 - [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmetrics&source_site=vercel-docs&relationship=graph)
@@ -40,7 +41,7 @@ Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metric
 
 > **Availability**: Metrics other than Web Analytics and Speed Insights metrics are available on Enterprise and Pro plans with Observability Plus
 
-Use `vercel metrics schema` before you build a query. Without an argument, the command lists the metrics available to your account. Pass a metric ID or prefix to inspect its dimensions and aggregations.
+Use `vercel metrics schema` before you build a query. Without an argument, the command lists the metrics available to your account. Pass a metric name or prefix to inspect its dimensions and aggregations.
 
 ## Usage
 
@@ -55,16 +56,270 @@ vercel metrics schema <metric-or-prefix>
 vercel metrics database.duration_ms --filter 'plan:pro'
 
 # Query production data for a specific project
-vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
+vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --prod
 
 # Query grouped results
-vercel metrics <metric-id> --group-by <dimension> --since 1d --limit 5 --project project-name --prod
+vercel metrics <metric_name> --group-by <dimension> --since 1d --limit 5 --project project-name --prod
 
 # Query across every project in the current team
-vercel metrics <metric-id> --all --group-by projectId --since 24h --prod
+vercel metrics <metric_name> --all --group-by projectId --since 24h --prod
 ```
 
 *Using the \`vercel metrics\` command to discover metrics before querying them.*
+
+## Available metrics
+
+Platform metric names start with `vercel.`. The tables below group metrics by prefix and describe what each metric measures. Use the full metric name as the `<metric_name>` argument:
+
+```bash filename="terminal"
+vercel metrics vercel.function_invocation.count --since 24h
+```
+
+Run `vercel metrics schema` to see the current catalog for your team, including custom metrics. To inspect the dimensions and supported aggregations for a group or a specific metric, pass its prefix or full name:
+
+```bash filename="terminal"
+vercel metrics schema vercel.function_invocation
+vercel metrics schema vercel.function_invocation.function_duration_ms
+```
+
+### Requests
+
+Prefix: `vercel.request`
+
+| Metric name | Description |
+| - | - |
+| `vercel.request.count` | Number of incoming requests. |
+| `vercel.request.fdt_in_bytes` | Incoming Fast Data Transfer, in bytes. |
+| `vercel.request.fdt_out_bytes` | Outgoing Fast Data Transfer, in bytes. |
+| `vercel.request.fdt_total_bytes` | Total Fast Data Transfer, in bytes. |
+| `vercel.request.route_cpu_duration_ms` | CPU time spent routing requests, in milliseconds. |
+| `vercel.request.external_rewrite_dns_ms` | DNS lookup time for external rewrites, in milliseconds. |
+| `vercel.request.external_rewrite_connect_ms` | Connection time for external rewrites, in milliseconds. |
+
+### Vercel Functions
+
+Prefix: `vercel.function_invocation`
+
+| Metric name | Description |
+| - | - |
+| `vercel.function_invocation.count` | Number of function invocations. |
+| `vercel.function_invocation.function_duration_ms` | Function duration, in milliseconds. |
+| `vercel.function_invocation.function_cpu_time_ms` | Active CPU time, in milliseconds. |
+| `vercel.function_invocation.cpu_throttle_percent` | CPU throttling percentage. |
+| `vercel.function_invocation.peak_memory_mb` | Peak memory usage, in megabytes. |
+| `vercel.function_invocation.provisioned_memory_mb` | Provisioned memory, in megabytes. |
+| `vercel.function_invocation.ttfb_ms` | Time to first byte, in milliseconds. |
+| `vercel.function_invocation.fot_in_bytes` | Incoming Fast Origin Transfer, in bytes. |
+| `vercel.function_invocation.fot_out_bytes` | Outgoing Fast Origin Transfer, in bytes. |
+| `vercel.function_invocation.fot_total_bytes` | Total Fast Origin Transfer, in bytes. |
+
+### Routing Middleware
+
+Prefix: `vercel.middleware_invocation`
+
+| Metric name | Description |
+| - | - |
+| `vercel.middleware_invocation.count` | Number of middleware invocations. |
+| `vercel.middleware_invocation.request_duration_ms` | Request duration, in milliseconds. |
+| `vercel.middleware_invocation.function_cpu_time_ms` | Active CPU time, in milliseconds. |
+| `vercel.middleware_invocation.function_duration_gbhr` | Function duration weighted by memory, in gigabyte-hours. |
+| `vercel.middleware_invocation.ttfb_ms` | Time to first byte, in milliseconds. |
+| `vercel.middleware_invocation.fot_in_bytes` | Incoming Fast Origin Transfer, in bytes. |
+| `vercel.middleware_invocation.fot_out_bytes` | Outgoing Fast Origin Transfer, in bytes. |
+| `vercel.middleware_invocation.fot_total_bytes` | Total Fast Origin Transfer, in bytes. |
+
+### External API requests
+
+Prefix: `vercel.external_api_request`
+
+| Metric name | Description |
+| - | - |
+| `vercel.external_api_request.count` | Number of outgoing requests to external APIs. |
+| `vercel.external_api_request.request_duration_ms` | External API request duration, in milliseconds. |
+| `vercel.external_api_request.transfer_bytes` | External API data transfer, in bytes. |
+
+### AI Gateway
+
+Prefix: `vercel.ai_gateway.request`
+
+#### Requests and latency
+
+| Metric name | Description |
+| - | - |
+| `vercel.ai_gateway.request.count` | Number of AI Gateway requests. |
+| `vercel.ai_gateway.request.request_duration_ms` | Request duration, in milliseconds. |
+| `vercel.ai_gateway.request.time_to_first_token_ms` | Time to first token, in milliseconds. |
+
+#### Tokens and media
+
+| Metric name | Description |
+| - | - |
+| `vercel.ai_gateway.request.input_tokens` | Number of input tokens. |
+| `vercel.ai_gateway.request.output_tokens` | Number of output tokens. |
+| `vercel.ai_gateway.request.cached_input_tokens` | Number of cached input tokens. |
+| `vercel.ai_gateway.request.cache_creation_input_tokens` | Number of input tokens used to create a cache entry. |
+| `vercel.ai_gateway.request.cache_creation1h_input_tokens` | Number of input tokens used to create a one-hour cache entry. |
+| `vercel.ai_gateway.request.audio_input_tokens` | Number of audio input tokens. |
+| `vercel.ai_gateway.request.audio_output_tokens` | Number of audio output tokens. |
+| `vercel.ai_gateway.request.audio_duration_seconds` | Audio duration, in seconds. |
+| `vercel.ai_gateway.request.image_count` | Number of images. |
+| `vercel.ai_gateway.request.image_input_tokens` | Number of image input tokens. |
+| `vercel.ai_gateway.request.video_count` | Number of videos. |
+| `vercel.ai_gateway.request.video_input_tokens` | Number of video input tokens. |
+| `vercel.ai_gateway.request.video_duration_seconds` | Video duration, in seconds. |
+| `vercel.ai_gateway.request.video_fps` | Video frame rate, in frames per second. |
+| `vercel.ai_gateway.request.realtime_client_message_count` | Number of realtime client messages. |
+| `vercel.ai_gateway.request.realtime_session_duration_seconds` | Realtime session duration, in seconds. |
+
+#### Tool calls and reranking
+
+| Metric name | Description |
+| - | - |
+| `vercel.ai_gateway.request.gateway_tool_call_count` | Number of AI Gateway tool calls. |
+| `vercel.ai_gateway.request.web_search_call_count` | Number of web search calls. |
+| `vercel.ai_gateway.request.google_maps_search_call_count` | Number of Google Maps search calls. |
+| `vercel.ai_gateway.request.reranking_query_count` | Number of reranking queries. |
+
+#### Costs
+
+All AI Gateway cost metrics use US dollars.
+
+| Metric name | Description |
+| - | - |
+| `vercel.ai_gateway.request.cost` | Request cost. |
+| `vercel.ai_gateway.request.gateway_cost` | AI Gateway cost. |
+| `vercel.ai_gateway.request.gateway_tool_call_cost` | AI Gateway tool call cost. |
+| `vercel.ai_gateway.request.model_allowlist_cost` | Model allowlist cost. |
+| `vercel.ai_gateway.request.provider_allowlist_cost` | Provider allowlist cost. |
+| `vercel.ai_gateway.request.region_pinning_cost` | Region pinning cost. |
+| `vercel.ai_gateway.request.zdr_cost` | Zero Data Retention cost. |
+| `vercel.ai_gateway.request.quota_write_cost` | Quota write cost. |
+| `vercel.ai_gateway.request.reporting_write_cost` | Reporting write cost. |
+| `vercel.ai_gateway.request.surcharge_cost` | Surcharge cost. |
+
+### Web Analytics
+
+Prefixes: `vercel.analytics.page_view` and `vercel.analytics.event`
+
+| Metric name | Description |
+| - | - |
+| `vercel.analytics.page_view.count` | Number of page views. |
+| `vercel.analytics.event.count` | Number of custom Web Analytics events. |
+
+### Speed Insights
+
+Prefix: `vercel.speed_insights`
+
+| Metric name | Description |
+| - | - |
+| `vercel.speed_insights.cls` | Cumulative Layout Shift (CLS) score. |
+| `vercel.speed_insights.fcp_ms` | First Contentful Paint (FCP), in milliseconds. |
+| `vercel.speed_insights.inp_ms` | Interaction to Next Paint (INP), in milliseconds. |
+| `vercel.speed_insights.lcp_ms` | Largest Contentful Paint (LCP), in milliseconds. |
+| `vercel.speed_insights.ttfb_ms` | Time to first byte (TTFB), in milliseconds. |
+
+### Firewall
+
+Prefix: `vercel.firewall_action`
+
+| Metric name | Description |
+| - | - |
+| `vercel.firewall_action.count` | Number of Firewall actions. |
+
+### BotID
+
+Prefix: `vercel.bot_id_check`
+
+| Metric name | Description |
+| - | - |
+| `vercel.bot_id_check.count` | Number of BotID checks. |
+
+### Image Optimization
+
+Prefix: `vercel.image_transformation`
+
+| Metric name | Description |
+| - | - |
+| `vercel.image_transformation.count` | Number of image transformations. |
+| `vercel.image_transformation.request_duration_ms` | Transformation duration, in milliseconds. |
+| `vercel.image_transformation.source_size_bytes` | Original image size, in bytes. |
+| `vercel.image_transformation.optimized_size_bytes` | Optimized image size, in bytes. |
+| `vercel.image_transformation.compression_ratio` | Image compression ratio. |
+| `vercel.image_transformation.size_change_percent` | Image size change, as a percentage. |
+
+### Incremental Static Regeneration
+
+Prefix: `vercel.isr_operation`
+
+| Metric name | Description |
+| - | - |
+| `vercel.isr_operation.count` | Number of Incremental Static Regeneration (ISR) operations. |
+| `vercel.isr_operation.read_bytes` | Data read, in bytes. |
+| `vercel.isr_operation.read_units` | Number of read units. |
+| `vercel.isr_operation.write_bytes` | Data written, in bytes. |
+| `vercel.isr_operation.write_units` | Number of write units. |
+
+### Drive
+
+Prefix: `vercel.drive`
+
+| Metric name | Description |
+| - | - |
+| `vercel.drive.read_bytes` | Data read, in bytes. |
+| `vercel.drive.write_bytes` | Data written, in bytes. |
+| `vercel.drive.storage_bytes` | Storage size, in bytes. |
+
+### Vercel Sandbox
+
+Prefix: `vercel.sandbox`
+
+| Metric name | Description |
+| - | - |
+| `vercel.sandbox.cpu_total_time_ms` | Active CPU time, in milliseconds. |
+| `vercel.sandbox.cpu_usage` | CPU usage, as a percentage. |
+| `vercel.sandbox.memory_used_bytes` | Memory usage, in bytes. |
+| `vercel.sandbox.memory_peak_gb_hr` | Peak memory, in gigabyte-hours. |
+| `vercel.sandbox.memory_requested_gb_hr` | Provisioned memory, in gigabyte-hours. |
+| `vercel.sandbox.public_ingress_bytes` | Incoming public data transfer, in bytes. |
+| `vercel.sandbox.public_egress_bytes` | Outgoing public data transfer, in bytes. |
+
+### Vercel Queues
+
+Prefix: `vercel.queue_operation`
+
+| Metric name | Description |
+| - | - |
+| `vercel.queue_operation.count` | Number of queue operations. |
+| `vercel.queue_operation.delivery_count` | Message delivery count. |
+| `vercel.queue_operation.message_age_on_receive_ms` | Message age when received, in milliseconds. |
+| `vercel.queue_operation.retention_seconds` | Message retention period, in seconds. |
+| `vercel.queue_operation.visibility_timeout` | Message visibility timeout, in seconds. |
+
+### Workflows
+
+Prefix: `vercel.workflow_operation`
+
+| Metric name | Description |
+| - | - |
+| `vercel.workflow_operation.runs` | Number of workflow runs created. |
+| `vercel.workflow_operation.run_completed` | Number of completed workflow runs. |
+| `vercel.workflow_operation.run_failed` | Number of failed workflow runs. |
+| `vercel.workflow_operation.run_cancelled` | Number of canceled workflow runs. |
+| `vercel.workflow_operation.steps` | Number of workflow steps created. |
+| `vercel.workflow_operation.step_completed` | Number of completed workflow steps. |
+| `vercel.workflow_operation.step_failed` | Number of failed workflow steps. |
+| `vercel.workflow_operation.step_cancelled` | Number of canceled workflow steps. |
+
+### Custom metrics
+
+[Custom metrics](/docs/observability/custom-metrics) use the names you pass to `metric()` in your application, such as `database.duration_ms`. Their names and prefixes depend on your application, so they don't appear in the platform tables above.
+
+Run `vercel metrics schema` to discover your team's custom metrics, then inspect a name or prefix before querying:
+
+```bash filename="terminal"
+vercel metrics schema database
+vercel metrics database.duration_ms --filter 'plan:pro'
+```
 
 ## Query output
 
@@ -90,16 +345,16 @@ These options only apply to the `vercel metrics` command.
 
 ### Metric
 
-The `<metric-id>` positional argument specifies the metric to query. Run `vercel metrics schema` to list queryable metrics for the current team context.
+The `<metric_name>` positional argument specifies the full metric name to query, such as `vercel.function_invocation.count` or `database.duration_ms`. Run `vercel metrics schema` to list queryable metrics for the current team context.
 
 ```bash filename="terminal"
-vercel metrics <metric-id>
+vercel metrics <metric_name>
 vercel metrics schema
 ```
 
 ### Schema subcommand
 
-Use the `schema` subcommand to inspect the dimensions and aggregations available for a metric. Pass a metric ID or prefix to inspect a narrower part of the schema.
+Use the `schema` subcommand to inspect the dimensions and aggregations available for a metric. Pass a metric name or prefix to inspect a narrower part of the schema.
 
 ```bash filename="terminal"
 vercel metrics schema
@@ -113,7 +368,7 @@ Use `--format` when you are building scripts or agent workflows that need to val
 The `--aggregation` option, shorthand `-a`, selects the aggregation for the metric.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --aggregation <aggregation>
+vercel metrics <metric_name> --aggregation <aggregation>
 ```
 
 If omitted, the CLI selects a supported aggregation based on the metric's unit. Use `vercel metrics schema <metric-or-prefix>` to inspect the available aggregations.
@@ -123,8 +378,8 @@ If omitted, the CLI selects a supported aggregation based on the metric's unit. 
 The `--group-by` option groups results by a dimension. Repeat it to group by multiple dimensions.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --group-by <dimension>
-vercel metrics <metric-id> --group-by <dimension> --group-by <dimension>
+vercel metrics <metric_name> --group-by <dimension>
+vercel metrics <metric_name> --group-by <dimension> --group-by <dimension>
 ```
 
 ### Filter
@@ -138,9 +393,9 @@ vercel metrics database.duration_ms --filter 'plan:pro'
 For platform metrics, use a dimension from the metric schema:
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --filter 'environment:production'
-vercel metrics <metric-id> --filter 'httpStatus >= 500'
-vercel metrics <metric-id> --filter 'requestPath:(/docs* OR /guides*)'
+vercel metrics <metric_name> --filter 'environment:production'
+vercel metrics <metric_name> --filter 'httpStatus >= 500'
+vercel metrics <metric_name> --filter 'requestPath:(/docs* OR /guides*)'
 ```
 
 The following KQL syntax is supported:
@@ -159,13 +414,13 @@ The following KQL syntax is supported:
 Wrap the complete filter in single quotes in your shell. Double-quote values that contain spaces or KQL-reserved characters. Use a backslash to escape the next character in a quoted or unquoted value:
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --filter 'requestPath:"/pricing enterprise"'
+vercel metrics <metric_name> --filter 'requestPath:"/pricing enterprise"'
 ```
 
 Repeat `--filter` to combine filters with `AND`:
 
 ```bash filename="terminal"
-vercel metrics <metric-id> -f 'country:US' -f 'deviceType != mobile'
+vercel metrics <metric_name> -f 'country:US' -f 'deviceType != mobile'
 ```
 
 The filter implementation is KQL-inspired and does not support every KQL feature. The following limits apply:
@@ -184,7 +439,7 @@ OData filter syntax is deprecated. Use KQL for new queries.
 The `--prod` option limits the query to production data. It is equivalent to `--filter 'environment:production'`.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --prod
+vercel metrics <metric_name> --prod
 ```
 
 ### Since
@@ -192,7 +447,7 @@ vercel metrics <metric-id> --prod
 The `--since` option, shorthand `-s`, sets the start of the time range. You can use a relative duration like `1h`, `24h`, or `7d`, a date, or an ISO timestamp. If omitted, the CLI defaults to the last hour.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --since 24h
+vercel metrics <metric_name> --since 24h
 ```
 
 ### Until
@@ -200,7 +455,7 @@ vercel metrics <metric-id> --since 24h
 The `--until` option, shorthand `-u`, sets the end of the time range. If omitted, the command uses the current time.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --since 24h --until 2026-03-19T12:00:00Z
+vercel metrics <metric_name> --since 24h --until 2026-03-19T12:00:00Z
 ```
 
 ### Granularity
@@ -208,7 +463,7 @@ vercel metrics <metric-id> --since 24h --until 2026-03-19T12:00:00Z
 The `--granularity` option, shorthand `-g`, controls the time bucket size. If omitted, the CLI computes a granularity for the selected time range.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --granularity 1h --since 7d
+vercel metrics <metric_name> --granularity 1h --since 7d
 ```
 
 ### Limit
@@ -216,7 +471,7 @@ vercel metrics <metric-id> --granularity 1h --since 7d
 The `--limit` option, shorthand `-l`, sets the maximum number of grouped results returned per time bucket. The default is `10`.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --group-by <dimension> --limit 50
+vercel metrics <metric_name> --group-by <dimension> --limit 50
 ```
 
 ### Order by
@@ -224,8 +479,8 @@ vercel metrics <metric-id> --group-by <dimension> --limit 50
 The `--order-by` option only applies to grouped results, so use it with `--group-by`. The default is `count` when the metric supports counting data points and `value` otherwise. Use `--order-by value` to order groups by the actual metric value returned by the query.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --group-by <dimension> --order-by count
-vercel metrics <metric-id> --group-by <dimension> --order-by value
+vercel metrics <metric_name> --group-by <dimension> --order-by count
+vercel metrics <metric_name> --group-by <dimension> --order-by value
 ```
 
 ### Order
@@ -233,7 +488,7 @@ vercel metrics <metric-id> --group-by <dimension> --order-by value
 The `--order` option sets the ordering direction for grouped results. It accepts `asc` or `desc`. The default is `desc`.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --group-by <dimension> --order-by value --order asc
+vercel metrics <metric_name> --group-by <dimension> --order-by value --order asc
 ```
 
 ### Project
@@ -241,7 +496,7 @@ vercel metrics <metric-id> --group-by <dimension> --order-by value --order asc
 The `--project` option, shorthand `-p`, specifies the project name or project ID to query. Use it when you want results for a specific project. It defaults to the linked project when `--all` is not set.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --project project-name --prod
+vercel metrics <metric_name> --project project-name --prod
 ```
 
 ### All
@@ -249,7 +504,7 @@ vercel metrics <metric-id> --project project-name --prod
 The `--all` option queries across all projects in the current team scope. It cannot be combined with `--project`.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --all --group-by projectId --prod
+vercel metrics <metric_name> --all --group-by projectId --prod
 ```
 
 ### Format
@@ -257,7 +512,7 @@ vercel metrics <metric-id> --all --group-by projectId --prod
 The `--format` option outputs JSON instead of text. Use it for automation and agents.
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --format json
+vercel metrics <metric_name> --format json
 vercel metrics schema <metric-or-prefix> --format json
 ```
 
@@ -284,19 +539,19 @@ vercel metrics database.duration_ms --filter 'plan:pro'
 Query a metric for the last seven days:
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --since 7d --granularity 1d --project project-name --prod
+vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --prod
 ```
 
 Query grouped results for a specific project:
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --group-by <dimension> --since 24h --project project-name --prod
+vercel metrics <metric_name> --group-by <dimension> --since 24h --project project-name --prod
 ```
 
 Query production data across every project in the current team:
 
 ```bash filename="terminal"
-vercel metrics <metric-id> --all --group-by projectId --since 24h --prod
+vercel metrics <metric_name> --all --group-by projectId --since 24h --prod
 ```
 
 ## Global Options

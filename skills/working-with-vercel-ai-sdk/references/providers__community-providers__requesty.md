@@ -4,8 +4,8 @@ description: Requesty Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/requesty"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/requesty.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ce59bd0ce1e260376072b2218b41eff901cc8c64a177c236d0f64adb0ac03cb4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "69806cdecaa696ff42a819719d49b513ce1ce5597c6bc07b2d6a54ce3a12b9a5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -26,7 +26,9 @@ Learn more about Requesty's capabilities in the [Requesty Documentation](https:/
 
 The Requesty provider is available in the `@requesty/ai-sdk` module. You can install it with:
 
-**Packages:** `@requesty/ai-sdk`
+```bash
+pnpm add @requesty/ai-sdk
+```
 
 ## API Key Setup
 

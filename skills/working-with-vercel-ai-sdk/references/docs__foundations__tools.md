@@ -4,8 +4,8 @@ description: Learn about tools with the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/tools.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "90b6a2ac3075a6ea5fee773040e73681f4567f977928ad2429331d85fc6c1a4f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b9c993fa4c67b49c2ee57800b060b16c2f8ba24e035dde39dec5106e3c8de073"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -226,7 +226,7 @@ import { generateText, isStepCount } from 'ai';
 import { searchTool } from 'some-tool-package';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-haiku-4.5',
+  model: 'anthropic/claude-haiku-5.5',
   prompt: 'When was Vercel Ship AI?',
   tools: {
     webSearch: searchTool,

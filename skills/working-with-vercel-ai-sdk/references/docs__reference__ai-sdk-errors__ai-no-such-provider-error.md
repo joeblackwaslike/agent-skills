@@ -4,8 +4,8 @@ description: Learn how to fix AI_NoSuchProviderError
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-error"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-no-such-provider-error.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3e7bcee1b0d73777e86b58f290d829727f60e1bde5bd3f5e57bb3bf134191911"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "f2bac2ae8cb9e96587a4a1e4597021514bd9d7b6c228ad9d5c9f839a45071cc0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -32,9 +32,9 @@ if (NoSuchProviderError.isInstance(error)) {
 }
 ```
 
-Experimental evaluation resolution uses `modelType: 'evaluationModel'`. This
-includes unavailable evaluation capabilities and unknown evaluation model or
-provider IDs. See [Evaluation](/docs/ai-sdk-core/evaluation#default-provider-strings).
+Experimental decision resolution uses `modelType: 'decisionModel'`. This
+includes unavailable decision capabilities and unknown decision model or
+provider IDs. See [Decisions](/docs/ai-sdk-core/decisions#default-provider-strings).
 
 ---
 

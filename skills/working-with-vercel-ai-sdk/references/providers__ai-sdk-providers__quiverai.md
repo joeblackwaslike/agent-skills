@@ -4,8 +4,8 @@ description: Learn how to use QuiverAI models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "37d39341d708770921c2262656f077f9a9c534b851bdacfddcec9d619f3ce8a3"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4c9a0ba33da01aa8cae7d89627731aa15177604a56d0eb6e308b12760cd44713"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "37d39341d708770921c2262656f077f9a9c534b851bdacfddcec9d619f3ce8a3"
 
 The QuiverAI provider is available via the `@ai-sdk/quiverai` module. You can install it with
 
-**Packages:** `@ai-sdk/quiverai`
+```bash
+pnpm add @ai-sdk/quiverai
+```
 
 ## Provider Instance
 

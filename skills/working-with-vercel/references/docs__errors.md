@@ -12,8 +12,8 @@ related:
 summary: Use this guide to find specific solutions and insights for common Vercel errors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "245441bb887a84b112348b8156f33b239c2d48ad2afc3b6ecefc15d1c727a222"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b6f13c24ba4f55ff2fcec6bab324dbe05668d303cde419e0354173656b79f526"
 ---
 
 # Error Codes
@@ -33,9 +33,9 @@ When developing your application with Vercel, you may encounter a variety of err
 - [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
 - [Custom error pages](https://vercel.com/docs/custom-error-pages?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn how to configure custom error pages for 5xx server errors on Vercel.
 - [REST API Errors](https://vercel.com/docs/rest-api/errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — General and specific errors you may encounter when using the Vercel REST API.
-- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
 - [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Get the auth code for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — GET /v1/registrar/domains/{domain}/auth-code — Get the auth code for a domain. This is required to transfer a domain fro
 
 Full cross-link map for this page: [/docs/errors.graph.md](/docs/errors.graph.md?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

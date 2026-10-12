@@ -14,8 +14,8 @@ related:
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "96610ffe81bb59c7444f48a5e1a7c66d5353235ea931cb932f9043f42e3d151f"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "24d4fc7c8c15a90dd4e2675603ea5ad6f0d4fb87d825a9b7ecde3a57210c19cf"
 ---
 
 # Read Passport identity in your application
@@ -36,6 +36,7 @@ After Passport authenticates a visitor, Vercel stores a signed Passport session 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=related) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
 
 Full cross-link map for this page: [/docs/passport/read-identity.graph.md](/docs/passport/read-identity.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fread-identity&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0c02a6347730013f550ba8f6d0de87dd72cb672b60e6ea793663fbc76f3a9720"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1edc35db6065c6e15a5c797c0da300911f1bf4a19fe6ca93ea6998f972047412"
 ---
 
 # Reference
@@ -404,7 +404,7 @@ The `FLAGS_SECRET` value must have a specific length (32 random bytes encoded in
 node -e "console.log(crypto.randomBytes(32).toString('base64url'))"
 ```
 
-Add each value to your project's environment variables in the Vercel dashboard, scoped to the matching environment. When adding the Preview and Production values, mark them as **Sensitive** to hide the value from the dashboard and CLI after creation.
+Add each value to your project's environment variables in the Vercel dashboard, scoped to the matching environment. Store the Preview and Production values as **Secret** so they cannot be read from the dashboard or CLI after creation.
 
 Then pull your environment variables locally with `vercel env pull` to make them available to your project.
 

@@ -4,20 +4,22 @@ description: "Use @ai-sdk/tui with HarnessAgent."
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/terminal-ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/terminal-ui.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c7c6ffc26cbdd3f52d86203d0bcdc32d79d211d68df902fc824913c06d10b8a8"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "a92e905957eaf9c7587735625f64d4e257b0d52ebe23605042fd7c76ddd7332a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `@ai-sdk/tui` can render harness streams, tool calls, reasoning sections, and
-approval prompts in a terminal. Because `HarnessAgent` requires a session on
-every call, wrap it with a small `AgentTUIAgent` adapter that injects one
+approval prompts in a terminal. Because `HarnessAgent` requires a session for
+`generate` and `stream` calls, wrap it with a small `AgentTUIAgent` adapter that injects one
 session for the lifetime of the terminal UI.
 
 ## Installation
 
-**Packages:** `@ai-sdk/tui`, `@ai-sdk/harness`, `@ai-sdk/harness-codex`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/tui @ai-sdk/harness @ai-sdk/harness-codex @ai-sdk/sandbox-vercel
+```
 
 ## Example
 

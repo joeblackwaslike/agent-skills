@@ -16,8 +16,8 @@ related:
 summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e9de7dfe41aa8544785f2dfd0b3d5c71daa1f52041c2df413c069a95fd370d3e"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "bd9ac6fad57a454190a2ca78464c45f9b6a6289e420e9072b46c8392e8dd3ba8"
 ---
 
 # vercel global-config
@@ -33,8 +33,8 @@ The `vercel global-config` command manages [Global Config](/docs/global-config) 
 - [vercel blob](https://vercel.com/docs/cli/blob?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use Global Configs in your projects.
 - [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
-- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
 
 Full cross-link map for this page: [/docs/cli/global-config.graph.md](/docs/cli/global-config.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fglobal-config&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -71,13 +71,15 @@ vercel global-config list --format json
 | --- | --- | --- |
 | `-F, --format <FORMAT>` | String | Output format (`json`) |
 
-### add (create)
+### create
+
+`add` is a supported alias.
 
 Creates a new Global Config store with the given slug. Optionally seeds it with initial items.
 
 ```bash filename="terminal"
-vercel global-config add flags
-vercel global-config add flags --items '{"betaUiEnabled":true,"region":"sfo1"}'
+vercel global-config create flags
+vercel global-config create flags --items '{"betaUiEnabled":true,"region":"sfo1"}'
 ```
 
 *Create a store with slug \`flags\`, optionally with seed items.*
@@ -95,13 +97,15 @@ vercel global-config add flags --items '{"betaUiEnabled":true,"region":"sfo1"}'
 | `--items <JSON>` | String | Optional JSON object of initial items (`{ "key": <value>, ... }`) |
 | `-F, --format <FORMAT>` | String | Output format (`json`) |
 
-### get (inspect)
+### inspect
+
+`get` remains a supported alias, but prints a deprecation warning. Use `inspect` for new commands.
 
 Shows metadata for a Global Config store. Accepts either the store ID (starts with `ecfg_`) or the slug.
 
 ```bash filename="terminal"
-vercel global-config get flags
-vercel global-config get ecfg_abc123 --format json
+vercel global-config inspect flags
+vercel global-config inspect ecfg_abc123 --format json
 ```
 
 *Inspect a store by ID or slug.*
@@ -254,7 +258,7 @@ vercel global-config backups flags --restore backup_version_abc123 --yes
 ### Create a store and seed initial items
 
 ```bash filename="terminal"
-vercel global-config add flags --items '{"betaUiEnabled":false,"region":"sfo1"}'
+vercel global-config create flags --items '{"betaUiEnabled":false,"region":"sfo1"}'
 ```
 
 *Create a store with two initial items.*
@@ -294,7 +298,7 @@ The Global Config SDK reads from a `GLOBAL_CONFIG` environment variable (falling
 https://global-config.vercel.com/<globalConfigId>?token=<token>
 ```
 
-Use `vercel global-config get <id-or-slug>` to look up the Global Config ID, then combine it with the token. See [Global Config dashboard](/docs/global-config/global-config-dashboard) for details on the connection string format.
+Use `vercel global-config inspect <id-or-slug>` to look up the Global Config ID, then combine it with the token. See [Global Config dashboard](/docs/global-config/global-config-dashboard) for details on the connection string format.
 
 ## Related
 

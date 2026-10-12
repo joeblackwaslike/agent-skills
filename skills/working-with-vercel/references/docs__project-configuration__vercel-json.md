@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "029c5dfed921bd3256a0a12a246fa29f13c935070628120c4785b5d0b15406b8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "43141e9d062f7377b6449bd0033349b756d898f5375bedece5d076e8163cb9bd"
 ---
 
 # Static Configuration with vercel.json
@@ -31,16 +31,17 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Server-Timing response headers will pass through to the client](https://vercel.com/changelog/server-timing-header?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related)
+- [Skip sending request bodies to Routing Middleware](https://vercel.com/changelog/skip-sending-request-bodies-to-routing-middleware?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
-- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Response headers](https://vercel.com/docs/headers/response-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-json&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -68,6 +69,7 @@ This file should be created in your project's root directory and allows you to s
 - [functionFailoverRegions](#functionfailoverregions)
 - [rewrites](#rewrites)
 - [routes](#routes)
+- [skipMiddlewareRequestBody](#skipmiddlewarerequestbody)
 - [trailingSlash](#trailingslash)
 
 ## schema autocomplete
@@ -1679,6 +1681,28 @@ With [`rewrites`](/docs/project-configuration/vercel-json#rewrites), the regex n
 With `routes`, the `src` property is case-insensitive, so multiple request paths with different cases serve the same page, creating duplicate content.
 
 With [`rewrites`](/docs/project-configuration/vercel-json#rewrites) / [`redirects`](/docs/project-configuration/vercel-json#redirects) / [`headers`](/docs/project-configuration/vercel-json#headers), the `source` property is case-sensitive so you don't accidentally create duplicate content.
+
+## skipMiddlewareRequestBody
+
+**Type**: `boolean`.
+
+**Default Value**: `false`.
+
+Set `skipMiddlewareRequestBody` to `true` to skip forwarding the client request body to [Routing Middleware](/docs/routing-middleware).
+
+This reduces [Fast Origin Transfer (FOT)](/docs/manage-cdn-usage#fast-origin-transfer) usage and can improve [Time to First Byte (TTFB)](/docs/speed-insights/metrics#time-to-first-byte-ttfb), especially for requests with large bodies. [Vercel Functions](/docs/functions) and [rewrite targets](/docs/routing/rewrites) still receive the request body.
+
+> **⚠️ Warning:** Before enabling `skipMiddlewareRequestBody`, you must ensure your Routing
+> Middleware does not read or access the client request body.
+
+We strongly recommend that you avoid reading or accessing request bodies in Routing Middleware. Middleware runs on every matching request, so reading the body can slow down your application. Read and process request bodies in your Vercel Functions or at your rewrite targets instead.
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "skipMiddlewareRequestBody": true
+}
+```
 
 ## trailingSlash
 

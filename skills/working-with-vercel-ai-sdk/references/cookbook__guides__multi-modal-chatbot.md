@@ -11,8 +11,8 @@ tags:
   - vision
   - next
 source: "https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "69ca408ea03bd151fec306eb0b5d43890aa3dcc452ebf13de6e9b052cb713f12"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "55f348ecdb032daf0106657ea5d10d28b71abf472288bb9141cc0b78f3d27dd6"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -65,7 +65,9 @@ one line of code! Learn more about [available providers](/providers) and
 [building custom providers](/providers/community-providers/custom-providers)
 in the [providers](/providers) section.
 
-**Packages:** `ai`, `@ai-sdk/react`
+```bash
+pnpm add ai @ai-sdk/react
+```
 
 ### Configure your Vercel AI Gateway API key
 

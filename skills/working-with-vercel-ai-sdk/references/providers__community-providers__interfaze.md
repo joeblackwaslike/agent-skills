@@ -4,8 +4,8 @@ description: Interfaze Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/interfaze"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/interfaze.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d4866f0d7c8d4504541ff4e58c60ea3792df0c27f10b1c9861c5179b6681498f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0a15d05fc25afd2de02d38c8de5df736784fe872357c9d4a89d5daf0ca2cbe7c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ Learn more in the [Interfaze documentation](https://interfaze.ai/docs).
 
 The Interfaze provider is available in the `@interfaze-ai/ai-sdk` module. You can install it with:
 
-**Packages:** `@interfaze-ai/ai-sdk`
+```bash
+pnpm add @interfaze-ai/ai-sdk
+```
 
 ## Provider Instance
 

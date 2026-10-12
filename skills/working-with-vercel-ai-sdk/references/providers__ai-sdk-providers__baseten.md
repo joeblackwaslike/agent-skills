@@ -4,8 +4,8 @@ description: Learn how to use Baseten models with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b131666366e1669bf0b12a7a281bdb114736d654d49783bf348319a0f3d48b3c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c492140eb333739c21046d00ebbd55192e56ee938ff3205dd30c5197f97eed74"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "b131666366e1669bf0b12a7a281bdb114736d654d49783bf348319a0f3d48b3c"
 
 The Baseten provider is available via the `@ai-sdk/baseten` module. You can install it with
 
-**Packages:** `@ai-sdk/baseten`
+```bash
+pnpm add @ai-sdk/baseten
+```
 
 ## Provider Instance
 

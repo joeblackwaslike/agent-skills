@@ -4,8 +4,8 @@ description: Create a client for connecting to MCP servers
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "97dab1b7b941852f03dd829f01d1f6784db83eba05ee6ec1175608ae69dfde00"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "02a1a790eb090af315f68f6200cd34d1fededbc2ae87dddcf5e051cbb00943f0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,8 +17,12 @@ Creates a lightweight Model Context Protocol (MCP) client that connects to an MC
 - **Prompts**: Methods to list available prompts and retrieve prompt messages
 - **Completions**: Methods to request autocompletion suggestions for prompt arguments and resource template variables
 - **Elicitation**: Support for handling server requests for additional input during tool execution
+- **Experimental events**: Discover events and manage webhook subscriptions with `client.experimental_events`
 
-It currently does not support accepting notifications from an MCP server.
+It currently does not support in-band notifications from an MCP server. For
+experimental webhook delivery, see the [MCP Events guide](/docs/ai-sdk-core/mcp-events),
+[event methods reference](/docs/reference/ai-sdk-core/mcp-events), and
+[webhook handler reference](/docs/reference/ai-sdk-core/mcp-events#webhook-handler).
 
 ## Import
 
@@ -32,6 +36,11 @@ import { createMCPClient } from "@ai-sdk/mcp"
 
 - `config` (`MCPClientConfig`): Configuration for the MCP client.
   - `MCPClientConfig`
+    - `experimental_events?` (`Experimental_MCPEventsConfig`): Experimental event subscriptions. Configure either a private durable store for direct webhooks or a managed adapter. See \[MCP Events]\(/docs/reference/ai-sdk-core/mcp-events#managed-subscriptions).
+      - `Experimental_MCPEventsConfig`
+        - `store?` (`Experimental_MCPEventStore`): Required in direct mode. Persists subscription identities, callback URLs, signing secrets, cursors, and expirations. Shared with the webhook receiver. Cannot be combined with adapter.
+        - `adapter?` (`Experimental_MCPEventAdapter`): Required in managed mode. Creates bound subscription operations once before transport startup, receiving transport metadata: \{ type, url } for HTTP/SSE or \{ type: 'custom' } for custom transports. Cannot be combined with store or validateArguments. No local event store or refresh loop is required.
+        - `validateArguments?` (`({ definition, arguments }) => void | PromiseLike<void>`): Optional application validation for event filters. Throw to reject a subscription before persisting its secret or sending events/subscribe.
     - `transport` (`MCPTransportConfig | MCPTransport`): Configuration for the message transport layer.
       - `MCPTransport`
         - `start` (`() => Promise<void>`): A method that starts the transport
@@ -65,6 +74,7 @@ import { createMCPClient } from "@ai-sdk/mcp"
 
 Returns a Promise that resolves to an `MCPClient` with the following properties and methods:
 
+- `experimental_events` (`Experimental_MCPEvents | Experimental_ManagedMCPEvents`): Event catalog discovery and mode-specific subscription methods. Managed mode adds getSubscription and listSubscriptions; direct mode has refresh. See the \[MCP Events reference]\(/docs/reference/ai-sdk-core/mcp-events).
 - `initializeResult` (`InitializeResult`): Connection metadata used by this client. For legacy servers this is the initialize result; for modern servers an equivalent value is derived from protocol discovery.
 - `serverInfo` (`Configuration`): Information about the connected MCP server (name, version, optional title), as reported during initialization or protocol discovery.
 - `instructions?` (`string`): Optional instructions provided by the server during the initialize handshake. Describes how to use the server and its features. Useful for inclusion in the LLM system prompt.
@@ -97,7 +107,9 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
     }) => McpToolSet<TOOL_SCHEMAS>`): Converts existing MCP tool definitions into AI SDK tools without listing tools again.
   - `parameters`
     - `definitions` (`ListToolsResult`): Tool definitions, typically returned by \`listTools\`.
-    - `schemas?` (`TOOL_SCHEMAS`): Optional schema definitions for compile-time type checking and typed outputs.
+    - `options?` (`{ schemas?: TOOL_SCHEMAS }`): Options for converting the tool definitions.
+      - `options`
+        - `schemas?` (`TOOL_SCHEMAS`): Optional schema definitions for compile-time type checking and typed outputs.
 - `listResources` (`async (options?: {
       params?: PaginatedRequest['params'];
       options?: RequestOptions;

@@ -4,8 +4,8 @@ description: Monitor AI SDK calls and agent traces with Raindrop
 url: "https://ai-sdk.dev/providers/observability/raindrop"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/raindrop.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b4368a2f4bf37cfaa99379d955deca6fe306bee8dcaf190fa9b7f0724813a26f"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d523d6275c158e8c267689372b6be480584e94ee9198d7b15c6ae542b7f9ff0d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ Raindrop supports the AI SDK v7 telemetry interface directly, so you can use `re
 
 Install the Raindrop AI SDK integration:
 
-**Packages:** `@raindrop-ai/ai-sdk`
+```bash
+pnpm add @raindrop-ai/ai-sdk
+```
 
 Set your Raindrop write key (create one in the [Raindrop dashboard](https://www.raindrop.ai/)):
 

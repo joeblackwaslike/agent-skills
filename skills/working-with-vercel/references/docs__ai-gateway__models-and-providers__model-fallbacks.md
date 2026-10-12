@@ -3,21 +3,21 @@ title: AI Gateway Model Fallbacks
 product: vercel
 url: /docs/ai-gateway/models-and-providers/model-fallbacks
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks"
-last_updated: 2026-09-10
+last_updated: 2026-10-02
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/models-and-providers/evaluation-fallbacks
+  - /docs/ai-gateway/models-and-providers/decision-fallbacks
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/observability-and-spend/logs
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0095e274e86a7ee44107ca42f0e56f8e8ffafc693b4baa8b208af8d7d87f567a"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ccf5b677df2b98c9ae1ba9c9845e83470b99c59aeb003bb0a30a81f32442d4d7"
 ---
 
 # AI Gateway Model Fallbacks
@@ -37,6 +37,7 @@ You can configure model failover to specify backups that are tried in order if t
 - [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
+- [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related)
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Learn how to work with multiple providers and models
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-fallbacks&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
@@ -48,7 +49,7 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-
 
 Add a `models` array to `providerOptions.gateway` to list fallback models. The same option works across every AI Gateway API format. Select your API below:
 
-String entries on this page react to execution failure. On an evaluation request, a string entry can also name a language model, which answers through structured output. Evaluation requests can also add one conditional object that reacts to a successful but uncertain result. AI Gateway rejects a conditional object with a `400` error on any other request type, and when the conditional object names the primary model itself. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks) for confidence, Boolean probability, compound conditions, and full-request reruns.
+String entries on this page react to execution failure. On a decision request, a string entry can also name a language model, which answers through structured output. Decision requests can also add one conditional object that reacts to a successful but uncertain result. AI Gateway rejects a conditional object with a `400` error on any other request type, and when the conditional object names the primary model itself. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks) for confidence, Boolean probability, compound conditions, and full-request reruns.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 

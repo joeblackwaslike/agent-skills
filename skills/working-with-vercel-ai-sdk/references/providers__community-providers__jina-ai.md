@@ -4,8 +4,8 @@ description: Learn how to use the Jina AI provider.
 url: "https://ai-sdk.dev/providers/community-providers/jina-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/jina-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4ce7db890af40d797c8d70bd00d6a9b216686fb9592f7e357bb6132740163c81"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "fabc5d3a002c05f8e01e70bf438ecdccb27c16e443a1b48ac368f564f7fe6164"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "4ce7db890af40d797c8d70bd00d6a9b216686fb9592f7e357bb6132740163c81"
 
 The Jina provider is available in the `jina-ai-provider` module. You can install it with
 
-**Packages:** `jina-ai-provider`
+```bash
+pnpm add jina-ai-provider
+```
 
 ## Provider Instance
 

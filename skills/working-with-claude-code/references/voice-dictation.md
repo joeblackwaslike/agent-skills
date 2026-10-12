@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/voice-dictation.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "4e3dfa423ac836c9354eadfa193db1d24cd9ea49d12a6dbb4a9c863aa0155453"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "222b99354ac354c010370379256c05be57e8854f56dfb3cc5e3dd89a23ac1977"
 ---
 
 > ## Documentation Index
@@ -14,7 +14,7 @@ sha256: "4e3dfa423ac836c9354eadfa193db1d24cd9ea49d12a6dbb4a9c863aa0155453"
 
 Speak your prompts instead of typing them in the Claude Code CLI. Your speech is transcribed live into the prompt input, so you can mix voice and typing in the same message. Enable dictation with `/voice`, then either hold a key while you speak or tap once to start and again to send.
 
-Dictation also works in [agent view](/docs/en/agent-view#peek-and-reply). Hold or tap your push-to-talk key while the dispatch input or a peek-panel reply is focused to dictate to a background session.
+In [hold mode](#hold-to-record), dictation also works in [agent view](/docs/en/agent-view#peek-and-reply). Hold your push-to-talk key while the dispatch input or a peek-panel reply is focused to dictate to a background session.
 
 ## Requirements
 

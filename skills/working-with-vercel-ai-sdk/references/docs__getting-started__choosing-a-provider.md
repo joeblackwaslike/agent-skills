@@ -4,8 +4,8 @@ description: Learn how to configure and authenticate with AI providers in the AI
 url: "https://ai-sdk.dev/docs/getting-started/choosing-a-provider"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/choosing-a-provider.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7bb5fc621b41d13739446ef53bac6e4b31e1fb13d45d91bb36358c0c906e6313"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d9d0e5dc9944f8f0e1d703c9744e5a63b694b2a41919156aca602c809800ba58"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -62,7 +62,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 You can also use [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) provider packages directly. Install the package and create a provider instance. For example, to use Anthropic:
 
-**Packages:** `@ai-sdk/anthropic`
+```bash
+pnpm add @ai-sdk/anthropic
+```
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';

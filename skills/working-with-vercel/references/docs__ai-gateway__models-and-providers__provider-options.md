@@ -3,7 +3,7 @@ title: AI Gateway Provider Routing and Fallbacks
 product: vercel
 url: /docs/ai-gateway/models-and-providers/provider-options
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options"
-last_updated: 2026-09-10
+last_updated: 2026-10-02
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "82def21708aa50dea45ec2231a0edab901f0fa5bf5f0ff2991ebd1fafcd4eddd"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "8556f76031e06b68b0d0d58f050ece2838e47f4c24bc8a5a2168f0bee73b046c"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -107,7 +107,7 @@ You can set per-provider timeouts to trigger fast failover when a provider is sl
 
 String model fallbacks try backup models when the primary model fails or is unavailable. See [Model Fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks) for failure-based routing.
 
-Evaluation requests can also add one conditional object to `providerOptions.gateway.models`. It reruns a successful evaluation when a confidence, Boolean probability, or compound condition matches. AI Gateway rejects a conditional object with a `400` error on any other request type, and when the conditional object names the primary model itself. See [Evaluation Fallbacks](/docs/ai-gateway/models-and-providers/evaluation-fallbacks) for the complete wire contract and provider-option behavior.
+Decision requests can also add one conditional object to `providerOptions.gateway.models`. It reruns a successful decision when a confidence, Boolean probability, or compound condition matches. AI Gateway rejects a conditional object with a `400` error on any other request type, and when the conditional object names the primary model itself. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks) for the complete wire contract and provider-option behavior.
 
 ## Advanced configuration
 
@@ -556,6 +556,12 @@ ByteDance
 
 byteplus.com
 
+callstack
+
+Callstack
+
+apex.callstack.com
+
 cerebras
 
 Cerebras
@@ -639,6 +645,12 @@ groq
 Groq
 
 groq.com
+
+heygen
+
+HeyGen
+
+heygen.com
 
 inception
 
@@ -820,6 +832,12 @@ SambaNova
 
 sambanova.ai
 
+stealth
+
+Stealth
+
+vercel.com
+
 stepfun
 
 StepFun
@@ -855,6 +873,12 @@ togetherai
 Together AI
 
 together.ai
+
+topaz
+
+Topaz Labs
+
+topazlabs.com
 
 typesafe-ai
 

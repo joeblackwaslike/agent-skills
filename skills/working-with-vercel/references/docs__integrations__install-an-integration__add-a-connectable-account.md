@@ -13,8 +13,8 @@ related:
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "04b01f3e19c28efc9772e665bd1f329459368f050df700baaeda68cce75df370"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "85cb2b7c0c062f03ae6c35069da301b67be647d7b79b04b858b5afc2ed080a85"
 ---
 
 # Add a Connectable Account
@@ -42,7 +42,7 @@ Once installed, you can manage the following aspect of the integration:
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Learn how to call Vercel API endpoints to interact with Vercel resources
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Get Account Information](https://vercel.com/docs/rest-api/marketplace/get-account-information?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=related) — GET /v1/installations/{integrationConfigurationId}/account — Fetches the best account or user’s contact info
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Finstall-an-integration%2Fadd-a-connectable-account&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

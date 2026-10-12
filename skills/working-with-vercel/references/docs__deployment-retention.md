@@ -16,8 +16,8 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "371e4a06150d752d88d299c17e2e2efdd54b07600b90ae017681299f8c98fcec"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "f7b0b7870ebc7e0f5c1e12cdf90dfec43856b0f7f632ffc6cac16f0294ff0742"
 ---
 
 # Deployment Retention
@@ -35,9 +35,9 @@ Deployment retention refers to the configured policies that determine how long d
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Information on deleting an individual deployment.
 - [Deployment retention policies now preserve active branch deployments](https://vercel.com/changelog/deployment-retention-policies-now-preserve-active-branch-deployments?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
+- [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Hobby projects now default to 30-day deployment retention](https://vercel.com/changelog/hobby-projects-now-default-to-30-day-deployment-retention?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
-- [Skew Protection max age now supports the full deployment lifetime](https://vercel.com/changelog/skew-protection-max-age-now-supports-the-full-deployment-lifetime?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related)
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Set retention periods, review remaining usage, and reduce deployment output size.
 - [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy?from=related&source_path=%2Fdocs%2Fdeployment-retention&source_site=vercel-docs&relationship=related) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per

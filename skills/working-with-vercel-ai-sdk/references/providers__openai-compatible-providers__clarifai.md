@@ -4,8 +4,8 @@ description: Use Clarifai OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/clarifai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7a110be411d71d2dc677a029b3156f8c7b98edb05efd9dc776adf9ed73ad21d5"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "39bdce5fbb4dd95dc4cff3f05ccd8cfe5ebc5c4c735ed7e2ef880efcee117e6d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "7a110be411d71d2dc677a029b3156f8c7b98edb05efd9dc776adf9ed73ad21d5"
 
 The Clarifai provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 ## Provider Instance
 

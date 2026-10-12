@@ -4,8 +4,8 @@ description: Learn how to work with multiple providers and models
 url: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "9632fbee4870b96521f88b6b4d5db8ea171630c316b323c91ae86ece95f99dfa"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "bc2934321ea84b4b2e7999f231c7b9806731db1da75b9a2cd43b53694d11ebd5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -85,7 +85,7 @@ export const anthropic = customProvider({
   languageModels: {
     opus: gateway('anthropic/claude-opus-5.5'),
     sonnet: gateway('anthropic/claude-sonnet-5.5'),
-    haiku: gateway('anthropic/claude-haiku-4.5'),
+    haiku: gateway('anthropic/claude-haiku-5.5'),
   },
   fallbackProvider: gateway,
 });
@@ -395,7 +395,7 @@ export const registry = createProviderRegistry(
     // setup model name aliases
     anthropic: customProvider({
       languageModels: {
-        fast: anthropic('claude-haiku-4-5'),
+        fast: anthropic('claude-haiku-5-5'),
 
         // simple model
         writing: anthropic('claude-sonnet-4-5'),
@@ -473,14 +473,14 @@ const result = await streamText({
 
 This simplifies provider usage and makes it easier to switch between providers without changing your model references throughout your codebase.
 
-## Experimental evaluation models
+## Experimental decision models
 
-Custom providers accept `evaluationModels` aliases, and registries expose
-`evaluationModel('provider:model')`. These methods return model instances for
-`experimental_evaluate`. Direct string IDs use Gateway by default, or an
-explicitly configured default provider with an `evaluationModel` method. Registry
-middleware for language and image models does not apply to evaluation.
-See [Evaluation](/docs/ai-sdk-core/evaluation#model-aliases-and-registries)
+Custom providers accept `decisionModels` aliases, and registries expose
+`decisionModel('provider:model')`. These methods return model instances for
+`experimental_decide`. Direct string IDs use Gateway by default, or an
+explicitly configured default provider with a `decisionModel` method. Registry
+middleware for language and image models does not apply to decision.
+See [Decisions](/docs/ai-sdk-core/decisions#model-aliases-and-registries)
 for aliases, default-provider configuration, and capability differences.
 
 ---

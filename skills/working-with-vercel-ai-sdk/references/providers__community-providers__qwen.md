@@ -4,8 +4,8 @@ description: Learn how to use the Qwen provider.
 url: "https://ai-sdk.dev/providers/community-providers/qwen"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/qwen.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "11cf5897ce979051b8186ccf3edefd8b10e9d9e4a25b19854a471999a3a3c068"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "684bebce4b381951b411f7a6779d498390d8b4bbf81ee14b14c040b6bea13d16"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ provider](/providers/ai-sdk-providers).
 
 The Qwen provider is available in the `qwen-ai-provider` module. You can install it with
 
-**Packages:** `qwen-ai-provider`
+```bash
+pnpm add qwen-ai-provider
+```
 
 ## Provider Instance
 

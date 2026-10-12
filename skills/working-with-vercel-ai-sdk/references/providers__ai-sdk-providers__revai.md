@@ -4,8 +4,8 @@ description: Learn how to use the Rev.ai provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/revai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "95c885d75a70fb3d53fac7544f1af9aecbc074e890cdfa4a30b3cb242d213ca1"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "fa541720982164543c97c42a1505208b9cfd44a25422d112099a63c298c5169f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Rev.ai](https://www.rev.ai/) provider contains language model support for t
 
 The Rev.ai provider is available in the `@ai-sdk/revai` module. You can install it with
 
-**Packages:** `@ai-sdk/revai`
+```bash
+pnpm add @ai-sdk/revai
+```
 
 ## Provider Instance
 

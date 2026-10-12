@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "58aad8b2469305da28ea6fd9fbb4f612078ecdd76c3b625f164bd84ff2c2d72c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "6b123d9fdb10f1245f1f7fe60354bfea80350f4b30f0c206775b55f3e21fe689"
 ---
 
 # SvelteKit on Vercel
@@ -124,7 +124,7 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
   kit: {
     adapter: adapter({
-      runtime: 'nodejs20.x',
+      runtime: 'nodejs24.x',
     }),
   },
 };

@@ -1,8 +1,8 @@
 ---
 title: "VS Code devcontainer CLI"
 source: "https://code.visualstudio.com/docs/devcontainers/devcontainer-cli"
-fetched_at: "2026-10-05T11:12:30.813Z"
-sha256: "fff9e80a4997e15142d7a4a6da4dd52498d296c16a1729daed23ae854bd52af6"
+fetched_at: "2026-10-12T11:41:07.891Z"
+sha256: "88b8589c40048c8b98d14a208b973322032b81bfcb0dc10a1aefdc85b0e6cb72"
 ---
 
 # VS Code devcontainer CLI
@@ -12,6 +12,40 @@ Source: https://code.visualstudio.com/docs/devcontainers/devcontainer-cli
 # Dev Container CLI
 
 
+                
+                
+
+
+	
+		
+			
+			Copy as Markdown
+		
+		
+			
+		
+		
+			- Copy as Markdown
+
+			- View as Markdown
+
+			- 
+
+			- Ask in VS Code
+
+			- Ask in VS Code Insiders
+
+		
+
+	
+	
+		[Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fdevcontainers%2Fdevcontainer-cli%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+	
+
+
+                
+                
+                
 This topic covers the development container command-line interface (dev container CLI), which allows you to build and manage development containers, and is a companion to the Development Containers Specification.
 
 
@@ -240,4 +274,4 @@ The dev container CLI and specification are under active development and we welc
 
                 
                 
-                9/30/2026
+                10/7/2026

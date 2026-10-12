@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "14744bdc040a05c272445dec4686988157fd19db513860852a34974a1748b27b"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "ca95024d3455fe1949e434b60db720e38af654cd91eb642eecae7f9101a9561e"
 ---
 
 # JS SDK Reference
@@ -30,7 +30,9 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
 - [Port 8080 is now available in Vercel Sandboxes](https://vercel.com/changelog/port-8080-is-now-available-in-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
+- [Vercel Sandbox creation now returns a ready sandbox](https://vercel.com/changelog/sandbox-create-waits-until-ready?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
@@ -40,7 +42,6 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
-- [Stop a session](https://vercel.com/docs/rest-api/sandboxes/stop-a-session?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/stop — Stops a running session and releases its allocated resources. All running
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -415,14 +416,14 @@ const sandbox = await Sandbox.create({
 
 #### `Sandbox.get()`
 
-`Sandbox.get()` retrieves an existing sandbox by name. If the sandbox is stopped, the next SDK call (such as `runCommand`) automatically resumes it. Pass `resume: false` to skip the implicit resume.
+`Sandbox.get()` retrieves an existing sandbox by name. If the sandbox is stopped, the next SDK call (such as `runCommand`) automatically resumes it. Pass `resume: true` to resume it before `get` resolves.
 
 **Returns:** `Promise<Sandbox>`.
 
 | Parameter  | Type                          | Required | Details                                                                                                  |
 | ---------- | ----------------------------- | -------- | -------------------------------------------------------------------------------------------------------- |
 | `name`     | `string`                      | Yes      | Sandbox name to retrieve.                                                                                |
-| `resume`   | `boolean`                     | No       | Whether to resume the sandbox immediately. Defaults to `true`.                                           |
+| `resume`   | `boolean`                     | No       | Whether to resume the sandbox before `get` resolves. Defaults to `false`. A stopped sandbox still resumes automatically on the first SDK call that needs a running session. |
 | `onResume` | `(sandbox) => Promise<void>`  | No       | Fires whenever a session resumes (including after auto-resume).                                          |
 | `signal`   | `AbortSignal`                 | No       | Cancel the request.                                                                                      |
 
@@ -1732,36 +1733,9 @@ await snapshot.delete();
 
 ## Drive class
 
-> **Availability**: Drives (Private Beta) are available to Enterprise and Pro plans
-
 A `Drive` represents persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 
 Create drives with [`Drive.getOrCreate()`](/docs/sandbox/sdk-reference#drive.getorcreate), list them with [`Drive.list()`](/docs/sandbox/sdk-reference#drive.list), and delete them with [`drive.delete()`](/docs/sandbox/sdk-reference#drive.delete). Mount a drive with read-write access, or use [`drive.snapshot()`](/docs/sandbox/sdk-reference#drive.snapshot) to mount a read-only snapshot.
-
-Once you are added to the [private beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta), install the beta version of the `@vercel/sandbox` SDK:
-
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/sandbox@beta
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/sandbox@beta
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/sandbox@beta
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/sandbox@beta
-    ```
-  </Code>
-</CodeBlock>
 
 ### Drive class accessors
 
@@ -1773,6 +1747,26 @@ The `driveId` accessor returns the drive's unique ID.
 
 ```ts filename="index.ts"
 console.log(drive.driveId);
+```
+
+#### `parentDriveId`
+
+The `parentDriveId` accessor returns the ID of the source drive for a fork. It returns `undefined` for a drive created without a fork.
+
+**Returns:** `string | undefined`.
+
+```ts filename="index.ts"
+console.log(drive.parentDriveId);
+```
+
+#### `rootDriveId`
+
+The `rootDriveId` accessor returns the ID of the original drive in a chain of forks. Forking a fork keeps the same root drive ID. It returns `undefined` for a drive created without a fork.
+
+**Returns:** `string | undefined`.
+
+```ts filename="index.ts"
+console.log(drive.rootDriveId);
 ```
 
 #### `name`
@@ -1946,6 +1940,33 @@ await Sandbox.create({
   },
 });
 ```
+
+#### `drive.fork()`
+
+> **Availability**: Drive forks (Private Beta) are available to Enterprise and Pro plans
+
+Call `drive.fork()` to create a new drive from an existing drive's data. The fork belongs to the same project and inherits the source drive's region and maximum size. You can mount and update the fork independently of the source drive.
+
+> **💡 Note:** A drive must be mounted read-write and written to at least once before you can create a fork from it. Creating a fork of a drive that has never been written to fails with a `drive_not_initialized` error.
+
+**Returns:** `Promise<Drive>`.
+
+| Parameter | Type          | Required | Details                                                  |
+| --------- | ------------- | -------- | -------------------------------------------------------- |
+| `name`    | `string`      | Yes      | Name of the new drive. Must be unique within the project. |
+| `signal`  | `AbortSignal` | No       | Cancel the request if necessary.                         |
+
+```ts filename="index.ts"
+import { Drive } from '@vercel/sandbox';
+
+const drive = await Drive.get({ name: 'workspace-cache' });
+const forkedDrive = await drive.fork({ name: 'workspace-cache-fork' });
+
+console.log(forkedDrive.name);
+console.log(forkedDrive.parentDriveId === drive.driveId); // true
+```
+
+For a mount example, see [Forking a drive](/docs/sandbox/concepts/drives#forking-a-drive).
 
 #### `drive.delete()`
 

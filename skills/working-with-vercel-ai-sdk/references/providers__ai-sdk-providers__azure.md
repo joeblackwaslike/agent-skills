@@ -4,8 +4,8 @@ description: Learn how to use the Azure OpenAI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/azure"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6f788fa2405921e763fc7492357f14ea8da359c5cfb63ad15f88feb2ccdf80bb"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "3a1fe70a6477ce1175b3864f8e1f1a051b2e19595b62596649e70e620faab0ba"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai
 
 The Azure OpenAI provider is available in the `@ai-sdk/azure` module. You can install it with
 
-**Packages:** `@ai-sdk/azure`
+```bash
+pnpm add @ai-sdk/azure
+```
 
 ## Provider Instance
 
@@ -146,7 +148,7 @@ You can use the following optional settings to customize the OpenAI provider ins
 
 - **maiBaseURL** *string*
 
-  URL prefix for MAI realtime requests (MAI-Transcribe-2-Streaming).
+  URL prefix for MAI requests (MAI-Image and MAI-Transcribe-2-Streaming).
   Defaults to `https://{resourceName}.services.ai.azure.com/mai/v1`.
 
 - **webSocket** *WebSocketConstructor*
@@ -1017,7 +1019,8 @@ The following optional provider options are available for Azure OpenAI embedding
 
 ## Image Models
 
-You can create models that call the Azure OpenAI image generation API (DALL-E) using the `.image()` factory method. The first argument is your deployment name for the DALL-E model.
+You can create models that call the Azure OpenAI image generation API using the `.image()` factory method. The first argument is your deployment name.
+MAI-Image models use the [MAI image API](#mai-image) instead.
 
 ```ts
 const model = azure.image('your-dalle-deployment-name');
@@ -1081,6 +1084,67 @@ parameter instead.
 
 When creating your Azure OpenAI deployment, make sure to set the DALL-E model
 version you want to use.
+
+### MAI-Image
+
+MAI-Image models (`MAI-Image-2.6`, `MAI-Image-2.6-Flash`, `MAI-Image-2.5`,
+`MAI-Image-2.5-Flash`, `MAI-Image-2.5-Pro`) use the MAI image API at
+`https://{resourceName}.services.ai.azure.com/mai/v1` (override with
+`maiBaseURL`). Deployments named after the model are detected automatically,
+case-insensitively. For other deployment names, set
+`providerOptions.azure.api` to `'mai'`.
+
+```ts
+import { azure, type AzureImageModelOptions } from '@ai-sdk/azure';
+import { generateImage } from 'ai';
+
+const { image, usage } = await generateImage({
+  model: azure.image('MAI-Image-2.6'),
+  prompt: 'A watercolor of three flowers on a blue background',
+  size: '1536x1024',
+  providerOptions: {
+    azure: {
+      webGrounding: true,
+    } satisfies AzureImageModelOptions,
+  },
+});
+```
+
+Pass reference images to edit or combine them (up to five JPEG or PNG
+images). Masks are not supported.
+
+```ts
+const { image } = await generateImage({
+  model: azure.image('MAI-Image-2.6-Flash'),
+  prompt: {
+    text: 'Put the product from the first image into the scene from the second',
+    images: [productImage, sceneImage],
+  },
+});
+```
+
+Each request returns one PNG image; `generateImage` sends one request per image.
+`size` is sent as `width` and `height`. Each side must be at least 768 pixels,
+and the total pixel count at most 2,359,296 for MAI-Image-2.6 models and
+1,048,576 for MAI-Image-2.5 models. Without `size`, `aspectRatio` is mapped to
+dimensions of about one megapixel; without either, the model returns 1024x1024.
+`seed` is not supported. Token usage is returned in `usage`, with the input
+text and image token split in `providerMetadata.azure.images`.
+
+The following provider options are available:
+
+- **api** *'mai' | 'openai'*
+
+  API to use. Defaults to `'mai'` for MAI-Image models, `'openai'` otherwise.
+
+- **autoAspectRatio** *boolean*
+
+  Let the model choose the output aspect ratio from the prompt and reference
+  images. MAI-Image-2.6 models only.
+
+- **webGrounding** *boolean*
+
+  Ground generation in Bing web search results. MAI-Image-2.6 models only.
 
 ## Transcription Models
 

@@ -4,8 +4,8 @@ description: API Reference for pruneMessages.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7791aec102e7eebb6dfb7321795f88575b8b25cef2cbdde4f22f6f4f39dc0e69"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "a39c0d3beeeffdf88243fbb312b6bfe6e5969a043273943af7002f229c37ba49"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -53,7 +53,7 @@ import { pruneMessages } from "ai"
 
 - `messages` (`ModelMessage[]`): An array of ModelMessage objects to prune.
 - `reasoning` (`'all' | 'before-last-message' | 'none'`): How to remove reasoning content from assistant messages. Default: "none".
-- `toolCalls` (`'all' | 'before-last-message' | 'before-last-${number}-messages' | 'none' | Array<{ type: 'all' | 'before-last-message' | 'before-last-${number}-messages'; tools?: string[] }>`): How to prune tool call/results/approval content. Can specify a strategy string or an array for per-tool fine control. Default: \[] (empty array, equivalent to "none").
+- `toolCalls` (``'all' | 'before-last-message' | `before-last-${number}-messages` | 'none' | Array<{ type: 'all' | 'before-last-message' | `before-last-${number}-messages`; tools?: string[] }>``): How to prune tool call/results/approval content. Can specify a strategy string or an array for per-tool fine control. Default: \[] (empty array, equivalent to "none").
 - `emptyMessages` (`'keep' | 'remove'`): Whether to keep or remove messages whose content is empty after pruning. Default: "remove".
 
 ### Returns

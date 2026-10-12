@@ -4,8 +4,8 @@ description: AI SDK Integration for monitoring and tracing LLM applications
 url: "https://ai-sdk.dev/providers/observability"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e43a506243c6885ce2ef5ba555cb433c2c998c4982a4d6c8397eda8cb14c1053"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b294b01d03f1748c6e8aa00c1336d5adb540fb2bbb1b72689827388a0b5e582e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -15,6 +15,7 @@ Several LLM observability providers offer integrations with the AI SDK telemetry
 - [Axiom](/providers/observability/axiom)
 - [Braintrust](/providers/observability/braintrust)
 - [Confident AI](/providers/observability/confident-ai)
+- [Datadog](/providers/observability/datadog)
 - [Helicone](/providers/observability/helicone)
 - [HoneyHive](https://docs.honeyhive.ai/integrations/vercel)
 - [Laminar](/providers/observability/laminar)

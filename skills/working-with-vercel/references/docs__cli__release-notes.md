@@ -13,8 +13,8 @@ related:
 summary: Browse release notes for Vercel CLI versions, including major, minor, and patch changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/release-notes.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e14fff4e4c16741d8037c83b2f8e0cc2715f2df70697ee31b658509efe488bff"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "237007502e89032ea1f7f01e00be92404d87e348a4f050729945f4dff2cd2eb5"
 ---
 
 # Vercel CLI Release Notes
@@ -27,7 +27,24 @@ Release notes for [Vercel CLI](/docs/cli) and its related packages. Each release
 
 To update to the latest version, see [updating Vercel CLI](/docs/cli#updating-vercel-cli) or run [`vercel upgrade`](/docs/cli/upgrade).
 
-vercel@62.2.0Published 2026-10-02 Minor changes- 8a2668d:  
+vercel@63.1.0Published 2026-10-08 Minor changes- 2a4156d:  vercel@63.0.2Published 2026-10-08 Patch changes- e324375:  vercel@63.0.1Published 2026-10-08 Patch changes- 3733132:  vercel@63.0.0Published 2026-10-08 Major changes- 17637ac:  Minor changes- f91d6d3:  
+- e041037:  Patch changes- 7431c35:  
+- ef7fdaf:  
+- 76b6025:  
+- 0fce17f:  
+- bfde787:  
+- 552f87b:  
+- 331b358:  vercel@62.7.0Published 2026-10-07 Minor changes- 978350d:  vercel@62.5.0Published 2026-10-06 Minor changes- f954b92:  
+- aa84773:  
+- 06e5c99:  
+- 368d3f6:  
+- 5937035:  Patch changes- c1d2298:  
+- 121506c:  
+- ea89cc4:  
+- db6985f:  vercel@62.4.0Published 2026-10-05 Minor changes- 94f6cea:  
+- 1888ae0:  Patch changes- ed0126f:  
+- 8455317:  
+- 8ac5320:  vercel@62.2.0Published 2026-10-02 Minor changes- 8a2668d:  
 - a7ef28c:  Patch changes- eed4b48:  
 - 796be12:  
 - 1f558d0:  

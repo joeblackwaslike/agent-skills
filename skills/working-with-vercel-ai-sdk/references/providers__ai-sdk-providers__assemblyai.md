@@ -4,8 +4,8 @@ description: Learn how to use the AssemblyAI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "2746c78c4cbca9ccf4bcd46e335c47f63e5652adbea93d6c02548d5dd312e2a4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "91c5e34f5fe2af113703a9df5a3ff09d3b2df5145fed5f345672f876f688e27c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [AssemblyAI](https://assemblyai.com/) provider contains transcription model 
 
 The AssemblyAI provider is available in the `@ai-sdk/assemblyai` module. You can install it with
 
-**Packages:** `@ai-sdk/assemblyai`
+```bash
+pnpm add @ai-sdk/assemblyai
+```
 
 ## Provider Instance
 

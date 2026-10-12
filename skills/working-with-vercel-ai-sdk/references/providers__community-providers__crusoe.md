@@ -4,8 +4,8 @@ description: Learn how to use the Crusoe provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/crusoe"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/crusoe.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "bd044d93e91148e746ee1d2feca6d8b5217d4b69c3f4b00e92560883132ae6f5"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "17608799c8ea5a250b8686ba01b2d55b7a2d1a17f6a2996f2f593e54326b4526"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ API keys can be obtained from the [Crusoe Cloud Console](https://console.crusoec
 
 The Crusoe provider is available via the `crusoe-ai-provider` module. You can install it with:
 
-**Packages:** `crusoe-ai-provider`
+```bash
+pnpm add crusoe-ai-provider
+```
 
 ### Environment variables
 

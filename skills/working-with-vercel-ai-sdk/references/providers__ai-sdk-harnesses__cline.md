@@ -4,8 +4,8 @@ description: Learn how to use the Cline harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "243da0c49e04231b4959484d54e8e748405b6d3d6715407201889c0a502aacb0"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "40f7ad9ee048c42eafb5547559d4991752d448ad46fc450936420323d51365ca"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-cline`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-cline @ai-sdk/sandbox-vercel
+```
 
 The Cline runtime has no bootstrap step: nothing is installed inside the
 sandbox when a session starts.

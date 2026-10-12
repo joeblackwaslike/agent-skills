@@ -14,8 +14,8 @@ related:
 summary: Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects, and pull configuration for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1a36fde167923770bde72ee53db5ab8471db612b841b4c68b9e9bc8eddd01b8c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b6d14d0b0b94ea13ba6d132e3bc3997ebe80d5f82da7d1b5c93c8e0fb4d0852d"
 ---
 
 # vercel microfrontends
@@ -32,7 +32,7 @@ The `vercel microfrontends` command (alias: `vercel mf`) provides utilities for 
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Vercel MCP tools for microfrontends.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel env](https://vercel.com/docs/cli/env?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=related) — Learn how to get started with microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli/microfrontends.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fmicrofrontends&source_site=vercel-docs&relationship=graph)
@@ -130,9 +130,9 @@ vercel microfrontends remove-from-group [options]
 
 ### Options
 
-| Option      | Description                                                           |
-| ----------- | --------------------------------------------------------------------- |
-| `-y, --yes` | Skip the project-link prompt (does not skip the removal confirmation) |
+| Option      | Description                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| `-y, --yes` | Skip the project-link prompt and removal confirmations, including the warning for referenced projects. |
 
 ### Examples
 
@@ -152,10 +152,10 @@ vercel microfrontends delete-group [options]
 
 ### Options
 
-| Option      | Description                                                            |
-| ----------- | ---------------------------------------------------------------------- |
-| `--group`   | Name or ID of the microfrontends group to delete                       |
-| `-y, --yes` | Skip the project-link prompt (does not skip the deletion confirmation) |
+| Option      | Description                                                                            |
+| ----------- | -------------------------------------------------------------------------------------- |
+| `--group`   | Name or ID of the microfrontends group to delete                                     |
+| `-y, --yes` | Skip the deletion confirmation. Combine with `--group` to delete without prompting. |
 
 ### Examples
 
@@ -165,10 +165,10 @@ vercel microfrontends delete-group [options]
 vercel microfrontends delete-group
 ```
 
-#### Delete a group with flags
+#### Delete a group without prompts
 
 ```bash filename="terminal"
-vercel mf delete-group --group="My Group"
+vercel mf delete-group --group="My Group" --yes
 ```
 
 ## inspect-group

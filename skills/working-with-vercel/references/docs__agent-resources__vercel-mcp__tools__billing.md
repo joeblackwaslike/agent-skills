@@ -17,8 +17,8 @@ related:
 summary: Vercel MCP tools for billing and purchases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4148eed90f839bbe6cd997788d74dec1a21d15ce76ca6b1432b162d4e811c757"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "cc396113425bb82cced13d8bf03ba54947a61ea8dd14d7aa3f35f8ad8fbf1038"
 ---
 
 # Billing and Purchases
@@ -31,8 +31,8 @@ Review your team's billing charges and contract commitments, or get quotes befor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [List FOCUS billing charges](https://vercel.com/docs/rest-api/billing/list-focus-billing-charges?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling&source_site=vercel-docs&relationship=related) — GET /v1/billing/charges — Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 - [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling&source_site=vercel-docs&relationship=related) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
 - [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.

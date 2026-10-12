@@ -4,8 +4,8 @@ description: Learn how to resume chatbot streams after client disconnects.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3e57fa4c31399332886690e31d1e9d594dc4aa4725f3c06aacb382d61547cc93"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "1890da2ae1d4f6eed06611fc5f5b5554a2ffc23a9e22dd87bfba54a9e4048369"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -90,6 +90,28 @@ You must send the chat ID with each request (see
 `prepareSendMessagesRequest`).
 
 When you enable `resume`, the `useChat` hook makes a `GET` request to `/api/chat/[id]/stream` on mount to check for and resume any active streams.
+
+The hook also reconnects when the page becomes visible again after being in the background (for example, after switching browser tabs or returning to a mobile app). This only happens when the stream was interrupted by a network disconnect. Healthy streams and other errors are left untouched.
+
+`DefaultChatTransport` treats resumed streams as full replays by default, as
+returned by the `resumable-stream` setup below. On the first `start` chunk, the
+client resets the interrupted response and rebuilds it from the replay. This
+prevents duplicate text, reasoning, and step parts after a network disconnect.
+
+If your resume endpoint sends only the remaining chunks, set
+`resumeStreamIsReplay: false`. This preserves the interrupted response even if
+the continuation includes a `start` chunk with the same message ID:
+
+```ts
+const transport = new DefaultChatTransport({
+  resumeStreamIsReplay: false,
+});
+```
+
+When a continuation omits the `start` chunk, the client preserves its interrupted
+streaming state with either setting. Continuing active text or reasoning parts
+requires the same chat instance; a page reload does not retain that streaming
+state, so use a full replay for reloads.
 
 The default transport URL-encodes the chat ID as a single path segment. IDs equal
 to `.` or `..` are rejected with an `InvalidArgumentError` because URL parsers
@@ -215,7 +237,7 @@ The diagram above shows the complete lifecycle of a resumable stream:
 
 1. **Stream creation**: When you send a new message, the POST handler uses `streamText` to generate the response. The `consumeSseStream` callback creates a resumable stream with a unique ID and stores it in Redis through the `resumable-stream` package
 2. **Stream tracking**: Your persistence layer saves the `activeStreamId` in the chat data
-3. **Client reconnection**: When the client reconnects (page reload), the `resume` option triggers a GET request to `/api/chat/[id]/stream`
+3. **Client reconnection**: When the client reconnects (page reload, or returning to a backgrounded page after a network disconnect), the `resume` option triggers a GET request to `/api/chat/[id]/stream`
 4. **Stream recovery**: The GET handler checks for an `activeStreamId` and uses `resumeExistingStream` to reconnect. If no active stream exists, it returns a 204 (No Content) response
 5. **Completion cleanup**: When the stream finishes, the `onEnd` callback clears the `activeStreamId` by setting it to `null`
 

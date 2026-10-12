@@ -16,8 +16,8 @@ related:
 summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "08490571d988aec4ef064bf1047728c7c4d0d956d9289512c41adaf8e8a13d20"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b98ce4d3896dd3cc45374012b18b3ff7590bd5a33042a2caa11ce0cb8ae3963c"
 ---
 
 # Observability
@@ -111,6 +111,7 @@ Observability provides different sections of features and traffic sources that h
 | [Queues](/docs/observability/insights#queues)                                                             |            | ✓             |
 | [External Rewrites](/docs/observability/insights#external-rewrites)                                       | ✓          | ✓             |
 | [Microfrontends](/docs/observability/insights#microfrontends)                                             | ✓          | ✓             |
+| [AI Traffic](/docs/observability/insights#ai-traffic)                                                     | ✓          | ✓             |
 
 ## Tracked events
 

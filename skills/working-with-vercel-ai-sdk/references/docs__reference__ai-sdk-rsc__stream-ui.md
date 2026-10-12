@@ -4,8 +4,8 @@ description: Reference for the streamUI function from the AI SDK RSC
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "428b576aa0a0591ca695bcbe13d5a72cae0d6063410ffd993718a6bb15c59a1b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "57816c08ca3b5bd77626b998c3f450bdb61f84565a041a899a51b7cfb23c7b6e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -111,7 +111,7 @@ import { streamUI } from "@ai-sdk/rsc"
         - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
     - `value` (`ReactNode`): The final ui node that was generated.
     - `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
-    - `response` (`Response`): Optional response data.
+    - `response?` (`Response`): Optional response data.
       - `Response`
         - `headers?` (`Record<string, string>`): Response headers.
 

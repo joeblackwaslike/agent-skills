@@ -4,8 +4,8 @@ description: Learn how to use the Voyage AI provider.
 url: "https://ai-sdk.dev/providers/community-providers/voyage-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/voyage-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "49320f9f5757007c0492d71dc1c3062e685c19d2c10d2e2d037fadbbe24bd1ff"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "66cdc5f15e906117715300a942cd9cca0cf450da1a72be3132245223833c1d5c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "49320f9f5757007c0492d71dc1c3062e685c19d2c10d2e2d037fadbbe24bd1ff"
 
 The Voyage provider is available in the `voyage-ai-provider` module. You can install it with
 
-**Packages:** `voyage-ai-provider`
+```bash
+pnpm add voyage-ai-provider
+```
 
 ## Provider Instance
 

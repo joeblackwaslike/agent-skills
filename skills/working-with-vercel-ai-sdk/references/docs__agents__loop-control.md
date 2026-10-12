@@ -4,8 +4,8 @@ description: Control agent execution with built-in loop management using stopWhe
 url: "https://ai-sdk.dev/docs/agents/loop-control"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c7cf81a3891bd98192b7697803f600901409e4c481e372684e83d5f24af8fc70"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cf080df0ca2d3b1b381aa80b151ffd9296dfb180ac57554450e12ff143f97a34"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,6 +22,8 @@ The AI SDK provides built-in loop control through two parameters: `stopWhen` for
 ## Stop Conditions
 
 The `stopWhen` parameter controls when to stop execution when there are tool results in the last step. By default, `ToolLoopAgent` stops after 20 steps using `isStepCount(20)`. This default is a safety measure to prevent runaway loops that could result in excessive API calls and costs.
+
+If this default limit stops a tool loop that could otherwise continue, the SDK logs a warning with guidance on configuring `stopWhen`. Set `stopWhen` explicitly to choose a limit, even if you want to keep `isStepCount(20)`. Explicit stop conditions do not produce this warning.
 
 `WorkflowAgent` does not apply a default step limit. It continues until the model stops calling tools or another natural termination condition is met. Configure an explicit condition such as `isStepCount(20)` when you need to bound its model calls. See [WorkflowAgent Loop Control](/docs/agents/workflow-agent#loop-control) for details.
 

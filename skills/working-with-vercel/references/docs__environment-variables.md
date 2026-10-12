@@ -9,20 +9,20 @@ prerequisites:
   []
 related:
   - /docs/deployments/environments
-  - /docs/projects
   - /docs/environment-variables/rotating-secrets
+  - /docs/environment-variables/sensitive-environment-variables
   - /docs/builds/configure-a-build
   - /docs/functions
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "bcc4ed0f71bc473f708d81801cc47b23666877063cef85ef40eb9eeba699c039"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "883df9cf3fddeefadae6067f9c35c60ce91da89a6fd76e31f0b5d135bdaf6898"
 ---
 
 # Environment variables
 
-Environment variables are key-value pairs configured outside your source code so that each value can change depending on the [Environment](/docs/deployments/environments). These values are encrypted at rest and visible to any user that has access to the [project](/docs/projects). It is safe to use both non-sensitive and sensitive data, such as tokens. When you need to replace an API key, token, or other credential, follow the steps for [rotating environment variables](/docs/environment-variables/rotating-secrets) to update it without downtime.
+Environment variables are key-value pairs configured outside your source code so that each value can change depending on the [Environment](/docs/deployments/environments). These values are encrypted at rest. Config values remain readable to members with project access, while Secret values are write-only after saving. When you need to replace an API key, token, or other credential, follow the steps for [rotating environment variables](/docs/environment-variables/rotating-secrets) to update it without downtime.
 
 
 <!-- docsgraph:related -->
@@ -30,6 +30,7 @@ Environment variables are key-value pairs configured outside your source code so
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Deployments](https://v0.app/docs/deployments?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [External APIs](https://v0.app/docs/external-apis?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build full-stack applications by calling external APIs with environment variables.
@@ -41,10 +42,11 @@ Environment variables are key-value pairs configured outside your source code so
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 
 Full cross-link map for this page: [/docs/environment-variables.graph.md](/docs/environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fenvironment-variables&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
+
+When adding variables in the dashboard or with the CLI, choose **Config** or **Secret** for each variable. Config values stay readable to authorized members while Secret values are write-only after saving. Learn more in [Config and Secret environment variables](/docs/environment-variables/sensitive-environment-variables).
 
 Your source code can read these values to change behavior during the [Build Step](/docs/builds/configure-a-build) or during [Function](/docs/functions) execution.
 

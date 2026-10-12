@@ -4,8 +4,8 @@ description: Learn how to use the Pi harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e212fb452e8b068653d5434f6f54d83c58bba6ab09404d8dd4b0a56806b20b6a"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "378ec8b295dd76d70eb5eb35eea05da781f9e9123c32254e750f92152c991705"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-pi`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-pi @ai-sdk/sandbox-vercel
+```
 
 ## Import
 
@@ -88,17 +90,64 @@ Settings:
 
 - `auth`: authentication mode (`auto`, `openai`, `anthropic`, `custom`, or
   `ai-gateway`) or an isolated authentication environment.
+- `cacheRetention`: default prompt cache retention for model requests (`none`,
+  `short`, or `long`). For Anthropic models, `long` uses the 1-hour cache
+  instead of the 5-minute default.
 - `credentials`: application-owned Pi credential storage. This replaces the
   file-backed `auth.json` store and supports persistent database-backed
   credentials.
 - `extensionFactories`: trusted inline Pi extension factories that run in the
   host Node.js process.
+- `fileToolPathPolicy`: extra sandbox roots Pi's native file tools can read,
+  and roots they must refuse. See [File Tool Paths](#file-tool-paths).
 - `mcpServers`: MCP server definitions keyed by server name.
+- `mcpSettings`: settings for the MCP adapter that serves `mcpServers`, applied
+  over the package defaults. `toolPrefix` (`mcp`, `server`, `short`, or `none`)
+  sets how MCP tool names are prefixed and defaults to `mcp`; only
+  `mcp`-prefixed tool calls are reported as provider-executed dynamic tools
+  with parsed JSON results. `outputGuard` defaults to `true`; the adapter then
+  truncates tool results over 50 KiB or 2,000 lines and writes the full text to
+  the host temp directory, which Pi's sandbox file tools cannot read. Set it to
+  `false` to return results in full.
 - `providers`: explicit Pi provider configurations for custom models.
 - `reattachInProcess`: whether a suspended turn can reuse its live Pi session
   in the current process. Defaults to `true`.
 - `thinkingLevel`: Pi thinking level (`off`, `minimal`, `low`, `medium`,
   `high`, `xhigh`, or `max`).
+
+## File Tool Paths
+
+By default, Pi's native file tools (`read`, `write`, `edit`, `ls`, `find`, and
+`grep`) are limited to the session workspace, and the read-only tools can also
+read the harness skill directory. Use `fileToolPathPolicy` to change what they
+can reach:
+
+```ts
+const harness = createPi({
+  fileToolPathPolicy: {
+    readableRoots: ['/home/vercel-sandbox', '/tmp'],
+    deniedRoots: ['/home/vercel-sandbox/.credentials'],
+  },
+});
+```
+
+- `readableRoots`: absolute sandbox directories that `read`, `ls`, `find`, and
+  `grep` can reach in addition to the defaults. They do not become writable.
+- `deniedRoots`: absolute sandbox directories that every native file tool
+  refuses, even inside the workspace or a readable root. Both requested paths
+  and denied roots are resolved in the sandbox, so symlinks pointing to or from
+  a denied root are refused. Denied roots are resolved when the Pi session
+  starts; start a new session if a denied symlink changes target. `find` and
+  `grep` skip denied roots when they search a parent directory. `grep` skips
+  them by directory name, so it also skips other directories with the same
+  name under the searched directory.
+
+When the setting is present, a leading `~` in a tool path expands to the
+sandbox home directory.
+
+The policy applies to Pi's native file tools only. The `bash` tool is not
+restricted by it, so do not treat `deniedRoots` as a security boundary for
+commands the agent runs.
 
 ## Inline Extensions
 

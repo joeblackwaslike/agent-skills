@@ -1,7 +1,7 @@
 ---
-source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/plugin/src/v2/effect/PLAN.md"
-fetched_at: "2026-06-22T05:59:46.710Z"
-sha256: "c790ae2db0eedb2af0cdcc5b04164fd84a871a99674de161ffdb41368945f4af"
+source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/plugin/src/effect/PLAN.md"
+fetched_at: "2026-10-12T11:48:23.877Z"
+sha256: "cde6ef15fd55fc50a4c729f854ba143cba2cab8f3a0754c6e73c68c1504e5651"
 ---
 
 # V2 Plugin System Implementation Plan
@@ -13,8 +13,8 @@ This document describes the agreed target design for the V2 plugin system. It is
 ## Goals
 
 - Internal and external plugins use the same public plugin API.
-- Effect plugins import `@opencode-ai/plugin/v2/effect`, not `@opencode-ai/core`.
-- Public domain values use generated `@opencode-ai/sdk` types.
+- Effect plugins import `@opencode/plugin/effect`, not `@opencode/core`.
+- Public domain values use generated `@opencode/sdk` types.
 - Core may retain branded IDs, decoded Effect schemas, and internal service types.
 - Plugins may register replayable domain transforms and runtime hooks imperatively during setup.
 - Registrations are scoped, independently disposable, ordered, and removable.
@@ -174,7 +174,7 @@ Hook context objects may contain:
 - Purpose-built methods for allowed mutations
 - Capability methods where the operation requires more than field assignment
 
-They must not expose core drafts or unrestricted internal objects.
+They must not expose core editors or unrestricted internal objects.
 
 ## Domain Transforms Versus Runtime Hooks
 
@@ -182,7 +182,7 @@ Both use the same low-level scoped registration registry, but consumers invoke t
 
 ```ts
 ctx.tool.transform(...) // replayed to build effective tool registry state
-ctx.tool.hook(...)      // invoked at a live tool operation boundary
+ctx.tool.hook(...)     // invoked at a live tool operation boundary
 ```
 
 The shared low-level machinery owns registration order, scope cleanup, disposal, and snapshots. Each domain owns when its transforms or runtime hooks execute.
@@ -214,7 +214,7 @@ type EventMap = {
 }
 ```
 
-Core resolves the public event type string to its internal event definition and delegates to `EventV2.Service.subscribe`.
+Core resolves the public event type string to its internal event definition and delegates to `Event.Service.subscribe`.
 
 ## Domain State Model
 
@@ -296,7 +296,7 @@ begin batch
 → end batch
 ```
 
-Registration itself is not staged per plugin. If setup fails, closing the plugin's child scope removes every registration made before the failure.
+Registration itself is not staged per plugin. If setup fails, closing the plugin's child scope removes every registration made before the failure. A replacement then retries the previous definition; if that setup also fails, the plugin remains inactive.
 
 Outside a batch, transform registration and disposal rebuild immediately.
 
@@ -310,7 +310,7 @@ export const ModelsDevPlugin = define({
   effect: (ctx) =>
     Effect.gen(function* () {
       const modelsDev = yield* ModelsDev.Service
-      const event = yield* EventV2.Service
+      const event = yield* Event.Service
 
       yield* ctx.integration.transform(
         Effect.fn(function* (integration) {
@@ -430,7 +430,7 @@ The Effect implementation remains the canonical runtime. Promise and embedding w
 
 ### 1. Define Public Contracts
 
-- Define `PluginHost` domain capabilities in `@opencode-ai/plugin/v2/effect`.
+- Define `PluginHost` domain capabilities in `@opencode/plugin/effect`.
 - Define SDK-typed editors for agent, catalog, command, integration, reference, skill, and tool.
 - Define typed runtime hook maps per domain.
 - Define `Registration`.
@@ -489,7 +489,7 @@ The Effect implementation remains the canonical runtime. Promise and embedding w
 ### 8. Add Event Adapter
 
 - Build the SDK event discriminant map.
-- Resolve public type strings to internal EventV2 definitions.
+- Resolve public type strings to internal Event definitions.
 - Return typed Effect streams.
 
 ### 9. Verification

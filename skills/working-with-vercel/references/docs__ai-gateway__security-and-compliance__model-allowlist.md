@@ -14,8 +14,8 @@ related:
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8e8053d595a58046c965d3d4626bd91e436321b04bf77a0db6271aec80a19b64"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "40c7e3323c5ab3edbdcfb6200a664c3832da314e51acec0a93c6823d3412d91d"
 ---
 
 # AI Gateway Model Allowlist
@@ -30,10 +30,11 @@ The model allowlist lets team owners restrict which models can be used through A
 
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related)
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [Update virtual model config](https://vercel.com/docs/rest-api/ai-gateway/update-virtual-model-config?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=related) — PATCH /ai-gateway/virtual-model-configs — Update a virtual model config
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fmodel-allowlist&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

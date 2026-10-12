@@ -16,8 +16,8 @@ related:
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b4d9d68f5b5b32e1f9e5d557e14a18f2c07d2a030799ef6d3cd1776a2e19c731"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "622bcf9bca2e45d0b416a60cff5d147d937b2350fcba7ae9684b379e7ac894a4"
 ---
 
 # OpenID Connect (OIDC) Federation
@@ -109,6 +109,16 @@ vercel env pull
 
 This writes the `VERCEL_OIDC_TOKEN` environment variable and other environment variables targeted
 to `development` to the `.env.local` file of your project folder. See the [CLI docs](/docs/cli/env) for more information.
+
+### Reading a rotated token file
+
+If your environment supplies a rotating token file, set `VERCEL_OIDC_TOKEN_FILE` to its path. In Node.js, call [`getVercelOidcToken()`](/docs/oidc/reference#other-cloud-providers) when you need the current token. In `@vercel/oidc` 4.0.0 and later, the helper checks these token sources in order:
+
+1. The `x-vercel-oidc-token` header in the request context.
+2. The file named by `VERCEL_OIDC_TOKEN_FILE`, when set.
+3. The `VERCEL_OIDC_TOKEN` environment variable.
+
+When the request context has no token, the SDK reads the configured file on each call. Changes to the file take effect without restarting your process. An unreadable or empty configured file causes an error rather than a fallback to `VERCEL_OIDC_TOKEN`. Don't cache the helper's result.
 
 ## Related
 

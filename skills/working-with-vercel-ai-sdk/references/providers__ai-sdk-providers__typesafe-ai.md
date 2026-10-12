@@ -1,16 +1,16 @@
 ---
 title: TypeSafe
-description: Use TypeSafe System One models for typed evaluations with the AI SDK.
+description: Use TypeSafe System One models for typed decisions with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "20939bacca52d64740eae89cf61fae583fd3c0d634351f039a357897170a0cdf"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d6ff9ceeed93d474b7845f51390266298a09a7dd03eb1c7d810eeed540d142c1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
-The [TypeSafe](https://typesafe.ai) provider supports the experimental evaluation
+The [TypeSafe](https://typesafe.ai) provider supports the experimental decision
 API with native Choice, Score, and Boolean answers. It sends all questions in one
 request against the same state.
 
@@ -35,21 +35,32 @@ const customTypeSafe = createTypeSafeAi({
 
 `createTypeSafeAi` accepts:
 
-| Setting   | Description                                 |
-| --------- | ------------------------------------------- |
-| `apiKey`  | API key; defaults to `TYPESAFE_AI_API_KEY`. |
-| `baseURL` | Defaults to `https://api.typesafe.ai/v1`.   |
-| `headers` | Additional request headers.                 |
-| `fetch`   | Custom fetch implementation.                |
+| Setting   | Description                                                            |
+| --------- | ---------------------------------------------------------------------- |
+| `apiKey`  | API key; defaults to `TYPESAFE_AI_API_KEY`.                            |
+| `baseURL` | Defaults to `TYPESAFE_AI_BASE_URL`, then `https://api.typesafe.ai/v1`. |
+| `headers` | Additional request headers.                                            |
+| `fetch`   | Custom fetch implementation.                                           |
 
-## Evaluation
+Use `TYPESAFE_AI_BASE_URL` to route the default `typeSafeAi` instance through a
+trusted proxy or self-hosted TypeSafe-compatible server:
+
+```sh
+TYPESAFE_AI_BASE_URL=http://127.0.0.1:8766/v1
+```
+
+An explicit `baseURL` passed to `createTypeSafeAi` takes precedence over the
+environment variable. The configured server receives the API key and decision
+state and must implement the TypeSafe `POST /systemone` API.
+
+## Decision
 
 ```ts
 import { typeSafeAi } from '@ai-sdk/typesafe-ai';
-import { experimental_evaluate } from 'ai';
+import { experimental_decide } from 'ai';
 
-const result = await experimental_evaluate({
-  model: typeSafeAi.evaluationModel('jev-latest'),
+const result = await experimental_decide({
+  model: typeSafeAi.decisionModel('jev-latest'),
   state: {
     message: 'I was charged twice. Please refund the duplicate.',
   },
@@ -85,7 +96,7 @@ Use `jev-latest` or another TypeSafe model ID. The response includes the actual
 model ID, such as the resolved version behind the alias. Use model instances,
 custom aliases, or registered providers. With `typeSafeAi` explicitly configured
 as `globalThis.AI_SDK_DEFAULT_PROVIDER`, you can pass `model: 'jev-latest'`
-directly. See [model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
+directly. See [model aliases and registries](/docs/ai-sdk-core/decisions#model-aliases-and-registries).
 
 | Question  | Native TypeSafe primitive | Limits and semantics                                                 |
 | --------- | ------------------------- | -------------------------------------------------------------------- |
@@ -120,7 +131,7 @@ No provider-specific options are currently defined. Unknown entries under
 `providerOptions.typesafe` produce unsupported-option warnings. Language,
 embedding, and image model factories throw `NoSuchModelError`.
 
-Evaluation models support workflow serialization. A custom fetch function is not
+Decision models support workflow serialization. A custom fetch function is not
 serialized; restored models use the default fetch implementation.
 
 ---

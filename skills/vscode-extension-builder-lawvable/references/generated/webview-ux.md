@@ -1,8 +1,8 @@
 ---
 title: "Webview UX Guidelines"
 source: "https://code.visualstudio.com/api/ux-guidelines/webviews"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "cb2dba877c02e7d6c050befcd1f8d09c1c697944f91ba60b29c753552f3a43b8"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "9a8723909c636a637a0826fce4abed62502ef86f8113384ba1f78021a08345ef"
 ---
 
 # Webview UX Guidelines
@@ -10,6 +10,44 @@ sha256: "cb2dba877c02e7d6c050befcd1f8d09c1c697944f91ba60b29c753552f3a43b8"
 Source: https://code.visualstudio.com/api/ux-guidelines/webviews
 
 # Webviews
+
+ 
+
+ 
+
+ Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/ux-guidelines/webviews.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fux-guidelines%2Fwebviews%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fux-guidelines%2Fwebviews%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fux-guidelines%2Fwebviews%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 If you need to display custom functionality that is beyond what the VS Code API supports, you can use [webviews](https://code.visualstudio.com/api/extension-guides/webview), which are fully customizable. It's important to understand that webviews should only be used if you absolutely need them.
 
@@ -68,4 +106,4 @@ _This webview view shows content for creating a pull request that uses dropdowns
 - [Webview View extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample)
 
  
- 9/30/2026
+ 10/7/2026

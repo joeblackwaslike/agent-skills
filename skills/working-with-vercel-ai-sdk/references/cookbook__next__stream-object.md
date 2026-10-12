@@ -8,8 +8,8 @@ tags:
   - streaming
   - structured data
 source: "https://ai-sdk.dev/cookbook/next/stream-object.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6e34000018e11d71ebfe4844c77915edc370154233c145978adfc906f7de8e09"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "c1219a93a599e20f7a2a7b1f5341be499a4ae5eaab41a2b555b450081e4cf111"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -105,7 +105,7 @@ export async function POST(req: Request) {
 
 ## Loading State and Stopping the Stream
 
-You can use the `loading` state to display a loading indicator while the object is being generated.
+You can use the `isLoading` state to display a loading indicator while the object is being generated.
 You can also use the `stop` function to stop the object generation process.
 
 ```tsx title='app/page.tsx' {7,16,21,24}

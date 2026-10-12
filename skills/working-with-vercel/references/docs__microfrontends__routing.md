@@ -16,8 +16,8 @@ related:
 summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e7a02dc3971024825aabe4cf0fbb0d88f95a58bdf949e242f4aee82f672f84a4"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "956d571ec0cda11afaa4cf79858d9a0efdc2de7a59eb1c9a2560a6509390f149"
 ---
 
 # Microfrontends Routing
@@ -31,6 +31,7 @@ Microfrontends routing determines which application handles a path and which dep
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends previews now link across repositories](https://vercel.com/changelog/microfrontends-previews-now-link-across-repositories?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
+- [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends?from=related&source_path=%2Fdocs%2Fmicrofrontends%2Frouting&source_site=vercel-docs&relationship=related) — Learn how to migrate legacy applications using microfrontends

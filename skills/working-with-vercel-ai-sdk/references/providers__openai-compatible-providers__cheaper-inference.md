@@ -4,8 +4,8 @@ description: Use the Cheaper Inference OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/cheaper-inference"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/cheaper-inference.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "81931cb3b6e4923d37ed67501a2fe493807393b88d77282c7772898c70709c65"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "5f8576783508b82bd5d0f5fabd0ca30c43fc6acad0867346e4c7f3d1a4256403"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ sha256: "81931cb3b6e4923d37ed67501a2fe493807393b88d77282c7772898c70709c65"
 
 Install the OpenAI Compatible provider:
 
-**Packages:** `@ai-sdk/openai-compatible`
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 Create a Cheaper Inference API key and set it as a server-side environment variable:
 

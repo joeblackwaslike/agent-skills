@@ -16,8 +16,8 @@ related:
 summary: Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/getting-started-with-vercel.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1cc2f5235596e3ba928d0fd8485a9ecf67d26d0cd1a06d76dfce4319a2fe602f"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "f953840f8c1d07880e66ac2cb948f4f35460bd8aa65e1369503abd04a8cfb966"
 ---
 
 # Getting started with Vercel
@@ -32,13 +32,13 @@ Install the Vercel CLI and deploy your app. If you use an AI coding agent, add a
 
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to deploy an AI application to production on Vercel
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Learn how to deploy an AI application to production on Vercel
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Vercel MCP tools for documentation and cli.
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Build your first Vercel Function in a few steps.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/getting-started-with-vercel.graph.md](/docs/getting-started-with-vercel.graph.md?from=related&source_path=%2Fdocs%2Fgetting-started-with-vercel&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -46,7 +46,7 @@ Full cross-link map for this page: [/docs/getting-started-with-vercel.graph.md](
 **Agent prompt**
 
 ```text
-Help me get set up with Vercel. Based on my project, do the following: 1. Install the Vercel CLI globally (`npm i -g vercel`) and log in with `vercel login`. 2. If you are Claude Code, OpenAI Codex, Grok Build, Cursor, GitHub Copilot, or Kimi Code, install the Vercel Plugin with `npx plugins add vercel/vercel-plugin`. Otherwise, install Vercel Skills with `npx skills add vercel-labs/agent-skills`. 3. Connect the Vercel MCP server with `npx -y add-mcp https://mcp.vercel.com -g`. 4. Deploy with `vercel` and share the preview URL. 5. Suggest next steps based on my project, such as adding a custom domain, setting environment variables, or configuring Vercel Functions.
+Help me get set up with Vercel. Based on my project, do the following: 1. Install the Vercel CLI globally (`npm i -g vercel`) and log in with `vercel login`. 2. If you are Claude Code, OpenAI Codex, Grok Build, Cursor, GitHub Copilot, or Kimi Code, install the Vercel Plugin with `npx plugins add vercel/vercel-plugin`. If you are OpenCode, install it with `opencode plugin add github:vercel/vercel-plugin`. Otherwise, install Vercel Skills with `npx skills add vercel-labs/agent-skills`. 3. Connect the Vercel MCP server with `npx -y add-mcp https://mcp.vercel.com -g`. 4. Deploy with `vercel` and share the preview URL. 5. Suggest next steps based on my project, such as adding a custom domain, setting environment variables, or configuring Vercel Functions.
 ```
 
 ## Prerequisites
@@ -106,6 +106,12 @@ If you use [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [OpenA
 
 ```bash
 npx plugins add vercel/vercel-plugin
+```
+
+In [OpenCode](https://opencode.ai), install it with OpenCode's plugin command instead:
+
+```bash
+opencode plugin add github:vercel/vercel-plugin
 ```
 
 The plugin activates automatically. No configuration needed.

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/telemetry.md"
-fetched_at: "2026-06-22T05:57:43.917Z"
-sha256: "8ce7930d5df9494f8b45633a73d2ad701b128cc1005490251a96917fa595d999"
+fetched_at: "2026-10-12T11:44:59.166Z"
+sha256: "c731cf1f5403c2164f1164dc1c9581782e324c16cc6c4fedb51716978d45c133"
 ---
 
 # Observability with OpenTelemetry
@@ -48,6 +48,7 @@ Environment variables can override these settings.
 | `target`       | `GEMINI_TELEMETRY_TARGET`         | Where to send telemetry data                        | `"gcp"`/`"local"` | `"local"`               |
 | `otlpEndpoint` | `GEMINI_TELEMETRY_OTLP_ENDPOINT`  | OTLP collector endpoint                             | URL string        | `http://localhost:4317` |
 | `otlpProtocol` | `GEMINI_TELEMETRY_OTLP_PROTOCOL`  | OTLP transport protocol                             | `"grpc"`/`"http"` | `"grpc"`                |
+| `otlpHeaders`  | `GEMINI_TELEMETRY_OTLP_HEADERS`   | Custom headers for OTLP exporter requests           | JSON/`key=value`  | -                       |
 | `outfile`      | `GEMINI_TELEMETRY_OUTFILE`        | Save telemetry to file (overrides `otlpEndpoint`)   | file path         | -                       |
 | `logPrompts`   | `GEMINI_TELEMETRY_LOG_PROMPTS`    | Include prompts in telemetry logs                   | `true`/`false`    | `true`                  |
 | `useCollector` | `GEMINI_TELEMETRY_USE_COLLECTOR`  | Use external OTLP collector (advanced)              | `true`/`false`    | `false`                 |

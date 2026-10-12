@@ -1,13 +1,47 @@
 ---
 title: "Language Model API"
 source: "https://code.visualstudio.com/api/extension-guides/language-model"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "dda72d3feb84376dad341687d6db1a7dd2d7fb6141c2a753a441b8253a70ecb4"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "85680a81e1f979040327a2b5ef3a90246660a1a53b9a40716ac0ac97db7b839a"
 ---
 
 # Language Model API
 
 Source: https://code.visualstudio.com/api/extension-guides/language-model
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/extension-guides/ai/language-model.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fai%2Flanguage-model%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fai%2Flanguage-model%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fai%2Flanguage-model%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 The Language Model API enables you to [use the Language Model](https://code.visualstudio.com/api/references/vscode-api#lm) and integrate AI-powered features and natural language processing in your Visual Studio Code extension.
 
@@ -264,4 +298,4 @@ Once you have created your AI extension, you can publish your extension to the V
 - [Build a VS Code chat extension](https://code.visualstudio.com/api/extension-guides/ai/chat)
 
  
- 9/30/2026
+ 10/7/2026

@@ -4,8 +4,8 @@ description: Create and run AI SDK HarnessAgent sessions.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "067f912f1dfb4e00dfc2d844752e89f6dde36af1972b6a8e48acfd5411287a9d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "f91694d6fb793ecb624ab2115588ee06620f380d59b3c9c2c5d2ca22b9f28198"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,7 +18,9 @@ results while a preconfigured harness powers these results.
 
 Install the core harness package, a harness adapter, and a sandbox adapter:
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-claude-code`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel
+```
 
 Bridge-backed harnesses such as Claude Code and Codex require using real network sandbox
 like `@ai-sdk/sandbox-vercel`. Host-runtime harnesses such as Pi can also run with

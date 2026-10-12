@@ -15,8 +15,8 @@ related:
 summary: Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "64e1104c4740a937ab86e630f6b7a8cfc60ec0588e03641ae003d20e227498c1"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "68e0e2b6b49d2ef022a7f92674cf4bbcdc52e8a2c7faea517f53bdbeb3d92934"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -36,7 +36,6 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Queues Observability](https://vercel.com/docs/queues/observability?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=related) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 
 Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fsdk&source_site=vercel-docs&relationship=graph)

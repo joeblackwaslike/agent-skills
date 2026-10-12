@@ -16,8 +16,8 @@ related:
 summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "54282da0a0fe5d6a2cb3b19e1673112732726e7b4510c7fd79dbd46ff2e925f6"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "00ad2eb3a798f0dfdff6601935ba64aa8cb7dacec580ac52eb7ac8a45eed2c73"
 ---
 
 # Vercel Workflows
@@ -43,7 +43,7 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Starting workflows](https://workflow-sdk.dev/docs/foundations/starting-workflows?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related) — Trigger workflows and track their execution using the start() function.
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=related)
 
 Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md?from=related&source_path=%2Fdocs%2Fworkflows&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

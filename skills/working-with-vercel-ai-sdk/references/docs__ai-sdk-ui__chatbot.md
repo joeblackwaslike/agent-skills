@@ -4,8 +4,8 @@ description: Learn how to use the useChat hook.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "63f2417ac02d6cbc6be078674727ef9a5d27107947b751f09bfe922c0da1da2e"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "92da2609e6996f1d36fd320628b8d72167c6adee08464d98a908cf0cdaebdc5a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -1010,7 +1010,9 @@ Some providers such as [Perplexity](/providers/ai-sdk-providers/perplexity#sourc
 
 You can forward sources to the client with the `sendSources` option. This example uses the Perplexity Agent API's `fast` preset to search the web. Install `@ai-sdk/perplexity` and set `PERPLEXITY_API_KEY` in your environment:
 
-**Packages:** `@ai-sdk/perplexity`
+```bash
+pnpm add @ai-sdk/perplexity
+```
 
 ```ts title="app/api/chat/route.ts" {21}
 import { perplexity } from '@ai-sdk/perplexity';

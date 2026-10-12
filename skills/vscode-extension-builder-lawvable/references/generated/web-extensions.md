@@ -1,13 +1,47 @@
 ---
 title: "Web Extensions"
 source: "https://code.visualstudio.com/api/extension-guides/web-extensions"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "112fdf4d814eb242ac575bb6ac9f43027aa231d18284dcbb2fd0a0a0c5a63102"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "e237fce8166663183c869b95e52091849bc72d7d1c11c9ba980f23e419e934cf"
 ---
 
 # Web Extensions
 
 Source: https://code.visualstudio.com/api/extension-guides/web-extensions
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/extension-guides/web-extensions.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fweb-extensions%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fweb-extensions%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Fextension-guides%2Fweb-extensions%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 Visual Studio Code can run as an editor in the browser. One example is the `github.dev` user interface reached by pressing `.` (the period key) when browsing a repository or Pull Request in GitHub. When VS Code is used in the Web, installed extensions are run in an extension host in the browser, called the 'web extension host'. An extension that can run in a web extension host is called a 'web extension'.
 
@@ -821,4 +855,4 @@ export function run(): Promise&#x3C;void> {
 - [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)
 
  
- 9/30/2026
+ 10/7/2026

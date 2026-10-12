@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/review-requests"
-fetched_at: "2026-09-28T10:42:53.812Z"
-sha256: "f139ff923577c0e1893c2a5e19b088e9fc28a603ef5ed36443cbf855cc6430c2"
+fetched_at: "2026-10-12T11:47:53.585Z"
+sha256: "d2f984fef0f6bb69189a9e35210b85ce9580663acb99261287da272529d55841"
 ---
 
 # REST API endpoints for review requests
@@ -531,5 +531,74 @@ curl -L \
 ```
 
 **Response schema (Status: 200):**
+
+Same response schema as [Request reviewers for a pull request](#request-reviewers-for-a-pull-request).
+
+## Rerequest reviewers for a pull request
+
+```
+POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers/rerequest
+```
+
+Rerequests reviews for a pull request from a given set of users and/or teams.
+This endpoint triggers notifications. Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "Rate limits for the API" and "Best practices for using the REST API."
+
+### Parameters
+
+#### Headers
+
+- **`accept`** (string)
+  Setting to `application/vnd.github+json` is recommended.
+
+#### Path and query parameters
+
+- **`owner`** (string) (required)
+  The account owner of the repository. The name is not case sensitive.
+
+- **`repo`** (string) (required)
+  The name of the repository without the .git extension. The name is not case sensitive.
+
+- **`pull_number`** (integer) (required)
+  The number that identifies the pull request.
+
+#### Body parameters
+
+- **`reviewers`** (array of strings)
+  An array of user logins whose reviews will be rerequested.
+
+- **`team_reviewers`** (array of strings)
+  An array of team slugs whose reviews will be rerequested.
+
+### HTTP response status codes
+
+- **201** - Created
+
+- **403** - Forbidden
+
+- **422** - Unprocessable Entity if user is not a collaborator
+
+### Code examples
+
+#### Example
+
+**Request:**
+
+```curl
+curl -L \
+  -X POST \
+  https://api.github.com/repos/OWNER/REPO/pulls/PULL_NUMBER/requested_reviewers/rerequest \
+  -d '{
+  "reviewers": [
+    "octocat",
+    "hubot",
+    "other_user"
+  ],
+  "team_reviewers": [
+    "justice-league"
+  ]
+}'
+```
+
+**Response schema (Status: 201):**
 
 Same response schema as [Request reviewers for a pull request](#request-reviewers-for-a-pull-request).

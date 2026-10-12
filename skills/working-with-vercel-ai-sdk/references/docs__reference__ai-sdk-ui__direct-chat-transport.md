@@ -4,8 +4,8 @@ description: API Reference for the DirectChatTransport class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0f981e6e08438d386eb664d940da08735d00a6a30362bf6650340972083ad513"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "50115a5e8c90c17041e7e942db9341974174452754762f19ab88614f0d965afd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -51,6 +51,8 @@ import { DirectChatTransport } from "ai"
 - `originalMessages?` (`UIMessage[]`): The original messages. If provided, persistence mode is assumed, and a message ID is provided for the response message (generated with \`generateMessageId\`, or reused from the last message when it is an assistant message).
 - `generateMessageId?` (`IdGenerator`): Generate a message ID for the response message. If not provided, no message ID will be set for the response message (unless the original messages are provided and the last message is an assistant message).
 - `messageMetadata?` (`(options: { part: TextStreamPart }) => METADATA | undefined`): Extracts message metadata that will be sent to the client. Called on \`start\` and \`finish\` events.
+- `onStepEnd?` (`UIMessageStreamOnStepEndCallback`): Called after each step is converted to UI message parts. Receives messages, isContinuation, and the accumulated responseMessage, including step metadata, for inspection or persistence.
+- `onStepFinish?` (`UIMessageStreamOnStepFinishCallback`): Deprecated alias for onStepEnd.
 - `sendReasoning?` (`boolean`): Send reasoning parts to the client. Defaults to true.
 - `sendSources?` (`boolean`): Send source parts to the client. Defaults to false.
 - `sendFinish?` (`boolean`): Send the finish event to the client. Set to false if you are using additional streamText calls that send additional data. Defaults to true.

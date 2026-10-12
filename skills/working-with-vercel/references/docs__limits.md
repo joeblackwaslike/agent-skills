@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ffce7e037057817c7bef479b00c6b32e3c97b585a1d52a2fd69f5dc485638bb2"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "596dff8804b5afd8892ed8c41ca481c485702225a6c8d214cb8a146613b0ea87"
 ---
 
 # Limits
@@ -178,17 +178,14 @@ Vercel Workflows limits the size and throughput of each workflow run, including 
 
 ## Vercel Functions
 
-The limits of Vercel functions are based on the [runtime](/docs/functions/runtimes) that you use.
+Vercel Functions run on [Fluid compute](/docs/fluid-compute), which is enabled by default for new projects. Its key limits per plan:
 
-For example, different runtimes allow for different [bundle sizes](/docs/functions/limitations#bundle-size-limits), [maximum duration](/docs/functions/runtimes/edge#maximum-execution-duration), and [memory](/docs/functions/limitations#memory-size-limits).
+| Limit                                                            | Hobby                            | Pro and Enterprise                                       |
+| ----------------------------------------------------------------- | -------------------------------- | -------------------------------------------------------- |
+| [Maximum duration](/docs/functions/limitations#max-duration)     | 300s (5 minutes) default and max | 300s default, 800s max, up to 1800s (30 minutes) in beta |
+| [Memory and CPU](/docs/functions/limitations#memory-size-limits) | 2 GB / 1 vCPU default and max    | 2 GB / 1 vCPU default, up to 4 GB / 2 vCPU max           |
 
-If you have an existing project, deployed to Vercel before April 23rd 2025 and **not using Fluid compute**, Vercel Functions have the following defaults and maximum limits for the duration of a function:
-
-|            | Default | Maximum           |
-| ---------- | ------- | ----------------- |
-| Hobby      | 10s     | 60s (1 minute)    |
-| Pro        | 15s     | 300s (5 minutes)  |
-| Enterprise | 15s     | 900s (15 minutes) |
+For the full reference, see [Vercel Functions limitations](/docs/functions/limitations).
 
 ## Connecting a project to a Git repository
 

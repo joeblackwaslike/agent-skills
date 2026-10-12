@@ -12,8 +12,8 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "dfbef8c6a3d758b3db4a914b07e3a11d2ad42d1452e0d5d9965d6f94d51b723a"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "e293fd126164db90da7ec30c8783acd8d372989863b472fe06a389fd3c25f3ee"
 ---
 
 # Support Center
@@ -37,8 +37,8 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

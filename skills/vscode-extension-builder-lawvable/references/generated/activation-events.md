@@ -1,13 +1,47 @@
 ---
 title: "Activation Events"
 source: "https://code.visualstudio.com/api/references/activation-events"
-fetched_at: "2026-10-05T11:12:49.290Z"
-sha256: "0e3c493c9f6a32acd20d76f3799170d82615c8a90724de9b234505218ae12f4e"
+fetched_at: "2026-10-12T11:41:30.415Z"
+sha256: "16d651c601dfa2103eb3cc44e83b00bbef4260a5580d209ecc4dccfc0de69e0c"
 ---
 
 # Activation Events
 
 Source: https://code.visualstudio.com/api/references/activation-events
+
+Copy as Markdown
+
+ 
+
+ 
+
+ 
+- 
+
+ 
+ Copy as Markdown
+
+ 
+
+- 
+ [View as Markdown](https://code.visualstudio.com/api/references/activation-events.md)
+
+ 
+- 
+
+- 
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Factivation-events%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+- 
+ [Ask in VS Code Insiders](vscode-insiders://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Factivation-events%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
+
+	
+ [Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fapi%2Freferences%2Factivation-events%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+
+ 
 
 **Activation Events** is a set of JSON declarations that you make in the `activationEvents` field of `package.json` [Extension Manifest](https://code.visualstudio.com/api/references/extension-manifest). Your extension becomes activated when the **Activation Event** happens. Here is a list of all available **Activation Events**:
 
@@ -449,4 +483,4 @@ The `*` activation event is emitted and interested extensions will be activated 
 **Note:** An extension **must** export an `activate()` function from its main module and it will be invoked **only once** by VS Code when any of the specified activation events is emitted. Also, an extension **should** export a `deactivate()` function from its main module to perform cleanup tasks on VS Code shutdown. Extension **must** return a Promise from `deactivate()` if the cleanup process is asynchronous. An extension may return `undefined` from `deactivate()` if the cleanup runs synchronously.
 
  
- 9/30/2026
+ 10/7/2026

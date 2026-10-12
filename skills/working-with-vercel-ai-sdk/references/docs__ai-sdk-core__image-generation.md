@@ -4,8 +4,8 @@ description: Learn how to generate images with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "bcf53336f0fe782a9d438bc503f37159679d8cd0ffc4d0dd9a10c3c14727cb2d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "0a7e728ab383056419beecba8f9237f55e66a8e580e109e4e7b222b3c609d480"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -303,7 +303,7 @@ import { generateImage, wrapImageModel } from 'ai';
 const model = wrapImageModel({
   model: "openai/gpt-image-2.5-sunburst",
   middleware: {
-    specificationVersion: 'v3',
+    specificationVersion: 'v4',
     transformParams: async ({ params }) => ({
       ...params,
       size: params.size ?? '1024x1024',
@@ -373,9 +373,11 @@ for (const file of result.files) {
 | [Google](/providers/ai-sdk-providers/google#image-models)                       | `gemini-2.5-flash-image`                                     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                                                                                                                 |
 | [Google](/providers/ai-sdk-providers/google#image-models)                       | `gemini-3-pro-image-preview`                                 | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                                                                                                                 |
 | [Google](/providers/ai-sdk-providers/google#image-models)                       | `gemini-3.1-flash-image-preview`                             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                                                                                                                 |
+| [Google](/providers/ai-sdk-providers/google#image-models)                       | `gemini-nano-banana-2.1`                                     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1                                                                                             |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#image-models)         | `gemini-2.5-flash-image`                                     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                                                                                                                 |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#image-models)         | `gemini-3-pro-image-preview`                                 | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                                                                                                                 |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#image-models)         | `gemini-3.1-flash-image-preview`                             | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9                                                                                                                 |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex#image-models)         | `gemini-nano-banana-2.1`                                     | 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, 21:9, 1:8, 8:1, 1:4, 4:1                                                                                             |
 | [Fireworks](/providers/ai-sdk-providers/fireworks#image-models)                 | `accounts/fireworks/models/flux-1-dev-fp8`                   | 1:1, 2:3, 3:2, 4:5, 5:4, 16:9, 9:16, 9:21, 21:9                                                                                                                     |
 | [Fireworks](/providers/ai-sdk-providers/fireworks#image-models)                 | `accounts/fireworks/models/flux-1-schnell-fp8`               | 1:1, 2:3, 3:2, 4:5, 5:4, 16:9, 9:16, 9:21, 21:9                                                                                                                     |
 | [Fireworks](/providers/ai-sdk-providers/fireworks#image-models)                 | `accounts/fireworks/models/playground-v2-5-1024px-aesthetic` | 640x1536, 768x1344, 832x1216, 896x1152, 1024x1024, 1152x896, 1216x832, 1344x768, 1536x640                                                                           |

@@ -14,8 +14,8 @@ related:
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f0aa9b60da486c765e3b1274bd2fa315085561982870b22f72fba46ff9bb348a"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "cdb3832fc64b675c9c0da26256fca52a9b2e03a0dda42c48c2573919a1791e69"
 ---
 
 # vercel alerts
@@ -31,9 +31,9 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 - [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related)
 - [vercel security](https://vercel.com/docs/cli/security?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
 - [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
-- [vercel metrics](https://vercel.com/docs/cli/metrics?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -103,7 +103,7 @@ vercel alerts --ai
 
 ### Since
 
-The `--since` option sets the start of the time range. Use an ISO 8601 timestamp.
+The `--since` option, shorthand `-s`, sets the start of the time range. Use an ISO 8601 timestamp.
 
 If you don't pass `--since` or `--until`, the command defaults to the last 24 hours.
 
@@ -113,7 +113,7 @@ vercel alerts --since 2026-03-01T00:00:00.000Z
 
 ### Until
 
-The `--until` option sets the end of the time range. Use an ISO 8601 timestamp.
+The `--until` option, shorthand `-u`, sets the end of the time range. Use an ISO 8601 timestamp.
 
 ```bash filename="terminal"
 vercel alerts --since 2026-03-01T00:00:00.000Z --until 2026-03-02T00:00:00.000Z
@@ -217,13 +217,13 @@ Use [rule schemas](#rules-schema) to inspect the fields available to your select
 
 Use `vercel alerts rules --help` to see the rules command tree.
 
-Rule IDs are returned by `rules add` and shown by `rules ls`. Use those IDs with `rules inspect`, `rules update`, and `rules rm`.
+Rule IDs are returned by `rules create` and shown by `rules ls`. Use those IDs with `rules inspect`, `rules update`, and `rules rm`.
 
 | Command | Aliases | Description |
 | --- | --- | --- |
 | `rules ls` | `list` | List alert rules for a project or team. |
 | `rules schema` | None | Show available rule types, request fields, constraints, and examples. |
-| `rules add` | `create` | Create an alert rule from a JSON body file. |
+| `rules create` | `add` | Create an alert rule from a JSON body file. |
 | `rules inspect` | `get` | Show one alert rule by ID. |
 | `rules rm` | `remove`, `delete` | Delete an alert rule. |
 | `rules update` | `patch` | Patch an alert rule or change its project scope. |
@@ -286,14 +286,14 @@ vercel alerts rules schema
 vercel alerts rules schema --type built-in
 ```
 
-#### `rules add`
+#### `rules create`
 
 Create an alert rule from a JSON body file. The create body must set `type`. For a built-in rule, set `type` to `built-in`.
 
-Aliases: `create`.
+`add` is a supported alias.
 
 ```bash filename="terminal"
-vercel alerts rules add --project my-app --body ./rule.json
+vercel alerts rules create --project my-app --body ./rule.json
 ```
 
 ##### Options
@@ -335,7 +335,7 @@ Create a built-in error anomaly rule for one project:
 ```
 
 ```bash filename="terminal"
-vercel alerts rules add --project my-app --body ./rule.json
+vercel alerts rules create --project my-app --body ./rule.json
 ```
 
 Use `vercel alerts rules schema --type built-in` for additional validated examples, filter syntax, and current constraints.
@@ -481,7 +481,7 @@ Use `--format json` for scripting and automation. Rule commands write only JSON 
 | --- | --- |
 | `rules ls` | `{ "rules": [...] }` |
 | `rules schema` | `{ "schemaVersion": number, "ruleTypes": [...] }` |
-| `rules add`, `rules inspect`, `rules update` | `{ "rule": {...} }` |
+| `rules create`, `rules inspect`, `rules update` | `{ "rule": {...} }` |
 | `rules rm` | `{ "ok": true, "ruleId": "ar_...", "deleted": true }` |
 
 Validation failures return an `error` object with `code` and `message`. When the API identifies individual invalid fields, the object also includes an `issues` array with field paths and messages.

@@ -4,8 +4,8 @@ description: Concepts behind building multistep interfaces
 url: "https://ai-sdk.dev/docs/advanced/multistep-interfaces"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/multistep-interfaces.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "a729631f9072872fe47cfa16c51a0e901bec87e805edaaacbe465b85df733245"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "f6b11a99403ccc8f2e4c61a2a6aacbf46b6ffa17450c89c865407259d15b34cd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,7 +89,7 @@ Tool: bookFlight("BA123", "12th December", ["John Doe", "Jane Doe"])
 Model: Your flight has been booked!
 ```
 
-Before the last tool call, the passenger details needed by the `bookFlight` tool are not available in the application context. As a result, the model asks the user to provide the passenger details before proceeding with the booking.
+After `lookupFlight` returns, the passenger details needed by the `bookFlight` tool are not yet available in the application context. The model asks the user for those details; once the user supplies the names, the model can call `bookFlight`.
 
 Looking up passenger information could've been another tool that the model could've called before calling the `bookFlight` tool assuming that the user is logged into the application. This way, the model does not have to ask the user for the passenger details and can proceed with the booking.
 

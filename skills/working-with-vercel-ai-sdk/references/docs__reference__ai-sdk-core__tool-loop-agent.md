@@ -4,8 +4,8 @@ description: API Reference for the ToolLoopAgent class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "39ff5fbe5ec6cdbac7494a12333732098f605bee2e02a37f44f17589d15227de"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "abd6f3e40ccce7acfcd501fd277bf0d2a47587d80f14e31b5c10c8ecd20eb316"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -94,7 +94,7 @@ import { ToolLoopAgent } from "ai"
     - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
     - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object that flows through the entire generation lifecycle.
     - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`, keyed by tool name.
-- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step (LLM call) begins, before the provider is called. Each step represents a single LLM invocation. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
+- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step begins, before the provider is called. Each step includes a model generation and any associated local tool execution; provider retries remain within the same step. If also specified in \`generate()\` or \`stream()\`, both callbacks are called (constructor first).
   - `GenerateTextStepStartEvent`
     - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
     - `modelId` (`string`): The specific model identifier (e.g., "gpt-6-astra").
@@ -174,11 +174,11 @@ const result = await agent.generate({
 - `prompt` (`string | Array<ModelMessage>`): A text prompt or message array.
 - `messages` (`Array<ModelMessage>`): A full conversation history as a list of model messages.
 - `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
-- `timeout?` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs and chunkMs have no effect on generate(); they are streaming-only and are enforced by stream(). Can be used alongside abortSignal.
+- `timeout?` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. stepMs limits each complete step, including model generation, retries, and local tool execution. firstChunkMs and chunkMs have no effect on generate(); they are streaming-only and are enforced by stream(). Can be used alongside abortSignal.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
 - `options?` (`CALL_OPTIONS`): Custom call options when the agent is configured with a callOptionsSchema.
 - `onStart?` (`GenerateTextOnStartCallback`): Callback that is called when the agent operation begins, before any LLM calls are made. If also specified in the constructor, both callbacks are called (constructor first).
-- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step (LLM call) begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).
+- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).
 - `onToolExecutionStart?` (`OnToolExecutionStartCallback`): Callback that is called right before a tool's execute function runs. If also specified in the constructor, both callbacks are called (constructor first).
 - `onToolExecutionEnd?` (`OnToolExecutionEndCallback`): Callback that is called right after a tool's execute function completes (or errors). If also specified in the constructor, both callbacks are called (constructor first).
 - `onStepEnd?` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. If also specified in the constructor, both callbacks are called (constructor first, then this one).
@@ -207,12 +207,12 @@ for await (const chunk of stream.textStream) {
 - `prompt` (`string | Array<ModelMessage>`): A text prompt or message array.
 - `messages` (`Array<ModelMessage>`): A full conversation history as a list of model messages.
 - `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
-- `timeout?` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. firstChunkMs limits the wait for the first content-bearing output in each model-call step. chunkMs limits gaps between later content-bearing output chunks. Can be used alongside abortSignal.
+- `timeout?` (`number | { totalMs?: number; stepMs?: number; firstChunkMs?: number; chunkMs?: number }`): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, firstChunkMs, and/or chunkMs properties. stepMs limits each complete step, including model generation, retries, and local tool execution. firstChunkMs limits the wait for the first content-bearing output in each model-call step. chunkMs starts with the first meaningful model output and limits gaps between subsequent meaningful model output chunks. Both output timers stop when the model response finishes and start fresh for each retry or later model call; they exclude retry backoff and local tool execution. Tool results, including preliminary results, do not reset them. Provider-executed tools remain within the model response. Can be used alongside abortSignal.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
 - `options?` (`CALL_OPTIONS`): Custom call options when the agent is configured with a callOptionsSchema.
 - `experimental_transform?` (`StreamTextTransform | Array<StreamTextTransform>`): Optional stream transformation(s). They are applied in the order provided and must maintain the stream structure. See \`streamText\` docs for details.
 - `onStart?` (`GenerateTextOnStartCallback`): Callback that is called when the agent operation begins, before any LLM calls are made. If also specified in the constructor, both callbacks are called (constructor first).
-- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step (LLM call) begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).
+- `onStepStart?` (`GenerateTextOnStepStartCallback`): Callback that is called when a step begins, before the provider is called. If also specified in the constructor, both callbacks are called (constructor first).
 - `onToolExecutionStart?` (`OnToolExecutionStartCallback`): Callback that is called right before a tool's execute function runs. If also specified in the constructor, both callbacks are called (constructor first).
 - `onToolExecutionEnd?` (`OnToolExecutionEndCallback`): Callback that is called right after a tool's execute function completes (or errors). If also specified in the constructor, both callbacks are called (constructor first).
 - `onStepEnd?` (`GenerateTextOnStepEndCallback`): Callback invoked after each agent step (LLM/tool call) completes. If also specified in the constructor, both callbacks are called (constructor first, then this one).

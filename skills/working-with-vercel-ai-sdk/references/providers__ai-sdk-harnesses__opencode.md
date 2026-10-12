@@ -4,8 +4,8 @@ description: Learn how to use the OpenCode harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "71f591b1338f1579bf3ce5322a5bfd6b1a5c744b14e7f9886187566844da3f6b"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "d29cc56d5f8f61164951ed3f9ee52f4120957485b14f63ea22419f959750560d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-opencode`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-opencode @ai-sdk/sandbox-vercel
+```
 
 The adapter bootstraps the OpenCode bridge dependencies inside the sandbox when
 the first session starts. The bridge package depends on `@opencode-ai/sdk` and

@@ -4,8 +4,8 @@ description: Learn how to use the Cursor harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4a34c024bd855ac43fd015760957a61a4c29772a31d829c19a7ffe776fdabbc8"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "effa796a0131307acecd15c13d7c7396bbcc3a61e65d462b390f5c51a80e8199"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,9 @@ releases as this early API gets further refined.
 
 ## Setup
 
-**Packages:** `@ai-sdk/harness`, `@ai-sdk/harness-cursor`, `@ai-sdk/sandbox-vercel`
+```bash
+pnpm add @ai-sdk/harness @ai-sdk/harness-cursor @ai-sdk/sandbox-vercel
+```
 
 Create a Cursor user API key and set `CURSOR_API_KEY`. The key authenticates
 Cursor CLI in the sandbox regardless of how Cursor authenticates to the model

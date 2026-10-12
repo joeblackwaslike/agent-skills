@@ -4,8 +4,8 @@ description: Monitor and debug your AI SDK application with Latitude
 url: "https://ai-sdk.dev/providers/observability/latitude"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/latitude.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3806f2fe3ec172add4f7721af0abd1aef36e85e36222aececee46ba4e1e1e5da"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "358c54a318c47ac0783522e7d3083bff5f7c0d05efe4c394cc12391ea259d712"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,9 @@ Latitude's SDK registers a global OpenTelemetry tracer. Once you register the AI
 
 Install both packages:
 
-**Packages:** `@latitude-data/telemetry`, `@ai-sdk/otel`
+```bash
+pnpm add @latitude-data/telemetry @ai-sdk/otel
+```
 
 Sign in at [app.latitude.so](https://app.latitude.so) and grab your API key and project slug from the dashboard. Set them in your environment:
 

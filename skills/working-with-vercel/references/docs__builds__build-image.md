@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0af813a9fc83a8404d7c3f5e270f065529c740a76fc5ce2523ea4b9c09c0f020"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "b73297cc7d5ddc7b92b9a96264dca74bbe1c8a252c71865592396c23b1cfde34"
 ---
 
 # Build image overview
@@ -35,8 +35,8 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel Container Registry](https://vercel.com/docs/container-registry?from=related&source_path=%2Fdocs%2Fbuilds%2Fbuild-image&source_site=vercel-docs&relationship=related) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
@@ -47,7 +47,7 @@ Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/bui
 
 | Runtime                                                           | [Build image](/docs/builds/build-image)                 |
 | ----------------------------------------------------------------- | ------------------------------------------------------- |
-| [Node.js](/docs/functions/runtimes/node-js)                       | `24.x` `22.x` `20.x`                                    |
+| [Node.js](/docs/functions/runtimes/node-js)                       | `24.x` `22.x`                                           |
 | [Python](/docs/functions/runtimes/python)                         | `3.14`, `3.13`, `3.12`                                  |
 | [Ruby](/docs/functions/runtimes/ruby)                             | `3.3.x`                                                 |
 | [Go](/docs/functions/runtimes/go)                                                 | (Supported) |

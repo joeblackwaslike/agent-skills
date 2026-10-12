@@ -16,8 +16,8 @@ related:
 summary: Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-10-05T11:22:15.364Z"
-sha256: "64006a88d531d4a800d0bff4df17814f4f53d302a39bd9cd13b93d7eefca71b5"
+fetched_at: "2026-10-12T11:51:10.837Z"
+sha256: "a91b43374e2d485459d1987802df474597bf557888836ae5cd2e1b96cb5f6914"
 ---
 
 # Make Your First Vercel API Request
@@ -35,7 +35,7 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
+- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=related) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
 
 Full cross-link map for this page: [/docs/rest-api/getting-started.graph.md](/docs/rest-api/getting-started.graph.md?from=related&source_path=%2Fdocs%2Frest-api%2Fgetting-started&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

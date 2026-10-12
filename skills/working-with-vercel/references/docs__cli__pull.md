@@ -15,8 +15,8 @@ related:
 summary: Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pull.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8b0585ca83aa664e0db956af753956474563d383a1c9ba401bb1e25ee0a222f4"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "4272a7a46506830d346b52b247b35acc934df60aa1023a37da5b8bef5e3196c6"
 ---
 
 # vercel pull
@@ -34,7 +34,7 @@ The `vercel pull` command is used to store [Environment Variables](/docs/environ
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=related) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/cli/pull.graph.md](/docs/cli/pull.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fpull&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

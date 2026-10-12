@@ -3,7 +3,7 @@ title: AI Gateway Model Filtering
 product: vercel
 url: /docs/ai-gateway/models-and-providers/model-filtering
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering"
-last_updated: 2026-09-17
+last_updated: 2026-10-02
 type: reference
 prerequisites:
   - /docs/ai-gateway/models-and-providers
@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/authentication-and-byok
-  - /docs/ai-gateway/modalities/evaluation
+  - /docs/ai-gateway/modalities/decision
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7e411e0f9e30ab816c791530ddf5a99cd072db4bef4f6cf74dd4fa3636239557"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "7cfd28fe36e820aec7b51383ca5f37eb67d49b001da2e63a0af4527e206bfe62"
 ---
 
 # AI Gateway Model Filtering
@@ -33,8 +33,8 @@ sha256: "7e411e0f9e30ab816c791530ddf5a99cd072db4bef4f6cf74dd4fa3636239557"
 
 - [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=related) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-filtering.graph.md](/docs/ai-gateway/models-and-providers/model-filtering.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fmodel-filtering&source_site=vercel-docs&relationship=graph)
@@ -57,7 +57,7 @@ The following capabilities are supported:
 
 AI Gateway sets `structured-output` on a provider model only after a live probe shows that provider produces schema-constrained output, so the same model can carry the capability on some providers and not others. `has: ['structured-output']` routes only to the providers that carry it.
 
-[Evaluation](/docs/ai-gateway/modalities/evaluation) requests don't need `structured-output` in `has`. AI Gateway adds the requirement automatically to language-model fallbacks, and adding it to the request-wide `has` would also filter the native evaluation model.
+[Decision](/docs/ai-gateway/modalities/decision) requests don't need `structured-output` in `has`. AI Gateway adds the requirement automatically to language-model fallbacks, and adding it to the request-wide `has` would also filter the native decision model.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 

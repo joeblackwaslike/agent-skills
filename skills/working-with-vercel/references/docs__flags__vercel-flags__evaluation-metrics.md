@@ -16,8 +16,8 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "78f9bee65e372c1605a8e57166049f2aae09bbacc6ace13c3bab713095c689f8"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "1e56c4202eea748dbbe84541245f1495a78eef8268afc08ed058514c51d730a2"
 ---
 
 # Flag Evaluation Metrics
@@ -37,7 +37,6 @@ Evaluation metrics show how often a feature flag is evaluated and which variants
 - [Observability](https://vercel.com/docs/flags/observability?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Track feature flag evaluations and analyze their impact with Web Analytics.
 - [Using the Core Library](https://vercel.com/docs/flags/vercel-flags/sdks/core?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Use the Vercel Flags core evaluation library directly for custom setups.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=related) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/evaluation-metrics.graph.md](/docs/flags/vercel-flags/evaluation-metrics.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fevaluation-metrics&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

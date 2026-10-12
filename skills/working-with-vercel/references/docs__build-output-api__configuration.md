@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7d741ca5bdb62d2c51a1d1d2bb41b4430ece037d22878886fdcebe3e935e395c"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "233469ce375fe60f01dd33dbc52fdc1991f279ec292d1b4dde11759e2997dec1"
 ---
 
 # Build Output Configuration
@@ -39,8 +39,8 @@ sha256: "7d741ca5bdb62d2c51a1d1d2bb41b4430ece037d22878886fdcebe3e935e395c"
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 
 Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->

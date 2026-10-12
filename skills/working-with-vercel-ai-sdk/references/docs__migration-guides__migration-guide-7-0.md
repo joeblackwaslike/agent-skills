@@ -4,8 +4,8 @@ description: Learn how to upgrade AI SDK 6.x to 7.0.
 url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e520549bc153506b0ee5bf57864f37a0dd3b52d67364534150f2827329310937"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "cd14241e8bfe8a0f29871caf25200cc35b84a75c398cfa8fb07cbbb8d7fcda79"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -1386,7 +1386,7 @@ if (isToolUIPart(part)) {
 
 The deprecated tool result content part of `{ type: 'media' }` has been removed in AI SDK 7.
 
-Use `{ type: 'file-data' }` for all inline file content, including images.
+Use `{ type: 'file', mediaType, data: { type: 'data', data } }` for inline tool-result file content, including images, as described below. The legacy `file-data` variant still works through runtime auto-migration, but is deprecated.
 
 #### Tool Result Content: Migrate Away From `image-*` and `file-*` variants to `file`
 

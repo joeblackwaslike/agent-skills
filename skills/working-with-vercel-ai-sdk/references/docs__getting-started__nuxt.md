@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Vue.js (Nux
 url: "https://ai-sdk.dev/docs/getting-started/nuxt"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nuxt.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "323b45189a1e0bfea8a321381459beaa1d18ed4f6c9b0926f54ee5c727f3b253"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "9282e076d55b8ab8d0a817527dddd29ce3273db1c6e2e8737842b2c799a7248e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -49,7 +49,9 @@ one line of code! Learn more about [available providers](/providers) and
 [building custom providers](/providers/community-providers/custom-providers)
 in the [providers](/providers) section.
 
-**Packages:** `ai`, `@ai-sdk/vue`, `zod`
+```bash
+pnpm add ai @ai-sdk/vue zod
+```
 
 ### Configure Vercel AI Gateway API key
 
@@ -152,7 +154,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';

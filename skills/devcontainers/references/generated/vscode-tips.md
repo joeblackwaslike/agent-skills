@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers tips and tricks"
 source: "https://code.visualstudio.com/docs/devcontainers/tips-and-tricks"
-fetched_at: "2026-10-05T11:12:30.813Z"
-sha256: "83dd3ed3eeb07bf456c03e5f84834e4c8d7c99b8a0942faf64e68e436433dcd6"
+fetched_at: "2026-10-12T11:41:07.891Z"
+sha256: "df18e633458901444937d14221b2c7d80728238486b2f71106a056801a338e8d"
 ---
 
 # VS Code Dev Containers tips and tricks
@@ -12,6 +12,40 @@ Source: https://code.visualstudio.com/docs/devcontainers/tips-and-tricks
 # Dev Containers Tips and Tricks
 
 
+                
+                
+
+
+	
+		
+			
+			Copy as Markdown
+		
+		
+			
+		
+		
+			- Copy as Markdown
+
+			- View as Markdown
+
+			- 
+
+			- Ask in VS Code
+
+			- Ask in VS Code Insiders
+
+		
+
+	
+	
+		[Ask in VS Code](vscode://GitHub.Copilot-Chat/chat?prompt=Read%20https%3A%2F%2Fcode.visualstudio.com%2Fdocs%2Fdevcontainers%2Ftips-and-tricks%20and%20answer%20questions%20about%20the%20content.&windowId=_blank)
+	
+
+
+                
+                
+                
 This article includes some tips and tricks for getting the Dev Containers extension up and running in different environments.
 
 
@@ -437,4 +471,4 @@ We have a variety of other remote resources:
 
                 
                 
-                9/30/2026
+                10/7/2026

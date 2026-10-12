@@ -4,8 +4,8 @@ description: Monitor your AI SDK applications with Laminar
 url: "https://ai-sdk.dev/providers/observability/laminar"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "169625a6f986f055ab8dfb58e75b4987d73d538c8d352e2766ec21d1c5b540c5"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "45b6e5852c5155c703be042daf58b22b0d044aa84f54d422be06bb8205044840"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -43,7 +43,9 @@ Copy the prompt below and paste it to your coding agent, for it to integrate ful
 
 To setup Laminar manually, first install the `@lmnr-ai/lmnr` package.
 
-**Packages:** `@lmnr-ai/lmnr`
+```bash
+pnpm add @lmnr-ai/lmnr
+```
 
 ### Get your project API key and set in the environment
 

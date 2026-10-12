@@ -14,8 +14,8 @@ related:
 summary: "Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your agents to AI Gateway."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/setup.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "35305eae7c1be8a6c5abfb2800d9e100a539d83339d2790c20c4323118112b42"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "169c76b538ef358c2de463b869112da852b4440f2aca2d57e848d9cae760b306"
 ---
 
 # vercel setup
@@ -30,8 +30,8 @@ The `vercel setup` command prepares your machine for coding agents in two steps:
 
 - [vercel agent](https://vercel.com/docs/cli/agent?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=related) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 - [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 - [vercel install](https://vercel.com/docs/cli/install?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=related) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 
 Full cross-link map for this page: [/docs/cli/setup.graph.md](/docs/cli/setup.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsetup&source_site=vercel-docs&relationship=graph)

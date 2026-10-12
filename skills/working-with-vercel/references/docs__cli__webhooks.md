@@ -3,7 +3,7 @@ title: vercel webhooks
 product: vercel
 url: /docs/cli/webhooks
 canonical_url: "https://vercel.com/docs/cli/webhooks"
-last_updated: 2026-07-15
+last_updated: 2026-10-06
 type: reference
 prerequisites:
   - /docs/cli
@@ -15,13 +15,11 @@ related:
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e58c1350cd3a66028ebe3c4cc2f85d8aac9c16a8c4b0b2053113b3fe2c17c999"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "64919cf535b8b29e78d36a9613e02213f66a061b137a2d286bf33d78896d9f2c"
 ---
 
 # vercel webhooks
-
-> **💡 Note:** The `vercel webhooks` command is currently in beta. Features and behavior may change.
 
 The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for your Vercel account, providing functionality to list, inspect, create, and remove webhooks. Webhooks allow you to receive HTTP POST requests when events occur in your Vercel account.
 
@@ -34,8 +32,8 @@ The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for y
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 - [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks — Get a list of webhooks
+- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel crons](https://vercel.com/docs/cli/crons?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=related) — GET /v1/webhooks/{id} — Get a webhook
 
 Full cross-link map for this page: [/docs/cli/webhooks.graph.md](/docs/cli/webhooks.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fwebhooks&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -47,7 +45,7 @@ For more information about webhooks and their supported events, see the [Webhook
 The `vercel webhooks` command supports the following subcommands:
 
 - [`list`](#vercel-webhooks-list) - List all webhooks
-- [`get`](#vercel-webhooks-get) - Get details of a specific webhook
+- [`inspect`](#vercel-webhooks-inspect) - Inspect details of a specific webhook
 - [`create`](#vercel-webhooks-create) - Create a new webhook
 - [`rm`](#vercel-webhooks-rm) - Remove a webhook
 
@@ -79,30 +77,24 @@ vercel webhooks ls --format json
 
 *Using the \`--format json\` option to output webhooks as JSON.*
 
-## vercel webhooks get
+## vercel webhooks inspect
 
-The `vercel webhooks get` command displays detailed information about a specific webhook.
-
-```bash filename="terminal"
-vercel webhooks get <id>
-```
-
-*Using the \`vercel webhooks get\` command to retrieve information about a webhook.*
-
-You can also use the `inspect` alias:
+The `vercel webhooks inspect` command displays detailed information about a specific webhook.
 
 ```bash filename="terminal"
 vercel webhooks inspect <id>
 ```
 
-*Using the \`vercel webhooks inspect\` alias to retrieve information about a webhook.*
+*Using the \`vercel webhooks inspect\` command to retrieve information about a webhook.*
+
+`get` remains a supported alias, but prints a deprecation warning. Use `inspect` for new commands.
 
 ### JSON output
 
 Use the `--format` option to output the webhook details as JSON:
 
 ```bash filename="terminal"
-vercel webhooks get <id> --format json
+vercel webhooks inspect <id> --format json
 ```
 
 *Using the \`--format json\` option to output webhook details as JSON.*
@@ -190,7 +182,7 @@ These are options that only apply to the `vercel webhooks` command.
 
 ### Format
 
-The `--format` option can be used with the `list` and `get` subcommands to output results as JSON. The only supported value is `json`.
+The `--format` option can be used with the `list` and `inspect` subcommands to output results as JSON. The only supported value is `json`.
 
 ```bash filename="terminal"
 vercel webhooks ls --format json

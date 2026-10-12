@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/deep-links.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "490b034d629d886bf9e8c825a93a2a5e9b91c18b858c3a4e4e36eb81802fdf8d"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "d038e60fdd2ffd7bd5695ffb8d9d933f837a3468ce5ec1f4167c241db660ad59"
 ---
 
 > ## Documentation Index
@@ -166,11 +166,15 @@ Claude Code registers the `claude-cli://` handler with your operating system on 
 
 The handler launches Claude Code in a detected terminal emulator. On macOS, Claude Code remembers the terminal from your most recent interactive session and reuses it, supporting iTerm2, Ghostty, kitty, Alacritty, WezTerm, and Terminal.app. On Linux it honors the `$TERMINAL` environment variable, then `x-terminal-emulator`, then a list of common emulators. On Windows it prefers Windows Terminal, then PowerShell, then `cmd.exe`.
 
-To prevent registration entirely, set [`disableDeepLinkRegistration`](/docs/en/settings-reference#disabledeeplinkregistration) to `"disable"` in `settings.json`. To enforce this across an organization so users cannot re-enable it, set it in [managed settings](/docs/en/server-managed-settings) instead.
+To prevent registration entirely, set [`disableDeepLinkRegistration`](/docs/en/settings-reference#disabledeeplinkregistration) to `"disable"` in `settings.json`. To enforce this across an organization so users cannot re-enable it, set it in [managed settings](/docs/en/server-managed-settings) instead. Claude Code's `disableDeepLinkRegistration` setting covers `claude-cli://` links only.
 
 ## Open a VS Code tab instead of a terminal
 
 The VS Code extension registers its own handler at `vscode://anthropic.claude-code/open`, which opens a Claude Code editor tab rather than a terminal window. See [Launch a VS Code tab from other tools](/docs/en/vs-code#launch-a-vs-code-tab-from-other-tools) for that URL's parameters.
+
+## Open a Claude Desktop session on an SSH connection
+
+Claude Desktop handles its own `claude://` links. To open a Desktop session on a remote machine over SSH, see [Open an SSH session from a link](/docs/en/desktop#open-an-ssh-session-from-a-link).
 
 ## Troubleshooting
 
@@ -184,7 +188,7 @@ The `xdg-open` command is part of the `xdg-utils` package, which minimal server 
 
 ### The link renders as plain text instead of being clickable
 
-Some Markdown renderers only allow `http` and `https` links and strip other URL schemes. GitHub does this in READMEs, issues, pull requests, and wikis: `[label](claude-cli://...)` renders as just `label`, with no link and the URL removed. On these platforms, put the deep link in a code block so readers can see the URL and paste it into their browser's address bar.
+Some Markdown renderers only allow `http` and `https` links and strip other URL schemes. GitHub does this in READMEs, issues, pull requests, and wikis: `[label](claude-cli://...)` renders as `label`, with no link and the URL removed. On these platforms, put the deep link in a code block so readers can see the URL and paste it into their browser's address bar.
 
 ### The session opens in my home directory instead of the repo
 

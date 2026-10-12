@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/terminal-config.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "bac9d97cee19b66e4c4822595094b2a5b1cd3be0c4122f38da228832331f03c8"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "d6f5576f661b1b93b82746123dfb9169efb1709a35e9a71194976ad1f7c87961"
 ---
 
 > ## Documentation Index
@@ -119,6 +119,17 @@ The example below plays a system sound on macOS. The linked guide has desktop no
   }
 }
 ```
+
+## See session status in your terminal
+
+If your terminal implements the OSC 7501 Program Status Protocol, it can show whether each interactive Claude Code session is working, waiting on you, or done, which helps when you run long tasks or several sessions at once. There is nothing to turn on in Claude Code. To find out whether your terminal implements the protocol and where it shows the status, check its documentation.
+
+If it does and you see no status for a session, check for each of these causes:
+
+* **Claude Code version**: status reporting requires Claude Code v2.1.295 or later. Run `claude --version` in your shell to check.
+* **tmux**: inside tmux, Claude Code checks tmux for support instead of your terminal, and [`allow-passthrough`](#configure-tmux) has no effect on that. Start the session outside tmux.
+* **Background session**: a [background session](/docs/en/agent-view) doesn't report its status to your terminal, even while you're attached to it. Agent view shows its status instead.
+* **[`CLAUDE_CODE_DISABLE_TERMINAL_TITLE`](/docs/en/env-vars#variables)**: if you set this variable to `1`, Claude Code doesn't check for support or report status. Unset it.
 
 ## Configure tmux
 

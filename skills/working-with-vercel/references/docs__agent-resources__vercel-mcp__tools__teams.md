@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for teams and users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "43dedf4c0021ce108f8ca7c815a2a9ead69550fdc340710f87580ee764d16d68"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "6bb7684c04d07b4dc3f1279bec6d006ed1f86300e1889692a75263c5c14f0d85"
 ---
 
 # Teams and Users
@@ -30,7 +30,7 @@ Find the teams you belong to and inspect their membership and account details. Y
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
 - [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
 - [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
-- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to list, add, switch, invite, and manage your teams with the vercel teams CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 - [Get access request status](https://vercel.com/docs/rest-api/teams/get-access-request-status?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — GET /v1/teams/{teamId}/request/{userId} — Check the status of a join request. It'll respond with a 404 if the request ha
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=graph)

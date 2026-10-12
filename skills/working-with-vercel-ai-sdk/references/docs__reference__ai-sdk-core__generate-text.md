@@ -4,8 +4,8 @@ description: API Reference for generateText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "62ee36bc1415a9ef7dc4bd1b716a2f4686a569b21dfc361b0539ab4b4d868ba4"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "2ba7c1a587244743774268d5f19b4e44ffbae720690c73b83b493c77de158bd1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -113,10 +113,10 @@ import { generateText } from "ai"
 - `frequencyPenalty?` (`number`): Frequency penalty setting. It affects the likelihood of the model to repeatedly use the same words or phrases. The value is passed through to the provider. The range depends on the provider and model.
 - `stopSequences?` (`string[]`): Sequences that will stop the generation of the text. If the model generates any of these sequences, it will stop generating further text.
 - `seed?` (`number`): The seed (integer) to use for random sampling. If set and supported by the model, calls will generate deterministic results.
-- `reasoning?` (`'provider-default' | 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'`): Controls how much reasoning the model performs before generating a response. When omitted, the provider's default behavior is used. \`'provider-default'\` explicitly requests the provider's default. Providers that do not support reasoning will emit a warning. If reasoning-related \`providerOptions\` are also set, they take precedence and this parameter is ignored. See the \[reasoning guide]\(/docs/ai-sdk-core/reasoning) for provider-specific mapping details.
+- `reasoning?` (`'provider-default' | 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'max'`): Controls how much reasoning the model performs before generating a response. When omitted, the provider's default behavior is used. \`'provider-default'\` explicitly requests the provider's default. Providers that do not support reasoning will emit a warning. Provider-specific settings take precedence over corresponding mapped fields. Partial configurations may still use portable reasoning to fill missing fields; summary and display settings can be combined with it. See the \[reasoning guide]\(/docs/ai-sdk-core/reasoning) for provider-specific mapping details.
 - `maxRetries?` (`number`): Maximum number of retries. Set to 0 to disable retries. Default: 2.
 - `abortSignal?` (`AbortSignal`): An optional abort signal that can be used to cancel the call.
-- `timeout?` (``number | { totalMs?: number; stepMs?: number; toolMs?: number; tools?: Partial<Record<`${toolName}Ms`, number>> }``): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each individual step (LLM call). toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern \{toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.
+- `timeout?` (``number | { totalMs?: number; stepMs?: number; toolMs?: number; tools?: Partial<Record<`${toolName}Ms`, number>> }``): Timeout in milliseconds. Can be specified as a number or as an object with totalMs, stepMs, toolMs, and/or tools properties. totalMs sets the total timeout for the entire call. stepMs sets the timeout for each complete step, including model generation, retries, and local tool execution. toolMs sets the default timeout for all tool executions. tools sets per-tool timeout overrides using the pattern \{toolName}Ms (e.g. weatherMs, slowApiMs) that take precedence over toolMs - tool names are type-checked for autocomplete. If a tool takes longer than its timeout, it aborts and returns a tool-error so the model can respond or retry. Can be used alongside abortSignal.
 - `headers?` (`Record<string, string | undefined>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
 - `telemetry?` (`TelemetryOptions`): Telemetry configuration.
   - `TelemetryOptions`
@@ -237,7 +237,7 @@ import { generateText } from "ai"
     - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
     - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object that flows through the generation lifecycle.
     - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`, keyed by tool name.
-- `onStepStart?` (`(event: GenerateTextStepStartEvent) => PromiseLike<void> | void`): Callback that is called when a step (LLM call) begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.
+- `onStepStart?` (`(event: GenerateTextStepStartEvent) => PromiseLike<void> | void`): Callback that is called when a step begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.
   - `GenerateTextStepStartEvent`
     - `stepNumber` (`number`): Zero-based index of the current step.
     - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
@@ -389,7 +389,7 @@ import { generateText } from "ai"
         - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used across all steps.
         - `outputTokens` (`number | undefined`): The total number of output (completion) tokens used across all steps.
         - `totalTokens` (`number | undefined`): The total number of tokens used across all steps.
-    - `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in all steps.
+    - `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in all steps. Text parts can include an optional citations array of references supporting that text; see Sources and Citations in the generating text guide.
     - `providerMetadata` (`ProviderMetadata | undefined`): Additional provider-specific metadata from the final step.
     - `text` (`string`): The full text that has been generated.
     - `reasoningText` (`string | undefined`): The reasoning text of the model (only available for some models).
@@ -441,7 +441,7 @@ import { generateText } from "ai"
 
 ### Returns
 
-- `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in all steps.
+- `content` (`Array<ContentPart<TOOLS>>`): The content that was generated in all steps. Text parts can include an optional citations array of references supporting that text; see Sources and Citations in the generating text guide.
 - `text` (`string`): The concatenation of all text parts generated in the final step. It is an empty string if the final step contains no text parts. Inspect \`finalStep.content\` to distinguish that case.
 - `reasoning` (`Array<ReasoningOutput | ReasoningFileOutput>`): Deprecated. Use \`finalStep.reasoning\` instead. The full reasoning that the model has generated in the final step.
   - `ReasoningOutput`

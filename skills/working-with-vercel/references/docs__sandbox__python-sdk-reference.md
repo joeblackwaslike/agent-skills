@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persistence, and network policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b855a744d9461e469d0a17a97d525f27b53da2b800f8f190ac5e727cf1633736"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "a80dd0643fa83f08e95bfa7f59c6876b6db9d5c495effc9e397352f466e4df5f"
 ---
 
 # Python SDK Reference
@@ -32,10 +32,9 @@ Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run process
 
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
 - [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Create snapshot-backed persistent sandboxes on Vercel.
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Sandbox](https://eve.dev/docs/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots?from=related&source_path=%2Fdocs%2Fsandbox%2Fpython-sdk-reference&source_site=vercel-docs&relationship=related) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
@@ -123,7 +122,7 @@ When you omit `image`, the Sandbox API uses `vercel/sandbox/universal:latest`. Y
 
 The SDK selects the owning project from its resolved credentials. To use another project, configure `SandboxServiceOptions` with credentials for that project.
 
-Drive mount paths must be absolute, and a sandbox with mounted drives can't use failover regions. See [Drives](/docs/sandbox/concepts/drives) and [Regions](/docs/sandbox/concepts/regions).
+Drive mount paths must be absolute, and the sandbox's main region must match each mounted drive's region. See [Drives](/docs/sandbox/concepts/drives) and [Regions](/docs/sandbox/concepts/regions).
 
 Create a persistent sandbox without automatic cleanup:
 
@@ -464,7 +463,7 @@ You can also construct a mount explicitly with `DriveMount(drive, mode="read-wri
 
 `create_sandbox()`, `fork_sandbox()`, and `get_or_create_sandbox()` accept `mounts`. A fork doesn't inherit its source sandbox's mounts. Pass `mounts` to attach drives to the fork.
 
-Mount paths must be absolute and can't overlap. You can mount each drive once and mount up to four drives per sandbox. All mounted drives and the sandbox must use the same region.
+Mount paths must be absolute and can't overlap. You can mount each drive once and mount up to four drives per sandbox. All mounted drives must be in the sandbox's main region.
 
 ### List drives
 

@@ -3,7 +3,7 @@ title: get-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation"
-last_updated: 2026-10-05
+last_updated: 2026-10-12
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about get-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "9567fc4da799b3ccdc3d163ca1c43aab851f7c47185dade20a996226c59bb9e4"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "38cd8d66f09450a4939d4db5866a3bd3ba3712bfbf5c448734df322531a44b58"
 ---
 
 # Get Installation

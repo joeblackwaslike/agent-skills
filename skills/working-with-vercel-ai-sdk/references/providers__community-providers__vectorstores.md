@@ -4,8 +4,8 @@ description: Learn how to use vector databases with the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/vectorstores"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/vectorstores.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "46f9cdef3d4170089e30da1a7a54188ee83429666feb8da2f33f80a81c692d47"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "ad6108b40735c93bcd7370d220fb89c70ccd3ce89705db0341d8669f65fe62ea"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [vectorstores provider](https://www.vectorstores.org/integration/vercel/) in
 
 The vectorstores provider is available in the `@vectorstores/vercel` module. You can install it with:
 
-**Packages:** `@vectorstores/vercel`, `@vectorstores/core`
+```bash
+pnpm add @vectorstores/vercel @vectorstores/core
+```
 
 ## Document Indexing
 

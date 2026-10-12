@@ -4,8 +4,8 @@ description: Learn how to use the OpenAI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/openai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e04b0802376dbc470fa31231a6c02bdbb7adb5e4c8fc35ac101d905e5c222ed8"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "23ebd6ea2675dbf116d5b5cc384108f761e5efbf1d991859902be450bde01fb4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The [OpenAI](https://openai.com/) provider contains language model support for t
 
 The OpenAI provider is available in the `@ai-sdk/openai` module. You can install it with
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ## Provider Instance
 
@@ -40,6 +42,16 @@ const openai = createOpenAI({
 ```
 
 You can use the following optional settings to customize the OpenAI provider instance:
+
+- **batchResultDownloads** *object*
+
+  Settings for downloading JSON Lines batch results.
+
+  - **maxLineBytes** *number*
+
+    Maximum UTF-8 bytes per row, excluding the LF delimiter. Defaults to 64 MiB
+    (67,108,864 bytes). Must be a positive safe integer. Oversized rows throw a
+    `DownloadError` and cancel the download.
 
 - **baseURL** *string*
 
@@ -491,7 +503,9 @@ The [`ai-sdk-openai-websocket-fetch`](https://www.npmjs.com/package/ai-sdk-opena
 package provides a drop-in `fetch` replacement that routes streaming requests
 through a persistent WebSocket connection.
 
-**Packages:** `ai-sdk-openai-websocket-fetch`
+```bash
+pnpm add ai-sdk-openai-websocket-fetch
+```
 
 Pass the WebSocket fetch to `createOpenAI` via the `fetch` option:
 
@@ -738,6 +752,13 @@ for (const toolResult of result.toolResults) {
   }
 }
 ```
+
+`result.sources` and source stream events expose the URLs returned in
+`web_search_call.action.sources`. These may include uncited URLs. Inline
+references are available separately on `text.citations` and `text-end.citations`,
+including titles and provider-supplied text ranges. Raw annotations remain in
+text provider metadata. Citation-only responses and `web_search_preview`
+responses without retrieval data retain citation-derived sources.
 
 The web search tool supports the following configuration options:
 
@@ -1822,6 +1843,10 @@ for (const part of result.content) {
           // url_citation is returned from web_search and provides:
           // properties: type, url, title, start_index and end_index
           break;
+        case 'file_search':
+          // Retrieved file-search result; provides fileId.
+          // The filename is available as part.filename.
+          break;
         case 'file_citation':
           // file_citation is returned from file_search and provides:
           // properties: type, file_id, filename and index
@@ -1898,12 +1923,20 @@ for (const part of result.content) {
 }
 ```
 
+When file-search results are included in the API response, each retrieved file
+is exposed once as a document source, even if it has multiple matching passages
+or is not cited. Inline file citations are available on `text.citations` and
+`text-end.citations`. If the response omits file-search results, file citations
+also remain document sources for compatibility. Generated file paths remain
+source parts and are not treated as citations.
+
 #### Typed providerMetadata in Source Document Parts
 
 For source document parts, when `part.type === 'source'` and `sourceType === 'document'`, the `providerMetadata` is provided as `OpenaiResponsesSourceDocumentProviderMetadata`.
 
 This metadata is also a discriminated union with a required `type` field. Supported types include:
 
+- `file_search` (retrieved file; includes `fileId`)
 - `file_citation`
 - `container_file_citation`
 - `file_path`
@@ -3417,18 +3450,18 @@ const result = await generateSpeech({
 | `tts-1-hd`        | ✓            |
 | `gpt-4o-mini-tts` | ✓            |
 
-## Evaluation Models
+## Decision Models
 
-Create an experimental evaluation model with `openai.evaluationModel(modelId)`.
-It uses the Responses API with structured output to answer Choice, Score, and
-Boolean questions. Choose a model that supports structured output, such as `gpt-6-luna`.
+Create an experimental decision model with `openai.decisionModel(modelId)`.
+It uses the native [Decisions API](https://developers.openai.com/api/docs/guides/decisions)
+to answer Choice, Score, and Boolean questions with `gpt-6-luna`.
 
 ```ts
 import { openai } from '@ai-sdk/openai';
-import { experimental_evaluate } from 'ai';
+import { experimental_decide } from 'ai';
 
-const { answers } = await experimental_evaluate({
-  model: openai.evaluationModel('gpt-6-luna'),
+const { answers } = await experimental_decide({
+  model: openai.decisionModel('gpt-6-luna'),
   state: 'I was charged twice.',
   questions: {
     requestsRefund: {
@@ -3444,23 +3477,59 @@ const { answers } = await experimental_evaluate({
 });
 ```
 
-Scores are finite fractional positions on the ordered rubric. Choice labels are
-returned exactly as supplied. These are model judgments: no probability
-distributions are returned for Choice or Score. Boolean answers contain a prompted
-estimate of P(true), validated to be finite and in `[0, 1]`. These estimates are
-not guaranteed to be calibrated. Apply thresholds in application code, for example
+Scores are probability-weighted fractional positions on the ordered rubric, starting
+at zero. Choice labels are returned exactly as supplied. Choice and Score answers
+include probability distributions. Boolean questions use the API's predicate
+primitive and return P(true). Apply thresholds in application code, for example
 `answers.requestsRefund.probability >= 0.5`.
 
-The factory respects `createOpenAI` settings, including custom fetch and base URL.
-Pass Responses options through `providerOptions.openai`. Usage, warnings,
-response information, and provider metadata are preserved. Refusals, truncated
-output, or invalid answers fail the entire call. See [Evaluation](/docs/ai-sdk-core/evaluation).
+Structured state, instructions, and criterion descriptions are serialized as JSON
+text. Score levels receive zero-based index labels. Non-null Boolean criteria are
+appended to predicate instructions under `Criteria for true:` and `Criteria for false:`.
+String criteria are passed through; structured criteria are serialized as JSON text.
 
-Evaluation models can also be accessed through `customProvider` aliases or
-`createProviderRegistry().evaluationModel('provider:model')`. Direct string IDs
+Image file parts in `state` are sent as inline images. Set `imageDetail` in a file
+part's `providerOptions.openai` to `'low'`, `'high'`, `'auto'`, or `'original'` to
+choose its detail level:
+
+```ts
+state: [
+  { type: 'text', text: 'Inspect the product in this photo.' },
+  {
+    type: 'file',
+    mediaType: 'image/png',
+    data: productPhoto,
+    providerOptions: { openai: { imageDetail: 'high' } },
+  },
+],
+```
+
+The factory respects `createOpenAI` settings, including custom fetch and base URL.
+Set `providerOptions.openai.safetyIdentifier` to an opaque end-user identifier for
+safety monitoring (up to 128 characters). For example:
+
+```ts
+providerOptions: {
+  openai: { safetyIdentifier: 'user-123' } satisfies OpenAIDecisionModelOptions,
+}
+```
+
+Import `OpenAIDecisionModelOptions` from `@ai-sdk/openai` when using the type above.
+Other OpenAI options are unsupported and produce warnings. Native confidence
+values are available in `providerMetadata.openai.confidence`, keyed by question ID.
+Input and output token counts are available in `usage`. The full native token usage
+(including cache, reasoning, and total counts) is preserved in
+`providerMetadata.openai.usage`. Response headers, the returned model ID, and the
+raw response body are preserved. If OpenAI refuses a question, the entire call
+throws `InvalidResponseDataError` with the question name and the raw response in
+`error.data`. Invalid answers also fail the entire decision.
+See [Decisions](/docs/ai-sdk-core/decisions).
+
+Decision models can also be accessed through `customProvider` aliases or
+`createProviderRegistry().decisionModel('provider:model')`. Direct string IDs
 use Gateway by default, or an explicitly configured default provider with an
-`evaluationModel` method. See
-[model aliases and registries](/docs/ai-sdk-core/evaluation#model-aliases-and-registries).
+`decisionModel` method. See
+[model aliases and registries](/docs/ai-sdk-core/decisions#model-aliases-and-registries).
 
 ---
 

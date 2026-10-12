@@ -4,8 +4,8 @@ description: Learn how to use the Zhipu (Z.AI) provider.
 url: "https://ai-sdk.dev/providers/community-providers/zhipu"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/zhipu.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b03f9e1cfd2fdfcecafeb133875fe9ca5b3057de5b6dd4d94c7cc0abb0ef0327"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "1b9e42d9287d44e01bd7073028d32f74011217f128ba39713c01d351264f7b47"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -14,7 +14,9 @@ sha256: "b03f9e1cfd2fdfcecafeb133875fe9ca5b3057de5b6dd4d94c7cc0abb0ef0327"
 
 ## Setup
 
-**Packages:** `zhipu-ai-provider`
+```bash
+pnpm add zhipu-ai-provider
+```
 
 Set up your `.env` file / environment with your API key.
 

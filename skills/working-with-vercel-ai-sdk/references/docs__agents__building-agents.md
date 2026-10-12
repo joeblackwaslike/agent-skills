@@ -4,8 +4,8 @@ description: Complete guide to creating agents with the ToolLoopAgent.
 url: "https://ai-sdk.dev/docs/agents/building-agents"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/building-agents.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f733621fcdca65515f5d2c6cd76d3e5ad9e55f3bef38a927c8aa7913b5eccf0d"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "4bfcaad09775ff1c284110f1527e308835e7fdb34eb0e77c26e6541f0d59e209"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -87,7 +87,9 @@ results. If a tool needs server-side values such as credentials, scoped
 permissions, or default settings, pass them through `toolsContext` and declare
 them with the tool's `contextSchema`.
 
-```ts {12-15,20-27,31-40}
+Set `runtimeContext` and `toolsContext` in the `ToolLoopAgent` constructor.
+
+```ts
 import { ToolLoopAgent, tool } from 'ai';
 import { z } from 'zod';
 
@@ -107,6 +109,16 @@ const agent = new ToolLoopAgent({
         searchTickets(query, context.accountId, context.apiKey),
     }),
   },
+  runtimeContext: {
+    requestId: 'req_abc',
+    escalated: false,
+  },
+  toolsContext: {
+    searchTickets: {
+      apiKey: process.env.SUPPORT_API_KEY!,
+      accountId: 'acct_123',
+    },
+  },
   prepareStep: async ({ runtimeContext }) => {
     if (runtimeContext.escalated) {
       return { temperature: 0.1 };
@@ -118,18 +130,11 @@ const agent = new ToolLoopAgent({
 
 const result = await agent.generate({
   prompt: 'Find open billing tickets for this account.',
-  runtimeContext: {
-    requestId: 'req_abc',
-    escalated: false,
-  },
-  toolsContext: {
-    searchTickets: {
-      apiKey: process.env.SUPPORT_API_KEY!,
-      accountId: 'acct_123',
-    },
-  },
 });
 ```
+
+For context that changes with each invocation, use `callOptionsSchema` and
+`prepareCall`. See [Configuring Call Options](/docs/agents/configuring-call-options).
 
 Model call settings returned from `prepareStep`, such as `temperature`, apply
 only to the current step. Later steps use the agent's top-level setting unless

@@ -4,8 +4,8 @@ description: Learn how to use LangDB with the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/langdb"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/langdb.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b07b07470881b2a355db9a312158664da0bb7aabb239a23efe7a4cbeb64d7428"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "765dcb8557c1e74dee8c7556497bf67bc569da8671067d13ea9474cc60451a37"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -27,7 +27,9 @@ LangDB provides OpenAI-compatible APIs, enabling developers to connect with mult
 
 The LangDB provider is available via the `@langdb/vercel-provider` module. You can install it with:
 
-**Packages:** `@langdb/vercel-provider`
+```bash
+pnpm add @langdb/vercel-provider
+```
 
 ## Provider Instance
 

@@ -4,8 +4,8 @@ description: OLLM Provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/ollm"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/ollm.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "416a3e93757e73451eb840b6b85dfda003b0c0a429e862eed22fe50111b96c59"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "8aed7d693d0e9c31df858383f7fee70b77e34cb24252e8cee8c58b37f86bf5ff"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,7 +24,9 @@ Learn more about OLLM's capabilities in the [OLLM Website](https://ollm.com).
 
 The OLLM provider is available in the `@ofoundation/ollm` module. You can install it with:
 
-**Packages:** `@ofoundation/ollm`
+```bash
+pnpm add @ofoundation/ollm
+```
 
 ## Provider Instance
 

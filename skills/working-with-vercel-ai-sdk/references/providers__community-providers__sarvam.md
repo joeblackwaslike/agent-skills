@@ -4,8 +4,8 @@ description: Learn how to use the Sarvam AI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/sarvam"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/sarvam.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "be51a49aeb362cda468c51c52905352ef565ca36c6c9490b0b1267ceb094e8a6"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "7e190e1413bb689fc2491d1efb0021945d9d2ed55db872cd9b596752da15d2b1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,9 @@ The Sarvam AI Provider is a library developed to integrate with the AI SDK. This
 
 The Sarvam provider is available in the `sarvam-ai-provider` module. You can install it with:
 
-**Packages:** `sarvam-ai-provider`
+```bash
+pnpm add sarvam-ai-provider
+```
 
 ## Provider Instance
 

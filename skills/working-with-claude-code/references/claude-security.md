@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-security.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "eae5d41a6b58ae1910979ea89f0fd1f8dcdd3fd7d618faddbb21ee0c39eb57f7"
+fetched_at: "2026-10-12T11:42:00.662Z"
+sha256: "05afc01b020c1727cde7748a40e938e71e1502971414714a899098a257bc5465"
 ---
 
 > ## Documentation Index
@@ -53,7 +53,7 @@ If the install fails, the fix depends on which message Claude Code reports:
 * If it reports `Marketplace "claude-plugins-official" not found`, add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 * If it reports that it [can't find the plugin in the marketplace](/docs/en/plugins/install#install-a-plugin), check the plugin name for a typo.
 
-Check the install summary. If it reports `Run /reload-plugins to activate.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to activate the plugin in your current session.
+Check the install summary. If it reports `Run /reload-plugins to apply.`, see [Apply plugin changes without restarting](/docs/en/plugins/cli-reference#reload-plugins) to activate the plugin in your current session.
 
 Once the plugin is active, you're ready to [scan and fix your codebase](#scan-and-fix-your-codebase).
 

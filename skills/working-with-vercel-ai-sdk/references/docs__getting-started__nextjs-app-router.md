@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Next.js App
 url: "https://ai-sdk.dev/docs/getting-started/nextjs-app-router"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-app-router.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "623ebe1e4d6e5533d4c288ddc38787da086cbbbe1410f231eab091bf38ddb55c"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "09570f4ade5079702d012cdfa83382c5b731ec17d92e08db5e307c096d54540b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -54,7 +54,9 @@ models from different providers with one API key, but you can switch to any
 provider or model by installing its package. Check out available [AI SDK
 providers](/providers/ai-sdk-providers) for more information.
 
-**Packages:** `ai`, `@ai-sdk/react`, `zod`
+```bash
+pnpm add ai @ai-sdk/react zod
+```
 
 ### Configure your AI Gateway API key
 
@@ -137,7 +139,9 @@ model: gateway('anthropic/claude-sonnet-5.5');
 
 To use a different provider, install its package and create a provider instance. For example, to use OpenAI directly:
 
-**Packages:** `@ai-sdk/openai`
+```bash
+pnpm add @ai-sdk/openai
+```
 
 ```ts
 import { openai } from '@ai-sdk/openai';

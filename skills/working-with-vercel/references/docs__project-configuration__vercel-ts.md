@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b97d8b14cdaea6d923568d959a4164f07fdafde5e2d3ed5d4878616007337123"
+fetched_at: "2026-10-12T11:51:15.124Z"
+sha256: "d2bad60fc74d4f150c7ebc85d3a2d2de9ee7754dfb0fd7914937118a26ede526"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -34,14 +34,12 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
-- [headers](https://nextjs.org/docs/app/api-reference/config/next-config-js/headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Add custom HTTP headers to your Next.js app.
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fvercel-ts&source_site=vercel-docs&relationship=graph)
 <!-- /docsgraph:related -->
@@ -202,6 +200,7 @@ export const config: VercelConfig = {
 - [regions](#regions)
 - [functionFailoverRegions](#functionfailoverregions)
 - [rewrites](#rewrites)
+- [skipMiddlewareRequestBody](#skipmiddlewarerequestbody)
 - [trailingSlash](#trailingslash)
 - [legacy](#legacy)
 
@@ -1154,6 +1153,29 @@ The `source` property should **NOT** be a file because precedence is given to th
 > `vercel dev`, but does work when deployed.
 
 Learn more about [rewrites](/docs/routing/rewrites) on Vercel.
+
+## skipMiddlewareRequestBody
+
+**Type**: `boolean`.
+
+**Default Value**: `false`.
+
+Set `skipMiddlewareRequestBody` to `true` to skip forwarding the client request body to [Routing Middleware](/docs/routing-middleware).
+
+This reduces [Fast Origin Transfer (FOT)](/docs/manage-cdn-usage#fast-origin-transfer) usage and can improve [Time to First Byte (TTFB)](/docs/speed-insights/metrics#time-to-first-byte-ttfb), especially for requests with large bodies. [Vercel Functions](/docs/functions) and [rewrite targets](/docs/routing/rewrites) still receive the request body.
+
+> **⚠️ Warning:** Before enabling `skipMiddlewareRequestBody`, you must ensure your Routing
+> Middleware does not read or access the client request body.
+
+We strongly recommend that you avoid reading or accessing request bodies in Routing Middleware. Middleware runs on every matching request, so reading the body can slow down your application. Read and process request bodies in your Vercel Functions or at your rewrite targets instead.
+
+```typescript filename="vercel.ts"
+import type { VercelConfig } from '@vercel/config/v1';
+
+export const config: VercelConfig = {
+  skipMiddlewareRequestBody: true,
+};
+```
 
 ## trailingSlash
 

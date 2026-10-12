@@ -4,8 +4,8 @@ description: Learn how to use the SAP AI Core provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/community-providers/sap-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/sap-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d381f5ac5224f0e899902f03d4edc87af327f7d598cf42ae39637c5718e2c3ab"
+fetched_at: "2026-10-12T11:48:49.587Z"
+sha256: "b898576437367a50f0ddc33aafb3e65a652a3f3d05edd1e95c53d2d21ad0fc2e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -30,11 +30,15 @@ Both providers offer:
 
 ### @jerome-benoit/sap-ai-provider (recommended)
 
-**Packages:** `@jerome-benoit/sap-ai-provider`
+```bash
+pnpm add @jerome-benoit/sap-ai-provider
+```
 
 ### @jerome-benoit/sap-ai-provider-v2
 
-**Packages:** `@jerome-benoit/sap-ai-provider-v2`
+```bash
+pnpm add @jerome-benoit/sap-ai-provider-v2
+```
 
 Authentication is handled automatically via the `AICORE_SERVICE_KEY` environment variable (local) or `VCAP_SERVICES` (SAP BTP).
 
