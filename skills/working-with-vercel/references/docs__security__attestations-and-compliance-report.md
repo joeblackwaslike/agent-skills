@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "22a1c3488d3ef16aad687a7f8647075a5df58a4e680365da88b16a712c7b9f52"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "68978d9fad716bb12ce203e8e76db8efddcab55f3ada3de9463db1c2e4d33298"
 ---
 
 # Attestations and Compliance Report
@@ -27,16 +27,16 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
-- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
-- [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related)
-- [Security Dashboard](https://vercel.com/docs/security/security-dashboard?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
-- [Get certs](https://vercel.com/docs/rest-api/certs/get-certs?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — GET /v8/certs — Get certs
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=related) — PUT /v8/certs — Upload a cert
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings)
+- [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
+- [Security Dashboard](https://vercel.com/docs/security/security-dashboard) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
+- [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert) — PUT /v8/certs — Upload a cert
 
-Full cross-link map for this page: [/docs/security/attestations-and-compliance-report.graph.md](/docs/security/attestations-and-compliance-report.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fattestations-and-compliance-report&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/security/attestations-and-compliance-report.graph.md](/docs/security/attestations-and-compliance-report.graph.md)
 <!-- /docsgraph:related -->
 
 To access compliance documents:

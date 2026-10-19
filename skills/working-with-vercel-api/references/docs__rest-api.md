@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-10-12T11:51:10.837Z"
-sha256: "5c79b79227355a41fd3ae786e060505e38af1e1c8535a1cbdeaaf81855bcf190"
+fetched_at: "2026-10-19T09:46:49.617Z"
+sha256: "55a5392157e2186b84218305d43d6dce08eb6a99a25c6a7a102f3969cbfd93ff"
 ---
 
 # Vercel REST API Reference
@@ -52,6 +52,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
 | **PATCH** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
 | **DELETE** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
+| **GET** | [`/v1/ai-gateway/routers`](/docs/rest-api/ai-gateway/list-ai-gateway-routers.md) | List AI Gateway routers |
 | **GET** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/list-rules.md) | List rules |
 | **POST** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/create-rule.md) | Create rule |
 | **PATCH** | [`/ai-gateway/rules`](/docs/rest-api/ai-gateway/update-rule.md) | Update rule |
@@ -62,12 +63,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/ai-gateway/budgets/defaults/list`](/docs/rest-api/ai-gateway/list-ai-gateway-budget-defaults.md) | List AI Gateway budget defaults |
 | **PUT** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/upsert-ai-gateway-budget-default.md) | Upsert AI Gateway budget default |
 | **DELETE** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/archive-ai-gateway-budget-default.md) | Archive AI Gateway budget default |
-
-## API Ai Gateway
-
-| Method | Endpoint | Description |
-|---|---|---|
-| **GET** | [`/v1/ai-gateway/routers`](/docs/rest-api/api-ai-gateway/list-ai-gateway-routers.md) | List AI Gateway routers |
 
 ## Artifacts
 
@@ -414,6 +409,18 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/observability/manage/configuration/projects`](/docs/rest-api/observability/lists-disabled-observability-plus-projects.md) | Lists disabled Observability Plus projects |
 | **PUT** | [`/v1/observability/manage/configuration/projects/{projectIdOrName}`](/docs/rest-api/observability/updates-a-disabled-observability-plus-project-setting.md) | Updates a disabled Observability Plus project setting |
 
+## Organizations
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/organizations`](/docs/rest-api/organizations/list-organizations.md) | List Organizations |
+| **POST** | [`/v1/organizations`](/docs/rest-api/organizations/create-an-organization.md) | Create an Organization |
+| **GET** | [`/v1/organizations/{organizationId}`](/docs/rest-api/organizations/get-an-organization.md) | Get an Organization |
+| **PATCH** | [`/v1/organizations/{organizationId}`](/docs/rest-api/organizations/update-an-organization.md) | Update an Organization |
+| **GET** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/organizations/list-organization-teams.md) | List Organization Teams |
+| **POST** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/organizations/create-or-add-team-to-organization.md) | Create or Add Team to Organization |
+| **DELETE** | [`/v1/organizations/{organizationId}/teams/{targetTeamId}`](/docs/rest-api/organizations/delete-team-from-organization.md) | Delete Team from Organization |
+
 ## Projectmembers
 
 | Method | Endpoint | Description |
@@ -539,6 +546,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/read-system-bypass.md) | Read System Bypass |
 | **POST** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/create-system-bypass-rule.md) | Create System Bypass Rule |
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
+| **GET** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/get-conditional-firewall-bypasses.md) | Get conditional firewall bypasses |
+| **POST** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/create-conditional-firewall-bypass.md) | Create conditional firewall bypass |
+| **DELETE** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/delete-conditional-firewall-bypass.md) | Delete conditional firewall bypass |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
 | **GET** | [`/v1/security/firewall/events/summary`](/docs/rest-api/security/read-firewall-actions-summary-by-project.md) | Read Firewall Actions Summary by Project |
 | **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/security/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
@@ -612,6 +622,10 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/vercel-ci/repository-settings`](/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository.md) | Enable or disable Vercel CI for a connected repository |
 | **GET** | [`/v2/vercel-ci/invocations`](/docs/rest-api/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata.md) | List invocations for a team, optionally filtered by repository and invocation metadata |
 | **GET** | [`/v2/vercel-ci/branches`](/docs/rest-api/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team.md) | List Vercel CI branch suggestions for a team |
+| **POST** | [`/v1/vercel-ci/task-analyses`](/docs/rest-api/vercel-ci/start-an-asynchronous-vercel-ci-task-analysis.md) | Start an asynchronous Vercel CI task analysis |
+| **GET** | [`/v1/vercel-ci/task-analyses/{analysisId}`](/docs/rest-api/vercel-ci/get-the-current-status-of-a-vercel-ci-task-analysis.md) | Get the current status of a Vercel CI task analysis |
+| **POST** | [`/v1/vercel-ci/task-analyses/{analysisId}/pull-request`](/docs/rest-api/vercel-ci/create-a-github-pull-request-that-adds-vercel-ci-tags-for-the-completed-analysis.md) | Create a GitHub pull request that adds Vercel CI tags for the completed analysis |
+| **GET** | [`/v1/vercel-ci/task-analyses/{analysisId}/tasks`](/docs/rest-api/vercel-ci/list-discovered-tasks-for-a-completed-vercel-ci-task-analysis.md) | List discovered tasks for a completed Vercel CI task analysis |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts`](/docs/rest-api/vercel-ci/list-all-attempts-for-an-invocation.md) | List all attempts for an invocation |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/tree`](/docs/rest-api/vercel-ci/get-an-invocation-with-its-jobs-and-tasks.md) | Get an invocation with its jobs and tasks |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}`](/docs/rest-api/vercel-ci/get-a-specific-invocation-attempt.md) | Get a specific invocation attempt |

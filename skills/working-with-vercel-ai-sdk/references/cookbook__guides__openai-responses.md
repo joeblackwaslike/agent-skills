@@ -7,8 +7,8 @@ tags:
   - getting-started
   - agents
 source: "https://ai-sdk.dev/cookbook/guides/openai-responses.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ddb459472a6d0324f8430fc44c729d665503598c6d4c3c7f075e661ee40313c3"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "c780e8368673b63dcec9e6ff9c62cf03b1b110fdd646ab52bfbc9f7880c78313"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -109,7 +109,7 @@ const result = await generateText({
   model: openai.responses('gpt-6-luna'),
   prompt: 'What happened in San Francisco last week?',
   tools: {
-    web_search_preview: openai.tools.webSearchPreview(),
+    web_search: openai.tools.webSearch(),
   },
 });
 
@@ -126,7 +126,7 @@ const result = await generateText({
   model: openai.responses('gpt-6-luna'),
   prompt: 'What happened in San Francisco last week?',
   tools: {
-    web_search_preview: openai.tools.webSearchPreview({
+    web_search: openai.tools.webSearch({
       searchContextSize: 'high',
       userLocation: {
         type: 'approximate',

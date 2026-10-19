@@ -13,8 +13,8 @@ related:
 summary: Use list_user_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "22459b2161de4e07e30c95c176d84c522dadc331f0add081dcf6cdf72b1f7799"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3f9dc34024fe5687f72ad1ec0101eaa7e395e3efa3f315aac02325604d8169bf"
 ---
 
 # list_user_events
@@ -27,13 +27,13 @@ List User Events.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [count_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_user_events&source_site=vercel-docs&relationship=related) — Use count_events with Vercel MCP.
-- [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_user_events&source_site=vercel-docs&relationship=related) — Use list_team_members with Vercel MCP.
-- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_user_events&source_site=vercel-docs&relationship=related) — Use aggregate_events with Vercel MCP.
-- [list_event_types](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_event_types?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_user_events&source_site=vercel-docs&relationship=related) — Use list_event_types with Vercel MCP.
-- [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_user_events&source_site=vercel-docs&relationship=related) — Use list_teams with Vercel MCP.
+- [count_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events) — Use count_events with Vercel MCP.
+- [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members) — Use list_team_members with Vercel MCP.
+- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
+- [list_event_types](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_event_types) — Use list_event_types with Vercel MCP.
+- [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams) — Use list_teams with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_user_events.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_user_events.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_user_events&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_user_events.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_user_events.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -49,8 +49,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams
 | `projectIds`  | string | No       | Comma-delimited list of project IDs to filter the results by.                                                                       |
 | `entityId`    | string | No       | Filters events to those associated with a specific entity (matched against `payload.id`). For example, a connector ID.              |
 | `withPayload` | string | No       | When set to `true`, the response will include the `payload` field for each event.                                                   |
-| `teamId`      | string | No       | Team ID.                                                                                                                            |
-| `slug`        | string | No       | Team slug.                                                                                                                          |
+| `teamId`      | string | No       | Team ID to use for this operation.                                                                                                  |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                         |
 
 
 ---

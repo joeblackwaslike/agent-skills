@@ -13,8 +13,8 @@ related:
 summary: Use get_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "74f2b3033629d77a633777acdde4f8bf556933559da0c657dd096201542d0b5d"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "9d6579f78d7f3ddff47e380add8e5b03c5f22be1ed0ba4bf6f62ea53217af0c5"
 ---
 
 # get_deployment
@@ -27,24 +27,33 @@ Get a [deployment](/docs/deployments) by ID or hostname.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get Deployment](https://v0.app/docs/api/v1/reference/deployments/get-by-id?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=related) — Get a deployment by ID. This will return the details of the deployment, including the inspector URL, chat ID, project ID
-- [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=related) — Use get_deployment_file_contents with Vercel MCP.
-- [get_deployment_check_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks/get_deployment_check_run?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=related) — Use get_deployment_check_run with Vercel MCP.
-- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=related) — Use list_deployment_files with Vercel MCP.
-- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=related) — Use list_deployments with Vercel MCP.
-- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=related) — Use get_git_deployment_context with Vercel MCP.
+- [Get Deployment](https://v0.app/docs/api/v1/reference/deployments/get-by-id) — Get a deployment by ID. This will return the details of the deployment, including the inspector URL, chat ID, project ID
+- [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
+- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
+- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
+- [get_deployment_feature_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags) — Use get_deployment_feature_flags with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_deployment&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md)
 <!-- /docsgraph:related -->
 
 | Parameter         | Type   | Required | Description                                                                                                                                         |
 | ----------------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `idOrUrl`         | string | Yes      | The unique identifier or hostname of the deployment.                                                                                                |
 | `withGitRepoInfo` | string | No       | When `true`, the response includes the `gitSource` object with the commit SHA, branch name, and connected repository metadata. Defaults to `false`. |
-| `teamId`          | string | No       | Team ID.                                                                                                                                            |
-| `slug`            | string | No       | Team slug.                                                                                                                                          |
+| `teamId`          | string | No       | Team ID to use for this operation.                                                                                                                  |
+| `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                         |
 
 **Sample prompt:** "Get details about my latest production deployment"
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter | Type   | Required | Default | Description                                               |
+| --------- | ------ | -------- | ------- | --------------------------------------------------------- |
+| `idOrUrl` | string | Yes      | -       | The unique identifier or hostname of the deployment.      |
+| `teamId`  | string | Yes      | -       | The team ID or slug. Use the team that owns the resource. |
 
 
 ---

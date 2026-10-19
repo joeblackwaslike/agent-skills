@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b63bab8c3f530b34fadbfae1e28a53cbeaf0f71834d661bfaaf4a92aab9431a5"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "cd5f1ed2d8f0bf94d95e0a0afe99bee861bb6b37a0e5c2665dacc1011b62ac3d"
 ---
 
 # Encryption and TLS
@@ -26,18 +26,19 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deprecating the DHE cipher suite for TLS connections](https://vercel.com/changelog/deprecating-the-dhe-cipher-suite-for-tls-connections?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
-- [Encrypted Client Hello (ECH) is now supported on Vercel CDN](https://vercel.com/changelog/encrypted-client-hello-now-supported-on-vercel-cdn?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
-- [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
-- [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related)
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel uses SSL certification to keep your site secure.
-- [Security](https://vercel.com/docs/vercel-blob/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how your Vercel Blob store is secured
-- [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=related) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Deprecating the DHE cipher suite for TLS connections](https://vercel.com/changelog/deprecating-the-dhe-cipher-suite-for-tls-connections)
+- [Encrypted Client Hello (ECH) is now supported on Vercel CDN](https://vercel.com/changelog/encrypted-client-hello-now-supported-on-vercel-cdn)
+- [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
+- [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
+- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
+- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
-Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/docs/cdn-security/encryption.graph.md?from=related&source_path=%2Fdocs%2Fcdn-security%2Fencryption&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/docs/cdn-security/encryption.graph.md)
 <!-- /docsgraph:related -->
 
 The CDN automatically forwards any HTTP requests to your **deployment** to HTTPS using the `308` status code:

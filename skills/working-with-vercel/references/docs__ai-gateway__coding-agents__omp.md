@@ -14,8 +14,8 @@ related:
 summary: Connect omp (oh-my-pi) to AI Gateway with the Vercel CLI or an environment variable. Use the built-in provider to access the model catalog.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/omp.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f9aa40387b24c02ec73669495f864a17ef5df0383752f29957c1f14d4164fb02"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "4405dcd9d8bee4fdc21beccc22f0bbf6e49eca370242d6279a7336bba0d9f4af"
 ---
 
 # omp with AI Gateway
@@ -28,14 +28,14 @@ sha256: "f9aa40387b24c02ec73669495f864a17ef5df0383752f29957c1f14d4164fb02"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
-- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
-- [Pi with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/pi?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=related) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
+- [Pi with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/pi) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/omp.graph.md](/docs/ai-gateway/coding-agents/omp.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fomp&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/omp.graph.md](/docs/ai-gateway/coding-agents/omp.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -43,7 +43,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/omp.graph.md]
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for omp:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent omp
+npx vercel@latest ai-gateway setup --agent omp
 ```
 
 The command provisions a key and adds the export to your shell profile, backed by the macOS Keychain where available.

@@ -1,16 +1,18 @@
 ---
 title: Patronus
-description: Monitor, evaluate and debug your AI SDK application with Patronus
+description: Configure the Patronus integration with the AI SDK.
 url: "https://ai-sdk.dev/providers/observability/patronus"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/patronus.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "97395d75086fad6a895f714bc5e2e565c3cc697e2497ab1e0768f1dcc5879d33"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "1e6033c4e68c2cda8a8c47ee2c3bacbf9b88a55ca5f518d28037fd48a0d1bd9f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
-[Patronus AI](https://patronus.ai) provides an end-to-end system to evaluate, monitor and improve performance of an LLM system, enabling developers to ship AI products safely and confidently. Learn more [here](https://docs.patronus.ai/docs).
+[Patronus AI](https://patronus.ai) is a research lab developing training data and simulated environments for frontier AI. Its work spans reinforcement learning environments and digital world models for agents operating in software.
+
+This guide covers the OpenTelemetry integration and its tracing and evaluation capabilities.
 
 When you build with the AI SDK, you can stream OpenTelemetry (OTEL) traces straight into Patronus and pair every generation with rich automatic evaluations.
 
@@ -131,12 +133,11 @@ Result: a single trace containing the root HTTP request, the LLM generation span
 
 ## Once you've traced
 
-- If you're tracing an agent, Patronus's AI assistant Percival will assist with error analysis and prompt optimization. Learn more [here](https://docs.patronus.ai/docs/percival/percival)
-- Get set up on production monitoring and alerting by viewing logs and traces on Patronus and configuring webhooks for alerting. Learn more [here](https://docs.patronus.ai/docs/real_time_monitoring/webhooks)
+- If you're tracing an agent, Patronus's AI assistant Percival will assist with error analysis and prompt optimization.
+- Get set up on production monitoring and alerting by viewing logs and traces on Patronus and configuring webhooks for alerting.
 
 ## Resources
 
-- [Patronus docs](https://docs.patronus.ai)
 - [OpenTelemetry SDK (JS)](https://opentelemetry.io/docs/instrumentation/js/)
 
 ---

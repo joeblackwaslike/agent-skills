@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/hipaa-setup.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "3e5ce923330f7c04d495acdd06fa329fc966343298dc33bed0f6db04983e05cf"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "ab947878e22d175b80948482e48e158ad9a060af7f5e1d1726d624cb16cb8562"
 ---
 
 > ## Documentation Index
@@ -210,6 +210,7 @@ With the HIPAA configuration applied, some Claude Code features are off or behav
 | `--cloud`, `/teleport`, and [Remote Control](/docs/en/remote-control) are refused | [Cloud sessions](/docs/en/claude-code-on-the-web) and Remote Control are off |
 | `/feedback` and `/bug` are unavailable | Feedback submission is off |
 | Claude can't publish an [artifact](/docs/en/artifacts) | Artifact publishing is off |
+| MCP tools load into context upfront | [MCP tool search](/docs/en/mcp#configure-tool-search) is off. Neither `ENABLE_TOOL_SEARCH` nor managed settings turns it back on |
 | An MCP server or hook that reads `ANTHROPIC_API_KEY` stops authenticating | Claude Code [removes Anthropic credentials](#anthropic-credentials-in-commands-hooks-and-mcp-servers) from the processes it starts |
 | Restrictions remain after `/login` to a different organization | The HIPAA status lasts until Claude Code restarts |
 

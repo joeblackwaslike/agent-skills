@@ -13,8 +13,8 @@ related:
 summary: Use get_order with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_order.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "10c32f4f386e7c286272ca5a0e04123d8fa433f8241dbbc938ee3a81ad62c59a"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1c9eee25bef4b7b0e9e4409fc91e1d544ba4410381766fe02f5477ca94bab694"
 ---
 
 # get_order
@@ -27,21 +27,21 @@ Get a domain order.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_domain_order](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_domain_order?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_order&source_site=vercel-docs&relationship=related) — Use get_domain_order with Vercel MCP.
-- [Get a domain order](https://vercel.com/docs/rest-api/domains-registrar/get-a-domain-order?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_order&source_site=vercel-docs&relationship=related) — GET /v1/registrar/orders/{orderId} — Get information about a domain order by its ID
-- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_order&source_site=vercel-docs&relationship=related) — Use get_team with Vercel MCP.
-- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_order&source_site=vercel-docs&relationship=related) — Use get_domain_price with Vercel MCP.
-- [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_order&source_site=vercel-docs&relationship=related) — Use get_domain_contact_verification with Vercel MCP.
+- [get_domain_order](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_domain_order) — Use get_domain_order with Vercel MCP.
+- [Get a domain order](https://vercel.com/docs/rest-api/domains-registrar/get-a-domain-order) — GET /v1/registrar/orders/{orderId} — Get information about a domain order by its ID
+- [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
+- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
+- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_order.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_order.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_order&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_order.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_order.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter | Type   | Required | Description      |
-| --------- | ------ | -------- | ---------------- |
-| `orderId` | string | Yes      | A valid order ID |
-| `teamId`  | string | No       | Team ID.         |
+| Parameter | Type   | Required | Description                        |
+| --------- | ------ | -------- | ---------------------------------- |
+| `orderId` | string | Yes      | A valid order ID                   |
+| `teamId`  | string | No       | Team ID to use for this operation. |
 
 
 ---

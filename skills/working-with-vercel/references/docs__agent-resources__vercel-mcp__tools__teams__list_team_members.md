@@ -13,8 +13,8 @@ related:
 summary: Use list_team_members with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "32880843e20c85998e0e6b70a8af8f30cf76711d6be3f4a51abc96557b7a8b60"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b37fefee45029b56a2924fb8574f2b4b93700f576416de4f9e66261add93a65c"
 ---
 
 # list_team_members
@@ -27,28 +27,28 @@ List team members.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_team_members&source_site=vercel-docs&relationship=related) — Use list_teams with Vercel MCP.
-- [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_team_members&source_site=vercel-docs&relationship=related) — Use list_access_group_members with Vercel MCP.
-- [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_team_members&source_site=vercel-docs&relationship=related) — Use list_user_events with Vercel MCP.
-- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_team_members&source_site=vercel-docs&relationship=related) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
-- [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_team_members&source_site=vercel-docs&relationship=related) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
+- [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
+- [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams) — Use list_teams with Vercel MCP.
+- [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events) — Use list_user_events with Vercel MCP.
+- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
+- [list_access_groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups) — Use list_access_groups with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_team_members&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
 | Parameter                     | Type   | Required | Description                                                                                                                                                                          |
 | ----------------------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `limit`                       | number | No       | Limit how many team members should be returned                                                                                                                                       |
+| `limit`                       | number | No       | Limit how many team members should be returned Minimum: 1.                                                                                                                           |
 | `since`                       | number | No       | Timestamp in milliseconds to only include members added since then.                                                                                                                  |
 | `until`                       | number | No       | Timestamp in milliseconds to only include members added until then.                                                                                                                  |
 | `search`                      | string | No       | Search team members by their name, username, and email.                                                                                                                              |
 | `role`                        | string | No       | Only return members with the specified team role. Allowed values: `"OWNER"`, `"MEMBER"`, `"DEVELOPER"`, `"SECURITY"`, `"BILLING"`, `"VIEWER"`, `"VIEWER_FOR_PLUS"`, `"CONTRIBUTOR"`. |
 | `excludeProject`              | string | No       | Exclude members who belong to the specified project.                                                                                                                                 |
 | `eligibleMembersForProjectId` | string | No       | Include team members who are eligible to be members of the specified project.                                                                                                        |
-| `teamId`                      | string | Yes      | Team ID.                                                                                                                                                                             |
-| `slug`                        | string | No       | Team slug.                                                                                                                                                                           |
+| `teamId`                      | string | Yes      | Team ID to use for this operation.                                                                                                                                                   |
+| `slug`                        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                          |
 
 
 ---

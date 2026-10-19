@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Pinecone connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/pinecone.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7c82e1886f33c9c42449b16675ad324daa507ce9c1f756369a9f4c7d67cd616a"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "edf51f83da4c01bb324ad9aca5a78d1d0e53949133c51a9398604236c90f53e0"
 ---
 
 # Vercel Pinecone Integration
@@ -34,13 +34,13 @@ them in your applications.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fpinecone&source_site=vercel-docs&relationship=related) — Learn how to add the Deep Infra native integration with Vercel.
-- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fpinecone&source_site=vercel-docs&relationship=related) — Learn how to add the fal native integration with Vercel.
-- [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fpinecone&source_site=vercel-docs&relationship=related) — Learn how to add Perplexity connectable account integration with Vercel.
-- [Vercel Replicate Integration](https://vercel.com/docs/agent-resources/integrations-for-models/replicate?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fpinecone&source_site=vercel-docs&relationship=related) — Learn how to add Replicate connectable account integration with Vercel.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fpinecone&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
+- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
+- [Vercel Replicate Integration](https://vercel.com/docs/agent-resources/integrations-for-models/replicate) — Learn how to add Replicate connectable account integration with Vercel.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 
-Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/pinecone.graph.md](/docs/agent-resources/integrations-for-models/pinecone.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fpinecone&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/pinecone.graph.md](/docs/agent-resources/integrations-for-models/pinecone.graph.md)
 <!-- /docsgraph:related -->
 
 **What is a vector database?**

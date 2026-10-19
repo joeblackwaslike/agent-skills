@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f4b9806daef20383a418201328af6a266b0dc87cee0211215ada6691dbdc2ee8"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2c8757b7f7a5c3dca85ea3f24869fe57c625fcde3bbce7e07bceedb86830ef62"
 ---
 
 # Session tracing
@@ -30,19 +30,17 @@ With session tracing, you can use the Vercel toolbar to trace **your** own brows
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
-- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
-- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
-- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related)
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
-- [Instrumentation](https://vercel.com/docs/tracing/instrumentation?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn how to instrument your application to understand performance and infrastructure details.
-- [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=related) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
+- [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
+- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
+- [create_trace_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session) — Use create_trace_session with Vercel MCP.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
 
-Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md?from=related&source_path=%2Fdocs%2Ftracing%2Fsession-tracing&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
 <!-- /docsgraph:related -->
 
 Session tracing complements [always-on tracing](/docs/tracing/always-on-tracing), which continuously collects sampled traces from your production and preview traffic. Use session tracing when you want to trace only your own requests, without turning on collection for everyone.

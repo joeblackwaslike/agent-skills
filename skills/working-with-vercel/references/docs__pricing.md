@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "531ffae83fb21e2054c3ea901747cc277e746e6123bd26bcf3b2406b2963de5b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d18a5b19810686ecd9b624d38234886a56817c90df8be83e517ab9c4f8eb0f4a"
 ---
 
 # Pricing on Vercel
@@ -30,15 +30,15 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Build Queues](https://vercel.com/docs/builds/build-queues?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
+- [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 
-Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md?from=related&source_path=%2Fdocs%2Fpricing&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md)
 <!-- /docsgraph:related -->
 
 For a full breakdown of Vercel's pricing by plan, see the [pricing page](/pricing).
@@ -94,10 +94,10 @@ For content delivery, you can pay on demand or through [Flat Rate CDN](/docs/pri
 
 #### [Global Config](/docs/global-config/global-config-limits)
 
-| Resource | Pro Price |
-| --- | --- |
-| Global Config Reads (formerly known as Edge Config Reads) | $3.00 |
-| Global Config Writes (formerly known as Edge Config Writes) | $5.00 |
+| Resource | Hobby Included | On-demand Rates |
+| --- | --- | --- |
+| Global Config Reads | First 100,000 | $3 per 1,000,000 Reads |
+| Global Config Writes | First 100 | $1 per 100 Writes |
 
 
 #### [Web Analytics](/docs/analytics/limits-and-pricing)

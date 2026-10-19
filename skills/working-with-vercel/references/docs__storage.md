@@ -16,8 +16,8 @@ related:
 summary: Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b099e95db9a2fc00445d0c233f45a6f5068debfc143e35e37b11d723843ad6b6"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c1075e57a174d550c511de41bef0ff97e85075f14515e192b106758f491529c8"
 ---
 
 # Vercel Storage overview
@@ -32,20 +32,20 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improved performance for Vercel Postgres from Edge Functions](https://vercel.com/changelog/improved-performance-for-vercel-postgres-from-edge-functions?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [Improvements and fixes](https://vercel.com/changelog/improvements-and-fixes?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related)
-- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=related) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Improved performance for Vercel Postgres from Edge Functions](https://vercel.com/changelog/improved-performance-for-vercel-postgres-from-edge-functions)
+- [Improvements and fixes](https://vercel.com/changelog/improvements-and-fixes)
+- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications)
+- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 
-Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md?from=related&source_path=%2Fdocs%2Fstorage&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
 <!-- /docsgraph:related -->
 
 #### Upload files

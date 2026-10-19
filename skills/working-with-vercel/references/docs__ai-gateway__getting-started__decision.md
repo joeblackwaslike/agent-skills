@@ -16,8 +16,8 @@ related:
 summary: Answer a typed boolean question about application state using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/decision.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "544ce5c5a9bad4c9f5554fabb2f141a95ead1f3fa3b59543c7700f9e3fc47379"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "edaa35644fedfeec5f33bb646a9c0b638f03fcecac6d556782a74c38c67d3204"
 ---
 
 # AI Gateway Decision Quickstart
@@ -30,16 +30,15 @@ Ask a typed question about application state through AI Gateway and get a boolea
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related)
-- [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related)
-- [Automatic Model Selection](https://eve.dev/docs/guides/decide?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related) — Choose agent models automatically or ask typed questions in your tools and application code.
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 200+ models.
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
+- [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
+- [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
+- [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
-Full cross-link map for this page: [/docs/ai-gateway/getting-started/decision.graph.md](/docs/ai-gateway/getting-started/decision.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Fdecision&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/decision.graph.md](/docs/ai-gateway/getting-started/decision.graph.md)
 <!-- /docsgraph:related -->
 
 ## Make your first decision

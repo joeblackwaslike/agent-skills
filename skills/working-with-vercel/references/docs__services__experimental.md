@@ -13,8 +13,8 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "275440278c3006ef27edbff767e1a5e250e3b5da5cd734936c307241c623d6cb"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0a346087c03cc739ef2bf25a19147234077acdb20712971efb44518dabd407f4"
 ---
 
 # Experimental Services
@@ -33,18 +33,18 @@ Services let you deploy multiple backends and frontends within a single Vercel p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
-- [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related)
-- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Learn how to serve multiple Vercel projects from a single domain.
-- [Services](https://vercel.com/docs/build-output-api/services?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Service configuration reference](https://vercel.com/docs/services/config-reference?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — Options available for service configuration.
-- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
+- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
+- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
+- [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
-Full cross-link map for this page: [/docs/services/experimental.graph.md](/docs/services/experimental.graph.md?from=related&source_path=%2Fdocs%2Fservices%2Fexperimental&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/services/experimental.graph.md](/docs/services/experimental.graph.md)
 <!-- /docsgraph:related -->
 
 ## How experimental services work

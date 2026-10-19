@@ -13,8 +13,8 @@ related:
 summary: "Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise access control."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/extended-permissions.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "914a86c0a3d1ab4ee1ff848f7793e4b90ce10655cfcbbe9d9f4e940effede1b1"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b73964cf0352789f22534d56a90a910b71ba89af70c74567f0649fd9bd898dfd"
 ---
 
 # Extended permissions
@@ -27,17 +27,17 @@ Vercel's Role-Based Access Control (RBAC) system consists of three main componen
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related)
-- [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related)
-- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related) — Learn about the project level roles and their permissions.
-- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related)
-- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related)
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
-- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
+- [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
+- [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
+- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
+- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
+- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 
-Full cross-link map for this page: [/docs/rbac/access-roles/extended-permissions.graph.md](/docs/rbac/access-roles/extended-permissions.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles%2Fextended-permissions&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/rbac/access-roles/extended-permissions.graph.md](/docs/rbac/access-roles/extended-permissions.graph.md)
 <!-- /docsgraph:related -->
 
 - **Team roles**: Core roles that define a user's overall access level within a team

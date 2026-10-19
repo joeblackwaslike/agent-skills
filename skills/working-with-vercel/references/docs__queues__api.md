@@ -13,8 +13,8 @@ related:
 summary: HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/api.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "386567f1766dae1efd6079f43e6e60999367ee2effc71548806c85e48694d789"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "fccf680da2b46940dfd3eec21ff4359d1dbc449326b6879155a157e17c5dac0d"
 ---
 
 # API Reference
@@ -27,13 +27,13 @@ The Vercel Queues API is a REST API for publishing, consuming, and managing mess
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
-- [Vercel Queues: Python SDK Reference](https://vercel.com/docs/queues/python-sdk?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Publish and consume messages with the Vercel Queues Python SDK.
-- [Quickstart](https://vercel.com/docs/queues/quickstart?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Set up Vercel Queues with the SDK.
-- [Poll Mode](https://vercel.com/docs/queues/poll-mode?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=related) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
+- [Vercel Queues: Python SDK Reference](https://vercel.com/docs/queues/python-sdk) — Publish and consume messages with the Vercel Queues Python SDK.
+- [Poll Mode](https://vercel.com/docs/queues/poll-mode) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
+- [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
 
-Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md?from=related&source_path=%2Fdocs%2Fqueues%2Fapi&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md)
 <!-- /docsgraph:related -->
 
 ## Authentication

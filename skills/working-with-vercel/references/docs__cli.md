@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "1c8be219511be2172a5fc1cbc712f07a2ab47cbc366a0db903740713a1832229"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "124c8c5f3f7dff489d99f21cf1646e25fdcc7de4c3f1d620d3d123968eba9849"
 ---
 
 # Vercel CLI Overview
@@ -30,20 +30,20 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Terminal commands](https://v0.app/docs/terminal-commands?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — v0 can run bash commands in your project sandbox to test, debug, and use platform CLIs. Control its autonomy with three
-- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Configure weighted traffic splits for Vercel Flags from the Vercel CLI](https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Copy-to-Prompt instructions now available for Flags](https://vercel.com/changelog/copy-to-prompt-instructions-now-available-for-flags?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Experimental native binaries for Vercel CLI](https://vercel.com/changelog/experimental-native-binaries-for-vercel-cli?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related)
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Terminal commands](https://v0.app/docs/terminal-commands) — v0 can run bash commands in your project sandbox to test, debug, and use platform CLIs. Control its autonomy with three
+- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
+- [Configure weighted traffic splits for Vercel Flags from the Vercel CLI](https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli)
+- [Copy-to-Prompt instructions now available for Flags](https://vercel.com/changelog/copy-to-prompt-instructions-now-available-for-flags)
+- [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration)
+- [Experimental native binaries for Vercel CLI](https://vercel.com/changelog/experimental-native-binaries-for-vercel-cli)
+- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
 
-Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md?from=related&source_path=%2Fdocs%2Fcli&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli.graph.md](/docs/cli.graph.md)
 <!-- /docsgraph:related -->
 
 If you'd like to interface with the platform programmatically, check out the [REST API documentation](/docs/rest-api).
@@ -127,23 +127,48 @@ Using the `VERCEL_TOKEN` environment variable is recommended for CI/CD because i
 
 ## Experimental native CLI binaries
 
-Native CLI binaries are also available as an experimental opt-in install.
-
-Native CLI binaries can reduce setup in environments where installing and maintaining Node.js is unnecessary or inconvenient, including lightweight containers, CI jobs, or managed developer workspaces.
-
-To install the native binary, run:
+The standard `vercel` package includes experimental native binaries as optional dependencies for supported platforms. This installation still requires Node.js to run its launcher, even when you use native execution. Install [Vercel CLI](#installing-vercel-cli) with your package manager, keeping optional dependencies enabled, then opt into native execution:
 
 ```bash filename="terminal"
-pnpm i -g @vercel/vc-native -f
+vercel upgrade --enable-binary
 ```
 
-The `-f` flag is required because the native package installs the same global bin names as the standard CLI. It allows pnpm to replace existing global `vercel` and `vc` bin links. Once installed, `vercel` and `vc` run the native binary matched to your OS and CPU architecture, across macOS, Linux, and Windows on x64 and arm64.
+*Enabling native execution for Vercel CLI.*
 
-Platform-specific packages are also available when you need a specific binary:
+If the native package is missing because you omitted optional dependencies, reinstall `vercel` with optional dependencies enabled. For an npm installation:
 
 ```bash filename="terminal"
-pnpm i -g @vercel/vc-native-darwin-x64 -f
+npm install --global vercel@latest --include=optional
+vercel upgrade --enable-binary
 ```
+
+*Restoring optional dependencies and enabling native execution.*
+
+Verify the installed version and runtime:
+
+```bash filename="terminal"
+vercel --version
+```
+
+*Checking the installed Vercel CLI version and execution mode.*
+
+The CLI banner includes `(native)` when it runs the native binary.
+
+On macOS, the package uses its installed native binary by default unless you opt out. To return to Node.js execution, run [`vercel upgrade --disable-binary`](/docs/cli/upgrade#disable-binary).
+
+Linux native packages target glibc. On musl hosts, such as Alpine, the launcher looks for a matching musl package and uses Node.js execution if that package isn't installed. A missing native package falls back to Node.js execution; a failure after native execution starts doesn't retry the command with Node.js execution.
+
+### Migrate from the legacy native package
+
+If you installed `@vercel/vc-native` directly, remove it and install `vercel` with the same package manager. For example, with pnpm:
+
+```bash filename="terminal"
+pnpm remove -g @vercel/vc-native
+pnpm add -g vercel@latest
+vercel upgrade --enable-binary
+```
+
+Package-manager upgrades update `vercel`, including when it runs through the native binary. They no longer upgrade the legacy `@vercel/vc-native` wrapper.
 
 ## Available Commands
 
@@ -434,6 +459,17 @@ vercel env run -- <command>
 
 [Learn more about the env command](/docs/cli/env)
 
+### feedback
+
+Send bugs, friction, and feature requests to the Vercel team without logging in or linking a project.
+
+```bash
+vercel feedback "The error didn't explain how to fix the issue"
+vercel feedback -f product=cli -f type=bug -f actual="Unknown option: --preview"
+```
+
+[Learn more about the feedback command](/docs/cli/feedback)
+
 ### firewall
 
 Manage your Vercel Firewall: view changes, publish, manage IP blocks, system bypass entries, custom rules, attack mode, and system mitigations.
@@ -629,11 +665,12 @@ vercel logout
 
 ### logs
 
-List runtime logs for a specific deployment.
+Query runtime log entries and CDN request records for your project.
 
 ```bash
-vercel logs [deployment-url]
-vercel logs [deployment-url] --follow
+vercel logs
+vercel logs requests
+vercel logs --deployment [deployment-url]
 ```
 
 [Learn more about the logs command](/docs/cli/logs)

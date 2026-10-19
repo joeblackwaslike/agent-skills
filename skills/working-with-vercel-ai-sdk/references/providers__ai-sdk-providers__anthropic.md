@@ -4,8 +4,8 @@ description: Learn how to use the Anthropic provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "3358128d42e4d7e0346be7512a331f14b4a6cd9c75131fe9ee0979fd9a6161dd"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "0ec50c0c1d6c24b5446b230dd19fb0fadae24a4e679f6a5a37c70d2c3df5fd18"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -743,6 +743,13 @@ Anthropic's `max_tokens` limit includes both thinking and final text. To reserve
 room for both, the provider adds `budgetTokens` to `maxOutputTokens` when
 setting `max_tokens`. For known models, the combined value is capped at the
 model's maximum output token limit.
+
+With manual thinking (`thinking.type: 'enabled'`), a `required` or named
+`toolChoice` falls back to `auto` with a warning. For a named tool choice, only
+the selected tool is sent. This also applies when the top-level `reasoning`
+option enables manual thinking, including when structured output uses the
+internal JSON response tool. Tool use is no longer guaranteed: instruct the
+model to use the tool in your prompt and verify that a tool call was made.
 
 See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details
 on how to integrate reasoning into your chatbot.

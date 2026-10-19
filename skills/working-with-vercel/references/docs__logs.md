@@ -16,8 +16,8 @@ related:
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f2bd420d810991e84e34b334e6cb663ac2c39aefabcae8ba73aeb579394da840"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "efcb33e6350defdd4e0d602d7a7cff1628822d103ee3f1b437f2758fdd8feab3"
 ---
 
 # Logs
@@ -34,16 +34,15 @@ When you deploy your website to Vercel, the platform generates build logs that s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I store logs on Vercel?](https://vercel.com/kb/guide/how-do-i-store-logs-on-vercel?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to store logs on Vercel.
-- [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
-- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Using Drains](https://vercel.com/docs/drains/using-drains?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations,
-- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=related) — Use get_runtime_logs with Vercel MCP.
+- [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
+- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Using Drains](https://vercel.com/docs/drains/using-drains) — Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations,
+- [Retrieves a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-configurable-log-drain-deprecated) — GET /v1/log-drains/{id} — Retrieves a Configurable Log Drain. This endpoint must be called with a team AccessToken \\(int
 
-Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md?from=related&source_path=%2Fdocs%2Flogs&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md)
 <!-- /docsgraph:related -->
 
 - The version of the build tools

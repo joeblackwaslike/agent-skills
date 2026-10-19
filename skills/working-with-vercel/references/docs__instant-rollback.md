@@ -16,8 +16,8 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "166cd956051d831809ac770e7cf742bd183be01901953df1f44c864250ddd450"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "113d68f2cd9ffad69ac8879ee7c67c8ece0368b99784bc1eba1c7f6f2dd7b27f"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -30,20 +30,20 @@ Vercel provides Instant Rollback as a way to quickly revert to a previous produc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
-- [Add context when using Instant Rollback](https://vercel.com/changelog/new-instant-rollback-flow?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
-- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
-- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
-- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related) — Incrementally release updates to your backend to minimize impact of mistakes.
-- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
-- [Introducing eve](https://vercel.com/blog/introducing-eve?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
-- [Instant Rollback is now generally available to revert deployments](https://vercel.com/changelog/instant-rollback-is-now-available-to-revert-deployments?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
-- [Instant Rollback public beta available to revert deployments](https://vercel.com/changelog/instant-rollback-public-beta-available-to-revert-deployments?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=related)
+- [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready)
+- [Add context when using Instant Rollback](https://vercel.com/changelog/new-instant-rollback-flow)
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
+- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
+- [Introducing eve](https://vercel.com/blog/introducing-eve)
+- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
+- [Instant Rollback is now generally available to revert deployments](https://vercel.com/changelog/instant-rollback-is-now-available-to-revert-deployments)
+- [Instant Rollback public beta available to revert deployments](https://vercel.com/changelog/instant-rollback-public-beta-available-to-revert-deployments)
 
-Full cross-link map for this page: [/docs/instant-rollback.graph.md](/docs/instant-rollback.graph.md?from=related&source_path=%2Fdocs%2Finstant-rollback&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/instant-rollback.graph.md](/docs/instant-rollback.graph.md)
 <!-- /docsgraph:related -->
 
 - Vercel treats the rolled-back deployment as a restored version of a previous deployment

@@ -13,8 +13,8 @@ related:
 summary: Use update_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "493878f1712881f1309a5441a492698d89422ee76816f85e1733e52625b86502"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3d41e7541651c0538b9a0f5ab83253cb89b164ed51f2fa9d0c69f436ba19c0a4"
 ---
 
 # update_project
@@ -27,23 +27,23 @@ Update an existing project.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [update_version](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_version?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Fupdate_project&source_site=vercel-docs&relationship=related) — Use update_version with Vercel MCP.
-- [update_project_check](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks/update_project_check?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Fupdate_project&source_site=vercel-docs&relationship=related) — Use update_project_check with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Fupdate_project&source_site=vercel-docs&relationship=related) — Use create_project with Vercel MCP.
-- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Fupdate_project&source_site=vercel-docs&relationship=related) — Use update_rolling_release_config with Vercel MCP.
-- [update_project_protection_bypass](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_protection_bypass?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Fupdate_project&source_site=vercel-docs&relationship=related) — Use update_project_protection_bypass with Vercel MCP.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [update_project_protection_bypass](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_protection_bypass) — Use update_project_protection_bypass with Vercel MCP.
+- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config) — Use update_rolling_release_config with Vercel MCP.
+- [update_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings) — Use update_flag_settings with Vercel MCP.
+- [update_bulk_redirect_version](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version) — Use update_bulk_redirect_version with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/update_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/update_project.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Fupdate_project&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/update_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/update_project.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `idOrName`    | string | Yes      | The unique project identifier or the project name |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | Yes      | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName`    | string | Yes      | The unique project identifier or the project name           |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 
 ---

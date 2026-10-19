@@ -1,8 +1,8 @@
 ---
 title: "Markdown Front Matter"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "0762bf2422920365432028609ca1ee6b0f0c73af197570f14dd8a7874a9adc7c"
+fetched_at: "2026-10-19T09:38:00.847Z"
+sha256: "2e506ba06c0d1a3cad4327a29fc8ebe11415c311678f052a62a703178f86fe17"
 ---
 
 # Markdown Front Matter
@@ -80,7 +80,6 @@ type VersionConfig = {  /**   * The base path of the version, will be appended t
 You can configure this plugin through preset options or plugin options.
 
 tipMost Docusaurus users configure this plugin through the preset options.
-
 Preset optionsPlugin optionsIf you use a preset, configure this plugin through the [preset options](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic):docusaurus.config.js
 ```
 module.exports = {  presets: [    [      '@docusaurus/preset-classic',      {        docs: {          path: 'docs',          breadcrumbs: true,          // Simple use-case: string editUrl          // editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',          // Advanced use-case: functional editUrl          editUrl: ({versionDocsDirPath, docPath}) =>            `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`,          editLocalizedFiles: false,          editCurrentVersion: false,          routeBasePath: 'docs',          include: ['**/*.md', '**/*.mdx'],          exclude: [            '**/_*.{js,jsx,ts,tsx,md,mdx}',            '**/_*/**',            '**/*.test.{js,jsx,ts,tsx}',            '**/__tests__/**',          ],          sidebarPath: 'sidebars.js',          async sidebarItemsGenerator({            defaultSidebarItemsGenerator,            numberPrefixParser,            item,            version,            docs,            isCategoryIndex,          }) {            // Use the provided data to generate a custom sidebar slice            return [              {type: 'doc', id: 'intro'},              {                type: 'category',                label: 'Tutorials',                items: [                  {type: 'doc', id: 'tutorial1'},                  {type: 'doc', id: 'tutorial2'},                ],              },            ];          },          numberPrefixParser(filename) {            // Implement your own logic to extract a potential number prefix            const numberPrefix = findNumberPrefix(filename);            // Prefix found: return it with the cleaned filename            if (numberPrefix) {              return {                numberPrefix,                filename: filename.replace(prefix, ''),              };            }            // No number prefix found            return {numberPrefix: undefined, filename};          },          docsRootComponent: '@theme/DocsRoot',          docVersionRootComponent: '@theme/DocVersionRoot',          docRootComponent: '@theme/DocRoot',          docItemComponent: '@theme/DocItem',          remarkPlugins: [require('./my-remark-plugin')],          rehypePlugins: [],          beforeDefaultRemarkPlugins: [],          beforeDefaultRehypePlugins: [],          showLastUpdateAuthor: false,          showLastUpdateTime: false,          disableVersioning: false,          includeCurrentVersion: true,          lastVersion: undefined,          versions: {            current: {              label: 'Android SDK v2.0.0 (WIP)',              path: 'android-2.0.0',              banner: 'none',            },            '1.0.0': {              label: 'Android SDK v1.0.0',              path: 'android-1.0.0',              banner: 'unmaintained',            },          },          onlyIncludeVersions: ['current', '1.0.0', '2.0.0'],        },      },    ],  ],};

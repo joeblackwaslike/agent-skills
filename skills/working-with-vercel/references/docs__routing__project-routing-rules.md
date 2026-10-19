@@ -15,8 +15,8 @@ related:
 summary: Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/project-routing-rules.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "e2b0fe8f29cae2ca4f2e2204b8d314d8bb4c38118307bc47141d49d8085becf2"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "ab410f20e829f41680ee05a00836997a8bf19281cd0e2fe067067ea9a55fc69c"
 ---
 
 # Project-Level Routing Rules
@@ -29,16 +29,16 @@ Project-level routing rules let you add redirects, rewrites, response headers, a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related)
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related)
-- [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
-- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
-- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
-- [Delete routing rules](https://vercel.com/docs/rest-api/project-routes/delete-routing-rules?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related) — DELETE /v1/projects/{projectId}/routes — Delete one or more routing rules from a project by ID. Stages a new version wit
-- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
+- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
+- [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
+- [Delete routing rules](https://vercel.com/docs/rest-api/project-routes/delete-routing-rules) — DELETE /v1/projects/{projectId}/routes — Delete one or more routing rules from a project by ID. Stages a new version wit
+- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 
-Full cross-link map for this page: [/docs/routing/project-routing-rules.graph.md](/docs/routing/project-routing-rules.graph.md?from=related&source_path=%2Fdocs%2Frouting%2Fproject-routing-rules&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/routing/project-routing-rules.graph.md](/docs/routing/project-routing-rules.graph.md)
 <!-- /docsgraph:related -->
 
 These rules are separate from deployment-level routes defined in `vercel.json` or your framework configuration. They run at the CDN level on every request, after [bulk redirects](/docs/routing/redirects/bulk-redirects) and before your deployment's own routes. See the [routing order](/docs/routing#routing-order) for the full sequence.

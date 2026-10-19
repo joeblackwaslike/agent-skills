@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   - /docs/vercel-blob
 related:
-  - /docs/vercel-blob/using-blob-sdk
   - /docs/manage-cdn-usage
   - /docs/cdn
   - /docs/vercel-blob/client-upload
   - /docs/vercel-blob/server-upload
+  - /docs/vercel-blob
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "16fe338bc0f996f6bbb86ed5f7b9118e07e6632e5a7cfff051773eac265fe7e5"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2eb17ae98af17bc266bb580973eb1c8bf0d79cce6a564b6fb600fe865f07c945"
 ---
 
 # Vercel Blob Pricing
@@ -34,25 +34,25 @@ Vercel Blob usage is measured based on the following:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Increased Blob store limit for Hobby users](https://vercel.com/changelog/increased-blob-store-limit-for-hobby-users?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related)
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Increased Blob store limit for Hobby users](https://vercel.com/changelog/increased-blob-store-limit-for-hobby-users)
+- [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan)
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
-Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md](/docs/vercel-blob/usage-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fusage-and-pricing&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md](/docs/vercel-blob/usage-and-pricing.graph.md)
 <!-- /docsgraph:related -->
 
 - **Storage Size**: Monthly average of your blob store size (GB-month)
-- **Simple Operations**: Counts when a blob is accessed by its URL and it's a cache MISS or when using the [`head()`](/docs/vercel-blob/using-blob-sdk#head) method
-- **Advanced Operations**: Counts when using [`put()`](/docs/vercel-blob/using-blob-sdk#put), [`copy()`](/docs/vercel-blob/using-blob-sdk#copy), or [`list()`](/docs/vercel-blob/using-blob-sdk#list) methods, and when you create a Blob store
+- **Simple Operations**: Counts when a blob is accessed by its URL and it's a cache MISS, or when you retrieve blob metadata without downloading the blob
+- **Advanced Operations**: Counts when you upload, copy, or list blobs, and when you create a Blob store
 - **Blob Data Transfer**: Charged when blobs are downloaded or viewed
 - **[CDN Requests](/docs/manage-cdn-usage#cdn-requests)**: Each blob access by its URL counts as one CDN Request, regardless if it's a MISS or HIT
 - **[Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer)**: Applied only for cache MISS scenarios
@@ -86,9 +86,9 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 - The maximum size of a blob in cache is [512 MB](/docs/vercel-blob/usage-and-pricing#size-limits). Any blob larger than this will generate a cache MISS on every access, resulting in a Fast Origin Transfer and CDN Request charge each time it is accessed
 - Uploads do not incur data transfer charges when using [Client Uploads](/docs/vercel-blob/client-upload)
 - Uploads incur [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) charges when using [Server Uploads](/docs/vercel-blob/server-upload) if your Vercel application is the one receiving the file upload
-- [Multipart uploads](/docs/vercel-blob/using-blob-sdk#multipart-uploads) count as multiple Advanced Operations: one when starting, one per part, one for completion
+- [Multipart uploads](/docs/vercel-blob#multipart-uploads) count as multiple Advanced Operations: one when starting, one per part, one for completion
 - Creating a Blob store counts as one Advanced Operation; deleting a store is free
-- [`del()`](/docs/vercel-blob/using-blob-sdk#del) operations are free
+- Delete operations are free
 - **Dashboard interactions count as operations**: Each time you interact with the Vercel dashboard to browse your blob store, upload files, or view blob details, these actions count as Advanced Operations and will appear in your usage metrics.
 
 ## Private and public storage delivery costs

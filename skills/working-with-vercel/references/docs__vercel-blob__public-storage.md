@@ -11,13 +11,13 @@ related:
   - /docs/vercel-blob
   - /docs/cli/blob
   - /docs/vercel-blob/using-blob-sdk
+  - /docs/vercel-blob/python-sdk-reference
   - /docs/vercel-blob/server-upload
-  - /docs/vercel-blob/client-upload
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7e7a73db2edd2ec6be6308bd7bb43ac036fff817a3be5a757b75a151d6acd7f2"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d501ae8e1be76b46a15da9c05a718f2c8b3f1307c0248c946634439a18c40d65"
 ---
 
 # Public Storage
@@ -32,36 +32,46 @@ Public Blob stores make files accessible to anyone with the URL. Use public stor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
-- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related)
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
-- [Vercel Storage overview](https://vercel.com/docs/storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=related) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
+- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
+- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 
-Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fpublic-storage&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md)
 <!-- /docsgraph:related -->
 
 See [differences with private storage](/docs/vercel-blob#private-and-public-storage).
 
 ## Creating a public Blob store
 
-You can create a public Blob store from the Vercel dashboard or the CLI:
+Create a public Blob store from the dashboard or the Vercel CLI.
 
-- **Dashboard**:
-  1. Go to your project's [**Storage** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
-  2. Select **Create Storage**, then choose **Blob**
-  3. Select **Continue**, then set the access to **Public**
-- **[CLI](/docs/cli/blob)**: Run `vercel blob create-store [name] --access public`
+#### Dashboard
 
-When your code runs on Vercel, the SDK authenticates using OIDC by default. Connect your store to a project so Vercel adds the OIDC token and `BLOB_STORE_ID` to your environment automatically. For team-level stores or code that runs outside Vercel, see [Authentication](/docs/vercel-blob/using-blob-sdk#authentication).
+1. Go to your project's [**Storage** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
+2. Select **Create Storage**, then choose **Blob**
+3. Select **Continue**, then set the access to **Public**
+
+#### CLI
+
+Run [`vercel blob create-store`](/docs/cli/blob#create-store) from your linked project directory with `--access public`. The `--yes` flag connects the new store to the project in all environments:
+
+```bash filename="terminal"
+vercel blob create-store my-public-store --access public --yes
+```
+
+When your code runs on Vercel, the SDK authenticates using OIDC by default. Connect your store to a project so Vercel adds the OIDC token and `BLOB_STORE_ID` to your environment automatically. For team-level stores or code that runs outside Vercel, see Authentication in the [JS SDK](/docs/vercel-blob/using-blob-sdk#authentication) or [Python SDK](/docs/vercel-blob/python-sdk-reference#authentication) reference.
 
 ## Uploading files
 
-Upload files to a public Blob store using [`put()`](/docs/vercel-blob/using-blob-sdk#put) with `access: 'public'`:
+Upload files to a public Blob store by setting the upload's access to public:
+
+**app/api/upload/route.ts**
 
 ```ts filename="app/api/upload/route.ts"
 import { put } from '@vercel/blob';
@@ -76,6 +86,25 @@ export async function POST(request: Request) {
 
   return Response.json(blob);
 }
+```
+
+**main.py**
+
+```py filename="main.py"
+from fastapi import FastAPI, UploadFile
+
+from vercel import blob
+
+app = FastAPI()
+
+
+@app.post("/api/upload")
+async def upload(file: UploadFile) -> blob.PutResult:
+    return await blob.put_blob(
+        file.filename or "upload",
+        await file.read(),
+        access="public",
+    )
 ```
 
 See the [server uploads](/docs/vercel-blob/server-upload) and [client uploads](/docs/vercel-blob/client-upload) guides for detailed instructions on uploading files.
@@ -122,9 +151,8 @@ import Image from 'next/image';
 ```
 
 > **💡 Note:** `next/image` with direct blob URLs only works with public Blob stores. For
-> private blobs, serve files through your [Functions](/docs/functions) using
-> [`get()`](/docs/vercel-blob/using-blob-sdk#get) and use the function route URL
-> as the image source.
+> private blobs, [serve files through your Functions](/docs/vercel-blob/private-storage#delivering-private-blobs)
+> and use the function route URL as the image source.
 
 ### Linking a file for download
 
@@ -134,7 +162,7 @@ import Image from 'next/image';
 </a>
 ```
 
-Adding `?download=1` to a blob URL forces a file download, regardless of file type. The SDK also exposes this as the `downloadUrl` property on blob objects. Without it, the URL displays the file in the browser when the MIME type supports it (images, videos, audio, PDFs, plain text, XML, and JSON). All other MIME types automatically trigger a download.
+Adding `?download=1` to a blob URL forces a file download, regardless of file type. The SDK also returns this URL as the download URL of each uploaded blob. Without it, the URL displays the file in the browser when the MIME type supports it (images, videos, audio, PDFs, plain text, XML, and JSON). All other MIME types automatically trigger a download.
 
 This behavior is controlled by the `content-disposition` header. Vercel Blob sets it to `inline` for displayable types and `attachment` for everything else. This also prevents hosting HTML pages on Vercel Blob.
 
@@ -151,7 +179,7 @@ Vercel will cache blobs up to [512 MB](/docs/vercel-blob/usage-and-pricing#size-
 
 ### Configuring cache duration
 
-You can customize the caching duration using the [`cacheControlMaxAge`](/docs/vercel-blob/using-blob-sdk#put) option in the [`put()`](/docs/vercel-blob/using-blob-sdk#put) and [`handleUpload`](/docs/vercel-blob/using-blob-sdk#handleupload) methods.
+You can customize the caching duration by setting a cache max age when you upload a blob from your server or generate a token for a [client upload](/docs/vercel-blob/client-upload). See the [JS SDK](/docs/vercel-blob/using-blob-sdk#put) and [Python SDK](/docs/vercel-blob/python-sdk-reference#put_blob) references.
 
 The minimum configurable value is 60 seconds (1 minute). This represents the maximum time needed for our cache to update content behind a blob URL. For applications requiring faster updates, consider using a [Vercel function](/docs/functions) instead.
 
@@ -163,7 +191,7 @@ When a browser requests a public blob URL, the CDN automatically includes an `ET
 
 This works automatically for public blobs accessed by URL. You don't need to write any code to benefit from conditional requests.
 
-If you're using [`get()`](/docs/vercel-blob/using-blob-sdk#get) to process public blobs server-side, you can also pass the `ifNoneMatch` option to avoid re-downloading unchanged blobs:
+If you download public blobs server-side, you can also make a conditional read with the [`ifNoneMatch`](/docs/vercel-blob/using-blob-sdk#get) option to avoid re-downloading unchanged blobs:
 
 ```js
 import { get } from '@vercel/blob';
@@ -191,7 +219,7 @@ This connects your store to `vercel-blob-default-project`, a Vercel-managed, tea
 
 ### Search engine visibility of blobs
 
-While Vercel Blob URLs can be designed to be unique and unguessable (when using `addRandomSuffix: true`), they can still be indexed by search engines under certain conditions:
+While Vercel Blob URLs can be designed to be unique and unguessable (when you add a random suffix to the pathname), they can still be indexed by search engines under certain conditions:
 
 - If you link to blob URLs from public webpages
 - If you embed blob content (images, PDFs, etc.) in indexed content
@@ -201,10 +229,20 @@ By default, Vercel Blob does not provide a `robots.txt` file or other indexing c
 
 ### Preventing search engine indexing
 
-If you want to prevent search engines from indexing your blob content, you need to upload a `robots.txt` file directly to your blob store:
+If you want to prevent search engines from indexing your blob content, you need to upload a `robots.txt` file directly to your blob store from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 1. Go to your [**Storage** page](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fstores\&title=Go+to+Storage) and select your blob store
 2. Upload a `robots.txt` file to the root of your blob store with appropriate directives
+
+#### CLI
+
+Run [`vercel blob put`](/docs/cli/blob#put) to upload the file to the root of your blob store:
+
+```bash filename="terminal"
+vercel blob put ./robots.txt --pathname robots.txt --access public
+```
 
 Example `robots.txt` content to block all crawling of your blob store:
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "890130caa00ac55f6aa96d2762ca2b003fb23fc4eb805f081abcb7a2f642931a"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d48ae85306cc4f15987aa51f5098121f663f041c4bc4826c719aebccac01faa1"
 ---
 
 # What is Compute?
@@ -30,20 +30,20 @@ Compute is the work a server performs to respond to a request, such as rendering
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — How to create high-performance database connection pools without leaking connections
-- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
-- [Fluid compute: Evolving serverless for AI workloads](https://vercel.com/blog/fluid-compute-evolving-serverless-for-ai-workloads?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related)
-- [Vercel Functions](https://vercel.com/docs/functions?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
-- [Backends on Vercel](https://vercel.com/docs/frameworks/backend?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
+- [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
+- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute) — How to create high-performance database connection pools without leaking connections
+- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute)
+- [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
+- [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 
-Full cross-link map for this page: [/docs/fundamentals/what-is-compute.graph.md](/docs/fundamentals/what-is-compute.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Fwhat-is-compute&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/fundamentals/what-is-compute.graph.md](/docs/fundamentals/what-is-compute.graph.md)
 <!-- /docsgraph:related -->
 
 ## Where does compute happen?

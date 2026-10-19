@@ -13,8 +13,8 @@ related:
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "33c89ee7a3b88fc2322df26254d9b9396e35cf4477d2b45aa6e9b7bc4d9ba235"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "8afb496a7d83cdf390814d2e61c8ee1fbdd4cd6e8ea1c7480a6108c73fb99ba6"
 ---
 
 # Configure additional identity scopes
@@ -27,16 +27,17 @@ Passport requests identity information through the Connect application assigned 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related)
-- [How to identify and authorize visitors with the Vercel Passport token in Next.js](https://vercel.com/kb/guide/vercel-passport-nextjs?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Read the Vercel Passport token server-side in a Next.js app to identify visitors with the external_sub claim and authori
-- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
-- [Passport token claims](https://vercel.com/docs/passport/token-claims?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Review the standard, deployment, and visitor identity claims in a Passport token.
-- [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
-- [Forward Passport identity to another backend](https://vercel.com/docs/passport/forward-identity?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Forward a Passport visitor identity to another backend that you operate.
-- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Learn how to manage scopes and permissions for Sign in with Vercel
-- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=related) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
+- [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
+- [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
+- [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
+- [Personalize and lock down a Nuxt app with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nuxt) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Nuxt server routes, then personalize pa
+- [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
+- [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 
-Full cross-link map for this page: [/docs/passport/additional-identity-scopes.graph.md](/docs/passport/additional-identity-scopes.graph.md?from=related&source_path=%2Fdocs%2Fpassport%2Fadditional-identity-scopes&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/passport/additional-identity-scopes.graph.md](/docs/passport/additional-identity-scopes.graph.md)
 <!-- /docsgraph:related -->
 
 Passport uses the standard OpenID Connect scopes, including `openid`, `profile`, and `email`. You can configure Connect to include additional claims, such as group membership, in the Passport token when your identity provider supports them.

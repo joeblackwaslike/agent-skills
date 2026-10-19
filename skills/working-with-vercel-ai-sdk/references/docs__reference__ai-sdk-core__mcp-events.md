@@ -4,8 +4,8 @@ description: Reference for experimental MCP event methods, the webhook handler, 
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "63348cf113aac3937c744f7a15c84e3b3df2bfa75747b2f0e2e0bd819b6c7a12"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "854b9d1d009ab3481959a4bad8490840a41a978f6f428caadf1918cea4d3cf9f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -96,7 +96,7 @@ try {
     name: 'comment.created',
     arguments: { document_id: 'doc_123' },
     context: { bindingId: 'saved_intent_123' },
-    expiresAt: null,
+    ttlMs: null,
     idempotencyKey: 'saved_intent_123',
   });
 
@@ -260,21 +260,22 @@ type ManagedSubscribeInput = {
   arguments: JSONObject;
   context?: JSONObject;
   idempotencyKey: string;
+  ttlMs: number | null;
   options?: {
     signal?: AbortSignal;
     timeout?: number;
     maxTotalTimeout?: number;
   };
-} & (
-  | { ttlMs: number; expiresAt?: never }
-  | { expiresAt: string | null; ttlMs?: never }
-);
+};
 ```
 
 These types are exported as `Experimental_ManagedSubscription` and
-`Experimental_ManagedSubscribeInput`. Supply exactly one monitoring lifetime:
-a positive `ttlMs`, an ISO deadline in `expiresAt`, or `expiresAt: null` to
-monitor until stopped. The backend validates these values and enforces its limits.
+`Experimental_ManagedSubscribeInput`. Creation requires `ttlMs`: a positive
+integer duration in milliseconds, or `null` to monitor until stopped. The backend
+validates these values and enforces its limits. `expiresAt` is response-only.
+
+Reuse the same duration and idempotency key when retrying an uncertain create
+result. The backend calculates the deadline once; a retry must not extend it.
 
 `Experimental_MCPEventOperations` has four operations:
 

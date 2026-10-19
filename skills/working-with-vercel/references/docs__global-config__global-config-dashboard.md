@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "114828e3f218822966ca3ac79aa8ea6e7b679e81f478415866c6b6c9dd93eba7"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c74c8c44f69507a437e9ff6e95d352c1b389483685944b2e728d4cd561c2fe22"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -30,14 +30,14 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related)
-- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
-- [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config)
+- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 
-Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-dashboard&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md)
 <!-- /docsgraph:related -->
 
 ## Creating a Global Config

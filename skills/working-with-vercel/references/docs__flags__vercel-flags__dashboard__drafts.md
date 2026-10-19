@@ -16,8 +16,8 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e4cd0a058f9487e4f874906e8581b543500e3155e9401140ef079a1ad072b320"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "cc7f2e4e9b97e7d6746375a1a6799568a76c349c04cadb38bbb9a4b239e9463e"
 ---
 
 # Draft Flags
@@ -30,17 +30,17 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related)
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related)
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
-- [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=related) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
+- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 
-Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fdashboard%2Fdrafts&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md)
 <!-- /docsgraph:related -->
 
 ## How drafts work
@@ -79,7 +79,10 @@ The `description` and `options` you define here will pre-fill the dashboard when
 Vercel compares the flags in your code against the flags in the dashboard whenever a new production deployment goes live. It uses the [Flags Discovery Endpoint](/docs/flags/flags-explorer/getting-started#creating-the-flags-discovery-endpoint) to detect which flags your code defines, then highlights any mismatches:
 
 - **Drafts**: Flags that exist in your production deployment's code but have not been created in the dashboard appear as drafts. You can promote a draft to turn it into a fully managed Vercel Flag with targeting rules and environment configuration.
-- **Unreferenced**: Flags that exist in the dashboard but are not found in your latest production deployment are marked with an **Unreferenced** badge in the flag list and flag details page. This helps you identify flags that may be safe to [archive](/docs/flags/vercel-flags/dashboard/archive).
+- **Unreferenced**: Flags that exist in the dashboard but are not found in your latest production deployment are marked with an **Unreferenced** badge in the flag list and flag details page. These flags may be upcoming or no longer used.
+- **Stale**: Flags that an earlier production deployment referenced, but your latest production deployment no longer does, are marked with a **Stale** badge instead. These flags are likely no longer used in your code and may be safe to [archive](/docs/flags/vercel-flags/dashboard/archive).
+- **Project Mismatch**: If your latest production deployment references a flag with the same key from a different project, the flag is marked with a **Project Mismatch** badge. The flag in this project is not referenced.
+- **Quiet**: Active flags that had no evaluations in the last 3 days are marked with a **Quiet** badge. Together with a **Stale** badge, this suggests the flag is safe to archive.
 - **Referenced archived flags**: If an archived flag is still present in your production deployment, the archive shows a **Referenced** badge so you know the code still depends on it. This can indicate a potential misconfiguration since archived flags are neither served nor evaluated, so your application will fall back to the default value defined in code.
 
 ## How to promote a draft

@@ -1,8 +1,8 @@
 ---
 title: "Pages Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "389737f3cb52ecd035bc22653957f7b1a8618f86628765f4c21bfbae0046b756"
+fetched_at: "2026-10-19T09:38:00.847Z"
+sha256: "2821f62833f486a73552475e8ecb5185c5f3c4686edc7302b86db482643bb652"
 ---
 
 # Pages Plugin
@@ -56,7 +56,6 @@ type EditUrlFunction = (params: {  blogDirPath: string;  blogPath: string;  perm
 You can configure this plugin through preset options or plugin options.
 
 tipMost Docusaurus users configure this plugin through the preset options.
-
 Preset optionsPlugin optionsIf you use a preset, configure this plugin through the [preset options](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic):docusaurus.config.js
 ```
 module.exports = {  presets: [    [      '@docusaurus/preset-classic',      {        pages: {          path: 'src/pages',          routeBasePath: '',          include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],          exclude: [            '**/_*.{js,jsx,ts,tsx,md,mdx}',            '**/_*/**',            '**/*.test.{js,jsx,ts,tsx}',            '**/__tests__/**',          ],          mdxPageComponent: '@theme/MDXPage',          remarkPlugins: [require('./my-remark-plugin')],          rehypePlugins: [],          beforeDefaultRemarkPlugins: [],          beforeDefaultRehypePlugins: [],        },      },    ],  ],};

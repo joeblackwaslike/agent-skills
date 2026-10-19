@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/keyboard-shortcuts.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "702a2b4a5a4a84a8734758bffe216e6c56daf79b5c498b0f2316cfa0cba10d22"
+fetched_at: "2026-10-19T09:41:44.018Z"
+sha256: "ebce6750916d66c587fa9370d2d98ee6948de936463bb2db02cc121ef8411648"
 ---
 
 # Gemini CLI keyboard shortcuts
@@ -158,7 +158,7 @@ You can add alternative keybindings or remove default keybindings by creating a
 
 The configuration uses a JSON array of objects, similar to VS Code's keybinding
 schema. Each object must specify a `command` from the reference tables above and
-a `key` combination.
+a `key` combination or an array of `keys`.
 
 ```json
 [
@@ -170,6 +170,16 @@ a `key` combination.
     // prefix "-" to unbind a key
     "command": "-app.toggleYolo",
     "key": "ctrl+y"
+  },
+  {
+    // unbind multiple keys in a single entry
+    "command": "-input.newline",
+    "keys": ["alt+enter", "ctrl+enter", "shift+enter", "ctrl+j"]
+  },
+  {
+    // bind multiple keys in a single entry
+    "command": "input.newline",
+    "keys": ["enter", "shift+enter"]
   },
   {
     "command": "input.submit",
@@ -193,9 +203,13 @@ a `key` combination.
 ]
 ```
 
-- **Unbinding** To remove an existing or default keybinding, prefix a minus sign
-  (`-`) to the `command` name.
-- **No Auto-unbinding** The same key can be bound to multiple commands in
+- **Unbinding**: To remove an existing or default keybinding, prefix a minus
+  sign (`-`) to the `command` name. You can unbind multiple keys in a single
+  entry using `keys`.
+- **Multiple Keys**: You can provide an array of key combinations using `keys`
+  instead of (or in addition to) `key`. The first key in `keys` acts as the
+  primary shortcut displayed in the UI.
+- **No Auto-unbinding**: The same key can be bound to multiple commands in
   different contexts at the same time. Therefore, creating a binding does not
   automatically unbind the key from other commands.
 - **Explicit Modifiers**: Key matching is explicit. For example, a binding for

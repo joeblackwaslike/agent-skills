@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0abfc9eb34a0539be9fd385f7b2b8013503a8e3ffd9dcb669d070c0a527d7539"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c6d43e3d57e6aaf490dee644751fe99cff83d8ab81f936eb1341f06ae5c80e67"
 ---
 
 # Privacy and Compliance
@@ -29,15 +29,15 @@ Vercel takes a privacy-focused approach to our products and strives to enable ou
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
-- [Vercel acquires Splitbee to expand first-party analytics](https://vercel.com/blog/vercel-acquires-splitbee?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related)
-- [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot common issues with Vercel Web Analytics.
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [Vercel acquires Splitbee to expand first-party analytics](https://vercel.com/blog/vercel-acquires-splitbee)
+- [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
-Full cross-link map for this page: [/docs/analytics/privacy-policy.graph.md](/docs/analytics/privacy-policy.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fprivacy-policy&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/analytics/privacy-policy.graph.md](/docs/analytics/privacy-policy.graph.md)
 <!-- /docsgraph:related -->
 
 ## Data collected

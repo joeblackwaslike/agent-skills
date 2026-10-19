@@ -13,8 +13,8 @@ related:
 summary: Use create_project_env with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/create_project_env.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c2495d8efdf38869b75b7f611a538f2396acc5e38b939d82c1b1fd26c1bbb1ef"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "dfe94f83c9ad0d47ee4e79674bbc3970d12148ee661eed63f49283cadfe8f269"
 ---
 
 # create_project_env
@@ -27,13 +27,13 @@ Create one or more environment variables.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [edit_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/edit_project_env?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables%2Fcreate_project_env&source_site=vercel-docs&relationship=related) — Use edit_project_env with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables%2Fcreate_project_env&source_site=vercel-docs&relationship=related) — Use create_project with Vercel MCP.
-- [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables%2Fcreate_project_env&source_site=vercel-docs&relationship=related) — Use get_project_env with Vercel MCP.
-- [list_project_custom_environments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/list_project_custom_environments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables%2Fcreate_project_env&source_site=vercel-docs&relationship=related) — Use list_project_custom_environments with Vercel MCP.
-- [get_custom_environment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_custom_environment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables%2Fcreate_project_env&source_site=vercel-docs&relationship=related) — Use get_custom_environment with Vercel MCP.
+- [edit_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/edit_project_env) — Use edit_project_env with Vercel MCP.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
+- [list_project_custom_environments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/list_project_custom_environments) — Use list_project_custom_environments with Vercel MCP.
+- [get_custom_environment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_custom_environment) — Use get_custom_environment with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables/create_project_env.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables/create_project_env.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables%2Fcreate_project_env&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables/create_project_env.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables/create_project_env.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -42,8 +42,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 | ------------- | -------------------------- | -------- | ----------------------------------------------------------- |
 | `idOrName`    | string                     | Yes      | The unique project identifier or the project name           |
 | `upsert`      | string                     | No       | Allow override of environment variable if it already exists |
-| `teamId`      | string                     | No       | Team ID.                                                    |
-| `slug`        | string                     | No       | Team slug.                                                  |
+| `teamId`      | string                     | No       | Team ID to use for this operation.                          |
+| `slug`        | string                     | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object \| Array\<object> | Yes      | Request body for this tool.                                 |
 
 

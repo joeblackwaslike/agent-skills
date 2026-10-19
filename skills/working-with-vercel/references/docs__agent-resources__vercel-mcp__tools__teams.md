@@ -13,13 +13,13 @@ related:
 summary: Vercel MCP tools for teams and users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "6bb7684c04d07b4dc3f1279bec6d006ed1f86300e1889692a75263c5c14f0d85"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "639075316277e85bee3e4ca5c30e4c0e41ff2fffc05dde2952b527b75e80581b"
 ---
 
 # Teams and Users
 
-Find the teams you belong to and inspect their membership and account details. You can check access requests, join a team, and review activity recorded for your user.
+Inspect your account and teams, list team members, and read activity events. These tools do not join teams or inspect team access requests.
 
 
 <!-- docsgraph:related -->
@@ -27,13 +27,13 @@ Find the teams you belong to and inspect their membership and account details. Y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
-- [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
-- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
-- [Get access request status](https://vercel.com/docs/rest-api/teams/get-access-request-status?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=related) — GET /v1/teams/{teamId}/request/{userId} — Check the status of a join request. It'll respond with a 404 if the request ha
+- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
+- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
+- [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
+- [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams.graph.md)
 <!-- /docsgraph:related -->
 
 ## `get_auth_user`
@@ -50,32 +50,10 @@ Get a Team.
 
 ## Parameters
 
-| Parameter | Type   | Required | Description |
-| --------- | ------ | -------- | ----------- |
-| `slug`    | string | No       | Team slug.  |
-| `teamId`  | string | Yes      | Team ID.    |
-
-## `get_team_access_request`
-
-Get access request status.
-
-## Parameters
-
-| Parameter | Type   | Required | Description                |
-| --------- | ------ | -------- | -------------------------- |
-| `userId`  | string | Yes      | The unique user identifier |
-| `teamId`  | string | Yes      | The unique team identifier |
-
-## `join_team`
-
-Join a team.
-
-## Parameters
-
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | Yes      | The unique team identifier  |
-| `requestBody` | object | Yes      | Request body for this tool. |
+| Parameter | Type   | Required | Description                                                 |
+| --------- | ------ | -------- | ----------------------------------------------------------- |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `teamId`  | string | Yes      | Team ID to use for this operation.                          |
 
 ## `list_event_types`
 
@@ -83,10 +61,10 @@ List Event Types.
 
 ## Parameters
 
-| Parameter | Type   | Required | Description |
-| --------- | ------ | -------- | ----------- |
-| `teamId`  | string | No       | Team ID.    |
-| `slug`    | string | No       | Team slug.  |
+| Parameter | Type   | Required | Description                                                 |
+| --------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`  | string | No       | Team ID to use for this operation.                          |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 ## `list_team_members`
 
@@ -96,15 +74,15 @@ List team members.
 
 | Parameter                     | Type   | Required | Description                                                                                                                                                                          |
 | ----------------------------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `limit`                       | number | No       | Limit how many team members should be returned                                                                                                                                       |
+| `limit`                       | number | No       | Limit how many team members should be returned Minimum: 1.                                                                                                                           |
 | `since`                       | number | No       | Timestamp in milliseconds to only include members added since then.                                                                                                                  |
 | `until`                       | number | No       | Timestamp in milliseconds to only include members added until then.                                                                                                                  |
 | `search`                      | string | No       | Search team members by their name, username, and email.                                                                                                                              |
 | `role`                        | string | No       | Only return members with the specified team role. Allowed values: `"OWNER"`, `"MEMBER"`, `"DEVELOPER"`, `"SECURITY"`, `"BILLING"`, `"VIEWER"`, `"VIEWER_FOR_PLUS"`, `"CONTRIBUTOR"`. |
 | `excludeProject`              | string | No       | Exclude members who belong to the specified project.                                                                                                                                 |
 | `eligibleMembersForProjectId` | string | No       | Include team members who are eligible to be members of the specified project.                                                                                                        |
-| `teamId`                      | string | Yes      | Team ID.                                                                                                                                                                             |
-| `slug`                        | string | No       | Team slug.                                                                                                                                                                           |
+| `teamId`                      | string | Yes      | Team ID to use for this operation.                                                                                                                                                   |
+| `slug`                        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                          |
 
 ## `list_teams`
 
@@ -117,6 +95,12 @@ List the [teams](/docs/accounts) you belong to.
 | `until`   | number | No       | Timestamp (in milliseconds) to only include Teams created until then. |
 
 **Sample prompt:** "Show me all the teams I'm part of"
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+This workflow takes no parameters.
 
 ## `list_user_events`
 
@@ -135,8 +119,8 @@ List User Events.
 | `projectIds`  | string | No       | Comma-delimited list of project IDs to filter the results by.                                                                       |
 | `entityId`    | string | No       | Filters events to those associated with a specific entity (matched against `payload.id`). For example, a connector ID.              |
 | `withPayload` | string | No       | When set to `true`, the response will include the `payload` field for each event.                                                   |
-| `teamId`      | string | No       | Team ID.                                                                                                                            |
-| `slug`        | string | No       | Team slug.                                                                                                                          |
+| `teamId`      | string | No       | Team ID to use for this operation.                                                                                                  |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                         |
 
 
 ---

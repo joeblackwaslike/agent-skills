@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/ROADMAP.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "197dd4820090bdaf995da1a522226fa4216318db1ff5b12944d022b88a0c4f3d"
+fetched_at: "2026-10-19T09:41:44.018Z"
+sha256: "fcf340000bf55272f96dd2db67051879c857c2729213bbad57a3ab986c29b908"
 ---
 
 # Gemini CLI Roadmap
@@ -49,13 +49,11 @@ Our development is guided by the following principles:
 
 ## How the Roadmap Works
 
-Our roadmap is managed directly through GitHub Issues. See our entry point
-Roadmap Issue [here](https://github.com/google-gemini/gemini-cli/issues/4191).
-This approach allows for transparency and gives you a direct way to learn more
-or get involved with any specific initiative. All our roadmap items will be
-tagged as Type:`Feature` and Label:`maintainer` for features we are actively
-working on, or Type:`Task` and Label:`maintainer` for a more detailed list of
-tasks.
+Our roadmap is managed directly through GitHub Issues. This approach allows for
+transparency and gives you a direct way to learn more or get involved with any
+specific initiative. All our roadmap items will be tagged as Type:`Feature` and
+Label:`maintainer` for features we are actively working on, or Type:`Task` and
+Label:`maintainer` for a more detailed list of tasks.
 
 Issues are organized to provide key information at a glance:
 

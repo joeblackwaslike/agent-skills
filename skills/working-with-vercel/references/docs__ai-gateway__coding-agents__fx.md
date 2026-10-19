@@ -11,13 +11,14 @@ prerequisites:
 related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/observability-and-spend/observability
+  - /docs/agent-harnesses/fx
   - /docs/ai-gateway/coding-agents/harbor
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect fx to AI Gateway with the Vercel CLI or the AI_GATEWAY_API_KEY environment variable.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/fx.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "44f4e89bfd72ff6e52a358a3d5e086736e8e88b5d4aa108feaae752586b6522d"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "35dfea085927bf168576b1ecd2d62113e653483bc5dbfc3fbbbca86cc4c19d1c"
 ---
 
 # fx with AI Gateway
@@ -30,14 +31,14 @@ sha256: "44f4e89bfd72ff6e52a358a3d5e086736e8e88b5d4aa108feaae752586b6522d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [fx is now available in the AI SDK harness layer](https://vercel.com/changelog/fx-ai-sdk-harness-adapter?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=related) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
+- [fx is now available in the AI SDK harness layer](https://vercel.com/changelog/fx-ai-sdk-harness-adapter)
+- [fx](https://ai-sdk.dev/providers/ai-sdk-harnesses/fx) — Learn how to use the fx harness adapter.
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/fx.graph.md](/docs/ai-gateway/coding-agents/fx.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Ffx&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/fx.graph.md](/docs/ai-gateway/coding-agents/fx.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -45,7 +46,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/fx.graph.md](
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for fx:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent fx
+npx vercel@latest ai-gateway setup --agent fx
 ```
 
 The command exports `AI_GATEWAY_API_KEY` from a managed block in your shell startup file and pins `credential_source` in `~/.fx/settings.json` to that key, ahead of a stored `fx login` session.
@@ -88,6 +89,10 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 | Variable             | Description                                       |
 | -------------------- | ------------------------------------------------- |
 | `AI_GATEWAY_API_KEY` | Your AI Gateway API key. Required                 |
+
+## Run fx durably
+
+To deploy an fx agent as a service, use `libfx`, which has durability built in and routes model calls through AI Gateway. You don't need to install `durable-harness`. Follow the [durable fx guide](/docs/agent-harnesses/fx) to configure persistent sessions, a chat route, and deployment on Vercel.
 
 ## Next steps
 

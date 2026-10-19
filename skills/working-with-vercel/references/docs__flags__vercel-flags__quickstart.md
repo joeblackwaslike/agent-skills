@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/frameworks/full-stack/nextjs
   - /docs/cli
-  - /docs/flags/vercel-flags/sdks/flags-sdk
   - /docs/agent-resources/skills
+  - /docs/flags/vercel-flags/sdks/flags-sdk
   - /docs/flags/vercel-flags/sdks/core
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8d420ffd0ed8984bc5800d0db5c28b7f5fd93bc11fc10e382fafa33d4b58c4db"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "a7252f867543a8db20e51dd846cad7d6161ba8cfc9300d7b0b5df416af460573"
 ---
 
 # Getting Started with Vercel Flags
@@ -31,15 +31,15 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=related) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
-Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fvercel-flags%2Fquickstart&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md)
 <!-- /docsgraph:related -->
 
 **Agent prompt**
@@ -67,6 +67,10 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
   If your project isn't linked yet, run `vercel link` first.
 
 - ### Install the required packages
+  If you use an AI coding assistant, install the [Vercel Flags agent skill](/docs/agent-resources/skills). It helps plan flags, use the `vercel flags` CLI, and run rollouts and experiments:
+  ```bash filename="terminal"
+  npx skills add vercel/flags --skill vercel-flags
+  ```
   **Flags SDK**
 
   The [Flags SDK](/docs/flags/vercel-flags/sdks/flags-sdk) is a framework-native way to define and evaluate feature flags. It works with any flag provider through adapters. The `@flags-sdk/vercel` adapter connects it to your Vercel Flags project, and `@vercel/flags-core` is the evaluation engine used behind the scenes.
@@ -92,7 +96,7 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
       ```
     </Code>
   </CodeBlock>
-  If you use an AI coding assistant, you can also install the [Flags SDK agent skill](/docs/agent-resources/skills) to help define, evaluate, and clean up feature flags:
+  To let your coding assistant also write the flag declarations, install the Flags SDK skill:
   ```bash filename="terminal"
   npx skills add vercel/flags --skill flags-sdk
   ```

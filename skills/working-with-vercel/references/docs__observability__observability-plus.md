@@ -9,13 +9,15 @@ prerequisites:
   - /docs/observability
 related:
   - /docs/observability
+  - /docs/cli/buy
   - /docs/plans/pro-plan
   - /docs/query
+  - /docs/alerts
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1f4ac3441dc9f946a6e88ecd40d10a989546edc9a6e198e948eebbf544bacc08"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2a40d185f851e614dc3557d1294ae5b0d8fb157bfaf22a00e44640862bf25545"
 ---
 
 # Observability Plus
@@ -30,20 +32,20 @@ Every Vercel team has access to [Observability](/docs/observability). **Observab
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now in limited beta for Enterprise customers](https://vercel.com/changelog/anomaly-alerts-now-in-limited-beta-for-enterprise-customers?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now include error spikes](https://vercel.com/changelog/anomaly-alerts-now-include-error-spikes?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related)
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
-- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related)
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
+- [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email)
+- [Anomaly alerts now in limited beta for Enterprise customers](https://vercel.com/changelog/anomaly-alerts-now-in-limited-beta-for-enterprise-customers)
+- [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta)
+- [Anomaly alerts now include error spikes](https://vercel.com/changelog/anomaly-alerts-now-include-error-spikes)
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
-Full cross-link map for this page: [/docs/observability/observability-plus.graph.md](/docs/observability/observability-plus.graph.md?from=related&source_path=%2Fdocs%2Fobservability%2Fobservability-plus&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/observability/observability-plus.graph.md](/docs/observability/observability-plus.graph.md)
 <!-- /docsgraph:related -->
 
 For teams created or upgraded to Paid Pro on or after April 3, 2026, Observability Plus is enabled by default. Existing Paid Pro and Enterprise teams can [enable it separately](#enabling-observability-plus). Pro Trial plans require conversion to Paid Pro to access Observability Plus.
@@ -54,11 +56,23 @@ To learn more about Observability Plus, see [Limitations](#limitations) or [pric
 
 ### Enabling Observability Plus
 
-To enable Observability Plus on an existing Paid Pro or Enterprise team:
+Enable Observability Plus on an existing Paid Pro or Enterprise team from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 1. Go to the **Observability Plus** section of your team's [**Billing** settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23observability).
 2. Turn on the **Observability Plus** toggle.
 3. Review any charges, then confirm to enable.
+
+#### CLI
+
+Run [`vercel buy addon`](/docs/cli/buy#addon):
+
+```bash filename="terminal"
+vercel buy addon observability-plus
+```
+
+Then confirm the purchase.
 
 > **💡 Note:** If you don't see Observability Plus in the upgrade flow or in Billing, contact [Vercel Support](/help) or your Vercel account representative for assistance.
 
@@ -113,6 +127,8 @@ The project immediately regains access to Observability Plus features.
 ### Disabling Observability Plus
 
 Paid Pro teams can disable Observability Plus at any time. After you disable it, Vercel stops collecting Observability Plus events. To regain access to extended retention data, re-enable it.
+
+Alerts for the team or project stop while Observability Plus is disabled. After you re-enable it, alerts restart after an [activation period](/docs/alerts#observability-plus-activation-period).
 
 1. Go to the **Observability Plus** section of your team's [**Billing** settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling%23observability).
 2. Click the toggle to disable it.

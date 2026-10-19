@@ -13,8 +13,8 @@ related:
 summary: Use cancel_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "9c498d1294aad5d57e9b7331b4b2891fd54ef2fbe3c86d42d4efdde9a830d393"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "825b13331475ccbc7f6269e47a6486bb2db8fb917f7c5f56458bd931852dd60c"
 ---
 
 # cancel_deployment
@@ -27,23 +27,23 @@ Cancel a deployment.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Delete a Deployment](https://vercel.com/docs/rest-api/deployments/delete-a-deployment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fcancel_deployment&source_site=vercel-docs&relationship=related) — DELETE /v13/deployments/{id} — This API allows you to delete a deployment, either by supplying its \\`id\\` in the URL or
-- [request_rollback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fcancel_deployment&source_site=vercel-docs&relationship=related) — Use request_rollback with Vercel MCP.
-- [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fcancel_deployment&source_site=vercel-docs&relationship=related) — Use create_deployment with Vercel MCP.
-- [create_deployment_check_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks/create_deployment_check_run?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fcancel_deployment&source_site=vercel-docs&relationship=related) — Use create_deployment_check_run with Vercel MCP.
-- [update_deployment_check_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks/update_deployment_check_run?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fcancel_deployment&source_site=vercel-docs&relationship=related) — Use update_deployment_check_run with Vercel MCP.
+- [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment) — Use create_deployment with Vercel MCP.
+- [request_rollback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback) — Use request_rollback with Vercel MCP.
+- [Delete a Deployment](https://vercel.com/docs/rest-api/deployments/delete-a-deployment) — DELETE /v13/deployments/{id} — This API allows you to delete a deployment, either by supplying its \\`id\\` in the URL or
+- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fcancel_deployment&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter     | Type    | Required | Description                              |
-| ------------- | ------- | -------- | ---------------------------------------- |
-| `id`          | string  | Yes      | The unique identifier of the deployment. |
-| `teamId`      | string  | No       | Team ID.                                 |
-| `slug`        | string  | No       | Team slug.                               |
-| `requestBody` | unknown | No       | Request body for this tool.              |
+| Parameter     | Type    | Required | Description                                                 |
+| ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `id`          | string  | Yes      | The unique identifier of the deployment.                    |
+| `teamId`      | string  | No       | Team ID to use for this operation.                          |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | unknown | No       | Request body for this tool.                                 |
 
 
 ---

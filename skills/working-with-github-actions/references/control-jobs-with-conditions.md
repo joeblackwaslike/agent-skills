@@ -1,10 +1,12 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/how-tos/write-workflows/choose-when-workflows-run/control-jobs-with-conditions.md"
-fetched_at: "2026-06-15T05:55:46.959Z"
-sha256: "24324a5407ecde9def32f6265e5f2b1c49b894156b08e74c3780638042266842"
+fetched_at: "2026-10-19T09:43:37.420Z"
+sha256: "da7b70a1d8039e0002d5e1667412589cb2390475abc309bc401e0ac229f6816b"
 ---
 
-You can use the `jobs.<job_id>.if` conditional to prevent a job from running unless a condition is met. {% data reusables.actions.if-supported-contexts %}
+You can use the `jobs.<job_id>.if` conditional to prevent a job from running unless a condition is met. {% data reusables.actions.if-supported-contexts %} 
+
+Note that conditions executed by a shell (for example `[[ $variable == "prefix"* ]]`) cannot be evaluated in `jobs.<job_id>.if`. Such conditions must be written inside `jobs.<job_id>.steps[*].run`.
 
 ### Example: Only run job for a specific repository
 

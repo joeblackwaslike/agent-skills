@@ -11,12 +11,13 @@ prerequisites:
 related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/models-and-providers/provider-options
+  - /docs/agent-harnesses/opencode
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/opencode.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "04c3f09c3d0f55d2025a62440464f6ff05a323285ee6b51594b76c66e0a7e566"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "07813dc9d3045f197459312c0b10c5ef34ea8aa513083f8fa7ec5fe74c9797fa"
 ---
 
 # OpenCode with AI Gateway
@@ -29,14 +30,14 @@ sha256: "04c3f09c3d0f55d2025a62440464f6ff05a323285ee6b51594b76c66e0a7e566"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=related)
-- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=related) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=related) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
-- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=related) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
-- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=related) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
+- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/opencode.graph.md](/docs/ai-gateway/coding-agents/opencode.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fopencode&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/opencode.graph.md](/docs/ai-gateway/coding-agents/opencode.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -44,7 +45,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/opencode.grap
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for OpenCode:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent opencode
+npx vercel@latest ai-gateway setup --agent opencode
 ```
 
 This command:
@@ -54,7 +55,7 @@ This command:
 - Stores the key in your macOS Keychain instead of plaintext config.
 - Backs up any file it changes alongside the original as a `.bak` file.
 
-Pass `--dry-run` to preview the changes without applying them. To detect and configure every installed supported agent at once, run `vercel ai-gateway setup` without the `--agent` flag. See the [CLI reference](/docs/cli/ai-gateway#setup) for all options.
+Pass `--dry-run` to preview the changes without applying them. To detect and configure every installed supported agent at once, run `npx vercel@latest ai-gateway setup` without the `--agent` flag. See the [CLI reference](/docs/cli/ai-gateway#setup) for all options.
 
 To verify the setup:
 
@@ -111,6 +112,10 @@ You can customize models through your OpenCode config. Here's an example of spec
 ```
 
 See the [provider options documentation](/docs/ai-gateway/models-and-providers/provider-options) for more details on supported routing options.
+
+## Run OpenCode durably
+
+To deploy OpenCode as a service that resumes after crashes, function timeouts, and deployments, use `durable-harness`. OpenCode runs in your Vercel Function, with model calls routed through AI Gateway and session progress persisted across turns. Follow the [durable OpenCode guide](/docs/agent-harnesses/opencode) for agent, chat route, queue, and tool setup.
 
 ## Monitor usage and spend
 

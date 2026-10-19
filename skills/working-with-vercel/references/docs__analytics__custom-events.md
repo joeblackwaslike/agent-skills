@@ -16,8 +16,8 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "47923d265be540685ad32234b8995b6118f8bd5cbbc08de4027193e8122d070d"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "567a0d60c85ee5e88adcaf131116c12c4ee3522a863b9f9ea34fafdaf7d35546"
 ---
 
 # Tracking custom events
@@ -33,17 +33,18 @@ This is useful for tracking user interactions, such as button clicks, form submi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Track server-side custom events with Vercel Web Analytics](https://vercel.com/changelog/track-server-side-custom-events-with-vercel-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related)
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [Custom events now available for Web Analytics](https://vercel.com/changelog/custom-events-now-available-for-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related)
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related)
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
-- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Track server-side custom events with Vercel Web Analytics](https://vercel.com/changelog/track-server-side-custom-events-with-vercel-web-analytics)
+- [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Custom events now available for Web Analytics](https://vercel.com/changelog/custom-events-now-available-for-web-analytics)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
-Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fcustom-events&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Make sure you have `@vercel/analytics` version 1.1.0 or later

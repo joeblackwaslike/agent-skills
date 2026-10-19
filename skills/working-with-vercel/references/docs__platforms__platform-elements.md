@@ -13,8 +13,8 @@ related:
 summary: Prebuilt server actions and UI blocks you can install to speed up common platform tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5fc91cd1c0413486562042e5986f1796d1a89fd8ba5dd55c77ebca072317f05b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "56110dcb590012df002869eb2acdfc65488307c97b82f70be2f184c08813037c"
 ---
 
 # Platform Elements
@@ -27,15 +27,15 @@ Platform Elements are prebuilt building blocks for platforms. Actions are server
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related)
-- [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related)
-- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
-- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
-- [Examples](https://vercel.com/docs/platforms/examples?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=related) — Clone working multi-tenant and multi-project starters to begin your platform build.
+- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
+- [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
+- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
+- [Examples](https://vercel.com/docs/platforms/examples) — Clone working multi-tenant and multi-project starters to begin your platform build.
 
-Full cross-link map for this page: [/docs/platforms/platform-elements.graph.md](/docs/platforms/platform-elements.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/platforms/platform-elements.graph.md](/docs/platforms/platform-elements.graph.md)
 <!-- /docsgraph:related -->
 
 **Actions**: Server actions for programmatic tasks like adding domains and deploying files. [Learn more →](/docs/platforms/platform-elements/actions)

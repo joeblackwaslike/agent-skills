@@ -14,8 +14,8 @@ related:
 summary: Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/install.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8e80b55d20dd40e94e46bb8fa3bc258c2315aa8a6cf32a8e045555fbd514408c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "159484e9e22cd37c6d6501909ed2ccad36f527114c25ef617ac4215f2eac8f9c"
 ---
 
 # vercel install
@@ -28,14 +28,14 @@ sha256: "8e80b55d20dd40e94e46bb8fa3bc258c2315aa8a6cf32a8e045555fbd514408c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Install Marketplace Integrations from the Vercel CLI](https://vercel.com/changelog/install-marketplace-integrations-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related)
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel signup](https://vercel.com/docs/cli/signup?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to create a new Vercel account using the vercel signup CLI command.
-- [vercel init](https://vercel.com/docs/cli/init?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=related) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
+- [Install Marketplace Integrations from the Vercel CLI](https://vercel.com/changelog/install-marketplace-integrations-from-the-vercel-cli)
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
+- [vercel init](https://vercel.com/docs/cli/init) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
-Full cross-link map for this page: [/docs/cli/install.graph.md](/docs/cli/install.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Finstall&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/install.graph.md](/docs/cli/install.graph.md)
 <!-- /docsgraph:related -->
 
 See the [`vercel integration add` reference](/docs/cli/integration#vercel-integration-add) for all options and examples.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to remove a deployment using the vercel remove CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/remove.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "e729febc82f495f8c8240616f125f07be1e536007b82f0c209c2ab36fc9e8ae4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "de7ecec5fe112198b7d17ce38da9538b29d26ec1809df6f9c9dea0542b18e7bc"
 ---
 
 # vercel remove
@@ -27,13 +27,13 @@ The `vercel remove` command, which can be shortened to `vercel rm`, is used to r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fremove&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy?from=related&source_path=%2Fdocs%2Fcli%2Fremove&source_site=vercel-docs&relationship=related) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fremove&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel redirects](https://vercel.com/docs/cli/redirects?from=related&source_path=%2Fdocs%2Fcli%2Fremove&source_site=vercel-docs&relationship=related) — Learn how to manage project-level redirects using the vercel redirects CLI command.
-- [vercel rollback](https://vercel.com/docs/cli/rollback?from=related&source_path=%2Fdocs%2Fcli%2Fremove&source_site=vercel-docs&relationship=related) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [vercel rollback](https://vercel.com/docs/cli/rollback) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 
-Full cross-link map for this page: [/docs/cli/remove.graph.md](/docs/cli/remove.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fremove&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/remove.graph.md](/docs/cli/remove.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You can also remove deployments from the Project Overview page on the Vercel

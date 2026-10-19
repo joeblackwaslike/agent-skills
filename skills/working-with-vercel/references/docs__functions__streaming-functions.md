@@ -16,8 +16,8 @@ related:
 summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "bebe38639990274ecbc4ea9454813e69a310589f97bfdcfa8a787f2c9400b0fa"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1e72ea9340226cbe09eaf13eb88728696af1837a3dfa0a2aeeb2e5eca6dfe49f"
 ---
 
 # Streaming
@@ -30,20 +30,20 @@ AI providers can be slow when producing responses, but many make their responses
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Learn how to use the AI SDK to stream LLM responses.
-- [Python Vercel Functions now have streaming enabled by default](https://vercel.com/changelog/python-vercel-functions-now-have-streaming-enabled-by-default?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [Streaming is now supported in Vercel Functions for the Python runtime](https://vercel.com/changelog/streaming-is-now-supported-in-vercel-functions-for-the-python-runtime?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [Streaming now enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/streaming-now-enabled-by-default-for-all-node-js-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [Streaming to be enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/vercel-functions-to-enable-streaming-by-default?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
-- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
-- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
-- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [Building a GPT-3 app with Next.js and streaming (historical)](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
-- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=related)
+- [Python Vercel Functions now have streaming enabled by default](https://vercel.com/changelog/python-vercel-functions-now-have-streaming-enabled-by-default)
+- [Streaming is now supported in Vercel Functions for the Python runtime](https://vercel.com/changelog/streaming-is-now-supported-in-vercel-functions-for-the-python-runtime)
+- [Streaming now enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/streaming-now-enabled-by-default-for-all-node-js-vercel-functions)
+- [Streaming to be enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/vercel-functions-to-enable-streaming-by-default)
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
+- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
+- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
+- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
+- [Building a GPT-3 app with Next.js and streaming (historical)](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions)
+- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm) — Learn how to use the AI SDK to stream LLM responses.
+- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
+- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web)
 
-Full cross-link map for this page: [/docs/functions/streaming-functions.graph.md](/docs/functions/streaming-functions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fstreaming-functions&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/streaming-functions.graph.md](/docs/functions/streaming-functions.graph.md)
 <!-- /docsgraph:related -->
 
 **Vercel recommends using [Vercel's AI SDK](https://ai-sdk.dev/docs) to stream responses from LLMs and AI APIs**. It reduces the boilerplate necessary for streaming responses from AI providers and allows you to change AI providers with a few lines of code, rather than rewriting your entire application.

@@ -12,8 +12,8 @@ related:
 summary: Use this guide to find specific solutions and insights for common Vercel errors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "b6f13c24ba4f55ff2fcec6bab324dbe05668d303cde419e0354173656b79f526"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "6accb3dd740755c13a4de927fe4accf591dd0724c511e6993d567cad6c378984"
 ---
 
 # Error Codes
@@ -26,18 +26,19 @@ When developing your application with Vercel, you may encounter a variety of err
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel now supports customizing platform error pages](https://vercel.com/changelog/vercel-now-supports-customizing-platform-error-pages?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related)
-- [View specific error codes in runtime logs](https://vercel.com/changelog/view-specific-error-codes-in-runtime-logs?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related)
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
-- [Why am I unable to login or signup to the Vercel platform?](https://vercel.com/kb/guide/why-can-i-not-signup?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Information on what to do if you are experiencing issues logging in or signing up to the Vercel platform.
-- [Custom error pages](https://vercel.com/docs/custom-error-pages?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn how to configure custom error pages for 5xx server errors on Vercel.
-- [REST API Errors](https://vercel.com/docs/rest-api/errors?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — General and specific errors you may encounter when using the Vercel REST API.
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Get the auth code for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=related) — GET /v1/registrar/domains/{domain}/auth-code — Get the auth code for a domain. This is required to transfer a domain fro
+- [Vercel now supports customizing platform error pages](https://vercel.com/changelog/vercel-now-supports-customizing-platform-error-pages)
+- [View specific error codes in runtime logs](https://vercel.com/changelog/view-specific-error-codes-in-runtime-logs)
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
+- [Custom error pages](https://vercel.com/docs/custom-error-pages) — Learn how to configure custom error pages for 5xx server errors on Vercel.
+- [REST API Errors](https://vercel.com/docs/rest-api/errors) — General and specific errors you may encounter when using the Vercel REST API.
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Get the auth code for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain) — GET /v1/registrar/domains/{domain}/auth-code — Get the auth code for a domain. This is required to transfer a domain fro
 
-Full cross-link map for this page: [/docs/errors.graph.md](/docs/errors.graph.md?from=related&source_path=%2Fdocs%2Ferrors&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/errors.graph.md](/docs/errors.graph.md)
 <!-- /docsgraph:related -->
 
 For general error handling guidance, that covers dashboard related errors, see [General Errors](/docs/errors/error-list).

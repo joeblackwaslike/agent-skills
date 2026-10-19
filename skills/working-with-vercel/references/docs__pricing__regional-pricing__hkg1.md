@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Hong Kong (hkg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hkg1.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "98ef45cc8a5cfdca9ea5a46a26043d864fb72c9e65441b4d3e2148b9efdcf5df"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "358d6a8d24b93a0c48dbe10b930a83aaf068945602404d19a3b78c1c28566102"
 ---
 
 # Hong Kong (hkg1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhkg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhkg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhkg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Singapore \\(sin1\\) region.
-- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhkg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
-- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhkg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the London, UK \\(lhr1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
+- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
+- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/hkg1.graph.md](/docs/pricing/regional-pricing/hkg1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhkg1&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/hkg1.graph.md](/docs/pricing/regional-pricing/hkg1.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).

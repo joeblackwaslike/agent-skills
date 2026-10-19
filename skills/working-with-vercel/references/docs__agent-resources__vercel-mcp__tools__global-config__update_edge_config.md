@@ -13,13 +13,13 @@ related:
 summary: Use update_edge_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "fd19363e47356d9ddcd65b6e4c212202978b729f95b2ffce47498b4667469e80"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "690e0fb796544a52a6b4eeed67f40a4577a79e1ed0734c38ce801f01e83ecde6"
 ---
 
 # update_edge_config
 
-Update a Global Config.
+Updates a Global Config.
 
 
 <!-- docsgraph:related -->
@@ -27,23 +27,23 @@ Update a Global Config.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [patch_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Fupdate_edge_config&source_site=vercel-docs&relationship=related) — Use patch_edge_config_items with Vercel MCP.
-- [patch_edge_config_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_schema?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Fupdate_edge_config&source_site=vercel-docs&relationship=related) — Use patch_edge_config_schema with Vercel MCP.
-- [create_edge_config_token](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Fupdate_edge_config&source_site=vercel-docs&relationship=related) — Use create_edge_config_token with Vercel MCP.
-- [get_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backup?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Fupdate_edge_config&source_site=vercel-docs&relationship=related) — Use get_edge_config_backup with Vercel MCP.
-- [restore_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Fupdate_edge_config&source_site=vercel-docs&relationship=related) — Use restore_edge_config_backup with Vercel MCP.
+- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
+- [get_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config) — Use get_edge_config with Vercel MCP.
+- [patch_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items) — Use patch_edge_config_items with Vercel MCP.
+- [create_edge_config_token](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token) — Use create_edge_config_token with Vercel MCP.
+- [get_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_items) — Use get_edge_config_items with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Fupdate_edge_config&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter      | Type   | Required | Description                 |
-| -------------- | ------ | -------- | --------------------------- |
-| `edgeConfigId` | string | Yes      | The Global Config ID.       |
-| `teamId`       | string | No       | Team ID.                    |
-| `slug`         | string | No       | Team slug.                  |
-| `requestBody`  | object | No       | Request body for this tool. |
+| Parameter      | Type   | Required | Description                                                 |
+| -------------- | ------ | -------- | ----------------------------------------------------------- |
+| `edgeConfigId` | string | Yes      | The Global Config ID.                                       |
+| `teamId`       | string | No       | Team ID to use for this operation.                          |
+| `slug`         | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody`  | object | Yes      | Request body for this tool.                                 |
 
 
 ---

@@ -17,8 +17,8 @@ related:
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "555bca0ea5f68b93fc8ffe72cbdaaace85c77dc595038118bc9fccae4a1bdf92"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "fd435166d63065a7c3cf2cdad87ceb4f417b2b026b607386622707dd5f52970e"
 ---
 
 # Deployment integration actions
@@ -31,15 +31,15 @@ With deployment integration actions, integration providers can enable [integrati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deployment integration actions for Marketplace integrations](https://vercel.com/changelog/deployment-integration-actions-for-marketplace-integrations?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
-- [Actions](https://vercel.com/docs/platforms/platform-elements/actions?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Server actions you can install to run common platform tasks against the Vercel API.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
-- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=related) — Server action for programmatically deploying files to Vercel on behalf of platform users.
+- [Deployment integration actions for Marketplace integrations](https://vercel.com/changelog/deployment-integration-actions-for-marketplace-integrations)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Actions](https://vercel.com/docs/platforms/platform-elements/actions) — Server actions you can install to run common platform tasks against the Vercel API.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
+- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 
-Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fdeployment-integration-action&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md)
 <!-- /docsgraph:related -->
 
 For example, you can use deployment integration actions with the checks API to [create integrations](/docs/checks#build-your-checks-integration) that provide testing functionality to deployments.

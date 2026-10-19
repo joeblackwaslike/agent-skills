@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-api.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "02d90450d474a2bc7ac28e197ab6fd6aa16ac3ae01dbbd7434eeb9fef85585ca"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "915cad27648c5439e22f83a75c839905a7323f1d8d150b55be6869bec7863709"
 ---
 
 # Using the REST API with the Firewall
@@ -30,16 +30,16 @@ The security section of the [Vercel REST API](/docs/rest-api) allows you to prog
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [REST API for the Vercel Firewall](https://vercel.com/changelog/rest-api-for-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related)
-- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how to use Vercel WAF to protect your site in specific situations.
-- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Vercel MCP tools for firewall and security.
-- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
-- [Generate a firewall rule from natural language](https://vercel.com/docs/rest-api/security/generate-a-firewall-rule-from-natural-language?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — POST /v1/security/firewall/config/generate-rule — Generate a firewall rule from a natural language description.
-- [Read Firewall Actions by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-by-project?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=related) — GET /v1/security/firewall/events — Retrieve firewall actions for a project Rule names are resolved against the project's
+- [REST API for the Vercel Firewall](https://vercel.com/changelog/rest-api-for-the-vercel-firewall)
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
+- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
+- [Get conditional firewall bypasses](https://vercel.com/docs/rest-api/security/get-conditional-firewall-bypasses) — GET /v1/security/firewall/bypass/rules — Retrieve conditional firewall bypass rules for a project.
+- [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.
 
-Full cross-link map for this page: [/docs/vercel-firewall/firewall-api.graph.md](/docs/vercel-firewall/firewall-api.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Ffirewall-api&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/vercel-firewall/firewall-api.graph.md](/docs/vercel-firewall/firewall-api.graph.md)
 <!-- /docsgraph:related -->
 
 You can use the REST API programmatically as follows:

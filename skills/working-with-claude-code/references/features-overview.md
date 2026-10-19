@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/features-overview.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "b5a7d0ad57b45975e478922ddf8ce1572375f51747b7a53e641f4c4a1308e2e4"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "55baae6766d04686f88dd4640975957bc666b94907b02d50581fac4cc908f017"
 ---
 
 > ## Documentation Index
@@ -184,7 +184,7 @@ Some features can seem similar. For a deeper walkthrough of choosing between the
     | - | - | - |
     | **Runs** | A shell command, HTTP request, MCP tool call, LLM prompt, or subagent | Instructions Claude reads and follows |
     | **Triggered by** | [Lifecycle events](/docs/en/hooks#hook-events) such as `PostToolUse` or `SessionStart` | You typing `/<name>`, or Claude matching the description to your task |
-    | **Determinism** | Always fires on its event; the trigger is guaranteed | Claude interprets the instructions; outcome can vary |
+    | **Determinism** | Fires on its event without Claude deciding | Claude interprets the instructions; outcome can vary |
     | **Context cost** | Zero unless the hook returns output | Description loads each session; full content loads when used |
     | **Best for** | Linting after edits, blocking unsafe commands, logging, notifications | Workflows that need reasoning, reference material, multi-step tasks |
 
@@ -302,7 +302,7 @@ Each feature loads at different points in your session. The tabs below explain w
 
     * The agent's own system prompt, not the Claude Code system prompt
     * Full content of skills listed in the agent's `skills:` field
-    * CLAUDE.md and git status, except the built-in Explore and Plan agents [omit both](/docs/en/sub-agents#what-loads-at-startup), and an agent whose definition sets [`omitClaudeMd`](/docs/en/sub-agents#supported-frontmatter-fields) skips the user, project, and local CLAUDE.md files
+    * CLAUDE.md and git status. The built-in Explore and Plan agents [start with neither](/docs/en/sub-agents#what-loads-at-startup), and an agent whose definition sets [`omitClaudeMd`](/docs/en/sub-agents#supported-frontmatter-fields) starts without the user, project, and local CLAUDE.md files.
     * Whatever context the lead agent passes in the prompt
 
     For a [fork](/docs/en/sub-agents#fork-the-current-conversation), Claude Code loads the parent's conversation so far, system prompt, and tools instead.

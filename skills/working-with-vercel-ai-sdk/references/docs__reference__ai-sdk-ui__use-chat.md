@@ -4,8 +4,8 @@ description: API reference for the useChat hook.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "52501dde21b3990795ae91586440e86ea3f8a7c41619c13288bbae6a7ab944cf"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "a3fdb57c3e2b089a23b859e6b55f4567fc81796c7fab63e3eb334761ae08e162"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -80,7 +80,7 @@ import { Chat } from '@ai-sdk/angular'
             - `credentials` (`RequestCredentials | undefined`): The request credentials
             - `headers` (`HeadersInit | undefined`): The request headers
             - `api` (`string`): The API endpoint to use for the request. If not specified, it defaults to the transport’s API endpoint combined with the chat ID: /api/chat/\{chatId}/stream.
-- `id?` (`string`): A unique identifier for the chat. If not provided, a random one will be generated.
+- `id?` (`string`): A unique identifier for the chat. If not provided, a random one will be generated on first access, including when sending a message or resuming a stream.
 - `messages?` (`UIMessage[]`): Initial chat messages to populate the conversation with.
 - `messageMetadataSchema?` (`FlexibleSchema`): Schema for validating message metadata.
 - `dataPartSchemas?` (`UIDataTypesToSchemas`): Schemas for validating data parts in messages.

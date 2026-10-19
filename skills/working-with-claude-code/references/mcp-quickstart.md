@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/mcp-quickstart.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "71d7664eb76d2bce30138f14b948b3771b4366786b1d77b0ee0a7715989d556b"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "dd96c348f2010e09b40ce1b3fb5858467b513ab900e24d51f7932144d93e8953"
 ---
 
 > ## Documentation Index
@@ -358,6 +358,8 @@ If a server doesn't connect, check its status with `/mcp` inside a session or `c
     ```powershell theme={null}
     $env:MCP_TIMEOUT = "60000"; claude
     ```
+
+    Before v2.1.299, some connections to HTTP servers that were up timed out at startup regardless of `MCP_TIMEOUT`. If you use one of those versions and an HTTP server that is up still times out after you raise the limit, [update Claude Code](/docs/en/setup#update-claude-code).
   </Accordion>
 
   <Accordion title="Server already exists">

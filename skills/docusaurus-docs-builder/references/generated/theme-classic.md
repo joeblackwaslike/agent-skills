@@ -1,8 +1,8 @@
 ---
 title: "Classic Theme"
 source: "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "a5e5ff5adbb9dcc902d8f63bacc2421e2ae7133523c7ef818ee4492766461922"
+fetched_at: "2026-10-19T09:38:00.847Z"
+sha256: "ed5ce3038866b0a590fa1e777b1af2f18739c44a85e663b614cb7fcac05757c0"
 ---
 
 # Classic Theme
@@ -47,7 +47,6 @@ noteMost configuration for the theme is done in `themeConfig`, which can be foun
 You can configure this theme through preset options or plugin options.
 
 tipMost Docusaurus users configure this plugin through the preset options.
-
 Preset optionsPlugin optionsIf you use a preset, configure this plugin through the [preset options](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic):docusaurus.config.js
 ```
 module.exports = {  presets: [    [      '@docusaurus/preset-classic',      {        theme: {          customCss: './src/css/custom.css',        },      },    ],  ],};

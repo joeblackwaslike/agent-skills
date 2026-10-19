@@ -13,8 +13,8 @@ related:
 summary: Use create_or_transfer_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f614202bdecb7a825943b2132f0a5d27fe172e4180cc01b8e16bf6e3306179f6"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3820623d868290163d77493d503ccf8fa5e93d78393d7c20b380f850bad223e0"
 ---
 
 # create_or_transfer_domain
@@ -27,23 +27,22 @@ Add an existing domain to the Vercel platform.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I add a domain using the Vercel API?](https://vercel.com/kb/guide/how-do-i-add-a-domain-using-the-vercel-api?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=related) — Information on adding a domain using the Vercel API.
-- [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=related) — Use add_project_domain with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=related) — Use create_project with Vercel MCP.
-- [replace_domains_by_domain_records](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/replace_domains_by_domain_records?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=related) — Use replace_domains_by_domain_records with Vercel MCP.
-- [accept_project_transfer_request](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/accept_project_transfer_request?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=related) — Use accept_project_transfer_request with Vercel MCP.
-- [create_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flag?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=related) — Use create_flag with Vercel MCP.
+- [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
+- [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [replace_domain_dns_records](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records) — Use replace_domain_dns_records with Vercel MCP.
+- [get_domain_verification_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record) — Use get_domain_verification_record with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fcreate_or_transfer_domain&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | Yes      | Request body for this tool. |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 
 ---

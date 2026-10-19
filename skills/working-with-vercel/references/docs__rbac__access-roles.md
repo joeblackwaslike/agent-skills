@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "79bfd5712dcd8ef7ef0c57d3385ab5b1e682db066c9b9cffffb7b105830d990c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "61a3e95caf143a9062e98ca4c56e373f7669733a2dfb492ef9a5ffd08918e0d9"
 ---
 
 # Access Roles
@@ -30,20 +30,20 @@ Vercel distinguishes between different roles to help manage team members' access
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Account](https://v0.app/docs/account?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Manage your account and billing information.
-- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [GitHub](https://v0.app/docs/github?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Connect GitHub repositories to v0 and ship changes through branches, previews, pull requests, and CI.
-- [Private Dependencies](https://v0.app/docs/private-dependencies?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
-- [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [The Complete Guide to Vercel Passport](https://vercel.com/kb/guide/vercel-passport?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Vercel Passport protects deployments behind your own identity provider, such as Okta or Auth0. Learn how Passport works,
-- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related)
-- [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related)
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
+- [Account](https://v0.app/docs/account) — Manage your account and billing information.
+- [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [GitHub](https://v0.app/docs/github) — Connect GitHub repositories to v0 and ship changes through branches, previews, pull requests, and CI.
+- [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
+- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
+- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
+- [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams)
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 
-Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Faccess-roles&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
 <!-- /docsgraph:related -->
 
 The two groups are further divided into specific roles, each with its own set of permissions and responsibilities. These roles are designed to provide a balance between autonomy and security, ensuring that team members have the access they need to perform their tasks while maintaining the integrity of the team and its resources.

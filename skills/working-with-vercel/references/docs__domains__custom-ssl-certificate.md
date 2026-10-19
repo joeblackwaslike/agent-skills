@@ -9,11 +9,12 @@ prerequisites:
   - /docs/domains
 related:
   - /docs/rest-api/certs/upload-a-cert
+  - /docs/cli/certs
 summary: By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own custom SSL certificate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/custom-ssl-certificate.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d329a028bd625371e15e610ff3722e6298ed839596ceca27dc2be1d362a6581b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "693f3b83800463c02875742da97711590c54eb0b71c8ed9b14f95228d8232a8d"
 ---
 
 # Uploading Custom SSL Certificates
@@ -30,6 +31,10 @@ Uploading a custom certificate follows a three step process:
 2. Providing the certificate itself
 3. Providing the Certificate Authority root certificate such as one of [Let's Encrypt's ISRG root certificates](https://letsencrypt.org/certificates/). This will be provided by your certificate issuer and is different to the core certificate. This may be included in their download process or available for download on their website.
 
+Upload the certificate from the dashboard or the Vercel CLI.
+
+#### Dashboard
+
 The content of each element must be copied and pasted into the input box directly. The certificate and private key can be extracted from the [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) files that are provided by your certificate issuer, and should be in the following format:
 
 ```text filename="certificate.pem"
@@ -42,6 +47,14 @@ The content of each element must be copied and pasted into the input box directl
 -----BEGIN PRIVATE KEY-----
 <Private key body will be here>
 -----END PRIVATE KEY-----
+```
+
+#### CLI
+
+Run [`vercel certs add`](/docs/cli/certs) and pass the certificate, private key, and Certificate Authority files:
+
+```bash filename="terminal"
+vercel certs add --crt certificate.pem --key private-key.pem --ca ca.pem
 ```
 
 ## SSL best practices
@@ -67,7 +80,21 @@ openssl req -x509 -newkey rsa:4096 \
   -addext "subjectAltName=DNS:sub.example.com"
 ```
 
-This generates a `key.pem` file containing the private key and a `cert.pem` file containing the self-signed certificate. When uploading this certificate to Vercel, use `cert.pem` also for the Certificate Authority field.
+This generates a `key.pem` file containing the private key and a `cert.pem` file containing the self-signed certificate.
+
+Upload the self-signed certificate from the dashboard or the Vercel CLI.
+
+#### Dashboard
+
+When uploading this certificate to Vercel, use `cert.pem` also for the Certificate Authority field.
+
+#### CLI
+
+Run [`vercel certs add`](/docs/cli/certs) and pass `cert.pem` as both the certificate and the Certificate Authority:
+
+```bash filename="terminal"
+vercel certs add --crt cert.pem --key key.pem --ca cert.pem
+```
 
 
 ---

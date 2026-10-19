@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "ca95024d3455fe1949e434b60db720e38af654cd91eb642eecae7f9101a9561e"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "ddfcc482754e4233aeba764688f2d87db322135f335a72855bf8840ecdbe2977"
 ---
 
 # JS SDK Reference
@@ -30,20 +30,20 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
-- [Port 8080 is now available in Vercel Sandboxes](https://vercel.com/changelog/port-8080-is-now-available-in-vercel-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox creation now returns a ready sandbox](https://vercel.com/changelog/sandbox-create-waits-until-ready?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related)
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
-- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
+- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
+- [Port 8080 is now available in Vercel Sandboxes](https://vercel.com/changelog/port-8080-is-now-available-in-vercel-sandboxes)
+- [Vercel Sandbox creation now returns a ready sandbox](https://vercel.com/changelog/sandbox-create-waits-until-ready)
+- [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
 
-Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fsdk-reference&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
 <!-- /docsgraph:related -->
 
 For Python, see the [Python SDK Reference](/docs/sandbox/python-sdk-reference).
@@ -416,7 +416,7 @@ const sandbox = await Sandbox.create({
 
 #### `Sandbox.get()`
 
-`Sandbox.get()` retrieves an existing sandbox by name. If the sandbox is stopped, the next SDK call (such as `runCommand`) automatically resumes it. Pass `resume: true` to resume it before `get` resolves.
+`Sandbox.get()` retrieves an existing sandbox by name without resuming it by default (`resume: false`). A stopped persistent sandbox automatically resumes on the first SDK call that needs a running session, such as `runCommand`. Pass `resume: true` to resume it before `get` resolves.
 
 **Returns:** `Promise<Sandbox>`.
 
@@ -433,7 +433,7 @@ const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 
 #### `Sandbox.getOrCreate()`
 
-`Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it retrieves the sandbox if it exists, or creates it if it doesn't. An existing sandbox resumes on the first SDK call, or immediately when you pass `resume: true`. Use `onCreate` for one-time setup and `onResume` for setup that should run on every session start.
+`Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it retrieves the sandbox if it exists, or creates it if it doesn't. By default (`resume: false`), an existing sandbox is retrieved without resuming it. A stopped persistent sandbox resumes on the first SDK call that needs a running session, or immediately when you pass `resume: true`. Use `onCreate` for one-time setup and `onResume` for setup that should run on every session start.
 
 Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, call [`sandbox.update()`](#sandbox.update).
 
@@ -533,7 +533,10 @@ const command = await sandbox.getCommand(cmdId);
 | `params.detached` | `boolean`                | No       | Return immediately with a live `Command` object.   |
 | `params.stdout`   | `Writable`               | No       | Stream standard output to a writable.              |
 | `params.stderr`   | `Writable`               | No       | Stream standard error to a writable.               |
+| `params.stdin`    | `boolean \| Readable`    | No       | Keep stdin open, or pipe a readable to it.         |
 | `params.signal`   | `AbortSignal`            | No       | Cancel the command when using the object overload. |
+
+Set `stdin: true` with `detached: true` to write to the command with [`writeStdin()`](#writestdin), or pass a `Readable` such as `process.stdin` to pipe it to the command, with or without `detached`. Without `stdin`, the command reads from an empty stdin.
 
 ```ts
 const result = await sandbox.runCommand('node', ['--version']);
@@ -983,6 +986,7 @@ console.log(alice.homeDir); // "/home/alice"
 | `params.detached` | `boolean`                | No       | Return immediately with a live `Command` object.               |
 | `params.stdout`   | `Writable`               | No       | Stream standard output to a writable.                          |
 | `params.stderr`   | `Writable`               | No       | Stream standard error to a writable.                           |
+| `params.stdin`    | `boolean \| Readable`    | No       | Keep stdin open, or pipe a readable to it.                     |
 | `params.signal`   | `AbortSignal`            | No       | Cancel the command when using the object overload.             |
 
 ```ts
@@ -1413,6 +1417,45 @@ await command.kill('SIGKILL');
 
 **Returns:** `Promise<void>`.
 
+#### `writeStdin()`
+
+Call `writeStdin()` to send input to a running command started with `stdin: true` and `detached: true`. Writes reach the process in the order you call them, and each one resolves once the process has accepted the data. A write fails after 30 seconds if the process isn't reading stdin. The process reads from a pipe, not a terminal.
+
+```ts
+const command = await sandbox.runCommand({
+  cmd: 'cat',
+  detached: true,
+  stdin: true,
+});
+await command.writeStdin('hello\n');
+await command.closeStdin();
+const result = await command.wait();
+console.log(await result.stdout()); // "hello\n"
+```
+
+| Parameter          | Type                   | Required | Details                                          |
+| ------------------ | ---------------------- | -------- | ------------------------------------------------ |
+| `data`             | `string \| Uint8Array` | Yes      | The data to write. Strings are encoded as UTF-8. |
+| `opts.abortSignal` | `AbortSignal`          | No       | Cancel the write.                                |
+
+**Returns:** `Promise<void>`.
+
+**Note:** If a write fails, part of it may have reached the process, and later writes to that command are rejected. You can still call `closeStdin()` or `kill()`. Write to a command from one place at a time.
+
+#### `closeStdin()`
+
+Call `closeStdin()` to close the command's stdin. The process reads end of input once it has consumed everything written, so use this for commands that wait for it, such as `cat` or `sort`.
+
+```ts
+await command.closeStdin();
+```
+
+| Parameter          | Type          | Required | Details               |
+| ------------------ | ------------- | -------- | --------------------- |
+| `opts.abortSignal` | `AbortSignal` | No       | Cancel the operation. |
+
+**Returns:** `Promise<void>`.
+
 ## CommandFinished class
 
 `CommandFinished` is the result you receive after a sandbox command exits. It extends the `Command` class, so you keep access to streaming helpers such as `logs()` or `stdout()`, but you also get the final exit metadata immediately. You usually receive this object from `sandbox.runCommand()` or by awaiting `command.wait()` on a detached process.
@@ -1476,7 +1519,7 @@ console.log(`Command took ${duration}ms`);
 
 ### CommandFinished class methods
 
-`CommandFinished` inherits all methods from `Command` including `logs()`, `output()`, `stdout()`, `stderr()`, and `kill()`. See the [Command class](#command-class) section for details on these methods.
+`CommandFinished` inherits all methods from `Command` including `logs()`, `output()`, `stdout()`, `stderr()`, and `kill()`. See the [Command class](#command-class) section for details on these methods. `writeStdin()` and `closeStdin()` always reject on a `CommandFinished`, because the process has exited.
 
 ## NetworkPolicy class
 
@@ -1942,8 +1985,6 @@ await Sandbox.create({
 ```
 
 #### `drive.fork()`
-
-> **Availability**: Drive forks (Private Beta) are available to Enterprise and Pro plans
 
 Call `drive.fork()` to create a new drive from an existing drive's data. The fork belongs to the same project and inherits the source drive's region and maximum size. You can mount and update the fork independently of the source drive.
 

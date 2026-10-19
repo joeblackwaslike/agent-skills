@@ -8,12 +8,13 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/cli
   - /docs/cli/global-options
 summary: Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "4e525668d5460e21d8eb7478c341e4ee89ea15ca2fec03325ec7ce6ecb55e8dd"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b72f09400883ac74c24de622d1f35e2efee7508fa8cab5fcd551b0b843562f6e"
 ---
 
 # vercel upgrade
@@ -26,14 +27,21 @@ The `vercel upgrade` command upgrades the Vercel CLI on your machine to the late
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
-Full cross-link map for this page: [/docs/cli/upgrade.graph.md](/docs/cli/upgrade.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fupgrade&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/upgrade.graph.md](/docs/cli/upgrade.graph.md)
 <!-- /docsgraph:related -->
+
+Package-manager installations upgrade the `vercel` package, whether the CLI uses Node.js execution or native execution. If you installed the legacy `@vercel/vc-native` package directly, [migrate to `vercel`](/docs/cli#migrate-from-the-legacy-native-package) before upgrading.
+
+> **💡 Note:** If `vercel upgrade` can't detect a supported global package-manager
+> installation, it exits with an error. Update the CLI with the package manager
+> that installed it. Use `vercel upgrade --dry-run` to inspect the upgrade
+> command before running it.
 
 ## Usage
 
@@ -120,6 +128,30 @@ vercel upgrade --disable-auto
 
 *Disable automatic updates.*
 
+### Enable binary
+
+The `--enable-binary` option opts a package-manager installation into using its installed experimental native binary:
+
+```bash filename="terminal"
+vercel upgrade --enable-binary
+```
+
+*Enabling native execution when a native binary is installed.*
+
+This saves a runtime preference; it doesn't install a separate package. Keep optional dependencies enabled when installing `vercel` so the matching native package is available.
+
+### Disable binary
+
+The `--disable-binary` option disables native execution and returns a package-manager installation to Node.js execution:
+
+```bash filename="terminal"
+vercel upgrade --disable-binary
+```
+
+*Disabling native execution through the Node.js launcher.*
+
+The package's Node.js launcher handles this recovery command even if the native binary can't start. If you set `VERCEL_CLI_USE_NATIVE_BINARY=1` or `true`, remove that override so the saved opt-out takes effect.
+
 ### Format
 
 The `--format` option, value `json`, emits the upgrade plan as JSON. This implies `--dry-run`, so no upgrade is performed.
@@ -129,12 +161,6 @@ vercel upgrade --format=json
 ```
 
 *Output the upgrade plan as JSON for scripting or agent workflows.*
-
-> **💡 Note:** If `vercel upgrade` can't infer the package manager from a lockfile near the CLI
-> install, it falls back to npm and runs `npm i -g vercel@latest` (or the
-> non-global equivalent). Use `vercel upgrade --dry-run` first if you need to
-> confirm exactly which command will run, then re-run without `--dry-run` (or run
-> the printed command yourself) once you've reviewed it.
 
 ## Global Options
 

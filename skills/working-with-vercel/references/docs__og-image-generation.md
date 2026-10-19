@@ -16,8 +16,8 @@ related:
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4eb4dc435099cec2a9ee0deaebdd9921fb74cec11896722153a4750eded81940"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "4e3a6d8e0afb0b09f6bee272ebeb6aedc003cf0107b469d59f5c30eb354f8380"
 ---
 
 # Open Graph (OG) Image Generation
@@ -30,20 +30,20 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
-- [Using an SVG image in your OG image](https://vercel.com/kb/guide/using-svg-image?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how to use SVG embedded content to generate your OG images.
-- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — API Reference for the ImageResponse constructor.
-- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how to add metadata to your pages and create dynamic OG images.
-- [Using dynamic text as your OG Image](https://vercel.com/kb/guide/dynamic-text-as-image?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how to pass the image title as a URL parameter.
-- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
-- [Using an external image as OG image](https://vercel.com/kb/guide/using-an-external-dynamic-image?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how to pass the username as a URL parameter to pull an external profile image for the image generation.
-- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related)
-- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related)
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=related) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
+- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
+- [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images) — Learn how to add metadata to your pages and create dynamic OG images.
+- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
+- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
+- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
-Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md)
 <!-- /docsgraph:related -->
 
 ## Benefits

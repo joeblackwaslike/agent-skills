@@ -15,8 +15,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/api.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "6e53b51ff1978a3deb3f28948f79270a85c4608cac50da97d819f675fbaadee4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "5f104545ecc7ac3cf6133f0eb6b64016b1a734d7dce1c4decd0d1f251fde75d9"
 ---
 
 # Routing Middleware API
@@ -31,20 +31,19 @@ The Routing Middleware file should be named `middleware.ts` and placed at the ro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Adding a response header](https://vercel.com/kb/guide/add-response-header?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to add a response header in your Middleware.
-- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to filter query parameters in your Middleware.
-- [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to modify request headers in your Middleware.
-- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to render different content based on the user agent in your Middleware.
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use Next.js as a backend framework
-- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — API reference for the route.js special file.
-- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Adding a response header](https://vercel.com/kb/guide/add-response-header) — Learn how to add a response header in your Middleware.
+- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters) — Learn how to filter query parameters in your Middleware.
+- [Modifying request headers](https://vercel.com/kb/guide/modify-request-headers) — Learn how to modify request headers in your Middleware.
+- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device) — Learn how to render different content based on the user agent in your Middleware.
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
+- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js) — Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 
-Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md?from=related&source_path=%2Fdocs%2Frouting-middleware%2Fapi&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/routing-middleware/api.graph.md](/docs/routing-middleware/api.graph.md)
 <!-- /docsgraph:related -->
 
 The Routing Middleware must be a default export, with the function being named anything you like. For example, you can name it `router`, `middleware`, or any other name that makes sense for your application.

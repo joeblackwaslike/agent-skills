@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "82b0bc63ac13e45114eef965f58bcf1a3e1fb0e10c35db07e4b7d7eb5a5e0473"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "817c1425f0629d869bbf94c65092d0ef567f5550f5072e377d64c3ebb5c4d8bb"
 ---
 
 # Fair Use Guidelines
@@ -30,19 +30,20 @@ Vercel usage is subject to these fair use guidelines across plans and usage-base
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related)
-- [Vercel Remote Cache is now free](https://vercel.com/changelog/free-vercel-remote-cache?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related)
-- [Can Vercel sponsor my open source project?](https://vercel.com/kb/guide/can-vercel-sponsor-my-open-source-project?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Information on how Vercel can sponsor your open source project and how to apply.
-- [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn how to perform pentesting on Vercel.
-- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — This page outlines information on the pricing and limits for the source images-based legacy option.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams)
+- [Vercel Remote Cache is now free](https://vercel.com/changelog/free-vercel-remote-cache)
+- [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
+- [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
+- [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
+- [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel) — Learn how to perform pentesting on Vercel.
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing) — This page outlines information on the pricing and limits for the source images-based legacy option.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
-Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/docs/limits/fair-use-guidelines.graph.md?from=related&source_path=%2Fdocs%2Flimits%2Ffair-use-guidelines&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/docs/limits/fair-use-guidelines.graph.md)
 <!-- /docsgraph:related -->
 
 ### Examples of fair use

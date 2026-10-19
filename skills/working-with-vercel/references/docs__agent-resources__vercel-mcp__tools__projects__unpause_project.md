@@ -13,8 +13,8 @@ related:
 summary: Use unpause_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "26225afa9cf6e3c1e1894aa7af47e9b33db5570fe62e4a241c8f8bcd071b548f"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "04f19f70d0abd34c06a6ba25c80e33d8facacf07cd6a4e5c427221a0a5827c4b"
 ---
 
 # unpause_project
@@ -27,24 +27,33 @@ Unpause a project.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [pause_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/pause_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=related) — Use pause_project with Vercel MCP.
-- [Pause your project](https://vercel.com/kb/guide/pause-your-project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=related) — Use a webhook to pause your project based on spend management.
-- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
-- [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=related) — Use create_project with Vercel MCP.
-- [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=related) — Use update_project with Vercel MCP.
+- [pause_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/pause_project) — Use pause_project with Vercel MCP.
+- [Pause your project](https://vercel.com/kb/guide/pause-your-project) — Use a webhook to pause your project based on spend management.
+- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
+- [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Funpause_project&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter     | Type    | Required | Description                   |
-| ------------- | ------- | -------- | ----------------------------- |
-| `projectId`   | string  | Yes      | The unique project identifier |
-| `teamId`      | string  | No       | Team ID.                      |
-| `slug`        | string  | No       | Team slug.                    |
-| `requestBody` | unknown | No       | Request body for this tool.   |
+| Parameter     | Type    | Required | Description                                                 |
+| ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `projectId`   | string  | Yes      | The unique project identifier                               |
+| `teamId`      | string  | No       | Team ID to use for this operation.                          |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | unknown | No       | Request body for this tool.                                 |
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter   | Type   | Required | Default | Description                                                                                   |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
 
 
 ---

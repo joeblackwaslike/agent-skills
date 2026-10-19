@@ -13,8 +13,8 @@ related:
 summary: Use get_auth_user with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f259ec4793de5636299525fcfd2e8e4efefbbf7ee360d6fcaf817bb1161b90aa"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3e2fc88b684438a93d4c625c27badbe1dbb3b686fa39951e0e729c1ddb6de722"
 ---
 
 # get_auth_user
@@ -27,14 +27,14 @@ Get the User.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get User](https://v0.app/docs/api/v1/reference/user/get?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=related) — Retrieves information about the authenticated user, including their ID, name, email, and account metadata.
-- [get_team_access_request](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team_access_request?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=related) — Use get_team_access_request with Vercel MCP.
-- [get_auth_token](https://vercel.com/docs/agent-resources/vercel-mcp/tools/authentication/get_auth_token?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=related) — Use get_auth_token with Vercel MCP.
-- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=related) — Use get_team with Vercel MCP.
-- [Authentication](https://vercel.com/docs/agent-resources/vercel-mcp/tools/authentication?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=related) — Vercel MCP tools for authentication.
-- [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=related) — Use web_fetch_vercel_url with Vercel MCP.
+- [Get User](https://v0.app/docs/api/v1/reference/user/get) — Retrieves information about the authenticated user, including their ID, name, email, and account metadata.
+- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
+- [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
+- [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
+- [Get the User](https://vercel.com/docs/rest-api/user/get-the-user) — GET /v2/user — Retrieves information related to the currently authenticated User.
+- [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Fget_auth_user&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters

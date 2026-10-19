@@ -16,8 +16,8 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "281ff39e9721e43f5f9528b57cd12d41cff6263ada85b6aad7146a4b21c41b83"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "335f3f848042e020201805a2c31940451a7e58defe71441542cc186104e51780"
 ---
 
 # Remote Caching
@@ -32,20 +32,20 @@ Remote Caching saves you time by ensuring you never repeat the same task twice, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
-- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
-- [Buildkite](https://turborepo.dev/docs/guides/ci-vendors/buildkite?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Configure Buildkite pipelines to run Turborepo tasks with Remote Caching.
-- [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
-- [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
-- [Vercel Remote Cache is now free](https://vercel.com/changelog/free-vercel-remote-cache?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related)
-- [Purge your Remote Cache's build and CI artifacts](https://vercel.com/changelog/purge-your-remote-caches-build-and-ci-artifacts?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related)
-- [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related)
-- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related)
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=related)
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
+- [Buildkite](https://turborepo.dev/docs/guides/ci-vendors/buildkite) — Configure Buildkite pipelines to run Turborepo tasks with Remote Caching.
+- [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
+- [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
+- [Vercel Remote Cache is now free](https://vercel.com/changelog/free-vercel-remote-cache)
+- [Purge your Remote Cache's build and CI artifacts](https://vercel.com/changelog/purge-your-remote-caches-build-and-ci-artifacts)
+- [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc)
+- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase)
+- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 
-Full cross-link map for this page: [/docs/monorepos/remote-caching.graph.md](/docs/monorepos/remote-caching.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/monorepos/remote-caching.graph.md](/docs/monorepos/remote-caching.graph.md)
 <!-- /docsgraph:related -->
 
 When a team is working on the same PR, Remote Caching identifies the necessary artifacts (such as build and log outputs) and recycles them across machines in [external CI/CD](#use-remote-caching-from-external-ci/cd) and [during the Vercel Build process](#use-remote-caching-during-vercel-build).

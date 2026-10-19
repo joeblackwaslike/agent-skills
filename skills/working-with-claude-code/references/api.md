@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/mods/api.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "e6a04c782102f8d030fa4f41dff78232c838a94d06cc954dcc9d9931b87f63e9"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "569f2542ba1b341d39c4652dd6763d286558980da4dcbdde1444ebd94e535188"
 ---
 
 > ## Documentation Index
@@ -217,6 +217,8 @@ A background job can show the user something without starting a turn. Each of th
 | `$.ui.status(text)` | One line under the prompt that stays until you change it. It starts with `⚠` and the mod's name, as in `⚠ my-mod: checks: 3 passing`. |
 | `$.ui.toast(text)` | A toast notification with the mod's name that disappears after a few seconds. It's a box at the top right in [fullscreen rendering](/docs/en/fullscreen), and one line at the right under the prompt in the classic renderer. |
 | `$.ui.log(text)` | A dim line in the transcript that Claude doesn't read. It starts with `●` and the mod's name, as in `● my-mod: build finished`. |
+
+In the [VS Code extension](/docs/en/plugins/mods/interface#draw-in-the-vs-code-extension), status lines and toasts show above the prompt box instead, and log lines in the conversation.
 
 ### Start a turn from a background job
 

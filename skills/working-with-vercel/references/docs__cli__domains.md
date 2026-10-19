@@ -8,12 +8,13 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/domains/troubleshooting
   - /docs/cli/global-options
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "93c26c0a3e40518cc56090ec09da51a84aacf68e462c15319e09689d8b0488f2"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "9150f78fff3dcd03ce8b1472579a5fef1cbc6eee4a334188deaf213c3ea4c955"
 ---
 
 # vercel domains
@@ -26,16 +27,16 @@ The `vercel domains` command manages domains under the current scope. With it, y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Agents can now buy domains with the Vercel CLI](https://vercel.com/changelog/agents-can-now-buy-domains-with-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
-- [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
-- [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related)
-- [vercel dns](https://vercel.com/docs/cli/dns?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
-- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Agents can now buy domains with the Vercel CLI](https://vercel.com/changelog/agents-can-now-buy-domains-with-the-vercel-cli)
+- [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication)
+- [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration)
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 
-Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fdomains&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You can manage domains with further options and greater control under a Vercel
@@ -138,9 +139,97 @@ vercel domains auto-renew [domain] [on|off]
 renewal on or off for a registered domain. Both the domain and the
 \`on|off\` state are required.*
 
+## Buy or renew without prompts
+
+With Vercel CLI 63.1.0 and later, scripts and agents can use `domains buy` and `domains renew` without an interactive terminal. The commands also skip prompts in CI when you pass `--json`.
+
+Before charging a team, pass `--scope <team>` or set `VERCEL_ORG_ID` to that team's ID. A saved team selection or `vercel.json` scope alone isn't sufficient. If `VERCEL_ORG_ID` names a different team, the command refuses the charge.
+
+1. Run the command without `--amount` to get the current price and required action:
+
+   ```bash filename="terminal"
+   vercel domains buy example.com --scope my-team --json
+   vercel domains renew example.com --scope my-team --json
+   ```
+
+   Without `--amount`, these non-interactive commands charge nothing and exit with a non-zero status. The response identifies the paying team, price, term, and next command. For a purchase, it also reports renewal terms and missing registrant details.
+
+   For example, a renewal priced at $20 for one year returns these fields on stdout. This excerpt omits the message and hint fields. The amount is illustrative; always use the price returned for your domain:
+
+   ```json filename="Approval response (excerpt)"
+   {
+     "status": "action_required",
+     "reason": "confirmation_required",
+     "action": "confirmation_required",
+     "userActionRequired": true,
+     "data": {
+       "domain": "example.com",
+       "team": "my-team",
+       "amount": 20,
+       "currency": "USD",
+       "years": 1
+     },
+     "missing": ["--amount"],
+     "next": [
+       {
+         "command": "vercel domains renew example.com --scope my-team --amount 20.00 --json",
+         "when": "Only after a human approves: charges $20.00 now"
+       }
+     ]
+   }
+   ```
+
+   Human-readable guidance may also appear on stderr. Parse stdout for the JSON response; don't combine the two streams.
+
+2. Review the refund policy before approval. The CLI warns that domain registrations are non-refundable. Some purchases qualify for limited exceptions; see [domain refund eligibility](/docs/domains/troubleshooting#purchasing-a-domain-through-vercel). Domain renewals are never refundable.
+
+3. Ask a person to approve the price, paying team, and, for a purchase, automatic renewal. Then run the returned command with `--amount <approved-price-in-USD>` and any missing details. The amount must match the current price; it isn't a spending limit. If the price changes, the CLI charges nothing and asks for approval again.
+
+For supported flags and required fields, see [purchase options](#purchase-options) and [renewal options](#renewal-options).
+
+### Failed or unconfirmed charges
+
+The CLI doesn't automatically retry a purchase or renewal. In non-interactive mode or with `--json`, a failed or unconfirmed charge returns a JSON error. If the outcome is unknown, inspect the domain before retrying:
+
+```bash filename="terminal"
+vercel domains inspect example.com --scope my-team --json
+```
+
+An unknown outcome can mean the charge succeeded even though the CLI couldn't confirm it. Retrying immediately can charge you twice.
+
 ## Unique Options
 
 These are options that only apply to the `vercel domains` command.
+
+### Purchase options
+
+Use these options with the [prompt-free purchase procedure](#buy-or-renew-without-prompts). Approved billing details can supply available valid email and address fields, but never the registrant's first name, last name, or phone:
+
+| Option | Required without prompts | Description |
+| --- | --- | --- |
+| `--amount <USD>` | To charge | The purchase price a person approved, in US dollars. Omit it to request the price without charging. |
+| `--use-billing-details` | When using team billing fields | Approve using available team billing email and address fields for the registrant. |
+| `--first-name <TEXT>` | Yes | Registrant's first name. |
+| `--last-name <TEXT>` | Yes | Registrant's last name. |
+| `--email <TEXT>` | Unless supplied by approved billing details | Registrant's email address. |
+| `--phone <TEXT>` | Yes | Registrant's phone number, starting with `+` and containing 10-15 digits, including the country code. |
+| `--address <TEXT>` | Unless supplied by approved billing details | Street address. Quote values that contain spaces. |
+| `--city <TEXT>` | Unless supplied by approved billing details | City. |
+| `--state <TEXT>` | Unless supplied by approved billing details | State or province. The CLI requires this for every country. |
+| `--zip <TEXT>` | Unless supplied by approved billing details | Postal or ZIP code. The CLI requires this for every country. |
+| `--country <CODE>` | Unless supplied by approved billing details | Two-letter country code, such as `US`. |
+| `--company <TEXT>` | No | Registrant company name. |
+| `--auto-renew` | One of `--auto-renew` or `--no-auto-renew` | Allow recurring renewal charges at the end of each term. |
+| `--no-auto-renew` | One of `--auto-renew` or `--no-auto-renew` | Turn automatic renewal off. |
+| `--json` or `--format json` | No | Return structured output without prompts. |
+
+Contact flags override billing details. Replacing an existing billing address field with a flag discards the remaining billing address fields, so supply the complete replacement address. Adding a field missing from billing details keeps the other billing address fields.
+
+Pass exactly one of `--auto-renew` and `--no-auto-renew`. These flags don't take values such as `false`. To stop automatic renewal after a purchase, use [`vercel domains auto-renew <domain> off`](#extended-usage).
+
+### Renewal options
+
+`domains renew` accepts `--amount <USD>`, `--json`, and `--format json`. The amount approves the current renewal price for the reported term. Renewal doesn't require new registrant details or change the domain's automatic-renewal setting.
 
 ### Yes
 
@@ -257,13 +346,13 @@ vercel domains verify my-domain.com --format=json
 *Using the \`vercel domains verify\` command with the
 \`--format=json\` option.*
 
-You can also use the `--format=json` option with `renew` to print the renewal result as structured JSON. The renewal still requires an interactive confirmation of the charge before the JSON result is printed.
+You can also use the `--format=json` option with `buy` or `renew` to return structured JSON without prompts. Without `--amount`, the command charges nothing and returns the current price and approval instructions. To complete the charge, follow [Buy or renew without prompts](#buy-or-renew-without-prompts).
 
 ```bash filename="terminal"
-vercel domains renew my-domain.com --format=json
+vercel domains renew my-domain.com --scope my-team --format=json
 ```
 
-*Using the \`vercel domains renew\` command with the
+*Checking the renewal price for \`my-team\` without charging, using the
 \`--format=json\` option.*
 
 You can also use the `--format=json` option with `auto-renew` to return a structured JSON result describing the domain's new automatic renewal state.

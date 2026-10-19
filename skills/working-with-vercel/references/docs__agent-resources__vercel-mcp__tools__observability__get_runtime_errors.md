@@ -13,8 +13,8 @@ related:
 summary: Use get_runtime_errors with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "8b9d14e7eb3cf89add5ca0b1bc5602699c7d8df992db6fc512c8900eb9107fd3"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "9c5f9bb5a9e914159da7677ee8d11828ec0c2d0c4ab6e3a06ff28e9bda3c458c"
 ---
 
 # get_runtime_errors
@@ -27,22 +27,22 @@ Get grouped runtime error clusters for a project. Each cluster includes the erro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fget_runtime_errors&source_site=vercel-docs&relationship=related) — Use get_runtime_logs with Vercel MCP.
-- [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fget_runtime_errors&source_site=vercel-docs&relationship=related) — Use list_agent_runs with Vercel MCP.
-- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fget_runtime_errors&source_site=vercel-docs&relationship=related) — Use list_agent_run_projects with Vercel MCP.
-- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fget_runtime_errors&source_site=vercel-docs&relationship=related) — Vercel MCP tools for agent runs.
-- [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fget_runtime_errors&source_site=vercel-docs&relationship=related) — Use get_agent_run_trace with Vercel MCP.
+- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
+- [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
+- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fobservability%2Fget_runtime_errors&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md)
 <!-- /docsgraph:related -->
 
-| Parameter   | Type   | Required | Default | Description                                                                                                                                                                                          |
-| ----------- | ------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `projectId` | string | Yes      | -       | The project ID to get runtime errors for                                                                                                                                                             |
-| `teamId`    | string | Yes      | -       | The team ID to get runtime errors for. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using the `list_teams` tool. |
-| `since`     | string | No       | 24h ago | Start of the window as an ISO date or relative lookback from now (e.g., `1h`, `24h`, or `7d`). The maximum lookback is 7 days                                                                        |
-| `until`     | string | No       | now     | End of the window as an ISO date, relative lookback, or `now`. Omit this when the end should be the current time                                                                                     |
-| `routes`    | string | No       | -       | Comma-separated route paths to filter by (e.g., `/api/checkout`)                                                                                                                                     |
+| Parameter   | Type   | Required | Default | Description                                                                                                                         |
+| ----------- | ------ | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID to get runtime errors for.                                                                                           |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                                                           |
+| `since`     | string | No       | -       | Start of the window as an ISO date or relative lookback from now (e.g. "1h", "24h", "7d"). Defaults to 24h ago. Max lookback is 7d. |
+| `until`     | string | No       | -       | Optional end of the window as an ISO date, relative lookback, or "now". Omit this when the end should be the current time.          |
+| `routes`    | string | No       | -       | Comma-separated route paths to filter by (e.g. "/api/checkout").                                                                    |
 
 **Sample prompt:** "Why is my production app throwing errors?"
 

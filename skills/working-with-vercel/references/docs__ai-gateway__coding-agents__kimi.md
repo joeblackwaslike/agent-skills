@@ -15,8 +15,8 @@ related:
 summary: Connect Kimi CLI to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kimi.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "46d3ad7c822ec66c472e8f72c0fa330deb687e8690bcb08ac54b33e960085f87"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c754fb0ec54d14fea1ea027b0ae6b3b742f891d01ba7c87a61362a05dc5ccae0"
 ---
 
 # Kimi CLI with AI Gateway
@@ -29,15 +29,14 @@ sha256: "46d3ad7c822ec66c472e8f72c0fa330deb687e8690bcb08ac54b33e960085f87"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Moonshot AI's Kimi K2 0905 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ais-kimi-k2-0905-model-is-now-supported-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related)
-- [Kimi K2.6 on AI Gateway](https://vercel.com/changelog/kimi-k2.6-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related)
-- [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related)
-- [Moonshot AI's Kimi K2 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ai-kimi-k2-model-is-now-supported-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related)
-- [Kimi K3 is now available on AI Gateway](https://vercel.com/changelog/kimi-k3-is-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=related) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
+- [Kimi K2.6 on AI Gateway](https://vercel.com/changelog/kimi-k2.6-on-ai-gateway)
+- [Moonshot AI's Kimi K2 0905 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ais-kimi-k2-0905-model-is-now-supported-in-vercel-ai-gateway)
+- [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway)
+- [Moonshot AI's Kimi K2 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ai-kimi-k2-model-is-now-supported-in-vercel-ai-gateway)
+- [Kimi K3 is now available on AI Gateway](https://vercel.com/changelog/kimi-k3-is-now-available-on-ai-gateway)
+- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/kimi.graph.md](/docs/ai-gateway/coding-agents/kimi.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fkimi&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/kimi.graph.md](/docs/ai-gateway/coding-agents/kimi.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -45,7 +44,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/kimi.graph.md
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Kimi CLI:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent kimi
+npx vercel@latest ai-gateway setup --agent kimi
 ```
 
 The command writes a gateway provider and a `[models]` shortlist into `$KIMI_SHARE_DIR/config.toml`, with Moonshot's newest models first and the gateway's most-used models after them. It sets `default_model` to prefer `moonshotai/kimi-k3`. The file is created with `0600` permissions because Kimi requires a literal API key.

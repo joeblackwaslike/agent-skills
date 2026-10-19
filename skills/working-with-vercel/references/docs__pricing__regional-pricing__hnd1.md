@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Tokyo, Japan (hnd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hnd1.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "416835209631e2ef465b7a3a4d46b5e87c176acf84de1b24d8d67b7b955d4740"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3c4927e3feb37a40cbbb86e5429d503c98cf11e7cb52d3b9cc822d18f312b082"
 ---
 
 # Tokyo, Japan (hnd1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Osaka, Japan \\(kix1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/kix1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Osaka, Japan \\(kix1\\) region.
-- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the London, UK \\(lhr1\\) region.
-- [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
-- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Osaka, Japan \\(kix1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/kix1) — Vercel pricing for the Osaka, Japan \\(kix1\\) region.
+- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
+- [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/hnd1.graph.md](/docs/pricing/regional-pricing/hnd1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fhnd1&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/hnd1.graph.md](/docs/pricing/regional-pricing/hnd1.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).

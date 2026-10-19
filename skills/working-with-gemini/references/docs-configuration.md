@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md"
-fetched_at: "2026-10-12T11:44:59.166Z"
-sha256: "44d411858290a6cf90e178fa7bd4304f792f2d71b281096fc7858f06ff197ba6"
+fetched_at: "2026-10-19T09:41:44.018Z"
+sha256: "4b86e73ee6da5b18ec0515c3fbf12b9b72fb07fbb545fa93362507596cbc64f4"
 ---
 
 # Gemini CLI configuration
@@ -72,9 +72,14 @@ variables using `$VAR_NAME`, `${VAR_NAME}`, or `${VAR_NAME:-DEFAULT_VALUE}`
 syntax. These variables will be automatically resolved when the settings are
 loaded. For example, if you have an environment variable `MY_API_TOKEN`, you
 could use it in `settings.json` like this: `"apiKey": "$MY_API_TOKEN"`. If you
-want to provide a fallback value, use `${MY_API_TOKEN:-default-token}`.
-Additionally, each extension can have its own `.env` file in its directory,
-which will be loaded automatically.
+want to provide a fallback value, use `${MY_API_TOKEN:-default-token}`. You can
+reference variables from your shell environment as well as variables loaded from
+[`.env` files](#environment-variables-and-env-files). The settings that control
+how `.env` files are loaded, such as `security.folderTrust.enabled`,
+`advanced.ignoreLocalEnv`, `advanced.excludedEnvVars`, and `tools.sandbox`, are
+evaluated before any `.env` file is loaded, so they can only reference variables
+from your shell environment. Additionally, each extension can have its own
+`.env` file in its directory, which will be loaded automatically.
 
 **Note for Enterprise Users:** For guidance on deploying and managing Gemini CLI
 in a corporate environment, see the

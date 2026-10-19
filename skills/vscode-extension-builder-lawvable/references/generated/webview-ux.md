@@ -1,8 +1,8 @@
 ---
 title: "Webview UX Guidelines"
 source: "https://code.visualstudio.com/api/ux-guidelines/webviews"
-fetched_at: "2026-10-12T11:41:30.415Z"
-sha256: "9a8723909c636a637a0826fce4abed62502ef86f8113384ba1f78021a08345ef"
+fetched_at: "2026-10-19T09:38:05.422Z"
+sha256: "20cafc63948d373d9aca91ddb1babece9afeacee2bd1297c8660fc1c227d201d"
 ---
 
 # Webview UX Guidelines
@@ -106,4 +106,4 @@ _This webview view shows content for creating a pull request that uses dropdowns
 - [Webview View extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/webview-view-sample)
 
  
- 10/7/2026
+ 10/14/2026

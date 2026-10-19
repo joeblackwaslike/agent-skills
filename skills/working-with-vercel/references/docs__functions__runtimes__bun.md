@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e0873c3f664492209a7f418e9734000d71f872521f4ab2e6f50715d9268ba342"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "450d838be070d8b828277f124e01c8aeee5baa8bfb493406b261a2aec2187607"
 ---
 
 # Using the Bun Runtime with Vercel Functions
@@ -33,20 +33,20 @@ Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to No
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Bun runtime on Vercel Functions](https://vercel.com/blog/bun-runtime-on-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
-- [Bun runtime now in Public Beta for Vercel Functions](https://vercel.com/changelog/bun-runtime-now-in-public-beta-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
-- [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
-- [Bun 1.4 is now available in Vercel Functions](https://vercel.com/changelog/bun-1-4-is-now-available-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
-- [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
-- [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related)
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
-- [Using WebAssembly \\(Wasm\\)](https://vercel.com/docs/functions/runtimes/wasm?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=related) — Learn how to use WebAssembly \\(Wasm\\) to enable low-level languages to run on Vercel Functions and Routing Middleware.
+- [Bun runtime on Vercel Functions](https://vercel.com/blog/bun-runtime-on-vercel-functions)
+- [Bun runtime now in Public Beta for Vercel Functions](https://vercel.com/changelog/bun-runtime-now-in-public-beta-for-vercel-functions)
+- [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions)
+- [Bun 1.4 is now available in Vercel Functions](https://vercel.com/changelog/bun-1-4-is-now-available-in-vercel-functions)
+- [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration)
+- [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia)
+- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Elysia on Vercel](https://vercel.com/docs/frameworks/backend/elysia) — Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and h
+- [Using WebAssembly \\(Wasm\\)](https://vercel.com/docs/functions/runtimes/wasm) — Learn how to use WebAssembly \\(Wasm\\) to enable low-level languages to run on Vercel Functions and Routing Middleware.
 
-Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fbun&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/runtimes/bun.graph.md](/docs/functions/runtimes/bun.graph.md)
 <!-- /docsgraph:related -->
 
 Bun provides Node.js API compatibility and is generally faster than Node.js for CPU-bound tasks. It includes a bundler, test runner, and package manager.

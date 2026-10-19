@@ -4,8 +4,8 @@ description: Learn how to use Agent Client Protocol implementations through the 
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "15bf013b2ff1bafb4910cc008458d6d310b7528b60c4b5c8fbebfe14070a6407"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "612550c9aed8a7211165275bcaba036d7f7fa65fda9d2eacb8174d6d1de6bded"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -101,6 +101,9 @@ try {
   `agentCapabilities.mcpCapabilities.http`.
 - `authentication`: advertised ACP authentication method, metadata, and client
   capabilities.
+- `nonTextContentTypes`: non-text tool model output the implementation can
+  deliver to the model. Currently accepts `['image']`. Text is always supported.
+  Defaults to an empty list; undeclared images are omitted with a warning.
 - `auth`: downstream provider authentication mode:
   - `auto` (default): use AI Gateway when Gateway credentials and a
     `providerAuthentication` configuration are available; otherwise use direct
@@ -461,6 +464,7 @@ import { secureJsonParse } from '@ai-sdk/provider-utils';
 
 export const codexACPHarness = createACP({
   harnessId: 'acp-codex',
+  nonTextContentTypes: ['image'],
   // Define the runtime's built-in tool names and input schemas to expose
   // provider-executed calls as typed HarnessAgent tools.
   // builtinTools: { ... },
@@ -570,6 +574,7 @@ import { createACP } from '@ai-sdk/harness-acp';
 
 export const cursorACPHarness = createACP({
   harnessId: 'cursor-acp',
+  nonTextContentTypes: ['image'],
   source: {
     type: 'install-command',
     command: 'curl https://cursor.com/install -fsS | bash',

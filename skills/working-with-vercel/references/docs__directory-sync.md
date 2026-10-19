@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "6de3404816fd3285a0f7fa90d93a4adeaf465b9ed729da04c4a6e4e13015ed41"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d16e3677266b20a6633ef4e02b236c926612132c5259bdc4dd4a85253ec5e57e"
 ---
 
 # Directory Sync
@@ -30,15 +30,15 @@ Directory Sync helps teams manage their organization membership from a third-par
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Enterprise](https://v0.app/docs/enterprise?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related)
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
+- [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available)
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
+- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 
-Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md?from=related&source_path=%2Fdocs%2Fdirectory-sync&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md)
 <!-- /docsgraph:related -->
 
 When Directory Sync is configured, changes to your Directory Provider will automatically be synced with your [team members](/docs/rbac/managing-team-members). The previously existing permissions/roles will be overwritten by Directory Sync, including current user performing the sync.

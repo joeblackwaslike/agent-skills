@@ -16,8 +16,8 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "42955319d13432a22c392e12e56e1882341be0debc3b3a107b417be505628d26"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0a388b40662a1e12ed9509754d945b662e66549d21e3e9907d83ed227a2b9213"
 ---
 
 # Audit Logs
@@ -32,20 +32,20 @@ Audit logs help you track and analyze your [team members'](/docs/rbac/managing-t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [End-to-end encryption for Vercel Workflow](https://vercel.com/changelog/workflow-encryption?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related)
-- [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Understand how workflow and step data is encrypted at rest.
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
+- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
+- [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
+- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
+- [End-to-end encryption for Vercel Workflow](https://vercel.com/changelog/workflow-encryption)
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
+- [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption) — Understand how workflow and step data is encrypted at rest.
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
-Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md?from=related&source_path=%2Fdocs%2Faudit-log&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md)
 <!-- /docsgraph:related -->
 
 ![Select a timeframe to export audit logs for your team.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/audit-logs-section-light.png)

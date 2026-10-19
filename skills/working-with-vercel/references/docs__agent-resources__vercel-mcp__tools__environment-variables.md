@@ -13,13 +13,13 @@ related:
 summary: Vercel MCP tools for environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0f39543ce808bfee7cf3350ab6f9ab76c3175553895298e22bbe76abb82f5dd5"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "cfc1dca53e833e98ace09d82fb4cbcdcd3893b018dafc2753f2ef620cbcdf9e7"
 ---
 
 # Environment Variables
 
-Inspect and update configuration values for your projects and shared environment variables. You can also retrieve custom environment details to understand where your configuration applies.
+Read and update project environment variables, inspect custom environments, and read shared environment variables.
 
 
 <!-- docsgraph:related -->
@@ -27,13 +27,13 @@ Inspect and update configuration values for your projects and shared environment
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Learn how to create and manage environment variables for Vercel.
-- [Environment variables](https://vercel.com/docs/environment-variables?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — Learn more about environment variables on Vercel.
-- [Updates one or more shared environment variables](https://vercel.com/docs/rest-api/environment/updates-one-or-more-shared-environment-variables?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — PATCH /v1/env — Updates a given Shared Environment Variable for a Team.
-- [Create one or more shared environment variables](https://vercel.com/docs/rest-api/environment/create-one-or-more-shared-environment-variables?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables&source_site=vercel-docs&relationship=related) — POST /v1/env — Creates shared environment variable\\(s\\) for a team.
+- [Retrieve the environment variables of a project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-the-environment-variables-of-a-project-by-id-or-name) — GET /v10/projects/{idOrName}/env — Retrieve the environment variables for a given project by passing either the project
+- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
+- [Retrieve custom environments](https://vercel.com/docs/rest-api/environment/retrieve-custom-environments) — GET /v9/projects/{idOrName}/custom-environments — Retrieve custom environments for the project. Must not be named 'Produ
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
+- [Lists all Shared Environment Variables for a team](https://vercel.com/docs/rest-api/environment/lists-all-shared-environment-variables-for-a-team) — GET /v1/env — Lists all Shared Environment Variables for a team, taking into account optional filters.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fenvironment-variables&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md)
 <!-- /docsgraph:related -->
 
 ## `create_project_env`
@@ -46,8 +46,8 @@ Create one or more environment variables.
 | ------------- | -------------------------- | -------- | ----------------------------------------------------------- |
 | `idOrName`    | string                     | Yes      | The unique project identifier or the project name           |
 | `upsert`      | string                     | No       | Allow override of environment variable if it already exists |
-| `teamId`      | string                     | No       | Team ID.                                                    |
-| `slug`        | string                     | No       | Team slug.                                                  |
+| `teamId`      | string                     | No       | Team ID to use for this operation.                          |
+| `slug`        | string                     | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object \| Array\<object> | Yes      | Request body for this tool.                                 |
 
 ## `edit_project_env`
@@ -56,13 +56,13 @@ Edit an environment variable.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `idOrName`    | string | Yes      | The unique project identifier or the project name |
-| `id`          | string | Yes      | The unique environment variable identifier        |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | Yes      | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName`    | string | Yes      | The unique project identifier or the project name           |
+| `id`          | string | Yes      | The unique environment variable identifier                  |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 ## `filter_project_envs`
 
@@ -78,8 +78,8 @@ Retrieve the environment variables of a project by id or name.
 | `source`                | string | No       | The source that is calling the endpoint.                                                                |
 | `customEnvironmentId`   | string | No       | The unique custom environment identifier within the project                                             |
 | `customEnvironmentSlug` | string | No       | The custom environment slug (name) within the project                                                   |
-| `teamId`                | string | No       | Team ID.                                                                                                |
-| `slug`                  | string | No       | Team slug.                                                                                              |
+| `teamId`                | string | No       | Team ID to use for this operation.                                                                      |
+| `slug`                  | string | No       | Team slug to use for this operation. Use instead of teamId.                                             |
 
 ## `get_custom_environment`
 
@@ -91,8 +91,8 @@ Retrieve a custom environment.
 | --------------------- | ------ | -------- | ----------------------------------------------------------- |
 | `idOrName`            | string | Yes      | The unique project identifier or the project name           |
 | `environmentSlugOrId` | string | Yes      | The unique custom environment identifier within the project |
-| `teamId`              | string | No       | Team ID.                                                    |
-| `slug`                | string | No       | Team slug.                                                  |
+| `teamId`              | string | No       | Team ID to use for this operation.                          |
+| `slug`                | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 ## `get_project_env`
 
@@ -104,8 +104,8 @@ Retrieve the decrypted value of an environment variable of a project by id.
 | ---------- | ------ | -------- | ---------------------------------------------------------------------- |
 | `idOrName` | string | Yes      | The unique project identifier or the project name                      |
 | `id`       | string | Yes      | The unique ID for the environment variable to get the decrypted value. |
-| `teamId`   | string | No       | Team ID.                                                               |
-| `slug`     | string | No       | Team slug.                                                             |
+| `teamId`   | string | No       | Team ID to use for this operation.                                     |
+| `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId.            |
 
 ## `get_shared_env_var`
 
@@ -116,8 +116,8 @@ Retrieve the decrypted value of a Shared Environment Variable by id.
 | Parameter | Type   | Required | Description                                                                   |
 | --------- | ------ | -------- | ----------------------------------------------------------------------------- |
 | `id`      | string | Yes      | The unique ID for the Shared Environment Variable to get the decrypted value. |
-| `teamId`  | string | No       | Team ID.                                                                      |
-| `slug`    | string | No       | Team slug.                                                                    |
+| `teamId`  | string | No       | Team ID to use for this operation.                                            |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId.                   |
 
 ## `list_project_custom_environments`
 
@@ -125,24 +125,12 @@ Retrieve custom environments.
 
 ## Parameters
 
-| Parameter   | Type   | Required | Description                                         |
-| ----------- | ------ | -------- | --------------------------------------------------- |
-| `idOrName`  | string | Yes      | The unique project identifier or the project name   |
-| `gitBranch` | string | No       | Fetch custom environments for a specific git branch |
-| `teamId`    | string | No       | Team ID.                                            |
-| `slug`      | string | No       | Team slug.                                          |
-
-## `update_shared_env_variable`
-
-Updates one or more shared environment variables.
-
-## Parameters
-
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | No       | Request body for this tool. |
+| Parameter   | Type   | Required | Description                                                 |
+| ----------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName`  | string | Yes      | The unique project identifier or the project name           |
+| `gitBranch` | string | No       | Fetch custom environments for a specific git branch         |
+| `teamId`    | string | No       | Team ID to use for this operation.                          |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 
 ---

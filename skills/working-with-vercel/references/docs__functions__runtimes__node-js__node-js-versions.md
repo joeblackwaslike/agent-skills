@@ -13,8 +13,8 @@ related:
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "7ce89299fa8c1a86909e2cf57fab40d51c128ca248d9ee3e3dd3793d4e987ac9"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3a7c63c10b5130c744f9176bbe755f1a19d0424f752cade0ca6cf3f3fc8b483b"
 ---
 
 # Supported Node.js versions
@@ -29,20 +29,19 @@ By default, a new project uses the latest Node.js LTS version available on Verce
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Bulk upgrade deprecated Node.js versions](https://vercel.com/changelog/bulk-upgrade-deprecated-node-js-versions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related)
-- [Legacy build image is being deprecated on September 1, 2025](https://vercel.com/changelog/legacy-build-image-is-being-deprecated?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related)
-- [Node.js 20 is being deprecated on October 1, 2026](https://vercel.com/changelog/node-js-20-is-being-deprecated?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related)
-- [One-click upgrade for deprecated Node.js versions](https://vercel.com/changelog/one-click-upgrade-for-deprecated-node-js-versions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related)
-- [Node.js v20 LTS is now generally available](https://vercel.com/changelog/node-js-v20-lts-is-now-generally-available?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related)
-- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
-- [Node.js 10 is Now Available](https://vercel.com/blog/node-10?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related)
-- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related) — Learn about advanced configurations for Vercel functions on Vercel.
-- [Package Managers](https://vercel.com/docs/package-managers?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
-- [Set the Python version for your Vercel project](https://vercel.com/docs/functions/runtimes/python/python-version?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related) — Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
-- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
-- [Fluid compute](https://vercel.com/docs/fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=related) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
+- [Bulk upgrade deprecated Node.js versions](https://vercel.com/changelog/bulk-upgrade-deprecated-node-js-versions)
+- [Legacy build image is being deprecated on September 1, 2025](https://vercel.com/changelog/legacy-build-image-is-being-deprecated)
+- [Node.js 20 is being deprecated on October 1, 2026](https://vercel.com/changelog/node-js-20-is-being-deprecated)
+- [One-click upgrade for deprecated Node.js versions](https://vercel.com/changelog/one-click-upgrade-for-deprecated-node-js-versions)
+- [Node.js v20 LTS is now generally available](https://vercel.com/changelog/node-js-v20-lts-is-now-generally-available)
+- [Node.js 10 is Now Available](https://vercel.com/blog/node-10)
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
+- [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
+- [Set the Python version for your Vercel project](https://vercel.com/docs/functions/runtimes/python/python-version) — Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
+- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [Fluid compute](https://vercel.com/docs/fluid-compute) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
 
-Full cross-link map for this page: [/docs/functions/runtimes/node-js/node-js-versions.graph.md](/docs/functions/runtimes/node-js/node-js-versions.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js%2Fnode-js-versions&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/runtimes/node-js/node-js-versions.graph.md](/docs/functions/runtimes/node-js/node-js-versions.graph.md)
 <!-- /docsgraph:related -->
 
 Current available versions are:

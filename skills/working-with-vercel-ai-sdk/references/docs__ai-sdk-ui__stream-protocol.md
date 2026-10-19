@@ -4,8 +4,8 @@ description: Learn more about the supported stream protocols in the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "8fd6328f05410992348c8c1c68f051e51898a3e5a7fab43b67308aaeb80cdea7"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "52a38d9b483269fe1b81e95a81361825f43588b6c32089b3b7141531c3b0e7b0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -322,6 +322,13 @@ data: {"type":"error","errorText":"error message"}
 ### Tool Input Start Part
 
 Indicates the beginning of tool input streaming.
+
+The optional `inputEncoding` field specifies how to interpret subsequent input
+deltas. When omitted or set to `'json'`, the UI parses the accumulated text as
+partial JSON. With `'text'`, the UI uses the accumulated text directly as the
+string input. Use `'text'` for raw custom-tool input such as code or HTML.
+The encoding is also retained on persisted `input-streaming` tool parts so
+streaming can resume correctly.
 
 Format: Server-Sent Event with JSON object
 

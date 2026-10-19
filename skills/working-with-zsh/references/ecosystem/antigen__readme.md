@@ -1,7 +1,7 @@
 ---
-source: "https://raw.githubusercontent.com/zsh-users/antigen/develop/README.mkd"
-fetched_at: "2026-08-03T07:40:19.098Z"
-sha256: "831e0fbe34366335da630f12a1b0193f7613b610a121ac801bdd44ab7df4749e"
+source: "https://raw.githubusercontent.com/zsh-users/antigen/master/README.mkd"
+fetched_at: "2026-10-19T09:54:08.603Z"
+sha256: "56256c443c38181d1fa7576cd66bfb808cf4e380995ca9542ae073718f227273"
 ---
 
 <h1 align="center">
@@ -21,7 +21,6 @@ sha256: "831e0fbe34366335da630f12a1b0193f7613b610a121ac801bdd44ab7df4749e"
 Antigen is a small set of functions that help you easily manage your shell (zsh)
 plugins, called bundles. The concept is pretty much the same as bundles in a
 typical vim+pathogen setup. Antigen is to zsh, what [Vundle][] is to vim.
-
 
 Antigen has reached a certain level of stability and has been used in the wild
 for around a couple of years. If you face any problems, please open an issue.

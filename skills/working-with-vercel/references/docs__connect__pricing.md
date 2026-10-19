@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "1ba8e347a4d6a8ed8c45bddbf63e43ddf0a979a5fdfac1e5030d366d0d4aa7ec"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "57009f5f0f9fab933121a06710e4851f8c71bf8a21a6a6895f4f656038d6940c"
 ---
 
 # Vercel Connect Pricing
@@ -30,17 +30,18 @@ Vercel Connect is billed by token requests and triggers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
-- [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Understand Vercel Agent pricing and how to track costs
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
-Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fpricing&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md)
 <!-- /docsgraph:related -->
 
 A **token request** is a single call to the Vercel Connect API that returns a provider token, for example a `getToken` call from your application or agent.
@@ -74,12 +75,15 @@ Each trigger destination that receives the webhook event counts as one trigger. 
 
 Triggers are only counted for connectors that support [trigger forwarding](/docs/connect/concepts/triggers). If your connector does not use triggers, you are not billed for them.
 
+[MCP events](/docs/connect/mcp-events) are priced as triggers, at the rates shown above. Each MCP event delivery that Vercel Connect forwards to your destination counts as one trigger.
+
 ## How to stop being billed
 
 To stop being billed for Vercel Connect:
 
 - **Token requests:** Stop calling `getToken` from your application, remove the connector from any [linked projects](/docs/connect/concepts/project-links), and [revoke or delete](/docs/connect/concepts/tokens#revocation) existing provider tokens from the connector's settings page
 - **Triggers:** Remove the webhook URL from the provider's dashboard so their webhook client stops sending events to Vercel Connect. Removing trigger destinations alone does not stop billing, because incoming webhook events still count as one trigger even without a configured destination
+- **MCP events:** [Stop your MCP event subscriptions](/docs/connect/mcp-events#inspect-and-stop-subscriptions) so Vercel Connect no longer forwards their deliveries
 
 For platform limits and API rate limits, see [Limits](/docs/connect/limits).
 

@@ -16,8 +16,8 @@ related:
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "989476caf70de56819dba78fd02c39287b887c84eba1f8c0f9652ab8575d04c4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "ba5343865242567f5a2a4da14fca269e9f7057ae9f6b0ebcb4976284cbd4d616"
 ---
 
 # Audit Log Drains Reference
@@ -32,16 +32,16 @@ Audit Log Drains forward team activity events to external endpoints for storage,
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related)
-- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related)
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related)
-- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Vercel MCP tools for drains.
-- [Log Drains Reference](https://vercel.com/docs/drains/reference/logs?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Log Drains - data formats, sources, environments, and security configuration.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
+- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
+- [Log Drains Reference](https://vercel.com/docs/drains/reference/logs) — Learn about Log Drains - data formats, sources, environments, and security configuration.
+- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 
-Full cross-link map for this page: [/docs/drains/reference/audit-logs.graph.md](/docs/drains/reference/audit-logs.graph.md?from=related&source_path=%2Fdocs%2Fdrains%2Freference%2Faudit-logs&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/drains/reference/audit-logs.graph.md](/docs/drains/reference/audit-logs.graph.md)
 <!-- /docsgraph:related -->
 
 Audit Log Drains apply to the whole team. Filtering, sampling, and project selection are not available for Audit Log Drains.

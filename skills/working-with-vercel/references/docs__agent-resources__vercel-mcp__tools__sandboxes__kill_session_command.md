@@ -13,8 +13,8 @@ related:
 summary: Use kill_session_command with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "854169ea1569453982668e2725a30c5822c4dd3901a2d8f1513a4dd42178a636"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "51c1c1f4cc40aefbd2eb017527e15dedc15aa4cfbae4932a101abf23b6a65ea0"
 ---
 
 # kill_session_command
@@ -27,13 +27,13 @@ Kill a command.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Fkill_session_command&source_site=vercel-docs&relationship=related) — Use run_session_command with Vercel MCP.
-- [stop_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/stop_session?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Fkill_session_command&source_site=vercel-docs&relationship=related) — Use stop_session with Vercel MCP.
-- [get_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Fkill_session_command&source_site=vercel-docs&relationship=related) — Use get_session_command with Vercel MCP.
-- [list_session_commands](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Fkill_session_command&source_site=vercel-docs&relationship=related) — Use list_session_commands with Vercel MCP.
-- [Kill a command](https://vercel.com/docs/rest-api/sandboxes/kill-a-command?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Fkill_session_command&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill — Sends a signal to terminate a running command in a session. T
+- [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
+- [stop_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/stop_session) — Use stop_session with Vercel MCP.
+- [get_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command) — Use get_session_command with Vercel MCP.
+- [list_session_commands](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands) — Use list_session_commands with Vercel MCP.
+- [Kill a command](https://vercel.com/docs/rest-api/sandboxes/kill-a-command) — POST /v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill — Sends a signal to terminate a running command in a session. T
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Fkill_session_command&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -42,8 +42,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | ------------- | ------ | -------- | ------------------------------------------------------------ |
 | `cmdId`       | string | Yes      | The unique identifier of the command to terminate.           |
 | `sessionId`   | string | Yes      | The unique identifier of the session containing the command. |
-| `teamId`      | string | No       | Team ID.                                                     |
-| `slug`        | string | No       | Team slug.                                                   |
+| `teamId`      | string | No       | Team ID to use for this operation.                           |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.  |
 | `requestBody` | object | No       | Request body for this tool.                                  |
 
 

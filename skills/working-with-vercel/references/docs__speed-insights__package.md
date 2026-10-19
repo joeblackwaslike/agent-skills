@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-insights npm package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/package.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5b73805fc2cbc2c6b521cf5b61183c278cb65abd9ae1fda593b328aed9257526"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "03797ba1ef93b43914af6cef599d493dfe33dfddde0e9f07e3fd93514dfd9cdc"
 ---
 
 # Speed Insights Configuration with @vercel/speed-insights
@@ -27,17 +27,17 @@ With the `@vercel/speed-insights` npm package, you're able to configure your app
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related)
-- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related)
-- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related)
-- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related)
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=related) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
+- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
+- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
+- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 
-Full cross-link map for this page: [/docs/speed-insights/package.graph.md](/docs/speed-insights/package.graph.md?from=related&source_path=%2Fdocs%2Fspeed-insights%2Fpackage&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/speed-insights/package.graph.md](/docs/speed-insights/package.graph.md)
 <!-- /docsgraph:related -->
 
 ## Getting started

@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage telemetry collection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/telemetry.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b01fe720b8bc2d87f26560eb98a9ba8e6780c9e156680598507b076d786760a5"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "718b40db6e5260108885ae96ba3e6a88025b9c6beec3cec5b6570169539a8579"
 ---
 
 # vercel telemetry
@@ -26,16 +26,16 @@ The `vercel telemetry` command allows you to enable or disable telemetry collect
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Telemetry](https://vercel.com/docs/cli/about-telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Vercel CLI collects telemetry data about general usage.
-- [Telemetry](https://turborepo.dev/docs/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
-- [CLI Telemetry](https://eve.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn what eve CLI telemetry collects and how to control it.
-- [telemetry](https://turborepo.dev/docs/reference/telemetry?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
-- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Telemetry](https://vercel.com/docs/cli/about-telemetry) — Vercel CLI collects telemetry data about general usage.
+- [Telemetry](https://turborepo.dev/docs/telemetry) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
+- [CLI Telemetry](https://eve.dev/docs/reference/telemetry) — Learn what eve CLI telemetry collects and how to control it.
+- [telemetry](https://turborepo.dev/docs/reference/telemetry) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
+- [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
-Full cross-link map for this page: [/docs/cli/telemetry.graph.md](/docs/cli/telemetry.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Ftelemetry&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/telemetry.graph.md](/docs/cli/telemetry.graph.md)
 <!-- /docsgraph:related -->
 
 ## Usage

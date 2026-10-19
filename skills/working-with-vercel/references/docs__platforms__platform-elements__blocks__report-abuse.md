@@ -13,8 +13,8 @@ related:
 summary: A content moderation interface for reporting abuse with categorization, validation, and privacy-focused design.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "decae5ede8bbaf28f8a510f12d8e06990cfa2793b20e374db27d3a2e93c8c687"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "23c377765e166c23a08afb7878bb0dc70332271183b74a84e4b453075e24a1b3"
 ---
 
 # Report Abuse
@@ -29,17 +29,16 @@ The Report Abuse block provides platforms with a professional content moderation
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related)
-- [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Learn how to protect your authentication endpoints against abuse.
-- [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
-- [Modals](https://chat-sdk.dev/docs/modals?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Collect structured user input through modal dialogs with text fields, dropdowns, and validation.
-- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — A component for users to claim ownership of Vercel deployments created on their behalf.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Learn how to redact sensitive data from your Web Analytics events.
-- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [DNS Table](https://vercel.com/docs/platforms/platform-elements/blocks/dns-table?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=related) — A DNS record display component with one-click copying for guiding users through domain configuration.
+- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
+- [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting) — Learn how to protect your authentication endpoints against abuse.
+- [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
+- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
+- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
+- [DNS Table](https://vercel.com/docs/platforms/platform-elements/blocks/dns-table) — A DNS record display component with one-click copying for guiding users through domain configuration.
 
-Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Fblocks%2Freport-abuse&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md)
 <!-- /docsgraph:related -->
 
 ## Installation

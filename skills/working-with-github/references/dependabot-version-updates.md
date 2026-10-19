@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/concepts/supply-chain-security/dependabot-version-updates.md"
-fetched_at: "2026-07-20T06:52:02.847Z"
-sha256: "5dd092107e1f55d15ab5bf82c59f124d72a166b71b436e9d21c585517023e6b9"
+fetched_at: "2026-10-19T09:44:08.178Z"
+sha256: "2a7262024a0588cc0d69ac39343b8f99d5749319f7a3b89980ac11505ec2d1b4"
 ---
 
 {% data reusables.dependabot.enterprise-enable-dependabot %}
@@ -41,6 +41,12 @@ Actions are often updated with bug fixes and new features to make automated proc
 For each action in the file, {% data variables.product.prodname_dependabot %} checks the action's reference (typically a version number or commit identifier associated with the action) against the latest version. If a more recent version of the action is available, {% data variables.product.prodname_dependabot %} will send you a pull request that updates the reference in the workflow file to the latest version.
 
 {% data variables.product.prodname_dependabot %} also checks workflow files for uses of reusable workflows, and updates the Git reference for these called reusable workflows.
+
+{% ifversion actions-workflow-lockfiles %}
+
+If a workflow has been onboarded to a workflow dependency lockfile, {% data variables.product.prodname_dependabot %} also regenerates the matching lockfile entry in the same pull request, so the pinned commit in the lockfile always matches the updated reference in the workflow file. This needs no additional configuration. For more information, see [AUTOTITLE](/actions/how-tos/secure-your-work/lock-workflow-dependencies).
+
+{% endif %}
 
 To enable this feature, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/auto-update-actions).
 

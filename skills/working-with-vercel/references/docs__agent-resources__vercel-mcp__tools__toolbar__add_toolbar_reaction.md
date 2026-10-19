@@ -13,8 +13,8 @@ related:
 summary: Use add_toolbar_reaction with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d40125743907daaf5298d559b1b842cf664b7be6022ddf29f783394c632db5db"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "ae41bc1666f1483a61eb9d888cda881761297803f0cb04fc0a12fd80e8ec5af9"
 ---
 
 # add_toolbar_reaction
@@ -27,23 +27,23 @@ Add an emoji reaction to a message in a toolbar thread.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related) — Use reply_to_toolbar_thread with Vercel MCP.
-- [edit_toolbar_message](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/edit_toolbar_message?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related) — Use edit_toolbar_message with Vercel MCP.
-- [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related)
-- [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related) — Use get_toolbar_thread with Vercel MCP.
-- [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related) — Use change_toolbar_thread_resolve_status with Vercel MCP.
-- [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel Toolbar in production and local environments.
+- [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
+- [edit_toolbar_message](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/edit_toolbar_message) — Use edit_toolbar_message with Vercel MCP.
+- [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments)
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
+- [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread) — Use get_toolbar_thread with Vercel MCP.
+- [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.
+- [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.graph.md](/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ftoolbar%2Fadd_toolbar_reaction&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.graph.md](/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.graph.md)
 <!-- /docsgraph:related -->
 
-| Parameter   | Type   | Required | Default | Description                                                                                                                                                                            |
-| ----------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `threadId`  | string | Yes      | -       | The thread ID containing the message                                                                                                                                                   |
-| `messageId` | string | Yes      | -       | The message ID to react to                                                                                                                                                             |
-| `teamId`    | string | Yes      | -       | The team ID that owns the thread. Alternatively the team slug can be used. Team IDs start with 'team\_'. Can be found by reading `.vercel/project.json` (orgId) or using `list_teams`. |
-| `emoji`     | string | Yes      | -       | The emoji to add as a reaction (e.g. 👍)                                                                                                                                               |
+| Parameter   | Type   | Required | Default | Description                                               |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------- |
+| `threadId`  | string | Yes      | -       | The thread ID containing the message                      |
+| `messageId` | string | Yes      | -       | The message ID to react to                                |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource. |
+| `emoji`     | string | Yes      | -       | The emoji to add as a reaction (e.g. 👍)                  |
 
 **Sample prompt:** "Add a 👍 reaction to message msg\_456 on toolbar thread tbt\_123"
 

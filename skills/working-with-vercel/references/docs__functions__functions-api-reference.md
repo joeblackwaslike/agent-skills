@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d2f0af7c31d16315a8eaec48cdd074bfc3c8868b1289d4d092ea0e8412569360"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "62123a81b9dbb7fccabdfcfcfae2342a8a22cb6a38d6bc0138c790182dddfc17"
 ---
 
 # Functions API Reference
@@ -32,20 +32,20 @@ Functions are defined similar to a [Route Handler](https://nextjs.org/docs/app/a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Stopping Streams](https://ai-sdk.dev/docs/advanced/stopping-streams?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to cancel streams with the AI SDK
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to deploy an AI application to production on Vercel
-- [Node.js Vercel Functions now support fetch web handlers](https://vercel.com/changelog/node-js-vercel-functions-now-support-fetch-web-handlers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
-- [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
-- [Node.js Vercel Functions now support request cancellation](https://vercel.com/changelog/node-js-vercel-functions-now-support-request-cancellation?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
-- [Vercel Functions now support graceful shutdown](https://vercel.com/changelog/vercel-functions-now-support-graceful-shutdown?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
-- [waitUntil is now available for Vercel Functions](https://vercel.com/changelog/waituntil-is-now-available-for-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
-- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Stream data to clients in real time without waiting for workflow completion.
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related)
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Stopping Streams](https://ai-sdk.dev/docs/advanced/stopping-streams) — Learn how to cancel streams with the AI SDK
+- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide) — Learn how to deploy an AI application to production on Vercel
+- [Node.js Vercel Functions now support fetch web handlers](https://vercel.com/changelog/node-js-vercel-functions-now-support-fetch-web-handlers)
+- [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation)
+- [Node.js Vercel Functions now support request cancellation](https://vercel.com/changelog/node-js-vercel-functions-now-support-request-cancellation)
+- [Vercel Functions now support graceful shutdown](https://vercel.com/changelog/vercel-functions-now-support-graceful-shutdown)
+- [waitUntil is now available for Vercel Functions](https://vercel.com/changelog/waituntil-is-now-available-for-vercel-functions)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
+- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming) — Stream data to clients in real time without waiting for workflow completion.
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
+- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
-Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md)
 <!-- /docsgraph:related -->
 
 > For \["nextjs"]:

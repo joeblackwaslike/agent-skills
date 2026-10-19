@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "27982923e3b4c0b89880b1b9805a0d8b4a4cc79aca550dd6724961c85a4aff33"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "57c878bd67befb1066ed52380d83fd6ee97c2c6fcfb3ec7088abaa545883c198"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -56,20 +56,20 @@ sha256: "27982923e3b4c0b89880b1b9805a0d8b4a4cc79aca550dd6724961c85a4aff33"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Upgrade your Next.js Application from Version 14 to 15.
-- [Add cache tags from Function responses, regardless of framework](https://vercel.com/changelog/add-cache-tags-from-function-responses-regardless-of-framework?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
-- [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
-- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
-- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
-- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
-- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — How to create high-performance database connection pools without leaking connections
-- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
-- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
-- [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related)
-- [Streaming](https://workflow-sdk.dev/docs/foundations/streaming?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Stream data to clients in real time without waiting for workflow completion.
-- [Set cache control headers for functions](https://vercel.com/kb/guide/set-cache-control-headers?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=related) — Learn how to set headers to cache your function's responses.
+- [How to upgrade to version 15](https://nextjs.org/docs/app/guides/upgrading/version-15) — Upgrade your Next.js Application from Version 14 to 15.
+- [How to upgrade to version 15](https://nextjs.org/docs/pages/guides/upgrading/version-15) — Upgrade your Next.js Application from Version 14 to 15.
+- [Add cache tags from Function responses, regardless of framework](https://vercel.com/changelog/add-cache-tags-from-function-responses-regardless-of-framework)
+- [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
+- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
+- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image)
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
+- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute) — How to create high-performance database connection pools without leaking connections
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
+- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved)
 
-Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Ffunctions-api-reference%2Fvercel-functions-package&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md)
 <!-- /docsgraph:related -->
 
 2. Import the `@vercel/functions` package (non-Next.js frameworks or Next.js versions below 15.1):
@@ -497,11 +497,11 @@ The following Runtime Cache limits apply:
 
 Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [regional pricing docs](/docs/pricing/regional-pricing).
 
-### `experimental_upgradeWebSocket`
+### `upgradeWebSocket`
 
 **Description**: Upgrades an incoming HTTP GET request to a WebSocket connection.
 
-`experimental_upgradeWebSocket()` requires the `ws` package in your project. Install `ws` and import the API from `@vercel/functions`.
+`upgradeWebSocket()` requires `@vercel/functions` version 3.10.0 or later and the `ws` package in your project. Install `ws` and import the API from `@vercel/functions`.
 
 <CodeBlock>
   <Code tab="pnpm">
@@ -539,12 +539,12 @@ The `UpgradeWebSocketOptions` object accepts the following properties:
 
 ```ts filename="app/api/ws/route.ts"
 import {
-  experimental_upgradeWebSocket,
+  upgradeWebSocket,
   type WebSocketData,
 } from '@vercel/functions';
 
 export async function GET() {
-  return experimental_upgradeWebSocket((ws) => {
+  return upgradeWebSocket((ws) => {
     ws.on('message', (data: WebSocketData) => {
       ws.send(data);
     });
@@ -554,22 +554,22 @@ export async function GET() {
 }
 ```
 
-When using `experimental_upgradeWebSocket()` in a Next.js app with Cache
+When using `upgradeWebSocket()` in a Next.js app with Cache
 Components enabled, call [`connection()`](https://nextjs.org/docs/app/api-reference/functions/connection)
-before `experimental_upgradeWebSocket()`. This opts the route handler out of
+before `upgradeWebSocket()`. This opts the route handler out of
 static prerendering, so the WebSocket upgrade runs only at request time.
 
 ```ts {1,8} filename="app/api/ws/route.ts"
 import { connection } from 'next/server';
 import {
-  experimental_upgradeWebSocket,
+  upgradeWebSocket,
   type WebSocketData,
 } from '@vercel/functions';
 
 export async function GET() {
   await connection();
 
-  return experimental_upgradeWebSocket((ws) => {
+  return upgradeWebSocket((ws) => {
     ws.on('message', (data: WebSocketData) => {
       ws.send(data);
     });
@@ -581,13 +581,13 @@ Learn more about [using WebSockets on Vercel Functions](/docs/functions/websocke
 
 #### Limits and usage
 
-You can use `experimental_upgradeWebSocket()` to handle incoming WebSocket connections in any Vercel Function, including Next.js Route Handlers and other frameworks’ equivalents. However, this API only works on the Vercel platform and gives you less control over the request lifecycle; when possible, you should handle WebSocket connections using native Node.js APIs instead.
+You can use `upgradeWebSocket()` to handle incoming WebSocket connections in any Vercel Function, including Next.js Route Handlers and other frameworks’ equivalents. However, this API only works on the Vercel platform and gives you less control over the request lifecycle; when possible, you should handle WebSocket connections using native Node.js APIs instead.
 
 #### Local development
 
-When developing a Next.js app that uses `experimental_upgradeWebSocket()` locally, you must run the development server using `vc dev` with [Vercel CLI 54.14.2 or above](/docs/cli#updating-vercel-cli) instead of `next dev`.
+When developing a Next.js app that uses `upgradeWebSocket()` locally, you must run the development server using `vc dev` with [Vercel CLI 54.14.2 or above](/docs/cli#updating-vercel-cli) instead of `next dev`.
 
-Next.js is the only framework that supports local development with `experimental_upgradeWebSocket()`. No other instances of this API run in a local development environment.
+Next.js is the only framework that supports local development with `upgradeWebSocket()`. No other instances of this API run in a local development environment.
 
 ### Database Connection Pool Management
 

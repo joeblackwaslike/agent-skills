@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "9608a1116f082b1bdc9967d7cfe73e4c77d1a447bdd68d29b0ce3e77fda43fbc"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "ac3cb732235a6d5ec838ca0586d39f542a2453215d7da6d0a542f0da2972cf89"
 ---
 
 # Deploying Turborepo to Vercel
@@ -30,20 +30,20 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/app/guides/ci-build-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Learn how to configure CI to cache Next.js builds
-- [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/pages/guides/ci-build-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Learn how to configure CI to cache Next.js builds
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
-- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related)
-- [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
-- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
-- [Production checklist for launch](https://vercel.com/docs/production-checklist?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
-- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/app/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
+- [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/pages/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
+- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
+- [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
-Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fturborepo&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->
 
 - Fast incremental builds

@@ -16,8 +16,8 @@ related:
 summary: Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/aider.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "89efcf4f33a8b9afb1c2bc5ed417c8166aea9c5ccede59cb8660dae05d9c2b7a"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "8621994d85e6913cc60af412573e75957e1f003bd909274add5b55a02d5c1838"
 ---
 
 # Aider with AI Gateway
@@ -30,13 +30,14 @@ sha256: "89efcf4f33a8b9afb1c2bc5ed417c8166aea9c5ccede59cb8660dae05d9c2b7a"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Faider&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Faider&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Faider&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Faider&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Faider&source_site=vercel-docs&relationship=related) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/aider.graph.md](/docs/ai-gateway/coding-agents/aider.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Faider&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/aider.graph.md](/docs/ai-gateway/coding-agents/aider.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -44,7 +45,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/aider.graph.m
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Aider:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent aider
+npx vercel@latest ai-gateway setup --agent aider
 ```
 
 The command writes the gateway base URL and a default model into `~/.aider.conf.yml`, registers the gateway's models in `.aider.model.metadata.json` and `.aider.model.settings.yml` so Aider knows their context windows, and exports `AIDER_OPENAI_API_KEY` from a managed block in your shell startup file. Re-run it to refresh the model registrations.

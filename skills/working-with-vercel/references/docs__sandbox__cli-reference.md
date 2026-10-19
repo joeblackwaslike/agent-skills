@@ -12,17 +12,17 @@ related:
   - /docs/sandbox/python-sdk-reference
   - /docs/project-configuration/general-settings
   - /docs/sandbox/concepts/images
-  - /docs/sandbox/concepts/tags
-summary: Based on the Docker CLI, you can use the Sandbox CLI to manage your Vercel Sandbox from the command line.
+  - /docs/sandbox/concepts/persistent-sandboxes
+summary: Use the Sandbox CLI to run coding agents, manage sandboxes, execute commands, and copy files from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "6487fbf0ce49c2af55448cbd059c8b7d0fa2ebc14c2825f9be49c70f8542033b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "a908425bc47dbed1af701693454ddbe54de24212e69f0d48e82ea69df8a44ef4"
 ---
 
 # Sandbox CLI Reference
 
-The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execute commands, copy files, and more from your terminal. This page provides a complete reference for all available commands.
+Use the Sandbox CLI to [run coding agents](#run-a-coding-agent), manage sandboxes, execute commands, and copy files from your terminal.
 
 
 <!-- docsgraph:related -->
@@ -30,20 +30,18 @@ The Sandbox CLI, based on the Docker CLI, allows you to manage sandboxes, execut
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
-- [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
-- [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
-- [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related)
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
-- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for sandboxes.
+- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
+- [Full Sandbox egress firewall now available on Hobby plan](https://vercel.com/changelog/full-sandbox-egress-firewall-now-available-on-hobby-plan)
+- [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly)
+- [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli)
+- [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
+- [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
-Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fcli-reference&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md)
 <!-- /docsgraph:related -->
 
 Use the CLI for manual testing and debugging, or use the [JS SDK](/docs/sandbox/sdk-reference) or [Python SDK](/docs/sandbox/python-sdk-reference) to automate sandbox workflows in your application.
@@ -52,7 +50,7 @@ Sandboxes are identified by **name** (unique within your project) and are **pers
 
 ## Installation
 
-Install the Sandbox CLI globally to use all commands:
+Install the Sandbox CLI globally to run `sandbox` or `sbx` from any directory:
 
 <CodeBlock>
   <Code tab="pnpm">
@@ -77,11 +75,19 @@ Install the Sandbox CLI globally to use all commands:
   </Code>
 </CodeBlock>
 
-You can invoke the CLI using the `sandbox` or `sbx` commands in your terminal.
+You can also run the CLI without a global installation:
+
+```bash filename="Terminal"
+npx sandbox@latest --help
+```
 
 ## Authentication
 
-Log in to use Vercel Sandbox:
+The CLI uses your saved Vercel credentials. If you aren't signed in, it starts
+the login flow when you run a command that requires authentication. Follow the
+verification link, or press Enter to open it in your browser.
+
+You can also sign in explicitly:
 
 ```bash filename="Terminal"
 sandbox login
@@ -174,8 +180,54 @@ sandbox list --cursor <token>
 Create a sandbox in the specified account and project.
 
 ```bash filename="terminal"
-sandbox create [OPTIONS]
+sandbox create [OPTIONS] [agent]
 ```
+
+### Run a coding agent
+
+With Sandbox CLI 4.8.0 or later, use `sandbox create <agent>` in an interactive
+terminal to start a coding agent in a new sandbox:
+
+```bash filename="Terminal"
+sandbox create opencode
+```
+
+If you haven't installed the CLI globally, use `npx sandbox@latest create opencode`.
+The `sbx` alias also works with a global installation, for example `sbx create pi`.
+
+| Agent       | Command                   |
+| ----------- | ------------------------- |
+| OpenCode    | `sandbox create opencode` |
+| Pi          | `sandbox create pi`       |
+| Claude Code | `sandbox create claude`   |
+| Codex       | `sandbox create codex`    |
+
+The agent runs inside the sandbox, with its interactive interface in your local
+terminal. Its commands and file edits run remotely. Your local project files
+aren't uploaded automatically. Clone your repository inside the sandbox with
+appropriate credentials, or use [`sandbox copy`](#sandbox-copy) to copy files.
+
+Vercel login authenticates Sandbox access. Configure your chosen agent's
+credentials separately using its authentication flow or the `--env` option.
+The CLI tries to determine your team and project; set `--scope` and `--project`
+explicitly when needed:
+
+```bash filename="Terminal"
+sandbox create pi --name my-agent --scope my-team --project my-project
+```
+
+The CLI selects the [universal image](/docs/sandbox/concepts/images#vercel-managed-images)
+with the agents preinstalled. Omit `--image`, `--runtime`, and `--snapshot` when
+using an agent shortcut.
+
+Exiting the agent leaves the sandbox running. Unless you pass `--silent`, the
+CLI prints commands to reconnect to the agent or stop the sandbox. Use the
+printed reconnect command to continue your conversation; running
+`sandbox create <agent>` again creates another sandbox. Before reconnecting,
+follow any reminder to export environment variables.
+
+Stop the sandbox when you're finished. Normal
+[Sandbox persistence](/docs/sandbox/concepts/persistent-sandboxes) settings apply.
 
 ### Sandbox create example
 
@@ -1015,8 +1067,6 @@ sandbox sessions list my-sandbox --sort-order asc --limit 100
 
 ## `sandbox drives`
 
-> **Availability**: Drives (Beta) are available on all plans
-
 Drives are persistent storage that can be mounted into a sandbox. To learn more, see [Drives](/docs/sandbox/concepts/drives).
 
 ```bash filename="terminal"
@@ -1113,8 +1163,6 @@ sandbox drives get-or-create cache --region sfo1
 | `<name>` | The name of the drive to get or create. |
 
 ## `sandbox drives fork`
-
-> **Availability**: Drive forks (Private Beta) are available to Enterprise and Pro plans
 
 Create a new drive from an existing drive's data. The fork belongs to the same project and inherits the source drive's region and maximum size. You can mount and update the fork independently of the source drive.
 

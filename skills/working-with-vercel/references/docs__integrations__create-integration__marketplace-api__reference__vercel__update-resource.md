@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "759dad2df7704123460aee5da57da5b73e0ed9b95018393001b271f9ed6b9a6c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "79b319da6b88439d0006cf833cda6ec230716f6cdfaba6246ffe0adf9a188914"
 ---
 
 # Update Resource
@@ -80,7 +80,7 @@ This endpoint updates an existing resource in the installation. All parameters a
 "string"
         ]
       },
-      "claims": "object" // required // Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+      "claims": "object" // required // Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
     ]
   }
 }

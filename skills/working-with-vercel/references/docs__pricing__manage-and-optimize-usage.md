@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   - /docs/pricing
 related:
+  - /docs/cli/usage
   - /docs/pricing/flex-commit
   - /docs/notifications
   - /docs/functions/usage-and-pricing
   - /docs/builds/managing-builds
-  - /docs/deployment-storage
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c835bd9749ca7912876c1abd701ad52e3e40d46b8916faa5e4b4027b8fe7f4a8"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "df9b58d72e357ece29c268770c0a544687e0918ed54c9580c9de84689671bcdc"
 ---
 
 # Manage and optimize usage
@@ -32,25 +32,29 @@ There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Log Drains are now generally available](https://vercel.com/changelog/log-drains-are-now-generally-available?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
-- [Lower pricing for Log Drains](https://vercel.com/changelog/lower-pricing-for-log-drains?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
-- [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
-- [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
-- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related)
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Log Drains are now generally available](https://vercel.com/changelog/log-drains-are-now-generally-available)
+- [Lower pricing for Log Drains](https://vercel.com/changelog/lower-pricing-for-log-drains)
+- [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards)
+- [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
-Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fmanage-and-optimize-usage&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
 <!-- /docsgraph:related -->
 
 ## Viewing usage
 
 The Usage page shows the usage of all projects in your Vercel account by default. To access it, open **Usage** in the sidebar from your Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard).
+
+Review usage from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 To use the usage page:
 
@@ -60,6 +64,14 @@ To use the usage page:
 4. You can choose to view the usage of a particular project by selecting it from the dropdown
 5. In the overview, you'll see an allotment indicator. It shows how much of your usage you've consumed in the current cycle and the projected cost for each item
 6. Review the breakdown by project and region to understand the metrics causing the high usage
+
+#### CLI
+
+Run [`vercel usage`](/docs/cli/usage) to see usage for the last 30 days by project. Use `--group-by region` to group by region instead.
+
+```bash filename="terminal"
+vercel usage --since 30d --group-by project
+```
 
 ## Usage alerts, notification, and spend management
 

@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "e747c4e00f25a1b997ae012083bfbb37afcf8f96c8b638e4c505f20f28c237c1"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0851020cf96c52e7daf0416be69eea07d88d1cfbd046aecd78585ede6fd86e78"
 ---
 
 # Update Resource

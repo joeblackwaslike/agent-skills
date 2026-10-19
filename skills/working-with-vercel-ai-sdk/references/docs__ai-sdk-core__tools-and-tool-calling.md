@@ -4,8 +4,8 @@ description: Learn about tool calling and multi-step calls (using stopWhen) with
 url: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d1249f327dfe860847a09d2814bf99debcddf41b9a3615dda83afff91a0d1b6c"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "9e212b1aa7648a0c381d9e81b95288f084ef38ee8f69de1c5f65e5e88e583f2f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -303,7 +303,7 @@ for (const part of result.content) {
       type: 'tool-approval-response',
       approvalId: part.approvalId,
       approved: true, // or false to deny
-      reason: 'User confirmed the command', // Optional context for the model
+      reason: 'User confirmed the command', // Optional, see below
     };
     approvals.push(response);
   }
@@ -314,6 +314,17 @@ messages.push({ role: 'tool', content: approvals });
 ```
 
 Then call `generateText` or `streamText` again with the updated messages. If approved, the tool executes. If denied, the model receives the denial and can respond accordingly.
+
+The optional `reason` is handled differently depending on the decision:
+
+- **Denied**: the reason is included in the `execution-denied` tool result, so the model can see why the tool call was not executed.
+- **Approved** (tools executed by the AI SDK): the reason remains in the approval response in your messages (e.g. for rendering in the UI or for audit logs). The SDK does not include it in the model prompt, modify the tool's input, or expose it through a dedicated execution option. The model only sees the tool result. In manual `generateText` and `streamText` continuations, the approval response is available to the tool's `execute` function through `options.messages`.
+
+The approval `reason` is not a channel for passing data to an approved tool.
+If you need input from the user (for example, an answer to a question or a
+corrected value), use a tool without an `execute` function and provide its
+result from the client instead. See [Chatbot Tool
+Usage](/docs/ai-sdk-ui/chatbot-tool-usage).
 
 When the tool should execute without any approval metadata in the output, use
 `'not-applicable'`, return `undefined` from an approval function, or omit `toolApproval`. Use `'approved'`, `'denied'`, or
@@ -489,6 +500,35 @@ const result = await generateText({
   },
 });
 ```
+
+### Tool call execution concurrency
+
+By default, when a model generates multiple tool calls in one step,
+`generateText`, `streamText`, and `ToolLoopAgent` execute those calls
+concurrently. Set `toolCallConcurrency` to a positive integer to limit how many
+SDK-executed tool calls run at once.
+
+Use `toolCallConcurrency: 1` when later calls need to observe side effects from
+earlier calls. The SDK starts calls sequentially in the order the model
+generated them:
+
+```ts {5}
+const result = await generateText({
+  model: "anthropic/claude-sonnet-5.5",
+  tools,
+  prompt: 'Update the file, then read it.',
+  toolCallConcurrency: 1,
+});
+```
+
+This option controls execution of tool calls that the SDK runs locally. It does
+not change how many tool calls the model may generate, and it does not schedule
+provider-executed tools or client-side tools. Provider options such as
+`parallelToolCalls` control model generation instead.
+
+When the operation is aborted, active tools receive the abort signal and queued
+tool calls are not started. A streaming tool holds its concurrency slot until
+its final output or error.
 
 ### Tool execution lifecycle callbacks
 

@@ -15,8 +15,8 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "4ff3dce73318eb2a6da5da344e0e763cb1139920d95c244e8685ea78d9c3dc81"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2d82566d098b44ba8ceefb3ee261ea7acbaa8f535289a0b626736fd0dc319334"
 ---
 
 # Cohere Rerank API with AI Gateway
@@ -29,15 +29,15 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Reranking](https://ai-sdk.dev/docs/ai-sdk-core/reranking?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Learn how to rerank documents with the AI SDK.
-- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — API Reference for rerank.
-- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Learn how to use the Cohere provider for the AI SDK.
-- [Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway](https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related)
-- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Learn how to use the Voyage AI provider for embedding and reranking with the AI SDK.
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=related) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
+- [Reranking](https://ai-sdk.dev/docs/ai-sdk-core/reranking) — Learn how to rerank documents with the AI SDK.
+- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank) — API Reference for rerank.
+- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use the Cohere provider for the AI SDK.
+- [Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway](https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway)
+- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage) — Learn how to use the Voyage AI provider for embedding and reranking with the AI SDK.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
 
-Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsdks-and-apis%2Fcohere-rerank&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md)
 <!-- /docsgraph:related -->
 
 Reranking reorders a list of documents by their relevance to a query. It is commonly used to improve results in retrieval-augmented generation (RAG) pipelines after an initial retrieval step. To see which models support reranking, use the **Reranking** filter on the [models page](/ai-gateway/models?capabilities=reranking).

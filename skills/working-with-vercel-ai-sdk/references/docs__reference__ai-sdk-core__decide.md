@@ -4,8 +4,8 @@ description: Decide answers to typed questions against shared state with a decis
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/decide"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/decide.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "2ff6a6690258096612cf2e25ed2c2c97d1096960dff0e3ac2e1cdd5031425feb"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "69b4d1a7c9e04dcb222fd9b6a9a21e3e921038d7ae9a85063ff98790f5df3163"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -14,7 +14,7 @@ sha256: "2ff6a6690258096612cf2e25ed2c2c97d1096960dff0e3ac2e1cdd5031425feb"
 import { experimental_decide } from 'ai';
 ```
 
-Decides answers to a nonempty map of `choice`, `score`, and `boolean` questions against one
+Decides answers to a nonempty map of `choice`, `score`, `boolean`, and `box` questions against one
 state. See [Decisions](/docs/ai-sdk-core/decisions) for examples and semantics.
 
 ## Parameters
@@ -35,6 +35,29 @@ state. See [Decisions](/docs/ai-sdk-core/decisions) for examples and semantics.
 
 See [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks#experimental_decide)
 for the complete `onStart` and `onEnd` event fields.
+
+## Questions
+
+Each question has a `type` and can include `instructions` and `criteria` as
+described below.
+Instructions and criterion descriptions accept strings, JSON objects, or JSON
+arrays.
+
+| Type      | Instructions            | Criteria                                                                                                            |
+| --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `choice`  | Optional; may be `null` | Required nonempty map of option names to descriptions                                                               |
+| `score`   | Optional; may be `null` | Required nonempty array of levels, indexed from zero                                                                |
+| `boolean` | Optional; may be `null` | Optional object with `true` and/or `false` descriptions; at least one must be non-null when instructions are absent |
+| `box`     | Required and non-null   | None                                                                                                                |
+
+Criterion descriptions may be `null` in the shared type, but providers can impose
+stricter limits. Perplexity requires non-null Score levels and accepts 1–10 levels;
+a single level yields score `0` and probability `1`. Other providers may require
+at least two levels. Optional instructions also remain subject to the provider's
+API contract.
+
+See [question semantics](/docs/ai-sdk-core/decisions#question-types) and
+[Perplexity decision examples](/providers/ai-sdk-providers/perplexity#decision-models).
 
 ## Result
 

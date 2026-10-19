@@ -13,8 +13,8 @@ related:
 summary: Use get_firewall_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c4340063b6e9bbdcdbdc08c17eed8886bbb8dbea06877fae88835bda30ee32b9"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b8c3badcb2aa1a6619b29dfb1be6b316f1cfd0d865c30c081e881fc5ffa808ab"
 ---
 
 # get_firewall_config
@@ -27,13 +27,13 @@ Read Firewall Configuration.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [update_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_firewall_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffirewall%2Fget_firewall_config&source_site=vercel-docs&relationship=related) — Use update_firewall_config with Vercel MCP.
-- [put_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffirewall%2Fget_firewall_config&source_site=vercel-docs&relationship=related) — Use put_firewall_config with Vercel MCP.
-- [get_microfrontends_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffirewall%2Fget_firewall_config&source_site=vercel-docs&relationship=related) — Use get_microfrontends_config with Vercel MCP.
-- [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffirewall%2Fget_firewall_config&source_site=vercel-docs&relationship=related) — Use get_microfrontends_config_for_project with Vercel MCP.
-- [get_configuration](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffirewall%2Fget_firewall_config&source_site=vercel-docs&relationship=related) — Use get_configuration with Vercel MCP.
+- [put_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config) — Use put_firewall_config with Vercel MCP.
+- [update_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_firewall_config) — Use update_firewall_config with Vercel MCP.
+- [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
+- [get_microfrontends_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config) — Use get_microfrontends_config with Vercel MCP.
+- [get_configuration](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration) — Use get_configuration with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffirewall%2Fget_firewall_config&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -41,8 +41,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 | Parameter       | Type   | Required | Description                                                                      |
 | --------------- | ------ | -------- | -------------------------------------------------------------------------------- |
 | `projectId`     | string | Yes      | The project ID.                                                                  |
-| `teamId`        | string | No       | Team ID.                                                                         |
-| `slug`          | string | No       | Team slug.                                                                       |
+| `teamId`        | string | No       | Team ID to use for this operation.                                               |
+| `slug`          | string | No       | Team slug to use for this operation. Use instead of teamId.                      |
 | `configVersion` | string | Yes      | The firewall configuration version. Use `active` for the deployed configuration. |
 
 

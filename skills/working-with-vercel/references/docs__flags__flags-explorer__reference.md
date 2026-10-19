@@ -15,8 +15,8 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "1edc35db6065c6e15a5c797c0da300911f1bf4a19fe6ca93ea6998f972047412"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b3b13127678746e7e6ed1d8d4fc0bc3a6c1b5f4938728aabf3ae52ba276dc6a2"
 ---
 
 # Reference
@@ -31,15 +31,15 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — APIs for working with feature flags in Next.js.
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Using the Flags SDK in SvelteKit
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — Learn how to start using the Flags SDK in your Next.js project.
-- [Statsig](https://flags-sdk.dev/docs/providers/statsig?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
-- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related)
-- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=related) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
+- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
+- [Statsig](https://flags-sdk.dev/docs/providers/statsig)
+- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
+- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
 
-Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md?from=related&source_path=%2Fdocs%2Fflags%2Fflags-explorer%2Freference&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
 <!-- /docsgraph:related -->
 
 ## Definitions

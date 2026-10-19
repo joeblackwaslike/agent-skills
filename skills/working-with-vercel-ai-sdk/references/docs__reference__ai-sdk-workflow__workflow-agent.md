@@ -4,8 +4,8 @@ description: API Reference for the WorkflowAgent class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "b47093f76a9ca98d02ca0fc7a8d252913532c902b15ffa2ed23588dcee5c46d1"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "74c54062801ebf643de75ce22cf740a4e01084250b1ffcf35495e4843e71739f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -68,10 +68,11 @@ import { WorkflowAgent } from "@ai-sdk/workflow"
 - `tools?` (`Record<string, Tool>`): A set of tools the agent can call. Keys are tool names. Tools are serialized to JSON Schema across workflow step boundaries and validated with Ajv at runtime.
 - `toolChoice?` (`ToolChoice`): Tool call selection strategy. Options: 'auto' | 'none' | 'required' | \{ type: 'tool', toolName: string }. Default: 'auto'.
 - `stopWhen?` (`StopCondition | StopCondition[]`): Default stop condition for the agent loop. When omitted, generate defaults to 20 steps, while stream has no maximum step count. Use \`isStepCount()\` to bound execution. Per-call values override this default.
+- `toolCallConcurrency?` (`number`): Maximum number of local tool calls executing concurrently within a step, including approved calls. Must be a positive integer. Set to 1 for sequential execution in model order. Defaults to unlimited concurrency. Can be changed by prepareCall; explicit generate/stream call options take precedence. Provider-executed tools are unaffected.
 - `activeTools?` (`ActiveTools<TTools>`): Default set of active tools. Limits which tools the model can call without changing tool call and result types. Per-stream values override this default.
 - `output?` (`OutputSpecification`): Default structured output specification. Per-stream values override this default.
 - `repairToolCall?` (`ToolCallRepairFunction`): Default function to repair tool calls that fail to parse. Mark the function with 'use step' when used in a workflow. Per-stream values override this default.
-- `experimental_download?` (`DownloadFunction`): Default custom download function for URLs. Per-stream values override this default.
+- `experimental_download?` (`DownloadFunction`): Default custom download function for URLs. Mark the function with 'use step' when used in a workflow. Per-stream values override this default.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Default sandbox session passed to tool descriptions and execution as \`experimental\_sandbox\`, and exposed to \`prepareStep\`. Per-stream values override this default.
 - `experimental_toolApprovalSecret?` (`WorkflowToolApprovalSecret`): Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Per-stream values override this default.
 - `prepareStep?` (`PrepareStepCallback`): Callback called before each step in the agent loop. Use it to modify settings, manage context, inject messages dynamically, or override \`experimental\_sandbox\` for the current step. Receives step number, previous steps, messages, context, and sandbox.
@@ -184,6 +185,7 @@ const result = await agent.stream({
 - `system?` (`string`): Deprecated. Use \`instructions\` instead.
 - `stopWhen?` (`StopCondition | StopCondition[]`): Condition(s) for ending the agent loop. When omitted and no constructor-level condition is configured, WorkflowAgent has no maximum step count and continues until natural completion. Use \`isStepCount()\` to bound execution.
 - `toolChoice?` (`ToolChoice`): Override the tool choice strategy for this call. Default: 'auto'.
+- `toolCallConcurrency?` (`number`): Override the local tool call concurrency limit for this call. Must be a positive integer. Set to 1 for sequential execution in model order, including approved calls. Takes precedence over the constructor and prepareCall.
 - `activeTools?` (`ActiveTools<TTools>`): Limits the subset of tools available for this call without changing tool call and result types.
 - `output?` (`OutputSpecification`): Structured output specification. Use \`Output.object(\{ schema })\` for typed objects or \`Output.text()\` for text.
 - `timeout?` (`number`): Model-call deadline in milliseconds. Inside a workflow, the absolute deadline is checked at dispatch and retry and remains in effect across suspension. It does not cancel a tool waiting on a Workflow hook; use run.cancel() to stop the suspended run.
@@ -192,7 +194,7 @@ const result = await agent.stream({
 - `includeRawChunks?` (`boolean`): Include raw, unprocessed chunks from the provider in the stream. Default: false.
 - `repairToolCall?` (`ToolCallRepairFunction`): Callback to attempt automatic recovery when a tool call cannot be parsed. Mark the function with 'use step' when used in a workflow.
 - `experimental_transform?` (`StreamTextTransform | Array<StreamTextTransform>`): Factories for stream transformations, applied in order to raw provider events before model processing and writable output. Each factory must return a TransformStream synchronously and maintain the stream structure. Mark each factory with 'use step' when used in a workflow.
-- `experimental_download?` (`DownloadFunction`): Custom download function for fetching files/URLs.
+- `experimental_download?` (`DownloadFunction`): Custom download function for fetching files/URLs. Mark the function with 'use step' when used in a workflow.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Sandbox session passed to tool descriptions and execution as \`experimental\_sandbox\`, and exposed to \`prepareStep\`. Overrides the constructor default.
 - `experimental_toolApprovalSecret?` (`WorkflowToolApprovalSecret`): Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Overrides the constructor default.
 - `telemetry?` (`TelemetryOptions`): Per-call telemetry configuration.

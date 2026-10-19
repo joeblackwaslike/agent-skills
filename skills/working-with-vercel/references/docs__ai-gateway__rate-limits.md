@@ -15,8 +15,8 @@ related:
 summary: Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a rate-limited request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ed87e0dad1d6d0c312d85b0408625252482601c8ed29e248e587ee0a0ca28641"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0918be6181510e036a03699e41ee4573f04c0adf3a3ec57aabbb17bef7734a0b"
 ---
 
 # AI Gateway Rate Limits
@@ -29,16 +29,16 @@ AI Gateway does not rate limit paid-tier requests. The free tier applies lower p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [AI Gateway Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [Vercel Connect Limits](https://vercel.com/docs/connect/limits?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=related) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
+- [AI Gateway Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts) — Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 
-Full cross-link map for this page: [/docs/ai-gateway/rate-limits.graph.md](/docs/ai-gateway/rate-limits.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Frate-limits&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/rate-limits.graph.md](/docs/ai-gateway/rate-limits.graph.md)
 <!-- /docsgraph:related -->
 
 ## How rate limits work

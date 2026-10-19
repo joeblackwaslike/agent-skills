@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Sydney, Australia (syd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/syd1.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "18551d22bc525f2372a60ed53146c57719a0abe060dc5184c188e0a2b77475b0"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "baf43060cb4c8af6a6d8dd87a700a45c69b7371316af224815eb4c9b414ffc45"
 ---
 
 # Sydney, Australia (syd1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Singapore \\(sin1\\) region.
-- [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
-- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
+- [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/syd1.graph.md](/docs/pricing/regional-pricing/syd1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fsyd1&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/syd1.graph.md](/docs/pricing/regional-pricing/syd1.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).

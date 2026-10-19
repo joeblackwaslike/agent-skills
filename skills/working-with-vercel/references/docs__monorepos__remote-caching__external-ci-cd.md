@@ -13,8 +13,8 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-09-14T09:45:03.548Z"
-sha256: "1e60a84e49dd9f39c0964d995615516aa86d6c803eea3276b80d337ba699a040"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "56f2ef17e99313b86e2a31cbf3cfc73424e9042f2a755806cb9b2d64361cd917"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -27,15 +27,15 @@ You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
-- [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
-- [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related)
-- [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
-- [Travis CI](https://turborepo.dev/docs/guides/ci-vendors/travis-ci?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Configure Travis CI to run Turborepo tasks with Remote Caching.
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
-- [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=related)
+- [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
+- [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc)
+- [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
+- [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Travis CI](https://turborepo.dev/docs/guides/ci-vendors/travis-ci) — Configure Travis CI to run Turborepo tasks with Remote Caching.
+- [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching)
 
-Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos%2Fremote-caching%2Fexternal-ci-cd&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md)
 <!-- /docsgraph:related -->
 
 - **OpenID Connect (OIDC)**: configure a policy that allows exchanging the CI/CD provider's OIDC tokens for short-lived Turborepo access tokens that grant access to Remote Cache (recommended).

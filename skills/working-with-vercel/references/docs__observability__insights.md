@@ -9,15 +9,15 @@ prerequisites:
   - /docs/observability
 related:
   - /docs/functions
+  - /docs/cli/metrics
   - /docs/manage-cdn-usage
   - /docs/image-optimization
   - /docs/incremental-static-regeneration
-  - /docs/vercel-blob
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "5082e091255fa4cf5ff510d1eb43b526518c11c40242504259714c0906d68ea4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1b7ffc4f6c6e6bb413d15de4aaad86fe502dcad7211f49fd4d503e92ffba8b48"
 ---
 
 # Observability Insights
@@ -30,17 +30,18 @@ Vercel organizes Observability through sections that correspond to different fea
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
-- [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related)
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=related) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
+- [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
-Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md?from=related&source_path=%2Fdocs%2Fobservability%2Finsights&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
 <!-- /docsgraph:related -->
 
 ## Vercel Functions
@@ -99,6 +100,9 @@ It also shows:
 - Paths that AI crawlers request the most
 - Paths that AI assistants request the most from user-initiated sessions
 - Paths that AI bots requested but received an error
+- Paths that AI bots request as Markdown
+
+You can also query AI crawler, assistant, and failed-request counts with the [AI traffic metrics in the Vercel CLI](/docs/cli/metrics#ai-traffic).
 
 ## Fast Data Transfer
 
@@ -149,7 +153,7 @@ To learn more, see [Builds](/docs/builds).
 
 ## AI Gateway
 
-With the AI Gateway you can switch between ~100 AI models without needing to manage API keys, rate limits, or provider accounts.
+With the AI Gateway you can switch between 400+ AI models without needing to manage API keys, rate limits, or provider accounts.
 
 The **AI Gateway** tab surfaces metrics related to the AI Gateway, and provides visibility into:
 

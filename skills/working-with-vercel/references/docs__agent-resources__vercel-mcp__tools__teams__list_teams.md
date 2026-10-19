@@ -13,8 +13,8 @@ related:
 summary: Use list_teams with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "628ef78253c0ccb528a9964e18e7c478e2c46da335e3b7ce7e05137603847b00"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "336af6ccf1b7c305dc63cf676c43946acf24ede074228fc603c00dc8ad694944"
 ---
 
 # list_teams
@@ -27,13 +27,13 @@ List the [teams](/docs/accounts) you belong to.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_teams&source_site=vercel-docs&relationship=related) — Use list_team_members with Vercel MCP.
-- [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_teams&source_site=vercel-docs&relationship=related) — Use list_domains with Vercel MCP.
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_teams&source_site=vercel-docs&relationship=related) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
-- [list_supported_tlds](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_teams&source_site=vercel-docs&relationship=related) — Use list_supported_tlds with Vercel MCP.
-- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_teams&source_site=vercel-docs&relationship=related) — Use get_team with Vercel MCP.
+- [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members) — Use list_team_members with Vercel MCP.
+- [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
+- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
+- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_teams.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_teams&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_teams.graph.md)
 <!-- /docsgraph:related -->
 
 | Parameter | Type   | Required | Description                                                           |
@@ -43,6 +43,12 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams
 | `until`   | number | No       | Timestamp (in milliseconds) to only include Teams created until then. |
 
 **Sample prompt:** "Show me all the teams I'm part of"
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+This workflow takes no parameters.
 
 
 ---

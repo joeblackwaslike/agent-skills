@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "596dff8804b5afd8892ed8c41ca481c485702225a6c8d214cb8a146613b0ea87"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "7b3f8aeaf22c6baf69092bda342796805b6af0ad1dc1aadd29cbba15769538c4"
 ---
 
 # Limits
@@ -32,20 +32,20 @@ You can raise many of the limits on this page. The process depends on your plan:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Integration](https://v0.app/docs/vercel-integration?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — How v0 and Vercel work in tandem.
-- [CDN origin timeout increased to two minutes](https://vercel.com/changelog/cdn-origin-timeout-increased-to-two-minutes?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
-- [CLI deployment limits removed](https://vercel.com/changelog/cli-deployment-limits-removed?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
-- [Increased limit for projects per Git repo](https://vercel.com/changelog/increased-limit-for-projects-per-git-repo?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
-- [Vercel Sandbox now supports 10,000 concurrent sandboxes and 5,000 vCPUs per minute](https://vercel.com/changelog/vercel-sandbox-now-supports-10-000-concurrent-sandboxes-and-5-000-vcpus-per-minute?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=related) — Learn about legacy usage and pricing for Vercel Functions.
+- [Vercel Integration](https://v0.app/docs/vercel-integration) — How v0 and Vercel work in tandem.
+- [CDN origin timeout increased to two minutes](https://vercel.com/changelog/cdn-origin-timeout-increased-to-two-minutes)
+- [CLI deployment limits removed](https://vercel.com/changelog/cli-deployment-limits-removed)
+- [Increased limit for projects per Git repo](https://vercel.com/changelog/increased-limit-for-projects-per-git-repo)
+- [Vercel Sandbox now supports 10,000 concurrent sandboxes and 5,000 vCPUs per minute](https://vercel.com/changelog/vercel-sandbox-now-supports-10-000-concurrent-sandboxes-and-5-000-vcpus-per-minute)
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
-Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md?from=related&source_path=%2Fdocs%2Flimits&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md)
 <!-- /docsgraph:related -->
 
 - **Enterprise**: Contact your Vercel account team to request a limit increase. Limits marked as **Custom** are set in your contract.
@@ -250,11 +250,11 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Description | Name | Limit | Duration (Seconds) | Scope |
 |-------------|------|-------|-------------------|-------|
 | Abuse report creation per minute. | `api-abuse-create-report` | 200 | 60 | `owner` |
-| Artifacts requests per minute (Free). | `api-artifacts-free` | 100 | 60 | `owner` |
+| Artifacts requests per minute (Free). | `api-artifacts-free` | 200 | 60 | `owner` |
 | Requests per minute to fetch the microfrontends groups for a team. | `api-microfrontends-groups` | 30 | 60 | `owner` |
 | Requests per minute to fetch the microfrontends config for a team. | `api-microfrontends-config` | 30 | 60 | `owner` |
 | Requests per minute to fetch the deployment of the best default app. | `api-microfrontends-best-default-app-deployment` | 30 | 60 | `owner` |
-| Artifacts requests per minute (Paid). | `api-artifacts-paid` | 10000 | 60 | `owner` |
+| Artifacts requests per minute (Paid). | `api-artifacts-paid` | 20000 | 60 | `owner` |
 | Remote Cache purge requests per minute. | `api-artifacts-remote-caching-purge` | 5 | 60 | `owner` |
 | Project production deployment per minute. | `api-projects-production-deployment` | 500 | 60 | `user` |
 | Project expiration updates per minute. | `api-projects-deployment-expiration` | 100 | 60 | `owner` |

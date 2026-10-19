@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "db6965e42faefaf82e023142f50917f3bdf1cd512cc89b7c3ddf85bd951497ed"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "cc4468f79e109df1913a783a7f0b71131a0f5a711b69aa05e6f96997108eeffb"
 ---
 
 # Security & Compliance Measures
@@ -30,20 +30,20 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [v0 vs Base44](https://v0.app/docs/compare/v0-vs-base44?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Base44.
-- [v0 vs Bolt](https://v0.app/docs/compare/v0-vs-bolt?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Bolt.
-- [v0 vs Figma Make](https://v0.app/docs/compare/v0-vs-figma-make?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Figma Make.
-- [v0 vs Replit](https://v0.app/docs/compare/v0-vs-replit?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — A source-backed comparison of v0 and Replit.
-- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
-- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
-- [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=related)
+- [v0 vs Base44](https://v0.app/docs/compare/v0-vs-base44) — A source-backed comparison of v0 and Base44.
+- [v0 vs Bolt](https://v0.app/docs/compare/v0-vs-bolt) — A source-backed comparison of v0 and Bolt.
+- [v0 vs Figma Make](https://v0.app/docs/compare/v0-vs-figma-make) — A source-backed comparison of v0 and Figma Make.
+- [v0 vs Replit](https://v0.app/docs/compare/v0-vs-replit) — A source-backed comparison of v0 and Replit.
+- [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance)
 
-Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md?from=related&source_path=%2Fdocs%2Fsecurity%2Fcompliance&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md)
 <!-- /docsgraph:related -->
 
 To understand how security responsibilities are divided between you (the customer) and Vercel, see the [shared responsibility model](/docs/security/shared-responsibility). It explains who is responsible for each aspect of keeping your cloud services secure and running smoothly.

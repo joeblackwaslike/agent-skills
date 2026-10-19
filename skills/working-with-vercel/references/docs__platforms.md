@@ -16,8 +16,8 @@ related:
 summary: Build platforms where agents and users deploy apps with isolated projects or shared multi-tenant deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "dd7b6624f6804a89fc1fa9fe98bd1b944f61ac09a756c97af5b3c517ac3c6d21"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "320ffa9a76bf5edd72642b91e23b25a8c56cf993ce681533e3f3ff0dfcca85ff"
 ---
 
 # Vercel for Platforms
@@ -32,14 +32,14 @@ Vercel for Platforms gives generated apps isolated projects and deployments. Mul
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
-- [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
-- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related)
-- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
-- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories)
+- [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
+- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
-Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md?from=related&source_path=%2Fdocs%2Fplatforms&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md)
 <!-- /docsgraph:related -->
 
 ```typescript filename="create-project.ts"

@@ -16,8 +16,8 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "79a05e227b6d2a382b873ca381d76117cff654efa0c3775a84a18adb6dd334fb"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "39bf32b5db5ce3c7b2d3063146036ce198010cd21b7ce3d407b0836fbc4522d7"
 ---
 
 # Pricing for Web Analytics
@@ -33,19 +33,19 @@ After you enable Vercel Web Analytics, your plan determines which features you c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Split Web Analytics data by any dimension](https://vercel.com/changelog/split-web-analytics-data-by-any-dimension?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [Up to 80% pricing reduction for Web Analytics](https://vercel.com/changelog/up-to-80-pricing-reduction-for-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [UTM parameter support in Web Analytics](https://vercel.com/changelog/utm-parameter-support-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related)
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about using Observability Plus and its limits.
-- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=related) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Split Web Analytics data by any dimension](https://vercel.com/changelog/split-web-analytics-data-by-any-dimension)
+- [Up to 80% pricing reduction for Web Analytics](https://vercel.com/changelog/up-to-80-pricing-reduction-for-web-analytics)
+- [UTM parameter support in Web Analytics](https://vercel.com/changelog/utm-parameter-support-in-web-analytics)
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 
-Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Flimits-and-pricing&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
 
 |  | Hobby | Pro | Pro with Web Analytics Plus | Enterprise |

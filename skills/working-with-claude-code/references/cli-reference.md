@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/cli-reference.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "c2346f30a836617b4d415699d77365e18e5c78cfc21ea967fe4d4f11e89c333d"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "a27045a987676e2291e9f7b5d83facbfb26c9bdb1c8bd7233e1afbc155b8fadc"
 ---
 
 > ## Documentation Index
@@ -491,8 +491,8 @@ The exit code reports how the run ended. To act on it in a pipeline, see [Run ev
 
 | Exit code | Meaning |
 | :- | :- |
-| `0` | Every case meets the threshold |
-| `1` | A failing case, a load error, or an untrusted plugin directory |
+| `0` | The suite passed: every case meets the threshold and nothing else failed the run |
+| `1` | A failing case, a load error, an untrusted plugin directory, a run that [ended on an API error](/docs/en/plugin-evals#runs-ended-on-an-api-error), or another cause listed under [Run evals in CI](/docs/en/plugin-evals#run-evals-in-ci) |
 | `2` | A partial run |
 | `130` | Interrupted |
 | `143` | Terminated |

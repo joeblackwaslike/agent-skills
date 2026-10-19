@@ -14,8 +14,8 @@ related:
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "cdb3832fc64b675c9c0da26256fca52a9b2e03a0dda42c48c2573919a1791e69"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "7d6fc8553970741ee7c78d75ddc232f0274b635117acfcd9b9853ae30e1def92"
 ---
 
 # vercel alerts
@@ -28,14 +28,14 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related)
-- [vercel security](https://vercel.com/docs/cli/security?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=related) — View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+- [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli)
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
+- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
-Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Falerts&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md)
 <!-- /docsgraph:related -->
 
 By default, `vercel alerts` reads alerts for the linked project from the last 24 hours. You can change the scope with `--project` or `--all`, filter by alert type, change the time range, and switch between table, AI investigation, or JSON output.
@@ -230,7 +230,7 @@ Rule IDs are returned by `rules create` and shown by `rules ls`. Use those IDs w
 
 #### `rules ls`
 
-List alert rules that affect the linked project. Use `--project` to select another project or `--all` to list every accessible rule in the selected team.
+List alert rules that affect the linked project. Use `--project` to select another project or `--all` to list every accessible alert rule in the selected team.
 
 Aliases: `list`.
 
@@ -288,7 +288,7 @@ vercel alerts rules schema --type built-in
 
 #### `rules create`
 
-Create an alert rule from a JSON body file. The create body must set `type`. For a built-in rule, set `type` to `built-in`.
+Create an alert rule from a JSON body file. The create body must set `type`. For a built-in alert rule, set `type` to `built-in`.
 
 `add` is a supported alias.
 
@@ -385,7 +385,7 @@ vercel alerts rules inspect ar_abc123 --format json
 
 #### `rules rm`
 
-Delete an alert rule. The selected team's default rule cannot be deleted.
+Delete an alert rule. The selected team's default alert rule cannot be deleted.
 
 Aliases: `remove`, `delete`.
 

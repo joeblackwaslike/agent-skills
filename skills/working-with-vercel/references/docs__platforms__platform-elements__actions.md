@@ -14,8 +14,8 @@ related:
 summary: Server actions you can install to run common platform tasks against the Vercel API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f2ff85db2f59406acb87127b0e150f9f10f716fbbb11c0dff068c9ed8d3827ea"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1e0a05111ff60a9bb82419b3be53a847f9321814a36656d66c6b86d30bcb41f8"
 ---
 
 # Actions
@@ -28,14 +28,13 @@ Actions are server-side functions that wrap common Vercel API calls so you can a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=related) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
-- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=related) — These actions allow integration providers to set up automated tasks with Vercel deployments.
-- [Update deployment integration action](https://vercel.com/docs/rest-api/deployments/update-deployment-integration-action?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=related) — PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} —
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=related) — Vercel MCP tools for documentation and cli.
-- [Invoice Actions](https://vercel.com/docs/rest-api/marketplace/invoice-actions?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=related) — POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions — This endpoint allows the part
+- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
+- [Update deployment integration action](https://vercel.com/docs/rest-api/deployments/update-deployment-integration-action) — PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} —
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Vercel MCP tools for documentation and cli.
+- [Invoice Actions](https://vercel.com/docs/rest-api/marketplace/invoice-actions) — POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions — This endpoint allows the part
 
-Full cross-link map for this page: [/docs/platforms/platform-elements/actions.graph.md](/docs/platforms/platform-elements/actions.graph.md?from=related&source_path=%2Fdocs%2Fplatforms%2Fplatform-elements%2Factions&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/platforms/platform-elements/actions.graph.md](/docs/platforms/platform-elements/actions.graph.md)
 <!-- /docsgraph:related -->
 
 **Add custom domain**: Programmatically add a custom domain to a project and check its status. [Learn more →](/docs/platforms/platform-elements/actions/add-custom-domain)

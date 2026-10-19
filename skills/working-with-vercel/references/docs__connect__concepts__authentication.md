@@ -17,8 +17,8 @@ related:
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1fc67d3393d8e44abafbd5262312c1d4529bd4a790daaca8d26e2281784c3f94"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d053eae23e6105db1b487e676ad4f06e6d8a5fbca3cdb635ea21164507515d47"
 ---
 
 # Authentication in Vercel Connect
@@ -31,33 +31,35 @@ Vercel Connect sits between your code and a provider. Each token request has two
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related)
-- [Quickstart](https://vercel.com/docs/connect/quickstart?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
-- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
-Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Fauthentication&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
 
 ## Caller to Vercel Connect
 
-How does Vercel Connect know who's calling? The `@vercel/connect` SDK supports two authentication methods, plus a separate path for dashboard and CLI users.
+How does Vercel Connect know who's calling? The Vercel Connect SDKs (`@vercel/connect` for TypeScript and `vercel-connect` for Python) support two authentication methods, plus a separate path for dashboard and CLI users.
 
 ### Vercel OIDC token (recommended)
 
-A running Vercel deployment authenticates with its [OIDC token](/docs/oidc). The token's claims identify the team, project, and environment the deployment belongs to. Vercel Connect checks those claims against the [project links](/docs/connect/concepts/project-links) on the requested connector. If there's no link for the calling project, or the link doesn't include the calling environment, the request is rejected with `ClientNotLinkedToProjectError` or `ClientNotEnabledForEnvironmentError`.
+A running Vercel deployment authenticates with its [OIDC token](/docs/oidc). The token's claims identify the team, project, and environment the deployment belongs to. Vercel Connect checks those claims against the [project links](/docs/connect/concepts/project-links) on the requested connector. If there's no link for the calling project, or the link doesn't include the calling environment, the request is rejected with `ClientNotLinkedToProjectError` or `ClientNotEnabledForEnvironmentError` in TypeScript, or `ConnectApiError` in Python.
 
 On Vercel, the SDK reads `VERCEL_OIDC_TOKEN` from the environment automatically. For local development, run `vercel link` followed by `vercel env pull` to download a development token into `.env.local`. The token expires after about 12 hours; re-run `vercel env pull` if you see authentication errors.
 
 ### Access token
 
-For external CI/CD or non-Vercel environments where `VERCEL_OIDC_TOKEN` isn't available, pass a [Vercel access token](/docs/rest-api#creating-an-access-token) directly to the SDK via `options.vercelToken`:
+For external CI/CD or non-Vercel environments where `VERCEL_OIDC_TOKEN` isn't available, pass a [Vercel access token](/docs/rest-api#creating-an-access-token) directly to the SDK with the `vercelToken` or `vercel_token` option:
+
+**app/lib/explicit-token.ts**
 
 ```ts filename="app/lib/explicit-token.ts"
 import { getToken } from '@vercel/connect';
@@ -67,6 +69,21 @@ const token = await getToken(
   { subject: { type: 'app' } },
   { vercelToken: process.env.VERCEL_TOKEN },
 );
+```
+
+**main.py**
+
+```py filename="main.py"
+import os
+
+from vercel import connect
+from vercel.connect import ConnectAppTokenSubject, ConnectOptions
+
+token = await connect.get_token(
+    'slack/acme-slack',
+    subject=ConnectAppTokenSubject(),
+    options=ConnectOptions(vercel_token=os.environ['VERCEL_TOKEN']),
+)
 ```
 
 The token's team and project scope determine which connectors it can request from, in the same way an OIDC token's claims would. Make sure the project on the token is linked to the connector you're calling.
@@ -81,8 +98,8 @@ Dashboard requests and `vercel connect` CLI requests authenticate with your Verc
 | ----------------------------------------------------- | ---------------------------------- |
 | Vercel deployment (production, preview, development)  | OIDC token (automatic)             |
 | Local development with `vercel link`                  | OIDC token via `vercel env pull`   |
-| External CI/CD (GitHub Actions, CircleCI, and so on)  | Access token via `vercelToken`     |
-| Non-Vercel hosting                                    | Access token via `vercelToken`     |
+| External CI/CD (GitHub Actions, CircleCI, and so on)  | Access token via `vercelToken` or `vercel_token` |
+| Non-Vercel hosting                                    | Access token via `vercelToken` or `vercel_token` |
 
 ### What's on the wire
 
@@ -126,7 +143,7 @@ That depends on the connector type or connection method:
 
 [Browse all connectors](/connect/browse) to see the authentication options and setup instructions available for each service.
 
-For OAuth-based connectors, Vercel Connect drives the full authorization-code flow including refresh, and stores the refresh token on Vercel's infrastructure. Your code never sees the refresh token directly; you only ever receive short-lived access tokens through `getToken`.
+For OAuth-based connectors, Vercel Connect drives the full authorization-code flow including refresh, and stores the refresh token on Vercel's infrastructure. Your code never sees the refresh token directly; you only ever receive short-lived access tokens through `getToken` or `get_token()`.
 
 Custom OAuth connectors also support the **client-credentials** grant, where Vercel Connect authenticates as your service (rather than on behalf of a user) and exchanges the client ID and secret directly for an access token. After creating the connector, open it in the dashboard, click **Edit**, and select which grant types to enable. Use the authorization-code flow for `user` subjects and the client-credentials flow for `app` subjects.
 
@@ -142,20 +159,21 @@ The Connect API surfaces auth failures as typed errors on the SDK side. The most
 | `UserAuthorizationRequiredError`             | A `user` subject was requested but that user hasn't authorized the connector.                         | Trigger the user-consent flow for that user, then retry.                                                                       |
 | `ConnectorNotFoundError`                     | No Connect client is registered for the connector UID under this team.                                | Create the connector (`vercel connect`) before requesting a token.                                                             |
 
-See the [SDK Reference](/docs/connect/ts-sdk-reference#errors) for the full error class list.
+The Python SDK raises `ConnectorInstallationRequiredError`, `UserAuthorizationRequiredError`, and `ConnectNotFoundError` for these cases, and `ConnectApiError` for project link failures. See the [TypeScript SDK Reference](/docs/connect/ts-sdk-reference#errors) or the [Python SDK Reference](/docs/connect/python-sdk-reference#errors) for the full error class list.
 
 ## Recommendations
 
 - **Use separate connectors when environments need provider-level isolation.** A project link controls which deployments can request tokens from a connector; it does not assign a provider [installation](/docs/connect/concepts/installations) to each environment. For example, if Production and a `qa` Custom Environment are enabled on the same Slack connector, code in either environment can request a token for the connector's default Slack workspace installation or for an explicit `installationId`. To prevent either environment from reaching the other's provider installations, create and install a connector for each environment, then link each environment only to its own connector.
 - **Scope every token request.** Pass `scopes`, `resources`, or `authorizationDetails` to narrow what a token can do; don't request a tenant-wide token when you need to read one channel.
-- **Prefer OIDC over access tokens.** OIDC tokens are short-lived, project-bound, and rotated automatically. Reserve `vercelToken` for environments where OIDC isn't an option.
-- **Refresh `vercel env pull` regularly during local development.** The OIDC token expires after about 12 hours. If `getToken` starts failing with auth errors after a long break, pull a fresh token before debugging further.
+- **Prefer OIDC over access tokens.** OIDC tokens are short-lived, project-bound, and rotated automatically. Reserve access tokens for environments where OIDC isn't an option.
+- **Refresh `vercel env pull` regularly during local development.** The OIDC token expires after about 12 hours. If token requests start failing with auth errors after a long break, pull a fresh token before debugging further.
 
 ## Next steps
 
 - [Project links](/docs/connect/concepts/project-links): How the OIDC token is checked.
 - [Tokens](/docs/connect/concepts/tokens): How a token request is shaped.
-- [SDK Reference](/docs/connect/ts-sdk-reference): `ConnectOptions.vercelToken` and the error classes thrown on auth failures.
+- [TypeScript SDK Reference](/docs/connect/ts-sdk-reference): `ConnectOptions.vercelToken` and the error classes thrown on auth failures.
+- [Python SDK Reference](/docs/connect/python-sdk-reference): `ConnectOptions.vercel_token` and the exceptions raised on auth failures.
 
 
 ---

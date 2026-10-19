@@ -3,7 +3,7 @@ title: upsert-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about upsert-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "6a79a809fe4c0b6b2e9671727f353060ede3e2d09c2ef7172b02e62af04332df"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "553ef9620053ab3aaf3718152094f89367b9e7008db86fc4e98d3587346a5b99"
 ---
 
 # Upsert Installation
@@ -154,7 +154,9 @@ User Auth OIDC token claims schema:
     "contact": {
       "email": "string" // required,
       "name": "string"
-    }
+    },
+    "country": "string" // ISO 3166-1 alpha-2 country code of the installer, when enabled for the integration. Example: `US`.,
+    "countrySource": "string" // How `country` was determined: `ip` is the geolocation of the request that created the installation, `billing` is the billing address country of the account.
   },
   "parentAccount": {
     "name": "string",

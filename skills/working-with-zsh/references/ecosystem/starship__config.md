@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-10-12T11:58:08.740Z"
-sha256: "78f6c00ce93105083eac7c441150ccb684c40748eff6c73f6bdf8f6b297a1f38"
+fetched_at: "2026-10-19T09:54:08.603Z"
+sha256: "b870fcc7bd0a25d4e2414560166e3314821167e8234a14a502420a9ff9f0c9ca"
 ---
 
 # Configuration
@@ -3935,7 +3935,7 @@ Arch = "Arch is the best! "
 
 The `package` module is shown when the current directory is the repository for a
 package, and shows its current version. The module currently supports `npm`, `nimble`, `cargo`,
-`poetry`, `python`, `composer`, `gradle`, `julia`, `mix`, `helm`, `shards`, `galaxy`, `daml` and `dart` packages.
+`poetry`, `python`, `composer`, `gradle`, `julia`, `mix`, `helm`, `shards`, `galaxy`, `daml`, `dart` and `zig` packages.
 
 - [**npm**](https://docs.npmjs.com/cli/commands/npm) – The `npm` package version is extracted from the `package.json` present
   in the current directory
@@ -3959,6 +3959,7 @@ package, and shows its current version. The module currently supports `npm`, `ni
 - [**SBT**](https://scala-sbt.org) - The `sbt` package version is extracted from the `build.sbt` present in the current directory
 - [**Daml**](https://www.digitalasset.com/developers) - The `daml` package version is extracted from the `daml.yaml` present in the current directory
 - [**Dart**](https://pub.dev/) - The `dart` package version is extracted from the `pubspec.yaml` present in the current directory
+- [**Zig**](https://ziglang.org) - The `zig` package version is extracted from the `build.zig.zon` present in the current directory
 
 > ⚠️ The version being shown is that of the package whose source code is in your
 > current directory, not your package manager.
@@ -5003,7 +5004,7 @@ It supports both Hashicorp Terraform and OpenTofu for version detection.
 By default the module will be shown if any of the following conditions are met:
 
 - The current directory contains a `.terraform` folder
-- Current directory contains a file with the `.tf`, `.tfplan` or `.tfstate` extensions
+- Current directory contains a file with the `.tf`, `.tofu`, `.tfplan` or `.tfstate` extensions
 
 ### Options
 
@@ -5012,7 +5013,7 @@ By default the module will be shown if any of the following conditions are met:
 | `format`            | `'via [$symbol$workspace]($style) '`                    | The format string for the module.                                         |
 | `version_format`    | `'v${raw}'`                                             | The version format. Available vars are `raw`, `major`, `minor`, & `patch` |
 | `symbol`            | `'💠'`                                                  | A format string shown before the terraform workspace.                     |
-| `detect_extensions` | `['tf', 'tfplan', 'tfstate']`                           | Which extensions should trigger this module.                              |
+| `detect_extensions` | `['tf', 'tofu', 'tfplan', 'tfstate']`                   | Which extensions should trigger this module.                              |
 | `detect_files`      | `[]`                                                    | Which filenames should trigger this module.                               |
 | `detect_folders`    | `['.terraform']`                                        | Which folders should trigger this module.                                 |
 | `style`             | `'bold 105'`                                            | The style for the module.                                                 |

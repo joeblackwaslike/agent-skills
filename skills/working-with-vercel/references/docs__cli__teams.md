@@ -14,8 +14,8 @@ related:
 summary: Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "7cd7ed6db96435a26bd59e2fba8a31cbb139089a5395bdaa3e2f33c7294f7a9c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "5451cc423565b68d24e395588ff0121fb08971edbc08b4ed7c4b73d655d0b100"
 ---
 
 # vercel teams
@@ -28,13 +28,13 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel switch](https://vercel.com/docs/cli/switch?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to switch between different team scopes using the vercel switch CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel switch](https://vercel.com/docs/cli/switch) — Learn how to switch between different team scopes using the vercel switch CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
-Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fteams&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
 <!-- /docsgraph:related -->
 
 `vercel team` is an alias for the same command, and `vercel switch` is a top-level alias for `vercel teams switch`.

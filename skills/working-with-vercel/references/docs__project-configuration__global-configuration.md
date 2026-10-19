@@ -12,8 +12,8 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "aa2700fc555241b2caec2dfeb43cbbebb6a9a41bd754a40488a0b2e8ae11cec0"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "af2284f2cc5984d2c3bcdaf771f911d8a762bc4e573963fc33512368ddb24fce"
 ---
 
 # Global Vercel CLI Configuration
@@ -26,13 +26,13 @@ Using the following files and configuration options, you can configure [Vercel C
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel login](https://vercel.com/docs/cli/login?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to login into your Vercel account using the vercel login CLI command.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=related) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
-Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md?from=related&source_path=%2Fdocs%2Fproject-configuration%2Fglobal-configuration&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md)
 <!-- /docsgraph:related -->
 
 The two global configuration files are: `config.json` and `auth.json`. These files are stored in the `com.vercel.cli` directory inside [`XDG_DATA_HOME`](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html), which defaults to:

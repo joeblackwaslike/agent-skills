@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "ee3750b0cd7a85dae8025559af32e25a70a85f164262b49cfce881ae7405e320"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "9484e74d99e2cb5705550cd50fccfbfff8b6d6c84b9398486f0f4f9654d979a1"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -26,20 +26,20 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel plugin is now available in Grok Build](https://vercel.com/changelog/vercel-plugin-is-now-available-in-grok-build?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
-- [Vercel Plugin now available in Kimi Code CLI](https://vercel.com/changelog/vercel-plugin-now-available-in-kimi-code-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
-- [Vercel Plugin now available in VS Code and GitHub Copilot CLI](https://vercel.com/changelog/vercel-plugin-now-available-in-vs-code-and-github-copilot-cli?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
-- [Vercel plugin now supported on OpenAI Codex and Codex CLI](https://vercel.com/changelog/vercel-plugin-openai-codex-and-codex-cli-support?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
-- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
-- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
-- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
-- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Agent Skills](https://vercel.com/docs/agent-resources/skills?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=related) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
+- [Vercel plugin is now available in Grok Build](https://vercel.com/changelog/vercel-plugin-is-now-available-in-grok-build)
+- [Vercel Plugin now available in Kimi Code CLI](https://vercel.com/changelog/vercel-plugin-now-available-in-kimi-code-cli)
+- [Vercel Plugin now available in VS Code and GitHub Copilot CLI](https://vercel.com/changelog/vercel-plugin-now-available-in-vs-code-and-github-copilot-cli)
+- [Vercel plugin now supported on OpenAI Codex and Codex CLI](https://vercel.com/changelog/vercel-plugin-openai-codex-and-codex-cli-support)
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-plugin&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md)
 <!-- /docsgraph:related -->
 
 ## Getting started
@@ -101,6 +101,7 @@ The plugin installs into these coding tools. Each tool has its own installation 
 | [GitHub Copilot CLI](https://github.com/github/copilot-cli)                     | Supported |
 | [Grok Build](https://x.ai/build)                                                | Supported |
 | [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code)                        | Supported |
+| [Kiro](https://kiro.dev)                                                        | Supported |
 | [OpenCode](https://opencode.ai) 2                                               | Supported |
 | [VS Code](https://code.visualstudio.com)                                        | Supported |
 
@@ -122,7 +123,7 @@ The plugin includes 33 skills covering the Vercel ecosystem:
 | Skill                                | Covers |
 | ------------------------------------ | ------ |
 | `access-protected-vercel-deployment` | Authenticated CLI and browser access to protected preview and production deployments with `vc curl`, OIDC, and Trusted Sources |
-| `ai-gateway`                         | Unified model API, provider routing, failover, cost tracking, and hundreds of models |
+| `ai-gateway`                         | Unified model API, provider routing, failover, cost tracking, and 400+ models |
 | `ai-sdk`                             | AI SDK 7, including text and object generation, streaming, tool calling, agents, MCP, and embeddings |
 | `auth`                               | Authentication integrations for Clerk, Better Auth, Descope, and Auth0 with Marketplace provisioning |
 | `bootstrap`                          | Project bootstrapping, including linking, environment provisioning, database setup, and first-run tasks |

@@ -2,8 +2,8 @@
 title: "Operation"
 description: Polling background work in the Hosted v1 API.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/operation.md"
-fetched_at: "2026-10-10T20:16:32.123Z"
-sha256: "18a428745eb547ff31b02f07177df42f139750a69ab879795d22869ca4b016ff"
+fetched_at: "2026-10-19T09:41:16.408Z"
+sha256: "34abb2d6f8dd205ad94b47a5953fe5ed3fed8fb5cba0966aedc872faf33e1039"
 ---
 
 # Operation
@@ -46,6 +46,7 @@ curl -X GET 'https://hosted.doltdb.com/api/v1/operations/{id}' \
 | `200` | The operation. | [`Operation`](/products/hosted/api/v1/models#model-operation) |
 | `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |

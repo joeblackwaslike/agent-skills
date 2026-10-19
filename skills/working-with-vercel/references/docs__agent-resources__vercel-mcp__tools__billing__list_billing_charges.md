@@ -13,8 +13,8 @@ related:
 summary: Use list_billing_charges with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_billing_charges.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "34889f2f60c587cff126c7eaf2b64c974245af2ac05e90a5d4d8eccc564301fe"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "e202ead0434bca7f13696229afdf35a6de126e572bb7f21036171c7c12cf586d"
 ---
 
 # list_billing_charges
@@ -27,14 +27,14 @@ List FOCUS billing charges.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=related)
-- [List FOCUS billing charges](https://vercel.com/docs/rest-api/billing/list-focus-billing-charges?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=related) — GET /v1/billing/charges — Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within
-- [list_contract_commitments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_contract_commitments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=related) — Use list_contract_commitments with Vercel MCP.
-- [get_rolling_release_billing_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=related) — Use get_rolling_release_billing_status with Vercel MCP.
-- [list_integration_billing_plans](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=related) — Use list_integration_billing_plans with Vercel MCP.
-- [vercel usage](https://vercel.com/docs/cli/usage?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=related) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
+- [List FOCUS billing charges](https://vercel.com/docs/rest-api/billing/list-focus-billing-charges) — GET /v1/billing/charges — Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within
+- [list_contract_commitments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_contract_commitments) — Use list_contract_commitments with Vercel MCP.
+- [get_rolling_release_billing_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status) — Use get_rolling_release_billing_status with Vercel MCP.
+- [list_integration_billing_plans](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans) — Use list_integration_billing_plans with Vercel MCP.
+- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing/list_billing_charges.graph.md](/docs/agent-resources/vercel-mcp/tools/billing/list_billing_charges.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fbilling%2Flist_billing_charges&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing/list_billing_charges.graph.md](/docs/agent-resources/vercel-mcp/tools/billing/list_billing_charges.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -43,8 +43,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billi
 | --------- | ------ | -------- | ------------------------------------------------------------------------- |
 | `from`    | string | Yes      | Inclusive start of the date range as an ISO 8601 date-time string in UTC. |
 | `to`      | string | Yes      | Exclusive end of the date range as an ISO 8601 date-time string in UTC.   |
-| `teamId`  | string | No       | Team ID.                                                                  |
-| `slug`    | string | No       | Team slug.                                                                |
+| `teamId`  | string | No       | Team ID to use for this operation.                                        |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId.               |
 
 
 ---

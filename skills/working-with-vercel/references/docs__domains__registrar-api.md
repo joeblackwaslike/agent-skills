@@ -16,8 +16,8 @@ related:
 summary: "Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/registrar-api.md"
-fetched_at: "2026-09-28T10:45:21.491Z"
-sha256: "b113add6d3f9e63ef325edaf9087e10f7afb668d77f69577a5c32dd7936807a8"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2236e90e94fa11b42ef76c88340964bcf2b49abee8e9ca06ae61d654faaa244f"
 ---
 
 # Programmatic Domain Management
@@ -30,11 +30,11 @@ The domains registrar API enables you to programmatically manage your domain lif
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [New Domains Registrar API for domain search, pricing, purchase, and management](https://vercel.com/changelog/new-domains-registrar-api-for-domain-search-pricing-purchase-and-management?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related)
-- [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
-- [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=related) — GET /v1/registrar/domains/{domain}/contact-verification — Get the registrant contact verification status for a domain. U
+- [New Domains Registrar API for domain search, pricing, purchase, and management](https://vercel.com/changelog/new-domains-registrar-api-for-domain-search-pricing-purchase-and-management)
+- [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
+- [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain) — GET /v1/registrar/domains/{domain}/contact-verification — Get the registrant contact verification status for a domain. U
 
-Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fregistrar-api&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md)
 <!-- /docsgraph:related -->
 
 ## Getting started with the API

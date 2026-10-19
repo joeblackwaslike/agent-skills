@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-10-12T11:51:10.837Z"
-sha256: "2394f3b3b95159a85fea4d2e1aa65a48f0e9830c312ad34a62660b24ec5c3162"
+fetched_at: "2026-10-19T09:46:49.617Z"
+sha256: "a73ff6200c5a0d76c8d07107421b0d6326218833c45c8acf8b4d13ccb7115661"
 ---
 
 # Vercel SDK Reference
@@ -52,6 +52,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/ai-gateway/get-virtual-model-config-1.md) | Get virtual model config |
 | **PATCH** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/ai-gateway/update-virtual-model-config-1.md) | Update virtual model config |
 | **DELETE** | [`/ai-gateway/virtual-model-configs/{vmcSlug}`](/docs/rest-api/sdk/ai-gateway/delete-virtual-model-config-1.md) | Delete virtual model config |
+| **GET** | [`/v1/ai-gateway/routers`](/docs/rest-api/sdk/ai-gateway/list-ai-gateway-routers.md) | List AI Gateway routers |
 | **GET** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/list-rules.md) | List rules |
 | **POST** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/create-rule.md) | Create rule |
 | **PATCH** | [`/ai-gateway/rules`](/docs/rest-api/sdk/ai-gateway/update-rule.md) | Update rule |
@@ -503,6 +504,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/cmd`](/docs/rest-api/sdk/sandboxes/execute-a-command.md) | Execute a command |
 | **GET** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}`](/docs/rest-api/sdk/sandboxes/get-a-command.md) | Get a command |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/kill`](/docs/rest-api/sdk/sandboxes/kill-a-command.md) | Kill a command |
+| **POST** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/stdin`](/docs/rest-api/sdk/sandboxes/write-to-command-stdin.md) | Write to command stdin |
 | **GET** | [`/v2/sandboxes/sessions/{sessionId}/cmd/{cmdId}/logs`](/docs/rest-api/sdk/sandboxes/stream-command-logs.md) | Stream command logs |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/stop`](/docs/rest-api/sdk/sandboxes/stop-a-session.md) | Stop a session |
 | **POST** | [`/v2/sandboxes/sessions/{sessionId}/extend-timeout`](/docs/rest-api/sdk/sandboxes/extend-session-timeout.md) | Extend session timeout |
@@ -532,6 +534,9 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/read-system-bypass.md) | Read System Bypass |
 | **POST** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/create-system-bypass-rule.md) | Create System Bypass Rule |
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
+| **GET** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/get-conditional-firewall-bypasses.md) | Get conditional firewall bypasses |
+| **POST** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/create-conditional-firewall-bypass.md) | Create conditional firewall bypass |
+| **DELETE** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/delete-conditional-firewall-bypass.md) | Delete conditional firewall bypass |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/sdk/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
 | **GET** | [`/v1/security/firewall/events/summary`](/docs/rest-api/sdk/security/read-firewall-actions-summary-by-project.md) | Read Firewall Actions Summary by Project |
 | **POST** | [`/v1/security/firewall/config/generate-rule`](/docs/rest-api/sdk/security/generate-a-firewall-rule-from-natural-language.md) | Generate a firewall rule from natural language |
@@ -601,8 +606,14 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **GET** | [`/v1/vercel-ci/repository-settings`](/docs/rest-api/sdk/vercel-ci/get-vercel-ci-settings-for-a-connected-repository.md) | Get Vercel CI settings for a connected repository |
+| **PATCH** | [`/v1/vercel-ci/repository-settings`](/docs/rest-api/sdk/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository.md) | Enable or disable Vercel CI for a connected repository |
 | **GET** | [`/v2/vercel-ci/invocations`](/docs/rest-api/sdk/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata.md) | List invocations for a team, optionally filtered by repository and invocation metadata |
 | **GET** | [`/v2/vercel-ci/branches`](/docs/rest-api/sdk/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team.md) | List Vercel CI branch suggestions for a team |
+| **POST** | [`/v1/vercel-ci/task-analyses`](/docs/rest-api/sdk/vercel-ci/start-an-asynchronous-vercel-ci-task-analysis.md) | Start an asynchronous Vercel CI task analysis |
+| **GET** | [`/v1/vercel-ci/task-analyses/{analysisId}`](/docs/rest-api/sdk/vercel-ci/get-the-current-status-of-a-vercel-ci-task-analysis.md) | Get the current status of a Vercel CI task analysis |
+| **POST** | [`/v1/vercel-ci/task-analyses/{analysisId}/pull-request`](/docs/rest-api/sdk/vercel-ci/create-a-github-pull-request-that-adds-vercel-ci-tags-for-the-completed-analysis.md) | Create a GitHub pull request that adds Vercel CI tags for the completed analysis |
+| **GET** | [`/v1/vercel-ci/task-analyses/{analysisId}/tasks`](/docs/rest-api/sdk/vercel-ci/list-discovered-tasks-for-a-completed-vercel-ci-task-analysis.md) | List discovered tasks for a completed Vercel CI task analysis |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts`](/docs/rest-api/sdk/vercel-ci/list-all-attempts-for-an-invocation.md) | List all attempts for an invocation |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/tree`](/docs/rest-api/sdk/vercel-ci/get-an-invocation-with-its-jobs-and-tasks.md) | Get an invocation with its jobs and tasks |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}`](/docs/rest-api/sdk/vercel-ci/get-a-specific-invocation-attempt.md) | Get a specific invocation attempt |

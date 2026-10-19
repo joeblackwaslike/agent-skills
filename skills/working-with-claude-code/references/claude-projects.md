@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-projects.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "7d4a17b60b82cec2cf55305256d53af39123984a065e2eb3d2e7a4a20807f2fb"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "4f50e7fd2084ea2a0c6765742bea7039017692e21dac10d5d6d542f08cb42ec9"
 ---
 
 > ## Documentation Index
@@ -370,7 +370,7 @@ Cloud threads don't have the skills, MCP servers, plugins, and tools installed o
 
 * Skills, subagents, and commands: commit them to a repository you added to the project, for example a skill at `.claude/skills/<skill-name>/SKILL.md`. Each cloud thread clones every repository in the project and loads `.claude/skills/`, `.claude/agents/`, and `.claude/commands/` from each of them, so a skill committed to one repository is available in every cloud thread. Cloud threads also load the [skills you enable for your claude.ai account](/docs/en/skills#skills-in-cowork-and-cloud-sessions).
 * Plugins: add them in **Project settings > Plugins**; they load into each new cloud thread. Plugins that a repository declares in its `.claude/settings.json` [don't load in cloud threads](/docs/en/cloud-environments#what-carries-over-from-your-setup).
-* MCP servers: cloud threads get their MCP tools from the connectors on your claude.ai account, which are MCP servers you connect once at [claude.ai/customize/connectors](https://claude.ai/customize/connectors) or through the **Manage connectors** link in **Project settings > Environment**. Every cloud thread can use all of them with no per-project setup. The project conversation itself has no connectors, so send work that needs one as a task for a cloud thread. In a project with one repository, cloud threads also load MCP servers from that repository's [`.mcp.json`](/docs/en/cloud-environments#what-carries-over-from-your-setup). [How connectors reach Claude Code](/docs/en/mcp#how-connectors-reach-claude-code) lists the rules for cloud sessions and the settings that turn connectors off.
+* MCP servers: cloud threads get their MCP tools from the connectors on your claude.ai account, which are MCP servers you connect once at [claude.ai/customize/connectors](https://claude.ai/customize/connectors). Every cloud thread can use all of them with no per-project setup. The project conversation itself has no connectors, so send work that needs one as a task for a cloud thread. In a project with one repository, cloud threads also load MCP servers from that repository's [`.mcp.json`](/docs/en/cloud-environments#what-carries-over-from-your-setup). [How connectors reach Claude Code](/docs/en/mcp#how-connectors-reach-claude-code) lists the rules for cloud sessions and the settings that turn connectors off.
 * Command-line tools and packages: install them in the environment's [setup script](/docs/en/cloud-environments#setup-scripts).
 
 To see which connectors a running cloud thread has at claude.ai/code, open the thread and select **Connectors** from the **+** menu beside its message box. Turning a connector off there removes it from that thread and saves that as your account default, so new threads and claude.ai chats start without it until you turn it back on. A cloud thread picks up a connector you add or reconnect after the next message you send it.
@@ -389,7 +389,6 @@ Settings save as you change them; a text field you're editing, such as the goal 
 | Project instructions | Memory | [Standing rules](#give-a-project-standing-context) every new thread receives |
 | Project repositories | Environment | The repositories new cloud threads clone |
 | Cloud environment | Environment | The [cloud environment](#choose-an-environment-for-threads) new cloud threads run in |
-| Connectors | Environment | A link to manage the claude.ai connectors cloud threads get |
 | Plugins | Plugins | The plugins that load into each new cloud thread |
 | Usage | Usage | [Token use](#usage-and-cost) by thread and by model |
 | Memory | Memory | The project's [memory files](#give-a-project-standing-context) |

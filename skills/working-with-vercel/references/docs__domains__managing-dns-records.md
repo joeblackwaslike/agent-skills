@@ -9,11 +9,12 @@ prerequisites:
   - /docs/domains
 related:
   - /docs/domains/managing-nameservers
+  - /docs/cli/dns
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "15c57ba80b9f52af01b4d955f3b3309f7c10eb9cf2b5e92830572722f6ce53d2"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c138f8e3d8409e198a1c5f5a8222968a80f57697cb9306954c62eaf5006e13d2"
 ---
 
 # Managing DNS Records
@@ -26,19 +27,19 @@ Once you've added a domain and it's using Vercel's nameservers, you can view its
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
-- [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Information about how to assign a Vercel deployment to a domain without downtime.
-- [DNS Records UI](https://vercel.com/blog/dns-records-ui?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related)
-- [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Information about how to migrate your DNS records to Vercel without downtime.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how DNS works to properly configure your domain.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn how domains work and the options Vercel provides for managing them.
-- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=related) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
+- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
+- [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
+- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [DNS Records UI](https://vercel.com/blog/dns-records-ui)
+- [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns) — Information about how to migrate your DNS records to Vercel without downtime.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers) — Learn about nameservers and the benefits Vercel nameservers provide.
 
-Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md](/docs/domains/managing-dns-records.graph.md?from=related&source_path=%2Fdocs%2Fdomains%2Fmanaging-dns-records&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md](/docs/domains/managing-dns-records.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** To make sure DNS records are applied, and to allow you to manage them, your
@@ -47,6 +48,10 @@ Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md]
 > nameservers to copy and use with your registrar.
 
 ## Adding DNS Records
+
+Add a DNS record from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 - ### Selecting your Domain
   On your team's [dashboard](/dashboard), open **Domains** in the sidebar. From the Domains page, click on a domain of your choice to view its Advanced Settings page.
@@ -66,9 +71,21 @@ Full cross-link map for this page: [/docs/domains/managing-dns-records.graph.md]
   > **💡 Note:** Once a DNS record has been added, it can take up to 24 hours to the DNS
   > records to fully update and any local caches to be cleared.
 
+#### CLI
+
+Run [`vercel dns add`](/docs/cli/dns) with the domain, name, type, and value. For example, to add an `A` record for `api.example.com`, run:
+
+```bash filename="terminal"
+vercel dns add example.com api A 198.51.100.100
+```
+
 ## Pointing a subdomain to an external service
 
 If your domain uses Vercel's nameservers, you can point a subdomain to a service hosted elsewhere by adding the DNS records that service provides. You do not need to add the subdomain to a Vercel project.
+
+Add the records from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 For example, to host `support.example.com` with another provider, open `example.com` on your team's **Domains** page and [add a DNS record](#adding-dns-records):
 
@@ -76,6 +93,14 @@ For example, to host `support.example.com` with another provider, open `example.
 | --- | --- | --- |
 | A | `support` | The IPv4 address supplied by the provider. |
 | CNAME | `support` | The target hostname supplied by the provider. |
+
+#### CLI
+
+Run [`vercel dns add`](/docs/cli/dns) with the record type your provider requests. For example, to add a `CNAME` record:
+
+```bash filename="terminal"
+vercel dns add example.com support CNAME <target-hostname>
+```
 
 Use the record type requested by the provider. Do not add both an A and a CNAME record for the same hostname. In Vercel's **Name** field, enter only `support`, not `support.example.com`. Add any additional verification records the provider requires, then [verify the published records](#verifying-dns-records).
 
@@ -101,14 +126,25 @@ $ dig MX example.com +short
 
 ## Removing DNS Records
 
-To remove DNS records:
+Remove DNS records from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 1. On your team's [dashboard](/dashboard), select the [**Domains** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). From the Domains page, click on a domain of your choice to view its Advanced Settings page.
 2. Select the ellipsis (⋯) to access the context menu and select **Delete DNS Zone**. Follow the prompts to delete the record.
 
-Default records can't be removed. However, new records can override them if required.
-
 ![Removing a DNS record from the DNS UI.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/delete-dns-record.png)
+
+#### CLI
+
+Run [`vercel dns ls`](/docs/cli/dns) to find the record ID, then remove the record with `vercel dns rm`:
+
+```bash filename="terminal"
+vercel dns ls example.com
+vercel dns rm <record-id>
+```
+
+Default records can't be removed. However, new records can override them if required.
 
 ## DNS Presets
 
@@ -141,11 +177,25 @@ If your provider is not listed, add its records manually.
 
 Use the exact record values from your email provider's setup instructions. For example, Google Workspace maintains its [MX record and Gmail activation instructions](https://knowledge.workspace.google.com/admin/domains/set-up-mx-records-for-google-workspace).
 
+Add the records from the dashboard or the Vercel CLI.
+
+#### Dashboard
+
 1. Open the domain's DNS settings and select **MX** as the record type.
 2. Leave **Name** blank for the root domain. For email on a subdomain, enter only that subdomain's prefix.
 3. Enter the **Value** and **Priority** supplied by your email provider, then select **Add**. Repeat for each required MX record. Lower priority numbers take precedence.
 4. Add the provider's domain verification records, such as a TXT record. Use the exact name and value the provider specifies.
-5. Complete the provider's verification and activation steps. Add any email authentication records the provider requires, such as SPF, DKIM, and DMARC.
+
+#### CLI
+
+Run [`vercel dns add`](/docs/cli/dns) for each record. Use `'@'` as the name for the root domain, and pass the MX priority as the last argument:
+
+```bash filename="terminal"
+vercel dns add example.com '@' MX <mail-server-hostname> <priority>
+vercel dns add example.com '@' TXT "<verification-value>"
+```
+
+Complete the provider's verification and activation steps. Add any email authentication records the provider requires, such as SPF, DKIM, and DMARC.
 
 MX records control where incoming email is delivered. Adding MX records does not create a mailbox or configure outgoing email; complete those tasks with your email provider.
 

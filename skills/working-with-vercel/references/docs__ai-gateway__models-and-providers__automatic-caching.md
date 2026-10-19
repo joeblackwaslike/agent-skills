@@ -9,16 +9,16 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/models-and-providers/session-affinity
   - /docs/ai-gateway/sdks-and-apis/responses
-  - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
-summary: Enable automatic prompt caching and provider-side cache affinity with AI Gateway to reduce costs and latency.
+summary: Enable automatic prompt caching and session affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "60d6945a7b98d00bc57d50f8127706bb5556c3774d10b2fc6f9045d30542b9ba"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "9d359fb698f36667d5cd4fcb7d90c3b56445150c95c0b34c5787202760a7427f"
 ---
 
 # AI Gateway Automatic Prompt Caching
@@ -31,16 +31,18 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related)
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
-- [Caching](https://ai-sdk.dev/docs/advanced/caching?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — How to handle caching when working with the AI SDK
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to use the Amazon Bedrock provider.
-- [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Learn how to create a caching middleware for local development.
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
+- [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway)
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
+- [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
+- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock) — Learn how to use the Amazon Bedrock provider.
+- [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware) — Learn how to create a caching middleware for local development.
 
-Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fautomatic-caching&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md)
 <!-- /docsgraph:related -->
+
+To keep each conversation on the provider that already holds its cache, see [Session affinity](/docs/ai-gateway/models-and-providers/session-affinity).
 
 > **💡 Note:** **Supported providers:** Automatic caching works with Anthropic (direct,
 > Vertex, and Bedrock), MiniMax, and Alibaba.
@@ -125,13 +127,13 @@ The anchor is advisory. Values that can't be used (not a positive integer, past 
 
 The anchor only applies when `caching: 'auto'` is set, and like the other markers it only modifies requests to explicit-caching providers.
 
-## Improve cache hits with cache affinity
+## Improve cache hits with session affinity
 
 Send the same `x-session-affinity` header with related requests so AI Gateway can forward it to the selected provider. Providers that support session affinity can use the value to preserve prompt-cache locality.
 
-Use an opaque, stable value for each conversation, agent run, or related workflow. Don't include personal data in the value or reuse one value across unrelated sessions. The header does not affect your [routing configuration](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) or which provider AI Gateway selects, and it does not guarantee a cache hit.
+Use an opaque, stable value for each conversation, agent run, or related workflow. Don't include personal data in the value or reuse one value across unrelated sessions. AI Gateway also uses the header to keep a conversation on the provider that holds its cache. For how that works, including how it interacts with your routing settings, see [Session affinity](/docs/ai-gateway/models-and-providers/session-affinity). The header doesn't guarantee a cache hit.
 
-### Add cache affinity with AI SDK
+### Add the header with the AI SDK
 
 Pass `x-session-affinity` to each AI SDK call with the `headers` option:
 
@@ -142,12 +144,12 @@ const result = streamText({
   model: 'deepseek/deepseek-v4-flash-0731',
   prompt: 'Hello world',
   headers: {
-    'x-session-affinity': 'session_123',
+    'x-session-affinity': 'sess_8f3KQ2vXr9mT',
   },
 });
 ```
 
-### Add cache affinity to compatibility API requests
+### Add the header to compatibility API requests
 
 AI Gateway forwards `x-session-affinity` through its OpenAI-compatible, Anthropic-compatible, and OpenResponses API formats. Set it as a default SDK client header or include it directly in each HTTP request:
 
@@ -160,7 +162,7 @@ const openai = new OpenAI({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
   defaultHeaders: {
-    'x-session-affinity': 'session_123',
+    'x-session-affinity': 'sess_8f3KQ2vXr9mT',
   },
 });
 
@@ -179,7 +181,7 @@ const openai = new OpenAI({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh/v1',
   defaultHeaders: {
-    'x-session-affinity': 'session_123',
+    'x-session-affinity': 'sess_8f3KQ2vXr9mT',
   },
 });
 
@@ -198,7 +200,7 @@ const anthropic = new Anthropic({
   apiKey: process.env.AI_GATEWAY_API_KEY,
   baseURL: 'https://ai-gateway.vercel.sh',
   defaultHeaders: {
-    'x-session-affinity': 'session_123',
+    'x-session-affinity': 'sess_8f3KQ2vXr9mT',
   },
 });
 
@@ -217,7 +219,7 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
   headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
-    'x-session-affinity': 'session_123',
+    'x-session-affinity': 'sess_8f3KQ2vXr9mT',
   },
   body: JSON.stringify({
     model: 'deepseek/deepseek-v4-flash-0731',

@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "51e513dac4f65844900264a81ad6d09b836f68246ef0ebdaf79b70ef314dd73e"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3b6ea28c3ea165812471ad91b05acede5b359551d5769107385656b455fc267a"
 ---
 
 # Billing & Invoices
@@ -29,18 +29,18 @@ You can view your current invoice from the **Settings** section in your dashboar
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Threshold billing is now enabled for Pro teams](https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related)
-- [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related)
-- [Where can I get copies of my Vercel Invoices?](https://vercel.com/kb/guide/where-can-i-get-copies-of-my-vercel-invoices?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Learn about how you can get access to your Vercel invoices.
-- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related)
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=related) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
+- [Threshold billing is now enabled for Pro teams](https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams)
+- [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026)
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [Where can I get copies of my Vercel Invoices?](https://vercel.com/kb/guide/where-can-i-get-copies-of-my-vercel-invoices) — Learn about how you can get access to your Vercel invoices.
+- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 
-Full cross-link map for this page: [/docs/pricing/understanding-my-invoice.graph.md](/docs/pricing/understanding-my-invoice.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Funderstanding-my-invoice&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing/understanding-my-invoice.graph.md](/docs/pricing/understanding-my-invoice.graph.md)
 <!-- /docsgraph:related -->
 
 - By navigating to the **Billing** section in the sidebar of the dashboard

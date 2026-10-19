@@ -13,8 +13,8 @@ related:
 summary: Use list_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "474c1dc331073f127d8be5ede2203eddb1ce9eca59c311171c4b7b3da790ac88"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "872d1344047f9133a1f0fd547717dfb9b7a0d8d731f5e7bf4794970210b01774"
 ---
 
 # list_deployments
@@ -27,14 +27,13 @@ List [deployments](/docs/deployments), optionally filtered by project.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Find Deployments](https://v0.app/docs/api/v1/reference/deployments/find?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=related) — Find deployments by project and chat IDs. This will return a list of deployments for the given project and chat IDs.
-- [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=related) — Use list_deployment_events with Vercel MCP.
-- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=related) — Use list_deployment_files with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=related) — Use get_deployment with Vercel MCP.
-- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=related) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
-- [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=related) — Use list_deployment_aliases with Vercel MCP.
+- [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
+- [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
+- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployments&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md)
 <!-- /docsgraph:related -->
 
 | Parameter           | Type             | Required | Description                                                                                                             |
@@ -53,10 +52,21 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `rollbackCandidate` | boolean          | No       | Filter deployments based on their rollback candidacy                                                                    |
 | `branch`            | string           | No       | Filter deployments based on the branch name                                                                             |
 | `sha`               | string           | No       | Filter deployments based on the SHA                                                                                     |
-| `teamId`            | string           | No       | Team ID.                                                                                                                |
-| `slug`              | string           | No       | Team slug.                                                                                                              |
+| `teamId`            | string           | No       | Team ID to use for this operation.                                                                                      |
+| `slug`              | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                             |
 
 **Sample prompt:** "Show me deployments for my blog project"
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter   | Type   | Required | Default | Description                                               |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID to list deployments for.                   |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource. |
+| `since`     | number | No       | -       | Get deployments created after this timestamp.             |
+| `until`     | number | No       | -       | Get deployments created before this timestamp.            |
 
 
 ---

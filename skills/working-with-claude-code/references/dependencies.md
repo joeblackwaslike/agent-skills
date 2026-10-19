@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/dependencies.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "3f27eab4fb844a86a274cbdbcc6534b600744f637e33cfe0d6959e49b720be5a"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "a29a982a1fddb4dbaa361f5c996d4b444fceee116b86bf33720d92e5137ae97e"
 ---
 
 > ## Documentation Index
@@ -220,6 +220,17 @@ When several installed plugins constrain the same dependency, the dependency res
 Auto-update fetches a constrained dependency at the highest git tag that satisfies every installed plugin's range, rather than at the marketplace's latest version. If the installed plugins' ranges don't overlap, auto-update leaves that dependency at its current version, and the `/plugin` **Errors** tab shows an entry naming the constraining plugin. If they overlap but no tag falls in the range, auto-update fetches the marketplace's current copy and skips the update when that copy's `version` falls outside any installed plugin's range.
 
 When a user uninstalls the last plugin that constrains a dependency, the dependency is no longer constrained to a version range and resumes tracking its marketplace entry on the next update.
+
+### Dependencies when your plugin loads from claude.ai
+
+When a user turns your plugin on for their claude.ai account, Claude Code loads it as `<name>@synced`, [with no marketplace](/docs/en/plugins/loading#synced-plugins). For that copy of your plugin, Claude Code counts a dependency entry that names a marketplace as met when the user has either of these:
+
+* **The dependency from its marketplace**: installed from the marketplace your entry names, and enabled. Claude Code checks a `version` range in your entry against the installed copy's version.
+* **A claude.ai plugin of the same name**: enabled from their claude.ai account. Claude Code checks a `version` range in your entry against that plugin's `version`, and a plugin that states no `version` passes the check.
+
+If you tell users to turn your plugin on from claude.ai, tell them to turn the dependency on there too, or to install it from its marketplace.
+
+A claude.ai plugin meets the entry only when your plugin also loads from claude.ai.
 
 ## See also
 

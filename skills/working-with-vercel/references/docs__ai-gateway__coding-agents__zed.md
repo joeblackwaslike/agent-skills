@@ -16,8 +16,8 @@ related:
 summary: Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zed.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c806e955a40db9266a6d491c01de5b034b7c01272c69dadcb72699d9ee5b9a7b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "52733355da14ea9392a6bb65ed23f3dea5c35f6bebc361994404a417f7a1d8ea"
 ---
 
 # Zed with AI Gateway
@@ -30,13 +30,13 @@ sha256: "c806e955a40db9266a6d491c01de5b034b7c01272c69dadcb72699d9ee5b9a7b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=related) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zed.graph.md](/docs/ai-gateway/coding-agents/zed.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzed&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zed.graph.md](/docs/ai-gateway/coding-agents/zed.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -44,7 +44,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zed.graph.md]
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Zed:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent zed
+npx vercel@latest ai-gateway setup --agent zed
 ```
 
 The command configures Zed's first-party `vercel_ai_gateway` provider in its JSONC `settings.json` with a comment-preserving merge, points it at the gateway's coding-agent endpoint, sets the Agent Panel default model, and exports `VERCEL_AI_GATEWAY_API_KEY` from a managed block in your shell startup file so the key stays out of the settings file.

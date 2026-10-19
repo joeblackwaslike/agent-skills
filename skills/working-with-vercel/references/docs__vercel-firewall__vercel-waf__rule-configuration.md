@@ -13,8 +13,8 @@ related:
 summary: List of configurable options with the Vercel WAF
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "67708f58920c00ed17c6b905c72982aff76027c8ddba702152b43c2d70136b46"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1d861ac95d77066f4cefe8a6c00c706b9dd8c4bd1af857473fbabe85e20429b6"
 ---
 
 # Rule Configuration Reference
@@ -27,18 +27,16 @@ For each custom rule that you create, you can configure one or more conditions w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Manage Next.js Server Actions in the Vercel Firewall](https://vercel.com/changelog/manage-next-js-server-actions-in-the-vercel-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related)
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
-- [Deny non-browser traffic or blocklisted ASNs](https://vercel.com/kb/guide/deny-non-browser-traffic-or-blocklisted-asns?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to block traffic from known threats with the Vercel WAF API.
-- [Challenge cookie-less requests on a specific path](https://vercel.com/kb/guide/challenge-cookieless-requests-on-a-specific-path?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to challenge specific requests with the Vercel WAF API.
-- [Challenge cURL requests](https://vercel.com/kb/guide/challenge-curl-requests?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to challenge curl requests with the Vercel WAF API.
-- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — GET /ai-gateway/rules — List the authenticated team's routing rules
-- [vercel firewall](https://vercel.com/docs/cli/firewall?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=related) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
+- [Manage Next.js Server Actions in the Vercel Firewall](https://vercel.com/changelog/manage-next-js-server-actions-in-the-vercel-firewall)
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
+- [WAF Custom Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules) — Learn how to add and manage custom rules to configure the Vercel Web Application Firewall \\(WAF\\).
+- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
+- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [Get conditional firewall bypasses](https://vercel.com/docs/rest-api/security/get-conditional-firewall-bypasses) — GET /v1/security/firewall/bypass/rules — Retrieve conditional firewall bypass rules for a project.
+- [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.
 
-Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md](/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md?from=related&source_path=%2Fdocs%2Fvercel-firewall%2Fvercel-waf%2Frule-configuration&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md](/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md)
 <!-- /docsgraph:related -->
 
 You also specify an [**action**](#actions) executed when all the conditions are met.

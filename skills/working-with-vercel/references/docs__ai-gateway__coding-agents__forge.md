@@ -16,8 +16,8 @@ related:
 summary: Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/forge.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ac905eee64d9ead6591e303e1dd2f8dd2f0f864b9d2699914d084d144ea65450"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "8ccb19c8976efd245df89183a60daa375085b71129b18585994fa6d99cd8dfbe"
 ---
 
 # ForgeCode with AI Gateway
@@ -30,14 +30,14 @@ sha256: "ac905eee64d9ead6591e303e1dd2f8dd2f0f864b9d2699914d084d144ea65450"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=related) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=related) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=related) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
+- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/forge.graph.md](/docs/ai-gateway/coding-agents/forge.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fforge&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/forge.graph.md](/docs/ai-gateway/coding-agents/forge.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -45,7 +45,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/forge.graph.m
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for ForgeCode:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent forge
+npx vercel@latest ai-gateway setup --agent forge
 ```
 
 The command writes a gateway `[[providers]]` entry and `[session]` defaults into `~/.forge/.forge.toml`. It stores the key in the sibling `.credentials.json` with `0600` permissions, which is the only key source Forge 2.13 and later read. Re-run it to refresh the defaults.

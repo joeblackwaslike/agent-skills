@@ -4,8 +4,8 @@ description: Learn how to use the OpenCode harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d29cc56d5f8f61164951ed3f9ee52f4120957485b14f63ea22419f959750560d"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "8fc977178f22cfb2e89a905a4e5a8272ebea2e490818f8c4721fa2668f88f611"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -228,6 +228,17 @@ not fit a common tool shape.
 
 OpenCode supports built-in tool approval requests when `permissionMode` is
 `allow-reads` or `allow-edits`. Host-executed AI SDK tool approvals also work.
+
+## Built-in Tool Filtering
+
+The adapter supports `activeTools` and `inactiveTools` for OpenCode built-in
+tools. It uses OpenCode's native `permission: 'deny'` rules, which keep inactive
+built-ins out of the model-facing tool list.
+
+OpenCode groups its native `write` and `edit` tools under the same `edit`
+permission. Keep the Harness `write` and `edit` tools in the same active or
+inactive state. Filtering only one of them causes session startup to throw a
+`HarnessCapabilityUnsupportedError`.
 
 ## Related
 

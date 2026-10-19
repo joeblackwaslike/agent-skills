@@ -3,7 +3,7 @@ title: import-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about import-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "c2798b45fb38d637f8efbf4c4e2d656a1c2ce147c0f8bb8b4146bfdd21aa0e04"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c14bdc13a8c76bd811f941c61e066adcbb870289267cf74ecc5adee9eb7fe486"
 ---
 
 # Import Resource
@@ -95,7 +95,7 @@ This endpoint imports (upserts) a resource to Vercel's installation. This may be
 "string"
         ]
       },
-      "claims": "object" // required // Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+      "claims": "object" // required // Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
     ]
   }
 }

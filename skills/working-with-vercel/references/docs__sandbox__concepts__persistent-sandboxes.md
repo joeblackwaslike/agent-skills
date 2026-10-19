@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "790295b5717c60bd0ea408cd089fc8ea441db78ed884d258f23ae0ddfd25fe50"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "fa33dfc0cfb5ff09624a49373a75bc67cdc551fd15707a7911c9505564da16d0"
 ---
 
 # Persistence
@@ -31,18 +31,18 @@ Persistent sandboxes automatically save their filesystem state when stopped and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
-- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
-- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
-- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Sandbox persistence is now GA](https://vercel.com/changelog/sandbox-persistence-is-now-ga?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
-- [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related)
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours)
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
+- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
+- [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Sandbox persistence is now GA](https://vercel.com/changelog/sandbox-persistence-is-now-ga)
+- [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta)
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
-Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fpersistent-sandboxes&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md)
 <!-- /docsgraph:related -->
 
 **Persistence is the default.** Every sandbox created with [`Sandbox.create()`](/docs/sandbox/sdk-reference#sandbox.create) or [`sandbox create`](/docs/sandbox/cli-reference#sandbox-create) is persistent unless you explicitly opt out.
@@ -217,7 +217,7 @@ asyncio.run(main())
 
 ## Get or create (idempotent)
 
-`Sandbox.getOrCreate` is the recommended pattern for long-lived sandboxes. It resumes the sandbox if it exists, or creates it if it doesn't.
+`Sandbox.getOrCreate` is the recommended pattern for long-lived sandboxes. It retrieves the sandbox without resuming it by default (`resume: false`), or creates it if it doesn't exist.
 
 Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, use [`sandbox.update`](#update-sandbox-configuration).
 
@@ -273,7 +273,7 @@ Use `Sandbox.get({ name })` to retrieve a persistent sandbox by name. The handle
 **index.ts**
 
 ```ts filename="index.ts"
-// Retrieve the sandbox by name. The next SDK call resumes the session.
+// Retrieve the sandbox without resuming it.
 const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 
 // The filesystem is restored from the last session
@@ -296,7 +296,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-Pass `resume: false` to skip auto-resume. The sandbox resumes on the next SDK call that requires a running VM.
+Both `Sandbox.get` and `Sandbox.getOrCreate` default to `resume: false`, so retrieving an existing sandbox does not start a session. Pass `resume: true` to resume a stopped sandbox before the lookup resolves. Otherwise, the sandbox resumes on the next SDK call that requires a running VM.
 
 ## Update sandbox configuration
 

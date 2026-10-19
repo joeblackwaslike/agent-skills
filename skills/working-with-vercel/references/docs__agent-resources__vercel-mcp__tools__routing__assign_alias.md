@@ -13,8 +13,8 @@ related:
 summary: Use assign_alias with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/assign_alias.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "3cf874ec986ff4d2eb1618bdc11637b78dd7e819b359cca0a0d1a920bd105f39"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "f02bab1f6f48cb634a66fec916807c96b8f1f070686e6e89a8bb7cc441bfb675"
 ---
 
 # assign_alias
@@ -27,23 +27,23 @@ Assign an Alias.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frouting%2Fassign_alias&source_site=vercel-docs&relationship=related) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
-- [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frouting%2Fassign_alias&source_site=vercel-docs&relationship=related) — Use list_deployment_aliases with Vercel MCP.
-- [Delete an Alias](https://vercel.com/docs/rest-api/aliases/delete-an-alias?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frouting%2Fassign_alias&source_site=vercel-docs&relationship=related) — DELETE /v2/aliases/{aliasId} — Delete an Alias with the specified ID.
-- [list_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_aliases?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frouting%2Fassign_alias&source_site=vercel-docs&relationship=related) — Use list_aliases with Vercel MCP.
-- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frouting%2Fassign_alias&source_site=vercel-docs&relationship=related) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
+- [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
+- [get_alias](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/get_alias) — Use get_alias with Vercel MCP.
+- [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases) — Use list_deployment_aliases with Vercel MCP.
+- [Delete an Alias](https://vercel.com/docs/rest-api/aliases/delete-an-alias) — DELETE /v2/aliases/{aliasId} — Delete an Alias with the specified ID.
+- [list_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_aliases) — Use list_aliases with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/assign_alias.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/assign_alias.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frouting%2Fassign_alias&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/assign_alias.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/assign_alias.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                      |
-| ------------- | ------ | -------- | ------------------------------------------------ |
-| `id`          | string | Yes      | The deployment or alias ID or URL to assign from |
-| `teamId`      | string | No       | Team ID.                                         |
-| `slug`        | string | No       | Team slug.                                       |
-| `requestBody` | object | Yes      | Request body for this tool.                      |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `id`          | string | Yes      | The deployment or alias ID or URL to assign from            |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 
 ---

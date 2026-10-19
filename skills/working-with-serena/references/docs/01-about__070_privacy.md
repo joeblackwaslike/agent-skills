@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/070_privacy.md"
-fetched_at: "2026-09-28T10:43:25.309Z"
-sha256: "205e930a34bbb64fe10fb322035c2878488dcf701f038a730c63124501f5884c"
+fetched_at: "2026-10-19T09:44:32.510Z"
+sha256: "69d82d8e33f30f93345f59babd24fa849d6904d75cc639b07cd102364d7f7d15"
 ---
 
 (privacy)=
@@ -14,6 +14,7 @@ We collect only the following anonymous usage data whenever Serena is started:
 
  * the version of Serena being used,
  * the operating system being used,
+ * the Serena agent interface being used,
  * the language backend being used,
  * the enabled status of the Serena Dashboard,
  * the enabled [Serena agent context](contexts)

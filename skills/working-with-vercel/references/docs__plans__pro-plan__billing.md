@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "71f7f76b7ea1bef992e7cd332614a2f56117e1577a107adeba3a782eba535913"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "dea0f6ccd0187b8072da08e59003256b5c7fe99d9aa4b986dabc5939006b6154"
 ---
 
 # Billing FAQ for Pro Plan
@@ -31,14 +31,14 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related)
-- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
-- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Vercel MCP tools for billing and purchases.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
+- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 
-Full cross-link map for this page: [/docs/plans/pro-plan/billing.graph.md](/docs/plans/pro-plan/billing.graph.md?from=related&source_path=%2Fdocs%2Fplans%2Fpro-plan%2Fbilling&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/plans/pro-plan/billing.graph.md](/docs/plans/pro-plan/billing.graph.md)
 <!-- /docsgraph:related -->
 
 ## Payments

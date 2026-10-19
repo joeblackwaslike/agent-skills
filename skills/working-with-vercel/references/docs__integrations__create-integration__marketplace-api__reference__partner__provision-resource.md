@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "6327770ebd47a9fddf587b7a405e60d0b603ca021909c7757cd0541ee59cc536"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "6a8a60125f687f1ddfd77f25417bb8eb4812b7667e72106ac9eb573fcaa5e9d5"
 ---
 
 # Provision Resource
@@ -249,7 +249,7 @@ See schema: `#/properties/customClaims/properties/roles/items`
 "string"
         ]
       },
-      "claims": "object" // required // Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+      "claims": "object" // required // Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
     ]
   }
 }

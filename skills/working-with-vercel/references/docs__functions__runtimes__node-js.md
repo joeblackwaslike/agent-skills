@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "abdbdca87febb6e88e565f72dc65afe52406383e2d89d79b501429ff5afdf4f4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0959e1c16b607a2fcc76944eef30fd3ec87a348683ee4d6811b1349153ac14c1"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -31,20 +31,20 @@ Use the Node.js runtime to run Vercel Functions written in JavaScript or TypeScr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Bytecode caching for Serverless Functions by default](https://vercel.com/changelog/bytecode-caching-for-serverless-functions-by-default?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
-- [Deploy Node servers with zero configuration](https://vercel.com/changelog/deploy-node-servers-with-zero-configuration?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
-- [In-function concurrency now in public beta](https://vercel.com/changelog/in-function-concurrency-now-in-public-beta?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
-- [Node.js 24 LTS is now generally available for builds and functions](https://vercel.com/changelog/node-js-24-lts-is-now-generally-available-for-builds-and-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
-- [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related)
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=related) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Bytecode caching for Serverless Functions by default](https://vercel.com/changelog/bytecode-caching-for-serverless-functions-by-default)
+- [Deploy Node servers with zero configuration](https://vercel.com/changelog/deploy-node-servers-with-zero-configuration)
+- [In-function concurrency now in public beta](https://vercel.com/changelog/in-function-concurrency-now-in-public-beta)
+- [Node.js 24 LTS is now generally available for builds and functions](https://vercel.com/changelog/node-js-24-lts-is-now-generally-available-for-builds-and-functions)
+- [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation)
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
-Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fnode-js&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md)
 <!-- /docsgraph:related -->
 
 [Node.js](/docs/functions/runtimes/node-js)-powered functions are suited to computationally intense or large functions and provide benefits like:
@@ -56,7 +56,7 @@ Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/
 
 Vercel creates a separate function for each supported source file in the root `api/` directory. Avoid creating a separate function for each API endpoint. Keep related routes in a shared function so [Fluid compute](/docs/fluid-compute#optimized-concurrency) can reuse instances across routes and Vercel builds fewer functions.
 
-You can use a framework with routing support, such as [Hono](/docs/frameworks/backend/hono), or define a single [`fetch` handler](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard) that receives requests for all HTTP methods and routes them by URL pathname. Keep shared utilities and route modules outside `api/` and import them from your function entry point.
+For example, you can use [Next.js Route Handlers](https://nextjs.org/docs/app/getting-started/route-handlers), a framework with routing support such as [Hono](/docs/frameworks/backend/hono), or define a single [`fetch` handler](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard) that receives requests for all HTTP methods and routes them by URL pathname. Keep shared utilities and route modules outside `api/` and import them from your function entry point.
 
 Create a shared API entry point in the root `api/` directory using the [`fetch` Web Standard export](/docs/functions/functions-api-reference?framework=other\&language=ts#fetch-web-standard). As your API grows, add routing logic to this handler and configure [rewrites](/docs/routing/rewrites) to send related API paths to the same function:
 

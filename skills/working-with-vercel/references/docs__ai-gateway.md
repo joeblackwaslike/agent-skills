@@ -16,8 +16,8 @@ related:
 summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "748be90db84133e6740b40164c2f954fe3bde740498f4184f1bee993cf6c4a57"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "bac2155790802907161e32bb0ac25a4a1284223cd910358de4639a91c1f01f13"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -32,20 +32,20 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
-- [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
-- [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
-- [Deployment](https://eve.dev/docs/guides/deployment/overview?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Choose a deployment strategy and prepare an eve agent for production.
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [AI Gateway and one-click deploys now available on TRAE](https://vercel.com/changelog/ai-gateway-and-one-click-deploys-now-available-on-trae?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [Auto-recharge available in AI Gateway](https://vercel.com/changelog/auto-recharge-available-in-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
-- [Claude Opus 4.1 is now supported in Vercel AI Gateway](https://vercel.com/changelog/claude-4-1-opus-is-now-supported-in-vercel-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=related)
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
+- [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
+- [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
+- [Deployment](https://eve.dev/docs/guides/deployment/overview) — Choose a deployment strategy and prepare an eve agent for production.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [AI Gateway and one-click deploys now available on TRAE](https://vercel.com/changelog/ai-gateway-and-one-click-deploys-now-available-on-trae)
+- [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta)
+- [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
+- [Auto-recharge available in AI Gateway](https://vercel.com/changelog/auto-recharge-available-in-ai-gateway)
+- [Claude Opus 4.1 is now supported in Vercel AI Gateway](https://vercel.com/changelog/claude-4-1-opus-is-now-supported-in-vercel-ai-gateway)
 
-Full cross-link map for this page: [/docs/ai-gateway.graph.md](/docs/ai-gateway.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway.graph.md](/docs/ai-gateway.graph.md)
 <!-- /docsgraph:related -->
 
 #### AI SDK
@@ -94,12 +94,12 @@ Your application does not need to run on Vercel. Call AI Gateway from any server
 
 Use AI Gateway when you want these controls without operating your own proxy, database, and routing control plane:
 
-| Requirement | How AI Gateway handles it |
-| --- | --- |
-| Centralized credentials | Authenticate your application once, then use AI Gateway system credentials or your own provider accounts through [BYOK](/docs/ai-gateway/authentication-and-byok/byok). |
-| Request logging | Inspect each request's model, provider attempts, latency, token usage, status, and cost in [request logs](/docs/ai-gateway/observability-and-spend/logs). |
-| Spending controls | Set [budgets](/docs/ai-gateway/observability-and-spend/budgets) for a team, project, API key, or team member. AI Gateway rejects new system-credential requests after an applicable budget is exceeded. |
-| Provider failover | Route a model across healthy providers and configure ordered [provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks). |
+| Requirement             | How AI Gateway handles it                                                                                                                                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Centralized credentials | Authenticate your application once, then use AI Gateway system credentials or your own provider accounts through [BYOK](/docs/ai-gateway/authentication-and-byok/byok).                                                      |
+| Request logging         | Inspect each request's model, provider attempts, latency, token usage, status, and cost in [request logs](/docs/ai-gateway/observability-and-spend/logs).                                                                    |
+| Spending controls       | Set [budgets](/docs/ai-gateway/observability-and-spend/budgets) for a team, project, API key, or team member. AI Gateway rejects new system-credential requests after an applicable budget is exceeded.                      |
+| Provider failover       | Route a model across healthy providers and configure ordered [provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks). |
 
 Budgets cover spend billed through AI Gateway system credentials. BYOK spend is metered separately and does not count toward those limits. If a BYOK request fails, AI Gateway can fall back to system credentials. Review the [BYOK behavior](/docs/ai-gateway/authentication-and-byok/byok) and [soft-cap budget semantics](/docs/ai-gateway/observability-and-spend/budgets#how-budgets-work) when strict provider-account use or zero-overshoot limits are requirements.
 

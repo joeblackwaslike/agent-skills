@@ -17,8 +17,8 @@ related:
 summary: Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/eve.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "5366d2481ab684213f863cf90f1ec2fcfbbc805bb5cdde1be882fa4dc7c6c697"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "8b4a251626d064ccef19ca1d202e424f4bd5455f2748bfe4419f6cefbf1dc21d"
 ---
 
 # eve with MCP
@@ -31,19 +31,19 @@ Connect an [eve](/docs/eve) agent to a [Model Context Protocol (MCP)](/docs/mcp)
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [MCP Connections](https://eve.dev/docs/connections/mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Connect an eve agent to a remote MCP server, authorize it with Vercel Connect or static credentials, and control which t
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Connections](https://eve.dev/docs/connections?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
-- [Connect a Warehouse (Optional)](https://eve.dev/docs/tutorial/connect-a-warehouse?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Optional follow-up to the Build an Agent tutorial. Let each user connect their own warehouse over an OAuth MCP via Verce
-- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Vercel MCP tools for integrations.
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Connect a Warehouse (Optional)](https://eve.dev/docs/tutorial/connect-a-warehouse) — Optional follow-up to the Build an Agent tutorial. Let each user connect their own warehouse over an OAuth MCP via Verce
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 
-Full cross-link map for this page: [/docs/mcp/integrations/eve.graph.md](/docs/mcp/integrations/eve.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations%2Feve&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/mcp/integrations/eve.graph.md](/docs/mcp/integrations/eve.graph.md)
 <!-- /docsgraph:related -->
 
 ## Prerequisites

@@ -16,8 +16,8 @@ related:
 summary: Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments in this overview.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "23f05a0375c5e6a5982d758c9a06a64f40a0d53c7375ed7dc70dd22aefb9f093"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "ef6301461e3c23ee6b6f6958c5d7769bcf5b771a57d45a2193349f8f5ed4f33e"
 ---
 
 # Comments Overview
@@ -32,20 +32,20 @@ Comments allow teams [and invited participants](/docs/comments/how-comments-work
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to prototype a storefront section in v0 and ship it to Next.js](https://vercel.com/kb/guide/how-to-prototype-a-storefront-section-in-v0?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how v0 prototyping works for storefront sections, from a scoped prompt to a pull request in your existing Next.js
-- [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
-- [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Comments are now visible in your dashboard notifications](https://vercel.com/changelog/comments-are-now-visible-in-your-dashboard-notifications?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related)
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
-- [Vercel CLI Overview](https://vercel.com/docs/cli?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=related) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [How to prototype a storefront section in v0 and ship it to Next.js](https://vercel.com/kb/guide/how-to-prototype-a-storefront-section-in-v0) — Learn how v0 prototyping works for storefront sections, from a scoped prompt to a pull request in your existing Next.js
+- [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
+- [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
+- [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
+- [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
+- [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta)
+- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
+- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
+- [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration)
+- [Comments are now visible in your dashboard notifications](https://vercel.com/changelog/comments-are-now-visible-in-your-dashboard-notifications)
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 
-Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md?from=related&source_path=%2Fdocs%2Fcomments&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md)
 <!-- /docsgraph:related -->
 
 ![Comments on a preview deployment of the Vercel Docs homepage.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/comments/comment-light.png)

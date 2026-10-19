@@ -4,8 +4,8 @@ description: "Build durable, resumable agents with the WorkflowAgent from @ai-sd
 url: "https://ai-sdk.dev/docs/agents/workflow-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/workflow-agent.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "1281cf54fe312f5bd72904059730efde2d380dc9bf207ed8341a51c4da98e1e0"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "7b9698a73b20cd71fb866210852022fed70f1680088b5918ad2692cd0a404828"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -884,6 +884,26 @@ Other options carry over with the same names: `prepareStep`, `onStart`, `onStepS
 - [WorkflowChatTransport API Reference](/docs/reference/ai-sdk-workflow/workflow-chat-transport) for stream reconnection options
 - [Building Agents](/docs/agents/building-agents) for the in-memory `ToolLoopAgent` alternative
 - [Loop Control](/docs/agents/loop-control) for advanced stop conditions
+
+## Tool execution concurrency
+
+Set `toolCallConcurrency` to limit how many local tool calls execute concurrently
+within a step. Use `1` when calls must execute sequentially in model order:
+
+```ts
+const agent = new WorkflowAgent({
+  model,
+  tools,
+  toolCallConcurrency: 1,
+});
+```
+
+The limit applies to both `generate()` and `stream()`, including approved tool
+calls resumed from message history. It must be a positive integer. By default,
+all local calls execute concurrently; provider-executed tools are unaffected.
+You can also return the setting from `prepareCall` or pass it to `generate()` or
+`stream()`. Explicit call options take precedence over `prepareCall`, which takes
+precedence over the constructor default.
 
 ---
 

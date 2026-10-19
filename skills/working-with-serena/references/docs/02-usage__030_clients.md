@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/030_clients.md"
-fetched_at: "2026-10-12T11:48:42.891Z"
-sha256: "32e433b6b12ae9c56d55a19321f99ad314b1eac96ddc5114e50e4acdb15ef10c"
+fetched_at: "2026-10-19T09:44:32.510Z"
+sha256: "a7c3d75e53a2688581be05a341a0cd6b9831e7fc29b7dcf547cf28dcb47a8a1e"
 ---
 
 # Connecting Your MCP Client
@@ -114,26 +114,6 @@ To set up the Serena MCP server for Claude Code, you can simply run this command
 
 Find manual setup instructions as well as workarounds for Claude Code's recent regressions pertaining to (external) tool use below.
 
-:::{attention}
-Recent updates to Claude Code (CC) and to the Opus line of models resulted in drastically reduced
-adherence to instructions pertaining to Serena's tools.
-
-After extensive analysis, we identified part of the reason to be very long and detailed
-tool descriptions for built-in tools and parts of the default system prompt. 
-The descriptions of CC's system tools take almost 16k tokens, cannot be adjusted by the user,
-and introduce a very strong bias towards internal tools, making it almost impossible to convince Opus 4.7 to use Serena.
-
-As a workaround, we crafted a system prompt that counteracts this bias.
-When using Serena, we highly recommend that you start CC as 
-
-```shell
-claude --system-prompt="$(serena prompts print-cc-system-prompt-override)"
-```
-
-You can also consider adding the content of `serena prompts print-cc-system-prompt-override` to your `CLAUDE.md` files,
-but the effect may be insufficient for counteracting Claude Code's bias towards internal tools.
-:::
-
 **Global Configuration**. To add the Serena MCP server for all your projects, use the user-level configuration of claude code and the `--project-from-cwd` flag:
 
 ```shell
@@ -221,7 +201,8 @@ Claude Code settings file (`.claude/settings.json` in your project directory, or
 The hooks will:
 
 - **`remind`**: Nudge the agent to use Serena's symbolic tools when it makes too many consecutive
-  `grep` or `read_file` calls without using any Serena tools in between.
+  `grep` or `read_file` calls without using any Serena tools in between. Searches and source-file reads
+  run via the `Bash` tool (as native Claude Code installations do) are counted as well.
 - **`activate`**: Prompt the agent to activate the project and read Serena's instructions at session start.
 - **`cleanup`**: Clean up hook session data when the session ends.
 - **`auto-approve`**: Auto-approve Serena tool calls whenever Claude Code is in a permissive
@@ -230,6 +211,25 @@ The hooks will:
 
 For more details on Claude Code's hook system, see the
 [Claude Code hooks documentation](https://code.claude.com/docs/en/hooks).
+
+**Modifying Claude Code's Prompts.**
+Recent updates to Claude Code (CC) and to the Opus line of models resulted in drastically reduced
+adherence to instructions pertaining to Serena's tools.
+
+Analysis showed that part of the reason are very long and detailed
+tool descriptions for built-in tools and parts of the default system prompt.
+The descriptions of CC's system tools take almost 16k tokens, cannot be adjusted by the user,
+and introduce a very strong bias towards internal tools, making it almost impossible to convince Opus 4.7 to use Serena.
+
+To counteracts this bias, you can consider overriding the system prompt with a version
+that emphasizes usage of Serena's tools.
+
+```shell
+claude --system-prompt="$(serena prompts print-cc-system-prompt-override)"
+```
+
+You can also consider adding the content of `serena prompts print-cc-system-prompt-override` to your `CLAUDE.md` files,
+but the effect may be insufficient for counteracting Claude Code's bias towards internal tools.
 
 ## DeepSeek Harness (DSH)
 

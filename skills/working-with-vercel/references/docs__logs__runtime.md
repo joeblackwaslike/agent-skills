@@ -12,12 +12,12 @@ related:
   - /docs/functions
   - /docs/deployments/environments
   - /docs/drains
-  - /docs/functions/streaming-functions
+  - /docs/cli/logs
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a260ae14018526afcfc1102841a18f28b648657dc5802685aa7907dbc5348b5b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "29fcb8152d6860b129838f98f8b0537e31126174e0a48b8f56e13e38bd867e99"
 ---
 
 # Runtime Logs
@@ -32,20 +32,20 @@ The **Logs** section in the sidebar allows you to view, search, inspect, and [sh
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [30-day runtime log retention, now available in Observability Plus](https://vercel.com/changelog/30-day-runtime-log-retention-now-available-in-observability-plus?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
-- [Agents can now access runtime logs with Vercel's MCP server](https://vercel.com/changelog/agents-can-now-access-runtime-logs-with-vercels-mcp-server?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
-- [Caching details now available in Runtime Logs](https://vercel.com/changelog/caching-details-now-available-in-runtime-logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
-- [Function start type now available in Runtime Logs](https://vercel.com/changelog/function-start-type-now-available-in-runtime-logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
-- [Improved streaming runtime logs exports](https://vercel.com/changelog/improved-streaming-runtime-logs-exports?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
-- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
-- [Vercel Function Logs](https://vercel.com/docs/functions/logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Use runtime logs to debug and monitor your Vercel Functions.
-- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=related) — Use get_runtime_logs with Vercel MCP.
+- [30-day runtime log retention, now available in Observability Plus](https://vercel.com/changelog/30-day-runtime-log-retention-now-available-in-observability-plus)
+- [Agents can now access runtime logs with Vercel's MCP server](https://vercel.com/changelog/agents-can-now-access-runtime-logs-with-vercels-mcp-server)
+- [Caching details now available in Runtime Logs](https://vercel.com/changelog/caching-details-now-available-in-runtime-logs)
+- [Function start type now available in Runtime Logs](https://vercel.com/changelog/function-start-type-now-available-in-runtime-logs)
+- [Improved streaming runtime logs exports](https://vercel.com/changelog/improved-streaming-runtime-logs-exports)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
+- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
-Full cross-link map for this page: [/docs/logs/runtime.graph.md](/docs/logs/runtime.graph.md?from=related&source_path=%2Fdocs%2Flogs%2Fruntime&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/logs/runtime.graph.md](/docs/logs/runtime.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You can only view runtime logs from the Logs tab. [Build
@@ -76,13 +76,25 @@ You can view the following log types in the [Logs tab](#view-runtime-logs):
 
 ## View runtime logs
 
-To view runtime logs:
+View runtime logs from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 1. From the [dashboard](/dashboard), select the project that you wish to see the logs for
 2. Open [**Logs**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Flogs\&title=Go+to+Logs) in the sidebar from your project overview
 3. From here you can view, filter, and search through the runtime logs. Each log row shares [basic info](#log-details) about the request, like execution, domain name, HTTP status, function type, and RequestId.
 
 ![Layout to visualize the runtime logs.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/observability/request-log-overview-light.png?lightbox)
+
+#### CLI
+
+Run [`vercel logs`](/docs/cli/logs) from your linked project directory. By default, it shows the latest 100 runtime log entries from the last 30 minutes. Use `--query` to filter entries and `--since` to look further back:
+
+```bash filename="terminal"
+vercel logs --environment production --query 'level:error' --since 1h
+```
+
+The CLI returns a bounded set of results and doesn't stream. To follow logs in real time, use **Live mode** in the dashboard, described in [Timeline](#timeline).
 
 ## Log filters
 

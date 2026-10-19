@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "75ec3ee77f896a18ecbe9f7814b3d28227cbebcc57933e5cdc264e0cce3affb4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "6acee6a314a32b4a7834282fe6cc493f94f82fc4ecfe08eca9c150fe44e7db5b"
 ---
 
 # Vercel Primitives
@@ -31,16 +31,16 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
-- [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
-- [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related)
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets)
+- [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
+- [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework)
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 
-Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fprimitives&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md)
 <!-- /docsgraph:related -->
 
 Files outside of these directories are ignored and will not be served to visitors.
@@ -159,7 +159,7 @@ type ServerlessFunctionConfig = {
   handler: string;
   runtime: string;
   memory?: number;
-  maxDuration?: number;
+  maxDuration?: number | 'max';
   environment?: Record<string, string>;
   regions?: string[];
   supportsWrapper?: boolean;
@@ -167,17 +167,17 @@ type ServerlessFunctionConfig = {
 };
 ```
 
-| Key                           | [Type](/docs/rest-api#types) | Required | Description                                                                                                                                               |
-| ----------------------------- | ----------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **runtime**                   | [String](/docs/rest-api#types)       | Yes      | Specifies which "runtime" will be used to execute the Vercel Function. See [Runtimes](/docs/functions/runtimes) for more information.                     |
-| **handler**                   | [String](/docs/rest-api#types)       | Yes      | Indicates the initial file where code will be executed for the Vercel Function.                                                                           |
-| **memory**                    | [Integer](/docs/rest-api#types)      | No       | Amount of memory (RAM in MB) that will be allocated to the Vercel Function. See [memory size limits](/docs/functions/limitations#memory-size-limits) for more information. |
-| **architecture**              | [String](/docs/rest-api#types)       | No       | Specifies the instruction set "architecture" the Vercel Function supports. Either `x86_64` or `arm64`. The default value is `x86_64`.                     |
-| **maxDuration**               | [Integer](/docs/rest-api#types)      | No       | Maximum duration (in seconds) that will be allowed for the Vercel Function. See [max duration](/docs/functions/limitations#max-duration) for more information. |
-| **environment**               | [Map](/docs/rest-api#types)          | No       | Map of additional environment variables that will be available to the Vercel Function, in addition to the env vars specified in the Project Settings.     |
-| **regions**                   | [String\[\]](/docs/rest-api#types)     | No       | List of Vercel Regions where the Vercel Function will be deployed to.                                                                                     |
-| **supportsWrapper**           | [Boolean](/docs/rest-api#types)      | No       | True if a custom runtime has support for Lambda runtime wrappers.                                                                                         |
-| **supportsResponseStreaming** | [Boolean](/docs/rest-api#types)      | No       | When true, the Vercel Function will stream the response to the client.                                                                                    |
+| Key                           | [Type](/docs/rest-api#types)       | Required | Description                                                                                                                                                                                                                                                                                                  |
+| ----------------------------- | ------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **runtime**                   | [String](/docs/rest-api#types)             | Yes      | Specifies which "runtime" will be used to execute the Vercel Function. See [Runtimes](/docs/functions/runtimes) for more information.                                                                                                                                                                        |
+| **handler**                   | [String](/docs/rest-api#types)             | Yes      | Indicates the initial file where code will be executed for the Vercel Function.                                                                                                                                                                                                                              |
+| **memory**                    | [Integer](/docs/rest-api#types)            | No       | Amount of memory (RAM in MB) that will be allocated to the Vercel Function. See [memory size limits](/docs/functions/limitations#memory-size-limits) for more information.                                                                                                                                   |
+| **architecture**              | [String](/docs/rest-api#types)             | No       | Specifies the instruction set "architecture" the Vercel Function supports. Either `x86_64` or `arm64`. The default value is `x86_64`.                                                                                                                                                                        |
+| **maxDuration**               | [Integer](/docs/rest-api#types) or `"max"` | No       | Maximum duration (in seconds) that will be allowed for the Vercel Function. See [max duration](/docs/functions/limitations#max-duration) for more information. `"max"` resolves to your plan's maximum, not the [extended max duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta) beta. |
+| **environment**               | [Map](/docs/rest-api#types)                | No       | Map of additional environment variables that will be available to the Vercel Function, in addition to the env vars specified in the Project Settings.                                                                                                                                                        |
+| **regions**                   | [String\[\]](/docs/rest-api#types)           | No       | List of Vercel Regions where the Vercel Function will be deployed to.                                                                                                                                                                                                                                        |
+| **supportsWrapper**           | [Boolean](/docs/rest-api#types)            | No       | True if a custom runtime has support for Lambda runtime wrappers.                                                                                                                                                                                                                                            |
+| **supportsResponseStreaming** | [Boolean](/docs/rest-api#types)            | No       | When true, the Vercel Function will stream the response to the client.                                                                                                                                                                                                                                       |
 
 #### Node.js config
 
@@ -192,8 +192,8 @@ type NodejsServerlessFunctionConfig = ServerlessFunctionConfig & {
 ```
 
 | Key                           | [Type](/docs/rest-api#types) | Required | Description                                                                                                                                    |
-| ----------------------------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **launcherType**              | "Nodejs"                                                                | Yes      | Specifies which launcher to use. Currently only "Nodejs" is supported.                                                                         |
+| ----------------------------- | ------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **launcherType**              | "Nodejs"                                                      | Yes      | Specifies which launcher to use. Currently only "Nodejs" is supported.                                                                         |
 | **shouldAddHelpers**          | [Boolean](/docs/rest-api#types)      | No       | Enables request and response helpers methods.                                                                                                  |
 | **shouldAddSourcemapSupport** | [Boolean](/docs/rest-api#types)      | No       | Enables source map support for stack traces at runtime.                                                                                        |
 | **awsLambdaHandler**          | [String](/docs/rest-api#types)       | No       | [AWS Handler Value](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html) for when the serverless function uses AWS Lambda syntax. |

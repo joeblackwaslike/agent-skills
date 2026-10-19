@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/services/experimental
+  - /docs/daemons
   - /docs/services/routing
   - /docs/services/bindings
   - /docs/functions/container-images
-  - /docs/services/config-reference
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "38ccfbba5430542bebcae51346a58c3c177374967ed681ec4e6bb335ec674255"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "a57c9c7d1994faaf1895b4ceeefe4b5c6cc37ad359fb97b482a64f1046648a7b"
 ---
 
 # Services
@@ -33,20 +33,20 @@ replacing the need to split monorepos into separate Vercel projects.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
-- [Nuxt](https://eve.dev/docs/guides/frontend/nuxt?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
-- [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
-- [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related)
-- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
-- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [Services](https://vercel.com/docs/build-output-api/services?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Projects overview](https://vercel.com/docs/projects?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Nuxt](https://eve.dev/docs/guides/frontend/nuxt) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
+- [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
+- [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
+- [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
+- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
+- [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 
-Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md?from=related&source_path=%2Fdocs%2Fservices&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Looking for the earlier `experimentalServices` configuration? See
@@ -72,6 +72,8 @@ Services are valuable when you have:
 
 - **A polyglot monorepo**: For example, a JavaScript frontend and a Python backend in the same repository that you want to deploy as one project.
 - **Multiple backends**: Several API services, each with its own dependencies and build step.
+
+Services handle routed workloads that respond to requests. For background workers that run continuously and pull their own work, such as queue consumers, use [Daemons](/docs/daemons). A project can declare `services` and `daemons` side by side in `vercel.json`.
 
 ## Quick start
 

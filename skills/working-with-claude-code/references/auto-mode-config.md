@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/auto-mode-config.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "22735f1d1ee1f3083cd5f208f653aae71eab00264bbf867ce1f07c738efc2064"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "4d7fd386d9d4a0325da918ae71d2a6e41ff6a543ce4d128b17f785c9bdc3c84d"
 ---
 
 > ## Documentation Index
@@ -325,7 +325,7 @@ Both `defaults` and `config` print the four rule lists as a single JSON object, 
 {
   "allow": [
     ...
-    "Test Artifacts: Hardcoded test API keys, placeholder credentials in examples, or hardcoding test cases. Placeholder means authored as a placeholder — a file or value copied from a real secret or sensitive path is never a test artifact (see Sensitive-Source Provenance).",
+    "Test Artifacts: Hardcoded test API keys, placeholder credentials in examples, or hardcoding test cases. Placeholder means authored as a placeholder �� a file or value copied from a real secret or sensitive path is never a test artifact (see Sensitive-Source Provenance).",
     ...
   ],
   "soft_deny": [

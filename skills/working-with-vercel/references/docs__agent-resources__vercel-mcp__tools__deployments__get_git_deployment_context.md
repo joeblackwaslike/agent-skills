@@ -13,8 +13,8 @@ related:
 summary: Use get_git_deployment_context with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b8f52fb0d2e4e10051e040a2f0d9a0fc528dec089d39d0d22081666d2c57d2dc"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "04d93e30b9f110a03f5605028d87bc0baf9823be2f69222c9af257d01a834720"
 ---
 
 # get_git_deployment_context
@@ -27,16 +27,18 @@ List your teams, their plans, linked Git projects, and connected Cursor Origin w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_git_deployment_context&source_site=vercel-docs&relationship=related) — Use get_deployment with Vercel MCP.
-- [create_git_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_git_project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_git_deployment_context&source_site=vercel-docs&relationship=related) — Use create_git_project with Vercel MCP.
-- [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_git_deployment_context&source_site=vercel-docs&relationship=related) — Use get_deployment_file_contents with Vercel MCP.
-- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_git_deployment_context&source_site=vercel-docs&relationship=related) — Use list_deployments with Vercel MCP.
-- [get_microfrontends_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_git_deployment_context&source_site=vercel-docs&relationship=related) — Use get_microfrontends_config with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
+- [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
+- [create_git_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_git_project) — Use create_git_project with Vercel MCP.
+- [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
+- [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Fget_git_deployment_context&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md)
 <!-- /docsgraph:related -->
 
 **Sample prompt:** "Which of my Git repositories already have Vercel projects?"
+
+This tool is available on the root connection. Project-scoped connections already bind a team and project and do not register this discovery tool.
 
 
 ---

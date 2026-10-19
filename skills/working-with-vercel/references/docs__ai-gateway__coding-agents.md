@@ -16,8 +16,8 @@ related:
 summary: Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "310dc6844ca685dd7b3ca6103209ee419593907408095111ae67df09f0a7204b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "14f0cb8d83e98ff794823a7cfa1d0c4c178fe7fbcfb16d30146ace42b39b3d50"
 ---
 
 # Coding Agents and Chat Platforms with AI Gateway
@@ -30,17 +30,18 @@ Route coding agents and chat platforms through AI Gateway to share model access,
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Agent Resources](https://vercel.com/docs/agent-resources?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=related) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway)
+- [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
+- [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
+- [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway)
+- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
+- [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/docs/ai-gateway/coding-agents.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -48,14 +49,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents.graph.md](/do
 The [Vercel CLI](/docs/cli/ai-gateway#setup) is the recommended way to connect a coding agent. One command provisions or reuses an API key, writes each agent's configuration, and points every agent at the right gateway endpoint:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup
-```
-
-`npx` runs Vercel CLI without installing it globally. To keep `vercel` available as a global command, install or update the CLI before running setup:
-
-```bash filename="terminal"
-npm i -g vercel@latest
-vercel ai-gateway setup
+npx vercel@latest ai-gateway setup
 ```
 
 The command detects the agents installed on your machine, shows you a diff of every planned change before it writes anything, and stores your key in the macOS Keychain instead of in plaintext config. It reuses an existing key when your configs already point at the gateway, and accepts a pasted key so you don't have to mint a new one. Model lists written into agent configs come from the [AI Gateway leaderboards](/docs/ai-gateway/leaderboards), so the defaults track what's actually being used. It also copies your existing Claude Desktop and Codex Desktop sessions so your history survives the provider switch.
@@ -127,7 +121,7 @@ See each agent's page for what its endpoint adds. Agents with a first-party AI G
 | Benefit            | Without                              | With                            |
 | ------------------ | ------------------------------------ | ------------------------------- |
 | **Spend tracking** | Separate dashboards per provider     | Single unified view             |
-| **Model access**   | Limited to agent's default models    | 200+ models from all providers  |
+| **Model access**   | Limited to agent's default models    | 400+ models from 70+ providers  |
 | **Billing**        | Multiple invoices, multiple accounts | One Vercel invoice              |
 | **Reliability**    | Single point of failure              | Automatic provider fallbacks    |
 | **Observability**  | Limited or no visibility             | Full request traces and metrics |
@@ -248,6 +242,18 @@ See [Configure Cursor with AI Gateway](/docs/ai-gateway/coding-agents/cursor) fo
 
 See [Configure GitHub Copilot CLI with AI Gateway](/docs/ai-gateway/coding-agents/copilot) for automatic and manual setup.
 
+## Run coding agents durably
+
+To deploy a coding agent as a service that resumes after crashes, function timeouts, and deployments, follow the [durable harness guides](/docs/agent-harnesses). Model calls use AI Gateway, while the durable runtime persists session state and resumes interrupted turns. Configuring AI Gateway for a local CLI does not enable this runtime.
+
+- [Claude Code](/docs/agent-harnesses/claude-code): Run the Claude Agent SDK with `durable-harness` and Vercel Sandbox.
+- [Codex](/docs/agent-harnesses/codex): Run Codex with `durable-harness` and Vercel Sandbox.
+- [OpenCode](/docs/agent-harnesses/opencode): Run OpenCode with `durable-harness` in your Vercel Function.
+- [Pi](/docs/agent-harnesses/pi): Use Pi's durable runtime or the `durable-harness/pi` adapter.
+- [fx](/docs/agent-harnesses/fx): Deploy with `libfx`, which has durability built in.
+
+[eve](/docs/agent-harnesses/eve) also has durable sessions built in on Vercel.
+
 ## Evaluate agents with Harbor
 
 [Harbor](/docs/ai-gateway/coding-agents/harbor) runs benchmarks such as Terminal-Bench with your choice of coding-agent harness. It supports built-in adapters, including Claude Code, Codex, fx, OpenCode, and Pi, as well as custom agents. Connect a harness to AI Gateway through its adapter's provider or compatible API settings. Configure Harbor with `harbor run`; Harbor does not have a `vercel ai-gateway setup --agent` value.
@@ -256,7 +262,7 @@ See the [Harbor guide](/docs/ai-gateway/coding-agents/harbor) for Codex, Claude 
 
 ## Chat platforms
 
-Chatbox and Open WebUI require manual configuration. OpenClaw works with `vercel ai-gateway setup --agent openclaw`:
+Chatbox and Open WebUI require manual configuration. OpenClaw works with `npx vercel@latest ai-gateway setup --agent openclaw`:
 
 - [Chatbox](/docs/ai-gateway/coding-agents/chatbox), a cross-platform desktop chat interface
 - [Open WebUI](/docs/ai-gateway/coding-agents/open-webui), a self-hosted web interface
@@ -264,7 +270,7 @@ Chatbox and Open WebUI require manual configuration. OpenClaw works with `vercel
 
 ## Getting started
 
-1. **Run the CLI**: `vercel ai-gateway setup` creates a key and configures every agent it supports. Skip to step 4 when it finishes
+1. **Run the CLI**: `npx vercel@latest ai-gateway setup` creates a key and configures every agent it supports. Skip to step 4 when it finishes
 2. **Get an API key**: to configure a tool by hand, create a key in the [AI Gateway page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway)
 3. **Configure the connection**: point the tool at the endpoint named on its setup page
 4. **Start using the tool**: requests now route through AI Gateway

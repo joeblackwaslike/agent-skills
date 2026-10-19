@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/koalaman/shellcheck/master/README.md"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "76af5ad794673b99992d172f0b2267d3f3e130c1653362e5870af1e143a2f5b0"
+fetched_at: "2026-10-19T09:38:26.830Z"
+sha256: "7bb0c6431e2f8a1702ad9a1bc1665953f0218256a2511e87e24d6ccd480032c7"
 ---
 
 [![Build Status](https://github.com/koalaman/shellcheck/actions/workflows/build.yml/badge.svg)](https://github.com/koalaman/shellcheck/actions/workflows/build.yml)
@@ -231,6 +231,11 @@ docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable myscript
 
 or use `koalaman/shellcheck-alpine` if you want a larger Alpine Linux based image to extend. It works exactly like a regular Alpine image, but has shellcheck preinstalled.
 
+Using [mise](https://mise.jdx.dev):
+```sh
+mise use shellcheck
+```
+
 Using the [nix package manager](https://nixos.org/nix):
 ```sh
 nix-env -iA nixpkgs.shellcheck
@@ -246,15 +251,13 @@ Alternatively, you can download pre-compiled binaries for the latest release her
 * [Linux, x86_64](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz) (statically linked)
 * [Linux, armv6hf](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.armv6hf.tar.xz), i.e. Raspberry Pi (statically linked)
 * [Linux, aarch64](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.aarch64.tar.xz) aka ARM64 (statically linked)
+* [Linux, riscv64](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.riscv64.tar.xz) (statically linked)
 * [macOS, aarch64](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.darwin.aarch64.tar.xz)
 * [macOS, x86_64](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.darwin.x86_64.tar.xz)
 * [Windows, x86](https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.zip)
 
 or see the [GitHub Releases](https://github.com/koalaman/shellcheck/releases) for other releases
 (including the [latest](https://github.com/koalaman/shellcheck/releases/tag/latest) meta-release for daily git builds).
-
-There are currently no official binaries for Apple Silicon, but third party builds are available via
-[ShellCheck for Visual Studio Code](https://github.com/vscode-shellcheck/shellcheck-binaries/releases).
 
 Distro packages already come with a `man` page. If you are building from source, it can be installed with:
 

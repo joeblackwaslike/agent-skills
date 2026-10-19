@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "25015922f4c8e3990bc6c6effb0c17ac5b3adf916f30e9a5df2a86d30d0757f4"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b6a4faa5e2a0cd5193ad965849a8f7d8d547ed3f472e97c0922160839399e499"
 ---
 
 # Global Config Limits and pricing
@@ -30,17 +30,17 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related)
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
-- [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related)
-- [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
-- [vercel global-config](https://vercel.com/docs/cli/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
-- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=related) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config)
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
+- [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config)
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
-Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fglobal-config-limits&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md)
 <!-- /docsgraph:related -->
 
 Keep the number of stores to a minimum. Fewer large stores improve your overall latency.
@@ -49,10 +49,10 @@ Keep the number of stores to a minimum. Fewer large stores improve your overall 
 
 The following table outlines the price for each resource according to the plan you are on:
 
-| Resource | Pro Price |
-| --- | --- |
-| Global Config Reads (formerly known as Edge Config Reads) | $3.00 |
-| Global Config Writes (formerly known as Edge Config Writes) | $5.00 |
+| Resource | Hobby Included | On-demand Rates |
+| --- | --- | --- |
+| Global Config Reads | First 100,000 | $3 per 1,000,000 Reads |
+| Global Config Writes | First 100 | $1 per 100 Writes |
 
 
 ## Limits by plan

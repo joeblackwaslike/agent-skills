@@ -17,8 +17,8 @@ related:
 summary: Escalate uncertain AI Gateway decision results to another model with confidence, probability, and compound conditions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/decision-fallbacks.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "7f4078b8332d8963a92adce6acb0684d9499585e34cfca48910e05b6c7336b38"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "828681e43712705f67f67978ed18c301f41e310ff67121a3498acbc1cfe1cc0d"
 ---
 
 # Decision Fallbacks
@@ -31,14 +31,14 @@ Decision fallbacks rerun a successful decision with another model when an answer
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=related)
-- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=related) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=related) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [experimental_decide](https://ai-sdk.dev/docs/reference/ai-sdk-core/decide?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=related) — Decide answers to typed questions against shared state with a decision model.
+- [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
+- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
+- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [experimental_decide](https://ai-sdk.dev/docs/reference/ai-sdk-core/decide) — Decide answers to typed questions against shared state with a decision model.
+- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 
-Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fdecision-fallbacks&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Decision fallbacks were previously called evaluation fallbacks. The

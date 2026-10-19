@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/file-checkpointing.md"
-fetched_at: "2026-10-05T11:13:49.762Z"
-sha256: "2634ff26003ccde235e0f6bcb2a746de5b411c5504d5d40076631e498fb739b6"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "c2eb54ff4b8d1ba4817082499a22a631ba29f7691c3672c0424ae82134e9c8ee"
 ---
 
 > ## Documentation Index
@@ -628,7 +628,7 @@ File checkpointing has the following limitations:
 | Limitation | Description |
 | - | - |
 | Write/Edit/NotebookEdit tools only | Changes made through Bash commands are not tracked |
-| Subagent edits | Edits a [subagent](/docs/en/agent-sdk/subagents) applies aren't tracked or restored, except a skill with `context: fork` running in the foreground; use git to revert untracked edits |
+| Subagent edits | Edits a [subagent](/docs/en/agent-sdk/subagents) applies aren't tracked, except a skill with `context: fork` running in the foreground. A rewind reverts them only in files the main conversation had already edited; use git to revert the rest |
 | Same session | Checkpoints are tied to the session that created them |
 | File content only | Creating, moving, or deleting directories is not undone by rewinding |
 | Local files | Remote or network files are not tracked |

@@ -16,8 +16,8 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5ee5ffd656a1d1c90be62103c234bf727a6f889c56d21bbfa0302baea1ff034d"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "cde91ffc440a5bbf68221cd4491546db799b09e6df62f49cc15296c5ff06517c"
 ---
 
 # Spend Management
@@ -32,20 +32,20 @@ Spend management is a way for you to notify or to automatically take action on y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Spend Management expands to Enterprise Flexible Commitment plans](https://vercel.com/changelog/spend-management-enterprise-flex?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
-- [Pause your project](https://vercel.com/kb/guide/pause-your-project?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Use a webhook to pause your project based on spend management.
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
-- [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
-- [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
-- [Spend Management now enabled by default on Pro](https://vercel.com/changelog/spend-management-now-enabled-by-default-on-pro?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related)
-- [Account Plans on Vercel](https://vercel.com/docs/plans?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — Learn about the different plans available on Vercel.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=related) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Spend Management expands to Enterprise Flexible Commitment plans](https://vercel.com/changelog/spend-management-enterprise-flex)
+- [Pause your project](https://vercel.com/kb/guide/pause-your-project) — Use a webhook to pause your project based on spend management.
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
+- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
+- [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users)
+- [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default)
+- [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management)
+- [Spend Management now enabled by default on Pro](https://vercel.com/changelog/spend-management-now-enabled-by-default-on-pro)
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
-Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md?from=related&source_path=%2Fdocs%2Fspend-management&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md)
 <!-- /docsgraph:related -->
 
 - [Receive a notification](/docs/spend-management#managing-alert-threshold-notifications)
@@ -128,7 +128,11 @@ Vercel provides an option to automatically pause the production deployment for a
 
 > **💡 Note:** Pausing is not instantaneous. Because Vercel [checks your spend](#how-vercel-checks-your-spend-amount) every few minutes, projects can keep serving traffic and accruing usage for several minutes after you cross the spend amount.
 
-Pausing only affects production deployments. It does not stop [AI Gateway](/docs/ai-gateway) API key usage or v0 usage billed to your team, which continue to count toward your spend amount.
+Pausing only affects production deployments. It does not stop [AI Gateway](/docs/ai-gateway) API key usage or v0 usage billed to your team, which continue to count toward your spend amount. Stored resources are not deleted, so any storage-related charges will continue to be billed to your team, including:
+
+- [Deployment Storage and Functions Storage](/docs/deployment-storage): The build output and function bundles retained with your deployments, billed in GB-months. To reduce these charges, shorten your [deployment retention policy](/docs/deployment-retention) or [delete old deployments](/docs/deployment-storage/optimize).
+- [Vercel Blob storage](/docs/vercel-blob/usage-and-pricing): Billed on the monthly average size of your blob stores.
+- [Vercel Container Registry image storage](/docs/container-registry/limits-and-pricing): Billed for the container images stored in your registry.
 
 When visitors access your production deployment while it is paused, they will see a [503 DEPLOYMENT\_PAUSED error](/docs/errors/deployment_paused).
 

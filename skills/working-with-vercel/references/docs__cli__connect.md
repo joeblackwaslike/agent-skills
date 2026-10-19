@@ -15,13 +15,13 @@ related:
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "00e08ac0cd88e7a4fafb3417723d9708812407d0405c73764e9d87544770c348"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3e41a088dc1cbe1dc878eecbf0eb4bf2e0d86d125727b5bbf34613bfd2dc2d2b"
 ---
 
 # vercel connect
 
-The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors. Use it to create connectors, attach them to projects, request runtime tokens, and remove them.
+The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors. Use it to find services to connect to, create connectors, attach them to projects, request runtime tokens, and remove them.
 
 
 <!-- docsgraph:related -->
@@ -29,24 +29,25 @@ The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect now supports CLI setup for 100+ connectors](https://vercel.com/changelog/vercel-cli-100-services?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related)
-- [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
-- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
-- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Vercel Connect now supports CLI setup for 100+ connectors](https://vercel.com/changelog/vercel-cli-100-services)
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
+- [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq)
+- [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft)
+- [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
+- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
-Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fconnect&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md)
 <!-- /docsgraph:related -->
 
 It supports the following subcommands:
 
+- [`discover`](#vercel-connect-discover): Find services you can create a connector for
 - [`create`](#vercel-connect-create): Create a new connector
 - [`list`](#vercel-connect-list): List connectors for your team or project
 - [`token`](#vercel-connect-token): Get a runtime token from a connector
@@ -55,8 +56,54 @@ It supports the following subcommands:
 - [`update`](#vercel-connect-update): Update connector branding
 - [`remove`](#vercel-connect-remove): Delete a connector
 - [`open`](#vercel-connect-open): Open a connector in the Vercel dashboard
+- [`categories`](#vercel-connect-categories): List the categories services are grouped into
 
 Connectors are identified by their ID (for example, `scl_abc123`) or their UID (for example, `slack/my-bot`).
+
+## vercel connect discover
+
+Finds services you can create a connector for. Pass a query to search service names, aliases, keywords, and descriptions.
+
+```bash filename="terminal"
+vercel connect discover [query]
+```
+
+*List services, optionally filtered by a search query.*
+
+```bash filename="terminal"
+vercel connect discover crm
+```
+
+*Find services related to CRM.*
+
+Each result shows the service name to pass to [`vercel connect create`](#vercel-connect-create), its display name, the connection methods it supports, and a short description.
+
+The command returns 50 services by default. When more match, the output ends with a command that fetches the next page.
+
+### Options
+
+| Option | Shorthand | Description |
+| --- | --- | --- |
+| `--category <SLUG>` | | Filter by category. Repeatable. Run `vercel connect categories` for valid slugs. |
+| `--connection-method <METHOD>` | | Filter by connection method (for example, `oauth`, `api-key`, `mcp`). Repeatable. |
+| `--target <TARGET>` | | Filter by the product a service exposes (for example, `api`, `mcp`). Repeatable. |
+| `--supports-triggers` | | Only show services that can forward webhook triggers. |
+| `--limit <COUNT>` | | Number of services to return. Defaults to 50, maximum 500. |
+| `--next <CURSOR>` | | Cursor for the next page of results. |
+| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+
+### Examples
+
+```bash filename="terminal"
+vercel connect discover
+vercel connect discover crm
+vercel connect discover --category ai --category data
+vercel connect discover --connection-method mcp
+vercel connect discover --supports-triggers
+vercel connect discover --limit 100
+vercel connect discover --next <cursor>
+vercel connect discover --format=json
+```
 
 ## vercel connect create
 
@@ -68,7 +115,7 @@ vercel connect create <service>
 
 *Create a new connector for the given service.*
 
-Pass a service name such as `slack`, `notion`, or `okta`, or the URL of an OAuth or MCP server such as `mcp.linear.app`.
+Pass a service name such as `slack`, `notion`, or `okta`, or the URL of an OAuth or MCP server such as `mcp.linear.app`. Run [`vercel connect discover`](#vercel-connect-discover) to find a service's name.
 
 ```bash filename="terminal"
 vercel connect create slack --name acme-slack
@@ -426,6 +473,29 @@ vercel connect open <connector>
 vercel connect open scl_abc123
 vercel connect open slack/my-bot
 vercel connect open scl_abc123 --format=json
+```
+
+## vercel connect categories
+
+Lists the categories services are grouped into, with the number of services in each. Use a category's slug with `vercel connect discover --category`.
+
+```bash filename="terminal"
+vercel connect categories
+```
+
+*List service categories.*
+
+### Options
+
+| Option | Shorthand | Description |
+| --- | --- | --- |
+| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+
+### Examples
+
+```bash filename="terminal"
+vercel connect categories
+vercel connect categories --format=json
 ```
 
 ## Global Options

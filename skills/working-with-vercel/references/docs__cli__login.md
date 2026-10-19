@@ -13,8 +13,8 @@ related:
 summary: Learn how to login into your Vercel account using the vercel login CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/login.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "fe6a5cf89811209360201bfab9712afc9dae350398879807c509b8c4cccae981"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "808280ddeef1613a87ab2ebe100461846cdccc382042516ec4a6058a8719abe6"
 ---
 
 # vercel login
@@ -27,14 +27,14 @@ The `vercel login` command allows you to login to your Vercel account through Ve
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [New Vercel CLI login flow](https://vercel.com/changelog/new-vercel-cli-login-flow?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related)
-- [vercel logout](https://vercel.com/docs/cli/logout?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to logout from your Vercel account using the vercel logout CLI command.
-- [vercel whoami](https://vercel.com/docs/cli/whoami?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
-- [vercel open](https://vercel.com/docs/cli/open?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel help](https://vercel.com/docs/cli/help?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=related) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [New Vercel CLI login flow](https://vercel.com/changelog/new-vercel-cli-login-flow)
+- [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
+- [vercel whoami](https://vercel.com/docs/cli/whoami) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
+- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 
-Full cross-link map for this page: [/docs/cli/login.graph.md](/docs/cli/login.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogin&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/login.graph.md](/docs/cli/login.graph.md)
 <!-- /docsgraph:related -->
 
 If you don't have a Vercel account yet, use [`vercel signup`](/docs/cli/signup) to create one.

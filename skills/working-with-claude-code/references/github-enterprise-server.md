@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/github-enterprise-server.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "6e59e5065fdceb98ebbacb86ee860d930dcbe1e633b75f7bf1e8029b5fd821bd"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "f833e16eb3b18587757cf535bf6b203e1df04767b8ecd31830547bdffebb8fb0"
 ---
 
 > ## Documentation Index
@@ -26,7 +26,7 @@ The table below shows which Claude Code features support GHES and any difference
 
 | Feature | GHES support | Notes |
 | :- | :- | :- |
-| Cloud sessions | ✅ Supported | An Owner connects the GHES instance once; developers use `claude --cloud` or [claude.ai/code](https://claude.ai/code) as usual |
+| Cloud sessions | ✅ Supported | An Owner connects the GHES instance once; developers use `claude --cloud` or [claude.ai/code](https://claude.ai/code) |
 | Code Review | ✅ Supported | Same automated PR reviews as github.com |
 | Claude Security | ✅ Supported | Available in public beta for Enterprise plans at [claude.ai/security](https://claude.ai/security) |
 | Teleport sessions | ✅ Supported | Move sessions between cloud and terminal with `--teleport` |
@@ -37,7 +37,7 @@ The table below shows which Claude Code features support GHES and any difference
 
 ## Admin setup
 
-An Owner connects your GHES instance to Claude Code once. After that, developers in your organization can use GHES repositories without any additional configuration. You need the Owner or Primary Owner role in your Claude organization and permission to create GitHub Apps on your GHES instance.
+An Owner connects your GHES instance to Claude Code once. You need the Owner or Primary Owner role in your Claude organization and permission to create GitHub Apps on your GHES instance.
 
 The guided setup generates a GitHub App manifest and redirects you to your GHES instance to create the app in one click. If your environment blocks the redirect flow, an [alternative manual setup](#manual-setup) is available.
 
@@ -59,7 +59,7 @@ The guided setup generates a GitHub App manifest and redirects you to your GHES 
   </Step>
 
   <Step title="Enable Code Review">
-    Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](/docs/en/code-review#set-up-code-review) for your GHES repositories using the same configuration as github.com.
+    Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enable [Code Review](/docs/en/code-review-setup) for your GHES repositories using the same configuration as github.com.
   </Step>
 </Steps>
 
@@ -97,7 +97,7 @@ Hosted pre-session flows, such as the repository picker, run on Anthropic's side
 
 ## Developer workflow
 
-Once an Owner has connected the GHES instance, no developer-side configuration is needed. Claude Code detects your GHES hostname automatically from the git remote in your working directory.
+Claude Code detects your GHES hostname automatically from the git remote in your working directory.
 
 Clone a repository from your GHES instance as you normally would, replacing `github.example.com` and the repository path with your GHES hostname and repository:
 
@@ -205,6 +205,8 @@ A few features behave differently on GHES than on github.com. The [feature table
 ### Cloud session fails to clone repository
 
 If `claude --cloud` fails with a clone error, verify that an Owner has completed setup for your GHES instance and that the GitHub App is installed on the repository you're working in. Ask the Owner who connected the instance to confirm that the hostname registered in Claude settings matches the hostname in your git remote.
+
+If the session stops with "Authentication failed while accessing the repository", you may not have connected your own GitHub Enterprise account. Connect it from the repository picker on [claude.ai/code](https://claude.ai/code), then start a new session.
 
 ### Marketplace add fails with a policy error
 

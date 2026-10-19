@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e819afd444ed760149d972a27293bb6ad3294fbfadc7ffe32104c5ccfb3386fb"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "e5aebc00d702ff1bb3ed3ff611da6810cb068519231d3fdd9153e73e97dbb3f8"
 ---
 
 # Using Monorepos
@@ -30,20 +30,20 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Automatically skip unnecessary deployments in monorepos](https://vercel.com/changelog/automatically-skip-unnecessary-deployments-in-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
-- [Lockfile-aware deployment skipping for monorepos](https://vercel.com/changelog/lockfile-aware-deployment-skipping-for-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
-- [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
-- [Skip unaffected builds for projects in Bun monorepos](https://vercel.com/changelog/skip-unaffected-builds-for-projects-in-bun-monorepos?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
-- [Sync projects with @vercel/related-projects](https://vercel.com/changelog/sync-projects-with-vercel-related-projects?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to import files inside Serverless Functions on Vercel.
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related) — Learn the systematic steps to identify and resolve 404 issues.
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
-- [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=related)
+- [Automatically skip unnecessary deployments in monorepos](https://vercel.com/changelog/automatically-skip-unnecessary-deployments-in-monorepos)
+- [Lockfile-aware deployment skipping for monorepos](https://vercel.com/changelog/lockfile-aware-deployment-skipping-for-monorepos)
+- [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default)
+- [Skip unaffected builds for projects in Bun monorepos](https://vercel.com/changelog/skip-unaffected-builds-for-projects-in-bun-monorepos)
+- [Sync projects with @vercel/related-projects](https://vercel.com/changelog/sync-projects-with-vercel-related-projects)
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
+- [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase)
 
-Full cross-link map for this page: [/docs/monorepos.graph.md](/docs/monorepos.graph.md?from=related&source_path=%2Fdocs%2Fmonorepos&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/monorepos.graph.md](/docs/monorepos.graph.md)
 <!-- /docsgraph:related -->
 
 ## Deploy a template monorepo

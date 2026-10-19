@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/artifacts.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "91db43877648f4cc2864a4eca51771960323cbafa26f7f9c06bf10021be5c5eb"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "286097f5602fe616465be22f1c0bbf3eb48296bd5d92e79d1184ed75cfb6918d"
 ---
 
 > ## Documentation Index
@@ -73,11 +73,13 @@ A new artifact that Claude publishes in response to a prompt you type goes throu
 | The session is in [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode) | Asks before the first publish of each artifact |
 | The publish declares runtime capabilities for the page, such as [connector calls](#pull-live-data-with-mcp-connectors) or [file downloads](#offer-a-file-download) | Asks before that publish |
 | You shared the artifact publicly | Asks once per conversation before changing it |
-| You turned [feature-flag fetching](/docs/en/env-vars#features-that-need-feature-flag-fetching) off | Asks before the first publish of each artifact |
 | Claude publishes in a turn that a [scheduled task](/docs/en/scheduled-tasks) firing in your session started, rather than a prompt you typed | Asks before the first publish of each artifact |
 | Claude can't read the file without your approval | Asks before publishing it. An allow rule for the `Artifact` tool doesn't skip this prompt |
+| In [Manual](/docs/en/permission-modes) or `acceptEdits` mode, Claude makes a small change to an artifact's file it can't edit without your approval, such as a project file in Manual mode | Asks before publishing the change. You're asked even if an allow rule covers the `Artifact` tool, because the edit to the file needs your approval |
 
-Claude reads files in your session's [working directories](/docs/en/permissions#working-directories), and in the temporary directory it writes pages to, without asking. To let Claude publish from another folder without the prompt, add the folder as a working directory with [`--add-dir`](/docs/en/cli-reference#cli-flags) at launch or `/add-dir` during the session.
+To let Claude read a file outside your [working directories](/docs/en/permissions#working-directories) without your approval, add its folder as a working directory with [`--add-dir`](/docs/en/cli-reference#cli-flags) at launch or `/add-dir` during the session. Claude already reads files in those directories, and in the temporary directory it writes pages to, without asking.
+
+If a publish prompt includes a sentence such as `Also makes 1 edit to that file on disk.`, Claude is changing the artifact's file and publishing it in one step. When you approve the prompt, Claude Code publishes the page, then writes the change to your file.
 
 ## Update an artifact
 
@@ -137,7 +139,7 @@ Claude Code asks for your approval before Claude reads the artifact in these cas
 * **Cloud session without network access**: for a [cloud environment](/docs/en/cloud-environments#access-levels), that's the **None** level. In [auto mode](/docs/en/permission-modes#eliminate-prompts-with-auto-mode), the classifier can approve instead; in a [Cowork](https://claude.com/product/cowork) session, the approval is yours alone.
 * **Another organization's public artifact**: Claude Code asks you first, even in auto mode. Where Claude Code can't ask you, such as in `bypassPermissions` mode, Claude can't read the artifact. Claude can read these artifacts only while [feature-flag fetching](/docs/en/env-vars#features-that-need-feature-flag-fetching) is on.
 * **Unconfirmed owner or network setting**: when Claude Code can't confirm who made the artifact, or can't confirm a cloud session's network setting, it asks, and your approval covers that one request.
-* **Plan mode, or feature-flag fetching turned off**: in [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), or if you turned [feature-flag fetching](/docs/en/env-vars#features-that-need-feature-flag-fetching) off, Claude Code asks before the Artifact tool reads an artifact someone else in your organization made.
+* **Plan mode**: in [plan mode](/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), Claude Code asks before the Artifact tool reads an artifact someone else in your organization made.
 
 When Claude reads the artifact with WebFetch, WebFetch's own [prompting rules](/docs/en/tools-reference#webfetch-tool-behavior) still apply.
 
@@ -172,7 +174,7 @@ You need Claude Code v2.1.228 or later. If you turned [feature-flag fetching](/d
 
 Your [permission mode](/docs/en/permission-modes) decides what Claude does when a sent comment arrives:
 
-* **Claude replies on its own**: when your permission mode lets Claude post the reply without asking you, Claude reads the thread and replies, and edits the artifact when the comment asks for a change. You see `Auto-replied to comment thread on Artifact: <name>` or `Auto-edited Artifact: <name> in response to a comment thread`.
+* **Claude replies on its own**: if you're in a permission mode that lets Claude post the reply without asking you, Claude reads the thread and replies. You see `Auto-replied to comment thread on Artifact: <name>`.
 * **Claude waits for you**: outside plan mode, when posting the reply would need your approval, you see `Comments are waiting on Artifact: <name>`. Claude then asks you for approval to read the thread, and again to post the reply.
 * **Claude pauses in plan mode**: you see `Comments are waiting on Artifact: <name>`, and Claude doesn't reply until you leave plan mode and ask it to read and reply.
 

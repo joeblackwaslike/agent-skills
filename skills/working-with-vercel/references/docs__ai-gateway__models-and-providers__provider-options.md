@@ -12,13 +12,13 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/automatic-caching
   - /docs/ai-gateway/sdks-and-apis/responses
+  - /docs/ai-gateway/models-and-providers/session-affinity
   - /docs/ai-gateway/models-and-providers/provider-timeouts
-  - /docs/ai-gateway/models-and-providers/model-fallbacks
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "8556f76031e06b68b0d0d58f050ece2838e47f4c24bc8a5a2168f0bee73b046c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "714f1fac596703d53080b2225576d6dba6e169b3ae8270d4f798d94138e38b8e"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -31,19 +31,19 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related)
-- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn about the providers and models available in the AI SDK.
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Learn how to configure and authenticate with AI providers in the AI SDK.
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
-- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
-- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=related) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 200+ models.
+- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google) — Learn how to use Google models through AI Gateway or the direct Google provider.
+- [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
+- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models) — Learn about the providers and models available in the AI SDK.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
+- [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
+- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
-Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodels-and-providers%2Fprovider-options&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md)
 <!-- /docsgraph:related -->
 
 Use `providerOptions.gateway` to control provider order and fallback behavior.
@@ -98,6 +98,24 @@ Clients on the [Responses API](/docs/ai-gateway/sdks-and-apis/responses) can als
 - `cache_ttl` selects a five-minute or one-hour cache lifetime. See [Cache lifetime](/docs/ai-gateway/models-and-providers/automatic-caching#cache-lifetime).
 
 These fields belong at the top level of the Responses API request, not inside `providerOptions.gateway`.
+
+## Session affinity
+
+AI Gateway keeps a conversation on the provider that holds its prompt cache. Two options in `providerOptions.gateway` control this:
+
+- `sessionId` groups related requests into one session. Use a stable, opaque value for each conversation or agent run.
+- `sessionAffinity` turns the behavior on or off. The default is `true`. Set it to `false` to stop AI Gateway from pinning and reordering providers for a request.
+
+```typescript
+providerOptions: {
+  gateway: {
+    sessionId: 'session_123',
+    sessionAffinity: true,
+  },
+},
+```
+
+You can also send the session ID in the `x-session-id` header. For the full lookup order, how AI Gateway fingerprints requests that have no session ID, and how it keeps caches warm across models, see [Session affinity](/docs/ai-gateway/models-and-providers/session-affinity).
 
 ## Provider timeouts
 
@@ -604,6 +622,12 @@ DigitalOcean
 
 digitalocean.com
 
+elorian
+
+Elorian
+
+elorian.ai
+
 exa
 
 Exa
@@ -748,6 +772,12 @@ Novita AI
 
 novita.ai
 
+nvidia
+
+NVIDIA
+
+build.nvidia.com
+
 openai
 
 OpenAI
@@ -765,6 +795,12 @@ parasail
 Parasail
 
 parasail.io
+
+pareto
+
+Pareto Inference
+
+paretoinference.com
 
 particle
 
@@ -802,6 +838,12 @@ Recraft
 
 recraft.ai
 
+reflection
+
+Reflection
+
+reflection.ai
+
 relace
 
 Relace
@@ -831,6 +873,12 @@ sambanova
 SambaNova
 
 sambanova.ai
+
+scaledown
+
+ScaleDown
+
+scaledown.ai
 
 stealth
 

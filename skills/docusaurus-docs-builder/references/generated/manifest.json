@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T11:41:30.383Z",
+  "generated_at": "2026-10-19T09:38:05.383Z",
   "docs": [
     {
       "slug": "installation",
@@ -70,8 +70,8 @@
       "title": "Markdown Front Matter",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter",
       "file": "markdown-front-matter.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "0762bf2422920365432028609ca1ee6b0f0c73af197570f14dd8a7874a9adc7c"
+      "fetched_at": "2026-10-19T09:38:00.847Z",
+      "sha256": "2e506ba06c0d1a3cad4327a29fc8ebe11415c311678f052a62a703178f86fe17"
     },
     {
       "slug": "markdown-links",
@@ -86,8 +86,8 @@
       "title": "Markdown Assets",
       "url": "https://docusaurus.io/docs/markdown-features/assets",
       "file": "markdown-assets.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "e64241a659c8d38f036d72639debe5f7fdbcac20da0f853435bee8f2ca625c6c"
+      "fetched_at": "2026-10-19T09:38:00.847Z",
+      "sha256": "d9c653ad71617ef035675ad3b39b1ddea98324e0a6a7a263ac9f65be9f715a31"
     },
     {
       "slug": "markdown-toc",
@@ -142,8 +142,8 @@
       "title": "Styling and Layout",
       "url": "https://docusaurus.io/docs/styling-layout",
       "file": "styling-layout.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "b2a1b59077e8e610f6cabf7d1a6b2f59136bc72f78bb7f4e71f75a0bca567190"
+      "fetched_at": "2026-10-19T09:38:00.847Z",
+      "sha256": "983d87b1074360a8325f5343d14660a6c92165f769e3913e07c5a3303a019e36"
     },
     {
       "slug": "swizzling",
@@ -158,24 +158,24 @@
       "title": "Classic Theme",
       "url": "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic",
       "file": "theme-classic.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "a5e5ff5adbb9dcc902d8f63bacc2421e2ae7133523c7ef818ee4492766461922"
+      "fetched_at": "2026-10-19T09:38:00.847Z",
+      "sha256": "ed5ce3038866b0a590fa1e777b1af2f18739c44a85e663b614cb7fcac05757c0"
     },
     {
       "slug": "plugin-content-docs",
       "title": "Docs Plugin",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs",
       "file": "plugin-content-docs.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "1f2ebfdf2f0c882918423d4a2f233e79e914e49f0746f967fd1f3bbc884456da"
+      "fetched_at": "2026-10-19T09:38:00.847Z",
+      "sha256": "5fed4aba49c92a3e3ca8d23398ccd60d470841f67aef316d0720d2a8c24f9ca7"
     },
     {
       "slug": "plugin-content-pages",
       "title": "Pages Plugin",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages",
       "file": "plugin-content-pages.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "389737f3cb52ecd035bc22653957f7b1a8618f86628765f4c21bfbae0046b756"
+      "fetched_at": "2026-10-19T09:38:00.847Z",
+      "sha256": "2821f62833f486a73552475e8ecb5185c5f3c4686edc7302b86db482643bb652"
     },
     {
       "slug": "plugin-content-blog",

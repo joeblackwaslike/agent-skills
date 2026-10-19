@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4c708740d7e840c6a219b085fd5ba800e2a71bfaac6d18038be31c8f9204c994"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "e429378cd3251e9c329b9aaeb41c1a6ce5939e0f57e3de29a2e849572d8d0bbe"
 ---
 
 # Using Global Config
@@ -30,14 +30,14 @@ sha256: "4c708740d7e840c6a219b085fd5ba800e2a71bfaac6d18038be31c8f9204c994"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related)
-- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — Learn how to create a Global Config store and read from it in your project.
-- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config — Returns all Global Configs.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — POST /v1/global-config — Creates a Global Config.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
+- [Global Config](https://flags-sdk.dev/docs/providers/global-config)
+- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 
-Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fusing-global-config&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md)
 <!-- /docsgraph:related -->
 
 We recommend using [the Global Config client SDK](/docs/global-config/global-config-sdk) to read data from your Global Configs. To write data to your Global Configs, use [Vercel REST API](/docs/rest-api) as outlined in [our docs on managing Global Configs with the API](/docs/global-config/vercel-api).

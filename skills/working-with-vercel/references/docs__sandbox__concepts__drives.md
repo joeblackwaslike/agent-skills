@@ -17,13 +17,11 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "57a25e98d27fde0fd44d1c65052522710ed1710af8649f51e4c25e8da0b856df"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "bff65d4541ffd5dd3ab8c2d6025409da598bd6a6ddb8b09fabe53c0ae9776cb5"
 ---
 
 # Drives
-
-> **Availability**: Drives (Public Beta) are available on Enterprise and Pro and Hobby plans
 
 Drives provide persistent storage that you mount into a sandbox as a working directory. Your agent can generate code, download dependencies, and build up context in that directory, keeping its progress across sessions.
 
@@ -33,16 +31,20 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Drives](https://vercel.com/kb/guide/vercel-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how Vercel Drives provide persistent storage for Vercel Sandboxes, and how to create, mount, list, and delete a dr
-- [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
-- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related)
-- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [List drives](https://vercel.com/docs/rest-api/sandboxes/list-drives?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=related) — GET /v2/sandboxes/drives — Retrieves a paginated list of drives belonging to a specific project.
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create snapshot-backed persistent sandboxes on Vercel.
+- [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
+- [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
+- [Vercel Drives is now generally available](https://vercel.com/changelog/vercel-drives-is-now-generally-available)
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
+- [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 
-Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fconcepts%2Fdrives&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md)
 <!-- /docsgraph:related -->
 
 Files written to a drive persist after the sandbox stops. Mount the same drive in a later run to pick up where you left off, even when starting from a different sandbox environment. You can mount up to four drives in a sandbox, each at its own path alongside the sandbox's own filesystem.
@@ -216,8 +218,6 @@ In the CLI, `--mount` uses the format `drive:/path[:read-write|snapshot]`.
 
 You can also mount a drive by taking a point-in-time, read-only snapshot of it. Snapshots allow multiple sandboxes to mount the same drive concurrently. Each snapshot mount reflects the drive as it was at the moment you mounted it, and does not include any writes made to the drive thereafter. Mount a new snapshot to pick up more recent writes.
 
-> **💡 Note:** A drive must be mounted read-write and written to at least once before you can mount a snapshot of it. Mounting a snapshot of a drive that has never been written to fails with a `drive_not_initialized` error.
-
 **index.ts**
 
 ```ts filename="index.ts"
@@ -268,8 +268,6 @@ sandbox create --name reader-2 --mount shared:/data:snapshot
 In the CLI, `--mount` uses the format `drive:/path[:read-write|snapshot]`.
 
 ### Forking a drive
-
-> **Availability**: Drive forks (Private Beta) are available to Enterprise and Pro plans
 
 You can fork an existing drive into a new drive, copying the drive's data and inheriting its region and maximum size. The fork belongs to the same project. Writes to a forked drive do not change the original drive, allowing you to safely edit a copy while preserving the source data. This can be useful to start a fleet of agents, each working independently on their own read-write copy forked from a base drive.
 
@@ -379,6 +377,10 @@ sandbox drives rm workspace-cache
 Drives are billed on three metrics: storage, reads, and writes. Storage is measured hourly on the logical used size in GB of each drive. Reads and writes measure the logical read and write usage in GB of each drive.
 
 See [Sandbox pricing](/docs/sandbox/pricing#drive-storage) for the rates in each region and the Hobby allotments.
+
+## Start with a template
+
+Deploy an eve template to start building AI agents that store and search files on a drive:
 
 ## Next steps
 

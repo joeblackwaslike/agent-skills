@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Paris, France (cdg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cdg1.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f7969106937ec54085fd77e1f9e76c964ea1d69466aa9366e1d34c8b9251a1a1"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "40ccbb920436da7bf2d4b7e4baa1721d506212769e87ce95fd52237df0d1c229"
 ---
 
 # Paris, France (cdg1) pricing
@@ -31,13 +31,13 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fcdg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fcdg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Montréal, Canada \\(yul1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/yul1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fcdg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Montréal, Canada \\(yul1\\) region.
-- [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fcdg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
-- [Frankfurt, Germany \\(fra1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/fra1?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fcdg1&source_site=vercel-docs&relationship=related) — Vercel pricing for the Frankfurt, Germany \\(fra1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Montréal, Canada \\(yul1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/yul1) — Vercel pricing for the Montréal, Canada \\(yul1\\) region.
+- [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
+- [Frankfurt, Germany \\(fra1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/fra1) — Vercel pricing for the Frankfurt, Germany \\(fra1\\) region.
 
-Full cross-link map for this page: [/docs/pricing/regional-pricing/cdg1.graph.md](/docs/pricing/regional-pricing/cdg1.graph.md?from=related&source_path=%2Fdocs%2Fpricing%2Fregional-pricing%2Fcdg1&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/pricing/regional-pricing/cdg1.graph.md](/docs/pricing/regional-pricing/cdg1.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** All prices shown are in USD and exclude value-added tax (VAT), goods and services tax (GST), and other applicable taxes. Taxes are calculated based on your billing address and added to your invoice where required by law. [Learn more about taxes](/docs/pricing/taxes).

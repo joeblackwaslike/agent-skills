@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the Deep Infra native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e6297fdeabd64344eea5a622fa1abe3516e8739a2378c68252237914f3b7a1b6"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1cef7f88a6c1fae513c989ce53569281185c24c08686146560ea8e0655708bfd"
 ---
 
 # Vercel Deep Infra Integration
@@ -33,13 +33,13 @@ cloud providers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fdeepinfra&source_site=vercel-docs&relationship=related) — Learn how to add the fal native integration with Vercel.
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fdeepinfra&source_site=vercel-docs&relationship=related) — Learn how to add the xAI native integration with Vercel.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fdeepinfra&source_site=vercel-docs&relationship=related) — Learn how to add Together AI connectable account integration with Vercel.
-- [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fdeepinfra&source_site=vercel-docs&relationship=related) — Learn how to add the Groq native integration with Vercel.
-- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fdeepinfra&source_site=vercel-docs&relationship=related) — Learn how to add a new AI provider to your Vercel projects.
+- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
+- [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
+- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 
-Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/deepinfra.graph.md](/docs/agent-resources/integrations-for-models/deepinfra.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fintegrations-for-models%2Fdeepinfra&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/deepinfra.graph.md](/docs/agent-resources/integrations-for-models/deepinfra.graph.md)
 <!-- /docsgraph:related -->
 
 This integration gives you access to the large selection of available AI models and allows you to manage your tokens, billing and usage directly from Vercel.

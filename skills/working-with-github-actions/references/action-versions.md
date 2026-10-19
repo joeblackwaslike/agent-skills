@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-10-12
+Last updated: 2026-10-19
 
 ## GitHub Official
 
@@ -11,7 +11,7 @@ Last updated: 2026-10-12
 | `actions/checkout` | `v7.0.1` | `uses: actions/checkout@v7.0.1` |
 | `actions/setup-node` | `v7.1.0` | `uses: actions/setup-node@v7.1.0` |
 | `actions/setup-python` | `v7.0.0` | `uses: actions/setup-python@v7.0.0` |
-| `actions/setup-java` | `v6.0.1` | `uses: actions/setup-java@v6.0.1` |
+| `actions/setup-java` | `v6.1.0` | `uses: actions/setup-java@v6.1.0` |
 | `actions/setup-go` | `v7.0.0` | `uses: actions/setup-go@v7.0.0` |
 | `actions/cache` | `v6.1.0` | `uses: actions/cache@v6.1.0` |
 | `actions/upload-artifact` | `v7.0.2` | `uses: actions/upload-artifact@v7.0.2` |

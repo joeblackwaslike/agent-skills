@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "481e539b73e71cacba0b113c703a397e94f4e77f7d5f678f3e68d23e28279bb5"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1505758cbad836488af5be1b49040f595cae7485c7b88668eca892dec22e40e4"
 ---
 
 # Projects
@@ -27,13 +27,13 @@ Create projects from scratch or connect an existing Git repository to Vercel. Yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
-- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
-- [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
-- [Update a project domain](https://vercel.com/docs/rest-api/projects/update-a-project-domain?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/domains/{domain} — Update a project domain's configuration, including the name, git branch
-- [Update Protection Bypass for Automation](https://vercel.com/docs/rest-api/projects/update-protection-bypass-for-automation?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects&source_site=vercel-docs&relationship=related) — PATCH /v1/projects/{idOrName}/protection-bypass — Update the deployment protection automation bypass for a project
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
+- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
+- [Teams and Users](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams) — Vercel MCP tools for teams and users.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects.graph.md](/docs/agent-resources/vercel-mcp/tools/projects.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects.graph.md](/docs/agent-resources/vercel-mcp/tools/projects.graph.md)
 <!-- /docsgraph:related -->
 
 ## `accept_project_transfer_request`
@@ -42,12 +42,12 @@ Accept project transfer request.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                               |
-| ------------- | ------ | -------- | ----------------------------------------- |
-| `code`        | string | Yes      | The code of the project transfer request. |
-| `teamId`      | string | No       | Team ID.                                  |
-| `slug`        | string | No       | Team slug.                                |
-| `requestBody` | object | No       | Request body for this tool.               |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `code`        | string | Yes      | The code of the project transfer request.                   |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 ## `add_project_domain`
 
@@ -55,25 +55,25 @@ Add a domain to a project.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `idOrName`    | string | Yes      | The unique project identifier or the project name |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | Yes      | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName`    | string | Yes      | The unique project identifier or the project name           |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 ## `create_git_project`
 
 Create or reuse a Vercel project linked to an accessible Git repository. By default, it creates a preview deployment from the repository's production branch.
 
-| Parameter       | Type    | Required | Default         | Description                                                                |
-| --------------- | ------- | -------- | --------------- | -------------------------------------------------------------------------- |
-| `repo`          | string  | Yes      | -               | Repository as `owner/name` or a repository URL                             |
-| `teamId`        | string  | Yes      | -               | Team ID, or team slug for this tool                                        |
-| `provider`      | string  | No       | Inferred        | Git provider; defaults to GitHub when the URL does not identify a provider |
-| `projectName`   | string  | No       | Repository name | Project to create or reuse                                                 |
-| `rootDirectory` | string  | No       | -               | Directory to build in a monorepo; applies to new projects                  |
-| `deploy`        | boolean | No       | `true`          | Create a preview deployment; set `false` to link only                      |
+| Parameter       | Type    | Required | Default | Description                                                                                                                                                                                                                                                                                 |
+| --------------- | ------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `repo`          | string  | Yes      | -       | Repository as "owner/name", or a repository URL such as https://github.com/owner/name or https://origin.cursor.com/owner/name.                                                                                                                                                              |
+| `teamId`        | string  | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                                                                                                                                                                                                                   |
+| `provider`      | string  | No       | -       | Git provider to link. Inferred from recognized repository URLs. Otherwise defaults to "github". Use "cursor-origin" for Cursor-hosted repositories at origin.cursor.com. Ignored when the project already exists. Allowed values: `"github"`, `"gitlab"`, `"bitbucket"`, `"cursor-origin"`. |
+| `projectName`   | string  | No       | -       | Vercel project to create or reuse. Defaults to the lowercased repository name.                                                                                                                                                                                                              |
+| `rootDirectory` | string  | No       | -       | Root-relative directory to build in a monorepo. Only applied when creating the project.                                                                                                                                                                                                     |
+| `deploy`        | boolean | No       | `true`  | Whether to create a preview deployment from the linked repository's production branch. Defaults to true. Set false only when the user explicitly requests link-only behavior.                                                                                                               |
 
 **Sample prompt:** "Create a Vercel project for my team's GitHub repository and deploy a preview"
 
@@ -83,36 +83,79 @@ Create a new project.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | No       | Request body for this tool. |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 ## `get_project`
 
 Get a [project](/docs/projects) by ID or name, including its configuration.
 
-| Parameter  | Type   | Required | Description                                       |
-| ---------- | ------ | -------- | ------------------------------------------------- |
-| `idOrName` | string | Yes      | The unique project identifier or the project name |
-| `teamId`   | string | No       | Team ID.                                          |
-| `slug`     | string | No       | Team slug.                                        |
+| Parameter  | Type   | Required | Description                                                 |
+| ---------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName` | string | Yes      | The unique project identifier or the project name           |
+| `teamId`   | string | No       | Team ID to use for this operation.                          |
+| `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 **Sample prompt:** "Get details about my next-js-blog project"
 
-## `get_project_token`
+## Workflow connection parameters
 
-Generate a project OIDC token.
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter   | Type   | Required | Default | Description                                                                                   |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
+
+## `get_project_deletion_link`
+
+Get a link to the Delete Project section in the Vercel dashboard. This tool verifies project ownership and returns `requires_user_action`. You must review and confirm deletion in the dashboard. The tool does not delete the project.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `idOrName`    | string | Yes      | The project ID or name      |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | No       | Request body for this tool. |
+| Parameter  | Type   | Required | Description                                       |
+| ---------- | ------ | -------- | ------------------------------------------------- |
+| `idOrName` | string | Yes      | The unique project identifier or the project name |
+| `teamId`   | string | Yes      | Team ID to use for this operation.                |
+
+## `get_project_deployment_protection`
+
+Get the effective password protection, Vercel Authentication, and Trusted IP settings for a Vercel project. Password values are never returned.
+
+## Parameters
+
+| Parameter   | Type   | Required | Default | Description                                                                                   |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
+
+## `get_project_domain`
+
+Get project domain by project id/name and domain name.
+
+## Parameters
+
+| Parameter  | Type   | Required | Description                                                 |
+| ---------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName` | string | Yes      | The unique project identifier or the project name           |
+| `domain`   | string | Yes      | The project domain name                                     |
+| `teamId`   | string | No       | Team ID to use for this operation.                          |
+| `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId. |
+
+## `git_namespaces`
+
+Lists git namespaces for a supported provider. Supported providers are `github`, `gitlab` and `bitbucket`. If the provider is not provided, it will try to obtain it from the user that authenticated the request.
+
+## Parameters
+
+| Parameter        | Type    | Required | Description                                                                                        |
+| ---------------- | ------- | -------- | -------------------------------------------------------------------------------------------------- |
+| `host`           | string  | No       | The custom Git host if using a custom Git provider, like GitHub Enterprise Server                  |
+| `provider`       | string  | No       | Allowed values: `"github"`, `"github-limited"`, `"github-custom-host"`, `"gitlab"`, `"bitbucket"`. |
+| `viewerMetadata` | boolean | No       | When true, includes the viewer object for each namespace.                                          |
 
 ## `list_project_domains`
 
@@ -134,8 +177,8 @@ Retrieve project domains by project by id or name.
 | `since`               | number | No       | Get domains created after this JavaScript timestamp.                                                                                                             |
 | `until`               | number | No       | Get domains created before this JavaScript timestamp.                                                                                                            |
 | `order`               | string | No       | Domains sort order by createdAt Allowed values: `"ASC"`, `"DESC"`. Default: `"DESC"`.                                                                            |
-| `teamId`              | string | No       | Team ID.                                                                                                                                                         |
-| `slug`                | string | No       | Team slug.                                                                                                                                                       |
+| `teamId`              | string | No       | Team ID to use for this operation.                                                                                                                               |
+| `slug`                | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                      |
 
 ## `list_projects`
 
@@ -144,7 +187,7 @@ List [projects](/docs/projects) in your account or selected team. The tool also 
 | Parameter                   | Type    | Required | Description                                                                                                                                                                                     |
 | --------------------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `from`                      | string  | No       | Query only projects updated after the given timestamp or continuation token.                                                                                                                    |
-| `gitForkProtection`         | string  | No       | Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed Allowed values: `"1"`, `"0"`.                                                       |
+| `gitForkProtection`         | string  | No       | Specifies whether PRs from Git forks should require a team member's authorization before it can be deployed Allowed values: `"0"`, `"1"`.                                                       |
 | `limit`                     | string  | No       | Limit the number of projects returned                                                                                                                                                           |
 | `search`                    | string  | No       | Search projects by the name field                                                                                                                                                               |
 | `repo`                      | string  | No       | Filter results by repo. Also used for project count                                                                                                                                             |
@@ -154,14 +197,22 @@ List [projects](/docs/projects) in your account or selected team. The tool also 
 | `edgeConfigId`              | string  | No       | Filter results by connected Global Config ID                                                                                                                                                    |
 | `edgeConfigTokenId`         | string  | No       | Filter results by connected Global Config Token ID                                                                                                                                              |
 | `deprecated`                | boolean | No       | -                                                                                                                                                                                               |
-| `elasticConcurrencyEnabled` | string  | No       | Filter results by projects with elastic concurrency enabled Allowed values: `"1"`, `"0"`.                                                                                                       |
+| `elasticConcurrencyEnabled` | string  | No       | Filter results by projects with elastic concurrency enabled Allowed values: `"0"`, `"1"`.                                                                                                       |
 | `staticIpsEnabled`          | string  | No       | Filter results by projects with Static IPs enabled Allowed values: `"0"`, `"1"`.                                                                                                                |
 | `buildMachineTypes`         | string  | No       | Filter results by effective build machine types. Accepts comma-separated values. Use "elastic" for projects with elastic selection and "default" for projects without a build machine type set. |
 | `buildQueueConfiguration`   | string  | No       | Filter results by build queue configuration. SKIP\_NAMESPACE\_QUEUE includes projects without a configuration set. Allowed values: `"SKIP_NAMESPACE_QUEUE"`, `"WAIT_FOR_NAMESPACE_QUEUE"`.        |
-| `teamId`                    | string  | No       | Team ID.                                                                                                                                                                                        |
-| `slug`                      | string  | No       | Team slug.                                                                                                                                                                                      |
+| `teamId`                    | string  | No       | Team ID to use for this operation.                                                                                                                                                              |
+| `slug`                      | string  | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                     |
 
 **Sample prompt:** "Show me projects in my team"
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter | Type   | Required | Default | Description                                               |
+| --------- | ------ | -------- | ------- | --------------------------------------------------------- |
+| `teamId`  | string | Yes      | -       | The team ID or slug. Use the team that owns the resource. |
 
 ## `pause_project`
 
@@ -169,12 +220,21 @@ Pause a project.
 
 ## Parameters
 
-| Parameter     | Type    | Required | Description                   |
-| ------------- | ------- | -------- | ----------------------------- |
-| `projectId`   | string  | Yes      | The unique project identifier |
-| `teamId`      | string  | No       | Team ID.                      |
-| `slug`        | string  | No       | Team slug.                    |
-| `requestBody` | unknown | No       | Request body for this tool.   |
+| Parameter     | Type    | Required | Description                                                 |
+| ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `projectId`   | string  | Yes      | The unique project identifier                               |
+| `teamId`      | string  | No       | Team ID to use for this operation.                          |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | unknown | No       | Request body for this tool.                                 |
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter   | Type   | Required | Default | Description                                                                                   |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
 
 ## `unpause_project`
 
@@ -182,12 +242,21 @@ Unpause a project.
 
 ## Parameters
 
-| Parameter     | Type    | Required | Description                   |
-| ------------- | ------- | -------- | ----------------------------- |
-| `projectId`   | string  | Yes      | The unique project identifier |
-| `teamId`      | string  | No       | Team ID.                      |
-| `slug`        | string  | No       | Team slug.                    |
-| `requestBody` | unknown | No       | Request body for this tool.   |
+| Parameter     | Type    | Required | Description                                                 |
+| ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `projectId`   | string  | Yes      | The unique project identifier                               |
+| `teamId`      | string  | No       | Team ID to use for this operation.                          |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | unknown | No       | Request body for this tool.                                 |
+
+## Workflow connection parameters
+
+If your connection exposes the smaller workflow tool list, use these parameters instead. Follow your connection's tool schema.
+
+| Parameter   | Type   | Required | Default | Description                                                                                   |
+| ----------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
+| `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
 
 ## `update_project`
 
@@ -195,12 +264,26 @@ Update an existing project.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `idOrName`    | string | Yes      | The unique project identifier or the project name |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | Yes      | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName`    | string | Yes      | The unique project identifier or the project name           |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
+
+## `update_project_deployment_protection`
+
+Partially update password protection, Vercel Authentication, and Trusted IPs for a Vercel project. Can replace passwords or IP allowlists, restrict access, or disable protection and expose deployments. Omitted settings are preserved. Availability depends on the Vercel team plan and caller permissions.
+
+## Parameters
+
+| Parameter            | Type   | Required | Default | Description                                                                                   |
+| -------------------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| `projectId`          | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
+| `teamId`             | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
+| `passwordProtection` | object | No       | -       | Enable or disable password protection. Omit to preserve the current setting.                  |
+| `ssoProtection`      | object | No       | -       | Enable or disable Vercel Authentication. Omit to preserve the current setting.                |
+| `trustedIps`         | object | No       | -       | Enable or disable Trusted IPs. Omit to preserve the current setting.                          |
 
 ## `update_project_protection_bypass`
 
@@ -208,12 +291,26 @@ Update Protection Bypass for Automation.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `idOrName`    | string | Yes      | The unique project identifier or the project name |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | Yes      | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `idOrName`    | string | Yes      | The unique project identifier or the project name           |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
+
+## `verify_project_domain`
+
+Attempts to verify a project domain with `verified = false` by checking the correctness of the project domain's `verification` challenge.
+
+## Parameters
+
+| Parameter     | Type    | Required | Description                                                 |
+| ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `idOrName`    | string  | Yes      | The unique project identifier or the project name           |
+| `domain`      | string  | Yes      | The domain name you want to verify                          |
+| `teamId`      | string  | No       | Team ID to use for this operation.                          |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | unknown | No       | Request body for this tool.                                 |
 
 
 ---

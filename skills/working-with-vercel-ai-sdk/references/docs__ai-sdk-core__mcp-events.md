@@ -4,8 +4,8 @@ description: Understand the MCP webhook events contract and the AI SDK APIs for 
 url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-events"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-events.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "f0d0e00ecb10f7284961e839b55eeea4006ba3f34d03ef596b561baac1869fdc"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "cea1b37edb88e2189894bbacc247f27759036d3614de52293953a076600ac15c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -110,6 +110,56 @@ The helper verifies signatures and echoes challenges automatically. It invokes
 processing. Processing failures return `503` so the server can retry. In your
 app, resolve `onEvent` only after processing or durably accepting the event.
 
+**Identify duplicate agent runs.** If an agent finishes inside `onEvent` but a
+later operation throws (for example, a database write), the handler returns `503`.
+Redelivery can then run the agent again for the same event, producing another
+`invoke_agent` trace. These spans do not automatically include the MCP server or
+event identity.
+
+With an [OpenTelemetry tracer provider configured](/docs/ai-sdk-core/telemetry#enabling-telemetry),
+use this pattern inside `onEvent` to attach that identity to agent spans. Here,
+`model` is your configured language model, and `subscription` and `event` are the
+callback arguments:
+
+```ts
+import { OpenTelemetry } from '@ai-sdk/otel';
+import { ToolLoopAgent } from 'ai';
+
+const agent = new ToolLoopAgent({
+  model,
+  runtimeContext: {
+    mcpServer: 'comments-server', // Identify the server this handler receives from.
+    eventName: event.name,
+    subscriptionId: subscription.id,
+    eventId: event.eventId,
+  },
+  telemetry: {
+    includeRuntimeContext: {
+      mcpServer: true,
+      eventName: true,
+      subscriptionId: true,
+      eventId: true,
+    },
+    integrations: new OpenTelemetry({
+      enrichSpan: ({ runtimeContext }) => ({
+        'app.mcp.server': runtimeContext?.mcpServer as string | undefined,
+        'app.mcp.event_name': runtimeContext?.eventName as string | undefined,
+        'app.mcp.subscription_id': runtimeContext?.subscriptionId as
+          | string
+          | undefined,
+        'app.mcp.event_id': runtimeContext?.eventId as string | undefined,
+      }),
+    }),
+  },
+});
+
+await agent.generate({ prompt: JSON.stringify(event.data) });
+```
+
+This makes duplicate runs identifiable; your application still needs to deduplicate
+processing. See [custom OpenTelemetry span attributes](/docs/ai-sdk-core/telemetry#custom-opentelemetry-span-attributes)
+for more about `enrichSpan`.
+
 Two optional callbacks handle signed subscription lifecycle messages:
 
 - `onGap({ subscription, messageId, gap })`: some events are no longer available
@@ -157,12 +207,15 @@ try {
 }
 ```
 
-Before sending the subscription request, the SDK generates and saves
+After catalog discovery and before sending `events/subscribe`, the SDK generates and saves
 `delivery.secret`. It appends a `mcp_event_subscription` query parameter to the
 callback URL so the webhook can find that secret even while verification is
 pending. Preserve this parameter and pass the raw request body to the handler.
 
 ## Runnable example
+
+For a step-by-step walkthrough of receiving events and choosing a subscription
+backend, see the [MCP events recipe](/cookbook/node/mcp-events).
 
 The [local example](https://github.com/vercel/ai/tree/main/examples/mcp/src/events)
 uses `@modelcontextprotocol/server` to emit a comment and the AI SDK to subscribe,

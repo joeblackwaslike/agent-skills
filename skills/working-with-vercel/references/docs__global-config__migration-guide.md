@@ -16,8 +16,8 @@ related:
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "9dc70d88f7a70b097d31f17dacdee3f1a394842f0ce99cf960df6cc8c6baa08d"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "770eab8e8a4ebf3f35c91ec92bbec09a420cfcfbfce3959e3b0ed8b6e91b3449"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -30,17 +30,17 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
-- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
-- [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
-- [Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
-- [Vercel Edge Config is now generally available](https://vercel.com/blog/vercel-edge-config-is-now-generally-available?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related)
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=related) — Vercel MCP tools for global config.
+- [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config)
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
+- [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
+- [Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge)
+- [Vercel Edge Config is now generally available](https://vercel.com/blog/vercel-edge-config-is-now-generally-available)
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 
-Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md?from=related&source_path=%2Fdocs%2Fglobal-config%2Fmigration-guide&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md)
 <!-- /docsgraph:related -->
 
 The store itself is unchanged. This page lists everything that changed with the rename, and what to do if you use the REST API, connection strings, or a custom environment variable setup.

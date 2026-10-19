@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ef91654ae42ec96ecdbf62d7b6e8b43fdc6bef87c98b78b87e7fb95c468343aa"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2a169ced93af59f1264429ca071efd0fee3266895465c8d94e819f4b6bc31987"
 ---
 
 # Building Integrations with Vercel REST API
@@ -33,13 +33,13 @@ See the following API reference documentation for how to use Vercel REST API to 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel SDK Reference](https://vercel.com/docs/rest-api/sdk?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — Interact programmatically with your Vercel account using the SDK.
-- [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
-- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
-- [Update a project domain](https://vercel.com/docs/rest-api/projects/update-a-project-domain?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — PATCH /v9/projects/{idOrName}/domains/{domain} — Update a project domain's configuration, including the name, git branch
-- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=related) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
+- [Vercel SDK Reference](https://vercel.com/docs/rest-api/sdk) — Interact programmatically with your Vercel account using the SDK.
+- [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
+- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
+- [Update a project domain](https://vercel.com/docs/rest-api/projects/update-a-project-domain) — PATCH /v9/projects/{idOrName}/domains/{domain} — Update a project domain's configuration, including the name, git branch
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
 
-Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fcreate-integration%2Fvercel-api-integrations&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)
 <!-- /docsgraph:related -->
 
 - [Creating a Project Environment Variable](/docs/rest-api/projects/create-one-or-more-environment-variables)

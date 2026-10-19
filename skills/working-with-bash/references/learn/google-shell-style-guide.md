@@ -1,7 +1,7 @@
 ---
 source: "https://google.github.io/styleguide/shellguide.html"
-fetched_at: "2026-09-28T10:38:26.295Z"
-sha256: "1c581b0551fb21cec8150d548992d74a851c426386ff32c9a8fc57a3ed22d8b9"
+fetched_at: "2026-10-19T09:38:26.830Z"
+sha256: "bf1b46d5a4c83f1fbed21b816312694862f6f147dfadcb729f2e65ba290d0749"
 ---
 
 Google Style Guides | Style guides for Google-originated open-source projects
@@ -65,13 +65,12 @@ environments may require plain Bourne shell for certain scripts.
 
 When to use Shell
 
-Shell should only be used for small utilities or simple wrapper
-scripts.
+Shell should only be used for small utilities or simple wrapper scripts.
 
-While shell scripting isn’t a development language, it is used for
-writing various utility scripts throughout Google. This style guide
-is more a recognition of its use rather than a suggestion that it be
-used for widespread deployment.
+While shell scripting isn’t a development language, it is used for writing
+various utility scripts throughout Google. This style guide is more a
+recognition of its use rather than a suggestion that it be used for widespread
+deployment.
 
 Some guidelines:
 
@@ -95,10 +94,10 @@ File Extensions
 
 Executables should have a .sh extension or no extension.
 
-  If the executable will have a build rule that renames the source file
-then prefer to use a .sh extension.
-This enables you to use the recommended naming convention, with a source
-file like foo.sh and a build rule named foo.
+  If the executable will have a build rule that renames the source file then
+prefer to use a .sh extension. This enables you to use the recommended
+naming convention, with a source file like foo.sh and a build rule named
+foo.
 
   If the executable will be added directly to the user’s PATH, then prefer
 to use no extension. It is not necessary to know what language a program is
@@ -115,10 +114,10 @@ SUID/SGID
 
 SUID and SGID are forbidden on shell scripts.
 
-There are too many security issues with shell that make it nearly
-impossible to secure sufficiently to allow SUID/SGID. While bash does
-make it difficult to run SUID, it’s still possible on some platforms
-which is why we’re being explicit about banning it.
+There are too many security issues with shell that make it nearly impossible to
+secure sufficiently to allow SUID/SGID. While bash does make it difficult to run
+SUID, it’s still possible on some platforms which is why we’re being explicit
+about banning it.
 
 Use sudo to provide elevated access if you need it.
 
@@ -130,8 +129,8 @@ All error messages should go to STDERR.
 
 This makes it easier to separate normal status from actual issues.
 
-A function to print out error messages along with other status
-information is recommended.
+A function to print out error messages along with other status information is
+recommended.
 
 err() {
   echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $*" >&2
@@ -148,10 +147,8 @@ File Header
 
 Start each file with a description of its contents.
 
-Every file must have a top-level comment including a brief overview of
-its contents. A
-copyright notice
-and author information are optional.
+Every file must have a top-level comment including a brief overview of its
+contents. A copyright notice and author information are optional.
 
 Example:
 
@@ -165,9 +162,9 @@ Any function that is not both obvious and short must have a function header
 comment. Any function in a library must have a function header comment
 regardless of length or complexity.
 
-It should be possible for someone else to learn how to use your
-program or to use a function in your library by reading the comments
-(and self-help, if provided) without reading the code.
+It should be possible for someone else to learn how to use your program or to
+use a function in your library by reading the comments (and self-help, if
+provided) without reading the code.
 
 All function header comments should describe the intended API behaviour using:
 
@@ -222,19 +219,19 @@ function del_thing() {
 
 Implementation Comments
 
-Comment tricky, non-obvious, interesting or important parts of your
-code.
+Comment tricky, non-obvious, interesting or important parts of your code.
 
-This follows general Google coding comment practice. Don’t comment
-everything. If there’s a complex algorithm or you’re doing something
-out of the ordinary, put a short comment in.
+This follows general Google coding comment practice. Don’t comment everything.
+If there’s a complex algorithm or you’re doing something out of the ordinary,
+put a short comment in.
 
 TODO Comments
 
 Use TODO comments for code that is temporary, a short-term solution, or
 good-enough but not perfect.
 
-This matches the convention in the C++ Guide.
+This matches the convention in the
+C++ Guide.
 
 TODOs should include the string TODO in all caps, followed by the name,
 e-mail address, or other identifier of the person with the best context about
@@ -249,16 +246,16 @@ Examples:
 
 Formatting
 
-While you should follow the style that’s already there for files that
-you’re modifying, the following are required for any new code.
+While you should follow the style that’s already there for files that you’re
+modifying, the following are required for any new code.
 
 Indentation
 
 Indent 2 spaces. No tabs.
 
-Use blank lines between blocks to improve readability. Indentation is
-two spaces. Whatever you do, don’t use tabs. For existing files, stay
-faithful to the existing indentation.
+Use blank lines between blocks to improve readability. Indentation is two
+spaces. Whatever you do, don’t use tabs. For existing files, stay faithful to
+the existing indentation.
 
 Exception: The only exception for using tabs is for the body of <<-
 tab-indented
@@ -391,12 +388,11 @@ case "${expression}" in
     ;;
 esac
 
-Simple commands may be put on the same line as the pattern and
-;; as long as the expression remains readable. This is
-often appropriate for single-letter option processing. When the
-actions don’t fit on a single line, put the pattern on a line on its
-own, then the actions, then ;; also on a line of its own.
-When on the same line as the actions, use a space after the close
+Simple commands may be put on the same line as the pattern and ;; as
+long as the expression remains readable. This is often appropriate for
+single-letter option processing. When the actions don’t fit on a single line,
+put the pattern on a line on its own, then the actions, then ;; also on a line
+of its own. When on the same line as the actions, use a space after the close
 parenthesis of the pattern and another before the ;;.
 
 verbose='false'
@@ -418,9 +414,9 @@ Variable expansion
 In order of precedence: Stay consistent with what you find; quote your
 variables; prefer "${var}" over "$var".
 
-These are strongly recommended guidelines but not mandatory
-regulation. Nonetheless, the fact that it’s a recommendation and
-not mandatory doesn’t mean it should be taken lightly or downplayed.
+These are strongly recommended guidelines but not mandatory regulation.
+Nonetheless, the fact that it’s a recommendation and not mandatory doesn’t mean
+it should be taken lightly or downplayed.
 
 They are listed in order of precedence.
 
@@ -571,9 +567,8 @@ Command Substitution
 
 Use $(command) instead of backticks.
 
-Nested backticks require escaping the inner ones with \ .
-The $(command) format doesn’t change when nested and is
-easier to read.
+Nested backticks require escaping the inner ones with \ . The $(command)
+format doesn’t change when nested and is easier to read.
 
 Example:
 
@@ -617,9 +612,9 @@ Testing Strings
 
 Use quotes rather than filler characters where possible.
 
-Bash is smart enough to deal with an empty string in a test. So, given
-that the code is much easier to read, use tests for empty/non-empty
-strings or empty strings rather than filler characters.
+Bash is smart enough to deal with an empty string in a test. So, given that the
+code is much easier to read, use tests for empty/non-empty strings or empty
+strings rather than filler characters.
 
 # Do this:
 if [[ "${my_var}" == "some_string" ]]; then
@@ -642,8 +637,7 @@ if [[ "${my_var}X" == "some_stringX" ]]; then
   do_something
 fi
 
-To avoid confusion about what you’re testing for, explicitly use
--z or -n.
+To avoid confusion about what you’re testing for, explicitly use -z or -n.
 
 # Use this
 if [[ -n "${my_var}" ]]; then
@@ -655,12 +649,10 @@ if [[ "${my_var}" ]]; then
   do_something
 fi
 
-For clarity, use == for equality rather than
-= even though both work. The former encourages the use of
-[[ and the latter can be confused with an assignment.
-However, be careful when using < and >
-in [[ … ]] which performs a lexicographical comparison.
-Use (( … )) or -lt and -gt for
+For clarity, use == for equality rather than = even though both work. The
+former encourages the use of [[ and the latter can be confused with an
+assignment. However, be careful when using < and > in [[ … ]] which
+performs a lexicographical comparison. Use (( … )) or -lt and -gt for
 numerical comparison.
 
 # Use this
@@ -691,8 +683,8 @@ Wildcard Expansion of Filenames
 
 Use an explicit path when doing wildcard expansion of filenames.
 
-As filenames can begin with a -, it’s a lot safer to
-expand wildcards with ./* instead of *.
+As filenames can begin with a -, it’s a lot safer to expand wildcards with
+./* instead of *.
 
 # Here's the contents of the directory:
 # -f  -r  somedir  somefile
@@ -713,9 +705,8 @@ Eval
 
 eval should be avoided.
 
-Eval munges the input when used for assignment to variables and can
-set variables without making it possible to check what those variables
-were.
+Eval munges the input when used for assignment to variables and can set
+variables without making it possible to check what those variables were.
 
 # What does this set?
 # Did it succeed? In part or whole?
@@ -727,17 +718,17 @@ variable="$(eval some_function)"
 Arrays
 
 Bash arrays should be used to store lists of elements, to avoid quoting
-complications. This particularly applies to argument lists. Arrays
-should not be used to facilitate more complex data structures (see
+complications. This particularly applies to argument lists. Arrays should not be
+used to facilitate more complex data structures (see
 When to use Shell above).
 
-Arrays store an ordered collection of strings, and can be safely
-expanded into individual elements for a command or loop.
+Arrays store an ordered collection of strings, and can be safely expanded into
+individual elements for a command or loop.
 
-Using a single string for multiple command arguments should be
-avoided, as it inevitably leads to authors using eval
-or trying to nest quotes inside the string, which does not give
-reliable or readable results and leads to needless complexity.
+Using a single string for multiple command arguments should be avoided, as it
+inevitably leads to authors using eval or trying to nest quotes inside the
+string, which does not give reliable or readable results and leads to needless
+complexity.
 
 # An array is assigned using parentheses, and can be appended to
 # with +=( … ).
@@ -781,12 +772,11 @@ Using arrays can risk a script’s complexity growing.
 
 Arrays Decision
 
-Arrays should be used to safely create and pass around lists. In
-particular, when building a set of command arguments, use arrays to
-avoid confusing quoting issues. Use quoted expansion –
-"${array[@]}" – to access arrays. However, if more
-advanced data manipulation is required, shell scripting should be
-avoided altogether; see above.
+Arrays should be used to safely create and pass around lists. In particular,
+when building a set of command arguments, use arrays to avoid confusing quoting
+issues. Use quoted expansion – "${array[@]}" – to access arrays. However, if
+more advanced data manipulation is required, shell scripting should be avoided
+altogether; see above.
 
 Pipes to While
 
@@ -845,23 +835,20 @@ and clearer.
 
 Arithmetic
 
-Always use (( … )) or $(( … )) rather than
-let or $[ … ] or expr.
+Always use (( … )) or $(( … )) rather than let or $[ … ] or expr.
 
-Never use the $[ … ] syntax, the expr
-command, or the let built-in.
+Never use the $[ … ] syntax, the expr command, or the let built-in.
 
-< and > don’t perform numerical
-comparison inside [[ … ]] expressions (they perform
-lexicographical comparisons instead; see Testing Strings).
-For preference, don’t use [[ … ]] at all for numeric comparisons, use
-(( … )) instead.
+< and > don’t perform numerical comparison inside [[ … ]] expressions
+(they perform lexicographical comparisons instead; see
+Testing Strings). For preference, don’t use [[ … ]] at
+all for numeric comparisons, use (( … )) instead.
 
-It is recommended to avoid using (( … )) as a standalone
-statement, and otherwise be wary of its expression evaluating to zero
+It is recommended to avoid using (( … )) as a standalone statement, and
+otherwise be wary of its expression evaluating to zero
 
-  particularly with set -e enabled. For example,
-set -e; i=0; (( i++ )) will cause the shell to exit.
+  particularly with set -e enabled. For example, set -e; i=0; (( i++ ))
+will cause the shell to exit.
 
 # Simple calculation used as text - note the use of $(( … )) within
 # a string.
@@ -889,15 +876,13 @@ i=$( expr 4 + 4 )
 # Quoting can be error prone when using expr too.
 i=$( expr 4 '*' 4 )
 
-Stylistic considerations aside, the shell’s built-in arithmetic is
-many times faster than expr.
+Stylistic considerations aside, the shell’s built-in arithmetic is many times
+faster than expr.
 
-When using variables, the ${var} (and $var)
-forms are not required within $(( … )). The shell knows
-to look up var for you, and omitting the
-${…} leads to cleaner code. This is slightly contrary to
-the previous rule about always using braces, so this is a
-recommendation only.
+When using variables, the ${var} (and $var) forms are not required within
+$(( … )). The shell knows to look up var for you, and omitting the ${…}
+leads to cleaner code. This is slightly contrary to the previous rule about
+always using braces, so this is a recommendation only.
 
 # N.B.: Remember to declare your variables as integers when
 # possible, and to prefer local variables over globals.
@@ -983,8 +968,8 @@ Variable Names
 
 Same as for function names.
 
-Variables names for loops should be similarly named for any variable
-you’re looping through.
+Variables names for loops should be similarly named for any variable you’re
+looping through.
 
 for zone in "${zones[@]}"; do
   something_with "${zone}"
@@ -1024,9 +1009,8 @@ Source Filenames
 
 Lowercase, with underscores to separate words if desired.
 
-This is for consistency with other code styles in Google:
-maketemplate or make_template but not
-make-template.
+This is for consistency with other code styles in Google: maketemplate or
+make_template but not make-template.
 
 Use Local Variables
 
@@ -1037,10 +1021,9 @@ using local when declaring them. This avoids polluting the global namespace
 and inadvertently setting variables that may have significance outside the
 function.
 
-Declaration and assignment must be separate statements when the
-assignment value is provided by a command substitution; as the
-local builtin does not propagate the exit code from the
-command substitution.
+Declaration and assignment must be separate statements when the assignment value
+is provided by a command substitution; as the local builtin does not propagate
+the exit code from the command substitution.
 
 my_func2() {
   local name="$1"
@@ -1068,14 +1051,14 @@ Put all functions together in the file just below constants. Don’t hide
 executable code between functions. Doing so makes the code difficult to follow
 and results in nasty surprises when debugging.
 
-If you’ve got functions, put them all together near the top of the
-file. Only includes, set statements and setting constants
-may be done before declaring functions.
+If you’ve got functions, put them all together near the top of the file. Only
+includes, set statements and setting constants may be done before declaring
+functions.
 
 main
 
-A function called main is required for scripts long enough
-to contain at least one other function.
+A function called main is required for scripts long enough to contain at least
+one other function.
 
 In order to easily find the start of the program, put the main program in a
 function called main as the bottom-most function. This provides consistency
@@ -1085,8 +1068,8 @@ non-comment line in the file should be a call to main:
 
 main "$@"
 
-Obviously, for short scripts where it’s just a linear flow,
-main is overkill and so is not required.
+Obviously, for short scripts where it’s just a linear flow, main is overkill
+and so is not required.
 
 Calling Commands
 
@@ -1094,8 +1077,8 @@ Checking Return Values
 
 Always check return values and give informative return values.
 
-For unpiped commands, use $? or check directly via an
-if statement to keep it simple.
+For unpiped commands, use $? or check directly via an if statement to keep
+it simple.
 
 Example:
 
@@ -1111,22 +1094,20 @@ if (( $? != 0 )); then
   exit 1
 fi
 
-Bash also has the PIPESTATUS variable that allows
-checking of the return code from all parts of a pipe. If it’s only
-necessary to check success or failure of the whole pipe, then the
-following is acceptable:
+Bash also has the PIPESTATUS variable that allows checking of the return code
+from all parts of a pipe. If it’s only necessary to check success or failure of
+the whole pipe, then the following is acceptable:
 
 tar -cf - ./* | ( cd "${dir}" && tar -xf - )
 if (( PIPESTATUS[0] != 0 || PIPESTATUS[1] != 0 )); then
   echo "Unable to tar files to ${dir}" >&2
 fi
 
-However, as PIPESTATUS will be overwritten as soon as you
-do any other command, if you need to act differently on errors based
-on where it happened in the pipe, you’ll need to assign
-PIPESTATUS to another variable immediately after running
-the command (don’t forget that [ is a command and will
-wipe out PIPESTATUS).
+However, as PIPESTATUS will be overwritten as soon as you do any other
+command, if you need to act differently on errors based on where it happened in
+the pipe, you’ll need to assign PIPESTATUS to another variable immediately
+after running the command (don’t forget that [ is a command and will wipe out
+PIPESTATUS).
 
 tar -cf - ./* | ( cd "${DIR}" && tar -xf - )
 return_codes=( "${PIPESTATUS[@]}" )
@@ -1139,8 +1120,8 @@ fi
 
 Builtin Commands vs. External Commands
 
-Given the choice between invoking a shell builtin and invoking a
-separate process, choose the builtin.
+Given the choice between invoking a shell builtin and invoking a separate
+process, choose the builtin.
 
 We prefer the use of builtins such as the
 Parameter Expansion

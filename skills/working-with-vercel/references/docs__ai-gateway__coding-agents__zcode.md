@@ -15,8 +15,8 @@ related:
 summary: Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zcode.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "2ef6c255a4a95dbcf30878c2e62ca6fd8d0e8aae7d295e02ac0bf2883d300898"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "de9c9177985b445984c5a5d4119bf6b4c26ac51f1cac09675cb9ed6ca8c6b05c"
 ---
 
 # ZCode with AI Gateway
@@ -29,13 +29,14 @@ sha256: "2ef6c255a4a95dbcf30878c2e62ca6fd8d0e8aae7d295e02ac0bf2883d300898"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Zed with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zed?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzcode&source_site=vercel-docs&relationship=related) — Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzcode&source_site=vercel-docs&relationship=related) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzcode&source_site=vercel-docs&relationship=related) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzcode&source_site=vercel-docs&relationship=related) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzcode&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Zed with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zed) — Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
+- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zcode.graph.md](/docs/ai-gateway/coding-agents/zcode.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fzcode&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zcode.graph.md](/docs/ai-gateway/coding-agents/zcode.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -43,7 +44,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zcode.graph.m
 Quit ZCode, then run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup):
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent zcode
+npx vercel@latest ai-gateway setup --agent zcode
 ```
 
 The command writes a gateway provider and a seeded model list into `~/.zcode/v2/config.json` with `0600` permissions. Re-run it to refresh the model list.

@@ -16,8 +16,8 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4d809009e809906dc7aa3e13a1a0954b113a2c66ffe72faa9c1f44fd316e2a58"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0b27ccdca56fd2e7582c7fc16d49f1c432a8f2c21ed3fac95647641c0dd7989e"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -30,18 +30,18 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
-- [Vercel vs Kubernetes](https://vercel.com/kb/guide/vercel-vs-kubernetes?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Compare Vercel and Kubernetes on operational ownership, deployment workflow, scaling, and cost model to decide which pla
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related)
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=related) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
+- [Vercel vs Kubernetes](https://vercel.com/kb/guide/vercel-vs-kubernetes) — Compare Vercel and Kubernetes on operational ownership, deployment workflow, scaling, and cost model to decide which pla
+- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams)
+- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
+- [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
+- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
+- [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 
-Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md?from=related&source_path=%2Fdocs%2Fintegrations%2Fexternal-platforms%2Fkubernetes&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md)
 <!-- /docsgraph:related -->
 
 You can integrate Vercel with your existing Kubernetes infrastructure to optimize the delivery of your frontend applications. This reduces the number of services your teams need to manage, while still taking advantage of Kubernetes for your backend and other containerized workloads.

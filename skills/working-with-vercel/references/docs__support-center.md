@@ -12,8 +12,8 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "e293fd126164db90da7ec30c8783acd8d372989863b472fe06a389fd3c25f3ee"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2c61ee6cf78a21053bd1deaef61aeca37741ac7a03df9807de9c74a3ed149b52"
 ---
 
 # Support Center
@@ -28,19 +28,19 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Create and view support cases on the Vercel dashboard](https://vercel.com/changelog/support-center?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
-- [Support Center is now available for Pro customers](https://vercel.com/changelog/support-center-on-pro?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
-- [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Information on how to get help from Vercel Support through the available channels.
-- [How long does it take to get a response from Vercel Support?](https://vercel.com/kb/guide/vercel-support-queue-time?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Information on how long it might take Vercel Support to respond to your request.
-- [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
-- [Get support from the dashboard](https://vercel.com/blog/support-form?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related)
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Vercel security overview](https://vercel.com/docs/security?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Products](https://vercel.com/docs/products?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=related) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Create and view support cases on the Vercel dashboard](https://vercel.com/changelog/support-center)
+- [Support Center is now available for Pro customers](https://vercel.com/changelog/support-center-on-pro)
+- [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
+- [How long does it take to get a response from Vercel Support?](https://vercel.com/kb/guide/vercel-support-queue-time) — Information on how long it might take Vercel Support to respond to your request.
+- [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center)
+- [Get support from the dashboard](https://vercel.com/blog/support-form)
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
-Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md?from=related&source_path=%2Fdocs%2Fsupport-center&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
 <!-- /docsgraph:related -->
 
 ## Submit a ticket

@@ -12,12 +12,12 @@ related:
   - /docs/plans/pro-plan/trials
   - /docs/cli/cache
   - /docs/caching/cdn-cache
-  - /docs/analytics
+  - /docs/deployment-protection/methods-to-protect-deployments/password-protection
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, remove, and configure..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "205c34c45e6dfb78834de3d93bc422f2c0820c3c8e761fa1bd640be4a7aeb588"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "7c3a8552da4e3ee1019ba2125a2692ec6ec6b4f920bd8a272b4d126df5212c22"
 ---
 
 # vercel project
@@ -30,16 +30,15 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related)
-- [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Managing projects](https://vercel.com/docs/projects/managing-projects?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage your projects through the Vercel Dashboard.
-- [vercel integration](https://vercel.com/docs/cli/integration?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
-- [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
-- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=related) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
+- [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli)
+- [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
+- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
+- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
+- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
-Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fproject&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
 <!-- /docsgraph:related -->
 
 `vercel projects` is an alias for the same command.
@@ -238,6 +237,10 @@ vercel project checks remove chk_abc123 my-app
 ### `protection`
 
 Show or toggle deployment protection settings for a project. Pass `enable` or `disable` as the action; omit both to show current settings.
+
+Activating [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) for a project without it can incur charges. Review [Password Protection pricing](/docs/deployment-protection/methods-to-protect-deployments/password-protection#password-protection-pricing) before activating it. Run the command in an interactive terminal and type the project name to confirm, or enable it in the dashboard. Updating an existing password and disabling protection don't require this activation confirmation. Scripts and agents must hand activation to a person.
+
+For project-priced Pro teams, disabling Password Protection stops future charges for that project. Run `vercel project protection disable [name] --password --scope my-team` to disable it.
 
 ```bash filename="terminal"
 vercel project protection [action] [name] [options]

@@ -13,13 +13,13 @@ related:
 summary: Use restore_edge_config_backup with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "66319d79b4a784d56fab6ae81cd080f7e07e801d799de0b2787f549293a4dc21"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "82ce7ae3201bfac20fcbbc78ef5ac9c6e4ad4d9c37570940e79c75ecadc321f9"
 ---
 
 # restore_edge_config_backup
 
-Restore Global Config backup.
+Restores a Global Config backup.
 
 
 <!-- docsgraph:related -->
@@ -27,25 +27,24 @@ Restore Global Config backup.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backup?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=related) — Use get_edge_config_backup with Vercel MCP.
-- [Restore Global Config backup](https://vercel.com/docs/rest-api/global-config/restore-global-config-backup?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=related) — POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore — Restores a Global Config backup.
-- [Backups now available for Vercel Edge Config](https://vercel.com/changelog/backups-now-available-for-vercel-edge-config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=related)
-- [update_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=related) — Use update_edge_config with Vercel MCP.
-- [patch_edge_config_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_schema?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=related) — Use patch_edge_config_schema with Vercel MCP.
-- [Get Global Config backup](https://vercel.com/docs/rest-api/global-config/get-global-config-backup?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=related) — GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} — Retrieves a specific version of a Global Conf
+- [get_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backup) — Use get_edge_config_backup with Vercel MCP.
+- [get_edge_config_backups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backups) — Use get_edge_config_backups with Vercel MCP.
+- [Restore Global Config backup](https://vercel.com/docs/rest-api/global-config/restore-global-config-backup) — POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore — Restores a Global Config backup.
+- [update_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config) — Use update_edge_config with Vercel MCP.
+- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fglobal-config%2Frestore_edge_config_backup&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter                   | Type    | Required | Description                          |
-| --------------------------- | ------- | -------- | ------------------------------------ |
-| `edgeConfigId`              | string  | Yes      | The Global Config ID.                |
-| `edgeConfigBackupVersionId` | string  | Yes      | The Global Config backup version ID. |
-| `teamId`                    | string  | No       | Team ID.                             |
-| `slug`                      | string  | No       | Team slug.                           |
-| `requestBody`               | unknown | No       | Request body for this tool.          |
+| Parameter                   | Type    | Required | Description                                                 |
+| --------------------------- | ------- | -------- | ----------------------------------------------------------- |
+| `edgeConfigId`              | string  | Yes      | The Global Config ID.                                       |
+| `edgeConfigBackupVersionId` | string  | Yes      | The Global Config backup version ID.                        |
+| `teamId`                    | string  | No       | Team ID to use for this operation.                          |
+| `slug`                      | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody`               | unknown | No       | Request body for this tool.                                 |
 
 
 ---

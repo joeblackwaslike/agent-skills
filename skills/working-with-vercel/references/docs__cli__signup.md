@@ -14,8 +14,8 @@ related:
 summary: Learn how to create a new Vercel account using the vercel signup CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/signup.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "4b85f979c64f430c6a39ff5d5287d80aa72e154cc6bb1068e8273e79f9f150ae"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "8995d084b3c260cd8e5c71e48a09290bb041c26f8d21902da4a13187f130f7e7"
 ---
 
 # vercel signup
@@ -28,13 +28,13 @@ The `vercel signup` command allows you to create a new Vercel account through Ve
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel logout](https://vercel.com/docs/cli/logout?from=related&source_path=%2Fdocs%2Fcli%2Fsignup&source_site=vercel-docs&relationship=related) — Learn how to logout from your Vercel account using the vercel logout CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup?from=related&source_path=%2Fdocs%2Fcli%2Fsignup&source_site=vercel-docs&relationship=related) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fsignup&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fcli%2Fsignup&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel init](https://vercel.com/docs/cli/init?from=related&source_path=%2Fdocs%2Fcli%2Fsignup&source_site=vercel-docs&relationship=related) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
+- [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel init](https://vercel.com/docs/cli/init) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 
-Full cross-link map for this page: [/docs/cli/signup.graph.md](/docs/cli/signup.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fsignup&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/signup.graph.md](/docs/cli/signup.graph.md)
 <!-- /docsgraph:related -->
 
 If you already have a Vercel account, use [`vercel login`](/docs/cli/login) instead.

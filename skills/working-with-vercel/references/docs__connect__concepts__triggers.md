@@ -12,12 +12,13 @@ related:
   - /docs/connect/concepts/tokens
   - /docs/deployments/environments
   - /docs/domains/working-with-domains/add-a-domain-to-environment
+  - /docs/oidc
   - /docs/cli/connect
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7bd7a6adc05cef9f487e9031b4809b378f873626d689dad9bda713cf666557a1"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "31c4aa47265c5258bee08259923256ff46e1927c908c3abf78232ffca0d39904"
 ---
 
 # Webhook triggers for Vercel Connect
@@ -30,19 +31,20 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
-- [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
-- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
-- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related)
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Observability](https://vercel.com/docs/connect/observability?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
-- [Setting Up Webhooks](https://vercel.com/docs/webhooks?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=related) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect)
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
+- [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+- [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
 
-Full cross-link map for this page: [/docs/connect/concepts/triggers.graph.md](/docs/connect/concepts/triggers.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fconcepts%2Ftriggers&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/connect/concepts/triggers.graph.md](/docs/connect/concepts/triggers.graph.md)
 <!-- /docsgraph:related -->
 
 [Browse connectors](/connect/browse) to see which services support triggers and their default events.
@@ -110,7 +112,57 @@ Deleting a Custom Environment removes trigger destinations that target it. Verce
 
 ## Verifying a forwarded request
 
-When Vercel Connect forwards an event to your project, it signs the outbound request so your handler can confirm it came from Vercel Connect. Verify the signature on the receiving end before acting on the payload. Vercel Connect publishes the signing key per connector for this purpose.
+When Vercel Connect forwards an event to your project, it attaches a Vercel [OIDC token](/docs/oidc) as a `Bearer` credential in the `Authorization` header. Verify that token before acting on the payload. Because every connector uses the same mechanism, you verify one token instead of implementing each provider's signature scheme.
+
+Use `createConnectWebhookVerifier` from `@vercel/connect/chat` in TypeScript, or `verify_connect_webhook()` in Python:
+
+**app/api/slack-events/route.ts**
+
+```ts filename="app/api/slack-events/route.ts"
+import { createConnectWebhookVerifier } from '@vercel/connect/chat';
+
+const verify = createConnectWebhookVerifier();
+
+export async function POST(request: Request) {
+  const body = await request.text();
+
+  try {
+    await verify(request, body);
+  } catch {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const event = JSON.parse(body);
+  // Handle the verified event.
+  return Response.json({ ok: true });
+}
+```
+
+**main.py**
+
+```py filename="main.py"
+from fastapi import FastAPI, HTTPException, Request
+from vercel.connect import (
+    ConnectWebhookVerificationError,
+    verify_connect_webhook,
+)
+
+app = FastAPI()
+
+
+@app.post('/api/slack-events')
+async def slack_events(request: Request):
+    try:
+        await verify_connect_webhook(request)
+    except ConnectWebhookVerificationError:
+        raise HTTPException(status_code=401)
+
+    event = await request.json()
+    # Handle the verified event.
+    return {'ok': True}
+```
+
+By default, both verifiers accept a token only when its project and environment match the current deployment, using `VERCEL_PROJECT_ID` and `VERCEL_TARGET_ENV` (then `VERCEL_ENV`). They accept any valid Vercel OIDC token for that project and environment; they aren't pinned to a specific connector or deployment. Verification fails closed: if the verifier can't determine the expected project or environment, it rejects every request.
 
 ## Errors
 
@@ -122,6 +174,7 @@ If the target does not resolve to a deployment, or the receiving handler returns
 - [Microsoft Teams connector](/connect/microsoft-teams): Set up a managed Teams bot and forward verified activities to your project.
 - [Connector catalog](/connect/browse): Which connectors support triggers and their default events.
 - [CLI Reference](/docs/cli/connect): Full surface of `vercel connect attach --triggers`.
+- [Python SDK Reference](/docs/connect/python-sdk-reference#verify_connect_webhook): Full `verify_connect_webhook()` reference.
 
 
 ---

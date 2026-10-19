@@ -12,11 +12,12 @@ related:
   - /docs/plans/hobby
   - /docs/plans/pro-plan
   - /docs/git
+  - /docs/plans/enterprise
 summary: Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0c30af3086c6e9580700c21c2a645de6fdbee896517ced35e0b8271f21331296"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "6df33187f4df553a872d4d3b3aa5b631198c851faecd022ec601f25e4753c705"
 ---
 
 # Troubleshoot project collaboration
@@ -29,18 +30,18 @@ This guide will help you troubleshoot deployment failures related to project col
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related)
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Vercel MCP tools for deployments.
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Auto-add Git committers now available for Enterprise teams](https://vercel.com/changelog/auto-add-git-committers-now-available-for-enterprise-teams)
+- [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team)
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 
-Full cross-link map for this page: [/docs/deployments/troubleshoot-project-collaboration.graph.md](/docs/deployments/troubleshoot-project-collaboration.graph.md?from=related&source_path=%2Fdocs%2Fdeployments%2Ftroubleshoot-project-collaboration&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/deployments/troubleshoot-project-collaboration.graph.md](/docs/deployments/troubleshoot-project-collaboration.graph.md)
 <!-- /docsgraph:related -->
 
 For private repositories, a deployment can fail if Vercel cannot identify the commit author, or if your team requires manual approval before adding the committer. You can use the following checklist to make sure your Vercel team is properly configured:
@@ -73,11 +74,11 @@ To make sure we can verify your commits:
 
 For more information, see [Using Hobby teams](/docs/git#using-hobby-teams)
 
-### Pro teams
+### Pro and Enterprise teams
 
-The [Pro Plan](/docs/plans/pro-plan) allows for collaboration through team membership. When someone with a Vercel account commits to your codebase, they may be added automatically or require approval, depending on your [collaboration settings](/docs/accounts#collaboration-settings).
+The [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans allow for collaboration through team membership. When someone with a Vercel account commits to your codebase, they may be added automatically or require approval, depending on your [collaboration settings](/docs/accounts#collaboration-settings).
 
-To deploy commits under a Vercel Pro team, the commit author must be a member of the team containing the Vercel project connected to the Git repository.
+To deploy commits under a Vercel Pro or Enterprise team, the commit author must be a member of the team containing the Vercel project connected to the Git repository.
 
 To make sure we can verify commits associated with your team:
 
@@ -85,7 +86,9 @@ To make sure we can verify commits associated with your team:
 2. Review your team's [collaboration settings](/docs/accounts#collaboration-settings) to confirm whether Vercel should auto approve or manually approve new committers
 3. If your team uses manual approval, approve the pending membership before the contributor deploys again. After approval, the committer must redeploy their changes.
 
-For more information, see [Using Pro teams](/docs/git#using-pro-teams)
+On Pro teams, members added this way are billed at standard [Pro seat pricing](/docs/plans/pro-plan#additional-team-seats). On Enterprise teams, Developer seat pricing follows your Enterprise contract.
+
+For more information, see [Using Pro and Enterprise teams](/docs/git#using-pro-and-enterprise-teams)
 
 ### Bot access
 

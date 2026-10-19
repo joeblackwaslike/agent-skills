@@ -15,8 +15,8 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1da14537e755cdeb4a046cacb7bd05cb892e817a3baac2d72c2f9626ad6f019b"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "da67d0f65194a12d7e13c18908f3c3d26f8403b5067646d7821bd68ccfe5d946"
 ---
 
 # Filtering Analytics
@@ -31,19 +31,19 @@ to use it to answer specific questions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Bounce rate support in Web Analytics](https://vercel.com/changelog/bounce-rate-support-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
-- [Device type support and improved breakdowns in Web Analytics](https://vercel.com/changelog/device-type-support-and-improved-breakdowns-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
-- [Hostname support in Web Analytics](https://vercel.com/changelog/hostname-support-in-web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
-- [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
-- [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related)
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Observability Insights](https://vercel.com/docs/observability/insights?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=related) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Bounce rate support in Web Analytics](https://vercel.com/changelog/bounce-rate-support-in-web-analytics)
+- [Device type support and improved breakdowns in Web Analytics](https://vercel.com/changelog/device-type-support-and-improved-breakdowns-in-web-analytics)
+- [Hostname support in Web Analytics](https://vercel.com/changelog/hostname-support-in-web-analytics)
+- [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support)
+- [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
-Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Ffiltering&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md)
 <!-- /docsgraph:related -->
 
 ## Using filters

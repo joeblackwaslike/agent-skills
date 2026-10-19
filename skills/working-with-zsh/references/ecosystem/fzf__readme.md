@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/junegunn/fzf/master/README.md"
-fetched_at: "2026-06-16T01:06:56.418Z"
-sha256: "cf04eefdc64236aeb99de2208e17fc43271bee9da798aa639f45baeae84f987c"
+fetched_at: "2026-10-19T09:54:08.603Z"
+sha256: "d1f195c7133d3b358a25e400c2ae1605573edd2e0c7ed6b06a619868d390b4ec"
 ---
 
 <div align="center">
@@ -847,6 +847,13 @@ Fuzzy completion in Nushell works via the
 [external completer](https://www.nushell.sh/cookbook/external_completers.html)
 mechanism. There are some differences compared to bash and zsh:
 
+- Nushell 0.116.1 or newer is required. The completion runs on the line-editor
+  thread so fzf can take the terminal; a previously configured external
+  completer (e.g. Carapace) is therefore invoked inline when the `**` trigger
+  is absent.
+- The script wraps whichever external completer is configured when it loads,
+  so load it after any other external completer setup. The autoload setup
+  described above runs after `config.nu`, so it already does this.
 - On Nushell >= 0.103.0, the external completer is no longer called for
   built-in commands (e.g. `cd`, `ls`). Fuzzy completion with `**<TAB>` only
   works for external commands.

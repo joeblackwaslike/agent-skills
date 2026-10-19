@@ -1,8 +1,8 @@
 ---
 title: "Markdown Assets"
 source: "https://docusaurus.io/docs/markdown-features/assets"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "e64241a659c8d38f036d72639debe5f7fdbcac20da0f853435bee8f2ca625c6c"
+fetched_at: "2026-10-19T09:38:00.847Z"
+sha256: "d9c653ad71617ef035675ad3b39b1ddea98324e0a6a7a263ac9f65be9f715a31"
 ---
 
 # Markdown Assets
@@ -53,7 +53,7 @@ In the same way, you can link to existing assets by `require`'ing them and using
 # My Markdown page<a target="\_blank" href={require('./assets/docusaurus-asset-example.docx').default}> Download this docx </a>or[Download this docx using Markdown](./assets/docusaurus-asset-example.docx)
 ```
 
-http://localhost:3000[Download this docx](https://docusaurus.io/assets/files/docusaurus-asset-example-93ea653de6d8636f7254aecab1adbcce.docx)[Download this docx using Markdown](https://docusaurus.io/assets/files/docusaurus-asset-example-93ea653de6d8636f7254aecab1adbcce.docx)
+http://localhost:3000[Download this docx](https://docusaurus.io/assets/files/docusaurus-asset-example-8a02c5a8acb7dcb8.docx)[Download this docx using Markdown](https://docusaurus.io/assets/files/docusaurus-asset-example-8a02c5a8acb7dcb8.docx)
 Markdown links are always file pathsIf you use the Markdown image or link syntax, all asset paths will be resolved as file paths by Docusaurus and automatically converted to `require()` calls. You don't need to use `require()` in Markdown unless you use the JSX syntax, which you do have to handle yourself.
 
 ## Inline SVGs[​](https://docusaurus.io/docs/markdown-features/assets#inline-svgs)
@@ -132,4 +132,4 @@ If you intend to write URLs, you can use the `pathname://` protocol to disable a
 ![banner](pathname:///img/docusaurus-asset-example-banner.png)
 ```
 
-This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-assets.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-assets.mdx)Last updated on Oct 15, 2026 by Sébastien Lorber

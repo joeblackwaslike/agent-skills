@@ -17,8 +17,8 @@ related:
 summary: Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile.vercel file.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/container.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "8314dff2ff6d62fbd821229f741759cf05019f2542e3e0070c6c730291b910dd"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "7c6dce5bdb2dadf5c238c07691d0eb2ed425f0aca60d86804f23ea7510c15002"
 ---
 
 # Container Runtime
@@ -33,16 +33,16 @@ Vercel Functions can run any code and library using Open Container Initiative (O
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related)
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related)
-- [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=related) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
+- [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 
-Full cross-link map for this page: [/docs/functions/runtimes/container.graph.md](/docs/functions/runtimes/container.graph.md?from=related&source_path=%2Fdocs%2Ffunctions%2Fruntimes%2Fcontainer&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/functions/runtimes/container.graph.md](/docs/functions/runtimes/container.graph.md)
 <!-- /docsgraph:related -->
 
 ## Usage
@@ -147,6 +147,7 @@ The same [limits](/docs/functions/limitations) and [Active CPU pricing model](/d
 
 - [Vercel Functions](/docs/functions)
 - [Vercel Container Registry](/docs/container-registry)
+- [Daemons](/docs/daemons) for container images that run continuously without receiving traffic
 - [Container Images Demo template](https://vercel.com/templates/container-images/container-images-demo)
 
 

@@ -13,8 +13,8 @@ related:
 summary: Use list_flags_v2 with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b5452f92ec8cc3611c96c94748b7a85beec57006fd2f24e6092fadf3bf39250f"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "a237aef4e15428ef7d99a1c852dbfa43f8cee7213b725262d3e42309d0c18ae3"
 ---
 
 # list_flags_v2
@@ -27,13 +27,13 @@ List flags.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags%2Flist_flags_v2&source_site=vercel-docs&relationship=related) — Use list_flags with Vercel MCP.
-- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags%2Flist_flags_v2&source_site=vercel-docs&relationship=related) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
-- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags%2Flist_flags_v2&source_site=vercel-docs&relationship=related) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
-- [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags%2Flist_flags_v2&source_site=vercel-docs&relationship=related) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
-- [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags%2Flist_flags_v2&source_site=vercel-docs&relationship=related) — Use get_flag with Vercel MCP.
+- [list_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags) — Use list_flags with Vercel MCP.
+- [list_team_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags_v2) — Use list_team_flags_v2 with Vercel MCP.
+- [list_team_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags) — Use list_team_flags with Vercel MCP.
+- [list_flag_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions) — Use list_flag_versions with Vercel MCP.
+- [list_team_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings) — Use list_team_flag_settings with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Ffeature-flags%2Flist_flags_v2&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -42,15 +42,15 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | ------------------------- | ---------------- | -------- | --------------------------------------------------------------------------------------------------- |
 | `projectIdOrName`         | string           | Yes      | The project id or name                                                                              |
 | `state`                   | string           | No       | The state of the flags to retrieve. Defaults to `active`. Allowed values: `"active"`, `"archived"`. |
-| `limit`                   | integer          | No       | Maximum number of flags to return. Default: `25`.                                                   |
+| `limit`                   | integer          | No       | Maximum number of flags to return. Minimum: 1. Maximum: 100. Default: `25`.                         |
 | `cursor`                  | string           | No       | Pagination cursor to continue from.                                                                 |
 | `search`                  | string           | No       | Search flags by their slug or description. Case-insensitive.                                        |
 | `tags`                    | Array\<string> | No       | Filter flags by tag. Repeat the parameter for multiple tags (all must match).                       |
 | `createdBy`               | string           | No       | Filter flags by the id of the entity that created them (a user or team id).                         |
 | `maintainerIds`           | Array\<string> | No       | Filter flags by maintainer user id. Repeat the parameter for multiple maintainers (any may match).  |
 | `includeMarketplaceFlags` | boolean          | No       | Whether to include Marketplace experimentation items in the paginated response. Defaults to false.  |
-| `teamId`                  | string           | No       | Team ID.                                                                                            |
-| `slug`                    | string           | No       | Team slug.                                                                                          |
+| `teamId`                  | string           | No       | Team ID to use for this operation.                                                                  |
+| `slug`                    | string           | No       | Team slug to use for this operation. Use instead of teamId.                                         |
 
 
 ---

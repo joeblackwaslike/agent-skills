@@ -1,5 +1,5 @@
 ---
-source: "https://raw.githubusercontent.com/rossmacarthur/sheldon/trunk/README.md"
+source: "https://raw.githubusercontent.com/rossmacarthur/sheldon/master/README.md"
 fetched_at: "2026-06-16T01:06:56.418Z"
 sha256: "4f1551300595aed9e50700a033fa2f9559027f544d4bf48f6c2aa50715f81089"
 ---

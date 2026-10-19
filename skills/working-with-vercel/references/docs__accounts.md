@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e10400bb58d526b9e56b04f07966e50b01af8713483c3596c649dae5e4aa58ee"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "4b2693115b34a1ecf7fdb86e6072687bfa0f1b6d04dc9b64b11a0a51ce4156c8"
 ---
 
 # Account Management
@@ -30,20 +30,20 @@ When you first sign up for Vercel, you'll create an account. This account is use
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
-- [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
-- [Introducing new token formats and secret scanning](https://vercel.com/changelog/new-token-formats-and-secret-scanning?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
-- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
-- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn how to create scalable firewall configurations with Terraform
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Teams](https://v0.app/docs/teams?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Collaborate with your team on projects with shared resources.
-- [September 2020](https://vercel.com/blog/changelog-september-2020?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related)
-- [How do I delete my Vercel account?](https://vercel.com/kb/guide/how-do-i-delete-my-vercel-account?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — This guide covers how to delete your personal or team account on Vercel.
-- [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=related) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
+- [Auto-add Git committers now available for Enterprise teams](https://vercel.com/changelog/auto-add-git-committers-now-available-for-enterprise-teams)
+- [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team)
+- [Introducing new token formats and secret scanning](https://vercel.com/changelog/new-token-formats-and-secret-scanning)
+- [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
+- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
+- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 
-Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md?from=related&source_path=%2Fdocs%2Faccounts&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md)
 <!-- /docsgraph:related -->
 
 - [Hobby](/docs/plans/hobby)
@@ -168,6 +168,14 @@ To choose which team appears when you first log in or open the dashboard, [chang
 
 ![Selecting a team plan.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/new-team-light.png)
 
+#### CLI
+
+Run [`vercel teams create`](/docs/cli/teams):
+
+```bash filename="terminal"
+vercel teams create --slug <team-slug> --name "<team-name>"
+```
+
 #### cURL
 
 To create an Authorization Bearer token, see the [access token](/docs/rest-api#creating-an-access-token) section of the API documentation.
@@ -272,13 +280,13 @@ There are a couple of methods you can use to locate your Team ID:
 
 When someone pushes a commit to a private Git repository connected to your team's project, Vercel determines how the commit author is added to your team based on the [collaboration settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers%23collaboration-settings\&title=Collaboration+Settings). You can configure this behavior in your team's **Settings** > **Members** > **Collaboration**.
 
-There are two approval modes: **Auto Approval** and **Manual Approval**.
+There are two approval modes: **Auto Approval** and **Manual Approval**. Both modes are available on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) teams.
 
 ### Auto approval
 
 When a commit author has a Vercel account linked to their Git provider, Vercel automatically adds them to your team with the [Developer role](/docs/rbac/access-roles#developer-role). Their deployment then continues immediately.
 
-On the [Pro plan](/docs/plans/pro-plan), the Developer role is a paid seat. With **Auto Approval** enabled, anyone who pushes a commit to a private repository connected to one of your team's projects, and has a Vercel account linked to their Git provider, is added to your team as a billed Developer seat with no confirmation step. If you want to decide who becomes a paid member of your team, use [Manual approval](#manual-approval) instead.
+On the [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans, the Developer role is a paid seat. With **Auto Approval** enabled, anyone who pushes a commit to a private repository connected to one of your team's projects, and has a Vercel account linked to their Git provider, is added to your team as a billed Developer seat with no confirmation step. If you want to decide who becomes a paid member of your team, use [Manual approval](#manual-approval) instead.
 
 Team owners receive a notification when a new member is added through auto approval.
 
@@ -305,7 +313,7 @@ Team owners are notified in both approval modes:
 
 ### Billing
 
-Members added through collaboration settings receive the [Developer role](/docs/rbac/access-roles#developer-role) and are billed at the same seat pricing as members added through invitations or identity provider sync. See [Pro plan pricing](/docs/plans/pro-plan#additional-team-seats) for seat costs.
+Members added through collaboration settings receive the [Developer role](/docs/rbac/access-roles#developer-role) and are billed at the same seat pricing as members added through invitations or identity provider sync. On Pro teams, see [Pro plan pricing](/docs/plans/pro-plan#additional-team-seats) for seat costs. On [Enterprise](/docs/plans/enterprise) teams, Developer seat pricing follows your Enterprise contract.
 
 The approval mode determines when a paid seat is added:
 

@@ -2,8 +2,8 @@
 title: "User"
 description: The authenticated user resource in the Hosted v1 API.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/user.md"
-fetched_at: "2026-08-24T04:47:05.170Z"
-sha256: "fe85eeaba96a072cb94d5aa7cd7380f364cfb4b1d34b847ca4a86dcb7ca4fb17"
+fetched_at: "2026-10-19T09:41:16.408Z"
+sha256: "5615da62220e3e50105624a3b416f8b49ccaabf59fde1651e2a10589bb13acf7"
 ---
 
 # User
@@ -29,6 +29,7 @@ curl -X GET 'https://hosted.doltdb.com/api/v1/user' \
 |--------|-------------|--------|
 | `200` | The authenticated user's profile. | [`User`](/products/hosted/api/v1/models#model-user) |
 | `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 

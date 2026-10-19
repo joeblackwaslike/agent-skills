@@ -13,8 +13,8 @@ related:
 summary: Use get_configuration with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c1f6bbe052f1562bdb6e6d326f55a294c64756394c43b01a0d7a97f10fc19598"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "355bf0439db7420d3d8810ed224f40188146f54e2ae4fddb5678fbc5bac0618f"
 ---
 
 # get_configuration
@@ -27,22 +27,22 @@ Retrieve an integration configuration.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_integration_configuration_products](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Fget_configuration&source_site=vercel-docs&relationship=related) — Use list_integration_configuration_products with Vercel MCP.
-- [list_integration_configurations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configurations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Fget_configuration&source_site=vercel-docs&relationship=related) — Use list_integration_configurations with Vercel MCP.
-- [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Fget_configuration&source_site=vercel-docs&relationship=related) — Use get_rolling_release_config with Vercel MCP.
-- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Fget_configuration&source_site=vercel-docs&relationship=related) — Use get_team with Vercel MCP.
-- [get_microfrontends_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Fget_configuration&source_site=vercel-docs&relationship=related) — Use get_microfrontends_config with Vercel MCP.
+- [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
+- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
+- [list_integration_configuration_products](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products) — Use list_integration_configuration_products with Vercel MCP.
+- [list_integration_configurations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configurations) — Use list_integration_configurations with Vercel MCP.
+- [get_edge_configs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_configs) — Use get_edge_configs with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Fget_configuration&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter | Type   | Required | Description                      |
-| --------- | ------ | -------- | -------------------------------- |
-| `id`      | string | Yes      | ID of the configuration to check |
-| `teamId`  | string | No       | Team ID.                         |
-| `slug`    | string | No       | Team slug.                       |
+| Parameter | Type   | Required | Description                                                 |
+| --------- | ------ | -------- | ----------------------------------------------------------- |
+| `id`      | string | Yes      | ID of the configuration to check                            |
+| `teamId`  | string | No       | Team ID to use for this operation.                          |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 
 ---

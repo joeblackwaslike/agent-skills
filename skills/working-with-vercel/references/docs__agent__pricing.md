@@ -16,8 +16,8 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "4fe31f7b7f87cefafcd90e2ea26d193c2ba6e5dc756eb8bdc4810a44eeb2de30"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b45a4000283cb52c86e526fee9d4a4c6ab046dcb04863944c13042751d8d772f"
 ---
 
 # Vercel Agent Pricing
@@ -30,27 +30,28 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
-- [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related)
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Pricing on Vercel](https://vercel.com/docs/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
-- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=related) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
+- [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta)
+- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing)
+- [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
+- [Pricing](https://v0.app/docs/pricing) — Understand the v0 plans, pricing, and usage limits.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
-Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fpricing&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md)
 <!-- /docsgraph:related -->
 
 ## Pricing summary
 
 | Feature | Included usage | Pricing |
 | --- | --- | --- |
-| [Chat](/docs/agent/chat) | A limited number of simple requests during the beta | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
-| [Slack](/docs/agent/chat/slack) | A limited number of simple requests during the beta | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Chat](/docs/agent/chat) | 50 messages per team member per day during the beta, excluding approved plans | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Slack](/docs/agent/chat/slack) | Shares the Chat allowance of 50 messages per team member per day | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Code Review](/docs/agent/pr-review) | None | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Vercel Agent Investigation](/docs/agent/investigation) | 10 investigations per billing cycle with Observability Plus | Additional investigations use provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Installation](/docs/agent/installation) | No charge for installation | Standard usage charges for installed products still apply |
@@ -69,14 +70,14 @@ The amount you pay depends on the work required. A quick question costs less tha
 
 ## Chat
 
-Simple requests, such as finding a setting, explaining a DNS warning, or answering a documentation question, are included up to a limited number of messages during the beta.
+Each team member gets 50 free Chat messages per day on each team during the beta. The allowance resets at 00:00 UTC. Messages you send to Vercel Agent in Slack count toward the same allowance.
 
-A Chat response incurs charges when:
+A Chat message incurs charges when:
 
-- The response requires Vercel Agent to investigate, plan, or write code
-- You continue using Chat after the included messages are used
+- You approve a plan that Vercel Agent proposes, even if you have free messages left
+- You send more messages after you use the day's 50 free messages
 
-Selecting **Cancel** on a proposed plan does not run or charge for the work described in that plan.
+A message that only proposes a plan counts like any other message. It uses one of your free messages, or incurs charges after you use the day's 50 free messages. Selecting **Cancel** on a proposed plan does not run or charge for the work described in that plan.
 
 ## Code Review
 

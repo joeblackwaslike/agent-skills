@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "9f484e8ed0679ca0a54f42766ff9f2c9085bdbe14c825f3c1ec9e70007e934aa"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "43584fdc821e128ed5bed793e9738e24c077d3fbbc913b4c3fab62061d51f1ff"
 ---
 
 # How requests flow through Vercel
@@ -30,15 +30,15 @@ When you deploy to Vercel, your code runs on a global network of servers. This n
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related)
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Learn how to build and scale performant APIs on Vercel.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
+- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
+- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
+- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
-Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md?from=related&source_path=%2Fdocs%2Ffundamentals%2Finfrastructure&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md)
 <!-- /docsgraph:related -->
 
 The following sections walk through what happens from the moment a user presses **enter** on their keyboard to when your application appears on their screen. For a deeper technical dive, see [Life of a Vercel Request: What Happens When a User Presses Enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter).

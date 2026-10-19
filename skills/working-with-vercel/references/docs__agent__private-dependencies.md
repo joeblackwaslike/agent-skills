@@ -12,8 +12,8 @@ related:
 summary: Configure shared npm credentials so Vercel Agent can install private dependencies from npm and custom registries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/private-dependencies.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "46faabf27449a27a522ec36d07e504030621113625c2b9c2f54cec881fb09ddc"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "b2d1cec986df74bb270f1944fceaa7dc32974643051697322e6814b92ed751e9"
 ---
 
 # Private Dependencies
@@ -26,20 +26,20 @@ Vercel Agent installs private npm packages using your repository's existing pack
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related)
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
-- [Private Dependencies](https://v0.app/docs/private-dependencies?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
-- [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related)
-- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Understand why dependencies may not being installed during a build and how to fix.
-- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
-- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
-- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
-- [Installation](https://vercel.com/docs/agent/installation?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [Package Managers](https://vercel.com/docs/package-managers?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
-- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
-- [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=related) — Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
+- [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
+- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
+- [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
+- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install) — Understand why dependencies may not being installed during a build and how to fix.
+- [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables)
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
+- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
+- [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories) — Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 
-Full cross-link map for this page: [/docs/agent/private-dependencies.graph.md](/docs/agent/private-dependencies.graph.md?from=related&source_path=%2Fdocs%2Fagent%2Fprivate-dependencies&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent/private-dependencies.graph.md](/docs/agent/private-dependencies.graph.md)
 <!-- /docsgraph:related -->
 
 ## How it works

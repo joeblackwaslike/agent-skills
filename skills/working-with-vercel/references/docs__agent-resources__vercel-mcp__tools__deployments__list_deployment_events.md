@@ -13,8 +13,8 @@ related:
 summary: Use list_deployment_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5749b3304357df6d20e94211d9205f509809af853b87af3f880a37723fa914a9"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "f366acd7f0697212831db9ed9104eb55a48e2a435e212ad15c9e0155478528fa"
 ---
 
 # list_deployment_events
@@ -27,13 +27,13 @@ Get deployment events, including build output. Use `direction: "backward"` for r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployment_events&source_site=vercel-docs&relationship=related) — Use list_deployments with Vercel MCP.
-- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployment_events&source_site=vercel-docs&relationship=related) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
-- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployment_events&source_site=vercel-docs&relationship=related) — Use list_deployment_files with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployment_events&source_site=vercel-docs&relationship=related) — Use get_deployment with Vercel MCP.
-- [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployment_events&source_site=vercel-docs&relationship=related) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
+- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
+- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
+- [get_deployment_build_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs) — Use get_deployment_build_logs with Vercel MCP.
+- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [ui_get_build_log_excerpt](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt) — Use ui_get_build_log_excerpt with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdeployments%2Flist_deployment_events&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.graph.md)
 <!-- /docsgraph:related -->
 
 | Parameter    | Type             | Required | Description                                                                                                           |
@@ -48,8 +48,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `statusCode` | number \| string | No       | HTTP status code range to filter events by.                                                                           |
 | `delimiter`  | number           | No       | Allowed values: `0`, `1`.                                                                                             |
 | `builds`     | number           | No       | Allowed values: `0`, `1`.                                                                                             |
-| `teamId`     | string           | No       | Team ID.                                                                                                              |
-| `slug`       | string           | No       | Team slug.                                                                                                            |
+| `teamId`     | string           | No       | Team ID to use for this operation.                                                                                    |
+| `slug`       | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                           |
 
 **Sample prompt:** "Show me the latest build logs for the failed deployment"
 

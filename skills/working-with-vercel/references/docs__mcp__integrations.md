@@ -16,8 +16,8 @@ related:
 summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5403c0ef2a0b3a085249e68407263b0dc584ea0625d44fa40d5cf805d10fe521"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2373570591a3c9b797c928151f78fb0d1ef8716cc9264d02ea7b199122e81962"
 ---
 
 # MCP Integrations
@@ -30,15 +30,15 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related)
-- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related)
-- [MCP Integrations](https://v0.app/docs/MCP?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect and use MCP servers directly in v0
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
-- [MCP Connections](https://eve.dev/docs/connections/mcp?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Connect an eve agent to a remote MCP server, authorize it with Vercel Connect or static credentials, and control which t
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
-- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=related) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
+- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
+- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
-Full cross-link map for this page: [/docs/mcp/integrations.graph.md](/docs/mcp/integrations.graph.md?from=related&source_path=%2Fdocs%2Fmcp%2Fintegrations&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/mcp/integrations.graph.md](/docs/mcp/integrations.graph.md)
 <!-- /docsgraph:related -->
 
 | Integration | Use it when | Connection setup |

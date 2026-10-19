@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "d7b1378f8cefdb04aaeafe997e3f50e2f4e25b08608ebb71d6f49fbf05510386"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "e5442a1b0252db2cb2df1285313affef4c7816dc0addd728a7b59269b06b3091"
 ---
 
 # Glossary
@@ -30,20 +30,20 @@ A full glossary of terms used in Vercel's products and documentation.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introduction](https://turborepo.dev/docs?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Learn what Turborepo is, how it solves monorepo scaling problems, and how to navigate the documentation.
-- [Structuring a repository](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Set up a multi-package workspace with the directory structure, package.json files, and lockfile that Turborepo expects.
-- [Add to an existing repository](https://turborepo.dev/docs/getting-started/add-to-existing-repository?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Incrementally adopt Turborepo in an existing single-package or multi-package repository.
-- [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
-- [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
-- [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
-- [Vercel Pricing](https://vercel.com/pricing?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Choose a Vercel plan and compare features and usage pricing.
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [June 2020](https://vercel.com/blog/changelog-june-2020?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=related)
+- [Introduction](https://turborepo.dev/docs) — Learn what Turborepo is, how it solves monorepo scaling problems, and how to navigate the documentation.
+- [Structuring a repository](https://turborepo.dev/docs/crafting-your-repository/structuring-a-repository) — Set up a multi-package workspace with the directory structure, package.json files, and lockfile that Turborepo expects.
+- [Add to an existing repository](https://turborepo.dev/docs/getting-started/add-to-existing-repository) — Incrementally adopt Turborepo in an existing single-package or multi-package repository.
+- [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
+- [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
+- [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [June 2020](https://vercel.com/blog/changelog-june-2020)
 
-Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md?from=related&source_path=%2Fdocs%2Fglossary&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
 <!-- /docsgraph:related -->
 
 ## A
@@ -173,6 +173,10 @@ A [domain](#domains) you own and configure to point to your Vercel deployment, r
 An Enterprise feature that replaces Vercel's default platform error pages, such as function timeouts and throttling, with your own branded HTML pages. See [Custom error pages](/docs/custom-error-pages).
 
 ## D
+
+### Daemons
+
+A beta feature that runs long-running container processes, such as queue consumers and workflow workers, that don't receive traffic. You declare daemons in `vercel.json`, and Vercel runs a fixed number of instances of each daemon per region. See [Daemons](/docs/daemons).
 
 ### Data Cache
 

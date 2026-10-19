@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "67fe12820af37cb9de8dd6ea85e3a5bc2e9280c3e4a4ebc16cb0dd064c720224"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "1dd45a81ac4b32697a249b508dcb0810ac93cb1cc7fdb20c7aa0947a0d039b81"
 ---
 
 # AI Gateway Text Generation Quickstart
@@ -31,15 +31,14 @@ Stream a text response through AI Gateway.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text with chat prompt using the AI SDK and Node
-- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text with chat prompt using the AI SDK and Next.js
-- [Generate Text](https://ai-sdk.dev/cookbook/next/generate-text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text using the AI SDK and Next.js.
-- [Generate Text](https://ai-sdk.dev/cookbook/node/generate-text?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Learn how to generate text using the AI SDK and Node
-- [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate text responses with the OpenAI Responses API through AI Gateway.
-- [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Generate speech and transcribe it using AI Gateway.
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt) — Learn how to generate text with chat prompt using the AI SDK and Node
+- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt) — Learn how to generate text with chat prompt using the AI SDK and Next.js
+- [Generate Text](https://ai-sdk.dev/cookbook/next/generate-text) — Learn how to generate text using the AI SDK and Next.js.
+- [Generate Text](https://ai-sdk.dev/cookbook/node/generate-text) — Learn how to generate text using the AI SDK and Node
+- [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
 
-Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fgetting-started%2Ftext&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md)
 <!-- /docsgraph:related -->
 
 ## Generate your first text response

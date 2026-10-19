@@ -8,17 +8,19 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/logs/runtime
+  - /docs/observability/observability-plus
   - /docs/cli/global-options
-summary: View and filter request logs for your Vercel project, or stream live runtime logs from a deployment.
+summary: View and filter runtime logs or CDN request records for your Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "78e476cb726f04d19b0b9b1598c294e830bf94f690e550bddfef2eae2e952154"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2ae3f0c3696cce2b67112f04e99fc66a719957dbf5d277f0b57b43bfe7d493cc"
 ---
 
 # vercel logs
 
-The `vercel logs` command displays request logs for your project or streams live runtime logs from a specific deployment.
+The `vercel logs` command shows runtime logs for your project. Use `vercel logs requests` to list CDN request records.
 
 
 <!-- docsgraph:related -->
@@ -26,37 +28,36 @@ The `vercel logs` command displays request logs for your project or streams live
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
-- [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related)
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel activity](https://vercel.com/docs/cli/activity?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel inspect](https://vercel.com/docs/cli/inspect?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
-- [vercel traces](https://vercel.com/docs/cli/traces?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Search spans, inspect request traces, capture session traces, or manage trace sampling rules for a project from the term
-- [vercel api](https://vercel.com/docs/cli/api?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=related) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs)
+- [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log)
+- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 
-Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Flogs&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md)
 <!-- /docsgraph:related -->
 
-By default, running `vercel logs` shows request logs from the last 24 hours for the linked project and branch. You can filter logs by environment, log level, status code, source, and more.
+> **💡 Note:** This page describes `vercel logs` in Vercel CLI v64.0.0 and later. For
+> earlier versions, see
+> [Removed and changed options](#removed-and-changed-options).
 
-To stream live logs, use the `--follow` flag. Live streaming continues for up to 5 minutes unless interrupted.
+By default, you get the latest 100 records from the last 30 minutes for the linked project, across production, preview, and custom environments. How far back you can query, and which request fields you can filter, depend on your plan. See [runtime log limits](/docs/logs/runtime#limits) and [Observability Plus limitations](/docs/observability/observability-plus#limitations).
 
 You can find more detailed logs on the [Logs](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Flogs\&title=Open+Logs) page in the Vercel Dashboard.
 
 ## Usage
 
 ```bash filename="terminal"
-# Display recent request logs for the linked project
+# Runtime logs from the last 30 minutes
 vercel logs
 
-# Stream live logs for the current git branch
-vercel logs --follow
-
-# Filter logs by level and time range
-vercel logs --level error --since 1h
+# CDN request records with a 5xx status
+vercel logs requests --query 'httpStatus >= 500'
 ```
 
-*Using the \`vercel logs\` command to view request logs or stream runtime logs.*
+*Using the \`vercel logs\` command to view runtime logs or CDN request records.*
 
 ## Unique options
 
@@ -64,7 +65,7 @@ These options only apply to the `vercel logs` command.
 
 ### Project
 
-The `--project` option, shorthand `-p`, specifies the project ID or name. Defaults to the linked project.
+The `--project` option, shorthand `-p`, sets the project ID or name. It defaults to the linked project.
 
 ```bash filename="terminal"
 vercel logs --project my-app
@@ -72,153 +73,141 @@ vercel logs --project my-app
 
 ### Deployment
 
-The `--deployment` option, shorthand `-d`, specifies a deployment ID or URL to filter logs.
+The `--deployment` option filters by a deployment ID or URL.
 
 ```bash filename="terminal"
 vercel logs --deployment dpl_xxxxx
 ```
 
-### Follow
-
-The `--follow` option, shorthand `-f`, streams live runtime logs instead of showing request logs.
-
-When using `--follow`, the command finds the latest deployment for your current git branch. You can combine it with `--deployment` to stream logs for a specific deployment.
-
-```bash filename="terminal"
-# Stream logs for the current branch's latest deployment
-vercel logs --follow
-
-# Stream logs for a specific deployment
-vercel logs --follow --deployment dpl_xxxxx
-```
-
-Use `--no-follow` to disable auto-following when a deployment ID or URL is given as the first argument.
-
-### JSON
-
-The `--json` option, shorthand `-j`, outputs logs in JSON Lines format. This makes it easier to pipe the output to other command-line tools such as [jq](https://jqlang.github.io/jq/).
-
-```bash filename="terminal"
-vercel logs --json | jq 'select(.level == "error")'
-```
-
-### Expand
-
-The `--expand` option, shorthand `-x`, displays the full log message below each request line instead of truncating it.
-
-```bash filename="terminal"
-vercel logs --expand
-```
-
-### Limit
-
-The `--limit` option, shorthand `-n`, specifies the maximum number of log entries to return. The default is 100.
-
-```bash filename="terminal"
-vercel logs --limit 50
-```
-
 ### Environment
 
-The `--environment` option filters logs by deployment environment. Valid values are `production` and `preview`.
+The `--environment` option filters by deployment environment, including custom environments.
 
 ```bash filename="terminal"
 vercel logs --environment production
 ```
 
-### Level
-
-The `--level` option filters logs by log level. You can specify multiple levels. Valid values are `error`, `warning`, `info`, and `fatal`.
-
-```bash filename="terminal"
-vercel logs --level error --level warning
-```
-
-### Status-code
-
-The `--status-code` option filters logs by HTTP status code. You can use specific codes or wildcards like `4xx` or `5xx`.
-
-```bash filename="terminal"
-vercel logs --status-code 500
-vercel logs --status-code 5xx
-```
-
-### Source
-
-The `--source` option filters logs by request source. You can specify multiple sources. Valid values are `serverless`, `edge-function`, `edge-middleware`, and `static`.
-
-```bash filename="terminal"
-vercel logs --source edge-function --source serverless
-```
-
 ### Query
 
-The `--query` option, shorthand `-q`, performs a full-text search across log messages.
+The `-q, --query` option filters results using Vercel's supported subset of [Kibana Query Language (KQL)](https://www.elastic.co/docs/reference/query-languages/kql).
 
 ```bash filename="terminal"
-vercel logs --query "timeout"
+vercel logs runtime --query 'level:error AND timeout'
 ```
 
-### Request-id
+*Filtering runtime logs to error entries that mention "timeout".*
 
-The `--request-id` option filters logs by a specific request ID.
+The following KQL syntax is supported:
 
-```bash filename="terminal"
-vercel logs --request-id req_xxxxx
-```
+| Syntax             | Description                                 |
+| ------------------ | ------------------------------------------- |
+| `field:value`      | The field equals the value.                 |
+| `field:(a OR b)`   | The field matches any listed value.         |
+| `field:*`          | The field is present.                       |
+| `field != value`   | The field does not equal the value.         |
+| `field > value`, `field >= value`, `field < value`, `field <= value` | Compare a numeric field on request records, such as `httpStatus`. |
+| `field:*text*`     | The field value contains `text`.            |
+| `AND`, `OR`, `NOT` | Combine clauses.                            |
+| `(...)`            | Group clauses.                              |
+
+When you write a query:
+
+| Rule | Description |
+| --- | --- |
+| Quoting | Wrap the complete query in single quotes. Double-quote values that contain spaces or KQL-reserved characters, including request IDs that contain colons. |
+| Runtime logs | A bare word searches the message, case-insensitive. Multiple bare words combine with `AND`. |
+| `requestId` | Uses the query time window. When the request is older than 30 minutes, widen the window with [`--since`](#since). |
+| Fields | Run `vercel logs runtime --help` or `vercel logs requests --help` to list the fields you can filter. |
 
 ### Since
 
-The `--since` option, shorthand `-s`, returns logs from after a specific time. You can use ISO 8601 format or relative values like `1h` or `30m`. The default is 24 hours ago.
+The `--since` option, shorthand `-s`, sets the start of the time window. You can use a relative duration such as `1h` or `30m`, an ISO 8601 timestamp, or `now`. If you omit it, the window starts 30 minutes before `--until`, or 30 minutes before now.
 
 ```bash filename="terminal"
-vercel logs --since 1h
-vercel logs --since 2026-01-15T10:00:00Z
+vercel logs --since 2h
 ```
 
 ### Until
 
-The `--until` option, shorthand `-u`, returns logs up until a specific time. You can use ISO 8601 format or relative values. The default is now.
+The `--until` option, shorthand `-u`, sets the end of the time window. It accepts the same values as `--since`. If you omit it, the command uses the current time.
 
 ```bash filename="terminal"
-vercel logs --since 2h --until 1h
+vercel logs --since 2026-01-15T10:00:00Z --until 2026-01-15T11:00:00Z
 ```
 
-### Branch
+### Limit
 
-The `--branch` option, shorthand `-b`, filters logs by git branch. By default, the command detects your current git branch and filters to matching deployments.
+The `-n, --limit` option sets the maximum number of records to return. The default is 100, and the maximum is 10,000.
 
 ```bash filename="terminal"
-vercel logs --branch feature-x
+vercel logs --limit 500
 ```
 
-Use `--no-branch` to disable automatic git branch detection and show logs from all branches.
+### Next
+
+The `--next` option, shorthand `-N`, continues a previous query. The cursor keeps the team, project, filter, and time window.
+
+When the query matches more records than the command returned, table output prints a `Next page:` command. With `--json`, pass the summary line's `pagination.next` value. You can change `--limit` on the next page. Passing `--next` together with `--project`, `--deployment`, `--environment`, `--query`, `--since`, or `--until` fails with a usage error.
+
+```bash filename="terminal"
+vercel logs --next <cursor>
+```
+
+### JSON
+
+The `--json` option prints one JSON object per line. `-F json` prints the same output.
+
+- Each record uses `{"type":"log"|"request","data":<event>}`. Read fields under `.data`.
+- The last line is a `summary` with `recordsReturned`, `timeRange`, `pagination` (`hasMore` and `next`), and `excludedIntervals`.
+
+An empty result prints only the summary line.
+
+```bash filename="terminal"
+vercel logs runtime --query 'level:error' --json | jq 'select(.type == "log") | .data'
+```
+
+*Printing runtime logs as JSON Lines and reading each record with \`jq\`.*
+
+[`--non-interactive`](/docs/cli/global-options#non-interactive) implies `--json`.
+
+## Removed and changed options
+
+If you pass a removed option, the command fails with a usage error and prints the replacement.
+
+| Old usage                    | Replacement                                                              |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| `--search <text>`            | `--query` with a bare word, for example `--query 'timeout'`.             |
+| `--level error`              | `--query 'level:error'`.                                                 |
+| `--source serverless`        | `--query 'source:function'`.                                             |
+| `--source static`            | Static and CDN traffic is in `vercel logs requests`.                     |
+| `--status-code 500`          | `vercel logs requests --query 'httpStatus:500'`.                         |
+| `--status-code 5xx`          | `vercel logs requests --query 'httpStatus >= 500 AND httpStatus < 600'`. |
+| `--request-id <id>`          | `--query 'requestId:"<id>"'`.                                            |
+| `--branch <name>`            | No longer supported. Remove it from the command.                         |
+| `--expand`                   | Removed. The command shows full runtime messages by default.             |
+| `--no-follow`, `--no-branch` | Removed. The command runs a query for the time window you set.           |
+| Positional deployment, `-d`  | `--deployment`. The `-d` shorthand is now always `--debug`.              |
+| `-j` shorthand for JSON      | `--json` or `-F json`.                                                   |
+
+`--follow` is deprecated. The command prints a warning and returns the query results instead of streaming.
 
 ## Examples
 
-Display error logs from the last hour:
+Show production runtime errors from the last hour:
 
 ```bash filename="terminal"
-vercel logs --level error --since 1h
+vercel logs runtime --environment production --query 'level:error' --since 1h
 ```
 
-Display production logs with 500 errors and output as JSON:
+*Filtering production runtime logs to errors from the last hour.*
+
+Show POST requests that missed the cache:
 
 ```bash filename="terminal"
-vercel logs --environment production --status-code 500 --json
+vercel logs requests --query 'requestMethod:POST AND cacheResult:MISS'
 ```
 
-Search logs and pipe to jq:
-
-```bash filename="terminal"
-vercel logs --query "timeout" --json | jq '.message'
-```
-
-Display logs with full message details:
-
-```bash filename="terminal"
-vercel logs --expand --limit 20
-```
+*Querying CDN request records for POST requests with a cache miss.*
 
 ## Global Options
 

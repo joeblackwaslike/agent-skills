@@ -15,8 +15,8 @@ related:
 summary: Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "24833dc77aeddcbd3a39b2af84b864d4d1699c581de3f104cda0074416b615d9"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "552166e23150e913374f8725e0a563736f9e6c534956d5d2f4b2b62680221394"
 ---
 
 # GPT-Live
@@ -29,16 +29,14 @@ Build a voice conversation with `openai/gpt-live-1` through AI Gateway. GPT-Live
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related)
-- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — API reference for the experimental_useRealtime hook.
-- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related)
-- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Learn how to build realtime voice conversations with the AI SDK.
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
-- [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related)
-- [Gemini 3.8 Live models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
+- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
+- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
+- [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
 
-Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime/gpt-live.graph.md](/docs/ai-gateway/modalities/realtime/gpt-live.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fmodalities%2Frealtime%2Fgpt-live&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime/gpt-live.graph.md](/docs/ai-gateway/modalities/realtime/gpt-live.graph.md)
 <!-- /docsgraph:related -->
 
 AI Gateway supports GPT-Live over WebSocket with **client delegation**. You choose whether to use application code, a service, an agent, or another model for delegated work. Starting a Live session does not automatically start a backend model.

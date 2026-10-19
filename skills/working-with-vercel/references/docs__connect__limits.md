@@ -15,8 +15,8 @@ related:
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a700501874319bf82640e8f66e968d81c3b09fe414fbb95a189dbe21d960796a"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "fd2a328651b2deffc0ca183eb209db3490154a291329d136d5e0c4fc61a93a17"
 ---
 
 # Vercel Connect Limits
@@ -31,14 +31,14 @@ The following limits apply. Contact your account team if you need higher limits.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related)
-- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
-- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
-- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
-- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=related) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
+- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 
-Full cross-link map for this page: [/docs/connect/limits.graph.md](/docs/connect/limits.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Flimits&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/connect/limits.graph.md](/docs/connect/limits.graph.md)
 <!-- /docsgraph:related -->
 
 | Resource                                 | Limit                            |

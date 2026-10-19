@@ -13,8 +13,8 @@ related:
 summary: Use run_session_command with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e6caae1f4fcee8f6e353e6f22de41116918d13e6139221e67147d194a259b994"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "fc5eaf8834068ba9ed8cc9dc61292e466fabea3eb7b1419118d8b44e257b57cb"
 ---
 
 # run_session_command
@@ -27,13 +27,13 @@ Execute a command.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Frun_session_command&source_site=vercel-docs&relationship=related) — Use get_session_command with Vercel MCP.
-- [kill_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Frun_session_command&source_site=vercel-docs&relationship=related) — Use kill_session_command with Vercel MCP.
-- [list_session_commands](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Frun_session_command&source_site=vercel-docs&relationship=related) — Use list_session_commands with Vercel MCP.
-- [stop_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/stop_session?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Frun_session_command&source_site=vercel-docs&relationship=related) — Use stop_session with Vercel MCP.
-- [create_session_directory](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Frun_session_command&source_site=vercel-docs&relationship=related) — Use create_session_directory with Vercel MCP.
+- [get_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command) — Use get_session_command with Vercel MCP.
+- [kill_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command) — Use kill_session_command with Vercel MCP.
+- [list_session_commands](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands) — Use list_session_commands with Vercel MCP.
+- [stop_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/stop_session) — Use stop_session with Vercel MCP.
+- [create_session_directory](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory) — Use create_session_directory with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes%2Frun_session_command&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -41,8 +41,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | Parameter     | Type   | Required | Description                                                           |
 | ------------- | ------ | -------- | --------------------------------------------------------------------- |
 | `sessionId`   | string | Yes      | The unique identifier of the session in which to execute the command. |
-| `teamId`      | string | No       | Team ID.                                                              |
-| `slug`        | string | No       | Team slug.                                                            |
+| `teamId`      | string | No       | Team ID to use for this operation.                                    |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.           |
 | `requestBody` | object | No       | Request body for this tool.                                           |
 
 

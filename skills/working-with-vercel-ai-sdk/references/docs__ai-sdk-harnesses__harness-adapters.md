@@ -4,8 +4,8 @@ description: Learn about the available AI SDK harness adapters.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-adapters.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "39e124a51c9429f62bc3f8539262328b2d88597d32f2baf5d3ba35eb37210f53"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "6b1f2c30c8d357787ead9c382c883ad8bc5767b8a719e62aca55901663640ea3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -45,10 +45,10 @@ The AI SDK includes the following harness adapters:
 | [Codex](/providers/ai-sdk-harnesses/codex)                   | Sandbox bridge   | ✓            | ✓             | ✓                 | ✗                      | ✗                       | ✗              |
 | [Cursor](/providers/ai-sdk-harnesses/cursor)                 | Sandbox via ACP  | ✓            | ✓             | ✗                 | ✗                      | ✗                       | ✗              |
 | [Deep Agents](/providers/ai-sdk-harnesses/deepagents)        | Sandbox bridge   | ✓            | ✓             | ✓                 | ✓                      | ✓ via auto-rejection    | ✗              |
-| [fx](/providers/ai-sdk-harnesses/fx)                         | Sandbox via ACP  | ✓            | ✓             | ✗                 | ✓                      | ✗                       | ✗              |
+| [fx](/providers/ai-sdk-harnesses/fx)                         | Host process     | ✓            | ✓             | ✓                 | ✓                      | ✓                       | ✗              |
 | [GitHub Copilot](/providers/ai-sdk-harnesses/github-copilot) | Sandbox via ACP  | ✓            | ✓             | ✗                 | ✗                      | ✗                       | ✗              |
 | [Grok Build](/providers/ai-sdk-harnesses/grok-build)         | Sandbox via ACP  | ✓            | ✓             | ✓                 | ✗                      | ✗                       | ✗              |
-| [OpenCode](/providers/ai-sdk-harnesses/opencode)             | Sandbox bridge   | ✓            | ✓             | ✓                 | ✓                      | ✓ via auto-rejection    | ✗              |
+| [OpenCode](/providers/ai-sdk-harnesses/opencode)             | Sandbox bridge   | ✓            | ✓             | ✓                 | ✓                      | ✓                       | ✗              |
 | [Pi](/providers/ai-sdk-harnesses/pi)                         | Host process     | ✓            | ✓             | ✗                 | ✓                      | ✓                       | ✗              |
 
 ---

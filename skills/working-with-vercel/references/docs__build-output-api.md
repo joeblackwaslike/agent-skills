@@ -16,8 +16,8 @@ related:
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1f04184fa8149d95e19b555f54b3e0038d9e5b11d610370c11f7e0ed9e55d1ec"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "61010994ff6119eec87f3089412c6aeb6152c9940952db07eff36eb32f576534"
 ---
 
 # Build Output API
@@ -30,20 +30,19 @@ The Build Output API is a file-system-based specification for a directory struct
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
-- [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
-- [NestJS](https://workflow-sdk.dev/docs/getting-started/nestjs?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Set up Workflow SDK in a NestJS app.
-- [Announcing the Build Output API](https://vercel.com/blog/build-output-api?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
-- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how to work with build output limits for Next.js on Vercel.
-- [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related)
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [vercel build](https://vercel.com/docs/cli/build?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=related) — Learn about the core concepts of Vercel
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent)
+- [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)
+- [NestJS](https://workflow-sdk.dev/docs/getting-started/nestjs) — Set up Workflow SDK in a NestJS app.
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
+- [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli)
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 
-Full cross-link map for this page: [/docs/build-output-api.graph.md](/docs/build-output-api.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/build-output-api.graph.md](/docs/build-output-api.graph.md)
 <!-- /docsgraph:related -->
 
 Framework authors can take advantage of [framework-defined infrastructure](/blog/framework-defined-infrastructure) by implementing this directory structure as the output of their build command. This allows the framework to define and use all of the Vercel platform features.
@@ -82,6 +81,7 @@ ideally the same as the platform [Build Image](/docs/builds/build-image).
 - [Vercel Primitives](/docs/build-output-api/primitives)
 - [Features](/docs/build-output-api/features)
 - [Services](/docs/build-output-api/services)
+- [Daemons](/docs/build-output-api/daemons)
 
 
 ---

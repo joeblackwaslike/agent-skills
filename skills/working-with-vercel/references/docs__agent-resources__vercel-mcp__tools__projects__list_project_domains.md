@@ -13,8 +13,8 @@ related:
 summary: Use list_project_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a959c2130d9ee580667f4374a8a8f3291dc1acdbbffdf454b6c22fc1fc83a46a"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "66c2b2ae6adbacb500e8e51feb71a8db8f9f48adef6405965c018bb0ecdaf528"
 ---
 
 # list_project_domains
@@ -27,13 +27,13 @@ Retrieve project domains by project by id or name.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_project_domains&source_site=vercel-docs&relationship=related) — Use list_domains with Vercel MCP.
-- [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_project_domains&source_site=vercel-docs&relationship=related) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
-- [List Project Domains by Apex Domain](https://vercel.com/docs/rest-api/domains/list-project-domains-by-apex-domain?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_project_domains&source_site=vercel-docs&relationship=related) — GET /v1/domains/{domain}/project-domains — List all project domains associated with an apex domain owned by the authenti
-- [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_project_domains&source_site=vercel-docs&relationship=related) — Use add_project_domain with Vercel MCP.
-- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_project_domains&source_site=vercel-docs&relationship=related) — Use list_projects with Vercel MCP.
+- [get_domain_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains) — Use get_domain_project_domains with Vercel MCP.
+- [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
+- [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
+- [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
+- [List Project Domains by Apex Domain](https://vercel.com/docs/rest-api/domains/list-project-domains-by-apex-domain) — GET /v1/domains/{domain}/project-domains — List all project domains associated with an apex domain owned by the authenti
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fprojects%2Flist_project_domains&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -52,8 +52,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `since`               | number | No       | Get domains created after this JavaScript timestamp.                                                                                                             |
 | `until`               | number | No       | Get domains created before this JavaScript timestamp.                                                                                                            |
 | `order`               | string | No       | Domains sort order by createdAt Allowed values: `"ASC"`, `"DESC"`. Default: `"DESC"`.                                                                            |
-| `teamId`              | string | No       | Team ID.                                                                                                                                                         |
-| `slug`                | string | No       | Team slug.                                                                                                                                                       |
+| `teamId`              | string | No       | Team ID to use for this operation.                                                                                                                               |
+| `slug`                | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                      |
 
 
 ---

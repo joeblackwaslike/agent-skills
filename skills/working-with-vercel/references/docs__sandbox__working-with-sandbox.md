@@ -9,20 +9,20 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/images
+  - /docs/sandbox/cli-reference
   - /docs/sandbox/pricing
   - /docs/sandbox/sdk-reference
-  - /docs/sandbox/cli-reference
   - /docs/sandbox/concepts/persistent-sandboxes
-summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
+summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "6f82d8e04034349383db99c9d9889ab9176bb98d51f73f3fbe727cc38e751d0e"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "212e7adb6f6fc75e2fd5fd7a0282f7ed1da4e8aa1effd4e8cda79994ce44baba"
 ---
 
 # Working with Sandbox
 
-Use Vercel Sandbox to run code, stream command output, manage files, capture snapshots, and stop sandboxes from your application.
+Use Vercel Sandbox to run code, stream command output, manage files, capture snapshots, and stop sandboxes from your application or from the terminal.
 
 
 <!-- docsgraph:related -->
@@ -30,16 +30,15 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related)
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=related) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
-Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md](/docs/sandbox/working-with-sandbox.graph.md?from=related&source_path=%2Fdocs%2Fsandbox%2Fworking-with-sandbox&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md](/docs/sandbox/working-with-sandbox.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** Sandboxes are **persistent by default**: when a sandbox stops, the SDK automatically snapshots its filesystem and restores it on the next resume. Pass `persistent: false` at creation time for one-off, ephemeral workloads.
@@ -107,7 +106,20 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+**script.sh**
+
+```bash filename="script.sh"
+echo "console.log('Hello from Vercel Sandbox!')" > hello.js
+
+sandbox create --name my-sandbox --timeout 1m
+sandbox copy ./hello.js my-sandbox:/vercel/sandbox/hello.js
+sandbox exec my-sandbox -- node hello.js
+sandbox stop my-sandbox
+```
+
 You can use any of the [Vercel Managed Image](/docs/sandbox/concepts/images#vercel-managed-images), or start from your own or a shared [custom image](/docs/sandbox/concepts/images#custom-images) hosted on Vercel Container Registry. See [Images](/docs/sandbox/concepts/images) for how to use it:
+
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -116,6 +128,22 @@ const sandbox = await Sandbox.create({
   image: 'my-repository:latest',
 });
 ```
+
+**script.sh**
+
+```bash filename="script.sh"
+sandbox create --image my-repository:latest
+```
+
+## Start a coding agent from the CLI
+
+With Sandbox CLI 4.8.0 or later, start OpenCode in a new sandbox from an interactive terminal:
+
+```bash filename="Terminal"
+sandbox create opencode
+```
+
+The agent's interface opens in your terminal while its commands run in the sandbox. Sign in to Vercel for Sandbox access and authenticate OpenCode separately. Your local files are not copied automatically. See the [CLI reference](/docs/sandbox/cli-reference#sandbox-create) for agent options and how to reconnect or stop the sandbox.
 
 ## Resume a long-lived sandbox
 
@@ -169,6 +197,18 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+**script.sh**
+
+```bash filename="script.sh"
+# First run: create a named sandbox, write a file, stop it.
+sandbox create --name my-sandbox
+sandbox exec my-sandbox -- sh -c "echo 'Hello from the first session.' > notes.txt"
+sandbox stop my-sandbox
+
+# Later: `sandbox run --name` resumes the same sandbox and runs a command in it.
+sandbox run --name my-sandbox -- cat notes.txt
+```
+
 ## Execute long-running tasks
 
 By default, sandboxes timeout after 5 minutes. For longer tasks, set a custom timeout when creating the sandbox:
@@ -208,6 +248,12 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+**script.sh**
+
+```bash filename="script.sh"
+sandbox create --name my-sandbox --timeout 3h
+```
+
 To extend a running sandbox, call `extendTimeout()` in TypeScript or `extend_execution_time_limit()` in Python:
 
 **index.ts**
@@ -240,6 +286,8 @@ async def main() -> None:
 
 asyncio.run(main())
 ```
+
+The CLI can't extend a running session. [`sandbox config timeout`](/docs/sandbox/cli-reference#sandbox-config) changes the timeout for new sessions only.
 
 See [Pricing and Limits](/docs/sandbox/pricing#runtime-limits) for maximum durations by plan.
 
@@ -304,6 +352,17 @@ async def main() -> None:
 
 asyncio.run(main())
 ```
+
+**script.sh**
+
+```bash filename="script.sh"
+# sandbox exec runs in the foreground and streams output until the command exits.
+sandbox create --name my-sandbox --timeout 2m
+sandbox exec my-sandbox -- bash -lc 'for i in 1 2 3; do echo $i; sleep 1; done'
+sandbox stop my-sandbox
+```
+
+The CLI has no detached mode: `sandbox exec` streams output while the command runs and returns when it exits. To start a command and return right away, use `detached: true` in the SDK.
 
 ## Prepare files and download artifacts
 
@@ -385,11 +444,29 @@ Path('dist/output.txt').write_text('hello from sandbox\\n')
 asyncio.run(main())
 ```
 
+**script.sh**
+
+```bash filename="script.sh"
+# ./build-artifact.js is a local copy of the script from the SDK example.
+sandbox create --name my-sandbox
+
+# sandbox copy transfers one file and doesn't create parent directories.
+sandbox exec my-sandbox -- mkdir -p src
+sandbox copy ./build-artifact.js my-sandbox:/vercel/sandbox/src/build-artifact.js
+sandbox exec my-sandbox -- node src/build-artifact.js
+
+mkdir -p artifacts/dist
+sandbox copy my-sandbox:/vercel/sandbox/dist/output.txt ./artifacts/dist/output.txt
+sandbox stop my-sandbox
+```
+
 ## Snapshot and restore a prepared environment
 
 Use snapshots after dependency installation or environment setup so future sandboxes start from the same filesystem state. With persistent sandboxes, snapshots are also created automatically every time the sandbox stops; for manual checkpoints, call `snapshot()` explicitly.
 
 To spawn fresh children from another sandbox's current snapshot without tracking IDs manually, use [`Sandbox.fork`](/docs/sandbox/sdk-reference#sandbox.fork). The fork inherits the source's config and is seeded from its latest snapshot:
+
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
@@ -398,6 +475,12 @@ const child = await Sandbox.fork({
   sourceSandbox: 'my-base-sandbox',
   persistent: false,
 });
+```
+
+**script.sh**
+
+```bash filename="script.sh"
+sandbox fork my-base-sandbox --non-persistent
 ```
 
 **index.ts**
@@ -464,6 +547,25 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+**script.sh**
+
+```bash filename="script.sh"
+echo '{"env": "prod"}' > config.json
+
+sandbox create --name my-sandbox --image vercel/sandbox/node:24
+sandbox copy ./config.json my-sandbox:/vercel/sandbox/config.json
+
+# Snapshotting stops the sandbox and prints the snapshot ID.
+sandbox snapshot my-sandbox --stop --expiration 1d
+
+sandbox create --name my-restored-sandbox --snapshot <snapshot-id> --timeout 2m
+sandbox exec my-restored-sandbox -- cat config.json
+sandbox stop my-restored-sandbox
+
+# Delete the snapshot when you no longer need it.
+sandbox snapshots delete <snapshot-id>
+```
+
 ## Debug with an interactive shell
 
 Connect to a running sandbox for interactive debugging with an SSH-like experience:
@@ -485,6 +587,12 @@ View your sandboxes in the [Sandboxes dashboard](https://vercel.com/d?to=%2F%5Bt
 - Stopped sandboxes
 - Command history and sandbox URLs
 
+To list sandboxes from the terminal, run [`sandbox list`](/docs/sandbox/cli-reference#sandbox-list). It shows running sandboxes by default, and `--all` includes stopped ones:
+
+```bash filename="terminal"
+sandbox list --all
+```
+
 Track compute usage across projects in the [Usage dashboard](https://vercel.com/d?to=%2Fdashboard%2F%5Bteam%5D%2Fusage\&title=Show+Usage+Page), which measures:
 
 - **Sandbox Provisioned Memory**: Memory allocated to your sandboxes
@@ -495,7 +603,7 @@ Track compute usage across projects in the [Usage dashboard](https://vercel.com/
 
 ## Stop a sandbox
 
-There are three ways to stop a sandbox:
+There are four ways to stop a sandbox:
 
 ### Through the dashboard
 
@@ -537,6 +645,14 @@ async def main() -> None:
 
 
 asyncio.run(main())
+```
+
+### From the CLI
+
+Run [`sandbox stop`](/docs/sandbox/cli-reference#sandbox-stop) with the name of the sandbox you want to stop:
+
+```bash filename="Terminal"
+sandbox stop my-sandbox
 ```
 
 ### Automatic timeout

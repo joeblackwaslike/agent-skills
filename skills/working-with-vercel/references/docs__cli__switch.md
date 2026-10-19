@@ -12,8 +12,8 @@ related:
 summary: Learn how to switch between different team scopes using the vercel switch CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/switch.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "e92482987a8601a03db2f224797335fd97b4c5d1e7663c8303931030331e1b09"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "5f44ebb6a035835de42e08408364c481a2b37a3b4c4025d4ddc6f1099aa70e88"
 ---
 
 # vercel switch
@@ -26,13 +26,13 @@ The `vercel switch` command is used to switch to a different team scope when log
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel teams](https://vercel.com/docs/cli/teams?from=related&source_path=%2Fdocs%2Fcli%2Fswitch&source_site=vercel-docs&relationship=related) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fswitch&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel upgrade](https://vercel.com/docs/cli/upgrade?from=related&source_path=%2Fdocs%2Fcli%2Fswitch&source_site=vercel-docs&relationship=related) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
-- [vercel buy](https://vercel.com/docs/cli/buy?from=related&source_path=%2Fdocs%2Fcli%2Fswitch&source_site=vercel-docs&relationship=related) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel link](https://vercel.com/docs/cli/link?from=related&source_path=%2Fdocs%2Fcli%2Fswitch&source_site=vercel-docs&relationship=related) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel upgrade](https://vercel.com/docs/cli/upgrade) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 
-Full cross-link map for this page: [/docs/cli/switch.graph.md](/docs/cli/switch.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fswitch&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/switch.graph.md](/docs/cli/switch.graph.md)
 <!-- /docsgraph:related -->
 
 ## Usage

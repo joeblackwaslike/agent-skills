@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "951d4cdd61d04d1dbc37227c9ff3528d06e0a3a1255ba08120ef5c29246cd6ac"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0640630d4cdcec82cb2f47a848cf262a7c34fe41714dabd747a288720d6f80c4"
 ---
 
 # Two-factor enforcement
@@ -27,15 +27,15 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related)
-- [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related)
-- [SAML Single Sign-On](https://vercel.com/docs/saml?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Access Control](https://vercel.com/docs/security/access-control?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=related) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement)
+- [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
-Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md?from=related&source_path=%2Fdocs%2Ftwo-factor-enforcement&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md)
 <!-- /docsgraph:related -->
 
 What to expect:

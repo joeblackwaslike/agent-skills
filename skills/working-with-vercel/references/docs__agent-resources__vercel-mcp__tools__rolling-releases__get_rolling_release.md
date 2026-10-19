@@ -13,8 +13,8 @@ related:
 summary: Use get_rolling_release with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "298202782cd3c28287c79c7e5ede5b26bbe9e6a232b65a6db2785d63f1c63ef1"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "7c9f1e7771fa2973217b5edb1f6bb79d8edd0efc0b7a63a2a5a30165e3ac0123"
 ---
 
 # get_rolling_release
@@ -27,13 +27,13 @@ Get the active rolling release information for a project.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frolling-releases%2Fget_rolling_release&source_site=vercel-docs&relationship=related) — Use get_rolling_release_config with Vercel MCP.
-- [get_rolling_release_billing_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frolling-releases%2Fget_rolling_release&source_site=vercel-docs&relationship=related) — Use get_rolling_release_billing_status with Vercel MCP.
-- [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frolling-releases%2Fget_rolling_release&source_site=vercel-docs&relationship=related) — Use complete_rolling_release with Vercel MCP.
-- [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frolling-releases%2Fget_rolling_release&source_site=vercel-docs&relationship=related) — Use start_rolling_release with Vercel MCP.
-- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frolling-releases%2Fget_rolling_release&source_site=vercel-docs&relationship=related) — Use update_rolling_release_config with Vercel MCP.
+- [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
+- [get_rolling_release_billing_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status) — Use get_rolling_release_billing_status with Vercel MCP.
+- [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
+- [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
+- [Get the active rolling release information for a project](https://vercel.com/docs/rest-api/rolling-release/get-the-active-rolling-release-information-for-a-project) — GET /v1/projects/{idOrName}/rolling-release — Return the Rolling Release for a project, regardless of whether the rollou
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Frolling-releases%2Fget_rolling_release&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
@@ -42,8 +42,8 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 | ---------- | ------ | -------- | -------------------------------------------------------------------------------------- |
 | `idOrName` | string | Yes      | Project ID or project name (URL-encoded)                                               |
 | `state`    | string | No       | Filter by rolling release state Allowed values: `"ACTIVE"`, `"COMPLETE"`, `"ABORTED"`. |
-| `teamId`   | string | No       | Team ID.                                                                               |
-| `slug`     | string | No       | Team slug.                                                                             |
+| `teamId`   | string | No       | Team ID to use for this operation.                                                     |
+| `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId.                            |
 
 
 ---

@@ -15,8 +15,8 @@ related:
 summary: How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, project, and environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/project-grants.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "d314af294b8a9c26d7b5d4d9d22e3c9239c864305fba39926542e79c98b00578"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "c2589be1da06b25b71d0e9bf94fd93813dc4b9ae1ba35d1e9c7529fee1cf94f3"
 ---
 
 # Vercel KMS Project Grants
@@ -29,14 +29,14 @@ A project grant is an issuer policy (`project-grant`) that lets a Vercel deploym
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=related)
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=related) — Vercel MCP tools for key management.
-- [Concepts](https://vercel.com/docs/eve/concepts?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=related) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=related) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
-- [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=related) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=related) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
+- [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
+- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
 
-Full cross-link map for this page: [/docs/kms/concepts/project-grants.graph.md](/docs/kms/concepts/project-grants.graph.md?from=related&source_path=%2Fdocs%2Fkms%2Fconcepts%2Fproject-grants&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/kms/concepts/project-grants.graph.md](/docs/kms/concepts/project-grants.graph.md)
 <!-- /docsgraph:related -->
 
 ## What a project grant authorizes

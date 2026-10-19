@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "f98aced9169e040ffb4ee8d20f3c9ee9c1c88080b43986039882682975b05b47"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "18f3e30c32fcac1ebc00f54e25a442ec393db6d7dbd80c41dae6663045479513"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -30,20 +30,20 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Git repositories can now be searched for and imported easily](https://vercel.com/changelog/git-repositories-can-now-be-searched-for-and-imported-easily?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
-- [Projects can now be renamed](https://vercel.com/changelog/projects-can-now-be-renamed?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
-- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
-- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn about if it's possible to deploy to a private cloud with Vercel.
-- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related)
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=related) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Git repositories can now be searched for and imported easily](https://vercel.com/changelog/git-repositories-can-now-be-searched-for-and-imported-easily)
+- [Projects can now be renamed](https://vercel.com/changelog/projects-can-now-be-renamed)
+- [Repository checkout and Git LFS downloads are now faster](https://vercel.com/changelog/repository-checkout-and-git-lfs-downloads-are-now-faster)
+- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
+- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
+- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
-Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md?from=related&source_path=%2Fdocs%2Fgit&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md)
 <!-- /docsgraph:related -->
 
 Using Git with Vercel provides the following benefits:
@@ -154,19 +154,19 @@ When the same commit appears in multiple branches, Vercel will prompt you to cho
 
 As an additional security measure, commits on private Git repositories (and commits of forks that are targeting those Git repositories) will only be deployed if the commit author also has access to the respective project on Vercel.
 
-Depending on whether the owner of the connected Vercel project is a Hobby or a Pro team, the behavior changes as mentioned in the sections below.
+Depending on whether the owner of the connected Vercel project is a Hobby team or a Pro or Enterprise team, the behavior changes as mentioned in the sections below.
 
 This only applies to commit authors on GitHub organizations, GitLab groups and non-personal Bitbucket workspaces. It does not apply to collaborators on personal Git accounts.
 
 For public Git repositories, [a different behavior](/docs/git#deploying-forks-of-public-git-repositories) applies.
 
-### Using Pro teams
+### Using Pro and Enterprise teams
 
-To deploy commits under a Vercel Pro team, the commit author must be a member of the team containing the Vercel project connected to the Git repository.
+To deploy commits under a Vercel Pro or Enterprise team, the commit author must be a member of the team containing the Vercel project connected to the Git repository.
 
-Membership is verified by finding the Vercel user associated with the commit author through [**Login Connections**](/docs/accounts#login-methods-and-connections). If a Vercel user is found, it checks if the account is a member of the Pro team.
+Membership is verified by finding the Vercel user associated with the commit author through [**Login Connections**](/docs/accounts#login-methods-and-connections). If a Vercel user is found, it checks if the account is a member of the team.
 
-If the commit author is not yet a member but has a Vercel account, they may be automatically added to the team or require approval, depending on your [collaboration settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers%23collaboration-settings\&title=Collaboration+Settings). If the commit author does not have a Vercel account, they must create one and link their Git provider before they can deploy.
+If the commit author is not yet a member but has a Vercel account, they may be automatically added to the team or require approval, depending on your [collaboration settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers%23collaboration-settings\&title=Collaboration+Settings). Both Pro and Enterprise teams can choose between **Auto Approval** and **Manual Approval** for private-repository committers. If the commit author does not have a Vercel account, they must create one and link their Git provider before they can deploy.
 
 ### Using Hobby teams
 
@@ -176,7 +176,7 @@ To deploy commits under a Hobby team, the commit author must be the owner of the
 
 If the commit author is not the owner of the destination Hobby team, the deployment will be prevented, and a recommendation to transfer the project to a Pro team will be displayed on the Git provider.
 
-After transferring the project to a Pro team, commit authors can be added as members of that team. The behavior mentioned in the [section above](/docs/git#using-pro-teams) will then apply to them whenever they commit.
+After transferring the project to a Pro team, commit authors can be added as members of that team. The behavior mentioned in the [section above](/docs/git#using-pro-and-enterprise-teams) will then apply to them whenever they commit.
 
 ## Deploying forks of public Git repositories
 

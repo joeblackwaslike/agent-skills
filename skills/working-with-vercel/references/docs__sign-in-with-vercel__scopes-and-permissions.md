@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a664e7a56c6f71e0d283fa75603e20eb8da0e26b4c4863383e2e36ed15db7c1c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "3a02e9c7cf3aaba6485fa41fe6ebdfa65b3fe8794c012343c1021898accc60f4"
 ---
 
 # Scopes and Permissions
@@ -26,15 +26,15 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related)
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Learn how to manage project access and added products for your integrations.
-- [Access tokens](https://vercel.com/docs/accounts/access-tokens?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
-- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=related) — Learn about the project level roles and their permissions.
+- [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel)
+- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 
-Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md?from=related&source_path=%2Fdocs%2Fsign-in-with-vercel%2Fscopes-and-permissions&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md)
 <!-- /docsgraph:related -->
 
 ## Scopes
@@ -71,16 +71,18 @@ The following permissions are available:
 
 | Permission | Access | Description |
 | --- | --- | --- |
-| Access Groups | Read Only | Read Access Groups. |
+| Access Groups | Read Only, Read and Write | Read and manage access groups, their members, and project roles. |
 | Activity Events | Read Only | Read activity events. |
 | AI Gateway | Use | Use AI Gateway. |
 | AI Gateway API Keys | Read and Write | Read and make changes to AI Gateway API keys. |
+| AI Gateway Budgets | Read Only, Read and Write | Read and manage AI Gateway budgets and budget defaults. |
 | AI Gateway Guardrails | Read Only, Read and Write | Read and manage AI Gateway guardrails. |
 | AI Gateway Private Models | Read Only, Read and Write | Read and manage AI Gateway private model configurations. |
 | AI Gateway Rules | Read Only, Read and Write | Read and manage AI Gateway routing rules. |
 | AI Gateway Virtual Models | Read Only, Read and Write | Read and manage AI Gateway virtual model configurations. |
 | Alerts | Read Only, Read and Write | Read and manage alerts and alert rules. |
 | All Environment Variables | Read and Write | Manage all project environment variables. |
+| Audit Logs | Read Only | Read and download team audit logs. |
 | Automations | Read Only, Read and Write | Read and manage automations. |
 | Billing | Read Only, Read and Write | Read billing information and make purchases. |
 | Blob | Read and Write | Manage Blob storage. |
@@ -113,6 +115,7 @@ The following permissions are available:
 | Non-Production Flags | Read and Write | Manage non-production feature flags. |
 | Production Environment Variables | Read Only, Read and Write | Manage production project environment variables. |
 | Production Flags | Read and Write | Manage production feature flags. |
+| Project Members | Read Only, Read and Write | Read, add, update, and remove members of authorized projects. |
 | Project Protection Bypass | Read and Write | Manage project protection bypass rules. |
 | Project Trusted Sources | Read Only, Read and Write | Read and manage project trusted sources. |
 | Projects | Read Only, Read and Write | Read and make changes to authorized projects. |

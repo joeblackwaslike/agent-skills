@@ -4,8 +4,8 @@ description: Learn how to use tools with the useChat hook.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1ac3d5894e4eb3aed57141a54097355e078015dfd9a081ca5ce7ac25ea4b5f69"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "cc554ba06214eb69c3bbac5c509fed721bdc241c9180a6f9fd9ab40ba501612c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -554,6 +554,12 @@ as `part.approval.reason`.
 For manual approval requests, the reason for requiring approval is available as
 `part.approval.requestReason`. It remains separate from an optional response
 reason supplied to `addToolApprovalResponse`.
+When a response reason is supplied with a denial, it is included in the
+`execution-denied` tool result that the model sees. When it is supplied with an
+approval for a tool executed by the AI SDK, it is recorded on the message part,
+but the SDK does not include it in the model prompt, modify the tool's input, or
+expose it through a dedicated execution option. To collect input from the user
+for a tool, use a client-side tool and `addToolOutput` instead.
 
 Approval request chunks can also include an `approvalDescriptor` with opaque
 application-specific metadata. UI message processing exposes it as

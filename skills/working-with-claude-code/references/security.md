@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "0adfb745929b46c9ecd30cc80f7dc28d5be43140209a7d6299d803ff8cbda96f"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "57603902b3038ab4c51a458516e7d74cb41cd256026e5ebc1d0c20a671aea155"
 ---
 
 > ## Documentation Index
@@ -98,7 +98,7 @@ We encourage either writing your own MCP servers or using MCP servers from provi
 
 ## IDE security
 
-See [VS Code security and privacy](/docs/en/vs-code#security-and-privacy) for more information on running Claude Code in an IDE.
+See [The built-in IDE MCP server](/docs/en/vs-code#the-built-in-ide-mcp-server) for more information on running Claude Code in an IDE.
 
 ## Cloud execution security
 

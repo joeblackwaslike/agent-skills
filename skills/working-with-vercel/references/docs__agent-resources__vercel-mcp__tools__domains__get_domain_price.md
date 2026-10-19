@@ -13,8 +13,8 @@ related:
 summary: Use get_domain_price with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "cfba3811d62722a82a9ba87f6ead87d716fd9e1b74fdd4ddb8692c0fd9d216a3"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "f9406a04afc5d1e52d0939e5efd5076a601b40fafa23ca70bf7c034296e22586"
 ---
 
 # get_domain_price
@@ -27,20 +27,20 @@ Get current domain pricing. For a purchase, use `get_purchase_quote` to obtain t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_tld_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_tld_price?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_domain_price&source_site=vercel-docs&relationship=related) — Use get_tld_price with Vercel MCP.
-- [buy_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_domain?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_domain_price&source_site=vercel-docs&relationship=related) — Use buy_domain with Vercel MCP.
-- [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_domain_price&source_site=vercel-docs&relationship=related) — Use buy_domains with Vercel MCP.
-- [Get price data for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-a-domain?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_domain_price&source_site=vercel-docs&relationship=related) — GET /v1/registrar/domains/{domain}/price — Get price data for a specific domain
-- [get_domain_order](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_domain_order?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_domain_price&source_site=vercel-docs&relationship=related) — Use get_domain_order with Vercel MCP.
+- [get_tld_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_tld_price) — Use get_tld_price with Vercel MCP.
+- [get_purchase_quote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote) — Use get_purchase_quote with Vercel MCP.
+- [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
+- [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
+- [buy_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_domain) — Use buy_domain with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fdomains%2Fget_domain_price&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price.graph.md)
 <!-- /docsgraph:related -->
 
 | Parameter | Type   | Required | Description                                                                                                      |
 | --------- | ------ | -------- | ---------------------------------------------------------------------------------------------------------------- |
 | `domain`  | string | Yes      | A valid domain name                                                                                              |
 | `years`   | string | No       | The number of years to get the price for. If not provided, the minimum number of years for the TLD will be used. |
-| `teamId`  | string | No       | Team ID.                                                                                                         |
+| `teamId`  | string | No       | Team ID to use for this operation.                                                                               |
 
 **Sample prompt:** "Is example.com available, and what does it cost to register?"
 

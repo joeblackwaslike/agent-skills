@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/microsoft-foundry.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "90b494a3de5fa21ef6bd5ca22077c49d470635b16963c7abe0b13bb4c03dc693"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "85d0e619be75661d5773f746946575be788c6a2a9a87fbaa352390b1b4da083b"
 ---
 
 > ## Documentation Index
@@ -152,7 +152,7 @@ For the roles your identity needs, see [Azure RBAC configuration](#azure-rbac-co
 
 #### Use a bearer token
 
-Claude Code sends the value of `ANTHROPIC_FOUNDRY_AUTH_TOKEN` on every request as the `Authorization: Bearer` header. Use this option when another process, such as a host application or a sign-in script, has already obtained an access token for you. Requires Claude Code v2.1.203 or later.
+Claude Code sends the value of `ANTHROPIC_FOUNDRY_AUTH_TOKEN` on every request as the `Authorization: Bearer` header. Use this option when another process, such as a host application or a sign-in script, has already obtained an access token for you.
 
 Set the variable to a bearer token that Microsoft Entra ID issued for your resource:
 

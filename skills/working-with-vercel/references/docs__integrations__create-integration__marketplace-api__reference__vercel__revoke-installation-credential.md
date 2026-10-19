@@ -3,7 +3,7 @@ title: revoke-installation-credential
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/revoke-installation-credential
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/revoke-installation-credential"
-last_updated: 2026-10-12
+last_updated: 2026-10-19
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about revoke-installation-credential on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/revoke-installation-credential.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "3bcedbe40443bbfbb90a039d9382278f9bf58b7c2f9549d58a6f6f11423e1240"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "013098b1a6f38889ec6690345763e29a67c58ede1c208920f69516ea164344a5"
 ---
 
 # Revoke Installation Credential

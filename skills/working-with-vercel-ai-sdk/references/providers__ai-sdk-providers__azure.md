@@ -4,8 +4,8 @@ description: Learn how to use the Azure OpenAI provider for the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/azure"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "3a1fe70a6477ce1175b3864f8e1f1a051b2e19595b62596649e70e620faab0ba"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "5e6d94969c9785ab3e997eceb18de8f8dcee146f67104ee2449c0f1b6672ffc9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -488,6 +488,10 @@ check.
 
 The Azure OpenAI responses API supports web search through the `azure.tools.webSearch` tool.
 
+`azure.tools.webSearchPreview()` is deprecated. Use `azure.tools.webSearch()`
+instead. The existing `searchContextSize` and `userLocation` options are
+supported by both tools.
+
 ```ts
 const result = await generateText({
   model: azure('gpt-5'),
@@ -731,7 +735,7 @@ const result = await generateText({
     'Create a program that generates five random numbers between 1 and 100 with two decimal places, and show me the execution results. Also save the result to a file.',
   tools: {
     code_interpreter: azure.tools.codeInterpreter(),
-    web_search_preview: azure.tools.webSearchPreview({}),
+    web_search: azure.tools.webSearch({}),
     file_search: azure.tools.fileSearch({ vectorStoreIds: ['vs_1234'] }), // requires a configured vector store
   },
 });
@@ -851,7 +855,7 @@ const result = await generateText({
     'Create a program that generates five random numbers between 1 and 100 with two decimal places, and show me the execution results. Also save the result to a file.',
   tools: {
     code_interpreter: azure.tools.codeInterpreter(),
-    web_search_preview: azure.tools.webSearchPreview({}),
+    web_search: azure.tools.webSearch({}),
     file_search: azure.tools.fileSearch({ vectorStoreIds: ['vs_1234'] }), // requires a configured vector store
   },
 });

@@ -15,8 +15,8 @@ related:
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f5d2571b1c72203b2070cc88600c515255dac44080ef8f63a9b06599a39bb4b5"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d46dbd8e7beeb3e1db502ff5f544de5e22ab43187de6aadf74a7d8ea0fb41d73"
 ---
 
 # For Service Providers
@@ -29,16 +29,16 @@ If you are a service owner, this page covers what your service needs to support 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect now accepts service submissions](https://vercel.com/changelog/vercel-connect-service-submissions?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
-- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=related) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Vercel Connect now accepts service submissions](https://vercel.com/changelog/vercel-connect-service-submissions)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
-Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md?from=related&source_path=%2Fdocs%2Fconnect%2Fproviders&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md)
 <!-- /docsgraph:related -->
 
 ## How a connection to your service works

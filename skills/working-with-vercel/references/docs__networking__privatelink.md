@@ -16,13 +16,33 @@ related:
 summary: Connect Vercel deployments to AWS-hosted backends through AWS PrivateLink endpoint services without using the public internet.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/privatelink.md"
-fetched_at: "2026-09-21T09:45:51.435Z"
-sha256: "cb63962860286d0d2251c98afdf11619da071ff9dbccecda28c73654e7db6bf7"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "e564c087800fa5d17bc612277dd249af8288b20216d4ce8454293c732eb45ced"
 ---
 
 # AWS PrivateLink
 
 With PrivateLink, you can connect your Vercel deployments to AWS-hosted backend services over a private connection, without exposing traffic to the public internet. [Get started](#getting-started) by creating a PrivateLink connection.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [AWS PrivateLink is now available on Pro and Enterprise](https://vercel.com/changelog/aws-privatelink-is-now-available-on-pro-and-enterprise)
+- [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
+- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [List PrivateLink endpoints](https://vercel.com/docs/rest-api/networking/list-private-link-endpoints) — GET /v1/networking/privatelink/endpoints — Lists all PrivateLink endpoints for a project.
+- [Create a PrivateLink endpoint](https://vercel.com/docs/rest-api/networking/create-a-private-link-endpoint) — POST /v1/networking/privatelink/endpoints — Creates a PrivateLink endpoint for a project.
+- [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
+- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+
+Full cross-link map for this page: [/docs/networking/privatelink.graph.md](/docs/networking/privatelink.graph.md)
+<!-- /docsgraph:related -->
 
 ## When to use PrivateLink
 

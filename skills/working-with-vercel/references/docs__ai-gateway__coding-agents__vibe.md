@@ -16,8 +16,8 @@ related:
 summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "5e58c1d77baa7e19827a13613176e55c45f1e6755b50b76e7f6b77f05d17ff65"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "46a57c50c49f42480d25147423c729bbdf534197fa31d92d7d9c4ec3f3ef1c90"
 ---
 
 # Mistral Vibe with AI Gateway
@@ -30,14 +30,14 @@ sha256: "5e58c1d77baa7e19827a13613176e55c45f1e6755b50b76e7f6b77f05d17ff65"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
-- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=related) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway)
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
+- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
-Full cross-link map for this page: [/docs/ai-gateway/coding-agents/vibe.graph.md](/docs/ai-gateway/coding-agents/vibe.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fcoding-agents%2Fvibe&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/coding-agents/vibe.graph.md](/docs/ai-gateway/coding-agents/vibe.graph.md)
 <!-- /docsgraph:related -->
 
 ## Set up with the Vercel CLI
@@ -45,7 +45,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/vibe.graph.md
 Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Mistral Vibe:
 
 ```bash filename="terminal"
-npx vercel ai-gateway setup --agent vibe
+npx vercel@latest ai-gateway setup --agent vibe
 ```
 
 The command writes the gateway provider and an unaliased `[[models]]` shortlist into `$VIBE_HOME/config.toml`, with Mistral's top models first and the leaderboard's most-used models after them. It pins `active_model` to the leading Mistral model. Re-run the command to refresh the list.

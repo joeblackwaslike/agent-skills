@@ -8,14 +8,15 @@ type: tutorial
 prerequisites:
   - /docs/vercel-blob
 related:
+  - /docs/cli/blob
   - /docs/vercel-blob/vercel-signed-urls
   - /docs/vercel-blob/using-blob-sdk
   - /docs/environment-variables/system-environment-variables
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "ac0e316303603de75c11a600b8ef7940f836eb6ce6a99a72698a07992f194140"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "dee31cd71a11345b7af736099f1f73a8b3acf8c5f7f03fe8fe170c82528466d6"
 ---
 
 # Client Uploads with Vercel Blob
@@ -30,22 +31,22 @@ In this guide, you'll learn how to do the following:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Recommendations and best practices for optimizing videos in your Next.js application.
-- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
-- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use private Vercel Blob storage to serve files with authentication
-- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Split integration.
-- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=related) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
+- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
+- [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
+- [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
+- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
+- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
+- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 
-Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md?from=related&source_path=%2Fdocs%2Fvercel-blob%2Fclient-upload&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
 <!-- /docsgraph:related -->
 
-- Use the Vercel dashboard to create a Blob store connected to a project
+- Use the Vercel dashboard or the [CLI](/docs/cli/blob) to create a Blob store connected to a project
 - Upload a file using the Blob SDK from a browser
 
 ## Prerequisites
@@ -76,12 +77,20 @@ Vercel Blob works with any frontend framework. First, install the package:
 </CodeBlock>
 
 - ### Create a Blob store
+  Create a Blob store from the dashboard or the Vercel CLI.
+  #### Dashboard
   1. Go to your project's [**Storage** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
   2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
   4. Use the name "Images" and select **Create a new Blob store**
   5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options
   Once created, you are taken to the Vercel Blob store page.
+  #### CLI
+  Run [`vercel blob create-store`](/docs/cli/blob#create-store) from your linked project directory. The `--access` flag is required and accepts `private` or `public`. The `--yes` flag connects the new store to the project in all environments, including **Development**, which `vercel env pull` reads from:
+  ```bash filename="terminal"
+  vercel blob create-store Images --access private --yes
+  ```
+  To connect only some environments, use `--environment` instead of `--yes`, once for each environment, for example `--environment production --environment development`.
 
 - ### Prepare your local project
   Since you created the Blob store in a project, we automatically created and added the following Environment Variables to the project for you.

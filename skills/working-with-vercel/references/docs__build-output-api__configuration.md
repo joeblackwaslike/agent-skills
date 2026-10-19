@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "233469ce375fe60f01dd33dbc52fdc1991f279ec292d1b4dde11759e2997dec1"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "2e804b0048272eea7c1912bbd7fa7648ebaf9fa377cca43074bf5f2623995884"
 ---
 
 # Build Output Configuration
@@ -30,19 +30,18 @@ sha256: "233469ce375fe60f01dd33dbc52fdc1991f279ec292d1b4dde11759e2997dec1"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related)
-- [Image](https://nextjs.org/docs/pages/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
-- [Image Component](https://nextjs.org/docs/app/api-reference/components/image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
-- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Backwards compatible Image Optimization with the Legacy Image component.
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Features](https://vercel.com/docs/build-output-api/features?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to implement common Vercel platform features through the Build Output API.
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=related) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
+- [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
+- [Image](https://nextjs.org/docs/pages/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Image Component](https://nextjs.org/docs/app/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy) — Backwards compatible Image Optimization with the Legacy Image component.
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 
-Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md?from=related&source_path=%2Fdocs%2Fbuild-output-api%2Fconfiguration&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md)
 <!-- /docsgraph:related -->
 
 <br />
@@ -60,6 +59,7 @@ type Config = {
   framework?: Framework;
   crons?: CronsConfig;
   services?: Service[];
+  daemons?: DaemonsConfig;
 };
 ```
 
@@ -71,6 +71,7 @@ Config Types:
 - [OverrideConfig](#overrides)
 - [CronsConfig](#crons)
 - [Service](#services)
+- [DaemonsConfig](#daemons)
 
 <br />
 
@@ -634,6 +635,27 @@ type ServiceBinding = {
 ```
 
 For an example of declaring services and the resulting build output, see the [Services](/docs/build-output-api/services) reference.
+
+### daemons
+
+**Build Output Configuration File**: `.vercel/output/config.json`
+
+<br />
+
+The optional `daemons` property is an object whose keys are the names of the deployment's [daemons](/docs/daemons). Each value is an empty object. When `daemons` is present, Vercel reads each daemon's descriptor from `.vercel/output/daemons/<name>/.vc-config.json`, and treats the object as the complete set of daemons for the deployment. Omitting `daemons` means the deployment declares no daemons. For the descriptor format, see the [Daemons](/docs/build-output-api/daemons) reference.
+
+```ts
+type DaemonsConfig = Record<string, Record<string, never>>;
+```
+
+#### `daemons` example
+
+```json
+  "daemons": {
+    "worker": {},
+    "scheduler": {}
+  }
+```
 
 ## Full `config.json` example
 

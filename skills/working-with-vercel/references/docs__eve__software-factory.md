@@ -14,8 +14,8 @@ related:
 summary: Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed change.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/software-factory.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "30b8c49d733fc3adcfde96a524e8beb112379687f386ba5b9a8e063a216d7aab"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "e67135761c58ced5bb80b628e59b2387ff2f314a6962ba9e09a7558c8b221b7f"
 ---
 
 # How Software Factories Work
@@ -28,13 +28,14 @@ Software factories organize AI agents into repeatable development workflows that
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
-- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
-- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
-- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=related) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
+- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Introducing eve](https://vercel.com/blog/introducing-eve)
 
-Full cross-link map for this page: [/docs/eve/software-factory.graph.md](/docs/eve/software-factory.graph.md?from=related&source_path=%2Fdocs%2Feve%2Fsoftware-factory&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/eve/software-factory.graph.md](/docs/eve/software-factory.graph.md)
 <!-- /docsgraph:related -->
 
 ## Why use a software factory

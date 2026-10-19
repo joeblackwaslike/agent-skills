@@ -13,13 +13,13 @@ related:
 summary: Use list_integration_configuration_products with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "05a24d5d3a8dd50e41ee3188a31b41ceec4e56a8b7dbea80d490230e02b4d781"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "4fe6908de2270ad9633df0635e72986c87c1e4d6d61d2e0ad028ca9a3a9421bf"
 ---
 
 # list_integration_configuration_products
 
-List products for integration configuration.
+Returns products available for an integration configuration. Each product includes a `metadataSchema` field with the JSON Schema for required and optional metadata fields.
 
 
 <!-- docsgraph:related -->
@@ -27,22 +27,22 @@ List products for integration configuration.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_integration_configurations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configurations?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Flist_integration_configuration_products&source_site=vercel-docs&relationship=related) — Use list_integration_configurations with Vercel MCP.
-- [list_integration_billing_plans](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Flist_integration_configuration_products&source_site=vercel-docs&relationship=related) — Use list_integration_billing_plans with Vercel MCP.
-- [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Flist_integration_configuration_products&source_site=vercel-docs&relationship=related) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
-- [get_configuration](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Flist_integration_configuration_products&source_site=vercel-docs&relationship=related) — Use get_configuration with Vercel MCP.
-- [list_event_types](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_event_types?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Flist_integration_configuration_products&source_site=vercel-docs&relationship=related) — Use list_event_types with Vercel MCP.
+- [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
+- [list_integration_configurations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configurations) — Use list_integration_configurations with Vercel MCP.
+- [list_integration_billing_plans](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans) — Use list_integration_billing_plans with Vercel MCP.
+- [get_configuration](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration) — Use get_configuration with Vercel MCP.
+- [list_event_types](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_event_types) — Use list_event_types with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fintegrations%2Flist_integration_configuration_products&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter | Type   | Required | Description                         |
-| --------- | ------ | -------- | ----------------------------------- |
-| `id`      | string | Yes      | ID of the integration configuration |
-| `teamId`  | string | No       | Team ID.                            |
-| `slug`    | string | No       | Team slug.                          |
+| Parameter | Type   | Required | Description                                                 |
+| --------- | ------ | -------- | ----------------------------------------------------------- |
+| `id`      | string | Yes      | ID of the integration configuration                         |
+| `teamId`  | string | No       | Team ID to use for this operation.                          |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 
 ---

@@ -13,8 +13,8 @@ related:
 summary: Use update_kms_issuer with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "5694d214362b9367a4d47e0bac4ab8c31a445915c348ce19acfb64f580d1f7d2"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "497b475a4d0517e0a4bc1922ce577210eb7597aabab4fab59b7845c32a678e9f"
 ---
 
 # update_kms_issuer
@@ -27,23 +27,23 @@ Update an issuer.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [update_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fkey-management%2Fupdate_kms_issuer&source_site=vercel-docs&relationship=related) — Use update_kms_issuer_policy with Vercel MCP.
-- [get_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fkey-management%2Fupdate_kms_issuer&source_site=vercel-docs&relationship=related) — Use get_kms_issuer with Vercel MCP.
-- [create_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fkey-management%2Fupdate_kms_issuer&source_site=vercel-docs&relationship=related) — Use create_kms_issuer_policy with Vercel MCP.
-- [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fkey-management%2Fupdate_kms_issuer&source_site=vercel-docs&relationship=related) — Use create_kms_signing_key with Vercel MCP.
-- [activate_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fkey-management%2Fupdate_kms_issuer&source_site=vercel-docs&relationship=related) — Use activate_kms_signing_key with Vercel MCP.
+- [update_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy) — Use update_kms_issuer_policy with Vercel MCP.
+- [get_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer) — Use get_kms_issuer with Vercel MCP.
+- [create_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy) — Use create_kms_issuer_policy with Vercel MCP.
+- [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
+- [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key) — Use create_kms_signing_key with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fkey-management%2Fupdate_kms_issuer&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `issuerId`    | string | Yes      | The ID of the issuer.       |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | No       | Request body for this tool. |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `issuerId`    | string | Yes      | The ID of the issuer.                                       |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 
 ---

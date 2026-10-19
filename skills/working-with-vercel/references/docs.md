@@ -16,8 +16,8 @@ related:
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "ebca344645fb7dff3068e3aaa27e934f3e4749aac24a709ddd16ad2e6ff29eb2"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "d5ce00464dac398f97bc9f903e6a57b613f262c1017bf7de331297c6d4f053ca"
 ---
 
 # Vercel Documentation
@@ -96,14 +96,14 @@ Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Oct 9, 2026: [Agents can now buy domains with the Vercel CLI](https://vercel.com/changelog/agents-can-now-buy-domains-with-the-vercel-cli). Agents can now use the Vercel CLI to purchase domains.
-- Oct 9, 2026: [New Pro teams now default to 30-day deployment retention](https://vercel.com/changelog/new-pro-teams-now-default-to-30-day-deployment-retention). New Pro teams use 30-day deployment retention by default, with the option to keep longer history.
-- Oct 9, 2026: [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams). Existing Pro teams will pay $0.10 per GB-month for Deployment Storage and Functions Storage, and the retention window moves to 30 days on October 23.
-- Oct 9, 2026: [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway). Call Microsoft's Decision-1 through Vercel AI Gateway with one API key to classify text, route requests, and track usage and spend
+- Oct 18, 2026: [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity). Vercel AI Gateway logs now group requests into sessions, with cache hit rate, cost, turns, and the coding agent behind each conversation.
+- Oct 17, 2026: [DeepSeek V4.1 Flash 1017 now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway). Call DeepSeek V4.1 Flash 1017 through Vercel AI Gateway with one API key, image input, spend tracking, and traces on every request.
+- Oct 16, 2026: [Elorian AI's Glimpse now available on AI Gateway](https://vercel.com/changelog/elorian-ai-glimpse-now-available-on-ai-gateway). Call Elorian's Glimpse through Vercel AI Gateway with one API key, no provider account, spend tracking, and request traces.
+- Oct 16, 2026: [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway). Call Perplexity Decider V1.2 and Decider Flash V1.2 through Vercel AI Gateway with one API key, shared budgets, and usage tracking.
 
 ## Build with AI
 
-**AI Gateway**: Call hundreds of models through one endpoint with the AI SDK, any OpenAI-compatible SDK, or cURL, with budgets, fallbacks, and usage monitoring. [Learn more →](/docs/ai-gateway)
+**AI Gateway**: Call 400+ models through one endpoint with the AI SDK, any OpenAI-compatible SDK, or cURL, with budgets, fallbacks, and usage monitoring. [Learn more →](/docs/ai-gateway)
 
 **AI SDK**: Build chat, agents, and structured output in TypeScript with streaming and tool calling across React, Next.js, Vue, Svelte, and Node.js. [Learn more →](/docs/ai-sdk)
 

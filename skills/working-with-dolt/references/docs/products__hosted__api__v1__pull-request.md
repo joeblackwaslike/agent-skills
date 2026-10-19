@@ -2,8 +2,8 @@
 title: "Pull Request"
 description: Reading the pull requests in a deployment database, with their comments and activity.
 source: "https://www.dolthub.com/docs/products/hosted/api/v1/pull-request.md"
-fetched_at: "2026-09-07T09:01:36.097Z"
-sha256: "b59b14224242c185b254c37c0588fdef5105c7473a37f15618d4e65074be5f5a"
+fetched_at: "2026-10-19T09:41:16.408Z"
+sha256: "9d9acd85ec59c10e24beef41a4a7e6fd1ff87cbdfb93caa79dd8c4028fb95b2f"
 ---
 
 # Pull Request
@@ -47,6 +47,7 @@ curl -X GET 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/p
 | `200` | The database's pull requests. | [`Pull[]`](/products/hosted/api/v1/models#model-pull) |
 | `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
@@ -105,6 +106,7 @@ curl -X GET 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/p
 | `200` | The pull request's comments. | [`PullComment[]`](/products/hosted/api/v1/models#model-pullcomment) |
 | `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
@@ -173,6 +175,7 @@ curl -X POST 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/
 | `201` | The comment that was created. | [`PullComment`](/products/hosted/api/v1/models#model-pullcomment) |
 | `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `422` | The request was well-formed but semantically invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
@@ -227,6 +230,7 @@ curl -X GET 'https://hosted.doltdb.com/api/v1/deployments/{owner}/{deployment}/p
 | `200` | The pull request's activity log. | [`PullActivityLogEntry[]`](/products/hosted/api/v1/models#model-pullactivitylogentry) |
 | `400` | The request was malformed or failed input validation. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `401` | Authentication credentials were missing or invalid. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
+| `403` | Authenticated, but not permitted to perform this action. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `404` | The requested resource does not exist. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `405` | The HTTP method is not supported for this resource. | [`Problem`](/products/hosted/api/v1/models#model-problem) |
 | `500` | An unexpected server error occurred. | [`Problem`](/products/hosted/api/v1/models#model-problem) |

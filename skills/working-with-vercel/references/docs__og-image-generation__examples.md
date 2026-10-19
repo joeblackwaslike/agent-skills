@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "5deadde65604a4ca137b1b4e609320278b8d441ccf299457ef4d4da37bdc063c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "f805011c39fd25b7964ff7421305e2863fea382b61969320a869e7595b2e5fa1"
 ---
 
 # OG Image Generation Examples
@@ -30,19 +30,18 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
-- [Using an external image as OG image](https://vercel.com/kb/guide/using-an-external-dynamic-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to pass the username as a URL parameter to pull an external profile image for the image generation.
-- [Using an SVG image in your OG image](https://vercel.com/kb/guide/using-svg-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use SVG embedded content to generate your OG images.
-- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Using languages in your OG image](https://vercel.com/kb/guide/using-different-languages?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to use other languages in the text of your OG image.
-- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — API Reference for the ImageResponse constructor.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
-- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=related) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
+- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Codemods](https://nextjs.org/docs/pages/guides/upgrading/codemods) — Use codemods to upgrade your Next.js codebase when new features are released.
+- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
+- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 
-Full cross-link map for this page: [/docs/og-image-generation/examples.graph.md](/docs/og-image-generation/examples.graph.md?from=related&source_path=%2Fdocs%2Fog-image-generation%2Fexamples&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/og-image-generation/examples.graph.md](/docs/og-image-generation/examples.graph.md)
 <!-- /docsgraph:related -->
 
 > For \['nextjs']:

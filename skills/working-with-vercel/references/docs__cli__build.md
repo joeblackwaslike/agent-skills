@@ -10,13 +10,14 @@ prerequisites:
 related:
   - /docs/build-output-api
   - /docs/schedules/quickstart
+  - /docs/build-output-api/services
   - /docs/deployments/environments
   - /docs/cli/global-options
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "fe79ad333b5d6dc7e508e0ea925e0f3b0a812e4fa9d481d80deec3a249b8f599"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "f387cccf8e10ec6c712a7f981378ee790b5c3a8d9fed9a72a9635e6d68f7b954"
 ---
 
 # vercel build
@@ -31,15 +32,15 @@ Build artifacts are placed into the `.vercel/output` directory according to the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
-- [vercel dev](https://vercel.com/docs/cli/dev?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel deploy](https://vercel.com/docs/cli/deploy?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel list](https://vercel.com/docs/cli/list?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Builds](https://vercel.com/docs/builds?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=related) — Understand how the build step works when creating a Vercel Deployment.
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
-Full cross-link map for this page: [/docs/cli/build.graph.md](/docs/cli/build.graph.md?from=related&source_path=%2Fdocs%2Fcli%2Fbuild&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/cli/build.graph.md](/docs/cli/build.graph.md)
 <!-- /docsgraph:related -->
 
 When used in conjunction with the `vercel deploy --prebuilt` command, this allows a Vercel Deployment
@@ -64,6 +65,8 @@ Project.*
 ## Schedule configuration
 
 `vercel build` combines [Schedules](/docs/schedules/quickstart) defined in `vercel.json` with schedules that framework builders emit in their Build Output `config.json`. Schedule names must be unique across both sources. If a name appears more than once, the build fails with `SCHEDULE_NAME_CONFLICT`.
+
+For a schedule that targets a function in a [service](/docs/build-output-api/services), set `service` to the service's name and `function` to its build-output function identifier, without the `.func` suffix. For example, `service: "worker"` and `function: "index"` target `.vercel/output/services/worker/functions/index.func`, not a source filename. The build preserves function targets unchanged. `service` applies only to function targets, not `path` or `topic`. Service-hosted function schedules run after deployment; `vercel dev` rejects them with `DEV_SCHEDULE_SERVICE_FUNCTION_UNSUPPORTED`.
 
 ## Unique Options
 

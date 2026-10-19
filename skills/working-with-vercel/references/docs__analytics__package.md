@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "8c5006a62e634eba0ba53c8df4271da02466fe155f44ef205c7f2ab036845376"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "4a00ea2c3c3ff8401b7fbfd6663a901d2d41768c28568d4c3aad55c6cccdc9da"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -30,18 +30,18 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related)
-- [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — API reference for the layout.js file.
-- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
-- [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Next.js fully supports building Single-Page Applications (SPAs).
-- [Link Component](https://nextjs.org/docs/app/api-reference/components/link?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Enable fast client-side navigation with the built-in `next/link` component.
-- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Vercel MCP tools for web analytics.
-- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to use the @vercel/og library with examples.
-- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to use Global Config with Vercel's Split integration.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=related) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support)
+- [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout) — API reference for the layout.js file.
+- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
+- [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications) — Next.js fully supports building Single-Page Applications (SPAs).
+- [Link Component](https://nextjs.org/docs/app/api-reference/components/link) — Enable fast client-side navigation with the built-in `next/link` component.
+- [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
+- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
-Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md?from=related&source_path=%2Fdocs%2Fanalytics%2Fpackage&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
 <!-- /docsgraph:related -->
 
 ## What's new in version 2.x

@@ -15,8 +15,8 @@ related:
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "2467af46d4f3c94260e0b43d052e998ddb002c88a0d0d1f8619b6c2beac34fe9"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "0cdbe832375f228766933d480898a0b969de4149469889a0ed16766352f2ed13"
 ---
 
 # Package Managers
@@ -29,20 +29,20 @@ Vercel will automatically detect the package manager used in your project and in
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Understand why dependencies may not being installed during a build and how to fix.
-- [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
-- [How do I use the latest npm version for my Vercel Deployment?](https://vercel.com/kb/guide/how-do-i-use-the-latest-npm-version-for-my-vercel-deployment?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn how to use the latest npm version for Vercel deployments.
-- [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Information on how to use private dependencies with a Vercel deployment.
-- [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Automatic pnpm v8 support](https://vercel.com/changelog/automatic-pnpm-v8-support?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related)
-- [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Learn about the supported Node.js versions on Vercel.
-- [Deploying to Vercel](https://vercel.com/docs/deployments?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=related) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration)
+- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install) — Understand why dependencies may not being installed during a build and how to fix.
+- [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
+- [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration)
+- [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects)
+- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
+- [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support)
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Automatic pnpm v8 support](https://vercel.com/changelog/automatic-pnpm-v8-support)
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
-Full cross-link map for this page: [/docs/package-managers.graph.md](/docs/package-managers.graph.md?from=related&source_path=%2Fdocs%2Fpackage-managers&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/package-managers.graph.md](/docs/package-managers.graph.md)
 <!-- /docsgraph:related -->
 
 If you are using [Corepack](/docs/builds/configure-a-build#corepack), Vercel will use the package manager specified in the `package.json` file's `packageManager` field instead.

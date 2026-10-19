@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-10-12T11:41:07.891Z"
-sha256: "a3134f6160e8e7fc28170f268dc749db70f802adb790daf4e14bf5a548108c5a"
+fetched_at: "2026-10-19T09:37:30.763Z"
+sha256: "41d3f715bc9901e48f9d69a4733bafd3e8d13b096ce6c8f27a86398581af7602"
 ---
 
 # Available templates index
@@ -116,7 +116,7 @@ Templates
 | Docker in Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-in-docker:1.3.5` | `1.3.5` |
 | Docker outside of Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-outside-of-docker:1.3.4` | `1.3.4` |
 | Docker outside of Docker Compose | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-outside-of-docker-compose:2.3.4` | `2.3.4` |
-| C# (.NET) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/dotnet:3.6.0` | `3.6.0` |
+| C# (.NET) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/dotnet:3.6.1` | `3.6.1` |
 | F# (.NET) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/dotnet-fsharp:3.2.0` | `3.2.0` |
 | C# (.NET) and MS SQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/dotnet-mssql:3.7.0` | `3.7.0` |
 | C# (.NET) and PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/dotnet-postgres:3.6.0` | `3.6.0` |
@@ -282,11 +282,12 @@ Templates
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.3.0` | `1.3.0` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.1.1` | `1.1.1` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.4.0` | `1.4.0` |
-| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.10-15.26.30` | `2026.10.10-15.26.30` |
-| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.10-15.26.30` | `2026.10.10-15.26.30` |
-| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.10-15.26.30` | `2026.10.10-15.26.30` |
-| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.10.10-15.26.30` | `2026.10.10-15.26.30` |
-| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.10.10-15.26.30` | `2026.10.10-15.26.30` |
+| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
+| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
+| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
+| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
+| Blank ESP-IDF Environment | T0ng5 | `ghcr.io/t0ng5/esp-idf/esp-idf:0.0.1` | `0.0.1` |
 
 
             

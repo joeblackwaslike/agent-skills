@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-10-12T11:41:30.415Z"
-sha256: "b0f3f1f52c675e5d442b606c56bd5375aca08ea8bdf9ca8e5d693f4b6c4a5592"
+fetched_at: "2026-10-19T09:38:05.422Z"
+sha256: "625d3f68849a9f3515edb084daabae629549f19bba6e0c4d27fd300e4b0aa288"
 ---
 
 # VS Code API
@@ -1155,9 +1155,11 @@ registerDocumentHighlightProvider(selector: [DocumentSelector](https://code.visu
 
 Register a document highlight provider.
 
-Multiple providers can be registered for a language. In that case providers are sorted
+By default, multiple providers can be registered for a language. In that case providers are sorted
 by their [score](https://code.visualstudio.com/api/references/vscode-api#languages.match) and groups sequentially asked for document highlights.
 The process stops when a provider returns a `non-falsy` or `non-failure` result.
+When `editor.occurrencesHighlightFromAllProviders` is enabled, matching providers are asked in parallel
+and their results are merged, preserving the highest-priority provider's kind for duplicate ranges.
 
 ParameterDescription
 selector: [DocumentSelector](https://code.visualstudio.com/api/references/vscode-api#DocumentSelector)A selector that defines the documents this provider is applicable to.

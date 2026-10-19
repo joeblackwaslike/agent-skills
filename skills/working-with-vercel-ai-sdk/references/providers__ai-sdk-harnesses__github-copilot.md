@@ -4,8 +4,8 @@ description: Learn how to use the GitHub Copilot harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "ed4ed7f837e3a77ad1ebe7fafc53a1704af913137317c6b9c09cdfccb1aa87c1"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "cb05c0fd374f997f792003169300fb7a100839b8ed6224abf9d6c9ec7d43647c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -260,6 +260,9 @@ every request. Shell execution still requires approval under `allow-edits`.
   sandbox-external request transformations. When a sandbox without that
   capability is provided, custom `headers` therefore cannot be passed and are
   ignored.
+- Images returned by tool `toModelOutput()` callbacks are not supported. The
+  adapter omits image content and writes a warning to bridge stderr. Text
+  output is still delivered to the model.
 
 ## Related
 

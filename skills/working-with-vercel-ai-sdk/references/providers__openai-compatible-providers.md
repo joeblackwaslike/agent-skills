@@ -4,8 +4,8 @@ description: Use OpenAI compatible providers with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d26a17d621c400d7820db7326fed00d719888942c998c8591824156123f2d3d1"
+fetched_at: "2026-10-19T09:44:40.101Z"
+sha256: "36b87ae5c946a21edc7e31533d272fb1db4f3bd3f52c604b8e8d3e3429a00c51"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -372,6 +372,11 @@ You can create image models using the `.imageModel()` factory method:
 ```ts
 const model = provider.imageModel('model-id');
 ```
+
+Image generation and editing responses can contain base64 data (`b64_json`),
+image URLs (`url`), or a mixture of both. The provider automatically downloads
+URL-based images so that `image.base64` and `image.uint8Array` remain available.
+When an image includes both fields, base64 data takes precedence.
 
 ### Basic Image Generation
 

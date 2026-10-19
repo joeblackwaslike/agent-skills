@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "1cdd34aa3bf6608799e512aa2e7955e73d3c1b89c40528c0b12f78799dc18e89"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "639f9f95bcc8dcb07946950a89b8acb43e61ff3f56187afd6aaad8954d412667"
 ---
 
 # Sandboxes
@@ -27,13 +27,13 @@ Create sandboxes to run commands and work with files in isolated environments. Y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [Python SDK Reference](https://vercel.com/docs/sandbox/python-sdk-reference?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persisten
-- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Task-oriented examples for common Vercel Sandbox operations in TypeScript and Python.
-- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — Create isolated sandbox environments to run builds, tests, and commands safely.
-- [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=related) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [Python SDK Reference](https://vercel.com/docs/sandbox/python-sdk-reference) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persisten
+- [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [List sessions](https://vercel.com/docs/rest-api/sandboxes/list-sessions) — GET /v2/sandboxes/sessions — Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fsandboxes&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md)
 <!-- /docsgraph:related -->
 
 ## `create_sandboxes_sessions_by_session_id_snapshot_v2`
@@ -42,12 +42,12 @@ Create a snapshot.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `sessionId`   | string | Yes      | The unique identifier of the session to snapshot. |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | No       | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `sessionId`   | string | Yes      | The unique identifier of the session to snapshot.           |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 ## `create_sandboxes_sessions_by_session_id_snapshot_v3`
 
@@ -55,12 +55,12 @@ Create a snapshot.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                                       |
-| ------------- | ------ | -------- | ------------------------------------------------- |
-| `sessionId`   | string | Yes      | The unique identifier of the session to snapshot. |
-| `teamId`      | string | No       | Team ID.                                          |
-| `slug`        | string | No       | Team slug.                                        |
-| `requestBody` | object | No       | Request body for this tool.                       |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `sessionId`   | string | Yes      | The unique identifier of the session to snapshot.           |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 ## `create_sandboxes_v2`
 
@@ -68,11 +68,11 @@ Create a named sandbox.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | Yes      | Request body for this tool. |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 ## `create_sandboxes_v3`
 
@@ -80,11 +80,11 @@ Create a named sandbox.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | No       | Request body for this tool. |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 ## `create_sandboxes_v4`
 
@@ -92,11 +92,11 @@ Create a named sandbox.
 
 ## Parameters
 
-| Parameter     | Type   | Required | Description                 |
-| ------------- | ------ | -------- | --------------------------- |
-| `teamId`      | string | No       | Team ID.                    |
-| `slug`        | string | No       | Team slug.                  |
-| `requestBody` | object | No       | Request body for this tool. |
+| Parameter     | Type   | Required | Description                                                 |
+| ------------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | object | No       | Request body for this tool.                                 |
 
 ## `create_session_directory`
 
@@ -107,8 +107,8 @@ Create a directory.
 | Parameter     | Type   | Required | Description                                                      |
 | ------------- | ------ | -------- | ---------------------------------------------------------------- |
 | `sessionId`   | string | Yes      | The unique identifier of the session to create the directory in. |
-| `teamId`      | string | No       | Team ID.                                                         |
-| `slug`        | string | No       | Team slug.                                                       |
+| `teamId`      | string | No       | Team ID to use for this operation.                               |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.      |
 | `requestBody` | object | No       | Request body for this tool.                                      |
 
 ## `extend_session_timeout`
@@ -120,8 +120,8 @@ Extend session timeout.
 | Parameter     | Type   | Required | Description                                                     |
 | ------------- | ------ | -------- | --------------------------------------------------------------- |
 | `sessionId`   | string | Yes      | The unique identifier of the session to extend the timeout for. |
-| `teamId`      | string | No       | Team ID.                                                        |
-| `slug`        | string | No       | Team slug.                                                      |
+| `teamId`      | string | No       | Team ID to use for this operation.                              |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.     |
 | `requestBody` | object | No       | Request body for this tool.                                     |
 
 ## `get_named_sandbox`
@@ -130,13 +130,13 @@ Get a named sandbox.
 
 ## Parameters
 
-| Parameter   | Type    | Required | Description                                                                                                                                |
-| ----------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`      | string  | Yes      | Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).                                        |
-| `projectId` | string  | No       | The project ID or name (required when not using OIDC token).                                                                               |
-| `resume`    | boolean | No       | Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Defaults to false. Default: `false`. |
-| `teamId`    | string  | No       | Team ID.                                                                                                                                   |
-| `slug`      | string  | No       | Team slug.                                                                                                                                 |
+| Parameter   | Type    | Required | Description                                                                                                             |
+| ----------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `name`      | string  | Yes      | Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).                     |
+| `projectId` | string  | No       | The project ID or name (required when not using OIDC token).                                                            |
+| `resume`    | boolean | No       | Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Default: `false`. |
+| `teamId`    | string  | No       | Team ID to use for this operation.                                                                                      |
+| `slug`      | string  | No       | Team slug to use for this operation. Use instead of teamId.                                                             |
 
 ## `get_session`
 
@@ -144,11 +144,11 @@ Get a session.
 
 ## Parameters
 
-| Parameter   | Type   | Required | Description                                       |
-| ----------- | ------ | -------- | ------------------------------------------------- |
-| `sessionId` | string | Yes      | The unique identifier of the session to retrieve. |
-| `teamId`    | string | No       | Team ID.                                          |
-| `slug`      | string | No       | Team slug.                                        |
+| Parameter   | Type   | Required | Description                                                 |
+| ----------- | ------ | -------- | ----------------------------------------------------------- |
+| `sessionId` | string | Yes      | The unique identifier of the session to retrieve.           |
+| `teamId`    | string | No       | Team ID to use for this operation.                          |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 ## `get_session_command`
 
@@ -161,8 +161,8 @@ Get a command.
 | `sessionId` | string | Yes      | The unique identifier of the session containing the command.                                                                                                                                     |
 | `cmdId`     | string | Yes      | The unique identifier of the command to retrieve.                                                                                                                                                |
 | `wait`      | string | No       | If set to "true", the request will block until the command finishes execution. Useful for synchronously waiting for command completion. Allowed values: `"true"`, `"false"`. Default: `"false"`. |
-| `teamId`    | string | No       | Team ID.                                                                                                                                                                                         |
-| `slug`      | string | No       | Team slug.                                                                                                                                                                                       |
+| `teamId`    | string | No       | Team ID to use for this operation.                                                                                                                                                               |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                      |
 
 ## `get_session_command_logs`
 
@@ -174,8 +174,8 @@ Stream command logs.
 | ----------- | ------ | -------- | ------------------------------------------------------------ |
 | `sessionId` | string | Yes      | The unique identifier of the session containing the command. |
 | `cmdId`     | string | Yes      | The unique identifier of the command to stream logs for.     |
-| `teamId`    | string | No       | Team ID.                                                     |
-| `slug`      | string | No       | Team slug.                                                   |
+| `teamId`    | string | No       | Team ID to use for this operation.                           |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.  |
 
 ## `get_session_snapshot`
 
@@ -183,11 +183,11 @@ Get a snapshot.
 
 ## Parameters
 
-| Parameter    | Type   | Required | Description                                        |
-| ------------ | ------ | -------- | -------------------------------------------------- |
-| `snapshotId` | string | Yes      | The unique identifier of the snapshot to retrieve. |
-| `teamId`     | string | No       | Team ID.                                           |
-| `slug`       | string | No       | Team slug.                                         |
+| Parameter    | Type   | Required | Description                                                 |
+| ------------ | ------ | -------- | ----------------------------------------------------------- |
+| `snapshotId` | string | Yes      | The unique identifier of the snapshot to retrieve.          |
+| `teamId`     | string | No       | Team ID to use for this operation.                          |
+| `slug`       | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 ## `kill_session_command`
 
@@ -199,28 +199,28 @@ Kill a command.
 | ------------- | ------ | -------- | ------------------------------------------------------------ |
 | `cmdId`       | string | Yes      | The unique identifier of the command to terminate.           |
 | `sessionId`   | string | Yes      | The unique identifier of the session containing the command. |
-| `teamId`      | string | No       | Team ID.                                                     |
-| `slug`        | string | No       | Team slug.                                                   |
+| `teamId`      | string | No       | Team ID to use for this operation.                           |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.  |
 | `requestBody` | object | No       | Request body for this tool.                                  |
 
-## `list_sandboxes`
+## `list_named_sandboxes`
 
-List sandboxes.
+List named sandboxes for a project. This tool corresponds to the `listNamedSandboxes` catalog operation. Use `list_sessions` to list Sandbox sessions.
 
 ## Parameters
 
 | Parameter    | Type                       | Required | Description                                                                                                                    |
 | ------------ | -------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `project`    | string                     | Yes      | The unique identifier or name of the project to list named sandboxes for.                                                      |
-| `limit`      | number                     | No       | Maximum number of named sandboxes to return in the response. Used for pagination. Default: `20`.                               |
+| `limit`      | number                     | No       | Maximum number of named sandboxes to return in the response. Used for pagination. Minimum: 1. Maximum: 50. Default: `20`.      |
 | `sortBy`     | string                     | No       | Field to sort by. Allowed values: `"createdAt"`, `"name"`, `"statusUpdatedAt"`, `"currentSnapshotId"`. Default: `"createdAt"`. |
 | `namePrefix` | string                     | No       | Filter named sandboxes whose name starts with this prefix. Only valid when sortBy=name.                                        |
 | `cursor`     | string                     | No       | Opaque pagination cursor from a previous response.                                                                             |
-| `sortOrder`  | string                     | No       | Sort direction. Defaults to desc. Allowed values: `"asc"`, `"desc"`. Default: `"desc"`.                                        |
+| `sortOrder`  | string                     | No       | Sort direction. Allowed values: `"asc"`, `"desc"`. Default: `"desc"`.                                                          |
 | `status`     | string                     | No       | Filter named sandboxes by status. Only valid when sortBy is createdAt. Allowed values: `"running"`, `"stopping"`, `"stopped"`. |
-| `tags`       | string \| Array\<string> | No       | Filter sandboxes by tag. Format: "key:value". Only one tag filter is supported at a time.                                    |
-| `teamId`     | string                     | No       | Team ID.                                                                                                                       |
-| `slug`       | string                     | No       | Team slug.                                                                                                                     |
+| `tags`       | string \| Array\<string> | No       | Filter sandboxes by tag. Format: "key:value". Only one tag filter is supported at a time.                                      |
+| `teamId`     | string                     | No       | Team ID to use for this operation.                                                                                             |
+| `slug`       | string                     | No       | Team slug to use for this operation. Use instead of teamId.                                                                    |
 
 ## `list_session_commands`
 
@@ -228,11 +228,11 @@ List commands.
 
 ## Parameters
 
-| Parameter   | Type   | Required | Description                                                |
-| ----------- | ------ | -------- | ---------------------------------------------------------- |
-| `sessionId` | string | Yes      | The unique identifier of the session to list commands for. |
-| `teamId`    | string | No       | Team ID.                                                   |
-| `slug`      | string | No       | Team slug.                                                 |
+| Parameter   | Type   | Required | Description                                                 |
+| ----------- | ------ | -------- | ----------------------------------------------------------- |
+| `sessionId` | string | Yes      | The unique identifier of the session to list commands for.  |
+| `teamId`    | string | No       | Team ID to use for this operation.                          |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 ## `list_session_snapshots`
 
@@ -240,15 +240,15 @@ List snapshots.
 
 ## Parameters
 
-| Parameter   | Type   | Required | Description                                                                                         |
-| ----------- | ------ | -------- | --------------------------------------------------------------------------------------------------- |
-| `project`   | string | Yes      | The unique identifier or name of the project to list snapshots for.                                 |
-| `name`      | string | No       | Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores). |
-| `limit`     | number | No       | Maximum number of snapshots to return in the response. Used for pagination. Default: `20`.          |
-| `cursor`    | string | No       | Opaque pagination cursor from a previous response.                                                  |
-| `sortOrder` | string | No       | Sort direction for results by creation time. Allowed values: `"asc"`, `"desc"`. Default: `"desc"`.  |
-| `teamId`    | string | No       | Team ID.                                                                                            |
-| `slug`      | string | No       | Team slug.                                                                                          |
+| Parameter   | Type   | Required | Description                                                                                                         |
+| ----------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `project`   | string | Yes      | The unique identifier or name of the project to list snapshots for.                                                 |
+| `name`      | string | No       | Name for the sandbox. Must be unique per project and URL-safe (alphanumeric, hyphens, underscores).                 |
+| `limit`     | number | No       | Maximum number of snapshots to return in the response. Used for pagination. Minimum: 1. Maximum: 50. Default: `20`. |
+| `cursor`    | string | No       | Opaque pagination cursor from a previous response.                                                                  |
+| `sortOrder` | string | No       | Sort direction for results by creation time. Allowed values: `"asc"`, `"desc"`. Default: `"desc"`.                  |
+| `teamId`    | string | No       | Team ID to use for this operation.                                                                                  |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.                                                         |
 
 ## `list_sessions`
 
@@ -256,15 +256,15 @@ List sessions.
 
 ## Parameters
 
-| Parameter   | Type   | Required | Description                                                                                        |
-| ----------- | ------ | -------- | -------------------------------------------------------------------------------------------------- |
-| `project`   | string | Yes      | The unique identifier or name of the project to list sessions for.                                 |
-| `name`      | string | No       | Filter sessions by sandbox name. Only sessions belonging to the specified sandbox are returned.    |
-| `limit`     | number | No       | Maximum number of sessions to return in the response. Used for pagination. Default: `20`.          |
-| `cursor`    | string | No       | Opaque pagination cursor from a previous response.                                                 |
-| `sortOrder` | string | No       | Sort direction for results by creation time. Allowed values: `"asc"`, `"desc"`. Default: `"desc"`. |
-| `teamId`    | string | No       | Team ID.                                                                                           |
-| `slug`      | string | No       | Team slug.                                                                                         |
+| Parameter   | Type   | Required | Description                                                                                                        |
+| ----------- | ------ | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| `project`   | string | Yes      | The unique identifier or name of the project to list sessions for.                                                 |
+| `name`      | string | No       | Filter sessions by sandbox name. Only sessions belonging to the specified sandbox are returned.                    |
+| `limit`     | number | No       | Maximum number of sessions to return in the response. Used for pagination. Minimum: 1. Maximum: 50. Default: `20`. |
+| `cursor`    | string | No       | Opaque pagination cursor from a previous response.                                                                 |
+| `sortOrder` | string | No       | Sort direction for results by creation time. Allowed values: `"asc"`, `"desc"`. Default: `"desc"`.                 |
+| `teamId`    | string | No       | Team ID to use for this operation.                                                                                 |
+| `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.                                                        |
 
 ## `read_session_file`
 
@@ -275,8 +275,8 @@ Read a file.
 | Parameter     | Type   | Required | Description                                                 |
 | ------------- | ------ | -------- | ----------------------------------------------------------- |
 | `sessionId`   | string | Yes      | The unique identifier of the session to read the file from. |
-| `teamId`      | string | No       | Team ID.                                                    |
-| `slug`        | string | No       | Team slug.                                                  |
+| `teamId`      | string | No       | Team ID to use for this operation.                          |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
 ## `run_session_command`
@@ -288,8 +288,8 @@ Execute a command.
 | Parameter     | Type   | Required | Description                                                           |
 | ------------- | ------ | -------- | --------------------------------------------------------------------- |
 | `sessionId`   | string | Yes      | The unique identifier of the session in which to execute the command. |
-| `teamId`      | string | No       | Team ID.                                                              |
-| `slug`        | string | No       | Team slug.                                                            |
+| `teamId`      | string | No       | Team ID to use for this operation.                                    |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.           |
 | `requestBody` | object | No       | Request body for this tool.                                           |
 
 ## `stop_session`
@@ -298,12 +298,12 @@ Stop a session.
 
 ## Parameters
 
-| Parameter     | Type    | Required | Description                                   |
-| ------------- | ------- | -------- | --------------------------------------------- |
-| `sessionId`   | string  | Yes      | The unique identifier of the session to stop. |
-| `teamId`      | string  | No       | Team ID.                                      |
-| `slug`        | string  | No       | Team slug.                                    |
-| `requestBody` | unknown | No       | Request body for this tool.                   |
+| Parameter     | Type    | Required | Description                                                 |
+| ------------- | ------- | -------- | ----------------------------------------------------------- |
+| `sessionId`   | string  | Yes      | The unique identifier of the session to stop.               |
+| `teamId`      | string  | No       | Team ID to use for this operation.                          |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
+| `requestBody` | unknown | No       | Request body for this tool.                                 |
 
 ## `update_sandbox`
 
@@ -311,14 +311,14 @@ Update a sandbox.
 
 ## Parameters
 
-| Parameter     | Type    | Required | Description                                                                                                                                |
-| ------------- | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `name`        | string  | Yes      | The sandbox to update.                                                                                                                     |
-| `projectId`   | string  | No       | The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.                                     |
-| `resume`      | boolean | No       | Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Defaults to false. Default: `false`. |
-| `teamId`      | string  | No       | Team ID.                                                                                                                                   |
-| `slug`        | string  | No       | Team slug.                                                                                                                                 |
-| `requestBody` | object  | No       | Request body for this tool.                                                                                                                |
+| Parameter     | Type    | Required | Description                                                                                                             |
+| ------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `name`        | string  | Yes      | The sandbox to update.                                                                                                  |
+| `projectId`   | string  | No       | The project ID that owns the named sandbox. When provided, takes precedence over OIDC project context.                  |
+| `resume`      | boolean | No       | Whether to automatically resume a stopped named sandbox by creating a new instance from its snapshot. Default: `false`. |
+| `teamId`      | string  | No       | Team ID to use for this operation.                                                                                      |
+| `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId.                                                             |
+| `requestBody` | object  | No       | Request body for this tool.                                                                                             |
 
 ## `update_session_network_policy`
 
@@ -329,8 +329,8 @@ Update network policy.
 | Parameter     | Type   | Required | Description                                                            |
 | ------------- | ------ | -------- | ---------------------------------------------------------------------- |
 | `sessionId`   | string | Yes      | The unique identifier of the session to update the network policy for. |
-| `teamId`      | string | No       | Team ID.                                                               |
-| `slug`        | string | No       | Team slug.                                                             |
+| `teamId`      | string | No       | Team ID to use for this operation.                                     |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.            |
 | `requestBody` | object | No       | Request body for this tool.                                            |
 
 ## `write_session_files`
@@ -343,8 +343,8 @@ Write files.
 | ------------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `xCwd`        | string | No       | The target directory where the tarball contents will be extracted. If not specified, files are extracted to the sandbox home directory. |
 | `sessionId`   | string | Yes      | The unique identifier of the session to write files to.                                                                                 |
-| `teamId`      | string | No       | Team ID.                                                                                                                                |
-| `slug`        | string | No       | Team slug.                                                                                                                              |
+| `teamId`      | string | No       | Team ID to use for this operation.                                                                                                      |
+| `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                             |
 | `requestBody` | string | Yes      | A base64-encoded gzipped tarball to extract. Provide this binary value as a base64 string.                                              |
 
 

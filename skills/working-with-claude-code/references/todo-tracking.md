@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/todo-tracking.md"
-fetched_at: "2026-09-14T09:37:17.168Z"
-sha256: "62c37c4a0e0c113eb21600c9b532e06be7349b7611996dfe9bc09ca01b83e69f"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "faeb4117a415e4d595080c0dc44177b9ea58deb9a1430b6ce9348f987d4c6cbf"
 ---
 
 > ## Documentation Index
@@ -19,7 +19,7 @@ In a session that has the task-tracking tools, Claude keeps a written todo list,
 ## Model availability
 
 <Note>
-  The following tools are available by default only on Claude 3.x models, Opus 4 through 4.7, Sonnet 4 through 4.6, and Haiku 4.5. On every other model, including model IDs Claude Code doesn't recognize, they aren't available unless you opt in:
+  The following tools are available by default only on Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5, and earlier models. On every other model, including model IDs Claude Code doesn't recognize, they aren't available unless you opt in:
 
   * `TodoWrite`
   * `TaskCreate`

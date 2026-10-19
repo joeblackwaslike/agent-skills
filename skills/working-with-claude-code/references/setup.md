@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/setup.md"
-fetched_at: "2026-10-12T11:42:00.662Z"
-sha256: "e9277a9054a55eccbd64d1907b270d7a243a2026d8951840bf822fb70bc1d986"
+fetched_at: "2026-10-19T09:38:46.020Z"
+sha256: "68b9b31f8e22702599ed1d6e08bfbd74da20f5fdfb88f88f49340c29767815dc"
 ---
 
 > ## Documentation Index
@@ -210,7 +210,7 @@ Claude Code checks for updates on startup and periodically while running. Update
 
 Run `claude doctor` to see the result of the most recent update attempt.
 
-On macOS and Linux, the native installer manages the launcher at `~/.local/bin/claude` as a symlink into `~/.local/share/claude/versions/`. If you replace that launcher with your own script or symlink, auto-update and `claude update` leave it in place: new versions still install under the `versions/` directory, and your launcher decides which version runs. Before v2.1.207, the auto-updater replaced a custom launcher at that path with its own symlink on every update.
+On macOS and Linux, the native installer manages the launcher at `~/.local/bin/claude` as a symlink into `~/.local/share/claude/versions/`. If you replace that launcher with your own script or symlink, auto-update and `claude update` leave it in place: new versions still install under the `versions/` directory, and your launcher decides which version runs.
 
 With a custom launcher, Claude Code also keeps every installed version on disk because it can't tell which version the launcher needs. `claude doctor` reports a launcher that the native installer didn't create.
 

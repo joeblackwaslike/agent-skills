@@ -1444,7 +1444,7 @@ paths:
             example: my-team-url-slug
   /ai-gateway/virtual-model-configs/list:
     get:
-      description: List virtual model configs. With `ownerId`, returns all of that team's VMCs. Without it, pages through VMCs across all teams (newest-first, `limit`/`cursor`).
+      description: List virtual model configs. For a team, returns all of its VMCs, or with `limit` or `cursor` one page ordered by `virtualModelSlug`. Across teams, pages newest-first. `includeArchived=false` omits archived VMCs.
       operationId: listAiGatewayVirtualModelConfigs
       security:
         - bearerToken: []
@@ -1484,6 +1484,13 @@ paths:
           in: query
           schema:
             type: string
+        - name: includeArchived
+          in: query
+          schema:
+            type: string
+            enum:
+              - "true"
+              - "false"
         - description: The Team identifier to perform the request on behalf of.
           in: query
           name: teamId
@@ -1667,7 +1674,7 @@ paths:
         - bearerToken: []
       summary: List AI Gateway routers
       tags:
-        - api-ai-gateway
+        - ai-gateway
       responses:
         "200":
           description: ""
@@ -1750,7 +1757,7 @@ paths:
             type: string
             example: my-team-url-slug
     get:
-      description: List the authenticated team's routing rules
+      description: List the authenticated team's routing rules, oldest first. Without `limit` or `cursor`, returns every rule. With either, returns one page and a `nextCursor` for the next page (null on the last page). Paging reads and sorts the team's rules server-side, which is fine at current rule counts.
       operationId: listAiGatewayRules
       security:
         - bearerToken: []
@@ -1784,6 +1791,19 @@ paths:
             enum:
               - "true"
               - "false"
+        - name: limit
+          description: Maximum number of rules to return (capped at 200). Enables pagination.
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            description: Maximum number of rules to return (capped at 200). Enables pagination.
+        - name: cursor
+          description: Opaque cursor returned by a prior call as nextCursor.
+          in: query
+          schema:
+            type: string
+            description: Opaque cursor returned by a prior call as nextCursor.
         - description: The Team identifier to perform the request on behalf of.
           in: query
           name: teamId
@@ -1883,7 +1903,7 @@ paths:
             example: my-team-url-slug
   /ai-gateway/budgets/list:
     get:
-      description: List the team's AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope.
+      description: 'List the team''s AI Gateway budgets (team/project/user scopes, plus default-covered api-key spend) as a flat list, optionally filtered by scope. Without `limit` or `cursor`, returns every budget. With either, returns one page ordered by `quotaEntityId` plus `nextCursor` (null on the last page) and `defaultCoveredCounts`. Paging still reads the full merge server-side: the gateway meter list it joins has no cursor.'
       operationId: listAiGatewayBudgets
       security:
         - bearerToken: []
@@ -1921,6 +1941,28 @@ paths:
               - user
               - api-key
             description: Restrict the list to a single budget scope.
+        - name: includeDefaultCovered
+          description: 'Whether to include rows inherited from a budget default (`source: "default"`). Defaults to true.'
+          in: query
+          schema:
+            type: string
+            enum:
+              - "true"
+              - "false"
+            description: 'Whether to include rows inherited from a budget default (`source: "default"`). Defaults to true.'
+        - name: limit
+          description: Maximum number of budgets to return (capped at 200). Enables pagination.
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            description: Maximum number of budgets to return (capped at 200). Enables pagination.
+        - name: cursor
+          description: Opaque cursor returned by a prior call as nextCursor.
+          in: query
+          schema:
+            type: string
+            description: Opaque cursor returned by a prior call as nextCursor.
         - description: The Team identifier to perform the request on behalf of.
           in: query
           name: teamId
@@ -2381,6 +2423,23 @@ paths:
                     required:
                       - status
                     type: object
+                  - properties:
+                      readOnly:
+                        type: boolean
+                        enum:
+                          - false
+                          - true
+                        description: Present and `true` when the token can read artifacts but cannot upload them.
+                      status:
+                        type: string
+                        enum:
+                          - disabled
+                          - enabled
+                          - over_limit
+                          - paused
+                    required:
+                      - status
+                    type: object
         "400":
           description: ""
         "401":
@@ -2426,9 +2485,6 @@ paths:
                     items:
                       type: string
                     type: array
-                    description: Array of URLs where the artifact was updated
-                    example:
-                      - https://api.vercel.com/v2/now/artifact/12HKQaOmR5t5Uy6vdcQsNIiZgHGB
                 required:
                   - urls
                 type: object
@@ -6189,6 +6245,7 @@ paths:
         content:
           application/json:
             schema:
+              additionalProperties: false
               properties:
                 name:
                   type: string
@@ -9918,6 +9975,8 @@ paths:
           description: ""
         "410":
           description: ""
+        "500":
+          description: ""
       parameters:
         - description: The Team identifier to perform the request on behalf of.
           in: query
@@ -10093,6 +10152,8 @@ paths:
         "409":
           description: ""
         "410":
+          description: ""
+        "500":
           description: ""
       parameters:
         - name: projectId
@@ -10464,6 +10525,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ConnectError'
+        "503":
+          description: ""
         "504":
           description: ""
       parameters:
@@ -12740,12 +12803,16 @@ paths:
                                 claims:
                                   type: object
                                   additionalProperties:
-                                    nullable: true
-                                    oneOf:
-                                      - type: string
-                                      - type: number
-                                      - type: boolean
-                                  description: Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+                                    anyOf:
+                                      - nullable: true
+                                        oneOf:
+                                          - type: string
+                                          - type: number
+                                          - type: boolean
+                                      - type: array
+                                        items:
+                                          type: string
+                                  description: Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
                               additionalProperties: false
                             description: Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
                         required:
@@ -14510,6 +14577,7 @@ paths:
                           - 20.x
                           - 22.x
                           - 24.x
+                          - 26.x
                           - 8.10.x
                         description: If set it overrides the `projectSettings.nodeVersion` for this deployment.
                       oidcTokenClaims:
@@ -14757,6 +14825,7 @@ paths:
                               - 20.x
                               - 22.x
                               - 24.x
+                              - 26.x
                               - 8.10.x
                           outputDirectory:
                             nullable: true
@@ -14845,7 +14914,7 @@ paths:
                             properties:
                               cores:
                                 type: number
-                                description: Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
+                                description: Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
                               defaultPurchaseType:
                                 type: string
                                 enum:
@@ -14862,7 +14931,7 @@ paths:
                                 description: Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
                               memory:
                                 type: number
-                                description: Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
+                                description: Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
                               purchaseType:
                                 type: string
                                 enum:
@@ -15363,11 +15432,16 @@ paths:
                                               type: array
                                             entrypoint:
                                               type: string
+                                            instances:
+                                              additionalProperties:
+                                                type: number
+                                              type: object
+                                              description: Instance counts by region.
                                             replicas:
                                               additionalProperties:
                                                 type: number
                                               type: object
-                                              description: Replica counts by region.
+                                              description: Instance counts by region.
                                             resources:
                                               properties:
                                                 requests:
@@ -15387,12 +15461,13 @@ paths:
                                               type: object
                                             root:
                                               type: string
+                                            terminationGracePeriodSeconds:
+                                              type: number
                                             name:
                                               type: string
                                           required:
                                             - entrypoint
                                             - name
-                                            - replicas
                                             - root
                                           type: object
                                           description: Set when this build produces the named daemon.
@@ -15814,11 +15889,16 @@ paths:
                                               type: array
                                             entrypoint:
                                               type: string
+                                            instances:
+                                              additionalProperties:
+                                                type: number
+                                              type: object
+                                              description: Instance counts by region.
                                             replicas:
                                               additionalProperties:
                                                 type: number
                                               type: object
-                                              description: Replica counts by region.
+                                              description: Instance counts by region.
                                             resources:
                                               properties:
                                                 requests:
@@ -15838,12 +15918,13 @@ paths:
                                               type: object
                                             root:
                                               type: string
+                                            terminationGracePeriodSeconds:
+                                              type: number
                                             name:
                                               type: string
                                           required:
                                             - entrypoint
                                             - name
-                                            - replicas
                                             - root
                                           type: object
                                           description: Set when this build produces the named daemon.
@@ -18330,6 +18411,7 @@ paths:
                           - 20.x
                           - 22.x
                           - 24.x
+                          - 26.x
                           - 8.10.x
                         description: If set it overrides the `projectSettings.nodeVersion` for this deployment.
                       oidcTokenClaims:
@@ -20359,6 +20441,7 @@ paths:
                           - 20.x
                           - 22.x
                           - 24.x
+                          - 26.x
                           - 8.10.x
                         description: If set it overrides the `projectSettings.nodeVersion` for this deployment.
                       oidcTokenClaims:
@@ -20606,6 +20689,7 @@ paths:
                               - 20.x
                               - 22.x
                               - 24.x
+                              - 26.x
                               - 8.10.x
                           outputDirectory:
                             nullable: true
@@ -20694,7 +20778,7 @@ paths:
                             properties:
                               cores:
                                 type: number
-                                description: Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
+                                description: Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
                               defaultPurchaseType:
                                 type: string
                                 enum:
@@ -20711,7 +20795,7 @@ paths:
                                 description: Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
                               memory:
                                 type: number
-                                description: Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
+                                description: Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
                               purchaseType:
                                 type: string
                                 enum:
@@ -21212,11 +21296,16 @@ paths:
                                               type: array
                                             entrypoint:
                                               type: string
+                                            instances:
+                                              additionalProperties:
+                                                type: number
+                                              type: object
+                                              description: Instance counts by region.
                                             replicas:
                                               additionalProperties:
                                                 type: number
                                               type: object
-                                              description: Replica counts by region.
+                                              description: Instance counts by region.
                                             resources:
                                               properties:
                                                 requests:
@@ -21236,12 +21325,13 @@ paths:
                                               type: object
                                             root:
                                               type: string
+                                            terminationGracePeriodSeconds:
+                                              type: number
                                             name:
                                               type: string
                                           required:
                                             - entrypoint
                                             - name
-                                            - replicas
                                             - root
                                           type: object
                                           description: Set when this build produces the named daemon.
@@ -21663,11 +21753,16 @@ paths:
                                               type: array
                                             entrypoint:
                                               type: string
+                                            instances:
+                                              additionalProperties:
+                                                type: number
+                                              type: object
+                                              description: Instance counts by region.
                                             replicas:
                                               additionalProperties:
                                                 type: number
                                               type: object
-                                              description: Replica counts by region.
+                                              description: Instance counts by region.
                                             resources:
                                               properties:
                                                 requests:
@@ -21687,12 +21782,13 @@ paths:
                                               type: object
                                             root:
                                               type: string
+                                            terminationGracePeriodSeconds:
+                                              type: number
                                             name:
                                               type: string
                                           required:
                                             - entrypoint
                                             - name
-                                            - replicas
                                             - root
                                           type: object
                                           description: Set when this build produces the named daemon.
@@ -23833,6 +23929,7 @@ paths:
                     nodeVersion:
                       description: Override the Node.js version that should be used for this deployment
                       enum:
+                        - 26.x
                         - 24.x
                         - 22.x
                         - 20.x
@@ -25530,6 +25627,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                     description: If set it overrides the `projectSettings.nodeVersion` for this deployment.
                   oidcTokenClaims:
@@ -25777,6 +25875,7 @@ paths:
                           - 20.x
                           - 22.x
                           - 24.x
+                          - 26.x
                           - 8.10.x
                       outputDirectory:
                         nullable: true
@@ -25865,7 +25964,7 @@ paths:
                         properties:
                           cores:
                             type: number
-                            description: Number of cores the build machine ran with. Set at dispatch time once the build lands on a hive.
+                            description: Build cores. Deployment creation sets the requested value; dispatch replaces it with the cores assigned by routing.
                           defaultPurchaseType:
                             type: string
                             enum:
@@ -25882,7 +25981,7 @@ paths:
                             description: Whether the build ran on a fixed or elastic machine. Used to drive billing for the build.
                           memory:
                             type: number
-                            description: Memory, in MiB, the build machine ran with. Set at dispatch time once the build lands on a hive.
+                            description: Build memory, in MiB. Deployment creation sets the requested value; dispatch replaces it with the memory assigned by routing.
                           purchaseType:
                             type: string
                             enum:
@@ -26383,11 +26482,16 @@ paths:
                                           type: array
                                         entrypoint:
                                           type: string
+                                        instances:
+                                          additionalProperties:
+                                            type: number
+                                          type: object
+                                          description: Instance counts by region.
                                         replicas:
                                           additionalProperties:
                                             type: number
                                           type: object
-                                          description: Replica counts by region.
+                                          description: Instance counts by region.
                                         resources:
                                           properties:
                                             requests:
@@ -26407,12 +26511,13 @@ paths:
                                           type: object
                                         root:
                                           type: string
+                                        terminationGracePeriodSeconds:
+                                          type: number
                                         name:
                                           type: string
                                       required:
                                         - entrypoint
                                         - name
-                                        - replicas
                                         - root
                                       type: object
                                       description: Set when this build produces the named daemon.
@@ -26834,11 +26939,16 @@ paths:
                                           type: array
                                         entrypoint:
                                           type: string
+                                        instances:
+                                          additionalProperties:
+                                            type: number
+                                          type: object
+                                          description: Instance counts by region.
                                         replicas:
                                           additionalProperties:
                                             type: number
                                           type: object
-                                          description: Replica counts by region.
+                                          description: Instance counts by region.
                                         resources:
                                           properties:
                                             requests:
@@ -26858,12 +26968,13 @@ paths:
                                           type: object
                                         root:
                                           type: string
+                                        terminationGracePeriodSeconds:
+                                          type: number
                                         name:
                                           type: string
                                       required:
                                         - entrypoint
                                         - name
-                                        - replicas
                                         - root
                                       type: object
                                       description: Set when this build produces the named daemon.
@@ -39717,7 +39828,7 @@ paths:
         required: true
   /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}:
     get:
-      description: Retrieves a specific version of a Global Config from backup storage.
+      description: Retrieves a specific version of a Global Config from backup storage. The `user` field is only included when the caller can list team members.
       operationId: getEdgeConfigBackup
       security:
         - bearerToken: []
@@ -39796,6 +39907,7 @@ paths:
                           - id
                           - username
                         type: object
+                        description: Omitted when the caller cannot list team members.
                     required:
                       - backup
                       - id
@@ -42217,6 +42329,11 @@ paths:
                     type: number
                   seed:
                     type: number
+                  seenInProduction:
+                    type: boolean
+                    enum:
+                      - false
+                      - true
                   slug:
                     type: string
                   state:
@@ -43311,6 +43428,11 @@ paths:
                     type: number
                   seed:
                     type: number
+                  seenInProduction:
+                    type: boolean
+                    enum:
+                      - false
+                      - true
                   slug:
                     type: string
                   state:
@@ -48162,6 +48284,9 @@ paths:
                                 oneOf:
                                   - type: string
                                   - type: number
+                                  - items:
+                                      type: string
+                                    type: array
                                   - type: boolean
                                     enum:
                                       - false
@@ -48567,12 +48692,16 @@ paths:
                           claims:
                             type: object
                             additionalProperties:
-                              nullable: true
-                              oneOf:
-                                - type: string
-                                - type: number
-                                - type: boolean
-                            description: Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+                              anyOf:
+                                - nullable: true
+                                  oneOf:
+                                    - type: string
+                                    - type: number
+                                    - type: boolean
+                                - type: array
+                                  items:
+                                    type: string
+                            description: Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
                         additionalProperties: false
                       description: Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
                   additionalProperties: false
@@ -48834,12 +48963,16 @@ paths:
                           claims:
                             type: object
                             additionalProperties:
-                              nullable: true
-                              oneOf:
-                                - type: string
-                                - type: number
-                                - type: boolean
-                            description: Claims to set (string, number, or boolean), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
+                              anyOf:
+                                - nullable: true
+                                  oneOf:
+                                    - type: string
+                                    - type: number
+                                    - type: boolean
+                                - type: array
+                                  items:
+                                    type: string
+                            description: Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
                         additionalProperties: false
                       description: Ordered rules resolved at mint time. Later rules win and shallow-merge over earlier ones.
                   additionalProperties: false
@@ -58573,6 +58706,7 @@ paths:
                             - 20.x
                             - 22.x
                             - 24.x
+                            - 26.x
                             - 8.10.x
                         oidcTokenConfig:
                           properties:
@@ -58628,7 +58762,18 @@ paths:
                           type: object
                         passwordProtection:
                           nullable: true
+                          properties:
+                            deploymentType:
+                              type: string
+                              enum:
+                                - all
+                                - all_except_custom_domains
+                                - preview
+                                - prod_deployment_urls_and_all_previews
+                          required:
+                            - deploymentType
                           type: object
+                          description: Password protection settings returned without the secret password hash.
                         paused:
                           type: boolean
                           enum:
@@ -62188,6 +62333,412 @@ paths:
           required: true
           schema:
             type: string
+  /v1/organizations:
+    post:
+      description: Create a new Organization. This endpoint is in private beta. Contact your Vercel account team for access.
+      operationId: createOrganization
+      security:
+        - bearerToken: []
+      summary: Create an Organization
+      tags:
+        - organizations
+      responses:
+        "202":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        "400":
+          description: |-
+            One of the provided values in the request body is invalid.
+            One of the provided values in the request query is invalid.
+            The slug is already in use
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+        "500":
+          description: ""
+      parameters:
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+            example: my-team-url-slug
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - slug
+              additionalProperties: false
+              properties:
+                slug:
+                  type: string
+                  maxLength: 48
+                  pattern: ^(?!-)(?:[a-z0-9-]{1,48})(?<!-)$
+                  description: The desired slug for the organization.
+                name:
+                  type: string
+                  maxLength: 256
+                  description: The desired name for the organization. Generated from the slug if not provided.
+    get:
+      description: List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission on the organization's root or backing team — the same criteria as GET /v1/organizations/:organizationId/teams. This endpoint is in private beta. Contact your Vercel account team for access.
+      operationId: listOrganizations
+      security:
+        - bearerToken: []
+      summary: List Organizations
+      tags:
+        - organizations
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  organizations:
+                    items:
+                      $ref: '#/components/schemas/Organization'
+                    type: array
+                required:
+                  - organizations
+                type: object
+        "400":
+          description: ""
+        "403":
+          description: You do not have permission to access this resource.
+        "410":
+          description: ""
+      parameters: []
+  /v1/organizations/{organizationId}:
+    get:
+      description: Get a single organization by ID. This endpoint is in private beta. Contact your Vercel account team for access.
+      operationId: getOrganization
+      security:
+        - bearerToken: []
+      summary: Get an Organization
+      tags:
+        - organizations
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: organizationId
+          description: The ID of the organization to retrieve.
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the organization to retrieve.
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+            example: my-team-url-slug
+    patch:
+      description: Update an organization's slug, name, or avatar. Upload avatar images through the existing files API before setting their hash. The organization avatar is independent of the root team's avatar. This endpoint is in private beta. Contact your Vercel account team for access.
+      operationId: updateOrganization
+      security:
+        - bearerToken: []
+      summary: Update an Organization
+      tags:
+        - organizations
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        "400":
+          description: |-
+            One of the provided values in the request body is invalid.
+            One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: organizationId
+          description: The ID of the organization to update.
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the organization to update.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              minProperties: 1
+              additionalProperties: false
+              properties:
+                avatar:
+                  type: string
+                  maxLength: 40
+                  pattern: ^[0-9a-f]+$
+                  description: The hash value of an uploaded image, or `null` to clear the organization avatar. Omit to leave it unchanged.
+                  nullable: true
+                name:
+                  type: string
+                  maxLength: 256
+                  description: The new display name for the organization.
+                slug:
+                  type: string
+                  maxLength: 48
+                  pattern: ^(?!-)(?:[a-z0-9-]{1,48})(?<!-)$
+                  description: The new slug for the organization.
+  /v1/organizations/{organizationId}/teams:
+    get:
+      description: List up to 100 teams in an organization, each enriched with the team's slug, name, and avatar. Set `includeMemberCount` to include counts that include pending memberships but exclude email invitations without a membership record. Teams whose underlying record no longer exists are omitted, so a page may contain fewer teams than the page size (or be empty) while still returning a `cursor`; paginate until `cursor` is absent. This endpoint is in private beta. Contact your Vercel account team for access.
+      operationId: listOrganizationTeams
+      security:
+        - bearerToken: []
+      summary: List Organization Teams
+      tags:
+        - organizations
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  cursor:
+                    type: string
+                  teams:
+                    items:
+                      $ref: '#/components/schemas/OrganizationTeamListItem'
+                    type: array
+                required:
+                  - teams
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: organizationId
+          description: The ID of the organization.
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the organization.
+        - name: cursor
+          description: Pagination cursor.
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Pagination cursor.
+        - name: includeMemberCount
+          description: When true, includes each team's member count in the response.
+          in: query
+          required: false
+          schema:
+            type: boolean
+            description: When true, includes each team's member count in the response.
+    post:
+      description: 'Create a new team under an organization, or add an existing team. `mode: "create"` creates a brand-new child team from `slug` + `name` — a platform child by default, or an enterprise child (billed on the organization root''s flex subscription) when `billingPlan: "enterprise"` is supplied. `mode: "link"` links an existing team identified by `teamId` or `slug`; the child''s billing profile is derived from the target team''s plan (enterprise team → enterprise child, else platform), or explicitly supplied. Both modes respond with the resulting organization-team link. This endpoint is in private beta. Contact your Vercel account team for access.'
+      operationId: addOrganizationTeam
+      security:
+        - bearerToken: []
+      summary: Create or Add Team to Organization
+      tags:
+        - organizations
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationTeam'
+        "400":
+          description: |-
+            One of the provided values in the request body is invalid.
+            One of the provided values in the request query is invalid.
+            The slug is already in use
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+        "500":
+          description: ""
+      parameters:
+        - name: organizationId
+          description: The ID of the organization to create or add a team under.
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the organization to create or add a team under.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - mode
+              oneOf:
+                - required:
+                    - mode
+                    - slug
+                    - name
+                  properties:
+                    mode:
+                      enum:
+                        - create
+                    name: {}
+                - required:
+                    - mode
+                    - teamId
+                  properties:
+                    mode:
+                      enum:
+                        - link
+                  not:
+                    required:
+                      - name
+                - required:
+                    - mode
+                    - slug
+                  properties:
+                    mode:
+                      enum:
+                        - link
+                  not:
+                    required:
+                      - name
+              properties:
+                mode:
+                  type: string
+                  enum:
+                    - create
+                    - link
+                  description: Whether to create a new team under the organization (\"create\") or link an existing one (\"link\").
+                teamId:
+                  type: string
+                  description: The ID of an existing team to add to the organization (link mode).
+                slug:
+                  type: string
+                  description: The slug of an existing team to link, or the slug for a new team to create.
+                name:
+                  type: string
+                  description: The display name for a new team. Required in create mode; rejected in link mode.
+                billingPlan:
+                  type: string
+                  enum:
+                    - enterprise
+                    - platform
+  /v1/organizations/{organizationId}/teams/{targetTeamId}:
+    delete:
+      description: Delete a team from an organization. This endpoint is in private beta. Contact your Vercel account team for access.
+      operationId: removeOrganizationTeam
+      security:
+        - bearerToken: []
+      summary: Delete Team from Organization
+      tags:
+        - organizations
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  organizationId:
+                    type: string
+                  teamId:
+                    type: string
+                required:
+                  - organizationId
+                  - teamId
+                type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: organizationId
+          description: The ID of the organization.
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the organization.
+        - name: targetTeamId
+          description: The ID of the team to remove.
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the team to remove.
   /v1/projects/{idOrName}/members:
     get:
       description: Lists all members of a project.
@@ -67778,6 +68329,7 @@ paths:
                             - 20.x
                             - 22.x
                             - 24.x
+                            - 26.x
                             - 8.10.x
                         oidcTokenConfig:
                           properties:
@@ -68264,6 +68816,52 @@ paths:
                                       - action
                                       - rule_id
                                     type: object
+                                  response_has:
+                                    items:
+                                      properties:
+                                        key:
+                                          type: string
+                                        type:
+                                          type: string
+                                          enum:
+                                            - response_status
+                                        value:
+                                          oneOf:
+                                            - type: string
+                                            - properties:
+                                                eq:
+                                                  type: string
+                                                gt:
+                                                  type: number
+                                                gte:
+                                                  type: number
+                                                inc:
+                                                  items:
+                                                    type: string
+                                                  type: array
+                                                list:
+                                                  type: string
+                                                lt:
+                                                  type: number
+                                                lte:
+                                                  type: number
+                                                neq:
+                                                  type: string
+                                                ninc:
+                                                  items:
+                                                    type: string
+                                                  type: array
+                                                pre:
+                                                  type: string
+                                                re:
+                                                  type: string
+                                                suf:
+                                                  type: string
+                                              type: object
+                                      required:
+                                        - type
+                                      type: object
+                                    type: array
                                   src:
                                     oneOf:
                                       - type: string
@@ -70783,6 +71381,7 @@ paths:
                                 - 20.x
                                 - 22.x
                                 - 24.x
+                                - 26.x
                                 - 8.10.x
                             oidcTokenConfig:
                               properties:
@@ -71269,6 +71868,52 @@ paths:
                                           - action
                                           - rule_id
                                         type: object
+                                      response_has:
+                                        items:
+                                          properties:
+                                            key:
+                                              type: string
+                                            type:
+                                              type: string
+                                              enum:
+                                                - response_status
+                                            value:
+                                              oneOf:
+                                                - type: string
+                                                - properties:
+                                                    eq:
+                                                      type: string
+                                                    gt:
+                                                      type: number
+                                                    gte:
+                                                      type: number
+                                                    inc:
+                                                      items:
+                                                        type: string
+                                                      type: array
+                                                    list:
+                                                      type: string
+                                                    lt:
+                                                      type: number
+                                                    lte:
+                                                      type: number
+                                                    neq:
+                                                      type: string
+                                                    ninc:
+                                                      items:
+                                                        type: string
+                                                      type: array
+                                                    pre:
+                                                      type: string
+                                                    re:
+                                                      type: string
+                                                    suf:
+                                                      type: string
+                                                  type: object
+                                          required:
+                                            - type
+                                          type: object
+                                        type: array
                                       src:
                                         oneOf:
                                           - type: string
@@ -74606,6 +75251,7 @@ paths:
                                 - 20.x
                                 - 22.x
                                 - 24.x
+                                - 26.x
                                 - 8.10.x
                             oidcTokenConfig:
                               properties:
@@ -74661,7 +75307,18 @@ paths:
                               type: object
                             passwordProtection:
                               nullable: true
+                              properties:
+                                deploymentType:
+                                  type: string
+                                  enum:
+                                    - all
+                                    - all_except_custom_domains
+                                    - preview
+                                    - prod_deployment_urls_and_all_previews
+                              required:
+                                - deploymentType
                               type: object
+                              description: Password protection settings returned without the secret password hash.
                             paused:
                               type: boolean
                               enum:
@@ -80349,6 +81006,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                   oidcTokenConfig:
                     properties:
@@ -80404,7 +81062,18 @@ paths:
                     type: object
                   passwordProtection:
                     nullable: true
+                    properties:
+                      deploymentType:
+                        type: string
+                        enum:
+                          - all
+                          - all_except_custom_domains
+                          - preview
+                          - prod_deployment_urls_and_all_previews
+                    required:
+                      - deploymentType
                     type: object
+                    description: Password protection settings returned without the secret password hash.
                   paused:
                     type: boolean
                     enum:
@@ -86343,6 +87012,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                   oidcTokenConfig:
                     properties:
@@ -86398,7 +87068,18 @@ paths:
                     type: object
                   passwordProtection:
                     nullable: true
+                    properties:
+                      deploymentType:
+                        type: string
+                        enum:
+                          - all
+                          - all_except_custom_domains
+                          - preview
+                          - prod_deployment_urls_and_all_previews
+                    required:
+                      - deploymentType
                     type: object
+                    description: Password protection settings returned without the secret password hash.
                   paused:
                     type: boolean
                     enum:
@@ -91780,6 +92461,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                   oidcTokenConfig:
                     properties:
@@ -91835,7 +92517,18 @@ paths:
                     type: object
                   passwordProtection:
                     nullable: true
+                    properties:
+                      deploymentType:
+                        type: string
+                        enum:
+                          - all
+                          - all_except_custom_domains
+                          - preview
+                          - prod_deployment_urls_and_all_previews
+                    required:
+                      - deploymentType
                     type: object
+                    description: Password protection settings returned without the secret password hash.
                   paused:
                     type: boolean
                     enum:
@@ -94800,6 +95493,7 @@ paths:
                   maxLength: 100
                 nodeVersion:
                   enum:
+                    - 26.x
                     - 24.x
                     - 22.x
                     - 20.x
@@ -95178,16 +95872,9 @@ paths:
                           - value
                         additionalProperties: false
                       minItems: 1
-                    protectionMode:
-                      description: 'exclusive: ip match is enough to bypass deployment protection (regardless of other settings). additional: ip must match + any other protection should be also provided (password, vercel auth, shareable link, automation bypass header, automation bypass query param)'
-                      enum:
-                        - exclusive
-                        - additional
-                      type: string
                   required:
                     - deploymentType
                     - addresses
-                    - protectionMode
                   type: object
                   nullable: true
                 trustedSources:
@@ -98186,6 +98873,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                   oidcTokenConfig:
                     properties:
@@ -98241,7 +98929,18 @@ paths:
                     type: object
                   passwordProtection:
                     nullable: true
+                    properties:
+                      deploymentType:
+                        type: string
+                        enum:
+                          - all
+                          - all_except_custom_domains
+                          - preview
+                          - prod_deployment_urls_and_all_previews
+                    required:
+                      - deploymentType
                     type: object
+                    description: Password protection settings returned without the secret password hash.
                   paused:
                     type: boolean
                     enum:
@@ -103632,6 +104331,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                   oidcTokenConfig:
                     properties:
@@ -103687,7 +104387,18 @@ paths:
                     type: object
                   passwordProtection:
                     nullable: true
+                    properties:
+                      deploymentType:
+                        type: string
+                        enum:
+                          - all
+                          - all_except_custom_domains
+                          - preview
+                          - prod_deployment_urls_and_all_previews
+                    required:
+                      - deploymentType
                     type: object
+                    description: Password protection settings returned without the secret password hash.
                   paused:
                     type: boolean
                     enum:
@@ -118094,6 +118805,7 @@ paths:
                       - 20.x
                       - 22.x
                       - 24.x
+                      - 26.x
                       - 8.10.x
                   oidcTokenConfig:
                     properties:
@@ -118149,7 +118861,18 @@ paths:
                     type: object
                   passwordProtection:
                     nullable: true
+                    properties:
+                      deploymentType:
+                        type: string
+                        enum:
+                          - all
+                          - all_except_custom_domains
+                          - preview
+                          - prod_deployment_urls_and_all_previews
+                    required:
+                      - deploymentType
                     type: object
+                    description: Password protection settings returned without the secret password hash.
                   paused:
                     type: boolean
                     enum:
@@ -121233,7 +121956,7 @@ paths:
             example: my-team-url-slug
   /v2/sandboxes:
     get:
-      description: Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status.
+      description: Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted by creation time or name, and optionally filtered by name prefix or status. Overdue sessions for running and stopping sandboxes are recovered before returning the page, so an entry may no longer match its queried status after recovery.
       operationId: listNamedSandboxes
       security:
         - bearerToken: []
@@ -122993,19 +123716,13 @@ paths:
           description: You do not have permission to access this resource.
         "404":
           description: ""
-        "409":
-          description: ""
         "410":
           description: ""
         "422":
           description: ""
         "429":
-          description: The concurrency limit has been exceeded.
+          description: ""
         "500":
-          description: ""
-        "502":
-          description: ""
-        "503":
           description: ""
       parameters:
         - name: name
@@ -123517,7 +124234,7 @@ paths:
                     env: staging
                     team: platform
     delete:
-      description: Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata. Returns 404 if the sandbox does not exist or was deleted by a concurrent request.
+      description: Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first. This operation deletes all sandbox entities with the given name and the named sandbox metadata. When the config item is already missing, the returned sandbox uses stored metadata and defaults; config fields may be stale.
       operationId: deleteSandbox
       security:
         - bearerToken: []
@@ -127595,6 +128312,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -128129,6 +128847,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -128320,6 +129039,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -128436,6 +129156,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -128727,6 +129448,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -129261,6 +129983,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -129452,6 +130175,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -129568,6 +130292,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -129859,6 +130584,7 @@ paths:
                                               - rate_limit_api_id
                                               - raw_path
                                               - region
+                                              - response_code
                                               - route
                                               - ruleset
                                               - scheme
@@ -130393,6 +131119,7 @@ paths:
                                                   - rate_limit_api_id
                                                   - raw_path
                                                   - region
+                                                  - response_code
                                                   - route
                                                   - ruleset
                                                   - scheme
@@ -130584,6 +131311,7 @@ paths:
                                                   - rate_limit_api_id
                                                   - raw_path
                                                   - region
+                                                  - response_code
                                                   - route
                                                   - ruleset
                                                   - scheme
@@ -130700,6 +131428,7 @@ paths:
                                                   - rate_limit_api_id
                                                   - raw_path
                                                   - region
+                                                  - response_code
                                                   - route
                                                   - ruleset
                                                   - scheme
@@ -131022,6 +131751,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -131568,6 +132298,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -131759,6 +132490,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -131875,6 +132607,7 @@ paths:
                                                 - rate_limit_api_id
                                                 - raw_path
                                                 - region
+                                                - response_code
                                                 - route
                                                 - ruleset
                                                 - scheme
@@ -132365,6 +133098,7 @@ paths:
                                       - shared_condition
                                       - traffic_source
                                       - ruleset
+                                      - response_code
                                     description: '[Parameter](https://vercel.com/docs/security/vercel-waf/rule-configuration#parameters) from the incoming traffic.'
                                   op:
                                     type: string
@@ -132560,6 +133294,7 @@ paths:
                                           - shared_condition
                                           - traffic_source
                                           - ruleset
+                                          - response_code
                                       op:
                                         type: string
                                         enum:
@@ -132799,6 +133534,7 @@ paths:
                                         - shared_condition
                                         - traffic_source
                                         - ruleset
+                                        - response_code
                                     op:
                                       type: string
                                       enum:
@@ -132936,6 +133672,7 @@ paths:
                                         - shared_condition
                                         - traffic_source
                                         - ruleset
+                                        - response_code
                                     op:
                                       type: string
                                       enum:
@@ -133105,6 +133842,7 @@ paths:
                                         - shared_condition
                                         - traffic_source
                                         - ruleset
+                                        - response_code
                                     op:
                                       type: string
                                       enum:
@@ -133226,6 +133964,7 @@ paths:
                                         - shared_condition
                                         - traffic_source
                                         - ruleset
+                                        - response_code
                                     op:
                                       type: string
                                       enum:
@@ -133422,6 +134161,7 @@ paths:
                                         - shared_condition
                                         - traffic_source
                                         - ruleset
+                                        - response_code
                                     op:
                                       type: string
                                       enum:
@@ -133619,6 +134359,7 @@ paths:
                                         - shared_condition
                                         - traffic_source
                                         - ruleset
+                                        - response_code
                                     op:
                                       type: string
                                       enum:
@@ -134100,6 +134841,7 @@ paths:
                                         - rate_limit_api_id
                                         - raw_path
                                         - region
+                                        - response_code
                                         - route
                                         - ruleset
                                         - scheme
@@ -134646,6 +135388,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -134837,6 +135580,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -134953,6 +135697,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -135325,6 +136070,7 @@ paths:
                                         - rate_limit_api_id
                                         - raw_path
                                         - region
+                                        - response_code
                                         - route
                                         - ruleset
                                         - scheme
@@ -135859,6 +136605,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -136050,6 +136797,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -136166,6 +136914,7 @@ paths:
                                             - rate_limit_api_id
                                             - raw_path
                                             - region
+                                            - response_code
                                             - route
                                             - ruleset
                                             - scheme
@@ -136926,6 +137675,603 @@ paths:
                 note:
                   type: string
                   maxLength: 500
+  /v1/security/firewall/bypass/rules:
+    get:
+      description: Retrieve conditional firewall bypass rules for a project.
+      operationId: getConditionalBypass
+      security:
+        - bearerToken: []
+      summary: Get conditional firewall bypasses
+      tags:
+        - security
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      condition:
+                        type: string
+                      conditionGroup:
+                        items:
+                          properties:
+                            conditions:
+                              items:
+                                properties:
+                                  key:
+                                    type: string
+                                  neg:
+                                    type: boolean
+                                    enum:
+                                      - false
+                                      - true
+                                  op:
+                                    type: string
+                                    enum:
+                                      - eq
+                                      - ex
+                                      - gt
+                                      - gte
+                                      - inc
+                                      - list
+                                      - lt
+                                      - lte
+                                      - neq
+                                      - nex
+                                      - ninc
+                                      - pre
+                                      - re
+                                      - sub
+                                      - suf
+                                  type:
+                                    type: string
+                                    enum:
+                                      - bot_category
+                                      - bot_name
+                                      - bot_protection
+                                      - bot_status
+                                      - cookie
+                                      - domain_environment
+                                      - environment
+                                      - geo_as_number
+                                      - geo_city
+                                      - geo_continent
+                                      - geo_country
+                                      - geo_country_region
+                                      - header
+                                      - host
+                                      - ip_address
+                                      - ja3_digest
+                                      - ja4_digest
+                                      - method
+                                      - path
+                                      - protocol
+                                      - query
+                                      - rate_limit_api_id
+                                      - raw_path
+                                      - region
+                                      - response_code
+                                      - route
+                                      - ruleset
+                                      - scheme
+                                      - server_action
+                                      - shared_condition
+                                      - target_path
+                                      - traffic_source
+                                      - trusted_source
+                                      - user_agent
+                                  value:
+                                    oneOf:
+                                      - type: string
+                                      - type: number
+                                      - items:
+                                          type: string
+                                        type: array
+                                required:
+                                  - op
+                                  - type
+                                type: object
+                              type: array
+                          required:
+                            - conditions
+                          type: object
+                        type: array
+                      createdAt:
+                        type: string
+                      domain:
+                        type: string
+                      id:
+                        type: string
+                      note:
+                        type: string
+                      projectId:
+                        type: string
+                      updatedAt:
+                        type: string
+                    required:
+                      - condition
+                      - conditionGroup
+                      - createdAt
+                      - domain
+                      - id
+                      - projectId
+                      - updatedAt
+                    type: object
+                  - properties:
+                      rules:
+                        items:
+                          properties:
+                            condition:
+                              type: string
+                            conditionGroup:
+                              items:
+                                properties:
+                                  conditions:
+                                    items:
+                                      properties:
+                                        key:
+                                          type: string
+                                        neg:
+                                          type: boolean
+                                          enum:
+                                            - false
+                                            - true
+                                        op:
+                                          type: string
+                                          enum:
+                                            - eq
+                                            - ex
+                                            - gt
+                                            - gte
+                                            - inc
+                                            - list
+                                            - lt
+                                            - lte
+                                            - neq
+                                            - nex
+                                            - ninc
+                                            - pre
+                                            - re
+                                            - sub
+                                            - suf
+                                        type:
+                                          type: string
+                                          enum:
+                                            - bot_category
+                                            - bot_name
+                                            - bot_protection
+                                            - bot_status
+                                            - cookie
+                                            - domain_environment
+                                            - environment
+                                            - geo_as_number
+                                            - geo_city
+                                            - geo_continent
+                                            - geo_country
+                                            - geo_country_region
+                                            - header
+                                            - host
+                                            - ip_address
+                                            - ja3_digest
+                                            - ja4_digest
+                                            - method
+                                            - path
+                                            - protocol
+                                            - query
+                                            - rate_limit_api_id
+                                            - raw_path
+                                            - region
+                                            - response_code
+                                            - route
+                                            - ruleset
+                                            - scheme
+                                            - server_action
+                                            - shared_condition
+                                            - target_path
+                                            - traffic_source
+                                            - trusted_source
+                                            - user_agent
+                                        value:
+                                          oneOf:
+                                            - type: string
+                                            - type: number
+                                            - items:
+                                                type: string
+                                              type: array
+                                      required:
+                                        - op
+                                        - type
+                                      type: object
+                                    type: array
+                                required:
+                                  - conditions
+                                type: object
+                              type: array
+                            createdAt:
+                              type: string
+                            domain:
+                              type: string
+                            id:
+                              type: string
+                            note:
+                              type: string
+                            projectId:
+                              type: string
+                            updatedAt:
+                              type: string
+                          required:
+                            - condition
+                            - conditionGroup
+                            - createdAt
+                            - domain
+                            - id
+                            - projectId
+                            - updatedAt
+                          type: object
+                        type: array
+                    required:
+                      - rules
+                    type: object
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: projectId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: slug
+          in: query
+          required: false
+          schema:
+            type: string
+            example: my-team-url-slug
+        - name: domain
+          in: query
+          required: false
+          schema:
+            type: string
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+    post:
+      description: Create a conditional firewall bypass rule for a project domain.
+      operationId: createConditionalBypass
+      security:
+        - bearerToken: []
+      summary: Create conditional firewall bypass
+      tags:
+        - security
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                properties:
+                  condition:
+                    type: string
+                  conditionGroup:
+                    items:
+                      properties:
+                        conditions:
+                          items:
+                            properties:
+                              key:
+                                type: string
+                              neg:
+                                type: boolean
+                                enum:
+                                  - false
+                                  - true
+                              op:
+                                type: string
+                                enum:
+                                  - eq
+                                  - ex
+                                  - gt
+                                  - gte
+                                  - inc
+                                  - list
+                                  - lt
+                                  - lte
+                                  - neq
+                                  - nex
+                                  - ninc
+                                  - pre
+                                  - re
+                                  - sub
+                                  - suf
+                              type:
+                                type: string
+                                enum:
+                                  - bot_category
+                                  - bot_name
+                                  - bot_protection
+                                  - bot_status
+                                  - cookie
+                                  - domain_environment
+                                  - environment
+                                  - geo_as_number
+                                  - geo_city
+                                  - geo_continent
+                                  - geo_country
+                                  - geo_country_region
+                                  - header
+                                  - host
+                                  - ip_address
+                                  - ja3_digest
+                                  - ja4_digest
+                                  - method
+                                  - path
+                                  - protocol
+                                  - query
+                                  - rate_limit_api_id
+                                  - raw_path
+                                  - region
+                                  - response_code
+                                  - route
+                                  - ruleset
+                                  - scheme
+                                  - server_action
+                                  - shared_condition
+                                  - target_path
+                                  - traffic_source
+                                  - trusted_source
+                                  - user_agent
+                              value:
+                                oneOf:
+                                  - type: string
+                                  - type: number
+                                  - items:
+                                      type: string
+                                    type: array
+                            required:
+                              - op
+                              - type
+                            type: object
+                          type: array
+                      required:
+                        - conditions
+                      type: object
+                    type: array
+                  createdAt:
+                    type: string
+                  domain:
+                    type: string
+                  id:
+                    type: string
+                  note:
+                    type: string
+                  projectId:
+                    type: string
+                  updatedAt:
+                    type: string
+                required:
+                  - condition
+                  - conditionGroup
+                  - createdAt
+                  - domain
+                  - id
+                  - projectId
+                  - updatedAt
+                type: object
+        "400":
+          description: |-
+            One of the provided values in the request body is invalid.
+            One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: projectId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: slug
+          in: query
+          required: false
+          schema:
+            type: string
+            example: my-team-url-slug
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - domain
+                - conditionGroup
+              properties:
+                domain:
+                  type: string
+                conditionGroup:
+                  type: array
+                  minItems: 1
+                  maxItems: 25
+                  items:
+                    type: object
+                    required:
+                      - conditions
+                    properties:
+                      conditions:
+                        type: array
+                        minItems: 1
+                        maxItems: 65
+                        items:
+                          oneOf:
+                            - type: object
+                              additionalProperties: false
+                              required:
+                                - type
+                                - op
+                                - value
+                              properties:
+                                type:
+                                  type: string
+                                  enum:
+                                    - user_agent
+                                op:
+                                  type: string
+                                  enum:
+                                    - eq
+                                    - pre
+                                    - suf
+                                    - sub
+                                value:
+                                  type: string
+                                  maxLength: 500
+                                key:
+                                  type: string
+                                  enum:
+                                    - user-agent
+                            - type: object
+                              additionalProperties: false
+                              required:
+                                - type
+                                - op
+                                - value
+                              properties:
+                                type:
+                                  type: string
+                                  enum:
+                                    - path
+                                op:
+                                  type: string
+                                  enum:
+                                    - eq
+                                    - pre
+                                    - suf
+                                    - sub
+                                value:
+                                  type: string
+                                  maxLength: 500
+                            - type: object
+                              additionalProperties: false
+                              required:
+                                - type
+                                - op
+                                - key
+                                - value
+                              properties:
+                                type:
+                                  type: string
+                                  enum:
+                                    - header
+                                op:
+                                  type: string
+                                  enum:
+                                    - eq
+                                    - pre
+                                    - suf
+                                    - sub
+                                key:
+                                  type: string
+                                  maxLength: 128
+                                  pattern: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+                                value:
+                                  type: string
+                                  maxLength: 500
+                            - type: object
+                              additionalProperties: false
+                              required:
+                                - type
+                                - op
+                                - key
+                              properties:
+                                type:
+                                  type: string
+                                  enum:
+                                    - header
+                                op:
+                                  type: string
+                                  enum:
+                                    - ex
+                                key:
+                                  type: string
+                                  maxLength: 128
+                                  pattern: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+                note:
+                  type: string
+                  maxLength: 500
+    delete:
+      description: Delete a conditional firewall bypass rule from a project domain.
+      operationId: deleteConditionalBypass
+      security:
+        - bearerToken: []
+      summary: Delete conditional firewall bypass
+      tags:
+        - security
+      responses:
+        "204":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: string
+                enum:
+                  - ""
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+        "403":
+          description: You do not have permission to access this resource.
+        "404":
+          description: ""
+        "410":
+          description: ""
+      parameters:
+        - name: projectId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: slug
+          in: query
+          required: false
+          schema:
+            type: string
+            example: my-team-url-slug
+        - name: domain
+          in: query
+          required: true
+          schema:
+            type: string
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
   /v1/security/firewall/events:
     get:
       description: Retrieve firewall actions for a project Rule names are resolved against the project's *current* active firewall configuration and the team's active rulesets, so a rule that has since been renamed reports its new name and one that has been deleted reports `null`. System rules such as `sys_dos_mitigation` and `ip_blocking` have no configured name and always report `null`. Filters (`ip`, `isActive`, `action`, `actionType`, `ruleKind`, `ruleId`, `hosts`) are ANDed across params and ORed within a repeated param. They are applied to the policies before `limit`/`cursor`, so pages only count matching policies. A policy with no matching requests yields no action row, so a page can hold fewer than `limit` actions; only `pagination.next` signals the end. A `cursor` is only valid with the filters it was issued for.
@@ -140688,6 +142034,11 @@ paths:
                               type: number
                             name:
                               type: string
+                            nonSensitive:
+                              type: boolean
+                              enum:
+                                - false
+                                - true
                           required:
                             - length
                             - name
@@ -142762,7 +144113,7 @@ paths:
                             pattern: ^ag_[A-z0-9_ -]+$
   /v1/teams/{teamId}:
     delete:
-      description: Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent.
+      description: Delete a team under your account. You need to send a `DELETE` request with the desired team `id`. An optional array of reasons for deletion may also be sent. Enterprise teams can only be deleted in test billing mode and when not linked to an organization.
       operationId: deleteTeam
       security:
         - bearerToken: []
@@ -146240,6 +147591,617 @@ paths:
             type: number
             minimum: 1
             maximum: 50
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+            example: my-team-url-slug
+  /v1/vercel-ci/task-analyses:
+    post:
+      description: Create task analysis
+      operationId: createVercelCiTaskAnalysis
+      security:
+        - bearerToken: []
+      summary: Start an asynchronous Vercel CI task analysis
+      tags:
+        - vercel-ci
+      responses:
+        "202":
+          description: Task analysis was accepted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  analysisId:
+                    type: string
+                  status:
+                    anyOf:
+                      - const: pending
+                        type: string
+                      - const: completed
+                        type: string
+                      - const: failed
+                        type: string
+                required:
+                  - analysisId
+                  - status
+        "400":
+          description: One of the provided values in the request body is invalid.
+        "401":
+          description: The request is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "403":
+          description: You do not have permission to access this resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+        "429":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      name:
+                        type: string
+                      message:
+                        type: string
+                      limit:
+                        type: number
+                    required:
+                      - code
+                      - name
+                      - message
+                      - limit
+                required:
+                  - error
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "503":
+          description: ""
+      parameters:
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+            example: my-team-url-slug
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - owner
+                - repo
+              properties:
+                owner:
+                  type: string
+                  maxLength: 100
+                repo:
+                  type: string
+                  maxLength: 100
+  /v1/vercel-ci/task-analyses/{analysisId}:
+    get:
+      description: Get task analysis
+      operationId: getVercelCiTaskAnalysis
+      security:
+        - bearerToken: []
+      summary: Get the current status of a Vercel CI task analysis
+      tags:
+        - vercel-ci
+      responses:
+        "200":
+          description: Current task analysis status.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  analysisId:
+                    type: string
+                  status:
+                    anyOf:
+                      - const: pending
+                        type: string
+                      - const: completed
+                        type: string
+                      - const: failed
+                        type: string
+                  failureReason:
+                    type: string
+                required:
+                  - analysisId
+                  - status
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "403":
+          description: You do not have permission to access this resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "404":
+          description: ""
+        "410":
+          description: ""
+        "429":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      name:
+                        type: string
+                      message:
+                        type: string
+                      limit:
+                        type: number
+                    required:
+                      - code
+                      - name
+                      - message
+                      - limit
+                required:
+                  - error
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+      parameters:
+        - name: analysisId
+          in: path
+          required: true
+          schema:
+            type: string
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+            example: my-team-url-slug
+  /v1/vercel-ci/task-analyses/{analysisId}/pull-request:
+    post:
+      description: Create task configuration pull request
+      operationId: createVercelCiTaskConfigurationPullRequest
+      security:
+        - bearerToken: []
+      summary: Create a GitHub pull request that adds Vercel CI tags for the completed analysis
+      tags:
+        - vercel-ci
+      responses:
+        "201":
+          description: Task configuration pull request created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+                  changedTaskNames:
+                    type: array
+                    items:
+                      type: string
+                required:
+                  - url
+                  - changedTaskNames
+        "400":
+          description: |-
+            One of the provided values in the request body is invalid.
+            One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "403":
+          description: You do not have permission to access this resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+        "429":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      name:
+                        type: string
+                      message:
+                        type: string
+                      limit:
+                        type: number
+                    required:
+                      - code
+                      - name
+                      - message
+                      - limit
+                required:
+                  - error
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+      parameters:
+        - name: analysisId
+          in: path
+          required: true
+          schema:
+            type: string
+        - description: The Team identifier to perform the request on behalf of.
+          in: query
+          name: teamId
+          schema:
+            type: string
+            example: team_1a2b3c4d5e6f7g8h9i0j1k2l
+        - description: The Team slug to perform the request on behalf of.
+          in: query
+          name: slug
+          schema:
+            type: string
+            example: my-team-url-slug
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - tasks
+              properties:
+                tasks:
+                  type: array
+                  minItems: 1
+                  maxItems: 100
+                  items:
+                    type: object
+                    additionalProperties: false
+                    required:
+                      - name
+                      - configPath
+                    properties:
+                      name:
+                        type: string
+                        maxLength: 500
+                      configPath:
+                        type: string
+                        maxLength: 2000
+  /v1/vercel-ci/task-analyses/{analysisId}/tasks:
+    get:
+      description: List task analysis tasks
+      operationId: listVercelCiTaskAnalysisTasks
+      security:
+        - bearerToken: []
+      summary: List discovered tasks for a completed Vercel CI task analysis
+      tags:
+        - vercel-ci
+      responses:
+        "200":
+          description: Discovered task analysis tasks.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tasks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        configPath:
+                          type: string
+                        recommendationReasons:
+                          type: array
+                          items:
+                            type: string
+                      required:
+                        - name
+                        - configPath
+                        - recommendationReasons
+                  pagination:
+                    type: object
+                    properties:
+                      nextCursor:
+                        type: string
+                required:
+                  - tasks
+                  - pagination
+        "400":
+          description: One of the provided values in the request query is invalid.
+        "401":
+          description: The request is not authorized.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "403":
+          description: You do not have permission to access this resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+        "404":
+          description: ""
+        "409":
+          description: ""
+        "410":
+          description: ""
+        "429":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      name:
+                        type: string
+                      message:
+                        type: string
+                      limit:
+                        type: number
+                    required:
+                      - code
+                      - name
+                      - message
+                      - limit
+                required:
+                  - error
+        "500":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                    required:
+                      - code
+                      - message
+                required:
+                  - error
+      parameters:
+        - name: analysisId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: cursor
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: string
         - description: The Team identifier to perform the request on behalf of.
           in: query
           name: teamId
@@ -154495,6 +156457,7 @@ paths:
                                 - 20.x
                                 - 22.x
                                 - 24.x
+                                - 26.x
                                 - 8.10.x
                             outputDirectory:
                               nullable: true
@@ -154863,6 +156826,8 @@ paths:
           description: You do not have permission to access this resource.
         "404":
           description: The deployment was not found
+        "409":
+          description: ""
         "410":
           description: ""
       parameters:
@@ -155276,11 +157241,15 @@ components:
       description: Public response shape for AI Gateway routing rules. Used so OpenAPI generation can avoid ElectroDB's recursive EntityItem types.
     AiGatewayRuleList:
       properties:
+        nextCursor:
+          nullable: true
+          type: string
         rules:
           items:
             $ref: '#/components/schemas/AiGatewayRule'
           type: array
       required:
+        - nextCursor
         - rules
       type: object
     AiGatewayBudget:
@@ -155360,6 +157329,27 @@ components:
           items:
             $ref: '#/components/schemas/AiGatewayBudget'
           type: array
+        defaultCoveredCounts:
+          properties:
+            api-key:
+              type: number
+            project:
+              type: number
+            team:
+              type: number
+            user:
+              type: number
+          required:
+            - api-key
+            - project
+            - team
+            - user
+          type: object
+          description: 'Paged requests only: `source: ''default''` rows per scope type across the whole `scopeType`-filtered list, independent of the page and of `includeDefaultCovered`.'
+        nextCursor:
+          nullable: true
+          type: string
+          description: 'Paged requests only (`limit` or `cursor` set): pass as `cursor` to read the next page; null on the last page.'
       required:
         - budgets
       type: object
@@ -155595,7 +157585,7 @@ components:
       required:
         - projectId
       type: object
-      description: Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+      description: Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
     ConnectTriggerConfiguration:
       properties:
         enabled:
@@ -155621,6 +157611,11 @@ components:
                 - false
                 - true
               description: Whether one app token can be used across installations.
+            isStaticCredential:
+              type: boolean
+              enum:
+                - false
+                - true
             permissionsUrl:
               type: string
               description: Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
@@ -155654,6 +157649,7 @@ components:
               description: Whether callers can request resource-specific app tokens.
           required:
             - crossInstallation
+            - isStaticCredential
             - supportsRefinement
           type: object
           description: App-token capabilities and known grants for the connector.
@@ -155813,7 +157809,7 @@ components:
           items:
             $ref: '#/components/schemas/ConnectTriggerDestination'
           type: array
-          description: Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+          description: Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
         triggers:
           $ref: '#/components/schemas/ConnectTriggerConfiguration'
           description: Incoming trigger configuration for the connector.
@@ -155899,6 +157895,11 @@ components:
                 - false
                 - true
               description: Whether one user token can be used across installations.
+            isStaticCredential:
+              type: boolean
+              enum:
+                - false
+                - true
             manualCredentialInput:
               type: boolean
               enum:
@@ -155929,6 +157930,7 @@ components:
               description: Whether callers can request resource-specific user tokens.
           required:
             - crossInstallation
+            - isStaticCredential
             - supportsRefinement
           type: object
           description: User-token capabilities and known grants for the connector.
@@ -155990,6 +157992,11 @@ components:
                 - false
                 - true
               description: Whether one app token can be used across installations.
+            isStaticCredential:
+              type: boolean
+              enum:
+                - false
+                - true
             permissionsUrl:
               type: string
               description: Link to the page on the service where this connector's app-level permissions are declared and granted, when the service has one and it differs from `clientUrl`.
@@ -156023,6 +158030,7 @@ components:
               description: Whether callers can request resource-specific app tokens.
           required:
             - crossInstallation
+            - isStaticCredential
             - supportsRefinement
           type: object
           description: App-token capabilities and known grants for the connector.
@@ -156184,7 +158192,7 @@ components:
           items:
             $ref: '#/components/schemas/ConnectTriggerDestination'
           type: array
-          description: Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`.
+          description: Destinations that incoming triggers should be forwarded to. Limited to 3 entries. Set the initial destination with `triggerDestination` during creation. Replace the complete set with `PATCH /v1/connect/connectors/{connector}/trigger-destinations`. Computed routing environments are stored internally, not returned here.
         triggers:
           $ref: '#/components/schemas/ConnectTriggerConfiguration'
           description: Incoming trigger configuration for the connector.
@@ -156272,6 +158280,11 @@ components:
                 - false
                 - true
               description: Whether one user token can be used across installations.
+            isStaticCredential:
+              type: boolean
+              enum:
+                - false
+                - true
             manualCredentialInput:
               type: boolean
               enum:
@@ -156302,6 +158315,7 @@ components:
               description: Whether callers can request resource-specific user tokens.
           required:
             - crossInstallation
+            - isStaticCredential
             - supportsRefinement
           type: object
           description: User-token capabilities and known grants for the connector.
@@ -159310,6 +161324,41 @@ components:
         - partialToken
       type: object
       description: The Global Config.
+    DeploymentCheckUpdatedPayload:
+      properties:
+        checkId:
+          type: string
+        checkName:
+          type: string
+        next:
+          properties:
+            targets:
+              items:
+                type: string
+              type: array
+          required:
+            - targets
+          type: object
+        previous:
+          properties:
+            targets:
+              items:
+                type: string
+              type: array
+          required:
+            - targets
+          type: object
+        projectId:
+          type: string
+        projectName:
+          type: string
+      required:
+        - checkId
+        - checkName
+        - projectId
+        - projectName
+      type: object
+      description: The payload of the event, if requested.
     UserEvent:
       properties:
         categories:
@@ -160458,7 +162507,6 @@ components:
                   type: string
               required:
                 - accessGroup
-                - author
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -160811,7 +162859,9 @@ components:
                       - '*'
                       - manage:speed-insights
                       - manage:web-analytics
+                      - read-write:access-group
                       - read-write:ai-gateway-api-key
+                      - read-write:ai-gateway-budgets
                       - read-write:ai-gateway-guardrails
                       - read-write:ai-gateway-private-models
                       - read-write:ai-gateway-rules
@@ -160838,6 +162888,7 @@ components:
                       - read-write:project-env-vars-production
                       - read-write:project-flags-non-production
                       - read-write:project-flags-production
+                      - read-write:project-members
                       - read-write:project-protection-bypass
                       - read-write:project-trusted-sources
                       - read-write:remote-cache
@@ -160846,11 +162897,13 @@ components:
                       - read-write:team-members
                       - read-write:vcr
                       - read:access-group
+                      - read:ai-gateway-budgets
                       - read:ai-gateway-guardrails
                       - read:ai-gateway-private-models
                       - read:ai-gateway-rules
                       - read:ai-gateway-virtual-model-configs
                       - read:alerts
+                      - read:audit-log
                       - read:automations
                       - read:billing
                       - read:connect
@@ -160867,6 +162920,7 @@ components:
                       - read:project-env-vars-non-production
                       - read:project-env-vars-production
                       - read:project-flags
+                      - read:project-members
                       - read:project-trusted-sources
                       - read:remote-cache
                       - read:sandbox
@@ -160914,7 +162968,9 @@ components:
                       - '*'
                       - manage:speed-insights
                       - manage:web-analytics
+                      - read-write:access-group
                       - read-write:ai-gateway-api-key
+                      - read-write:ai-gateway-budgets
                       - read-write:ai-gateway-guardrails
                       - read-write:ai-gateway-private-models
                       - read-write:ai-gateway-rules
@@ -160941,6 +162997,7 @@ components:
                       - read-write:project-env-vars-production
                       - read-write:project-flags-non-production
                       - read-write:project-flags-production
+                      - read-write:project-members
                       - read-write:project-protection-bypass
                       - read-write:project-trusted-sources
                       - read-write:remote-cache
@@ -160949,11 +163006,13 @@ components:
                       - read-write:team-members
                       - read-write:vcr
                       - read:access-group
+                      - read:ai-gateway-budgets
                       - read:ai-gateway-guardrails
                       - read:ai-gateway-private-models
                       - read:ai-gateway-rules
                       - read:ai-gateway-virtual-model-configs
                       - read:alerts
+                      - read:audit-log
                       - read:automations
                       - read:billing
                       - read:connect
@@ -160970,6 +163029,7 @@ components:
                       - read:project-env-vars-non-production
                       - read:project-env-vars-production
                       - read:project-flags
+                      - read:project-members
                       - read:project-trusted-sources
                       - read:remote-cache
                       - read:sandbox
@@ -161005,7 +163065,9 @@ components:
                         enum:
                           - manage:speed-insights
                           - manage:web-analytics
+                          - read-write:access-group
                           - read-write:ai-gateway-api-key
+                          - read-write:ai-gateway-budgets
                           - read-write:ai-gateway-guardrails
                           - read-write:ai-gateway-private-models
                           - read-write:ai-gateway-rules
@@ -161032,6 +163094,7 @@ components:
                           - read-write:project-env-vars-production
                           - read-write:project-flags-non-production
                           - read-write:project-flags-production
+                          - read-write:project-members
                           - read-write:project-protection-bypass
                           - read-write:project-trusted-sources
                           - read-write:remote-cache
@@ -161040,11 +163103,13 @@ components:
                           - read-write:team-members
                           - read-write:vcr
                           - read:access-group
+                          - read:ai-gateway-budgets
                           - read:ai-gateway-guardrails
                           - read:ai-gateway-private-models
                           - read:ai-gateway-rules
                           - read:ai-gateway-virtual-model-configs
                           - read:alerts
+                          - read:audit-log
                           - read:automations
                           - read:billing
                           - read:connect
@@ -161061,6 +163126,7 @@ components:
                           - read:project-env-vars-non-production
                           - read:project-env-vars-production
                           - read:project-flags
+                          - read:project-members
                           - read:project-trusted-sources
                           - read:remote-cache
                           - read:sandbox
@@ -161115,7 +163181,9 @@ components:
                         enum:
                           - manage:speed-insights
                           - manage:web-analytics
+                          - read-write:access-group
                           - read-write:ai-gateway-api-key
+                          - read-write:ai-gateway-budgets
                           - read-write:ai-gateway-guardrails
                           - read-write:ai-gateway-private-models
                           - read-write:ai-gateway-rules
@@ -161142,6 +163210,7 @@ components:
                           - read-write:project-env-vars-production
                           - read-write:project-flags-non-production
                           - read-write:project-flags-production
+                          - read-write:project-members
                           - read-write:project-protection-bypass
                           - read-write:project-trusted-sources
                           - read-write:remote-cache
@@ -161150,11 +163219,13 @@ components:
                           - read-write:team-members
                           - read-write:vcr
                           - read:access-group
+                          - read:ai-gateway-budgets
                           - read:ai-gateway-guardrails
                           - read:ai-gateway-private-models
                           - read:ai-gateway-rules
                           - read:ai-gateway-virtual-model-configs
                           - read:alerts
+                          - read:audit-log
                           - read:automations
                           - read:billing
                           - read:connect
@@ -161171,6 +163242,7 @@ components:
                           - read:project-env-vars-non-production
                           - read:project-env-vars-production
                           - read:project-flags
+                          - read:project-members
                           - read:project-trusted-sources
                           - read:remote-cache
                           - read:sandbox
@@ -161230,7 +163302,9 @@ components:
                     enum:
                       - manage:speed-insights
                       - manage:web-analytics
+                      - read-write:access-group
                       - read-write:ai-gateway-api-key
+                      - read-write:ai-gateway-budgets
                       - read-write:ai-gateway-guardrails
                       - read-write:ai-gateway-private-models
                       - read-write:ai-gateway-rules
@@ -161257,6 +163331,7 @@ components:
                       - read-write:project-env-vars-production
                       - read-write:project-flags-non-production
                       - read-write:project-flags-production
+                      - read-write:project-members
                       - read-write:project-protection-bypass
                       - read-write:project-trusted-sources
                       - read-write:remote-cache
@@ -161265,11 +163340,13 @@ components:
                       - read-write:team-members
                       - read-write:vcr
                       - read:access-group
+                      - read:ai-gateway-budgets
                       - read:ai-gateway-guardrails
                       - read:ai-gateway-private-models
                       - read:ai-gateway-rules
                       - read:ai-gateway-virtual-model-configs
                       - read:alerts
+                      - read:audit-log
                       - read:automations
                       - read:billing
                       - read:connect
@@ -161286,6 +163363,7 @@ components:
                       - read:project-env-vars-non-production
                       - read:project-env-vars-production
                       - read:project-flags
+                      - read:project-members
                       - read:project-trusted-sources
                       - read:remote-cache
                       - read:sandbox
@@ -162053,6 +164131,8 @@ components:
                   items:
                     type: string
                   type: array
+                eventName:
+                  type: string
                 fields:
                   items:
                     type: string
@@ -162070,6 +164150,8 @@ components:
                   enum:
                     - app
                     - user
+                subscriptionId:
+                  type: string
                 tokenCount:
                   type: number
                 tokensDeleted:
@@ -162318,6 +164400,7 @@ components:
                 - projectName
               type: object
               description: The payload of the event, if requested.
+            - $ref: '#/components/schemas/DeploymentCheckUpdatedPayload'
             - properties:
                 alias:
                   items:
@@ -164240,6 +166323,8 @@ components:
                     - url
                   type: object
                 deploymentId:
+                  type: string
+                projectId:
                   type: string
                 url:
                   type: string
@@ -167377,6 +169462,16 @@ components:
               type: object
               description: The payload of the event, if requested.
             - properties:
+                name:
+                  type: string
+                organizationId:
+                  type: string
+              required:
+                - name
+                - organizationId
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
                 organizationId:
                   type: string
                 slug:
@@ -168241,6 +170336,41 @@ components:
                   properties:
                     awsServiceName:
                       type: string
+                    configurationId:
+                      type: string
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    privateDnsNames:
+                      items:
+                        type: string
+                      type: array
+                    vercelRegion:
+                      type: string
+                  required:
+                    - awsServiceName
+                    - configurationId
+                    - id
+                    - name
+                    - vercelRegion
+                  type: object
+                networkName:
+                  type: string
+                scope:
+                  type: string
+                  enum:
+                    - network
+              required:
+                - endpoint
+                - scope
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
+                endpoint:
+                  properties:
+                    awsServiceName:
+                      type: string
                     id:
                       type: string
                     name:
@@ -168262,6 +170392,10 @@ components:
                   type: object
                 projectName:
                   type: string
+                scope:
+                  type: string
+                  enum:
+                    - project
               required:
                 - endpoint
               type: object
@@ -168281,9 +170415,72 @@ components:
                   type: string
                 projectName:
                   type: string
+                scope:
+                  type: string
+                  enum:
+                    - project
               required:
                 - privateLinkEndpoint
                 - projectId
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
+                current:
+                  properties:
+                    awsServiceName:
+                      type: string
+                    configurationId:
+                      type: string
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    privateDnsNames:
+                      items:
+                        type: string
+                      type: array
+                    vercelRegion:
+                      type: string
+                  required:
+                    - awsServiceName
+                    - configurationId
+                    - id
+                    - name
+                    - vercelRegion
+                  type: object
+                networkName:
+                  type: string
+                prev:
+                  properties:
+                    awsServiceName:
+                      type: string
+                    configurationId:
+                      type: string
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    privateDnsNames:
+                      items:
+                        type: string
+                      type: array
+                    vercelRegion:
+                      type: string
+                  required:
+                    - awsServiceName
+                    - configurationId
+                    - id
+                    - name
+                    - vercelRegion
+                  type: object
+                scope:
+                  type: string
+                  enum:
+                    - network
+              required:
+                - current
+                - prev
+                - scope
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -168335,6 +170532,10 @@ components:
                   type: object
                 projectName:
                   type: string
+                scope:
+                  type: string
+                  enum:
+                    - project
               required:
                 - current
                 - prev
@@ -168378,6 +170579,10 @@ components:
                   type: string
                 projectName:
                   type: string
+                scope:
+                  type: string
+                  enum:
+                    - project
               required:
                 - previousEndpoint
                 - privateLinkEndpoint
@@ -170712,6 +172917,50 @@ components:
               type: object
               description: The payload of the event, if requested.
             - properties:
+                connectionId:
+                  type: string
+                actorName:
+                  type: string
+                actorType:
+                  type: string
+                  enum:
+                    - admin
+                keyId:
+                  type: string
+              required:
+                - actorType
+                - connectionId
+                - keyId
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
+                connectionId:
+                  type: string
+                actorName:
+                  type: string
+                actorType:
+                  type: string
+                  enum:
+                    - admin
+                keyId:
+                  type: string
+                signingEnabled:
+                  type: boolean
+                  enum:
+                    - false
+                    - true
+                signingKeyId:
+                  nullable: true
+                  type: string
+              required:
+                - actorType
+                - connectionId
+                - keyId
+                - signingEnabled
+                - signingKeyId
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
                 alias:
                   type: string
                 projectId:
@@ -171657,11 +173906,8 @@ components:
                     - id
                     - type
                   type: object
-                transferRequestCode:
-                  type: string
               required:
                 - store
-                - transferRequestCode
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -171683,8 +173929,6 @@ components:
                     - id
                     - type
                   type: object
-                transferRequestCode:
-                  type: string
                 destinationTeamId:
                   type: string
                 destinationTeamName:
@@ -171693,7 +173937,6 @@ components:
                 - destinationTeamId
                 - destinationTeamName
                 - store
-                - transferRequestCode
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -171715,8 +173958,6 @@ components:
                     - id
                     - type
                   type: object
-                transferRequestCode:
-                  type: string
                 originTeamId:
                   type: string
                 originTeamName:
@@ -171725,7 +173966,6 @@ components:
                 - originTeamId
                 - originTeamName
                 - store
-                - transferRequestCode
               type: object
               description: The payload of the event, if requested.
             - properties:
@@ -174085,6 +176325,16 @@ components:
               type: object
               description: The payload of the event, if requested.
             - properties:
+                domain:
+                  type: string
+                projectId:
+                  type: string
+              required:
+                - domain
+                - projectId
+              type: object
+              description: The payload of the event, if requested.
+            - properties:
                 policy:
                   properties:
                     claims:
@@ -174328,6 +176578,8 @@ components:
               type: object
               description: The payload of the event, if requested.
             - properties:
+                createdByParentTeamId:
+                  type: string
                 expiresAt:
                   type: number
                   description: Unix epoch milliseconds. Absent when the token never expires.
@@ -174428,6 +176680,10 @@ components:
                     - team
                     - user
                   description: 'Scope of the token: - `''user''`: full-account token (not tied to any team). - `''team''`: scoped to a single team. - `''project''`: scoped to a single project within a team.'
+                source:
+                  type: string
+                  enum:
+                    - v0
                 teamId:
                   type: string
                   description: Present when `scope` is `'team'` or `'project'`.
@@ -174461,6 +176717,8 @@ components:
                 actorTokenId:
                   type: string
                   description: The token's public ID.
+                createdByParentTeamId:
+                  type: string
                 expired:
                   type: boolean
                   enum:
@@ -174556,6 +176814,16 @@ components:
                   enum:
                     - false
                     - true
+                scope:
+                  type: string
+                  enum:
+                    - project
+                    - team
+                    - user
+                source:
+                  type: string
+                  enum:
+                    - v0
                 teamId:
                   type: string
                 tokenId:
@@ -174735,6 +177003,8 @@ components:
             - admin-preview-deployment-suffix-clear
             - admin-saml-idp-material-deleted
             - admin-saml-idp-material-set
+            - admin-saml-sp-signing-key-created
+            - admin-saml-sp-signing-key-updated
             - admin-secondary-email-added
             - admin-secondary-email-removed
             - admin-team-name-update
@@ -174844,6 +177114,7 @@ components:
             - connect-attach-project
             - connect-bitbucket
             - connect-bitbucket-app
+            - connect-cancel-mcp-event-subscription
             - connect-configuration-created
             - connect-configuration-deleted
             - connect-configuration-link-updated
@@ -174851,6 +177122,7 @@ components:
             - connect-configuration-unlinked
             - connect-configuration-updated
             - connect-create-connector
+            - connect-create-mcp-event-subscription
             - connect-delete-connector
             - connect-delete-installation
             - connect-detach-project
@@ -174969,6 +177241,8 @@ components:
             - experiment-updated
             - firewall-bypass-created
             - firewall-bypass-deleted
+            - firewall-conditional-bypass-created
+            - firewall-conditional-bypass-deleted
             - firewall-config-modified
             - firewall-config-promoted
             - firewall-config-removed
@@ -175087,6 +177361,7 @@ components:
             - organization-emu-domains-merged
             - organization-emu-team-updated
             - organization-emu-updated
+            - organization-name-update
             - organization-slug-update
             - organization-sso-enforced
             - organization-team-add
@@ -175614,6 +177889,8 @@ components:
             - admin-preview-deployment-suffix-clear
             - admin-saml-idp-material-deleted
             - admin-saml-idp-material-set
+            - admin-saml-sp-signing-key-created
+            - admin-saml-sp-signing-key-updated
             - admin-secondary-email-added
             - admin-secondary-email-removed
             - admin-team-name-update
@@ -175723,6 +178000,7 @@ components:
             - connect-attach-project
             - connect-bitbucket
             - connect-bitbucket-app
+            - connect-cancel-mcp-event-subscription
             - connect-configuration-created
             - connect-configuration-deleted
             - connect-configuration-link-updated
@@ -175730,6 +178008,7 @@ components:
             - connect-configuration-unlinked
             - connect-configuration-updated
             - connect-create-connector
+            - connect-create-mcp-event-subscription
             - connect-delete-connector
             - connect-delete-installation
             - connect-detach-project
@@ -175848,6 +178127,8 @@ components:
             - experiment-updated
             - firewall-bypass-created
             - firewall-bypass-deleted
+            - firewall-conditional-bypass-created
+            - firewall-conditional-bypass-deleted
             - firewall-config-modified
             - firewall-config-promoted
             - firewall-config-removed
@@ -175966,6 +178247,7 @@ components:
             - organization-emu-domains-merged
             - organization-emu-team-updated
             - organization-emu-updated
+            - organization-name-update
             - organization-slug-update
             - organization-sso-enforced
             - organization-team-add
@@ -176341,6 +178623,8 @@ components:
               - admin-preview-deployment-suffix-clear
               - admin-saml-idp-material-deleted
               - admin-saml-idp-material-set
+              - admin-saml-sp-signing-key-created
+              - admin-saml-sp-signing-key-updated
               - admin-secondary-email-added
               - admin-secondary-email-removed
               - admin-team-name-update
@@ -176450,6 +178734,7 @@ components:
               - connect-attach-project
               - connect-bitbucket
               - connect-bitbucket-app
+              - connect-cancel-mcp-event-subscription
               - connect-configuration-created
               - connect-configuration-deleted
               - connect-configuration-link-updated
@@ -176457,6 +178742,7 @@ components:
               - connect-configuration-unlinked
               - connect-configuration-updated
               - connect-create-connector
+              - connect-create-mcp-event-subscription
               - connect-delete-connector
               - connect-delete-installation
               - connect-detach-project
@@ -176575,6 +178861,8 @@ components:
               - experiment-updated
               - firewall-bypass-created
               - firewall-bypass-deleted
+              - firewall-conditional-bypass-created
+              - firewall-conditional-bypass-deleted
               - firewall-config-modified
               - firewall-config-promoted
               - firewall-config-removed
@@ -176693,6 +178981,7 @@ components:
               - organization-emu-domains-merged
               - organization-emu-team-updated
               - organization-emu-updated
+              - organization-name-update
               - organization-slug-update
               - organization-sso-enforced
               - organization-team-add
@@ -177541,6 +179830,11 @@ components:
           type: number
         seed:
           type: number
+        seenInProduction:
+          type: boolean
+          enum:
+            - false
+            - true
         slug:
           type: string
         state:
@@ -178121,6 +180415,119 @@ components:
         - read
         - update
       description: Requested and authorized operations when `checkPermissions` is used. Legacy `includePermissions` responses contain a broader, non-authoritative permission summary.
+    Organization:
+      properties:
+        avatar:
+          nullable: true
+          type: string
+        createdAt:
+          type: string
+        name:
+          type: string
+          description: 'The organization''s display name. Optional: organizations created before the name attribute existed have no stored value. New orgs always get one (provided or slug-derived) via the service layer.'
+        organizationId:
+          type: string
+        ownerId:
+          type: string
+        slug:
+          type: string
+        teamCount:
+          type: number
+        teamId:
+          type: string
+        updatedAt:
+          type: string
+        userRole:
+          type: string
+          description: The authenticated user's role in the organization. Present on read endpoints when the user holds an organization role.
+      required:
+        - avatar
+        - createdAt
+        - organizationId
+        - ownerId
+        - slug
+        - teamCount
+        - teamId
+        - updatedAt
+      type: object
+    OrganizationTeamListItem:
+      properties:
+        avatar:
+          nullable: true
+          type: string
+          description: The ID of the file used as the Team's avatar, or `null` if none.
+        billingPlan:
+          type: string
+          enum:
+            - enterprise
+            - platform
+          description: 'Billing profile of the organization link: how this team settles within the organization. This is not the team''s billing.plan or planIteration. Links with `enterprise` billing participate in organization-level billing and usage rollups. This field is optional for legacy links that have no stored profile.'
+        createdAt:
+          type: string
+          description: ISO timestamp of when the team was linked to the organization.
+        memberCount:
+          type: number
+          description: Present only when the request sets `includeMemberCount=true`. Number of members on the Team, including pending memberships. Excludes email invitations that do not have a membership record.
+        name:
+          nullable: true
+          type: string
+          description: The Team's display name, or `null` if none has been set.
+        organizationId:
+          type: string
+          description: The ID of the organization the team belongs to.
+        slug:
+          type: string
+          description: The Team's slug, unique across Vercel.
+        ssoMode:
+          type: string
+          enum:
+            - organization
+            - team
+        teamId:
+          type: string
+          description: The Team's unique identifier.
+        updatedAt:
+          type: string
+          description: ISO timestamp of when the link was last updated.
+      required:
+        - avatar
+        - createdAt
+        - name
+        - organizationId
+        - slug
+        - ssoMode
+        - teamId
+        - updatedAt
+      type: object
+      description: An org-team link enriched with the linked team's display fields, as returned by the list-teams endpoint. We project to an explicit flat interface instead of spreading the ElectroDB `OrganizationTeamItem` because its recursive generics break the OpenAPI generator (which would silently drop the route).
+    OrganizationTeam:
+      properties:
+        billingPlan:
+          type: string
+          enum:
+            - enterprise
+            - platform
+          description: 'The child team''s billing profile within the organization. Optional: links created before this attribute existed have no stored value.'
+        createdAt:
+          type: string
+        organizationId:
+          type: string
+        ssoMode:
+          type: string
+          enum:
+            - organization
+            - team
+        teamId:
+          type: string
+        updatedAt:
+          type: string
+      required:
+        - createdAt
+        - organizationId
+        - ssoMode
+        - teamId
+        - updatedAt
+      type: object
     NamedSandbox:
       properties:
         architecture:
@@ -179335,6 +181742,11 @@ components:
                   - entitlement
                 type: object
               type: array
+            isOrgBackingTeamMembership:
+              type: boolean
+              enum:
+                - false
+                - true
             joinedFrom:
               properties:
                 commitId:
@@ -179848,6 +182260,11 @@ components:
                   - entitlement
                 type: object
               type: array
+            isOrgBackingTeamMembership:
+              type: boolean
+              enum:
+                - false
+                - true
             joinedFrom:
               properties:
                 commitId:

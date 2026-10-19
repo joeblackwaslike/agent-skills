@@ -17,8 +17,8 @@ related:
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "742418a365917e71c81d67c60287fefec1a360d58793ba6a17a090bfd6b41558"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "00f661192280be22dca9a0d72a3e1b1398007a7ca50591d19f80ace895374a56"
 ---
 
 # AI Gateway Regional Inference
@@ -37,15 +37,15 @@ running somewhere else.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
-- [Regional inference now available on AI Gateway](https://vercel.com/changelog/regional-inference-now-available-on-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Learn how to use the AI Gateway provider with the AI SDK.
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related)
-- [AI Gateway](https://vercel.com/docs/agent-resources/vercel-mcp/tools/ai-gateway?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=related) — Vercel MCP tools for ai gateway.
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
+- [Regional inference now available on AI Gateway](https://vercel.com/changelog/regional-inference-now-available-on-ai-gateway)
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 
-Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md?from=related&source_path=%2Fdocs%2Fai-gateway%2Fsecurity-and-compliance%2Fregional-inference&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** `inferenceRegion` pins where the provider runs inference and stores your data.
@@ -80,6 +80,8 @@ routes inference to that region:
 |-------|-----------------------------------|
 | `{ scope: 'zone', geoRegion: 'us' }` | A US data center |
 | `{ scope: 'zone', geoRegion: 'eu' }` | An EU data center |
+| `{ scope: 'zone', geoRegion: 'au' }` | An Australian data center |
+| `{ scope: 'zone', geoRegion: 'jp' }` | A Japanese data center |
 | `{ scope: 'global' }` (or omitted) | Any region |
 
 - The default (no `inferenceRegion`) is `global`, which means AI Gateway picks
@@ -87,7 +89,8 @@ routes inference to that region:
   resolve to a different region on each request, and that region may be outside
   your users' jurisdiction. Residency is opt-in: pin a region if where inference
   runs matters to you.
-- `zone` requires `geoRegion` (`us` or `eu`). If you omit it, the request fails.
+- `zone` requires `geoRegion` (`us`, `eu`, `au`, or `jp`). If you omit it, the
+  request fails.
 - You set the region in the request body or config only. There's no HTTP header
   for it.
 
@@ -501,6 +504,8 @@ Region coverage varies by model. To find models that support a region, filter th
 
 - [Models available in the US](/ai-gateway/models?inferenceRegionUs=true)
 - [Models available in the EU](/ai-gateway/models?inferenceRegionEu=true)
+- [Models available in Australia](/ai-gateway/models?inferenceRegionAu=true)
+- [Models available in Japan](/ai-gateway/models?inferenceRegionJp=true)
 
 The [`/v1/models`](https://ai-gateway.vercel.sh/v1/models) endpoint returns the
 same coverage as a `regions` array per model (for example, `["eu", "us"]`); a
@@ -565,8 +570,8 @@ the location question; it doesn't by itself make a workload GDPR-compliant.
 
 ## Current limits
 
-- The regions available today are `us` and `eu`, and not every model supports
-  both. Check a model's `regions` in the [model list](/docs/ai-gateway/models-and-providers)
+- The regions available today are `us`, `eu`, `au`, and `jp`, and not every
+  model supports all of them. Check a model's `regions` in the [model list](/docs/ai-gateway/models-and-providers)
   or from `https://ai-gateway.vercel.sh/v1/models`.
 - Region selection is opt-in; the default is `global`.
 - There's no cross-region fallback: a region that AI Gateway can't honor fails the

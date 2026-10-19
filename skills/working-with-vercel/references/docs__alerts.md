@@ -11,13 +11,13 @@ related:
   - /docs/functions/usage-and-pricing
   - /docs/routing-middleware
   - /docs/manage-cdn-usage
+  - /docs/observability/observability-plus
   - /docs/alerts/configure-alerts
-  - /docs/agent/investigation
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "dad2c6ed79f9faadfed488a49f0d8537fc87e59005b9e27ad57e2ec7f212bbc6"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "f49e4c72366428a28ef10d6f1ea70ac51a899cd49aae6d9674def65bd13f1eba"
 ---
 
 # Alerts
@@ -32,20 +32,20 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now in limited beta for Enterprise customers](https://vercel.com/changelog/anomaly-alerts-now-in-limited-beta-for-enterprise-customers?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related)
-- [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related)
-- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
-- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related)
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [Notifications](https://vercel.com/docs/notifications?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [Observability](https://vercel.com/docs/observability?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Glossary](https://vercel.com/docs/glossary?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=related) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available)
+- [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
+- [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email)
+- [Anomaly alerts now in limited beta for Enterprise customers](https://vercel.com/changelog/anomaly-alerts-now-in-limited-beta-for-enterprise-customers)
+- [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta)
+- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
+- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
+- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
+- [Notifications](https://vercel.com/docs/notifications) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
-Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md?from=related&source_path=%2Fdocs%2Falerts&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md)
 <!-- /docsgraph:related -->
 
 By default, you'll be notified about:
@@ -77,6 +77,15 @@ Usage anomaly alerts support these metrics:
   - [Routing Middleware invocations](/docs/routing-middleware#observability)
 - [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer)
 - [CDN Requests](/docs/manage-cdn-usage#cdn-requests)
+
+## Observability Plus activation period
+
+Alerts only use data collected while [Observability Plus](/docs/observability/observability-plus) was active. After you enable or re-enable Observability Plus, Vercel holds back alerts until it has enough data, which avoids false positives:
+
+- **Error anomalies**, including external API failure insights, start after Observability Plus has been active for 24 hours.
+- **Usage anomalies** start after Observability Plus has been active for 3 days.
+
+If you disable Observability Plus for your team or for a project, alerts stop for that scope. When you re-enable it, the activation periods start again.
 
 ## Configure alerts
 

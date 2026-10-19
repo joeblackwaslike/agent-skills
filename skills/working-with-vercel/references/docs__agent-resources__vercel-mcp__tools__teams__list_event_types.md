@@ -13,8 +13,8 @@ related:
 summary: Use list_event_types with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_event_types.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d4d1d88c39da1e8943035276bf6a159f135e2e5d028039f6d45d267ebbe6301c"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "93cfd1d6b2de2dce349982f595498a3010ef5cabb74de6b3afd1ea79eb01afa1"
 ---
 
 # list_event_types
@@ -27,21 +27,21 @@ List Event Types.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_event_types&source_site=vercel-docs&relationship=related) — Use get_team with Vercel MCP.
-- [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_event_types&source_site=vercel-docs&relationship=related) — Use list_user_events with Vercel MCP.
-- [list_integration_configuration_products](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_event_types&source_site=vercel-docs&relationship=related) — Use list_integration_configuration_products with Vercel MCP.
-- [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_event_types&source_site=vercel-docs&relationship=related) — Use list_teams with Vercel MCP.
-- [list_supported_tlds](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_event_types&source_site=vercel-docs&relationship=related) — Use list_supported_tlds with Vercel MCP.
+- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
+- [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events) — Use list_user_events with Vercel MCP.
+- [list_supported_tlds](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds) — Use list_supported_tlds with Vercel MCP.
+- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [list_integration_configuration_products](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products) — Use list_integration_configuration_products with Vercel MCP.
 
-Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_event_types.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_event_types.graph.md?from=related&source_path=%2Fdocs%2Fagent-resources%2Fvercel-mcp%2Ftools%2Fteams%2Flist_event_types&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_event_types.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_event_types.graph.md)
 <!-- /docsgraph:related -->
 
 ## Parameters
 
-| Parameter | Type   | Required | Description |
-| --------- | ------ | -------- | ----------- |
-| `teamId`  | string | No       | Team ID.    |
-| `slug`    | string | No       | Team slug.  |
+| Parameter | Type   | Required | Description                                                 |
+| --------- | ------ | -------- | ----------------------------------------------------------- |
+| `teamId`  | string | No       | Team ID to use for this operation.                          |
+| `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
 
 ---

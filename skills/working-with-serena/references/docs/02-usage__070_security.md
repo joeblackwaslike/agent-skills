@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/070_security.md"
-fetched_at: "2026-10-12T11:48:42.891Z"
-sha256: "5b028dbe393d6202f1f4d98b7dcd1ea1584c7875515de9f5bbac0adff02b4f49"
+fetched_at: "2026-10-19T09:44:32.510Z"
+sha256: "f057bffeafe818b61e9da2ca78d919c01aad0dfe85a58001dd15bdac0f16fe07"
 ---
 
 # Security Considerations
@@ -88,31 +88,7 @@ The question to ask is therefore not "is this project safe to work on because it
 "do I trust this repository enough to grant it the additional capabilities?".
 If a repository is not trustworthy, [sandboxing](sandboxing) is the answer, not the trust configuration.
 
-### Trust-Gated Features
-
-The set of trust-gated features is subject to change and can be expected to grow.
-The settings that require trust are annotated accordingly in the project configuration (see
-[configuration](050_configuration)); the following current examples illustrate the principle:
-
-- `activation_command` is a shell command that a project can request to be run whenever it is activated.
-  Without trust gating, merely opening a repository in Serena would execute code chosen by its author,
-  before the user has issued a single request.
-- `ls_specific_settings` can, among other things, override the package version and the package registry from
-  which a language server is acquired.
-  Without trust gating, a repository could thereby silently circumvent the supply chain protections described
-  below (version pinning, host restrictions) and cause attacker-controlled code to be downloaded and executed.
-- Following a symlink that is contained in the project but resolves to a location outside of the project root.
-  Without trust gating, a repository could redirect Serena's file tools to arbitrary locations outside the
-  project root (e.g. `~/.ssh/id_rsa`) by committing such a symlink, without the user requesting anything
-  beyond working in the project.
-  In an untrusted project, Serena therefore ignores symbolic links entirely: they are neither followed when
-  the project's files are enumerated, nor accepted as a path when a file is requested explicitly.
-  A symlink to a location inside the project root remains accessible for trusted projects only.
-
-Note that the effective set of trusted paths depends on the age of your configuration: installations predating
-the introduction of this setting retain a pattern that trusts all projects, ensuring that existing workflows are
-not broken, whereas newly created configurations trust no project by default.
-The applicable value can be inspected in the dashboard.
+For the list of trust-gated features, see the [configuration page](trusted-projects-config).
 
 (repl-security)=
 ## The REPL Interface

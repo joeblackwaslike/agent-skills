@@ -9,11 +9,12 @@ prerequisites:
   - /docs/rbac
 related:
   - /docs/rbac/access-roles
+  - /docs/cli/project
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "233af10a4a346bf653a81cd1ef02f62608c7ebd141394aaea676b5fe4bdc5754"
+fetched_at: "2026-10-19T09:46:53.451Z"
+sha256: "9d829a50a4035c3787a3418a01360e201ecbc7d3b347d993d84cdce82333ff3e"
 ---
 
 # Managing Team Members
@@ -26,15 +27,15 @@ As the team owner, you have the ability to manage your team's composition and th
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related)
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn about the different team level roles and the permissions they provide.
-- [Access Groups](https://vercel.com/docs/rbac/access-groups?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to configure access groups for team members on a Vercel account.
-- [Directory Sync](https://vercel.com/docs/directory-sync?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to configure Directory Sync for your Vercel Team.
-- [Account Management](https://vercel.com/docs/accounts?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn how to manage your Vercel account and team members.
-- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=related) — Learn about the project level roles and their permissions.
+- [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway)
+- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 
-Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md?from=related&source_path=%2Fdocs%2Frbac%2Fmanaging-team-members&source_site=vercel-docs&relationship=graph)
+Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md)
 <!-- /docsgraph:related -->
 
 ## Adding team members and assigning roles
@@ -64,12 +65,24 @@ Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/
 
 Team [owners](/docs/rbac/access-roles#owner-role) can assign project roles to team members with the [contributor role](/docs/rbac/access-roles#contributor-role), enabling control over their project-related actions. You can assign these roles during team invitations or to existing members.
 
+Assign a project role from the dashboard or the Vercel CLI.
+
+#### Dashboard
+
 1. Ensure you have selected your team from the team switcher
 2. Select the project you want to assign a member to
 3. Select **Access** from the left navigation, then inside the **Project Access** section select the team members email from the dropdown
 4. Select the role you want to assign to the member on the project
 
 ![Assigning a project role to a member.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/rbac-project-settings-assign-role-light.png)
+
+#### CLI
+
+Run [`vercel project members add`](/docs/cli/project#members), where `<role>` is `ADMIN`, `PROJECT_DEVELOPER`, or `PROJECT_VIEWER`:
+
+```bash filename="terminal"
+vercel project members add <project> <email> --role <role>
+```
 
 ## Delete a member
 
