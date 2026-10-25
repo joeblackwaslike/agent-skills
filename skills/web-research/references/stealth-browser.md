@@ -30,25 +30,27 @@ often sits on a private network, so it may not be reachable from this machine.
 
 ```bash
 url='<target-url>'   # write any ' in the URL as %27
+dir=$(mktemp -d)     # one directory per fetch, so parallel fetches don't collide
 curl -sS -m 300 -X POST "$STEALTH_BROWSER_URL/content" \
   -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN" \
   -H 'Content-Type: application/json' \
   -d "$(jq -nc --arg url "$url" '{url:$url}')" \
-  -D /tmp/sb-headers.txt -o /tmp/sb-page.html -w '%{http_code}\n'
-head -c 200000 /tmp/sb-page.html
+  -D "$dir/headers.txt" -o "$dir/page.html" -w '%{http_code}\n'
+head -c 200000 "$dir/page.html"
 ```
 
-`jq` builds the JSON body, so quotes in the URL can't break it.
+The recipe needs `jq`, which builds the JSON body so quotes in the URL can't break it.
+If `jq` isn't installed, skip the gateway rather than hand-writing the body.
 
 | Field | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `url` | string | required | Public `http`/`https` only. Loopback, private IPs, and bare hostnames get a 400. |
 | `waitForTimeout` | int, 0-15000 ms | 3000 | Extra wait after load. Raise it only when lazy-loaded content is missing. |
 
-curl prints the status code. On a 200, `/tmp/sb-page.html` holds the rendered HTML;
-parse it like a `webFetch` result. On any other status it holds the JSON error body
-from the Responses table below. `/tmp/sb-headers.txt` holds `X-Final-Url` (the URL
-after redirects) and, for a paused profile, `Retry-After`.
+curl prints the status code. On a 200, `$dir/page.html` holds the rendered HTML;
+parse it like a `webFetch` result. On any other status it holds the error body from
+the Responses table below. `$dir/headers.txt` holds `X-Final-Url` (the URL after
+redirects) and, for a paused profile, `Retry-After`.
 
 `head -c 200000` reads about 200 KB to save context. That is enough for Reddit
 (~190 KB) but stops Amazon search before the first result, because the page is ~2 MB
