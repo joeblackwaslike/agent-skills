@@ -32,7 +32,7 @@ often sits on a private network, so it may not be reachable from this machine.
 url='<target-url>'   # write any ' in the URL as %27
 dir=$(mktemp -d)     # one directory per fetch, so parallel fetches don't collide
 echo "saved to $dir" # a later shell call can't see $dir, so keep this path
-curl -sS -m 300 -X POST "$STEALTH_BROWSER_URL/content" \
+curl -sS -m 600 -X POST "$STEALTH_BROWSER_URL/content" \
   -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN" \
   -H 'Content-Type: application/json' \
   -d "$(jq -nc --arg url "$url" '{url:$url}')" \
@@ -75,8 +75,9 @@ One browser serves every request, so the gateway runs them one at a time in FIFO
 order. It waits a random gap between starts on the same profile: 20-40 s for `ebay`,
 5-10 s for `reddit`, 3-8 s for `anon`. At most five requests wait behind the running
 one, and each run can take about 50 s (30 s navigation timeout, plus `waitForTimeout`
-and a margin). A request at the back of a full queue can therefore wait close to five
-minutes, which is why the recipe uses `-m 300`. Raise it if you raise `waitForTimeout`.
+and a margin). On `ebay`, a request at the back of a full queue waits behind five runs
+and four 20-40 s gaps before its own run, about 500 s in the worst case, which is why
+the recipe uses `-m 600`. Add the extra seconds if you raise `waitForTimeout`.
 
 Keep eBay requests few. The gateway uses no proxy, and a block pauses the eBay profile
 for every caller.

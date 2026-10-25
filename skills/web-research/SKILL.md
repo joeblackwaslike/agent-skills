@@ -69,7 +69,7 @@ Apply in order. Stop at the first step that returns sufficient content.
 
 3. **stealth-browser gateway (bot-blocked sites)** is a self-hosted Camoufox (patched Firefox) gateway with logged-in eBay and Reddit profiles ([stealth-browser](https://github.com/joeblackwaslike/stealth-browser) covers setup). It needs `STEALTH_BROWSER_URL` and `STEALTH_BROWSER_TOKEN` in the environment; if either is unset, skip to step 4 without hunting for credentials. Use it when:
    - the URL hostname is on the send-straight-here list in `references/stealth-browser.md` (eBay, Reddit, Amazon), OR
-   - `webFetch` returned HTTP 403 / 429, a CAPTCHA page, or near-empty content from a page that is clearly server-rendered (not an SPA)
+   - `webFetch` returned HTTP 403 / 429, a CAPTCHA page, a login wall (or a redirect to a login page), or near-empty content from a page that is clearly server-rendered (not an SPA)
 
    Load `references/stealth-browser.md` for the fetch recipe, body fields, response table, and pacing.
 
