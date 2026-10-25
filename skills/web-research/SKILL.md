@@ -4,7 +4,7 @@ description: Expert web research router. Automatically selects the best search a
 license: MIT
 compatibility: Requires MCP servers for optimal routing (Exa, Context7, Ref, Tavily, Perplexity). Falls back gracefully to built-in webSearch and webFetch when specialized tools are unavailable.
 metadata:
-  last_updated: "2026-09-07"
+  last_updated: "2026-10-25"
 ---
 
 ## Web Research Routing Rules
@@ -60,26 +60,18 @@ Classify the query intent first, then route to the appropriate tool.
 Apply in order. Stop at the first step that returns sufficient content.
 
 1. **`webFetch`** — always try first. Zero overhead, instant.
-   - **Skip to step 3** if the URL hostname is on the known-blocking list (see `references/browserless.md`).
+   - **Skip to step 3** if the URL hostname is on the send-straight-here list (see `references/stealth-browser.md`).
 
 2. **Detect unhydrated SPA** — if the response body meets any of these conditions, escalate:
    - Total body text content < ~200 characters
    - Body contains `<div id="root">`, `<div id="app">`, or `<div id="__next">` with no meaningful content inside
    - Body is dominated by `<script>` tags with little visible text
 
-3. **Browserless (bot-blocked sites)** — self-hosted headless Chrome for sites that actively block agents. Trigger when:
-   - URL is on the known-blocking domain list (`references/browserless.md`), OR
-   - `webFetch` returned HTTP 403 / 429, a CAPTCHA page, or near-empty content from a page that is clearly server-rendered (not an SPA)
+3. **stealth-browser gateway (bot-blocked sites)** is a self-hosted Camoufox (patched Firefox) gateway with logged-in eBay and Reddit profiles ([stealth-browser](https://github.com/joeblackwaslike/stealth-browser) covers setup). It needs `STEALTH_BROWSER_URL` and `STEALTH_BROWSER_TOKEN` in the environment; if either is unset, skip to step 4 without hunting for credentials. Use it when:
+   - the URL hostname is on the send-straight-here list in `references/stealth-browser.md` (eBay, Reddit, Amazon), OR
+   - `webFetch` returned HTTP 403 / 429, a CAPTCHA page, a login wall (or a redirect to a login page), or near-empty content from a page that is clearly server-rendered (not an SPA)
 
-   ```bash
-   source ~/creds.zsh
-   curl -sS -X POST "$BROWSERLESS_URL/content" \
-     -H "Authorization: Bearer $BROWSERLESS_TOKEN" \
-     -H 'Content-Type: application/json' \
-     -d '{"url":"<target-url>","waitForTimeout":3000}' | head -c 200000
-   ```
-
-   `waitForTimeout` shown here (3000 ms) is the default for standard server-rendered pages. Increase to 5000–10000 ms for JS-heavy, lazy-loaded, or infinite-scroll content — see timeout tuning table in `references/browserless.md`. Response is rendered HTML — parse the same way as any `webFetch` result.
+   Load `references/stealth-browser.md` for the fetch recipe, body fields, response table, and pacing.
 
 4. **`superpowers-chrome`** — lower token cost than headless browser:
    `mcp__plugin_superpowers-chrome_chrome__use_browser`
@@ -109,4 +101,4 @@ Load the relevant reference when deep tool-specific details are needed:
 | Exa (search + deep research) | `references/exa-research.md` | Deep researcher workflow, date handling, citation format |
 | Brave Search | `references/brave-web-search.md` | Brave MCP unavailable, REST API fallback needed |
 | Tavily CLI | `references/tavily-cli.md` | `tvly` commands, crawl/extract/map/research workflows |
-| Browserless (bot-blocked sites) | `references/browserless.md` | Known-blocking domains, credential sourcing, timeout tuning |
+| stealth-browser gateway (bot-blocked sites) | `references/stealth-browser.md` | Domains to send straight there, credentials, profiles, error responses, pacing |
