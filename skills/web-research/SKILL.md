@@ -67,19 +67,18 @@ Apply in order. Stop at the first step that returns sufficient content.
    - Body contains `<div id="root">`, `<div id="app">`, or `<div id="__next">` with no meaningful content inside
    - Body is dominated by `<script>` tags with little visible text
 
-3. **stealth-browser gateway (bot-blocked sites)** is Joe's self-hosted Camoufox (patched Firefox) with logged-in eBay and Reddit profiles. Use it when:
+3. **stealth-browser gateway (bot-blocked sites)** is a self-hosted Camoufox (patched Firefox) gateway with logged-in eBay and Reddit profiles ([stealth-browser](https://github.com/joeblackwaslike/stealth-browser) covers setup). It needs `STEALTH_BROWSER_URL` and `STEALTH_BROWSER_TOKEN` in the environment; if either is unset, skip to step 4 without hunting for credentials. Use it when:
    - the URL hostname is on the send-straight-here list in `references/stealth-browser.md` (eBay, Reddit, Amazon), OR
    - `webFetch` returned HTTP 403 / 429, a CAPTCHA page, or near-empty content from a page that is clearly server-rendered (not an SPA)
 
    ```bash
-   source ~/creds.zsh
    curl -sS -m 120 -X POST "$STEALTH_BROWSER_URL/content" \
      -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN" \
      -H 'Content-Type: application/json' \
      -d '{"url":"<target-url>"}' | head -c 200000
    ```
 
-   A 200 returns rendered HTML; parse it like any `webFetch` result. The gateway picks the eBay/Reddit/anon profile from the hostname. Requests queue one at a time, which is why the curl call gets a long `-m`. Amazon search pages run ~2 MB with results past the 200 KB cap, so save those to a file and `grep` them instead of piping through `head`. On a 401 `session_expired` or a 423 `blocked`, don't retry: report it and move to step 4. Load `references/stealth-browser.md` for the body fields, the full response table, and pacing.
+   A 200 returns rendered HTML; parse it like any `webFetch` result. Send only `url`. The gateway routes eBay and Reddit (any subdomain) to their logged-in profiles and everything else, Amazon included, to an anonymous one. Requests queue one at a time, which is why the curl call gets a long `-m`. Amazon search pages run ~2 MB with results past the 200 KB cap, so save those to a file and `grep` them instead of piping through `head`. On a 401 `session_expired` or a 423 `blocked`, don't retry: report it and move to step 4. Load `references/stealth-browser.md` for the body fields, the full response table, and pacing.
 
 4. **`superpowers-chrome`** — lower token cost than headless browser:
    `mcp__plugin_superpowers-chrome_chrome__use_browser`

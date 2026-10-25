@@ -1,44 +1,40 @@
 # stealth-browser gateway
 
-Joe's self-hosted gateway in front of Camoufox, a patched Firefox with a pinned
-fingerprint. It runs on the home IP with no proxy and keeps two logged-in profiles.
-Use it when a site blocks agents: 403, 429, a CAPTCHA, a login wall, or a near-empty
-body on a server-rendered page. Source lives at `~/github/joeblackwaslike/stealth-browser`.
+[stealth-browser](https://github.com/joeblackwaslike/stealth-browser) is a self-hosted
+gateway in front of Camoufox, a patched Firefox with a pinned fingerprint. It can keep
+logged-in eBay and Reddit sessions. Use it when a site blocks agents: 403, 429, a
+CAPTCHA, a login wall, or a near-empty body on a server-rendered page. The repo README
+covers what the gateway is and how to deploy it.
 
 ## Credentials
 
-```bash
-source ~/creds.zsh   # exports STEALTH_BROWSER_URL and STEALTH_BROWSER_TOKEN
-```
-
-The URL is `https://stealth-browser.napoleon-catfish.ts.net` and only resolves on the
-tailnet. If DNS or the connection fails, the machine is off Tailscale or the gateway
-is down. Never print the token, not even a prefix. Check that it's set and reachable:
+The agent needs `STEALTH_BROWSER_URL` and `STEALTH_BROWSER_TOKEN` in its environment.
+If either is unset, skip the gateway and go to the next escalation step. Don't search
+the machine for credentials. Never print the token, not even a prefix. Check that the
+gateway is reachable:
 
 ```bash
-source ~/creds.zsh
-[ -n "$STEALTH_BROWSER_TOKEN" ] && echo "token set"
+[ -n "$STEALTH_BROWSER_URL" ] && [ -n "$STEALTH_BROWSER_TOKEN" ] || echo "not configured"
 curl -sS -o /dev/null -w '%{http_code}\n' "$STEALTH_BROWSER_URL/healthz" \
   -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN"   # 200 = ok
 ```
 
+If DNS or the connection fails, the gateway is down or not reachable from this machine
+(it often sits on a private network). Move to the next step.
+
 ## Fetching a page
 
 ```bash
-source ~/creds.zsh
 curl -sS -m 120 -X POST "$STEALTH_BROWSER_URL/content" \
   -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN" \
   -H 'Content-Type: application/json' \
   -d '{"url":"<target-url>"}' | head -c 200000
 ```
 
-The JSON body takes three fields.
-
 | Field | Type | Default | Notes |
 | --- | --- | --- | --- |
 | `url` | string | required | Public `http`/`https` only. Loopback, private IPs, and bare hostnames get a 400. |
 | `waitForTimeout` | int, 0-15000 ms | 3000 | Extra wait after load. Raise it only when lazy-loaded content is missing. |
-| `profile` | `"ebay"` \| `"reddit"` \| `"anon"` | from URL | Overrides the profile picked from the URL. |
 
 A 200 returns the rendered HTML (`text/html`). Parse it like a `webFetch` result. The
 `X-Final-Url` header holds the URL after redirects. `head -c 200000` caps the output
@@ -49,17 +45,14 @@ need with `grep`.
 
 ### Profiles
 
-When `profile` is omitted, the gateway matches the URL's exact hostname. It does no
-suffix matching and doesn't strip `www`.
+The gateway picks the profile from the URL's hostname, so send only `url`. A profile
+owns its domain and every subdomain of it:
 
-| Hostname | Profile | Logged in as |
-| --- | --- | --- |
-| `ebay.com`, `www.ebay.com` | `ebay` | A dedicated scraping account, never Joe's main seller account |
-| `reddit.com`, `old.reddit.com`, `www.reddit.com` | `reddit` | Joe's Reddit account |
-| anything else | `anon` | No login |
-
-Any other eBay or Reddit host (`m.ebay.com`, `np.reddit.com`) falls through to
-`anon`. For those, pass `"profile"` explicitly or rewrite the URL to a listed host.
+| Hostname | Profile |
+| --- | --- |
+| `ebay.com` or any subdomain (`www.ebay.com`, `m.ebay.com`) | `ebay`, logged in |
+| `reddit.com` or any subdomain (`old.reddit.com`, `www.reddit.com`) | `reddit`, logged in |
+| anything else (Amazon included) | `anon`, no login |
 
 ### Pacing
 
@@ -69,8 +62,8 @@ order. It waits a random gap between starts on the same profile: 20-40 s for `eb
 or more, so give curl a long `-m`. At most five requests can wait behind the running
 one.
 
-Keep eBay requests few. They go out from the home IP, and a block pauses the eBay
-profile for everyone.
+Keep eBay requests few. The gateway uses no proxy, and a block pauses the eBay profile
+for every caller.
 
 ## Responses
 
@@ -78,8 +71,8 @@ profile for everyone.
 | --- | --- | --- | --- |
 | 200 | HTML | Page rendered | Parse it |
 | 400 | `{"error":"invalid_request","message":...}` | Bad body or a disallowed URL | Fix the request |
-| 401 | `Unauthorized` (plain text) | Token missing or wrong | Re-source `~/creds.zsh` |
-| 401 | `{"session_expired":true,"profile":...}` | Saved login for that profile is missing or expired | Ask Joe to run `pnpm signin <profile>` in the stealth-browser repo; don't retry |
+| 401 | not JSON | Token missing or wrong | Check `STEALTH_BROWSER_TOKEN`; don't retry |
+| 401 | `{"session_expired":true,"profile":...}` | Saved login for that profile is missing or expired | Tell the user; the gateway operator re-captures it with `pnpm signin <profile>`. Don't retry |
 | 423 | `{"blocked":true,"profile":...,"reason":...}` | Site served a bot check; profile now paused 30 min | Don't retry; fall back to the next escalation step |
 | 423 | same, `"reason":"paused"`, `Retry-After` header (seconds) | Profile still paused from an earlier block | Don't retry before `Retry-After` |
 | 429 | `{"error":"rate_limited","profile":...}` | Target site rate-limited the request; no pause | Back off before the next request to that site |
@@ -89,20 +82,18 @@ profile for everyone.
 The `reason` on a fresh block is one of `ebay_challenge_redirect`,
 `interruption_page`, `ebay_error_page`, `captcha`, `verify_human`, or `http_block_status` (the site returned 403).
 
-`pnpm signin` opens a real browser for Joe to log in by hand, so an agent can't run it.
+`pnpm signin` has a person log in by hand in a remote browser, so an agent can't run it.
 Report the expired profile and move on.
 
 ## Domains to send straight here
 
-Skip `webFetch` for these hostnames (exact match, as above). Each one has been tested
-through the gateway:
+Skip `webFetch` for these hostnames. Each one has been tested through the gateway:
 
-- `www.ebay.com`: sold comps (`/sch/i.html?...&LH_Sold=1&LH_Complete=1`) and Terapeak
-  (Seller Hub research URLs). Both need the `ebay` profile; anonymous sold searches
-  redirect to sign-in.
-- `reddit.com`, `old.reddit.com`, `www.reddit.com`: threads and search, including
-  login-walled threads.
-- `www.amazon.com`: search results (`anon`).
+- eBay (any subdomain): sold comps (`/sch/i.html?...&LH_Sold=1&LH_Complete=1`) and
+  Terapeak (Seller Hub research URLs). Both need the logged-in `ebay` profile;
+  anonymous sold searches redirect to sign-in.
+- Reddit (any subdomain): threads and search, including login-walled threads.
+- `www.amazon.com`: search results and product pages (`anon`).
 
 For other domains, escalate from `webFetch` when the response shows any of:
 
