@@ -31,6 +31,7 @@ often sits on a private network, so it may not be reachable from this machine.
 ```bash
 url='<target-url>'   # write any ' in the URL as %27
 dir=$(mktemp -d)     # one directory per fetch, so parallel fetches don't collide
+echo "saved to $dir" # a later shell call can't see $dir, so keep this path
 curl -sS -m 300 -X POST "$STEALTH_BROWSER_URL/content" \
   -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN" \
   -H 'Content-Type: application/json' \
@@ -55,7 +56,7 @@ redirects) and, for a paused profile, `Retry-After`.
 `head -c 200000` reads about 200 KB to save context. That is enough for Reddit
 (~190 KB) but stops Amazon search before the first result, because the page is ~2 MB
 and results start past byte 300,000. For pages that size, `grep` the file for what you
-need.
+need, using the directory path the recipe printed.
 
 ### Profiles
 
