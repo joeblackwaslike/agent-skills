@@ -5,10 +5,6 @@ fingerprint. It runs on the home IP with no proxy and keeps two logged-in profil
 Use it when a site blocks agents: 403, 429, a CAPTCHA, a login wall, or a near-empty
 body on a server-rendered page. Source lives at `~/github/joeblackwaslike/stealth-browser`.
 
-The old Browserless instance still answers, but on Reddit it returns HTTP 200 with a
-"You've been blocked" page, so a status check won't catch the failure. Use this
-gateway instead of `$BROWSERLESS_URL` for bot-blocked sites.
-
 ## Credentials
 
 ```bash

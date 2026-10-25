@@ -79,7 +79,7 @@ Apply in order. Stop at the first step that returns sufficient content.
      -d '{"url":"<target-url>"}' | head -c 200000
    ```
 
-   A 200 returns rendered HTML; parse it like any `webFetch` result. The gateway picks the eBay/Reddit/anon profile from the hostname. Requests queue one at a time, which is why the curl call gets a long `-m`. Amazon search pages run ~2 MB with results past the 200 KB cap, so save those to a file and `grep` them instead of piping through `head`. On a 401 `session_expired` or a 423 `blocked`, don't retry: report it and move to step 4. Load `references/stealth-browser.md` for the body fields, the full response table, and pacing. Don't use the old `$BROWSERLESS_URL`; Reddit serves it a "You've been blocked" page with HTTP 200.
+   A 200 returns rendered HTML; parse it like any `webFetch` result. The gateway picks the eBay/Reddit/anon profile from the hostname. Requests queue one at a time, which is why the curl call gets a long `-m`. Amazon search pages run ~2 MB with results past the 200 KB cap, so save those to a file and `grep` them instead of piping through `head`. On a 401 `session_expired` or a 423 `blocked`, don't retry: report it and move to step 4. Load `references/stealth-browser.md` for the body fields, the full response table, and pacing.
 
 4. **`superpowers-chrome`** — lower token cost than headless browser:
    `mcp__plugin_superpowers-chrome_chrome__use_browser`
