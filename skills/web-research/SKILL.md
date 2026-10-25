@@ -71,17 +71,7 @@ Apply in order. Stop at the first step that returns sufficient content.
    - the URL hostname is on the send-straight-here list in `references/stealth-browser.md` (eBay, Reddit, Amazon), OR
    - `webFetch` returned HTTP 403 / 429, a CAPTCHA page, or near-empty content from a page that is clearly server-rendered (not an SPA)
 
-   ```bash
-   url='<target-url>'   # write any ' in the URL as %27
-   curl -sS -m 300 -X POST "$STEALTH_BROWSER_URL/content" \
-     -H "Authorization: Bearer $STEALTH_BROWSER_TOKEN" \
-     -H 'Content-Type: application/json' \
-     -d "$(jq -nc --arg url "$url" '{url:$url}')" \
-     -D /tmp/sb-headers.txt -o /tmp/sb-page.html -w '%{http_code}\n'
-   head -c 200000 /tmp/sb-page.html
-   ```
-
-   curl prints the status code. On a 200 the page file holds rendered HTML; parse it like any `webFetch` result. `/tmp/sb-headers.txt` holds `X-Final-Url` (the URL after redirects). The body needs only `url`, since the gateway routes `ebay.com`, `reddit.com`, and their subdomains to logged-in profiles and everything else, Amazon included, to an anonymous one. Requests queue one at a time, which is why the curl call gets a five-minute `-m`. Amazon search pages run ~2 MB with results past the 200 KB cap, so `grep` the saved file for those instead of reading it with `head`. On a 401 `session_expired` or a 423 `blocked`, don't retry: report it and move to step 4. Load `references/stealth-browser.md` for the body fields, the full response table, and pacing.
+   Load `references/stealth-browser.md` for the fetch recipe, body fields, response table, and pacing.
 
 4. **`superpowers-chrome`** — lower token cost than headless browser:
    `mcp__plugin_superpowers-chrome_chrome__use_browser`
